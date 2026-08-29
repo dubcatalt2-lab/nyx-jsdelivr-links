@@ -22,3 +22,6 @@ Use a short-lived GitHub token restricted to this repository with `Contents: Rea
 `https://cdn.jsdelivr.net/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/FILENAME.svg`
 
 The SVG does not contain Nyx credentials or application code. It displays the official `https://nyxlearning.org/` application in a full-window iframe.
+## Fixed publisher
+
+Use the repository-owned [Nyx SVG Batch Publisher](https://cdn.jsdelivr.net/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-batch-publisher-v1.svg). It fixes the upstream publisher's missing `escapeHtml` error-reporting function.
