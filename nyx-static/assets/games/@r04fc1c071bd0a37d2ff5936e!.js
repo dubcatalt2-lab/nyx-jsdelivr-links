@@ -115,11 +115,11 @@ if (ud) {
   Md.className = "arcade-random", Md.setAttribute("aria-label", "Random game"), Md.title = "Random game", 
   Md.disabled = !0, Md.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h3c4 0 8 12 12 12h3m-4-4 4 4-4 4M3 18h3c1.7 0 3.4-2.2 5-5m2-3c1.7-2.5 3.3-4 5-4h3m-4-4 4 4-4 4"/></svg><span>Random game</span>', 
   r.append(Md), Md.addEventListener("click", () => {
-    const e = lm();
-    e.length && Gm(e[Math.floor(Math.random() * e.length)], !0, [ "all", "misc" ].includes(hd.activeLibrary) ? "" : hd.activeLibrary);
+    const e = dm();
+    e.length && $m(e[Math.floor(Math.random() * e.length)], !0, [ "all", "misc" ].includes(hd.activeLibrary) ? "" : hd.activeLibrary);
   }), Cd.addEventListener("click", e => {
     const t = e.target.closest("[data-game-key]");
-    t && Gm(hd.gamesByKey.get(t.dataset.gameKey));
+    t && $m(hd.gamesByKey.get(t.dataset.gameKey));
   });
 }
 
@@ -583,16 +583,20 @@ function im(e) {
 }
 
 function lm() {
+  return md || !0 === hd.manifest?.includeUnillustrated;
+}
+
+function dm() {
   const e = fd.search.value.trim().toLowerCase();
-  return hd.games.filter(t => ("misc" === hd.activeLibrary ? !t.hasIcon : (t.hasIcon || e || md) && ("all" === hd.activeLibrary || xm(t).some(e => e.source === hd.activeLibrary))) && (!e || t.title.toLowerCase().includes(e))).sort((e, t) => "za" === fd.sort.value ? t.title.localeCompare(e.title, void 0, {
+  return hd.games.filter(t => ("misc" === hd.activeLibrary ? !t.hasIcon : (t.hasIcon || e || lm()) && ("all" === hd.activeLibrary || km(t).some(e => e.source === hd.activeLibrary))) && (!e || t.title.toLowerCase().includes(e))).sort((e, t) => "za" === fd.sort.value ? t.title.localeCompare(e.title, void 0, {
     numeric: !0
   }) : e.title.localeCompare(t.title, void 0, {
     numeric: !0
   }));
 }
 
-function dm() {
-  const e = lm(), t = Math.max(1, Math.ceil(e.length / hd.pageSize));
+function mm() {
+  const e = dm(), t = Math.max(1, Math.ceil(e.length / hd.pageSize));
   hd.page = Math.min(Math.max(1, hd.page), t), Gd(e);
   const a = (hd.page - 1) * hd.pageSize, r = e.slice(a, a + hd.pageSize), n = document.createDocumentFragment();
   for (const o of r) n.append(im(o));
@@ -601,14 +605,14 @@ function dm() {
   fd.nextPage.disabled = hd.page >= t, fd.pageInfo.textContent = `Page ${hd.page} of ${t}`;
 }
 
-function mm(e) {
-  return "all" === e ? hd.games.filter(e => e.hasIcon || md).length : "misc" === e ? hd.games.filter(e => !e.hasIcon).length : hd.games.filter(t => (t.hasIcon || md) && xm(t).some(t => t.source === e)).length;
+function um(e) {
+  return "all" === e ? hd.games.filter(e => e.hasIcon || lm()).length : "misc" === e ? hd.games.filter(e => !e.hasIcon).length : hd.games.filter(t => (t.hasIcon || lm()) && km(t).some(t => t.source === e)).length;
 }
 
-function um() {
+function fm() {
   const e = document.createDocumentFragment();
   for (const t of yd) {
-    const a = mm(t.id);
+    const a = um(t.id);
     if ("all" !== t.id && 0 === a) continue;
     const r = document.createElement("button");
     r.type = "button", r.className = "library-tab", r.dataset.library = t.id, r.title = t.description, 
@@ -622,46 +626,46 @@ function um() {
   fd.libraryTabs.replaceChildren(e);
 }
 
-function fm() {
-  hd.page = 1, dm();
+function pm() {
+  hd.page = 1, mm();
 }
 
-function pm(e) {
-  const t = lm(), a = Math.max(1, Math.ceil(t.length / hd.pageSize)), r = Math.min(Math.max(1, e), a);
-  r !== hd.page && (hd.page = r, dm(), fd.grid.scrollIntoView({
+function gm(e) {
+  const t = dm(), a = Math.max(1, Math.ceil(t.length / hd.pageSize)), r = Math.min(Math.max(1, e), a);
+  r !== hd.page && (hd.page = r, mm(), fd.grid.scrollIntoView({
     behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
     block: "start"
   }));
 }
 
-function gm(e) {
+function hm(e) {
   try {
     const t = new URL(location.href);
     e ? t.searchParams.set("game", e) : t.searchParams.delete("game"), H.replaceState(null, "", t);
   } catch {}
 }
 
-function hm() {
+function ym() {
   clearTimeout(hd.sourceTimer), hd.sourceTimer = 0;
 }
 
-function ym() {
+function vm() {
   const e = Number(navigator.hardwareConcurrency || 8), t = Number(navigator.deviceMemory || 8);
   return matchMedia("(max-width: 480px) and (max-height: 520px)").matches || e <= 4 || t <= 4 ? 2 : e <= 6 || t <= 6 ? 1 : 0;
 }
 
-function vm() {
+function bm() {
   return hd.activeGame && "off" !== hd.performancePreference ? "balanced" === hd.performancePreference ? 1 : "boost" === hd.performancePreference ? 2 : hd.performanceLevel : 0;
 }
 
-function bm(e, t = "") {
+function wm(e, t = "") {
   const a = Math.max(0, Math.min(2, Math.round(Number(e) || 0)));
   (a !== hd.performanceLevel || t && t !== hd.performanceReason) && (hd.performanceLevel = a, 
-  t && (hd.performanceReason = t), wm());
+  t && (hd.performanceReason = t), Lm());
 }
 
-function wm() {
-  const e = vm(), t = e > 0;
+function Lm() {
+  const e = bm(), t = e > 0;
   document.body.classList.toggle("game-active", Boolean(hd.activeGame)), document.body.classList.toggle("game-performance-active", t), 
   document.body.dataset.gamePerformanceLevel = String(e);
   const a = "auto" === hd.performancePreference ? 2 === e ? "Auto \xb7 Boost" : 1 === e ? "Auto \xb7 Balanced" : "Auto" : "balanced" === hd.performancePreference ? "Balanced" : "boost" === hd.performancePreference ? "Boost" : "Off";
@@ -671,16 +675,16 @@ function wm() {
   fd.performance.title = `Game optimizer: ${a}. Select to change Auto, Balanced, Boost, or Off.`);
 }
 
-function Lm() {
+function Sm() {
   hd.performanceFrame && cancelAnimationFrame(hd.performanceFrame), hd.performanceFrame = 0, 
   hd.performanceObserver?.disconnect?.(), hd.performanceObserver = null, hd.performanceSamples = [], 
   hd.performanceLongTasks = 0, hd.performanceStableWindows = 0, hd.performanceLastTune = 0;
 }
 
-function Sm() {
-  if (Lm(), !hd.activeGame) return;
-  "auto" === hd.performancePreference && (hd.performanceLevel = ym(), hd.performanceReason = hd.performanceLevel ? "device" : "ready", 
-  wm());
+function Em() {
+  if (Sm(), !hd.activeGame) return;
+  "auto" === hd.performancePreference && (hd.performanceLevel = vm(), hd.performanceReason = hd.performanceLevel ? "device" : "ready", 
+  Lm());
   try {
     hd.performanceObserver = new PerformanceObserver(e => {
       hd.performanceLongTasks += e.getEntries().filter(e => e.duration >= 50).length;
@@ -697,11 +701,11 @@ function Sm() {
     const r = a - e;
     if (e = a, "visible" === document.visibilityState && r > 0 && r < 250 && (hd.performanceSamples.push(r), 
     hd.performanceSamples.length > 180 && hd.performanceSamples.shift()), "auto" === hd.performancePreference && "visible" === document.visibilityState && a - hd.performanceLastTune >= 2e3) {
-      const e = hd.performanceSamples.splice(0), t = e.length ? e.reduce((e, t) => e + t, 0) / e.length : 0, r = e.filter(e => e >= 38).length, n = ym(), o = e.length >= 12 && (t >= 25 || r >= 5 || hd.performanceLongTasks >= 2), c = e.length >= 40 && t > 0 && t < 19.5 && 0 === r && 0 === hd.performanceLongTasks;
+      const e = hd.performanceSamples.splice(0), t = e.length ? e.reduce((e, t) => e + t, 0) / e.length : 0, r = e.filter(e => e >= 38).length, n = vm(), o = e.length >= 12 && (t >= 25 || r >= 5 || hd.performanceLongTasks >= 2), c = e.length >= 40 && t > 0 && t < 19.5 && 0 === r && 0 === hd.performanceLongTasks;
       fd.performance && (fd.performance.dataset.averageFrame = t.toFixed(1), fd.performance.dataset.slowFrames = String(r), 
       fd.performance.dataset.longTasks = String(hd.performanceLongTasks)), o ? (hd.performanceStableWindows = 0, 
-      bm(Math.max(n, hd.performanceLevel + 1), "slowdown")) : c && hd.performanceLevel > n ? (hd.performanceStableWindows += 1, 
-      hd.performanceStableWindows >= 4 && (hd.performanceStableWindows = 0, bm(hd.performanceLevel - 1, "recovered"))) : hd.performanceStableWindows = 0, 
+      wm(Math.max(n, hd.performanceLevel + 1), "slowdown")) : c && hd.performanceLevel > n ? (hd.performanceStableWindows += 1, 
+      hd.performanceStableWindows >= 4 && (hd.performanceStableWindows = 0, wm(hd.performanceLevel - 1, "recovered"))) : hd.performanceStableWindows = 0, 
       hd.performanceLongTasks = 0, hd.performanceLastTune = a;
     }
     hd.performanceFrame = requestAnimationFrame(t);
@@ -709,12 +713,12 @@ function Sm() {
   hd.performanceFrame = requestAnimationFrame(t);
 }
 
-function Em(e, t = !1) {
+function xm(e, t = !1) {
   fd.playerLoading.classList.remove("done"), fd.playerLoading.classList.toggle("failed", t), 
   fd.playerLoadingText.textContent = e, fd.playerRetry.hidden = !t;
 }
 
-function xm(e = hd.activeGame) {
+function km(e = hd.activeGame) {
   return e ? e.sources?.length ? e.sources : [ {
     url: e.url,
     source: e.source || "game",
@@ -722,7 +726,7 @@ function xm(e = hd.activeGame) {
   } ] : [];
 }
 
-function km(e, t) {
+function Im(e, t) {
   return {
     local: md ? "Archive" : "Nyx Archive",
     gn: "GN Math",
@@ -733,9 +737,9 @@ function km(e, t) {
   }[e?.source] || `Provider ${t + 1}`;
 }
 
-function Im() {
+function Pm() {
   if (!fd.provider) return;
-  const e = xm(), t = e.map(km), a = new Map, r = new Map;
+  const e = km(), t = e.map(Im), a = new Map, r = new Map;
   t.forEach(e => a.set(e, (a.get(e) || 0) + 1));
   const n = e.map((e, n) => {
     const o = document.createElement("option"), c = t[n], s = (r.get(c) || 0) + 1;
@@ -746,9 +750,9 @@ function Im() {
   fd.provider.disabled = e.length < 2, fd.provider.title = e.length > 1 ? `${e.length} providers available` : "Only one provider is available for this game";
 }
 
-function Pm() {
+function Cm() {
   if (hd.activeGame) {
-    hm(), fd.playerLoading.classList.add("done");
+    ym(), fd.playerLoading.classList.add("done");
     try {
       parent.postMessage({
         type: "nyx:game-launched"
@@ -757,8 +761,8 @@ function Pm() {
   }
 }
 
-function Cm() {
-  hm(), fd.frame.src = "about:blank", Em("This game could not load from any available source.", !0);
+function Mm() {
+  ym(), fd.frame.src = "about:blank", xm("This game could not load from any available source.", !0);
   try {
     parent.postMessage({
       type: "nyx:game-failed"
@@ -766,12 +770,12 @@ function Cm() {
   } catch {}
 }
 
-async function Mm(e, t = "") {
-  const a = xm();
-  if (!hd.activeGame || e < 0 || e >= a.length) return void Cm();
-  hm(), hd.activeSourceIndex = e, Im(), hd.sourceAttempt += 1;
+async function Am(e, t = "") {
+  const a = km();
+  if (!hd.activeGame || e < 0 || e >= a.length) return void Mm();
+  ym(), hd.activeSourceIndex = e, Pm(), hd.sourceAttempt += 1;
   const r = hd.sourceAttempt, n = a[e];
-  Em(t && a.length > 1 ? `Trying another source\u2026 ${e + 1} of ${a.length}` : "Loading game\u2026" + (a.length > 1 ? ` Source ${e + 1} of ${a.length}` : ""));
+  xm(t && a.length > 1 ? `Trying another source\u2026 ${e + 1} of ${a.length}` : "Loading game\u2026" + (a.length > 1 ? ` Source ${e + 1} of ${a.length}` : ""));
   try {
     let e = window;
     for (let t = 0; t < 4; t += 1) {
@@ -788,7 +792,7 @@ async function Mm(e, t = "") {
     const e = await Nd(), t = await e.getGameUrl(n.luminId || n.url.slice(11));
     if (o = String(t?.url || ""), !o) throw new Error("LuminSDK did not return a playable URL");
   } catch {
-    return void (r === hd.sourceAttempt && hd.activeGame && Am("The Lumin game could not be prepared."));
+    return void (r === hd.sourceAttempt && hd.activeGame && Gm("The Lumin game could not be prepared."));
   }
   if (r !== hd.sourceAttempt || !hd.activeGame) return;
   fd.frame.src = o;
@@ -797,27 +801,27 @@ async function Mm(e, t = "") {
     c = new URL(o, location.href).origin === location.origin;
   } catch {}
   (c || "lumin" === n.source) && (hd.sourceTimer = setTimeout(() => {
-    r === hd.sourceAttempt && hd.activeGame && Mm(e + 1, "The current source did not finish loading.");
+    r === hd.sourceAttempt && hd.activeGame && Am(e + 1, "The current source did not finish loading.");
   }, "lumin" === n.source ? 25e3 : 18e3));
 }
 
-function Am(e = "") {
+function Gm(e = "") {
   if (!hd.activeGame) return;
-  const t = xm(), a = t[hd.activeSourceIndex];
+  const t = km(), a = t[hd.activeSourceIndex];
   a?.url && hd.failedSources.add(a.url);
   let r = hd.activeSourceIndex + 1;
   for (;r < t.length && hd.failedSources.has(t[r].url); ) r += 1;
-  r < t.length ? Mm(r, e) : Cm();
+  r < t.length ? Am(r, e) : Mm();
 }
 
-async function Gm(e, t = !0, a = "") {
+async function $m(e, t = !0, a = "") {
   if (!e) return;
-  hd.lastFocused = document.activeElement, hd.activeGame = e, hd.performanceLevel = "auto" === hd.performancePreference ? ym() : "balanced" === hd.performancePreference ? 1 : "boost" === hd.performancePreference ? 2 : 0, 
+  hd.lastFocused = document.activeElement, hd.activeGame = e, hd.performanceLevel = "auto" === hd.performancePreference ? vm() : "balanced" === hd.performancePreference ? 1 : "boost" === hd.performancePreference ? 2 : 0, 
   hd.performanceReason = "auto" === hd.performancePreference && hd.performanceLevel ? "device" : "ready";
-  const r = xm(e), n = a ? r.findIndex(e => e.source === a && !hd.failedSources.has(e.url)) : -1, o = n >= 0 ? n : r.findIndex(e => !hd.failedSources.has(e.url));
-  if (hd.activeSourceIndex = o >= 0 ? o : 0, Im(), fd.playerTitle.textContent = e.title, 
-  fd.frame.title = e.title, fd.player.hidden = !1, wm(), Sm(), wd = await Ud(e), hd.activeGame === e) {
-    Mm(hd.activeSourceIndex), fd.close.focus(), t && gm(e.key);
+  const r = km(e), n = a ? r.findIndex(e => e.source === a && !hd.failedSources.has(e.url)) : -1, o = n >= 0 ? n : r.findIndex(e => !hd.failedSources.has(e.url));
+  if (hd.activeSourceIndex = o >= 0 ? o : 0, Pm(), fd.playerTitle.textContent = e.title, 
+  fd.frame.title = e.title, fd.player.hidden = !1, Lm(), Em(), wd = await Ud(e), hd.activeGame === e) {
+    Am(hd.activeSourceIndex), fd.close.focus(), t && hm(e.key);
     try {
       parent.postMessage({
         type: "nyx:game-loading"
@@ -826,13 +830,13 @@ async function Gm(e, t = !0, a = "") {
   }
 }
 
-function $m() {
-  zd(hd.activeGame, wd), wd = {}, hm(), hd.sourceAttempt += 1, hd.activeGame = null, 
-  hd.performanceLevel = 0, hd.performanceReason = "ready", Lm(), fd.frame.src = "about:blank", 
-  fd.player.hidden = !0, wm(), Em("Loading game\u2026"), gm(""), hd.lastFocused?.focus?.();
+function Bm() {
+  zd(hd.activeGame, wd), wd = {}, ym(), hd.sourceAttempt += 1, hd.activeGame = null, 
+  hd.performanceLevel = 0, hd.performanceReason = "ready", Sm(), fd.frame.src = "about:blank", 
+  fd.player.hidden = !0, Lm(), xm("Loading game\u2026"), hm(""), hd.lastFocused?.focus?.();
 }
 
-async function Bm() {
+async function Tm() {
   hd.manifest = await Td("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/games.json", "Catalog manifest", {
     attempts: 3
   });
@@ -851,13 +855,13 @@ async function Bm() {
     } finally {
       r += 1, (() => {
         hd.games = om([ ...t.values() ]), hd.gamesByKey = new Map(hd.games.map(e => [ e.key, e ])), 
-        "all" === hd.activeLibrary || mm(hd.activeLibrary) || (hd.activeLibrary = "all"), 
-        um(), dm();
+        "all" === hd.activeLibrary || um(hd.activeLibrary) || (hd.activeLibrary = "all"), 
+        fm(), mm();
         const c = e.length - r;
         c > 0 && (fd.count.textContent += ` \xb7 ${c} ${1 === c ? "library" : "libraries"} loading`), 
         r === e.length && a.length && (fd.count.textContent += ` \xb7 ${a.length} unavailable`), 
         fd.progress.classList.toggle("done", hd.games.length > 0 || r === e.length), 0 === hd.games.length && r < e.length && (fd.empty.hidden = !0), 
-        !n && o && hd.gamesByKey.has(o) && (n = !0, Gm(hd.gamesByKey.get(o), !1));
+        !n && o && hd.gamesByKey.has(o) && (n = !0, $m(hd.gamesByKey.get(o), !1));
       })();
     }
   })), !hd.games.length) throw new Error("No game library was available");
@@ -865,44 +869,44 @@ async function Bm() {
 
 fd.grid.addEventListener("click", e => {
   const t = e.target.closest("[data-game-key]");
-  t && Gm(hd.gamesByKey.get(t.dataset.gameKey), !0, t.dataset.preferredSource);
-}), fd.search.addEventListener("input", fm), fd.libraryTabs.addEventListener("click", e => {
+  t && $m(hd.gamesByKey.get(t.dataset.gameKey), !0, t.dataset.preferredSource);
+}), fd.search.addEventListener("input", pm), fd.libraryTabs.addEventListener("click", e => {
   const t = e.target.closest("[data-library]");
   t && t.dataset.library !== hd.activeLibrary && (hd.activeLibrary = t.dataset.library, 
-  um(), fm());
-}), fd.sort.addEventListener("change", fm), fd.previousPage.addEventListener("click", () => pm(hd.page - 1)), 
-fd.nextPage.addEventListener("click", () => pm(hd.page + 1)), fd.close.addEventListener("click", $m), 
+  fm(), pm());
+}), fd.sort.addEventListener("change", pm), fd.previousPage.addEventListener("click", () => gm(hd.page - 1)), 
+fd.nextPage.addEventListener("click", () => gm(hd.page + 1)), fd.close.addEventListener("click", Bm), 
 fd.provider?.addEventListener("change", () => {
-  const e = Number(fd.provider.value), t = xm();
+  const e = Number(fd.provider.value), t = km();
   !Number.isInteger(e) || e < 0 || e >= t.length || (hd.failedSources.delete(t[e].url), 
-  Mm(e, "Switching provider..."));
+  Am(e, "Switching provider..."));
 }), fd.performance?.addEventListener("click", () => {
   const e = [ "auto", "balanced", "boost", "off" ];
   hd.performancePreference = e[(e.indexOf(hd.performancePreference) + 1) % e.length], 
-  hd.performanceLevel = "auto" === hd.performancePreference ? ym() : "balanced" === hd.performancePreference ? 1 : "boost" === hd.performancePreference ? 2 : 0, 
+  hd.performanceLevel = "auto" === hd.performancePreference ? vm() : "balanced" === hd.performancePreference ? 1 : "boost" === hd.performancePreference ? 2 : 0, 
   hd.performanceReason = "auto" === hd.performancePreference && hd.performanceLevel ? "device" : "manual", 
   hd.performanceSamples = [], hd.performanceLongTasks = 0, hd.performanceStableWindows = 0, 
-  localStorage.setItem("nyx.gamePerformanceMode", hd.performancePreference), wm();
+  localStorage.setItem("nyx.gamePerformanceMode", hd.performancePreference), Lm();
 }), fd.reload.addEventListener("click", () => {
-  hd.activeGame && Mm(hd.activeSourceIndex);
+  hd.activeGame && Am(hd.activeSourceIndex);
 }), fd.playerRetry.addEventListener("click", () => {
-  for (const e of xm()) hd.failedSources.delete(e.url);
-  Mm(0);
+  for (const e of km()) hd.failedSources.delete(e.url);
+  Am(0);
 }), fd.fullscreen.addEventListener("click", async () => {
   try {
     document.fullscreenElement ? await document.exitFullscreen() : await fd.frame.parentElement.requestFullscreen();
   } catch {}
 }), fd.frame.addEventListener("load", () => {
   if (fd.player.hidden || !hd.activeGame || "about:blank" === fd.frame.src) return;
-  const e = xm()[hd.activeSourceIndex];
+  const e = km()[hd.activeSourceIndex];
   let t = !1, a = !1;
   try {
     const r = new URL(e?.url || "", location.href);
     t = r.origin === location.origin, a = t && /^\/assets\/(?:ugs|gn-math|gms-games|reds-misc)\/play\.html$/i.test(r.pathname), 
     t && "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/remote-play.html" === r.pathname && (a = !0);
   } catch {}
-  t && !a || setTimeout(Pm, 900);
-}), fd.frame.addEventListener("error", () => Am("The current source could not be opened.")), 
+  t && !a || setTimeout(Cm, 900);
+}), fd.frame.addEventListener("error", () => Gm("The current source could not be opened.")), 
 window.addEventListener("message", e => {
   if (e.origin === location.origin && e.source === fd.cloudFrame.contentWindow && "nyx:account-token-request" === e.data?.type) {
     const t = String(e.data.requestId || "").slice(0, 120);
@@ -931,16 +935,16 @@ window.addEventListener("message", e => {
       return void (t && (clearTimeout(t.timer), vd.delete(String(e.data.requestId || "")), 
       e.data.error ? t.reject(new Error(e.data.error)) : t.resolve(e.data)));
     }
-    e.source === fd.frame.contentWindow && hd.activeGame && ("nyx:game-launched" === e.data?.type && Pm(), 
-    "nyx:game-failed" === e.data?.type && Am("The current source reported a loading error."));
+    e.source === fd.frame.contentWindow && hd.activeGame && ("nyx:game-launched" === e.data?.type && Cm(), 
+    "nyx:game-failed" === e.data?.type && Gm("The current source reported a loading error."));
   } else document.body.classList.toggle("cloud-session-active", !0 === e.data.active); else Rd(e.data.view);
 }), fd.cloudFrame.addEventListener("load", () => {
   document.body.classList.remove("cloud-session-active");
 }), addEventListener("pagehide", () => zd(hd.activeGame, wd), {
   passive: !0
 }), document.addEventListener("keydown", e => {
-  "Escape" !== e.key || fd.player.hidden || document.fullscreenElement || $m();
-}), Bm().catch(e => {
+  "Escape" !== e.key || fd.player.hidden || document.fullscreenElement || Bm();
+}), Tm().catch(e => {
   console.error("Unable to load game library", e), fd.progress.classList.add("done"), 
   fd.count.textContent = "Could not load the game library", fd.empty.querySelector("h2").textContent = "Library unavailable", 
   fd.empty.querySelector("p").textContent = md ? "Reload Drop and try again." : "Reload Nyx and try again.", 

@@ -6,13 +6,13 @@ importScripts(__uv$config.sw || "@r07857cdbac02a78e5845521a!.js");
 
 const uv = new UVServiceWorker;
 
-async function handleRequest(λfdeb228946bf) {
-  if (uv.route(λfdeb228946bf)) {
-    return await uv.fetch(λfdeb228946bf);
+async function handleRequest(λb65f09b0ad9a) {
+  if (uv.route(λb65f09b0ad9a)) {
+    return await uv.fetch(λb65f09b0ad9a);
   }
-  return await fetch(λfdeb228946bf.request);
+  return await fetch(λb65f09b0ad9a.request);
 }
 
-self.addEventListener("fetch", λfdeb228946bf => {
-  λfdeb228946bf.respondWith(handleRequest(λfdeb228946bf));
+self.addEventListener("fetch", λb65f09b0ad9a => {
+  λb65f09b0ad9a.respondWith(handleRequest(λb65f09b0ad9a));
 });

@@ -1,26 +1,26 @@
-import λe93784ea2732 from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/libcurl/@r862d29361561633bc6d7b1e3!.mjs";
+import λ1c7660baeae1 from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/libcurl/@r862d29361561633bc6d7b1e3!.mjs";
 
-import { preserveTransferErrors as λc30e2a8ce1ae, requestWithTransferRetry as λd6ead70b6e1a } from "./@rb2b3030eeac80a1d4ae4b3fa!.mjs";
+import { preserveTransferErrors as λ30da362667e7, requestWithTransferRetry as λ4df997d3f874 } from "./@rb2b3030eeac80a1d4ae4b3fa!.mjs";
 
-import { headerEntries as λb7de1a0827e9 } from "./@r58e1303ec81b4e613dc28874!.mjs";
+import { headerEntries as λ6516501be7b1 } from "./@r58e1303ec81b4e613dc28874!.mjs";
 
-export default class Vu extends λe93784ea2732 {
+export default class Vu extends λ1c7660baeae1 {
   async init() {
-    await super.init(), λc30e2a8ce1ae(this.session), this.responseBudget = {
+    await super.init(), λ30da362667e7(this.session), this.responseBudget = {
       bytes: 0
     };
   }
-  request(λe93784ea2732, λc30e2a8ce1ae, λ71eb209a87de, λ02b602333adb, λ16bae83a6c4f) {
-    return λd6ead70b6e1a(async () => {
-      const λd6ead70b6e1a = await super.request(λe93784ea2732, λc30e2a8ce1ae, λ71eb209a87de, λ02b602333adb, λ16bae83a6c4f);
+  request(λ1c7660baeae1, λ30da362667e7, λ6895a7f138c6, λf21e7fa854f1, λ5ca43c7cacd4) {
+    return λ4df997d3f874(async () => {
+      const λ4df997d3f874 = await super.request(λ1c7660baeae1, λ30da362667e7, λ6895a7f138c6, λf21e7fa854f1, λ5ca43c7cacd4);
       return {
-        ...λd6ead70b6e1a,
-        headers: λb7de1a0827e9(λd6ead70b6e1a.headers)
+        ...λ4df997d3f874,
+        headers: λ6516501be7b1(λ4df997d3f874.headers)
       };
     }, {
-      method: λc30e2a8ce1ae,
-      body: λ71eb209a87de,
-      signal: λ16bae83a6c4f,
+      method: λ30da362667e7,
+      body: λ6895a7f138c6,
+      signal: λ5ca43c7cacd4,
       budget: this.responseBudget
     });
   }

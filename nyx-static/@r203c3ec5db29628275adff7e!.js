@@ -6,69 +6,69 @@ function Rm() {
   return '<!doctype html>\n<meta charset="utf-8">\n<style>\n  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#101318;color:#f5f7fb;font:15px/1.45 system-ui,sans-serif}\n  main{max-width:560px;padding:28px;text-align:center}\n  h1{font-size:20px;margin:0 0 10px}\n  p{margin:0;color:#c8ced8}\n  button{margin-top:18px;border:1px solid #445066;border-radius:10px;background:#1b2230;color:#f5f7fb;padding:10px 15px;font:600 14px system-ui,sans-serif;cursor:pointer}\n</style>\n<main>\n  <h1>Reconnecting StudyJet</h1>\n  <p>Nyx is reconnecting this tab to the proxy service worker.</p>\n  <button type="button" onclick="location.reload()">Retry now</button>\n</main>\n<script>\n  (() => {\n    const key=\'nyx.studyjet-route-retry:\'+location.pathname;\n    const attempts=Number(sessionStorage.getItem(key)||0);\n    if(attempts<2){\n      sessionStorage.setItem(key,String(attempts+1));\n      setTimeout(()=>location.reload(),900);\n    }else{\n      sessionStorage.removeItem(key);\n    }\n  })();\n<\/script>';
 }
 
-function qm(_180d8cbee24a) {
+function qm(_b758494d5be0) {
   try {
-    return new URL(_180d8cbee24a.request.url).pathname.startsWith(self.NYX_TUTSI_WORKER ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/~/tm/" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/~/study/");
+    return new URL(_b758494d5be0.request.url).pathname.startsWith(self.NYX_TUTSI_WORKER ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/~/tm/" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/~/study/");
   } catch {
     return !1;
   }
 }
 
-function Tm(_180d8cbee24a) {
+function Um(_b758494d5be0) {
   try {
-    const _a7c9babcb622 = new URL(_180d8cbee24a).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:study|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
-    return _a7c9babcb622 ? new URL(decodeURIComponent(_a7c9babcb622[1])).pathname : "";
+    const _9c333789f8b6 = new URL(_b758494d5be0).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:study|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
+    return _9c333789f8b6 ? new URL(decodeURIComponent(_9c333789f8b6[1])).pathname : "";
   } catch {
     return "";
   }
 }
 
-function Um(_180d8cbee24a) {
+function Wm(_b758494d5be0) {
   try {
-    const _a7c9babcb622 = new URL(_180d8cbee24a).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:study|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
-    return _a7c9babcb622 ? new URL(decodeURIComponent(_a7c9babcb622[1])).href : "";
+    const _9c333789f8b6 = new URL(_b758494d5be0).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:study|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
+    return _9c333789f8b6 ? new URL(decodeURIComponent(_9c333789f8b6[1])).href : "";
   } catch {
     return "";
   }
 }
 
-self.addEventListener("install", _180d8cbee24a => {
-  _180d8cbee24a.waitUntil(self.skipWaiting());
+self.addEventListener("install", _b758494d5be0 => {
+  _b758494d5be0.waitUntil(self.skipWaiting());
 });
 
-const Wm = [ "pagead2.googlesyndication.com", "googlesyndication.com", "googleads.g.doubleclick.net", "doubleclick.net", "googletagmanager.com", "google-analytics.com", "analytics.google.com", "adservice.google.com", "adtrafficquality.google", "stats.g.doubleclick.net", "static.cloudflareinsights.com", "cloudflareinsights.com", "statcounter.com", "c.statcounter.com", "www.statcounter.com", "inmobi.com", "cmp.inmobi.com", "vntsm.com", "hb.vntsm.com", "facebook.net", "connect.facebook.net", "ads.emulatorjs.org", "cdn.r9x.in", "gamemonetize.com", "html5.api.gamedistribution.com", "imasdk.googleapis.com", "sdk.poki.com" ];
+const _m = [ "pagead2.googlesyndication.com", "googlesyndication.com", "googleads.g.doubleclick.net", "doubleclick.net", "googletagmanager.com", "google-analytics.com", "analytics.google.com", "adservice.google.com", "adtrafficquality.google", "stats.g.doubleclick.net", "static.cloudflareinsights.com", "cloudflareinsights.com", "statcounter.com", "c.statcounter.com", "www.statcounter.com", "inmobi.com", "cmp.inmobi.com", "vntsm.com", "hb.vntsm.com", "facebook.net", "connect.facebook.net", "ads.emulatorjs.org", "cdn.r9x.in", "gamemonetize.com", "html5.api.gamedistribution.com", "imasdk.googleapis.com", "sdk.poki.com" ];
 
-function _m(_180d8cbee24a) {
-  const _a7c9babcb622 = String(_180d8cbee24a || "").toLowerCase();
-  return "cmp.inmobi.com" !== _a7c9babcb622 && !_a7c9babcb622.endsWith(".cmp.inmobi.com") && Wm.some(_180d8cbee24a => _a7c9babcb622 === _180d8cbee24a || _a7c9babcb622.endsWith(`.${_180d8cbee24a}`));
+function Nm(_b758494d5be0) {
+  const _9c333789f8b6 = String(_b758494d5be0 || "").toLowerCase();
+  return "cmp.inmobi.com" !== _9c333789f8b6 && !_9c333789f8b6.endsWith(".cmp.inmobi.com") && _m.some(_b758494d5be0 => _9c333789f8b6 === _b758494d5be0 || _9c333789f8b6.endsWith(`.${_b758494d5be0}`));
 }
 
-function Nm(_180d8cbee24a) {
-  const _a7c9babcb622 = Um(_180d8cbee24a.request.url);
-  if (!_a7c9babcb622) return !1;
+function zm(_b758494d5be0) {
+  const _9c333789f8b6 = Wm(_b758494d5be0.request.url);
+  if (!_9c333789f8b6) return !1;
   try {
-    const _180d8cbee24a = new URL(_a7c9babcb622);
-    return _m(_180d8cbee24a.hostname) || /(?:^|\/)(?:ads?|ad[-_.]?(?:loader|manager|script)|jump[_-]gamemonetize|poki-(?:master-loader|sdk))\.(?:js|mjs)(?:$|\/)/i.test(_180d8cbee24a.pathname) || "serve.app.playsaurus.com" === _180d8cbee24a.hostname && /\/ad-campaigns\//i.test(_180d8cbee24a.pathname);
+    const _b758494d5be0 = new URL(_9c333789f8b6);
+    return Nm(_b758494d5be0.hostname) || /(?:^|\/)(?:ads?|ad[-_.]?(?:loader|manager|script)|jump[_-]gamemonetize|poki-(?:master-loader|sdk))\.(?:js|mjs)(?:$|\/)/i.test(_b758494d5be0.pathname) || "serve.app.playsaurus.com" === _b758494d5be0.hostname && /\/ad-campaigns\//i.test(_b758494d5be0.pathname);
   } catch {
     return !1;
   }
 }
 
-function zm(_180d8cbee24a) {
-  const _a7c9babcb622 = _180d8cbee24a.request.headers.get("accept") || "";
-  return [ "script", "worker", "sharedworker" ].includes(_180d8cbee24a.request.destination) || /javascript|ecmascript/i.test(_a7c9babcb622) ? new Response("", {
+function Dm(_b758494d5be0) {
+  const _9c333789f8b6 = _b758494d5be0.request.headers.get("accept") || "";
+  return [ "script", "worker", "sharedworker" ].includes(_b758494d5be0.request.destination) || /javascript|ecmascript/i.test(_9c333789f8b6) ? new Response("", {
     status: 200,
     headers: {
       "Content-Type": "application/javascript; charset=utf-8"
     }
-  }) : "style" === _180d8cbee24a.request.destination || /text\/css/i.test(_a7c9babcb622) ? new Response("", {
+  }) : "style" === _b758494d5be0.request.destination || /text\/css/i.test(_9c333789f8b6) ? new Response("", {
     status: 200,
     headers: {
       "Content-Type": "text/css; charset=utf-8"
     }
-  }) : "image" === _180d8cbee24a.request.destination ? new Response("", {
+  }) : "image" === _b758494d5be0.request.destination ? new Response("", {
     status: 204
-  }) : "document" === _180d8cbee24a.request.destination || "iframe" === _180d8cbee24a.request.destination ? new Response('<!doctype html><meta charset="utf-8">', {
+  }) : "document" === _b758494d5be0.request.destination || "iframe" === _b758494d5be0.request.destination ? new Response('<!doctype html><meta charset="utf-8">', {
     status: 200,
     headers: {
       "Content-Type": "text/html; charset=utf-8"
@@ -78,19 +78,19 @@ function zm(_180d8cbee24a) {
   });
 }
 
-function Dm(_180d8cbee24a) {
-  const _a7c9babcb622 = _180d8cbee24a.request.headers.get("accept") || "", _b73b856d5dc9 = new URL(_180d8cbee24a.request.url).pathname, _40de0717fb16 = Tm(_180d8cbee24a.request.url);
-  return [ "script", "worker", "sharedworker", "style" ].includes(_180d8cbee24a.request.destination) || /javascript|ecmascript|text\/css/i.test(_a7c9babcb622) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_b73b856d5dc9) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_40de0717fb16);
+function Km(_b758494d5be0) {
+  const _9c333789f8b6 = _b758494d5be0.request.headers.get("accept") || "", _e56658a30d60 = new URL(_b758494d5be0.request.url).pathname, _70d240ce6cca = Um(_b758494d5be0.request.url);
+  return [ "script", "worker", "sharedworker", "style" ].includes(_b758494d5be0.request.destination) || /javascript|ecmascript|text\/css/i.test(_9c333789f8b6) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_e56658a30d60) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_70d240ce6cca);
 }
 
-function Km(_180d8cbee24a) {
-  const _a7c9babcb622 = _180d8cbee24a.request.headers.get("accept") || "", _b73b856d5dc9 = new URL(_180d8cbee24a.request.url).pathname, _40de0717fb16 = Tm(_180d8cbee24a.request.url);
-  return [ "script", "worker", "sharedworker" ].includes(_180d8cbee24a.request.destination) || /javascript|ecmascript/i.test(_a7c9babcb622) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_b73b856d5dc9) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_40de0717fb16) ? new Response("", {
+function Om(_b758494d5be0) {
+  const _9c333789f8b6 = _b758494d5be0.request.headers.get("accept") || "", _e56658a30d60 = new URL(_b758494d5be0.request.url).pathname, _70d240ce6cca = Um(_b758494d5be0.request.url);
+  return [ "script", "worker", "sharedworker" ].includes(_b758494d5be0.request.destination) || /javascript|ecmascript/i.test(_9c333789f8b6) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_e56658a30d60) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_70d240ce6cca) ? new Response("", {
     status: 200,
     headers: {
       "Content-Type": "application/javascript; charset=utf-8"
     }
-  }) : "style" === _180d8cbee24a.request.destination || /text\/css/i.test(_a7c9babcb622) ? new Response("", {
+  }) : "style" === _b758494d5be0.request.destination || /text\/css/i.test(_9c333789f8b6) ? new Response("", {
     status: 200,
     headers: {
       "Content-Type": "text/css; charset=utf-8"
@@ -98,54 +98,54 @@ function Km(_180d8cbee24a) {
   }) : null;
 }
 
-function Om(_180d8cbee24a) {
-  return /^\s*</.test(_180d8cbee24a) || /^\s*\)\]\}'/.test(_180d8cbee24a) || /^\s*\)\]/.test(_180d8cbee24a);
+function Xm(_b758494d5be0) {
+  return /^\s*</.test(_b758494d5be0) || /^\s*\)\]\}'/.test(_b758494d5be0) || /^\s*\)\]/.test(_b758494d5be0);
 }
 
-async function Xm(_180d8cbee24a, _a7c9babcb622) {
-  if (!Dm(_180d8cbee24a)) return _a7c9babcb622;
-  const _b73b856d5dc9 = _a7c9babcb622.headers.get("content-type") || "";
-  if (_a7c9babcb622.status >= 400 || _b73b856d5dc9.includes("text/html") || _b73b856d5dc9.includes("application/json") || _b73b856d5dc9.includes("text/json")) return Km(_180d8cbee24a) || _a7c9babcb622;
-  const _40de0717fb16 = await _a7c9babcb622.clone().text().catch(() => "");
-  if (Om(_40de0717fb16)) return Km(_180d8cbee24a) || _a7c9babcb622;
-  if (!_40de0717fb16) return _a7c9babcb622;
-  const _141e7eeaede3 = new Headers(_a7c9babcb622.headers);
-  return _141e7eeaede3.delete("content-length"), new Response(_40de0717fb16, {
-    status: _a7c9babcb622.status,
-    statusText: _a7c9babcb622.statusText,
-    headers: _141e7eeaede3
+async function Ym(_b758494d5be0, _9c333789f8b6) {
+  if (!Km(_b758494d5be0)) return _9c333789f8b6;
+  const _e56658a30d60 = _9c333789f8b6.headers.get("content-type") || "";
+  if (_9c333789f8b6.status >= 400 || _e56658a30d60.includes("text/html") || _e56658a30d60.includes("application/json") || _e56658a30d60.includes("text/json")) return Om(_b758494d5be0) || _9c333789f8b6;
+  const _70d240ce6cca = await _9c333789f8b6.clone().text().catch(() => "");
+  if (Xm(_70d240ce6cca)) return Om(_b758494d5be0) || _9c333789f8b6;
+  if (!_70d240ce6cca) return _9c333789f8b6;
+  const _ce3e3574fcaf = new Headers(_9c333789f8b6.headers);
+  return _ce3e3574fcaf.delete("content-length"), new Response(_70d240ce6cca, {
+    status: _9c333789f8b6.status,
+    statusText: _9c333789f8b6.statusText,
+    headers: _ce3e3574fcaf
   });
 }
 
-function Ym(_180d8cbee24a) {
-  return new Promise(_a7c9babcb622 => setTimeout(_a7c9babcb622, _180d8cbee24a));
+function Hm(_b758494d5be0) {
+  return new Promise(_9c333789f8b6 => setTimeout(_9c333789f8b6, _b758494d5be0));
 }
 
-async function Hm() {
+async function Fm() {
   return jm || (jm = (async () => {
-    const _180d8cbee24a = await self.clients.matchAll({
+    const _b758494d5be0 = await self.clients.matchAll({
       includeUncontrolled: !0,
       type: "window"
     });
-    for (const _a7c9babcb622 of _180d8cbee24a) try {
-      _a7c9babcb622.postMessage({
+    for (const _9c333789f8b6 of _b758494d5be0) try {
+      _9c333789f8b6.postMessage({
         $controller$swrevive: {}
       });
     } catch {}
-    await Ym(60);
+    await Hm(60);
   })().finally(() => {
     jm = null;
   }), jm);
 }
 
-async function Fm(_180d8cbee24a) {
-  const _a7c9babcb622 = Date.now() + 7e3;
-  let _b73b856d5dc9 = 0;
-  for (;Date.now() < _a7c9babcb622; ) {
-    const _a7c9babcb622 = Date.now();
-    if (_a7c9babcb622 >= _b73b856d5dc9 && (await Hm(), _b73b856d5dc9 = _a7c9babcb622 + 500), 
-    $studyjetController.shouldRoute(_180d8cbee24a)) return Jm(_180d8cbee24a);
-    await Ym(100);
+async function Jm(_b758494d5be0) {
+  const _9c333789f8b6 = Date.now() + 7e3;
+  let _e56658a30d60 = 0;
+  for (;Date.now() < _9c333789f8b6; ) {
+    const _9c333789f8b6 = Date.now();
+    if (_9c333789f8b6 >= _e56658a30d60 && (await Fm(), _e56658a30d60 = _9c333789f8b6 + 500), 
+    $studyjetController.shouldRoute(_b758494d5be0)) return Qm(_b758494d5be0);
+    await Hm(100);
   }
   return new Response(Rm(), {
     status: 502,
@@ -155,14 +155,14 @@ async function Fm(_180d8cbee24a) {
   });
 }
 
-async function Jm(_180d8cbee24a) {
-  return Xm(_180d8cbee24a, await $studyjetController.route(_180d8cbee24a));
+async function Qm(_b758494d5be0) {
+  return Ym(_b758494d5be0, await $studyjetController.route(_b758494d5be0));
 }
 
-self.addEventListener("fetch", _180d8cbee24a => {
-  self.NYX_TUTSI_WORKER || !Nm(_180d8cbee24a) ? $studyjetController.shouldRoute(_180d8cbee24a) ? _180d8cbee24a.respondWith(Jm(_180d8cbee24a)) : qm(_180d8cbee24a) && _180d8cbee24a.respondWith(Fm(_180d8cbee24a)) : _180d8cbee24a.respondWith(zm(_180d8cbee24a));
-}), self.addEventListener("activate", _180d8cbee24a => {
-  _180d8cbee24a.waitUntil(Promise.all([ self.clients.claim(), Hm().catch(() => {}) ]));
+self.addEventListener("fetch", _b758494d5be0 => {
+  self.NYX_TUTSI_WORKER || !zm(_b758494d5be0) ? $studyjetController.shouldRoute(_b758494d5be0) ? _b758494d5be0.respondWith(Qm(_b758494d5be0)) : qm(_b758494d5be0) && _b758494d5be0.respondWith(Jm(_b758494d5be0)) : _b758494d5be0.respondWith(Dm(_b758494d5be0));
+}), self.addEventListener("activate", _b758494d5be0 => {
+  _b758494d5be0.waitUntil(Promise.all([ self.clients.claim(), Fm().catch(() => {}) ]));
 }), setTimeout(() => {
-  Hm().catch(() => {});
+  Fm().catch(() => {});
 }, 120);
