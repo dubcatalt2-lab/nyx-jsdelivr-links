@@ -2,10 +2,10 @@ importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/scramjet-v1
 
 const {ScramjetServiceWorker: ef} = $scramjetLoadWorker(), tf = new ef, af = tf.loadConfig();
 
-self.addEventListener("install", λ9a3a05b39ef0 => {
-  λ9a3a05b39ef0.waitUntil(self.skipWaiting());
-}), self.addEventListener("activate", λ9a3a05b39ef0 => {
-  λ9a3a05b39ef0.waitUntil(self.clients.claim());
-}), self.addEventListener("fetch", λ9a3a05b39ef0 => {
-  λ9a3a05b39ef0.respondWith((async () => (await af, tf.route(λ9a3a05b39ef0) ? tf.fetch(λ9a3a05b39ef0) : fetch(λ9a3a05b39ef0.request)))());
+self.addEventListener("install", λ7fee73ede4a8 => {
+  λ7fee73ede4a8.waitUntil(self.skipWaiting());
+}), self.addEventListener("activate", λ7fee73ede4a8 => {
+  λ7fee73ede4a8.waitUntil(self.clients.claim());
+}), self.addEventListener("fetch", λ7fee73ede4a8 => {
+  λ7fee73ede4a8.respondWith((async () => (await af, tf.route(λ7fee73ede4a8) ? tf.fetch(λ7fee73ede4a8) : fetch(λ7fee73ede4a8.request)))());
 });

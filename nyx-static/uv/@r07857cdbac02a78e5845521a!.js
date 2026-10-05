@@ -1,90 +1,90 @@
 "use strict";
 
 (() => {
-  var _2f35264f4238 = self.StemConnect, _42fc29c02a55 = [ "cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-resource-policy", "content-security-policy", "content-security-policy-report-only", "expect-ct", "feature-policy", "origin-isolation", "strict-transport-security", "upgrade-insecure-requests", "x-content-type-options", "x-download-options", "x-frame-options", "x-permitted-cross-domain-policies", "x-powered-by", "x-xss-protection" ], _8081bcebed8c = [ "GET", "HEAD" ], _69c0679f9d42 = class extends _2f35264f4238.EventEmitter {
-    constructor(_42fc29c02a55 = __uv$config) {
-      super(), _42fc29c02a55.prefix || (_42fc29c02a55.prefix = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/service/"), this.config = _42fc29c02a55, 
-      this.bareClient = new _2f35264f4238.BareClient;
+  var _159c2ae5b1e4 = self.StemConnect, _fb8c5268dffd = [ "cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-resource-policy", "content-security-policy", "content-security-policy-report-only", "expect-ct", "feature-policy", "origin-isolation", "strict-transport-security", "upgrade-insecure-requests", "x-content-type-options", "x-download-options", "x-frame-options", "x-permitted-cross-domain-policies", "x-powered-by", "x-xss-protection" ], _5f1dc8ca8828 = [ "GET", "HEAD" ], _1c63932356db = class extends _159c2ae5b1e4.EventEmitter {
+    constructor(_fb8c5268dffd = __uv$config) {
+      super(), _fb8c5268dffd.prefix || (_fb8c5268dffd.prefix = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/service/"), this.config = _fb8c5268dffd, 
+      this.bareClient = new _159c2ae5b1e4.BareClient;
     }
-    route({request: _2f35264f4238}) {
-      return !!_2f35264f4238.url.startsWith(location.origin + this.config.prefix);
+    route({request: _159c2ae5b1e4}) {
+      return !!_159c2ae5b1e4.url.startsWith(location.origin + this.config.prefix);
     }
-    async fetch({request: _69c0679f9d42}) {
-      let _20dea9fcc950;
+    async fetch({request: _1c63932356db}) {
+      let _bba2cf0de0ab;
       try {
-        if (!_69c0679f9d42.url.startsWith(location.origin + this.config.prefix)) return await fetch(_69c0679f9d42);
-        let _952c345693e1 = new _2f35264f4238(this.config);
-        typeof this.config.construct == "function" && this.config.construct(_952c345693e1, "service");
-        let _715ddf1b7513 = await _952c345693e1.cookie.db();
-        _952c345693e1.meta.origin = location.origin, _952c345693e1.meta.base = _952c345693e1.meta.url = new URL(_952c345693e1.sourceUrl(_69c0679f9d42.url));
-        let _5d338a8fcc3c = new _653c3d4307af(_69c0679f9d42, _952c345693e1, _8081bcebed8c.includes(_69c0679f9d42.method.toUpperCase()) ? null : await _69c0679f9d42.blob());
-        if (_952c345693e1.meta.url.protocol === "blob:" && (_5d338a8fcc3c.blob = !0, _5d338a8fcc3c.base = _5d338a8fcc3c.url = new URL(_5d338a8fcc3c.url.pathname)), 
-        _69c0679f9d42.referrer && _69c0679f9d42.referrer.startsWith(location.origin)) {
-          let _2f35264f4238 = new URL(_952c345693e1.sourceUrl(_69c0679f9d42.referrer));
-          (_5d338a8fcc3c.headers.origin || _952c345693e1.meta.url.origin !== _2f35264f4238.origin && _69c0679f9d42.mode === "cors") && (_5d338a8fcc3c.headers.origin = _2f35264f4238.origin), 
-          _5d338a8fcc3c.headers.referer = _2f35264f4238.href;
+        if (!_1c63932356db.url.startsWith(location.origin + this.config.prefix)) return await fetch(_1c63932356db);
+        let _a5cad931e018 = new _159c2ae5b1e4(this.config);
+        typeof this.config.construct == "function" && this.config.construct(_a5cad931e018, "service");
+        let _923ad65f9928 = await _a5cad931e018.cookie.db();
+        _a5cad931e018.meta.origin = location.origin, _a5cad931e018.meta.base = _a5cad931e018.meta.url = new URL(_a5cad931e018.sourceUrl(_1c63932356db.url));
+        let _9682c071f08a = new _c49a897831fe(_1c63932356db, _a5cad931e018, _5f1dc8ca8828.includes(_1c63932356db.method.toUpperCase()) ? null : await _1c63932356db.blob());
+        if (_a5cad931e018.meta.url.protocol === "blob:" && (_9682c071f08a.blob = !0, _9682c071f08a.base = _9682c071f08a.url = new URL(_9682c071f08a.url.pathname)), 
+        _1c63932356db.referrer && _1c63932356db.referrer.startsWith(location.origin)) {
+          let _159c2ae5b1e4 = new URL(_a5cad931e018.sourceUrl(_1c63932356db.referrer));
+          (_9682c071f08a.headers.origin || _a5cad931e018.meta.url.origin !== _159c2ae5b1e4.origin && _1c63932356db.mode === "cors") && (_9682c071f08a.headers.origin = _159c2ae5b1e4.origin), 
+          _9682c071f08a.headers.referer = _159c2ae5b1e4.href;
         }
-        let _ba0e9560e37b = await _952c345693e1.cookie.getCookies(_715ddf1b7513) || [], _679b3d428fb6 = _952c345693e1.cookie.serialize(_ba0e9560e37b, _952c345693e1.meta, !1);
-        _5d338a8fcc3c.headers["user-agent"] = navigator.userAgent, _679b3d428fb6 && (_5d338a8fcc3c.headers.cookie = _679b3d428fb6);
-        let _cbf5d9f11ac3 = new _b55642418695(_5d338a8fcc3c, null, null);
-        if (this.emit("request", _cbf5d9f11ac3), _cbf5d9f11ac3.intercepted) return _cbf5d9f11ac3.returnValue;
-        _20dea9fcc950 = _5d338a8fcc3c.blob ? "blob:" + location.origin + _5d338a8fcc3c.url.pathname : _5d338a8fcc3c.url;
-        let _c55abd54ee95 = await this.bareClient.fetch(_20dea9fcc950, {
-          headers: _5d338a8fcc3c.headers,
-          method: _5d338a8fcc3c.method,
-          body: _5d338a8fcc3c.body,
-          credentials: _5d338a8fcc3c.credentials,
-          mode: _5d338a8fcc3c.mode,
-          cache: _5d338a8fcc3c.cache,
-          redirect: _5d338a8fcc3c.redirect
-        }), _f06e6743386c = new _5874a4071666(_5d338a8fcc3c, _c55abd54ee95), _e129cbf2710d = new _b55642418695(_f06e6743386c, null, null);
-        if (this.emit("beforemod", _e129cbf2710d), _e129cbf2710d.intercepted) return _e129cbf2710d.returnValue;
-        for (let _2f35264f4238 of _42fc29c02a55) _f06e6743386c.headers[_2f35264f4238] && delete _f06e6743386c.headers[_2f35264f4238];
-        if (_f06e6743386c.headers.location && (_f06e6743386c.headers.location = _952c345693e1.rewriteUrl(_f06e6743386c.headers.location)), 
-        [ "document", "iframe" ].includes(_69c0679f9d42.destination)) {
-          let _2f35264f4238 = _f06e6743386c.getHeader("content-disposition");
-          if (!/\s*?((inline|attachment);\s*?)filename=/i.test(_2f35264f4238)) {
-            let _42fc29c02a55 = /^\s*?attachment/i.test(_2f35264f4238) ? "attachment" : "inline", [_8081bcebed8c] = new URL(_c55abd54ee95.finalURL).pathname.split("/").slice(-1);
-            _f06e6743386c.headers["content-disposition"] = `${_42fc29c02a55}; filename=${JSON.stringify(_8081bcebed8c)}`;
+        let _c0396a81cfed = await _a5cad931e018.cookie.getCookies(_923ad65f9928) || [], _f2fcae706e05 = _a5cad931e018.cookie.serialize(_c0396a81cfed, _a5cad931e018.meta, !1);
+        _9682c071f08a.headers["user-agent"] = navigator.userAgent, _f2fcae706e05 && (_9682c071f08a.headers.cookie = _f2fcae706e05);
+        let _712a361d1b63 = new _a9a7ee2dfa5a(_9682c071f08a, null, null);
+        if (this.emit("request", _712a361d1b63), _712a361d1b63.intercepted) return _712a361d1b63.returnValue;
+        _bba2cf0de0ab = _9682c071f08a.blob ? "blob:" + location.origin + _9682c071f08a.url.pathname : _9682c071f08a.url;
+        let _b58b9f005fbb = await this.bareClient.fetch(_bba2cf0de0ab, {
+          headers: _9682c071f08a.headers,
+          method: _9682c071f08a.method,
+          body: _9682c071f08a.body,
+          credentials: _9682c071f08a.credentials,
+          mode: _9682c071f08a.mode,
+          cache: _9682c071f08a.cache,
+          redirect: _9682c071f08a.redirect
+        }), _7af18d914110 = new _2a7a3a5a43e2(_9682c071f08a, _b58b9f005fbb), _aa646958c0da = new _a9a7ee2dfa5a(_7af18d914110, null, null);
+        if (this.emit("beforemod", _aa646958c0da), _aa646958c0da.intercepted) return _aa646958c0da.returnValue;
+        for (let _159c2ae5b1e4 of _fb8c5268dffd) _7af18d914110.headers[_159c2ae5b1e4] && delete _7af18d914110.headers[_159c2ae5b1e4];
+        if (_7af18d914110.headers.location && (_7af18d914110.headers.location = _a5cad931e018.rewriteUrl(_7af18d914110.headers.location)), 
+        [ "document", "iframe" ].includes(_1c63932356db.destination)) {
+          let _159c2ae5b1e4 = _7af18d914110.getHeader("content-disposition");
+          if (!/\s*?((inline|attachment);\s*?)filename=/i.test(_159c2ae5b1e4)) {
+            let _fb8c5268dffd = /^\s*?attachment/i.test(_159c2ae5b1e4) ? "attachment" : "inline", [_5f1dc8ca8828] = new URL(_b58b9f005fbb.finalURL).pathname.split("/").slice(-1);
+            _7af18d914110.headers["content-disposition"] = `${_fb8c5268dffd}; filename=${JSON.stringify(_5f1dc8ca8828)}`;
           }
         }
-        if (_f06e6743386c.headers["set-cookie"] && (Promise.resolve(_952c345693e1.cookie.setCookies(_f06e6743386c.headers["set-cookie"], _715ddf1b7513, _952c345693e1.meta)).then(() => {
-          self.clients.matchAll().then(function(_2f35264f4238) {
-            _2f35264f4238.forEach(function(_2f35264f4238) {
-              _2f35264f4238.postMessage({
+        if (_7af18d914110.headers["set-cookie"] && (Promise.resolve(_a5cad931e018.cookie.setCookies(_7af18d914110.headers["set-cookie"], _923ad65f9928, _a5cad931e018.meta)).then(() => {
+          self.clients.matchAll().then(function(_159c2ae5b1e4) {
+            _159c2ae5b1e4.forEach(function(_159c2ae5b1e4) {
+              _159c2ae5b1e4.postMessage({
                 msg: "updateCookies",
-                url: _952c345693e1.meta.url.href
+                url: _a5cad931e018.meta.url.href
               });
             });
           });
-        }), delete _f06e6743386c.headers["set-cookie"]), _f06e6743386c.body) switch (_69c0679f9d42.destination) {
+        }), delete _7af18d914110.headers["set-cookie"]), _7af18d914110.body) switch (_1c63932356db.destination) {
          case "script":
-          _f06e6743386c.body = _952c345693e1.js.rewrite(await _c55abd54ee95.text());
+          _7af18d914110.body = _a5cad931e018.js.rewrite(await _b58b9f005fbb.text());
           break;
 
          case "worker":
           {
-            let _2f35264f4238 = [ _952c345693e1.bundleScript, _952c345693e1.clientScript, _952c345693e1.configScript, _952c345693e1.handlerScript ].map(_2f35264f4238 => JSON.stringify(_2f35264f4238)).join(",");
-            _f06e6743386c.body = `if (!self.__uv) {\n                                ${_952c345693e1.createJsInject(_952c345693e1.cookie.serialize(_ba0e9560e37b, _952c345693e1.meta, !0), _69c0679f9d42.referrer)}\n                            importScripts(${_2f35264f4238});\n                            }\n`, 
-            _f06e6743386c.body += _952c345693e1.js.rewrite(await _c55abd54ee95.text());
+            let _159c2ae5b1e4 = [ _a5cad931e018.bundleScript, _a5cad931e018.clientScript, _a5cad931e018.configScript, _a5cad931e018.handlerScript ].map(_159c2ae5b1e4 => JSON.stringify(_159c2ae5b1e4)).join(",");
+            _7af18d914110.body = `if (!self.__uv) {\n                                ${_a5cad931e018.createJsInject(_a5cad931e018.cookie.serialize(_c0396a81cfed, _a5cad931e018.meta, !0), _1c63932356db.referrer)}\n                            importScripts(${_159c2ae5b1e4});\n                            }\n`, 
+            _7af18d914110.body += _a5cad931e018.js.rewrite(await _b58b9f005fbb.text());
           }
           break;
 
          case "style":
-          _f06e6743386c.body = _952c345693e1.rewriteCSS(await _c55abd54ee95.text());
+          _7af18d914110.body = _a5cad931e018.rewriteCSS(await _b58b9f005fbb.text());
           break;
 
          case "iframe":
          case "document":
-          if (_f06e6743386c.getHeader("content-type") && _f06e6743386c.getHeader("content-type").startsWith("text/html")) {
-            let _2f35264f4238 = await _c55abd54ee95.text();
+          if (_7af18d914110.getHeader("content-type") && _7af18d914110.getHeader("content-type").startsWith("text/html")) {
+            let _159c2ae5b1e4 = await _b58b9f005fbb.text();
             if (Array.isArray(this.config.inject)) {
-              let _42fc29c02a55 = _2f35264f4238.indexOf("<head>"), _8081bcebed8c = _2f35264f4238.indexOf("<HEAD>"), _69c0679f9d42 = _2f35264f4238.indexOf("<body>"), _5874a4071666 = _2f35264f4238.indexOf("<BODY>"), _653c3d4307af = new URL(_20dea9fcc950), _b55642418695 = this.config.inject;
-              for (let _20dea9fcc950 of _b55642418695) new RegExp(_20dea9fcc950.host).test(_653c3d4307af.host) && (_20dea9fcc950.injectTo === "head" ? (_42fc29c02a55 !== -1 || _8081bcebed8c !== -1) && (_2f35264f4238 = _2f35264f4238.slice(0, _42fc29c02a55) + `${_20dea9fcc950.html}` + _2f35264f4238.slice(_42fc29c02a55)) : _20dea9fcc950.injectTo === "body" && (_69c0679f9d42 !== -1 || _5874a4071666 !== -1) && (_2f35264f4238 = _2f35264f4238.slice(0, _69c0679f9d42) + `${_20dea9fcc950.html}` + _2f35264f4238.slice(_69c0679f9d42)));
+              let _fb8c5268dffd = _159c2ae5b1e4.indexOf("<head>"), _5f1dc8ca8828 = _159c2ae5b1e4.indexOf("<HEAD>"), _1c63932356db = _159c2ae5b1e4.indexOf("<body>"), _2a7a3a5a43e2 = _159c2ae5b1e4.indexOf("<BODY>"), _c49a897831fe = new URL(_bba2cf0de0ab), _a9a7ee2dfa5a = this.config.inject;
+              for (let _bba2cf0de0ab of _a9a7ee2dfa5a) new RegExp(_bba2cf0de0ab.host).test(_c49a897831fe.host) && (_bba2cf0de0ab.injectTo === "head" ? (_fb8c5268dffd !== -1 || _5f1dc8ca8828 !== -1) && (_159c2ae5b1e4 = _159c2ae5b1e4.slice(0, _fb8c5268dffd) + `${_bba2cf0de0ab.html}` + _159c2ae5b1e4.slice(_fb8c5268dffd)) : _bba2cf0de0ab.injectTo === "body" && (_1c63932356db !== -1 || _2a7a3a5a43e2 !== -1) && (_159c2ae5b1e4 = _159c2ae5b1e4.slice(0, _1c63932356db) + `${_bba2cf0de0ab.html}` + _159c2ae5b1e4.slice(_1c63932356db)));
             }
-            _f06e6743386c.body = _952c345693e1.rewriteHtml(_2f35264f4238, {
+            _7af18d914110.body = _a5cad931e018.rewriteHtml(_159c2ae5b1e4, {
               document: !0,
-              injectHead: _952c345693e1.createHtmlInject(_952c345693e1.handlerScript, _952c345693e1.bundleScript, _952c345693e1.clientScript, _952c345693e1.configScript, _952c345693e1.cookie.serialize(_ba0e9560e37b, _952c345693e1.meta, !0), _69c0679f9d42.referrer)
+              injectHead: _a5cad931e018.createHtmlInject(_a5cad931e018.handlerScript, _a5cad931e018.bundleScript, _a5cad931e018.clientScript, _a5cad931e018.configScript, _a5cad931e018.cookie.serialize(_c0396a81cfed, _a5cad931e018.meta, !0), _1c63932356db.referrer)
             });
           }
           break;
@@ -92,30 +92,30 @@
          default:
           break;
         }
-        return _5d338a8fcc3c.headers.accept === "text/event-stream" && (_f06e6743386c.headers["content-type"] = "text/event-stream"), 
-        crossOriginIsolated && (_f06e6743386c.headers["Cross-Origin-Embedder-Policy"] = "require-corp"), 
-        this.emit("response", _e129cbf2710d), _e129cbf2710d.intercepted ? _e129cbf2710d.returnValue : new Response(_f06e6743386c.body, {
-          headers: _f06e6743386c.headers,
-          status: _f06e6743386c.status,
-          statusText: _f06e6743386c.statusText
+        return _9682c071f08a.headers.accept === "text/event-stream" && (_7af18d914110.headers["content-type"] = "text/event-stream"), 
+        crossOriginIsolated && (_7af18d914110.headers["Cross-Origin-Embedder-Policy"] = "require-corp"), 
+        this.emit("response", _aa646958c0da), _aa646958c0da.intercepted ? _aa646958c0da.returnValue : new Response(_7af18d914110.body, {
+          headers: _7af18d914110.headers,
+          status: _7af18d914110.status,
+          statusText: _7af18d914110.statusText
         });
-      } catch (_2f35264f4238) {
-        return [ "document", "iframe" ].includes(_69c0679f9d42.destination) ? (console.error(_2f35264f4238), 
-        T(_2f35264f4238, _20dea9fcc950)) : new Response(void 0, {
+      } catch (_159c2ae5b1e4) {
+        return [ "document", "iframe" ].includes(_1c63932356db.destination) ? (console.error(_159c2ae5b1e4), 
+        T(_159c2ae5b1e4, _bba2cf0de0ab)) : new Response(void 0, {
           status: 500
         });
       }
     }
-    static StemConnect=_2f35264f4238;
+    static StemConnect=_159c2ae5b1e4;
   };
-  self.UVServiceWorker = _69c0679f9d42;
-  var _5874a4071666 = class {
-    constructor(_2f35264f4238, _42fc29c02a55) {
-      this.request = _2f35264f4238, this.raw = _42fc29c02a55, this.ultraviolet = _2f35264f4238.ultraviolet, 
+  self.UVServiceWorker = _1c63932356db;
+  var _2a7a3a5a43e2 = class {
+    constructor(_159c2ae5b1e4, _fb8c5268dffd) {
+      this.request = _159c2ae5b1e4, this.raw = _fb8c5268dffd, this.ultraviolet = _159c2ae5b1e4.ultraviolet, 
       this.headers = {};
-      for (let _2f35264f4238 in _42fc29c02a55.rawHeaders) this.headers[_2f35264f4238.toLowerCase()] = _42fc29c02a55.rawHeaders[_2f35264f4238];
-      this.status = _42fc29c02a55.status, this.statusText = _42fc29c02a55.statusText, 
-      this.body = _42fc29c02a55.body;
+      for (let _159c2ae5b1e4 in _fb8c5268dffd.rawHeaders) this.headers[_159c2ae5b1e4.toLowerCase()] = _fb8c5268dffd.rawHeaders[_159c2ae5b1e4];
+      this.status = _fb8c5268dffd.status, this.statusText = _fb8c5268dffd.statusText, 
+      this.body = _fb8c5268dffd.body;
     }
     get url() {
       return this.request.url;
@@ -123,60 +123,60 @@
     get base() {
       return this.request.base;
     }
-    set base(_2f35264f4238) {
-      this.request.base = _2f35264f4238;
+    set base(_159c2ae5b1e4) {
+      this.request.base = _159c2ae5b1e4;
     }
-    getHeader(_2f35264f4238) {
-      return Array.isArray(this.headers[_2f35264f4238]) ? this.headers[_2f35264f4238][0] : this.headers[_2f35264f4238];
+    getHeader(_159c2ae5b1e4) {
+      return Array.isArray(this.headers[_159c2ae5b1e4]) ? this.headers[_159c2ae5b1e4][0] : this.headers[_159c2ae5b1e4];
     }
-  }, _653c3d4307af = class {
-    constructor(_2f35264f4238, _42fc29c02a55, _8081bcebed8c = null) {
-      this.ultraviolet = _42fc29c02a55, this.request = _2f35264f4238, this.headers = Object.fromEntries(_2f35264f4238.headers.entries()), 
-      this.method = _2f35264f4238.method, this.body = _8081bcebed8c || null, this.cache = _2f35264f4238.cache, 
-      this.redirect = _2f35264f4238.redirect, this.credentials = "omit", this.mode = _2f35264f4238.mode === "cors" ? _2f35264f4238.mode : "same-origin", 
+  }, _c49a897831fe = class {
+    constructor(_159c2ae5b1e4, _fb8c5268dffd, _5f1dc8ca8828 = null) {
+      this.ultraviolet = _fb8c5268dffd, this.request = _159c2ae5b1e4, this.headers = Object.fromEntries(_159c2ae5b1e4.headers.entries()), 
+      this.method = _159c2ae5b1e4.method, this.body = _5f1dc8ca8828 || null, this.cache = _159c2ae5b1e4.cache, 
+      this.redirect = _159c2ae5b1e4.redirect, this.credentials = "omit", this.mode = _159c2ae5b1e4.mode === "cors" ? _159c2ae5b1e4.mode : "same-origin", 
       this.blob = !1;
     }
     get url() {
       return this.ultraviolet.meta.url;
     }
-    set url(_2f35264f4238) {
-      this.ultraviolet.meta.url = _2f35264f4238;
+    set url(_159c2ae5b1e4) {
+      this.ultraviolet.meta.url = _159c2ae5b1e4;
     }
     get base() {
       return this.ultraviolet.meta.base;
     }
-    set base(_2f35264f4238) {
-      this.ultraviolet.meta.base = _2f35264f4238;
+    set base(_159c2ae5b1e4) {
+      this.ultraviolet.meta.base = _159c2ae5b1e4;
     }
-  }, _b55642418695 = class {
-    #_2f35264f4238;
-    #_42fc29c02a55;
-    constructor(_2f35264f4238 = {}, _42fc29c02a55 = null, _8081bcebed8c = null) {
-      this.#_2f35264f4238 = !1, this.#_42fc29c02a55 = null, this.data = _2f35264f4238, 
-      this.target = _42fc29c02a55, this.that = _8081bcebed8c;
+  }, _a9a7ee2dfa5a = class {
+    #_159c2ae5b1e4;
+    #_fb8c5268dffd;
+    constructor(_159c2ae5b1e4 = {}, _fb8c5268dffd = null, _5f1dc8ca8828 = null) {
+      this.#_159c2ae5b1e4 = !1, this.#_fb8c5268dffd = null, this.data = _159c2ae5b1e4, 
+      this.target = _fb8c5268dffd, this.that = _5f1dc8ca8828;
     }
     get intercepted() {
-      return this.#_2f35264f4238;
+      return this.#_159c2ae5b1e4;
     }
     get returnValue() {
-      return this.#_42fc29c02a55;
+      return this.#_fb8c5268dffd;
     }
-    respondWith(_2f35264f4238) {
-      this.#_42fc29c02a55 = _2f35264f4238, this.#_2f35264f4238 = !0;
+    respondWith(_159c2ae5b1e4) {
+      this.#_fb8c5268dffd = _159c2ae5b1e4, this.#_159c2ae5b1e4 = !0;
     }
   };
-  function E(_2f35264f4238, _42fc29c02a55) {
-    let _8081bcebed8c = `\n        errorTrace.value = ${JSON.stringify(_2f35264f4238)};\n        fetchedURL.textContent = ${JSON.stringify(_42fc29c02a55)};\n        for (const node of document.querySelectorAll("#uvHostname")) node.textContent = ${JSON.stringify(location.hostname)};\n        reload.addEventListener("click", () => location.reload());\n        uvVersion.textContent = ${JSON.stringify("3.2.10")};\n        uvBuild.textContent = ${JSON.stringify("92d9075")};\n    `;
-    return `<!DOCTYPE html>\n        <html>\n        <head>\n        <meta charset='utf-8' />\n        <title>Error</title>\n        <style>\n        * { background-color: white }\n        </style>\n        </head>\n        <body>\n        <h1 id='errorTitle'>Error processing your request</h1>\n        <hr />\n        <p>Failed to load <b id="fetchedURL"></b></p>\n        <p id="errorMessage">Internal Server Error</p>\n        <textarea id="errorTrace" cols="40" rows="10" readonly></textarea>\n        <p>Try:</p>\n        <ul>\n        <li>Checking your internet connection</li>\n        <li>Verifying you entered the correct address</li>\n        <li>Clearing the site data</li>\n        <li>Contacting <b id="uvHostname"></b>'s administrator</li>\n        <li>Verify the server isn't censored</li>\n        </ul>\n        <p>If you're the administrator of <b id="uvHostname"></b>, try:</p>\n        <ul>\n        <li>Restarting your server</li>\n        <li>Updating StemConnect</li>\n        <li>Troubleshooting the error on the <a href="https://github.com/titaniumnetwork-dev/StemConnect" target="_blank">GitHub repository</a></li>\n        </ul>\n        <button id="reload">Reload</button>\n        <hr />\n        <p><i>StemConnect v<span id="uvVersion"></span> (build <span id="uvBuild"></span>)</i></p>\n        <script src="${"data:application/javascript," + encodeURIComponent(_8081bcebed8c)}"><\/script>\n        </body>\n        </html>\n        `;
+  function E(_159c2ae5b1e4, _fb8c5268dffd) {
+    let _5f1dc8ca8828 = `\n        errorTrace.value = ${JSON.stringify(_159c2ae5b1e4)};\n        fetchedURL.textContent = ${JSON.stringify(_fb8c5268dffd)};\n        for (const node of document.querySelectorAll("#uvHostname")) node.textContent = ${JSON.stringify(location.hostname)};\n        reload.addEventListener("click", () => location.reload());\n        uvVersion.textContent = ${JSON.stringify("3.2.10")};\n        uvBuild.textContent = ${JSON.stringify("92d9075")};\n    `;
+    return `<!DOCTYPE html>\n        <html>\n        <head>\n        <meta charset='utf-8' />\n        <title>Error</title>\n        <style>\n        * { background-color: white }\n        </style>\n        </head>\n        <body>\n        <h1 id='errorTitle'>Error processing your request</h1>\n        <hr />\n        <p>Failed to load <b id="fetchedURL"></b></p>\n        <p id="errorMessage">Internal Server Error</p>\n        <textarea id="errorTrace" cols="40" rows="10" readonly></textarea>\n        <p>Try:</p>\n        <ul>\n        <li>Checking your internet connection</li>\n        <li>Verifying you entered the correct address</li>\n        <li>Clearing the site data</li>\n        <li>Contacting <b id="uvHostname"></b>'s administrator</li>\n        <li>Verify the server isn't censored</li>\n        </ul>\n        <p>If you're the administrator of <b id="uvHostname"></b>, try:</p>\n        <ul>\n        <li>Restarting your server</li>\n        <li>Updating StemConnect</li>\n        <li>Troubleshooting the error on the <a href="https://github.com/titaniumnetwork-dev/StemConnect" target="_blank">GitHub repository</a></li>\n        </ul>\n        <button id="reload">Reload</button>\n        <hr />\n        <p><i>StemConnect v<span id="uvVersion"></span> (build <span id="uvBuild"></span>)</i></p>\n        <script src="${"data:application/javascript," + encodeURIComponent(_5f1dc8ca8828)}"><\/script>\n        </body>\n        </html>\n        `;
   }
-  function T(_2f35264f4238, _42fc29c02a55) {
-    let _8081bcebed8c = {
+  function T(_159c2ae5b1e4, _fb8c5268dffd) {
+    let _5f1dc8ca8828 = {
       "content-type": "text/html"
     };
-    return crossOriginIsolated && (_8081bcebed8c["Cross-Origin-Embedder-Policy"] = "require-corp"), 
-    new Response(E(String(_2f35264f4238), _42fc29c02a55), {
+    return crossOriginIsolated && (_5f1dc8ca8828["Cross-Origin-Embedder-Policy"] = "require-corp"), 
+    new Response(E(String(_159c2ae5b1e4), _fb8c5268dffd), {
       status: 500,
-      headers: _8081bcebed8c
+      headers: _5f1dc8ca8828
     });
   }
 })();

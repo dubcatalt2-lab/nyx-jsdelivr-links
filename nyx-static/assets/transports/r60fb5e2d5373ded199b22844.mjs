@@ -1,17 +1,17 @@
-import λdc67389da556 from "./libcurl-client.mjs";
+import λ4c5efc258fb2 from "./libcurl-client.mjs";
 
-import { headerEntries as λf3243fcb3fa1, headerRecord as λ35d8a7737860 } from "./header-utils.mjs";
+import { headerEntries as λ493933cfd28c, headerRecord as λ2e285bb3c7c0 } from "./header-utils.mjs";
 
-export default class Ku extends λdc67389da556 {
-  async request(λdc67389da556, λ46ec9fe09d28, λ510d21a812ec, λ602e722769d5, λ56886d67cc81) {
-    const λfe3a11e38ce4 = await super.request(λdc67389da556, λ46ec9fe09d28, λ510d21a812ec, λf3243fcb3fa1(λ602e722769d5), λ56886d67cc81), λ2887dcb52bae = λ35d8a7737860(λfe3a11e38ce4.headers);
+export default class Ku extends λ4c5efc258fb2 {
+  async request(λ4c5efc258fb2, λ207b0ecbdc37, λ3150a560d9f1, λ2623400b7cca, λ1c0f84a1632a) {
+    const λ30c0a552fc1d = await super.request(λ4c5efc258fb2, λ207b0ecbdc37, λ3150a560d9f1, λ493933cfd28c(λ2623400b7cca), λ1c0f84a1632a), λ0c9676dd8f26 = λ2e285bb3c7c0(λ30c0a552fc1d.headers);
     return {
-      ...λfe3a11e38ce4,
-      headers: λ2887dcb52bae,
-      rawHeaders: λ2887dcb52bae
+      ...λ30c0a552fc1d,
+      headers: λ0c9676dd8f26,
+      rawHeaders: λ0c9676dd8f26
     };
   }
-  connect(λdc67389da556, λ35d8a7737860, λ46ec9fe09d28, λ510d21a812ec, λ602e722769d5, λ56886d67cc81, λfe3a11e38ce4) {
-    return super.connect(λdc67389da556, λ35d8a7737860, λf3243fcb3fa1(λ46ec9fe09d28), λ510d21a812ec, λ602e722769d5, λ56886d67cc81, λfe3a11e38ce4);
+  connect(λ4c5efc258fb2, λ2e285bb3c7c0, λ207b0ecbdc37, λ3150a560d9f1, λ2623400b7cca, λ1c0f84a1632a, λ30c0a552fc1d) {
+    return super.connect(λ4c5efc258fb2, λ2e285bb3c7c0, λ493933cfd28c(λ207b0ecbdc37), λ3150a560d9f1, λ2623400b7cca, λ1c0f84a1632a, λ30c0a552fc1d);
   }
 }
