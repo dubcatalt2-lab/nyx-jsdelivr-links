@@ -14,9 +14,9 @@
         });
         const i = await g(C);
         const c = [...i.objectStoreNames];
-        let Z;
+        let G;
         try {
-          Z = await new Promise((I, g) => {
+          G = await new Promise((I, g) => {
             if (!c.length) return I([]);
             const C = i.transaction(c, "readonly"),
               A = [];
@@ -57,8 +57,8 @@
         } finally {
           i.close();
         }
-        const G = await g(A, i.version, I => {
-          for (const g of Z) {
+        const Z = await g(A, i.version, I => {
+          for (const g of G) {
             const C = I.createObjectStore(g.name, {
               keyPath: g.keyPath,
               autoIncrement: g.autoIncrement
@@ -72,8 +72,8 @@
         try {
           await new Promise((I, g) => {
             if (!c.length) return I();
-            const C = G.transaction(c, "readwrite");
-            for (const I of Z) {
+            const C = Z.transaction(c, "readwrite");
+            for (const I of G) {
               const g = C.objectStore(I.name);
               for (const C of I.rows) I.keyPath === null ? g.put(C.value, C.key) : g.put(C.value);
             }
@@ -82,14 +82,14 @@
             C.onabort = () => g(C.error || Error("Storage copy interrupted."));
           });
         } catch (I) {
-          G.close();
+          Z.close();
           await new Promise(I => {
             const g = indexedDB.deleteDatabase(A);
             g.onsuccess = g.onerror = g.onblocked = I;
           });
           throw I;
         } finally {
-          G.close();
+          Z.close();
         }
       }
     };
@@ -140,15 +140,15 @@
     "PSAiIiwgbyA9ICIiOwogIHRyeSB7CiAgICBlID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oIm55eC50YWJGYXZpY29uIikgfHwgIiIsIG8gPSBsb2Nh",
     "bFN0b3JhZ2UuZ2V0SXRlbSgibnl4LmxvZ28iKSB8fCAiIjsKICB9IGNhdGNoIHt9CiAgZSAmJiBvICYmICJueXgiICE9PSBvICYmICh0LmhyZWYg",
     "PSBlKTsKfSkoKTwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9IkByM2I1MTM0OWQxNTdiYTcxYWE0MWZjYmU2IS5qcz92PTIwMjYwNzI2LWNocm9t",
-    "ZWJvb2stbGF5b3V0LTEiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJzdHlsZXMuY3NzP3Jldj05YTQ1YjJkMWQx",
-    "YWM2OTI5Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iY3NzL2F2YXRhci1kZWNvcmF0aW9ucy5jc3M/cmV2PTlhNDViMmQxZDFh",
-    "YzY5MjkiPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJjc3MvcHJvZmlsZS1lZmZlY3RzLmNzcz9yZXY9OWE0NWIyZDFkMWFjNjky",
-    "OSI+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9ImNzcy9wdWJsaWMtcHJvZmlsZS1wb2xpc2guY3NzP3Jldj05YTQ1YjJkMWQxYWM2",
-    "OTI5Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iY3NzL293bmVyLWRhc2hib2FyZC1wb2xpc2guY3NzP3Jldj05YTQ1YjJkMWQx",
-    "YWM2OTI5Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iY3NzL3dhdGNoLmNzcz9yZXY9OWE0NWIyZDFkMWFjNjkyOSI+CiAgICA8",
-    "bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9ImNzcy9ueXh0dWJlLWRpc2NvdmVyeS5jc3M/cmV2PTlhNDViMmQxZDFhYzY5MjkiPgogICAgPGxp",
-    "bmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJjc3MvYmVhbXMtd2FsbHBhcGVyLmNzcz9yZXY9OWE0NWIyZDFkMWFjNjkyOSI+CiAgICA8bGluayBy",
-    "ZWw9InN0eWxlc2hlZXQiIGhyZWY9ImNzcy9kaXNjb3JkLWxpbmsuY3NzP3Jldj05YTQ1YjJkMWQxYWM2OTI5Ij4KICAgIDxzY3JpcHQ+KCgpID0+",
+    "ZWJvb2stbGF5b3V0LTEiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJzdHlsZXMuY3NzP3Jldj1lZGI3YjA1Mzcx",
+    "NDUyNTg0Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iY3NzL2F2YXRhci1kZWNvcmF0aW9ucy5jc3M/cmV2PWVkYjdiMDUzNzE0",
+    "NTI1ODQiPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJjc3MvcHJvZmlsZS1lZmZlY3RzLmNzcz9yZXY9ZWRiN2IwNTM3MTQ1MjU4",
+    "NCI+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9ImNzcy9wdWJsaWMtcHJvZmlsZS1wb2xpc2guY3NzP3Jldj1lZGI3YjA1MzcxNDUy",
+    "NTg0Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iY3NzL293bmVyLWRhc2hib2FyZC1wb2xpc2guY3NzP3Jldj1lZGI3YjA1Mzcx",
+    "NDUyNTg0Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iY3NzL3dhdGNoLmNzcz9yZXY9ZWRiN2IwNTM3MTQ1MjU4NCI+CiAgICA8",
+    "bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9ImNzcy9ueXh0dWJlLWRpc2NvdmVyeS5jc3M/cmV2PWVkYjdiMDUzNzE0NTI1ODQiPgogICAgPGxp",
+    "bmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJjc3MvYmVhbXMtd2FsbHBhcGVyLmNzcz9yZXY9ZWRiN2IwNTM3MTQ1MjU4NCI+CiAgICA8bGluayBy",
+    "ZWw9InN0eWxlc2hlZXQiIGhyZWY9ImNzcy9kaXNjb3JkLWxpbmsuY3NzP3Jldj1lZGI3YjA1MzcxNDUyNTg0Ij4KICAgIDxzY3JpcHQ+KCgpID0+",
     "IHsKICBsZXQgZSA9ICJiYXIiOwogIHRyeSB7CiAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbSgibnl4LmhvbWVEZXNpZ24iLCAicmVkZXNpZ25lZCIp",
     "OwogIH0gY2F0Y2gge30KICB0cnkgewogICAgZSA9ICJsaXN0IiA9PT0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oIm55eC50YWJEZXNpZ24iKSA/ICJs",
     "aXN0IiA6ICJiYXIiOwogIH0gY2F0Y2gge30KICB0cnkgewogICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oIm55eC5icm93c2VyU2hlbGxNb2Rl",
@@ -172,9 +172,9 @@
     "aW50ZXItZXZlbnRzOiBub25lIWltcG9ydGFudAp9CkBtZWRpYShwcmVmZXJzLXJlZHVjZWQtbW90aW9uOnJlZHVjZSkgewogICNueXhTdHVkeUh1",
     "YlN0YXJ0dXAgewogICAgdHJhbnNpdGlvbjogbm9uZQogIH0KfTwvc3R5bGU+CiAgICA8c2NyaXB0PmRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5j",
     "bGFzc0xpc3QuYWRkKCJueXgtc3R1ZHlodWItc3RhcnRpbmciKTwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJjc3Mv",
-    "b2JzaWRpYW4uY3NzP3Jldj05YTQ1YjJkMWQxYWM2OTI5Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iY3NzL3Byb2ZpbGUtZWRp",
-    "dG9yLWxheW91dC5jc3M/cmV2PTlhNDViMmQxZDFhYzY5MjkiPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJjc3Mvc2Vzc2lvbi1v",
-    "dmVybGF5cy5jc3M/cmV2PTlhNDViMmQxZDFhYzY5MjkiPgogIDwvaGVhZD4KCiAgPGJvZHk+IDxpZnJhbWUgaWQ9Im55eFN0dWR5SHViU3RhcnR1",
+    "b2JzaWRpYW4uY3NzP3Jldj1lZGI3YjA1MzcxNDUyNTg0Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iY3NzL3Byb2ZpbGUtZWRp",
+    "dG9yLWxheW91dC5jc3M/cmV2PWVkYjdiMDUzNzE0NTI1ODQiPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJjc3Mvc2Vzc2lvbi1v",
+    "dmVybGF5cy5jc3M/cmV2PWVkYjdiMDUzNzE0NTI1ODQiPgogIDwvaGVhZD4KCiAgPGJvZHk+IDxpZnJhbWUgaWQ9Im55eFN0dWR5SHViU3RhcnR1",
     "cCIgc3JjPSJzdGFydHVwLXN0dWR5aHViLmh0bWw/dj0yMDI2MDczMC1tYXRoLWxlc3NvbnMtdjkiCiAgICAgIHRpdGxlPSJTdHVkeUh1YiBzdGFy",
     "dHVwIG1hdGggcXVlc3Rpb24iIHRhYmluZGV4PSIwIiByZWZlcnJlcnBvbGljeT0ibm8tcmVmZXJyZXIiPjwvaWZyYW1lPgogICAgPHNjcmlwdD4o",
     "KCkgPT4gewogIGNvbnN0IGUgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgibnl4U3R1ZHlIdWJTdGFydHVwIiksIHQgPSBkb2N1bWVudC5kb2N1",
@@ -628,8 +628,8 @@
     "ZXMtbGl2ZS1jb2xvci12MTEiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9ImpzL0ByY2YwNjY3NmU5N2ZiMDBiY2NjNjhiZWQxIS5qcz92PTIw",
     "MjYwOTEzLXJlbGF5LXNlbGVjdGlvbi12MSI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0ianMvQHIyMzBiZjhlNDhhZWJhMTNkZTU3ZDdlODEh",
     "LmpzP3Y9MjAyNjA5MTMtcmVsYXktc2VsZWN0aW9uLXYzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSIvanMvQHIzNzM2NzEwNzE5YzVjMjAy",
-    "ZWY5YmE2MDAhLmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJAcjUyNWYzMWVlYjQzYzgyZTE0YTg2MGUzMSEuanM/dj0yMDI2MTAwMy10",
-    "aGVtZS1wZXJzaXN0ZW5jZS12MzEwIj48L3NjcmlwdD4KICA8L2JvZHk+Cgo8L2h0bWw+Cgo="
+    "ZWY5YmE2MDAhLmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJAcjUyNWYzMWVlYjQzYzgyZTE0YTg2MGUzMSEuanM/dj0yMDI2MTAwNC1z",
+    "aW1wbGUtbGlua3MtdjMxMSI+PC9zY3JpcHQ+CiAgPC9ib2R5PgoKPC9odG1sPgoK"
   ].join("")), I => I.charCodeAt(0)));
   document.open();
   document.write(I);

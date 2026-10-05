@@ -1,51 +1,51 @@
-import { httpRelayUrl as λ87ea7b07c933 } from "./@r694ba82e944178de68f9bf8d!.mjs";
+import { httpRelayUrl as λb6b847fcfeb2 } from "./@r694ba82e944178de68f9bf8d!.mjs";
 
-export function normalizeRelay(λ87ea7b07c933, λf52aca1610f7 = globalThis.location?.protocol || "https:") {
+export function normalizeRelay(λb6b847fcfeb2, λ7b0dc4ced5ff = globalThis.location?.protocol || "https:") {
   try {
-    const λ4c71eae50117 = new URL(λ87ea7b07c933);
-    return ![ "ws:", "wss:" ].includes(λ4c71eae50117.protocol) || λ4c71eae50117.username || λ4c71eae50117.password || λ4c71eae50117.hash || "https:" === λf52aca1610f7 && "wss:" !== λ4c71eae50117.protocol ? "" : λ4c71eae50117.href;
+    const λa9298d22f587 = new URL(λb6b847fcfeb2);
+    return ![ "ws:", "wss:" ].includes(λa9298d22f587.protocol) || λa9298d22f587.username || λa9298d22f587.password || λa9298d22f587.hash || "https:" === λ7b0dc4ced5ff && "wss:" !== λa9298d22f587.protocol ? "" : λa9298d22f587.href;
   } catch {
     return "";
   }
 }
 
-export function relayCandidates(λ87ea7b07c933, λf52aca1610f7 = globalThis.__NYX_RUNTIME_CONFIG__ || {}, λ4c71eae50117 = location) {
-  const λfc9a6c7ac358 = `${"https:" === λ4c71eae50117.protocol ? "wss:" : "ws:"}//${λ4c71eae50117.host}/resources/live/`, λ67b2ed9459ce = normalizeRelay(λ87ea7b07c933.relay, λ4c71eae50117.protocol) || normalizeRelay(λf52aca1610f7.wispUrl, λ4c71eae50117.protocol) || λfc9a6c7ac358;
-  return !1 === λ87ea7b07c933.autoRelay ? [ λ67b2ed9459ce ] : [ ...new Set([ λ67b2ed9459ce, λfc9a6c7ac358, ...Array.isArray(λf52aca1610f7.wispUrls) ? λf52aca1610f7.wispUrls : [], "wss://copium-wisp-9529463.onrender.com/wisp/" ].map(λ87ea7b07c933 => normalizeRelay(λ87ea7b07c933, λ4c71eae50117.protocol)).filter(Boolean)) ].slice(0, 6);
+export function relayCandidates(λb6b847fcfeb2, λ7b0dc4ced5ff = globalThis.__NYX_RUNTIME_CONFIG__ || {}, λa9298d22f587 = location) {
+  const λ77949fff3c19 = `${"https:" === λa9298d22f587.protocol ? "wss:" : "ws:"}//${λa9298d22f587.host}/resources/live/`, λ3795368fd326 = normalizeRelay(λb6b847fcfeb2.relay, λa9298d22f587.protocol) || normalizeRelay(λ7b0dc4ced5ff.wispUrl, λa9298d22f587.protocol) || λ77949fff3c19;
+  return !1 === λb6b847fcfeb2.autoRelay ? [ λ3795368fd326 ] : [ ...new Set([ λ3795368fd326, λ77949fff3c19, ...Array.isArray(λ7b0dc4ced5ff.wispUrls) ? λ7b0dc4ced5ff.wispUrls : [], "wss://copium-wisp-9529463.onrender.com/wisp/" ].map(λb6b847fcfeb2 => normalizeRelay(λb6b847fcfeb2, λa9298d22f587.protocol)).filter(Boolean)) ].slice(0, 6);
 }
 
-export function transportCandidates(λf52aca1610f7, λ4c71eae50117 = globalThis.__NYX_RUNTIME_CONFIG__ || {}, λfc9a6c7ac358 = location) {
-  const λ67b2ed9459ce = λ87ea7b07c933(λfc9a6c7ac358), λ8eb33bb8d5cb = relayCandidates(λf52aca1610f7, λ4c71eae50117, λfc9a6c7ac358);
-  return !1 === λf52aca1610f7.httpBridge ? relayCandidates(λf52aca1610f7.relay === λ67b2ed9459ce ? {
-    ...λf52aca1610f7,
+export function transportCandidates(λ7b0dc4ced5ff, λa9298d22f587 = globalThis.__NYX_RUNTIME_CONFIG__ || {}, λ77949fff3c19 = location) {
+  const λ3795368fd326 = λb6b847fcfeb2(λ77949fff3c19), λ296b13cec42d = relayCandidates(λ7b0dc4ced5ff, λa9298d22f587, λ77949fff3c19);
+  return !1 === λ7b0dc4ced5ff.httpBridge ? relayCandidates(λ7b0dc4ced5ff.relay === λ3795368fd326 ? {
+    ...λ7b0dc4ced5ff,
     relay: ""
-  } : λf52aca1610f7, λ4c71eae50117.wispUrl === λ67b2ed9459ce ? {
-    ...λ4c71eae50117,
+  } : λ7b0dc4ced5ff, λa9298d22f587.wispUrl === λ3795368fd326 ? {
+    ...λa9298d22f587,
     wispUrl: ""
-  } : λ4c71eae50117, λfc9a6c7ac358).filter(λ87ea7b07c933 => λ87ea7b07c933 !== λ67b2ed9459ce) : λf52aca1610f7.relay && λf52aca1610f7.relay !== λ67b2ed9459ce ? [ ...new Set([ ...λ8eb33bb8d5cb, ...!1 === λf52aca1610f7.autoRelay ? [] : [ λ67b2ed9459ce ] ]) ] : [ ...new Set([ λ67b2ed9459ce, ...!1 === λf52aca1610f7.autoRelay ? [] : λ8eb33bb8d5cb ]) ];
+  } : λa9298d22f587, λ77949fff3c19).filter(λb6b847fcfeb2 => λb6b847fcfeb2 !== λ3795368fd326) : λ7b0dc4ced5ff.relay && λ7b0dc4ced5ff.relay !== λ3795368fd326 ? [ ...new Set([ ...λ296b13cec42d, ...!1 === λ7b0dc4ced5ff.autoRelay ? [] : [ λ3795368fd326 ] ]) ] : [ ...new Set([ λ3795368fd326, ...!1 === λ7b0dc4ced5ff.autoRelay ? [] : λ296b13cec42d ]) ];
 }
 
-export function probeWisp(λ87ea7b07c933, {timeout: λf52aca1610f7 = 7e3, Socket: λ4c71eae50117 = WebSocket} = {}) {
-  return new Promise(λfc9a6c7ac358 => {
-    let λ67b2ed9459ce, λ8eb33bb8d5cb = !1;
-    const n = λ87ea7b07c933 => {
-      if (!λ8eb33bb8d5cb) {
-        if (λ8eb33bb8d5cb = !0, clearTimeout(λ761093bb0b9b), λ67b2ed9459ce) {
-          λ67b2ed9459ce.onmessage = λ67b2ed9459ce.onerror = λ67b2ed9459ce.onclose = null;
+export function probeWisp(λb6b847fcfeb2, {timeout: λ7b0dc4ced5ff = 7e3, Socket: λa9298d22f587 = WebSocket} = {}) {
+  return new Promise(λ77949fff3c19 => {
+    let λ3795368fd326, λ296b13cec42d = !1;
+    const n = λb6b847fcfeb2 => {
+      if (!λ296b13cec42d) {
+        if (λ296b13cec42d = !0, clearTimeout(λ55662205a210), λ3795368fd326) {
+          λ3795368fd326.onmessage = λ3795368fd326.onerror = λ3795368fd326.onclose = null;
           try {
-            λ67b2ed9459ce.close();
+            λ3795368fd326.close();
           } catch {}
         }
-        λfc9a6c7ac358(λ87ea7b07c933);
+        λ77949fff3c19(λb6b847fcfeb2);
       }
-    }, λ761093bb0b9b = setTimeout(() => n(!1), λf52aca1610f7);
+    }, λ55662205a210 = setTimeout(() => n(!1), λ7b0dc4ced5ff);
     try {
-      λ67b2ed9459ce = new λ4c71eae50117(λ87ea7b07c933), λ67b2ed9459ce.binaryType = "arraybuffer", 
-      λ67b2ed9459ce.onmessage = λ87ea7b07c933 => {
-        if (!(λ87ea7b07c933.data instanceof ArrayBuffer)) return;
-        const λf52aca1610f7 = new Uint8Array(λ87ea7b07c933.data);
-        λf52aca1610f7.length >= 9 && 3 === λf52aca1610f7[0] && 0 === new DataView(λ87ea7b07c933.data).getUint32(1, !0) && n(!0);
-      }, λ67b2ed9459ce.onerror = λ67b2ed9459ce.onclose = () => n(!1);
+      λ3795368fd326 = new λa9298d22f587(λb6b847fcfeb2), λ3795368fd326.binaryType = "arraybuffer", 
+      λ3795368fd326.onmessage = λb6b847fcfeb2 => {
+        if (!(λb6b847fcfeb2.data instanceof ArrayBuffer)) return;
+        const λ7b0dc4ced5ff = new Uint8Array(λb6b847fcfeb2.data);
+        λ7b0dc4ced5ff.length >= 9 && 3 === λ7b0dc4ced5ff[0] && 0 === new DataView(λb6b847fcfeb2.data).getUint32(1, !0) && n(!0);
+      }, λ3795368fd326.onerror = λ3795368fd326.onclose = () => n(!1);
     } catch {
       n(!1);
     }
@@ -53,61 +53,61 @@ export function probeWisp(λ87ea7b07c933, {timeout: λf52aca1610f7 = 7e3, Socket
 }
 
 export class RelayTransport {
-  constructor({urls: λ87ea7b07c933, createClient: λf52aca1610f7, probe: λ4c71eae50117 = probeWisp, onStatus: λfc9a6c7ac358 = () => {}, storage: λ67b2ed9459ce = globalThis.sessionStorage, monitorMs: λ8eb33bb8d5cb = 3e4, requestTimeoutMs: λ761093bb0b9b = 2e4, rank: λa6ce0e7589cb = async λ87ea7b07c933 => λ87ea7b07c933, online: λ8d1b41b50099 = () => !1 !== globalThis.navigator?.onLine, visible: λ6d2c5c520755 = () => !globalThis.document?.hidden}) {
+  constructor({urls: λb6b847fcfeb2, createClient: λ7b0dc4ced5ff, probe: λa9298d22f587 = probeWisp, onStatus: λ77949fff3c19 = () => {}, storage: λ3795368fd326 = globalThis.sessionStorage, monitorMs: λ296b13cec42d = 3e4, requestTimeoutMs: λ55662205a210 = 2e4, rank: λ12537929f373 = async λb6b847fcfeb2 => λb6b847fcfeb2, online: λf51e33c07b04 = () => !1 !== globalThis.navigator?.onLine, visible: λ0e393832c8d0 = () => !globalThis.document?.hidden}) {
     Object.assign(this, {
-      urls: λ87ea7b07c933,
-      createClient: λf52aca1610f7,
-      probe: λ4c71eae50117,
-      onStatus: λfc9a6c7ac358,
-      storage: λ67b2ed9459ce,
-      monitorMs: λ8eb33bb8d5cb,
-      requestTimeoutMs: λ761093bb0b9b,
-      rank: λa6ce0e7589cb,
-      online: λ8d1b41b50099,
-      visible: λ6d2c5c520755
+      urls: λb6b847fcfeb2,
+      createClient: λ7b0dc4ced5ff,
+      probe: λa9298d22f587,
+      onStatus: λ77949fff3c19,
+      storage: λ3795368fd326,
+      monitorMs: λ296b13cec42d,
+      requestTimeoutMs: λ55662205a210,
+      rank: λ12537929f373,
+      online: λf51e33c07b04,
+      visible: λ0e393832c8d0
     }), this.ready = !1, this.closed = !1, this.url = "", this.client = null, this.switching = null, 
     this.failures = 0, this.retired = [];
   }
   async init() {
     await this.select(), this.ready = !0, this.schedule();
   }
-  async select(λ87ea7b07c933 = "") {
+  async select(λb6b847fcfeb2 = "") {
     if (this.closed) throw new Error("Relay connection closed.");
     if (this.switching) return this.switching;
     if (!this.online()) throw new Error("You are offline. Reconnect to Wi-Fi and try again.");
-    let λf52aca1610f7 = "";
+    let λ7b0dc4ced5ff = "";
     try {
-      λf52aca1610f7 = this.storage?.getItem("tutsi.workingRelay:" + this.urls.join("|")) || "";
+      λ7b0dc4ced5ff = this.storage?.getItem("tutsi.workingRelay:" + this.urls.join("|")) || "";
     } catch {}
-    const λ4c71eae50117 = [ ...new Set([ this.url, λf52aca1610f7, ...this.urls ]) ].filter(λf52aca1610f7 => this.urls.includes(λf52aca1610f7) && λf52aca1610f7 !== λ87ea7b07c933);
+    const λa9298d22f587 = [ ...new Set([ this.url, λ7b0dc4ced5ff, ...this.urls ]) ].filter(λ7b0dc4ced5ff => this.urls.includes(λ7b0dc4ced5ff) && λ7b0dc4ced5ff !== λb6b847fcfeb2);
     this.switching = (async () => {
-      let λf52aca1610f7;
-      const λfc9a6c7ac358 = await Promise.race([ Promise.resolve().then(() => this.rank(λ4c71eae50117)).catch(() => λ4c71eae50117), new Promise(λ87ea7b07c933 => {
-        λf52aca1610f7 = setTimeout(() => λ87ea7b07c933(λ4c71eae50117), 300);
-      }) ]).finally(() => clearTimeout(λf52aca1610f7));
-      for (const λf52aca1610f7 of λfc9a6c7ac358) {
+      let λ7b0dc4ced5ff;
+      const λ77949fff3c19 = await Promise.race([ Promise.resolve().then(() => this.rank(λa9298d22f587)).catch(() => λa9298d22f587), new Promise(λb6b847fcfeb2 => {
+        λ7b0dc4ced5ff = setTimeout(() => λb6b847fcfeb2(λa9298d22f587), 300);
+      }) ]).finally(() => clearTimeout(λ7b0dc4ced5ff));
+      for (const λ7b0dc4ced5ff of λ77949fff3c19) {
         if (this.closed) throw new Error("Relay connection closed.");
         if (this.onStatus({
           state: "checking",
-          url: λf52aca1610f7
-        }), !await this.probe(λf52aca1610f7)) continue;
-        let λ4c71eae50117;
+          url: λ7b0dc4ced5ff
+        }), !await this.probe(λ7b0dc4ced5ff)) continue;
+        let λa9298d22f587;
         try {
-          λ4c71eae50117 = await this.createClient(λf52aca1610f7);
+          λa9298d22f587 = await this.createClient(λ7b0dc4ced5ff);
         } catch {
           continue;
         }
-        if (this.closed) throw λ4c71eae50117.close?.(), new Error("Relay connection closed.");
+        if (this.closed) throw λa9298d22f587.close?.(), new Error("Relay connection closed.");
         for (this.client && this.retired.push(this.client); this.retired.length > 2; ) try {
           this.retired.shift()?.close?.();
         } catch {}
-        this.client = λ4c71eae50117, this.url = λf52aca1610f7, this.failures = 0;
+        this.client = λa9298d22f587, this.url = λ7b0dc4ced5ff, this.failures = 0;
         try {
-          this.storage?.setItem("tutsi.workingRelay:" + this.urls.join("|"), λf52aca1610f7);
+          this.storage?.setItem("tutsi.workingRelay:" + this.urls.join("|"), λ7b0dc4ced5ff);
         } catch {}
         return void this.onStatus({
-          state: λ87ea7b07c933 ? "switched" : "connected",
-          url: λf52aca1610f7
+          state: λb6b847fcfeb2 ? "switched" : "connected",
+          url: λ7b0dc4ced5ff
         });
       }
       throw this.onStatus({
@@ -121,68 +121,68 @@ export class RelayTransport {
       this.switching = null;
     }
   }
-  async recover(λ87ea7b07c933, λf52aca1610f7 = !1, λ4c71eae50117 = !1) {
-    return !(this.closed || !this.online() || this.client === λ87ea7b07c933 && (this.switching ? (await this.switching, 
-    this.client === λ87ea7b07c933) : !λf52aca1610f7 && await this.probe(this.url) || this.client === λ87ea7b07c933 && (await this.select(λ4c71eae50117 ? "" : this.url), 
-    this.client === λ87ea7b07c933)));
+  async recover(λb6b847fcfeb2, λ7b0dc4ced5ff = !1, λa9298d22f587 = !1) {
+    return !(this.closed || !this.online() || this.client === λb6b847fcfeb2 && (this.switching ? (await this.switching, 
+    this.client === λb6b847fcfeb2) : !λ7b0dc4ced5ff && await this.probe(this.url) || this.client === λb6b847fcfeb2 && (await this.select(λa9298d22f587 ? "" : this.url), 
+    this.client === λb6b847fcfeb2)));
   }
-  async attempt(λ87ea7b07c933, λf52aca1610f7) {
-    const λ4c71eae50117 = λf52aca1610f7[4], λfc9a6c7ac358 = new AbortController;
-    if (λ4c71eae50117?.aborted) throw λ4c71eae50117.reason || new DOMException("Cancelled", "AbortError");
-    let λ67b2ed9459ce, λ8eb33bb8d5cb = !1, λ761093bb0b9b = !1;
-    const λa6ce0e7589cb = λ4c71eae50117 ? AbortSignal.any([ λ4c71eae50117, λfc9a6c7ac358.signal ]) : λfc9a6c7ac358.signal, λ8d1b41b50099 = Promise.resolve().then(() => λ87ea7b07c933.request(...λf52aca1610f7.slice(0, 4), λa6ce0e7589cb));
-    λ8d1b41b50099.then(λ87ea7b07c933 => {
-      λ761093bb0b9b && λa6ce0e7589cb.aborted && λ87ea7b07c933?.body?.cancel?.().catch(() => {});
+  async attempt(λb6b847fcfeb2, λ7b0dc4ced5ff) {
+    const λa9298d22f587 = λ7b0dc4ced5ff[4], λ77949fff3c19 = new AbortController;
+    if (λa9298d22f587?.aborted) throw λa9298d22f587.reason || new DOMException("Cancelled", "AbortError");
+    let λ3795368fd326, λ296b13cec42d = !1, λ55662205a210 = !1;
+    const λ12537929f373 = λa9298d22f587 ? AbortSignal.any([ λa9298d22f587, λ77949fff3c19.signal ]) : λ77949fff3c19.signal, λf51e33c07b04 = Promise.resolve().then(() => λb6b847fcfeb2.request(...λ7b0dc4ced5ff.slice(0, 4), λ12537929f373));
+    λf51e33c07b04.then(λb6b847fcfeb2 => {
+      λ55662205a210 && λ12537929f373.aborted && λb6b847fcfeb2?.body?.cancel?.().catch(() => {});
     }, () => {});
-    const λ6d2c5c520755 = new Promise((λ87ea7b07c933, λf52aca1610f7) => {
-      const i = () => λf52aca1610f7(λ8eb33bb8d5cb ? Object.assign(new Error("Relay request timed out"), {
+    const λ0e393832c8d0 = new Promise((λb6b847fcfeb2, λ7b0dc4ced5ff) => {
+      const i = () => λ7b0dc4ced5ff(λ296b13cec42d ? Object.assign(new Error("Relay request timed out"), {
         name: "TimeoutError"
-      }) : λa6ce0e7589cb.reason);
-      λa6ce0e7589cb.addEventListener("abort", i, {
+      }) : λ12537929f373.reason);
+      λ12537929f373.addEventListener("abort", i, {
         once: !0
-      }), λ67b2ed9459ce = setTimeout(() => {
-        λ8eb33bb8d5cb = !0, λfc9a6c7ac358.abort();
-      }, this.requestTimeoutMs), λ8d1b41b50099.finally(() => λa6ce0e7589cb.removeEventListener("abort", i)).catch(() => {});
+      }), λ3795368fd326 = setTimeout(() => {
+        λ296b13cec42d = !0, λ77949fff3c19.abort();
+      }, this.requestTimeoutMs), λf51e33c07b04.finally(() => λ12537929f373.removeEventListener("abort", i)).catch(() => {});
     });
     try {
-      return await Promise.race([ λ8d1b41b50099, λ6d2c5c520755 ]);
+      return await Promise.race([ λf51e33c07b04, λ0e393832c8d0 ]);
     } finally {
-      λ761093bb0b9b = !0, clearTimeout(λ67b2ed9459ce);
+      λ55662205a210 = !0, clearTimeout(λ3795368fd326);
     }
   }
-  async request(...λ87ea7b07c933) {
+  async request(...λb6b847fcfeb2) {
     if (this.closed) throw new Error("Relay connection closed.");
     this.ready || await this.init();
-    const λf52aca1610f7 = this.client;
+    const λ7b0dc4ced5ff = this.client;
     try {
-      return await this.attempt(λf52aca1610f7, λ87ea7b07c933);
-    } catch (λ4c71eae50117) {
-      if (λ87ea7b07c933[4]?.aborted || "AbortError" === λ4c71eae50117?.name) throw λ4c71eae50117;
-      const λfc9a6c7ac358 = "TimeoutError" === λ4c71eae50117?.name || /timed?\s*out|timeout|ETIMEDOUT|ECONNRESET|network|socket|wisp|hyper.*(?:error|client)|muxtaskended|connection.*(?:closed|reset|lost|failed)|unexpected.*(?:eof|cutoff)|transport.*(?:closed|failed)/i.test(String(λ4c71eae50117?.message || λ4c71eae50117 || ""));
-      let λ67b2ed9459ce = !1;
+      return await this.attempt(λ7b0dc4ced5ff, λb6b847fcfeb2);
+    } catch (λa9298d22f587) {
+      if (λb6b847fcfeb2[4]?.aborted || "AbortError" === λa9298d22f587?.name) throw λa9298d22f587;
+      const λ77949fff3c19 = "TimeoutError" === λa9298d22f587?.name || /timed?\s*out|timeout|ETIMEDOUT|ECONNRESET|network|socket|wisp|hyper.*(?:error|client)|muxtaskended|connection.*(?:closed|reset|lost|failed)|unexpected.*(?:eof|cutoff)|transport.*(?:closed|failed)/i.test(String(λa9298d22f587?.message || λa9298d22f587 || ""));
+      let λ3795368fd326 = !1;
       try {
-        λ67b2ed9459ce = await this.recover(λf52aca1610f7, λfc9a6c7ac358, λfc9a6c7ac358);
+        λ3795368fd326 = await this.recover(λ7b0dc4ced5ff, λ77949fff3c19, λ77949fff3c19);
       } catch {}
-      if (λ67b2ed9459ce && /^(GET|HEAD)$/i.test(String(λ87ea7b07c933[1] || "GET")) && !λ87ea7b07c933[4]?.aborted && !this.closed && this.online()) return this.attempt(this.client, λ87ea7b07c933);
-      throw λ4c71eae50117;
+      if (λ3795368fd326 && /^(GET|HEAD)$/i.test(String(λb6b847fcfeb2[1] || "GET")) && !λb6b847fcfeb2[4]?.aborted && !this.closed && this.online()) return this.attempt(this.client, λb6b847fcfeb2);
+      throw λa9298d22f587;
     }
   }
-  connect(...λ87ea7b07c933) {
-    const λf52aca1610f7 = this.client, λ4c71eae50117 = λ87ea7b07c933[6];
-    λ87ea7b07c933[6] = (...λ87ea7b07c933) => {
-      this.recover(λf52aca1610f7).catch(() => {}), λ4c71eae50117?.(...λ87ea7b07c933);
+  connect(...λb6b847fcfeb2) {
+    const λ7b0dc4ced5ff = this.client, λa9298d22f587 = λb6b847fcfeb2[6];
+    λb6b847fcfeb2[6] = (...λb6b847fcfeb2) => {
+      this.recover(λ7b0dc4ced5ff).catch(() => {}), λa9298d22f587?.(...λb6b847fcfeb2);
     };
     try {
-      return λf52aca1610f7.connect(...λ87ea7b07c933);
-    } catch (λ87ea7b07c933) {
-      throw this.recover(λf52aca1610f7).catch(() => {}), λ87ea7b07c933;
+      return λ7b0dc4ced5ff.connect(...λb6b847fcfeb2);
+    } catch (λb6b847fcfeb2) {
+      throw this.recover(λ7b0dc4ced5ff).catch(() => {}), λb6b847fcfeb2;
     }
   }
   async check() {
     if (this.closed || !this.client || !this.online() || !this.visible()) return;
-    const λ87ea7b07c933 = this.client, λf52aca1610f7 = this.url, λ4c71eae50117 = await this.probe(λf52aca1610f7);
-    this.closed || λ87ea7b07c933 !== this.client || (this.failures = λ4c71eae50117 ? 0 : this.failures + 1, 
-    this.failures >= 2 && await this.recover(λ87ea7b07c933, !0).catch(() => {}));
+    const λb6b847fcfeb2 = this.client, λ7b0dc4ced5ff = this.url, λa9298d22f587 = await this.probe(λ7b0dc4ced5ff);
+    this.closed || λb6b847fcfeb2 !== this.client || (this.failures = λa9298d22f587 ? 0 : this.failures + 1, 
+    this.failures >= 2 && await this.recover(λb6b847fcfeb2, !0).catch(() => {}));
   }
   schedule() {
     !this.closed && this.monitorMs && (this.timer = setTimeout(async () => {
@@ -191,60 +191,60 @@ export class RelayTransport {
   }
   close() {
     this.closed = !0, clearTimeout(this.timer);
-    for (const λ87ea7b07c933 of [ this.client, ...this.retired ]) try {
-      λ87ea7b07c933?.close?.();
+    for (const λb6b847fcfeb2 of [ this.client, ...this.retired ]) try {
+      λb6b847fcfeb2?.close?.();
     } catch {}
     this.retired = [];
   }
 }
 
-const λf52aca1610f7 = new Map;
+const λ7b0dc4ced5ff = new Map;
 
-export async function rankForBlocker(λ87ea7b07c933, λ4c71eae50117, {fetcher: λfc9a6c7ac358 = fetch, onHint: λ67b2ed9459ce = () => {}} = {}) {
-  if (!/^[a-z0-9_-]{1,64}$/.test(λ4c71eae50117 || "")) return λ87ea7b07c933;
-  const λ8eb33bb8d5cb = await Promise.all(λ87ea7b07c933.map(async λ87ea7b07c933 => {
-    const λ67b2ed9459ce = new URL(λ87ea7b07c933).hostname;
-    if ("localhost" === λ67b2ed9459ce || λ67b2ed9459ce.endsWith(".local") || /^[\d.]+$/.test(λ67b2ed9459ce) || λ67b2ed9459ce.includes(":")) return {
-      url: λ87ea7b07c933,
+export async function rankForBlocker(λb6b847fcfeb2, λa9298d22f587, {fetcher: λ77949fff3c19 = fetch, onHint: λ3795368fd326 = () => {}} = {}) {
+  if (!/^[a-z0-9_-]{1,64}$/.test(λa9298d22f587 || "")) return λb6b847fcfeb2;
+  const λ296b13cec42d = await Promise.all(λb6b847fcfeb2.map(async λb6b847fcfeb2 => {
+    const λ3795368fd326 = new URL(λb6b847fcfeb2).hostname;
+    if ("localhost" === λ3795368fd326 || λ3795368fd326.endsWith(".local") || /^[\d.]+$/.test(λ3795368fd326) || λ3795368fd326.includes(":")) return {
+      url: λb6b847fcfeb2,
       blocked: null
     };
-    const λ8eb33bb8d5cb = λ4c71eae50117 + ":" + λ67b2ed9459ce, λ761093bb0b9b = λf52aca1610f7.get(λ8eb33bb8d5cb);
-    if (λ761093bb0b9b && λ761093bb0b9b.until > Date.now()) return {
-      url: λ87ea7b07c933,
-      blocked: λ761093bb0b9b.blocked
+    const λ296b13cec42d = λa9298d22f587 + ":" + λ3795368fd326, λ55662205a210 = λ7b0dc4ced5ff.get(λ296b13cec42d);
+    if (λ55662205a210 && λ55662205a210.until > Date.now()) return {
+      url: λb6b847fcfeb2,
+      blocked: λ55662205a210.blocked
     };
-    let λa6ce0e7589cb = null;
-    const λ8d1b41b50099 = new AbortController, λ6d2c5c520755 = setTimeout(() => λ8d1b41b50099.abort(), 4e3);
+    let λ12537929f373 = null;
+    const λf51e33c07b04 = new AbortController, λ0e393832c8d0 = setTimeout(() => λf51e33c07b04.abort(), 4e3);
     try {
-      const λ87ea7b07c933 = await λfc9a6c7ac358("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/link-checker/check", {
+      const λb6b847fcfeb2 = await λ77949fff3c19("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/link-checker/check", {
         method: "POST",
-        signal: λ8d1b41b50099.signal,
+        signal: λf51e33c07b04.signal,
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          url: "https://" + λ67b2ed9459ce + "/",
-          vendor: λ4c71eae50117
+          url: "https://" + λ3795368fd326 + "/",
+          vendor: λa9298d22f587
         })
       });
-      if (λ87ea7b07c933.ok) {
-        const λf52aca1610f7 = await λ87ea7b07c933.json(), λfc9a6c7ac358 = λf52aca1610f7?.vendors?.[λ4c71eae50117];
-        λfc9a6c7ac358?.error || "boolean" != typeof λfc9a6c7ac358?.blocked || (λa6ce0e7589cb = λfc9a6c7ac358.blocked);
+      if (λb6b847fcfeb2.ok) {
+        const λ7b0dc4ced5ff = await λb6b847fcfeb2.json(), λ77949fff3c19 = λ7b0dc4ced5ff?.vendors?.[λa9298d22f587];
+        λ77949fff3c19?.error || "boolean" != typeof λ77949fff3c19?.blocked || (λ12537929f373 = λ77949fff3c19.blocked);
       }
     } catch {} finally {
-      clearTimeout(λ6d2c5c520755);
+      clearTimeout(λ0e393832c8d0);
     }
-    return λf52aca1610f7.set(λ8eb33bb8d5cb, {
-      blocked: λa6ce0e7589cb,
-      until: Date.now() + (null === λa6ce0e7589cb ? 3e4 : 6e5)
-    }), λf52aca1610f7.size > 100 && λf52aca1610f7.delete(λf52aca1610f7.keys().next().value), 
+    return λ7b0dc4ced5ff.set(λ296b13cec42d, {
+      blocked: λ12537929f373,
+      until: Date.now() + (null === λ12537929f373 ? 3e4 : 6e5)
+    }), λ7b0dc4ced5ff.size > 100 && λ7b0dc4ced5ff.delete(λ7b0dc4ced5ff.keys().next().value), 
     {
-      url: λ87ea7b07c933,
-      blocked: λa6ce0e7589cb
+      url: λb6b847fcfeb2,
+      blocked: λ12537929f373
     };
   }));
-  return λ67b2ed9459ce({
-    vendor: λ4c71eae50117,
-    results: λ8eb33bb8d5cb
-  }), λ8eb33bb8d5cb.sort((λ87ea7b07c933, λf52aca1610f7) => Number(!0 === λ87ea7b07c933.blocked) - Number(!0 === λf52aca1610f7.blocked)).map(λ87ea7b07c933 => λ87ea7b07c933.url);
+  return λ3795368fd326({
+    vendor: λa9298d22f587,
+    results: λ296b13cec42d
+  }), λ296b13cec42d.sort((λb6b847fcfeb2, λ7b0dc4ced5ff) => Number(!0 === λb6b847fcfeb2.blocked) - Number(!0 === λ7b0dc4ced5ff.blocked)).map(λb6b847fcfeb2 => λb6b847fcfeb2.url);
 }
