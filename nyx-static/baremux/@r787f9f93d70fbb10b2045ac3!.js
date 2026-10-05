@@ -1,125 +1,125 @@
 !function() {
   "use strict";
-  const λ15a594e8570b = MessagePort.prototype.postMessage;
-  let λc0623bfe0d8b = null;
-  function a(λ15a594e8570b, λc0623bfe0d8b, λ5b461f4e64c0) {
-    console.error(`error while processing '${λ5b461f4e64c0}': `, λc0623bfe0d8b), λ15a594e8570b.postMessage({
+  const λ19793e91fe5f = MessagePort.prototype.postMessage;
+  let λ9ddf1922675e = null;
+  function a(λ19793e91fe5f, λ9ddf1922675e, λ59e9790b374a) {
+    console.error(`error while processing '${λ59e9790b374a}': `, λ9ddf1922675e), λ19793e91fe5f.postMessage({
       type: "error",
-      error: λc0623bfe0d8b
+      error: λ9ddf1922675e
     });
   }
-  async function n(λ5b461f4e64c0, λ411d00fcd0f3, λa1c8715d6b9c) {
-    const λ680a6e22e37a = await λa1c8715d6b9c.request(new URL(λ5b461f4e64c0.fetch.remote), λ5b461f4e64c0.fetch.method, λ5b461f4e64c0.fetch.body, λ5b461f4e64c0.fetch.headers, null);
+  async function n(λ59e9790b374a, λ9afe3dfad29a, λ96b6246b7f5c) {
+    const λ94847290dd01 = await λ96b6246b7f5c.request(new URL(λ59e9790b374a.fetch.remote), λ59e9790b374a.fetch.method, λ59e9790b374a.fetch.body, λ59e9790b374a.fetch.headers, null);
     if (!function() {
-      if (null === λc0623bfe0d8b) {
-        const λ5b461f4e64c0 = new MessageChannel, λ411d00fcd0f3 = new ReadableStream;
-        let λa1c8715d6b9c;
+      if (null === λ9ddf1922675e) {
+        const λ59e9790b374a = new MessageChannel, λ9afe3dfad29a = new ReadableStream;
+        let λ96b6246b7f5c;
         try {
-          λ15a594e8570b.call(λ5b461f4e64c0.port1, λ411d00fcd0f3, [ λ411d00fcd0f3 ]), λa1c8715d6b9c = !0;
-        } catch (λ15a594e8570b) {
-          λa1c8715d6b9c = !1;
+          λ19793e91fe5f.call(λ59e9790b374a.port1, λ9afe3dfad29a, [ λ9afe3dfad29a ]), λ96b6246b7f5c = !0;
+        } catch (λ19793e91fe5f) {
+          λ96b6246b7f5c = !1;
         }
-        return λc0623bfe0d8b = λa1c8715d6b9c, λa1c8715d6b9c;
+        return λ9ddf1922675e = λ96b6246b7f5c, λ96b6246b7f5c;
       }
-      return λc0623bfe0d8b;
-    }() && λ680a6e22e37a.body instanceof ReadableStream) {
-      const λ15a594e8570b = new Response(λ680a6e22e37a.body);
-      λ680a6e22e37a.body = await λ15a594e8570b.arrayBuffer();
+      return λ9ddf1922675e;
+    }() && λ94847290dd01.body instanceof ReadableStream) {
+      const λ19793e91fe5f = new Response(λ94847290dd01.body);
+      λ94847290dd01.body = await λ19793e91fe5f.arrayBuffer();
     }
-    λ680a6e22e37a.body instanceof ReadableStream || λ680a6e22e37a.body instanceof ArrayBuffer ? λ15a594e8570b.call(λ411d00fcd0f3, {
+    λ94847290dd01.body instanceof ReadableStream || λ94847290dd01.body instanceof ArrayBuffer ? λ19793e91fe5f.call(λ9afe3dfad29a, {
       type: "fetch",
-      fetch: λ680a6e22e37a
-    }, [ λ680a6e22e37a.body ]) : λ15a594e8570b.call(λ411d00fcd0f3, {
+      fetch: λ94847290dd01
+    }, [ λ94847290dd01.body ]) : λ19793e91fe5f.call(λ9afe3dfad29a, {
       type: "fetch",
-      fetch: λ680a6e22e37a
+      fetch: λ94847290dd01
     });
   }
-  let λ5b461f4e64c0 = null, λ411d00fcd0f3 = "";
+  let λ59e9790b374a = null, λ9afe3dfad29a = "";
   function c() {
     return new Error("there are no bare clients", {
       cause: "No BareTransport was set. Try creating a BareMuxConnection and calling `setTransport()` or `setManualTransport()` on it before using BareClient."
     });
   }
-  function r(λc0623bfe0d8b, λ411d00fcd0f3) {
-    const λa1c8715d6b9c = λ5b461f4e64c0;
-    let λ680a6e22e37a = [ λ411d00fcd0f3 ];
-    λc0623bfe0d8b.fetch?.body && λ680a6e22e37a.push(λc0623bfe0d8b.fetch.body), λc0623bfe0d8b.websocket?.channel && λ680a6e22e37a.push(λc0623bfe0d8b.websocket.channel), 
-    λ15a594e8570b.call(λa1c8715d6b9c, {
-      message: λc0623bfe0d8b,
-      port: λ411d00fcd0f3
-    }, λ680a6e22e37a);
+  function r(λ9ddf1922675e, λ9afe3dfad29a) {
+    const λ96b6246b7f5c = λ59e9790b374a;
+    let λ94847290dd01 = [ λ9afe3dfad29a ];
+    λ9ddf1922675e.fetch?.body && λ94847290dd01.push(λ9ddf1922675e.fetch.body), λ9ddf1922675e.websocket?.channel && λ94847290dd01.push(λ9ddf1922675e.websocket.channel), 
+    λ19793e91fe5f.call(λ96b6246b7f5c, {
+      message: λ9ddf1922675e,
+      port: λ9afe3dfad29a
+    }, λ94847290dd01);
   }
-  function l(λc0623bfe0d8b) {
-    λc0623bfe0d8b.onmessage = async λc0623bfe0d8b => {
-      const λa1c8715d6b9c = λc0623bfe0d8b.data.port, λ680a6e22e37a = λc0623bfe0d8b.data.message;
-      if ("ping" === λ680a6e22e37a.type) λ15a594e8570b.call(λa1c8715d6b9c, {
+  function l(λ9ddf1922675e) {
+    λ9ddf1922675e.onmessage = async λ9ddf1922675e => {
+      const λ96b6246b7f5c = λ9ddf1922675e.data.port, λ94847290dd01 = λ9ddf1922675e.data.message;
+      if ("ping" === λ94847290dd01.type) λ19793e91fe5f.call(λ96b6246b7f5c, {
         type: "pong"
-      }); else if ("set" === λ680a6e22e37a.type) try {
-        const λc0623bfe0d8b = async function() {}.constructor;
-        if ("bare-mux-remote" === λ680a6e22e37a.client.function) λ5b461f4e64c0 = λ680a6e22e37a.client.args[0], 
-        λ411d00fcd0f3 = `bare-mux-remote (${λ680a6e22e37a.client.args[1]})`; else try {
-          const λ15a594e8570b = new λc0623bfe0d8b(λ680a6e22e37a.client.function), [λa1c8715d6b9c, λ08ef69b3a0be] = await λ15a594e8570b();
-          λ5b461f4e64c0 = new λa1c8715d6b9c(...λ680a6e22e37a.client.args), λ411d00fcd0f3 = λ08ef69b3a0be;
-        } catch (λ15a594e8570b) {
-          throw λ15a594e8570b.cause = "The BareTransport provided was invalid. Common causes of this are a default export that is not a class that implements BareTransport if you are using `setTransport()`", 
-          λ15a594e8570b;
+      }); else if ("set" === λ94847290dd01.type) try {
+        const λ9ddf1922675e = async function() {}.constructor;
+        if ("bare-mux-remote" === λ94847290dd01.client.function) λ59e9790b374a = λ94847290dd01.client.args[0], 
+        λ9afe3dfad29a = `bare-mux-remote (${λ94847290dd01.client.args[1]})`; else try {
+          const λ19793e91fe5f = new λ9ddf1922675e(λ94847290dd01.client.function), [λ96b6246b7f5c, λ1eb57866ad8a] = await λ19793e91fe5f();
+          λ59e9790b374a = new λ96b6246b7f5c(...λ94847290dd01.client.args), λ9afe3dfad29a = λ1eb57866ad8a;
+        } catch (λ19793e91fe5f) {
+          throw λ19793e91fe5f.cause = "The BareTransport provided was invalid. Common causes of this are a default export that is not a class that implements BareTransport if you are using `setTransport()`", 
+          λ19793e91fe5f;
         }
-        console.log("set transport to ", λ5b461f4e64c0, λ411d00fcd0f3), λ15a594e8570b.call(λa1c8715d6b9c, {
+        console.log("set transport to ", λ59e9790b374a, λ9afe3dfad29a), λ19793e91fe5f.call(λ96b6246b7f5c, {
           type: "set"
         });
-      } catch (λ15a594e8570b) {
-        a(λa1c8715d6b9c, λ15a594e8570b, "set");
-      } else if ("get" === λ680a6e22e37a.type) λa1c8715d6b9c.postMessage({
+      } catch (λ19793e91fe5f) {
+        a(λ96b6246b7f5c, λ19793e91fe5f, "set");
+      } else if ("get" === λ94847290dd01.type) λ96b6246b7f5c.postMessage({
         type: "get",
-        name: λ411d00fcd0f3
-      }); else if ("fetch" === λ680a6e22e37a.type) try {
-        if (!λ5b461f4e64c0) throw c();
-        if (λ5b461f4e64c0 instanceof MessagePort) return void r(λ680a6e22e37a, λa1c8715d6b9c);
-        λ5b461f4e64c0.ready || await λ5b461f4e64c0.init(), await n(λ680a6e22e37a, λa1c8715d6b9c, λ5b461f4e64c0);
-      } catch (λ15a594e8570b) {
-        a(λa1c8715d6b9c, λ15a594e8570b, "fetch");
-      } else if ("websocket" === λ680a6e22e37a.type) try {
-        if (!λ5b461f4e64c0) throw c();
-        if (λ5b461f4e64c0 instanceof MessagePort) return void r(λ680a6e22e37a, λa1c8715d6b9c);
-        λ5b461f4e64c0.ready || await λ5b461f4e64c0.init(), await async function(λc0623bfe0d8b, λ5b461f4e64c0, λ411d00fcd0f3) {
-          const [λa1c8715d6b9c, λ680a6e22e37a] = λ411d00fcd0f3.connect(new URL(λc0623bfe0d8b.websocket.url), λc0623bfe0d8b.websocket.protocols, λc0623bfe0d8b.websocket.requestHeaders, λ5b461f4e64c0 => {
-            λ15a594e8570b.call(λc0623bfe0d8b.websocket.channel, {
+        name: λ9afe3dfad29a
+      }); else if ("fetch" === λ94847290dd01.type) try {
+        if (!λ59e9790b374a) throw c();
+        if (λ59e9790b374a instanceof MessagePort) return void r(λ94847290dd01, λ96b6246b7f5c);
+        λ59e9790b374a.ready || await λ59e9790b374a.init(), await n(λ94847290dd01, λ96b6246b7f5c, λ59e9790b374a);
+      } catch (λ19793e91fe5f) {
+        a(λ96b6246b7f5c, λ19793e91fe5f, "fetch");
+      } else if ("websocket" === λ94847290dd01.type) try {
+        if (!λ59e9790b374a) throw c();
+        if (λ59e9790b374a instanceof MessagePort) return void r(λ94847290dd01, λ96b6246b7f5c);
+        λ59e9790b374a.ready || await λ59e9790b374a.init(), await async function(λ9ddf1922675e, λ59e9790b374a, λ9afe3dfad29a) {
+          const [λ96b6246b7f5c, λ94847290dd01] = λ9afe3dfad29a.connect(new URL(λ9ddf1922675e.websocket.url), λ9ddf1922675e.websocket.protocols, λ9ddf1922675e.websocket.requestHeaders, λ59e9790b374a => {
+            λ19793e91fe5f.call(λ9ddf1922675e.websocket.channel, {
               type: "open",
-              args: [ λ5b461f4e64c0 ]
+              args: [ λ59e9790b374a ]
             });
-          }, λ5b461f4e64c0 => {
-            λ5b461f4e64c0 instanceof ArrayBuffer ? λ15a594e8570b.call(λc0623bfe0d8b.websocket.channel, {
+          }, λ59e9790b374a => {
+            λ59e9790b374a instanceof ArrayBuffer ? λ19793e91fe5f.call(λ9ddf1922675e.websocket.channel, {
               type: "message",
-              args: [ λ5b461f4e64c0 ]
-            }, [ λ5b461f4e64c0 ]) : λ15a594e8570b.call(λc0623bfe0d8b.websocket.channel, {
+              args: [ λ59e9790b374a ]
+            }, [ λ59e9790b374a ]) : λ19793e91fe5f.call(λ9ddf1922675e.websocket.channel, {
               type: "message",
-              args: [ λ5b461f4e64c0 ]
+              args: [ λ59e9790b374a ]
             });
-          }, (λ5b461f4e64c0, λ411d00fcd0f3) => {
-            λ15a594e8570b.call(λc0623bfe0d8b.websocket.channel, {
+          }, (λ59e9790b374a, λ9afe3dfad29a) => {
+            λ19793e91fe5f.call(λ9ddf1922675e.websocket.channel, {
               type: "close",
-              args: [ λ5b461f4e64c0, λ411d00fcd0f3 ]
+              args: [ λ59e9790b374a, λ9afe3dfad29a ]
             });
-          }, λ5b461f4e64c0 => {
-            λ15a594e8570b.call(λc0623bfe0d8b.websocket.channel, {
+          }, λ59e9790b374a => {
+            λ19793e91fe5f.call(λ9ddf1922675e.websocket.channel, {
               type: "error",
-              args: [ λ5b461f4e64c0 ]
+              args: [ λ59e9790b374a ]
             });
           });
-          λc0623bfe0d8b.websocket.channel.onmessage = λ15a594e8570b => {
-            "data" === λ15a594e8570b.data.type ? λa1c8715d6b9c(λ15a594e8570b.data.data) : "close" === λ15a594e8570b.data.type && λ680a6e22e37a(λ15a594e8570b.data.closeCode, λ15a594e8570b.data.closeReason);
-          }, λ15a594e8570b.call(λ5b461f4e64c0, {
+          λ9ddf1922675e.websocket.channel.onmessage = λ19793e91fe5f => {
+            "data" === λ19793e91fe5f.data.type ? λ96b6246b7f5c(λ19793e91fe5f.data.data) : "close" === λ19793e91fe5f.data.type && λ94847290dd01(λ19793e91fe5f.data.closeCode, λ19793e91fe5f.data.closeReason);
+          }, λ19793e91fe5f.call(λ59e9790b374a, {
             type: "websocket"
           });
-        }(λ680a6e22e37a, λa1c8715d6b9c, λ5b461f4e64c0);
-      } catch (λ15a594e8570b) {
-        a(λa1c8715d6b9c, λ15a594e8570b, "websocket");
+        }(λ94847290dd01, λ96b6246b7f5c, λ59e9790b374a);
+      } catch (λ19793e91fe5f) {
+        a(λ96b6246b7f5c, λ19793e91fe5f, "websocket");
       }
     };
   }
   new BroadcastChannel("bare-mux").postMessage({
     type: "refreshPort"
-  }), self.onconnect = λ15a594e8570b => {
-    l(λ15a594e8570b.ports[0]);
+  }), self.onconnect = λ19793e91fe5f => {
+    l(λ19793e91fe5f.ports[0]);
   }, console.debug("bare-mux: running v2.1.9 (build dc9dc6e)");
 }();

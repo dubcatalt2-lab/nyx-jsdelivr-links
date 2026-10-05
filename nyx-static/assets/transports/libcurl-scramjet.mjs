@@ -1,16 +1,16 @@
-import λ82d5f45bd72e from "./libcurl-client.mjs";
+import λ963c4560a1e8 from "./libcurl-client.mjs";
 
-import { headerEntries as λ68f6822d290d } from "./header-utils.mjs";
+import { headerEntries as λ4e09be2f5964 } from "./header-utils.mjs";
 
-export default class Yu extends λ82d5f45bd72e {
-  async request(λ82d5f45bd72e, λ84da95be9d3b, λddcc34bf4f13, λ3d5d74444f3f, λ1eeaac997ee7) {
-    const λef6beffe3352 = await super.request(λ82d5f45bd72e, λ84da95be9d3b, λddcc34bf4f13, λ68f6822d290d(λ3d5d74444f3f), λ1eeaac997ee7);
+export default class Yu extends λ963c4560a1e8 {
+  async request(λ963c4560a1e8, λ3be196fb4ab9, λ51884a2211b2, λ28dddb6bd3cc, λb8493bfb9866) {
+    const λe0f022dc61e9 = await super.request(λ963c4560a1e8, λ3be196fb4ab9, λ51884a2211b2, λ4e09be2f5964(λ28dddb6bd3cc), λb8493bfb9866);
     return {
-      ...λef6beffe3352,
-      headers: λ68f6822d290d(λef6beffe3352.headers)
+      ...λe0f022dc61e9,
+      headers: λ4e09be2f5964(λe0f022dc61e9.headers)
     };
   }
-  connect(λ82d5f45bd72e, λ84da95be9d3b, λddcc34bf4f13, λ3d5d74444f3f, λ1eeaac997ee7, λef6beffe3352, λc4f4ab6facba) {
-    return super.connect(λ82d5f45bd72e, λ84da95be9d3b, λ68f6822d290d(λddcc34bf4f13), λ3d5d74444f3f, λ1eeaac997ee7, λef6beffe3352, λc4f4ab6facba);
+  connect(λ963c4560a1e8, λ3be196fb4ab9, λ51884a2211b2, λ28dddb6bd3cc, λb8493bfb9866, λe0f022dc61e9, λdb857b2308b6) {
+    return super.connect(λ963c4560a1e8, λ3be196fb4ab9, λ4e09be2f5964(λ51884a2211b2), λ28dddb6bd3cc, λb8493bfb9866, λe0f022dc61e9, λdb857b2308b6);
   }
 }

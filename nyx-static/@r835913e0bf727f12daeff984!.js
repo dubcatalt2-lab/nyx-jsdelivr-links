@@ -2,10 +2,10 @@ importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/studyjet-v1
 
 const {StudyJetServiceWorker: ef} = $studyjetLoadWorker(), tf = new ef, af = tf.loadConfig();
 
-self.addEventListener("install", λ8027922c240d => {
-  λ8027922c240d.waitUntil(self.skipWaiting());
-}), self.addEventListener("activate", λ8027922c240d => {
-  λ8027922c240d.waitUntil(self.clients.claim());
-}), self.addEventListener("fetch", λ8027922c240d => {
-  λ8027922c240d.respondWith((async () => (await af, tf.route(λ8027922c240d) ? tf.fetch(λ8027922c240d) : fetch(λ8027922c240d.request)))());
+self.addEventListener("install", λ740131c2b75d => {
+  λ740131c2b75d.waitUntil(self.skipWaiting());
+}), self.addEventListener("activate", λ740131c2b75d => {
+  λ740131c2b75d.waitUntil(self.clients.claim());
+}), self.addEventListener("fetch", λ740131c2b75d => {
+  λ740131c2b75d.respondWith((async () => (await af, tf.route(λ740131c2b75d) ? tf.fetch(λ740131c2b75d) : fetch(λ740131c2b75d.request)))());
 });

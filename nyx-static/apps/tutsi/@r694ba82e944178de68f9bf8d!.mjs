@@ -1,33 +1,33 @@
-export const httpRelayUrl = (λ8b5eb5ece0ff = location) => `${"https:" === λ8b5eb5ece0ff.protocol ? "wss:" : "ws:"}//${λ8b5eb5ece0ff.host}/api/tutsi-relay/socket/`;
+export const httpRelayUrl = (λecb57e15a67b = location) => `${"https:" === λecb57e15a67b.protocol ? "wss:" : "ws:"}//${λecb57e15a67b.host}/api/tutsi-relay/socket/`;
 
-export async function readRelayFrames(λ8b5eb5ece0ff, λf8b46f9187b1, λdccb2c4b410d = () => {}) {
-  const λ075fd681140a = λ8b5eb5ece0ff.getReader(), λ7b4bee84944e = new Uint8Array(4);
-  let λeaa3a691ad1c = 0, λ14f7583d6482 = null, λe8ebcf5c22bf = 0, λ394e5cdb4bf1 = 0;
+export async function readRelayFrames(λecb57e15a67b, λd785f2b33f2a, λ3266c5e299a0 = () => {}) {
+  const λfc3f22c9304f = λecb57e15a67b.getReader(), λ994b5ee4f145 = new Uint8Array(4);
+  let λ23013e725441 = 0, λ965dfe05cfef = null, λ1b3e6b3b58f4 = 0, λ3b17631a89dd = 0;
   try {
     for (;;) {
-      const {done: λ8b5eb5ece0ff, value: λbcb4833aeec8} = await λ075fd681140a.read();
-      if (λ8b5eb5ece0ff) break;
-      if (!λbcb4833aeec8?.length) continue;
-      if (λdccb2c4b410d(), λ394e5cdb4bf1 += λbcb4833aeec8.length, λ394e5cdb4bf1 > 20971520) throw new Error("Relay response is too large");
-      let λfeb10d1bcac7 = 0;
-      for (;λfeb10d1bcac7 < λbcb4833aeec8.length; ) {
-        if (!λ14f7583d6482) {
-          const λ8b5eb5ece0ff = Math.min(4 - λeaa3a691ad1c, λbcb4833aeec8.length - λfeb10d1bcac7);
-          if (λ7b4bee84944e.set(λbcb4833aeec8.subarray(λfeb10d1bcac7, λfeb10d1bcac7 + λ8b5eb5ece0ff), λeaa3a691ad1c), 
-          λeaa3a691ad1c += λ8b5eb5ece0ff, λfeb10d1bcac7 += λ8b5eb5ece0ff, λeaa3a691ad1c < 4) continue;
-          const λf8b46f9187b1 = new DataView(λ7b4bee84944e.buffer).getUint32(0, !0);
-          if (λf8b46f9187b1 > 2097152) throw new Error("Relay frame is too large");
-          λ14f7583d6482 = new Uint8Array(λf8b46f9187b1), λe8ebcf5c22bf = 0, λeaa3a691ad1c = 0;
+      const {done: λecb57e15a67b, value: λ5bd6f47a007a} = await λfc3f22c9304f.read();
+      if (λecb57e15a67b) break;
+      if (!λ5bd6f47a007a?.length) continue;
+      if (λ3266c5e299a0(), λ3b17631a89dd += λ5bd6f47a007a.length, λ3b17631a89dd > 20971520) throw new Error("Relay response is too large");
+      let λ1509300247e1 = 0;
+      for (;λ1509300247e1 < λ5bd6f47a007a.length; ) {
+        if (!λ965dfe05cfef) {
+          const λecb57e15a67b = Math.min(4 - λ23013e725441, λ5bd6f47a007a.length - λ1509300247e1);
+          if (λ994b5ee4f145.set(λ5bd6f47a007a.subarray(λ1509300247e1, λ1509300247e1 + λecb57e15a67b), λ23013e725441), 
+          λ23013e725441 += λecb57e15a67b, λ1509300247e1 += λecb57e15a67b, λ23013e725441 < 4) continue;
+          const λd785f2b33f2a = new DataView(λ994b5ee4f145.buffer).getUint32(0, !0);
+          if (λd785f2b33f2a > 2097152) throw new Error("Relay frame is too large");
+          λ965dfe05cfef = new Uint8Array(λd785f2b33f2a), λ1b3e6b3b58f4 = 0, λ23013e725441 = 0;
         }
-        const λ8b5eb5ece0ff = Math.min(λ14f7583d6482.length - λe8ebcf5c22bf, λbcb4833aeec8.length - λfeb10d1bcac7);
-        λ14f7583d6482.set(λbcb4833aeec8.subarray(λfeb10d1bcac7, λfeb10d1bcac7 + λ8b5eb5ece0ff), λe8ebcf5c22bf), 
-        λe8ebcf5c22bf += λ8b5eb5ece0ff, λfeb10d1bcac7 += λ8b5eb5ece0ff, λe8ebcf5c22bf === λ14f7583d6482.length && (λf8b46f9187b1(λ14f7583d6482.buffer), 
-        λ14f7583d6482 = null);
+        const λecb57e15a67b = Math.min(λ965dfe05cfef.length - λ1b3e6b3b58f4, λ5bd6f47a007a.length - λ1509300247e1);
+        λ965dfe05cfef.set(λ5bd6f47a007a.subarray(λ1509300247e1, λ1509300247e1 + λecb57e15a67b), λ1b3e6b3b58f4), 
+        λ1b3e6b3b58f4 += λecb57e15a67b, λ1509300247e1 += λecb57e15a67b, λ1b3e6b3b58f4 === λ965dfe05cfef.length && (λd785f2b33f2a(λ965dfe05cfef.buffer), 
+        λ965dfe05cfef = null);
       }
     }
-    if (λeaa3a691ad1c || λ14f7583d6482) throw new Error("Incomplete relay frame");
+    if (λ23013e725441 || λ965dfe05cfef) throw new Error("Incomplete relay frame");
   } finally {
-    await λ075fd681140a.cancel().catch(() => {}), λ075fd681140a.releaseLock();
+    await λfc3f22c9304f.cancel().catch(() => {}), λfc3f22c9304f.releaseLock();
   }
 }
 
@@ -45,91 +45,91 @@ export class HttpRelaySocket extends EventTarget {
   bufferedAmount=0;
   protocol="";
   extensions="";
-  constructor(λ8b5eb5ece0ff) {
-    super(), this.url = String(λ8b5eb5ece0ff), this.abort = new AbortController, this.sequence = 0, 
+  constructor(λecb57e15a67b) {
+    super(), this.url = String(λecb57e15a67b), this.abort = new AbortController, this.sequence = 0, 
     this.queue = [], this.sending = !1, this.start();
   }
-  emit(λ8b5eb5ece0ff, λf8b46f9187b1 = new Event(λ8b5eb5ece0ff)) {
-    this.dispatchEvent(λf8b46f9187b1), this["on" + λ8b5eb5ece0ff]?.call(this, λf8b46f9187b1);
+  emit(λecb57e15a67b, λd785f2b33f2a = new Event(λecb57e15a67b)) {
+    this.dispatchEvent(λd785f2b33f2a), this["on" + λecb57e15a67b]?.call(this, λd785f2b33f2a);
   }
-  async request(λ8b5eb5ece0ff, λf8b46f9187b1 = {}, λdccb2c4b410d = AbortSignal.timeout(3e4)) {
-    const λ075fd681140a = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/tutsi-relay/" + λ8b5eb5ece0ff, {
-      ...λf8b46f9187b1,
+  async request(λecb57e15a67b, λd785f2b33f2a = {}, λ3266c5e299a0 = AbortSignal.timeout(3e4)) {
+    const λfc3f22c9304f = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/tutsi-relay/" + λecb57e15a67b, {
+      ...λd785f2b33f2a,
       cache: "no-store",
       credentials: "same-origin",
-      signal: AbortSignal.any([ this.abort.signal, λdccb2c4b410d ]),
+      signal: AbortSignal.any([ this.abort.signal, λ3266c5e299a0 ]),
       headers: {
-        ...λf8b46f9187b1.headers,
+        ...λd785f2b33f2a.headers,
         ...this.token ? {
           Authorization: "Bearer " + this.token
         } : {}
       }
     });
-    if (!λ075fd681140a.ok) throw new Error("Connection unavailable");
-    return λ075fd681140a;
+    if (!λfc3f22c9304f.ok) throw new Error("Connection unavailable");
+    return λfc3f22c9304f;
   }
   async start() {
     try {
-      const λ8b5eb5ece0ff = await (await this.request("sessions", {
+      const λecb57e15a67b = await (await this.request("sessions", {
         method: "POST"
       })).json();
-      if (this.token = λ8b5eb5ece0ff.token, this.batchSend = 1 === λ8b5eb5ece0ff.sendBatch, 
+      if (this.token = λecb57e15a67b.token, this.batchSend = 1 === λecb57e15a67b.sendBatch, 
       0 !== this.readyState) return this.cleanup();
       for (this.readyState = 1, this.emit("open"); 1 === this.readyState; ) {
-        const λ8b5eb5ece0ff = new AbortController;
-        let λf8b46f9187b1;
+        const λecb57e15a67b = new AbortController;
+        let λd785f2b33f2a;
         const s = () => {
-          clearTimeout(λf8b46f9187b1), λf8b46f9187b1 = setTimeout(() => λ8b5eb5ece0ff.abort(), 3e4);
+          clearTimeout(λd785f2b33f2a), λd785f2b33f2a = setTimeout(() => λecb57e15a67b.abort(), 3e4);
         };
         s();
         try {
-          const λf8b46f9187b1 = await this.request("receive", {}, AbortSignal.any([ λ8b5eb5ece0ff.signal, AbortSignal.timeout(12e4) ]));
-          if (204 === λf8b46f9187b1.status) continue;
-          s(), await readRelayFrames(λf8b46f9187b1.body, λ8b5eb5ece0ff => {
+          const λd785f2b33f2a = await this.request("receive", {}, AbortSignal.any([ λecb57e15a67b.signal, AbortSignal.timeout(12e4) ]));
+          if (204 === λd785f2b33f2a.status) continue;
+          s(), await readRelayFrames(λd785f2b33f2a.body, λecb57e15a67b => {
             1 === this.readyState && this.emit("message", new MessageEvent("message", {
-              data: "arraybuffer" === this.binaryType ? λ8b5eb5ece0ff : new Blob([ λ8b5eb5ece0ff ])
+              data: "arraybuffer" === this.binaryType ? λecb57e15a67b : new Blob([ λecb57e15a67b ])
             }));
           }, s);
         } finally {
-          clearTimeout(λf8b46f9187b1);
+          clearTimeout(λd785f2b33f2a);
         }
       }
     } catch {
       this.readyState < 2 && (this.emit("error"), this.close(1006));
     }
   }
-  send(λ8b5eb5ece0ff) {
+  send(λecb57e15a67b) {
     if (1 !== this.readyState) throw new DOMException("Socket is not open", "InvalidStateError");
-    const λf8b46f9187b1 = new Blob([ λ8b5eb5ece0ff ]);
-    if (λf8b46f9187b1.size > 262144 || this.bufferedAmount + λf8b46f9187b1.size > 2097152 || this.queue.length >= 512) return this.emit("error"), 
+    const λd785f2b33f2a = new Blob([ λecb57e15a67b ]);
+    if (λd785f2b33f2a.size > 262144 || this.bufferedAmount + λd785f2b33f2a.size > 2097152 || this.queue.length >= 512) return this.emit("error"), 
     void this.close(1006);
-    this.bufferedAmount += λf8b46f9187b1.size, this.queue.push(λf8b46f9187b1), this.flush();
+    this.bufferedAmount += λd785f2b33f2a.size, this.queue.push(λd785f2b33f2a), this.flush();
   }
   flush() {
     !this.sending && 1 === this.readyState && this.queue.length && (this.sending = !0, 
     Promise.resolve().then(async () => {
       for (;1 === this.readyState && this.queue.length; ) {
-        const λ8b5eb5ece0ff = [], λf8b46f9187b1 = [];
-        let λdccb2c4b410d = 0, λ075fd681140a = 0;
+        const λecb57e15a67b = [], λd785f2b33f2a = [];
+        let λ3266c5e299a0 = 0, λfc3f22c9304f = 0;
         do {
-          const λ7b4bee84944e = this.queue[0];
-          if (λ8b5eb5ece0ff.length && λ075fd681140a + 4 + λ7b4bee84944e.size > 1048576) break;
-          if (this.queue.shift(), λ8b5eb5ece0ff.push(λ7b4bee84944e), λdccb2c4b410d += λ7b4bee84944e.size, 
-          λ075fd681140a += λ7b4bee84944e.size + 4, this.batchSend) {
-            const λ8b5eb5ece0ff = new Uint8Array(4);
-            new DataView(λ8b5eb5ece0ff.buffer).setUint32(0, λ7b4bee84944e.size, !0), λf8b46f9187b1.push(λ8b5eb5ece0ff, λ7b4bee84944e);
+          const λ994b5ee4f145 = this.queue[0];
+          if (λecb57e15a67b.length && λfc3f22c9304f + 4 + λ994b5ee4f145.size > 1048576) break;
+          if (this.queue.shift(), λecb57e15a67b.push(λ994b5ee4f145), λ3266c5e299a0 += λ994b5ee4f145.size, 
+          λfc3f22c9304f += λ994b5ee4f145.size + 4, this.batchSend) {
+            const λecb57e15a67b = new Uint8Array(4);
+            new DataView(λecb57e15a67b.buffer).setUint32(0, λ994b5ee4f145.size, !0), λd785f2b33f2a.push(λecb57e15a67b, λ994b5ee4f145);
           }
-        } while (this.batchSend && this.queue.length && λ8b5eb5ece0ff.length < 64);
-        const λ7b4bee84944e = this.sequence;
-        if (this.sequence += λ8b5eb5ece0ff.length, await this.request(this.batchSend ? "send-batch" : "send", {
+        } while (this.batchSend && this.queue.length && λecb57e15a67b.length < 64);
+        const λ994b5ee4f145 = this.sequence;
+        if (this.sequence += λecb57e15a67b.length, await this.request(this.batchSend ? "send-batch" : "send", {
           method: "POST",
           headers: {
             "Content-Type": "application/octet-stream",
-            "X-Tutsi-Sequence": String(λ7b4bee84944e)
+            "X-Tutsi-Sequence": String(λ994b5ee4f145)
           },
-          body: this.batchSend ? new Blob(λf8b46f9187b1) : λ8b5eb5ece0ff[0]
+          body: this.batchSend ? new Blob(λd785f2b33f2a) : λecb57e15a67b[0]
         }), 1 !== this.readyState) return;
-        this.bufferedAmount -= λdccb2c4b410d;
+        this.bufferedAmount -= λ3266c5e299a0;
       }
     }).catch(() => {
       this.readyState < 2 && (this.emit("error"), this.close(1006));
@@ -146,51 +146,51 @@ export class HttpRelaySocket extends EventTarget {
       keepalive: !0
     }).catch(() => {});
   }
-  close(λ8b5eb5ece0ff = 1e3, λf8b46f9187b1 = "") {
+  close(λecb57e15a67b = 1e3, λd785f2b33f2a = "") {
     3 !== this.readyState && (this.readyState = 3, this.abort.abort(), this.cleanup(), 
     this.bufferedAmount = 0, this.queue.length = 0, this.emit("close", new CloseEvent("close", {
-      code: λ8b5eb5ece0ff,
-      reason: λf8b46f9187b1,
-      wasClean: 1e3 === λ8b5eb5ece0ff
+      code: λecb57e15a67b,
+      reason: λd785f2b33f2a,
+      wasClean: 1e3 === λecb57e15a67b
     })));
   }
 }
 
-const λ8b5eb5ece0ff = new Map;
+const λecb57e15a67b = new Map;
 
 export function createHttpRelayEndpoint() {
-  const λf8b46f9187b1 = httpRelayUrl() + crypto.randomUUID() + "/", λdccb2c4b410d = new Set;
-  return λ8b5eb5ece0ff.set(λf8b46f9187b1, λdccb2c4b410d), {
-    url: λf8b46f9187b1,
+  const λd785f2b33f2a = httpRelayUrl() + crypto.randomUUID() + "/", λ3266c5e299a0 = new Set;
+  return λecb57e15a67b.set(λd785f2b33f2a, λ3266c5e299a0), {
+    url: λd785f2b33f2a,
     close() {
-      λ8b5eb5ece0ff.delete(λf8b46f9187b1);
-      for (const λ8b5eb5ece0ff of λdccb2c4b410d) λ8b5eb5ece0ff.close();
-      λdccb2c4b410d.clear();
+      λecb57e15a67b.delete(λd785f2b33f2a);
+      for (const λecb57e15a67b of λ3266c5e299a0) λecb57e15a67b.close();
+      λ3266c5e299a0.clear();
     }
   };
 }
 
-let λf8b46f9187b1 = !1;
+let λd785f2b33f2a = !1;
 
 export function installHttpRelaySocket() {
-  if (λf8b46f9187b1) return;
-  λf8b46f9187b1 = !0;
-  const λdccb2c4b410d = globalThis.WebSocket;
-  function t(λf8b46f9187b1, λ075fd681140a) {
-    const λ7b4bee84944e = String(λf8b46f9187b1), λeaa3a691ad1c = λ8b5eb5ece0ff.get(λ7b4bee84944e);
-    if (λ7b4bee84944e === httpRelayUrl() || λeaa3a691ad1c) {
-      const λ8b5eb5ece0ff = new HttpRelaySocket(λf8b46f9187b1);
-      return λeaa3a691ad1c && (λeaa3a691ad1c.add(λ8b5eb5ece0ff), λ8b5eb5ece0ff.addEventListener("close", () => λeaa3a691ad1c.delete(λ8b5eb5ece0ff), {
+  if (λd785f2b33f2a) return;
+  λd785f2b33f2a = !0;
+  const λ3266c5e299a0 = globalThis.WebSocket;
+  function t(λd785f2b33f2a, λfc3f22c9304f) {
+    const λ994b5ee4f145 = String(λd785f2b33f2a), λ23013e725441 = λecb57e15a67b.get(λ994b5ee4f145);
+    if (λ994b5ee4f145 === httpRelayUrl() || λ23013e725441) {
+      const λecb57e15a67b = new HttpRelaySocket(λd785f2b33f2a);
+      return λ23013e725441 && (λ23013e725441.add(λecb57e15a67b), λecb57e15a67b.addEventListener("close", () => λ23013e725441.delete(λecb57e15a67b), {
         once: !0
-      })), λ8b5eb5ece0ff;
+      })), λecb57e15a67b;
     }
-    return void 0 === λ075fd681140a ? new λdccb2c4b410d(λf8b46f9187b1) : new λdccb2c4b410d(λf8b46f9187b1, λ075fd681140a);
+    return void 0 === λfc3f22c9304f ? new λ3266c5e299a0(λd785f2b33f2a) : new λ3266c5e299a0(λd785f2b33f2a, λfc3f22c9304f);
   }
-  Object.setPrototypeOf(t, λdccb2c4b410d), t.prototype = λdccb2c4b410d.prototype, 
+  Object.setPrototypeOf(t, λ3266c5e299a0), t.prototype = λ3266c5e299a0.prototype, 
   Object.defineProperty(t, Symbol.hasInstance, {
-    value: λ8b5eb5ece0ff => λ8b5eb5ece0ff instanceof λdccb2c4b410d || λ8b5eb5ece0ff instanceof HttpRelaySocket
+    value: λecb57e15a67b => λecb57e15a67b instanceof λ3266c5e299a0 || λecb57e15a67b instanceof HttpRelaySocket
   }), globalThis.WebSocket = t, addEventListener("pagehide", () => {
-    for (const λf8b46f9187b1 of λ8b5eb5ece0ff.values()) for (const λ8b5eb5ece0ff of λf8b46f9187b1) λ8b5eb5ece0ff.close();
-    λ8b5eb5ece0ff.clear();
+    for (const λd785f2b33f2a of λecb57e15a67b.values()) for (const λecb57e15a67b of λd785f2b33f2a) λecb57e15a67b.close();
+    λecb57e15a67b.clear();
   });
 }

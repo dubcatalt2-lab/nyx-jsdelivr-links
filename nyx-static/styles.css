@@ -1,19 +1,19 @@
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/core.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/chrome-and-settings.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/fresh-theme.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/interface-polish.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/midnight-theme.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/homepage.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/theme-consistency.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/default-theme-polish.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/settings-dashboard.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/owner-dashboard.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/home-utilities.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/hover-consistency.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/weather-redesign.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/theme-tints.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/setup-wizard.css?rev=f39ec01bf476d1d8");
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/credits.css?rev=f39ec01bf476d1d8");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/core.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/chrome-and-settings.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/fresh-theme.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/interface-polish.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/midnight-theme.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/homepage.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/theme-consistency.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/default-theme-polish.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/settings-dashboard.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/owner-dashboard.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/home-utilities.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/hover-consistency.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/weather-redesign.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/theme-tints.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/setup-wizard.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/credits.css?rev=edb7b05371452584");
 .nyx-founder-editor-overlay {
   position: fixed;
   z-index: 2147483000;
@@ -4515,7 +4515,9 @@ html[data-nyx-theme=custom] body.browser-shell.theme-custom {
 html[data-nyx-theme=custom] body.browser-shell.theme-custom.theme-default {
   --nyx-title-theme-color: var(--nyx-custom-bright)!important
 }
-html[data-nyx-theme=custom] body.browser-shell.theme-custom.theme-default .browser-window.browser-home-page :is(.nyx-home-title,.nyx-home-presence,.nyx-home-presence .nyx-account-button,.nyx-home-weather strong,.nyx-home-actions>button,.home-shortcut-grid .quick-tile span,.home-shortcut-grid .home-shortcut-open,.home-shortcut-grid .home-shortcut-add,.nyx-home-link-checker,.nyx-home-utility-links a) {
+html[data-nyx-theme=custom] body.browser-shell.theme-custom.theme-default .browser-window.browser-home-page :is(
+.nyx-home-title,.nyx-home-presence,.nyx-home-presence .nyx-account-button,.nyx-home-weather strong,.nyx-home-actions>button,.home-shortcut-grid .quick-tile span,.home-shortcut-grid .home-shortcut-open,.home-shortcut-grid .home-shortcut-add,.nyx-home-link-checker,.nyx-home-utility-links a
+) {
   color: var(--nyx-custom-text)!important;
   -webkit-text-fill-color: var(--nyx-custom-text)!important
 }
@@ -5769,7 +5771,9 @@ html[data-nyx-theme] body .nyx-profile-directory-card-host .nyx-user-profile-rol
     animation-delay: -1.1s!important
   }
 }
-html[data-nyx-theme] body.browser-shell .apps-launch-grid .quick-tile:is([data-domain=geforcenow],[data-domain="x.com"]) .quick-icon {
+html[data-nyx-theme] body.browser-shell .apps-launch-grid .quick-tile:is(
+[data-domain=geforcenow],[data-domain="x.com"]
+) .quick-icon {
   box-sizing: border-box!important;
   padding: 18px!important;
   border: 1px solid rgba(255,255,255,.16)!important;
@@ -5777,7 +5781,9 @@ html[data-nyx-theme] body.browser-shell .apps-launch-grid .quick-tile:is([data-
   background-image: none!important;
   box-shadow: 0 8px 24px rgba(0,0,0,.24)!important
 }
-html[data-nyx-theme] body.browser-shell .apps-launch-grid .quick-tile:is([data-domain=geforcenow],[data-domain="x.com"]):is(:hover,:focus-visible) .quick-icon {
+html[data-nyx-theme] body.browser-shell .apps-launch-grid .quick-tile:is(
+[data-domain=geforcenow],[data-domain="x.com"]
+):is(:hover,:focus-visible) .quick-icon {
   border-color: color-mix(in srgb,var(--nyx-chrome-accent) 48%,#fff)!important
 }
 html[data-nyx-theme] body.browser-shell .apps-panel :is(h1,h2),

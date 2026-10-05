@@ -161,13 +161,17 @@ html[data-nyx-theme=fresh][data-nyx-theme=fresh][data-nyx-theme=fresh] body.them
   color: var(--nyx-fern-text)!important;
   -webkit-text-fill-color: var(--nyx-fern-text)!important
 }
-html[data-nyx-theme=fresh][data-nyx-theme=fresh][data-nyx-theme=fresh] body.theme-fresh:is(body,#nyx-fern-weather-specificity) .weather-panel :is(.weather-panel-title,.weather-search-symbol,.weather-search input,.weather-search button,.weather-options,.weather-temp,.weather-desc,.weather-place,.weather-region-time,.weather-stat,.weather-stat strong,.weather-forecast-title,.weather-forecast-row,.weather-day,.weather-rain-chance,.weather-high-low,.weather-high-low span,.weather-status,.weather-icon-btn),
+html[data-nyx-theme=fresh][data-nyx-theme=fresh][data-nyx-theme=fresh] body.theme-fresh:is(body,#nyx-fern-weather-specificity) .weather-panel :is(
+.weather-panel-title,.weather-search-symbol,.weather-search input,.weather-search button,.weather-options,.weather-temp,.weather-desc,.weather-place,.weather-region-time,.weather-stat,.weather-stat strong,.weather-forecast-title,.weather-forecast-row,.weather-day,.weather-rain-chance,.weather-high-low,.weather-high-low span,.weather-status,.weather-icon-btn
+),
 html[data-nyx-theme=fresh][data-nyx-theme=fresh][data-nyx-theme=fresh] body.theme-fresh:is(body,#nyx-fern-weather-specificity) .weather-restore::after {
   color: var(--nyx-fern-text)!important;
   -webkit-text-fill-color: var(--nyx-fern-text)!important;
   text-shadow: none!important
 }
-html[data-nyx-theme=fresh][data-nyx-theme=fresh][data-nyx-theme=fresh] body.theme-fresh:is(body,#nyx-fern-weather-specificity) .weather-panel :is(.weather-search-symbol,.weather-search button,.weather-rain-chance,.weather-icon-btn) {
+html[data-nyx-theme=fresh][data-nyx-theme=fresh][data-nyx-theme=fresh] body.theme-fresh:is(body,#nyx-fern-weather-specificity) .weather-panel :is(
+.weather-search-symbol,.weather-search button,.weather-rain-chance,.weather-icon-btn
+) {
   color: var(--nyx-fern-accent)!important;
   -webkit-text-fill-color: var(--nyx-fern-accent)!important
 }
