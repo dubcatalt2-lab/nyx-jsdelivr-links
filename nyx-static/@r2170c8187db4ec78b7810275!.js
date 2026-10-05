@@ -4,36 +4,36 @@ importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/uv/@r07857c
 const sp = new Map, ap = [ 0, 180, 520 ], op = `<script data-nyx-proxy-privacy>(${function() {
   if (globalThis.__nyxProxyPrivacyInstalled) return;
   globalThis.__nyxProxyPrivacyInstalled = !0;
-  const λ712b953fcc58 = Object.freeze({
+  const λ38a84ae8645d = Object.freeze({
     code: 1,
     message: "Location access is disabled in Nyx private tabs."
-  }), t = λ6aa75d7576a7 => {
-    "function" == typeof λ6aa75d7576a7 && queueMicrotask(() => λ6aa75d7576a7(λ712b953fcc58));
-  }, λ6aa75d7576a7 = Object.freeze({
-    getCurrentPosition(λ712b953fcc58, λ6aa75d7576a7) {
-      t(λ6aa75d7576a7);
+  }), t = λ0c2a5bd9ace5 => {
+    "function" == typeof λ0c2a5bd9ace5 && queueMicrotask(() => λ0c2a5bd9ace5(λ38a84ae8645d));
+  }, λ0c2a5bd9ace5 = Object.freeze({
+    getCurrentPosition(λ38a84ae8645d, λ0c2a5bd9ace5) {
+      t(λ0c2a5bd9ace5);
     },
-    watchPosition: (λ712b953fcc58, λ6aa75d7576a7) => (t(λ6aa75d7576a7), 0),
+    watchPosition: (λ38a84ae8645d, λ0c2a5bd9ace5) => (t(λ0c2a5bd9ace5), 0),
     clearWatch() {}
   });
   try {
     Object.defineProperty(Navigator.prototype, "geolocation", {
       configurable: !0,
-      get: () => λ6aa75d7576a7
+      get: () => λ0c2a5bd9ace5
     });
   } catch {}
   try {
     Object.defineProperty(navigator, "geolocation", {
       configurable: !0,
-      get: () => λ6aa75d7576a7
+      get: () => λ0c2a5bd9ace5
     });
   } catch {}
-  const λdc499c459718 = navigator.permissions?.query?.bind(navigator.permissions);
-  if (λdc499c459718) try {
-    navigator.permissions.query = λ712b953fcc58 => {
-      if ("geolocation" === String(λ712b953fcc58?.name || "").toLowerCase()) {
-        const λ712b953fcc58 = new EventTarget;
-        return Object.defineProperties(λ712b953fcc58, {
+  const λ609e68d68634 = navigator.permissions?.query?.bind(navigator.permissions);
+  if (λ609e68d68634) try {
+    navigator.permissions.query = λ38a84ae8645d => {
+      if ("geolocation" === String(λ38a84ae8645d?.name || "").toLowerCase()) {
+        const λ38a84ae8645d = new EventTarget;
+        return Object.defineProperties(λ38a84ae8645d, {
           state: {
             enumerable: !0,
             value: "denied"
@@ -43,20 +43,20 @@ const sp = new Map, ap = [ 0, 180, 520 ], op = `<script data-nyx-proxy-privacy>(
             writable: !0,
             value: null
           }
-        }), Promise.resolve(λ712b953fcc58);
+        }), Promise.resolve(λ38a84ae8645d);
       }
-      return λdc499c459718(λ712b953fcc58);
+      return λ609e68d68634(λ38a84ae8645d);
     };
   } catch {}
 }.toString()})();<\/script>`;
 
-function cp(λ712b953fcc58) {
+function cp(λ38a84ae8645d) {
   try {
-    const λ6aa75d7576a7 = new URL(λ712b953fcc58).pathname.match(/^\/service\/(nyx_[a-z0-9_-]{12,80})\//i);
-    return λ6aa75d7576a7 ? {
-      id: λ6aa75d7576a7[1],
-      prefix: `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/service/${λ6aa75d7576a7[1]}/`,
-      dbName: `__nyx_uv_tab_${λ6aa75d7576a7[1]}`
+    const λ0c2a5bd9ace5 = new URL(λ38a84ae8645d).pathname.match(/^\/service\/(nyx_[a-z0-9_-]{12,80})\//i);
+    return λ0c2a5bd9ace5 ? {
+      id: λ0c2a5bd9ace5[1],
+      prefix: `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/service/${λ0c2a5bd9ace5[1]}/`,
+      dbName: `__nyx_uv_tab_${λ0c2a5bd9ace5[1]}`
     } : {
       id: "",
       prefix: self.__uv$config?.prefix || "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/service/",
@@ -71,104 +71,104 @@ function cp(λ712b953fcc58) {
   }
 }
 
-function ip(λ712b953fcc58) {
-  const λ6aa75d7576a7 = cp(λ712b953fcc58), λdc499c459718 = λ6aa75d7576a7.id || "legacy";
-  let λc53c87f639ab = sp.get(λdc499c459718);
-  if (!λc53c87f639ab) {
-    const λ712b953fcc58 = Array.isArray(self.__uv$config?.inject) ? [ ...self.__uv$config.inject ] : [];
-    λ712b953fcc58.push({
+function ip(λ38a84ae8645d) {
+  const λ0c2a5bd9ace5 = cp(λ38a84ae8645d), λ609e68d68634 = λ0c2a5bd9ace5.id || "legacy";
+  let λa063ed38f7c3 = sp.get(λ609e68d68634);
+  if (!λa063ed38f7c3) {
+    const λ38a84ae8645d = Array.isArray(self.__uv$config?.inject) ? [ ...self.__uv$config.inject ] : [];
+    λ38a84ae8645d.push({
       host: ".*",
       injectTo: "head",
       html: op
-    }), λc53c87f639ab = new UVServiceWorker({
+    }), λa063ed38f7c3 = new UVServiceWorker({
       ...self.__uv$config,
-      prefix: λ6aa75d7576a7.prefix,
-      cookieDbName: λ6aa75d7576a7.dbName,
-      inject: λ712b953fcc58
-    }), sp.set(λdc499c459718, λc53c87f639ab);
+      prefix: λ0c2a5bd9ace5.prefix,
+      cookieDbName: λ0c2a5bd9ace5.dbName,
+      inject: λ38a84ae8645d
+    }), sp.set(λ609e68d68634, λa063ed38f7c3);
   }
   return {
-    engine: λc53c87f639ab,
-    session: λ6aa75d7576a7
+    engine: λa063ed38f7c3,
+    session: λ0c2a5bd9ace5
   };
 }
 
-function up(λ712b953fcc58) {
-  return new Promise(λ6aa75d7576a7 => {
-    let λdc499c459718;
+function up(λ38a84ae8645d) {
+  return new Promise(λ0c2a5bd9ace5 => {
+    let λ609e68d68634;
     try {
-      λdc499c459718 = indexedDB.open(λ712b953fcc58);
+      λ609e68d68634 = indexedDB.open(λ38a84ae8645d);
     } catch {
-      return void λ6aa75d7576a7(!1);
+      return void λ0c2a5bd9ace5(!1);
     }
-    λdc499c459718.onerror = () => λ6aa75d7576a7(!1), λdc499c459718.onupgradeneeded = () => {}, 
-    λdc499c459718.onsuccess = () => {
-      const λ712b953fcc58 = λdc499c459718.result;
-      if (!λ712b953fcc58.objectStoreNames.contains("cookies")) return λ712b953fcc58.close(), 
-      void λ6aa75d7576a7(!0);
-      const λc53c87f639ab = λ712b953fcc58.transaction("cookies", "readwrite");
-      λc53c87f639ab.objectStore("cookies").clear(), λc53c87f639ab.oncomplete = () => {
-        λ712b953fcc58.close(), λ6aa75d7576a7(!0);
-      }, λc53c87f639ab.onerror = () => {
-        λ712b953fcc58.close(), λ6aa75d7576a7(!1);
-      }, λc53c87f639ab.onabort = () => {
-        λ712b953fcc58.close(), λ6aa75d7576a7(!1);
+    λ609e68d68634.onerror = () => λ0c2a5bd9ace5(!1), λ609e68d68634.onupgradeneeded = () => {}, 
+    λ609e68d68634.onsuccess = () => {
+      const λ38a84ae8645d = λ609e68d68634.result;
+      if (!λ38a84ae8645d.objectStoreNames.contains("cookies")) return λ38a84ae8645d.close(), 
+      void λ0c2a5bd9ace5(!0);
+      const λa063ed38f7c3 = λ38a84ae8645d.transaction("cookies", "readwrite");
+      λa063ed38f7c3.objectStore("cookies").clear(), λa063ed38f7c3.oncomplete = () => {
+        λ38a84ae8645d.close(), λ0c2a5bd9ace5(!0);
+      }, λa063ed38f7c3.onerror = () => {
+        λ38a84ae8645d.close(), λ0c2a5bd9ace5(!1);
+      }, λa063ed38f7c3.onabort = () => {
+        λ38a84ae8645d.close(), λ0c2a5bd9ace5(!1);
       };
     };
   });
 }
 
-function lp(λ712b953fcc58) {
+function lp(λ38a84ae8645d) {
   try {
-    const λ6aa75d7576a7 = new URL(λ712b953fcc58), λdc499c459718 = cp(λ712b953fcc58).prefix;
-    return λ6aa75d7576a7.pathname.startsWith(λdc499c459718) ? self.__uv$config.decodeUrl(λ6aa75d7576a7.pathname.slice(λdc499c459718.length)) : "";
+    const λ0c2a5bd9ace5 = new URL(λ38a84ae8645d), λ609e68d68634 = cp(λ38a84ae8645d).prefix;
+    return λ0c2a5bd9ace5.pathname.startsWith(λ609e68d68634) ? self.__uv$config.decodeUrl(λ0c2a5bd9ace5.pathname.slice(λ609e68d68634.length)) : "";
   } catch {
     return "";
   }
 }
 
-self.addEventListener("message", λ712b953fcc58 => {
-  const λ6aa75d7576a7 = λ712b953fcc58.data;
-  if ("nyx:destroy-proxy-session" !== λ6aa75d7576a7?.type || !/^nyx_[a-z0-9_-]{12,80}$/i.test(String(λ6aa75d7576a7.sessionId || ""))) return;
-  const λdc499c459718 = String(λ6aa75d7576a7.sessionId);
-  sp.delete(λdc499c459718), λ712b953fcc58.waitUntil?.(up(`__nyx_uv_tab_${λdc499c459718}`));
-}), self.addEventListener("install", λ712b953fcc58 => {
-  λ712b953fcc58.waitUntil(self.skipWaiting());
-}), self.addEventListener("activate", λ712b953fcc58 => {
-  λ712b953fcc58.waitUntil(self.clients.claim());
+self.addEventListener("message", λ38a84ae8645d => {
+  const λ0c2a5bd9ace5 = λ38a84ae8645d.data;
+  if ("nyx:destroy-proxy-session" !== λ0c2a5bd9ace5?.type || !/^nyx_[a-z0-9_-]{12,80}$/i.test(String(λ0c2a5bd9ace5.sessionId || ""))) return;
+  const λ609e68d68634 = String(λ0c2a5bd9ace5.sessionId);
+  sp.delete(λ609e68d68634), λ38a84ae8645d.waitUntil?.(up(`__nyx_uv_tab_${λ609e68d68634}`));
+}), self.addEventListener("install", λ38a84ae8645d => {
+  λ38a84ae8645d.waitUntil(self.skipWaiting());
+}), self.addEventListener("activate", λ38a84ae8645d => {
+  λ38a84ae8645d.waitUntil(self.clients.claim());
 });
 
 const dp = [ "adnxs.com", "ads.emulatorjs.org", "adsrvr.org", "adsterra.com", "adtrafficquality.google", "amazon-adsystem.com", "cdn.r9x.in", "criteo.com", "doubleclick.net", "exoclick.com", "gamemonetize.com", "googleadservices.com", "googlesyndication.com", "imasdk.googleapis.com", "mgid.com", "monetag.com", "openx.net", "outbrain.com", "playwire.com", "popads.net", "popcash.net", "propellerads.com", "pubmatic.com", "rubiconproject.com", "taboola.com", "trafficjunky.com" ];
 
-function pp(λ712b953fcc58) {
-  const λ6aa75d7576a7 = String(λ712b953fcc58 || "").toLowerCase();
-  return dp.some(λ712b953fcc58 => λ6aa75d7576a7 === λ712b953fcc58 || λ6aa75d7576a7.endsWith(`.${λ712b953fcc58}`));
+function pp(λ38a84ae8645d) {
+  const λ0c2a5bd9ace5 = String(λ38a84ae8645d || "").toLowerCase();
+  return dp.some(λ38a84ae8645d => λ0c2a5bd9ace5 === λ38a84ae8645d || λ0c2a5bd9ace5.endsWith(`.${λ38a84ae8645d}`));
 }
 
-function mp(λ712b953fcc58) {
-  const λ6aa75d7576a7 = lp(λ712b953fcc58.request.url);
-  if (!λ6aa75d7576a7) return !1;
+function mp(λ38a84ae8645d) {
+  const λ0c2a5bd9ace5 = lp(λ38a84ae8645d.request.url);
+  if (!λ0c2a5bd9ace5) return !1;
   try {
-    const λ712b953fcc58 = new URL(λ6aa75d7576a7);
-    return pp(λ712b953fcc58.hostname) || /(?:^|\/)(?:ads?|ad[-_.]?(?:loader|manager|script)|jump[_-]gamemonetize|poki-(?:master-loader|sdk))\.(?:js|mjs)(?:$|\/)/i.test(λ712b953fcc58.pathname) || "serve.app.playsaurus.com" === λ712b953fcc58.hostname && /\/ad-campaigns\//i.test(λ712b953fcc58.pathname);
+    const λ38a84ae8645d = new URL(λ0c2a5bd9ace5);
+    return pp(λ38a84ae8645d.hostname) || /(?:^|\/)(?:ads?|ad[-_.]?(?:loader|manager|script)|jump[_-]gamemonetize|poki-(?:master-loader|sdk))\.(?:js|mjs)(?:$|\/)/i.test(λ38a84ae8645d.pathname) || "serve.app.playsaurus.com" === λ38a84ae8645d.hostname && /\/ad-campaigns\//i.test(λ38a84ae8645d.pathname);
   } catch {
     return !1;
   }
 }
 
-function fp(λ712b953fcc58) {
-  const λ6aa75d7576a7 = λ712b953fcc58.request.headers.get("accept") || "";
-  return [ "script", "worker", "sharedworker" ].includes(λ712b953fcc58.request.destination) || /javascript|ecmascript/i.test(λ6aa75d7576a7) ? new Response("", {
+function fp(λ38a84ae8645d) {
+  const λ0c2a5bd9ace5 = λ38a84ae8645d.request.headers.get("accept") || "";
+  return [ "script", "worker", "sharedworker" ].includes(λ38a84ae8645d.request.destination) || /javascript|ecmascript/i.test(λ0c2a5bd9ace5) ? new Response("", {
     status: 200,
     headers: {
       "Content-Type": "application/javascript; charset=utf-8"
     }
-  }) : "style" === λ712b953fcc58.request.destination || /text\/css/i.test(λ6aa75d7576a7) ? new Response("", {
+  }) : "style" === λ38a84ae8645d.request.destination || /text\/css/i.test(λ0c2a5bd9ace5) ? new Response("", {
     status: 200,
     headers: {
       "Content-Type": "text/css; charset=utf-8"
     }
-  }) : "document" === λ712b953fcc58.request.destination || "iframe" === λ712b953fcc58.request.destination ? new Response('<!doctype html><meta charset="utf-8">', {
+  }) : "document" === λ38a84ae8645d.request.destination || "iframe" === λ38a84ae8645d.request.destination ? new Response('<!doctype html><meta charset="utf-8">', {
     status: 200,
     headers: {
       "Content-Type": "text/html; charset=utf-8"
@@ -178,19 +178,19 @@ function fp(λ712b953fcc58) {
   });
 }
 
-function hp(λ712b953fcc58) {
-  if (![ "script", "worker", "sharedworker" ].includes(λ712b953fcc58.request.destination)) return !1;
+function hp(λ38a84ae8645d) {
+  if (![ "script", "worker", "sharedworker" ].includes(λ38a84ae8645d.request.destination)) return !1;
   try {
-    const λ6aa75d7576a7 = new URL(lp(λ712b953fcc58.request.url));
-    return λ6aa75d7576a7.hostname.endsWith("cookielaw.org") || λ6aa75d7576a7.hostname.endsWith("onetrust.com");
+    const λ0c2a5bd9ace5 = new URL(lp(λ38a84ae8645d.request.url));
+    return λ0c2a5bd9ace5.hostname.endsWith("cookielaw.org") || λ0c2a5bd9ace5.hostname.endsWith("onetrust.com");
   } catch {
     return !1;
   }
 }
 
-function gp(λ712b953fcc58) {
-  const λ6aa75d7576a7 = λ712b953fcc58.request.headers.get("accept") || "", λdc499c459718 = new URL(λ712b953fcc58.request.url).pathname, λc53c87f639ab = /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(λdc499c459718);
-  return [ "script", "worker", "sharedworker" ].includes(λ712b953fcc58.request.destination) || /javascript|ecmascript/i.test(λ6aa75d7576a7) || λc53c87f639ab ? new Response("", {
+function gp(λ38a84ae8645d) {
+  const λ0c2a5bd9ace5 = λ38a84ae8645d.request.headers.get("accept") || "", λ609e68d68634 = new URL(λ38a84ae8645d.request.url).pathname, λa063ed38f7c3 = /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(λ609e68d68634);
+  return [ "script", "worker", "sharedworker" ].includes(λ38a84ae8645d.request.destination) || /javascript|ecmascript/i.test(λ0c2a5bd9ace5) || λa063ed38f7c3 ? new Response("", {
     status: 200,
     headers: {
       "Content-Type": "application/javascript; charset=utf-8",
@@ -199,98 +199,98 @@ function gp(λ712b953fcc58) {
   }) : null;
 }
 
-function yp(λ712b953fcc58) {
-  if ("style" === λ712b953fcc58.request.destination) return !0;
-  const λ6aa75d7576a7 = λ712b953fcc58.request.headers.get("accept") || "";
-  if (/text\/css/i.test(λ6aa75d7576a7)) return !0;
+function yp(λ38a84ae8645d) {
+  if ("style" === λ38a84ae8645d.request.destination) return !0;
+  const λ0c2a5bd9ace5 = λ38a84ae8645d.request.headers.get("accept") || "";
+  if (/text\/css/i.test(λ0c2a5bd9ace5)) return !0;
   try {
-    return /\.css(?:$|[/?#])/i.test(new URL(lp(λ712b953fcc58.request.url)).pathname);
+    return /\.css(?:$|[/?#])/i.test(new URL(lp(λ38a84ae8645d.request.url)).pathname);
   } catch {
     return !1;
   }
 }
 
-function wp(λ712b953fcc58) {
-  if ([ "script", "worker", "sharedworker" ].includes(λ712b953fcc58.request.destination)) return !0;
-  const λ6aa75d7576a7 = λ712b953fcc58.request.headers.get("accept") || "";
-  if (/javascript|ecmascript/i.test(λ6aa75d7576a7)) return !0;
+function wp(λ38a84ae8645d) {
+  if ([ "script", "worker", "sharedworker" ].includes(λ38a84ae8645d.request.destination)) return !0;
+  const λ0c2a5bd9ace5 = λ38a84ae8645d.request.headers.get("accept") || "";
+  if (/javascript|ecmascript/i.test(λ0c2a5bd9ace5)) return !0;
   try {
-    return /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(new URL(lp(λ712b953fcc58.request.url)).pathname);
+    return /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(new URL(lp(λ38a84ae8645d.request.url)).pathname);
   } catch {
     return !1;
   }
 }
 
-function vp(λ712b953fcc58) {
-  return yp(λ712b953fcc58) || wp(λ712b953fcc58);
+function vp(λ38a84ae8645d) {
+  return yp(λ38a84ae8645d) || wp(λ38a84ae8645d);
 }
 
-function jp(λ712b953fcc58) {
-  const λ6aa75d7576a7 = λ712b953fcc58?.headers?.get("content-type") || "";
-  return /text\/html|application\/json|text\/json/i.test(λ6aa75d7576a7);
+function jp(λ38a84ae8645d) {
+  const λ0c2a5bd9ace5 = λ38a84ae8645d?.headers?.get("content-type") || "";
+  return /text\/html|application\/json|text\/json/i.test(λ0c2a5bd9ace5);
 }
 
-async function xp(λ712b953fcc58, λ6aa75d7576a7) {
-  if (!vp(λ712b953fcc58)) return λ6aa75d7576a7.fetch(λ712b953fcc58);
-  let λdc499c459718 = null, λc53c87f639ab = null;
-  for (let λa24a1669b214 = 0; λa24a1669b214 < ap.length; λa24a1669b214 += 1) {
-    const λa51d714cd3fb = ap[λa24a1669b214];
-    λa51d714cd3fb && await new Promise(λ712b953fcc58 => setTimeout(λ712b953fcc58, λa51d714cd3fb));
+async function xp(λ38a84ae8645d, λ0c2a5bd9ace5) {
+  if (!vp(λ38a84ae8645d)) return λ0c2a5bd9ace5.fetch(λ38a84ae8645d);
+  let λ609e68d68634 = null, λa063ed38f7c3 = null;
+  for (let λc97472edef25 = 0; λc97472edef25 < ap.length; λc97472edef25 += 1) {
+    const λ455d7e4e4523 = ap[λc97472edef25];
+    λ455d7e4e4523 && await new Promise(λ38a84ae8645d => setTimeout(λ38a84ae8645d, λ455d7e4e4523));
     try {
-      if (λdc499c459718 = await λ6aa75d7576a7.fetch(λ712b953fcc58), λc53c87f639ab = null, 
-      λdc499c459718.status < 400 && !jp(λdc499c459718)) return λdc499c459718;
-    } catch (λ712b953fcc58) {
-      λc53c87f639ab = λ712b953fcc58;
+      if (λ609e68d68634 = await λ0c2a5bd9ace5.fetch(λ38a84ae8645d), λa063ed38f7c3 = null, 
+      λ609e68d68634.status < 400 && !jp(λ609e68d68634)) return λ609e68d68634;
+    } catch (λ38a84ae8645d) {
+      λa063ed38f7c3 = λ38a84ae8645d;
     }
   }
-  if (λdc499c459718) return λdc499c459718;
-  throw λc53c87f639ab || new Error("UV asset request failed");
+  if (λ609e68d68634) return λ609e68d68634;
+  throw λa063ed38f7c3 || new Error("UV asset request failed");
 }
 
-async function _p(λ712b953fcc58, λ6aa75d7576a7) {
-  if (!wp(λ712b953fcc58) || λ6aa75d7576a7.status >= 400) return λ6aa75d7576a7;
-  let λdc499c459718;
+async function _p(λ38a84ae8645d, λ0c2a5bd9ace5) {
+  if (!wp(λ38a84ae8645d) || λ0c2a5bd9ace5.status >= 400) return λ0c2a5bd9ace5;
+  let λ609e68d68634;
   try {
-    λdc499c459718 = new URL(lp(λ712b953fcc58.request.url));
+    λ609e68d68634 = new URL(lp(λ38a84ae8645d.request.url));
   } catch {
-    return λ6aa75d7576a7;
+    return λ0c2a5bd9ace5;
   }
-  if (!/unityloader\.js$/i.test(λdc499c459718.pathname)) return λ6aa75d7576a7;
-  const λc53c87f639ab = await λ6aa75d7576a7.clone().text().catch(() => ""), λa24a1669b214 = "this.callbacks[__uv.$wrap((e.data.id))]";
-  if (!λc53c87f639ab.includes(λa24a1669b214)) return λ6aa75d7576a7;
-  const λa51d714cd3fb = new Headers(λ6aa75d7576a7.headers);
-  λa51d714cd3fb.delete("content-length"), λa51d714cd3fb.delete("content-encoding"), 
-  λa51d714cd3fb.set("cache-control", "no-store");
-  const λ14e59380f997 = `${λa24a1669b214}(e.data.decompressed)`, λ9fbd6d5568f6 = λc53c87f639ab.replaceAll(λ14e59380f997, '(typeof this.callbacks[e.data.id]==="function"&&this.callbacks[e.data.id](e.data.decompressed))').replaceAll(λa24a1669b214, "this.callbacks[e.data.id]");
-  return new Response(λ9fbd6d5568f6, {
-    status: λ6aa75d7576a7.status,
-    statusText: λ6aa75d7576a7.statusText,
-    headers: λa51d714cd3fb
+  if (!/unityloader\.js$/i.test(λ609e68d68634.pathname)) return λ0c2a5bd9ace5;
+  const λa063ed38f7c3 = await λ0c2a5bd9ace5.clone().text().catch(() => ""), λc97472edef25 = "this.callbacks[__uv.$wrap((e.data.id))]";
+  if (!λa063ed38f7c3.includes(λc97472edef25)) return λ0c2a5bd9ace5;
+  const λ455d7e4e4523 = new Headers(λ0c2a5bd9ace5.headers);
+  λ455d7e4e4523.delete("content-length"), λ455d7e4e4523.delete("content-encoding"), 
+  λ455d7e4e4523.set("cache-control", "no-store");
+  const λ5fe771e40580 = `${λc97472edef25}(e.data.decompressed)`, λ6e237ffb2b74 = λa063ed38f7c3.replaceAll(λ5fe771e40580, '(typeof this.callbacks[e.data.id]==="function"&&this.callbacks[e.data.id](e.data.decompressed))').replaceAll(λc97472edef25, "this.callbacks[e.data.id]");
+  return new Response(λ6e237ffb2b74, {
+    status: λ0c2a5bd9ace5.status,
+    statusText: λ0c2a5bd9ace5.statusText,
+    headers: λ455d7e4e4523
   });
 }
 
-function bp(λ712b953fcc58) {
-  const λ6aa75d7576a7 = λ712b953fcc58.request.headers.get("accept") || "", λdc499c459718 = new URL(λ712b953fcc58.request.url).pathname;
-  let λc53c87f639ab = "";
+function bp(λ38a84ae8645d) {
+  const λ0c2a5bd9ace5 = λ38a84ae8645d.request.headers.get("accept") || "", λ609e68d68634 = new URL(λ38a84ae8645d.request.url).pathname;
+  let λa063ed38f7c3 = "";
   try {
-    λc53c87f639ab = new URL(lp(λ712b953fcc58.request.url)).pathname;
+    λa063ed38f7c3 = new URL(lp(λ38a84ae8645d.request.url)).pathname;
   } catch {}
-  return [ "script", "worker", "sharedworker", "style" ].includes(λ712b953fcc58.request.destination) || /javascript|ecmascript|text\/css/i.test(λ6aa75d7576a7) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(λdc499c459718) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(λc53c87f639ab);
+  return [ "script", "worker", "sharedworker", "style" ].includes(λ38a84ae8645d.request.destination) || /javascript|ecmascript|text\/css/i.test(λ0c2a5bd9ace5) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(λ609e68d68634) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(λa063ed38f7c3);
 }
 
-function qp(λ712b953fcc58) {
-  return /^\s*</.test(λ712b953fcc58) || /^\s*\)\]\}'/.test(λ712b953fcc58) || /^\s*\)\]/.test(λ712b953fcc58);
+function qp(λ38a84ae8645d) {
+  return /^\s*</.test(λ38a84ae8645d) || /^\s*\)\]\}'/.test(λ38a84ae8645d) || /^\s*\)\]/.test(λ38a84ae8645d);
 }
 
-async function kp(λ712b953fcc58) {
-  if (mp(λ712b953fcc58)) return fp(λ712b953fcc58);
-  const {engine: λ6aa75d7576a7} = ip(λ712b953fcc58.request.url);
-  if (hp(λ712b953fcc58)) return gp(λ712b953fcc58);
-  const λdc499c459718 = await _p(λ712b953fcc58, await xp(λ712b953fcc58, λ6aa75d7576a7)), λc53c87f639ab = λdc499c459718.headers.get("content-type") || "", λa24a1669b214 = bp(λ712b953fcc58), λa51d714cd3fb = λa24a1669b214 && (λc53c87f639ab.includes("text/html") || λc53c87f639ab.includes("application/json") || λc53c87f639ab.includes("text/json"));
-  return λa24a1669b214 && λa51d714cd3fb ? Response.error() : λa24a1669b214 && λdc499c459718.status >= 400 ? λdc499c459718 : λa24a1669b214 && qp(await λdc499c459718.clone().text().catch(() => "")) ? Response.error() : ([ "document", "iframe", "frame" ].includes(λ712b953fcc58.request.destination), 
-  λdc499c459718);
+async function kp(λ38a84ae8645d) {
+  if (mp(λ38a84ae8645d)) return fp(λ38a84ae8645d);
+  const {engine: λ0c2a5bd9ace5} = ip(λ38a84ae8645d.request.url);
+  if (hp(λ38a84ae8645d)) return gp(λ38a84ae8645d);
+  const λ609e68d68634 = await _p(λ38a84ae8645d, await xp(λ38a84ae8645d, λ0c2a5bd9ace5)), λa063ed38f7c3 = λ609e68d68634.headers.get("content-type") || "", λc97472edef25 = bp(λ38a84ae8645d), λ455d7e4e4523 = λc97472edef25 && (λa063ed38f7c3.includes("text/html") || λa063ed38f7c3.includes("application/json") || λa063ed38f7c3.includes("text/json"));
+  return λc97472edef25 && λ455d7e4e4523 ? Response.error() : λc97472edef25 && λ609e68d68634.status >= 400 ? λ609e68d68634 : λc97472edef25 && qp(await λ609e68d68634.clone().text().catch(() => "")) ? Response.error() : ([ "document", "iframe", "frame" ].includes(λ38a84ae8645d.request.destination), 
+  λ609e68d68634);
 }
 
-self.addEventListener("fetch", λ712b953fcc58 => {
-  λ712b953fcc58.respondWith(kp(λ712b953fcc58).catch(() => Response.error()));
+self.addEventListener("fetch", λ38a84ae8645d => {
+  λ38a84ae8645d.respondWith(kp(λ38a84ae8645d).catch(() => Response.error()));
 });

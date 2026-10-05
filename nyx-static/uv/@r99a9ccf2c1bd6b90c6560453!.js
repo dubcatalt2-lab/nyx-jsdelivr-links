@@ -1,619 +1,619 @@
 "use strict";
 
 (() => {
-  var _82344dbcb8cc = Object.create;
-  var _361d506d96b6 = Object.defineProperty;
-  var _975aace6d4ba = Object.getOwnPropertyDescriptor;
-  var _25c9e28880a6 = Object.getOwnPropertyNames;
-  var _0379e95aaabd = Object.getPrototypeOf, _d92d6e54f516 = Object.prototype.hasOwnProperty;
-  var et = (_82344dbcb8cc, _361d506d96b6) => () => (_361d506d96b6 || _82344dbcb8cc((_361d506d96b6 = {
+  var _8ffa921e40eb = Object.create;
+  var _c331fbac9a70 = Object.defineProperty;
+  var _f9d1bc577e59 = Object.getOwnPropertyDescriptor;
+  var _fdd1e7c9091b = Object.getOwnPropertyNames;
+  var _0c2d9a15385c = Object.getPrototypeOf, _53f7585e9797 = Object.prototype.hasOwnProperty;
+  var et = (_8ffa921e40eb, _c331fbac9a70) => () => (_c331fbac9a70 || _8ffa921e40eb((_c331fbac9a70 = {
     exports: {}
-  }).exports, _361d506d96b6), _361d506d96b6.exports);
-  var tt = (_82344dbcb8cc, _0379e95aaabd, _0d3402e587ac, _cd61c2c759b1) => {
-    if (_0379e95aaabd && typeof _0379e95aaabd == "object" || typeof _0379e95aaabd == "function") for (let _5d2f90686d0b of _25c9e28880a6(_0379e95aaabd)) !_d92d6e54f516.call(_82344dbcb8cc, _5d2f90686d0b) && _5d2f90686d0b !== _0d3402e587ac && _361d506d96b6(_82344dbcb8cc, _5d2f90686d0b, {
-      get: () => _0379e95aaabd[_5d2f90686d0b],
-      enumerable: !(_cd61c2c759b1 = _975aace6d4ba(_0379e95aaabd, _5d2f90686d0b)) || _cd61c2c759b1.enumerable
+  }).exports, _c331fbac9a70), _c331fbac9a70.exports);
+  var tt = (_8ffa921e40eb, _0c2d9a15385c, _e434b087a60b, _c0b656f59244) => {
+    if (_0c2d9a15385c && typeof _0c2d9a15385c == "object" || typeof _0c2d9a15385c == "function") for (let _11297093c840 of _fdd1e7c9091b(_0c2d9a15385c)) !_53f7585e9797.call(_8ffa921e40eb, _11297093c840) && _11297093c840 !== _e434b087a60b && _c331fbac9a70(_8ffa921e40eb, _11297093c840, {
+      get: () => _0c2d9a15385c[_11297093c840],
+      enumerable: !(_c0b656f59244 = _f9d1bc577e59(_0c2d9a15385c, _11297093c840)) || _c0b656f59244.enumerable
     });
-    return _82344dbcb8cc;
+    return _8ffa921e40eb;
   };
-  var m = (_975aace6d4ba, _25c9e28880a6, _d92d6e54f516) => (_d92d6e54f516 = _975aace6d4ba != null ? _82344dbcb8cc(_0379e95aaabd(_975aace6d4ba)) : {}, 
-  tt(_25c9e28880a6 || !_975aace6d4ba || !_975aace6d4ba.__esModule ? _361d506d96b6(_d92d6e54f516, "default", {
-    value: _975aace6d4ba,
+  var m = (_f9d1bc577e59, _fdd1e7c9091b, _53f7585e9797) => (_53f7585e9797 = _f9d1bc577e59 != null ? _8ffa921e40eb(_0c2d9a15385c(_f9d1bc577e59)) : {}, 
+  tt(_fdd1e7c9091b || !_f9d1bc577e59 || !_f9d1bc577e59.__esModule ? _c331fbac9a70(_53f7585e9797, "default", {
+    value: _f9d1bc577e59,
     enumerable: !0
-  }) : _d92d6e54f516, _975aace6d4ba));
-  var _0d3402e587ac = et((_82344dbcb8cc, _361d506d96b6) => {
+  }) : _53f7585e9797, _f9d1bc577e59));
+  var _e434b087a60b = et((_8ffa921e40eb, _c331fbac9a70) => {
     "use strict";
-    var _975aace6d4ba = typeof Reflect == "object" ? Reflect : null, _25c9e28880a6 = _975aace6d4ba && typeof _975aace6d4ba.apply == "function" ? _975aace6d4ba.apply : function(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) {
-      return Function.prototype.apply.call(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba);
-    }, _0379e95aaabd;
-    _975aace6d4ba && typeof _975aace6d4ba.ownKeys == "function" ? _0379e95aaabd = _975aace6d4ba.ownKeys : Object.getOwnPropertySymbols ? _0379e95aaabd = function(_82344dbcb8cc) {
-      return Object.getOwnPropertyNames(_82344dbcb8cc).concat(Object.getOwnPropertySymbols(_82344dbcb8cc));
-    } : _0379e95aaabd = function(_82344dbcb8cc) {
-      return Object.getOwnPropertyNames(_82344dbcb8cc);
+    var _f9d1bc577e59 = typeof Reflect == "object" ? Reflect : null, _fdd1e7c9091b = _f9d1bc577e59 && typeof _f9d1bc577e59.apply == "function" ? _f9d1bc577e59.apply : function(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) {
+      return Function.prototype.apply.call(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59);
+    }, _0c2d9a15385c;
+    _f9d1bc577e59 && typeof _f9d1bc577e59.ownKeys == "function" ? _0c2d9a15385c = _f9d1bc577e59.ownKeys : Object.getOwnPropertySymbols ? _0c2d9a15385c = function(_8ffa921e40eb) {
+      return Object.getOwnPropertyNames(_8ffa921e40eb).concat(Object.getOwnPropertySymbols(_8ffa921e40eb));
+    } : _0c2d9a15385c = function(_8ffa921e40eb) {
+      return Object.getOwnPropertyNames(_8ffa921e40eb);
     };
-    function rt(_82344dbcb8cc) {
-      console && console.warn && console.warn(_82344dbcb8cc);
+    function rt(_8ffa921e40eb) {
+      console && console.warn && console.warn(_8ffa921e40eb);
     }
-    var _d92d6e54f516 = Number.isNaN || function(_82344dbcb8cc) {
-      return _82344dbcb8cc !== _82344dbcb8cc;
+    var _53f7585e9797 = Number.isNaN || function(_8ffa921e40eb) {
+      return _8ffa921e40eb !== _8ffa921e40eb;
     };
     function d() {
       d.init.call(this);
     }
-    _361d506d96b6.exports = d;
-    _361d506d96b6.exports.once = st;
+    _c331fbac9a70.exports = d;
+    _c331fbac9a70.exports.once = st;
     d.EventEmitter = d;
     d.prototype._events = void 0;
     d.prototype._eventsCount = 0;
     d.prototype._maxListeners = void 0;
-    var _0d3402e587ac = 10;
-    function P(_82344dbcb8cc) {
-      if (typeof _82344dbcb8cc != "function") throw new TypeError('The "listener" argument must be of type Function. Received type ' + typeof _82344dbcb8cc);
+    var _e434b087a60b = 10;
+    function P(_8ffa921e40eb) {
+      if (typeof _8ffa921e40eb != "function") throw new TypeError('The "listener" argument must be of type Function. Received type ' + typeof _8ffa921e40eb);
     }
     Object.defineProperty(d, "defaultMaxListeners", {
       enumerable: !0,
       get: function() {
-        return _0d3402e587ac;
+        return _e434b087a60b;
       },
-      set: function(_82344dbcb8cc) {
-        if (typeof _82344dbcb8cc != "number" || _82344dbcb8cc < 0 || _d92d6e54f516(_82344dbcb8cc)) throw new RangeError('The value of "defaultMaxListeners" is out of range. It must be a non-negative number. Received ' + _82344dbcb8cc + ".");
-        _0d3402e587ac = _82344dbcb8cc;
+      set: function(_8ffa921e40eb) {
+        if (typeof _8ffa921e40eb != "number" || _8ffa921e40eb < 0 || _53f7585e9797(_8ffa921e40eb)) throw new RangeError('The value of "defaultMaxListeners" is out of range. It must be a non-negative number. Received ' + _8ffa921e40eb + ".");
+        _e434b087a60b = _8ffa921e40eb;
       }
     });
     d.init = function() {
       (this._events === void 0 || this._events === Object.getPrototypeOf(this)._events) && (this._events = Object.create(null), 
       this._eventsCount = 0), this._maxListeners = this._maxListeners || void 0;
     };
-    d.prototype.setMaxListeners = function(_82344dbcb8cc) {
-      if (typeof _82344dbcb8cc != "number" || _82344dbcb8cc < 0 || _d92d6e54f516(_82344dbcb8cc)) throw new RangeError('The value of "n" is out of range. It must be a non-negative number. Received ' + _82344dbcb8cc + ".");
-      return this._maxListeners = _82344dbcb8cc, this;
+    d.prototype.setMaxListeners = function(_8ffa921e40eb) {
+      if (typeof _8ffa921e40eb != "number" || _8ffa921e40eb < 0 || _53f7585e9797(_8ffa921e40eb)) throw new RangeError('The value of "n" is out of range. It must be a non-negative number. Received ' + _8ffa921e40eb + ".");
+      return this._maxListeners = _8ffa921e40eb, this;
     };
-    function J(_82344dbcb8cc) {
-      return _82344dbcb8cc._maxListeners === void 0 ? d.defaultMaxListeners : _82344dbcb8cc._maxListeners;
+    function J(_8ffa921e40eb) {
+      return _8ffa921e40eb._maxListeners === void 0 ? d.defaultMaxListeners : _8ffa921e40eb._maxListeners;
     }
     d.prototype.getMaxListeners = function() {
       return J(this);
     };
-    d.prototype.emit = function(_82344dbcb8cc) {
-      for (var _361d506d96b6 = [], _975aace6d4ba = 1; _975aace6d4ba < arguments.length; _975aace6d4ba++) _361d506d96b6.push(arguments[_975aace6d4ba]);
-      var _0379e95aaabd = _82344dbcb8cc === "error", _d92d6e54f516 = this._events;
-      if (_d92d6e54f516 !== void 0) _0379e95aaabd = _0379e95aaabd && _d92d6e54f516.error === void 0; else if (!_0379e95aaabd) return !1;
-      if (_0379e95aaabd) {
-        var _0d3402e587ac;
-        if (_361d506d96b6.length > 0 && (_0d3402e587ac = _361d506d96b6[0]), _0d3402e587ac instanceof Error) throw _0d3402e587ac;
-        var _cd61c2c759b1 = new Error("Unhandled error." + (_0d3402e587ac ? " (" + _0d3402e587ac.message + ")" : ""));
-        throw _cd61c2c759b1.context = _0d3402e587ac, _cd61c2c759b1;
+    d.prototype.emit = function(_8ffa921e40eb) {
+      for (var _c331fbac9a70 = [], _f9d1bc577e59 = 1; _f9d1bc577e59 < arguments.length; _f9d1bc577e59++) _c331fbac9a70.push(arguments[_f9d1bc577e59]);
+      var _0c2d9a15385c = _8ffa921e40eb === "error", _53f7585e9797 = this._events;
+      if (_53f7585e9797 !== void 0) _0c2d9a15385c = _0c2d9a15385c && _53f7585e9797.error === void 0; else if (!_0c2d9a15385c) return !1;
+      if (_0c2d9a15385c) {
+        var _e434b087a60b;
+        if (_c331fbac9a70.length > 0 && (_e434b087a60b = _c331fbac9a70[0]), _e434b087a60b instanceof Error) throw _e434b087a60b;
+        var _c0b656f59244 = new Error("Unhandled error." + (_e434b087a60b ? " (" + _e434b087a60b.message + ")" : ""));
+        throw _c0b656f59244.context = _e434b087a60b, _c0b656f59244;
       }
-      var _5d2f90686d0b = _d92d6e54f516[_82344dbcb8cc];
-      if (_5d2f90686d0b === void 0) return !1;
-      if (typeof _5d2f90686d0b == "function") _25c9e28880a6(_5d2f90686d0b, this, _361d506d96b6); else for (var _6a7610c279e1 = _5d2f90686d0b.length, _09844238d1a1 = re(_5d2f90686d0b, _6a7610c279e1), _975aace6d4ba = 0; _975aace6d4ba < _6a7610c279e1; ++_975aace6d4ba) _25c9e28880a6(_09844238d1a1[_975aace6d4ba], this, _361d506d96b6);
+      var _11297093c840 = _53f7585e9797[_8ffa921e40eb];
+      if (_11297093c840 === void 0) return !1;
+      if (typeof _11297093c840 == "function") _fdd1e7c9091b(_11297093c840, this, _c331fbac9a70); else for (var _f417c1c28204 = _11297093c840.length, _b2d9840f3e8e = re(_11297093c840, _f417c1c28204), _f9d1bc577e59 = 0; _f9d1bc577e59 < _f417c1c28204; ++_f9d1bc577e59) _fdd1e7c9091b(_b2d9840f3e8e[_f9d1bc577e59], this, _c331fbac9a70);
       return !0;
     };
-    function Y(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba, _25c9e28880a6) {
-      var _0379e95aaabd, _d92d6e54f516, _0d3402e587ac;
-      if (P(_975aace6d4ba), _d92d6e54f516 = _82344dbcb8cc._events, _d92d6e54f516 === void 0 ? (_d92d6e54f516 = _82344dbcb8cc._events = Object.create(null), 
-      _82344dbcb8cc._eventsCount = 0) : (_d92d6e54f516.newListener !== void 0 && (_82344dbcb8cc.emit("newListener", _361d506d96b6, _975aace6d4ba.listener ? _975aace6d4ba.listener : _975aace6d4ba), 
-      _d92d6e54f516 = _82344dbcb8cc._events), _0d3402e587ac = _d92d6e54f516[_361d506d96b6]), 
-      _0d3402e587ac === void 0) _0d3402e587ac = _d92d6e54f516[_361d506d96b6] = _975aace6d4ba, 
-      ++_82344dbcb8cc._eventsCount; else if (typeof _0d3402e587ac == "function" ? _0d3402e587ac = _d92d6e54f516[_361d506d96b6] = _25c9e28880a6 ? [ _975aace6d4ba, _0d3402e587ac ] : [ _0d3402e587ac, _975aace6d4ba ] : _25c9e28880a6 ? _0d3402e587ac.unshift(_975aace6d4ba) : _0d3402e587ac.push(_975aace6d4ba), 
-      _0379e95aaabd = J(_82344dbcb8cc), _0379e95aaabd > 0 && _0d3402e587ac.length > _0379e95aaabd && !_0d3402e587ac.warned) {
-        _0d3402e587ac.warned = !0;
-        var _cd61c2c759b1 = new Error("Possible EventEmitter memory leak detected. " + _0d3402e587ac.length + " " + String(_361d506d96b6) + " listeners added. Use emitter.setMaxListeners() to increase limit");
-        _cd61c2c759b1.name = "MaxListenersExceededWarning", _cd61c2c759b1.emitter = _82344dbcb8cc, 
-        _cd61c2c759b1.type = _361d506d96b6, _cd61c2c759b1.count = _0d3402e587ac.length, 
-        rt(_cd61c2c759b1);
+    function Y(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59, _fdd1e7c9091b) {
+      var _0c2d9a15385c, _53f7585e9797, _e434b087a60b;
+      if (P(_f9d1bc577e59), _53f7585e9797 = _8ffa921e40eb._events, _53f7585e9797 === void 0 ? (_53f7585e9797 = _8ffa921e40eb._events = Object.create(null), 
+      _8ffa921e40eb._eventsCount = 0) : (_53f7585e9797.newListener !== void 0 && (_8ffa921e40eb.emit("newListener", _c331fbac9a70, _f9d1bc577e59.listener ? _f9d1bc577e59.listener : _f9d1bc577e59), 
+      _53f7585e9797 = _8ffa921e40eb._events), _e434b087a60b = _53f7585e9797[_c331fbac9a70]), 
+      _e434b087a60b === void 0) _e434b087a60b = _53f7585e9797[_c331fbac9a70] = _f9d1bc577e59, 
+      ++_8ffa921e40eb._eventsCount; else if (typeof _e434b087a60b == "function" ? _e434b087a60b = _53f7585e9797[_c331fbac9a70] = _fdd1e7c9091b ? [ _f9d1bc577e59, _e434b087a60b ] : [ _e434b087a60b, _f9d1bc577e59 ] : _fdd1e7c9091b ? _e434b087a60b.unshift(_f9d1bc577e59) : _e434b087a60b.push(_f9d1bc577e59), 
+      _0c2d9a15385c = J(_8ffa921e40eb), _0c2d9a15385c > 0 && _e434b087a60b.length > _0c2d9a15385c && !_e434b087a60b.warned) {
+        _e434b087a60b.warned = !0;
+        var _c0b656f59244 = new Error("Possible EventEmitter memory leak detected. " + _e434b087a60b.length + " " + String(_c331fbac9a70) + " listeners added. Use emitter.setMaxListeners() to increase limit");
+        _c0b656f59244.name = "MaxListenersExceededWarning", _c0b656f59244.emitter = _8ffa921e40eb, 
+        _c0b656f59244.type = _c331fbac9a70, _c0b656f59244.count = _e434b087a60b.length, 
+        rt(_c0b656f59244);
       }
-      return _82344dbcb8cc;
+      return _8ffa921e40eb;
     }
-    d.prototype.addListener = function(_82344dbcb8cc, _361d506d96b6) {
-      return Y(this, _82344dbcb8cc, _361d506d96b6, !1);
+    d.prototype.addListener = function(_8ffa921e40eb, _c331fbac9a70) {
+      return Y(this, _8ffa921e40eb, _c331fbac9a70, !1);
     };
     d.prototype.on = d.prototype.addListener;
-    d.prototype.prependListener = function(_82344dbcb8cc, _361d506d96b6) {
-      return Y(this, _82344dbcb8cc, _361d506d96b6, !0);
+    d.prototype.prependListener = function(_8ffa921e40eb, _c331fbac9a70) {
+      return Y(this, _8ffa921e40eb, _c331fbac9a70, !0);
     };
     function ot() {
       if (!this.fired) return this.target.removeListener(this.type, this.wrapFn), this.fired = !0, 
       arguments.length === 0 ? this.listener.call(this.target) : this.listener.apply(this.target, arguments);
     }
-    function Z(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) {
-      var _25c9e28880a6 = {
+    function Z(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) {
+      var _fdd1e7c9091b = {
         fired: !1,
         wrapFn: void 0,
-        target: _82344dbcb8cc,
-        type: _361d506d96b6,
-        listener: _975aace6d4ba
-      }, _0379e95aaabd = ot.bind(_25c9e28880a6);
-      return _0379e95aaabd.listener = _975aace6d4ba, _25c9e28880a6.wrapFn = _0379e95aaabd, 
-      _0379e95aaabd;
+        target: _8ffa921e40eb,
+        type: _c331fbac9a70,
+        listener: _f9d1bc577e59
+      }, _0c2d9a15385c = ot.bind(_fdd1e7c9091b);
+      return _0c2d9a15385c.listener = _f9d1bc577e59, _fdd1e7c9091b.wrapFn = _0c2d9a15385c, 
+      _0c2d9a15385c;
     }
-    d.prototype.once = function(_82344dbcb8cc, _361d506d96b6) {
-      return P(_361d506d96b6), this.on(_82344dbcb8cc, Z(this, _82344dbcb8cc, _361d506d96b6)), 
+    d.prototype.once = function(_8ffa921e40eb, _c331fbac9a70) {
+      return P(_c331fbac9a70), this.on(_8ffa921e40eb, Z(this, _8ffa921e40eb, _c331fbac9a70)), 
       this;
     };
-    d.prototype.prependOnceListener = function(_82344dbcb8cc, _361d506d96b6) {
-      return P(_361d506d96b6), this.prependListener(_82344dbcb8cc, Z(this, _82344dbcb8cc, _361d506d96b6)), 
+    d.prototype.prependOnceListener = function(_8ffa921e40eb, _c331fbac9a70) {
+      return P(_c331fbac9a70), this.prependListener(_8ffa921e40eb, Z(this, _8ffa921e40eb, _c331fbac9a70)), 
       this;
     };
-    d.prototype.removeListener = function(_82344dbcb8cc, _361d506d96b6) {
-      var _975aace6d4ba, _25c9e28880a6, _0379e95aaabd, _d92d6e54f516, _0d3402e587ac;
-      if (P(_361d506d96b6), _25c9e28880a6 = this._events, _25c9e28880a6 === void 0) return this;
-      if (_975aace6d4ba = _25c9e28880a6[_82344dbcb8cc], _975aace6d4ba === void 0) return this;
-      if (_975aace6d4ba === _361d506d96b6 || _975aace6d4ba.listener === _361d506d96b6) --this._eventsCount === 0 ? this._events = Object.create(null) : (delete _25c9e28880a6[_82344dbcb8cc], 
-      _25c9e28880a6.removeListener && this.emit("removeListener", _82344dbcb8cc, _975aace6d4ba.listener || _361d506d96b6)); else if (typeof _975aace6d4ba != "function") {
-        for (_0379e95aaabd = -1, _d92d6e54f516 = _975aace6d4ba.length - 1; _d92d6e54f516 >= 0; _d92d6e54f516--) if (_975aace6d4ba[_d92d6e54f516] === _361d506d96b6 || _975aace6d4ba[_d92d6e54f516].listener === _361d506d96b6) {
-          _0d3402e587ac = _975aace6d4ba[_d92d6e54f516].listener, _0379e95aaabd = _d92d6e54f516;
+    d.prototype.removeListener = function(_8ffa921e40eb, _c331fbac9a70) {
+      var _f9d1bc577e59, _fdd1e7c9091b, _0c2d9a15385c, _53f7585e9797, _e434b087a60b;
+      if (P(_c331fbac9a70), _fdd1e7c9091b = this._events, _fdd1e7c9091b === void 0) return this;
+      if (_f9d1bc577e59 = _fdd1e7c9091b[_8ffa921e40eb], _f9d1bc577e59 === void 0) return this;
+      if (_f9d1bc577e59 === _c331fbac9a70 || _f9d1bc577e59.listener === _c331fbac9a70) --this._eventsCount === 0 ? this._events = Object.create(null) : (delete _fdd1e7c9091b[_8ffa921e40eb], 
+      _fdd1e7c9091b.removeListener && this.emit("removeListener", _8ffa921e40eb, _f9d1bc577e59.listener || _c331fbac9a70)); else if (typeof _f9d1bc577e59 != "function") {
+        for (_0c2d9a15385c = -1, _53f7585e9797 = _f9d1bc577e59.length - 1; _53f7585e9797 >= 0; _53f7585e9797--) if (_f9d1bc577e59[_53f7585e9797] === _c331fbac9a70 || _f9d1bc577e59[_53f7585e9797].listener === _c331fbac9a70) {
+          _e434b087a60b = _f9d1bc577e59[_53f7585e9797].listener, _0c2d9a15385c = _53f7585e9797;
           break;
         }
-        if (_0379e95aaabd < 0) return this;
-        _0379e95aaabd === 0 ? _975aace6d4ba.shift() : nt(_975aace6d4ba, _0379e95aaabd), 
-        _975aace6d4ba.length === 1 && (_25c9e28880a6[_82344dbcb8cc] = _975aace6d4ba[0]), 
-        _25c9e28880a6.removeListener !== void 0 && this.emit("removeListener", _82344dbcb8cc, _0d3402e587ac || _361d506d96b6);
+        if (_0c2d9a15385c < 0) return this;
+        _0c2d9a15385c === 0 ? _f9d1bc577e59.shift() : nt(_f9d1bc577e59, _0c2d9a15385c), 
+        _f9d1bc577e59.length === 1 && (_fdd1e7c9091b[_8ffa921e40eb] = _f9d1bc577e59[0]), 
+        _fdd1e7c9091b.removeListener !== void 0 && this.emit("removeListener", _8ffa921e40eb, _e434b087a60b || _c331fbac9a70);
       }
       return this;
     };
     d.prototype.off = d.prototype.removeListener;
-    d.prototype.removeAllListeners = function(_82344dbcb8cc) {
-      var _361d506d96b6, _975aace6d4ba, _25c9e28880a6;
-      if (_975aace6d4ba = this._events, _975aace6d4ba === void 0) return this;
-      if (_975aace6d4ba.removeListener === void 0) return arguments.length === 0 ? (this._events = Object.create(null), 
-      this._eventsCount = 0) : _975aace6d4ba[_82344dbcb8cc] !== void 0 && (--this._eventsCount === 0 ? this._events = Object.create(null) : delete _975aace6d4ba[_82344dbcb8cc]), 
+    d.prototype.removeAllListeners = function(_8ffa921e40eb) {
+      var _c331fbac9a70, _f9d1bc577e59, _fdd1e7c9091b;
+      if (_f9d1bc577e59 = this._events, _f9d1bc577e59 === void 0) return this;
+      if (_f9d1bc577e59.removeListener === void 0) return arguments.length === 0 ? (this._events = Object.create(null), 
+      this._eventsCount = 0) : _f9d1bc577e59[_8ffa921e40eb] !== void 0 && (--this._eventsCount === 0 ? this._events = Object.create(null) : delete _f9d1bc577e59[_8ffa921e40eb]), 
       this;
       if (arguments.length === 0) {
-        var _0379e95aaabd = Object.keys(_975aace6d4ba), _d92d6e54f516;
-        for (_25c9e28880a6 = 0; _25c9e28880a6 < _0379e95aaabd.length; ++_25c9e28880a6) _d92d6e54f516 = _0379e95aaabd[_25c9e28880a6], 
-        _d92d6e54f516 !== "removeListener" && this.removeAllListeners(_d92d6e54f516);
+        var _0c2d9a15385c = Object.keys(_f9d1bc577e59), _53f7585e9797;
+        for (_fdd1e7c9091b = 0; _fdd1e7c9091b < _0c2d9a15385c.length; ++_fdd1e7c9091b) _53f7585e9797 = _0c2d9a15385c[_fdd1e7c9091b], 
+        _53f7585e9797 !== "removeListener" && this.removeAllListeners(_53f7585e9797);
         return this.removeAllListeners("removeListener"), this._events = Object.create(null), 
         this._eventsCount = 0, this;
       }
-      if (_361d506d96b6 = _975aace6d4ba[_82344dbcb8cc], typeof _361d506d96b6 == "function") this.removeListener(_82344dbcb8cc, _361d506d96b6); else if (_361d506d96b6 !== void 0) for (_25c9e28880a6 = _361d506d96b6.length - 1; _25c9e28880a6 >= 0; _25c9e28880a6--) this.removeListener(_82344dbcb8cc, _361d506d96b6[_25c9e28880a6]);
+      if (_c331fbac9a70 = _f9d1bc577e59[_8ffa921e40eb], typeof _c331fbac9a70 == "function") this.removeListener(_8ffa921e40eb, _c331fbac9a70); else if (_c331fbac9a70 !== void 0) for (_fdd1e7c9091b = _c331fbac9a70.length - 1; _fdd1e7c9091b >= 0; _fdd1e7c9091b--) this.removeListener(_8ffa921e40eb, _c331fbac9a70[_fdd1e7c9091b]);
       return this;
     };
-    function ee(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) {
-      var _25c9e28880a6 = _82344dbcb8cc._events;
-      if (_25c9e28880a6 === void 0) return [];
-      var _0379e95aaabd = _25c9e28880a6[_361d506d96b6];
-      return _0379e95aaabd === void 0 ? [] : typeof _0379e95aaabd == "function" ? _975aace6d4ba ? [ _0379e95aaabd.listener || _0379e95aaabd ] : [ _0379e95aaabd ] : _975aace6d4ba ? it(_0379e95aaabd) : re(_0379e95aaabd, _0379e95aaabd.length);
+    function ee(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) {
+      var _fdd1e7c9091b = _8ffa921e40eb._events;
+      if (_fdd1e7c9091b === void 0) return [];
+      var _0c2d9a15385c = _fdd1e7c9091b[_c331fbac9a70];
+      return _0c2d9a15385c === void 0 ? [] : typeof _0c2d9a15385c == "function" ? _f9d1bc577e59 ? [ _0c2d9a15385c.listener || _0c2d9a15385c ] : [ _0c2d9a15385c ] : _f9d1bc577e59 ? it(_0c2d9a15385c) : re(_0c2d9a15385c, _0c2d9a15385c.length);
     }
-    d.prototype.listeners = function(_82344dbcb8cc) {
-      return ee(this, _82344dbcb8cc, !0);
+    d.prototype.listeners = function(_8ffa921e40eb) {
+      return ee(this, _8ffa921e40eb, !0);
     };
-    d.prototype.rawListeners = function(_82344dbcb8cc) {
-      return ee(this, _82344dbcb8cc, !1);
+    d.prototype.rawListeners = function(_8ffa921e40eb) {
+      return ee(this, _8ffa921e40eb, !1);
     };
-    d.listenerCount = function(_82344dbcb8cc, _361d506d96b6) {
-      return typeof _82344dbcb8cc.listenerCount == "function" ? _82344dbcb8cc.listenerCount(_361d506d96b6) : te.call(_82344dbcb8cc, _361d506d96b6);
+    d.listenerCount = function(_8ffa921e40eb, _c331fbac9a70) {
+      return typeof _8ffa921e40eb.listenerCount == "function" ? _8ffa921e40eb.listenerCount(_c331fbac9a70) : te.call(_8ffa921e40eb, _c331fbac9a70);
     };
     d.prototype.listenerCount = te;
-    function te(_82344dbcb8cc) {
-      var _361d506d96b6 = this._events;
-      if (_361d506d96b6 !== void 0) {
-        var _975aace6d4ba = _361d506d96b6[_82344dbcb8cc];
-        if (typeof _975aace6d4ba == "function") return 1;
-        if (_975aace6d4ba !== void 0) return _975aace6d4ba.length;
+    function te(_8ffa921e40eb) {
+      var _c331fbac9a70 = this._events;
+      if (_c331fbac9a70 !== void 0) {
+        var _f9d1bc577e59 = _c331fbac9a70[_8ffa921e40eb];
+        if (typeof _f9d1bc577e59 == "function") return 1;
+        if (_f9d1bc577e59 !== void 0) return _f9d1bc577e59.length;
       }
       return 0;
     }
     d.prototype.eventNames = function() {
-      return this._eventsCount > 0 ? _0379e95aaabd(this._events) : [];
+      return this._eventsCount > 0 ? _0c2d9a15385c(this._events) : [];
     };
-    function re(_82344dbcb8cc, _361d506d96b6) {
-      for (var _975aace6d4ba = new Array(_361d506d96b6), _25c9e28880a6 = 0; _25c9e28880a6 < _361d506d96b6; ++_25c9e28880a6) _975aace6d4ba[_25c9e28880a6] = _82344dbcb8cc[_25c9e28880a6];
-      return _975aace6d4ba;
+    function re(_8ffa921e40eb, _c331fbac9a70) {
+      for (var _f9d1bc577e59 = new Array(_c331fbac9a70), _fdd1e7c9091b = 0; _fdd1e7c9091b < _c331fbac9a70; ++_fdd1e7c9091b) _f9d1bc577e59[_fdd1e7c9091b] = _8ffa921e40eb[_fdd1e7c9091b];
+      return _f9d1bc577e59;
     }
-    function nt(_82344dbcb8cc, _361d506d96b6) {
-      for (;_361d506d96b6 + 1 < _82344dbcb8cc.length; _361d506d96b6++) _82344dbcb8cc[_361d506d96b6] = _82344dbcb8cc[_361d506d96b6 + 1];
-      _82344dbcb8cc.pop();
+    function nt(_8ffa921e40eb, _c331fbac9a70) {
+      for (;_c331fbac9a70 + 1 < _8ffa921e40eb.length; _c331fbac9a70++) _8ffa921e40eb[_c331fbac9a70] = _8ffa921e40eb[_c331fbac9a70 + 1];
+      _8ffa921e40eb.pop();
     }
-    function it(_82344dbcb8cc) {
-      for (var _361d506d96b6 = new Array(_82344dbcb8cc.length), _975aace6d4ba = 0; _975aace6d4ba < _361d506d96b6.length; ++_975aace6d4ba) _361d506d96b6[_975aace6d4ba] = _82344dbcb8cc[_975aace6d4ba].listener || _82344dbcb8cc[_975aace6d4ba];
-      return _361d506d96b6;
+    function it(_8ffa921e40eb) {
+      for (var _c331fbac9a70 = new Array(_8ffa921e40eb.length), _f9d1bc577e59 = 0; _f9d1bc577e59 < _c331fbac9a70.length; ++_f9d1bc577e59) _c331fbac9a70[_f9d1bc577e59] = _8ffa921e40eb[_f9d1bc577e59].listener || _8ffa921e40eb[_f9d1bc577e59];
+      return _c331fbac9a70;
     }
-    function st(_82344dbcb8cc, _361d506d96b6) {
-      return new Promise(function(_975aace6d4ba, _25c9e28880a6) {
-        function n(_975aace6d4ba) {
-          _82344dbcb8cc.removeListener(_361d506d96b6, o), _25c9e28880a6(_975aace6d4ba);
+    function st(_8ffa921e40eb, _c331fbac9a70) {
+      return new Promise(function(_f9d1bc577e59, _fdd1e7c9091b) {
+        function n(_f9d1bc577e59) {
+          _8ffa921e40eb.removeListener(_c331fbac9a70, o), _fdd1e7c9091b(_f9d1bc577e59);
         }
         function o() {
-          typeof _82344dbcb8cc.removeListener == "function" && _82344dbcb8cc.removeListener("error", n), 
-          _975aace6d4ba([].slice.call(arguments));
+          typeof _8ffa921e40eb.removeListener == "function" && _8ffa921e40eb.removeListener("error", n), 
+          _f9d1bc577e59([].slice.call(arguments));
         }
-        oe(_82344dbcb8cc, _361d506d96b6, o, {
+        oe(_8ffa921e40eb, _c331fbac9a70, o, {
           once: !0
-        }), _361d506d96b6 !== "error" && at(_82344dbcb8cc, n, {
+        }), _c331fbac9a70 !== "error" && at(_8ffa921e40eb, n, {
           once: !0
         });
       });
     }
-    function at(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) {
-      typeof _82344dbcb8cc.on == "function" && oe(_82344dbcb8cc, "error", _361d506d96b6, _975aace6d4ba);
+    function at(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) {
+      typeof _8ffa921e40eb.on == "function" && oe(_8ffa921e40eb, "error", _c331fbac9a70, _f9d1bc577e59);
     }
-    function oe(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba, _25c9e28880a6) {
-      if (typeof _82344dbcb8cc.on == "function") _25c9e28880a6.once ? _82344dbcb8cc.once(_361d506d96b6, _975aace6d4ba) : _82344dbcb8cc.on(_361d506d96b6, _975aace6d4ba); else if (typeof _82344dbcb8cc.addEventListener == "function") _82344dbcb8cc.addEventListener(_361d506d96b6, function n(_0379e95aaabd) {
-        _25c9e28880a6.once && _82344dbcb8cc.removeEventListener(_361d506d96b6, n), _975aace6d4ba(_0379e95aaabd);
-      }); else throw new TypeError('The "emitter" argument must be of type EventEmitter. Received type ' + typeof _82344dbcb8cc);
+    function oe(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59, _fdd1e7c9091b) {
+      if (typeof _8ffa921e40eb.on == "function") _fdd1e7c9091b.once ? _8ffa921e40eb.once(_c331fbac9a70, _f9d1bc577e59) : _8ffa921e40eb.on(_c331fbac9a70, _f9d1bc577e59); else if (typeof _8ffa921e40eb.addEventListener == "function") _8ffa921e40eb.addEventListener(_c331fbac9a70, function n(_0c2d9a15385c) {
+        _fdd1e7c9091b.once && _8ffa921e40eb.removeEventListener(_c331fbac9a70, n), _f9d1bc577e59(_0c2d9a15385c);
+      }); else throw new TypeError('The "emitter" argument must be of type EventEmitter. Received type ' + typeof _8ffa921e40eb);
     }
   });
-  var _cd61c2c759b1 = m(_0d3402e587ac(), 1);
-  var _5d2f90686d0b = class {
-    #_82344dbcb8cc;
-    #_361d506d96b6;
-    constructor(_82344dbcb8cc = {}, _361d506d96b6 = null, _975aace6d4ba = null) {
-      this.#_82344dbcb8cc = !1, this.#_361d506d96b6 = null, this.data = _82344dbcb8cc, 
-      this.target = _361d506d96b6, this.that = _975aace6d4ba;
+  var _c0b656f59244 = m(_e434b087a60b(), 1);
+  var _11297093c840 = class {
+    #_8ffa921e40eb;
+    #_c331fbac9a70;
+    constructor(_8ffa921e40eb = {}, _c331fbac9a70 = null, _f9d1bc577e59 = null) {
+      this.#_8ffa921e40eb = !1, this.#_c331fbac9a70 = null, this.data = _8ffa921e40eb, 
+      this.target = _c331fbac9a70, this.that = _f9d1bc577e59;
     }
     get intercepted() {
-      return this.#_82344dbcb8cc;
+      return this.#_8ffa921e40eb;
     }
     get returnValue() {
-      return this.#_361d506d96b6;
+      return this.#_c331fbac9a70;
     }
-    respondWith(_82344dbcb8cc) {
-      this.#_361d506d96b6 = _82344dbcb8cc, this.#_82344dbcb8cc = !0;
+    respondWith(_8ffa921e40eb) {
+      this.#_c331fbac9a70 = _8ffa921e40eb, this.#_8ffa921e40eb = !0;
     }
-  }, _6a7610c279e1 = _5d2f90686d0b;
-  var _09844238d1a1 = class extends _cd61c2c759b1.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.document = this.window.document, 
+  }, _f417c1c28204 = _11297093c840;
+  var _b2d9840f3e8e = class extends _c0b656f59244.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.document = this.window.document, 
       this.Document = this.window.Document || {}, this.DOMParser = this.window.DOMParser || {}, 
       this.docProto = this.Document.prototype || {}, this.domProto = this.DOMParser.prototype || {}, 
-      this.title = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.docProto, "title"), 
-      this.cookie = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.docProto, "cookie"), 
-      this.referrer = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.docProto, "referrer"), 
-      this.domain = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.docProto, "domain"), 
-      this.documentURI = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.docProto, "documentURI"), 
+      this.title = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.docProto, "title"), 
+      this.cookie = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.docProto, "cookie"), 
+      this.referrer = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.docProto, "referrer"), 
+      this.domain = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.docProto, "domain"), 
+      this.documentURI = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.docProto, "documentURI"), 
       this.write = this.docProto.write, this.writeln = this.docProto.writeln, this.querySelector = this.docProto.querySelector, 
       this.querySelectorAll = this.docProto.querySelectorAll, this.parseFromString = this.domProto.parseFromString, 
-      this.URL = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.docProto, "URL");
+      this.URL = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.docProto, "URL");
     }
     overrideParseFromString() {
-      this.ctx.override(this.domProto, "parseFromString", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          string: _25c9e28880a6,
-          type: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("parseFromString", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.string, _d92d6e54f516.data.type);
+      this.ctx.override(this.domProto, "parseFromString", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          string: _fdd1e7c9091b,
+          type: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("parseFromString", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.string, _53f7585e9797.data.type);
       });
     }
     overrideQuerySelector() {
-      this.ctx.override(this.docProto, "querySelector", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          selectors: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("querySelector", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.selectors);
+      this.ctx.override(this.docProto, "querySelector", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          selectors: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("querySelector", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.selectors);
       });
     }
     overrideDomain() {
       this.ctx.overrideDescriptor(this.docProto, "domain", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("getDomain", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("getDomain", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         },
-        set: (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba]) => {
-          let _25c9e28880a6 = new _6a7610c279e1({
-            value: _975aace6d4ba
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("setDomain", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : _25c9e28880a6.target.call(_25c9e28880a6.that, _25c9e28880a6.data.value);
+        set: (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59]) => {
+          let _fdd1e7c9091b = new _f417c1c28204({
+            value: _f9d1bc577e59
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("setDomain", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : _fdd1e7c9091b.target.call(_fdd1e7c9091b.that, _fdd1e7c9091b.data.value);
         }
       });
     }
     overrideReferrer() {
       this.ctx.overrideDescriptor(this.docProto, "referrer", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("referrer", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("referrer", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       });
     }
     overrideCreateTreeWalker() {
-      this.ctx.override(this.docProto, "createTreeWalker", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd = 4294967295, _d92d6e54f516, _0d3402e587ac] = _975aace6d4ba, _cd61c2c759b1 = new _6a7610c279e1({
-          root: _25c9e28880a6,
-          show: _0379e95aaabd,
-          filter: _d92d6e54f516,
-          expandEntityReferences: _0d3402e587ac
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("createTreeWalker", _cd61c2c759b1), _cd61c2c759b1.intercepted ? _cd61c2c759b1.returnValue : _cd61c2c759b1.target.call(_cd61c2c759b1.that, _cd61c2c759b1.data.root, _cd61c2c759b1.data.show, _cd61c2c759b1.data.filter, _cd61c2c759b1.data.expandEntityReferences);
+      this.ctx.override(this.docProto, "createTreeWalker", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c = 4294967295, _53f7585e9797, _e434b087a60b] = _f9d1bc577e59, _c0b656f59244 = new _f417c1c28204({
+          root: _fdd1e7c9091b,
+          show: _0c2d9a15385c,
+          filter: _53f7585e9797,
+          expandEntityReferences: _e434b087a60b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("createTreeWalker", _c0b656f59244), _c0b656f59244.intercepted ? _c0b656f59244.returnValue : _c0b656f59244.target.call(_c0b656f59244.that, _c0b656f59244.data.root, _c0b656f59244.data.show, _c0b656f59244.data.filter, _c0b656f59244.data.expandEntityReferences);
       });
     }
     overrideWrite() {
-      this.ctx.override(this.docProto, "write", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [..._25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          html: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("write", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.apply(_0379e95aaabd.that, _0379e95aaabd.data.html);
-      }), this.ctx.override(this.docProto, "writeln", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [..._25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          html: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("writeln", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.apply(_0379e95aaabd.that, _0379e95aaabd.data.html);
+      this.ctx.override(this.docProto, "write", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [..._fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          html: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("write", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.apply(_0c2d9a15385c.that, _0c2d9a15385c.data.html);
+      }), this.ctx.override(this.docProto, "writeln", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [..._fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          html: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("writeln", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.apply(_0c2d9a15385c.that, _0c2d9a15385c.data.html);
       });
     }
     overrideDocumentURI() {
       this.ctx.overrideDescriptor(this.docProto, "documentURI", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("documentURI", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("documentURI", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       });
     }
     overrideURL() {
       this.ctx.overrideDescriptor(this.docProto, "URL", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("url", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("url", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       });
     }
     overrideCookie() {
       this.ctx.overrideDescriptor(this.docProto, "cookie", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("getCookie", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("getCookie", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         },
-        set: (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba]) => {
-          let _25c9e28880a6 = new _6a7610c279e1({
-            value: _975aace6d4ba
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("setCookie", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : _25c9e28880a6.target.call(_25c9e28880a6.that, _25c9e28880a6.data.value);
+        set: (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59]) => {
+          let _fdd1e7c9091b = new _f417c1c28204({
+            value: _f9d1bc577e59
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("setCookie", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : _fdd1e7c9091b.target.call(_fdd1e7c9091b.that, _fdd1e7c9091b.data.value);
         }
       });
     }
     overrideTitle() {
       this.ctx.overrideDescriptor(this.docProto, "title", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("getTitle", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("getTitle", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         },
-        set: (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba]) => {
-          let _25c9e28880a6 = new _6a7610c279e1({
-            value: _975aace6d4ba
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("setTitle", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : _25c9e28880a6.target.call(_25c9e28880a6.that, _25c9e28880a6.data.value);
+        set: (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59]) => {
+          let _fdd1e7c9091b = new _f417c1c28204({
+            value: _f9d1bc577e59
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("setTitle", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : _fdd1e7c9091b.target.call(_fdd1e7c9091b.that, _fdd1e7c9091b.data.value);
         }
       });
     }
-  }, _c94bb5133033 = _09844238d1a1;
-  var _45f4c4d04d7a = m(_0d3402e587ac(), 1);
-  var _ff483495f71c = class extends _45f4c4d04d7a.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.Audio = this.window.Audio, 
+  }, _432d3a50f9bf = _b2d9840f3e8e;
+  var _6fa51b82c788 = m(_e434b087a60b(), 1);
+  var _0ef1c0177571 = class extends _6fa51b82c788.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.Audio = this.window.Audio, 
       this.Element = this.window.Element, this.elemProto = this.Element ? this.Element.prototype : {}, 
-      this.innerHTML = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.elemProto, "innerHTML"), 
-      this.outerHTML = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.elemProto, "outerHTML"), 
+      this.innerHTML = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.elemProto, "innerHTML"), 
+      this.outerHTML = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.elemProto, "outerHTML"), 
       this.setAttribute = this.elemProto.setAttribute, this.getAttribute = this.elemProto.getAttribute, 
       this.removeAttribute = this.elemProto.removeAttribute, this.hasAttribute = this.elemProto.hasAttribute, 
       this.querySelector = this.elemProto.querySelector, this.querySelectorAll = this.elemProto.querySelectorAll, 
       this.insertAdjacentHTML = this.elemProto.insertAdjacentHTML, this.insertAdjacentText = this.elemProto.insertAdjacentText;
     }
     overrideQuerySelector() {
-      this.ctx.override(this.elemProto, "querySelector", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          selectors: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("querySelector", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.selectors);
+      this.ctx.override(this.elemProto, "querySelector", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          selectors: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("querySelector", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.selectors);
       });
     }
     overrideAttribute() {
-      this.ctx.override(this.elemProto, "getAttribute", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          name: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("getAttribute", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.name);
-      }), this.ctx.override(this.elemProto, "setAttribute", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          name: _25c9e28880a6,
-          value: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("setAttribute", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.name, _d92d6e54f516.data.value);
-      }), this.ctx.override(this.elemProto, "hasAttribute", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          name: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("hasAttribute", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.name);
-      }), this.ctx.override(this.elemProto, "removeAttribute", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          name: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("removeAttribute", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.name);
+      this.ctx.override(this.elemProto, "getAttribute", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          name: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("getAttribute", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.name);
+      }), this.ctx.override(this.elemProto, "setAttribute", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          name: _fdd1e7c9091b,
+          value: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("setAttribute", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.name, _53f7585e9797.data.value);
+      }), this.ctx.override(this.elemProto, "hasAttribute", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          name: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("hasAttribute", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.name);
+      }), this.ctx.override(this.elemProto, "removeAttribute", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          name: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("removeAttribute", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.name);
       });
     }
     overrideAudio() {
-      this.ctx.override(this.window, "Audio", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return new _82344dbcb8cc(..._975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          url: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("audio", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : new _0379e95aaabd.target(_0379e95aaabd.data.url);
+      this.ctx.override(this.window, "Audio", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return new _8ffa921e40eb(..._f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          url: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("audio", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : new _0c2d9a15385c.target(_0c2d9a15385c.data.url);
       }, !0);
     }
     overrideHtml() {
       this.hookProperty(this.Element, "innerHTML", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("getInnerHTML", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("getInnerHTML", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         },
-        set: (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba]) => {
-          let _25c9e28880a6 = new _6a7610c279e1({
-            value: _975aace6d4ba
-          }, _82344dbcb8cc, _361d506d96b6);
-          if (this.emit("setInnerHTML", _25c9e28880a6), _25c9e28880a6.intercepted) return _25c9e28880a6.returnValue;
-          _82344dbcb8cc.call(_361d506d96b6, _25c9e28880a6.data.value);
+        set: (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59]) => {
+          let _fdd1e7c9091b = new _f417c1c28204({
+            value: _f9d1bc577e59
+          }, _8ffa921e40eb, _c331fbac9a70);
+          if (this.emit("setInnerHTML", _fdd1e7c9091b), _fdd1e7c9091b.intercepted) return _fdd1e7c9091b.returnValue;
+          _8ffa921e40eb.call(_c331fbac9a70, _fdd1e7c9091b.data.value);
         }
       }), this.hookProperty(this.Element, "outerHTML", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("getOuterHTML", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("getOuterHTML", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         },
-        set: (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba]) => {
-          let _25c9e28880a6 = new _6a7610c279e1({
-            value: _975aace6d4ba
-          }, _82344dbcb8cc, _361d506d96b6);
-          if (this.emit("setOuterHTML", _25c9e28880a6), _25c9e28880a6.intercepted) return _25c9e28880a6.returnValue;
-          _82344dbcb8cc.call(_361d506d96b6, _25c9e28880a6.data.value);
+        set: (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59]) => {
+          let _fdd1e7c9091b = new _f417c1c28204({
+            value: _f9d1bc577e59
+          }, _8ffa921e40eb, _c331fbac9a70);
+          if (this.emit("setOuterHTML", _fdd1e7c9091b), _fdd1e7c9091b.intercepted) return _fdd1e7c9091b.returnValue;
+          _8ffa921e40eb.call(_c331fbac9a70, _fdd1e7c9091b.data.value);
         }
       });
     }
     overrideInsertAdjacentHTML() {
-      this.ctx.override(this.elemProto, "insertAdjacentHTML", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          position: _25c9e28880a6,
-          html: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("insertAdjacentHTML", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.position, _d92d6e54f516.data.html);
+      this.ctx.override(this.elemProto, "insertAdjacentHTML", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          position: _fdd1e7c9091b,
+          html: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("insertAdjacentHTML", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.position, _53f7585e9797.data.html);
       });
     }
     overrideInsertAdjacentText() {
-      this.ctx.override(this.elemProto, "insertAdjacentText", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          position: _25c9e28880a6,
-          text: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("insertAdjacentText", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.position, _d92d6e54f516.data.text);
+      this.ctx.override(this.elemProto, "insertAdjacentText", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          position: _fdd1e7c9091b,
+          text: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("insertAdjacentText", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.position, _53f7585e9797.data.text);
       });
     }
-    hookProperty(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) {
-      if (!_82344dbcb8cc) return !1;
-      if (this.ctx.nativeMethods.isArray(_82344dbcb8cc)) {
-        for (let _25c9e28880a6 of _82344dbcb8cc) this.hookProperty(_25c9e28880a6, _361d506d96b6, _975aace6d4ba);
+    hookProperty(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) {
+      if (!_8ffa921e40eb) return !1;
+      if (this.ctx.nativeMethods.isArray(_8ffa921e40eb)) {
+        for (let _fdd1e7c9091b of _8ffa921e40eb) this.hookProperty(_fdd1e7c9091b, _c331fbac9a70, _f9d1bc577e59);
         return !0;
       }
-      let _25c9e28880a6 = _82344dbcb8cc.prototype;
-      return this.ctx.overrideDescriptor(_25c9e28880a6, _361d506d96b6, _975aace6d4ba), 
+      let _fdd1e7c9091b = _8ffa921e40eb.prototype;
+      return this.ctx.overrideDescriptor(_fdd1e7c9091b, _c331fbac9a70, _f9d1bc577e59), 
       !0;
     }
-  }, _15005d961edf = _ff483495f71c;
-  var _e0d4ede0a55d = m(_0d3402e587ac(), 1);
-  var _53c812af4364 = class extends _e0d4ede0a55d.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.Node = _82344dbcb8cc.window.Node || {}, 
+  }, _b03f52af3e7e = _0ef1c0177571;
+  var _72660037b31e = m(_e434b087a60b(), 1);
+  var _d6b4d252c716 = class extends _72660037b31e.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.Node = _8ffa921e40eb.window.Node || {}, 
       this.nodeProto = this.Node.prototype || {}, this.compareDocumentPosition = this.nodeProto.compareDocumentPosition, 
       this.contains = this.nodeProto.contains, this.insertBefore = this.nodeProto.insertBefore, 
       this.replaceChild = this.nodeProto.replaceChild, this.append = this.nodeProto.append, 
       this.appendChild = this.nodeProto.appendChild, this.removeChild = this.nodeProto.removeChild, 
-      this.textContent = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "textContent"), 
-      this.parentNode = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "parentNode"), 
-      this.parentElement = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "parentElement"), 
-      this.childNodes = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "childNodes"), 
-      this.baseURI = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "baseURI"), 
-      this.previousSibling = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "previousSibling"), 
-      this.ownerDocument = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "ownerDocument");
+      this.textContent = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "textContent"), 
+      this.parentNode = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "parentNode"), 
+      this.parentElement = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "parentElement"), 
+      this.childNodes = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "childNodes"), 
+      this.baseURI = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "baseURI"), 
+      this.previousSibling = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "previousSibling"), 
+      this.ownerDocument = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.nodeProto, "ownerDocument");
     }
     overrideTextContent() {
       this.ctx.overrideDescriptor(this.nodeProto, "textContent", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("getTextContent", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("getTextContent", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         },
-        set: (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba]) => {
-          let _25c9e28880a6 = new _6a7610c279e1({
-            value: _975aace6d4ba
-          }, _82344dbcb8cc, _361d506d96b6);
-          if (this.emit("setTextContent", _25c9e28880a6), _25c9e28880a6.intercepted) return _25c9e28880a6.returnValue;
-          _82344dbcb8cc.call(_361d506d96b6, _25c9e28880a6.data.value);
+        set: (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59]) => {
+          let _fdd1e7c9091b = new _f417c1c28204({
+            value: _f9d1bc577e59
+          }, _8ffa921e40eb, _c331fbac9a70);
+          if (this.emit("setTextContent", _fdd1e7c9091b), _fdd1e7c9091b.intercepted) return _fdd1e7c9091b.returnValue;
+          _8ffa921e40eb.call(_c331fbac9a70, _fdd1e7c9091b.data.value);
         }
       });
     }
     overrideAppend() {
-      this.ctx.override(this.nodeProto, "append", (_82344dbcb8cc, _361d506d96b6, [..._975aace6d4ba]) => {
-        let _25c9e28880a6 = new _6a7610c279e1({
-          nodes: _975aace6d4ba
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("append", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : _25c9e28880a6.target.call(_25c9e28880a6.that, _25c9e28880a6.data.nodes);
-      }), this.ctx.override(this.nodeProto, "appendChild", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          node: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("appendChild", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.node);
+      this.ctx.override(this.nodeProto, "append", (_8ffa921e40eb, _c331fbac9a70, [..._f9d1bc577e59]) => {
+        let _fdd1e7c9091b = new _f417c1c28204({
+          nodes: _f9d1bc577e59
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("append", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : _fdd1e7c9091b.target.call(_fdd1e7c9091b.that, _fdd1e7c9091b.data.nodes);
+      }), this.ctx.override(this.nodeProto, "appendChild", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          node: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("appendChild", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.node);
       });
     }
     overrideBaseURI() {
       this.ctx.overrideDescriptor(this.nodeProto, "baseURI", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("baseURI", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("baseURI", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       });
     }
     overrideParent() {
       this.ctx.overrideDescriptor(this.nodeProto, "parentNode", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            node: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("parentNode", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.node;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            node: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("parentNode", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.node;
         }
       }), this.ctx.overrideDescriptor(this.nodeProto, "parentElement", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            element: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("parentElement", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.node;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            element: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("parentElement", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.node;
         }
       });
     }
     overrideOwnerDocument() {
       this.ctx.overrideDescriptor(this.nodeProto, "ownerDocument", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            document: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("ownerDocument", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.document;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            document: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("ownerDocument", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.document;
         }
       });
     }
     overrideCompareDocumentPosit1ion() {
-      this.ctx.override(this.nodeProto, "compareDocumentPosition", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          node: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.node);
+      this.ctx.override(this.nodeProto, "compareDocumentPosition", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          node: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.node);
       });
     }
     overrideChildMethods() {
       this.ctx.override(this.nodeProto, "removeChild");
     }
-  }, _bbb76c978319 = _53c812af4364;
-  var _afc440612c1d = m(_0d3402e587ac(), 1);
-  var _49579e555c5e = class extends _afc440612c1d.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.Attr = this.window.Attr || {}, 
-      this.attrProto = this.Attr.prototype || {}, this.value = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.attrProto, "value"), 
-      this.name = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.attrProto, "name"), 
+  }, _06d9bdca66cc = _d6b4d252c716;
+  var _a1a89872662c = m(_e434b087a60b(), 1);
+  var _8cc135e4e6b3 = class extends _a1a89872662c.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.Attr = this.window.Attr || {}, 
+      this.attrProto = this.Attr.prototype || {}, this.value = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.attrProto, "value"), 
+      this.name = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.attrProto, "name"), 
       this.getNamedItem = this.attrProto.getNamedItem || null, this.setNamedItem = this.attrProto.setNamedItem || null, 
       this.removeNamedItem = this.attrProto.removeNamedItem || null, this.getNamedItemNS = this.attrProto.getNamedItemNS || null, 
       this.setNamedItemNS = this.attrProto.setNamedItemNS || null, this.removeNamedItemNS = this.attrProto.removeNamedItemNS || null, 
@@ -621,341 +621,341 @@
     }
     overrideNameValue() {
       this.ctx.overrideDescriptor(this.attrProto, "name", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("name", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("name", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       }), this.ctx.overrideDescriptor(this.attrProto, "value", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            name: this.name.get.call(_361d506d96b6),
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("getValue", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            name: this.name.get.call(_c331fbac9a70),
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("getValue", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         },
-        set: (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba]) => {
-          let _25c9e28880a6 = new _6a7610c279e1({
-            name: this.name.get.call(_361d506d96b6),
-            value: _975aace6d4ba
-          }, _82344dbcb8cc, _361d506d96b6);
-          if (this.emit("setValue", _25c9e28880a6), _25c9e28880a6.intercepted) return _25c9e28880a6.returnValue;
-          _25c9e28880a6.target.call(_25c9e28880a6.that, _25c9e28880a6.data.value);
+        set: (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59]) => {
+          let _fdd1e7c9091b = new _f417c1c28204({
+            name: this.name.get.call(_c331fbac9a70),
+            value: _f9d1bc577e59
+          }, _8ffa921e40eb, _c331fbac9a70);
+          if (this.emit("setValue", _fdd1e7c9091b), _fdd1e7c9091b.intercepted) return _fdd1e7c9091b.returnValue;
+          _fdd1e7c9091b.target.call(_fdd1e7c9091b.that, _fdd1e7c9091b.data.value);
         }
       });
     }
     overrideItemMethods() {
-      this.ctx.override(this.attrProto, "getNamedItem", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          name: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("getNamedItem", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.name);
-      }), this.ctx.override(this.attrProto, "setNamedItem", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          name: _25c9e28880a6,
-          value: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("setNamedItem", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.name, _d92d6e54f516.data.value);
-      }), this.ctx.override(this.attrProto, "removeNamedItem", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          name: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("removeNamedItem", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.name);
-      }), this.ctx.override(this.attrProto, "item", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          index: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("item", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.name);
-      }), this.ctx.override(this.attrProto, "getNamedItemNS", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          namespace: _25c9e28880a6,
-          localName: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("getNamedItemNS", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.namespace, _d92d6e54f516.data.localName);
-      }), this.ctx.override(this.attrProto, "setNamedItemNS", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          attr: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("setNamedItemNS", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.name);
-      }), this.ctx.override(this.attrProto, "removeNamedItemNS", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          namespace: _25c9e28880a6,
-          localName: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("removeNamedItemNS", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.namespace, _d92d6e54f516.data.localName);
+      this.ctx.override(this.attrProto, "getNamedItem", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          name: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("getNamedItem", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.name);
+      }), this.ctx.override(this.attrProto, "setNamedItem", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          name: _fdd1e7c9091b,
+          value: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("setNamedItem", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.name, _53f7585e9797.data.value);
+      }), this.ctx.override(this.attrProto, "removeNamedItem", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          name: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("removeNamedItem", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.name);
+      }), this.ctx.override(this.attrProto, "item", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          index: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("item", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.name);
+      }), this.ctx.override(this.attrProto, "getNamedItemNS", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          namespace: _fdd1e7c9091b,
+          localName: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("getNamedItemNS", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.namespace, _53f7585e9797.data.localName);
+      }), this.ctx.override(this.attrProto, "setNamedItemNS", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          attr: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("setNamedItemNS", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.name);
+      }), this.ctx.override(this.attrProto, "removeNamedItemNS", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          namespace: _fdd1e7c9091b,
+          localName: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("removeNamedItemNS", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.namespace, _53f7585e9797.data.localName);
       });
     }
-  }, _1b2c03745f50 = _49579e555c5e;
-  var _86c947a95a3b = m(_0d3402e587ac(), 1);
-  var _055df9115620 = class extends _86c947a95a3b.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.Function = this.window.Function, 
-      this.fnProto = this.Function.prototype, this.toString = this.fnProto.toString, this.fnStrings = _82344dbcb8cc.fnStrings, 
+  }, _5c718aa4723a = _8cc135e4e6b3;
+  var _c1fab5c800bd = m(_e434b087a60b(), 1);
+  var _faf43c81355f = class extends _c1fab5c800bd.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.Function = this.window.Function, 
+      this.fnProto = this.Function.prototype, this.toString = this.fnProto.toString, this.fnStrings = _8ffa921e40eb.fnStrings, 
       this.call = this.fnProto.call, this.apply = this.fnProto.apply, this.bind = this.fnProto.bind;
     }
     overrideFunction() {
-      this.ctx.override(this.window, "Function", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let _25c9e28880a6 = _975aace6d4ba[_975aace6d4ba.length - 1], _0379e95aaabd = [];
-        for (let _82344dbcb8cc = 0; _82344dbcb8cc < _975aace6d4ba.length - 1; _82344dbcb8cc++) _0379e95aaabd.push(_975aace6d4ba[_82344dbcb8cc]);
-        let _d92d6e54f516 = new _6a7610c279e1({
-          script: _25c9e28880a6,
-          args: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("function", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, ..._d92d6e54f516.data.args, _d92d6e54f516.data.script);
+      this.ctx.override(this.window, "Function", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let _fdd1e7c9091b = _f9d1bc577e59[_f9d1bc577e59.length - 1], _0c2d9a15385c = [];
+        for (let _8ffa921e40eb = 0; _8ffa921e40eb < _f9d1bc577e59.length - 1; _8ffa921e40eb++) _0c2d9a15385c.push(_f9d1bc577e59[_8ffa921e40eb]);
+        let _53f7585e9797 = new _f417c1c28204({
+          script: _fdd1e7c9091b,
+          args: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("function", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, ..._53f7585e9797.data.args, _53f7585e9797.data.script);
       }, !0);
     }
     overrideToString() {
-      this.ctx.override(this.fnProto, "toString", (_82344dbcb8cc, _361d506d96b6) => {
-        let _975aace6d4ba = new _6a7610c279e1({
-          fn: _361d506d96b6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("toString", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.target.call(_975aace6d4ba.data.fn);
+      this.ctx.override(this.fnProto, "toString", (_8ffa921e40eb, _c331fbac9a70) => {
+        let _f9d1bc577e59 = new _f417c1c28204({
+          fn: _c331fbac9a70
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("toString", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.target.call(_f9d1bc577e59.data.fn);
       });
     }
-  }, _89cac9590f58 = _055df9115620;
-  var _c759a5b3fb66 = m(_0d3402e587ac(), 1);
-  var _ac078065594c = class extends _c759a5b3fb66.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.Object = this.window.Object, 
+  }, _1e68dadf9922 = _faf43c81355f;
+  var _addbc3c18c44 = m(_e434b087a60b(), 1);
+  var _86950410d420 = class extends _addbc3c18c44.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.Object = this.window.Object, 
       this.getOwnPropertyDescriptors = this.Object.getOwnPropertyDescriptors, this.getOwnPropertyDescriptor = this.Object.getOwnPropertyDescriptor, 
       this.getOwnPropertyNames = this.Object.getOwnPropertyNames;
     }
     overrideGetPropertyNames() {
-      this.ctx.override(this.Object, "getOwnPropertyNames", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          names: _82344dbcb8cc.call(_361d506d96b6, _25c9e28880a6)
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("getOwnPropertyNames", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.data.names;
+      this.ctx.override(this.Object, "getOwnPropertyNames", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          names: _8ffa921e40eb.call(_c331fbac9a70, _fdd1e7c9091b)
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("getOwnPropertyNames", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.data.names;
       });
     }
     overrideGetOwnPropertyDescriptors() {
-      this.ctx.override(this.Object, "getOwnPropertyDescriptors", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          descriptors: _82344dbcb8cc.call(_361d506d96b6, _25c9e28880a6)
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("getOwnPropertyDescriptors", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.data.descriptors;
+      this.ctx.override(this.Object, "getOwnPropertyDescriptors", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          descriptors: _8ffa921e40eb.call(_c331fbac9a70, _fdd1e7c9091b)
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("getOwnPropertyDescriptors", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.data.descriptors;
       });
     }
-  }, _f5a720c0d799 = _ac078065594c;
-  var _923cf9f0d147 = m(_0d3402e587ac(), 1);
-  var _db7005fb9836 = class extends _923cf9f0d147.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.fetch = this.window.fetch, 
+  }, _bb217456d169 = _86950410d420;
+  var _2c9d62878b60 = m(_e434b087a60b(), 1);
+  var _8990998dce87 = class extends _2c9d62878b60.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.fetch = this.window.fetch, 
       this.Request = this.window.Request, this.Response = this.window.Response, this.Headers = this.window.Headers, 
       this.reqProto = this.Request ? this.Request.prototype : {}, this.resProto = this.Response ? this.Response.prototype : {}, 
-      this.headersProto = this.Headers ? this.Headers.prototype : {}, this.reqUrl = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.reqProto, "url"), 
-      this.resUrl = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.resProto, "url"), 
-      this.reqHeaders = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.reqProto, "headers"), 
-      this.resHeaders = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.resProto, "headers");
+      this.headersProto = this.Headers ? this.Headers.prototype : {}, this.reqUrl = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.reqProto, "url"), 
+      this.resUrl = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.resProto, "url"), 
+      this.reqHeaders = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.reqProto, "headers"), 
+      this.resHeaders = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.resProto, "headers");
     }
     override() {
       return this.overrideRequest(), this.overrideUrl(), this.overrideHeaders(), !0;
     }
     overrideRequest() {
-      return this.fetch ? (this.ctx.override(this.window, "fetch", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length || _975aace6d4ba[0] instanceof this.Request) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd = {}] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          input: _25c9e28880a6,
-          options: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("request", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.input, _d92d6e54f516.data.options);
-      }), this.ctx.override(this.window, "Request", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return new _82344dbcb8cc(..._975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd = {}] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          input: _25c9e28880a6,
-          options: _0379e95aaabd
-        }, _82344dbcb8cc);
-        return this.emit("request", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : new _d92d6e54f516.target(_d92d6e54f516.data.input, _d92d6e54f516.data.options);
+      return this.fetch ? (this.ctx.override(this.window, "fetch", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length || _f9d1bc577e59[0] instanceof this.Request) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c = {}] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          input: _fdd1e7c9091b,
+          options: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("request", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.input, _53f7585e9797.data.options);
+      }), this.ctx.override(this.window, "Request", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return new _8ffa921e40eb(..._f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c = {}] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          input: _fdd1e7c9091b,
+          options: _0c2d9a15385c
+        }, _8ffa921e40eb);
+        return this.emit("request", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : new _53f7585e9797.target(_53f7585e9797.data.input, _53f7585e9797.data.options);
       }, !0), !0) : !1;
     }
     overrideUrl() {
       return this.ctx.overrideDescriptor(this.reqProto, "url", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("requestUrl", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("requestUrl", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       }), this.ctx.overrideDescriptor(this.resProto, "url", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("responseUrl", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("responseUrl", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       }), !0;
     }
     overrideHeaders() {
       return this.Headers ? (this.ctx.overrideDescriptor(this.reqProto, "headers", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("requestHeaders", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("requestHeaders", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       }), this.ctx.overrideDescriptor(this.resProto, "headers", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("responseHeaders", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("responseHeaders", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
-      }), this.ctx.override(this.headersProto, "get", (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba]) => {
-        if (!_975aace6d4ba) return _82344dbcb8cc.call(_361d506d96b6);
-        let _25c9e28880a6 = new _6a7610c279e1({
-          name: _975aace6d4ba,
-          value: _82344dbcb8cc.call(_361d506d96b6, _975aace6d4ba)
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("getHeader", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : _25c9e28880a6.data.value;
-      }), this.ctx.override(this.headersProto, "set", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          name: _25c9e28880a6,
-          value: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("setHeader", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.name, _d92d6e54f516.data.value);
-      }), this.ctx.override(this.headersProto, "has", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.call(_361d506d96b6);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          name: _25c9e28880a6,
-          value: _82344dbcb8cc.call(_361d506d96b6, _25c9e28880a6)
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("hasHeader", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.data;
-      }), this.ctx.override(this.headersProto, "append", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          name: _25c9e28880a6,
-          value: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("appendHeader", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.name, _d92d6e54f516.data.value);
-      }), this.ctx.override(this.headersProto, "delete", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          name: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("deleteHeader", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.name);
+      }), this.ctx.override(this.headersProto, "get", (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59]) => {
+        if (!_f9d1bc577e59) return _8ffa921e40eb.call(_c331fbac9a70);
+        let _fdd1e7c9091b = new _f417c1c28204({
+          name: _f9d1bc577e59,
+          value: _8ffa921e40eb.call(_c331fbac9a70, _f9d1bc577e59)
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("getHeader", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : _fdd1e7c9091b.data.value;
+      }), this.ctx.override(this.headersProto, "set", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          name: _fdd1e7c9091b,
+          value: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("setHeader", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.name, _53f7585e9797.data.value);
+      }), this.ctx.override(this.headersProto, "has", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.call(_c331fbac9a70);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          name: _fdd1e7c9091b,
+          value: _8ffa921e40eb.call(_c331fbac9a70, _fdd1e7c9091b)
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("hasHeader", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.data;
+      }), this.ctx.override(this.headersProto, "append", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          name: _fdd1e7c9091b,
+          value: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("appendHeader", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.name, _53f7585e9797.data.value);
+      }), this.ctx.override(this.headersProto, "delete", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          name: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("deleteHeader", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.name);
       }), !0) : !1;
     }
-  }, _9efccd75062b = _db7005fb9836;
-  var _3201f8535856 = m(_0d3402e587ac(), 1);
-  var _714fb547aa35 = class extends _3201f8535856.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.XMLHttpRequest = this.window.XMLHttpRequest, 
+  }, _e1aa48d3f0d2 = _8990998dce87;
+  var _6413e925e365 = m(_e434b087a60b(), 1);
+  var _b820d08011dc = class extends _6413e925e365.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.XMLHttpRequest = this.window.XMLHttpRequest, 
       this.xhrProto = this.window.XMLHttpRequest ? this.window.XMLHttpRequest.prototype : {}, 
       this.open = this.xhrProto.open, this.abort = this.xhrProto.abort, this.send = this.xhrProto.send, 
       this.overrideMimeType = this.xhrProto.overrideMimeType, this.getAllResponseHeaders = this.xhrProto.getAllResponseHeaders, 
       this.getResponseHeader = this.xhrProto.getResponseHeader, this.setRequestHeader = this.xhrProto.setRequestHeader, 
-      this.responseURL = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.xhrProto, "responseURL"), 
-      this.responseText = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.xhrProto, "responseText");
+      this.responseURL = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.xhrProto, "responseURL"), 
+      this.responseText = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.xhrProto, "responseText");
     }
     override() {
       this.overrideOpen(), this.overrideSend(), this.overrideMimeType(), this.overrideGetResHeader(), 
       this.overrideGetResHeaders(), this.overrideSetReqHeader();
     }
     overrideOpen() {
-      this.ctx.override(this.xhrProto, "open", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd, _d92d6e54f516 = !0, _0d3402e587ac = null, _cd61c2c759b1 = null] = _975aace6d4ba, _5d2f90686d0b = new _6a7610c279e1({
-          method: _25c9e28880a6,
-          input: _0379e95aaabd,
-          async: _d92d6e54f516,
-          user: _0d3402e587ac,
-          password: _cd61c2c759b1
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("open", _5d2f90686d0b), _5d2f90686d0b.intercepted ? _5d2f90686d0b.returnValue : _5d2f90686d0b.target.call(_5d2f90686d0b.that, _5d2f90686d0b.data.method, _5d2f90686d0b.data.input, _5d2f90686d0b.data.async, _5d2f90686d0b.data.user, _5d2f90686d0b.data.password);
+      this.ctx.override(this.xhrProto, "open", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c, _53f7585e9797 = !0, _e434b087a60b = null, _c0b656f59244 = null] = _f9d1bc577e59, _11297093c840 = new _f417c1c28204({
+          method: _fdd1e7c9091b,
+          input: _0c2d9a15385c,
+          async: _53f7585e9797,
+          user: _e434b087a60b,
+          password: _c0b656f59244
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("open", _11297093c840), _11297093c840.intercepted ? _11297093c840.returnValue : _11297093c840.target.call(_11297093c840.that, _11297093c840.data.method, _11297093c840.data.input, _11297093c840.data.async, _11297093c840.data.user, _11297093c840.data.password);
       });
     }
     overrideResponseUrl() {
       this.ctx.overrideDescriptor(this.xhrProto, "responseURL", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("responseUrl", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("responseUrl", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       });
     }
     overrideSend() {
-      this.ctx.override(this.xhrProto, "send", (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba = null]) => {
-        let _25c9e28880a6 = new _6a7610c279e1({
-          body: _975aace6d4ba
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("send", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : _25c9e28880a6.target.call(_25c9e28880a6.that, _25c9e28880a6.data.body);
+      this.ctx.override(this.xhrProto, "send", (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59 = null]) => {
+        let _fdd1e7c9091b = new _f417c1c28204({
+          body: _f9d1bc577e59
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("send", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : _fdd1e7c9091b.target.call(_fdd1e7c9091b.that, _fdd1e7c9091b.data.body);
       });
     }
     overrideSetReqHeader() {
-      this.ctx.override(this.xhrProto, "setRequestHeader", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          name: _25c9e28880a6,
-          value: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("setReqHeader", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.name, _d92d6e54f516.data.value);
+      this.ctx.override(this.xhrProto, "setRequestHeader", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          name: _fdd1e7c9091b,
+          value: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("setReqHeader", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.name, _53f7585e9797.data.value);
       });
     }
     overrideGetResHeaders() {
-      this.ctx.override(this.xhrProto, "getAllResponseHeaders", (_82344dbcb8cc, _361d506d96b6) => {
-        let _975aace6d4ba = new _6a7610c279e1({
-          value: _82344dbcb8cc.call(_361d506d96b6)
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("getAllResponseHeaders", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+      this.ctx.override(this.xhrProto, "getAllResponseHeaders", (_8ffa921e40eb, _c331fbac9a70) => {
+        let _f9d1bc577e59 = new _f417c1c28204({
+          value: _8ffa921e40eb.call(_c331fbac9a70)
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("getAllResponseHeaders", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
       });
     }
     overrideGetResHeader() {
-      this.ctx.override(this.xhrProto, "getResponseHeader", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          name: _25c9e28880a6,
-          value: _82344dbcb8cc.call(_361d506d96b6, _25c9e28880a6)
-        }, _82344dbcb8cc, _361d506d96b6);
-        return _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.data.value;
+      this.ctx.override(this.xhrProto, "getResponseHeader", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          name: _fdd1e7c9091b,
+          value: _8ffa921e40eb.call(_c331fbac9a70, _fdd1e7c9091b)
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.data.value;
       });
     }
-  }, _ce793791e7ee = _714fb547aa35;
-  var _687b8601ce3e = m(_0d3402e587ac(), 1);
-  var _b49998ff41b8 = class extends _687b8601ce3e.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.EventSource = this.window.EventSource || {}, 
-      this.esProto = this.EventSource.prototype || {}, this.url = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.esProto, "url"), 
+  }, _4128a83cdffc = _b820d08011dc;
+  var _6fbcebe73c7b = m(_e434b087a60b(), 1);
+  var _42ffa46ac3b2 = class extends _6fbcebe73c7b.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.EventSource = this.window.EventSource || {}, 
+      this.esProto = this.EventSource.prototype || {}, this.url = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.esProto, "url"), 
       this.CONNECTING = 0, this.OPEN = 1, this.CLOSED = 2;
     }
     overrideConstruct() {
-      this.ctx.override(this.window, "EventSource", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return new _82344dbcb8cc(..._975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd = {}] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          url: _25c9e28880a6,
-          config: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("construct", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : new _d92d6e54f516.target(_d92d6e54f516.data.url, _d92d6e54f516.data.config);
+      this.ctx.override(this.window, "EventSource", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return new _8ffa921e40eb(..._f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c = {}] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          url: _fdd1e7c9091b,
+          config: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("construct", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : new _53f7585e9797.target(_53f7585e9797.data.url, _53f7585e9797.data.config);
       }, !0), "EventSource" in this.window && (this.window.EventSource.CONNECTING = this.CONNECTING, 
       this.window.EventSource.OPEN = this.OPEN, this.window.EventSource.CLOSED = this.CLOSED);
     }
     overrideUrl() {
       this.ctx.overrideDescriptor(this.esProto, "url", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("url", _975aace6d4ba), _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("url", _f9d1bc577e59), _f9d1bc577e59.data.value;
         }
       });
     }
-  }, _63fb112d140d = _b49998ff41b8;
-  var _401b8b5f8d4f = m(_0d3402e587ac(), 1);
-  var _10ad9c7556c0 = class extends _401b8b5f8d4f.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = this.ctx.window, this.History = this.window.History, 
+  }, _466101f3972a = _42ffa46ac3b2;
+  var _9a1a1b082c98 = m(_e434b087a60b(), 1);
+  var _e3baeaadec64 = class extends _9a1a1b082c98.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = this.ctx.window, this.History = this.window.History, 
       this.history = this.window.history, this.historyProto = this.History ? this.History.prototype : {}, 
       this.pushState = this.historyProto.pushState, this.replaceState = this.historyProto.replaceState, 
       this.go = this.historyProto.go, this.back = this.historyProto.back, this.forward = this.historyProto.forward;
@@ -965,83 +965,83 @@
       this.overrideBack();
     }
     overridePushState() {
-      this.ctx.override(this.historyProto, "pushState", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd, _d92d6e54f516 = ""] = _975aace6d4ba, _0d3402e587ac = new _6a7610c279e1({
-          state: _25c9e28880a6,
-          title: _0379e95aaabd,
-          url: _d92d6e54f516
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("pushState", _0d3402e587ac), _0d3402e587ac.intercepted ? _0d3402e587ac.returnValue : _0d3402e587ac.target.call(_0d3402e587ac.that, _0d3402e587ac.data.state, _0d3402e587ac.data.title, _0d3402e587ac.data.url);
+      this.ctx.override(this.historyProto, "pushState", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c, _53f7585e9797 = ""] = _f9d1bc577e59, _e434b087a60b = new _f417c1c28204({
+          state: _fdd1e7c9091b,
+          title: _0c2d9a15385c,
+          url: _53f7585e9797
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("pushState", _e434b087a60b), _e434b087a60b.intercepted ? _e434b087a60b.returnValue : _e434b087a60b.target.call(_e434b087a60b.that, _e434b087a60b.data.state, _e434b087a60b.data.title, _e434b087a60b.data.url);
       });
     }
     overrideReplaceState() {
-      this.ctx.override(this.historyProto, "replaceState", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd, _d92d6e54f516 = ""] = _975aace6d4ba, _0d3402e587ac = new _6a7610c279e1({
-          state: _25c9e28880a6,
-          title: _0379e95aaabd,
-          url: _d92d6e54f516
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("replaceState", _0d3402e587ac), _0d3402e587ac.intercepted ? _0d3402e587ac.returnValue : _0d3402e587ac.target.call(_0d3402e587ac.that, _0d3402e587ac.data.state, _0d3402e587ac.data.title, _0d3402e587ac.data.url);
+      this.ctx.override(this.historyProto, "replaceState", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c, _53f7585e9797 = ""] = _f9d1bc577e59, _e434b087a60b = new _f417c1c28204({
+          state: _fdd1e7c9091b,
+          title: _0c2d9a15385c,
+          url: _53f7585e9797
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("replaceState", _e434b087a60b), _e434b087a60b.intercepted ? _e434b087a60b.returnValue : _e434b087a60b.target.call(_e434b087a60b.that, _e434b087a60b.data.state, _e434b087a60b.data.title, _e434b087a60b.data.url);
       });
     }
     overrideGo() {
-      this.ctx.override(this.historyProto, "go", (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba]) => {
-        let _25c9e28880a6 = new _6a7610c279e1({
-          delta: _975aace6d4ba
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("go", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : _25c9e28880a6.target.call(_25c9e28880a6.that, _25c9e28880a6.data.delta);
+      this.ctx.override(this.historyProto, "go", (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59]) => {
+        let _fdd1e7c9091b = new _f417c1c28204({
+          delta: _f9d1bc577e59
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("go", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : _fdd1e7c9091b.target.call(_fdd1e7c9091b.that, _fdd1e7c9091b.data.delta);
       });
     }
     overrideForward() {
-      this.ctx.override(this.historyProto, "forward", (_82344dbcb8cc, _361d506d96b6) => {
-        let _975aace6d4ba = new _6a7610c279e1(null, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("forward", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.target.call(_975aace6d4ba.that);
+      this.ctx.override(this.historyProto, "forward", (_8ffa921e40eb, _c331fbac9a70) => {
+        let _f9d1bc577e59 = new _f417c1c28204(null, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("forward", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.target.call(_f9d1bc577e59.that);
       });
     }
     overrideBack() {
-      this.ctx.override(this.historyProto, "back", (_82344dbcb8cc, _361d506d96b6) => {
-        let _975aace6d4ba = new _6a7610c279e1(null, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("back", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.target.call(_975aace6d4ba.that);
+      this.ctx.override(this.historyProto, "back", (_8ffa921e40eb, _c331fbac9a70) => {
+        let _f9d1bc577e59 = new _f417c1c28204(null, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("back", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.target.call(_f9d1bc577e59.that);
       });
     }
-  }, _81d5ba82c687 = _10ad9c7556c0;
-  var _c03c86339428 = m(_0d3402e587ac(), 1), _97dd91d2ca10 = class extends _c03c86339428.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.location = this.window.location, 
+  }, _5ca30de275a3 = _e3baeaadec64;
+  var _fb65a2a7ea4e = m(_e434b087a60b(), 1), _8d872c055461 = class extends _fb65a2a7ea4e.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.location = this.window.location, 
       this.WorkerLocation = this.ctx.worker ? this.window.WorkerLocation : null, this.workerLocProto = this.WorkerLocation ? this.WorkerLocation.prototype : {}, 
       this.keys = [ "href", "protocol", "host", "hostname", "port", "pathname", "search", "hash", "origin" ], 
-      this.HashChangeEvent = this.window.HashChangeEvent || null, this.href = this.WorkerLocation ? _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.workerLocProto, "href") : _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.location, "href");
+      this.HashChangeEvent = this.window.HashChangeEvent || null, this.href = this.WorkerLocation ? _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.workerLocProto, "href") : _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.location, "href");
     }
-    overrideWorkerLocation(_82344dbcb8cc) {
+    overrideWorkerLocation(_8ffa921e40eb) {
       if (!this.WorkerLocation) return !1;
-      let _361d506d96b6 = this;
-      for (let _975aace6d4ba of this.keys) this.ctx.overrideDescriptor(this.workerLocProto, _975aace6d4ba, {
-        get: () => _82344dbcb8cc(_361d506d96b6.href.get.call(this.location))[_975aace6d4ba]
+      let _c331fbac9a70 = this;
+      for (let _f9d1bc577e59 of this.keys) this.ctx.overrideDescriptor(this.workerLocProto, _f9d1bc577e59, {
+        get: () => _8ffa921e40eb(_c331fbac9a70.href.get.call(this.location))[_f9d1bc577e59]
       });
       return !0;
     }
-    emulate(_82344dbcb8cc, _361d506d96b6) {
-      let _975aace6d4ba = {}, _25c9e28880a6 = this;
-      for (let _0379e95aaabd of _25c9e28880a6.keys) this.ctx.nativeMethods.defineProperty(_975aace6d4ba, _0379e95aaabd, {
+    emulate(_8ffa921e40eb, _c331fbac9a70) {
+      let _f9d1bc577e59 = {}, _fdd1e7c9091b = this;
+      for (let _0c2d9a15385c of _fdd1e7c9091b.keys) this.ctx.nativeMethods.defineProperty(_f9d1bc577e59, _0c2d9a15385c, {
         get() {
-          return _82344dbcb8cc(_25c9e28880a6.href.get.call(_25c9e28880a6.location))[_0379e95aaabd];
+          return _8ffa921e40eb(_fdd1e7c9091b.href.get.call(_fdd1e7c9091b.location))[_0c2d9a15385c];
         },
-        set: _0379e95aaabd !== "origin" ? function(_82344dbcb8cc) {
-          switch (_0379e95aaabd) {
+        set: _0c2d9a15385c !== "origin" ? function(_8ffa921e40eb) {
+          switch (_0c2d9a15385c) {
            case "href":
-            _25c9e28880a6.location.href = _361d506d96b6(_82344dbcb8cc);
+            _fdd1e7c9091b.location.href = _c331fbac9a70(_8ffa921e40eb);
             break;
 
            case "hash":
-            _25c9e28880a6.emit("hashchange", _975aace6d4ba.href, _82344dbcb8cc.trim().startsWith("#") ? new URL(_82344dbcb8cc.trim(), _975aace6d4ba.href).href : new URL("#" + _82344dbcb8cc.trim(), _975aace6d4ba.href).href, _25c9e28880a6);
+            _fdd1e7c9091b.emit("hashchange", _f9d1bc577e59.href, _8ffa921e40eb.trim().startsWith("#") ? new URL(_8ffa921e40eb.trim(), _f9d1bc577e59.href).href : new URL("#" + _8ffa921e40eb.trim(), _f9d1bc577e59.href).href, _fdd1e7c9091b);
             break;
 
            default:
             {
-              let _d92d6e54f516 = new URL(_975aace6d4ba.href);
-              _d92d6e54f516[_0379e95aaabd] = _82344dbcb8cc, _25c9e28880a6.location.href = _361d506d96b6(_d92d6e54f516.href);
+              let _53f7585e9797 = new URL(_f9d1bc577e59.href);
+              _53f7585e9797[_0c2d9a15385c] = _8ffa921e40eb, _fdd1e7c9091b.location.href = _c331fbac9a70(_53f7585e9797.href);
             }
             break;
           }
@@ -1049,126 +1049,126 @@
         configurable: !1,
         enumerable: !0
       });
-      return "reload" in this.location && this.ctx.nativeMethods.defineProperty(_975aace6d4ba, "reload", {
-        value: this.ctx.wrap(this.location, "reload", (_82344dbcb8cc, _361d506d96b6) => _82344dbcb8cc.call(_361d506d96b6 === _975aace6d4ba ? this.location : _361d506d96b6)),
+      return "reload" in this.location && this.ctx.nativeMethods.defineProperty(_f9d1bc577e59, "reload", {
+        value: this.ctx.wrap(this.location, "reload", (_8ffa921e40eb, _c331fbac9a70) => _8ffa921e40eb.call(_c331fbac9a70 === _f9d1bc577e59 ? this.location : _c331fbac9a70)),
         writable: !1,
         enumerable: !0
-      }), "replace" in this.location && this.ctx.nativeMethods.defineProperty(_975aace6d4ba, "replace", {
-        value: this.ctx.wrap(this.location, "assign", (_82344dbcb8cc, _25c9e28880a6, _0379e95aaabd) => {
-          (!_0379e95aaabd.length || _25c9e28880a6 !== _975aace6d4ba) && _82344dbcb8cc.call(_25c9e28880a6), 
-          _25c9e28880a6 = this.location;
-          let [_d92d6e54f516] = _0379e95aaabd, _0d3402e587ac = new URL(_d92d6e54f516, _975aace6d4ba.href);
-          return _82344dbcb8cc.call(_25c9e28880a6 === _975aace6d4ba ? this.location : _25c9e28880a6, _361d506d96b6(_0d3402e587ac.href));
+      }), "replace" in this.location && this.ctx.nativeMethods.defineProperty(_f9d1bc577e59, "replace", {
+        value: this.ctx.wrap(this.location, "assign", (_8ffa921e40eb, _fdd1e7c9091b, _0c2d9a15385c) => {
+          (!_0c2d9a15385c.length || _fdd1e7c9091b !== _f9d1bc577e59) && _8ffa921e40eb.call(_fdd1e7c9091b), 
+          _fdd1e7c9091b = this.location;
+          let [_53f7585e9797] = _0c2d9a15385c, _e434b087a60b = new URL(_53f7585e9797, _f9d1bc577e59.href);
+          return _8ffa921e40eb.call(_fdd1e7c9091b === _f9d1bc577e59 ? this.location : _fdd1e7c9091b, _c331fbac9a70(_e434b087a60b.href));
         }),
         writable: !1,
         enumerable: !0
-      }), "assign" in this.location && this.ctx.nativeMethods.defineProperty(_975aace6d4ba, "assign", {
-        value: this.ctx.wrap(this.location, "assign", (_82344dbcb8cc, _25c9e28880a6, _0379e95aaabd) => {
-          (!_0379e95aaabd.length || _25c9e28880a6 !== _975aace6d4ba) && _82344dbcb8cc.call(_25c9e28880a6), 
-          _25c9e28880a6 = this.location;
-          let [_d92d6e54f516] = _0379e95aaabd, _0d3402e587ac = new URL(_d92d6e54f516, _975aace6d4ba.href);
-          return _82344dbcb8cc.call(_25c9e28880a6 === _975aace6d4ba ? this.location : _25c9e28880a6, _361d506d96b6(_0d3402e587ac.href));
+      }), "assign" in this.location && this.ctx.nativeMethods.defineProperty(_f9d1bc577e59, "assign", {
+        value: this.ctx.wrap(this.location, "assign", (_8ffa921e40eb, _fdd1e7c9091b, _0c2d9a15385c) => {
+          (!_0c2d9a15385c.length || _fdd1e7c9091b !== _f9d1bc577e59) && _8ffa921e40eb.call(_fdd1e7c9091b), 
+          _fdd1e7c9091b = this.location;
+          let [_53f7585e9797] = _0c2d9a15385c, _e434b087a60b = new URL(_53f7585e9797, _f9d1bc577e59.href);
+          return _8ffa921e40eb.call(_fdd1e7c9091b === _f9d1bc577e59 ? this.location : _fdd1e7c9091b, _c331fbac9a70(_e434b087a60b.href));
         }),
         writable: !1,
         enumerable: !0
-      }), "ancestorOrigins" in this.location && this.ctx.nativeMethods.defineProperty(_975aace6d4ba, "ancestorOrigins", {
+      }), "ancestorOrigins" in this.location && this.ctx.nativeMethods.defineProperty(_f9d1bc577e59, "ancestorOrigins", {
         get() {
-          let _82344dbcb8cc = [];
-          return _25c9e28880a6.window.DOMStringList && _25c9e28880a6.ctx.nativeMethods.setPrototypeOf(_82344dbcb8cc, _25c9e28880a6.window.DOMStringList.prototype), 
-          _82344dbcb8cc;
+          let _8ffa921e40eb = [];
+          return _fdd1e7c9091b.window.DOMStringList && _fdd1e7c9091b.ctx.nativeMethods.setPrototypeOf(_8ffa921e40eb, _fdd1e7c9091b.window.DOMStringList.prototype), 
+          _8ffa921e40eb;
         },
         set: void 0,
         enumerable: !0
-      }), this.ctx.nativeMethods.defineProperty(_975aace6d4ba, "toString", {
-        value: this.ctx.wrap(this.location, "toString", () => _975aace6d4ba.href),
+      }), this.ctx.nativeMethods.defineProperty(_f9d1bc577e59, "toString", {
+        value: this.ctx.wrap(this.location, "toString", () => _f9d1bc577e59.href),
         enumerable: !0,
         writable: !1
-      }), this.ctx.nativeMethods.defineProperty(_975aace6d4ba, Symbol.toPrimitive, {
-        value: () => _975aace6d4ba.href,
+      }), this.ctx.nativeMethods.defineProperty(_f9d1bc577e59, Symbol.toPrimitive, {
+        value: () => _f9d1bc577e59.href,
         writable: !1,
         enumerable: !1
-      }), this.ctx.window.Location && this.ctx.nativeMethods.setPrototypeOf(_975aace6d4ba, this.ctx.window.Location.prototype), 
-      _975aace6d4ba;
+      }), this.ctx.window.Location && this.ctx.nativeMethods.setPrototypeOf(_f9d1bc577e59, this.ctx.window.Location.prototype), 
+      _f9d1bc577e59;
     }
-  }, _d149d429c8e3 = _97dd91d2ca10;
-  var _dcbdaf678766 = m(_0d3402e587ac(), 1);
-  var _2d6a5a3b4ffa = class extends _dcbdaf678766.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = this.ctx.window, this.postMessage = this.window.postMessage, 
+  }, _b0a4f6c11445 = _8d872c055461;
+  var _05b8f011d70f = m(_e434b087a60b(), 1);
+  var _12c4b24078e3 = class extends _05b8f011d70f.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = this.ctx.window, this.postMessage = this.window.postMessage, 
       this.MessageEvent = this.window.MessageEvent || {}, this.MessagePort = this.window.MessagePort || {}, 
       this.mpProto = this.MessagePort.prototype || {}, this.mpPostMessage = this.mpProto.postMessage, 
-      this.messageProto = this.MessageEvent.prototype || {}, this.messageData = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.messageProto, "data"), 
-      this.messageOrigin = _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptor(this.messageProto, "origin");
+      this.messageProto = this.MessageEvent.prototype || {}, this.messageData = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.messageProto, "data"), 
+      this.messageOrigin = _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptor(this.messageProto, "origin");
     }
     overridePostMessage() {
-      this.ctx.override(this.window, "postMessage", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let _25c9e28880a6, _0379e95aaabd, _d92d6e54f516;
-        this.ctx.worker ? [_25c9e28880a6, _d92d6e54f516 = []] = _975aace6d4ba : [_25c9e28880a6, _0379e95aaabd, _d92d6e54f516 = []] = _975aace6d4ba;
-        let _0d3402e587ac = new _6a7610c279e1({
-          message: _25c9e28880a6,
-          origin: _0379e95aaabd,
-          transfer: _d92d6e54f516,
+      this.ctx.override(this.window, "postMessage", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let _fdd1e7c9091b, _0c2d9a15385c, _53f7585e9797;
+        this.ctx.worker ? [_fdd1e7c9091b, _53f7585e9797 = []] = _f9d1bc577e59 : [_fdd1e7c9091b, _0c2d9a15385c, _53f7585e9797 = []] = _f9d1bc577e59;
+        let _e434b087a60b = new _f417c1c28204({
+          message: _fdd1e7c9091b,
+          origin: _0c2d9a15385c,
+          transfer: _53f7585e9797,
           worker: this.ctx.worker
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("postMessage", _0d3402e587ac), _0d3402e587ac.intercepted ? _0d3402e587ac.returnValue : this.ctx.worker ? _0d3402e587ac.target.call(_0d3402e587ac.that, _0d3402e587ac.data.message, _0d3402e587ac.data.transfer) : _0d3402e587ac.target.call(_0d3402e587ac.that, _0d3402e587ac.data.message, _0d3402e587ac.data.origin, _0d3402e587ac.data.transfer);
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("postMessage", _e434b087a60b), _e434b087a60b.intercepted ? _e434b087a60b.returnValue : this.ctx.worker ? _e434b087a60b.target.call(_e434b087a60b.that, _e434b087a60b.data.message, _e434b087a60b.data.transfer) : _e434b087a60b.target.call(_e434b087a60b.that, _e434b087a60b.data.message, _e434b087a60b.data.origin, _e434b087a60b.data.transfer);
       });
     }
-    wrapPostMessage(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba = !1) {
-      return this.ctx.wrap(_82344dbcb8cc, _361d506d96b6, (_361d506d96b6, _25c9e28880a6, _0379e95aaabd) => {
-        if (this.ctx.worker ? !_0379e95aaabd.length : 2 > _0379e95aaabd) return _361d506d96b6.apply(_25c9e28880a6, _0379e95aaabd);
-        let _d92d6e54f516, _0d3402e587ac, _cd61c2c759b1;
-        _975aace6d4ba ? ([_d92d6e54f516, _cd61c2c759b1 = []] = _0379e95aaabd, _0d3402e587ac = null) : [_d92d6e54f516, _0d3402e587ac, _cd61c2c759b1 = []] = _0379e95aaabd;
-        let _5d2f90686d0b = new _6a7610c279e1({
-          message: _d92d6e54f516,
-          origin: _0d3402e587ac,
-          transfer: _cd61c2c759b1,
+    wrapPostMessage(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59 = !1) {
+      return this.ctx.wrap(_8ffa921e40eb, _c331fbac9a70, (_c331fbac9a70, _fdd1e7c9091b, _0c2d9a15385c) => {
+        if (this.ctx.worker ? !_0c2d9a15385c.length : 2 > _0c2d9a15385c) return _c331fbac9a70.apply(_fdd1e7c9091b, _0c2d9a15385c);
+        let _53f7585e9797, _e434b087a60b, _c0b656f59244;
+        _f9d1bc577e59 ? ([_53f7585e9797, _c0b656f59244 = []] = _0c2d9a15385c, _e434b087a60b = null) : [_53f7585e9797, _e434b087a60b, _c0b656f59244 = []] = _0c2d9a15385c;
+        let _11297093c840 = new _f417c1c28204({
+          message: _53f7585e9797,
+          origin: _e434b087a60b,
+          transfer: _c0b656f59244,
           worker: this.ctx.worker
-        }, _361d506d96b6, _82344dbcb8cc);
-        return this.emit("postMessage", _5d2f90686d0b), _5d2f90686d0b.intercepted ? _5d2f90686d0b.returnValue : _975aace6d4ba ? _5d2f90686d0b.target.call(_5d2f90686d0b.that, _5d2f90686d0b.data.message, _5d2f90686d0b.data.transfer) : _5d2f90686d0b.target.call(_5d2f90686d0b.that, _5d2f90686d0b.data.message, _5d2f90686d0b.data.origin, _5d2f90686d0b.data.transfer);
+        }, _c331fbac9a70, _8ffa921e40eb);
+        return this.emit("postMessage", _11297093c840), _11297093c840.intercepted ? _11297093c840.returnValue : _f9d1bc577e59 ? _11297093c840.target.call(_11297093c840.that, _11297093c840.data.message, _11297093c840.data.transfer) : _11297093c840.target.call(_11297093c840.that, _11297093c840.data.message, _11297093c840.data.origin, _11297093c840.data.transfer);
       });
     }
     overrideMessageOrigin() {
       this.ctx.overrideDescriptor(this.messageProto, "origin", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("origin", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("origin", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       });
     }
     overrideMessageData() {
       this.ctx.overrideDescriptor(this.messageProto, "data", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("data", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("data", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       });
     }
-  }, _2a9d160ea9b6 = _2d6a5a3b4ffa;
-  var _ce7ecd927403 = m(_0d3402e587ac(), 1);
-  var _17ef5b65bdef = class extends _ce7ecd927403.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.navigator = this.window.navigator, 
+  }, _037d5ed47948 = _12c4b24078e3;
+  var _cb15b3f9e88c = m(_e434b087a60b(), 1);
+  var _5160602ac929 = class extends _cb15b3f9e88c.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.navigator = this.window.navigator, 
       this.Navigator = this.window.Navigator || {}, this.navProto = this.Navigator.prototype || {}, 
       this.sendBeacon = this.navProto.sendBeacon;
     }
     overrideSendBeacon() {
-      this.ctx.override(this.navProto, "sendBeacon", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd = ""] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          url: _25c9e28880a6,
-          data: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("sendBeacon", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.url, _d92d6e54f516.data.data);
+      this.ctx.override(this.navProto, "sendBeacon", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c = ""] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          url: _fdd1e7c9091b,
+          data: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("sendBeacon", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.url, _53f7585e9797.data.data);
       });
     }
-  }, _39ac429ccf4d = _17ef5b65bdef;
-  var _d6f62dc00856 = m(_0d3402e587ac(), 1);
-  var _9909a927cc27 = globalThis.fetch, _1b451199c5e6 = globalThis.SharedWorker, _ce292a519bb4 = globalThis.localStorage, _d525338ce653 = globalThis.navigator.serviceWorker, _1bfb445437e6 = MessagePort.prototype.postMessage, _8b2da99f2afc = {
+  }, _8e8375b1d046 = _5160602ac929;
+  var _6a362cf30681 = m(_e434b087a60b(), 1);
+  var _857259c7a37b = globalThis.fetch, _815b3cf2d7d0 = globalThis.SharedWorker, _5e0d3e44b687 = globalThis.localStorage, _a2730d69fede = globalThis.navigator.serviceWorker, _df7be027a452 = MessagePort.prototype.postMessage, _b7632281677a = {
     prototype: {
       send: WebSocket.prototype.send
     },
@@ -1178,370 +1178,370 @@
     OPEN: WebSocket.OPEN
   };
   async function W() {
-    let _82344dbcb8cc = (await self.clients.matchAll({
+    let _8ffa921e40eb = (await self.clients.matchAll({
       type: "window",
       includeUncontrolled: !0
-    })).map(async _82344dbcb8cc => {
-      let _361d506d96b6 = await function(_82344dbcb8cc) {
-        let _361d506d96b6 = new MessageChannel;
-        return new Promise(_975aace6d4ba => {
-          _82344dbcb8cc.postMessage({
+    })).map(async _8ffa921e40eb => {
+      let _c331fbac9a70 = await function(_8ffa921e40eb) {
+        let _c331fbac9a70 = new MessageChannel;
+        return new Promise(_f9d1bc577e59 => {
+          _8ffa921e40eb.postMessage({
             type: "getPort",
-            port: _361d506d96b6.port2
-          }, [ _361d506d96b6.port2 ]), _361d506d96b6.port1.onmessage = _82344dbcb8cc => {
-            _975aace6d4ba(_82344dbcb8cc.data);
+            port: _c331fbac9a70.port2
+          }, [ _c331fbac9a70.port2 ]), _c331fbac9a70.port1.onmessage = _8ffa921e40eb => {
+            _f9d1bc577e59(_8ffa921e40eb.data);
           };
         });
-      }(_82344dbcb8cc);
-      return await Ie(_361d506d96b6), _361d506d96b6;
-    }), _361d506d96b6 = Promise.race([ Promise.any(_82344dbcb8cc), new Promise((_82344dbcb8cc, _361d506d96b6) => setTimeout(_361d506d96b6, 1e3, new TypeError("timeout"))) ]);
+      }(_8ffa921e40eb);
+      return await Ie(_c331fbac9a70), _c331fbac9a70;
+    }), _c331fbac9a70 = Promise.race([ Promise.any(_8ffa921e40eb), new Promise((_8ffa921e40eb, _c331fbac9a70) => setTimeout(_c331fbac9a70, 1e3, new TypeError("timeout"))) ]);
     try {
-      return await _361d506d96b6;
-    } catch (_82344dbcb8cc) {
-      if (_82344dbcb8cc instanceof AggregateError) throw console.error("bare-mux: failed to get a bare-mux SharedWorker MessagePort as all clients returned an invalid MessagePort."), 
+      return await _c331fbac9a70;
+    } catch (_8ffa921e40eb) {
+      if (_8ffa921e40eb instanceof AggregateError) throw console.error("bare-mux: failed to get a bare-mux SharedWorker MessagePort as all clients returned an invalid MessagePort."), 
       new Error("All clients returned an invalid MessagePort.");
       return console.warn("bare-mux: failed to get a bare-mux SharedWorker MessagePort within 1s, retrying"), 
       await W();
     }
   }
-  function Ie(_82344dbcb8cc) {
-    let _361d506d96b6 = new MessageChannel, _975aace6d4ba = new Promise((_82344dbcb8cc, _975aace6d4ba) => {
-      _361d506d96b6.port1.onmessage = _361d506d96b6 => {
-        _361d506d96b6.data.type === "pong" && _82344dbcb8cc();
-      }, setTimeout(_975aace6d4ba, 1500);
+  function Ie(_8ffa921e40eb) {
+    let _c331fbac9a70 = new MessageChannel, _f9d1bc577e59 = new Promise((_8ffa921e40eb, _f9d1bc577e59) => {
+      _c331fbac9a70.port1.onmessage = _c331fbac9a70 => {
+        _c331fbac9a70.data.type === "pong" && _8ffa921e40eb();
+      }, setTimeout(_f9d1bc577e59, 1500);
     });
-    return _1bfb445437e6.call(_82344dbcb8cc, {
+    return _df7be027a452.call(_8ffa921e40eb, {
       message: {
         type: "ping"
       },
-      port: _361d506d96b6.port2
-    }, [ _361d506d96b6.port2 ]), _975aace6d4ba;
+      port: _c331fbac9a70.port2
+    }, [ _c331fbac9a70.port2 ]), _f9d1bc577e59;
   }
-  function Ve(_82344dbcb8cc, _361d506d96b6) {
-    let _975aace6d4ba = new _1b451199c5e6(_82344dbcb8cc, "ridgewood-stem-worker");
-    return _361d506d96b6 && _d525338ce653.addEventListener("message", _361d506d96b6 => {
-      if (_361d506d96b6.data.type === "getPort" && _361d506d96b6.data.port) {
+  function Ve(_8ffa921e40eb, _c331fbac9a70) {
+    let _f9d1bc577e59 = new _815b3cf2d7d0(_8ffa921e40eb, "ridgewood-stem-worker");
+    return _c331fbac9a70 && _a2730d69fede.addEventListener("message", _c331fbac9a70 => {
+      if (_c331fbac9a70.data.type === "getPort" && _c331fbac9a70.data.port) {
         console.debug("bare-mux: recieved request for port from sw");
-        let _975aace6d4ba = new _1b451199c5e6(_82344dbcb8cc, "ridgewood-stem-worker");
-        _1bfb445437e6.call(_361d506d96b6.data.port, _975aace6d4ba.port, [ _975aace6d4ba.port ]);
+        let _f9d1bc577e59 = new _815b3cf2d7d0(_8ffa921e40eb, "ridgewood-stem-worker");
+        _df7be027a452.call(_c331fbac9a70.data.port, _f9d1bc577e59.port, [ _f9d1bc577e59.port ]);
       }
-    }), _975aace6d4ba.port;
+    }), _f9d1bc577e59.port;
   }
-  var _986f49db2826 = null;
+  var _fcfa9d497815 = null;
   function lt() {
-    if (_986f49db2826 === null) {
-      let _82344dbcb8cc = new MessageChannel, _361d506d96b6 = new ReadableStream, _975aace6d4ba;
+    if (_fcfa9d497815 === null) {
+      let _8ffa921e40eb = new MessageChannel, _c331fbac9a70 = new ReadableStream, _f9d1bc577e59;
       try {
-        _1bfb445437e6.call(_82344dbcb8cc.port1, _361d506d96b6, [ _361d506d96b6 ]), _975aace6d4ba = !0;
+        _df7be027a452.call(_8ffa921e40eb.port1, _c331fbac9a70, [ _c331fbac9a70 ]), _f9d1bc577e59 = !0;
       } catch {
-        _975aace6d4ba = !1;
+        _f9d1bc577e59 = !1;
       }
-      return _986f49db2826 = _975aace6d4ba, _975aace6d4ba;
+      return _fcfa9d497815 = _f9d1bc577e59, _f9d1bc577e59;
     }
-    return _986f49db2826;
+    return _fcfa9d497815;
   }
-  var _5e54479b99cd = class {
-    constructor(_82344dbcb8cc) {
-      this.channel = new BroadcastChannel("bare-mux"), _82344dbcb8cc instanceof MessagePort || _82344dbcb8cc instanceof Promise ? this.port = _82344dbcb8cc : this.createChannel(_82344dbcb8cc, !0);
+  var _a476aecd2b96 = class {
+    constructor(_8ffa921e40eb) {
+      this.channel = new BroadcastChannel("bare-mux"), _8ffa921e40eb instanceof MessagePort || _8ffa921e40eb instanceof Promise ? this.port = _8ffa921e40eb : this.createChannel(_8ffa921e40eb, !0);
     }
-    createChannel(_82344dbcb8cc, _361d506d96b6) {
-      if (self.clients) this.port = W(), this.channel.onmessage = _82344dbcb8cc => {
-        _82344dbcb8cc.data.type === "refreshPort" && (this.port = W());
-      }; else if (_82344dbcb8cc && SharedWorker) {
-        if (!_82344dbcb8cc.startsWith("/") && !_82344dbcb8cc.includes("://")) throw new Error("Invalid URL. Must be absolute or start at the root.");
-        this.port = Ve(_82344dbcb8cc, _361d506d96b6), console.debug("bare-mux: setting localStorage bare-mux-path to", _82344dbcb8cc), 
-        _ce292a519bb4["bare-mux-path"] = _82344dbcb8cc;
+    createChannel(_8ffa921e40eb, _c331fbac9a70) {
+      if (self.clients) this.port = W(), this.channel.onmessage = _8ffa921e40eb => {
+        _8ffa921e40eb.data.type === "refreshPort" && (this.port = W());
+      }; else if (_8ffa921e40eb && SharedWorker) {
+        if (!_8ffa921e40eb.startsWith("/") && !_8ffa921e40eb.includes("://")) throw new Error("Invalid URL. Must be absolute or start at the root.");
+        this.port = Ve(_8ffa921e40eb, _c331fbac9a70), console.debug("bare-mux: setting localStorage bare-mux-path to", _8ffa921e40eb), 
+        _5e0d3e44b687["bare-mux-path"] = _8ffa921e40eb;
       } else {
         if (!SharedWorker) throw new Error("Unable to get a channel to the SharedWorker.");
         {
-          let _82344dbcb8cc = _ce292a519bb4["bare-mux-path"];
-          if (console.debug("bare-mux: got localStorage bare-mux-path:", _82344dbcb8cc), !_82344dbcb8cc) throw new Error("Unable to get bare-mux workerPath from localStorage.");
-          this.port = Ve(_82344dbcb8cc, _361d506d96b6);
+          let _8ffa921e40eb = _5e0d3e44b687["bare-mux-path"];
+          if (console.debug("bare-mux: got localStorage bare-mux-path:", _8ffa921e40eb), !_8ffa921e40eb) throw new Error("Unable to get bare-mux workerPath from localStorage.");
+          this.port = Ve(_8ffa921e40eb, _c331fbac9a70);
         }
       }
     }
-    async sendMessage(_82344dbcb8cc, _361d506d96b6) {
+    async sendMessage(_8ffa921e40eb, _c331fbac9a70) {
       this.port instanceof Promise && (this.port = await this.port);
       try {
         await Ie(this.port);
       } catch {
         return console.warn("bare-mux: Failed to get a ping response from the worker within 1.5s. Assuming port is dead."), 
-        this.createChannel(), await this.sendMessage(_82344dbcb8cc, _361d506d96b6);
+        this.createChannel(), await this.sendMessage(_8ffa921e40eb, _c331fbac9a70);
       }
-      let _975aace6d4ba = new MessageChannel, _25c9e28880a6 = [ _975aace6d4ba.port2, ..._361d506d96b6 || [] ], _0379e95aaabd = new Promise((_82344dbcb8cc, _361d506d96b6) => {
-        _975aace6d4ba.port1.onmessage = _975aace6d4ba => {
-          let _25c9e28880a6 = _975aace6d4ba.data;
-          _25c9e28880a6.type === "error" ? _361d506d96b6(_25c9e28880a6.error) : _82344dbcb8cc(_25c9e28880a6);
+      let _f9d1bc577e59 = new MessageChannel, _fdd1e7c9091b = [ _f9d1bc577e59.port2, ..._c331fbac9a70 || [] ], _0c2d9a15385c = new Promise((_8ffa921e40eb, _c331fbac9a70) => {
+        _f9d1bc577e59.port1.onmessage = _f9d1bc577e59 => {
+          let _fdd1e7c9091b = _f9d1bc577e59.data;
+          _fdd1e7c9091b.type === "error" ? _c331fbac9a70(_fdd1e7c9091b.error) : _8ffa921e40eb(_fdd1e7c9091b);
         };
       });
-      return _1bfb445437e6.call(this.port, {
-        message: _82344dbcb8cc,
-        port: _975aace6d4ba.port2
-      }, _25c9e28880a6), await _0379e95aaabd;
+      return _df7be027a452.call(this.port, {
+        message: _8ffa921e40eb,
+        port: _f9d1bc577e59.port2
+      }, _fdd1e7c9091b), await _0c2d9a15385c;
     }
   };
-  function Ce(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) {
-    console.error(`error while processing '${_975aace6d4ba}': `, _361d506d96b6), _82344dbcb8cc.postMessage({
+  function Ce(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) {
+    console.error(`error while processing '${_f9d1bc577e59}': `, _c331fbac9a70), _8ffa921e40eb.postMessage({
       type: "error",
-      error: _361d506d96b6
+      error: _c331fbac9a70
     });
   }
-  var _4953347b1604 = class {
-    constructor(_82344dbcb8cc) {
-      this.worker = new _5e54479b99cd(_82344dbcb8cc);
+  var _aa0ff0c7551e = class {
+    constructor(_8ffa921e40eb) {
+      this.worker = new _a476aecd2b96(_8ffa921e40eb);
     }
     async getTransport() {
       return (await this.worker.sendMessage({
         type: "get"
       })).name;
     }
-    async setTransport(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) {
-      await this.setManualTransport(`\n\t\t\tconst { default: BareTransport } = await import("${_82344dbcb8cc}");\n\t\t\treturn [BareTransport, "${_82344dbcb8cc}"];\n\t\t`, _361d506d96b6, _975aace6d4ba);
+    async setTransport(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) {
+      await this.setManualTransport(`\n\t\t\tconst { default: BareTransport } = await import("${_8ffa921e40eb}");\n\t\t\treturn [BareTransport, "${_8ffa921e40eb}"];\n\t\t`, _c331fbac9a70, _f9d1bc577e59);
     }
-    async setManualTransport(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) {
-      if (_82344dbcb8cc === "bare-mux-remote") throw new Error("Use setRemoteTransport.");
+    async setManualTransport(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) {
+      if (_8ffa921e40eb === "bare-mux-remote") throw new Error("Use setRemoteTransport.");
       await this.worker.sendMessage({
         type: "set",
         client: {
-          function: _82344dbcb8cc,
-          args: _361d506d96b6
+          function: _8ffa921e40eb,
+          args: _c331fbac9a70
         }
-      }, _975aace6d4ba);
+      }, _f9d1bc577e59);
     }
-    async setRemoteTransport(_82344dbcb8cc, _361d506d96b6) {
-      let _975aace6d4ba = new MessageChannel;
-      _975aace6d4ba.port1.onmessage = async _361d506d96b6 => {
-        let _975aace6d4ba = _361d506d96b6.data.port, _25c9e28880a6 = _361d506d96b6.data.message;
-        if (_25c9e28880a6.type === "fetch") try {
-          _82344dbcb8cc.ready || await _82344dbcb8cc.init(), await async function(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) {
-            let _25c9e28880a6 = await _975aace6d4ba.request(new URL(_82344dbcb8cc.fetch.remote), _82344dbcb8cc.fetch.method, _82344dbcb8cc.fetch.body, _82344dbcb8cc.fetch.headers, null);
-            if (!lt() && _25c9e28880a6.body instanceof ReadableStream) {
-              let _82344dbcb8cc = new Response(_25c9e28880a6.body);
-              _25c9e28880a6.body = await _82344dbcb8cc.arrayBuffer();
+    async setRemoteTransport(_8ffa921e40eb, _c331fbac9a70) {
+      let _f9d1bc577e59 = new MessageChannel;
+      _f9d1bc577e59.port1.onmessage = async _c331fbac9a70 => {
+        let _f9d1bc577e59 = _c331fbac9a70.data.port, _fdd1e7c9091b = _c331fbac9a70.data.message;
+        if (_fdd1e7c9091b.type === "fetch") try {
+          _8ffa921e40eb.ready || await _8ffa921e40eb.init(), await async function(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) {
+            let _fdd1e7c9091b = await _f9d1bc577e59.request(new URL(_8ffa921e40eb.fetch.remote), _8ffa921e40eb.fetch.method, _8ffa921e40eb.fetch.body, _8ffa921e40eb.fetch.headers, null);
+            if (!lt() && _fdd1e7c9091b.body instanceof ReadableStream) {
+              let _8ffa921e40eb = new Response(_fdd1e7c9091b.body);
+              _fdd1e7c9091b.body = await _8ffa921e40eb.arrayBuffer();
             }
-            _25c9e28880a6.body instanceof ReadableStream || _25c9e28880a6.body instanceof ArrayBuffer ? _1bfb445437e6.call(_361d506d96b6, {
+            _fdd1e7c9091b.body instanceof ReadableStream || _fdd1e7c9091b.body instanceof ArrayBuffer ? _df7be027a452.call(_c331fbac9a70, {
               type: "fetch",
-              fetch: _25c9e28880a6
-            }, [ _25c9e28880a6.body ]) : _1bfb445437e6.call(_361d506d96b6, {
+              fetch: _fdd1e7c9091b
+            }, [ _fdd1e7c9091b.body ]) : _df7be027a452.call(_c331fbac9a70, {
               type: "fetch",
-              fetch: _25c9e28880a6
+              fetch: _fdd1e7c9091b
             });
-          }(_25c9e28880a6, _975aace6d4ba, _82344dbcb8cc);
-        } catch (_82344dbcb8cc) {
-          Ce(_975aace6d4ba, _82344dbcb8cc, "fetch");
-        } else if (_25c9e28880a6.type === "websocket") try {
-          _82344dbcb8cc.ready || await _82344dbcb8cc.init(), await async function(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) {
-            let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba.connect(new URL(_82344dbcb8cc.websocket.url), _82344dbcb8cc.websocket.protocols, _82344dbcb8cc.websocket.requestHeaders, _361d506d96b6 => {
-              _1bfb445437e6.call(_82344dbcb8cc.websocket.channel, {
+          }(_fdd1e7c9091b, _f9d1bc577e59, _8ffa921e40eb);
+        } catch (_8ffa921e40eb) {
+          Ce(_f9d1bc577e59, _8ffa921e40eb, "fetch");
+        } else if (_fdd1e7c9091b.type === "websocket") try {
+          _8ffa921e40eb.ready || await _8ffa921e40eb.init(), await async function(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) {
+            let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59.connect(new URL(_8ffa921e40eb.websocket.url), _8ffa921e40eb.websocket.protocols, _8ffa921e40eb.websocket.requestHeaders, _c331fbac9a70 => {
+              _df7be027a452.call(_8ffa921e40eb.websocket.channel, {
                 type: "open",
-                args: [ _361d506d96b6 ]
+                args: [ _c331fbac9a70 ]
               });
-            }, _361d506d96b6 => {
-              _361d506d96b6 instanceof ArrayBuffer ? _1bfb445437e6.call(_82344dbcb8cc.websocket.channel, {
+            }, _c331fbac9a70 => {
+              _c331fbac9a70 instanceof ArrayBuffer ? _df7be027a452.call(_8ffa921e40eb.websocket.channel, {
                 type: "message",
-                args: [ _361d506d96b6 ]
-              }, [ _361d506d96b6 ]) : _1bfb445437e6.call(_82344dbcb8cc.websocket.channel, {
+                args: [ _c331fbac9a70 ]
+              }, [ _c331fbac9a70 ]) : _df7be027a452.call(_8ffa921e40eb.websocket.channel, {
                 type: "message",
-                args: [ _361d506d96b6 ]
+                args: [ _c331fbac9a70 ]
               });
-            }, (_361d506d96b6, _975aace6d4ba) => {
-              _1bfb445437e6.call(_82344dbcb8cc.websocket.channel, {
+            }, (_c331fbac9a70, _f9d1bc577e59) => {
+              _df7be027a452.call(_8ffa921e40eb.websocket.channel, {
                 type: "close",
-                args: [ _361d506d96b6, _975aace6d4ba ]
+                args: [ _c331fbac9a70, _f9d1bc577e59 ]
               });
-            }, _361d506d96b6 => {
-              _1bfb445437e6.call(_82344dbcb8cc.websocket.channel, {
+            }, _c331fbac9a70 => {
+              _df7be027a452.call(_8ffa921e40eb.websocket.channel, {
                 type: "error",
-                args: [ _361d506d96b6 ]
+                args: [ _c331fbac9a70 ]
               });
             });
-            _82344dbcb8cc.websocket.channel.onmessage = _82344dbcb8cc => {
-              _82344dbcb8cc.data.type === "data" ? _25c9e28880a6(_82344dbcb8cc.data.data) : _82344dbcb8cc.data.type === "close" && _0379e95aaabd(_82344dbcb8cc.data.closeCode, _82344dbcb8cc.data.closeReason);
-            }, _1bfb445437e6.call(_361d506d96b6, {
+            _8ffa921e40eb.websocket.channel.onmessage = _8ffa921e40eb => {
+              _8ffa921e40eb.data.type === "data" ? _fdd1e7c9091b(_8ffa921e40eb.data.data) : _8ffa921e40eb.data.type === "close" && _0c2d9a15385c(_8ffa921e40eb.data.closeCode, _8ffa921e40eb.data.closeReason);
+            }, _df7be027a452.call(_c331fbac9a70, {
               type: "websocket"
             });
-          }(_25c9e28880a6, _975aace6d4ba, _82344dbcb8cc);
-        } catch (_82344dbcb8cc) {
-          Ce(_975aace6d4ba, _82344dbcb8cc, "websocket");
+          }(_fdd1e7c9091b, _f9d1bc577e59, _8ffa921e40eb);
+        } catch (_8ffa921e40eb) {
+          Ce(_f9d1bc577e59, _8ffa921e40eb, "websocket");
         }
       }, await this.worker.sendMessage({
         type: "set",
         client: {
           function: "bare-mux-remote",
-          args: [ _975aace6d4ba.port2, _361d506d96b6 ]
+          args: [ _f9d1bc577e59.port2, _c331fbac9a70 ]
         }
-      }, [ _975aace6d4ba.port2 ]);
+      }, [ _f9d1bc577e59.port2 ]);
     }
     getInnerPort() {
       return this.worker.port;
     }
   };
   console.debug("bare-mux: running v2.1.6 (build 4b7607b)");
-  var _05dd5104fbcd = class extends _d6f62dc00856.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.Worker = this.window.Worker || {}, 
+  var _8989cbfb18fa = class extends _6a362cf30681.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.Worker = this.window.Worker || {}, 
       this.Worklet = this.window.Worklet || {}, this.workletProto = this.Worklet.prototype || {}, 
       this.workerProto = this.Worker.prototype || {}, this.postMessage = this.workerProto.postMessage, 
       this.terminate = this.workerProto.terminate, this.addModule = this.workletProto.addModule;
     }
     overrideWorker() {
-      this.ctx.override(this.window, "Worker", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return new _82344dbcb8cc(..._975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd = {}] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          url: _25c9e28880a6,
-          options: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        if (this.emit("worker", _d92d6e54f516), _d92d6e54f516.intercepted) return _d92d6e54f516.returnValue;
-        let _0d3402e587ac = new _d92d6e54f516.target(_d92d6e54f516.data.url, _d92d6e54f516.data.options), _cd61c2c759b1 = new _4953347b1604;
+      this.ctx.override(this.window, "Worker", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return new _8ffa921e40eb(..._f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c = {}] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          url: _fdd1e7c9091b,
+          options: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        if (this.emit("worker", _53f7585e9797), _53f7585e9797.intercepted) return _53f7585e9797.returnValue;
+        let _e434b087a60b = new _53f7585e9797.target(_53f7585e9797.data.url, _53f7585e9797.data.options), _c0b656f59244 = new _aa0ff0c7551e;
         return (async () => {
-          let _82344dbcb8cc = await _cd61c2c759b1.getInnerPort();
-          _0d3402e587ac.postMessage({
+          let _8ffa921e40eb = await _c0b656f59244.getInnerPort();
+          _e434b087a60b.postMessage({
             __uv$type: "baremuxinit",
-            port: _82344dbcb8cc
-          }, [ _82344dbcb8cc ]);
-        })(), _0d3402e587ac;
+            port: _8ffa921e40eb
+          }, [ _8ffa921e40eb ]);
+        })(), _e434b087a60b;
       }, !0);
     }
     overrideAddModule() {
-      this.ctx.override(this.workletProto, "addModule", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd = {}] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          url: _25c9e28880a6,
-          options: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("addModule", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.url, _d92d6e54f516.data.options);
+      this.ctx.override(this.workletProto, "addModule", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c = {}] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          url: _fdd1e7c9091b,
+          options: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("addModule", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.url, _53f7585e9797.data.options);
       });
     }
     overridePostMessage() {
-      this.ctx.override(this.workerProto, "postMessage", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd = []] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          message: _25c9e28880a6,
-          transfer: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("postMessage", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.message, _d92d6e54f516.data.transfer);
+      this.ctx.override(this.workerProto, "postMessage", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c = []] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          message: _fdd1e7c9091b,
+          transfer: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("postMessage", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.message, _53f7585e9797.data.transfer);
       });
     }
     overrideImportScripts() {
-      this.ctx.override(this.window, "importScripts", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let _25c9e28880a6 = new _6a7610c279e1({
-          scripts: _975aace6d4ba
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("importScripts", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : _25c9e28880a6.target.apply(_25c9e28880a6.that, _25c9e28880a6.data.scripts);
+      this.ctx.override(this.window, "importScripts", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let _fdd1e7c9091b = new _f417c1c28204({
+          scripts: _f9d1bc577e59
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("importScripts", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : _fdd1e7c9091b.target.apply(_fdd1e7c9091b.that, _fdd1e7c9091b.data.scripts);
       });
     }
-  }, _4fc2c59bb4a3 = _05dd5104fbcd;
-  var _0bf6aaff67c8 = m(_0d3402e587ac(), 1);
-  var _f9ac31fd0b8b = class extends _0bf6aaff67c8.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = this.ctx.window, this.URL = this.window.URL || {}, 
+  }, _eae49f9b84b7 = _8989cbfb18fa;
+  var _878ebbbf9850 = m(_e434b087a60b(), 1);
+  var _cb668ee6953a = class extends _878ebbbf9850.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = this.ctx.window, this.URL = this.window.URL || {}, 
       this.createObjectURL = this.URL.createObjectURL, this.revokeObjectURL = this.URL.revokeObjectURL;
     }
     overrideObjectURL() {
-      this.ctx.override(this.URL, "createObjectURL", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          object: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("createObjectURL", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.object);
-      }), this.ctx.override(this.URL, "revokeObjectURL", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          url: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("revokeObjectURL", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.url);
+      this.ctx.override(this.URL, "createObjectURL", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          object: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("createObjectURL", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.object);
+      }), this.ctx.override(this.URL, "revokeObjectURL", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          url: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("revokeObjectURL", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.url);
       });
     }
-  }, _a5b4db9b3d41 = _f9ac31fd0b8b;
-  var _be0ac459e2f9 = m(_0d3402e587ac(), 1);
-  var _0ea5f0abb378 = m(_0d3402e587ac(), 1);
-  var _1a985be3c634 = class extends _0ea5f0abb378.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.localStorage = this.window.localStorage || null, 
+  }, _8482f147b8d1 = _cb668ee6953a;
+  var _edb05ff8811a = m(_e434b087a60b(), 1);
+  var _379d6ca46034 = m(_e434b087a60b(), 1);
+  var _15adffd2a8ea = class extends _379d6ca46034.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.localStorage = this.window.localStorage || null, 
       this.sessionStorage = this.window.sessionStorage || null, this.Storage = this.window.Storage || {}, 
       this.storeProto = this.Storage.prototype || {}, this.getItem = this.storeProto.getItem || null, 
       this.setItem = this.storeProto.setItem || null, this.removeItem = this.storeProto.removeItem || null, 
       this.clear = this.storeProto.clear || null, this.key = this.storeProto.key || null, 
-      this.methods = [ "key", "getItem", "setItem", "removeItem", "clear" ], this.wrappers = new _82344dbcb8cc.nativeMethods.Map;
+      this.methods = [ "key", "getItem", "setItem", "removeItem", "clear" ], this.wrappers = new _8ffa921e40eb.nativeMethods.Map;
     }
     overrideMethods() {
-      this.ctx.override(this.storeProto, "getItem", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(this.wrappers.get(_361d506d96b6) || _361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          name: _25c9e28880a6
-        }, _82344dbcb8cc, this.wrappers.get(_361d506d96b6) || _361d506d96b6);
-        return this.emit("getItem", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.name);
-      }), this.ctx.override(this.storeProto, "setItem", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(this.wrappers.get(_361d506d96b6) || _361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          name: _25c9e28880a6,
-          value: _0379e95aaabd
-        }, _82344dbcb8cc, this.wrappers.get(_361d506d96b6) || _361d506d96b6);
-        return this.emit("setItem", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.name, _d92d6e54f516.data.value);
-      }), this.ctx.override(this.storeProto, "removeItem", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(this.wrappers.get(_361d506d96b6) || _361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          name: _25c9e28880a6
-        }, _82344dbcb8cc, this.wrappers.get(_361d506d96b6) || _361d506d96b6);
-        return this.emit("removeItem", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.name);
-      }), this.ctx.override(this.storeProto, "clear", (_82344dbcb8cc, _361d506d96b6) => {
-        let _975aace6d4ba = new _6a7610c279e1(null, _82344dbcb8cc, this.wrappers.get(_361d506d96b6) || _361d506d96b6);
-        return this.emit("clear", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.target.call(_975aace6d4ba.that);
-      }), this.ctx.override(this.storeProto, "key", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(this.wrappers.get(_361d506d96b6) || _361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          index: _25c9e28880a6
-        }, _82344dbcb8cc, this.wrappers.get(_361d506d96b6) || _361d506d96b6);
-        return this.emit("key", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.index);
+      this.ctx.override(this.storeProto, "getItem", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(this.wrappers.get(_c331fbac9a70) || _c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          name: _fdd1e7c9091b
+        }, _8ffa921e40eb, this.wrappers.get(_c331fbac9a70) || _c331fbac9a70);
+        return this.emit("getItem", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.name);
+      }), this.ctx.override(this.storeProto, "setItem", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(this.wrappers.get(_c331fbac9a70) || _c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          name: _fdd1e7c9091b,
+          value: _0c2d9a15385c
+        }, _8ffa921e40eb, this.wrappers.get(_c331fbac9a70) || _c331fbac9a70);
+        return this.emit("setItem", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.name, _53f7585e9797.data.value);
+      }), this.ctx.override(this.storeProto, "removeItem", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(this.wrappers.get(_c331fbac9a70) || _c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          name: _fdd1e7c9091b
+        }, _8ffa921e40eb, this.wrappers.get(_c331fbac9a70) || _c331fbac9a70);
+        return this.emit("removeItem", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.name);
+      }), this.ctx.override(this.storeProto, "clear", (_8ffa921e40eb, _c331fbac9a70) => {
+        let _f9d1bc577e59 = new _f417c1c28204(null, _8ffa921e40eb, this.wrappers.get(_c331fbac9a70) || _c331fbac9a70);
+        return this.emit("clear", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.target.call(_f9d1bc577e59.that);
+      }), this.ctx.override(this.storeProto, "key", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(this.wrappers.get(_c331fbac9a70) || _c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          index: _fdd1e7c9091b
+        }, _8ffa921e40eb, this.wrappers.get(_c331fbac9a70) || _c331fbac9a70);
+        return this.emit("key", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.index);
       });
     }
     overrideLength() {
       this.ctx.overrideDescriptor(this.storeProto, "length", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            length: _82344dbcb8cc.call(this.wrappers.get(_361d506d96b6) || _361d506d96b6)
-          }, _82344dbcb8cc, this.wrappers.get(_361d506d96b6) || _361d506d96b6);
-          return this.emit("length", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.length;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            length: _8ffa921e40eb.call(this.wrappers.get(_c331fbac9a70) || _c331fbac9a70)
+          }, _8ffa921e40eb, this.wrappers.get(_c331fbac9a70) || _c331fbac9a70);
+          return this.emit("length", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.length;
         }
       });
     }
-    emulate(_82344dbcb8cc, _361d506d96b6 = {}) {
-      this.ctx.nativeMethods.setPrototypeOf(_361d506d96b6, this.storeProto);
-      let _975aace6d4ba = new this.ctx.window.Proxy(_361d506d96b6, {
-        get: (_361d506d96b6, _975aace6d4ba) => {
-          if (_975aace6d4ba in this.storeProto || typeof _975aace6d4ba == "symbol") return _82344dbcb8cc[_975aace6d4ba];
-          let _25c9e28880a6 = new _6a7610c279e1({
-            name: _975aace6d4ba
-          }, null, _82344dbcb8cc);
-          return this.emit("get", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : _82344dbcb8cc[_25c9e28880a6.data.name];
+    emulate(_8ffa921e40eb, _c331fbac9a70 = {}) {
+      this.ctx.nativeMethods.setPrototypeOf(_c331fbac9a70, this.storeProto);
+      let _f9d1bc577e59 = new this.ctx.window.Proxy(_c331fbac9a70, {
+        get: (_c331fbac9a70, _f9d1bc577e59) => {
+          if (_f9d1bc577e59 in this.storeProto || typeof _f9d1bc577e59 == "symbol") return _8ffa921e40eb[_f9d1bc577e59];
+          let _fdd1e7c9091b = new _f417c1c28204({
+            name: _f9d1bc577e59
+          }, null, _8ffa921e40eb);
+          return this.emit("get", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : _8ffa921e40eb[_fdd1e7c9091b.data.name];
         },
-        set: (_361d506d96b6, _975aace6d4ba, _25c9e28880a6) => {
-          if (_975aace6d4ba in this.storeProto || typeof _975aace6d4ba == "symbol") return _82344dbcb8cc[_975aace6d4ba] = _25c9e28880a6;
-          let _0379e95aaabd = new _6a7610c279e1({
-            name: _975aace6d4ba,
-            value: _25c9e28880a6
-          }, null, _82344dbcb8cc);
-          return this.emit("set", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _82344dbcb8cc[_0379e95aaabd.data.name] = _0379e95aaabd.data.value;
+        set: (_c331fbac9a70, _f9d1bc577e59, _fdd1e7c9091b) => {
+          if (_f9d1bc577e59 in this.storeProto || typeof _f9d1bc577e59 == "symbol") return _8ffa921e40eb[_f9d1bc577e59] = _fdd1e7c9091b;
+          let _0c2d9a15385c = new _f417c1c28204({
+            name: _f9d1bc577e59,
+            value: _fdd1e7c9091b
+          }, null, _8ffa921e40eb);
+          return this.emit("set", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _8ffa921e40eb[_0c2d9a15385c.data.name] = _0c2d9a15385c.data.value;
         },
-        deleteProperty: (_361d506d96b6, _975aace6d4ba) => {
-          if (typeof _975aace6d4ba == "symbol") return delete _82344dbcb8cc[_975aace6d4ba];
-          let _25c9e28880a6 = new _6a7610c279e1({
-            name: _975aace6d4ba
-          }, null, _82344dbcb8cc);
-          return this.emit("delete", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : delete _82344dbcb8cc[_25c9e28880a6.data.name];
+        deleteProperty: (_c331fbac9a70, _f9d1bc577e59) => {
+          if (typeof _f9d1bc577e59 == "symbol") return delete _8ffa921e40eb[_f9d1bc577e59];
+          let _fdd1e7c9091b = new _f417c1c28204({
+            name: _f9d1bc577e59
+          }, null, _8ffa921e40eb);
+          return this.emit("delete", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : delete _8ffa921e40eb[_fdd1e7c9091b.data.name];
         }
       });
-      return this.wrappers.set(_975aace6d4ba, _82344dbcb8cc), this.ctx.nativeMethods.setPrototypeOf(_975aace6d4ba, this.storeProto), 
-      _975aace6d4ba;
+      return this.wrappers.set(_f9d1bc577e59, _8ffa921e40eb), this.ctx.nativeMethods.setPrototypeOf(_f9d1bc577e59, this.storeProto), 
+      _f9d1bc577e59;
     }
-  }, _4c6ce6cc88d2 = _1a985be3c634;
-  var _35b038df1aff = m(_0d3402e587ac(), 1);
-  var _df7d15dcaf73 = class extends _35b038df1aff.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.CSSStyleDeclaration = this.window.CSSStyleDeclaration || {}, 
+  }, _f0b92d4b4e69 = _15adffd2a8ea;
+  var _6394aec57d86 = m(_e434b087a60b(), 1);
+  var _a66b92ae5a45 = class extends _6394aec57d86.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.CSSStyleDeclaration = this.window.CSSStyleDeclaration || {}, 
       this.cssStyleProto = this.CSSStyleDeclaration.prototype || {}, this.getPropertyValue = this.cssStyleProto.getPropertyValue || null, 
-      this.setProperty = this.cssStyleProto.setProperty || null, this.cssText - _82344dbcb8cc.nativeMethods.getOwnPropertyDescriptors(this.cssStyleProto, "cssText"), 
+      this.setProperty = this.cssStyleProto.setProperty || null, this.cssText - _8ffa921e40eb.nativeMethods.getOwnPropertyDescriptors(this.cssStyleProto, "cssText"), 
       this.urlProps = [ "background", "backgroundImage", "borderImage", "borderImageSource", "listStyle", "listStyleImage", "cursor" ], 
       this.dashedUrlProps = [ "background", "background-image", "border-image", "border-image-source", "list-style", "list-style-image", "cursor" ], 
       this.propToDashed = {
@@ -1555,165 +1555,165 @@
       };
     }
     overrideSetGetProperty() {
-      this.ctx.override(this.cssStyleProto, "getPropertyValue", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6] = _975aace6d4ba, _0379e95aaabd = new _6a7610c279e1({
-          property: _25c9e28880a6
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("getPropertyValue", _0379e95aaabd), _0379e95aaabd.intercepted ? _0379e95aaabd.returnValue : _0379e95aaabd.target.call(_0379e95aaabd.that, _0379e95aaabd.data.property);
-      }), this.ctx.override(this.cssStyleProto, "setProperty", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (2 > _975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          property: _25c9e28880a6,
-          value: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("setProperty", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.property, _d92d6e54f516.data.value);
+      this.ctx.override(this.cssStyleProto, "getPropertyValue", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b] = _f9d1bc577e59, _0c2d9a15385c = new _f417c1c28204({
+          property: _fdd1e7c9091b
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("getPropertyValue", _0c2d9a15385c), _0c2d9a15385c.intercepted ? _0c2d9a15385c.returnValue : _0c2d9a15385c.target.call(_0c2d9a15385c.that, _0c2d9a15385c.data.property);
+      }), this.ctx.override(this.cssStyleProto, "setProperty", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (2 > _f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          property: _fdd1e7c9091b,
+          value: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("setProperty", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.property, _53f7585e9797.data.value);
       });
     }
     overrideCssText() {
       this.ctx.overrideDescriptor(this.cssStyleProto, "cssText", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("getCssText", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("getCssText", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         },
-        set: (_82344dbcb8cc, _361d506d96b6, [_975aace6d4ba]) => {
-          let _25c9e28880a6 = new _6a7610c279e1({
-            value: _975aace6d4ba
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("setCssText", _25c9e28880a6), _25c9e28880a6.intercepted ? _25c9e28880a6.returnValue : _25c9e28880a6.target.call(_25c9e28880a6.that, _25c9e28880a6.data.value);
+        set: (_8ffa921e40eb, _c331fbac9a70, [_f9d1bc577e59]) => {
+          let _fdd1e7c9091b = new _f417c1c28204({
+            value: _f9d1bc577e59
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("setCssText", _fdd1e7c9091b), _fdd1e7c9091b.intercepted ? _fdd1e7c9091b.returnValue : _fdd1e7c9091b.target.call(_fdd1e7c9091b.that, _fdd1e7c9091b.data.value);
         }
       });
     }
-  }, _84a28dfce788 = _df7d15dcaf73;
-  var _4112e88e4c15 = m(_0d3402e587ac(), 1);
-  var _ef3b7f26a464 = class extends _4112e88e4c15.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = this.ctx.window, this.IDBDatabase = this.window.IDBDatabase || {}, 
+  }, _4991d92e0be9 = _a66b92ae5a45;
+  var _a7fc4eb90bdb = m(_e434b087a60b(), 1);
+  var _7c592f069f0e = class extends _a7fc4eb90bdb.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = this.ctx.window, this.IDBDatabase = this.window.IDBDatabase || {}, 
       this.idbDatabaseProto = this.IDBDatabase.prototype || {}, this.IDBFactory = this.window.IDBFactory || {}, 
       this.idbFactoryProto = this.IDBFactory.prototype || {}, this.open = this.idbFactoryProto.open;
     }
     overrideOpen() {
-      this.ctx.override(this.IDBFactory.prototype, "open", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        if (!_975aace6d4ba.length || !_975aace6d4ba.length) return _82344dbcb8cc.apply(_361d506d96b6, _975aace6d4ba);
-        let [_25c9e28880a6, _0379e95aaabd] = _975aace6d4ba, _d92d6e54f516 = new _6a7610c279e1({
-          name: _25c9e28880a6,
-          version: _0379e95aaabd
-        }, _82344dbcb8cc, _361d506d96b6);
-        return this.emit("idbFactoryOpen", _d92d6e54f516), _d92d6e54f516.intercepted ? _d92d6e54f516.returnValue : _d92d6e54f516.target.call(_d92d6e54f516.that, _d92d6e54f516.data.name, _d92d6e54f516.data.version);
+      this.ctx.override(this.IDBFactory.prototype, "open", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        if (!_f9d1bc577e59.length || !_f9d1bc577e59.length) return _8ffa921e40eb.apply(_c331fbac9a70, _f9d1bc577e59);
+        let [_fdd1e7c9091b, _0c2d9a15385c] = _f9d1bc577e59, _53f7585e9797 = new _f417c1c28204({
+          name: _fdd1e7c9091b,
+          version: _0c2d9a15385c
+        }, _8ffa921e40eb, _c331fbac9a70);
+        return this.emit("idbFactoryOpen", _53f7585e9797), _53f7585e9797.intercepted ? _53f7585e9797.returnValue : _53f7585e9797.target.call(_53f7585e9797.that, _53f7585e9797.data.name, _53f7585e9797.data.version);
       });
     }
     overrideName() {
       this.ctx.overrideDescriptor(this.idbDatabaseProto, "name", {
-        get: (_82344dbcb8cc, _361d506d96b6) => {
-          let _975aace6d4ba = new _6a7610c279e1({
-            value: _82344dbcb8cc.call(_361d506d96b6)
-          }, _82344dbcb8cc, _361d506d96b6);
-          return this.emit("idbFactoryName", _975aace6d4ba), _975aace6d4ba.intercepted ? _975aace6d4ba.returnValue : _975aace6d4ba.data.value;
+        get: (_8ffa921e40eb, _c331fbac9a70) => {
+          let _f9d1bc577e59 = new _f417c1c28204({
+            value: _8ffa921e40eb.call(_c331fbac9a70)
+          }, _8ffa921e40eb, _c331fbac9a70);
+          return this.emit("idbFactoryName", _f9d1bc577e59), _f9d1bc577e59.intercepted ? _f9d1bc577e59.returnValue : _f9d1bc577e59.data.value;
         }
       });
     }
-  }, _88ba7c271e1f = _ef3b7f26a464;
-  var _022aa68f8352 = m(_0d3402e587ac(), 1);
-  var _eab4cb622ee9 = class extends _022aa68f8352.default {
-    constructor(_82344dbcb8cc) {
-      super(), this.ctx = _82344dbcb8cc, this.window = _82344dbcb8cc.window, this.WebSocket = this.window.WebSocket || {}, 
+  }, _227bb279a807 = _7c592f069f0e;
+  var _dc7bd7855171 = m(_e434b087a60b(), 1);
+  var _a136717114b2 = class extends _dc7bd7855171.default {
+    constructor(_8ffa921e40eb) {
+      super(), this.ctx = _8ffa921e40eb, this.window = _8ffa921e40eb.window, this.WebSocket = this.window.WebSocket || {}, 
       this.wsProto = this.WebSocket.prototype, this.CONNECTING = WebSocket.CONNECTING, 
       this.OPEN = WebSocket.OPEN, this.CLOSING = WebSocket.CLOSING, this.CLOSED = WebSocket.CLOSED, 
       this.socketmap = new WeakMap;
     }
-    overrideWebSocket(_82344dbcb8cc) {
-      this.ctx.override(this.window, "WebSocket", (_361d506d96b6, _975aace6d4ba, _25c9e28880a6) => {
-        let _0379e95aaabd = new EventTarget;
-        Object.setPrototypeOf(_0379e95aaabd, this.WebSocket.prototype), _0379e95aaabd.constructor = this.WebSocket;
-        let i = _82344dbcb8cc => new Proxy(_82344dbcb8cc, {
-          get(_82344dbcb8cc, _361d506d96b6) {
-            return _361d506d96b6 === "isTrusted" ? !0 : Reflect.get(_82344dbcb8cc, _361d506d96b6);
+    overrideWebSocket(_8ffa921e40eb) {
+      this.ctx.override(this.window, "WebSocket", (_c331fbac9a70, _f9d1bc577e59, _fdd1e7c9091b) => {
+        let _0c2d9a15385c = new EventTarget;
+        Object.setPrototypeOf(_0c2d9a15385c, this.WebSocket.prototype), _0c2d9a15385c.constructor = this.WebSocket;
+        let i = _8ffa921e40eb => new Proxy(_8ffa921e40eb, {
+          get(_8ffa921e40eb, _c331fbac9a70) {
+            return _c331fbac9a70 === "isTrusted" ? !0 : Reflect.get(_8ffa921e40eb, _c331fbac9a70);
           }
-        }), _d92d6e54f516 = _82344dbcb8cc.createWebSocket(_25c9e28880a6[0], _25c9e28880a6[1], null, {
+        }), _53f7585e9797 = _8ffa921e40eb.createWebSocket(_fdd1e7c9091b[0], _fdd1e7c9091b[1], null, {
           "User-Agent": navigator.userAgent,
           Origin: __uv.meta.url.origin
-        }), _0d3402e587ac = {
+        }), _e434b087a60b = {
           extensions: "",
           protocol: "",
-          url: _25c9e28880a6[0],
+          url: _fdd1e7c9091b[0],
           binaryType: "blob",
-          barews: _d92d6e54f516
+          barews: _53f7585e9797
         };
-        function u(_82344dbcb8cc) {
-          _0d3402e587ac["on" + _82344dbcb8cc.type]?.(i(_82344dbcb8cc)), _0379e95aaabd.dispatchEvent(_82344dbcb8cc);
+        function u(_8ffa921e40eb) {
+          _e434b087a60b["on" + _8ffa921e40eb.type]?.(i(_8ffa921e40eb)), _0c2d9a15385c.dispatchEvent(_8ffa921e40eb);
         }
-        return _d92d6e54f516.addEventListener("open", () => {
+        return _53f7585e9797.addEventListener("open", () => {
           u(new Event("open"));
-        }), _d92d6e54f516.addEventListener("close", _82344dbcb8cc => {
-          u(new CloseEvent("close", _82344dbcb8cc));
-        }), _d92d6e54f516.addEventListener("message", async _82344dbcb8cc => {
-          let _361d506d96b6 = _82344dbcb8cc.data;
-          typeof _361d506d96b6 == "string" || ("byteLength" in _361d506d96b6 ? _0d3402e587ac.binaryType === "blob" ? _361d506d96b6 = new Blob([ _361d506d96b6 ]) : Object.setPrototypeOf(_361d506d96b6, ArrayBuffer.prototype) : "arrayBuffer" in _361d506d96b6 && _0d3402e587ac.binaryType === "arraybuffer" && (_361d506d96b6 = await _361d506d96b6.arrayBuffer(), 
-          Object.setPrototypeOf(_361d506d96b6, ArrayBuffer.prototype)));
-          let _975aace6d4ba = new MessageEvent("message", {
-            data: _361d506d96b6,
-            origin: _82344dbcb8cc.origin,
-            lastEventId: _82344dbcb8cc.lastEventId,
-            source: _82344dbcb8cc.source,
-            ports: _82344dbcb8cc.ports
+        }), _53f7585e9797.addEventListener("close", _8ffa921e40eb => {
+          u(new CloseEvent("close", _8ffa921e40eb));
+        }), _53f7585e9797.addEventListener("message", async _8ffa921e40eb => {
+          let _c331fbac9a70 = _8ffa921e40eb.data;
+          typeof _c331fbac9a70 == "string" || ("byteLength" in _c331fbac9a70 ? _e434b087a60b.binaryType === "blob" ? _c331fbac9a70 = new Blob([ _c331fbac9a70 ]) : Object.setPrototypeOf(_c331fbac9a70, ArrayBuffer.prototype) : "arrayBuffer" in _c331fbac9a70 && _e434b087a60b.binaryType === "arraybuffer" && (_c331fbac9a70 = await _c331fbac9a70.arrayBuffer(), 
+          Object.setPrototypeOf(_c331fbac9a70, ArrayBuffer.prototype)));
+          let _f9d1bc577e59 = new MessageEvent("message", {
+            data: _c331fbac9a70,
+            origin: _8ffa921e40eb.origin,
+            lastEventId: _8ffa921e40eb.lastEventId,
+            source: _8ffa921e40eb.source,
+            ports: _8ffa921e40eb.ports
           });
-          u(_975aace6d4ba);
-        }), _d92d6e54f516.addEventListener("error", () => {
+          u(_f9d1bc577e59);
+        }), _53f7585e9797.addEventListener("error", () => {
           u(new Event("error"));
-        }), this.socketmap.set(_0379e95aaabd, _0d3402e587ac), _0379e95aaabd;
+        }), this.socketmap.set(_0c2d9a15385c, _e434b087a60b), _0c2d9a15385c;
       }, !0), this.ctx.overrideDescriptor(this.wsProto, "binaryType", {
-        get: (_82344dbcb8cc, _361d506d96b6) => this.socketmap.get(_361d506d96b6).binaryType,
-        set: (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-          let _25c9e28880a6 = this.socketmap.get(_361d506d96b6);
-          (_975aace6d4ba[0] === "blob" || _975aace6d4ba[0] === "arraybuffer") && (_25c9e28880a6.binaryType = _975aace6d4ba[0]);
+        get: (_8ffa921e40eb, _c331fbac9a70) => this.socketmap.get(_c331fbac9a70).binaryType,
+        set: (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+          let _fdd1e7c9091b = this.socketmap.get(_c331fbac9a70);
+          (_f9d1bc577e59[0] === "blob" || _f9d1bc577e59[0] === "arraybuffer") && (_fdd1e7c9091b.binaryType = _f9d1bc577e59[0]);
         }
       }), this.ctx.overrideDescriptor(this.wsProto, "bufferedAmount", {
-        get: (_82344dbcb8cc, _361d506d96b6) => 0
+        get: (_8ffa921e40eb, _c331fbac9a70) => 0
       }), this.ctx.overrideDescriptor(this.wsProto, "extensions", {
-        get: (_82344dbcb8cc, _361d506d96b6) => this.socketmap.get(_361d506d96b6).extensions
+        get: (_8ffa921e40eb, _c331fbac9a70) => this.socketmap.get(_c331fbac9a70).extensions
       }), this.ctx.overrideDescriptor(this.wsProto, "onclose", {
-        get: (_82344dbcb8cc, _361d506d96b6) => this.socketmap.get(_361d506d96b6).onclose,
-        set: (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-          let _25c9e28880a6 = this.socketmap.get(_361d506d96b6);
-          _25c9e28880a6.onclose = _975aace6d4ba[0];
+        get: (_8ffa921e40eb, _c331fbac9a70) => this.socketmap.get(_c331fbac9a70).onclose,
+        set: (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+          let _fdd1e7c9091b = this.socketmap.get(_c331fbac9a70);
+          _fdd1e7c9091b.onclose = _f9d1bc577e59[0];
         }
       }), this.ctx.overrideDescriptor(this.wsProto, "onerror", {
-        get: (_82344dbcb8cc, _361d506d96b6) => this.socketmap.get(_361d506d96b6).onerror,
-        set: (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-          let _25c9e28880a6 = this.socketmap.get(_361d506d96b6);
-          _25c9e28880a6.onerror = _975aace6d4ba[0];
+        get: (_8ffa921e40eb, _c331fbac9a70) => this.socketmap.get(_c331fbac9a70).onerror,
+        set: (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+          let _fdd1e7c9091b = this.socketmap.get(_c331fbac9a70);
+          _fdd1e7c9091b.onerror = _f9d1bc577e59[0];
         }
       }), this.ctx.overrideDescriptor(this.wsProto, "onmessage", {
-        get: (_82344dbcb8cc, _361d506d96b6) => this.socketmap.get(_361d506d96b6).onmessage,
-        set: (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-          let _25c9e28880a6 = this.socketmap.get(_361d506d96b6);
-          _25c9e28880a6.onmessage = _975aace6d4ba[0];
+        get: (_8ffa921e40eb, _c331fbac9a70) => this.socketmap.get(_c331fbac9a70).onmessage,
+        set: (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+          let _fdd1e7c9091b = this.socketmap.get(_c331fbac9a70);
+          _fdd1e7c9091b.onmessage = _f9d1bc577e59[0];
         }
       }), this.ctx.overrideDescriptor(this.wsProto, "onopen", {
-        get: (_82344dbcb8cc, _361d506d96b6) => this.socketmap.get(_361d506d96b6).onopen,
-        set: (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-          let _25c9e28880a6 = this.socketmap.get(_361d506d96b6);
-          _25c9e28880a6.onopen = _975aace6d4ba[0];
+        get: (_8ffa921e40eb, _c331fbac9a70) => this.socketmap.get(_c331fbac9a70).onopen,
+        set: (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+          let _fdd1e7c9091b = this.socketmap.get(_c331fbac9a70);
+          _fdd1e7c9091b.onopen = _f9d1bc577e59[0];
         }
       }), this.ctx.overrideDescriptor(this.wsProto, "url", {
-        get: (_82344dbcb8cc, _361d506d96b6) => this.socketmap.get(_361d506d96b6).url
+        get: (_8ffa921e40eb, _c331fbac9a70) => this.socketmap.get(_c331fbac9a70).url
       }), this.ctx.overrideDescriptor(this.wsProto, "protocol", {
-        get: (_82344dbcb8cc, _361d506d96b6) => this.socketmap.get(_361d506d96b6).protocol
+        get: (_8ffa921e40eb, _c331fbac9a70) => this.socketmap.get(_c331fbac9a70).protocol
       }), this.ctx.overrideDescriptor(this.wsProto, "readyState", {
-        get: (_82344dbcb8cc, _361d506d96b6) => this.socketmap.get(_361d506d96b6).barews.readyState
-      }), this.ctx.override(this.wsProto, "send", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => this.socketmap.get(_361d506d96b6).barews.send(_975aace6d4ba[0]), !1), 
-      this.ctx.override(this.wsProto, "close", (_82344dbcb8cc, _361d506d96b6, _975aace6d4ba) => {
-        let _25c9e28880a6 = this.socketmap.get(_361d506d96b6);
-        return _975aace6d4ba[0] === void 0 && (_975aace6d4ba[0] = 1e3), _975aace6d4ba[1] === void 0 && (_975aace6d4ba[1] = ""), 
-        _25c9e28880a6.barews.close(_975aace6d4ba[0], _975aace6d4ba[1]);
+        get: (_8ffa921e40eb, _c331fbac9a70) => this.socketmap.get(_c331fbac9a70).barews.readyState
+      }), this.ctx.override(this.wsProto, "send", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => this.socketmap.get(_c331fbac9a70).barews.send(_f9d1bc577e59[0]), !1), 
+      this.ctx.override(this.wsProto, "close", (_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59) => {
+        let _fdd1e7c9091b = this.socketmap.get(_c331fbac9a70);
+        return _f9d1bc577e59[0] === void 0 && (_f9d1bc577e59[0] = 1e3), _f9d1bc577e59[1] === void 0 && (_f9d1bc577e59[1] = ""), 
+        _fdd1e7c9091b.barews.close(_f9d1bc577e59[0], _f9d1bc577e59[1]);
       }, !1);
     }
-  }, _e11d1256cd01 = _eab4cb622ee9;
-  var _559fbc48e152 = class extends _be0ac459e2f9.default {
-    constructor(_82344dbcb8cc = self, _361d506d96b6, _975aace6d4ba = !_82344dbcb8cc.window) {
-      super(), this.window = _82344dbcb8cc, this.nativeMethods = {
+  }, _6566ab8f6e1c = _a136717114b2;
+  var _e9f29270fdfe = class extends _edb05ff8811a.default {
+    constructor(_8ffa921e40eb = self, _c331fbac9a70, _f9d1bc577e59 = !_8ffa921e40eb.window) {
+      super(), this.window = _8ffa921e40eb, this.nativeMethods = {
         fnToString: this.window.Function.prototype.toString,
         defineProperty: this.window.Object.defineProperty,
         getOwnPropertyDescriptor: this.window.Object.getOwnPropertyDescriptor,
@@ -1726,44 +1726,44 @@
         isExtensible: this.window.Object.isExtensible,
         Map: this.window.Map,
         Proxy: this.window.Proxy
-      }, this.worker = _975aace6d4ba, this.bareClient = _361d506d96b6, this.fetch = new _9efccd75062b(this), 
-      this.xhr = new _ce793791e7ee(this), this.idb = new _88ba7c271e1f(this), this.history = new _81d5ba82c687(this), 
-      this.element = new _15005d961edf(this), this.node = new _bbb76c978319(this), this.document = new _c94bb5133033(this), 
-      this.function = new _89cac9590f58(this), this.object = new _f5a720c0d799(this), 
-      this.websocket = new _e11d1256cd01(this), this.message = new _2a9d160ea9b6(this), 
-      this.navigator = new _39ac429ccf4d(this), this.eventSource = new _63fb112d140d(this), 
-      this.attribute = new _1b2c03745f50(this), this.url = new _a5b4db9b3d41(this), this.workers = new _4fc2c59bb4a3(this), 
-      this.location = new _d149d429c8e3(this), this.storage = new _4c6ce6cc88d2(this), 
-      this.style = new _84a28dfce788(this);
+      }, this.worker = _f9d1bc577e59, this.bareClient = _c331fbac9a70, this.fetch = new _e1aa48d3f0d2(this), 
+      this.xhr = new _4128a83cdffc(this), this.idb = new _227bb279a807(this), this.history = new _5ca30de275a3(this), 
+      this.element = new _b03f52af3e7e(this), this.node = new _06d9bdca66cc(this), this.document = new _432d3a50f9bf(this), 
+      this.function = new _1e68dadf9922(this), this.object = new _bb217456d169(this), 
+      this.websocket = new _6566ab8f6e1c(this), this.message = new _037d5ed47948(this), 
+      this.navigator = new _8e8375b1d046(this), this.eventSource = new _466101f3972a(this), 
+      this.attribute = new _5c718aa4723a(this), this.url = new _8482f147b8d1(this), this.workers = new _eae49f9b84b7(this), 
+      this.location = new _b0a4f6c11445(this), this.storage = new _f0b92d4b4e69(this), 
+      this.style = new _4991d92e0be9(this);
     }
-    override(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba, _25c9e28880a6) {
-      let _0379e95aaabd = this.wrap(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba, _25c9e28880a6);
-      return _82344dbcb8cc[_361d506d96b6] = _0379e95aaabd, _0379e95aaabd;
+    override(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59, _fdd1e7c9091b) {
+      let _0c2d9a15385c = this.wrap(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59, _fdd1e7c9091b);
+      return _8ffa921e40eb[_c331fbac9a70] = _0c2d9a15385c, _0c2d9a15385c;
     }
-    overrideDescriptor(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba = {}) {
-      let _25c9e28880a6 = this.wrapDescriptor(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba);
-      return _25c9e28880a6 ? (this.nativeMethods.defineProperty(_82344dbcb8cc, _361d506d96b6, _25c9e28880a6), 
-      _25c9e28880a6) : {};
+    overrideDescriptor(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59 = {}) {
+      let _fdd1e7c9091b = this.wrapDescriptor(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59);
+      return _fdd1e7c9091b ? (this.nativeMethods.defineProperty(_8ffa921e40eb, _c331fbac9a70, _fdd1e7c9091b), 
+      _fdd1e7c9091b) : {};
     }
-    wrap(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba, _25c9e28880a6 = !1) {
-      let _0379e95aaabd = _82344dbcb8cc[_361d506d96b6];
-      if (!_0379e95aaabd) return _0379e95aaabd;
-      let _d92d6e54f516 = "prototype" in _0379e95aaabd ? function() {
-        return _975aace6d4ba(_0379e95aaabd, this, [ ...arguments ]);
+    wrap(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59, _fdd1e7c9091b = !1) {
+      let _0c2d9a15385c = _8ffa921e40eb[_c331fbac9a70];
+      if (!_0c2d9a15385c) return _0c2d9a15385c;
+      let _53f7585e9797 = "prototype" in _0c2d9a15385c ? function() {
+        return _f9d1bc577e59(_0c2d9a15385c, this, [ ...arguments ]);
       } : {
         attach() {
-          return _975aace6d4ba(_0379e95aaabd, this, [ ...arguments ]);
+          return _f9d1bc577e59(_0c2d9a15385c, this, [ ...arguments ]);
         }
       }.attach;
-      return _25c9e28880a6 && (_d92d6e54f516.prototype = _0379e95aaabd.prototype, _d92d6e54f516.prototype.constructor = _d92d6e54f516), 
-      this.emit("wrap", _0379e95aaabd, _d92d6e54f516, _25c9e28880a6), _d92d6e54f516;
+      return _fdd1e7c9091b && (_53f7585e9797.prototype = _0c2d9a15385c.prototype, _53f7585e9797.prototype.constructor = _53f7585e9797), 
+      this.emit("wrap", _0c2d9a15385c, _53f7585e9797, _fdd1e7c9091b), _53f7585e9797;
     }
-    wrapDescriptor(_82344dbcb8cc, _361d506d96b6, _975aace6d4ba = {}) {
-      let _25c9e28880a6 = this.nativeMethods.getOwnPropertyDescriptor(_82344dbcb8cc, _361d506d96b6);
-      if (!_25c9e28880a6) return !1;
-      for (let _82344dbcb8cc in _975aace6d4ba) _82344dbcb8cc in _25c9e28880a6 && (_82344dbcb8cc === "get" || _82344dbcb8cc === "set" ? _25c9e28880a6[_82344dbcb8cc] = this.wrap(_25c9e28880a6, _82344dbcb8cc, _975aace6d4ba[_82344dbcb8cc]) : _25c9e28880a6[_82344dbcb8cc] = typeof _975aace6d4ba[_82344dbcb8cc] == "function" ? _975aace6d4ba[_82344dbcb8cc](_25c9e28880a6[_82344dbcb8cc]) : _975aace6d4ba[_82344dbcb8cc]);
-      return _25c9e28880a6;
+    wrapDescriptor(_8ffa921e40eb, _c331fbac9a70, _f9d1bc577e59 = {}) {
+      let _fdd1e7c9091b = this.nativeMethods.getOwnPropertyDescriptor(_8ffa921e40eb, _c331fbac9a70);
+      if (!_fdd1e7c9091b) return !1;
+      for (let _8ffa921e40eb in _f9d1bc577e59) _8ffa921e40eb in _fdd1e7c9091b && (_8ffa921e40eb === "get" || _8ffa921e40eb === "set" ? _fdd1e7c9091b[_8ffa921e40eb] = this.wrap(_fdd1e7c9091b, _8ffa921e40eb, _f9d1bc577e59[_8ffa921e40eb]) : _fdd1e7c9091b[_8ffa921e40eb] = typeof _f9d1bc577e59[_8ffa921e40eb] == "function" ? _f9d1bc577e59[_8ffa921e40eb](_fdd1e7c9091b[_8ffa921e40eb]) : _f9d1bc577e59[_8ffa921e40eb]);
+      return _fdd1e7c9091b;
     }
-  }, _7b973e58bb31 = _559fbc48e152;
-  typeof self == "object" && (self.UVClient = _559fbc48e152);
+  }, _47471ed8f839 = _e9f29270fdfe;
+  typeof self == "object" && (self.UVClient = _e9f29270fdfe);
 })();
