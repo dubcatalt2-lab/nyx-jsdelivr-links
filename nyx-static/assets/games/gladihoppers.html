@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+  <head><script src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/@r85e20fde1445866b404c1a1d!.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gladihoppers</title>
+    <base href="https://cdn.jsdelivr.net/gh/Toaster68/gh@bd6bd0189e8f6579756fbc78ef89241c28e0101b/">
+    <style>body,
+html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #05070d;
+  color: #fff;
+  font-family: system-ui
+}
+#unity-container {
+  width: 100%;
+  height: 100%
+}
+#progress {
+  position: fixed;
+  inset: auto 0 12px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 2
+}</style>
+    <script
+      src="https://cdn.jsdelivr.net/gh/Toaster68/gh@bd6bd0189e8f6579756fbc78ef89241c28e0101b/patch/js/UnityLoader.2019.2.js">
+</script>
+  </head>
+
+  <body>
+    <div id="unity-container"></div>
+    <div id="progress" role="status">Loading Gladihoppers…</div>
+    <script>const progress = document.getElementById("progress");
+
+document.xURL = document.URL, window.config = {
+  cachedDecompressedFileSizes: {
+    "Gladihoppers.data.unityweb": 17409938,
+    "Gladihoppers.wasm.code.unityweb": 6410659,
+    "Gladihoppers.wasm.framework.unityweb": 91463
+  }
+}, window.initPokiBridge = function(e) {
+  const send = (t, o) => window.unityGame.SendMessage(e, t, o);
+  window.commercialBreak = () => Promise.resolve().then(() => send("commercialBreakCompleted")), 
+  window.rewardedBreak = () => Promise.resolve().then(() => send("rewardedBreakCompleted", "false")), 
+  queueMicrotask(() => send("ready"));
+};
+
+const updateProgress = UnityLoader.Progress.update;
+
+UnityLoader.Progress.update = function(e, t, o) {
+  if (o && !o.lengthComputable && o.target) {
+    const e = new URL(o.target.responseURL, document.baseURI), t = e.searchParams.get("url") || e.href;
+    t.includes("/Build/") && (o = {
+      type: o.type,
+      lengthComputable: !1,
+      loaded: o.loaded,
+      total: o.total,
+      target: {
+        responseURL: t
+      }
+    });
+  }
+  return updateProgress.call(this, e, t, o);
+};
+
+try {
+  window.unityGame = window.gameInstance = UnityLoader.instantiate("unity-container", "https://cdn.jsdelivr.net/gh/Toaster68/gh@bd6bd0189e8f6579756fbc78ef89241c28e0101b/Build/Gladihoppers.json", {
+    onProgress(e, t) {
+      progress.textContent = `Loading Gladihoppers\u2026 ${Math.round(100 * t)}%`, 1 === t && (progress.hidden = !0, 
+      parent.postMessage({
+        type: "gn-math:ready"
+      }, "*"));
+    }
+  });
+} catch (e) {
+  progress.textContent = "Gladihoppers could not start. Reload to try again.", parent.postMessage({
+    type: "gn-math:error",
+    message: progress.textContent
+  }, "*");
+}</script>
+  </body>
+
+</html>
+

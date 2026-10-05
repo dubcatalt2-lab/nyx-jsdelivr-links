@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+  <head><script src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/@r85e20fde1445866b404c1a1d!.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>GN Math Game</title>
+    <style>* {
+  box-sizing: border-box;
+  font-weight: 400!important;
+  font-style: normal!important
+}
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background: #0b0f17;
+  color: #f8fafc;
+  font-family: Outfit,Arial,sans-serif
+}
+.loading {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #0b0f17;
+  text-align: center
+}
+.loading.hidden {
+  display: none
+}
+.box {
+  max-width: 540px;
+  width: min(540px,calc(100vw - 48px));
+  border: 1px solid #a78bfa;
+  border-radius: 16px;
+  padding: 24px;
+  background: #111827
+}
+.progress-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+  color: #f8fafc;
+  font-size: 15px
+}
+.progress-track {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(248,250,252,.14)
+}
+.progress-fill {
+  width: 0;
+  height: 100%;
+  border-radius: 999px;
+  background: #a78bfa;
+  transition: width .2s
+}
+.box button {
+  margin-top: 14px;
+  border: 1px solid #a78bfa;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 9px 14px;
+  font: inherit;
+  cursor: pointer
+}
+.game-frame {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #0b0f17
+}</style>
+  </head>
+
+  <body>
+    <div class="loading">
+      <div class="box" id="status">
+        <div class="progress-row"> <span id="progressLabel">Loading</span> <span
+            id="progressPercent">0%</span> </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </div> <iframe id="gameFrame" class="game-frame" title="GN Math game"
+      sandbox="allow-scripts allow-forms allow-modals allow-downloads allow-pointer-lock allow-presentation"
+      allow="fullscreen; gamepad; autoplay; keyboard-map; clipboard-read; clipboard-write; camera; microphone; display-capture; accelerometer; gyroscope; magnetometer; xr-spatial-tracking"
+      allowfullscreen tabindex="0"></iframe>
+    <script src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/@rbd40540c8f7b3a2faf0ddfdc!.js" data-provider="gn"></script>
+    <script type="module">import { prepareGameDocument } from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/@rf41309353ac8075587c9c20c!.js";
+
+const loading = document.querySelector(".loading"), status = document.getElementById("status"), progressLabel = document.getElementById("progressLabel"), progressPercent = document.getElementById("progressPercent"), progressFill = document.getElementById("progressFill"), frame = document.getElementById("gameFrame");
+
+function focusGameFrame() {
+  setTimeout(() => {
+    try {
+      frame.focus({
+        preventScroll: !0
+      });
+    } catch {
+      try {
+        frame.focus();
+      } catch {}
+    }
+  }, 0);
+}
+
+frame.addEventListener("load", () => {
+  setTimeout(focusGameFrame, 80);
+}), frame.addEventListener("pointerdown", focusGameFrame, {
+  capture: !0
+}), document.addEventListener("pointerdown", focusGameFrame, !0), document.addEventListener("wheel", e => {
+  e.ctrlKey && e.preventDefault();
+}, {
+  capture: !0,
+  passive: !1
+}), document.addEventListener("keydown", e => {
+  const t = String(e.key || "").toLowerCase();
+  if (!e.altKey || e.ctrlKey || e.metaKey || 2 === e.location || "alt" !== t) if (!e.altKey || e.ctrlKey || e.metaKey || 2 === e.location || !/^[1-9]$/.test(t) && ![ "l", "d", "t", "w", "r", "arrowleft", "arrowright", "tab" ].includes(t)) (e.ctrlKey || e.metaKey) && [ "+", "=", "-", "_", "0" ].includes(t) && (e.preventDefault(), 
+  e.stopPropagation()); else {
+    e.preventDefault(), e.stopPropagation();
+    try {
+      parent.postMessage({
+        type: "nyx:alt-shortcut",
+        key: t,
+        code: e.code || "",
+        location: e.location || 0,
+        shiftKey: !!e.shiftKey
+      }, "*");
+    } catch {}
+    try {
+      top.postMessage({
+        type: "nyx:alt-shortcut",
+        key: t,
+        code: e.code || "",
+        location: e.location || 0,
+        shiftKey: !!e.shiftKey
+      }, "*");
+    } catch {}
+  } else {
+    e.preventDefault(), e.stopPropagation();
+    try {
+      parent.postMessage({
+        type: "nyx:alt-prime"
+      }, "*");
+    } catch {}
+    try {
+      top.postMessage({
+        type: "nyx:alt-prime"
+      }, "*");
+    } catch {}
+  }
+}, !0);
+
+const params = new URLSearchParams(location.search), game = String(params.get("game") || "").replace(/^\/+/, "");
+
+let progressTimer = 0, gameLaunched = !1, gameLoadStarted = 0, gameReadySignal = !1;
+
+function setGameProgress(e, t = "Loading") {
+  const a = Math.max(0, Math.min(100, Math.round(e)));
+  progressLabel.textContent = a >= 100 ? "Launched" : t, progressPercent.textContent = `${a}%`, 
+  progressFill.style.width = `${a}%`, loading.classList.remove("hidden");
+}
+
+function startGameProgress() {
+  clearInterval(progressTimer), gameLaunched = !1, gameLoadStarted = performance.now();
+  let e = 8;
+  setGameProgress(e), progressTimer = setInterval(() => {
+    e = Math.min(94, e + Math.max(1, .1 * (96 - e))), setGameProgress(e);
+  }, 210);
+}
+
+function finishGameProgress() {
+  if (!gameLaunched) {
+    if (!gameReadySignal && !gameSurfaceReady()) return performance.now() - gameLoadStarted > 11e3 ? void fail("This game loaded a blank screen. One of its required files is missing or blocked.") : void setTimeout(finishGameProgress, 700);
+    gameLaunched = !0, clearInterval(progressTimer), setGameProgress(100, "Launched"), 
+    parent.postMessage({
+      type: "nyx:game-launched"
+    }, "*"), setTimeout(() => loading.classList.add("hidden"), 650);
+  }
+}
+
+function fail(e) {
+  window.nyxReportGameFailure?.(/blank|timed out/i.test(String(e)) ? "startup-timeout" : "load-error"), 
+  clearInterval(progressTimer), status.innerHTML = "", status.append(document.createTextNode(String(e || "This game failed to load.")));
+  const t = document.createElement("button");
+  t.type = "button", t.textContent = "Retry", t.addEventListener("click", () => location.reload());
+  const a = document.createElement("button");
+  a.type = "button", a.textContent = "Open game library", a.addEventListener("click", () => location.href = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/index.html"), 
+  status.append(document.createElement("br"), t, document.createTextNode(" "), a), 
+  loading.classList.remove("hidden"), parent.postMessage({
+    type: "nyx:game-failed"
+  }, "*");
+}
+
+function gameSurfaceReady() {
+  try {
+    const e = frame.contentDocument;
+    return !!e?.body && (!![ ...e.querySelectorAll("canvas,object,embed,ruffle-player,ruffle-object,iframe,#game,#game-container,#unity-container,#unity-canvas,#ruffle,#player") ].find(e => {
+      const t = e.getBoundingClientRect?.();
+      return t && t.width > 40 && t.height > 40 && "none" !== getComputedStyle(e).display;
+    }) || String(e.body.textContent || "").replace(/\s+/g, " ").trim().length > 40);
+  } catch {
+    return !1;
+  }
+}
+
+function safeGamePath(e) {
+  return e && !e.includes("..") && /^[a-z0-9_.-]+\.html(?:-[a-z0-9]+)?$/i.test(e) ? e : "";
+}
+
+window.addEventListener("message", e => {
+  if (e.source === frame.contentWindow) {
+    if ("gn-math:ready" === e.data?.type) return gameReadySignal = !0, void finishGameProgress();
+    if ("gn-math:error" === e.data?.type) {
+      const t = e.data.url ? ` (${e.data.url})` : "";
+      fail(`${e.data.message || "This game failed to load."}${t}`);
+    }
+  }
+}), frame.addEventListener("load", () => setTimeout(finishGameProgress, 1800));
+
+const requestedPath = safeGamePath(game), gamePath = {
+  "785-upd2.html": "785-upd3.html",
+  "253-update.html": "253-update2.html",
+  "801-fix.html": "801-fix2.html"
+}[requestedPath] || requestedPath, archiveGame = {
+  "82-a.html": "C/clcookieclicker.html",
+  "177.html": "R/clrun3.html"
+}[gamePath];
+
+if (archiveGame) location.replace("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/ugs/play.html?game=" + encodeURIComponent(archiveGame)); else if (gamePath) {
+  startGameProgress();
+  const e = `https://raw.githubusercontent.com/freebuisness/html/main/${encodeURIComponent(gamePath)}`;
+  setGameProgress(22);
+  const t = {
+    "4-pf.html": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/gladihoppers.html",
+    "435.html": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/small-world-cup.html"
+  }[gamePath];
+  fetch(t || `/gn-math-fetch?path=${encodeURIComponent(gamePath)}`, {
+    cache: "no-store"
+  }).then(a => {
+    if (a.ok) return setGameProgress(48), a;
+    if (t) throw new Error(`HTTP ${a.status}`);
+    return setGameProgress(34), fetch(e, {
+      cache: "no-store"
+    });
+  }).then(e => {
+    if (!e.ok) throw new Error(`HTTP ${e.status}`);
+    return setGameProgress(58), e.text();
+  }).then(e => {
+    setGameProgress(76), frame.srcdoc = prepareGameDocument(e, gamePath), setGameProgress(88), 
+    setTimeout(finishGameProgress, 7e3);
+  }).catch(e => fail(`Could not load GN Math game: ${e?.message || e || "Network error"}`));
+} else fail("Missing GN Math game path.")</script>
+  </body>
+
+</html>
+

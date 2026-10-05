@@ -1,0 +1,123 @@
+@font-face {
+  font-family: Quicksand;
+  src: url('/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/agents/fonts/Quicksand-Variable.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap
+}
+:root {
+  --accent: #e5e5e5;
+  --accent-rgb: 229,229,229;
+  --text: #f4f4f4;
+  --muted: #aaa;
+  --panel: #292929;
+  --line: #3b3b3b;
+  background: #212121
+}
+body.drop-tube {
+  background: #212121;
+  font-family: Quicksand,Arial,sans-serif
+}
+.starfield {
+  display: none
+}
+.tube-shell {
+  width: min(1400px,calc(100% - 48px));
+  padding-top: 24px
+}
+.media-nav {
+  margin: 0 0 28px;
+  background: #292929;
+  border-radius: 12px;
+  box-shadow: none
+}
+.media-nav button {
+  border-radius: 8px
+}
+.media-nav button.active {
+  background: #3a3a3a;
+  color: #fff
+}
+.catalog-head h1 {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -1px
+}
+.search-box {
+  background: #292929;
+  border-color: #414141;
+  border-radius: 12px;
+  min-width: 0;
+  max-width: 100%
+}
+.topic-row button {
+  background: #292929;
+  border-color: #3a3a3a;
+  color: #ddd
+}
+.video-card {
+  background: 0 0;
+  border: 0;
+  box-shadow: none
+}
+.video-cover {
+  border-radius: 12px;
+  overflow: hidden
+}
+.video-card h3 {
+  font-weight: 500
+}
+.channel-profile,
+.watch-info,
+.watch-related,
+.watch-stats {
+  background: #292929;
+  border-color: #3b3b3b;
+  box-shadow: none
+}
+a,
+button {
+  transition: background .2s,color .2s,border-color .2s
+}
+a:focus-visible,
+button:focus-visible {
+  outline: #ddd solid 2px;
+  outline-offset: 3px
+}
+.notice {
+  background: #303030;
+  border-color: #555;
+  color: #eee
+}
+.catalog-head > * {
+  min-width: 0
+}
+.search-box input {
+  min-width: 0
+}
+.topic-row {
+  max-width: 100%;
+  overflow-x: auto
+}
+.catalog-head {
+  min-width: 0
+}
+@media(max-width:600px) {
+  .tube-shell {
+    width: calc(100% - 24px);
+    padding-top: 12px
+  }
+  .catalog-head h1 {
+    font-size: 25px
+  }
+  .catalog-head {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch
+  }
+  .search-box {
+    width: 100%
+  }
+  .search-box button {
+    padding: 0 12px
+  }
+}

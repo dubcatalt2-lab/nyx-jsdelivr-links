@@ -1,0 +1,1 @@
+globalThis.__NYX_RUNTIME_CONFIG__=Object.freeze({"wispUrl":"wss://vps-a556737a.vps.ovh.us/resources/live/","wispUrls":["wss://vps-a556737a.vps.ovh.us/resources/live/"],"presenceUrl":"","publicOrigin":""});

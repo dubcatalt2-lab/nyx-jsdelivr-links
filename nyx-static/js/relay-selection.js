@@ -1,0 +1,73 @@
+(() => {
+  let t = "", e = "", n = null, r = 0;
+  const o = "nyx.lastWorkingRelay";
+  function a(t) {
+    return new Promise(e => {
+      let n, r, o = !1;
+      const a = t => {
+        if (!o) {
+          if (o = !0, clearTimeout(r), n) {
+            n.onmessage = n.onerror = n.onclose = null;
+            try {
+              n.close();
+            } catch {}
+          }
+          e(t);
+        }
+      };
+      r = setTimeout(() => a(!1), 1e4);
+      try {
+        n = new WebSocket(t), n.binaryType = "arraybuffer", n.onmessage = t => {
+          if (!(t.data instanceof ArrayBuffer)) return;
+          const e = new Uint8Array(t.data);
+          e.length >= 9 && 3 === e[0] && 0 === new DataView(t.data).getUint32(1, !0) && a(!0);
+        }, n.onerror = n.onclose = () => a(!1);
+      } catch {
+        a(!1);
+      }
+    });
+  }
+  function c(o) {
+    const a = JSON.stringify(o);
+    a !== t && (t = a, e = "", n = null, r++);
+  }
+  window.NyxRelaySelection = {
+    current: function(t) {
+      return c(t), e || t[0] || "";
+    },
+    choose: async function(t, l = "") {
+      if (c(t), n) return n;
+      if (e && !l) return e;
+      const i = r;
+      let s = "";
+      try {
+        s = localStorage.getItem(o) || "";
+      } catch {}
+      const u = [ ...new Set([ e, s, ...t ]) ].filter(e => t.includes(e) && e !== l);
+      t.includes(l) && u.push(l), n = (async () => {
+        for (const t of u) {
+          const n = await a(t);
+          if (i !== r) return "";
+          if (n) {
+            e = t;
+            try {
+              localStorage.setItem(o, t);
+            } catch {}
+            return t;
+          }
+        }
+        e = "";
+        try {
+          localStorage.removeItem(o);
+        } catch {}
+        return "";
+      })();
+      try {
+        return await n;
+      } finally {
+        i === r && (n = null);
+      }
+    },
+    probe: a
+  };
+})();
