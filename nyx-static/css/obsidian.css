@@ -1,4 +1,4 @@
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=edb7b05371452584");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=8ded933e3f225757");
 :root {
   --nyx-sidebar-width: 184px;
   --nyx-chrome-height: 0px;
@@ -46,19 +46,23 @@ body.browser-shell.nyx-browser-chrome-visible {
 }
 body.browser-shell::before {
   background: var(--obsidian-bg);
-  filter: blur(6px);
-  transform: scale(1.12);
+  filter: blur(1px);
+  transform: scale(1.02);
   inset: 0
+}
+body.browser-shell:not(.browser-content-active)::after {
+  background: linear-gradient(145deg,rgba(8,10,14,.24),rgba(4,6,10,.4));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.025)
 }
 html body.browser-shell.custom-bg-active .custom-bg-image {
   display: block!important;
-  filter: blur(6px) brightness(.48) saturate(.65);
-  transform: scale(1.12);
+  filter: blur(1px) brightness(.48) saturate(.65);
+  transform: scale(1.02);
   z-index: 1
 }
 body.browser-shell :is(#nyxBeamsBg,#nyxLineWavesBg,.nyx-wave-bg,#defaultVantaBg,#rubyVantaBg,#emeraldVantaBg,#sakuraVantaBg,#whiteVantaBg) {
-  filter: blur(6px) brightness(.55) saturate(.65);
-  transform: scale(1.12)
+  filter: blur(1px) brightness(.55) saturate(.65);
+  transform: scale(1.02)
 }
 html[data-nyx-appearance=light] body.browser-shell::before {
   opacity: .12
@@ -83,22 +87,13 @@ html[data-nyx-beam-wallpaper^=photo-halloween-] {
 }
 html[data-nyx-beam-wallpaper^=photo-] body:not(.custom-bg-active)::before {
   background: #000 var(--nyx-photo-wallpaper) center/cover no-repeat;
-  filter: blur(6px) brightness(.55) saturate(.65)
+  filter: blur(1px) brightness(.55) saturate(.65)
 }
 html[data-nyx-beam-wallpaper$="-deep"] body:not(.custom-bg-active)::before {
-  filter: blur(10px) brightness(.35) saturate(.5)
+  filter: blur(3px) brightness(.35) saturate(.5)
 }
 html[data-nyx-beam-wallpaper$="-mono"] body:not(.custom-bg-active)::before {
-  filter: blur(6px) brightness(.5) grayscale(1)
-}
-html:is([data-nyx-beam-wallpaper^=photo-leaves-],[data-nyx-beam-wallpaper^=photo-moonlight-]) body:not(.custom-bg-active)::before {
-  filter: blur(4px) brightness(.55) saturate(.65)
-}
-html:is([data-nyx-beam-wallpaper^=photo-leaves-],[data-nyx-beam-wallpaper^=photo-moonlight-])[data-nyx-beam-wallpaper$="-deep"] body:not(.custom-bg-active)::before {
-  filter: blur(10px) brightness(.35) saturate(.5)
-}
-html:is([data-nyx-beam-wallpaper^=photo-leaves-],[data-nyx-beam-wallpaper^=photo-moonlight-])[data-nyx-beam-wallpaper$="-mono"] body:not(.custom-bg-active)::before {
-  filter: blur(4px) brightness(.5) grayscale(1)
+  filter: blur(1px) brightness(.5) grayscale(1)
 }
 html[data-nyx-appearance=light][data-nyx-beam-wallpaper^=photo-] body::before {
   opacity: .14

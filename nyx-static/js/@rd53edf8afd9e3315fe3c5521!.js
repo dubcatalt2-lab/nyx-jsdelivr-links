@@ -1,3 +1,9 @@
+/*
+ * Framework-free port of React Bits Line Waves.
+ * Source: https://reactbits.dev/backgrounds/line-waves
+ * Repository: https://github.com/DavidHDev/react-bits
+ * Copyright (c) 2026 David Haz. MIT + Commons Clause; see THIRD_PARTY_NOTICES.md.
+ */
 !function() {
   "use strict";
   const e = Object.freeze({

@@ -11,4 +11,4 @@ For jsDelivr, build with --base=/gh/USER/REPO@REVISION/ (include any folder). Up
 Nyx's public Wisp relay accepts connections from any origin after release 2644d33. Other relay servers must allow your hosting origin. A network that blocks the relay itself can still prevent browsing. Renaming is not a guarantee against filtering.
 
 Source: https://github.com/dubcatalt2-lab/Nyx
-Includes modified AGPL Scramjet and its production patches; retain licenses and publish corresponding source when distributing. Rebuild from the matching Nyx source using npm run build:netlify, then node scripts/build-static-export.mjs with your hosting path. No server credentials included.
+Includes modified AGPL Scramjet and its production patches; retain licenses and publish corresponding source when distributing. Rebuild from the matching Nyx source using npm run build:vps, then node scripts/build-static-export.mjs with your hosting path. No server credentials included.

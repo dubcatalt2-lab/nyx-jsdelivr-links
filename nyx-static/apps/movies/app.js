@@ -1,6 +1,6 @@
-import { additionalSources as _n, movieSourceUrl as Kn } from "./@r777efab39fa6c30081ec55d4!.mjs?v=20260915-aniembed-v1";
+import { additionalSources as _n, movieSourceUrl as Kn } from "./@rfadd4f9595b413bd55e20a33!.js?v=20260915-aniembed-v1";
 
-import { launchMovieProxy as Zn, inspectMovieProxy as Xn, styleMovieVideo as Yn, startMovieProxy as Qn, canStartMovieProxy as ia } from "./@r8fbc4e9b57c83eff4c51cc07!.mjs?v=20260928-playback-recovery-v4";
+import { launchMovieProxy as Zn, inspectMovieProxy as Xn, styleMovieVideo as Yn, startMovieProxy as Qn, canStartMovieProxy as ia } from "./@re874b847568a139e69119ffa!.js?v=20260928-playback-recovery-v4";
 
 (() => {
   "use strict";

@@ -2,7 +2,7 @@ import { renderReply as e, scheduleReply as t } from "./@r30db43030bb8e80f711a54
 
 const o = "drop" === new URLSearchParams(location.search).get("shell") && parent !== window;
 
-import { setupDropEmbed as n } from "../drop/@rac772858f4114cad00bc3cfd!.mjs";
+import { setupDropEmbed as n } from "../drop/@rca66fe0ca42ef1648a842b3c!.js";
 
 import { setupKeys as a } from "./@rd7268825e63a9f17477b5873!.js?v=20261002-haiku-v1";
 

@@ -1,6 +1,7 @@
 !function() {
   "use strict";
-  const e = Object.freeze({
+  // Copyright (c) 2026 David Haz. See THIRD_PARTY_NOTICES.md.
+    const e = Object.freeze({
     obsidian: {
       label: "Obsidian",
       summary: "Quiet dark fabric",
