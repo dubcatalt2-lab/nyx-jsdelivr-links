@@ -5,24 +5,24 @@
       const I = await indexedDB.databases();
       for (const [C, A] of Object.entries(g)) {
         if (!I.some(I => I.name === C) || I.some(I => I.name === A)) continue;
-        const g = (I, g, C) => new Promise((A, G) => {
-          const i = g ? indexedDB.open(I, g) : indexedDB.open(I);
-          i.onerror = () => G(i.error);
-          i.onblocked = () => G(Error("Close other site tabs and reload to update saved browser data."));
-          i.onupgradeneeded = () => C?.(i.result);
-          i.onsuccess = () => A(i.result);
+        const g = (I, g, C) => new Promise((A, i) => {
+          const G = g ? indexedDB.open(I, g) : indexedDB.open(I);
+          G.onerror = () => i(G.error);
+          G.onblocked = () => i(Error("Close other site tabs and reload to update saved browser data."));
+          G.onupgradeneeded = () => C?.(G.result);
+          G.onsuccess = () => A(G.result);
         });
-        const G = await g(C);
-        const i = [...G.objectStoreNames];
+        const i = await g(C);
+        const G = [...i.objectStoreNames];
         let b;
         try {
           b = await new Promise((I, g) => {
-            if (!i.length) return I([]);
-            const C = G.transaction(i, "readonly"),
+            if (!G.length) return I([]);
+            const C = i.transaction(G, "readonly"),
               A = [];
-            for (const I of i) {
+            for (const I of G) {
               const g = C.objectStore(I),
-                G = {
+                i = {
                   name: I,
                   keyPath: g.keyPath,
                   autoIncrement: g.autoIncrement,
@@ -37,12 +37,12 @@
                   }),
                   rows: []
                 };
-              A.push(G);
-              const i = g.openCursor();
-              i.onsuccess = () => {
-                const I = i.result;
+              A.push(i);
+              const G = g.openCursor();
+              G.onsuccess = () => {
+                const I = G.result;
                 if (I) {
-                  G.rows.push({
+                  i.rows.push({
                     key: I.primaryKey,
                     value: I.value
                   });
@@ -55,9 +55,9 @@
             C.onabort = () => g(C.error || Error("Storage copy interrupted."));
           });
         } finally {
-          G.close();
+          i.close();
         }
-        const c = await g(A, G.version, I => {
+        const l = await g(A, i.version, I => {
           for (const g of b) {
             const C = I.createObjectStore(g.name, {
               keyPath: g.keyPath,
@@ -71,8 +71,8 @@
         });
         try {
           await new Promise((I, g) => {
-            if (!i.length) return I();
-            const C = c.transaction(i, "readwrite");
+            if (!G.length) return I();
+            const C = l.transaction(G, "readwrite");
             for (const I of b) {
               const g = C.objectStore(I.name);
               for (const C of I.rows) I.keyPath === null ? g.put(C.value, C.key) : g.put(C.value);
@@ -82,14 +82,14 @@
             C.onabort = () => g(C.error || Error("Storage copy interrupted."));
           });
         } catch (I) {
-          c.close();
+          l.close();
           await new Promise(I => {
             const g = indexedDB.deleteDatabase(A);
             g.onsuccess = g.onerror = g.onblocked = I;
           });
           throw I;
         } finally {
-          c.close();
+          l.close();
         }
       }
     };
@@ -102,9 +102,9 @@
     "PSJ1dGYtOCI+CiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLGluaXRpYWwtc2NhbGU9MSI+CiAg",
     "ICA8bWV0YSBuYW1lPSJyZWZlcnJlciIgY29udGVudD0ibm8tcmVmZXJyZXIiPgogICAgPHRpdGxlPlN0dWR5UmVhZHk8L3RpdGxlPgogICAgPGxp",
     "bmsgcmVsPSJpY29uIiBocmVmPSIvYXBwcy9kcm9wL2xvZ28uc3ZnIiB0eXBlPSJpbWFnZS9zdmcreG1sIj4KICAgIDxsaW5rIHJlbD0ic3R5bGVz",
-    "aGVldCIgaHJlZj0iL2Nzcy9vd25lci1kYXNoYm9hcmQuY3NzP3Jldj04ZGVkOTMzZTNmMjI1NzU3Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVl",
-    "dCIgaHJlZj0iL2Nzcy9vd25lci1kYXNoYm9hcmQtcG9saXNoLmNzcz9yZXY9OGRlZDkzM2UzZjIyNTc1NyI+CiAgICA8bGluayByZWw9InN0eWxl",
-    "c2hlZXQiIGhyZWY9Ii9hcHBzL2Ryb3Avc3R5bGUuY3NzP3Jldj04ZGVkOTMzZTNmMjI1NzU3Ij4KICAgIDxzY3JpcHQgc3JjPSIvcnVudGltZS1j",
+    "aGVldCIgaHJlZj0iL2Nzcy9vd25lci1kYXNoYm9hcmQuY3NzP3Jldj00OTU1ZDZjMWI3NjdhNTllIj4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVl",
+    "dCIgaHJlZj0iL2Nzcy9vd25lci1kYXNoYm9hcmQtcG9saXNoLmNzcz9yZXY9NDk1NWQ2YzFiNzY3YTU5ZSI+CiAgICA8bGluayByZWw9InN0eWxl",
+    "c2hlZXQiIGhyZWY9Ii9hcHBzL2Ryb3Avc3R5bGUuY3NzP3Jldj00OTU1ZDZjMWI3NjdhNTllIj4KICAgIDxzY3JpcHQgc3JjPSIvcnVudGltZS1j",
     "b25maWcuanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCB0eXBlPSJtb2R1bGUiIHNyYz0iL2FwcHMvZHJvcC9AcjZlY2QwMTU2MWYyNTM1MzljY2Zj",
     "ZWUzNSEuanMiPjwvc2NyaXB0PgogICAgPHN0eWxlPmh0bWwuc3RhcnR1cC1jb3ZlcmVkIHsKICBvdmVyZmxvdzogaGlkZGVuOwogIGJhY2tncm91",
     "bmQ6ICNmNWY3ZmEKfQpodG1sLnN0YXJ0dXAtY292ZXJlZCBib2R5ID4gOm5vdCgjc3R1ZHlyZWFkeS1zdGFydHVwKTpub3Qoc2NyaXB0KSB7CiAg",

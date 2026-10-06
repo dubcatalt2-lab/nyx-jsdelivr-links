@@ -1,9 +1,9 @@
 export function loremDesktop({api: e, screen: t, status: o, connected: n, reconnect: r}) {
-  let s, i, a, c, l, d = !1, u = !1, p = !1, h = "", v = null, m = !1;
+  let s, i, a, c, l, d = !1, u = !1, p = !1, v = "", h = null, m = !1;
   function f() {
     if (d || !p || !m) return;
-    if (!v) return void o("Desktop open");
-    const n = Math.max(0, Math.ceil((v - Date.now()) / 1e3));
+    if (!h) return void o("Desktop open");
+    const n = Math.max(0, Math.ceil((h - Date.now()) / 1e3));
     if (!n) return p = !1, t.replaceChildren(y), y.querySelector("h1").textContent = "Session ended", 
     q("Your session is over. Reconnect to join the queue again."), x.hidden = !1, void e("/lorem/queue").catch(() => {});
     o("Desktop open \xb7 " + Math.floor(n / 60) + ":" + String(n % 60).padStart(2, "0") + " remaining");
@@ -32,7 +32,7 @@ export function loremDesktop({api: e, screen: t, status: o, connected: n, reconn
   }
   function T(e, o) {
     if (d) return;
-    p = !0, h = e.url, v = Number(o) || null, m = !1, k.hidden = !0, y.querySelector("h1").textContent = "Opening your desktop";
+    p = !0, v = e.url, h = Number(o) || null, m = !1, k.hidden = !0, y.querySelector("h1").textContent = "Opening your desktop";
     const r = new URL(e.url);
     if ("https://loremgroup.org" !== r.origin || r.username || r.password || r.search || r.hash || !/^\/vm\/[A-Za-z0-9_-]+\/$/.test(r.pathname)) throw Error("Unsupported desktop URL.");
     const s = document.createElement("iframe");
@@ -55,13 +55,13 @@ export function loremDesktop({api: e, screen: t, status: o, connected: n, reconn
       if ("ready" === t.status) return void T(t.vm, t.expiresAt);
       if ("recovering" === t.status) throw Error(t.message);
       if ("queued" !== t.status) throw Error("Your queue reservation ended. Use Reconnect to join again.");
-      k.hidden = !1, y.querySelector("h1").textContent = t.position ? "You\u2019re #" + t.position + " in line" : "Waiting for a desktop", 
+      k.hidden = !1, y.querySelector("h1").textContent = "service_unavailable" === t.reason ? "Desktop service unavailable" : t.position ? "You\u2019re #" + t.position + " in line" : "Waiting for a desktop", 
       q("isolated_desktop_pending" === t.reason ? "Waiting for a separate desktop. Your place is saved." : "service_unavailable" === t.reason ? "The service is reconnecting. Your place is saved." : t.providerPosition ? "Waiting for provider capacity \xb7 provider position " + t.providerPosition : "Desktops are busy. Yours will open automatically."), 
       s = setTimeout(E, 5e3);
     } catch (t) {
       if (d || u) return;
-      t.status >= 500 || "TypeError" === t.name || "TimeoutError" === t.name ? (q("Reconnecting to the queue. Your place is saved."), 
-      s = setTimeout(E, 1e4)) : S(t);
+      t.status >= 500 || "TypeError" === t.name || "TimeoutError" === t.name ? (y.querySelector("h1").textContent = "Reconnecting to desktop service", 
+      q("Reconnecting to the queue. Your place is saved."), s = setTimeout(E, 1e4)) : S(t);
     }
   }
   k.onclick = async () => {
@@ -89,7 +89,7 @@ export function loremDesktop({api: e, screen: t, status: o, connected: n, reconn
       try {
         const o = await e("/lorem/queue");
         if (d) return;
-        "ready" === o.status && o.vm?.url === h || (t.replaceChildren(y), p = !1, S(Error(o.message || "Your desktop session ended. Reconnect to start a new session.")));
+        "ready" === o.status && o.vm?.url === v || (t.replaceChildren(y), p = !1, S(Error(o.message || "Your desktop session ended. Reconnect to start a new session.")));
       } catch (n) {
         if (d) return;
         [ 401, 403, 404 ].includes(n.status) ? (t.replaceChildren(), R(), o("Sign in again to reconnect.")) : o(n.message);

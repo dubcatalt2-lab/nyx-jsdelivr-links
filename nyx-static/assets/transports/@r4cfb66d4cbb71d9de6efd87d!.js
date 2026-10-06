@@ -1,16 +1,16 @@
-import λfc53bcd0dbdd from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/epoxy/@rebc1ad8dd3184da107fa150d!.js";
+import λ01ebce3e74af from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/epoxy/@rebc1ad8dd3184da107fa150d!.js";
 
-import { headerEntries as λ6c83c53669f9, headerRecord as λ6e5f0afbb4ff } from "./@r58e1303ec81b4e613dc28874!.js";
+import { headerEntries as λ8eabed8b0ecb, headerRecord as λb2f4ceb94e12 } from "./@r58e1303ec81b4e613dc28874!.js";
 
-export default class Gu extends λfc53bcd0dbdd {
-  async request(λfc53bcd0dbdd, λ66075fbd95e9, λ41bc937851ad, λf200cf9fa40a, λ429934eafe44) {
-    const λ41377cc737e5 = await super.request(λfc53bcd0dbdd, λ66075fbd95e9, λ41bc937851ad, λ6e5f0afbb4ff(λf200cf9fa40a), λ429934eafe44);
+export default class Gu extends λ01ebce3e74af {
+  async request(λ01ebce3e74af, λ9b9d49024cf9, λ572594835b34, λdd04f8692185, λa0418db9f28f) {
+    const λ683c5779e96d = await super.request(λ01ebce3e74af, λ9b9d49024cf9, λ572594835b34, λb2f4ceb94e12(λdd04f8692185), λa0418db9f28f);
     return {
-      ...λ41377cc737e5,
-      headers: λ6c83c53669f9(λ41377cc737e5.headers)
+      ...λ683c5779e96d,
+      headers: λ8eabed8b0ecb(λ683c5779e96d.headers)
     };
   }
-  connect(λfc53bcd0dbdd, λ6c83c53669f9, λ66075fbd95e9, λ41bc937851ad, λf200cf9fa40a, λ429934eafe44, λ41377cc737e5) {
-    return super.connect(λfc53bcd0dbdd, λ6c83c53669f9, λ6e5f0afbb4ff(λ66075fbd95e9), λ41bc937851ad, λf200cf9fa40a, λ429934eafe44, λ41377cc737e5);
+  connect(λ01ebce3e74af, λ8eabed8b0ecb, λ9b9d49024cf9, λ572594835b34, λdd04f8692185, λa0418db9f28f, λ683c5779e96d) {
+    return super.connect(λ01ebce3e74af, λ8eabed8b0ecb, λb2f4ceb94e12(λ9b9d49024cf9), λ572594835b34, λdd04f8692185, λa0418db9f28f, λ683c5779e96d);
   }
 }

@@ -76,7 +76,7 @@
     rebuildMesh() {
       this.mesh && (this.group.remove(this.mesh), this.mesh.geometry.dispose(), this.mesh.material.dispose());
       const e = this.options, t = function(e, t, n, i, s = 0, r = 100) {
-        const o = new e.BufferGeometry, a = t * (r + 1) * 2, c = t * r * 2, l = new Float32Array(3 * a), d = new Uint32Array(3 * c), h = new Float32Array(2 * a);
+        const o = new e.BufferGeometry, a = t * (r + 1) * 2, c = t * r * 2, l = new Float32Array(3 * a), h = new Uint32Array(3 * c), d = new Float32Array(2 * a);
         let g = 0, m = 0, f = 0;
         const u = -(t * n + (t - 1) * s) / 2;
         for (let v = 0; v < t; v++) {
@@ -85,15 +85,15 @@
             const a = i * (s / r - .5);
             l.set([ e, a, 0, e + n, a, 0 ], 3 * g);
             const c = s / r;
-            if (h.set([ t, c + o, t + 1, c + o ], f), s < r) {
+            if (d.set([ t, c + o, t + 1, c + o ], f), s < r) {
               const e = g, t = g + 1, n = g + 2, i = g + 3;
-              d.set([ e, t, n, n, t, i ], m), m += 6;
+              h.set([ e, t, n, n, t, i ], m), m += 6;
             }
             g += 2, f += 4;
           }
         }
-        return o.setAttribute("position", new e.BufferAttribute(l, 3)), o.setAttribute("uv", new e.BufferAttribute(h, 2)), 
-        o.setIndex(new e.BufferAttribute(d, 1)), o.computeVertexNormals(), o;
+        return o.setAttribute("position", new e.BufferAttribute(l, 3)), o.setAttribute("uv", new e.BufferAttribute(d, 2)), 
+        o.setIndex(new e.BufferAttribute(h, 1)), o.computeVertexNormals(), o;
       }(this.THREE, e.beamNumber, e.beamWidth, e.beamHeight, 0, 100), n = function(e, t) {
         return function(e, t, n) {
           const i = e.ShaderLib.physical, s = e.UniformsUtils.clone(i.uniforms), r = new t(n.material || {});
@@ -172,7 +172,12 @@
     tick=e => {
       if (this.frame = 0, !this.running) return;
       const t = this.lastFrame ? Math.min(.1, (e - this.lastFrame) / 1e3) : 0;
-      this.lastFrame = e, this.time += .1 * t, this.renderOnce(), this.frame = requestAnimationFrame(this.tick);
+      this.lastFrame = e, this.time += .1 * t;
+      try {
+        this.renderOnce(), this.frame = requestAnimationFrame(this.tick);
+      } catch (n) {
+        this.stop(), l(n);
+      }
     };
     start() {
       this.running || (this.running = !0, this.lastFrame = 0, this.frame = requestAnimationFrame(this.tick));
@@ -185,53 +190,76 @@
       this.stop(), this.mesh?.geometry?.dispose(), this.mesh?.material?.dispose(), this.renderer?.dispose();
     }
   }
-  let i = null, s = null, r = "frost", o = {
+  let i = null, s = null, r = !1, o = "frost", a = {
     ...t
   };
-  const a = matchMedia("(prefers-reduced-motion: reduce)");
-  function c() {
+  const c = matchMedia("(prefers-reduced-motion: reduce)");
+  function l(e) {
+    const t = s;
+    s = null, r = !0;
+    try {
+      t?.dispose();
+    } catch {}
+    i && (i.dataset.renderer = "fallback"), console.warn("Nyx Beams renderer unavailable", e);
+  }
+  function h() {
     if ("obsidian" === document.documentElement.dataset.nyxBeamWallpaper || document.documentElement.dataset.nyxBeamWallpaper?.startsWith("photo-")) return s?.stop(), 
     void (i && (i.hidden = !0));
     if (!i) return;
-    const e = document.body, t = e?.classList.contains("browser-content-active") && !e.classList.contains("nyx-built-in-content-active"), r = "lineWaves" === document.documentElement?.dataset.nyxBeamWallpaper, c = !e || r || e.classList.contains("custom-bg-active") || e.classList.contains("three-d-backgrounds") || t;
-    if (i.hidden = c, c) return void s?.stop();
-    const l = function() {
-      if (s || !i || !window.THREE) return s;
-      try {
-        s = new n(i, o), i.dataset.renderer = "react-bits";
-      } catch (e) {
-        i.dataset.renderer = "fallback", console.warn("Nyx Beams renderer unavailable", e);
-      }
-      return s;
-    }();
-    l?.resize(), l?.renderOnce(), !s || !i || i.hidden || document.hidden || a.matches || document.body?.classList.contains("lag-reducer") ? l?.stop() : l?.start();
+    const e = document.body, t = e?.classList.contains("browser-content-active") && !e.classList.contains("nyx-built-in-content-active"), o = "lineWaves" === document.documentElement?.dataset.nyxBeamWallpaper, h = !e || o || e.classList.contains("custom-bg-active") || e.classList.contains("three-d-backgrounds") || t;
+    if (i.hidden = h, h) s?.stop(); else try {
+      const e = function() {
+        if (s || r || !i || !window.THREE) return s;
+        try {
+          s = new n(i, a), i.dataset.renderer = "react-bits";
+        } catch (e) {
+          l(e);
+        }
+        return s;
+      }();
+      e?.resize(), e?.renderOnce(), !s || !i || i.hidden || document.hidden || c.matches || document.body?.classList.contains("lag-reducer") ? e?.stop() : e?.start();
+    } catch (d) {
+      l(d);
+    }
   }
-  function l(n = "frost", a = {}) {
-    r = e[n] ? n : "frost", o = {
+  function d(n = "frost", r = {}) {
+    if (o = e[n] ? n : "frost", a = {
       ...t,
-      ...o,
-      lightColor: e[r].lightColor,
-      ...a
-    }, i = document.getElementById("nyxBeamsBg") || i, i && (i.dataset.preset = r, i.dataset.lightColor = o.lightColor), 
-    s && s.update(o), c();
+      ...a,
+      lightColor: e[o].lightColor,
+      ...r
+    }, i = document.getElementById("nyxBeamsBg") || i, i && (i.dataset.preset = o, i.dataset.lightColor = a.lightColor), 
+    s && "obsidian" !== n && "lineWaves" !== n && !n.startsWith("photo-")) try {
+      s.update(a);
+    } catch (c) {
+      l(c);
+    }
+    h();
   }
-  function d() {
-    i = document.getElementById("nyxBeamsBg"), i && (l(localStorage.getItem("nyx.beamWallpaper") || "frost"), 
-    new MutationObserver(c).observe(document.body, {
+  function g() {
+    i = document.getElementById("nyxBeamsBg"), i && (d(localStorage.getItem("nyx.beamWallpaper") || "frost"), 
+    new MutationObserver(h).observe(document.body, {
       attributes: !0,
       attributeFilter: [ "class" ]
     }), new ResizeObserver(() => {
-      i.hidden || (s?.resize(), s?.renderOnce());
-    }).observe(i), document.addEventListener("visibilitychange", () => document.hidden ? s?.stop() : c()), 
-    a.addEventListener?.("change", c), i.addEventListener("webglcontextlost", e => {
+      if (!i.hidden) try {
+        s?.resize(), s?.renderOnce();
+      } catch (e) {
+        l(e);
+      }
+    }).observe(i), document.addEventListener("visibilitychange", () => document.hidden ? s?.stop() : h()), 
+    c.addEventListener?.("change", h), i.addEventListener("webglcontextlost", e => {
       e.preventDefault(), s?.stop();
     }), i.addEventListener("webglcontextrestored", () => {
-      s?.dispose(), s = null, c();
+      try {
+        s?.dispose();
+      } catch {}
+      s = null, r = !1, h();
     }));
   }
   window.NyxBeamsWallpaper = Object.freeze({
     presets: e,
-    apply: l,
+    apply: d,
     renderPreview: function(i, s) {
       if ("obsidian" === s) {
         const e = i?.getContext("2d");
@@ -261,9 +289,9 @@
         a?.dispose();
       }
     },
-    syncVisibility: c,
+    syncVisibility: h,
     source: "React Bits Beams"
-  }), "loading" === document.readyState ? document.addEventListener("DOMContentLoaded", d, {
+  }), "loading" === document.readyState ? document.addEventListener("DOMContentLoaded", g, {
     once: !0
-  }) : d();
+  }) : g();
 }();

@@ -347,7 +347,7 @@
     } catch {}
     a && r("Cloud Gaming session ended.", "ready");
   }
-  !async function() {
+  async function S() {
     try {
       n.network.value = "restricted" === localStorage.getItem("nyx-cloud-network") ? "restricted" : "auto";
     } catch {}
@@ -375,9 +375,9 @@
     });
     try {
       const a = await c(`${e}/status`, {}, !1);
-      if (!0 === a.maintenance) return t.configured = !1, o("Currently down", "error"), 
-      r("Cloud gaming is currently down.", "error"), n.network.disabled = !0, n.search.disabled = !0, 
-      void (n.tag.disabled = !0);
+      if (!0 === a.maintenance) return t.configured = !1, o("Stratus unavailable", "error"), 
+      r("Stratus is currently unavailable. Luna is available above.", "error"), n.network.disabled = !0, 
+      n.search.disabled = !0, void (n.tag.disabled = !0);
       if (!p()) return void o("Streaming unavailable", "error");
       if (t.configured = !0 === a.configured, o(t.configured ? "Stratus ready" : "Setup required", t.configured ? "ready" : "error"), 
       t.configured || r(a.setupMessage || "Cloud Gaming needs a configured provider account. Ask the owner to finish setup.", "error"), 
@@ -407,5 +407,11 @@
     } catch (a) {
       r(a.message || "Cloud Gaming is unavailable.", "error"), t.games.length || (n.empty.hidden = !1);
     }
-  }();
+  }
+  const C = document.querySelector("[data-luna-dialog]");
+  C?.open ? C.addEventListener("close", () => {
+    S();
+  }, {
+    once: !0
+  }) : S();
 })();
