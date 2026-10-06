@@ -4,7 +4,7 @@ Upload ALL files, preserving folders. Open Nyx.svg over HTTPS.
 Built hosting path: /gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/
 Relay: wss://vps-a556737a.vps.ovh.us/resources/live/
 
-This is not an iframe of nyxlearning.org. The SVG installs a local static-file worker, then opens the packaged Nyx interface. HTML navigation is served with the correct media type, including on jsDelivr. Scramjet v2 runtime names and URLs use the production renaming build. Accounts, AI, server media, chat and backend publishing are hidden. Some catalog games and remote services still require their upstream servers.
+This is not an iframe of nyxlearning.org. The SVG installs a local static-file worker, then opens the packaged Nyx interface at the same bookmarkable Nyx.svg address. HTML navigation is served with the correct media type, including on jsDelivr. Scramjet v2 runtime names and URLs use the production renaming build. Accounts, AI, server media, chat and backend publishing are hidden. Some catalog games and remote services still require their upstream servers.
 
 For jsDelivr, build with --base=/gh/USER/REPO@REVISION/ (include any folder). Upload this entire directory to that exact repository/revision/path. Share https://cdn.jsdelivr.net plus that path plus Nyx.svg. The existing Link Generator's old iframe SVGs are unchanged.
 

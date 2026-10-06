@@ -17,15 +17,17 @@
     tester: "Tester",
     contributor: "Contributor",
     member: "Member",
+    adkid: "Adkid",
     guest: "Guest"
   }), a = Object.freeze({
+    adkid: "member",
     co_owner: "owner",
     manager: "admin",
     support: "moderator",
     tester: "developer",
     contributor: "developer",
     guest: "member"
-  }), n = Object.freeze([ "member", "contributor", "tester", "support", "moderator", "developer", "manager", "admin", "co_owner", "owner" ]), o = e => t[e] || "Member", r = e => e?.customRole?.label || o(e?.role), s = e => /^#[0-9a-f]{6}$/i.test(String(e?.customRole?.color || "")) ? e.customRole.color : "", i = t => `<img class="nyx-owner-role-icon" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/roles/${e(a[t] || t)}.png" alt="" aria-hidden="true">`, l = (e, t) => e?.querySelectorAll?.("[data-owner-role-option]").forEach(e => {
+  }), n = Object.freeze([ "member", "adkid", "contributor", "tester", "support", "moderator", "developer", "manager", "admin", "co_owner", "owner" ]), o = e => t[e] || "Member", r = e => e?.customRole?.label || o(e?.role), s = e => /^#[0-9a-f]{6}$/i.test(String(e?.customRole?.color || "")) ? e.customRole.color : "", i = t => `<img class="nyx-owner-role-icon" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/roles/${e(a[t] || t)}.png" alt="" aria-hidden="true">`, l = (e, t) => e?.querySelectorAll?.("[data-owner-role-option]").forEach(e => {
     const a = e.dataset.ownerRoleOption === t;
     e.classList.toggle("active", a), e.setAttribute("aria-checked", String(a));
   }), c = e => ({
@@ -170,7 +172,7 @@
     }, w = document.createElement("section");
     w.className = "nyx-owner-dashboard-overlay owner-organized", w.setAttribute("role", "dialog"), 
     w.setAttribute("aria-modal", "true"), w.setAttribute("aria-labelledby", "nyxOwnerDashboardTitle"), 
-    w.innerHTML = `\n      <main class="nyx-owner-dashboard">\n        <header class="nyx-owner-header">\n          <div><span class="nyx-owner-eyebrow">${x("shield")}NYX ADMINISTRATION</span><h1 id="nyxOwnerDashboardTitle">Owner Dashboard</h1><p data-owner-access-copy>Loading your role permissions\u2026</p></div>\n          <div class="nyx-owner-header-actions">\n            <button type="button" data-owner-refresh>${x("refresh")}<span>Refresh</span></button>\n            <button class="nyx-owner-close" type="button" data-owner-close aria-label="Close owner dashboard">${x("close")}</button>\n          </div>\n        </header>\n        <nav class="nyx-owner-nav" aria-label="Dashboard sections">${[ [ "overview", "Overview" ], [ "users", "Users" ], [ "services", "Services" ], [ "activity", "Activity" ] ].map(([e, t]) => `<button type="button" data-owner-section="${e}" aria-pressed="${"overview" === e}" aria-controls="nyx-owner-section-${e}">${t}</button>`).join("")}</nav>\n        <section class="nyx-owner-section" data-owner-panel="overview" id="nyx-owner-section-overview" aria-label="Overview">\n          <div class="nyx-owner-section-heading"><h2>At a glance</h2><p>Choose a metric to view matching accounts.</p></div>\n          <section class="nyx-owner-metrics" data-owner-metrics aria-label="Account metrics"></section>\n          <section class="nyx-owner-traffic" data-owner-traffic hidden aria-label="Server traffic"></section>\n        </section>\n        <section class="nyx-owner-section" data-owner-panel="services" id="nyx-owner-section-services" aria-label="Services" hidden>\n          <div class="nyx-owner-section-heading"><h2>Services</h2><p>Balances, playback health, and game reports.</p></div>\n          <div class="nyx-owner-service-grid">\n            <section class="nyx-owner-tube-status" data-owner-ai-status hidden aria-live="polite"></section>\n            <section class="nyx-owner-tube-status" data-owner-tube-status hidden aria-live="polite"></section>\n            <section class="nyx-owner-tube-status" data-owner-game-reports hidden></section>\n          </div>\n        </section>\n        <section class="nyx-owner-workspace nyx-owner-section" data-owner-panel="users" id="nyx-owner-section-users" aria-label="Users" hidden>\n          <div class="nyx-owner-users-panel">\n            <header class="nyx-owner-panel-head">\n              <div><h2>${x("users")}Users</h2><span data-owner-user-count>Loading accounts\u2026</span></div>\n              <div class="nyx-owner-quick-actions">\n                <button type="button" data-owner-online-only>${x("online")}Online users</button>\n                <button type="button" data-owner-export>${x("download")}Export page</button>\n                <button type="button" data-owner-global-apps hidden>${x("apps")}Manage apps</button><button type="button" data-owner-studyready hidden>${x("apps")}StudyReady</button>\n                <button type="button" data-owner-custom-roles hidden>${x("users")}Custom roles</button>\n                <button type="button" data-owner-ip-bans hidden>${x("shield")}IP bans</button>\n              </div>\n            </header>\n            <form class="nyx-owner-filters" data-owner-filters>\n              <label class="nyx-owner-search">${x("search")}<input type="search" name="search" placeholder="Search name, username, email, or UID" autocomplete="off"></label>\n              <select name="role" aria-label="Filter by role"><option value="all">All roles</option><option value="guest">Guest</option><option value="owner">Owner</option><option value="co_owner">Co-owner</option><option value="admin">Admin</option><option value="manager">Manager</option><option value="developer">Developer</option><option value="moderator">Moderator</option><option value="support">Support</option><option value="tester">Tester</option><option value="contributor">Contributor</option><option value="member">Member</option></select>\n              <select name="subscription" aria-label="Filter by subscription"><option value="all">All subscriptions</option><option value="none">No account</option><option value="free">Free</option><option value="premium">Premium</option><option value="trialing">Trial</option><option value="past_due">Past due</option><option value="canceled">Canceled</option></select>\n              <select name="status" aria-label="Filter by account status"><option value="all">All accounts</option><option value="enabled">Enabled</option><option value="disabled">Disabled</option><option value="online">Online now</option><option value="offline">Offline</option></select>\n            </form>\n            <div class="nyx-owner-table-wrap" data-owner-table aria-live="polite"></div>\n            <footer class="nyx-owner-pagination" data-owner-pagination></footer>\n          </div>\n        </section>\n        <section class="nyx-owner-section" data-owner-panel="activity" id="nyx-owner-section-activity" aria-label="Activity" hidden>\n          <aside class="nyx-owner-activity-panel">\n            <header><div><h2>${x("activity")}Activity logs</h2><span>Security and account events</span></div></header>\n            <div class="nyx-owner-activity-list" data-owner-activity></div>\n          </aside>\n        </section>\n      </main>\n      <aside class="nyx-owner-user-drawer" data-owner-user-drawer hidden></aside>\n      <section class="nyx-owner-confirm" data-owner-confirm hidden></section>\n      <div class="nyx-owner-toasts" data-owner-toasts aria-live="polite"></div>`, 
+    w.innerHTML = `\n      <main class="nyx-owner-dashboard">\n        <header class="nyx-owner-header">\n          <div><span class="nyx-owner-eyebrow">${x("shield")}NYX ADMINISTRATION</span><h1 id="nyxOwnerDashboardTitle">Owner Dashboard</h1><p data-owner-access-copy>Loading your role permissions\u2026</p></div>\n          <div class="nyx-owner-header-actions">\n            <button type="button" data-owner-refresh>${x("refresh")}<span>Refresh</span></button>\n            <button class="nyx-owner-close" type="button" data-owner-close aria-label="Close owner dashboard">${x("close")}</button>\n          </div>\n        </header>\n        <nav class="nyx-owner-nav" aria-label="Dashboard sections">${[ [ "overview", "Overview" ], [ "users", "Users" ], [ "services", "Services" ], [ "activity", "Activity" ] ].map(([e, t]) => `<button type="button" data-owner-section="${e}" aria-pressed="${"overview" === e}" aria-controls="nyx-owner-section-${e}">${t}</button>`).join("")}</nav>\n        <section class="nyx-owner-section" data-owner-panel="overview" id="nyx-owner-section-overview" aria-label="Overview">\n          <div class="nyx-owner-section-heading"><h2>At a glance</h2><p>Choose a metric to view matching accounts.</p></div>\n          <section class="nyx-owner-metrics" data-owner-metrics aria-label="Account metrics"></section>\n          <section class="nyx-owner-traffic" data-owner-traffic hidden aria-label="Server traffic"></section>\n        </section>\n        <section class="nyx-owner-section" data-owner-panel="services" id="nyx-owner-section-services" aria-label="Services" hidden>\n          <div class="nyx-owner-section-heading"><h2>Services</h2><p>Balances, playback health, and game reports.</p></div>\n          <div class="nyx-owner-service-grid">\n            <section class="nyx-owner-tube-status" data-owner-ai-status hidden aria-live="polite"></section>\n            <section class="nyx-owner-tube-status" data-owner-tube-status hidden aria-live="polite"></section>\n            <section class="nyx-owner-tube-status" data-owner-game-reports hidden></section>\n          </div>\n        </section>\n        <section class="nyx-owner-workspace nyx-owner-section" data-owner-panel="users" id="nyx-owner-section-users" aria-label="Users" hidden>\n          <div class="nyx-owner-users-panel">\n            <header class="nyx-owner-panel-head">\n              <div><h2>${x("users")}Users</h2><span data-owner-user-count>Loading accounts\u2026</span></div>\n              <div class="nyx-owner-quick-actions">\n                <button type="button" data-owner-online-only>${x("online")}Online users</button>\n                <button type="button" data-owner-export>${x("download")}Export page</button>\n                <button type="button" data-owner-global-apps hidden>${x("apps")}Manage apps</button><button type="button" data-owner-studyready hidden>${x("apps")}StudyReady</button>\n                <button type="button" data-owner-ad-free hidden>${x("shield")}Ad-free keys</button><button type="button" data-owner-custom-roles hidden>${x("users")}Custom roles</button>\n                <button type="button" data-owner-ip-bans hidden>${x("shield")}IP bans</button>\n              </div>\n            </header>\n            <form class="nyx-owner-filters" data-owner-filters>\n              <label class="nyx-owner-search">${x("search")}<input type="search" name="search" placeholder="Search name, username, email, or UID" autocomplete="off"></label>\n              <select name="role" aria-label="Filter by role"><option value="all">All roles</option><option value="guest">Guest</option><option value="owner">Owner</option><option value="co_owner">Co-owner</option><option value="admin">Admin</option><option value="manager">Manager</option><option value="developer">Developer</option><option value="moderator">Moderator</option><option value="support">Support</option><option value="tester">Tester</option><option value="contributor">Contributor</option><option value="member">Member</option><option value="adkid">Adkid</option></select>\n              <select name="subscription" aria-label="Filter by subscription"><option value="all">All subscriptions</option><option value="none">No account</option><option value="free">Free</option><option value="premium">Premium</option><option value="trialing">Trial</option><option value="past_due">Past due</option><option value="canceled">Canceled</option></select>\n              <select name="status" aria-label="Filter by account status"><option value="all">All accounts</option><option value="enabled">Enabled</option><option value="disabled">Disabled</option><option value="online">Online now</option><option value="offline">Offline</option></select>\n            </form>\n            <div class="nyx-owner-table-wrap" data-owner-table aria-live="polite"></div>\n            <footer class="nyx-owner-pagination" data-owner-pagination></footer>\n          </div>\n        </section>\n        <section class="nyx-owner-section" data-owner-panel="activity" id="nyx-owner-section-activity" aria-label="Activity" hidden>\n          <aside class="nyx-owner-activity-panel">\n            <header><div><h2>${x("activity")}Activity logs</h2><span>Security and account events</span></div></header>\n            <div class="nyx-owner-activity-list" data-owner-activity></div>\n          </aside>\n        </section>\n      </main>\n      <aside class="nyx-owner-user-drawer" data-owner-user-drawer hidden></aside>\n      <section class="nyx-owner-confirm" data-owner-confirm hidden></section>\n      <div class="nyx-owner-toasts" data-owner-toasts aria-live="polite"></div>`, 
     document.body.appendChild(w), requestAnimationFrame(() => w.classList.add("show"));
     const $ = w.querySelector("[data-owner-metrics]"), S = w.querySelector("[data-owner-table]"), C = w.querySelector("[data-owner-pagination]"), A = w.querySelector("[data-owner-activity]"), N = w.querySelector("[data-owner-user-drawer]"), k = w.querySelector("[data-owner-confirm]"), L = function(t, a) {
       let n = !1, o = !0, r = !1, s = null, i = 60, l = null, c = null;
@@ -409,7 +411,7 @@
       H.innerHTML = `<div><strong>NyxTube <span data-owner-tube-state="${e(t.state)}">${e(a)}</span></strong><p>${e(n)}</p><small>Last success: ${e(u(t.lastSuccess))} &middot; Last check: ${e(u(t.lastChecked))}</small><small>Cache: ${(Number(t.cacheBytes || 0) / 1073741824).toFixed(2)} / ${(Number(t.cacheLimitBytes || 0) / 1073741824).toFixed(0)} GB &middot; Preparing: ${Number(t.activeJobs || 0)} / ${Number(t.maxJobs || 1)} &middot; Up to 720p</small></div><button type="button" data-owner-tube-check ${!t.enabled || O ? "disabled" : ""}>${O ? "Checking..." : "Check now"}</button>`, 
       P(H, "tube", "NyxTube");
     }
-    async function B(e = !1) {
+    async function j(e = !1) {
       if (w.isConnected && h.access?.founder && !O) {
         H.hidden = !1, e && (O = !0, F && _(F));
         try {
@@ -428,8 +430,8 @@
         }
       }
     }
-    const j = setInterval(() => {
-      document.hidden || B();
+    const B = setInterval(() => {
+      document.hidden || j();
     }, 6e4);
     async function G(e, t, a, n = () => {}) {
       const o = String(a || "").match(/^data:(image\/(?:gif|png|jpeg|webp));base64,([a-z0-9+/=]+)$/i);
@@ -489,7 +491,7 @@
         h.data = t, b?.(t.metrics?.onlineUsers), h.access = t.access || h.access, L.enable(Boolean(h.access?.founder)), 
         w.querySelector('[data-owner-section="services"]').hidden = !h.access?.founder, 
         w.querySelector("[data-owner-game-reports]").hidden = !h.access?.founder, h.access?.founder || "services" !== T || M("overview"), 
-        H.hidden = !h.access?.founder, H.hidden || B(), q.hidden = !h.access?.founder, q.hidden || (U(), 
+        H.hidden = !h.access?.founder, H.hidden || j(), q.hidden = !h.access?.founder, q.hidden || (U(), 
         async function() {
           const t = w.querySelector("[data-owner-game-reports]");
           if (w.isConnected && h.access?.founder) {
@@ -509,7 +511,8 @@
         const l = w.querySelector("[data-owner-custom-roles]");
         l && (l.hidden = !h.access?.founder);
         const y = w.querySelector("[data-owner-global-apps]");
-        y && (y.hidden = !h.access?.founder), w.querySelector("[data-owner-studyready]").hidden = !h.access?.founder;
+        y && (y.hidden = !h.access?.founder), w.querySelector("[data-owner-studyready]").hidden = !h.access?.founder, 
+        w.querySelector("[data-owner-ad-free]").hidden = !h.access?.founder;
         const g = w.querySelector('[name="role"]');
         g && (g.querySelectorAll("option[data-custom-role]").forEach(e => e.remove()), h.customRoles.forEach(t => g.insertAdjacentHTML("beforeend", `<option data-custom-role value="${e(t.id)}">${e(t.label)}</option>`)), 
         g.value = h.role);
@@ -820,7 +823,7 @@
       "Escape" === e.key && (k.hidden ? N.hidden ? ye() : ce() : (k.querySelector("[data-owner-confirm-cancel]") || k.querySelector("[data-owner-reset-close]"))?.click());
     }
     function ye() {
-      L.destroy(), clearInterval(j), clearInterval(D), h.controller?.abort(), clearTimeout(h.searchTimer), 
+      L.destroy(), clearInterval(B), clearInterval(D), h.controller?.abort(), clearTimeout(h.searchTimer), 
       w.classList.remove("show"), document.removeEventListener("keydown", me), window.removeEventListener("nyx:presence", be), 
       setTimeout(() => w.remove(), 180), g?.overlay === w && (g = null);
     }
@@ -832,8 +835,11 @@
       a && (a.textContent = t.toLocaleString());
     }
     return w.addEventListener("click", function(t) {
-      const a = t.target.closest("[data-owner-section]");
-      if (a) return M(a.dataset.ownerSection);
+      const n = t.target.closest("[data-owner-section]");
+      if (n) return M(n.dataset.ownerSection);
+      if (t.target.closest("[data-owner-ad-free]")) return void (h.access?.founder && import("./@ra5d7a53a5ead843e85722405!.js").then(e => e.openAdFreeManager({
+        api: E
+      })).catch(e => a?.(e.message)));
       if (t.target.closest("[data-owner-studyready]")) return void async function() {
         N.hidden = !1, N.classList.add("show"), h.selectedUser = null, h.selectedCapabilities = null, 
         N.innerHTML = '<div class="nyx-owner-drawer-loading">Loading StudyReady...</div>';
@@ -843,17 +849,17 @@
           N.innerHTML = `<div class="nyx-owner-error"><strong>StudyReady could not load</strong><span>${e(t.message)}</span><button type="button" data-owner-drawer-close>Close</button></div>`;
         }
       }();
-      const n = t.target.closest("[data-studyready-edit]");
-      if (n) {
-        const e = K.domains.find(e => e.hostname === n.dataset.studyreadyEdit), t = N.querySelector("[data-owner-studyready-form]");
+      const r = t.target.closest("[data-studyready-edit]");
+      if (r) {
+        const e = K.domains.find(e => e.hostname === r.dataset.studyreadyEdit), t = N.querySelector("[data-owner-studyready-form]");
         return t.elements.hostname.value = e.hostname, t.elements.title.value = e.title, 
         void t.elements.title.focus();
       }
-      const r = t.target.closest("[data-studyready-check]");
-      if (r) return void te(r, "check", r.dataset.studyreadyCheck);
-      const s = t.target.closest("[data-studyready-remove]");
-      if (s) return void te(s, "remove", s.dataset.studyreadyRemove);
-      if (t.target.closest("[data-owner-tube-check]")) return void B(!0);
+      const s = t.target.closest("[data-studyready-check]");
+      if (s) return void te(s, "check", s.dataset.studyreadyCheck);
+      const i = t.target.closest("[data-studyready-remove]");
+      if (i) return void te(i, "remove", i.dataset.studyreadyRemove);
+      if (t.target.closest("[data-owner-tube-check]")) return void j(!0);
       if (t.target === w || t.target.closest("[data-owner-close]")) return ye();
       if (t.target.closest("[data-owner-refresh]")) return void J();
       if (t.target.closest("[data-owner-export]")) return function() {
@@ -903,12 +909,12 @@
       }();
       if (t.target.closest("[data-owner-custom-role-new]")) return h.customRoleEditorId = "new", 
       ie(), void N.querySelector('[data-owner-custom-role-create] input[name="label"]')?.focus();
-      const i = t.target.closest("[data-owner-custom-role-edit]")?.dataset.ownerCustomRoleEdit;
-      if (i) return h.customRoleEditorId = i, ie(), void N.querySelector(`[data-owner-custom-role-update="${CSS.escape(i)}"] input[name="label"]`)?.focus();
+      const c = t.target.closest("[data-owner-custom-role-edit]")?.dataset.ownerCustomRoleEdit;
+      if (c) return h.customRoleEditorId = c, ie(), void N.querySelector(`[data-owner-custom-role-update="${CSS.escape(c)}"] input[name="label"]`)?.focus();
       if (t.target.closest("[data-owner-custom-role-cancel]")) return h.customRoleEditorId = "", 
       void ie();
-      const c = t.target.closest("[data-owner-custom-role-delete]")?.dataset.ownerCustomRoleDelete;
-      if (c) return void async function(e) {
+      const d = t.target.closest("[data-owner-custom-role-delete]")?.dataset.ownerCustomRoleDelete;
+      if (d) return void async function(e) {
         const t = h.customRoles.find(t => t.id === e);
         if (t && await de({
           title: "Delete this custom role?",
@@ -926,9 +932,9 @@
         } catch (a) {
           R(a.message || "The custom role could not be deleted.", "error");
         }
-      }(c);
-      const d = t.target.closest("[data-owner-global-app-delete]")?.dataset.ownerGlobalAppDelete;
-      if (d) return void async function(e) {
+      }(d);
+      const p = t.target.closest("[data-owner-global-app-delete]")?.dataset.ownerGlobalAppDelete;
+      if (p) return void async function(e) {
         const t = h.globalApps.find(t => t.id === e);
         if (t && await de({
           title: "Remove this app for everyone?",
@@ -944,9 +950,9 @@
         } catch (a) {
           R(a.message || "The app could not be removed.", "error");
         }
-      }(d);
-      const p = t.target.closest("[data-owner-unban]")?.dataset.ownerUnban;
-      if (p) return void async function(e) {
+      }(p);
+      const m = t.target.closest("[data-owner-unban]")?.dataset.ownerUnban;
+      if (m) return void async function(e) {
         const t = h.ipBans.find(t => t.id === e);
         if (t && await de({
           title: "Unblock this IP address?",
@@ -963,10 +969,10 @@
         } catch (a) {
           R(a.message || "The IP address could not be unblocked.", "error");
         }
-      }(p);
-      const m = t.target.closest("[data-owner-segment]")?.dataset.ownerSegment;
-      if (m) {
-        M("users"), h.segment = m, h.search = "", h.role = "all", h.subscription = "all", 
+      }(m);
+      const y = t.target.closest("[data-owner-segment]")?.dataset.ownerSegment;
+      if (y) {
+        M("users"), h.segment = y, h.search = "", h.role = "all", h.subscription = "all", 
         h.status = "all", h.page = 1;
         const e = w.querySelector("[data-owner-filters]");
         return e.elements.search.value = "", e.elements.role.value = "all", e.elements.subscription.value = "all", 
@@ -974,22 +980,22 @@
       }
       if (t.target.closest("[data-owner-online-only]")) return h.segment = "", h.status = "online" === h.status ? "all" : "online", 
       w.querySelector('[name="status"]').value = h.status, h.page = 1, void J();
-      const y = t.target.closest("[data-owner-sort]")?.dataset.ownerSort;
-      if (y) return h.sort === y ? h.direction = "asc" === h.direction ? "desc" : "asc" : (h.sort = y, 
+      const b = t.target.closest("[data-owner-sort]")?.dataset.ownerSort;
+      if (b) return h.sort === b ? h.direction = "asc" === h.direction ? "desc" : "asc" : (h.sort = b, 
       h.direction = "asc"), void J({
         preserveLoading: !0
       });
-      const b = t.target.closest("[data-owner-page]")?.dataset.ownerPage;
-      if (b) return h.page = Number(b) || 1, void J({
+      const f = t.target.closest("[data-owner-page]")?.dataset.ownerPage;
+      if (f) return h.page = Number(f) || 1, void J({
         preserveLoading: !0
       });
-      const f = t.target.closest("[data-owner-search-history]")?.dataset.ownerSearchHistory;
-      if (f) {
-        const e = (h.data?.users || []).find(e => e.uid === f);
+      const v = t.target.closest("[data-owner-search-history]")?.dataset.ownerSearchHistory;
+      if (v) {
+        const e = (h.data?.users || []).find(e => e.uid === v);
         if (e) return void le(e);
       }
-      const v = t.target.closest("[data-owner-clear-search-history]")?.dataset.ownerClearSearchHistory;
-      if (v && h.selectedUser?.uid === v) return void async function(e) {
+      const g = t.target.closest("[data-owner-clear-search-history]")?.dataset.ownerClearSearchHistory;
+      if (g && h.selectedUser?.uid === g) return void async function(e) {
         if (!e || e.guest) return;
         if (!await de({
           title: "Clear this search history?",
@@ -1009,17 +1015,17 @@
           R(a.message || "Search history could not be cleared.", "error"), t?.isConnected && (t.disabled = !1);
         }
       }(h.selectedUser);
-      const g = t.target.closest("[data-owner-view-user]")?.dataset.ownerViewUser;
-      if (g) return void X(g);
+      const $ = t.target.closest("[data-owner-view-user]")?.dataset.ownerViewUser;
+      if ($) return void X($);
       if (t.target.closest("[data-owner-drawer-close]")) return ce();
-      const $ = t.target.closest("[data-owner-role-option]")?.dataset.ownerRoleOption;
-      if ($) {
+      const x = t.target.closest("[data-owner-role-option]")?.dataset.ownerRoleOption;
+      if (x) {
         const e = N.querySelector("[data-owner-detail-role]");
         if (!e || e.disabled) return;
-        return e.value = $, void l(N, $);
+        return e.value = x, void l(N, x);
       }
-      const x = t.target.closest("[data-owner-ai-activity]");
-      if (x) return void async function(t) {
+      const S = t.target.closest("[data-owner-ai-activity]");
+      if (S) return void async function(t) {
         const a = h.selectedUser?.uid, n = N.querySelector("[data-owner-ai-activity-result]");
         if (a && n) {
           t.disabled = !0, n.textContent = "Loading AI activity...";
@@ -1033,7 +1039,7 @@
             t.isConnected && (t.disabled = !1);
           }
         }
-      }(x);
+      }(S);
       if (t.target.closest("[data-owner-save-ai-models]")) {
         const e = [ ...N.querySelectorAll("[data-ai-model]") ].map(e => ({
           model: e.dataset.aiModel,
@@ -1051,8 +1057,8 @@
           monthlyModelLimits: e
         });
       }
-      const S = t.target.closest("[data-owner-user-action]")?.dataset.ownerUserAction;
-      if (S) pe(S); else if (t.target.closest("[data-owner-save-access]")) {
+      const C = t.target.closest("[data-owner-user-action]")?.dataset.ownerUserAction;
+      if (C) pe(C); else if (t.target.closest("[data-owner-save-access]")) {
         const e = N.querySelector("[data-owner-detail-role]"), t = N.querySelector("[data-owner-detail-subscription]"), a = N.querySelector("[data-owner-detail-revenue]"), n = e?.value || (h.selectedUser?.customRole ? `custom:${h.selectedUser.customRole.id}` : h.selectedUser?.role), r = t?.value || h.selectedUser?.subscriptionStatus, s = a ? Math.round(100 * (Number(a.value) || 0)) : h.selectedUser?.monthlyRevenueCents, i = h.selectedUser?.customRole ? `custom:${h.selectedUser.customRole.id}` : h.selectedUser?.role, l = Boolean(e && n !== i), c = Boolean(t && (r !== h.selectedUser?.subscriptionStatus || s !== h.selectedUser?.monthlyRevenueCents));
         return void (async () => {
           if (l) {

@@ -3966,6 +3966,28 @@ body.theme-fresh .weather-status {
   transform-origin: left;
   animation: 2s linear forwards nyx-toast-countdown
 }
+.toast-close {
+  display: grid;
+  place-items: center;
+  flex: none;
+  margin-left: auto;
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  border: 0;
+  border-radius: 6px;
+  background: 0 0;
+  color: inherit;
+  cursor: pointer;
+  pointer-events: auto
+}
+.toast-close svg {
+  width: 16px;
+  height: 16px
+}
+.toast-close:hover {
+  background: color-mix(in srgb,currentColor 12%,transparent)
+}
 @keyframes nyx-toast-countdown {
   to {
     transform: scaleX(0)
