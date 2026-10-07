@@ -1,239 +1,246 @@
-import { supportsConversationVoice as r } from "./@rebf6eb055a8f45edc8ae21e6!.js";
+import { supportsConversationVoice as _0x714b6c_6 } from "\x2e\x2f\x40\x72\x65\x62\x66\x36\x65\x62\x30\x35\x35\x61\x38\x66\x34\x35\x65\x64\x63\x38\x61\x65\x32\x31\x65\x36\x21\x2e\x6a\x73";
 
-import "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@r905cbda8fc37fc16b4a72a77!.js";
+import "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x6a\x73\x2f\x40\x72\x39\x30\x35\x63\x62\x64\x61\x38\x66\x63\x33\x37\x66\x63\x31\x36\x62\x34\x61\x37\x32\x61\x37\x37\x21\x2e\x6a\x73";
 
-const be = e => String(e).replace(/[&<>"']/g, e => ({
-  "&": "&amp;",
-  "<": "&lt;",
-  ">": "&gt;",
-  '"': "&quot;",
-  "'": "&#39;"
-}[e])), ve = {
-  openai: [ "OpenAI", "openai" ],
-  anthropic: [ "Anthropic", "anthropic" ],
-  google: [ "Google", "gemini" ],
-  deepseek: [ "DeepSeek", "deepseek" ],
-  qwen: [ "Qwen", "qwen" ],
-  "x-ai": [ "xAI", "xai" ],
-  xai: [ "xAI", "xai" ],
-  mistralai: [ "Mistral", "mistral" ],
-  moonshotai: [ "Moonshot", "moonshot" ],
-  "z-ai": [ "Z.ai", "zai" ],
-  inception: [ "Inception", "inception" ],
-  nvidia: [ "NVIDIA", "nvidia" ],
-  "meta-llama": [ "Meta", "meta" ],
-  cohere: [ "Cohere", "cohere" ],
-  minimax: [ "MiniMax", "minimax" ],
-  openrouter: [ "OpenRouter", "openrouter" ],
-  xiaomi: [ "Xiaomi", "xiaomimimo" ],
-  amazon: [ "Amazon", "aws" ],
-  microsoft: [ "Microsoft", "microsoft" ],
-  perplexity: [ "Perplexity", "perplexity" ],
-  stepfun: [ "StepFun", "stepfun" ],
-  baidu: [ "Baidu", "baidu" ],
-  bytedance: [ "ByteDance", "bytedance" ],
-  arcee: [ "Arcee", "arcee" ],
-  ai21: [ "AI21", "ai21" ],
-  "arcee-ai": [ "Arcee", "arcee" ],
-  "bytedance-seed": [ "ByteDance", "bytedance" ],
-  meta: [ "Meta", "meta" ],
-  "aion-labs": [ "Aion Labs", "aionlabs" ],
-  tencent: [ "Tencent", "tencent" ],
-  sakana: [ "Sakana AI", "sakana" ],
-  poolside: [ "Poolside", "poolside" ],
-  upstage: [ "Upstage", "upstage" ],
-  nousresearch: [ "Nous Research", "nousresearch" ],
-  perceptron: [ "Perceptron", "perceptron" ],
-  "inference-net": [ "Inference.net", "inference" ],
-  "ibm-granite": [ "IBM", "ibm" ],
-  rekaai: [ "Reka", "reka" ],
-  relace: [ "Relace", "relace" ],
-  morph: [ "Morph", "morph" ],
-  fireworks: [ "Fireworks", "fireworks" ],
-  "dots-studio": [ "Dots", "dotsstudio" ],
-  liquid: [ "Liquid AI", "liquid" ],
-  kwaipilot: [ "Kwai", "kwaipilot" ],
-  meituan: [ "Meituan", "longcat" ],
-  thinkingmachines: [ "Thinking Machines", "thinkingmachines" ],
-  inclusionai: [ "InclusionAI", "inclusionai" ],
-  thedrummer: [ "TheDrummer", "thedrummer" ],
-  typesafe: [ "TypeSafe", "typesafe" ],
-  unbiased: [ "Unbiased", "unbiased" ],
-  writer: [ "Writer", "writer" ],
-  stealth: [ "Stealth", "stealth" ],
-  sao10k: [ "Sao10K", "sao10k" ],
-  "anthracite-org": [ "Anthracite", "anthracite-org" ],
-  gryphe: [ "Gryphe", "gryphe" ],
-  undi95: [ "Undi95", "undi95" ],
-  cognitivecomputations: [ "Cognitive Computations", "cognitivecomputations" ],
-  "prism-ml": [ "PrismML", "prism-ml" ],
-  mancer: [ "Mancer", "mancer" ],
-  "black-forest-labs": [ "Black Forest Labs", "flux" ],
-  recraft: [ "Recraft", "recraft" ],
-  runway: [ "Runway", "runway" ],
-  kwaivgi: [ "Kling", "kling" ],
-  elevenlabs: [ "ElevenLabs", "elevenlabs" ],
-  assemblyai: [ "AssemblyAI", "assemblyai" ],
-  suno: [ "Suno", "suno" ],
-  alibaba: [ "Alibaba", "alibaba" ]
+const _0xe4c94e_0 = _0xe4c94e_0 => String(_0xe4c94e_0).replace(/[&<>"']/g, _0xe4c94e_0 => ({
+  "\x26": "\x26\x61\x6d\x70\x3b",
+  "\x3c": "\x26\x6c\x74\x3b",
+  "\x3e": "\x26\x67\x74\x3b",
+  "\x22": "\x26\x71\x75\x6f\x74\x3b",
+  "\x27": "\x26\x23\x33\x39\x3b"
+}[_0xe4c94e_0])), _0xe4c94e_1 = {
+  openai: [ "\x4f\x70\x65\x6e\x41\x49", "\x6f\x70\x65\x6e\x61\x69" ],
+  anthropic: [ "\x41\x6e\x74\x68\x72\x6f\x70\x69\x63", "\x61\x6e\x74\x68\x72\x6f\x70\x69\x63" ],
+  google: [ "\x47\x6f\x6f\x67\x6c\x65", "\x67\x65\x6d\x69\x6e\x69" ],
+  deepseek: [ "\x44\x65\x65\x70\x53\x65\x65\x6b", "\x64\x65\x65\x70\x73\x65\x65\x6b" ],
+  qwen: [ "\x51\x77\x65\x6e", "\x71\x77\x65\x6e" ],
+  "\x78\x2d\x61\x69": [ "\x78\x41\x49", "\x78\x61\x69" ],
+  xai: [ "\x78\x41\x49", "\x78\x61\x69" ],
+  mistralai: [ "\x4d\x69\x73\x74\x72\x61\x6c", "\x6d\x69\x73\x74\x72\x61\x6c" ],
+  moonshotai: [ "\x4d\x6f\x6f\x6e\x73\x68\x6f\x74", "\x6d\x6f\x6f\x6e\x73\x68\x6f\x74" ],
+  "\x7a\x2d\x61\x69": [ "\x5a\x2e\x61\x69", "\x7a\x61\x69" ],
+  inception: [ "\x49\x6e\x63\x65\x70\x74\x69\x6f\x6e", "\x69\x6e\x63\x65\x70\x74\x69\x6f\x6e" ],
+  nvidia: [ "\x4e\x56\x49\x44\x49\x41", "\x6e\x76\x69\x64\x69\x61" ],
+  "\x6d\x65\x74\x61\x2d\x6c\x6c\x61\x6d\x61": [ "\x4d\x65\x74\x61", "\x6d\x65\x74\x61" ],
+  cohere: [ "\x43\x6f\x68\x65\x72\x65", "\x63\x6f\x68\x65\x72\x65" ],
+  minimax: [ "\x4d\x69\x6e\x69\x4d\x61\x78", "\x6d\x69\x6e\x69\x6d\x61\x78" ],
+  openrouter: [ "\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72", "\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72" ],
+  xiaomi: [ "\x58\x69\x61\x6f\x6d\x69", "\x78\x69\x61\x6f\x6d\x69\x6d\x69\x6d\x6f" ],
+  amazon: [ "\x41\x6d\x61\x7a\x6f\x6e", "\x61\x77\x73" ],
+  microsoft: [ "\x4d\x69\x63\x72\x6f\x73\x6f\x66\x74", "\x6d\x69\x63\x72\x6f\x73\x6f\x66\x74" ],
+  perplexity: [ "\x50\x65\x72\x70\x6c\x65\x78\x69\x74\x79", "\x70\x65\x72\x70\x6c\x65\x78\x69\x74\x79" ],
+  stepfun: [ "\x53\x74\x65\x70\x46\x75\x6e", "\x73\x74\x65\x70\x66\x75\x6e" ],
+  baidu: [ "\x42\x61\x69\x64\x75", "\x62\x61\x69\x64\x75" ],
+  bytedance: [ "\x42\x79\x74\x65\x44\x61\x6e\x63\x65", "\x62\x79\x74\x65\x64\x61\x6e\x63\x65" ],
+  arcee: [ "\x41\x72\x63\x65\x65", "\x61\x72\x63\x65\x65" ],
+  ai21: [ "\x41\x49\x32\x31", "\x61\x69\x32\x31" ],
+  "\x61\x72\x63\x65\x65\x2d\x61\x69": [ "\x41\x72\x63\x65\x65", "\x61\x72\x63\x65\x65" ],
+  "\x62\x79\x74\x65\x64\x61\x6e\x63\x65\x2d\x73\x65\x65\x64": [ "\x42\x79\x74\x65\x44\x61\x6e\x63\x65", "\x62\x79\x74\x65\x64\x61\x6e\x63\x65" ],
+  meta: [ "\x4d\x65\x74\x61", "\x6d\x65\x74\x61" ],
+  "\x61\x69\x6f\x6e\x2d\x6c\x61\x62\x73": [ "\x41\x69\x6f\x6e\x20\x4c\x61\x62\x73", "\x61\x69\x6f\x6e\x6c\x61\x62\x73" ],
+  tencent: [ "\x54\x65\x6e\x63\x65\x6e\x74", "\x74\x65\x6e\x63\x65\x6e\x74" ],
+  sakana: [ "\x53\x61\x6b\x61\x6e\x61\x20\x41\x49", "\x73\x61\x6b\x61\x6e\x61" ],
+  poolside: [ "\x50\x6f\x6f\x6c\x73\x69\x64\x65", "\x70\x6f\x6f\x6c\x73\x69\x64\x65" ],
+  upstage: [ "\x55\x70\x73\x74\x61\x67\x65", "\x75\x70\x73\x74\x61\x67\x65" ],
+  nousresearch: [ "\x4e\x6f\x75\x73\x20\x52\x65\x73\x65\x61\x72\x63\x68", "\x6e\x6f\x75\x73\x72\x65\x73\x65\x61\x72\x63\x68" ],
+  perceptron: [ "\x50\x65\x72\x63\x65\x70\x74\x72\x6f\x6e", "\x70\x65\x72\x63\x65\x70\x74\x72\x6f\x6e" ],
+  "\x69\x6e\x66\x65\x72\x65\x6e\x63\x65\x2d\x6e\x65\x74": [ "\x49\x6e\x66\x65\x72\x65\x6e\x63\x65\x2e\x6e\x65\x74", "\x69\x6e\x66\x65\x72\x65\x6e\x63\x65" ],
+  "\x69\x62\x6d\x2d\x67\x72\x61\x6e\x69\x74\x65": [ "\x49\x42\x4d", "\x69\x62\x6d" ],
+  rekaai: [ "\x52\x65\x6b\x61", "\x72\x65\x6b\x61" ],
+  relace: [ "\x52\x65\x6c\x61\x63\x65", "\x72\x65\x6c\x61\x63\x65" ],
+  morph: [ "\x4d\x6f\x72\x70\x68", "\x6d\x6f\x72\x70\x68" ],
+  fireworks: [ "\x46\x69\x72\x65\x77\x6f\x72\x6b\x73", "\x66\x69\x72\x65\x77\x6f\x72\x6b\x73" ],
+  "\x64\x6f\x74\x73\x2d\x73\x74\x75\x64\x69\x6f": [ "\x44\x6f\x74\x73", "\x64\x6f\x74\x73\x73\x74\x75\x64\x69\x6f" ],
+  liquid: [ "\x4c\x69\x71\x75\x69\x64\x20\x41\x49", "\x6c\x69\x71\x75\x69\x64" ],
+  kwaipilot: [ "\x4b\x77\x61\x69", "\x6b\x77\x61\x69\x70\x69\x6c\x6f\x74" ],
+  meituan: [ "\x4d\x65\x69\x74\x75\x61\x6e", "\x6c\x6f\x6e\x67\x63\x61\x74" ],
+  thinkingmachines: [ "\x54\x68\x69\x6e\x6b\x69\x6e\x67\x20\x4d\x61\x63\x68\x69\x6e\x65\x73", "\x74\x68\x69\x6e\x6b\x69\x6e\x67\x6d\x61\x63\x68\x69\x6e\x65\x73" ],
+  inclusionai: [ "\x49\x6e\x63\x6c\x75\x73\x69\x6f\x6e\x41\x49", "\x69\x6e\x63\x6c\x75\x73\x69\x6f\x6e\x61\x69" ],
+  thedrummer: [ "\x54\x68\x65\x44\x72\x75\x6d\x6d\x65\x72", "\x74\x68\x65\x64\x72\x75\x6d\x6d\x65\x72" ],
+  typesafe: [ "\x54\x79\x70\x65\x53\x61\x66\x65", "\x74\x79\x70\x65\x73\x61\x66\x65" ],
+  unbiased: [ "\x55\x6e\x62\x69\x61\x73\x65\x64", "\x75\x6e\x62\x69\x61\x73\x65\x64" ],
+  writer: [ "\x57\x72\x69\x74\x65\x72", "\x77\x72\x69\x74\x65\x72" ],
+  stealth: [ "\x53\x74\x65\x61\x6c\x74\x68", "\x73\x74\x65\x61\x6c\x74\x68" ],
+  sao10k: [ "\x53\x61\x6f\x31\x30\x4b", "\x73\x61\x6f\x31\x30\x6b" ],
+  "\x61\x6e\x74\x68\x72\x61\x63\x69\x74\x65\x2d\x6f\x72\x67": [ "\x41\x6e\x74\x68\x72\x61\x63\x69\x74\x65", "\x61\x6e\x74\x68\x72\x61\x63\x69\x74\x65\x2d\x6f\x72\x67" ],
+  gryphe: [ "\x47\x72\x79\x70\x68\x65", "\x67\x72\x79\x70\x68\x65" ],
+  undi95: [ "\x55\x6e\x64\x69\x39\x35", "\x75\x6e\x64\x69\x39\x35" ],
+  cognitivecomputations: [ "\x43\x6f\x67\x6e\x69\x74\x69\x76\x65\x20\x43\x6f\x6d\x70\x75\x74\x61\x74\x69\x6f\x6e\x73", "\x63\x6f\x67\x6e\x69\x74\x69\x76\x65\x63\x6f\x6d\x70\x75\x74\x61\x74\x69\x6f\x6e\x73" ],
+  "\x70\x72\x69\x73\x6d\x2d\x6d\x6c": [ "\x50\x72\x69\x73\x6d\x4d\x4c", "\x70\x72\x69\x73\x6d\x2d\x6d\x6c" ],
+  mancer: [ "\x4d\x61\x6e\x63\x65\x72", "\x6d\x61\x6e\x63\x65\x72" ],
+  "\x62\x6c\x61\x63\x6b\x2d\x66\x6f\x72\x65\x73\x74\x2d\x6c\x61\x62\x73": [ "\x42\x6c\x61\x63\x6b\x20\x46\x6f\x72\x65\x73\x74\x20\x4c\x61\x62\x73", "\x66\x6c\x75\x78" ],
+  recraft: [ "\x52\x65\x63\x72\x61\x66\x74", "\x72\x65\x63\x72\x61\x66\x74" ],
+  runway: [ "\x52\x75\x6e\x77\x61\x79", "\x72\x75\x6e\x77\x61\x79" ],
+  kwaivgi: [ "\x4b\x6c\x69\x6e\x67", "\x6b\x6c\x69\x6e\x67" ],
+  elevenlabs: [ "\x45\x6c\x65\x76\x65\x6e\x4c\x61\x62\x73", "\x65\x6c\x65\x76\x65\x6e\x6c\x61\x62\x73" ],
+  assemblyai: [ "\x41\x73\x73\x65\x6d\x62\x6c\x79\x41\x49", "\x61\x73\x73\x65\x6d\x62\x6c\x79\x61\x69" ],
+  suno: [ "\x53\x75\x6e\x6f", "\x73\x75\x6e\x6f" ],
+  alibaba: [ "\x41\x6c\x69\x62\x61\x62\x61", "\x61\x6c\x69\x62\x61\x62\x61" ]
 };
 
-function we(e) {
-  const t = e.id.split("/")[0].toLowerCase().replace(/^~/, ""), a = ve[t];
+function _0xe4c94e_2(_0xe4c94e_0) {
+  const _0xe4c94e_2 = _0xe4c94e_0.id.split("\x2f")[0].toLowerCase().replace(/^~/, ""), _0xe4c94e_3 = _0xe4c94e_1[_0xe4c94e_2];
   return {
-    key: a?.[1] || t,
-    label: a?.[0] || e.company || t || "Other",
-    icon: a?.[1] || ""
+    key: _0xe4c94e_3?.[1] || _0xe4c94e_2,
+    label: _0xe4c94e_3?.[0] || _0xe4c94e_0.company || _0xe4c94e_2 || "\x4f\x74\x68\x65\x72",
+    icon: _0xe4c94e_3?.[1] || ""
   };
 }
 
-const Ae = new Set([ "kling", "assemblyai", "alibaba", "aionlabs", "arcee", "aws", "baidu", "bytedance", "claude", "cohere", "deepseek", "fireworks", "gemini", "gemma", "hunyuan", "kimi", "kwaipilot", "longcat", "meta", "microsoft", "minimax", "mistral", "morph", "nvidia", "openrouter", "perplexity", "poolside", "qwen", "sakana", "stepfun", "tencent", "upstage" ]), Me = {
-  thinkingmachines: "thinkingmachines-author.png",
-  inclusionai: "inclusionai-author.png",
-  thedrummer: "thedrummer-author.png",
-  typesafe: "typesafe-author.png",
-  unbiased: "unbiased-author.png",
-  writer: "writer-author.png",
-  stealth: "stealth-author.svg",
-  sao10k: "sao10k-author.webp",
-  "anthracite-org": "anthracite-org-author.webp",
-  gryphe: "gryphe-author.webp",
-  undi95: "undi95-author.webp",
-  cognitivecomputations: "cognitivecomputations-author.png",
-  "prism-ml": "prism-ml-author.png",
-  mancer: "mancer-author.png"
+const _0xe4c94e_3 = new Set([ "\x6b\x6c\x69\x6e\x67", "\x61\x73\x73\x65\x6d\x62\x6c\x79\x61\x69", "\x61\x6c\x69\x62\x61\x62\x61", "\x61\x69\x6f\x6e\x6c\x61\x62\x73", "\x61\x72\x63\x65\x65", "\x61\x77\x73", "\x62\x61\x69\x64\x75", "\x62\x79\x74\x65\x64\x61\x6e\x63\x65", "\x63\x6c\x61\x75\x64\x65", "\x63\x6f\x68\x65\x72\x65", "\x64\x65\x65\x70\x73\x65\x65\x6b", "\x66\x69\x72\x65\x77\x6f\x72\x6b\x73", "\x67\x65\x6d\x69\x6e\x69", "\x67\x65\x6d\x6d\x61", "\x68\x75\x6e\x79\x75\x61\x6e", "\x6b\x69\x6d\x69", "\x6b\x77\x61\x69\x70\x69\x6c\x6f\x74", "\x6c\x6f\x6e\x67\x63\x61\x74", "\x6d\x65\x74\x61", "\x6d\x69\x63\x72\x6f\x73\x6f\x66\x74", "\x6d\x69\x6e\x69\x6d\x61\x78", "\x6d\x69\x73\x74\x72\x61\x6c", "\x6d\x6f\x72\x70\x68", "\x6e\x76\x69\x64\x69\x61", "\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72", "\x70\x65\x72\x70\x6c\x65\x78\x69\x74\x79", "\x70\x6f\x6f\x6c\x73\x69\x64\x65", "\x71\x77\x65\x6e", "\x73\x61\x6b\x61\x6e\x61", "\x73\x74\x65\x70\x66\x75\x6e", "\x74\x65\x6e\x63\x65\x6e\x74", "\x75\x70\x73\x74\x61\x67\x65" ]), _0xe4c94e_4 = {
+  thinkingmachines: "\x74\x68\x69\x6e\x6b\x69\x6e\x67\x6d\x61\x63\x68\x69\x6e\x65\x73\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+  inclusionai: "\x69\x6e\x63\x6c\x75\x73\x69\x6f\x6e\x61\x69\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+  thedrummer: "\x74\x68\x65\x64\x72\x75\x6d\x6d\x65\x72\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+  typesafe: "\x74\x79\x70\x65\x73\x61\x66\x65\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+  unbiased: "\x75\x6e\x62\x69\x61\x73\x65\x64\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+  writer: "\x77\x72\x69\x74\x65\x72\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+  stealth: "\x73\x74\x65\x61\x6c\x74\x68\x2d\x61\x75\x74\x68\x6f\x72\x2e\x73\x76\x67",
+  sao10k: "\x73\x61\x6f\x31\x30\x6b\x2d\x61\x75\x74\x68\x6f\x72\x2e\x77\x65\x62\x70",
+  "\x61\x6e\x74\x68\x72\x61\x63\x69\x74\x65\x2d\x6f\x72\x67": "\x61\x6e\x74\x68\x72\x61\x63\x69\x74\x65\x2d\x6f\x72\x67\x2d\x61\x75\x74\x68\x6f\x72\x2e\x77\x65\x62\x70",
+  gryphe: "\x67\x72\x79\x70\x68\x65\x2d\x61\x75\x74\x68\x6f\x72\x2e\x77\x65\x62\x70",
+  undi95: "\x75\x6e\x64\x69\x39\x35\x2d\x61\x75\x74\x68\x6f\x72\x2e\x77\x65\x62\x70",
+  cognitivecomputations: "\x63\x6f\x67\x6e\x69\x74\x69\x76\x65\x63\x6f\x6d\x70\x75\x74\x61\x74\x69\x6f\x6e\x73\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+  "\x70\x72\x69\x73\x6d\x2d\x6d\x6c": "\x70\x72\x69\x73\x6d\x2d\x6d\x6c\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+  mancer: "\x6d\x61\x6e\x63\x65\x72\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67"
 };
 
-function xe(e) {
-  return [ "aws", "longcat" ].includes(e.icon) ? `<span class="ai-company-themed"><img class="ai-company-logo ai-company-logo-color ai-logo-dark" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/agents/icons/${e.icon}-dark.svg" alt="" aria-hidden="true"><img class="ai-company-logo ai-company-logo-color ai-logo-light" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/ai-companies/${e.icon}-color.svg" alt="" aria-hidden="true"></span>` : Me[e.icon] ? `<img class="ai-company-logo ai-company-logo-color" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/ai-companies/${Me[e.icon]}" alt="" aria-hidden="true" width="22" height="22">` : Ae.has(e.icon) ? `<img class="ai-company-logo ai-company-logo-color" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/ai-companies/${e.icon}-color.svg" alt="" aria-hidden="true" width="22" height="22">` : e.icon ? `<img class="ai-company-logo ai-company-logo-mono" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/ai-companies/${e.icon}.svg" alt="" aria-hidden="true" width="22" height="22">` : `<span class="ai-company-initial" aria-hidden="true">${be(e.label.slice(0, 2).toUpperCase())}</span>`;
+function _0xe4c94e_5(_0xe4c94e_1) {
+  return [ "\x61\x77\x73", "\x6c\x6f\x6e\x67\x63\x61\x74" ].includes(_0xe4c94e_1.icon) ? `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x74\x68\x65\x6d\x65\x64\x22\x3e\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x20\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x2d\x63\x6f\x6c\x6f\x72\x20\x61\x69\x2d\x6c\x6f\x67\x6f\x2d\x64\x61\x72\x6b\x22\x20\x73\x72\x63\x3d\x22/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x61\x67\x65\x6e\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f${_0xe4c94e_1.icon}\x2d\x64\x61\x72\x6b\x2e\x73\x76\x67\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x20\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x2d\x63\x6f\x6c\x6f\x72\x20\x61\x69\x2d\x6c\x6f\x67\x6f\x2d\x6c\x69\x67\x68\x74\x22\x20\x73\x72\x63\x3d\x22/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x69\x65\x73\x2f${_0xe4c94e_1.icon}\x2d\x63\x6f\x6c\x6f\x72\x2e\x73\x76\x67\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x2f\x73\x70\x61\x6e\x3e` : _0xe4c94e_4[_0xe4c94e_1.icon] ? `\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x20\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x2d\x63\x6f\x6c\x6f\x72\x22\x20\x73\x72\x63\x3d\x22/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x69\x65\x73\x2f${_0xe4c94e_4[_0xe4c94e_1.icon]}\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x32\x32\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x32\x32\x22\x3e` : _0xe4c94e_3.has(_0xe4c94e_1.icon) ? `\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x20\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x2d\x63\x6f\x6c\x6f\x72\x22\x20\x73\x72\x63\x3d\x22/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x69\x65\x73\x2f${_0xe4c94e_1.icon}\x2d\x63\x6f\x6c\x6f\x72\x2e\x73\x76\x67\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x32\x32\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x32\x32\x22\x3e` : _0xe4c94e_1.icon ? `\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x20\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x2d\x6d\x6f\x6e\x6f\x22\x20\x73\x72\x63\x3d\x22/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x69\x65\x73\x2f${_0xe4c94e_1.icon}\x2e\x73\x76\x67\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x32\x32\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x32\x32\x22\x3e` : `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x69\x6e\x69\x74\x69\x61\x6c\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e${_0xe4c94e_0(_0xe4c94e_1.label.slice(0, 2).toUpperCase())}\x3c\x2f\x73\x70\x61\x6e\x3e`;
 }
 
-function Ce(e) {
-  const t = we(e), a = e.id.toLowerCase().replace(/^~/, ""), o = a.startsWith("anthropic/claude") ? "claude" : a.startsWith("google/gemma") ? "gemma" : a.startsWith("moonshotai/kimi") ? "kimi" : a.startsWith("x-ai/grok") ? "grok" : a.startsWith("tencent/hunyuan") ? "hunyuan" : "";
-  return xe(o ? {
-    ...t,
-    icon: o
-  } : t);
+function _0xe4c94e_6(_0xe4c94e_0) {
+  const _0xe4c94e_1 = _0xe4c94e_2(_0xe4c94e_0), _0xe4c94e_3 = _0xe4c94e_0.id.toLowerCase().replace(/^~/, ""), _0xe4c94e_4 = _0xe4c94e_3.startsWith("\x61\x6e\x74\x68\x72\x6f\x70\x69\x63\x2f\x63\x6c\x61\x75\x64\x65") ? "\x63\x6c\x61\x75\x64\x65" : _0xe4c94e_3.startsWith("\x67\x6f\x6f\x67\x6c\x65\x2f\x67\x65\x6d\x6d\x61") ? "\x67\x65\x6d\x6d\x61" : _0xe4c94e_3.startsWith("\x6d\x6f\x6f\x6e\x73\x68\x6f\x74\x61\x69\x2f\x6b\x69\x6d\x69") ? "\x6b\x69\x6d\x69" : _0xe4c94e_3.startsWith("\x78\x2d\x61\x69\x2f\x67\x72\x6f\x6b") ? "\x67\x72\x6f\x6b" : _0xe4c94e_3.startsWith("\x74\x65\x6e\x63\x65\x6e\x74\x2f\x68\x75\x6e\x79\x75\x61\x6e") ? "\x68\x75\x6e\x79\x75\x61\x6e" : "";
+  return _0xe4c94e_5(_0xe4c94e_4 ? {
+    ..._0xe4c94e_1,
+    icon: _0xe4c94e_4
+  } : _0xe4c94e_1);
 }
 
-const Ee = [ "openai", "anthropic", "xai", "deepseek", "gemini", "meta", "qwen", "mistral", "moonshot", "zai", "minimax" ], Le = e => Ee.includes(e) ? Ee.indexOf(e) : Ee.length, Ie = (e, t) => Le(e.key) - Le(t.key) || e.label.localeCompare(t.label);
+const _0xe4c94e_7 = [ "\x6f\x70\x65\x6e\x61\x69", "\x61\x6e\x74\x68\x72\x6f\x70\x69\x63", "\x78\x61\x69", "\x64\x65\x65\x70\x73\x65\x65\x6b", "\x67\x65\x6d\x69\x6e\x69", "\x6d\x65\x74\x61", "\x71\x77\x65\x6e", "\x6d\x69\x73\x74\x72\x61\x6c", "\x6d\x6f\x6f\x6e\x73\x68\x6f\x74", "\x7a\x61\x69", "\x6d\x69\x6e\x69\x6d\x61\x78" ], _0xe4c94e_8 = _0xe4c94e_0 => _0xe4c94e_7.includes(_0xe4c94e_0) ? _0xe4c94e_7.indexOf(_0xe4c94e_0) : _0xe4c94e_7.length, _0xe4c94e_9 = (_0xe4c94e_0, _0xe4c94e_1) => _0xe4c94e_8(_0xe4c94e_0.key) - _0xe4c94e_8(_0xe4c94e_1.key) || _0xe4c94e_0.label.localeCompare(_0xe4c94e_1.label);
 
-export function setupPicker(e, {compact: t = !1} = {}) {
-  const a = document.getElementById("modelMenu"), o = document.getElementById("modelSearch"), i = document.getElementById("modelCompanies"), n = document.getElementById("modelOptions"), s = document.getElementById("modelTrigger");
-  let l = [], c = "", m = 0;
-  function d() {
-    cancelAnimationFrame(m);
-    const e = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (a.querySelector('[data-model-company=""]').setAttribute("aria-pressed", String(!c)), 
-    i.querySelectorAll("[data-loop-copy]").forEach(t => t.hidden = e), a.hidden || e || t) return;
-    let o = 0;
-    const n = e => {
-      const t = o ? Math.min(e - o, 50) : 0;
-      o = e, i.querySelectorAll(".ai-company-rail").forEach((e, a) => {
-        const o = e.firstElementChild;
-        if (o.offsetHeight <= e.clientHeight) return void (e.lastElementChild.hidden = !0);
-        if (e.matches(":focus-within") || e.matches(":hover") && !e._continueOnHover || document.hidden) return;
-        const i = (e._loopOffset ?? e.scrollTop) + .018 * t * (0 === a ? 1 : -1);
-        e._loopOffset = (i % o.offsetHeight + o.offsetHeight) % o.offsetHeight, e.scrollTop = e._loopOffset;
-      }), m = requestAnimationFrame(n);
+export function setupPicker(_0xe4c94e_1, {compact: _0xe4c94e_3 = !1} = {}) {
+  const _0xe4c94e_4 = document.getElementById("\x6d\x6f\x64\x65\x6c\x4d\x65\x6e\x75"), _0xe4c94e_7 = document.getElementById("\x6d\x6f\x64\x65\x6c\x53\x65\x61\x72\x63\x68"), _0xe4c94e_8 = document.getElementById("\x6d\x6f\x64\x65\x6c\x43\x6f\x6d\x70\x61\x6e\x69\x65\x73"), _0xe4c94e_a = document.getElementById("\x6d\x6f\x64\x65\x6c\x4f\x70\x74\x69\x6f\x6e\x73"), _0xe4c94e_b = document.getElementById("\x6d\x6f\x64\x65\x6c\x54\x72\x69\x67\x67\x65\x72");
+  let _0xe4c94e_c = [], _0xe4c94e_d = "", _0xe4c94e_e = 0;
+  function _0xe4c94e_f() {
+    cancelAnimationFrame(_0xe4c94e_e);
+    const _0xe4c94e_0 = matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").matches;
+    if (_0xe4c94e_4.querySelector("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x3d\x22\x22\x5d").setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(!_0xe4c94e_d)), 
+    _0xe4c94e_8.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6c\x6f\x6f\x70\x2d\x63\x6f\x70\x79\x5d").forEach(_0xe4c94e_1 => _0xe4c94e_1.hidden = _0xe4c94e_0), 
+    _0xe4c94e_4.hidden || _0xe4c94e_0 || _0xe4c94e_3) return;
+    let _0xe4c94e_1 = 0;
+    const _0xe4c94e_2 = _0xe4c94e_0 => {
+      const _0xe4c94e_3 = _0xe4c94e_1 ? Math.min(_0xe4c94e_0 - _0xe4c94e_1, 50) : 0;
+      _0xe4c94e_1 = _0xe4c94e_0, _0xe4c94e_8.querySelectorAll("\x2e\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x72\x61\x69\x6c").forEach((_0xe4c94e_0, _0xe4c94e_1) => {
+        const _0xe4c94e_2 = _0xe4c94e_0.firstElementChild;
+        if (_0xe4c94e_2.offsetHeight <= _0xe4c94e_0.clientHeight) return void (_0xe4c94e_0.lastElementChild.hidden = !0);
+        if (_0xe4c94e_0.matches("\x3a\x66\x6f\x63\x75\x73\x2d\x77\x69\x74\x68\x69\x6e") || _0xe4c94e_0.matches("\x3a\x68\x6f\x76\x65\x72") && !_0xe4c94e_0._continueOnHover || document.hidden) return;
+        const _0xe4c94e_4 = (_0xe4c94e_0._loopOffset ?? _0xe4c94e_0.scrollTop) + .018 * _0xe4c94e_3 * (0 === _0xe4c94e_1 ? 1 : -1);
+        _0xe4c94e_0._loopOffset = (_0xe4c94e_4 % _0xe4c94e_2.offsetHeight + _0xe4c94e_2.offsetHeight) % _0xe4c94e_2.offsetHeight, 
+        _0xe4c94e_0.scrollTop = _0xe4c94e_0._loopOffset;
+      }), _0xe4c94e_e = requestAnimationFrame(_0xe4c94e_2);
     };
-    m = requestAnimationFrame(n);
+    _0xe4c94e_e = requestAnimationFrame(_0xe4c94e_2);
   }
-  function p() {
-    const s = /^(voice|speech|speak|tts)$/i.test(o.value.trim()), m = globalThis.NyxModelSearch.search(l.filter(e => (!s || r(e)) && (!c || we(e).key === c)), o.value.trim().toLowerCase(), we);
-    document.querySelector("[data-model-count]").textContent = m.length + " of " + l.length;
-    const d = new Map;
-    for (const e of m) {
-      const t = we(e);
-      d.has(t.key) || d.set(t.key, {
-        company: t,
+  function _0xe4c94e_10() {
+    const _0xe4c94e_5 = /^(voice|speech|speak|tts)$/i.test(_0xe4c94e_7.value.trim()), _0xe4c94e_b = globalThis.NyxModelSearch.search(_0xe4c94e_c.filter(_0xe4c94e_0 => (!_0xe4c94e_5 || _0x714b6c_6(_0xe4c94e_0)) && (!_0xe4c94e_d || _0xe4c94e_2(_0xe4c94e_0).key === _0xe4c94e_d)), _0xe4c94e_7.value.trim().toLowerCase(), _0xe4c94e_2);
+    document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x75\x6e\x74\x5d").textContent = _0xe4c94e_b.length + "\x20\x6f\x66\x20" + _0xe4c94e_c.length;
+    const _0xe4c94e_e = new Map;
+    for (const _0xe4c94e_0 of _0xe4c94e_b) {
+      const _0xe4c94e_1 = _0xe4c94e_2(_0xe4c94e_0);
+      _0xe4c94e_e.has(_0xe4c94e_1.key) || _0xe4c94e_e.set(_0xe4c94e_1.key, {
+        company: _0xe4c94e_1,
         items: []
-      }), d.get(t.key).items.push(e);
+      }), _0xe4c94e_e.get(_0xe4c94e_1.key).items.push(_0xe4c94e_0);
     }
-    const p = e => Number.isFinite(Number(e.created)) ? Number(e.created) : 0;
-    n.innerHTML = [ ...d.values() ].sort((e, t) => Ie(e.company, t.company)).map(t => {
-      t.items.sort((e, t) => p(t) - p(e) || e.label.localeCompare(t.label, void 0, {
+    const _0xe4c94e_f = _0xe4c94e_0 => Number.isFinite(Number(_0xe4c94e_0.created)) ? Number(_0xe4c94e_0.created) : 0;
+    _0xe4c94e_a.innerHTML = [ ..._0xe4c94e_e.values() ].sort((_0xe4c94e_0, _0xe4c94e_1) => _0xe4c94e_9(_0xe4c94e_0.company, _0xe4c94e_1.company)).map(_0xe4c94e_3 => {
+      _0xe4c94e_3.items.sort((_0xe4c94e_0, _0xe4c94e_1) => _0xe4c94e_f(_0xe4c94e_1) - _0xe4c94e_f(_0xe4c94e_0) || _0xe4c94e_0.label.localeCompare(_0xe4c94e_1.label, void 0, {
         numeric: !0
       }));
-      const a = Math.max(0, ...l.filter(e => we(e).key === t.company.key).map(p));
-      return '<section class="ai-model-group" role="group" aria-label="' + be(t.company.label) + '"><h3 class="ai-model-group-label">' + be(t.company.label) + " <span>" + t.items.length + '</span></h3><div class="ai-model-group-grid">' + t.items.map(t => ((t, a) => '<button type="button" class="ai-model-option" role="option" aria-selected="' + (t.id === e.value) + '" data-id="' + be(t.id) + '">' + Ce(t) + '<span class="ai-model-option-label"><strong>' + be(t.label) + (a ? " <em>Newest</em>" : "") + "</strong><small>" + be(we(t).label) + (r(t) ? " &middot; Native voice" : t.outputModalities?.includes("audio") ? " &middot; Music / audio" : "") + (t.vision ? " &middot; Vision" : "") + (t.reasoning ? " &middot; Reasoning" : "") + (p(t) ? " &middot; " + new Date(1e3 * p(t)).toLocaleDateString(void 0, {
-        month: "short",
-        year: "numeric"
-      }) : "") + (t.allowanceLabel ? " &middot; " + be(t.allowanceLabel) : "") + '</small></span><span class="ai-model-option-check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg></span></button>')(t, a > 0 && p(t) === a)).join("") + "</div></section>";
-    }).join(""), m.length || (n.textContent = "No matching models."), n.scrollTop = 0, 
-    a.querySelectorAll("[data-model-company]").forEach(e => e.setAttribute("aria-pressed", String(e.dataset.modelCompany === c))), 
-    m[0] && (o.value || c) && function(e) {
-      if (!e || a.hidden) return;
-      if (t) return void [ ...i.querySelectorAll("button") ].find(t => t.dataset.modelCompany === e)?.scrollIntoView({
-        block: "nearest",
-        inline: "nearest"
+      const _0xe4c94e_4 = Math.max(0, ..._0xe4c94e_c.filter(_0xe4c94e_0 => _0xe4c94e_2(_0xe4c94e_0).key === _0xe4c94e_3.company.key).map(_0xe4c94e_f));
+      return "\x3c\x73\x65\x63\x74\x69\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x67\x72\x6f\x75\x70\x22\x20\x72\x6f\x6c\x65\x3d\x22\x67\x72\x6f\x75\x70\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22" + _0xe4c94e_0(_0xe4c94e_3.company.label) + "\x22\x3e\x3c\x68\x33\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x67\x72\x6f\x75\x70\x2d\x6c\x61\x62\x65\x6c\x22\x3e" + _0xe4c94e_0(_0xe4c94e_3.company.label) + "\x20\x3c\x73\x70\x61\x6e\x3e" + _0xe4c94e_3.items.length + "\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x2f\x68\x33\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x67\x72\x6f\x75\x70\x2d\x67\x72\x69\x64\x22\x3e" + _0xe4c94e_3.items.map(_0xe4c94e_3 => ((_0xe4c94e_3, _0xe4c94e_4) => "\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x6f\x70\x74\x69\x6f\x6e\x22\x20\x72\x6f\x6c\x65\x3d\x22\x6f\x70\x74\x69\x6f\x6e\x22\x20\x61\x72\x69\x61\x2d\x73\x65\x6c\x65\x63\x74\x65\x64\x3d\x22" + (_0xe4c94e_3.id === _0xe4c94e_1.value) + "\x22\x20\x64\x61\x74\x61\x2d\x69\x64\x3d\x22" + _0xe4c94e_0(_0xe4c94e_3.id) + "\x22\x3e" + _0xe4c94e_6(_0xe4c94e_3) + "\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x6f\x70\x74\x69\x6f\x6e\x2d\x6c\x61\x62\x65\x6c\x22\x3e\x3c\x73\x74\x72\x6f\x6e\x67\x3e" + _0xe4c94e_0(_0xe4c94e_3.label) + (_0xe4c94e_4 ? "\x20\x3c\x65\x6d\x3e\x4e\x65\x77\x65\x73\x74\x3c\x2f\x65\x6d\x3e" : "") + "\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e\x3c\x73\x6d\x61\x6c\x6c\x3e" + _0xe4c94e_0(_0xe4c94e_2(_0xe4c94e_3).label) + (_0x714b6c_6(_0xe4c94e_3) ? "\x20\x26\x6d\x69\x64\x64\x6f\x74\x3b\x20\x4e\x61\x74\x69\x76\x65\x20\x76\x6f\x69\x63\x65" : _0xe4c94e_3.outputModalities?.includes("\x61\x75\x64\x69\x6f") ? "\x20\x26\x6d\x69\x64\x64\x6f\x74\x3b\x20\x4d\x75\x73\x69\x63\x20\x2f\x20\x61\x75\x64\x69\x6f" : "") + (_0xe4c94e_3.vision ? "\x20\x26\x6d\x69\x64\x64\x6f\x74\x3b\x20\x56\x69\x73\x69\x6f\x6e" : "") + (_0xe4c94e_3.reasoning ? "\x20\x26\x6d\x69\x64\x64\x6f\x74\x3b\x20\x52\x65\x61\x73\x6f\x6e\x69\x6e\x67" : "") + (_0xe4c94e_f(_0xe4c94e_3) ? "\x20\x26\x6d\x69\x64\x64\x6f\x74\x3b\x20" + new Date(1e3 * _0xe4c94e_f(_0xe4c94e_3)).toLocaleDateString(void 0, {
+        month: "\x73\x68\x6f\x72\x74",
+        year: "\x6e\x75\x6d\x65\x72\x69\x63"
+      }) : "") + (_0xe4c94e_3.allowanceLabel ? "\x20\x26\x6d\x69\x64\x64\x6f\x74\x3b\x20" + _0xe4c94e_0(_0xe4c94e_3.allowanceLabel) : "") + "\x3c\x2f\x73\x6d\x61\x6c\x6c\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x6f\x70\x74\x69\x6f\x6e\x2d\x63\x68\x65\x63\x6b\x22\x3e\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x35\x20\x31\x32\x20\x34\x20\x34\x20\x31\x30\x2d\x31\x30\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e")(_0xe4c94e_3, _0xe4c94e_4 > 0 && _0xe4c94e_f(_0xe4c94e_3) === _0xe4c94e_4)).join("") + "\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x73\x65\x63\x74\x69\x6f\x6e\x3e";
+    }).join(""), _0xe4c94e_b.length || (_0xe4c94e_a.textContent = "\x4e\x6f\x20\x6d\x61\x74\x63\x68\x69\x6e\x67\x20\x6d\x6f\x64\x65\x6c\x73\x2e"), 
+    _0xe4c94e_a.scrollTop = 0, _0xe4c94e_4.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x5d").forEach(_0xe4c94e_0 => _0xe4c94e_0.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0xe4c94e_0.dataset.modelCompany === _0xe4c94e_d))), 
+    _0xe4c94e_b[0] && (_0xe4c94e_7.value || _0xe4c94e_d) && function(_0xe4c94e_0) {
+      if (!_0xe4c94e_0 || _0xe4c94e_4.hidden) return;
+      if (_0xe4c94e_3) return void [ ..._0xe4c94e_8.querySelectorAll("\x62\x75\x74\x74\x6f\x6e") ].find(_0xe4c94e_1 => _0xe4c94e_1.dataset.modelCompany === _0xe4c94e_0)?.scrollIntoView({
+        block: "\x6e\x65\x61\x72\x65\x73\x74",
+        inline: "\x6e\x65\x61\x72\x65\x73\x74"
       });
-      const o = [ ...i.querySelectorAll(".ai-company-track:not([data-loop-copy]) button") ].find(t => t.dataset.modelCompany === e), n = o?.closest(".ai-company-rail");
-      if (!n) return;
-      const s = n.firstElementChild, r = o.getBoundingClientRect().top - n.getBoundingClientRect().top + n.scrollTop - (n.clientHeight - o.offsetHeight) / 2, l = !n.lastElementChild.hidden && s.offsetHeight > n.clientHeight;
-      n._loopOffset = l ? (r % s.offsetHeight + s.offsetHeight) % s.offsetHeight : Math.max(0, Math.min(r, n.scrollHeight - n.clientHeight)), 
-      n.scrollTop = n._loopOffset;
-    }(we(m[0]).key);
+      const _0xe4c94e_1 = [ ..._0xe4c94e_8.querySelectorAll("\x2e\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x74\x72\x61\x63\x6b\x3a\x6e\x6f\x74\x28\x5b\x64\x61\x74\x61\x2d\x6c\x6f\x6f\x70\x2d\x63\x6f\x70\x79\x5d\x29\x20\x62\x75\x74\x74\x6f\x6e") ].find(_0xe4c94e_1 => _0xe4c94e_1.dataset.modelCompany === _0xe4c94e_0), _0xe4c94e_2 = _0xe4c94e_1?.closest("\x2e\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x72\x61\x69\x6c");
+      if (!_0xe4c94e_2) return;
+      const _0xe4c94e_5 = _0xe4c94e_2.firstElementChild, _0xe4c94e_6 = _0xe4c94e_1.getBoundingClientRect().top - _0xe4c94e_2.getBoundingClientRect().top + _0xe4c94e_2.scrollTop - (_0xe4c94e_2.clientHeight - _0xe4c94e_1.offsetHeight) / 2, _0xe4c94e_7 = !_0xe4c94e_2.lastElementChild.hidden && _0xe4c94e_5.offsetHeight > _0xe4c94e_2.clientHeight;
+      _0xe4c94e_2._loopOffset = _0xe4c94e_7 ? (_0xe4c94e_6 % _0xe4c94e_5.offsetHeight + _0xe4c94e_5.offsetHeight) % _0xe4c94e_5.offsetHeight : Math.max(0, Math.min(_0xe4c94e_6, _0xe4c94e_2.scrollHeight - _0xe4c94e_2.clientHeight)), 
+      _0xe4c94e_2.scrollTop = _0xe4c94e_2._loopOffset;
+    }(_0xe4c94e_2(_0xe4c94e_b[0]).key);
   }
-  function u() {
-    const t = l.find(t => t.id === e.value);
-    s.innerHTML = t ? Ce(t) + "<span>" + be(t.label) + "</span>" : "Choose model", s.disabled = e.disabled || !l.length;
+  function _0xe4c94e_11() {
+    const _0xe4c94e_2 = _0xe4c94e_c.find(_0xe4c94e_0 => _0xe4c94e_0.id === _0xe4c94e_1.value);
+    _0xe4c94e_b.innerHTML = _0xe4c94e_2 ? _0xe4c94e_6(_0xe4c94e_2) + "\x3c\x73\x70\x61\x6e\x3e" + _0xe4c94e_0(_0xe4c94e_2.label) + "\x3c\x2f\x73\x70\x61\x6e\x3e" : "\x43\x68\x6f\x6f\x73\x65\x20\x6d\x6f\x64\x65\x6c", 
+    _0xe4c94e_b.disabled = _0xe4c94e_1.disabled || !_0xe4c94e_c.length;
   }
-  return matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", d), 
-  s.onclick = () => {
-    a.hidden = !1, a.showModal(), s.setAttribute("aria-expanded", "true"), p(), d(), 
-    o.focus();
-  }, document.getElementById("modelMenuClose").onclick = () => a.close(), a.addEventListener("close", () => {
-    a.hidden = !0, cancelAnimationFrame(m), s.setAttribute("aria-expanded", "false"), 
-    s.focus();
-  }), o.oninput = p, a.addEventListener("click", t => {
-    const o = t.target.closest("[data-model-company]");
-    if (o) return c = o.dataset.modelCompany, p(), void d();
-    const i = t.target.closest("[data-id]");
-    i && (e.value = i.dataset.id, e.dispatchEvent(new Event("change")), u(), a.close());
-  }), e.addEventListener("change", u), new MutationObserver(u).observe(e, {
+  return matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").addEventListener("\x63\x68\x61\x6e\x67\x65", _0xe4c94e_f), 
+  _0xe4c94e_b.onclick = () => {
+    _0xe4c94e_4.hidden = !1, _0xe4c94e_4.showModal(), _0xe4c94e_b.setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x74\x72\x75\x65"), 
+    _0xe4c94e_10(), _0xe4c94e_f(), _0xe4c94e_7.focus();
+  }, document.getElementById("\x6d\x6f\x64\x65\x6c\x4d\x65\x6e\x75\x43\x6c\x6f\x73\x65").onclick = () => _0xe4c94e_4.close(), 
+  _0xe4c94e_4.addEventListener("\x63\x6c\x6f\x73\x65", () => {
+    _0xe4c94e_4.hidden = !0, cancelAnimationFrame(_0xe4c94e_e), _0xe4c94e_b.setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x66\x61\x6c\x73\x65"), 
+    _0xe4c94e_b.focus();
+  }), _0xe4c94e_7.oninput = _0xe4c94e_10, _0xe4c94e_4.addEventListener("\x63\x6c\x69\x63\x6b", _0xe4c94e_0 => {
+    const _0xe4c94e_2 = _0xe4c94e_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x5d");
+    if (_0xe4c94e_2) return _0xe4c94e_d = _0xe4c94e_2.dataset.modelCompany, _0xe4c94e_10(), 
+    void _0xe4c94e_f();
+    const _0xe4c94e_3 = _0xe4c94e_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x69\x64\x5d");
+    _0xe4c94e_3 && (_0xe4c94e_1.value = _0xe4c94e_3.dataset.id, _0xe4c94e_1.dispatchEvent(new Event("\x63\x68\x61\x6e\x67\x65")), 
+    _0xe4c94e_11(), _0xe4c94e_4.close());
+  }), _0xe4c94e_1.addEventListener("\x63\x68\x61\x6e\x67\x65", _0xe4c94e_11), new MutationObserver(_0xe4c94e_11).observe(_0xe4c94e_1, {
     attributes: !0,
     childList: !0
   }), {
-    icon: e => Ce(l.find(t => t.id === e) || {
-      id: e,
-      company: "Assistant"
+    icon: _0xe4c94e_0 => _0xe4c94e_6(_0xe4c94e_c.find(_0xe4c94e_1 => _0xe4c94e_1.id === _0xe4c94e_0) || {
+      id: _0xe4c94e_0,
+      company: "\x41\x73\x73\x69\x73\x74\x61\x6e\x74"
     }),
     openVoice() {
-      c = "", s.click(), o.value = "voice", p();
+      _0xe4c94e_d = "", _0xe4c94e_b.click(), _0xe4c94e_7.value = "\x76\x6f\x69\x63\x65", _0xe4c94e_10();
     },
-    set(e) {
-      l = e.map(e => ({
-        ...e,
-        label: e.label || e.id
+    set(_0xe4c94e_1) {
+      _0xe4c94e_c = _0xe4c94e_1.map(_0xe4c94e_0 => ({
+        ..._0xe4c94e_0,
+        label: _0xe4c94e_0.label || _0xe4c94e_0.id
       })), function() {
-        const e = [ ...new Map(l.map(e => {
-          const t = we(e);
-          return [ t.key, t ];
-        })).values() ].sort(Ie);
-        e.some(e => e.key === c) || (c = "");
-        const a = e => `<button type="button" data-model-company="${be(e.key)}" title="${be(e.label)}" aria-label="${be(e.label)} models" aria-pressed="${c === e.key}">${xe(e)}</button>`;
-        if (t) return i.innerHTML = e.map(e => a(e).replace("</button>", "<span>" + be(e.label) + "</span></button>")).join(""), 
-        void d();
-        i.innerHTML = [ e.filter((e, t) => t % 2 == 0), e.filter((e, t) => t % 2 == 1) ].map((e, t) => `<div class="ai-company-rail" aria-label="${t ? "Right" : "Left"} company filters"><div class="ai-company-track">${e.map(a).join("")}</div></div>`).join(""), 
-        i.querySelectorAll(".ai-company-rail").forEach(e => {
-          const t = e.firstElementChild.cloneNode(!0);
-          t.setAttribute("aria-hidden", "true"), t.dataset.loopCopy = "", t.querySelectorAll("button").forEach(e => e.tabIndex = -1), 
-          e.append(t), e.addEventListener("pointerleave", () => {
-            e._loopOffset = e.scrollTop, e._continueOnHover = !1;
-          }), e.addEventListener("focusout", () => {
-            e._loopOffset = e.scrollTop;
+        const _0xe4c94e_1 = [ ...new Map(_0xe4c94e_c.map(_0xe4c94e_0 => {
+          const _0xe4c94e_1 = _0xe4c94e_2(_0xe4c94e_0);
+          return [ _0xe4c94e_1.key, _0xe4c94e_1 ];
+        })).values() ].sort(_0xe4c94e_9);
+        _0xe4c94e_1.some(_0xe4c94e_0 => _0xe4c94e_0.key === _0xe4c94e_d) || (_0xe4c94e_d = "");
+        const _0xe4c94e_4 = _0xe4c94e_1 => `\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x3d\x22${_0xe4c94e_0(_0xe4c94e_1.key)}\x22\x20\x74\x69\x74\x6c\x65\x3d\x22${_0xe4c94e_0(_0xe4c94e_1.label)}\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22${_0xe4c94e_0(_0xe4c94e_1.label)}\x20\x6d\x6f\x64\x65\x6c\x73\x22\x20\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64\x3d\x22${_0xe4c94e_d === _0xe4c94e_1.key}\x22\x3e${_0xe4c94e_5(_0xe4c94e_1)}\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e`;
+        if (_0xe4c94e_3) return _0xe4c94e_8.innerHTML = _0xe4c94e_1.map(_0xe4c94e_1 => _0xe4c94e_4(_0xe4c94e_1).replace("\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e", "\x3c\x73\x70\x61\x6e\x3e" + _0xe4c94e_0(_0xe4c94e_1.label) + "\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e")).join(""), 
+        void _0xe4c94e_f();
+        _0xe4c94e_8.innerHTML = [ _0xe4c94e_1.filter((_0xe4c94e_0, _0xe4c94e_1) => _0xe4c94e_1 % 2 == 0), _0xe4c94e_1.filter((_0xe4c94e_0, _0xe4c94e_1) => _0xe4c94e_1 % 2 == 1) ].map((_0xe4c94e_0, _0xe4c94e_1) => `\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x72\x61\x69\x6c\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22${_0xe4c94e_1 ? "\x52\x69\x67\x68\x74" : "\x4c\x65\x66\x74"}\x20\x63\x6f\x6d\x70\x61\x6e\x79\x20\x66\x69\x6c\x74\x65\x72\x73\x22\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x74\x72\x61\x63\x6b\x22\x3e${_0xe4c94e_0.map(_0xe4c94e_4).join("")}\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x64\x69\x76\x3e`).join(""), 
+        _0xe4c94e_8.querySelectorAll("\x2e\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x72\x61\x69\x6c").forEach(_0xe4c94e_0 => {
+          const _0xe4c94e_1 = _0xe4c94e_0.firstElementChild.cloneNode(!0);
+          _0xe4c94e_1.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), _0xe4c94e_1.dataset.loopCopy = "", 
+          _0xe4c94e_1.querySelectorAll("\x62\x75\x74\x74\x6f\x6e").forEach(_0xe4c94e_0 => _0xe4c94e_0.tabIndex = -1), 
+          _0xe4c94e_0.append(_0xe4c94e_1), _0xe4c94e_0.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x6c\x65\x61\x76\x65", () => {
+            _0xe4c94e_0._loopOffset = _0xe4c94e_0.scrollTop, _0xe4c94e_0._continueOnHover = !1;
+          }), _0xe4c94e_0.addEventListener("\x66\x6f\x63\x75\x73\x6f\x75\x74", () => {
+            _0xe4c94e_0._loopOffset = _0xe4c94e_0.scrollTop;
           });
-        }), d();
-      }(), p(), u();
+        }), _0xe4c94e_f();
+      }(), _0xe4c94e_10(), _0xe4c94e_11();
     }
   };
 }
 
-document.addEventListener("error", e => {
-  const t = e.target;
-  if (!(t instanceof HTMLImageElement && t.classList.contains("ai-company-logo"))) return;
-  const a = document.createElement("span");
-  a.className = "ai-company-initial", a.textContent = t.closest("[aria-label]")?.getAttribute("aria-label")?.slice(0, 2).toUpperCase() || "AI", 
-  a.setAttribute("aria-hidden", "true"), t.replaceWith(a);
+document.addEventListener("\x65\x72\x72\x6f\x72", _0xe4c94e_0 => {
+  const _0xe4c94e_1 = _0xe4c94e_0.target;
+  if (!(_0xe4c94e_1 instanceof HTMLImageElement && _0xe4c94e_1.classList.contains("\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f"))) return;
+  const _0xe4c94e_2 = document.createElement("\x73\x70\x61\x6e");
+  _0xe4c94e_2.className = "\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x69\x6e\x69\x74\x69\x61\x6c", _0xe4c94e_2.textContent = _0xe4c94e_1.closest("\x5b\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x5d")?.getAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c")?.slice(0, 2).toUpperCase() || "\x41\x49", 
+  _0xe4c94e_2.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), _0xe4c94e_1.replaceWith(_0xe4c94e_2);
 }, !0);

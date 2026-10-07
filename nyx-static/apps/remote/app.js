@@ -1,307 +1,322 @@
-import { enhanceDesktop as ec } from "./@rb54686d0715983ed3d8de6af!.js";
+import { enhanceDesktop as _0xeb3350_0 } from "\x2e\x2f\x40\x72\x62\x35\x34\x36\x38\x36\x64\x30\x37\x31\x35\x39\x38\x33\x65\x64\x33\x64\x38\x64\x65\x36\x61\x66\x21\x2e\x6a\x73";
 
-const m = e => document.getElementById(e);
+const _0x714b6c_b = _0xeb3350_0 => document.getElementById(_0xeb3350_0);
 
-let C, os, ns, tc, nc, oc, ic, as, ac = 0, rs = 0, cc = 0;
+let _0x714b6c_16, _0x73587b_3, _0x73587b_2, _0xeb3350_1, _0xeb3350_2, _0xeb3350_3, _0xeb3350_4, _0x73587b_5, _0xeb3350_5 = 0, _0x73587b_7 = 0, _0xeb3350_6 = 0;
 
-const I = e => {
-  m("notice").textContent = e;
-}, sc = e => ![ 401, 403, 404 ].includes(e.status) && ![ "auth/user-disabled", "auth/user-token-expired", "auth/invalid-user-token" ].includes(e.code), rc = e => e instanceof TypeError || [ "TimeoutError", "auth/network-request-failed" ].includes(e.name) || "auth/network-request-failed" === e.code ? "The connection request could not reach the server." : e.message;
+const _0x714b6c_24 = _0xeb3350_0 => {
+  _0x714b6c_b("\x6e\x6f\x74\x69\x63\x65").textContent = _0xeb3350_0;
+}, _0xeb3350_7 = _0xeb3350_0 => ![ 401, 403, 404 ].includes(_0xeb3350_0.status) && ![ "\x61\x75\x74\x68\x2f\x75\x73\x65\x72\x2d\x64\x69\x73\x61\x62\x6c\x65\x64", "\x61\x75\x74\x68\x2f\x75\x73\x65\x72\x2d\x74\x6f\x6b\x65\x6e\x2d\x65\x78\x70\x69\x72\x65\x64", "\x61\x75\x74\x68\x2f\x69\x6e\x76\x61\x6c\x69\x64\x2d\x75\x73\x65\x72\x2d\x74\x6f\x6b\x65\x6e" ].includes(_0xeb3350_0.code), _0xeb3350_8 = _0xeb3350_0 => _0xeb3350_0 instanceof TypeError || [ "\x54\x69\x6d\x65\x6f\x75\x74\x45\x72\x72\x6f\x72", "\x61\x75\x74\x68\x2f\x6e\x65\x74\x77\x6f\x72\x6b\x2d\x72\x65\x71\x75\x65\x73\x74\x2d\x66\x61\x69\x6c\x65\x64" ].includes(_0xeb3350_0.name) || "\x61\x75\x74\x68\x2f\x6e\x65\x74\x77\x6f\x72\x6b\x2d\x72\x65\x71\x75\x65\x73\x74\x2d\x66\x61\x69\x6c\x65\x64" === _0xeb3350_0.code ? "\x54\x68\x65\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x72\x65\x71\x75\x65\x73\x74\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x72\x65\x61\x63\x68\x20\x74\x68\x65\x20\x73\x65\x72\x76\x65\x72\x2e" : _0xeb3350_0.message;
 
-let dc, uc, lc = 0;
+let _0xeb3350_9, _0xeb3350_a, _0xeb3350_b = 0;
 
-async function $(e, t, n, o = !1) {
-  const i = await (C?.currentUser?.getIdToken(o));
-  if (!i) throw Object.assign(Error("Sign in to Nyx with your owner account."), {
+async function _0x714b6c_2e(_0xeb3350_0, _0xeb3350_1, _0xeb3350_2, _0xeb3350_3 = !1) {
+  const _0xeb3350_4 = await (_0x714b6c_16?.currentUser?.getIdToken(_0xeb3350_3));
+  if (!_0xeb3350_4) throw Object.assign(Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x4e\x79\x78\x20\x77\x69\x74\x68\x20\x79\x6f\x75\x72\x20\x6f\x77\x6e\x65\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e"), {
     status: 401
   });
-  const a = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/private-remote" + e, {
-    method: n || (t ? "POST" : "GET"),
+  const _0xeb3350_5 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x70\x72\x69\x76\x61\x74\x65\x2d\x72\x65\x6d\x6f\x74\x65" + _0xeb3350_0, {
+    method: _0xeb3350_2 || (_0xeb3350_1 ? "\x50\x4f\x53\x54" : "\x47\x45\x54"),
     headers: {
-      Authorization: "Bearer " + i,
-      ...t ? {
-        "Content-Type": "application/json"
+      Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0xeb3350_4,
+      ..._0xeb3350_1 ? {
+        "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
       } : {}
     },
-    ...t ? {
-      body: JSON.stringify(t)
+    ..._0xeb3350_1 ? {
+      body: JSON.stringify(_0xeb3350_1)
     } : {},
-    cache: "no-store",
+    cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65",
     signal: AbortSignal.timeout(15e3)
   });
-  if (401 === a.status && !o) return $(e, t, n, !0);
-  if (!a.ok) {
-    const e = await a.json().catch(() => ({}));
-    throw Object.assign(Error(e.error || "Not available."), {
-      status: a.status
+  if (401 === _0xeb3350_5.status && !_0xeb3350_3) return _0x714b6c_2e(_0xeb3350_0, _0xeb3350_1, _0xeb3350_2, !0);
+  if (!_0xeb3350_5.ok) {
+    const _0xeb3350_0 = await _0xeb3350_5.json().catch(() => ({}));
+    throw Object.assign(Error(_0xeb3350_0.error || "\x4e\x6f\x74\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e"), {
+      status: _0xeb3350_5.status
     });
   }
-  return a;
+  return _0xeb3350_5;
 }
 
-function pc(e, t, n, o = 6e4) {
-  as = setTimeout(async () => {
-    if (n === rs) {
+function _0xeb3350_c(_0xeb3350_0, _0xeb3350_1, _0xeb3350_2, _0xeb3350_3 = 6e4) {
+  _0x73587b_5 = setTimeout(async () => {
+    if (_0xeb3350_2 === _0x73587b_7) {
       try {
-        await $("/renew", {
-          session: e
+        await _0x714b6c_2e("\x2f\x72\x65\x6e\x65\x77", {
+          session: _0xeb3350_0
         });
-      } catch (o) {
-        return void (n === rs && (409 !== o.status && sc(o) ? pc(e, t, n, 5e3) : vc(t, rc(o), sc(o))));
+      } catch (_0xeb3350_3) {
+        return void (_0xeb3350_2 === _0x73587b_7 && (409 !== _0xeb3350_3.status && _0xeb3350_7(_0xeb3350_3) ? _0xeb3350_c(_0xeb3350_0, _0xeb3350_1, _0xeb3350_2, 5e3) : _0xeb3350_11(_0xeb3350_1, _0xeb3350_8(_0xeb3350_3), _0xeb3350_7(_0xeb3350_3))));
       }
-      n === rs && pc(e, t, n);
+      _0xeb3350_2 === _0x73587b_7 && _0xeb3350_c(_0xeb3350_0, _0xeb3350_1, _0xeb3350_2);
     }
-  }, o);
+  }, _0xeb3350_3);
 }
 
-const mc = e => async t => {
-  t?.preventDefault();
+const _0xeb3350_d = _0xeb3350_0 => async _0xeb3350_1 => {
+  _0xeb3350_1?.preventDefault();
   try {
-    await e(t);
-  } catch (n) {
-    I(n.message);
+    await _0xeb3350_0(_0xeb3350_1);
+  } catch (_0xeb3350_2) {
+    _0x714b6c_24(_0xeb3350_2.message);
   }
 };
 
-function hc(e) {
-  1 === os?.readyState && os.send(JSON.stringify(e));
+function _0xeb3350_e(_0xeb3350_0) {
+  1 === _0x73587b_3?.readyState && _0x73587b_3.send(JSON.stringify(_0xeb3350_0));
 }
 
-function fc() {
-  clearTimeout(oc), clearTimeout(ic), clearTimeout(as), m("cancelReconnect").hidden = !0, 
-  rs++, nc?.destroy(), nc = null, ns?.disconnect(), ns = null, hc({
-    type: "release"
-  }), os?.close(), os = null, tc && URL.revokeObjectURL(tc), tc = null, m("frame").removeAttribute("src"), 
-  m("frame").hidden = !1, m("screen").replaceChildren(m("frame")), m("screen").classList.remove("vnc-screen"), 
-  m("secureAttention").hidden = !0, m("session").hidden = !0, m("setup").hidden = !1;
+function _0xeb3350_f() {
+  clearTimeout(_0xeb3350_3), clearTimeout(_0xeb3350_4), clearTimeout(_0x73587b_5), 
+  _0x714b6c_b("\x63\x61\x6e\x63\x65\x6c\x52\x65\x63\x6f\x6e\x6e\x65\x63\x74").hidden = !0, _0x73587b_7++, _0xeb3350_2?.destroy(), 
+  _0xeb3350_2 = null, _0x73587b_2?.disconnect(), _0x73587b_2 = null, _0xeb3350_e({
+    type: "\x72\x65\x6c\x65\x61\x73\x65"
+  }), _0x73587b_3?.close(), _0x73587b_3 = null, _0xeb3350_1 && URL.revokeObjectURL(_0xeb3350_1), 
+  _0xeb3350_1 = null, _0x714b6c_b("\x66\x72\x61\x6d\x65").removeAttribute("\x73\x72\x63"), _0x714b6c_b("\x66\x72\x61\x6d\x65").hidden = !1, 
+  _0x714b6c_b("\x73\x63\x72\x65\x65\x6e").replaceChildren(_0x714b6c_b("\x66\x72\x61\x6d\x65")), _0x714b6c_b("\x73\x63\x72\x65\x65\x6e").classList.remove("\x76\x6e\x63\x2d\x73\x63\x72\x65\x65\x6e"), 
+  _0x714b6c_b("\x73\x65\x63\x75\x72\x65\x41\x74\x74\x65\x6e\x74\x69\x6f\x6e").hidden = !0, _0x714b6c_b("\x73\x65\x73\x73\x69\x6f\x6e").hidden = !0, 
+  _0x714b6c_b("\x73\x65\x74\x75\x70").hidden = !1;
 }
 
-async function wc() {
-  const e = await (await $("/devices")).json();
-  if (m("devices").replaceChildren(), !e.devices.length) {
-    const e = document.createElement("p");
-    e.textContent = "No paired computers.", m("devices").append(e);
+async function _0xeb3350_10() {
+  const _0xeb3350_0 = await (await _0x714b6c_2e("\x2f\x64\x65\x76\x69\x63\x65\x73")).json();
+  if (_0x714b6c_b("\x64\x65\x76\x69\x63\x65\x73").replaceChildren(), !_0xeb3350_0.devices.length) {
+    const _0xeb3350_0 = document.createElement("\x70");
+    _0xeb3350_0.textContent = "\x4e\x6f\x20\x70\x61\x69\x72\x65\x64\x20\x63\x6f\x6d\x70\x75\x74\x65\x72\x73\x2e", _0x714b6c_b("\x64\x65\x76\x69\x63\x65\x73").append(_0xeb3350_0);
   }
-  for (const t of e.devices) {
-    const e = document.createElement("div");
-    e.className = "device";
-    const n = document.createElement("span");
-    n.textContent = t.name;
-    const o = document.createElement("small");
-    o.textContent = t.connected ? "In use" : t.online ? "Online" : "Offline", n.append(o);
-    const i = document.createElement("button");
-    i.textContent = "Connect", i.disabled = !t.online || t.connected, i.onclick = mc(() => yc(t));
-    const a = document.createElement("button");
-    a.textContent = "Remove", a.onclick = mc(async () => {
-      confirm("Remove " + t.name + " and revoke its remote access?") && (await $("/devices/" + t.id, null, "DELETE"), 
-      await wc());
+  for (const _0xeb3350_1 of _0xeb3350_0.devices) {
+    const _0xeb3350_0 = document.createElement("\x64\x69\x76");
+    _0xeb3350_0.className = "\x64\x65\x76\x69\x63\x65";
+    const _0xeb3350_2 = document.createElement("\x73\x70\x61\x6e");
+    _0xeb3350_2.textContent = _0xeb3350_1.name;
+    const _0xeb3350_3 = document.createElement("\x73\x6d\x61\x6c\x6c");
+    _0xeb3350_3.textContent = _0xeb3350_1.connected ? "\x49\x6e\x20\x75\x73\x65" : _0xeb3350_1.online ? "\x4f\x6e\x6c\x69\x6e\x65" : "\x4f\x66\x66\x6c\x69\x6e\x65", 
+    _0xeb3350_2.append(_0xeb3350_3);
+    const _0xeb3350_4 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0xeb3350_4.textContent = "\x43\x6f\x6e\x6e\x65\x63\x74", _0xeb3350_4.disabled = !_0xeb3350_1.online || _0xeb3350_1.connected, 
+    _0xeb3350_4.onclick = _0xeb3350_d(() => _0xeb3350_12(_0xeb3350_1));
+    const _0xeb3350_5 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0xeb3350_5.textContent = "\x52\x65\x6d\x6f\x76\x65", _0xeb3350_5.onclick = _0xeb3350_d(async () => {
+      confirm("\x52\x65\x6d\x6f\x76\x65\x20" + _0xeb3350_1.name + "\x20\x61\x6e\x64\x20\x72\x65\x76\x6f\x6b\x65\x20\x69\x74\x73\x20\x72\x65\x6d\x6f\x74\x65\x20\x61\x63\x63\x65\x73\x73\x3f") && (await _0x714b6c_2e("\x2f\x64\x65\x76\x69\x63\x65\x73\x2f" + _0xeb3350_1.id, null, "\x44\x45\x4c\x45\x54\x45"), 
+      await _0xeb3350_10());
     });
-    const c = document.createElement("button");
-    c.textContent = "Generate new code", c.onclick = mc(async () => {
-      const e = await (await $("/devices/" + t.id + "/code", {})).json();
-      I("Code: " + e.code.match(/.{1,4}/g).join("-") + " ? valid for 5 minutes, for your owner account only.");
-    }), e.append(n, i), document.documentElement.hasAttribute("data-direct-desktop") || e.append(c, a), 
-    m("devices").append(e);
+    const _0xeb3350_6 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0xeb3350_6.textContent = "\x47\x65\x6e\x65\x72\x61\x74\x65\x20\x6e\x65\x77\x20\x63\x6f\x64\x65", _0xeb3350_6.onclick = _0xeb3350_d(async () => {
+      const _0xeb3350_0 = await (await _0x714b6c_2e("\x2f\x64\x65\x76\x69\x63\x65\x73\x2f" + _0xeb3350_1.id + "\x2f\x63\x6f\x64\x65", {})).json();
+      _0x714b6c_24("\x43\x6f\x64\x65\x3a\x20" + _0xeb3350_0.code.match(/.{1,4}/g).join("\x2d") + "\x20\x3f\x20\x76\x61\x6c\x69\x64\x20\x66\x6f\x72\x20\x35\x20\x6d\x69\x6e\x75\x74\x65\x73\x2c\x20\x66\x6f\x72\x20\x79\x6f\x75\x72\x20\x6f\x77\x6e\x65\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x6f\x6e\x6c\x79\x2e");
+    }), _0xeb3350_0.append(_0xeb3350_2, _0xeb3350_4), document.documentElement.hasAttribute("\x64\x61\x74\x61\x2d\x64\x69\x72\x65\x63\x74\x2d\x64\x65\x73\x6b\x74\x6f\x70") || _0xeb3350_0.append(_0xeb3350_6, _0xeb3350_5), 
+    _0x714b6c_b("\x64\x65\x76\x69\x63\x65\x73").append(_0xeb3350_0);
   }
 }
 
-function vc(e, t, n = !0) {
-  if (fc(), wc().catch(() => {}), !n) return void I(t);
-  const o = ++cc, i = rs, a = Math.min(3e4, 3e3 * 2 ** Math.min(o - 1, 4));
-  I(t + " Reconnecting in " + a / 1e3 + " seconds..."), m("cancelReconnect").hidden = !1, 
-  oc = setTimeout(() => {
-    rs === i && yc(e, !0).catch(t => {
-      rs === i + 2 && vc(e, t.message, ![ 401, 403, 404 ].includes(t.status) && ![ "auth/user-disabled", "auth/user-token-expired", "auth/invalid-user-token" ].includes(t.code));
+function _0xeb3350_11(_0xeb3350_0, _0xeb3350_1, _0xeb3350_2 = !0) {
+  if (_0xeb3350_f(), _0xeb3350_10().catch(() => {}), !_0xeb3350_2) return void _0x714b6c_24(_0xeb3350_1);
+  const _0xeb3350_4 = ++_0xeb3350_6, _0xeb3350_5 = _0x73587b_7, _0xeb3350_7 = Math.min(3e4, 3e3 * 2 ** Math.min(_0xeb3350_4 - 1, 4));
+  _0x714b6c_24(_0xeb3350_1 + "\x20\x52\x65\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\x20\x69\x6e\x20" + _0xeb3350_7 / 1e3 + "\x20\x73\x65\x63\x6f\x6e\x64\x73\x2e\x2e\x2e"), 
+  _0x714b6c_b("\x63\x61\x6e\x63\x65\x6c\x52\x65\x63\x6f\x6e\x6e\x65\x63\x74").hidden = !1, _0xeb3350_3 = setTimeout(() => {
+    _0x73587b_7 === _0xeb3350_5 && _0xeb3350_12(_0xeb3350_0, !0).catch(_0xeb3350_1 => {
+      _0x73587b_7 === _0xeb3350_5 + 2 && _0xeb3350_11(_0xeb3350_0, _0xeb3350_1.message, ![ 401, 403, 404 ].includes(_0xeb3350_1.status) && ![ "\x61\x75\x74\x68\x2f\x75\x73\x65\x72\x2d\x64\x69\x73\x61\x62\x6c\x65\x64", "\x61\x75\x74\x68\x2f\x75\x73\x65\x72\x2d\x74\x6f\x6b\x65\x6e\x2d\x65\x78\x70\x69\x72\x65\x64", "\x61\x75\x74\x68\x2f\x69\x6e\x76\x61\x6c\x69\x64\x2d\x75\x73\x65\x72\x2d\x74\x6f\x6b\x65\x6e" ].includes(_0xeb3350_1.code));
     });
-  }, a);
+  }, _0xeb3350_7);
 }
 
-async function yc(e, t = !1) {
-  t || (cc = 0), fc();
-  const n = ++rs;
-  m("cancelReconnect").hidden = !1;
+async function _0xeb3350_12(_0xeb3350_3, _0xeb3350_5 = !1) {
+  _0xeb3350_5 || (_0xeb3350_6 = 0), _0xeb3350_f();
+  const _0xeb3350_9 = ++_0x73587b_7;
+  _0x714b6c_b("\x63\x61\x6e\x63\x65\x6c\x52\x65\x63\x6f\x6e\x6e\x65\x63\x74").hidden = !1;
   try {
-    const t = "vnc" === e.mode ? (await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/novnc/core/rfb.js"))).default : null, o = "vnc" === e.mode ? (await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/novnc/core/util/events.js"))).releaseCapture : null;
-    if (n !== rs) return;
-    const {ticket: i} = await (await $("/connect", {
-      id: e.id
+    const _0xeb3350_5 = "\x76\x6e\x63" === _0xeb3350_3.mode ? (await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x76\x65\x6e\x64\x6f\x72\x2f\x6e\x6f\x76\x6e\x63\x2f\x63\x6f\x72\x65\x2f\x72\x66\x62\x2e\x6a\x73"))).default : null, _0xeb3350_7 = "\x76\x6e\x63" === _0xeb3350_3.mode ? (await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x76\x65\x6e\x64\x6f\x72\x2f\x6e\x6f\x76\x6e\x63\x2f\x63\x6f\x72\x65\x2f\x75\x74\x69\x6c\x2f\x65\x76\x65\x6e\x74\x73\x2e\x6a\x73"))).releaseCapture : null;
+    if (_0xeb3350_9 !== _0x73587b_7) return;
+    const {ticket: _0xeb3350_8} = await (await _0x714b6c_2e("\x2f\x63\x6f\x6e\x6e\x65\x63\x74", {
+      id: _0xeb3350_3.id
     })).json();
-    if (n !== rs) return;
-    m("session").hidden = !1, m("setup").hidden = !0, m("computerName").textContent = e.name, 
-    m("sessionState").textContent = "Connecting\u2026", I(""), os = new WebSocket(location.origin.replace(/^http/, "ws") + "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/private-remote/socket"), 
-    os.binaryType = "blob";
-    const a = os;
-    let c = 1006, s = !1;
-    a.addEventListener("close", e => {
-      c = e.code;
+    if (_0xeb3350_9 !== _0x73587b_7) return;
+    _0x714b6c_b("\x73\x65\x73\x73\x69\x6f\x6e").hidden = !1, _0x714b6c_b("\x73\x65\x74\x75\x70").hidden = !0, _0x714b6c_b("\x63\x6f\x6d\x70\x75\x74\x65\x72\x4e\x61\x6d\x65").textContent = _0xeb3350_3.name, 
+    _0x714b6c_b("\x73\x65\x73\x73\x69\x6f\x6e\x53\x74\x61\x74\x65").textContent = "\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\u2026", _0x714b6c_24(""), 
+    _0x73587b_3 = new WebSocket(location.origin.replace(/^http/, "\x77\x73") + "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x70\x72\x69\x76\x61\x74\x65\x2d\x72\x65\x6d\x6f\x74\x65\x2f\x73\x6f\x63\x6b\x65\x74"), 
+    _0x73587b_3.binaryType = "\x62\x6c\x6f\x62";
+    const _0xeb3350_a = _0x73587b_3;
+    let _0xeb3350_b = 1006, _0xeb3350_d = !1;
+    _0xeb3350_a.addEventListener("\x63\x6c\x6f\x73\x65", _0xeb3350_0 => {
+      _0xeb3350_b = _0xeb3350_0.code;
     }, {
       capture: !0
     });
-    const r = () => {
-      n === rs && vc(e, s ? "Windows desktop authentication failed." : {
-        4001: "Session authorization needs refreshing.",
-        4003: "Remote access was refused.",
-        4008: "Remote traffic limit reached.",
-        4009: "Computer is already in use.",
-        4010: "Connection could not keep up with the desktop stream.",
-        4011: "The Windows desktop stream ended.",
-        4012: "The Windows bridge disconnected."
-      }[c] || "Desktop connection interrupted (code " + c + ").", !s && ![ 4003, 4009 ].includes(c));
-    }, d = () => {
-      clearTimeout(ic), cc = 0, m("cancelReconnect").hidden = !0;
+    const _0xeb3350_e = () => {
+      _0xeb3350_9 === _0x73587b_7 && _0xeb3350_11(_0xeb3350_3, _0xeb3350_d ? "\x57\x69\x6e\x64\x6f\x77\x73\x20\x64\x65\x73\x6b\x74\x6f\x70\x20\x61\x75\x74\x68\x65\x6e\x74\x69\x63\x61\x74\x69\x6f\x6e\x20\x66\x61\x69\x6c\x65\x64\x2e" : {
+        4001: "\x53\x65\x73\x73\x69\x6f\x6e\x20\x61\x75\x74\x68\x6f\x72\x69\x7a\x61\x74\x69\x6f\x6e\x20\x6e\x65\x65\x64\x73\x20\x72\x65\x66\x72\x65\x73\x68\x69\x6e\x67\x2e",
+        4003: "\x52\x65\x6d\x6f\x74\x65\x20\x61\x63\x63\x65\x73\x73\x20\x77\x61\x73\x20\x72\x65\x66\x75\x73\x65\x64\x2e",
+        4008: "\x52\x65\x6d\x6f\x74\x65\x20\x74\x72\x61\x66\x66\x69\x63\x20\x6c\x69\x6d\x69\x74\x20\x72\x65\x61\x63\x68\x65\x64\x2e",
+        4009: "\x43\x6f\x6d\x70\x75\x74\x65\x72\x20\x69\x73\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x69\x6e\x20\x75\x73\x65\x2e",
+        4010: "\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6b\x65\x65\x70\x20\x75\x70\x20\x77\x69\x74\x68\x20\x74\x68\x65\x20\x64\x65\x73\x6b\x74\x6f\x70\x20\x73\x74\x72\x65\x61\x6d\x2e",
+        4011: "\x54\x68\x65\x20\x57\x69\x6e\x64\x6f\x77\x73\x20\x64\x65\x73\x6b\x74\x6f\x70\x20\x73\x74\x72\x65\x61\x6d\x20\x65\x6e\x64\x65\x64\x2e",
+        4012: "\x54\x68\x65\x20\x57\x69\x6e\x64\x6f\x77\x73\x20\x62\x72\x69\x64\x67\x65\x20\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64\x2e"
+      }[_0xeb3350_b] || "\x44\x65\x73\x6b\x74\x6f\x70\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x69\x6e\x74\x65\x72\x72\x75\x70\x74\x65\x64\x20\x28\x63\x6f\x64\x65\x20" + _0xeb3350_b + "\x29\x2e", !_0xeb3350_d && ![ 4003, 4009 ].includes(_0xeb3350_b));
+    }, _0xeb3350_f = () => {
+      clearTimeout(_0xeb3350_4), _0xeb3350_6 = 0, _0x714b6c_b("\x63\x61\x6e\x63\x65\x6c\x52\x65\x63\x6f\x6e\x6e\x65\x63\x74").hidden = !0;
     };
-    ic = setTimeout(() => {
-      n === rs && vc(e, "The desktop connection timed out.");
-    }, 15e3), os.onopen = () => a.send(JSON.stringify({
-      type: "viewer",
-      ticket: i
-    })), os.onmessage = i => {
-      if (n === rs) if (i.data instanceof Blob) {
-        d();
-        const e = URL.createObjectURL(i.data), t = tc;
-        tc = e, m("frame").src = e, t && URL.revokeObjectURL(t), m("sessionState").textContent = "Connected";
+    _0xeb3350_4 = setTimeout(() => {
+      _0xeb3350_9 === _0x73587b_7 && _0xeb3350_11(_0xeb3350_3, "\x54\x68\x65\x20\x64\x65\x73\x6b\x74\x6f\x70\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x74\x69\x6d\x65\x64\x20\x6f\x75\x74\x2e");
+    }, 15e3), _0x73587b_3.onopen = () => _0xeb3350_a.send(JSON.stringify({
+      type: "\x76\x69\x65\x77\x65\x72",
+      ticket: _0xeb3350_8
+    })), _0x73587b_3.onmessage = _0xeb3350_4 => {
+      if (_0xeb3350_9 === _0x73587b_7) if (_0xeb3350_4.data instanceof Blob) {
+        _0xeb3350_f();
+        const _0xeb3350_0 = URL.createObjectURL(_0xeb3350_4.data), _0xeb3350_2 = _0xeb3350_1;
+        _0xeb3350_1 = _0xeb3350_0, _0x714b6c_b("\x66\x72\x61\x6d\x65").src = _0xeb3350_0, _0xeb3350_2 && URL.revokeObjectURL(_0xeb3350_2), 
+        _0x714b6c_b("\x73\x65\x73\x73\x69\x6f\x6e\x53\x74\x61\x74\x65").textContent = "\x43\x6f\x6e\x6e\x65\x63\x74\x65\x64";
       } else {
-        const c = JSON.parse(i.data);
-        "ready" === c.type && c.session && pc(c.session, e, n), "status" === c.type && (m("sessionState").textContent = c.message), 
-        "vnc" === c.type && t && (m("frame").hidden = !0, b.classList.add("vnc-screen"), 
-        ns = new t(b, a, {
+        const _0xeb3350_1 = JSON.parse(_0xeb3350_4.data);
+        "\x72\x65\x61\x64\x79" === _0xeb3350_1.type && _0xeb3350_1.session && _0xeb3350_c(_0xeb3350_1.session, _0xeb3350_3, _0xeb3350_9), 
+        "\x73\x74\x61\x74\x75\x73" === _0xeb3350_1.type && (_0x714b6c_b("\x73\x65\x73\x73\x69\x6f\x6e\x53\x74\x61\x74\x65").textContent = _0xeb3350_1.message), 
+        "\x76\x6e\x63" === _0xeb3350_1.type && _0xeb3350_5 && (_0x714b6c_b("\x66\x72\x61\x6d\x65").hidden = !0, 
+        _0x714b6c_14.classList.add("\x76\x6e\x63\x2d\x73\x63\x72\x65\x65\x6e"), _0x73587b_2 = new _0xeb3350_5(_0x714b6c_14, _0xeb3350_a, {
           credentials: {
-            password: c.password
+            password: _0xeb3350_1.password
           }
-        }), nc = ec(ns, b, o), ns.scaleViewport = !0, ns.qualityLevel = 6, ns.compressionLevel = 2, 
-        ns.addEventListener("connect", () => {
-          n === rs && (d(), m("sessionState").textContent = "Connected \xb7 Windows service", 
-          m("secureAttention").hidden = !1);
-        }), ns.addEventListener("disconnect", () => setTimeout(r, 0)), ns.addEventListener("securityfailure", () => {
-          s = !0, I("Windows desktop authentication failed.");
+        }), _0xeb3350_2 = _0xeb3350_0(_0x73587b_2, _0x714b6c_14, _0xeb3350_7), _0x73587b_2.scaleViewport = !0, 
+        _0x73587b_2.qualityLevel = 6, _0x73587b_2.compressionLevel = 2, _0x73587b_2.addEventListener("\x63\x6f\x6e\x6e\x65\x63\x74", () => {
+          _0xeb3350_9 === _0x73587b_7 && (_0xeb3350_f(), _0x714b6c_b("\x73\x65\x73\x73\x69\x6f\x6e\x53\x74\x61\x74\x65").textContent = "\x43\x6f\x6e\x6e\x65\x63\x74\x65\x64\x20\xb7\x20\x57\x69\x6e\x64\x6f\x77\x73\x20\x73\x65\x72\x76\x69\x63\x65", 
+          _0x714b6c_b("\x73\x65\x63\x75\x72\x65\x41\x74\x74\x65\x6e\x74\x69\x6f\x6e").hidden = !1);
+        }), _0x73587b_2.addEventListener("\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74", () => setTimeout(_0xeb3350_e, 0)), 
+        _0x73587b_2.addEventListener("\x73\x65\x63\x75\x72\x69\x74\x79\x66\x61\x69\x6c\x75\x72\x65", () => {
+          _0xeb3350_d = !0, _0x714b6c_24("\x57\x69\x6e\x64\x6f\x77\x73\x20\x64\x65\x73\x6b\x74\x6f\x70\x20\x61\x75\x74\x68\x65\x6e\x74\x69\x63\x61\x74\x69\x6f\x6e\x20\x66\x61\x69\x6c\x65\x64\x2e");
         }));
       }
-    }, os.onclose = r, os.onerror = () => {
-      n === rs && I("Connection unavailable. Check that your PC is awake and the helper is running.");
+    }, _0x73587b_3.onclose = _0xeb3350_e, _0x73587b_3.onerror = () => {
+      _0xeb3350_9 === _0x73587b_7 && _0x714b6c_24("\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x43\x68\x65\x63\x6b\x20\x74\x68\x61\x74\x20\x79\x6f\x75\x72\x20\x50\x43\x20\x69\x73\x20\x61\x77\x61\x6b\x65\x20\x61\x6e\x64\x20\x74\x68\x65\x20\x68\x65\x6c\x70\x65\x72\x20\x69\x73\x20\x72\x75\x6e\x6e\x69\x6e\x67\x2e");
     };
-  } catch (o) {
-    n === rs && vc(e, rc(o), sc(o));
+  } catch (_0xeb3350_a) {
+    _0xeb3350_9 === _0x73587b_7 && _0xeb3350_11(_0xeb3350_3, _0xeb3350_8(_0xeb3350_a), _0xeb3350_7(_0xeb3350_a));
   }
 }
 
-function kc(e) {
-  const t = m("frame").getBoundingClientRect();
-  return t.width && m("frame").naturalWidth ? {
-    x: Math.max(0, Math.min(1, (e.clientX - t.left) / t.width)),
-    y: Math.max(0, Math.min(1, (e.clientY - t.top) / t.height))
+function _0xeb3350_13(_0xeb3350_0) {
+  const _0xeb3350_1 = _0x714b6c_b("\x66\x72\x61\x6d\x65").getBoundingClientRect();
+  return _0xeb3350_1.width && _0x714b6c_b("\x66\x72\x61\x6d\x65").naturalWidth ? {
+    x: Math.max(0, Math.min(1, (_0xeb3350_0.clientX - _0xeb3350_1.left) / _0xeb3350_1.width)),
+    y: Math.max(0, Math.min(1, (_0xeb3350_0.clientY - _0xeb3350_1.top) / _0xeb3350_1.height))
   } : null;
 }
 
-const b = m("screen");
+const _0x714b6c_14 = _0x714b6c_b("\x73\x63\x72\x65\x65\x6e");
 
-b.addEventListener("pointerdown", e => {
-  if (ns) return;
-  const t = kc(e);
-  t && (e.preventDefault(), b.focus(), b.setPointerCapture(e.pointerId), hc({
-    type: "pointer",
-    action: "down",
-    button: e.button,
-    ...t
+_0x714b6c_14.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x64\x6f\x77\x6e", _0xeb3350_0 => {
+  if (_0x73587b_2) return;
+  const _0xeb3350_1 = _0xeb3350_13(_0xeb3350_0);
+  _0xeb3350_1 && (_0xeb3350_0.preventDefault(), _0x714b6c_14.focus(), _0x714b6c_14.setPointerCapture(_0xeb3350_0.pointerId), 
+  _0xeb3350_e({
+    type: "\x70\x6f\x69\x6e\x74\x65\x72",
+    action: "\x64\x6f\x77\x6e",
+    button: _0xeb3350_0.button,
+    ..._0xeb3350_1
   }));
-}), b.addEventListener("pointerup", e => {
-  if (ns) return;
-  const t = kc(e);
-  t && hc({
-    type: "pointer",
-    action: "up",
-    button: e.button,
-    ...t
+}), _0x714b6c_14.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x75\x70", _0xeb3350_0 => {
+  if (_0x73587b_2) return;
+  const _0xeb3350_1 = _0xeb3350_13(_0xeb3350_0);
+  _0xeb3350_1 && _0xeb3350_e({
+    type: "\x70\x6f\x69\x6e\x74\x65\x72",
+    action: "\x75\x70",
+    button: _0xeb3350_0.button,
+    ..._0xeb3350_1
   });
-}), b.addEventListener("pointermove", e => {
-  if (ns || performance.now() - ac < 35) return;
-  ac = performance.now();
-  const t = kc(e);
-  t && hc({
-    type: "pointer",
-    action: "move",
+}), _0x714b6c_14.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x6d\x6f\x76\x65", _0xeb3350_0 => {
+  if (_0x73587b_2 || performance.now() - _0xeb3350_5 < 35) return;
+  _0xeb3350_5 = performance.now();
+  const _0xeb3350_1 = _0xeb3350_13(_0xeb3350_0);
+  _0xeb3350_1 && _0xeb3350_e({
+    type: "\x70\x6f\x69\x6e\x74\x65\x72",
+    action: "\x6d\x6f\x76\x65",
     button: 0,
-    ...t
+    ..._0xeb3350_1
   });
-}), b.addEventListener("pointercancel", () => hc({
-  type: "release"
-})), b.addEventListener("contextmenu", e => e.preventDefault()), b.addEventListener("wheel", e => {
-  ns || (e.preventDefault(), hc({
-    type: "wheel",
-    delta: Math.sign(e.deltaY)
+}), _0x714b6c_14.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x63\x61\x6e\x63\x65\x6c", () => _0xeb3350_e({
+  type: "\x72\x65\x6c\x65\x61\x73\x65"
+})), _0x714b6c_14.addEventListener("\x63\x6f\x6e\x74\x65\x78\x74\x6d\x65\x6e\x75", _0xeb3350_0 => _0xeb3350_0.preventDefault()), 
+_0x714b6c_14.addEventListener("\x77\x68\x65\x65\x6c", _0xeb3350_0 => {
+  _0x73587b_2 || (_0xeb3350_0.preventDefault(), _0xeb3350_e({
+    type: "\x77\x68\x65\x65\x6c",
+    delta: Math.sign(_0xeb3350_0.deltaY)
   }));
 }, {
   passive: !1
 });
 
-for (const e of [ "keydown", "keyup" ]) b.addEventListener(e, t => {
-  if (!ns) {
-    if ("Escape" === t.key) return hc({
-      type: "release"
-    }), void b.blur();
-    t.preventDefault(), hc({
-      type: "key",
-      action: "keydown" === e ? "down" : "up",
-      key: t.keyCode
+for (const _0xeb3350_15 of [ "\x6b\x65\x79\x64\x6f\x77\x6e", "\x6b\x65\x79\x75\x70" ]) _0x714b6c_14.addEventListener(_0xeb3350_15, _0xeb3350_0 => {
+  if (!_0x73587b_2) {
+    if ("\x45\x73\x63\x61\x70\x65" === _0xeb3350_0.key) return _0xeb3350_e({
+      type: "\x72\x65\x6c\x65\x61\x73\x65"
+    }), void _0x714b6c_14.blur();
+    _0xeb3350_0.preventDefault(), _0xeb3350_e({
+      type: "\x6b\x65\x79",
+      action: "\x6b\x65\x79\x64\x6f\x77\x6e" === _0xeb3350_15 ? "\x64\x6f\x77\x6e" : "\x75\x70",
+      key: _0xeb3350_0.keyCode
     });
   }
 });
 
-async function Q() {
+async function _0x714b6c_32() {
   try {
-    const e = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/founder-profile/auth-config", {
-      cache: "no-store",
+    const _0xeb3350_0 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x66\x6f\x75\x6e\x64\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67", {
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65",
       signal: AbortSignal.timeout(15e3)
     });
-    if (!e.ok) throw Error("Account service is temporarily unavailable.");
-    const t = await e.json();
-    if (!t.enabled) throw Error("Account sign-in is unavailable.");
-    const [n, o] = await Promise.all([ import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"), import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js") ]), i = n.getApps().find(e => "nyx-founder-owner" === e.name) || n.initializeApp({
-      apiKey: t.apiKey,
-      authDomain: t.projectId + ".firebaseapp.com",
-      projectId: t.projectId
-    }, "nyx-founder-owner");
-    C = o.getAuth(i), await o.setPersistence(C, o.browserLocalPersistence), o.onAuthStateChanged(C, e => {
-      fc(), clearTimeout(dc);
-      const t = ++lc;
-      m("workspace").hidden = !0, m("locked").hidden = !1, e ? bc(e, t) : m("accessState").textContent = "Sign in to Nyx, then return here.";
+    if (!_0xeb3350_0.ok) throw Error("\x41\x63\x63\x6f\x75\x6e\x74\x20\x73\x65\x72\x76\x69\x63\x65\x20\x69\x73\x20\x74\x65\x6d\x70\x6f\x72\x61\x72\x69\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+    const _0xeb3350_1 = await _0xeb3350_0.json();
+    if (!_0xeb3350_1.enabled) throw Error("\x41\x63\x63\x6f\x75\x6e\x74\x20\x73\x69\x67\x6e\x2d\x69\x6e\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+    const [_0xeb3350_2, _0xeb3350_3] = await Promise.all([ import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x70\x70\x2e\x6a\x73"), import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x75\x74\x68\x2e\x6a\x73") ]), _0xeb3350_4 = _0xeb3350_2.getApps().find(_0xeb3350_0 => "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72" === _0xeb3350_0.name) || _0xeb3350_2.initializeApp({
+      apiKey: _0xeb3350_1.apiKey,
+      authDomain: _0xeb3350_1.projectId + "\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d",
+      projectId: _0xeb3350_1.projectId
+    }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72");
+    _0x714b6c_16 = _0xeb3350_3.getAuth(_0xeb3350_4), await _0xeb3350_3.setPersistence(_0x714b6c_16, _0xeb3350_3.browserLocalPersistence), 
+    _0xeb3350_3.onAuthStateChanged(_0x714b6c_16, _0xeb3350_0 => {
+      _0xeb3350_f(), clearTimeout(_0xeb3350_9);
+      const _0xeb3350_1 = ++_0xeb3350_b;
+      _0x714b6c_b("\x77\x6f\x72\x6b\x73\x70\x61\x63\x65").hidden = !0, _0x714b6c_b("\x6c\x6f\x63\x6b\x65\x64").hidden = !1, _0xeb3350_0 ? _0xeb3350_14(_0xeb3350_0, _0xeb3350_1) : _0x714b6c_b("\x61\x63\x63\x65\x73\x73\x53\x74\x61\x74\x65").textContent = "\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x4e\x79\x78\x2c\x20\x74\x68\x65\x6e\x20\x72\x65\x74\x75\x72\x6e\x20\x68\x65\x72\x65\x2e";
     });
-  } catch (e) {
-    m("accessState").textContent = rc(e) + " Retrying\u2026", uc = setTimeout(Q, 5e3);
+  } catch (_0xeb3350_0) {
+    _0x714b6c_b("\x61\x63\x63\x65\x73\x73\x53\x74\x61\x74\x65").textContent = _0xeb3350_8(_0xeb3350_0) + "\x20\x52\x65\x74\x72\x79\x69\x6e\x67\u2026", 
+    _0xeb3350_a = setTimeout(_0x714b6c_32, 5e3);
   }
 }
 
-async function bc(e, t) {
+async function _0xeb3350_14(_0xeb3350_0, _0xeb3350_1) {
   try {
-    if (await $("/access"), t !== lc || C.currentUser !== e) return;
-    if (await wc(), t !== lc || C.currentUser !== e) return;
-    m("locked").hidden = !0, m("workspace").hidden = !1;
-  } catch (n) {
-    if (t !== lc || C.currentUser !== e) return;
-    const o = sc(n);
-    m("accessState").textContent = o ? "Connection unavailable. Retrying\u2026" : "This workspace is not available to your account.", 
-    o && (dc = setTimeout(() => bc(e, t), 5e3));
+    if (await _0x714b6c_2e("\x2f\x61\x63\x63\x65\x73\x73"), _0xeb3350_1 !== _0xeb3350_b || _0x714b6c_16.currentUser !== _0xeb3350_0) return;
+    if (await _0xeb3350_10(), _0xeb3350_1 !== _0xeb3350_b || _0x714b6c_16.currentUser !== _0xeb3350_0) return;
+    _0x714b6c_b("\x6c\x6f\x63\x6b\x65\x64").hidden = !0, _0x714b6c_b("\x77\x6f\x72\x6b\x73\x70\x61\x63\x65").hidden = !1;
+  } catch (_0xeb3350_2) {
+    if (_0xeb3350_1 !== _0xeb3350_b || _0x714b6c_16.currentUser !== _0xeb3350_0) return;
+    const _0xeb3350_3 = _0xeb3350_7(_0xeb3350_2);
+    _0x714b6c_b("\x61\x63\x63\x65\x73\x73\x53\x74\x61\x74\x65").textContent = _0xeb3350_3 ? "\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x52\x65\x74\x72\x79\x69\x6e\x67\u2026" : "\x54\x68\x69\x73\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x69\x73\x20\x6e\x6f\x74\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x74\x6f\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e", 
+    _0xeb3350_3 && (_0xeb3350_9 = setTimeout(() => _0xeb3350_14(_0xeb3350_0, _0xeb3350_1), 5e3));
   }
 }
 
-b.addEventListener("blur", () => hc({
-  type: "release"
-})), window.addEventListener("blur", () => hc({
-  type: "release"
-})), window.addEventListener("pagehide", fc), m("refresh").onclick = mc(wc), m("disconnect").onclick = m("cancelReconnect").onclick = () => {
-  fc(), I("Disconnected."), wc().catch(() => {});
-}, m("fullscreen").onclick = mc(async () => {
+_0x714b6c_14.addEventListener("\x62\x6c\x75\x72", () => _0xeb3350_e({
+  type: "\x72\x65\x6c\x65\x61\x73\x65"
+})), window.addEventListener("\x62\x6c\x75\x72", () => _0xeb3350_e({
+  type: "\x72\x65\x6c\x65\x61\x73\x65"
+})), window.addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", _0xeb3350_f), _0x714b6c_b("\x72\x65\x66\x72\x65\x73\x68").onclick = _0xeb3350_d(_0xeb3350_10), 
+_0x714b6c_b("\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74").onclick = _0x714b6c_b("\x63\x61\x6e\x63\x65\x6c\x52\x65\x63\x6f\x6e\x6e\x65\x63\x74").onclick = () => {
+  _0xeb3350_f(), _0x714b6c_24("\x44\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64\x2e"), _0xeb3350_10().catch(() => {});
+}, _0x714b6c_b("\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e").onclick = _0xeb3350_d(async () => {
   if (document.fullscreenElement) return document.exitPointerLock(), void await document.exitFullscreen();
-  const e = nc?.lock(), t = b.requestFullscreen();
-  await Promise.all([ e, t ]);
-}), m("lockMouse").onclick = mc(() => nc?.lock()), m("secureAttention").onclick = () => ns?.sendCtrlAltDel(), 
-m("pair").onsubmit = mc(async () => {
-  await $("/pair/approve", {
-    code: m("code").value
-  }), m("code").value = "", I("Computer paired. It should appear online shortly."), 
-  await wc();
-}), m("download").onclick = mc(async () => {
-  const e = await (await $("/host.zip")).blob(), t = URL.createObjectURL(e), n = document.createElement("a");
-  n.href = t, n.download = "Nyx-Remote.zip", n.click(), setTimeout(() => URL.revokeObjectURL(t), 1e3);
-}), window.addEventListener("pagehide", () => {
-  lc++, clearTimeout(dc), clearTimeout(uc);
-}), Q();
+  const _0xeb3350_0 = _0xeb3350_2?.lock(), _0xeb3350_1 = _0x714b6c_14.requestFullscreen();
+  await Promise.all([ _0xeb3350_0, _0xeb3350_1 ]);
+}), _0x714b6c_b("\x6c\x6f\x63\x6b\x4d\x6f\x75\x73\x65").onclick = _0xeb3350_d(() => _0xeb3350_2?.lock()), _0x714b6c_b("\x73\x65\x63\x75\x72\x65\x41\x74\x74\x65\x6e\x74\x69\x6f\x6e").onclick = () => _0x73587b_2?.sendCtrlAltDel(), 
+_0x714b6c_b("\x70\x61\x69\x72").onsubmit = _0xeb3350_d(async () => {
+  await _0x714b6c_2e("\x2f\x70\x61\x69\x72\x2f\x61\x70\x70\x72\x6f\x76\x65", {
+    code: _0x714b6c_b("\x63\x6f\x64\x65").value
+  }), _0x714b6c_b("\x63\x6f\x64\x65").value = "", _0x714b6c_24("\x43\x6f\x6d\x70\x75\x74\x65\x72\x20\x70\x61\x69\x72\x65\x64\x2e\x20\x49\x74\x20\x73\x68\x6f\x75\x6c\x64\x20\x61\x70\x70\x65\x61\x72\x20\x6f\x6e\x6c\x69\x6e\x65\x20\x73\x68\x6f\x72\x74\x6c\x79\x2e"), 
+  await _0xeb3350_10();
+}), _0x714b6c_b("\x64\x6f\x77\x6e\x6c\x6f\x61\x64").onclick = _0xeb3350_d(async () => {
+  const _0xeb3350_0 = await (await _0x714b6c_2e("\x2f\x68\x6f\x73\x74\x2e\x7a\x69\x70")).blob(), _0xeb3350_1 = URL.createObjectURL(_0xeb3350_0), _0xeb3350_2 = document.createElement("\x61");
+  _0xeb3350_2.href = _0xeb3350_1, _0xeb3350_2.download = "\x4e\x79\x78\x2d\x52\x65\x6d\x6f\x74\x65\x2e\x7a\x69\x70", _0xeb3350_2.click(), 
+  setTimeout(() => URL.revokeObjectURL(_0xeb3350_1), 1e3);
+}), window.addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", () => {
+  _0xeb3350_b++, clearTimeout(_0xeb3350_9), clearTimeout(_0xeb3350_a);
+}), _0x714b6c_32();

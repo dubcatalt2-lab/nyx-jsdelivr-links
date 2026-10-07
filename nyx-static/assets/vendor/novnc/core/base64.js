@@ -4,16 +4,16 @@
 
 // From: http://hg.mozilla.org/mozilla-central/raw-file/ec10630b1a54/js/src/devtools/jint/sunspider/string-base64.js
 
-import * as Log from './util/logging.js';
+import * as Log from "./util/logging.js";
 
 export default {
     /* Convert data (an array of integers) to a Base64 string. */
-    toBase64Table: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='.split(''),
-    base64Pad: '=',
+    toBase64Table: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".split(""),
+    base64Pad: "=",
 
     encode(data) {
         "use strict";
-        let result = '';
+        let result = "";
         const length = data.length;
         const lengthpad = (length % 3);
         // Convert every three bytes to 4 ascii characters.
@@ -57,7 +57,7 @@ export default {
     /* eslint-enable comma-spacing */
 
     decode(data, offset = 0) {
-        let dataLength = data.indexOf('=') - offset;
+        let dataLength = data.indexOf("=") - offset;
         if (dataLength < 0) { dataLength = data.length - offset; }
 
         /* Every four characters is 3 resulting numbers */
@@ -94,8 +94,8 @@ export default {
 
         // If there are any bits left, the base64 string was corrupted
         if (leftbits) {
-            const err = new Error('Corrupted base64 string');
-            err.name = 'Base64-Error';
+            const err = new Error("Corrupted base64 string");
+            err.name = "Base64-Error";
             throw err;
         }
 

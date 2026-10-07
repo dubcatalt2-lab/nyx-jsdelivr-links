@@ -161,7 +161,7 @@ function inflateResetKeep(strm) {
   if (!strm || !strm.state) { return Z_STREAM_ERROR; }
   state = strm.state;
   strm.total_in = strm.total_out = state.total = 0;
-  strm.msg = ''; /*Z_NULL*/
+  strm.msg = ""; /*Z_NULL*/
   if (state.wrap) {       /* to support ill-conceived Java test suite */
     strm.adler = state.wrap & 1;
   }
@@ -445,12 +445,12 @@ function inflate(strm, flush) {
       }
       if (!(state.wrap & 1) ||   /* check if zlib header allowed */
         (((hold & 0xff)/*BITS(8)*/ << 8) + (hold >> 8)) % 31) {
-        strm.msg = 'incorrect header check';
+        strm.msg = "incorrect header check";
         state.mode = BAD;
         break;
       }
       if ((hold & 0x0f)/*BITS(4)*/ !== Z_DEFLATED) {
-        strm.msg = 'unknown compression method';
+        strm.msg = "unknown compression method";
         state.mode = BAD;
         break;
       }
@@ -463,7 +463,7 @@ function inflate(strm, flush) {
         state.wbits = len;
       }
       else if (len > state.wbits) {
-        strm.msg = 'invalid window size';
+        strm.msg = "invalid window size";
         state.mode = BAD;
         break;
       }
@@ -487,12 +487,12 @@ function inflate(strm, flush) {
       //===//
       state.flags = hold;
       if ((state.flags & 0xff) !== Z_DEFLATED) {
-        strm.msg = 'unknown compression method';
+        strm.msg = "unknown compression method";
         state.mode = BAD;
         break;
       }
       if (state.flags & 0xe000) {
-        strm.msg = 'unknown header flags set';
+        strm.msg = "unknown header flags set";
         state.mode = BAD;
         break;
       }
@@ -695,7 +695,7 @@ function inflate(strm, flush) {
         }
         //===//
         if (hold !== (state.check & 0xffff)) {
-          strm.msg = 'header crc mismatch';
+          strm.msg = "header crc mismatch";
           state.mode = BAD;
           break;
         }
@@ -793,7 +793,7 @@ function inflate(strm, flush) {
         state.mode = TABLE;
         break;
       case 3:
-        strm.msg = 'invalid block type';
+        strm.msg = "invalid block type";
         state.mode = BAD;
       }
       //--- DROPBITS(2) ---//
@@ -815,7 +815,7 @@ function inflate(strm, flush) {
       }
       //===//
       if ((hold & 0xffff) !== ((hold >>> 16) ^ 0xffff)) {
-        strm.msg = 'invalid stored block lengths';
+        strm.msg = "invalid stored block lengths";
         state.mode = BAD;
         break;
       }
@@ -877,7 +877,7 @@ function inflate(strm, flush) {
       //---//
 //#ifndef PKZIP_BUG_WORKAROUND
       if (state.nlen > 286 || state.ndist > 30) {
-        strm.msg = 'too many length or distance symbols';
+        strm.msg = "too many length or distance symbols";
         state.mode = BAD;
         break;
       }
@@ -917,7 +917,7 @@ function inflate(strm, flush) {
       state.lenbits = opts.bits;
 
       if (ret) {
-        strm.msg = 'invalid code lengths set';
+        strm.msg = "invalid code lengths set";
         state.mode = BAD;
         break;
       }
@@ -964,7 +964,7 @@ function inflate(strm, flush) {
             bits -= here_bits;
             //---//
             if (state.have === 0) {
-              strm.msg = 'invalid bit length repeat';
+              strm.msg = "invalid bit length repeat";
               state.mode = BAD;
               break;
             }
@@ -1018,7 +1018,7 @@ function inflate(strm, flush) {
             //---//
           }
           if (state.have + copy > state.nlen + state.ndist) {
-            strm.msg = 'invalid bit length repeat';
+            strm.msg = "invalid bit length repeat";
             state.mode = BAD;
             break;
           }
@@ -1033,7 +1033,7 @@ function inflate(strm, flush) {
 
       /* check for end-of-block code (better have one) */
       if (state.lens[256] === 0) {
-        strm.msg = 'invalid code -- missing end-of-block';
+        strm.msg = "invalid code -- missing end-of-block";
         state.mode = BAD;
         break;
       }
@@ -1051,7 +1051,7 @@ function inflate(strm, flush) {
       // state.lencode = state.next;
 
       if (ret) {
-        strm.msg = 'invalid literal/lengths set';
+        strm.msg = "invalid literal/lengths set";
         state.mode = BAD;
         break;
       }
@@ -1068,7 +1068,7 @@ function inflate(strm, flush) {
       // state.distcode = state.next;
 
       if (ret) {
-        strm.msg = 'invalid distances set';
+        strm.msg = "invalid distances set";
         state.mode = BAD;
         break;
       }
@@ -1166,7 +1166,7 @@ function inflate(strm, flush) {
         break;
       }
       if (here_op & 64) {
-        strm.msg = 'invalid literal/length code';
+        strm.msg = "invalid literal/length code";
         state.mode = BAD;
         break;
       }
@@ -1241,7 +1241,7 @@ function inflate(strm, flush) {
       //---//
       state.back += here_bits;
       if (here_op & 64) {
-        strm.msg = 'invalid distance code';
+        strm.msg = "invalid distance code";
         state.mode = BAD;
         break;
       }
@@ -1269,7 +1269,7 @@ function inflate(strm, flush) {
       }
 //#ifdef INFLATE_STRICT
       if (state.offset > state.dmax) {
-        strm.msg = 'invalid distance too far back';
+        strm.msg = "invalid distance too far back";
         state.mode = BAD;
         break;
       }
@@ -1284,7 +1284,7 @@ function inflate(strm, flush) {
         copy = state.offset - copy;
         if (copy > state.whave) {
           if (state.sane) {
-            strm.msg = 'invalid distance too far back';
+            strm.msg = "invalid distance too far back";
             state.mode = BAD;
             break;
           }
@@ -1356,7 +1356,7 @@ function inflate(strm, flush) {
         _out = left;
         // NB: crc32 stored as signed 32-bit int, zswap32 returns signed too
         if ((state.flags ? hold : zswap32(hold)) !== state.check) {
-          strm.msg = 'incorrect data check';
+          strm.msg = "incorrect data check";
           state.mode = BAD;
           break;
         }
@@ -1379,7 +1379,7 @@ function inflate(strm, flush) {
         }
         //===//
         if (hold !== (state.total & 0xffffffff)) {
-          strm.msg = 'incorrect length check';
+          strm.msg = "incorrect length check";
           state.mode = BAD;
           break;
         }
@@ -1514,7 +1514,7 @@ function inflateSetDictionary(strm, dictionary) {
 }
 
 export { inflateReset, inflateReset2, inflateResetKeep, inflateInit, inflateInit2, inflate, inflateEnd, inflateGetHeader, inflateSetDictionary };
-export var inflateInfo = 'pako inflate (from Nodeca project)';
+export var inflateInfo = "pako inflate (from Nodeca project)";
 
 /* Not implemented
 exports.inflateCopy = inflateCopy;

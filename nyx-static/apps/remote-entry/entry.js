@@ -1,56 +1,59 @@
 (async () => {
-  const t = t => document.getElementById(t);
-  let e, a, n;
-  async function o() {
-    const t = await (e.currentUser?.getIdToken());
-    if (!t) throw Error("Sign in to continue.");
-    const a = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/private-remote/session", {
-      method: "POST",
+  const _0x4deea6_0 = _0x4deea6_0 => document.getElementById(_0x4deea6_0);
+  let _0x4deea6_1, _0x4deea6_2, _0x4deea6_3;
+  async function _0x4deea6_4() {
+    const _0x4deea6_0 = await (_0x4deea6_1.currentUser?.getIdToken());
+    if (!_0x4deea6_0) throw Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2e");
+    const _0x4deea6_2 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x70\x72\x69\x76\x61\x74\x65\x2d\x72\x65\x6d\x6f\x74\x65\x2f\x73\x65\x73\x73\x69\x6f\x6e", {
+      method: "\x50\x4f\x53\x54",
       headers: {
-        Authorization: "Bearer " + t
+        Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0x4deea6_0
       },
-      cache: "no-store",
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65",
       signal: AbortSignal.timeout(15e3)
     });
-    if (!a.ok) throw Error(404 === a.status ? "This account does not have access." : "Connection unavailable. Try again.");
-    location.assign("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/remote/index.html");
+    if (!_0x4deea6_2.ok) throw Error(404 === _0x4deea6_2.status ? "\x54\x68\x69\x73\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x64\x6f\x65\x73\x20\x6e\x6f\x74\x20\x68\x61\x76\x65\x20\x61\x63\x63\x65\x73\x73\x2e" : "\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x2e");
+    location.assign("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x72\x65\x6d\x6f\x74\x65\x2f\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c");
   }
-  async function i(e) {
-    t("status").textContent = "Connecting\u2026", document.querySelectorAll("button").forEach(t => t.disabled = !0);
+  async function _0x4deea6_5(_0x4deea6_1) {
+    _0x4deea6_0("\x73\x74\x61\x74\x75\x73").textContent = "\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\u2026", document.querySelectorAll("\x62\x75\x74\x74\x6f\x6e").forEach(_0x4deea6_0 => _0x4deea6_0.disabled = !0);
     try {
-      await e();
-    } catch (a) {
-      t("status").textContent = a.code?.startsWith("auth/") ? "Sign-in failed. Check your account details and connection." : a.message;
+      await _0x4deea6_1();
+    } catch (_0x4deea6_2) {
+      _0x4deea6_0("\x73\x74\x61\x74\x75\x73").textContent = _0x4deea6_2.code?.startsWith("\x61\x75\x74\x68\x2f") ? "\x53\x69\x67\x6e\x2d\x69\x6e\x20\x66\x61\x69\x6c\x65\x64\x2e\x20\x43\x68\x65\x63\x6b\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x64\x65\x74\x61\x69\x6c\x73\x20\x61\x6e\x64\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x2e" : _0x4deea6_2.message;
     } finally {
-      t("password").value = "", document.querySelectorAll("button").forEach(t => t.disabled = !1);
+      _0x4deea6_0("\x70\x61\x73\x73\x77\x6f\x72\x64").value = "", document.querySelectorAll("\x62\x75\x74\x74\x6f\x6e").forEach(_0x4deea6_0 => _0x4deea6_0.disabled = !1);
     }
   }
-  t("login").addEventListener("submit", n => {
-    n.preventDefault(), i(async () => {
-      await a(e, t("email").value.trim(), t("password").value), await o();
+  _0x4deea6_0("\x6c\x6f\x67\x69\x6e").addEventListener("\x73\x75\x62\x6d\x69\x74", _0x4deea6_3 => {
+    _0x4deea6_3.preventDefault(), _0x4deea6_5(async () => {
+      await _0x4deea6_2(_0x4deea6_1, _0x4deea6_0("\x65\x6d\x61\x69\x6c").value.trim(), _0x4deea6_0("\x70\x61\x73\x73\x77\x6f\x72\x64").value), 
+      await _0x4deea6_4();
     });
-  }), t("open").onclick = () => i(o), t("signOut").onclick = () => i(async () => {
-    await n(e), t("status").textContent = "Signed out.";
+  }), _0x4deea6_0("\x6f\x70\x65\x6e").onclick = () => _0x4deea6_5(_0x4deea6_4), _0x4deea6_0("\x73\x69\x67\x6e\x4f\x75\x74").onclick = () => _0x4deea6_5(async () => {
+    await _0x4deea6_3(_0x4deea6_1), _0x4deea6_0("\x73\x74\x61\x74\x75\x73").textContent = "\x53\x69\x67\x6e\x65\x64\x20\x6f\x75\x74\x2e";
   });
   try {
-    const o = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/founder-profile/auth-config", {
-      cache: "no-store",
+    const _0x4deea6_4 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x66\x6f\x75\x6e\x64\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67", {
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65",
       signal: AbortSignal.timeout(15e3)
     });
-    if (!o.ok) throw Error("Account service unavailable. Reload to try again.");
-    const i = await o.json();
-    if (!i.enabled) throw Error("Account sign-in is unavailable.");
-    const [s, r] = await Promise.all([ import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"), import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js") ]), c = s.getApps().find(t => "nyx-founder-owner" === t.name) || s.initializeApp({
-      apiKey: i.apiKey,
-      authDomain: i.projectId + ".firebaseapp.com",
-      projectId: i.projectId
-    }, "nyx-founder-owner");
-    e = r.getAuth(c), a = r.signInWithEmailAndPassword, n = r.signOut, await r.setPersistence(e, r.browserLocalPersistence), 
-    r.onAuthStateChanged(e, e => {
-      t("login").hidden = !!e, t("signedIn").hidden = !e, t("account").textContent = e?.email || "", 
-      t("status").textContent = "", t("submit").disabled = !1;
+    if (!_0x4deea6_4.ok) throw Error("\x41\x63\x63\x6f\x75\x6e\x74\x20\x73\x65\x72\x76\x69\x63\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x52\x65\x6c\x6f\x61\x64\x20\x74\x6f\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e");
+    const _0x4deea6_5 = await _0x4deea6_4.json();
+    if (!_0x4deea6_5.enabled) throw Error("\x41\x63\x63\x6f\x75\x6e\x74\x20\x73\x69\x67\x6e\x2d\x69\x6e\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+    const [_0x4deea6_6, _0x4deea6_7] = await Promise.all([ import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x70\x70\x2e\x6a\x73"), import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x75\x74\x68\x2e\x6a\x73") ]), _0x4deea6_8 = _0x4deea6_6.getApps().find(_0x4deea6_0 => "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72" === _0x4deea6_0.name) || _0x4deea6_6.initializeApp({
+      apiKey: _0x4deea6_5.apiKey,
+      authDomain: _0x4deea6_5.projectId + "\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d",
+      projectId: _0x4deea6_5.projectId
+    }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72");
+    _0x4deea6_1 = _0x4deea6_7.getAuth(_0x4deea6_8), _0x4deea6_2 = _0x4deea6_7.signInWithEmailAndPassword, 
+    _0x4deea6_3 = _0x4deea6_7.signOut, await _0x4deea6_7.setPersistence(_0x4deea6_1, _0x4deea6_7.browserLocalPersistence), 
+    _0x4deea6_7.onAuthStateChanged(_0x4deea6_1, _0x4deea6_1 => {
+      _0x4deea6_0("\x6c\x6f\x67\x69\x6e").hidden = !!_0x4deea6_1, _0x4deea6_0("\x73\x69\x67\x6e\x65\x64\x49\x6e").hidden = !_0x4deea6_1, 
+      _0x4deea6_0("\x61\x63\x63\x6f\x75\x6e\x74").textContent = _0x4deea6_1?.email || "", _0x4deea6_0("\x73\x74\x61\x74\x75\x73").textContent = "", 
+      _0x4deea6_0("\x73\x75\x62\x6d\x69\x74").disabled = !1;
     });
-  } catch (s) {
-    t("status").textContent = s.message;
+  } catch (_0x4deea6_6) {
+    _0x4deea6_0("\x73\x74\x61\x74\x75\x73").textContent = _0x4deea6_6.message;
   }
 })();

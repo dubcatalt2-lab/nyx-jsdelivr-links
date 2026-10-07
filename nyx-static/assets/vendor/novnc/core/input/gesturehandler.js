@@ -55,13 +55,13 @@ export default class GestureHandler {
         this.detach();
 
         this._target = target;
-        this._target.addEventListener('touchstart',
+        this._target.addEventListener("touchstart",
                                       this._boundEventHandler);
-        this._target.addEventListener('touchmove',
+        this._target.addEventListener("touchmove",
                                       this._boundEventHandler);
-        this._target.addEventListener('touchend',
+        this._target.addEventListener("touchend",
                                       this._boundEventHandler);
-        this._target.addEventListener('touchcancel',
+        this._target.addEventListener("touchcancel",
                                       this._boundEventHandler);
     }
 
@@ -73,13 +73,13 @@ export default class GestureHandler {
         this._stopLongpressTimeout();
         this._stopTwoTouchTimeout();
 
-        this._target.removeEventListener('touchstart',
+        this._target.removeEventListener("touchstart",
                                          this._boundEventHandler);
-        this._target.removeEventListener('touchmove',
+        this._target.removeEventListener("touchmove",
                                          this._boundEventHandler);
-        this._target.removeEventListener('touchend',
+        this._target.removeEventListener("touchend",
                                          this._boundEventHandler);
-        this._target.removeEventListener('touchcancel',
+        this._target.removeEventListener("touchcancel",
                                          this._boundEventHandler);
         this._target = null;
     }
@@ -91,14 +91,14 @@ export default class GestureHandler {
         e.preventDefault();
 
         switch (e.type) {
-            case 'touchstart':
+            case "touchstart":
                 fn = this._touchStart;
                 break;
-            case 'touchmove':
+            case "touchmove":
                 fn = this._touchMove;
                 break;
-            case 'touchend':
-            case 'touchcancel':
+            case "touchend":
+            case "touchcancel":
                 fn = this._touchEnd;
                 break;
         }
@@ -243,10 +243,10 @@ export default class GestureHandler {
                 return;
             }
 
-            this._pushEvent('gesturestart');
+            this._pushEvent("gesturestart");
         }
 
-        this._pushEvent('gesturemove');
+        this._pushEvent("gesturemove");
     }
 
     _touchEnd(id, x, y) {
@@ -314,7 +314,7 @@ export default class GestureHandler {
 
             // Are we still waiting for more releases?
             if (this._hasDetectedGesture()) {
-                this._pushEvent('gesturestart');
+                this._pushEvent("gesturestart");
             } else {
                 // Have we reached a dead end?
                 if (this._state !== GH_NOGESTURE) {
@@ -324,7 +324,7 @@ export default class GestureHandler {
         }
 
         if (this._hasDetectedGesture()) {
-            this._pushEvent('gestureend');
+            this._pushEvent("gestureend");
         }
 
         // Ignore any remaining touches until they are ended
@@ -387,7 +387,7 @@ export default class GestureHandler {
         }
 
         this._state = GH_LONGPRESS;
-        this._pushEvent('gesturestart');
+        this._pushEvent("gesturestart");
     }
 
     _startTwoTouchTimeout() {
@@ -428,8 +428,8 @@ export default class GestureHandler {
             this._state = GH_TWODRAG;
         }
 
-        this._pushEvent('gesturestart');
-        this._pushEvent('gesturemove');
+        this._pushEvent("gesturestart");
+        this._pushEvent("gesturemove");
     }
 
     _pushEvent(type) {
@@ -442,7 +442,7 @@ export default class GestureHandler {
 
         // However we have a slight distance to detect gestures, so for the
         // first gesture event we want to use the first positions we saw
-        if (type === 'gesturestart') {
+        if (type === "gesturestart") {
             pos = avg.first;
         }
 
@@ -455,29 +455,29 @@ export default class GestureHandler {
                 break;
         }
 
-        detail['clientX'] = pos.x;
-        detail['clientY'] = pos.y;
+        detail["clientX"] = pos.x;
+        detail["clientY"] = pos.y;
 
         // FIXME: other coordinates?
 
         // Some gestures also have a magnitude
         if (this._state === GH_PINCH) {
             let distance = this._getAverageDistance();
-            if (type === 'gesturestart') {
-                detail['magnitudeX'] = distance.first.x;
-                detail['magnitudeY'] = distance.first.y;
+            if (type === "gesturestart") {
+                detail["magnitudeX"] = distance.first.x;
+                detail["magnitudeY"] = distance.first.y;
             } else {
-                detail['magnitudeX'] = distance.last.x;
-                detail['magnitudeY'] = distance.last.y;
+                detail["magnitudeX"] = distance.last.x;
+                detail["magnitudeY"] = distance.last.y;
             }
         } else if (this._state === GH_TWODRAG) {
-            if (type === 'gesturestart') {
-                detail['magnitudeX'] = 0.0;
-                detail['magnitudeY'] = 0.0;
+            if (type === "gesturestart") {
+                detail["magnitudeX"] = 0.0;
+                detail["magnitudeY"] = 0.0;
             } else {
                 let movement = this._getAverageMovement();
-                detail['magnitudeX'] = movement.x;
-                detail['magnitudeY'] = movement.y;
+                detail["magnitudeX"] = movement.x;
+                detail["magnitudeY"] = movement.y;
             }
         }
 
@@ -488,19 +488,19 @@ export default class GestureHandler {
     _stateToGesture(state) {
         switch (state) {
             case GH_ONETAP:
-                return 'onetap';
+                return "onetap";
             case GH_TWOTAP:
-                return 'twotap';
+                return "twotap";
             case GH_THREETAP:
-                return 'threetap';
+                return "threetap";
             case GH_DRAG:
-                return 'drag';
+                return "drag";
             case GH_LONGPRESS:
-                return 'longpress';
+                return "longpress";
             case GH_TWODRAG:
-                return 'twodrag';
+                return "twodrag";
             case GH_PINCH:
-                return 'pinch';
+                return "pinch";
         }
 
         throw new Error("Unknown gesture state: " + state);

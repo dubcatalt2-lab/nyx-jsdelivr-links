@@ -1,724 +1,752 @@
 (() => {
   "use strict";
-  const e = document.body.hasAttribute("data-single-link");
-  let t = !1, a = !1, n = !1;
-  const r = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/link-checker", i = "nyx.linkGenerator.firebaseSession", o = e => document.querySelector(e), s = {
-    form: o("[data-generator-form]"),
-    label: o("[data-label-input]"),
-    filter: o("[data-filter-select]"),
-    accessCode: o("[data-access-code]"),
-    button: o("[data-generate-button]"),
-    status: o("[data-service-status]"),
-    origin: o("[data-origin]"),
-    notice: o("[data-notice]"),
-    resultCard: o("[data-result-card]"),
-    resultUrl: o("[data-result-url]"),
-    resultCount: o("[data-result-count]"),
-    resultTitle: o("[data-result-title]"),
-    resultSubtitle: o("[data-result-subtitle]"),
-    copy: o("[data-copy]"),
-    open: o("[data-open]"),
-    filterCheck: o("[data-filter-check]"),
-    filterCheckLabel: o("[data-filter-check-label]"),
-    filterCheckState: o("[data-filter-check-state]"),
-    filterCheckDetail: o("[data-filter-check-detail]"),
-    modeButtons: [ ...document.querySelectorAll("[data-access-mode]") ],
-    accountPanel: o("[data-account-access]"),
-    administratorPanel: o("[data-administrator-access]"),
-    accountFields: o("[data-account-fields]"),
-    email: o("[data-account-email]"),
-    password: o("[data-account-password]"),
-    accountStatus: o("[data-account-status]"),
-    signIn: o("[data-account-sign-in]"),
-    createAccount: o("[data-account-create]"),
-    refreshAccount: o("[data-account-refresh]"),
-    signOut: o("[data-account-sign-out]"),
-    wizardCard: o("[data-wizard-card]"),
-    wizardSteps: [ ...document.querySelectorAll("[data-wizard-step]") ],
-    wizardIndicators: [ ...document.querySelectorAll("[data-wizard-indicator]") ],
-    wizardProgress: o("[data-wizard-progress]"),
-    wizardNext: [ ...document.querySelectorAll("[data-wizard-next]") ],
-    wizardBack: [ ...document.querySelectorAll("[data-wizard-back]") ],
-    wizardRestart: o("[data-wizard-restart]"),
-    reviewAccess: o("[data-review-access]"),
-    reviewLabel: o("[data-review-label]"),
-    reviewFilter: o("[data-review-filter]"),
-    reviewOrigin: o("[data-review-origin]"),
-    reviewMethod: o("[data-review-method]"),
-    reviewAmountRow: o("[data-review-amount-row]"),
-    reviewAmount: o("[data-review-amount]"),
-    confirm: o("[data-confirm]"),
-    confirmText: o("[data-confirm-text]"),
-    amount: o("[data-premium-amount]"),
-    amountField: o("[data-premium-amount-field]"),
-    amountHint: o("[data-premium-amount-hint]"),
-    detailsGrid: o("[data-details-grid]"),
-    generationMethod: o("[data-generation-method]"),
-    generationMethodHint: o("[data-generation-method-hint]")
+  const _0x6f7a66_0 = document.body.hasAttribute("\x64\x61\x74\x61\x2d\x73\x69\x6e\x67\x6c\x65\x2d\x6c\x69\x6e\x6b");
+  let _0x6f7a66_1 = !1, _0x6f7a66_2 = !1, _0x6f7a66_3 = !1;
+  const _0x6f7a66_4 = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x63\x68\x65\x63\x6b\x65\x72", _0x6f7a66_5 = "\x6e\x79\x78\x2e\x6c\x69\x6e\x6b\x47\x65\x6e\x65\x72\x61\x74\x6f\x72\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x53\x65\x73\x73\x69\x6f\x6e", _0x6f7a66_6 = _0x6f7a66_0 => document.querySelector(_0x6f7a66_0), _0x6f7a66_7 = {
+    form: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x67\x65\x6e\x65\x72\x61\x74\x6f\x72\x2d\x66\x6f\x72\x6d\x5d"),
+    label: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x6c\x61\x62\x65\x6c\x2d\x69\x6e\x70\x75\x74\x5d"),
+    filter: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x66\x69\x6c\x74\x65\x72\x2d\x73\x65\x6c\x65\x63\x74\x5d"),
+    accessCode: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x65\x73\x73\x2d\x63\x6f\x64\x65\x5d"),
+    button: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x67\x65\x6e\x65\x72\x61\x74\x65\x2d\x62\x75\x74\x74\x6f\x6e\x5d"),
+    status: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x73\x65\x72\x76\x69\x63\x65\x2d\x73\x74\x61\x74\x75\x73\x5d"),
+    origin: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x6f\x72\x69\x67\x69\x6e\x5d"),
+    notice: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x6e\x6f\x74\x69\x63\x65\x5d"),
+    resultCard: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x2d\x63\x61\x72\x64\x5d"),
+    resultUrl: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x2d\x75\x72\x6c\x5d"),
+    resultCount: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x2d\x63\x6f\x75\x6e\x74\x5d"),
+    resultTitle: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x2d\x74\x69\x74\x6c\x65\x5d"),
+    resultSubtitle: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x2d\x73\x75\x62\x74\x69\x74\x6c\x65\x5d"),
+    copy: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x5d"),
+    open: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x6f\x70\x65\x6e\x5d"),
+    filterCheck: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x66\x69\x6c\x74\x65\x72\x2d\x63\x68\x65\x63\x6b\x5d"),
+    filterCheckLabel: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x66\x69\x6c\x74\x65\x72\x2d\x63\x68\x65\x63\x6b\x2d\x6c\x61\x62\x65\x6c\x5d"),
+    filterCheckState: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x66\x69\x6c\x74\x65\x72\x2d\x63\x68\x65\x63\x6b\x2d\x73\x74\x61\x74\x65\x5d"),
+    filterCheckDetail: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x66\x69\x6c\x74\x65\x72\x2d\x63\x68\x65\x63\x6b\x2d\x64\x65\x74\x61\x69\x6c\x5d"),
+    modeButtons: [ ...document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x65\x73\x73\x2d\x6d\x6f\x64\x65\x5d") ],
+    accountPanel: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x6f\x75\x6e\x74\x2d\x61\x63\x63\x65\x73\x73\x5d"),
+    administratorPanel: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x64\x6d\x69\x6e\x69\x73\x74\x72\x61\x74\x6f\x72\x2d\x61\x63\x63\x65\x73\x73\x5d"),
+    accountFields: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x6f\x75\x6e\x74\x2d\x66\x69\x65\x6c\x64\x73\x5d"),
+    email: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x6f\x75\x6e\x74\x2d\x65\x6d\x61\x69\x6c\x5d"),
+    password: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x6f\x75\x6e\x74\x2d\x70\x61\x73\x73\x77\x6f\x72\x64\x5d"),
+    accountStatus: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x6f\x75\x6e\x74\x2d\x73\x74\x61\x74\x75\x73\x5d"),
+    signIn: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x6f\x75\x6e\x74\x2d\x73\x69\x67\x6e\x2d\x69\x6e\x5d"),
+    createAccount: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x6f\x75\x6e\x74\x2d\x63\x72\x65\x61\x74\x65\x5d"),
+    refreshAccount: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x6f\x75\x6e\x74\x2d\x72\x65\x66\x72\x65\x73\x68\x5d"),
+    signOut: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x6f\x75\x6e\x74\x2d\x73\x69\x67\x6e\x2d\x6f\x75\x74\x5d"),
+    wizardCard: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x77\x69\x7a\x61\x72\x64\x2d\x63\x61\x72\x64\x5d"),
+    wizardSteps: [ ...document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x77\x69\x7a\x61\x72\x64\x2d\x73\x74\x65\x70\x5d") ],
+    wizardIndicators: [ ...document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x77\x69\x7a\x61\x72\x64\x2d\x69\x6e\x64\x69\x63\x61\x74\x6f\x72\x5d") ],
+    wizardProgress: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x77\x69\x7a\x61\x72\x64\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x5d"),
+    wizardNext: [ ...document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x77\x69\x7a\x61\x72\x64\x2d\x6e\x65\x78\x74\x5d") ],
+    wizardBack: [ ...document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x77\x69\x7a\x61\x72\x64\x2d\x62\x61\x63\x6b\x5d") ],
+    wizardRestart: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x77\x69\x7a\x61\x72\x64\x2d\x72\x65\x73\x74\x61\x72\x74\x5d"),
+    reviewAccess: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x76\x69\x65\x77\x2d\x61\x63\x63\x65\x73\x73\x5d"),
+    reviewLabel: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x76\x69\x65\x77\x2d\x6c\x61\x62\x65\x6c\x5d"),
+    reviewFilter: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x76\x69\x65\x77\x2d\x66\x69\x6c\x74\x65\x72\x5d"),
+    reviewOrigin: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x76\x69\x65\x77\x2d\x6f\x72\x69\x67\x69\x6e\x5d"),
+    reviewMethod: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x76\x69\x65\x77\x2d\x6d\x65\x74\x68\x6f\x64\x5d"),
+    reviewAmountRow: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x76\x69\x65\x77\x2d\x61\x6d\x6f\x75\x6e\x74\x2d\x72\x6f\x77\x5d"),
+    reviewAmount: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x76\x69\x65\x77\x2d\x61\x6d\x6f\x75\x6e\x74\x5d"),
+    confirm: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x6e\x66\x69\x72\x6d\x5d"),
+    confirmText: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x6e\x66\x69\x72\x6d\x2d\x74\x65\x78\x74\x5d"),
+    amount: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x70\x72\x65\x6d\x69\x75\x6d\x2d\x61\x6d\x6f\x75\x6e\x74\x5d"),
+    amountField: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x70\x72\x65\x6d\x69\x75\x6d\x2d\x61\x6d\x6f\x75\x6e\x74\x2d\x66\x69\x65\x6c\x64\x5d"),
+    amountHint: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x70\x72\x65\x6d\x69\x75\x6d\x2d\x61\x6d\x6f\x75\x6e\x74\x2d\x68\x69\x6e\x74\x5d"),
+    detailsGrid: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x64\x65\x74\x61\x69\x6c\x73\x2d\x67\x72\x69\x64\x5d"),
+    generationMethod: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x67\x65\x6e\x65\x72\x61\x74\x69\x6f\x6e\x2d\x6d\x65\x74\x68\x6f\x64\x5d"),
+    generationMethodHint: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x67\x65\x6e\x65\x72\x61\x74\x69\x6f\x6e\x2d\x6d\x65\x74\x68\x6f\x64\x2d\x68\x69\x6e\x74\x5d")
   };
-  let c = "account", l = 0, u = 100, d = 1e3, h = 100, m = 60, f = 5, p = 30, g = 10, w = {
+  let _0x6f7a66_8 = "\x61\x63\x63\x6f\x75\x6e\x74", _0x6f7a66_9 = 0, _0x6f7a66_a = 100, _0x6f7a66_b = 1e3, _0x6f7a66_c = 100, _0x6f7a66_d = 60, _0x6f7a66_e = 5, _0x6f7a66_f = 30, _0x6f7a66_10 = 10, _0x6f7a66_11 = {
     enabled: !1,
     apiKey: ""
-  }, b = function() {
+  }, _0x6f7a66_12 = function() {
     try {
-      return JSON.parse(sessionStorage.getItem(i) || "null");
+      return JSON.parse(sessionStorage.getItem(_0x6f7a66_5) || "\x6e\x75\x6c\x6c");
     } catch {
       return null;
     }
   }();
-  const y = new Set([ "cdn.jsdelivr.net", "gcore.jsdelivr.net", "fastly.jsdelivr.net", "quantil.jsdelivr.net", "originfastly.jsdelivr.net", "testingcf.jsdelivr.net", "jsdelivr.b-cdn.net", "esm.sh", "raw.esm.sh" ]), k = o("[data-cdn-host]"), v = o("[data-provider]");
-  let C = "jsdelivr", S = null;
-  function x() {
-    if (!S) return;
-    const e = A(), t = "bunny" === e ? S.bunnyAvailable : "surge" === e ? S.surgeAvailable : S.globalPublisherConfigured;
-    P(Boolean(t), t ? "Ready" : "Unavailable");
+  const _0x6f7a66_13 = new Set([ "\x63\x64\x6e\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x67\x63\x6f\x72\x65\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x66\x61\x73\x74\x6c\x79\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x71\x75\x61\x6e\x74\x69\x6c\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x6f\x72\x69\x67\x69\x6e\x66\x61\x73\x74\x6c\x79\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x74\x65\x73\x74\x69\x6e\x67\x63\x66\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x62\x2d\x63\x64\x6e\x2e\x6e\x65\x74", "\x65\x73\x6d\x2e\x73\x68", "\x72\x61\x77\x2e\x65\x73\x6d\x2e\x73\x68" ]), _0x6f7a66_14 = _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x63\x64\x6e\x2d\x68\x6f\x73\x74\x5d"), _0x6f7a66_15 = _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x70\x72\x6f\x76\x69\x64\x65\x72\x5d");
+  let _0x6f7a66_16 = "\x6a\x73\x64\x65\x6c\x69\x76\x72", _0x6f7a66_17 = null;
+  function _0x6f7a66_18() {
+    if (!_0x6f7a66_17) return;
+    const _0x6f7a66_0 = _0x6f7a66_19(), _0x6f7a66_1 = "\x62\x75\x6e\x6e\x79" === _0x6f7a66_0 ? _0x6f7a66_17.bunnyAvailable : "\x73\x75\x72\x67\x65" === _0x6f7a66_0 ? _0x6f7a66_17.surgeAvailable : _0x6f7a66_17.globalPublisherConfigured;
+    _0x6f7a66_1f(Boolean(_0x6f7a66_1), _0x6f7a66_1 ? "\x52\x65\x61\x64\x79" : "\x55\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65");
   }
-  function A() {
-    return [ "bunny", "surge" ].includes(v.value) ? v.value : "jsdelivr";
+  function _0x6f7a66_19() {
+    return [ "\x62\x75\x6e\x6e\x79", "\x73\x75\x72\x67\x65" ].includes(_0x6f7a66_15.value) ? _0x6f7a66_15.value : "\x6a\x73\x64\x65\x6c\x69\x76\x72";
   }
-  function $() {
-    const e = "bunny" === A(), t = "surge" === A();
-    (e || t) && (s.generationMethod.value = "managed"), s.generationMethod.closest("label").hidden = e || t, 
-    k.closest("label").hidden = e || t, o("[data-provider-hint]").textContent = t ? "Publish one new surge.sh site on the configured Surge account. The label gets a random suffix; existing sites are not replaced." : e ? "Create separate b-cdn.net hostnames pointing to Nyx. Bunny bandwidth charges and account limits apply; these still share the Nyx backend." : "Publish the static Nyx app and choose a delivery hostname.", 
-    s.confirm.checked = !1, ee(), x();
+  function _0x6f7a66_1a() {
+    const _0x6f7a66_0 = "\x62\x75\x6e\x6e\x79" === _0x6f7a66_19(), _0x6f7a66_1 = "\x73\x75\x72\x67\x65" === _0x6f7a66_19();
+    (_0x6f7a66_0 || _0x6f7a66_1) && (_0x6f7a66_7.generationMethod.value = "\x6d\x61\x6e\x61\x67\x65\x64"), 
+    _0x6f7a66_7.generationMethod.closest("\x6c\x61\x62\x65\x6c").hidden = _0x6f7a66_0 || _0x6f7a66_1, 
+    _0x6f7a66_14.closest("\x6c\x61\x62\x65\x6c").hidden = _0x6f7a66_0 || _0x6f7a66_1, _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x70\x72\x6f\x76\x69\x64\x65\x72\x2d\x68\x69\x6e\x74\x5d").textContent = _0x6f7a66_1 ? "\x50\x75\x62\x6c\x69\x73\x68\x20\x6f\x6e\x65\x20\x6e\x65\x77\x20\x73\x75\x72\x67\x65\x2e\x73\x68\x20\x73\x69\x74\x65\x20\x6f\x6e\x20\x74\x68\x65\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64\x20\x53\x75\x72\x67\x65\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e\x20\x54\x68\x65\x20\x6c\x61\x62\x65\x6c\x20\x67\x65\x74\x73\x20\x61\x20\x72\x61\x6e\x64\x6f\x6d\x20\x73\x75\x66\x66\x69\x78\x3b\x20\x65\x78\x69\x73\x74\x69\x6e\x67\x20\x73\x69\x74\x65\x73\x20\x61\x72\x65\x20\x6e\x6f\x74\x20\x72\x65\x70\x6c\x61\x63\x65\x64\x2e" : _0x6f7a66_0 ? "\x43\x72\x65\x61\x74\x65\x20\x73\x65\x70\x61\x72\x61\x74\x65\x20\x62\x2d\x63\x64\x6e\x2e\x6e\x65\x74\x20\x68\x6f\x73\x74\x6e\x61\x6d\x65\x73\x20\x70\x6f\x69\x6e\x74\x69\x6e\x67\x20\x74\x6f\x20\x4e\x79\x78\x2e\x20\x42\x75\x6e\x6e\x79\x20\x62\x61\x6e\x64\x77\x69\x64\x74\x68\x20\x63\x68\x61\x72\x67\x65\x73\x20\x61\x6e\x64\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x6c\x69\x6d\x69\x74\x73\x20\x61\x70\x70\x6c\x79\x3b\x20\x74\x68\x65\x73\x65\x20\x73\x74\x69\x6c\x6c\x20\x73\x68\x61\x72\x65\x20\x74\x68\x65\x20\x4e\x79\x78\x20\x62\x61\x63\x6b\x65\x6e\x64\x2e" : "\x50\x75\x62\x6c\x69\x73\x68\x20\x74\x68\x65\x20\x73\x74\x61\x74\x69\x63\x20\x4e\x79\x78\x20\x61\x70\x70\x20\x61\x6e\x64\x20\x63\x68\x6f\x6f\x73\x65\x20\x61\x20\x64\x65\x6c\x69\x76\x65\x72\x79\x20\x68\x6f\x73\x74\x6e\x61\x6d\x65\x2e", 
+    _0x6f7a66_7.confirm.checked = !1, _0x6f7a66_36(), _0x6f7a66_18();
   }
-  function N() {
-    return y.has(k.value) ? k.value : "cdn.jsdelivr.net";
+  function _0x6f7a66_1b() {
+    return _0x6f7a66_13.has(_0x6f7a66_14.value) ? _0x6f7a66_14.value : "\x63\x64\x6e\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74";
   }
-  function T(e, t) {
-    const a = new URL(e);
-    return "https:" === a.protocol && y.has(a.hostname) && a.pathname.startsWith("/gh/") && (a.hostname = t), 
-    a.href;
+  function _0x6f7a66_1c(_0x6f7a66_0, _0x6f7a66_1) {
+    const _0x6f7a66_2 = new URL(_0x6f7a66_0);
+    return "\x68\x74\x74\x70\x73\x3a" === _0x6f7a66_2.protocol && _0x6f7a66_13.has(_0x6f7a66_2.hostname) && _0x6f7a66_2.pathname.startsWith("\x2f\x67\x68\x2f") && (_0x6f7a66_2.hostname = _0x6f7a66_1), 
+    _0x6f7a66_2.href;
   }
-  const L = o("[data-bulk-job]") ? import("./@r26f2a0db389e97bde76ba2dc!.js?v=20260907-cdn-options-v2").then(e => e.attachBulkJobs({
+  const _0x6f7a66_1d = _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x6a\x6f\x62\x5d") ? import("\x2e\x2f\x40\x72\x32\x36\x66\x32\x61\x30\x64\x62\x33\x38\x39\x65\x39\x37\x62\x64\x65\x37\x36\x62\x61\x32\x64\x63\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x30\x37\x2d\x63\x64\x6e\x2d\x6f\x70\x74\x69\x6f\x6e\x73\x2d\x76\x32").then(_0x6f7a66_0 => _0x6f7a66_0.attachBulkJobs({
     access: async () => {
-      if (!b?.idToken) throw new Error("Sign in to your account above before starting or resuming a large job.");
-      const e = await W();
+      if (!_0x6f7a66_12?.idToken) throw new Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x61\x62\x6f\x76\x65\x20\x62\x65\x66\x6f\x72\x65\x20\x73\x74\x61\x72\x74\x69\x6e\x67\x20\x6f\x72\x20\x72\x65\x73\x75\x6d\x69\x6e\x67\x20\x61\x20\x6c\x61\x72\x67\x65\x20\x6a\x6f\x62\x2e");
+      const _0x6f7a66_0 = await _0x6f7a66_30();
       return {
-        uid: (await D(e.idToken)).uid,
-        token: e.idToken,
-        limit: _() ? d : h,
-        method: _() ? "p2p" : "managed"
+        uid: (await _0x6f7a66_28(_0x6f7a66_0.idToken)).uid,
+        token: _0x6f7a66_0.idToken,
+        limit: _0x6f7a66_2a() ? _0x6f7a66_b : _0x6f7a66_c,
+        method: _0x6f7a66_2a() ? "\x70\x32\x70" : "\x6d\x61\x6e\x61\x67\x65\x64"
       };
     }
   })) : Promise.resolve(null);
-  function E(e, t = "") {
-    s.notice.textContent = e, s.notice.className = "notice" + (t ? ` ${t}` : ""), s.notice.hidden = !e;
+  function _0x6f7a66_1e(_0x6f7a66_0, _0x6f7a66_1 = "") {
+    _0x6f7a66_7.notice.textContent = _0x6f7a66_0, _0x6f7a66_7.notice.className = "\x6e\x6f\x74\x69\x63\x65" + (_0x6f7a66_1 ? `\x20${_0x6f7a66_1}` : ""), 
+    _0x6f7a66_7.notice.hidden = !_0x6f7a66_0;
   }
-  function P(e, t) {
-    s.status.classList.toggle("online", e), s.status.classList.toggle("offline", !e), 
-    s.status.querySelector("span").textContent = t;
+  function _0x6f7a66_1f(_0x6f7a66_0, _0x6f7a66_1) {
+    _0x6f7a66_7.status.classList.toggle("\x6f\x6e\x6c\x69\x6e\x65", _0x6f7a66_0), _0x6f7a66_7.status.classList.toggle("\x6f\x66\x66\x6c\x69\x6e\x65", !_0x6f7a66_0), 
+    _0x6f7a66_7.status.querySelector("\x73\x70\x61\x6e").textContent = _0x6f7a66_1;
   }
-  function I(t, a = "") {
-    k.disabled = t;
-    const n = o("[data-bulk-setup] button");
-    n && (n.disabled = t), e && [ ...s.wizardNext, ...s.wizardBack, ...document.querySelectorAll("[data-method-choice]"), s.label, s.filter ].forEach(e => e.disabled = t), 
-    s.button.disabled = t;
-    const r = Q();
-    s.button.querySelector("span").textContent = t ? a || `Creating ${r} link${1 === r ? "" : "s"}...` : e ? "Create link" : "Generate " + (1 === r ? "link" : `${r} links`);
+  function _0x6f7a66_20(_0x6f7a66_1, _0x6f7a66_2 = "") {
+    _0x6f7a66_14.disabled = _0x6f7a66_1;
+    const _0x6f7a66_3 = _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x73\x65\x74\x75\x70\x5d\x20\x62\x75\x74\x74\x6f\x6e");
+    _0x6f7a66_3 && (_0x6f7a66_3.disabled = _0x6f7a66_1), _0x6f7a66_0 && [ ..._0x6f7a66_7.wizardNext, ..._0x6f7a66_7.wizardBack, ...document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6d\x65\x74\x68\x6f\x64\x2d\x63\x68\x6f\x69\x63\x65\x5d"), _0x6f7a66_7.label, _0x6f7a66_7.filter ].forEach(_0x6f7a66_0 => _0x6f7a66_0.disabled = _0x6f7a66_1), 
+    _0x6f7a66_7.button.disabled = _0x6f7a66_1;
+    const _0x6f7a66_4 = _0x6f7a66_34();
+    _0x6f7a66_7.button.querySelector("\x73\x70\x61\x6e").textContent = _0x6f7a66_1 ? _0x6f7a66_2 || `\x43\x72\x65\x61\x74\x69\x6e\x67\x20${_0x6f7a66_4}\x20\x6c\x69\x6e\x6b${1 === _0x6f7a66_4 ? "" : "\x73"}\x2e\x2e\x2e` : _0x6f7a66_0 ? "\x43\x72\x65\x61\x74\x65\x20\x6c\x69\x6e\x6b" : "\x47\x65\x6e\x65\x72\x61\x74\x65\x20" + (1 === _0x6f7a66_4 ? "\x6c\x69\x6e\x6b" : `${_0x6f7a66_4}\x20\x6c\x69\x6e\x6b\x73`);
   }
-  function M(e) {
-    [ s.signIn, s.createAccount, s.refreshAccount, s.signOut ].forEach(t => {
-      t.disabled = e;
+  function _0x6f7a66_21(_0x6f7a66_0) {
+    [ _0x6f7a66_7.signIn, _0x6f7a66_7.createAccount, _0x6f7a66_7.refreshAccount, _0x6f7a66_7.signOut ].forEach(_0x6f7a66_1 => {
+      _0x6f7a66_1.disabled = _0x6f7a66_0;
     });
   }
-  async function z(e) {
-    let t = {};
+  async function _0x6f7a66_22(_0x6f7a66_0) {
+    let _0x6f7a66_1 = {};
     try {
-      t = await e.json();
+      _0x6f7a66_1 = await _0x6f7a66_0.json();
     } catch {}
-    if (!e.ok) throw new Error(t.error || t.message || `Request failed (${e.status})`);
-    return t;
+    if (!_0x6f7a66_0.ok) throw new Error(_0x6f7a66_1.error || _0x6f7a66_1.message || `\x52\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64\x20\x28${_0x6f7a66_0.status}\x29`);
+    return _0x6f7a66_1;
   }
-  function j(e) {
-    b = e;
+  function _0x6f7a66_23(_0x6f7a66_0) {
+    _0x6f7a66_12 = _0x6f7a66_0;
     try {
-      e?.viaHost ? sessionStorage.removeItem(i) : sessionStorage.setItem(i, JSON.stringify(e));
+      _0x6f7a66_0?.viaHost ? sessionStorage.removeItem(_0x6f7a66_5) : sessionStorage.setItem(_0x6f7a66_5, JSON.stringify(_0x6f7a66_0));
     } catch {}
-    return Y(), e;
+    return _0x6f7a66_31(), _0x6f7a66_0;
   }
-  function O() {
-    b = null;
+  function _0x6f7a66_24() {
+    _0x6f7a66_12 = null;
     try {
-      sessionStorage.removeItem(i);
+      sessionStorage.removeItem(_0x6f7a66_5);
     } catch {}
-    Y();
+    _0x6f7a66_31();
   }
-  function B(e) {
-    const t = String(e?.message || e || "Authentication failed.").replace(/^Firebase:\s*/i, "");
+  function _0x6f7a66_25(_0x6f7a66_0) {
+    const _0x6f7a66_1 = String(_0x6f7a66_0?.message || _0x6f7a66_0 || "\x41\x75\x74\x68\x65\x6e\x74\x69\x63\x61\x74\x69\x6f\x6e\x20\x66\x61\x69\x6c\x65\x64\x2e").replace(/^Firebase:\s*/i, "");
     return {
-      EMAIL_EXISTS: "That email already has an account.",
-      EMAIL_NOT_FOUND: "Email or password is incorrect.",
-      INVALID_PASSWORD: "Email or password is incorrect.",
-      INVALID_LOGIN_CREDENTIALS: "Email or password is incorrect.",
-      WEAK_PASSWORD: "Choose a stronger password.",
-      TOO_MANY_ATTEMPTS_TRY_LATER: "Too many attempts. Try again later.",
-      USER_DISABLED: "This account has been disabled."
-    }[t] || t.replaceAll("_", " ").toLowerCase().replace(/^./, e => e.toUpperCase());
+      EMAIL_EXISTS: "\x54\x68\x61\x74\x20\x65\x6d\x61\x69\x6c\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x68\x61\x73\x20\x61\x6e\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e",
+      EMAIL_NOT_FOUND: "\x45\x6d\x61\x69\x6c\x20\x6f\x72\x20\x70\x61\x73\x73\x77\x6f\x72\x64\x20\x69\x73\x20\x69\x6e\x63\x6f\x72\x72\x65\x63\x74\x2e",
+      INVALID_PASSWORD: "\x45\x6d\x61\x69\x6c\x20\x6f\x72\x20\x70\x61\x73\x73\x77\x6f\x72\x64\x20\x69\x73\x20\x69\x6e\x63\x6f\x72\x72\x65\x63\x74\x2e",
+      INVALID_LOGIN_CREDENTIALS: "\x45\x6d\x61\x69\x6c\x20\x6f\x72\x20\x70\x61\x73\x73\x77\x6f\x72\x64\x20\x69\x73\x20\x69\x6e\x63\x6f\x72\x72\x65\x63\x74\x2e",
+      WEAK_PASSWORD: "\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x73\x74\x72\x6f\x6e\x67\x65\x72\x20\x70\x61\x73\x73\x77\x6f\x72\x64\x2e",
+      TOO_MANY_ATTEMPTS_TRY_LATER: "\x54\x6f\x6f\x20\x6d\x61\x6e\x79\x20\x61\x74\x74\x65\x6d\x70\x74\x73\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x6c\x61\x74\x65\x72\x2e",
+      USER_DISABLED: "\x54\x68\x69\x73\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x68\x61\x73\x20\x62\x65\x65\x6e\x20\x64\x69\x73\x61\x62\x6c\x65\x64\x2e"
+    }[_0x6f7a66_1] || _0x6f7a66_1.replaceAll("\x5f", "\x20").toLowerCase().replace(/^./, _0x6f7a66_0 => _0x6f7a66_0.toUpperCase());
   }
-  async function q(e, t, a, n = !1) {
-    if (!w.enabled || !w.apiKey) throw new Error("Free account access is not configured yet.");
-    const r = "token" === e ? "https://securetoken.googleapis.com/v1" : "https://identitytoolkit.googleapis.com/v1", i = await fetch(`${r}/${t}?key=${encodeURIComponent(w.apiKey)}`, {
-      method: "POST",
+  async function _0x6f7a66_26(_0x6f7a66_0, _0x6f7a66_1, _0x6f7a66_2, _0x6f7a66_3 = !1) {
+    if (!_0x6f7a66_11.enabled || !_0x6f7a66_11.apiKey) throw new Error("\x46\x72\x65\x65\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x61\x63\x63\x65\x73\x73\x20\x69\x73\x20\x6e\x6f\x74\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64\x20\x79\x65\x74\x2e");
+    const _0x6f7a66_4 = "\x74\x6f\x6b\x65\x6e" === _0x6f7a66_0 ? "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x73\x65\x63\x75\x72\x65\x74\x6f\x6b\x65\x6e\x2e\x67\x6f\x6f\x67\x6c\x65\x61\x70\x69\x73\x2e\x63\x6f\x6d\x2f\x76\x31" : "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x69\x64\x65\x6e\x74\x69\x74\x79\x74\x6f\x6f\x6c\x6b\x69\x74\x2e\x67\x6f\x6f\x67\x6c\x65\x61\x70\x69\x73\x2e\x63\x6f\x6d\x2f\x76\x31", _0x6f7a66_5 = await fetch(`${_0x6f7a66_4}\x2f${_0x6f7a66_1}\x3f\x6b\x65\x79\x3d${encodeURIComponent(_0x6f7a66_11.apiKey)}`, {
+      method: "\x50\x4f\x53\x54",
       headers: {
-        "Content-Type": n ? "application/x-www-form-urlencoded" : "application/json"
+        "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": _0x6f7a66_3 ? "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x78\x2d\x77\x77\x77\x2d\x66\x6f\x72\x6d\x2d\x75\x72\x6c\x65\x6e\x63\x6f\x64\x65\x64" : "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
       },
-      body: n ? new URLSearchParams(a) : JSON.stringify(a)
+      body: _0x6f7a66_3 ? new URLSearchParams(_0x6f7a66_2) : JSON.stringify(_0x6f7a66_2)
     });
-    let o = {};
+    let _0x6f7a66_6 = {};
     try {
-      o = await i.json();
+      _0x6f7a66_6 = await _0x6f7a66_5.json();
     } catch {}
-    if (!i.ok) throw new Error(o?.error?.message || `Authentication failed (${i.status})`);
-    return o;
+    if (!_0x6f7a66_5.ok) throw new Error(_0x6f7a66_6?.error?.message || `\x41\x75\x74\x68\x65\x6e\x74\x69\x63\x61\x74\x69\x6f\x6e\x20\x66\x61\x69\x6c\x65\x64\x20\x28${_0x6f7a66_5.status}\x29`);
+    return _0x6f7a66_6;
   }
-  function U(e, t = {}) {
+  function _0x6f7a66_27(_0x6f7a66_0, _0x6f7a66_1 = {}) {
     return {
-      idToken: e.idToken || e.id_token,
-      refreshToken: e.refreshToken || e.refresh_token || t.refreshToken,
-      expiresAt: Date.now() + 1e3 * Number(e.expiresIn || e.expires_in || 3600),
-      email: e.email || t.email || "",
-      emailVerified: Boolean(t.emailVerified),
-      subscriptionStatus: t.subscriptionStatus || "free",
-      premiumAccess: Boolean(t.premiumAccess)
+      idToken: _0x6f7a66_0.idToken || _0x6f7a66_0.id_token,
+      refreshToken: _0x6f7a66_0.refreshToken || _0x6f7a66_0.refresh_token || _0x6f7a66_1.refreshToken,
+      expiresAt: Date.now() + 1e3 * Number(_0x6f7a66_0.expiresIn || _0x6f7a66_0.expires_in || 3600),
+      email: _0x6f7a66_0.email || _0x6f7a66_1.email || "",
+      emailVerified: Boolean(_0x6f7a66_1.emailVerified),
+      subscriptionStatus: _0x6f7a66_1.subscriptionStatus || "\x66\x72\x65\x65",
+      premiumAccess: Boolean(_0x6f7a66_1.premiumAccess)
     };
   }
-  async function D(e) {
-    const t = await q("identity", "accounts:lookup", {
-      idToken: e
-    }), a = t.users?.[0];
+  async function _0x6f7a66_28(_0x6f7a66_0) {
+    const _0x6f7a66_1 = await _0x6f7a66_26("\x69\x64\x65\x6e\x74\x69\x74\x79", "\x61\x63\x63\x6f\x75\x6e\x74\x73\x3a\x6c\x6f\x6f\x6b\x75\x70", {
+      idToken: _0x6f7a66_0
+    }), _0x6f7a66_2 = _0x6f7a66_1.users?.[0];
     return {
-      uid: a?.localId || "",
-      email: a?.email || "",
-      emailVerified: Boolean(a?.emailVerified)
+      uid: _0x6f7a66_2?.localId || "",
+      email: _0x6f7a66_2?.email || "",
+      emailVerified: Boolean(_0x6f7a66_2?.emailVerified)
     };
   }
-  async function R(e) {
-    const t = await z(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/account/me", {
+  async function _0x6f7a66_29(_0x6f7a66_0) {
+    const _0x6f7a66_1 = await _0x6f7a66_22(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x61\x63\x63\x6f\x75\x6e\x74\x2f\x6d\x65", {
       headers: {
-        Accept: "application/json",
-        Authorization: `Bearer ${e}`
+        Accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+        Authorization: `\x42\x65\x61\x72\x65\x72\x20${_0x6f7a66_0}`
       },
-      cache: "no-store"
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
     }));
     return {
-      subscriptionStatus: String(t.subscriptionStatus || "free").toLowerCase(),
-      premiumAccess: Boolean(t.premiumAccess || [ "premium", "trialing" ].includes(String(t.subscriptionStatus || "").toLowerCase()))
+      subscriptionStatus: String(_0x6f7a66_1.subscriptionStatus || "\x66\x72\x65\x65").toLowerCase(),
+      premiumAccess: Boolean(_0x6f7a66_1.premiumAccess || [ "\x70\x72\x65\x6d\x69\x75\x6d", "\x74\x72\x69\x61\x6c\x69\x6e\x67" ].includes(String(_0x6f7a66_1.subscriptionStatus || "").toLowerCase()))
     };
   }
-  function _() {
-    return Boolean(b?.premiumAccess || [ "premium", "trialing" ].includes(String(b?.subscriptionStatus || "").toLowerCase()));
+  function _0x6f7a66_2a() {
+    return Boolean(_0x6f7a66_12?.premiumAccess || [ "\x70\x72\x65\x6d\x69\x75\x6d", "\x74\x72\x69\x61\x6c\x69\x6e\x67" ].includes(String(_0x6f7a66_12?.subscriptionStatus || "").toLowerCase()));
   }
-  function G() {
-    return "administrator" === c || "account" === c && _();
+  function _0x6f7a66_2b() {
+    return "\x61\x64\x6d\x69\x6e\x69\x73\x74\x72\x61\x74\x6f\x72" === _0x6f7a66_8 || "\x61\x63\x63\x6f\x75\x6e\x74" === _0x6f7a66_8 && _0x6f7a66_2a();
   }
-  function F() {
-    return "surge" === A() ? 1 : "p2p" === s.generationMethod.value && G() ? d : G() ? u : h;
+  function _0x6f7a66_2c() {
+    return "\x73\x75\x72\x67\x65" === _0x6f7a66_19() ? 1 : "\x70\x32\x70" === _0x6f7a66_7.generationMethod.value && _0x6f7a66_2b() ? _0x6f7a66_b : _0x6f7a66_2b() ? _0x6f7a66_a : _0x6f7a66_c;
   }
-  async function H() {
-    if (!b?.idToken) return b;
-    const e = await R(b.idToken);
-    return j({
-      ...b,
-      ...e
+  async function _0x6f7a66_2d() {
+    if (!_0x6f7a66_12?.idToken) return _0x6f7a66_12;
+    const _0x6f7a66_0 = await _0x6f7a66_29(_0x6f7a66_12.idToken);
+    return _0x6f7a66_23({
+      ..._0x6f7a66_12,
+      ..._0x6f7a66_0
     });
   }
-  async function V() {
-    if (!b?.refreshToken) throw new Error("Sign in again.");
-    return j(U(await q("token", "token", {
-      grant_type: "refresh_token",
-      refresh_token: b.refreshToken
-    }, !0), b));
+  async function _0x6f7a66_2e() {
+    if (!_0x6f7a66_12?.refreshToken) throw new Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x61\x67\x61\x69\x6e\x2e");
+    return _0x6f7a66_23(_0x6f7a66_27(await _0x6f7a66_26("\x74\x6f\x6b\x65\x6e", "\x74\x6f\x6b\x65\x6e", {
+      grant_type: "\x72\x65\x66\x72\x65\x73\x68\x5f\x74\x6f\x6b\x65\x6e",
+      refresh_token: _0x6f7a66_12.refreshToken
+    }, !0), _0x6f7a66_12));
   }
-  function J() {
-    return parent === window ? Promise.resolve("") : new Promise(e => {
-      const t = "link-generator-" + crypto.randomUUID(), a = t => {
-        clearTimeout(r), removeEventListener("message", n), e("string" == typeof t ? t : "");
-      }, n = e => {
-        e.source === parent && e.origin === location.origin && "nyx:account-token-response" === e.data?.type && e.data.requestId === t && a(e.data.token);
-      }, r = setTimeout(() => a(""), 4e3);
-      addEventListener("message", n), parent.postMessage({
-        type: "nyx:account-token-request",
-        requestId: t
+  function _0x6f7a66_2f() {
+    return parent === window ? Promise.resolve("") : new Promise(_0x6f7a66_0 => {
+      const _0x6f7a66_1 = "\x6c\x69\x6e\x6b\x2d\x67\x65\x6e\x65\x72\x61\x74\x6f\x72\x2d" + crypto.randomUUID(), _0x6f7a66_2 = _0x6f7a66_1 => {
+        clearTimeout(_0x6f7a66_4), removeEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x6f7a66_3), _0x6f7a66_0("\x73\x74\x72\x69\x6e\x67" == typeof _0x6f7a66_1 ? _0x6f7a66_1 : "");
+      }, _0x6f7a66_3 = _0x6f7a66_0 => {
+        _0x6f7a66_0.source === parent && _0x6f7a66_0.origin === location.origin && "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65" === _0x6f7a66_0.data?.type && _0x6f7a66_0.data.requestId === _0x6f7a66_1 && _0x6f7a66_2(_0x6f7a66_0.data.token);
+      }, _0x6f7a66_4 = setTimeout(() => _0x6f7a66_2(""), 4e3);
+      addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x6f7a66_3), parent.postMessage({
+        type: "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74",
+        requestId: _0x6f7a66_1
       }, location.origin);
     });
   }
-  async function W() {
-    if (!b) throw new Error("Sign in to use the Link Generator.");
-    if (b.viaHost) {
-      const e = await J();
-      if (!e) throw O(), new Error("Sign in to Nyx again to continue.");
-      b = {
-        ...b,
-        idToken: e
+  async function _0x6f7a66_30() {
+    if (!_0x6f7a66_12) throw new Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x75\x73\x65\x20\x74\x68\x65\x20\x4c\x69\x6e\x6b\x20\x47\x65\x6e\x65\x72\x61\x74\x6f\x72\x2e");
+    if (_0x6f7a66_12.viaHost) {
+      const _0x6f7a66_0 = await _0x6f7a66_2f();
+      if (!_0x6f7a66_0) throw _0x6f7a66_24(), new Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x4e\x79\x78\x20\x61\x67\x61\x69\x6e\x20\x74\x6f\x20\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2e");
+      _0x6f7a66_12 = {
+        ..._0x6f7a66_12,
+        idToken: _0x6f7a66_0
       };
-    } else b.expiresAt - Date.now() < 6e4 && await V();
-    return await H(), b;
+    } else _0x6f7a66_12.expiresAt - Date.now() < 6e4 && await _0x6f7a66_2e();
+    return await _0x6f7a66_2d(), _0x6f7a66_12;
   }
-  function Y() {
-    const a = Boolean(b?.idToken), n = a && _();
-    s.accountFields.hidden = a, s.signIn.hidden = a, s.createAccount.hidden = a, s.signOut.hidden = !a, 
-    s.refreshAccount.hidden = !0, s.accountStatus.className = "account-status" + (a ? " good" : ""), 
-    s.accountStatus.textContent = a ? n ? `${b.email || "Account"} has Premium access. No access code is required.` : `Signed in. You can create up to ${h} links per ${m}-minute window.` : `Sign in to create up to ${h} links per hour.`;
-    const r = s.modeButtons.find(e => "account" === e.dataset.accessMode);
-    r && (r.textContent = n ? "Premium account" : "Account"), e && (o("[data-access-gate]").hidden = !t || a, 
-    a && (s.accountStatus.textContent = "Signed in" + (b.email ? " as " + b.email : "") + ".")), 
-    "account" === c && K();
+  function _0x6f7a66_31() {
+    const _0x6f7a66_2 = Boolean(_0x6f7a66_12?.idToken), _0x6f7a66_3 = _0x6f7a66_2 && _0x6f7a66_2a();
+    _0x6f7a66_7.accountFields.hidden = _0x6f7a66_2, _0x6f7a66_7.signIn.hidden = _0x6f7a66_2, 
+    _0x6f7a66_7.createAccount.hidden = _0x6f7a66_2, _0x6f7a66_7.signOut.hidden = !_0x6f7a66_2, 
+    _0x6f7a66_7.refreshAccount.hidden = !0, _0x6f7a66_7.accountStatus.className = "\x61\x63\x63\x6f\x75\x6e\x74\x2d\x73\x74\x61\x74\x75\x73" + (_0x6f7a66_2 ? "\x20\x67\x6f\x6f\x64" : ""), 
+    _0x6f7a66_7.accountStatus.textContent = _0x6f7a66_2 ? _0x6f7a66_3 ? `${_0x6f7a66_12.email || "\x41\x63\x63\x6f\x75\x6e\x74"}\x20\x68\x61\x73\x20\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x65\x73\x73\x2e\x20\x4e\x6f\x20\x61\x63\x63\x65\x73\x73\x20\x63\x6f\x64\x65\x20\x69\x73\x20\x72\x65\x71\x75\x69\x72\x65\x64\x2e` : `\x53\x69\x67\x6e\x65\x64\x20\x69\x6e\x2e\x20\x59\x6f\x75\x20\x63\x61\x6e\x20\x63\x72\x65\x61\x74\x65\x20\x75\x70\x20\x74\x6f\x20${_0x6f7a66_c}\x20\x6c\x69\x6e\x6b\x73\x20\x70\x65\x72\x20${_0x6f7a66_d}\x2d\x6d\x69\x6e\x75\x74\x65\x20\x77\x69\x6e\x64\x6f\x77\x2e` : `\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x63\x72\x65\x61\x74\x65\x20\x75\x70\x20\x74\x6f\x20${_0x6f7a66_c}\x20\x6c\x69\x6e\x6b\x73\x20\x70\x65\x72\x20\x68\x6f\x75\x72\x2e`;
+    const _0x6f7a66_4 = _0x6f7a66_7.modeButtons.find(_0x6f7a66_0 => "\x61\x63\x63\x6f\x75\x6e\x74" === _0x6f7a66_0.dataset.accessMode);
+    _0x6f7a66_4 && (_0x6f7a66_4.textContent = _0x6f7a66_3 ? "\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x6f\x75\x6e\x74" : "\x41\x63\x63\x6f\x75\x6e\x74"), 
+    _0x6f7a66_0 && (_0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x65\x73\x73\x2d\x67\x61\x74\x65\x5d").hidden = !_0x6f7a66_1 || _0x6f7a66_2, 
+    _0x6f7a66_2 && (_0x6f7a66_7.accountStatus.textContent = "\x53\x69\x67\x6e\x65\x64\x20\x69\x6e" + (_0x6f7a66_12.email ? "\x20\x61\x73\x20" + _0x6f7a66_12.email : "") + "\x2e")), 
+    "\x61\x63\x63\x6f\x75\x6e\x74" === _0x6f7a66_8 && _0x6f7a66_32();
   }
-  function K() {
-    const t = G(), a = "p2p" === s.generationMethod.value, n = F();
-    s.amountField.hidden = e || "surge" === A(), s.detailsGrid.classList.add("premium"), 
-    s.amount.max = String(n), Number.parseInt(s.amount.value, 10) > n && (s.amount.value = String(n)), 
-    s.amountHint.textContent = t && a ? `P2P can publish up to ${d.toLocaleString()} links per run through your GitHub token. Automatic repositories roll over at 1,000 SVGs.` : t ? `Choosing ${f}-${u} links starts a ${g}-minute cooldown. Smaller batches start it after ${p} total links.` : `Regular accounts can create up to ${h} links during each ${m}-minute window.`, 
-    Z();
+  function _0x6f7a66_32() {
+    const _0x6f7a66_1 = _0x6f7a66_2b(), _0x6f7a66_2 = "\x70\x32\x70" === _0x6f7a66_7.generationMethod.value, _0x6f7a66_3 = _0x6f7a66_2c();
+    _0x6f7a66_7.amountField.hidden = _0x6f7a66_0 || "\x73\x75\x72\x67\x65" === _0x6f7a66_19(), _0x6f7a66_7.detailsGrid.classList.add("\x70\x72\x65\x6d\x69\x75\x6d"), 
+    _0x6f7a66_7.amount.max = String(_0x6f7a66_3), Number.parseInt(_0x6f7a66_7.amount.value, 10) > _0x6f7a66_3 && (_0x6f7a66_7.amount.value = String(_0x6f7a66_3)), 
+    _0x6f7a66_7.amountHint.textContent = _0x6f7a66_1 && _0x6f7a66_2 ? `\x50\x32\x50\x20\x63\x61\x6e\x20\x70\x75\x62\x6c\x69\x73\x68\x20\x75\x70\x20\x74\x6f\x20${_0x6f7a66_b.toLocaleString()}\x20\x6c\x69\x6e\x6b\x73\x20\x70\x65\x72\x20\x72\x75\x6e\x20\x74\x68\x72\x6f\x75\x67\x68\x20\x79\x6f\x75\x72\x20\x47\x69\x74\x48\x75\x62\x20\x74\x6f\x6b\x65\x6e\x2e\x20\x41\x75\x74\x6f\x6d\x61\x74\x69\x63\x20\x72\x65\x70\x6f\x73\x69\x74\x6f\x72\x69\x65\x73\x20\x72\x6f\x6c\x6c\x20\x6f\x76\x65\x72\x20\x61\x74\x20\x31\x2c\x30\x30\x30\x20\x53\x56\x47\x73\x2e` : _0x6f7a66_1 ? `\x43\x68\x6f\x6f\x73\x69\x6e\x67\x20${_0x6f7a66_e}\x2d${_0x6f7a66_a}\x20\x6c\x69\x6e\x6b\x73\x20\x73\x74\x61\x72\x74\x73\x20\x61\x20${_0x6f7a66_10}\x2d\x6d\x69\x6e\x75\x74\x65\x20\x63\x6f\x6f\x6c\x64\x6f\x77\x6e\x2e\x20\x53\x6d\x61\x6c\x6c\x65\x72\x20\x62\x61\x74\x63\x68\x65\x73\x20\x73\x74\x61\x72\x74\x20\x69\x74\x20\x61\x66\x74\x65\x72\x20${_0x6f7a66_f}\x20\x74\x6f\x74\x61\x6c\x20\x6c\x69\x6e\x6b\x73\x2e` : `\x52\x65\x67\x75\x6c\x61\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x73\x20\x63\x61\x6e\x20\x63\x72\x65\x61\x74\x65\x20\x75\x70\x20\x74\x6f\x20${_0x6f7a66_c}\x20\x6c\x69\x6e\x6b\x73\x20\x64\x75\x72\x69\x6e\x67\x20\x65\x61\x63\x68\x20${_0x6f7a66_d}\x2d\x6d\x69\x6e\x75\x74\x65\x20\x77\x69\x6e\x64\x6f\x77\x2e`, 
+    _0x6f7a66_35();
   }
-  function X(e) {
-    c = e, s.accountPanel.hidden = "account" !== e, s.administratorPanel.hidden = "administrator" !== e, 
-    K(), s.modeButtons.forEach(t => {
-      const a = t.dataset.accessMode === e;
-      t.classList.toggle("active", a), t.setAttribute("aria-selected", String(a));
+  function _0x6f7a66_33(_0x6f7a66_0) {
+    _0x6f7a66_8 = _0x6f7a66_0, _0x6f7a66_7.accountPanel.hidden = "\x61\x63\x63\x6f\x75\x6e\x74" !== _0x6f7a66_0, 
+    _0x6f7a66_7.administratorPanel.hidden = "\x61\x64\x6d\x69\x6e\x69\x73\x74\x72\x61\x74\x6f\x72" !== _0x6f7a66_0, _0x6f7a66_32(), 
+    _0x6f7a66_7.modeButtons.forEach(_0x6f7a66_1 => {
+      const _0x6f7a66_2 = _0x6f7a66_1.dataset.accessMode === _0x6f7a66_0;
+      _0x6f7a66_1.classList.toggle("\x61\x63\x74\x69\x76\x65", _0x6f7a66_2), _0x6f7a66_1.setAttribute("\x61\x72\x69\x61\x2d\x73\x65\x6c\x65\x63\x74\x65\x64", String(_0x6f7a66_2));
     });
   }
-  function Q() {
-    if (e) return 1;
-    const t = F(), a = Number.parseInt(s.amount.value, 10);
-    return Number.isInteger(a) ? Math.max(1, Math.min(t, a)) : 1;
+  function _0x6f7a66_34() {
+    if (_0x6f7a66_0) return 1;
+    const _0x6f7a66_1 = _0x6f7a66_2c(), _0x6f7a66_2 = Number.parseInt(_0x6f7a66_7.amount.value, 10);
+    return Number.isInteger(_0x6f7a66_2) ? Math.max(1, Math.min(_0x6f7a66_1, _0x6f7a66_2)) : 1;
   }
-  function Z() {
-    const t = Q(), a = "p2p" === s.generationMethod.value;
-    s.reviewAmountRow.hidden = !1, s.reviewAmount.textContent = `${t} link${1 === t ? "" : "s"}`, 
-    s.confirmText.textContent = "surge" === A() ? "I understand this publishes a public Nyx wrapper on the configured Surge account. Surge account limits apply." : "bunny" === A() ? `I understand this creates ${t} Bunny pull zone${1 === t ? "" : "s"} on the configured Bunny account, with its bandwidth charges and limits.` : a ? `I understand P2P bulk-publishes ${1 === t ? "one Nyx launcher" : `${t} Nyx launchers`} through Nyx's protected server publisher.` : `I understand this publishes ${1 === t ? "one Nyx launcher" : `${t} Nyx launchers`} through a GitHub repository.`, 
-    s.button.disabled || (s.button.querySelector("span").textContent = e ? "Create link" : "Generate " + (1 === t ? "link" : `${t} links`));
+  function _0x6f7a66_35() {
+    const _0x6f7a66_1 = _0x6f7a66_34(), _0x6f7a66_2 = "\x70\x32\x70" === _0x6f7a66_7.generationMethod.value;
+    _0x6f7a66_7.reviewAmountRow.hidden = !1, _0x6f7a66_7.reviewAmount.textContent = `${_0x6f7a66_1}\x20\x6c\x69\x6e\x6b${1 === _0x6f7a66_1 ? "" : "\x73"}`, 
+    _0x6f7a66_7.confirmText.textContent = "\x73\x75\x72\x67\x65" === _0x6f7a66_19() ? "\x49\x20\x75\x6e\x64\x65\x72\x73\x74\x61\x6e\x64\x20\x74\x68\x69\x73\x20\x70\x75\x62\x6c\x69\x73\x68\x65\x73\x20\x61\x20\x70\x75\x62\x6c\x69\x63\x20\x4e\x79\x78\x20\x77\x72\x61\x70\x70\x65\x72\x20\x6f\x6e\x20\x74\x68\x65\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64\x20\x53\x75\x72\x67\x65\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e\x20\x53\x75\x72\x67\x65\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x6c\x69\x6d\x69\x74\x73\x20\x61\x70\x70\x6c\x79\x2e" : "\x62\x75\x6e\x6e\x79" === _0x6f7a66_19() ? `\x49\x20\x75\x6e\x64\x65\x72\x73\x74\x61\x6e\x64\x20\x74\x68\x69\x73\x20\x63\x72\x65\x61\x74\x65\x73\x20${_0x6f7a66_1}\x20\x42\x75\x6e\x6e\x79\x20\x70\x75\x6c\x6c\x20\x7a\x6f\x6e\x65${1 === _0x6f7a66_1 ? "" : "\x73"}\x20\x6f\x6e\x20\x74\x68\x65\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64\x20\x42\x75\x6e\x6e\x79\x20\x61\x63\x63\x6f\x75\x6e\x74\x2c\x20\x77\x69\x74\x68\x20\x69\x74\x73\x20\x62\x61\x6e\x64\x77\x69\x64\x74\x68\x20\x63\x68\x61\x72\x67\x65\x73\x20\x61\x6e\x64\x20\x6c\x69\x6d\x69\x74\x73\x2e` : _0x6f7a66_2 ? `\x49\x20\x75\x6e\x64\x65\x72\x73\x74\x61\x6e\x64\x20\x50\x32\x50\x20\x62\x75\x6c\x6b\x2d\x70\x75\x62\x6c\x69\x73\x68\x65\x73\x20${1 === _0x6f7a66_1 ? "\x6f\x6e\x65\x20\x4e\x79\x78\x20\x6c\x61\x75\x6e\x63\x68\x65\x72" : `${_0x6f7a66_1}\x20\x4e\x79\x78\x20\x6c\x61\x75\x6e\x63\x68\x65\x72\x73`}\x20\x74\x68\x72\x6f\x75\x67\x68\x20\x4e\x79\x78\x27\x73\x20\x70\x72\x6f\x74\x65\x63\x74\x65\x64\x20\x73\x65\x72\x76\x65\x72\x20\x70\x75\x62\x6c\x69\x73\x68\x65\x72\x2e` : `\x49\x20\x75\x6e\x64\x65\x72\x73\x74\x61\x6e\x64\x20\x74\x68\x69\x73\x20\x70\x75\x62\x6c\x69\x73\x68\x65\x73\x20${1 === _0x6f7a66_1 ? "\x6f\x6e\x65\x20\x4e\x79\x78\x20\x6c\x61\x75\x6e\x63\x68\x65\x72" : `${_0x6f7a66_1}\x20\x4e\x79\x78\x20\x6c\x61\x75\x6e\x63\x68\x65\x72\x73`}\x20\x74\x68\x72\x6f\x75\x67\x68\x20\x61\x20\x47\x69\x74\x48\x75\x62\x20\x72\x65\x70\x6f\x73\x69\x74\x6f\x72\x79\x2e`, 
+    _0x6f7a66_7.button.disabled || (_0x6f7a66_7.button.querySelector("\x73\x70\x61\x6e").textContent = _0x6f7a66_0 ? "\x43\x72\x65\x61\x74\x65\x20\x6c\x69\x6e\x6b" : "\x47\x65\x6e\x65\x72\x61\x74\x65\x20" + (1 === _0x6f7a66_1 ? "\x6c\x69\x6e\x6b" : `${_0x6f7a66_1}\x20\x6c\x69\x6e\x6b\x73`));
   }
-  function ee() {
-    document.querySelectorAll("[data-method-choice]").forEach(e => e.setAttribute("aria-pressed", String(e.dataset.methodChoice === s.generationMethod.value)));
-    const e = "p2p" === s.generationMethod.value;
-    s.generationMethodHint.textContent = e ? `P2P bulk-publishes up to ${d.toLocaleString()} Nyx links directly and keeps the GitHub credential on the Nyx server.` : "Nyx managed uses the protected server publisher; its GitHub credential never reaches your browser.", 
-    K();
+  function _0x6f7a66_36() {
+    document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6d\x65\x74\x68\x6f\x64\x2d\x63\x68\x6f\x69\x63\x65\x5d").forEach(_0x6f7a66_0 => _0x6f7a66_0.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x6f7a66_0.dataset.methodChoice === _0x6f7a66_7.generationMethod.value)));
+    const _0x6f7a66_0 = "\x70\x32\x70" === _0x6f7a66_7.generationMethod.value;
+    _0x6f7a66_7.generationMethodHint.textContent = _0x6f7a66_0 ? `\x50\x32\x50\x20\x62\x75\x6c\x6b\x2d\x70\x75\x62\x6c\x69\x73\x68\x65\x73\x20\x75\x70\x20\x74\x6f\x20${_0x6f7a66_b.toLocaleString()}\x20\x4e\x79\x78\x20\x6c\x69\x6e\x6b\x73\x20\x64\x69\x72\x65\x63\x74\x6c\x79\x20\x61\x6e\x64\x20\x6b\x65\x65\x70\x73\x20\x74\x68\x65\x20\x47\x69\x74\x48\x75\x62\x20\x63\x72\x65\x64\x65\x6e\x74\x69\x61\x6c\x20\x6f\x6e\x20\x74\x68\x65\x20\x4e\x79\x78\x20\x73\x65\x72\x76\x65\x72\x2e` : "\x4e\x79\x78\x20\x6d\x61\x6e\x61\x67\x65\x64\x20\x75\x73\x65\x73\x20\x74\x68\x65\x20\x70\x72\x6f\x74\x65\x63\x74\x65\x64\x20\x73\x65\x72\x76\x65\x72\x20\x70\x75\x62\x6c\x69\x73\x68\x65\x72\x3b\x20\x69\x74\x73\x20\x47\x69\x74\x48\x75\x62\x20\x63\x72\x65\x64\x65\x6e\x74\x69\x61\x6c\x20\x6e\x65\x76\x65\x72\x20\x72\x65\x61\x63\x68\x65\x73\x20\x79\x6f\x75\x72\x20\x62\x72\x6f\x77\x73\x65\x72\x2e", 
+    _0x6f7a66_32();
   }
-  function te(a, n = (a >= l ? "forward" : "back")) {
-    const r = Math.max(0, Math.min(s.wizardSteps.length - 1, Number(a) || 0));
-    l = r, s.wizardCard.classList.remove("wizard-forward", "wizard-back"), s.wizardCard.offsetWidth, 
-    s.wizardCard.classList.add("back" === n ? "wizard-back" : "wizard-forward"), s.wizardSteps.forEach((e, t) => {
-      const a = t === r;
-      e.hidden = !a, e.classList.toggle("active", a);
-    }), s.form.hidden = 3 === r, s.wizardIndicators.forEach((e, t) => {
-      e.classList.toggle("active", t === r), e.classList.toggle("complete", t < r), t === r ? e.setAttribute("aria-current", "step") : e.removeAttribute("aria-current");
-    }), e && t && requestAnimationFrame(() => s.wizardSteps[r].querySelector("h2")?.focus({
+  function _0x6f7a66_37(_0x6f7a66_2, _0x6f7a66_3 = (_0x6f7a66_2 >= _0x6f7a66_9 ? "\x66\x6f\x72\x77\x61\x72\x64" : "\x62\x61\x63\x6b")) {
+    const _0x6f7a66_4 = Math.max(0, Math.min(_0x6f7a66_7.wizardSteps.length - 1, Number(_0x6f7a66_2) || 0));
+    _0x6f7a66_9 = _0x6f7a66_4, _0x6f7a66_7.wizardCard.classList.remove("\x77\x69\x7a\x61\x72\x64\x2d\x66\x6f\x72\x77\x61\x72\x64", "\x77\x69\x7a\x61\x72\x64\x2d\x62\x61\x63\x6b"), 
+    _0x6f7a66_7.wizardCard.offsetWidth, _0x6f7a66_7.wizardCard.classList.add("\x62\x61\x63\x6b" === _0x6f7a66_3 ? "\x77\x69\x7a\x61\x72\x64\x2d\x62\x61\x63\x6b" : "\x77\x69\x7a\x61\x72\x64\x2d\x66\x6f\x72\x77\x61\x72\x64"), 
+    _0x6f7a66_7.wizardSteps.forEach((_0x6f7a66_0, _0x6f7a66_1) => {
+      const _0x6f7a66_2 = _0x6f7a66_1 === _0x6f7a66_4;
+      _0x6f7a66_0.hidden = !_0x6f7a66_2, _0x6f7a66_0.classList.toggle("\x61\x63\x74\x69\x76\x65", _0x6f7a66_2);
+    }), _0x6f7a66_7.form.hidden = 3 === _0x6f7a66_4, _0x6f7a66_7.wizardIndicators.forEach((_0x6f7a66_0, _0x6f7a66_1) => {
+      _0x6f7a66_0.classList.toggle("\x61\x63\x74\x69\x76\x65", _0x6f7a66_1 === _0x6f7a66_4), _0x6f7a66_0.classList.toggle("\x63\x6f\x6d\x70\x6c\x65\x74\x65", _0x6f7a66_1 < _0x6f7a66_4), 
+      _0x6f7a66_1 === _0x6f7a66_4 ? _0x6f7a66_0.setAttribute("\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74", "\x73\x74\x65\x70") : _0x6f7a66_0.removeAttribute("\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74");
+    }), _0x6f7a66_0 && _0x6f7a66_1 && requestAnimationFrame(() => _0x6f7a66_7.wizardSteps[_0x6f7a66_4].querySelector("\x68\x32")?.focus({
       preventScroll: !0
-    })), document.dispatchEvent(new CustomEvent("nyx-generator-step", {
-      detail: r
-    })), s.wizardProgress.style.width = r / (s.wizardSteps.length - 1) * 100 + "%";
+    })), document.dispatchEvent(new CustomEvent("\x6e\x79\x78\x2d\x67\x65\x6e\x65\x72\x61\x74\x6f\x72\x2d\x73\x74\x65\x70", {
+      detail: _0x6f7a66_4
+    })), _0x6f7a66_7.wizardProgress.style.width = _0x6f7a66_4 / (_0x6f7a66_7.wizardSteps.length - 1) * 100 + "\x25";
   }
-  function ae() {
-    o("[data-review-cdn]").textContent = "surge" === A() ? "Surge - new .surge.sh address" : "bunny" === A() ? "Bunny.net \xb7 b-cdn.net" : N(), 
-    s.reviewAccess.textContent = "account" === c ? _() ? `${b?.email || "Account"} \xb7 Premium` : b?.email || "Free account" : "Premium access code", 
-    s.reviewLabel.textContent = s.label.value.trim() || "Automatic", s.reviewFilter.textContent = s.filter.options[s.filter.selectedIndex]?.textContent || "Not selected", 
-    s.reviewOrigin.textContent = s.origin.textContent || "Official Nyx origin", s.reviewMethod.textContent = "surge" === A() ? "Nyx Surge publisher" : "p2p" === s.generationMethod.value ? "P2P" : e ? "Nyx" : "Nyx managed", 
-    Z();
+  function _0x6f7a66_38() {
+    _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x72\x65\x76\x69\x65\x77\x2d\x63\x64\x6e\x5d").textContent = "\x73\x75\x72\x67\x65" === _0x6f7a66_19() ? "\x53\x75\x72\x67\x65\x20\x2d\x20\x6e\x65\x77\x20\x2e\x73\x75\x72\x67\x65\x2e\x73\x68\x20\x61\x64\x64\x72\x65\x73\x73" : "\x62\x75\x6e\x6e\x79" === _0x6f7a66_19() ? "\x42\x75\x6e\x6e\x79\x2e\x6e\x65\x74\x20\xb7\x20\x62\x2d\x63\x64\x6e\x2e\x6e\x65\x74" : _0x6f7a66_1b(), 
+    _0x6f7a66_7.reviewAccess.textContent = "\x61\x63\x63\x6f\x75\x6e\x74" === _0x6f7a66_8 ? _0x6f7a66_2a() ? `${_0x6f7a66_12?.email || "\x41\x63\x63\x6f\x75\x6e\x74"}\x20\xb7\x20\x50\x72\x65\x6d\x69\x75\x6d` : _0x6f7a66_12?.email || "\x46\x72\x65\x65\x20\x61\x63\x63\x6f\x75\x6e\x74" : "\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x65\x73\x73\x20\x63\x6f\x64\x65", 
+    _0x6f7a66_7.reviewLabel.textContent = _0x6f7a66_7.label.value.trim() || "\x41\x75\x74\x6f\x6d\x61\x74\x69\x63", 
+    _0x6f7a66_7.reviewFilter.textContent = _0x6f7a66_7.filter.options[_0x6f7a66_7.filter.selectedIndex]?.textContent || "\x4e\x6f\x74\x20\x73\x65\x6c\x65\x63\x74\x65\x64", 
+    _0x6f7a66_7.reviewOrigin.textContent = _0x6f7a66_7.origin.textContent || "\x4f\x66\x66\x69\x63\x69\x61\x6c\x20\x4e\x79\x78\x20\x6f\x72\x69\x67\x69\x6e", 
+    _0x6f7a66_7.reviewMethod.textContent = "\x73\x75\x72\x67\x65" === _0x6f7a66_19() ? "\x4e\x79\x78\x20\x53\x75\x72\x67\x65\x20\x70\x75\x62\x6c\x69\x73\x68\x65\x72" : "\x70\x32\x70" === _0x6f7a66_7.generationMethod.value ? "\x50\x32\x50" : _0x6f7a66_0 ? "\x4e\x79\x78" : "\x4e\x79\x78\x20\x6d\x61\x6e\x61\x67\x65\x64", 
+    _0x6f7a66_35();
   }
-  async function ne() {
-    if (E(""), "administrator" === c) {
-      if (!s.accessCode.value) return E("Enter your Premium access code to continue.", "error"), 
-      s.accessCode.focus(), !1;
+  async function _0x6f7a66_39() {
+    if (_0x6f7a66_1e(""), "\x61\x64\x6d\x69\x6e\x69\x73\x74\x72\x61\x74\x6f\x72" === _0x6f7a66_8) {
+      if (!_0x6f7a66_7.accessCode.value) return _0x6f7a66_1e("\x45\x6e\x74\x65\x72\x20\x79\x6f\x75\x72\x20\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x65\x73\x73\x20\x63\x6f\x64\x65\x20\x74\x6f\x20\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2e", "\x65\x72\x72\x6f\x72"), 
+      _0x6f7a66_7.accessCode.focus(), !1;
       try {
-        if (E("Checking your Premium access code..."), !0 !== (await z(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/link-generator/validate-access", {
-          method: "POST",
+        if (_0x6f7a66_1e("\x43\x68\x65\x63\x6b\x69\x6e\x67\x20\x79\x6f\x75\x72\x20\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x65\x73\x73\x20\x63\x6f\x64\x65\x2e\x2e\x2e"), !0 !== (await _0x6f7a66_22(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x67\x65\x6e\x65\x72\x61\x74\x6f\x72\x2f\x76\x61\x6c\x69\x64\x61\x74\x65\x2d\x61\x63\x63\x65\x73\x73", {
+          method: "\x50\x4f\x53\x54",
           headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
+            Accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+            "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
           },
           body: JSON.stringify({
-            accessCode: s.accessCode.value
+            accessCode: _0x6f7a66_7.accessCode.value
           })
-        }))).valid) throw new Error("The Premium access code could not be verified.");
+        }))).valid) throw new Error("\x54\x68\x65\x20\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x65\x73\x73\x20\x63\x6f\x64\x65\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x76\x65\x72\x69\x66\x69\x65\x64\x2e");
         return !0;
-      } catch (t) {
-        return E(t.message || "The Premium access code is incorrect.", "error"), s.accessCode.focus(), 
-        s.accessCode.select(), !1;
+      } catch (_0x6f7a66_1) {
+        return _0x6f7a66_1e(_0x6f7a66_1.message || "\x54\x68\x65\x20\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x65\x73\x73\x20\x63\x6f\x64\x65\x20\x69\x73\x20\x69\x6e\x63\x6f\x72\x72\x65\x63\x74\x2e", "\x65\x72\x72\x6f\x72"), 
+        _0x6f7a66_7.accessCode.focus(), _0x6f7a66_7.accessCode.select(), !1;
       }
     }
-    if (!w.enabled) return E("Free account access is not configured yet. Choose Premium users to continue.", "error"), 
+    if (!_0x6f7a66_11.enabled) return _0x6f7a66_1e("\x46\x72\x65\x65\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x61\x63\x63\x65\x73\x73\x20\x69\x73\x20\x6e\x6f\x74\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64\x20\x79\x65\x74\x2e\x20\x43\x68\x6f\x6f\x73\x65\x20\x50\x72\x65\x6d\x69\x75\x6d\x20\x75\x73\x65\x72\x73\x20\x74\x6f\x20\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2e", "\x65\x72\x72\x6f\x72"), 
     !1;
-    if (!b?.idToken) return e && (o("[data-access-gate]").hidden = !1), E("Sign in or create a free account before continuing.", "error"), 
-    s.email.focus(), !1;
+    if (!_0x6f7a66_12?.idToken) return _0x6f7a66_0 && (_0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x61\x63\x63\x65\x73\x73\x2d\x67\x61\x74\x65\x5d").hidden = !1), 
+    _0x6f7a66_1e("\x53\x69\x67\x6e\x20\x69\x6e\x20\x6f\x72\x20\x63\x72\x65\x61\x74\x65\x20\x61\x20\x66\x72\x65\x65\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x62\x65\x66\x6f\x72\x65\x20\x63\x6f\x6e\x74\x69\x6e\x75\x69\x6e\x67\x2e", "\x65\x72\x72\x6f\x72"), _0x6f7a66_7.email.focus(), 
+    !1;
     try {
-      return await W(), Y(), !0;
-    } catch (t) {
-      return E(B(t), "error"), !1;
+      return await _0x6f7a66_30(), _0x6f7a66_31(), !0;
+    } catch (_0x6f7a66_1) {
+      return _0x6f7a66_1e(_0x6f7a66_25(_0x6f7a66_1), "\x65\x72\x72\x6f\x72"), !1;
     }
   }
-  async function re(t) {
-    if (n) return;
-    n = !0;
-    const a = t?.currentTarget;
-    a && (a.disabled = !0);
+  async function _0x6f7a66_3a(_0x6f7a66_1) {
+    if (_0x6f7a66_3) return;
+    _0x6f7a66_3 = !0;
+    const _0x6f7a66_2 = _0x6f7a66_1?.currentTarget;
+    _0x6f7a66_2 && (_0x6f7a66_2.disabled = !0);
     try {
-      if (e) {
-        if (0 === l) {
-          if (!s.label.value.trim()) return E("Give your link a name.", "error"), void s.label.focus();
-          if (!await ne()) return;
-          return E(""), ae(), void te(1);
+      if (_0x6f7a66_0) {
+        if (0 === _0x6f7a66_9) {
+          if (!_0x6f7a66_7.label.value.trim()) return _0x6f7a66_1e("\x47\x69\x76\x65\x20\x79\x6f\x75\x72\x20\x6c\x69\x6e\x6b\x20\x61\x20\x6e\x61\x6d\x65\x2e", "\x65\x72\x72\x6f\x72"), 
+          void _0x6f7a66_7.label.focus();
+          if (!await _0x6f7a66_39()) return;
+          return _0x6f7a66_1e(""), _0x6f7a66_38(), void _0x6f7a66_37(1);
         }
-        return 1 === l ? (s.confirm.checked = !0, E(""), void te(2)) : void 0;
+        return 1 === _0x6f7a66_9 ? (_0x6f7a66_7.confirm.checked = !0, _0x6f7a66_1e(""), 
+        void _0x6f7a66_37(2)) : void 0;
       }
-      if (0 === l) {
-        if (!await ne()) return;
-        return E(""), void te(1);
+      if (0 === _0x6f7a66_9) {
+        if (!await _0x6f7a66_39()) return;
+        return _0x6f7a66_1e(""), void _0x6f7a66_37(1);
       }
-      if (1 === l) {
-        if (!s.filter.value) return E("Choose a content filter before continuing.", "error"), 
-        void s.filter.focus();
-        const e = Number.parseInt(s.amount.value, 10), t = F();
-        if (!Number.isInteger(e) || e < 1 || e > t) return E(`Choose an amount from 1 to ${t}.`, "error"), 
-        void s.amount.focus();
-        E(""), ae(), te(2);
+      if (1 === _0x6f7a66_9) {
+        if (!_0x6f7a66_7.filter.value) return _0x6f7a66_1e("\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x63\x6f\x6e\x74\x65\x6e\x74\x20\x66\x69\x6c\x74\x65\x72\x20\x62\x65\x66\x6f\x72\x65\x20\x63\x6f\x6e\x74\x69\x6e\x75\x69\x6e\x67\x2e", "\x65\x72\x72\x6f\x72"), 
+        void _0x6f7a66_7.filter.focus();
+        const _0x6f7a66_0 = Number.parseInt(_0x6f7a66_7.amount.value, 10), _0x6f7a66_1 = _0x6f7a66_2c();
+        if (!Number.isInteger(_0x6f7a66_0) || _0x6f7a66_0 < 1 || _0x6f7a66_0 > _0x6f7a66_1) return _0x6f7a66_1e(`\x43\x68\x6f\x6f\x73\x65\x20\x61\x6e\x20\x61\x6d\x6f\x75\x6e\x74\x20\x66\x72\x6f\x6d\x20\x31\x20\x74\x6f\x20${_0x6f7a66_1}\x2e`, "\x65\x72\x72\x6f\x72"), 
+        void _0x6f7a66_7.amount.focus();
+        _0x6f7a66_1e(""), _0x6f7a66_38(), _0x6f7a66_37(2);
       }
     } finally {
-      n = !1, a && (a.disabled = !1);
+      _0x6f7a66_3 = !1, _0x6f7a66_2 && (_0x6f7a66_2.disabled = !1);
     }
   }
-  function ie(e) {
-    return String("string" == typeof e ? e : e?.key || e?.filter || "").trim().toLowerCase();
+  function _0x6f7a66_3b(_0x6f7a66_0) {
+    return String("\x73\x74\x72\x69\x6e\x67" == typeof _0x6f7a66_0 ? _0x6f7a66_0 : _0x6f7a66_0?.key || _0x6f7a66_0?.filter || "").trim().toLowerCase();
   }
-  function oe(e, t, a, n) {
-    s.filterCheck.className = `filter-check ${e}`, s.filterCheckLabel.textContent = t, 
-    s.filterCheckState.textContent = a, s.filterCheckDetail.textContent = n;
+  function _0x6f7a66_3c(_0x6f7a66_0, _0x6f7a66_1, _0x6f7a66_2, _0x6f7a66_3) {
+    _0x6f7a66_7.filterCheck.className = `\x66\x69\x6c\x74\x65\x72\x2d\x63\x68\x65\x63\x6b\x20${_0x6f7a66_0}`, _0x6f7a66_7.filterCheckLabel.textContent = _0x6f7a66_1, 
+    _0x6f7a66_7.filterCheckState.textContent = _0x6f7a66_2, _0x6f7a66_7.filterCheckDetail.textContent = _0x6f7a66_3;
   }
-  function se(t, a = "") {
-    s.open.dataset.ready = String(Boolean(t)), s.open.classList.toggle("disabled", !t), 
-    s.open.setAttribute("aria-disabled", String(!t)), s.open.textContent = t ? e ? "Open link" : "Open first" : "Starting CDN...", 
-    s.open.dataset.readinessMessage = a || "";
+  function _0x6f7a66_3d(_0x6f7a66_1, _0x6f7a66_2 = "") {
+    _0x6f7a66_7.open.dataset.ready = String(Boolean(_0x6f7a66_1)), _0x6f7a66_7.open.classList.toggle("\x64\x69\x73\x61\x62\x6c\x65\x64", !_0x6f7a66_1), 
+    _0x6f7a66_7.open.setAttribute("\x61\x72\x69\x61\x2d\x64\x69\x73\x61\x62\x6c\x65\x64", String(!_0x6f7a66_1)), _0x6f7a66_7.open.textContent = _0x6f7a66_1 ? _0x6f7a66_0 ? "\x4f\x70\x65\x6e\x20\x6c\x69\x6e\x6b" : "\x4f\x70\x65\x6e\x20\x66\x69\x72\x73\x74" : "\x53\x74\x61\x72\x74\x69\x6e\x67\x20\x43\x44\x4e\x2e\x2e\x2e", 
+    _0x6f7a66_7.open.dataset.readinessMessage = _0x6f7a66_2 || "";
   }
-  async function ce(e) {
-    return z(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/link-generator/readiness", {
-      method: "POST",
+  async function _0x6f7a66_3e(_0x6f7a66_0) {
+    return _0x6f7a66_22(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x67\x65\x6e\x65\x72\x61\x74\x6f\x72\x2f\x72\x65\x61\x64\x69\x6e\x65\x73\x73", {
+      method: "\x50\x4f\x53\x54",
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
+        Accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+        "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
       },
       body: JSON.stringify({
-        url: e
+        url: _0x6f7a66_0
       })
     }));
   }
-  async function le(e, t = 12) {
-    se(!1, "This link is still being prepared.");
-    let a = "This link is still being prepared.";
-    for (let r = 0; r < t; r += 1) {
+  async function _0x6f7a66_3f(_0x6f7a66_0, _0x6f7a66_1 = 12) {
+    _0x6f7a66_3d(!1, "\x54\x68\x69\x73\x20\x6c\x69\x6e\x6b\x20\x69\x73\x20\x73\x74\x69\x6c\x6c\x20\x62\x65\x69\x6e\x67\x20\x70\x72\x65\x70\x61\x72\x65\x64\x2e");
+    let _0x6f7a66_2 = "\x54\x68\x69\x73\x20\x6c\x69\x6e\x6b\x20\x69\x73\x20\x73\x74\x69\x6c\x6c\x20\x62\x65\x69\x6e\x67\x20\x70\x72\x65\x70\x61\x72\x65\x64\x2e";
+    for (let _0x6f7a66_4 = 0; _0x6f7a66_4 < _0x6f7a66_1; _0x6f7a66_4 += 1) {
       try {
-        const t = await ce(e);
-        if (a = t.message || a, t.ready) return se(!0, ""), !0;
-        if ("disabled" === t.state || "suspended" === t.state) return se(!1, a), !1;
-      } catch (n) {
-        a = n.message || a;
+        const _0x6f7a66_1 = await _0x6f7a66_3e(_0x6f7a66_0);
+        if (_0x6f7a66_2 = _0x6f7a66_1.message || _0x6f7a66_2, _0x6f7a66_1.ready) return _0x6f7a66_3d(!0, ""), 
+        !0;
+        if ("\x64\x69\x73\x61\x62\x6c\x65\x64" === _0x6f7a66_1.state || "\x73\x75\x73\x70\x65\x6e\x64\x65\x64" === _0x6f7a66_1.state) return _0x6f7a66_3d(!1, _0x6f7a66_2), 
+        !1;
+      } catch (_0x6f7a66_3) {
+        _0x6f7a66_2 = _0x6f7a66_3.message || _0x6f7a66_2;
       }
-      r < t - 1 && await new Promise(e => setTimeout(e, 2500));
+      _0x6f7a66_4 < _0x6f7a66_1 - 1 && await new Promise(_0x6f7a66_0 => setTimeout(_0x6f7a66_0, 2500));
     }
-    return se(!1, a), !1;
+    return _0x6f7a66_3d(!1, _0x6f7a66_2), !1;
   }
-  async function ue(e, t) {
+  async function _0x6f7a66_40(_0x6f7a66_0, _0x6f7a66_1) {
     try {
-      const a = await z(await fetch(`${r}/check`, {
-        method: "POST",
+      const _0x6f7a66_2 = await _0x6f7a66_22(await fetch(`${_0x6f7a66_4}\x2f\x63\x68\x65\x63\x6b`, {
+        method: "\x50\x4f\x53\x54",
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
+          Accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+          "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         },
         body: JSON.stringify({
-          url: e,
-          vendor: t
+          url: _0x6f7a66_0,
+          vendor: _0x6f7a66_1
         }),
-        cache: "no-store"
-      })), n = a?.vendors && "object" == typeof a.vendors ? a.vendors : {}, i = n[t] || Object.values(n)[0] || (Array.isArray(a?.results) ? a.results[0] : a?.result || a);
-      return i?.error || !1 === i?.ok ? "error" : !0 === i?.blocked ? "blocked" : !1 === i?.blocked ? "allowed" : "info";
+        cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+      })), _0x6f7a66_3 = _0x6f7a66_2?.vendors && "\x6f\x62\x6a\x65\x63\x74" == typeof _0x6f7a66_2.vendors ? _0x6f7a66_2.vendors : {}, _0x6f7a66_5 = _0x6f7a66_3[_0x6f7a66_1] || Object.values(_0x6f7a66_3)[0] || (Array.isArray(_0x6f7a66_2?.results) ? _0x6f7a66_2.results[0] : _0x6f7a66_2?.result || _0x6f7a66_2);
+      return _0x6f7a66_5?.error || !1 === _0x6f7a66_5?.ok ? "\x65\x72\x72\x6f\x72" : !0 === _0x6f7a66_5?.blocked ? "\x62\x6c\x6f\x63\x6b\x65\x64" : !1 === _0x6f7a66_5?.blocked ? "\x61\x6c\x6c\x6f\x77\x65\x64" : "\x69\x6e\x66\x6f";
     } catch {
-      return "error";
+      return "\x65\x72\x72\x6f\x72";
     }
   }
-  async function de(e, t, a) {
-    const n = {
+  async function _0x6f7a66_41(_0x6f7a66_0, _0x6f7a66_1, _0x6f7a66_2) {
+    const _0x6f7a66_3 = {
       allowed: 0,
       blocked: 0,
       info: 0,
       error: 0
-    }, r = function(e) {
-      const t = new Map;
-      return e.forEach(e => {
-        let a = `url:${e}`;
+    }, _0x6f7a66_4 = function(_0x6f7a66_0) {
+      const _0x6f7a66_1 = new Map;
+      return _0x6f7a66_0.forEach(_0x6f7a66_0 => {
+        let _0x6f7a66_2 = `\x75\x72\x6c\x3a${_0x6f7a66_0}`;
         try {
-          const t = new URL(e), n = y.has(t.hostname.toLowerCase()) && t.pathname.match(/^\/gh\/([^/]+)\/([^/]+@[^/]+)\/[^/]+\.svg$/i);
-          n && (a = `cdn:${t.hostname}:${n[1].toLowerCase()}/${n[2].toLowerCase()}`);
+          const _0x6f7a66_1 = new URL(_0x6f7a66_0), _0x6f7a66_3 = _0x6f7a66_13.has(_0x6f7a66_1.hostname.toLowerCase()) && _0x6f7a66_1.pathname.match(/^\/gh\/([^/]+)\/([^/]+@[^/]+)\/[^/]+\.svg$/i);
+          _0x6f7a66_3 && (_0x6f7a66_2 = `\x63\x64\x6e\x3a${_0x6f7a66_1.hostname}\x3a${_0x6f7a66_3[1].toLowerCase()}\x2f${_0x6f7a66_3[2].toLowerCase()}`);
         } catch {}
-        const n = t.get(a);
-        n ? n.count += 1 : t.set(a, {
-          url: e,
+        const _0x6f7a66_3 = _0x6f7a66_1.get(_0x6f7a66_2);
+        _0x6f7a66_3 ? _0x6f7a66_3.count += 1 : _0x6f7a66_1.set(_0x6f7a66_2, {
+          url: _0x6f7a66_0,
           count: 1
         });
-      }), [ ...t.values() ];
-    }(e), i = r.length < e.length;
-    oe("checking", a, `Checking 0 of ${e.length}`, i ? `Nyx is checking ${r.length} shared CDN source${1 === r.length ? "" : "s"} for ${e.length} identical generated links.` : `Nyx is checking ${1 === e.length ? "this link" : "each generated link"} once.`);
-    let o = 0, s = 0;
+      }), [ ..._0x6f7a66_1.values() ];
+    }(_0x6f7a66_0), _0x6f7a66_5 = _0x6f7a66_4.length < _0x6f7a66_0.length;
+    _0x6f7a66_3c("\x63\x68\x65\x63\x6b\x69\x6e\x67", _0x6f7a66_2, `\x43\x68\x65\x63\x6b\x69\x6e\x67\x20\x30\x20\x6f\x66\x20${_0x6f7a66_0.length}`, _0x6f7a66_5 ? `\x4e\x79\x78\x20\x69\x73\x20\x63\x68\x65\x63\x6b\x69\x6e\x67\x20${_0x6f7a66_4.length}\x20\x73\x68\x61\x72\x65\x64\x20\x43\x44\x4e\x20\x73\x6f\x75\x72\x63\x65${1 === _0x6f7a66_4.length ? "" : "\x73"}\x20\x66\x6f\x72\x20${_0x6f7a66_0.length}\x20\x69\x64\x65\x6e\x74\x69\x63\x61\x6c\x20\x67\x65\x6e\x65\x72\x61\x74\x65\x64\x20\x6c\x69\x6e\x6b\x73\x2e` : `\x4e\x79\x78\x20\x69\x73\x20\x63\x68\x65\x63\x6b\x69\x6e\x67\x20${1 === _0x6f7a66_0.length ? "\x74\x68\x69\x73\x20\x6c\x69\x6e\x6b" : "\x65\x61\x63\x68\x20\x67\x65\x6e\x65\x72\x61\x74\x65\x64\x20\x6c\x69\x6e\x6b"}\x20\x6f\x6e\x63\x65\x2e`);
+    let _0x6f7a66_6 = 0, _0x6f7a66_7 = 0;
     await Promise.all(Array.from({
-      length: Math.min(5, r.length)
+      length: Math.min(5, _0x6f7a66_4.length)
     }, async () => {
-      for (;o < r.length; ) {
-        const i = o;
-        o += 1;
-        const c = r[i], l = await ue(c.url, t);
-        n[l] += c.count, s += c.count, oe("checking", a, `Checking ${s} of ${e.length}`, "Completed checks appear here when the batch finishes.");
+      for (;_0x6f7a66_6 < _0x6f7a66_4.length; ) {
+        const _0x6f7a66_5 = _0x6f7a66_6;
+        _0x6f7a66_6 += 1;
+        const _0x6f7a66_8 = _0x6f7a66_4[_0x6f7a66_5], _0x6f7a66_9 = await _0x6f7a66_40(_0x6f7a66_8.url, _0x6f7a66_1);
+        _0x6f7a66_3[_0x6f7a66_9] += _0x6f7a66_8.count, _0x6f7a66_7 += _0x6f7a66_8.count, 
+        _0x6f7a66_3c("\x63\x68\x65\x63\x6b\x69\x6e\x67", _0x6f7a66_2, `\x43\x68\x65\x63\x6b\x69\x6e\x67\x20${_0x6f7a66_7}\x20\x6f\x66\x20${_0x6f7a66_0.length}`, "\x43\x6f\x6d\x70\x6c\x65\x74\x65\x64\x20\x63\x68\x65\x63\x6b\x73\x20\x61\x70\x70\x65\x61\x72\x20\x68\x65\x72\x65\x20\x77\x68\x65\x6e\x20\x74\x68\x65\x20\x62\x61\x74\x63\x68\x20\x66\x69\x6e\x69\x73\x68\x65\x73\x2e");
       }
-    })), n.blocked ? oe("blocked", a, `${n.blocked} blocked`, `Sorry, but ${n.blocked === e.length ? "all of those links are" : `${n.blocked} of ${e.length} links are`} currently blocked.`) : n.error ? oe("error", a, `${n.error} unchecked`, `${n.allowed} allowed; ${n.error} could not be checked.`) : n.info ? oe("info", a, `${n.info} informational`, `${n.allowed} allowed; ${n.info} did not return a blocked or allowed decision.`) : oe("allowed", a, `${n.allowed} allowed`, 1 === e.length ? "The selected filter currently reports this link as allowed." : i ? `One representative check covered all ${e.length} identical Nyx SVG links from the shared CDN source.` : "The selected filter currently reports every generated link as allowed.");
+    })), _0x6f7a66_3.blocked ? _0x6f7a66_3c("\x62\x6c\x6f\x63\x6b\x65\x64", _0x6f7a66_2, `${_0x6f7a66_3.blocked}\x20\x62\x6c\x6f\x63\x6b\x65\x64`, `\x53\x6f\x72\x72\x79\x2c\x20\x62\x75\x74\x20${_0x6f7a66_3.blocked === _0x6f7a66_0.length ? "\x61\x6c\x6c\x20\x6f\x66\x20\x74\x68\x6f\x73\x65\x20\x6c\x69\x6e\x6b\x73\x20\x61\x72\x65" : `${_0x6f7a66_3.blocked}\x20\x6f\x66\x20${_0x6f7a66_0.length}\x20\x6c\x69\x6e\x6b\x73\x20\x61\x72\x65`}\x20\x63\x75\x72\x72\x65\x6e\x74\x6c\x79\x20\x62\x6c\x6f\x63\x6b\x65\x64\x2e`) : _0x6f7a66_3.error ? _0x6f7a66_3c("\x65\x72\x72\x6f\x72", _0x6f7a66_2, `${_0x6f7a66_3.error}\x20\x75\x6e\x63\x68\x65\x63\x6b\x65\x64`, `${_0x6f7a66_3.allowed}\x20\x61\x6c\x6c\x6f\x77\x65\x64\x3b\x20${_0x6f7a66_3.error}\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x63\x68\x65\x63\x6b\x65\x64\x2e`) : _0x6f7a66_3.info ? _0x6f7a66_3c("\x69\x6e\x66\x6f", _0x6f7a66_2, `${_0x6f7a66_3.info}\x20\x69\x6e\x66\x6f\x72\x6d\x61\x74\x69\x6f\x6e\x61\x6c`, `${_0x6f7a66_3.allowed}\x20\x61\x6c\x6c\x6f\x77\x65\x64\x3b\x20${_0x6f7a66_3.info}\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x75\x72\x6e\x20\x61\x20\x62\x6c\x6f\x63\x6b\x65\x64\x20\x6f\x72\x20\x61\x6c\x6c\x6f\x77\x65\x64\x20\x64\x65\x63\x69\x73\x69\x6f\x6e\x2e`) : _0x6f7a66_3c("\x61\x6c\x6c\x6f\x77\x65\x64", _0x6f7a66_2, `${_0x6f7a66_3.allowed}\x20\x61\x6c\x6c\x6f\x77\x65\x64`, 1 === _0x6f7a66_0.length ? "\x54\x68\x65\x20\x73\x65\x6c\x65\x63\x74\x65\x64\x20\x66\x69\x6c\x74\x65\x72\x20\x63\x75\x72\x72\x65\x6e\x74\x6c\x79\x20\x72\x65\x70\x6f\x72\x74\x73\x20\x74\x68\x69\x73\x20\x6c\x69\x6e\x6b\x20\x61\x73\x20\x61\x6c\x6c\x6f\x77\x65\x64\x2e" : _0x6f7a66_5 ? `\x4f\x6e\x65\x20\x72\x65\x70\x72\x65\x73\x65\x6e\x74\x61\x74\x69\x76\x65\x20\x63\x68\x65\x63\x6b\x20\x63\x6f\x76\x65\x72\x65\x64\x20\x61\x6c\x6c\x20${_0x6f7a66_0.length}\x20\x69\x64\x65\x6e\x74\x69\x63\x61\x6c\x20\x4e\x79\x78\x20\x53\x56\x47\x20\x6c\x69\x6e\x6b\x73\x20\x66\x72\x6f\x6d\x20\x74\x68\x65\x20\x73\x68\x61\x72\x65\x64\x20\x43\x44\x4e\x20\x73\x6f\x75\x72\x63\x65\x2e` : "\x54\x68\x65\x20\x73\x65\x6c\x65\x63\x74\x65\x64\x20\x66\x69\x6c\x74\x65\x72\x20\x63\x75\x72\x72\x65\x6e\x74\x6c\x79\x20\x72\x65\x70\x6f\x72\x74\x73\x20\x65\x76\x65\x72\x79\x20\x67\x65\x6e\x65\x72\x61\x74\x65\x64\x20\x6c\x69\x6e\x6b\x20\x61\x73\x20\x61\x6c\x6c\x6f\x77\x65\x64\x2e");
   }
-  L.catch(() => {}), s.modeButtons.forEach(e => e.addEventListener("click", () => X(e.dataset.accessMode))), 
-  o("[data-bulk-label]")?.addEventListener("input", () => {
-    o("[data-bulk-filename]").textContent = `${o("[data-bulk-label]").value.toLowerCase() || "nyx"}-learning-[random 32-character code].svg`;
-  }), o("[data-bulk-setup]")?.addEventListener("submit", async e => {
-    if (e.preventDefault(), s.button.disabled) return;
-    const t = Number(o("[data-bulk-amount]").value);
-    if (!(!Number.isSafeInteger(t) || t < 1 || t > 1e5)) if (t > F()) try {
-      (await L).start({
-        total: t,
-        label: o("[data-bulk-label]").value,
-        host: o("[data-bulk-host]").value
-      }), o("[data-bulk-job]").hidden = !1;
-    } catch (a) {
-      E(a.message, "error");
-    } else s.label.value = o("[data-bulk-label]").value, v.value = "jsdelivr", $(), 
-    s.generationMethod.value = "managed", ee(), s.amount.value = String(Math.min(F(), Number(o("[data-bulk-amount]").value))), 
-    k.value = o("[data-bulk-host]").value, s.confirm.checked = !1, Z(), te(0), E("Your link options are ready. Continue through access, details, and review to publish."), 
-    s.wizardCard.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+  _0x6f7a66_1d.catch(() => {}), _0x6f7a66_7.modeButtons.forEach(_0x6f7a66_0 => _0x6f7a66_0.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x6f7a66_33(_0x6f7a66_0.dataset.accessMode))), 
+  _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x6c\x61\x62\x65\x6c\x5d")?.addEventListener("\x69\x6e\x70\x75\x74", () => {
+    _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x66\x69\x6c\x65\x6e\x61\x6d\x65\x5d").textContent = `${_0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x6c\x61\x62\x65\x6c\x5d").value.toLowerCase() || "\x6e\x79\x78"}\x2d\x6c\x65\x61\x72\x6e\x69\x6e\x67\x2d\x5b\x72\x61\x6e\x64\x6f\x6d\x20\x33\x32\x2d\x63\x68\x61\x72\x61\x63\x74\x65\x72\x20\x63\x6f\x64\x65\x5d\x2e\x73\x76\x67`;
+  }), _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x73\x65\x74\x75\x70\x5d")?.addEventListener("\x73\x75\x62\x6d\x69\x74", async _0x6f7a66_0 => {
+    if (_0x6f7a66_0.preventDefault(), _0x6f7a66_7.button.disabled) return;
+    const _0x6f7a66_1 = Number(_0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x61\x6d\x6f\x75\x6e\x74\x5d").value);
+    if (!(!Number.isSafeInteger(_0x6f7a66_1) || _0x6f7a66_1 < 1 || _0x6f7a66_1 > 1e5)) if (_0x6f7a66_1 > _0x6f7a66_2c()) try {
+      (await _0x6f7a66_1d).start({
+        total: _0x6f7a66_1,
+        label: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x6c\x61\x62\x65\x6c\x5d").value,
+        host: _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x68\x6f\x73\x74\x5d").value
+      }), _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x6a\x6f\x62\x5d").hidden = !1;
+    } catch (_0x6f7a66_2) {
+      _0x6f7a66_1e(_0x6f7a66_2.message, "\x65\x72\x72\x6f\x72");
+    } else _0x6f7a66_7.label.value = _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x6c\x61\x62\x65\x6c\x5d").value, _0x6f7a66_15.value = "\x6a\x73\x64\x65\x6c\x69\x76\x72", 
+    _0x6f7a66_1a(), _0x6f7a66_7.generationMethod.value = "\x6d\x61\x6e\x61\x67\x65\x64", _0x6f7a66_36(), 
+    _0x6f7a66_7.amount.value = String(Math.min(_0x6f7a66_2c(), Number(_0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x61\x6d\x6f\x75\x6e\x74\x5d").value))), 
+    _0x6f7a66_14.value = _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x68\x6f\x73\x74\x5d").value, _0x6f7a66_7.confirm.checked = !1, 
+    _0x6f7a66_35(), _0x6f7a66_37(0), _0x6f7a66_1e("\x59\x6f\x75\x72\x20\x6c\x69\x6e\x6b\x20\x6f\x70\x74\x69\x6f\x6e\x73\x20\x61\x72\x65\x20\x72\x65\x61\x64\x79\x2e\x20\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x74\x68\x72\x6f\x75\x67\x68\x20\x61\x63\x63\x65\x73\x73\x2c\x20\x64\x65\x74\x61\x69\x6c\x73\x2c\x20\x61\x6e\x64\x20\x72\x65\x76\x69\x65\x77\x20\x74\x6f\x20\x70\x75\x62\x6c\x69\x73\x68\x2e"), 
+    _0x6f7a66_7.wizardCard.scrollIntoView({
+      behavior: "\x73\x6d\x6f\x6f\x74\x68",
+      block: "\x73\x74\x61\x72\x74"
     });
-  }), o("[data-download-links]").addEventListener("click", () => {
-    if (!s.resultUrl.value) return;
-    const e = URL.createObjectURL(new Blob([ s.resultUrl.value + "\n" ], {
-      type: "text/plain;charset=utf-8"
-    })), t = document.createElement("a");
-    t.href = e, t.download = `nyx-${C}-links.txt`, document.body.appendChild(t), t.click(), 
-    t.remove(), setTimeout(() => URL.revokeObjectURL(e), 1e3);
-  }), document.querySelectorAll("[data-method-choice]").forEach(e => e.addEventListener("click", () => {
-    s.generationMethod.value = e.dataset.methodChoice, s.confirm.checked = !1, ee();
-  })), s.amount.addEventListener("input", Z), s.generationMethod.addEventListener("change", ee), 
-  v.addEventListener("change", $), s.wizardNext.forEach(e => e.addEventListener("click", re)), 
-  s.wizardBack.forEach(e => e.addEventListener("click", () => {
-    E(""), te(l - 1, "back");
-  })), s.wizardRestart.addEventListener("click", () => {
-    s.label.value = "", s.filter.value = "", s.confirm.checked = !1, s.resultCard.hidden = !0, 
-    E(""), te(e ? 0 : 1, "back");
-  }), s.signIn.addEventListener("click", async function() {
-    const e = s.email.value.trim(), t = s.password.value;
-    if (!e || !t) return s.accountStatus.textContent = "Enter your email and password.", 
-    void (s.accountStatus.className = "account-status error");
-    M(!0);
+  }), _0x6f7a66_6("\x5b\x64\x61\x74\x61\x2d\x64\x6f\x77\x6e\x6c\x6f\x61\x64\x2d\x6c\x69\x6e\x6b\x73\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    if (!_0x6f7a66_7.resultUrl.value) return;
+    const _0x6f7a66_0 = URL.createObjectURL(new Blob([ _0x6f7a66_7.resultUrl.value + "\x0a" ], {
+      type: "\x74\x65\x78\x74\x2f\x70\x6c\x61\x69\x6e\x3b\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
+    })), _0x6f7a66_1 = document.createElement("\x61");
+    _0x6f7a66_1.href = _0x6f7a66_0, _0x6f7a66_1.download = `\x6e\x79\x78\x2d${_0x6f7a66_16}\x2d\x6c\x69\x6e\x6b\x73\x2e\x74\x78\x74`, 
+    document.body.appendChild(_0x6f7a66_1), _0x6f7a66_1.click(), _0x6f7a66_1.remove(), 
+    setTimeout(() => URL.revokeObjectURL(_0x6f7a66_0), 1e3);
+  }), document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6d\x65\x74\x68\x6f\x64\x2d\x63\x68\x6f\x69\x63\x65\x5d").forEach(_0x6f7a66_0 => _0x6f7a66_0.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x6f7a66_7.generationMethod.value = _0x6f7a66_0.dataset.methodChoice, _0x6f7a66_7.confirm.checked = !1, 
+    _0x6f7a66_36();
+  })), _0x6f7a66_7.amount.addEventListener("\x69\x6e\x70\x75\x74", _0x6f7a66_35), _0x6f7a66_7.generationMethod.addEventListener("\x63\x68\x61\x6e\x67\x65", _0x6f7a66_36), 
+  _0x6f7a66_15.addEventListener("\x63\x68\x61\x6e\x67\x65", _0x6f7a66_1a), _0x6f7a66_7.wizardNext.forEach(_0x6f7a66_0 => _0x6f7a66_0.addEventListener("\x63\x6c\x69\x63\x6b", _0x6f7a66_3a)), 
+  _0x6f7a66_7.wizardBack.forEach(_0x6f7a66_0 => _0x6f7a66_0.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x6f7a66_1e(""), _0x6f7a66_37(_0x6f7a66_9 - 1, "\x62\x61\x63\x6b");
+  })), _0x6f7a66_7.wizardRestart.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x6f7a66_7.label.value = "", _0x6f7a66_7.filter.value = "", _0x6f7a66_7.confirm.checked = !1, 
+    _0x6f7a66_7.resultCard.hidden = !0, _0x6f7a66_1e(""), _0x6f7a66_37(_0x6f7a66_0 ? 0 : 1, "\x62\x61\x63\x6b");
+  }), _0x6f7a66_7.signIn.addEventListener("\x63\x6c\x69\x63\x6b", async function() {
+    const _0x6f7a66_0 = _0x6f7a66_7.email.value.trim(), _0x6f7a66_1 = _0x6f7a66_7.password.value;
+    if (!_0x6f7a66_0 || !_0x6f7a66_1) return _0x6f7a66_7.accountStatus.textContent = "\x45\x6e\x74\x65\x72\x20\x79\x6f\x75\x72\x20\x65\x6d\x61\x69\x6c\x20\x61\x6e\x64\x20\x70\x61\x73\x73\x77\x6f\x72\x64\x2e", 
+    void (_0x6f7a66_7.accountStatus.className = "\x61\x63\x63\x6f\x75\x6e\x74\x2d\x73\x74\x61\x74\x75\x73\x20\x65\x72\x72\x6f\x72");
+    _0x6f7a66_21(!0);
     try {
-      j(U(await q("identity", "accounts:signInWithPassword", {
-        email: e,
-        password: t,
+      _0x6f7a66_23(_0x6f7a66_27(await _0x6f7a66_26("\x69\x64\x65\x6e\x74\x69\x74\x79", "\x61\x63\x63\x6f\x75\x6e\x74\x73\x3a\x73\x69\x67\x6e\x49\x6e\x57\x69\x74\x68\x50\x61\x73\x73\x77\x6f\x72\x64", {
+        email: _0x6f7a66_0,
+        password: _0x6f7a66_1,
         returnSecureToken: !0
       })));
-      const [a, n] = await Promise.all([ D(b.idToken), R(b.idToken) ]);
-      j({
-        ...b,
-        ...a,
-        ...n
-      }), s.password.value = "";
-    } catch (a) {
-      s.accountStatus.textContent = B(a), s.accountStatus.className = "account-status error";
+      const [_0x6f7a66_2, _0x6f7a66_3] = await Promise.all([ _0x6f7a66_28(_0x6f7a66_12.idToken), _0x6f7a66_29(_0x6f7a66_12.idToken) ]);
+      _0x6f7a66_23({
+        ..._0x6f7a66_12,
+        ..._0x6f7a66_2,
+        ..._0x6f7a66_3
+      }), _0x6f7a66_7.password.value = "";
+    } catch (_0x6f7a66_2) {
+      _0x6f7a66_7.accountStatus.textContent = _0x6f7a66_25(_0x6f7a66_2), _0x6f7a66_7.accountStatus.className = "\x61\x63\x63\x6f\x75\x6e\x74\x2d\x73\x74\x61\x74\x75\x73\x20\x65\x72\x72\x6f\x72";
     } finally {
-      M(!1);
+      _0x6f7a66_21(!1);
     }
-  }), s.createAccount.addEventListener("click", async function() {
-    const e = s.email.value.trim(), t = s.password.value;
-    if (!e || t.length < 6) return s.accountStatus.textContent = "Enter an email and a password with at least 6 characters.", 
-    void (s.accountStatus.className = "account-status error");
-    M(!0);
+  }), _0x6f7a66_7.createAccount.addEventListener("\x63\x6c\x69\x63\x6b", async function() {
+    const _0x6f7a66_0 = _0x6f7a66_7.email.value.trim(), _0x6f7a66_1 = _0x6f7a66_7.password.value;
+    if (!_0x6f7a66_0 || _0x6f7a66_1.length < 6) return _0x6f7a66_7.accountStatus.textContent = "\x45\x6e\x74\x65\x72\x20\x61\x6e\x20\x65\x6d\x61\x69\x6c\x20\x61\x6e\x64\x20\x61\x20\x70\x61\x73\x73\x77\x6f\x72\x64\x20\x77\x69\x74\x68\x20\x61\x74\x20\x6c\x65\x61\x73\x74\x20\x36\x20\x63\x68\x61\x72\x61\x63\x74\x65\x72\x73\x2e", 
+    void (_0x6f7a66_7.accountStatus.className = "\x61\x63\x63\x6f\x75\x6e\x74\x2d\x73\x74\x61\x74\x75\x73\x20\x65\x72\x72\x6f\x72");
+    _0x6f7a66_21(!0);
     try {
-      j(U(await q("identity", "accounts:signUp", {
-        email: e,
-        password: t,
+      _0x6f7a66_23(_0x6f7a66_27(await _0x6f7a66_26("\x69\x64\x65\x6e\x74\x69\x74\x79", "\x61\x63\x63\x6f\x75\x6e\x74\x73\x3a\x73\x69\x67\x6e\x55\x70", {
+        email: _0x6f7a66_0,
+        password: _0x6f7a66_1,
         returnSecureToken: !0
       }), {
-        email: e,
+        email: _0x6f7a66_0,
         emailVerified: !1
-      })), await H(), s.password.value = "", Y();
-    } catch (a) {
-      s.accountStatus.textContent = B(a), s.accountStatus.className = "account-status error";
+      })), await _0x6f7a66_2d(), _0x6f7a66_7.password.value = "", _0x6f7a66_31();
+    } catch (_0x6f7a66_2) {
+      _0x6f7a66_7.accountStatus.textContent = _0x6f7a66_25(_0x6f7a66_2), _0x6f7a66_7.accountStatus.className = "\x61\x63\x63\x6f\x75\x6e\x74\x2d\x73\x74\x61\x74\x75\x73\x20\x65\x72\x72\x6f\x72";
     } finally {
-      M(!1);
+      _0x6f7a66_21(!1);
     }
-  }), s.signOut.addEventListener("click", O), s.form.addEventListener("submit", async t => {
-    if (t.preventDefault(), a) return;
-    if (e && l < 2) return void await re();
-    if (e && !s.confirm.checked) return E("Confirm your link details first.", "error"), 
-    void te(1);
-    if (!s.filter.value) return E("Choose a blocker before creating the link.", "error"), 
-    void s.filter.focus();
-    const n = s.filter.value, r = s.filter.options[s.filter.selectedIndex]?.textContent || n;
-    E(""), s.resultCard.hidden = !0, a = !0, I(!0);
+  }), _0x6f7a66_7.signOut.addEventListener("\x63\x6c\x69\x63\x6b", _0x6f7a66_24), _0x6f7a66_7.form.addEventListener("\x73\x75\x62\x6d\x69\x74", async _0x6f7a66_1 => {
+    if (_0x6f7a66_1.preventDefault(), _0x6f7a66_2) return;
+    if (_0x6f7a66_0 && _0x6f7a66_9 < 2) return void await _0x6f7a66_3a();
+    if (_0x6f7a66_0 && !_0x6f7a66_7.confirm.checked) return _0x6f7a66_1e("\x43\x6f\x6e\x66\x69\x72\x6d\x20\x79\x6f\x75\x72\x20\x6c\x69\x6e\x6b\x20\x64\x65\x74\x61\x69\x6c\x73\x20\x66\x69\x72\x73\x74\x2e", "\x65\x72\x72\x6f\x72"), 
+    void _0x6f7a66_37(1);
+    if (!_0x6f7a66_7.filter.value) return _0x6f7a66_1e("\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x62\x6c\x6f\x63\x6b\x65\x72\x20\x62\x65\x66\x6f\x72\x65\x20\x63\x72\x65\x61\x74\x69\x6e\x67\x20\x74\x68\x65\x20\x6c\x69\x6e\x6b\x2e", "\x65\x72\x72\x6f\x72"), 
+    void _0x6f7a66_7.filter.focus();
+    const _0x6f7a66_3 = _0x6f7a66_7.filter.value, _0x6f7a66_4 = _0x6f7a66_7.filter.options[_0x6f7a66_7.filter.selectedIndex]?.textContent || _0x6f7a66_3;
+    _0x6f7a66_1e(""), _0x6f7a66_7.resultCard.hidden = !0, _0x6f7a66_2 = !0, _0x6f7a66_20(!0);
     try {
-      const t = {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }, a = "p2p" === s.generationMethod.value ? "p2p" : "managed", i = A(), o = {
-        label: s.label.value,
-        provider: i,
-        method: "bunny" === i ? "managed" : a
+      const _0x6f7a66_1 = {
+        Accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+        "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
+      }, _0x6f7a66_2 = "\x70\x32\x70" === _0x6f7a66_7.generationMethod.value ? "\x70\x32\x70" : "\x6d\x61\x6e\x61\x67\x65\x64", _0x6f7a66_5 = _0x6f7a66_19(), _0x6f7a66_6 = {
+        label: _0x6f7a66_7.label.value,
+        provider: _0x6f7a66_5,
+        method: "\x62\x75\x6e\x6e\x79" === _0x6f7a66_5 ? "\x6d\x61\x6e\x61\x67\x65\x64" : _0x6f7a66_2
       };
-      if ("account" === c) {
-        const e = await W();
-        t.Authorization = `Bearer ${e.idToken}`, o.amount = Q();
+      if ("\x61\x63\x63\x6f\x75\x6e\x74" === _0x6f7a66_8) {
+        const _0x6f7a66_0 = await _0x6f7a66_30();
+        _0x6f7a66_1.Authorization = `\x42\x65\x61\x72\x65\x72\x20${_0x6f7a66_0.idToken}`, _0x6f7a66_6.amount = _0x6f7a66_34();
       } else {
-        if (!s.accessCode.value) throw new Error("Enter your Premium access code.");
-        o.accessCode = s.accessCode.value, o.amount = Q();
+        if (!_0x6f7a66_7.accessCode.value) throw new Error("\x45\x6e\x74\x65\x72\x20\x79\x6f\x75\x72\x20\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x65\x73\x73\x20\x63\x6f\x64\x65\x2e");
+        _0x6f7a66_6.accessCode = _0x6f7a66_7.accessCode.value, _0x6f7a66_6.amount = _0x6f7a66_34();
       }
-      let l;
+      let _0x6f7a66_9;
       for (;;) {
-        const e = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/link-generator", {
-          method: "POST",
-          headers: t,
-          body: JSON.stringify(o)
+        const _0x6f7a66_0 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x67\x65\x6e\x65\x72\x61\x74\x6f\x72", {
+          method: "\x50\x4f\x53\x54",
+          headers: _0x6f7a66_1,
+          body: JSON.stringify(_0x6f7a66_6)
         });
-        if (429 === e.status) {
-          const t = await e.clone().json().catch(() => ({}));
-          if ("STATIC_PACKAGE_PREPARING" === t.code) {
-            E(t.error), await new Promise(t => setTimeout(t, 1e3 * Math.max(1, Math.min(60, Number(e.headers.get("Retry-After")) || 10))));
+        if (429 === _0x6f7a66_0.status) {
+          const _0x6f7a66_1 = await _0x6f7a66_0.clone().json().catch(() => ({}));
+          if ("\x53\x54\x41\x54\x49\x43\x5f\x50\x41\x43\x4b\x41\x47\x45\x5f\x50\x52\x45\x50\x41\x52\x49\x4e\x47" === _0x6f7a66_1.code) {
+            _0x6f7a66_1e(_0x6f7a66_1.error), await new Promise(_0x6f7a66_1 => setTimeout(_0x6f7a66_1, 1e3 * Math.max(1, Math.min(60, Number(_0x6f7a66_0.headers.get("\x52\x65\x74\x72\x79\x2d\x41\x66\x74\x65\x72")) || 10))));
             continue;
           }
         }
-        l = await z(e);
+        _0x6f7a66_9 = await _0x6f7a66_22(_0x6f7a66_0);
         break;
       }
-      const u = (Array.isArray(l.links) ? l.links : []).map(e => "string" == typeof e ? e : e?.url).filter(Boolean).map(e => T(e, N()));
-      if (!u.length && l.url && u.push(T(l.url, N())), !u.length) throw new Error("The link provider did not return any generated links.");
-      C = i;
-      const d = "bunny" !== i;
-      s.resultUrl.value = u.join("\n"), s.resultCount.textContent = `${u.length} link${1 === u.length ? "" : "s"}`, 
-      s.resultTitle.textContent = 1 === u.length ? "Your Nyx link is ready" : "Your Nyx links are ready", 
-      s.resultSubtitle.textContent = l.partial ? `${u.length} of ${l.requested} requested links were created.` : (1 === u.length ? "The link was" : "All links were") + " created successfully.", 
-      s.open.href = u[0], se(d), s.resultCard.hidden = !1, s.accessCode.value = "", te(3), 
-      requestAnimationFrame(() => s.resultCard.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
+      const _0x6f7a66_a = (Array.isArray(_0x6f7a66_9.links) ? _0x6f7a66_9.links : []).map(_0x6f7a66_0 => "\x73\x74\x72\x69\x6e\x67" == typeof _0x6f7a66_0 ? _0x6f7a66_0 : _0x6f7a66_0?.url).filter(Boolean).map(_0x6f7a66_0 => _0x6f7a66_1c(_0x6f7a66_0, _0x6f7a66_1b()));
+      if (!_0x6f7a66_a.length && _0x6f7a66_9.url && _0x6f7a66_a.push(_0x6f7a66_1c(_0x6f7a66_9.url, _0x6f7a66_1b())), 
+      !_0x6f7a66_a.length) throw new Error("\x54\x68\x65\x20\x6c\x69\x6e\x6b\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x75\x72\x6e\x20\x61\x6e\x79\x20\x67\x65\x6e\x65\x72\x61\x74\x65\x64\x20\x6c\x69\x6e\x6b\x73\x2e");
+      _0x6f7a66_16 = _0x6f7a66_5;
+      const _0x6f7a66_b = "\x62\x75\x6e\x6e\x79" !== _0x6f7a66_5;
+      _0x6f7a66_7.resultUrl.value = _0x6f7a66_a.join("\x0a"), _0x6f7a66_7.resultCount.textContent = `${_0x6f7a66_a.length}\x20\x6c\x69\x6e\x6b${1 === _0x6f7a66_a.length ? "" : "\x73"}`, 
+      _0x6f7a66_7.resultTitle.textContent = 1 === _0x6f7a66_a.length ? "\x59\x6f\x75\x72\x20\x4e\x79\x78\x20\x6c\x69\x6e\x6b\x20\x69\x73\x20\x72\x65\x61\x64\x79" : "\x59\x6f\x75\x72\x20\x4e\x79\x78\x20\x6c\x69\x6e\x6b\x73\x20\x61\x72\x65\x20\x72\x65\x61\x64\x79", 
+      _0x6f7a66_7.resultSubtitle.textContent = _0x6f7a66_9.partial ? `${_0x6f7a66_a.length}\x20\x6f\x66\x20${_0x6f7a66_9.requested}\x20\x72\x65\x71\x75\x65\x73\x74\x65\x64\x20\x6c\x69\x6e\x6b\x73\x20\x77\x65\x72\x65\x20\x63\x72\x65\x61\x74\x65\x64\x2e` : (1 === _0x6f7a66_a.length ? "\x54\x68\x65\x20\x6c\x69\x6e\x6b\x20\x77\x61\x73" : "\x41\x6c\x6c\x20\x6c\x69\x6e\x6b\x73\x20\x77\x65\x72\x65") + "\x20\x63\x72\x65\x61\x74\x65\x64\x20\x73\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x6c\x79\x2e", 
+      _0x6f7a66_7.open.href = _0x6f7a66_a[0], _0x6f7a66_3d(_0x6f7a66_b), _0x6f7a66_7.resultCard.hidden = !1, 
+      _0x6f7a66_7.accessCode.value = "", _0x6f7a66_37(3), requestAnimationFrame(() => _0x6f7a66_7.resultCard.scrollIntoView({
+        behavior: "\x73\x6d\x6f\x6f\x74\x68",
+        block: "\x6e\x65\x61\x72\x65\x73\x74"
       }));
-      const [, h] = await Promise.all([ de(u, n, r), d ? Promise.resolve(!0) : le(u[0]) ]), m = l.premiumCooldown, f = "administrator" === l.access || "premium" === l.access, w = m?.triggered ? `${u.length} link${1 === u.length ? " was" : "s were"} created. A ${m.minutes || g}-minute Premium cooldown is now active.` : `${u.length} link${1 === u.length ? " was" : "s were"} created with Premium access. ${m?.accumulated || 0} of ${m?.accumulatedLimit || p} links accumulated before cooldown.`;
-      l.partial ? E(l.warning || `${u.length} of ${l.requested} links were created.`, "error") : h ? E(e ? m?.triggered ? `Link created. You can create another in ${m.minutes || g} minutes.` : "" : f ? w : `${u.length} link${1 === u.length ? " was" : "s were"} created. ${l.remaining} link${1 === l.remaining ? "" : "s"} remaining in your current hourly window.`) : E(`${f ? `${w} ` : ""}${s.open.dataset.readinessMessage || "The link was created, but the CDN is still provisioning it. Try Open first again shortly."}`, "error");
-    } catch (i) {
-      E(i.message, "error");
+      const [, _0x6f7a66_c] = await Promise.all([ _0x6f7a66_41(_0x6f7a66_a, _0x6f7a66_3, _0x6f7a66_4), _0x6f7a66_b ? Promise.resolve(!0) : _0x6f7a66_3f(_0x6f7a66_a[0]) ]), _0x6f7a66_d = _0x6f7a66_9.premiumCooldown, _0x6f7a66_e = "\x61\x64\x6d\x69\x6e\x69\x73\x74\x72\x61\x74\x6f\x72" === _0x6f7a66_9.access || "\x70\x72\x65\x6d\x69\x75\x6d" === _0x6f7a66_9.access, _0x6f7a66_11 = _0x6f7a66_d?.triggered ? `${_0x6f7a66_a.length}\x20\x6c\x69\x6e\x6b${1 === _0x6f7a66_a.length ? "\x20\x77\x61\x73" : "\x73\x20\x77\x65\x72\x65"}\x20\x63\x72\x65\x61\x74\x65\x64\x2e\x20\x41\x20${_0x6f7a66_d.minutes || _0x6f7a66_10}\x2d\x6d\x69\x6e\x75\x74\x65\x20\x50\x72\x65\x6d\x69\x75\x6d\x20\x63\x6f\x6f\x6c\x64\x6f\x77\x6e\x20\x69\x73\x20\x6e\x6f\x77\x20\x61\x63\x74\x69\x76\x65\x2e` : `${_0x6f7a66_a.length}\x20\x6c\x69\x6e\x6b${1 === _0x6f7a66_a.length ? "\x20\x77\x61\x73" : "\x73\x20\x77\x65\x72\x65"}\x20\x63\x72\x65\x61\x74\x65\x64\x20\x77\x69\x74\x68\x20\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x65\x73\x73\x2e\x20${_0x6f7a66_d?.accumulated || 0}\x20\x6f\x66\x20${_0x6f7a66_d?.accumulatedLimit || _0x6f7a66_f}\x20\x6c\x69\x6e\x6b\x73\x20\x61\x63\x63\x75\x6d\x75\x6c\x61\x74\x65\x64\x20\x62\x65\x66\x6f\x72\x65\x20\x63\x6f\x6f\x6c\x64\x6f\x77\x6e\x2e`;
+      _0x6f7a66_9.partial ? _0x6f7a66_1e(_0x6f7a66_9.warning || `${_0x6f7a66_a.length}\x20\x6f\x66\x20${_0x6f7a66_9.requested}\x20\x6c\x69\x6e\x6b\x73\x20\x77\x65\x72\x65\x20\x63\x72\x65\x61\x74\x65\x64\x2e`, "\x65\x72\x72\x6f\x72") : _0x6f7a66_c ? _0x6f7a66_1e(_0x6f7a66_0 ? _0x6f7a66_d?.triggered ? `\x4c\x69\x6e\x6b\x20\x63\x72\x65\x61\x74\x65\x64\x2e\x20\x59\x6f\x75\x20\x63\x61\x6e\x20\x63\x72\x65\x61\x74\x65\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x69\x6e\x20${_0x6f7a66_d.minutes || _0x6f7a66_10}\x20\x6d\x69\x6e\x75\x74\x65\x73\x2e` : "" : _0x6f7a66_e ? _0x6f7a66_11 : `${_0x6f7a66_a.length}\x20\x6c\x69\x6e\x6b${1 === _0x6f7a66_a.length ? "\x20\x77\x61\x73" : "\x73\x20\x77\x65\x72\x65"}\x20\x63\x72\x65\x61\x74\x65\x64\x2e\x20${_0x6f7a66_9.remaining}\x20\x6c\x69\x6e\x6b${1 === _0x6f7a66_9.remaining ? "" : "\x73"}\x20\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x20\x69\x6e\x20\x79\x6f\x75\x72\x20\x63\x75\x72\x72\x65\x6e\x74\x20\x68\x6f\x75\x72\x6c\x79\x20\x77\x69\x6e\x64\x6f\x77\x2e`) : _0x6f7a66_1e(`${_0x6f7a66_e ? `${_0x6f7a66_11}\x20` : ""}${_0x6f7a66_7.open.dataset.readinessMessage || "\x54\x68\x65\x20\x6c\x69\x6e\x6b\x20\x77\x61\x73\x20\x63\x72\x65\x61\x74\x65\x64\x2c\x20\x62\x75\x74\x20\x74\x68\x65\x20\x43\x44\x4e\x20\x69\x73\x20\x73\x74\x69\x6c\x6c\x20\x70\x72\x6f\x76\x69\x73\x69\x6f\x6e\x69\x6e\x67\x20\x69\x74\x2e\x20\x54\x72\x79\x20\x4f\x70\x65\x6e\x20\x66\x69\x72\x73\x74\x20\x61\x67\x61\x69\x6e\x20\x73\x68\x6f\x72\x74\x6c\x79\x2e"}`, "\x65\x72\x72\x6f\x72");
+    } catch (_0x6f7a66_5) {
+      _0x6f7a66_1e(_0x6f7a66_5.message, "\x65\x72\x72\x6f\x72");
     } finally {
-      a = !1, I(!1);
+      _0x6f7a66_2 = !1, _0x6f7a66_20(!1);
     }
-  }), s.open.addEventListener("click", async e => {
-    if ("true" === s.open.dataset.ready) return;
-    e.preventDefault();
-    const t = s.open.href;
-    E(s.open.dataset.readinessMessage || "This link is still being prepared. Checking again...", "error");
-    const a = await le(t, 1);
-    E(a ? "The CDN link is ready. Select Open first again." : s.open.dataset.readinessMessage || "The CDN link is not ready yet.", a ? "" : "error");
-  }), s.copy.addEventListener("click", async () => {
+  }), _0x6f7a66_7.open.addEventListener("\x63\x6c\x69\x63\x6b", async _0x6f7a66_0 => {
+    if ("\x74\x72\x75\x65" === _0x6f7a66_7.open.dataset.ready) return;
+    _0x6f7a66_0.preventDefault();
+    const _0x6f7a66_1 = _0x6f7a66_7.open.href;
+    _0x6f7a66_1e(_0x6f7a66_7.open.dataset.readinessMessage || "\x54\x68\x69\x73\x20\x6c\x69\x6e\x6b\x20\x69\x73\x20\x73\x74\x69\x6c\x6c\x20\x62\x65\x69\x6e\x67\x20\x70\x72\x65\x70\x61\x72\x65\x64\x2e\x20\x43\x68\x65\x63\x6b\x69\x6e\x67\x20\x61\x67\x61\x69\x6e\x2e\x2e\x2e", "\x65\x72\x72\x6f\x72");
+    const _0x6f7a66_2 = await _0x6f7a66_3f(_0x6f7a66_1, 1);
+    _0x6f7a66_1e(_0x6f7a66_2 ? "\x54\x68\x65\x20\x43\x44\x4e\x20\x6c\x69\x6e\x6b\x20\x69\x73\x20\x72\x65\x61\x64\x79\x2e\x20\x53\x65\x6c\x65\x63\x74\x20\x4f\x70\x65\x6e\x20\x66\x69\x72\x73\x74\x20\x61\x67\x61\x69\x6e\x2e" : _0x6f7a66_7.open.dataset.readinessMessage || "\x54\x68\x65\x20\x43\x44\x4e\x20\x6c\x69\x6e\x6b\x20\x69\x73\x20\x6e\x6f\x74\x20\x72\x65\x61\x64\x79\x20\x79\x65\x74\x2e", _0x6f7a66_2 ? "" : "\x65\x72\x72\x6f\x72");
+  }), _0x6f7a66_7.copy.addEventListener("\x63\x6c\x69\x63\x6b", async () => {
     try {
-      await navigator.clipboard.writeText(s.resultUrl.value), s.copy.textContent = e ? "Copied" : "Copied all", 
+      await navigator.clipboard.writeText(_0x6f7a66_7.resultUrl.value), _0x6f7a66_7.copy.textContent = _0x6f7a66_0 ? "\x43\x6f\x70\x69\x65\x64" : "\x43\x6f\x70\x69\x65\x64\x20\x61\x6c\x6c", 
       setTimeout(() => {
-        s.copy.textContent = e ? "Copy link" : "Copy all";
+        _0x6f7a66_7.copy.textContent = _0x6f7a66_0 ? "\x43\x6f\x70\x79\x20\x6c\x69\x6e\x6b" : "\x43\x6f\x70\x79\x20\x61\x6c\x6c";
       }, 1400);
     } catch {
-      s.resultUrl.select(), document.execCommand("copy");
+      _0x6f7a66_7.resultUrl.select(), document.execCommand("\x63\x6f\x70\x79");
     }
   }), function() {
-    if ("tutsi" === document.documentElement.dataset.appShell) return;
-    let e = "default";
+    if ("\x74\x75\x74\x73\x69" === document.documentElement.dataset.appShell) return;
+    let _0x6f7a66_0 = "\x64\x65\x66\x61\x75\x6c\x74";
     try {
-      e = localStorage.getItem("nyx.theme") || "default";
+      _0x6f7a66_0 = localStorage.getItem("\x6e\x79\x78\x2e\x74\x68\x65\x6d\x65") || "\x64\x65\x66\x61\x75\x6c\x74";
     } catch {}
-    e && "default" !== e && document.body.classList.add(`theme-${e}`);
-  }(), Y(), $(), te(0), s.wizardNext[0].disabled = !0, Promise.all([ async function() {
+    _0x6f7a66_0 && "\x64\x65\x66\x61\x75\x6c\x74" !== _0x6f7a66_0 && document.body.classList.add(`\x74\x68\x65\x6d\x65\x2d${_0x6f7a66_0}`);
+  }(), _0x6f7a66_31(), _0x6f7a66_1a(), _0x6f7a66_37(0), _0x6f7a66_7.wizardNext[0].disabled = !0, 
+  Promise.all([ async function() {
     try {
-      const e = await z(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/link-generator/status", {
+      const _0x6f7a66_0 = await _0x6f7a66_22(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x67\x65\x6e\x65\x72\x61\x74\x6f\x72\x2f\x73\x74\x61\x74\x75\x73", {
         headers: {
-          Accept: "application/json"
+          Accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         },
-        cache: "no-store"
-      })), t = v.querySelector('[value="surge"]');
-      t.hidden = !0 !== e.surgeAvailable, t.disabled = !0 !== e.surgeAvailable, "surge" !== A() || e.surgeAvailable || (v.value = "jsdelivr", 
-      $());
-      const a = v.querySelector('[value="bunny"]');
-      a.disabled = !e.bunnyAvailable, a.textContent = e.bunnyAvailable ? "Bunny.net pull zones" : "Bunny.net pull zones (server key not configured)", 
-      h = Math.max(1, Math.min(100, Number.parseInt(e.freeHourlyLimit, 10) || 100)), m = Math.max(1, Number.parseInt(e.freeWindowMinutes, 10) || 60), 
-      u = Math.max(h, Math.min(1e4, Number.parseInt(e.premiumBatchLimit, 10) || h)), d = Math.max(u, Math.min(1e4, Number.parseInt(e.p2pPremiumBatchLimit, 10) || 1e3)), 
-      f = Math.max(1, Number.parseInt(e.premiumImmediateCooldownAt, 10) || 5), p = Math.max(f, Number.parseInt(e.premiumAccumulatedLimit, 10) || 30), 
-      g = Math.max(1, Number.parseInt(e.premiumCooldownMinutes, 10) || 10), Y(), K(), 
-      s.origin.textContent = e.origin || "Not configured", S = e, x(), e.available || E("The Nyx administrator still needs to finish the Link Generator server settings.", "error");
-    } catch (e) {
-      s.origin.textContent = "Unavailable", P(!1, "Unavailable"), E(`Could not check the generator: ${e.message}`, "error");
+        cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+      })), _0x6f7a66_1 = _0x6f7a66_15.querySelector("\x5b\x76\x61\x6c\x75\x65\x3d\x22\x73\x75\x72\x67\x65\x22\x5d");
+      _0x6f7a66_1.hidden = !0 !== _0x6f7a66_0.surgeAvailable, _0x6f7a66_1.disabled = !0 !== _0x6f7a66_0.surgeAvailable, 
+      "\x73\x75\x72\x67\x65" !== _0x6f7a66_19() || _0x6f7a66_0.surgeAvailable || (_0x6f7a66_15.value = "\x6a\x73\x64\x65\x6c\x69\x76\x72", 
+      _0x6f7a66_1a());
+      const _0x6f7a66_2 = _0x6f7a66_15.querySelector("\x5b\x76\x61\x6c\x75\x65\x3d\x22\x62\x75\x6e\x6e\x79\x22\x5d");
+      _0x6f7a66_2.disabled = !_0x6f7a66_0.bunnyAvailable, _0x6f7a66_2.textContent = _0x6f7a66_0.bunnyAvailable ? "\x42\x75\x6e\x6e\x79\x2e\x6e\x65\x74\x20\x70\x75\x6c\x6c\x20\x7a\x6f\x6e\x65\x73" : "\x42\x75\x6e\x6e\x79\x2e\x6e\x65\x74\x20\x70\x75\x6c\x6c\x20\x7a\x6f\x6e\x65\x73\x20\x28\x73\x65\x72\x76\x65\x72\x20\x6b\x65\x79\x20\x6e\x6f\x74\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64\x29", 
+      _0x6f7a66_c = Math.max(1, Math.min(100, Number.parseInt(_0x6f7a66_0.freeHourlyLimit, 10) || 100)), 
+      _0x6f7a66_d = Math.max(1, Number.parseInt(_0x6f7a66_0.freeWindowMinutes, 10) || 60), 
+      _0x6f7a66_a = Math.max(_0x6f7a66_c, Math.min(1e4, Number.parseInt(_0x6f7a66_0.premiumBatchLimit, 10) || _0x6f7a66_c)), 
+      _0x6f7a66_b = Math.max(_0x6f7a66_a, Math.min(1e4, Number.parseInt(_0x6f7a66_0.p2pPremiumBatchLimit, 10) || 1e3)), 
+      _0x6f7a66_e = Math.max(1, Number.parseInt(_0x6f7a66_0.premiumImmediateCooldownAt, 10) || 5), 
+      _0x6f7a66_f = Math.max(_0x6f7a66_e, Number.parseInt(_0x6f7a66_0.premiumAccumulatedLimit, 10) || 30), 
+      _0x6f7a66_10 = Math.max(1, Number.parseInt(_0x6f7a66_0.premiumCooldownMinutes, 10) || 10), 
+      _0x6f7a66_31(), _0x6f7a66_32(), _0x6f7a66_7.origin.textContent = _0x6f7a66_0.origin || "\x4e\x6f\x74\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64", 
+      _0x6f7a66_17 = _0x6f7a66_0, _0x6f7a66_18(), _0x6f7a66_0.available || _0x6f7a66_1e("\x54\x68\x65\x20\x4e\x79\x78\x20\x61\x64\x6d\x69\x6e\x69\x73\x74\x72\x61\x74\x6f\x72\x20\x73\x74\x69\x6c\x6c\x20\x6e\x65\x65\x64\x73\x20\x74\x6f\x20\x66\x69\x6e\x69\x73\x68\x20\x74\x68\x65\x20\x4c\x69\x6e\x6b\x20\x47\x65\x6e\x65\x72\x61\x74\x6f\x72\x20\x73\x65\x72\x76\x65\x72\x20\x73\x65\x74\x74\x69\x6e\x67\x73\x2e", "\x65\x72\x72\x6f\x72");
+    } catch (_0x6f7a66_0) {
+      _0x6f7a66_7.origin.textContent = "\x55\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", _0x6f7a66_1f(!1, "\x55\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65"), 
+      _0x6f7a66_1e(`\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x68\x65\x63\x6b\x20\x74\x68\x65\x20\x67\x65\x6e\x65\x72\x61\x74\x6f\x72\x3a\x20${_0x6f7a66_0.message}`, "\x65\x72\x72\x6f\x72");
     }
   }(), async function() {
     try {
-      w = await z(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/link-generator/auth-config", {
+      _0x6f7a66_11 = await _0x6f7a66_22(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x67\x65\x6e\x65\x72\x61\x74\x6f\x72\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67", {
         headers: {
-          Accept: "application/json"
+          Accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         },
-        cache: "no-store"
+        cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
       }));
     } catch {
-      w = {
+      _0x6f7a66_11 = {
         enabled: !1,
         apiKey: ""
       };
     }
-    s.modeButtons.find(e => "account" === e.dataset.accessMode).disabled = !w.enabled, 
-    w.enabled || X("administrator");
-    const e = w.enabled ? await J() : "";
-    if (e) try {
-      const [t, a] = await Promise.all([ D(e), R(e) ]);
-      j({
-        ...t,
-        ...a,
-        idToken: e,
+    _0x6f7a66_7.modeButtons.find(_0x6f7a66_0 => "\x61\x63\x63\x6f\x75\x6e\x74" === _0x6f7a66_0.dataset.accessMode).disabled = !_0x6f7a66_11.enabled, 
+    _0x6f7a66_11.enabled || _0x6f7a66_33("\x61\x64\x6d\x69\x6e\x69\x73\x74\x72\x61\x74\x6f\x72");
+    const _0x6f7a66_0 = _0x6f7a66_11.enabled ? await _0x6f7a66_2f() : "";
+    if (_0x6f7a66_0) try {
+      const [_0x6f7a66_1, _0x6f7a66_2] = await Promise.all([ _0x6f7a66_28(_0x6f7a66_0), _0x6f7a66_29(_0x6f7a66_0) ]);
+      _0x6f7a66_23({
+        ..._0x6f7a66_1,
+        ..._0x6f7a66_2,
+        idToken: _0x6f7a66_0,
         viaHost: !0
       });
     } catch {}
-    if (b?.idToken) try {
-      !b.viaHost && b.expiresAt - Date.now() < 6e4 && await V(), await H();
+    if (_0x6f7a66_12?.idToken) try {
+      !_0x6f7a66_12.viaHost && _0x6f7a66_12.expiresAt - Date.now() < 6e4 && await _0x6f7a66_2e(), 
+      await _0x6f7a66_2d();
     } catch {
-      O();
+      _0x6f7a66_24();
     }
-    t = !0, Y();
+    _0x6f7a66_1 = !0, _0x6f7a66_31();
   }(), async function() {
     try {
-      const t = await z(await fetch(`${r}/vendors`, {
+      const _0x6f7a66_1 = await _0x6f7a66_22(await fetch(`${_0x6f7a66_4}\x2f\x76\x65\x6e\x64\x6f\x72\x73`, {
         headers: {
-          Accept: "application/json"
+          Accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         },
-        cache: "no-store"
-      })), a = Array.isArray(t) ? t : t.vendors;
-      if (!Array.isArray(a) || !a.length) throw new Error("No filters are currently available.");
-      s.filter.textContent = "";
-      const n = document.createElement("option");
-      n.value = "", n.textContent = e ? "Choose a blocker" : "Choose a content filter", 
-      s.filter.append(n), a.forEach(e => {
-        const t = ie(e);
-        if (!t) return;
-        const a = document.createElement("option");
-        a.value = t, a.textContent = function(e) {
-          const t = ie(e), a = String("string" == typeof e ? e : e?.label || e?.filter || e?.key || "Content filter"), n = {
-            blocksi_ai: "Blocksi AI",
-            cisco: "Cisco Umbrella",
-            dnsfilter: "DNSFilter",
-            fortiguard: "FortiGuard",
-            goguardian: "GoGuardian",
-            iboss: "iBoss",
-            lanschool: "LanSchool",
-            paloalto: "Palo Alto"
+        cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+      })), _0x6f7a66_2 = Array.isArray(_0x6f7a66_1) ? _0x6f7a66_1 : _0x6f7a66_1.vendors;
+      if (!Array.isArray(_0x6f7a66_2) || !_0x6f7a66_2.length) throw new Error("\x4e\x6f\x20\x66\x69\x6c\x74\x65\x72\x73\x20\x61\x72\x65\x20\x63\x75\x72\x72\x65\x6e\x74\x6c\x79\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+      _0x6f7a66_7.filter.textContent = "";
+      const _0x6f7a66_3 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+      _0x6f7a66_3.value = "", _0x6f7a66_3.textContent = _0x6f7a66_0 ? "\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x62\x6c\x6f\x63\x6b\x65\x72" : "\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x63\x6f\x6e\x74\x65\x6e\x74\x20\x66\x69\x6c\x74\x65\x72", 
+      _0x6f7a66_7.filter.append(_0x6f7a66_3), _0x6f7a66_2.forEach(_0x6f7a66_0 => {
+        const _0x6f7a66_1 = _0x6f7a66_3b(_0x6f7a66_0);
+        if (!_0x6f7a66_1) return;
+        const _0x6f7a66_2 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+        _0x6f7a66_2.value = _0x6f7a66_1, _0x6f7a66_2.textContent = function(_0x6f7a66_0) {
+          const _0x6f7a66_1 = _0x6f7a66_3b(_0x6f7a66_0), _0x6f7a66_2 = String("\x73\x74\x72\x69\x6e\x67" == typeof _0x6f7a66_0 ? _0x6f7a66_0 : _0x6f7a66_0?.label || _0x6f7a66_0?.filter || _0x6f7a66_0?.key || "\x43\x6f\x6e\x74\x65\x6e\x74\x20\x66\x69\x6c\x74\x65\x72"), _0x6f7a66_3 = {
+            blocksi_ai: "\x42\x6c\x6f\x63\x6b\x73\x69\x20\x41\x49",
+            cisco: "\x43\x69\x73\x63\x6f\x20\x55\x6d\x62\x72\x65\x6c\x6c\x61",
+            dnsfilter: "\x44\x4e\x53\x46\x69\x6c\x74\x65\x72",
+            fortiguard: "\x46\x6f\x72\x74\x69\x47\x75\x61\x72\x64",
+            goguardian: "\x47\x6f\x47\x75\x61\x72\x64\x69\x61\x6e",
+            iboss: "\x69\x42\x6f\x73\x73",
+            lanschool: "\x4c\x61\x6e\x53\x63\x68\x6f\x6f\x6c",
+            paloalto: "\x50\x61\x6c\x6f\x20\x41\x6c\x74\x6f"
           };
-          return n[t] ? n[t] : /^cisco talos$/i.test(a) ? "Cisco Umbrella" : a === t ? t.replace(/_/g, " ").replace(/\b\w/g, e => e.toUpperCase()) : a;
-        }(e), s.filter.append(a);
-      }), s.filter.disabled = !1;
-    } catch (t) {
-      s.filter.innerHTML = '<option value="">Filter list unavailable</option>', s.filter.disabled = !0, 
-      E(`Could not load the content filters: ${t.message}`, "error");
+          return _0x6f7a66_3[_0x6f7a66_1] ? _0x6f7a66_3[_0x6f7a66_1] : /^cisco talos$/i.test(_0x6f7a66_2) ? "\x43\x69\x73\x63\x6f\x20\x55\x6d\x62\x72\x65\x6c\x6c\x61" : _0x6f7a66_2 === _0x6f7a66_1 ? _0x6f7a66_1.replace(/_/g, "\x20").replace(/\b\w/g, _0x6f7a66_0 => _0x6f7a66_0.toUpperCase()) : _0x6f7a66_2;
+        }(_0x6f7a66_0), _0x6f7a66_7.filter.append(_0x6f7a66_2);
+      }), _0x6f7a66_7.filter.disabled = !1;
+    } catch (_0x6f7a66_1) {
+      _0x6f7a66_7.filter.innerHTML = "\x3c\x6f\x70\x74\x69\x6f\x6e\x20\x76\x61\x6c\x75\x65\x3d\x22\x22\x3e\x46\x69\x6c\x74\x65\x72\x20\x6c\x69\x73\x74\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x3c\x2f\x6f\x70\x74\x69\x6f\x6e\x3e", 
+      _0x6f7a66_7.filter.disabled = !0, _0x6f7a66_1e(`\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x20\x74\x68\x65\x20\x63\x6f\x6e\x74\x65\x6e\x74\x20\x66\x69\x6c\x74\x65\x72\x73\x3a\x20${_0x6f7a66_1.message}`, "\x65\x72\x72\x6f\x72");
     }
   }() ]).finally(() => {
-    s.wizardNext[0].disabled = !1;
+    _0x6f7a66_7.wizardNext[0].disabled = !1;
   });
 })();

@@ -137,7 +137,7 @@ main {
     gap: 12px
   }
 }</style>
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/obsidian.css?rev=a40afc91ec7c1999">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/obsidian.css?rev=9ae3113a046b3a57">
   </head>
 
   <body>
@@ -152,47 +152,47 @@ main {
       <div id="empty" class="empty">No games found.</div>
     </main>
     <script>
-const grid = document.getElementById("grid"), empty = document.getElementById("empty"), search = document.getElementById("search"), source = document.getElementById("source");
+const grid = document.getElementById("\x67\x72\x69\x64"), empty = document.getElementById("\x65\x6d\x70\x74\x79"), search = document.getElementById("\x73\x65\x61\x72\x63\x68"), source = document.getElementById("\x73\x6f\x75\x72\x63\x65");
 let games = [];
 
-function gameUrl(e) {
-  return "gba" === e.type && e.romId ? new URL(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/gms-games/play.html?v=20260903-game-ad-guard-v1&gba=${encodeURIComponent(e.romId)}`, location.origin).href : new URL(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/gms-games/play.html?v=20260903-game-ad-guard-v1&game=${encodeURIComponent(e.path)}`, location.origin).href;
+function gameUrl(_0x0aa89d_0) {
+  return "\x67\x62\x61" === _0x0aa89d_0.type && _0x0aa89d_0.romId ? new URL(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x67\x6d\x73\x2d\x67\x61\x6d\x65\x73\x2f\x70\x6c\x61\x79\x2e\x68\x74\x6d\x6c\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x30\x33\x2d\x67\x61\x6d\x65\x2d\x61\x64\x2d\x67\x75\x61\x72\x64\x2d\x76\x31\x26\x67\x62\x61\x3d${encodeURIComponent(_0x0aa89d_0.romId)}`, location.origin).href : new URL(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x67\x6d\x73\x2d\x67\x61\x6d\x65\x73\x2f\x70\x6c\x61\x79\x2e\x68\x74\x6d\x6c\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x30\x33\x2d\x67\x61\x6d\x65\x2d\x61\x64\x2d\x67\x75\x61\x72\x64\x2d\x76\x31\x26\x67\x61\x6d\x65\x3d${encodeURIComponent(_0x0aa89d_0.path)}`, location.origin).href;
 }
 
-function coverUrl(e) {
-  if (!e) return "";
+function coverUrl(_0x0aa89d_0) {
+  if (!_0x0aa89d_0) return "";
   try {
-    const t = new URL(e, location.href);
-    return [ "raw.githubusercontent.com", "cdn.jsdelivr.net", "rawcdn.githack.com", "raw.githack.com" ].includes(t.hostname) ? `/gms-games-proxy?url=${encodeURIComponent(t.href)}` : t.href;
+    const _0x0aa89d_1 = new URL(_0x0aa89d_0, location.href);
+    return [ "\x72\x61\x77\x2e\x67\x69\x74\x68\x75\x62\x75\x73\x65\x72\x63\x6f\x6e\x74\x65\x6e\x74\x2e\x63\x6f\x6d", "\x63\x64\x6e\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x72\x61\x77\x63\x64\x6e\x2e\x67\x69\x74\x68\x61\x63\x6b\x2e\x63\x6f\x6d", "\x72\x61\x77\x2e\x67\x69\x74\x68\x61\x63\x6b\x2e\x63\x6f\x6d" ].includes(_0x0aa89d_1.hostname) ? `\x2f\x67\x6d\x73\x2d\x67\x61\x6d\x65\x73\x2d\x70\x72\x6f\x78\x79\x3f\x75\x72\x6c\x3d${encodeURIComponent(_0x0aa89d_1.href)}` : _0x0aa89d_1.href;
   } catch {
-    return e;
+    return _0x0aa89d_0;
   }
 }
 
 function render() {
-  const e = search.value.trim().toLowerCase(), t = games.filter(t => !e || `${t.title} ${t.id}`.toLowerCase().includes(e));
-  grid.innerHTML = t.map(e => `\n        <button class="card" type="button" data-url="${e.url}">\n          ${e.cover ? `<img class="thumb" alt="" loading="lazy" src="${e.cover}">` : '<span class="thumb broken" aria-hidden="true"></span>'}\n          <span class="thumb-fallback ${e.cover ? "" : "generated"}" aria-hidden="true">${e.title.slice(0, 1).toUpperCase()}</span>\n          <span class="name">${e.title}</span>\n          <span class="meta">${e.id}</span>\n        </button>\n      `).join(""), 
-  empty.style.display = t.length ? "none" : "block";
+  const _0x0aa89d_0 = search.value.trim().toLowerCase(), _0x0aa89d_1 = games.filter(_0x0aa89d_1 => !_0x0aa89d_0 || `${_0x0aa89d_1.title}\x20${_0x0aa89d_1.id}`.toLowerCase().includes(_0x0aa89d_0));
+  grid.innerHTML = _0x0aa89d_1.map(_0x0aa89d_0 => `\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x62\x75\x74\x74\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x63\x61\x72\x64\x22\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x75\x72\x6c\x3d\x22${_0x0aa89d_0.url}\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20${_0x0aa89d_0.cover ? `\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x68\x75\x6d\x62\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x6c\x6f\x61\x64\x69\x6e\x67\x3d\x22\x6c\x61\x7a\x79\x22\x20\x73\x72\x63\x3d\x22${_0x0aa89d_0.cover}\x22\x3e` : "\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x68\x75\x6d\x62\x20\x62\x72\x6f\x6b\x65\x6e\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x2f\x73\x70\x61\x6e\x3e"}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x68\x75\x6d\x62\x2d\x66\x61\x6c\x6c\x62\x61\x63\x6b\x20${_0x0aa89d_0.cover ? "" : "\x67\x65\x6e\x65\x72\x61\x74\x65\x64"}\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e${_0x0aa89d_0.title.slice(0, 1).toUpperCase()}\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x6e\x61\x6d\x65\x22\x3e${_0x0aa89d_0.title}\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x6d\x65\x74\x61\x22\x3e${_0x0aa89d_0.id}\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20`).join(""), 
+  empty.style.display = _0x0aa89d_1.length ? "\x6e\x6f\x6e\x65" : "\x62\x6c\x6f\x63\x6b";
 }
 
-grid.addEventListener("click", e => {
-  const t = e.target.closest("[data-url]");
-  t && (parent.postMessage({
-    type: "nyx:game-loading"
-  }, "*"), location.href = t.dataset.url);
-}), grid.addEventListener("error", e => {
-  e.target?.classList?.contains("thumb") && e.target.classList.add("broken");
-}, !0), search.addEventListener("input", render), fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/gms-games/games.json", {
-  cache: "no-store"
-}).then(e => e.json()).then(e => {
-  games = (Array.isArray(e.games) ? e.games : []).map(e => ({
-    ...e,
-    url: gameUrl(e),
-    cover: coverUrl(e.cover)
-  })), source.textContent = `${games.length} games from GMS Games.`, render();
+grid.addEventListener("\x63\x6c\x69\x63\x6b", _0x0aa89d_0 => {
+  const _0x0aa89d_1 = _0x0aa89d_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x75\x72\x6c\x5d");
+  _0x0aa89d_1 && (parent.postMessage({
+    type: "\x6e\x79\x78\x3a\x67\x61\x6d\x65\x2d\x6c\x6f\x61\x64\x69\x6e\x67"
+  }, "\x2a"), location.href = _0x0aa89d_1.dataset.url);
+}), grid.addEventListener("\x65\x72\x72\x6f\x72", _0x0aa89d_0 => {
+  _0x0aa89d_0.target?.classList?.contains("\x74\x68\x75\x6d\x62") && _0x0aa89d_0.target.classList.add("\x62\x72\x6f\x6b\x65\x6e");
+}, !0), search.addEventListener("\x69\x6e\x70\x75\x74", render), fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x67\x6d\x73\x2d\x67\x61\x6d\x65\x73\x2f\x67\x61\x6d\x65\x73\x2e\x6a\x73\x6f\x6e", {
+  cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+}).then(_0x0aa89d_0 => _0x0aa89d_0.json()).then(_0x0aa89d_0 => {
+  games = (Array.isArray(_0x0aa89d_0.games) ? _0x0aa89d_0.games : []).map(_0x0aa89d_0 => ({
+    ..._0x0aa89d_0,
+    url: gameUrl(_0x0aa89d_0),
+    cover: coverUrl(_0x0aa89d_0.cover)
+  })), source.textContent = `${games.length}\x20\x67\x61\x6d\x65\x73\x20\x66\x72\x6f\x6d\x20\x47\x4d\x53\x20\x47\x61\x6d\x65\x73\x2e`, render();
 }).catch(() => {
-  source.textContent = "Could not load GMS Games.", empty.textContent = "Could not load the GMS Games list.", 
-  empty.style.display = "block";
+  source.textContent = "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x20\x47\x4d\x53\x20\x47\x61\x6d\x65\x73\x2e", empty.textContent = "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x20\x74\x68\x65\x20\x47\x4d\x53\x20\x47\x61\x6d\x65\x73\x20\x6c\x69\x73\x74\x2e", 
+  empty.style.display = "\x62\x6c\x6f\x63\x6b";
 })</script>
   </body>
 

@@ -1,797 +1,834 @@
-import { renderReply as e, scheduleReply as t } from "./@r30db43030bb8e80f711a5429!.js";
+import { renderReply as _0x714b6c_0, scheduleReply as _0x714b6c_1 } from "\x2e\x2f\x40\x72\x33\x30\x64\x62\x34\x33\x30\x33\x30\x62\x62\x38\x65\x38\x30\x66\x37\x31\x31\x61\x35\x34\x32\x39\x21\x2e\x6a\x73";
 
-const o = "drop" === new URLSearchParams(location.search).get("shell") && parent !== window;
+const _0x714b6c_2 = "\x64\x72\x6f\x70" === new URLSearchParams(location.search).get("\x73\x68\x65\x6c\x6c") && parent !== window;
 
-import { setupDropEmbed as n } from "../drop/@rca66fe0ca42ef1648a842b3c!.js";
+import { setupDropEmbed as _0x714b6c_3 } from "\x2e\x2e\x2f\x64\x72\x6f\x70\x2f\x40\x72\x63\x61\x36\x36\x66\x65\x30\x63\x61\x34\x32\x65\x66\x31\x36\x34\x38\x61\x38\x34\x32\x62\x33\x63\x21\x2e\x6a\x73";
 
-import { setupKeys as a } from "./@rd7268825e63a9f17477b5873!.js?v=20261002-haiku-v1";
+import { setupKeys as _0x714b6c_4 } from "\x2e\x2f\x40\x72\x64\x37\x32\x36\x38\x38\x32\x35\x65\x36\x33\x61\x39\x66\x31\x37\x34\x37\x37\x62\x35\x38\x37\x33\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x31\x30\x30\x32\x2d\x68\x61\x69\x6b\x75\x2d\x76\x31";
 
-import { readResponse as i } from "./@r30e5b755a8942777cddfc0ef!.js";
+import { readResponse as _0x714b6c_5 } from "\x2e\x2f\x40\x72\x33\x30\x65\x35\x62\x37\x35\x35\x61\x38\x39\x34\x32\x37\x37\x37\x63\x64\x64\x66\x63\x30\x65\x66\x21\x2e\x6a\x73";
 
-import { supportsConversationVoice as r } from "./@rebf6eb055a8f45edc8ae21e6!.js";
+import { supportsConversationVoice as _0x714b6c_6 } from "\x2e\x2f\x40\x72\x65\x62\x66\x36\x65\x62\x30\x35\x35\x61\x38\x66\x34\x35\x65\x64\x63\x38\x61\x65\x32\x31\x65\x36\x21\x2e\x6a\x73";
 
-import { setupChats as s } from "./@rf4a369b9d15999244ce90400!.js?v=20260928-projects-v1";
+import { setupChats as _0x714b6c_7 } from "\x2e\x2f\x40\x72\x66\x34\x61\x33\x36\x39\x62\x39\x64\x31\x35\x39\x39\x39\x32\x34\x34\x63\x65\x39\x30\x34\x30\x30\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x32\x38\x2d\x70\x72\x6f\x6a\x65\x63\x74\x73\x2d\x76\x31";
 
-import { setupScreen as c } from "./@rd30e506fa7dba9f22f5d3257!.js?v=20260927-chat";
+import { setupScreen as _0x714b6c_8 } from "\x2e\x2f\x40\x72\x64\x33\x30\x65\x35\x30\x36\x66\x61\x37\x64\x62\x61\x39\x66\x32\x32\x66\x35\x64\x33\x32\x35\x37\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x32\x37\x2d\x63\x68\x61\x74";
 
-import { setupPicker as l } from "./@r47c95e357fdf40ff154c6188!.js?v=20261002-haiku-v1";
+import { setupPicker as _0x714b6c_9 } from "\x2e\x2f\x40\x72\x34\x37\x63\x39\x35\x65\x33\x35\x37\x66\x64\x66\x34\x30\x66\x66\x31\x35\x34\x63\x36\x31\x38\x38\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x31\x30\x30\x32\x2d\x68\x61\x69\x6b\x75\x2d\x76\x31";
 
-import { setupMedia as d } from "./@rf7675e03c7a92504b558d97b!.js?v=20260928-voice-v2";
+import { setupMedia as _0x714b6c_a } from "\x2e\x2f\x40\x72\x66\x37\x36\x37\x35\x65\x30\x33\x63\x37\x61\x39\x32\x35\x30\x34\x62\x35\x35\x38\x64\x39\x37\x62\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x32\x38\x2d\x76\x6f\x69\x63\x65\x2d\x76\x32";
 
-const m = e => document.getElementById(e);
+const _0x714b6c_b = _0x714b6c_0 => document.getElementById(_0x714b6c_0);
 
-m("model").addEventListener("change", () => v.stopVoice());
+_0x714b6c_b("\x6d\x6f\x64\x65\x6c").addEventListener("\x63\x68\x61\x6e\x67\x65", () => _0x714b6c_12.stopVoice());
 
-const u = {
-  account: "M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0 M4 21v-2a8 8 0 0 1 16 0v2",
-  code: "m8 6-6 6 6 6M16 6l6 6-6 6M14 3l-4 18",
-  chat: "M4 4h16v12H9l-5 4z",
-  sun: "M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1 1M18 18l1 1M5 19l1-1M18 6l1-1 M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0",
-  moon: "M20 15A8 8 0 0 1 9 4a8 8 0 1 0 11 11z",
-  compose: "M9 4H5a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-5 M16 3a2 2 0 0 1 3 3l-9 9-4 1 1-4z",
-  pin: "M8 3h8l-1 6 4 4v2H5v-2l4-4z M12 15v6",
-  folder: "M3 7V5h6l2 2h10v13H3z",
-  file: "M6 3h8l4 4v14H6z M14 3v5h5",
-  refresh: "M20 11a8 8 0 1 0-2.35 5.65 M20 4v7h-7",
-  plus: "M12 5v14 M5 12h14",
-  send: "m21 3-8.5 18-3.2-7.3L2 10.5 21 3z M9.3 13.7l4.2-4.2",
-  stop: "M6 6h12v12H6z",
-  close: "m6 6 12 12 M18 6 6 18",
-  search: "M21 21l-5-5 M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0",
-  connect: "M8 3v5 M16 3v5 M5 8h14v3a7 7 0 0 1-14 0z M12 18v3",
-  download: "m3 7 9-4 9 4v10l-9 4-9-4z M3 7l9 4 9-4 M12 11v10 M7 5l9 4",
-  spark: "m12 3 2 6 6 3-6 2-2 6-2-6-6-2 6-3z"
+const _0x714b6c_c = {
+  account: "\x4d\x31\x36\x20\x37\x61\x34\x20\x34\x20\x30\x20\x31\x20\x31\x2d\x38\x20\x30\x20\x34\x20\x34\x20\x30\x20\x30\x20\x31\x20\x38\x20\x30\x20\x4d\x34\x20\x32\x31\x76\x2d\x32\x61\x38\x20\x38\x20\x30\x20\x30\x20\x31\x20\x31\x36\x20\x30\x76\x32",
+  code: "\x6d\x38\x20\x36\x2d\x36\x20\x36\x20\x36\x20\x36\x4d\x31\x36\x20\x36\x6c\x36\x20\x36\x2d\x36\x20\x36\x4d\x31\x34\x20\x33\x6c\x2d\x34\x20\x31\x38",
+  chat: "\x4d\x34\x20\x34\x68\x31\x36\x76\x31\x32\x48\x39\x6c\x2d\x35\x20\x34\x7a",
+  sun: "\x4d\x31\x32\x20\x32\x76\x32\x4d\x31\x32\x20\x32\x30\x76\x32\x4d\x32\x20\x31\x32\x68\x32\x4d\x32\x30\x20\x31\x32\x68\x32\x4d\x35\x20\x35\x6c\x31\x20\x31\x4d\x31\x38\x20\x31\x38\x6c\x31\x20\x31\x4d\x35\x20\x31\x39\x6c\x31\x2d\x31\x4d\x31\x38\x20\x36\x6c\x31\x2d\x31\x20\x4d\x31\x36\x20\x31\x32\x61\x34\x20\x34\x20\x30\x20\x31\x20\x31\x2d\x38\x20\x30\x20\x34\x20\x34\x20\x30\x20\x30\x20\x31\x20\x38\x20\x30",
+  moon: "\x4d\x32\x30\x20\x31\x35\x41\x38\x20\x38\x20\x30\x20\x30\x20\x31\x20\x39\x20\x34\x61\x38\x20\x38\x20\x30\x20\x31\x20\x30\x20\x31\x31\x20\x31\x31\x7a",
+  compose: "\x4d\x39\x20\x34\x48\x35\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x2d\x32\x20\x32\x76\x31\x33\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x20\x32\x20\x32\x68\x31\x33\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x20\x32\x2d\x32\x76\x2d\x35\x20\x4d\x31\x36\x20\x33\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x33\x20\x33\x6c\x2d\x39\x20\x39\x2d\x34\x20\x31\x20\x31\x2d\x34\x7a",
+  pin: "\x4d\x38\x20\x33\x68\x38\x6c\x2d\x31\x20\x36\x20\x34\x20\x34\x76\x32\x48\x35\x76\x2d\x32\x6c\x34\x2d\x34\x7a\x20\x4d\x31\x32\x20\x31\x35\x76\x36",
+  folder: "\x4d\x33\x20\x37\x56\x35\x68\x36\x6c\x32\x20\x32\x68\x31\x30\x76\x31\x33\x48\x33\x7a",
+  file: "\x4d\x36\x20\x33\x68\x38\x6c\x34\x20\x34\x76\x31\x34\x48\x36\x7a\x20\x4d\x31\x34\x20\x33\x76\x35\x68\x35",
+  refresh: "\x4d\x32\x30\x20\x31\x31\x61\x38\x20\x38\x20\x30\x20\x31\x20\x30\x2d\x32\x2e\x33\x35\x20\x35\x2e\x36\x35\x20\x4d\x32\x30\x20\x34\x76\x37\x68\x2d\x37",
+  plus: "\x4d\x31\x32\x20\x35\x76\x31\x34\x20\x4d\x35\x20\x31\x32\x68\x31\x34",
+  send: "\x6d\x32\x31\x20\x33\x2d\x38\x2e\x35\x20\x31\x38\x2d\x33\x2e\x32\x2d\x37\x2e\x33\x4c\x32\x20\x31\x30\x2e\x35\x20\x32\x31\x20\x33\x7a\x20\x4d\x39\x2e\x33\x20\x31\x33\x2e\x37\x6c\x34\x2e\x32\x2d\x34\x2e\x32",
+  stop: "\x4d\x36\x20\x36\x68\x31\x32\x76\x31\x32\x48\x36\x7a",
+  close: "\x6d\x36\x20\x36\x20\x31\x32\x20\x31\x32\x20\x4d\x31\x38\x20\x36\x20\x36\x20\x31\x38",
+  search: "\x4d\x32\x31\x20\x32\x31\x6c\x2d\x35\x2d\x35\x20\x4d\x31\x38\x20\x31\x30\x61\x38\x20\x38\x20\x30\x20\x31\x20\x31\x2d\x31\x36\x20\x30\x20\x38\x20\x38\x20\x30\x20\x30\x20\x31\x20\x31\x36\x20\x30",
+  connect: "\x4d\x38\x20\x33\x76\x35\x20\x4d\x31\x36\x20\x33\x76\x35\x20\x4d\x35\x20\x38\x68\x31\x34\x76\x33\x61\x37\x20\x37\x20\x30\x20\x30\x20\x31\x2d\x31\x34\x20\x30\x7a\x20\x4d\x31\x32\x20\x31\x38\x76\x33",
+  download: "\x6d\x33\x20\x37\x20\x39\x2d\x34\x20\x39\x20\x34\x76\x31\x30\x6c\x2d\x39\x20\x34\x2d\x39\x2d\x34\x7a\x20\x4d\x33\x20\x37\x6c\x39\x20\x34\x20\x39\x2d\x34\x20\x4d\x31\x32\x20\x31\x31\x76\x31\x30\x20\x4d\x37\x20\x35\x6c\x39\x20\x34",
+  spark: "\x6d\x31\x32\x20\x33\x20\x32\x20\x36\x20\x36\x20\x33\x2d\x36\x20\x32\x2d\x32\x20\x36\x2d\x32\x2d\x36\x2d\x36\x2d\x32\x20\x36\x2d\x33\x7a"
 };
 
-function p(e) {
-  return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + u[e] + '"></path></svg>';
+function _0x714b6c_d(_0x714b6c_0) {
+  return "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22" + _0x714b6c_c[_0x714b6c_0] + "\x22\x3e\x3c\x2f\x70\x61\x74\x68\x3e\x3c\x2f\x73\x76\x67\x3e";
 }
 
-for (const [fe, we, ve] of [ [ "refresh", "refresh", "" ], [ "newTask", "compose", "New chat" ], [ "send", "send", "" ], [ "stop", "stop", "Stop" ], [ "closeLogin", "close", "" ], [ "connect", "connect", "Connect folder" ], [ "activityTab", "spark", "Activity" ], [ "fileTab", "file", "Preview" ] ]) {
-  const e = m(fe);
-  e.innerHTML = p(we), ve && e.append(document.createTextNode(ve));
+for (const [_0x714b6c_46, _0x714b6c_47, _0x714b6c_48] of [ [ "\x72\x65\x66\x72\x65\x73\x68", "\x72\x65\x66\x72\x65\x73\x68", "" ], [ "\x6e\x65\x77\x54\x61\x73\x6b", "\x63\x6f\x6d\x70\x6f\x73\x65", "\x4e\x65\x77\x20\x63\x68\x61\x74" ], [ "\x73\x65\x6e\x64", "\x73\x65\x6e\x64", "" ], [ "\x73\x74\x6f\x70", "\x73\x74\x6f\x70", "\x53\x74\x6f\x70" ], [ "\x63\x6c\x6f\x73\x65\x4c\x6f\x67\x69\x6e", "\x63\x6c\x6f\x73\x65", "" ], [ "\x63\x6f\x6e\x6e\x65\x63\x74", "\x63\x6f\x6e\x6e\x65\x63\x74", "\x43\x6f\x6e\x6e\x65\x63\x74\x20\x66\x6f\x6c\x64\x65\x72" ], [ "\x61\x63\x74\x69\x76\x69\x74\x79\x54\x61\x62", "\x73\x70\x61\x72\x6b", "\x41\x63\x74\x69\x76\x69\x74\x79" ], [ "\x66\x69\x6c\x65\x54\x61\x62", "\x66\x69\x6c\x65", "\x50\x72\x65\x76\x69\x65\x77" ] ]) {
+  const _0x714b6c_0 = _0x714b6c_b(_0x714b6c_46);
+  _0x714b6c_0.innerHTML = _0x714b6c_d(_0x714b6c_47), _0x714b6c_48 && _0x714b6c_0.append(document.createTextNode(_0x714b6c_48));
 }
 
-function h() {
-  const e = "light" === document.documentElement.dataset.theme;
-  m("themeToggle").innerHTML = p(e ? "moon" : "sun") + (e ? "Dark mode" : "Light mode"), 
-  m("themeToggle").setAttribute("aria-label", e ? "Use dark mode" : "Use light mode");
+function _0x714b6c_e() {
+  const _0x714b6c_0 = "\x6c\x69\x67\x68\x74" === document.documentElement.dataset.theme;
+  _0x714b6c_b("\x74\x68\x65\x6d\x65\x54\x6f\x67\x67\x6c\x65").innerHTML = _0x714b6c_d(_0x714b6c_0 ? "\x6d\x6f\x6f\x6e" : "\x73\x75\x6e") + (_0x714b6c_0 ? "\x44\x61\x72\x6b\x20\x6d\x6f\x64\x65" : "\x4c\x69\x67\x68\x74\x20\x6d\x6f\x64\x65"), 
+  _0x714b6c_b("\x74\x68\x65\x6d\x65\x54\x6f\x67\x67\x6c\x65").setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x714b6c_0 ? "\x55\x73\x65\x20\x64\x61\x72\x6b\x20\x6d\x6f\x64\x65" : "\x55\x73\x65\x20\x6c\x69\x67\x68\x74\x20\x6d\x6f\x64\x65");
 }
 
-m("themeToggle").onclick = () => {
-  const e = "light" === document.documentElement.dataset.theme ? "dark" : "light";
-  document.documentElement.dataset.theme = e;
+_0x714b6c_b("\x74\x68\x65\x6d\x65\x54\x6f\x67\x67\x6c\x65").onclick = () => {
+  const _0x714b6c_0 = "\x6c\x69\x67\x68\x74" === document.documentElement.dataset.theme ? "\x64\x61\x72\x6b" : "\x6c\x69\x67\x68\x74";
+  document.documentElement.dataset.theme = _0x714b6c_0;
   try {
-    localStorage.setItem("nook.theme", e);
+    localStorage.setItem("\x6e\x6f\x6f\x6b\x2e\x74\x68\x65\x6d\x65", _0x714b6c_0);
   } catch {}
-  h();
-}, h();
+  _0x714b6c_e();
+}, _0x714b6c_e();
 
-const g = document.querySelector(".aside-bottom a");
+const _0x714b6c_f = document.querySelector("\x2e\x61\x73\x69\x64\x65\x2d\x62\x6f\x74\x74\x6f\x6d\x20\x61");
 
-g.innerHTML = p("download") + "Download companion";
+_0x714b6c_f.innerHTML = _0x714b6c_d("\x64\x6f\x77\x6e\x6c\x6f\x61\x64") + "\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x20\x63\x6f\x6d\x70\x61\x6e\x69\x6f\x6e";
 
-const f = document.getElementById("welcome").cloneNode(!0), w = l(m("model"), {
-  compact: o
-}), v = d({
-  notice: I,
-  sizePrompt: ee,
-  canSend: () => !A && (T || N) && !!C?.currentUser && !!m("model").value,
-  voiceModel: () => T ? !!r(U.find(e => e.id === m("model").value)) || (w.openVoice(), 
-  I("Choose a model with native voice output."), !1) : (I("Switch to Chat for model voice conversations."), 
+const _0x714b6c_10 = document.getElementById("\x77\x65\x6c\x63\x6f\x6d\x65").cloneNode(!0), _0x714b6c_11 = _0x714b6c_9(_0x714b6c_b("\x6d\x6f\x64\x65\x6c"), {
+  compact: _0x714b6c_2
+}), _0x714b6c_12 = _0x714b6c_a({
+  notice: _0x714b6c_24,
+  sizePrompt: _0x714b6c_36,
+  canSend: () => !_0x714b6c_1d && (_0x714b6c_1b || _0x714b6c_1c) && !!_0x714b6c_16?.currentUser && !!_0x714b6c_b("\x6d\x6f\x64\x65\x6c").value,
+  voiceModel: () => _0x714b6c_1b ? !!_0x714b6c_6(_0x714b6c_1f.find(_0x714b6c_0 => _0x714b6c_0.id === _0x714b6c_b("\x6d\x6f\x64\x65\x6c").value)) || (_0x714b6c_11.openVoice(), 
+  _0x714b6c_24("\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x6d\x6f\x64\x65\x6c\x20\x77\x69\x74\x68\x20\x6e\x61\x74\x69\x76\x65\x20\x76\x6f\x69\x63\x65\x20\x6f\x75\x74\x70\x75\x74\x2e"), !1) : (_0x714b6c_24("\x53\x77\x69\x74\x63\x68\x20\x74\x6f\x20\x43\x68\x61\x74\x20\x66\x6f\x72\x20\x6d\x6f\x64\x65\x6c\x20\x76\x6f\x69\x63\x65\x20\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e\x73\x2e"), 
   !1)
-}), y = a({
-  appName: o ? "Drop" : "Nook",
-  user: () => C?.currentUser,
-  busy: () => A,
-  notice: I,
+}), _0x714b6c_13 = _0x714b6c_4({
+  appName: _0x714b6c_2 ? "\x44\x72\x6f\x70" : "\x4e\x6f\x6f\x6b",
+  user: () => _0x714b6c_16?.currentUser,
+  busy: () => _0x714b6c_1d,
+  notice: _0x714b6c_24,
   changed: async () => {
-    v.stopVoice(), await K();
+    _0x714b6c_12.stopVoice(), await _0x714b6c_2f();
   }
-}), b = c({
-  notice: I
-}), x = s({
-  notice: I,
-  busy: () => A,
-  changed: ie,
-  open: e => {
-    v.reset(), b.stop(), H = e.messages || [], "boolean" == typeof e.computer && T === e.computer && le(!e.computer, !1), 
-    e.model && [ ...m("model").options ].some(t => t.value === e.model) && (m("model").value = e.model, 
-    m("model").dispatchEvent(new Event("change"))), m("effort").value = [ "low", "medium", "high" ].includes(e.effort) ? e.effort : "medium", 
-    m("effort").dispatchEvent(new Event("change")), m("feed").replaceChildren(), H.length || re();
-    for (const t of H) {
-      let e = t.content;
-      if (!T && "assistant" === t.role) try {
-        e = JSON.parse(e).message || e;
+}), _0x714b6c_14 = _0x714b6c_8({
+  notice: _0x714b6c_24
+}), _0x714b6c_15 = _0x714b6c_7({
+  notice: _0x714b6c_24,
+  busy: () => _0x714b6c_1d,
+  changed: _0x714b6c_3b,
+  open: _0x714b6c_0 => {
+    _0x714b6c_12.reset(), _0x714b6c_14.stop(), _0x714b6c_20 = _0x714b6c_0.messages || [], 
+    "\x62\x6f\x6f\x6c\x65\x61\x6e" == typeof _0x714b6c_0.computer && _0x714b6c_1b === _0x714b6c_0.computer && _0x714b6c_3f(!_0x714b6c_0.computer, !1), 
+    _0x714b6c_0.model && [ ..._0x714b6c_b("\x6d\x6f\x64\x65\x6c").options ].some(_0x714b6c_1 => _0x714b6c_1.value === _0x714b6c_0.model) && (_0x714b6c_b("\x6d\x6f\x64\x65\x6c").value = _0x714b6c_0.model, 
+    _0x714b6c_b("\x6d\x6f\x64\x65\x6c").dispatchEvent(new Event("\x63\x68\x61\x6e\x67\x65"))), _0x714b6c_b("\x65\x66\x66\x6f\x72\x74").value = [ "\x6c\x6f\x77", "\x6d\x65\x64\x69\x75\x6d", "\x68\x69\x67\x68" ].includes(_0x714b6c_0.effort) ? _0x714b6c_0.effort : "\x6d\x65\x64\x69\x75\x6d", 
+    _0x714b6c_b("\x65\x66\x66\x6f\x72\x74").dispatchEvent(new Event("\x63\x68\x61\x6e\x67\x65")), _0x714b6c_b("\x66\x65\x65\x64").replaceChildren(), 
+    _0x714b6c_20.length || _0x714b6c_3c();
+    for (const _0x714b6c_1 of _0x714b6c_20) {
+      let _0x714b6c_0 = _0x714b6c_1.content;
+      if (!_0x714b6c_1b && "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x714b6c_1.role) try {
+        _0x714b6c_0 = JSON.parse(_0x714b6c_0).message || _0x714b6c_0;
       } catch {}
-      q(t.role, e, t.model, t.metadata, t);
+      _0x714b6c_25(_0x714b6c_1.role, _0x714b6c_0, _0x714b6c_1.model, _0x714b6c_1.metadata, _0x714b6c_1);
     }
-    m("taskTitle").textContent = e.temporary ? "Temporary chat" : e.title || "New chat", 
-    m("prompt").value = "", ee(), B();
+    _0x714b6c_b("\x74\x61\x73\x6b\x54\x69\x74\x6c\x65").textContent = _0x714b6c_0.temporary ? "\x54\x65\x6d\x70\x6f\x72\x61\x72\x79\x20\x63\x68\x61\x74" : _0x714b6c_0.title || "\x4e\x65\x77\x20\x63\x68\x61\x74", 
+    _0x714b6c_b("\x70\x72\x6f\x6d\x70\x74").value = "", _0x714b6c_36(), _0x714b6c_2b();
   }
 });
 
-let C, M, S = "", k = 0, E = !1, T = !0, N = !1, A = !1, L = null, U = [], H = [], P = "";
+let _0x714b6c_16, _0x714b6c_17, _0x714b6c_18 = "", _0x714b6c_19 = 0, _0x714b6c_1a = !1, _0x714b6c_1b = !0, _0x714b6c_1c = !1, _0x714b6c_1d = !1, _0x714b6c_1e = null, _0x714b6c_1f = [], _0x714b6c_20 = [], _0x714b6c_21 = "";
 
-const j = new URLSearchParams(location.hash.slice(1));
+const _0x714b6c_22 = new URLSearchParams(location.hash.slice(1));
 
-/^[a-f0-9]{64}$/.test(j.get("companion") || "") && "6768" === j.get("port") && sessionStorage.setItem("nyx.agents.pair", j.get("companion")), 
+/^[a-f0-9]{64}$/.test(_0x714b6c_22.get("\x63\x6f\x6d\x70\x61\x6e\x69\x6f\x6e") || "") && "\x36\x37\x36\x38" === _0x714b6c_22.get("\x70\x6f\x72\x74") && sessionStorage.setItem("\x6e\x79\x78\x2e\x61\x67\x65\x6e\x74\x73\x2e\x70\x61\x69\x72", _0x714b6c_22.get("\x63\x6f\x6d\x70\x61\x6e\x69\x6f\x6e")), 
 location.hash && window.history.replaceState(null, "", location.pathname + location.search);
 
-const D = () => sessionStorage.getItem("nyx.agents.pair") || "";
+const _0x714b6c_23 = () => sessionStorage.getItem("\x6e\x79\x78\x2e\x61\x67\x65\x6e\x74\x73\x2e\x70\x61\x69\x72") || "";
 
-function I(e) {
-  m("notice").textContent = e, m("notice").hidden = !1, clearTimeout(I.timer), I.timer = setTimeout(() => m("notice").hidden = !0, 7e3);
+function _0x714b6c_24(_0x714b6c_0) {
+  _0x714b6c_b("\x6e\x6f\x74\x69\x63\x65").textContent = _0x714b6c_0, _0x714b6c_b("\x6e\x6f\x74\x69\x63\x65").hidden = !1, 
+  clearTimeout(_0x714b6c_24.timer), _0x714b6c_24.timer = setTimeout(() => _0x714b6c_b("\x6e\x6f\x74\x69\x63\x65").hidden = !0, 7e3);
 }
 
-function q(t, o, n, a, i) {
-  m("welcome")?.remove(), "user" !== t && m("feed").querySelector(".thinking-message")?.remove();
-  const r = document.createElement("article");
-  r.className = "message " + t;
-  const s = document.createElement("div");
-  s.className = "message-heading";
-  const c = n || m("model").value;
-  if ("assistant" === t && c) {
-    const e = document.createElement("span");
-    e.className = "reply-logo", e.innerHTML = w.icon(c), s.append(e);
+function _0x714b6c_25(_0x714b6c_1, _0x714b6c_2, _0x714b6c_3, _0x714b6c_4, _0x714b6c_5) {
+  _0x714b6c_b("\x77\x65\x6c\x63\x6f\x6d\x65")?.remove(), "\x75\x73\x65\x72" !== _0x714b6c_1 && _0x714b6c_b("\x66\x65\x65\x64").querySelector("\x2e\x74\x68\x69\x6e\x6b\x69\x6e\x67\x2d\x6d\x65\x73\x73\x61\x67\x65")?.remove();
+  const _0x714b6c_6 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+  _0x714b6c_6.className = "\x6d\x65\x73\x73\x61\x67\x65\x20" + _0x714b6c_1;
+  const _0x714b6c_7 = document.createElement("\x64\x69\x76");
+  _0x714b6c_7.className = "\x6d\x65\x73\x73\x61\x67\x65\x2d\x68\x65\x61\x64\x69\x6e\x67";
+  const _0x714b6c_8 = _0x714b6c_3 || _0x714b6c_b("\x6d\x6f\x64\x65\x6c").value;
+  if ("\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x714b6c_1 && _0x714b6c_8) {
+    const _0x714b6c_0 = document.createElement("\x73\x70\x61\x6e");
+    _0x714b6c_0.className = "\x72\x65\x70\x6c\x79\x2d\x6c\x6f\x67\x6f", _0x714b6c_0.innerHTML = _0x714b6c_11.icon(_0x714b6c_8), 
+    _0x714b6c_7.append(_0x714b6c_0);
   }
-  const l = document.createElement("strong");
-  if (l.textContent = "user" === t ? "You" : "error" === t ? "Stopped" : U.find(e => e.id === c)?.label || c || "Assistant", 
-  s.append(l), r.append(s), i && !x.temporary()) {
-    i.id ||= crypto.randomUUID(), r.dataset.messageId = i.id;
-    const e = document.createElement("button");
-    e.type = "button", e.className = "message-pin", e.innerHTML = p("pin");
-    const t = () => {
-      e.setAttribute("aria-pressed", String(!!i.pinned)), e.setAttribute("aria-label", i.pinned ? "Unpin message" : "Pin message"), 
-      e.title = i.pinned ? "Unpin message" : "Pin message";
+  const _0x714b6c_9 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+  if (_0x714b6c_9.textContent = "\x75\x73\x65\x72" === _0x714b6c_1 ? "\x59\x6f\x75" : "\x65\x72\x72\x6f\x72" === _0x714b6c_1 ? "\x53\x74\x6f\x70\x70\x65\x64" : _0x714b6c_1f.find(_0x714b6c_0 => _0x714b6c_0.id === _0x714b6c_8)?.label || _0x714b6c_8 || "\x41\x73\x73\x69\x73\x74\x61\x6e\x74", 
+  _0x714b6c_7.append(_0x714b6c_9), _0x714b6c_6.append(_0x714b6c_7), _0x714b6c_5 && !_0x714b6c_15.temporary()) {
+    _0x714b6c_5.id ||= crypto.randomUUID(), _0x714b6c_6.dataset.messageId = _0x714b6c_5.id;
+    const _0x714b6c_0 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x714b6c_0.type = "\x62\x75\x74\x74\x6f\x6e", _0x714b6c_0.className = "\x6d\x65\x73\x73\x61\x67\x65\x2d\x70\x69\x6e", _0x714b6c_0.innerHTML = _0x714b6c_d("\x70\x69\x6e");
+    const _0x714b6c_1 = () => {
+      _0x714b6c_0.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(!!_0x714b6c_5.pinned)), _0x714b6c_0.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x714b6c_5.pinned ? "\x55\x6e\x70\x69\x6e\x20\x6d\x65\x73\x73\x61\x67\x65" : "\x50\x69\x6e\x20\x6d\x65\x73\x73\x61\x67\x65"), 
+      _0x714b6c_0.title = _0x714b6c_5.pinned ? "\x55\x6e\x70\x69\x6e\x20\x6d\x65\x73\x73\x61\x67\x65" : "\x50\x69\x6e\x20\x6d\x65\x73\x73\x61\x67\x65";
     };
-    t(), e.onclick = () => {
-      A || (!i.pinned && H.filter(e => e.pinned).length >= 20 ? I("You can pin up to 20 messages per chat.") : (i.pinned = !i.pinned, 
-      t(), x.save(H, m("model").value, !T, m("effort").value)));
-    }, s.append(e);
+    _0x714b6c_1(), _0x714b6c_0.onclick = () => {
+      _0x714b6c_1d || (!_0x714b6c_5.pinned && _0x714b6c_20.filter(_0x714b6c_0 => _0x714b6c_0.pinned).length >= 20 ? _0x714b6c_24("\x59\x6f\x75\x20\x63\x61\x6e\x20\x70\x69\x6e\x20\x75\x70\x20\x74\x6f\x20\x32\x30\x20\x6d\x65\x73\x73\x61\x67\x65\x73\x20\x70\x65\x72\x20\x63\x68\x61\x74\x2e") : (_0x714b6c_5.pinned = !_0x714b6c_5.pinned, 
+      _0x714b6c_1(), _0x714b6c_15.save(_0x714b6c_20, _0x714b6c_b("\x6d\x6f\x64\x65\x6c").value, !_0x714b6c_1b, _0x714b6c_b("\x65\x66\x66\x6f\x72\x74").value)));
+    }, _0x714b6c_7.append(_0x714b6c_0);
   }
-  if ("string" == typeof a?.summary && a.summary.trim()) {
-    const e = document.createElement("details");
-    e.className = "reasoning-summary";
-    const t = document.createElement("summary");
-    t.textContent = "Thinking summary";
-    const o = document.createElement("div");
-    o.textContent = a.summary.slice(0, 2400), e.append(t, o), r.append(e);
+  if ("\x73\x74\x72\x69\x6e\x67" == typeof _0x714b6c_4?.summary && _0x714b6c_4.summary.trim()) {
+    const _0x714b6c_0 = document.createElement("\x64\x65\x74\x61\x69\x6c\x73");
+    _0x714b6c_0.className = "\x72\x65\x61\x73\x6f\x6e\x69\x6e\x67\x2d\x73\x75\x6d\x6d\x61\x72\x79";
+    const _0x714b6c_1 = document.createElement("\x73\x75\x6d\x6d\x61\x72\x79");
+    _0x714b6c_1.textContent = "\x54\x68\x69\x6e\x6b\x69\x6e\x67\x20\x73\x75\x6d\x6d\x61\x72\x79";
+    const _0x714b6c_2 = document.createElement("\x64\x69\x76");
+    _0x714b6c_2.textContent = _0x714b6c_4.summary.slice(0, 2400), _0x714b6c_0.append(_0x714b6c_1, _0x714b6c_2), 
+    _0x714b6c_6.append(_0x714b6c_0);
   }
-  const d = document.createElement("div");
-  if (d.className = "message-content", "assistant" === t ? e(d, o) : d.textContent = o, 
-  r.append(d), "assistant" === t && "length" === i?.finishReason) {
-    const e = document.createElement("button");
-    e.type = "button", e.className = "continue-response", e.textContent = "Continue response", 
-    e.title = "This reply reached its response limit. Continue using your remaining allowance.", 
-    e.onclick = () => {
-      A || (H.at(-1) === i ? m("prompt").value.trim() ? I("Send or clear your draft before continuing.") : (m("prompt").value = "Continue your previous response from where it stopped, without repeating it.", 
-      m("composer").requestSubmit()) : I("Continue from the latest reply in this chat."));
-    }, r.append(e);
+  const _0x714b6c_a = document.createElement("\x64\x69\x76");
+  if (_0x714b6c_a.className = "\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74", "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x714b6c_1 ? _0x714b6c_0(_0x714b6c_a, _0x714b6c_2) : _0x714b6c_a.textContent = _0x714b6c_2, 
+  _0x714b6c_6.append(_0x714b6c_a), "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x714b6c_1 && "\x6c\x65\x6e\x67\x74\x68" === _0x714b6c_5?.finishReason) {
+    const _0x714b6c_0 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x714b6c_0.type = "\x62\x75\x74\x74\x6f\x6e", _0x714b6c_0.className = "\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65", _0x714b6c_0.textContent = "\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x72\x65\x73\x70\x6f\x6e\x73\x65", 
+    _0x714b6c_0.title = "\x54\x68\x69\x73\x20\x72\x65\x70\x6c\x79\x20\x72\x65\x61\x63\x68\x65\x64\x20\x69\x74\x73\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x6c\x69\x6d\x69\x74\x2e\x20\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x75\x73\x69\x6e\x67\x20\x79\x6f\x75\x72\x20\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x2e", 
+    _0x714b6c_0.onclick = () => {
+      _0x714b6c_1d || (_0x714b6c_20.at(-1) === _0x714b6c_5 ? _0x714b6c_b("\x70\x72\x6f\x6d\x70\x74").value.trim() ? _0x714b6c_24("\x53\x65\x6e\x64\x20\x6f\x72\x20\x63\x6c\x65\x61\x72\x20\x79\x6f\x75\x72\x20\x64\x72\x61\x66\x74\x20\x62\x65\x66\x6f\x72\x65\x20\x63\x6f\x6e\x74\x69\x6e\x75\x69\x6e\x67\x2e") : (_0x714b6c_b("\x70\x72\x6f\x6d\x70\x74").value = "\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x79\x6f\x75\x72\x20\x70\x72\x65\x76\x69\x6f\x75\x73\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x66\x72\x6f\x6d\x20\x77\x68\x65\x72\x65\x20\x69\x74\x20\x73\x74\x6f\x70\x70\x65\x64\x2c\x20\x77\x69\x74\x68\x6f\x75\x74\x20\x72\x65\x70\x65\x61\x74\x69\x6e\x67\x20\x69\x74\x2e", 
+      _0x714b6c_b("\x63\x6f\x6d\x70\x6f\x73\x65\x72").requestSubmit()) : _0x714b6c_24("\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x66\x72\x6f\x6d\x20\x74\x68\x65\x20\x6c\x61\x74\x65\x73\x74\x20\x72\x65\x70\x6c\x79\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x63\x68\x61\x74\x2e"));
+    }, _0x714b6c_6.append(_0x714b6c_0);
   }
-  return m("feed").append(r), m("feed").scrollTop = m("feed").scrollHeight, r;
+  return _0x714b6c_b("\x66\x65\x65\x64").append(_0x714b6c_6), _0x714b6c_b("\x66\x65\x65\x64").scrollTop = _0x714b6c_b("\x66\x65\x65\x64").scrollHeight, 
+  _0x714b6c_6;
 }
 
-function z(e) {
-  m("feed").querySelector(".thinking-message")?.remove();
-  const t = q("assistant", "", e);
-  t.classList.add("thinking-message"), t.setAttribute("role", "status"), t.querySelector(".message-content").innerHTML = '<span class="thinking-dot"></span><span>Thinking...</span>', 
-  t.dataset.started = Date.now();
+function _0x714b6c_26(_0x714b6c_0) {
+  _0x714b6c_b("\x66\x65\x65\x64").querySelector("\x2e\x74\x68\x69\x6e\x6b\x69\x6e\x67\x2d\x6d\x65\x73\x73\x61\x67\x65")?.remove();
+  const _0x714b6c_1 = _0x714b6c_25("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", "", _0x714b6c_0);
+  _0x714b6c_1.classList.add("\x74\x68\x69\x6e\x6b\x69\x6e\x67\x2d\x6d\x65\x73\x73\x61\x67\x65"), _0x714b6c_1.setAttribute("\x72\x6f\x6c\x65", "\x73\x74\x61\x74\x75\x73"), 
+  _0x714b6c_1.querySelector("\x2e\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74").innerHTML = "\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x68\x69\x6e\x6b\x69\x6e\x67\x2d\x64\x6f\x74\x22\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x73\x70\x61\x6e\x3e\x54\x68\x69\x6e\x6b\x69\x6e\x67\x2e\x2e\x2e\x3c\x2f\x73\x70\x61\x6e\x3e", 
+  _0x714b6c_1.dataset.started = Date.now();
 }
 
-let O, R = 0;
+let _0x714b6c_27, _0x714b6c_28 = 0;
 
-const V = document.createElement("div");
+const _0x714b6c_29 = document.createElement("\x64\x69\x76");
 
-function W(e) {
-  const t = Number(e.headers.get("retry-after"));
-  if (429 !== e.status || !Number.isFinite(t) || t < 1 || t > 60) return;
-  R = Date.now() + 1e3 * t, clearInterval(O);
-  const o = () => {
-    const e = Math.max(0, Math.ceil((R - Date.now()) / 1e3));
-    V.hidden = !e, V.textContent = e ? `You can send another message in ${e}s.` : "", 
-    B(), e || clearInterval(O);
+function _0x714b6c_2a(_0x714b6c_0) {
+  const _0x714b6c_1 = Number(_0x714b6c_0.headers.get("\x72\x65\x74\x72\x79\x2d\x61\x66\x74\x65\x72"));
+  if (429 !== _0x714b6c_0.status || !Number.isFinite(_0x714b6c_1) || _0x714b6c_1 < 1 || _0x714b6c_1 > 60) return;
+  _0x714b6c_28 = Date.now() + 1e3 * _0x714b6c_1, clearInterval(_0x714b6c_27);
+  const _0x714b6c_2 = () => {
+    const _0x714b6c_0 = Math.max(0, Math.ceil((_0x714b6c_28 - Date.now()) / 1e3));
+    _0x714b6c_29.hidden = !_0x714b6c_0, _0x714b6c_29.textContent = _0x714b6c_0 ? `\x59\x6f\x75\x20\x63\x61\x6e\x20\x73\x65\x6e\x64\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x6d\x65\x73\x73\x61\x67\x65\x20\x69\x6e\x20${_0x714b6c_0}\x73\x2e` : "", 
+    _0x714b6c_2b(), _0x714b6c_0 || clearInterval(_0x714b6c_27);
   };
-  o(), O = setInterval(o, 250);
+  _0x714b6c_2(), _0x714b6c_27 = setInterval(_0x714b6c_2, 250);
 }
 
-function B() {
-  m("apiKeys").disabled = A, m("send").disabled = Date.now() < R || A || !T && !N || !C?.currentUser || !m("model").value, 
-  m("stop").hidden = !A, m("model").disabled = A, m("effortTrigger").disabled = A, 
-  m("newTask").disabled = A, m("chatMode").disabled = A, m("computerMode").disabled = A, 
-  m("connection").classList.toggle("online", N), m("connection").innerHTML = N ? "<i></i> Companion connected" : "<i></i> Companion offline";
+function _0x714b6c_2b() {
+  _0x714b6c_b("\x61\x70\x69\x4b\x65\x79\x73").disabled = _0x714b6c_1d, _0x714b6c_b("\x73\x65\x6e\x64").disabled = Date.now() < _0x714b6c_28 || _0x714b6c_1d || !_0x714b6c_1b && !_0x714b6c_1c || !_0x714b6c_16?.currentUser || !_0x714b6c_b("\x6d\x6f\x64\x65\x6c").value, 
+  _0x714b6c_b("\x73\x74\x6f\x70").hidden = !_0x714b6c_1d, _0x714b6c_b("\x6d\x6f\x64\x65\x6c").disabled = _0x714b6c_1d, 
+  _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x54\x72\x69\x67\x67\x65\x72").disabled = _0x714b6c_1d, _0x714b6c_b("\x6e\x65\x77\x54\x61\x73\x6b").disabled = _0x714b6c_1d, 
+  _0x714b6c_b("\x63\x68\x61\x74\x4d\x6f\x64\x65").disabled = _0x714b6c_1d, _0x714b6c_b("\x63\x6f\x6d\x70\x75\x74\x65\x72\x4d\x6f\x64\x65").disabled = _0x714b6c_1d, 
+  _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e").classList.toggle("\x6f\x6e\x6c\x69\x6e\x65", _0x714b6c_1c), _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e").innerHTML = _0x714b6c_1c ? "\x3c\x69\x3e\x3c\x2f\x69\x3e\x20\x43\x6f\x6d\x70\x61\x6e\x69\x6f\x6e\x20\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64" : "\x3c\x69\x3e\x3c\x2f\x69\x3e\x20\x43\x6f\x6d\x70\x61\x6e\x69\x6f\x6e\x20\x6f\x66\x66\x6c\x69\x6e\x65";
 }
 
-async function J(e, t, o) {
-  if (!D()) throw Error("Open this page from Start-Nyx-Agents.cmd to pair your companion.");
-  let n;
+async function _0x714b6c_2c(_0x714b6c_0, _0x714b6c_1, _0x714b6c_2) {
+  if (!_0x714b6c_23()) throw Error("\x4f\x70\x65\x6e\x20\x74\x68\x69\x73\x20\x70\x61\x67\x65\x20\x66\x72\x6f\x6d\x20\x53\x74\x61\x72\x74\x2d\x4e\x79\x78\x2d\x41\x67\x65\x6e\x74\x73\x2e\x63\x6d\x64\x20\x74\x6f\x20\x70\x61\x69\x72\x20\x79\x6f\x75\x72\x20\x63\x6f\x6d\x70\x61\x6e\x69\x6f\x6e\x2e");
+  let _0x714b6c_3;
   try {
-    n = await fetch("http://127.0.0.1:6768" + e, {
-      method: t ? "POST" : "GET",
+    _0x714b6c_3 = await fetch("\x68\x74\x74\x70\x3a\x2f\x2f\x31\x32\x37\x2e\x30\x2e\x30\x2e\x31\x3a\x36\x37\x36\x38" + _0x714b6c_0, {
+      method: _0x714b6c_1 ? "\x50\x4f\x53\x54" : "\x47\x45\x54",
       headers: {
-        Authorization: "Bearer " + D(),
-        ...t ? {
-          "Content-Type": "application/json"
+        Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0x714b6c_23(),
+        ..._0x714b6c_1 ? {
+          "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         } : {}
       },
-      ...t ? {
-        body: JSON.stringify(t)
+      ..._0x714b6c_1 ? {
+        body: JSON.stringify(_0x714b6c_1)
       } : {},
-      signal: o,
-      targetAddressSpace: "loopback"
+      signal: _0x714b6c_2,
+      targetAddressSpace: "\x6c\x6f\x6f\x70\x62\x61\x63\x6b"
     });
-  } catch (i) {
-    if ("AbortError" === i.name) throw i;
-    throw Error("Cannot reach the companion. Keep its window open and allow local-network access in your browser.");
+  } catch (_0x714b6c_5) {
+    if ("\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x714b6c_5.name) throw _0x714b6c_5;
+    throw Error("\x43\x61\x6e\x6e\x6f\x74\x20\x72\x65\x61\x63\x68\x20\x74\x68\x65\x20\x63\x6f\x6d\x70\x61\x6e\x69\x6f\x6e\x2e\x20\x4b\x65\x65\x70\x20\x69\x74\x73\x20\x77\x69\x6e\x64\x6f\x77\x20\x6f\x70\x65\x6e\x20\x61\x6e\x64\x20\x61\x6c\x6c\x6f\x77\x20\x6c\x6f\x63\x61\x6c\x2d\x6e\x65\x74\x77\x6f\x72\x6b\x20\x61\x63\x63\x65\x73\x73\x20\x69\x6e\x20\x79\x6f\x75\x72\x20\x62\x72\x6f\x77\x73\x65\x72\x2e");
   }
-  const a = await n.json();
-  if (!n.ok) throw Error(a.error || "Companion request failed.");
-  return a;
+  const _0x714b6c_4 = await _0x714b6c_3.json();
+  if (!_0x714b6c_3.ok) throw Error(_0x714b6c_4.error || "\x43\x6f\x6d\x70\x61\x6e\x69\x6f\x6e\x20\x72\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64\x2e");
+  return _0x714b6c_4;
 }
 
-V.hidden = !0, V.className = "ai-send-cooldown", V.setAttribute("role", "status"), 
-V.style.cssText = "font-size:12px;text-align:center;padding:4px;", m("composer").before(V);
+_0x714b6c_29.hidden = !0, _0x714b6c_29.className = "\x61\x69\x2d\x73\x65\x6e\x64\x2d\x63\x6f\x6f\x6c\x64\x6f\x77\x6e", _0x714b6c_29.setAttribute("\x72\x6f\x6c\x65", "\x73\x74\x61\x74\x75\x73"), 
+_0x714b6c_29.style.cssText = "\x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3a\x31\x32\x70\x78\x3b\x74\x65\x78\x74\x2d\x61\x6c\x69\x67\x6e\x3a\x63\x65\x6e\x74\x65\x72\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x34\x70\x78\x3b", _0x714b6c_b("\x63\x6f\x6d\x70\x6f\x73\x65\x72").before(_0x714b6c_29);
 
-let Y = !1;
+let _0x714b6c_2d = !1;
 
-async function $(e, t, n, a) {
-  const r = e;
-  if ("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai" === e && y.active()) return y.send(t, n, a);
-  o && !Y && (e = e.replace(/^\/api\/nyx-ai(?=\/models|$)/, "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/drop-ai")), o || (e = e.replace(/^\/api\/nyx-ai(?=\/models|$)/, "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nook-ai"));
-  const s = await (C?.currentUser?.getIdToken());
-  if (!s) throw Error("Sign in to your account first.");
-  const c = await fetch(e, {
-    method: t ? "POST" : "GET",
+async function _0x714b6c_2e(_0x714b6c_0, _0x714b6c_1, _0x714b6c_3, _0x714b6c_4) {
+  const _0x714b6c_6 = _0x714b6c_0;
+  if ("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69" === _0x714b6c_0 && _0x714b6c_13.active()) return _0x714b6c_13.send(_0x714b6c_1, _0x714b6c_3, _0x714b6c_4);
+  _0x714b6c_2 && !_0x714b6c_2d && (_0x714b6c_0 = _0x714b6c_0.replace(/^\/api\/nyx-ai(?=\/models|$)/, "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x64\x72\x6f\x70\x2d\x61\x69")), 
+  _0x714b6c_2 || (_0x714b6c_0 = _0x714b6c_0.replace(/^\/api\/nyx-ai(?=\/models|$)/, "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x6f\x6f\x6b\x2d\x61\x69"));
+  const _0x714b6c_7 = await (_0x714b6c_16?.currentUser?.getIdToken());
+  if (!_0x714b6c_7) throw Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x66\x69\x72\x73\x74\x2e");
+  const _0x714b6c_8 = await fetch(_0x714b6c_0, {
+    method: _0x714b6c_1 ? "\x50\x4f\x53\x54" : "\x47\x45\x54",
     headers: {
-      Authorization: "Bearer " + s,
-      "x-nyx-ai-provider": "shared",
-      ...t ? {
-        "Content-Type": "application/json"
+      Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0x714b6c_7,
+      "\x78\x2d\x6e\x79\x78\x2d\x61\x69\x2d\x70\x72\x6f\x76\x69\x64\x65\x72": "\x73\x68\x61\x72\x65\x64",
+      ..._0x714b6c_1 ? {
+        "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
       } : {}
     },
-    ...t ? {
-      body: JSON.stringify(t)
+    ..._0x714b6c_1 ? {
+      body: JSON.stringify(_0x714b6c_1)
     } : {},
-    signal: n
+    signal: _0x714b6c_3
   });
-  return o && !Y && /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai/models" === r && (404 === c.status || c.headers.get("content-type")?.includes("text/html")) ? (Y = !0, 
-  document.querySelector(".footnote").textContent = "Local preview uses existing account limits until the Drop backend is deployed.", 
-  $(r, t, n, a)) : (W(c), i(c, a));
+  return _0x714b6c_2 && !_0x714b6c_2d && /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x6d\x6f\x64\x65\x6c\x73" === _0x714b6c_6 && (404 === _0x714b6c_8.status || _0x714b6c_8.headers.get("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65")?.includes("\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c")) ? (_0x714b6c_2d = !0, 
+  document.querySelector("\x2e\x66\x6f\x6f\x74\x6e\x6f\x74\x65").textContent = "\x4c\x6f\x63\x61\x6c\x20\x70\x72\x65\x76\x69\x65\x77\x20\x75\x73\x65\x73\x20\x65\x78\x69\x73\x74\x69\x6e\x67\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x6c\x69\x6d\x69\x74\x73\x20\x75\x6e\x74\x69\x6c\x20\x74\x68\x65\x20\x44\x72\x6f\x70\x20\x62\x61\x63\x6b\x65\x6e\x64\x20\x69\x73\x20\x64\x65\x70\x6c\x6f\x79\x65\x64\x2e", 
+  _0x714b6c_2e(_0x714b6c_6, _0x714b6c_1, _0x714b6c_3, _0x714b6c_4)) : (_0x714b6c_2a(_0x714b6c_8), 
+  _0x714b6c_5(_0x714b6c_8, _0x714b6c_4));
 }
 
-async function K() {
-  const e = C?.currentUser?.uid, t = y.revision();
+async function _0x714b6c_2f() {
+  const _0x714b6c_0 = _0x714b6c_16?.currentUser?.uid, _0x714b6c_1 = _0x714b6c_13.revision();
   try {
-    const o = await y.models() || await $("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai/models" + (y.active() ? "?custom=1" : ""));
-    if (e !== C?.currentUser?.uid || t !== y.revision()) return;
-    U = (o.models || []).filter(e => (!1 !== e.text || e.outputModalities?.includes("audio")) && !e.id.endsWith(":batch")), 
-    m("model").replaceChildren(...U.map(e => new Option(e.label || e.id, e.id))), w.set(U), 
-    B();
-  } catch (o) {
-    I(o.message);
+    const _0x714b6c_2 = await _0x714b6c_13.models() || await _0x714b6c_2e("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x6d\x6f\x64\x65\x6c\x73" + (_0x714b6c_13.active() ? "\x3f\x63\x75\x73\x74\x6f\x6d\x3d\x31" : ""));
+    if (_0x714b6c_0 !== _0x714b6c_16?.currentUser?.uid || _0x714b6c_1 !== _0x714b6c_13.revision()) return;
+    _0x714b6c_1f = (_0x714b6c_2.models || []).filter(_0x714b6c_0 => (!1 !== _0x714b6c_0.text || _0x714b6c_0.outputModalities?.includes("\x61\x75\x64\x69\x6f")) && !_0x714b6c_0.id.endsWith("\x3a\x62\x61\x74\x63\x68")), 
+    _0x714b6c_b("\x6d\x6f\x64\x65\x6c").replaceChildren(..._0x714b6c_1f.map(_0x714b6c_0 => new Option(_0x714b6c_0.label || _0x714b6c_0.id, _0x714b6c_0.id))), 
+    _0x714b6c_11.set(_0x714b6c_1f), _0x714b6c_2b();
+  } catch (_0x714b6c_2) {
+    _0x714b6c_24(_0x714b6c_2.message);
   }
 }
 
-async function F(e = "") {
-  const t = await J("/tool", {
-    tool: "list",
+async function _0x714b6c_30(_0x714b6c_0 = "") {
+  const _0x714b6c_1 = await _0x714b6c_2c("\x2f\x74\x6f\x6f\x6c", {
+    tool: "\x6c\x69\x73\x74",
     args: {
-      path: e
+      path: _0x714b6c_0
     }
   });
-  P = e, m("files").replaceChildren();
-  const o = (e, t, o = !1) => {
-    const n = document.createElement("button");
-    n.className = "file" + (o ? " directory" : ""), n.innerHTML = p(o ? "folder" : "file"), 
-    n.append(document.createTextNode(e)), n.onclick = () => t().catch(e => I(e.message)), 
-    m("files").append(n);
+  _0x714b6c_21 = _0x714b6c_0, _0x714b6c_b("\x66\x69\x6c\x65\x73").replaceChildren();
+  const _0x714b6c_2 = (_0x714b6c_0, _0x714b6c_1, _0x714b6c_2 = !1) => {
+    const _0x714b6c_3 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x714b6c_3.className = "\x66\x69\x6c\x65" + (_0x714b6c_2 ? "\x20\x64\x69\x72\x65\x63\x74\x6f\x72\x79" : ""), _0x714b6c_3.innerHTML = _0x714b6c_d(_0x714b6c_2 ? "\x66\x6f\x6c\x64\x65\x72" : "\x66\x69\x6c\x65"), 
+    _0x714b6c_3.append(document.createTextNode(_0x714b6c_0)), _0x714b6c_3.onclick = () => _0x714b6c_1().catch(_0x714b6c_0 => _0x714b6c_24(_0x714b6c_0.message)), 
+    _0x714b6c_b("\x66\x69\x6c\x65\x73").append(_0x714b6c_3);
   };
-  e && o("Parent folder", () => F(e.split("/").slice(0, -1).join("/")), !0);
-  for (const n of t.entries) o(n.name, async () => {
-    if (n.directory) return F(n.path);
-    const e = await J("/tool", {
-      tool: "read",
+  _0x714b6c_0 && _0x714b6c_2("\x50\x61\x72\x65\x6e\x74\x20\x66\x6f\x6c\x64\x65\x72", () => _0x714b6c_30(_0x714b6c_0.split("\x2f").slice(0, -1).join("\x2f")), !0);
+  for (const _0x714b6c_3 of _0x714b6c_1.entries) _0x714b6c_2(_0x714b6c_3.name, async () => {
+    if (_0x714b6c_3.directory) return _0x714b6c_30(_0x714b6c_3.path);
+    const _0x714b6c_0 = await _0x714b6c_2c("\x2f\x74\x6f\x6f\x6c", {
+      tool: "\x72\x65\x61\x64",
       args: {
-        path: n.path
+        path: _0x714b6c_3.path
       }
     });
-    m("previewPath").textContent = n.path, m("previewContent").textContent = e.content, 
-    G(!0);
-  }, n.directory);
+    _0x714b6c_b("\x70\x72\x65\x76\x69\x65\x77\x50\x61\x74\x68").textContent = _0x714b6c_3.path, _0x714b6c_b("\x70\x72\x65\x76\x69\x65\x77\x43\x6f\x6e\x74\x65\x6e\x74").textContent = _0x714b6c_0.content, 
+    _0x714b6c_31(!0);
+  }, _0x714b6c_3.directory);
 }
 
-function G(e) {
-  m("preview").hidden = !e, m("activity").hidden = e, m("fileTab").classList.toggle("selected", e), 
-  m("activityTab").classList.toggle("selected", !e);
+function _0x714b6c_31(_0x714b6c_0) {
+  _0x714b6c_b("\x70\x72\x65\x76\x69\x65\x77").hidden = !_0x714b6c_0, _0x714b6c_b("\x61\x63\x74\x69\x76\x69\x74\x79").hidden = _0x714b6c_0, 
+  _0x714b6c_b("\x66\x69\x6c\x65\x54\x61\x62").classList.toggle("\x73\x65\x6c\x65\x63\x74\x65\x64", _0x714b6c_0), _0x714b6c_b("\x61\x63\x74\x69\x76\x69\x74\x79\x54\x61\x62").classList.toggle("\x73\x65\x6c\x65\x63\x74\x65\x64", !_0x714b6c_0);
 }
 
-async function Q() {
+async function _0x714b6c_32() {
   try {
-    const e = await (await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/founder-profile/auth-config", {
-      cache: "no-store"
+    const _0x714b6c_0 = await (await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x66\x6f\x75\x6e\x64\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67", {
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
     })).json();
-    if (!e.enabled) throw Error("Account sign-in is unavailable on this server.");
-    const [t, n] = await Promise.all([ import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"), import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js") ]);
-    M = n;
-    const a = t.getApps().find(e => "nyx-founder-owner" === e.name) || t.initializeApp({
-      apiKey: e.apiKey,
-      authDomain: e.projectId + ".firebaseapp.com",
-      projectId: e.projectId
-    }, "nyx-founder-owner");
-    C = n.getAuth(a), await n.setPersistence(C, n.browserLocalPersistence), n.onAuthStateChanged(C, e => {
-      y.bind(e?.uid || ""), o && parent.postMessage({
-        type: "drop:account",
-        signedIn: !!e,
-        name: e?.displayName || "Drop account",
-        uid: e?.uid || "",
-        avatarUrl: e?.photoURL || ""
-      }, location.origin), S = te(e?.displayName), k = 0, x.bind(e?.uid), e && ne(e), 
-      m("account").innerHTML = p("account") + (e ? "Sign out" : "Sign in"), m("account").title = e ? "Sign out" : "Sign in", 
-      m("account").setAttribute("aria-label", e ? "Sign out" : "Sign in"), e ? K() : (m("model").replaceChildren(new Option("Sign in to load models", "")), 
-      w.set([]), v.reset()), B();
+    if (!_0x714b6c_0.enabled) throw Error("\x41\x63\x63\x6f\x75\x6e\x74\x20\x73\x69\x67\x6e\x2d\x69\x6e\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x73\x65\x72\x76\x65\x72\x2e");
+    const [_0x714b6c_1, _0x714b6c_3] = await Promise.all([ import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x70\x70\x2e\x6a\x73"), import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x75\x74\x68\x2e\x6a\x73") ]);
+    _0x714b6c_17 = _0x714b6c_3;
+    const _0x714b6c_4 = _0x714b6c_1.getApps().find(_0x714b6c_0 => "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72" === _0x714b6c_0.name) || _0x714b6c_1.initializeApp({
+      apiKey: _0x714b6c_0.apiKey,
+      authDomain: _0x714b6c_0.projectId + "\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d",
+      projectId: _0x714b6c_0.projectId
+    }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72");
+    _0x714b6c_16 = _0x714b6c_3.getAuth(_0x714b6c_4), await _0x714b6c_3.setPersistence(_0x714b6c_16, _0x714b6c_3.browserLocalPersistence), 
+    _0x714b6c_3.onAuthStateChanged(_0x714b6c_16, _0x714b6c_0 => {
+      _0x714b6c_13.bind(_0x714b6c_0?.uid || ""), _0x714b6c_2 && parent.postMessage({
+        type: "\x64\x72\x6f\x70\x3a\x61\x63\x63\x6f\x75\x6e\x74",
+        signedIn: !!_0x714b6c_0,
+        name: _0x714b6c_0?.displayName || "\x44\x72\x6f\x70\x20\x61\x63\x63\x6f\x75\x6e\x74",
+        uid: _0x714b6c_0?.uid || "",
+        avatarUrl: _0x714b6c_0?.photoURL || ""
+      }, location.origin), _0x714b6c_18 = _0x714b6c_37(_0x714b6c_0?.displayName), _0x714b6c_19 = 0, 
+      _0x714b6c_15.bind(_0x714b6c_0?.uid), _0x714b6c_0 && _0x714b6c_39(_0x714b6c_0), _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74").innerHTML = _0x714b6c_d("\x61\x63\x63\x6f\x75\x6e\x74") + (_0x714b6c_0 ? "\x53\x69\x67\x6e\x20\x6f\x75\x74" : "\x53\x69\x67\x6e\x20\x69\x6e"), 
+      _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74").title = _0x714b6c_0 ? "\x53\x69\x67\x6e\x20\x6f\x75\x74" : "\x53\x69\x67\x6e\x20\x69\x6e", _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74").setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x714b6c_0 ? "\x53\x69\x67\x6e\x20\x6f\x75\x74" : "\x53\x69\x67\x6e\x20\x69\x6e"), 
+      _0x714b6c_0 ? _0x714b6c_2f() : (_0x714b6c_b("\x6d\x6f\x64\x65\x6c").replaceChildren(new Option("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x6c\x6f\x61\x64\x20\x6d\x6f\x64\x65\x6c\x73", "")), 
+      _0x714b6c_11.set([]), _0x714b6c_12.reset()), _0x714b6c_2b();
     });
-  } catch (e) {
-    I(e.message);
+  } catch (_0x714b6c_0) {
+    _0x714b6c_24(_0x714b6c_0.message);
   }
 }
 
-m("activityTab").onclick = () => G(!1), m("fileTab").onclick = () => G(!0), m("refresh").onclick = () => F(P).catch(e => I(e.message)), 
-m("connect").onclick = async () => {
+_0x714b6c_b("\x61\x63\x74\x69\x76\x69\x74\x79\x54\x61\x62").onclick = () => _0x714b6c_31(!1), _0x714b6c_b("\x66\x69\x6c\x65\x54\x61\x62").onclick = () => _0x714b6c_31(!0), 
+_0x714b6c_b("\x72\x65\x66\x72\x65\x73\x68").onclick = () => _0x714b6c_30(_0x714b6c_21).catch(_0x714b6c_0 => _0x714b6c_24(_0x714b6c_0.message)), 
+_0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").onclick = async () => {
   try {
-    if (!C?.currentUser) return void m("login").showModal();
-    I("Confirm the connection in the Windows dialog.");
-    const e = await J("/connect", {});
-    if (N = e.connected, !N) throw Error("Connection declined.");
-    const t = await J("/status");
-    m("folder").textContent = t.workspace, await F(), I("Connected to " + t.workspace);
-  } catch (e) {
-    N = !1, I(e.message);
+    if (!_0x714b6c_16?.currentUser) return void _0x714b6c_b("\x6c\x6f\x67\x69\x6e").showModal();
+    _0x714b6c_24("\x43\x6f\x6e\x66\x69\x72\x6d\x20\x74\x68\x65\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x69\x6e\x20\x74\x68\x65\x20\x57\x69\x6e\x64\x6f\x77\x73\x20\x64\x69\x61\x6c\x6f\x67\x2e");
+    const _0x714b6c_0 = await _0x714b6c_2c("\x2f\x63\x6f\x6e\x6e\x65\x63\x74", {});
+    if (_0x714b6c_1c = _0x714b6c_0.connected, !_0x714b6c_1c) throw Error("\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x64\x65\x63\x6c\x69\x6e\x65\x64\x2e");
+    const _0x714b6c_1 = await _0x714b6c_2c("\x2f\x73\x74\x61\x74\x75\x73");
+    _0x714b6c_b("\x66\x6f\x6c\x64\x65\x72").textContent = _0x714b6c_1.workspace, await _0x714b6c_30(), 
+    _0x714b6c_24("\x43\x6f\x6e\x6e\x65\x63\x74\x65\x64\x20\x74\x6f\x20" + _0x714b6c_1.workspace);
+  } catch (_0x714b6c_0) {
+    _0x714b6c_1c = !1, _0x714b6c_24(_0x714b6c_0.message);
   } finally {
-    B();
+    _0x714b6c_2b();
   }
-}, m("account").onclick = async () => {
-  C?.currentUser ? (await ce(), await M.signOut(C), N = !1, H = [], m("feed").replaceChildren(), 
-  B()) : (o && _(!1), m("login").showModal());
+}, _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74").onclick = async () => {
+  _0x714b6c_16?.currentUser ? (await _0x714b6c_3e(), await _0x714b6c_17.signOut(_0x714b6c_16), 
+  _0x714b6c_1c = !1, _0x714b6c_20 = [], _0x714b6c_b("\x66\x65\x65\x64").replaceChildren(), _0x714b6c_2b()) : (_0x714b6c_2 && _0x714b6c_35(!1), 
+  _0x714b6c_b("\x6c\x6f\x67\x69\x6e").showModal());
 };
 
-let X = !1, Z = !1;
+let _0x714b6c_33 = !1, _0x714b6c_34 = !1;
 
-function _(e) {
-  Z || (X = e, m("authTitle").textContent = o ? e ? "Create your Drop account" : "Sign in to Drop" : e ? "Create an account" : "Sign in", 
-  m("authSubmit").textContent = e ? "Create account" : "Sign in", m("authSwitchHint").textContent = e ? "Already have an account?" : "New here?", 
-  m("authSwitch").textContent = e ? "Sign in" : "Create an account", m("confirmPasswordLabel").hidden = !e, 
-  m("confirmPassword").disabled = !e, m("confirmPassword").required = e, m("password").autocomplete = e ? "new-password" : "current-password", 
-  m("password").minLength = e ? 8 : 1, m("password").maxLength = 256, m("signupUsernameLabel").hidden = !e, 
-  m("signupUsername").disabled = !e, m("signupUsername").required = e, m("confirmPassword").value = "", 
-  m("loginError").textContent = "");
+function _0x714b6c_35(_0x714b6c_0) {
+  _0x714b6c_34 || (_0x714b6c_33 = _0x714b6c_0, _0x714b6c_b("\x61\x75\x74\x68\x54\x69\x74\x6c\x65").textContent = _0x714b6c_2 ? _0x714b6c_0 ? "\x43\x72\x65\x61\x74\x65\x20\x79\x6f\x75\x72\x20\x44\x72\x6f\x70\x20\x61\x63\x63\x6f\x75\x6e\x74" : "\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x44\x72\x6f\x70" : _0x714b6c_0 ? "\x43\x72\x65\x61\x74\x65\x20\x61\x6e\x20\x61\x63\x63\x6f\x75\x6e\x74" : "\x53\x69\x67\x6e\x20\x69\x6e", 
+  _0x714b6c_b("\x61\x75\x74\x68\x53\x75\x62\x6d\x69\x74").textContent = _0x714b6c_0 ? "\x43\x72\x65\x61\x74\x65\x20\x61\x63\x63\x6f\x75\x6e\x74" : "\x53\x69\x67\x6e\x20\x69\x6e", 
+  _0x714b6c_b("\x61\x75\x74\x68\x53\x77\x69\x74\x63\x68\x48\x69\x6e\x74").textContent = _0x714b6c_0 ? "\x41\x6c\x72\x65\x61\x64\x79\x20\x68\x61\x76\x65\x20\x61\x6e\x20\x61\x63\x63\x6f\x75\x6e\x74\x3f" : "\x4e\x65\x77\x20\x68\x65\x72\x65\x3f", 
+  _0x714b6c_b("\x61\x75\x74\x68\x53\x77\x69\x74\x63\x68").textContent = _0x714b6c_0 ? "\x53\x69\x67\x6e\x20\x69\x6e" : "\x43\x72\x65\x61\x74\x65\x20\x61\x6e\x20\x61\x63\x63\x6f\x75\x6e\x74", 
+  _0x714b6c_b("\x63\x6f\x6e\x66\x69\x72\x6d\x50\x61\x73\x73\x77\x6f\x72\x64\x4c\x61\x62\x65\x6c").hidden = !_0x714b6c_0, _0x714b6c_b("\x63\x6f\x6e\x66\x69\x72\x6d\x50\x61\x73\x73\x77\x6f\x72\x64").disabled = !_0x714b6c_0, 
+  _0x714b6c_b("\x63\x6f\x6e\x66\x69\x72\x6d\x50\x61\x73\x73\x77\x6f\x72\x64").required = _0x714b6c_0, _0x714b6c_b("\x70\x61\x73\x73\x77\x6f\x72\x64").autocomplete = _0x714b6c_0 ? "\x6e\x65\x77\x2d\x70\x61\x73\x73\x77\x6f\x72\x64" : "\x63\x75\x72\x72\x65\x6e\x74\x2d\x70\x61\x73\x73\x77\x6f\x72\x64", 
+  _0x714b6c_b("\x70\x61\x73\x73\x77\x6f\x72\x64").minLength = _0x714b6c_0 ? 8 : 1, _0x714b6c_b("\x70\x61\x73\x73\x77\x6f\x72\x64").maxLength = 256, 
+  _0x714b6c_b("\x73\x69\x67\x6e\x75\x70\x55\x73\x65\x72\x6e\x61\x6d\x65\x4c\x61\x62\x65\x6c").hidden = !_0x714b6c_0, _0x714b6c_b("\x73\x69\x67\x6e\x75\x70\x55\x73\x65\x72\x6e\x61\x6d\x65").disabled = !_0x714b6c_0, 
+  _0x714b6c_b("\x73\x69\x67\x6e\x75\x70\x55\x73\x65\x72\x6e\x61\x6d\x65").required = _0x714b6c_0, _0x714b6c_b("\x63\x6f\x6e\x66\x69\x72\x6d\x50\x61\x73\x73\x77\x6f\x72\x64").value = "", 
+  _0x714b6c_b("\x6c\x6f\x67\x69\x6e\x45\x72\x72\x6f\x72").textContent = "");
 }
 
-function ee() {
-  const e = m("prompt");
-  e.style.height = "40px", e.style.height = Math.min(180, Math.max(40, e.scrollHeight)) + "px";
+function _0x714b6c_36() {
+  const _0x714b6c_0 = _0x714b6c_b("\x70\x72\x6f\x6d\x70\x74");
+  _0x714b6c_0.style.height = "\x34\x30\x70\x78", _0x714b6c_0.style.height = Math.min(180, Math.max(40, _0x714b6c_0.scrollHeight)) + "\x70\x78";
 }
 
-function te(e) {
-  return String(e || "").replace(/^[ @]+/, "").replace(/[&\xa7][0-9a-fk-or]/gi, "").trim().slice(0, 48);
+function _0x714b6c_37(_0x714b6c_0) {
+  return String(_0x714b6c_0 || "").replace(/^[ @]+/, "").replace(/[&\xa7][0-9a-fk-or]/gi, "").trim().slice(0, 48);
 }
 
-function oe(e = !1) {
-  const t = document.querySelector("#welcome h1");
-  if (!t) return;
-  const o = S ? [ `What's on your mind, ${S}?`, "How can I help?", "What are we exploring?", "What's next?" ] : [ "What's on your mind?", "How can I help?", "What are we exploring?", "What's next?" ];
-  t.textContent = o[k % o.length], e && !matchMedia("(prefers-reduced-motion: reduce)").matches && t.animate([ {
+function _0x714b6c_38(_0x714b6c_0 = !1) {
+  const _0x714b6c_1 = document.querySelector("\x23\x77\x65\x6c\x63\x6f\x6d\x65\x20\x68\x31");
+  if (!_0x714b6c_1) return;
+  const _0x714b6c_2 = _0x714b6c_18 ? [ `\x57\x68\x61\x74\x27\x73\x20\x6f\x6e\x20\x79\x6f\x75\x72\x20\x6d\x69\x6e\x64\x2c\x20${_0x714b6c_18}\x3f`, "\x48\x6f\x77\x20\x63\x61\x6e\x20\x49\x20\x68\x65\x6c\x70\x3f", "\x57\x68\x61\x74\x20\x61\x72\x65\x20\x77\x65\x20\x65\x78\x70\x6c\x6f\x72\x69\x6e\x67\x3f", "\x57\x68\x61\x74\x27\x73\x20\x6e\x65\x78\x74\x3f" ] : [ "\x57\x68\x61\x74\x27\x73\x20\x6f\x6e\x20\x79\x6f\x75\x72\x20\x6d\x69\x6e\x64\x3f", "\x48\x6f\x77\x20\x63\x61\x6e\x20\x49\x20\x68\x65\x6c\x70\x3f", "\x57\x68\x61\x74\x20\x61\x72\x65\x20\x77\x65\x20\x65\x78\x70\x6c\x6f\x72\x69\x6e\x67\x3f", "\x57\x68\x61\x74\x27\x73\x20\x6e\x65\x78\x74\x3f" ];
+  _0x714b6c_1.textContent = _0x714b6c_2[_0x714b6c_19 % _0x714b6c_2.length], _0x714b6c_0 && !matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").matches && _0x714b6c_1.animate([ {
     opacity: 0,
-    transform: "translateY(5px)"
+    transform: "\x74\x72\x61\x6e\x73\x6c\x61\x74\x65\x59\x28\x35\x70\x78\x29"
   }, {
     opacity: 1,
-    transform: "translateY(0)"
+    transform: "\x74\x72\x61\x6e\x73\x6c\x61\x74\x65\x59\x28\x30\x29"
   } ], {
     duration: 350,
-    easing: "ease-out"
+    easing: "\x65\x61\x73\x65\x2d\x6f\x75\x74"
   });
 }
 
-async function ne(e) {
+async function _0x714b6c_39(_0x714b6c_0) {
   try {
-    const t = await $("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/profiles/me");
-    if (C?.currentUser?.uid !== e.uid) return;
-    S = te(t.profile?.username || t.profile?.handle || t.profile?.displayName || e.displayName), 
-    oe();
+    const _0x714b6c_1 = await _0x714b6c_2e("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x70\x72\x6f\x66\x69\x6c\x65\x73\x2f\x6d\x65");
+    if (_0x714b6c_16?.currentUser?.uid !== _0x714b6c_0.uid) return;
+    _0x714b6c_18 = _0x714b6c_37(_0x714b6c_1.profile?.username || _0x714b6c_1.profile?.handle || _0x714b6c_1.profile?.displayName || _0x714b6c_0.displayName), 
+    _0x714b6c_38();
   } catch {}
 }
 
-function ae(e) {
-  if ("github" === e) return '<img class="recent-brand" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/agents/icons/github.svg" alt="GitHub">';
-  const t = {
-    chat: "M4 4h16v12H9l-5 4z",
-    code: "m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18",
-    image: "M3 3h18v18H3z M3 16l5-5 4 4 3-3 6 6 M8 7h.01",
-    deploy: "M7 17H5a4 4 0 0 1-.8-7.9A7 7 0 0 1 18 8a4.5 4.5 0 0 1 1 9h-2 M12 21V11m-4 4 4-4 4 4",
-    search: u.search,
-    file: u.file
+function _0x714b6c_3a(_0x714b6c_0) {
+  if ("\x67\x69\x74\x68\x75\x62" === _0x714b6c_0) return "\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x72\x65\x63\x65\x6e\x74\x2d\x62\x72\x61\x6e\x64\x22\x20\x73\x72\x63\x3d\x22/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x61\x67\x65\x6e\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x67\x69\x74\x68\x75\x62\x2e\x73\x76\x67\x22\x20\x61\x6c\x74\x3d\x22\x47\x69\x74\x48\x75\x62\x22\x3e";
+  const _0x714b6c_1 = {
+    chat: "\x4d\x34\x20\x34\x68\x31\x36\x76\x31\x32\x48\x39\x6c\x2d\x35\x20\x34\x7a",
+    code: "\x6d\x38\x20\x36\x2d\x36\x20\x36\x20\x36\x20\x36\x6d\x38\x2d\x31\x32\x20\x36\x20\x36\x2d\x36\x20\x36\x6d\x2d\x33\x2d\x31\x35\x2d\x32\x20\x31\x38",
+    image: "\x4d\x33\x20\x33\x68\x31\x38\x76\x31\x38\x48\x33\x7a\x20\x4d\x33\x20\x31\x36\x6c\x35\x2d\x35\x20\x34\x20\x34\x20\x33\x2d\x33\x20\x36\x20\x36\x20\x4d\x38\x20\x37\x68\x2e\x30\x31",
+    deploy: "\x4d\x37\x20\x31\x37\x48\x35\x61\x34\x20\x34\x20\x30\x20\x30\x20\x31\x2d\x2e\x38\x2d\x37\x2e\x39\x41\x37\x20\x37\x20\x30\x20\x30\x20\x31\x20\x31\x38\x20\x38\x61\x34\x2e\x35\x20\x34\x2e\x35\x20\x30\x20\x30\x20\x31\x20\x31\x20\x39\x68\x2d\x32\x20\x4d\x31\x32\x20\x32\x31\x56\x31\x31\x6d\x2d\x34\x20\x34\x20\x34\x2d\x34\x20\x34\x20\x34",
+    search: _0x714b6c_c.search,
+    file: _0x714b6c_c.file
   };
-  return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + (t[e] || t.chat) + '"/></svg>';
+  return "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22" + (_0x714b6c_1[_0x714b6c_0] || _0x714b6c_1.chat) + "\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e";
 }
 
-function ie() {
-  const e = m("welcome");
-  if (!e) return;
-  e.querySelector(".recent-suggestions")?.remove();
-  const t = x.recent();
-  if (!t.length) return;
-  const o = document.createElement("div");
-  o.className = "recent-suggestions", o.setAttribute("aria-label", "Continue a recent chat");
-  for (const n of t) {
-    const e = document.createElement("button");
-    e.type = "button", e.innerHTML = ae(n.activity), e.dataset.activity = n.activity;
-    const t = document.createElement("span"), a = document.createElement("small");
-    a.textContent = "Continue";
-    const i = document.createElement("strong");
-    i.textContent = n.title, t.append(a, i), e.append(t), e.title = "Continue: " + n.title, 
-    e.onclick = () => x.resume(n.id), o.append(e);
+function _0x714b6c_3b() {
+  const _0x714b6c_0 = _0x714b6c_b("\x77\x65\x6c\x63\x6f\x6d\x65");
+  if (!_0x714b6c_0) return;
+  _0x714b6c_0.querySelector("\x2e\x72\x65\x63\x65\x6e\x74\x2d\x73\x75\x67\x67\x65\x73\x74\x69\x6f\x6e\x73")?.remove();
+  const _0x714b6c_1 = _0x714b6c_15.recent();
+  if (!_0x714b6c_1.length) return;
+  const _0x714b6c_2 = document.createElement("\x64\x69\x76");
+  _0x714b6c_2.className = "\x72\x65\x63\x65\x6e\x74\x2d\x73\x75\x67\x67\x65\x73\x74\x69\x6f\x6e\x73", _0x714b6c_2.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x61\x20\x72\x65\x63\x65\x6e\x74\x20\x63\x68\x61\x74");
+  for (const _0x714b6c_3 of _0x714b6c_1) {
+    const _0x714b6c_0 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x714b6c_0.type = "\x62\x75\x74\x74\x6f\x6e", _0x714b6c_0.innerHTML = _0x714b6c_3a(_0x714b6c_3.activity), 
+    _0x714b6c_0.dataset.activity = _0x714b6c_3.activity;
+    const _0x714b6c_1 = document.createElement("\x73\x70\x61\x6e"), _0x714b6c_4 = document.createElement("\x73\x6d\x61\x6c\x6c");
+    _0x714b6c_4.textContent = "\x43\x6f\x6e\x74\x69\x6e\x75\x65";
+    const _0x714b6c_5 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+    _0x714b6c_5.textContent = _0x714b6c_3.title, _0x714b6c_1.append(_0x714b6c_4, _0x714b6c_5), 
+    _0x714b6c_0.append(_0x714b6c_1), _0x714b6c_0.title = "\x43\x6f\x6e\x74\x69\x6e\x75\x65\x3a\x20" + _0x714b6c_3.title, 
+    _0x714b6c_0.onclick = () => _0x714b6c_15.resume(_0x714b6c_3.id), _0x714b6c_2.append(_0x714b6c_0);
   }
-  e.append(o);
+  _0x714b6c_0.append(_0x714b6c_2);
 }
 
-function re() {
-  m("feed").replaceChildren(f.cloneNode(!0)), oe(), ie();
+function _0x714b6c_3c() {
+  _0x714b6c_b("\x66\x65\x65\x64").replaceChildren(_0x714b6c_10.cloneNode(!0)), _0x714b6c_38(), 
+  _0x714b6c_3b();
 }
 
-function se(e) {
-  G(!1), m("activity").querySelector(".muted")?.remove();
-  const t = document.createElement("article");
-  t.className = "action";
-  const o = document.createElement("strong");
-  o.textContent = e.tool + " \xb7 " + (e.args.path || e.args.cwd || "workspace");
-  const n = document.createElement("pre");
-  n.textContent = "write" === e.tool ? e.args.content : JSON.stringify(e.args, null, 2);
-  const a = document.createElement("p");
-  return a.textContent = [ "write", "delete", "command" ].includes(e.tool) ? "Waiting for desktop approval\u2026" : "Reading workspace\u2026", 
-  t.append(o, n, a), m("activity").append(t), {
-    row: t,
-    status: a
+function _0x714b6c_3d(_0x714b6c_0) {
+  _0x714b6c_31(!1), _0x714b6c_b("\x61\x63\x74\x69\x76\x69\x74\x79").querySelector("\x2e\x6d\x75\x74\x65\x64")?.remove();
+  const _0x714b6c_1 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+  _0x714b6c_1.className = "\x61\x63\x74\x69\x6f\x6e";
+  const _0x714b6c_2 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+  _0x714b6c_2.textContent = _0x714b6c_0.tool + "\x20\xb7\x20" + (_0x714b6c_0.args.path || _0x714b6c_0.args.cwd || "\x77\x6f\x72\x6b\x73\x70\x61\x63\x65");
+  const _0x714b6c_3 = document.createElement("\x70\x72\x65");
+  _0x714b6c_3.textContent = "\x77\x72\x69\x74\x65" === _0x714b6c_0.tool ? _0x714b6c_0.args.content : JSON.stringify(_0x714b6c_0.args, null, 2);
+  const _0x714b6c_4 = document.createElement("\x70");
+  return _0x714b6c_4.textContent = [ "\x77\x72\x69\x74\x65", "\x64\x65\x6c\x65\x74\x65", "\x63\x6f\x6d\x6d\x61\x6e\x64" ].includes(_0x714b6c_0.tool) ? "\x57\x61\x69\x74\x69\x6e\x67\x20\x66\x6f\x72\x20\x64\x65\x73\x6b\x74\x6f\x70\x20\x61\x70\x70\x72\x6f\x76\x61\x6c\u2026" : "\x52\x65\x61\x64\x69\x6e\x67\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\u2026", 
+  _0x714b6c_1.append(_0x714b6c_2, _0x714b6c_3, _0x714b6c_4), _0x714b6c_b("\x61\x63\x74\x69\x76\x69\x74\x79").append(_0x714b6c_1), 
+  {
+    row: _0x714b6c_1,
+    status: _0x714b6c_4
   };
 }
 
-async function ce() {
-  v.stopVoice(), L?.abort();
+async function _0x714b6c_3e() {
+  _0x714b6c_12.stopVoice(), _0x714b6c_1e?.abort();
   try {
-    D() && await J("/stop", {});
+    _0x714b6c_23() && await _0x714b6c_2c("\x2f\x73\x74\x6f\x70", {});
   } catch {}
 }
 
-function le(e, t = !0) {
-  if (!A && T !== e) {
-    if (T = e, v.reset(), b.stop(), t && (H = [], m("feed").replaceChildren()), document.body.classList.toggle("chat-mode", e), 
-    !matchMedia("(prefers-reduced-motion: reduce)").matches) for (const [e, t] of [ ...document.querySelectorAll("main,.code-panels") ].entries()) t.getAnimations().forEach(e => e.cancel()), 
-    "none" !== getComputedStyle(t).display && t.animate([ {
+function _0x714b6c_3f(_0x714b6c_0, _0x714b6c_1 = !0) {
+  if (!_0x714b6c_1d && _0x714b6c_1b !== _0x714b6c_0) {
+    if (_0x714b6c_1b = _0x714b6c_0, _0x714b6c_12.reset(), _0x714b6c_14.stop(), _0x714b6c_1 && (_0x714b6c_20 = [], 
+    _0x714b6c_b("\x66\x65\x65\x64").replaceChildren()), document.body.classList.toggle("\x63\x68\x61\x74\x2d\x6d\x6f\x64\x65", _0x714b6c_0), 
+    !matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").matches) for (const [_0x714b6c_0, _0x714b6c_1] of [ ...document.querySelectorAll("\x6d\x61\x69\x6e\x2c\x2e\x63\x6f\x64\x65\x2d\x70\x61\x6e\x65\x6c\x73") ].entries()) _0x714b6c_1.getAnimations().forEach(_0x714b6c_0 => _0x714b6c_0.cancel()), 
+    "\x6e\x6f\x6e\x65" !== getComputedStyle(_0x714b6c_1).display && _0x714b6c_1.animate([ {
       opacity: 0,
-      transform: "translateY(10px)"
+      transform: "\x74\x72\x61\x6e\x73\x6c\x61\x74\x65\x59\x28\x31\x30\x70\x78\x29"
     }, {
       opacity: 1,
-      transform: "translateY(0)"
+      transform: "\x74\x72\x61\x6e\x73\x6c\x61\x74\x65\x59\x28\x30\x29"
     } ], {
       duration: 320,
-      delay: 45 * e,
-      easing: "cubic-bezier(.22,1,.36,1)",
-      fill: "backwards"
+      delay: 45 * _0x714b6c_0,
+      easing: "\x63\x75\x62\x69\x63\x2d\x62\x65\x7a\x69\x65\x72\x28\x2e\x32\x32\x2c\x31\x2c\x2e\x33\x36\x2c\x31\x29",
+      fill: "\x62\x61\x63\x6b\x77\x61\x72\x64\x73"
     });
-    m("chatMode").setAttribute("aria-pressed", String(e)), m("computerMode").setAttribute("aria-pressed", String(!e)), 
-    m("taskTitle").textContent = e ? "New chat" : "New task", m("newTask").innerHTML = p("compose") + (e ? "New chat" : "New task"), 
-    m("modeHint").textContent = e ? "Chat with your selected model. Code mode is optional." : "Code mode: file edits and commands require desktop approval.", 
-    m("prompt").placeholder = e ? "Message your model..." : "Describe a task...", B(), 
-    m("prompt").focus();
+    _0x714b6c_b("\x63\x68\x61\x74\x4d\x6f\x64\x65").setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x714b6c_0)), _0x714b6c_b("\x63\x6f\x6d\x70\x75\x74\x65\x72\x4d\x6f\x64\x65").setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(!_0x714b6c_0)), 
+    _0x714b6c_b("\x74\x61\x73\x6b\x54\x69\x74\x6c\x65").textContent = _0x714b6c_0 ? "\x4e\x65\x77\x20\x63\x68\x61\x74" : "\x4e\x65\x77\x20\x74\x61\x73\x6b", _0x714b6c_b("\x6e\x65\x77\x54\x61\x73\x6b").innerHTML = _0x714b6c_d("\x63\x6f\x6d\x70\x6f\x73\x65") + (_0x714b6c_0 ? "\x4e\x65\x77\x20\x63\x68\x61\x74" : "\x4e\x65\x77\x20\x74\x61\x73\x6b"), 
+    _0x714b6c_b("\x6d\x6f\x64\x65\x48\x69\x6e\x74").textContent = _0x714b6c_0 ? "\x43\x68\x61\x74\x20\x77\x69\x74\x68\x20\x79\x6f\x75\x72\x20\x73\x65\x6c\x65\x63\x74\x65\x64\x20\x6d\x6f\x64\x65\x6c\x2e\x20\x43\x6f\x64\x65\x20\x6d\x6f\x64\x65\x20\x69\x73\x20\x6f\x70\x74\x69\x6f\x6e\x61\x6c\x2e" : "\x43\x6f\x64\x65\x20\x6d\x6f\x64\x65\x3a\x20\x66\x69\x6c\x65\x20\x65\x64\x69\x74\x73\x20\x61\x6e\x64\x20\x63\x6f\x6d\x6d\x61\x6e\x64\x73\x20\x72\x65\x71\x75\x69\x72\x65\x20\x64\x65\x73\x6b\x74\x6f\x70\x20\x61\x70\x70\x72\x6f\x76\x61\x6c\x2e", 
+    _0x714b6c_b("\x70\x72\x6f\x6d\x70\x74").placeholder = _0x714b6c_0 ? "\x4d\x65\x73\x73\x61\x67\x65\x20\x79\x6f\x75\x72\x20\x6d\x6f\x64\x65\x6c\x2e\x2e\x2e" : "\x44\x65\x73\x63\x72\x69\x62\x65\x20\x61\x20\x74\x61\x73\x6b\x2e\x2e\x2e", 
+    _0x714b6c_2b(), _0x714b6c_b("\x70\x72\x6f\x6d\x70\x74").focus();
   }
 }
 
-m("authSwitch").onclick = () => _(!X), m("closeLogin").onclick = () => {
-  Z || m("login").close();
-}, m("login").addEventListener("cancel", e => {
-  Z && e.preventDefault();
-}), m("login").addEventListener("close", () => {
-  m("password").value = "", m("confirmPassword").value = "", m("loginError").textContent = "";
-}), m("loginForm").onsubmit = async e => {
-  if (e.preventDefault(), !Z) {
-    if (m("loginError").textContent = "", X && m("password").value !== m("confirmPassword").value) return m("loginError").textContent = "Passwords do not match.", 
-    void m("confirmPassword").focus();
-    Z = !0;
-    for (const e of [ "authSubmit", "authSwitch", "closeLogin", "email", "password", "confirmPassword", "signupUsername" ]) m(e).disabled = !0;
-    m("authSubmit").textContent = X ? "Creating account..." : "Signing in...";
+_0x714b6c_b("\x61\x75\x74\x68\x53\x77\x69\x74\x63\x68").onclick = () => _0x714b6c_35(!_0x714b6c_33), _0x714b6c_b("\x63\x6c\x6f\x73\x65\x4c\x6f\x67\x69\x6e").onclick = () => {
+  _0x714b6c_34 || _0x714b6c_b("\x6c\x6f\x67\x69\x6e").close();
+}, _0x714b6c_b("\x6c\x6f\x67\x69\x6e").addEventListener("\x63\x61\x6e\x63\x65\x6c", _0x714b6c_0 => {
+  _0x714b6c_34 && _0x714b6c_0.preventDefault();
+}), _0x714b6c_b("\x6c\x6f\x67\x69\x6e").addEventListener("\x63\x6c\x6f\x73\x65", () => {
+  _0x714b6c_b("\x70\x61\x73\x73\x77\x6f\x72\x64").value = "", _0x714b6c_b("\x63\x6f\x6e\x66\x69\x72\x6d\x50\x61\x73\x73\x77\x6f\x72\x64").value = "", _0x714b6c_b("\x6c\x6f\x67\x69\x6e\x45\x72\x72\x6f\x72").textContent = "";
+}), _0x714b6c_b("\x6c\x6f\x67\x69\x6e\x46\x6f\x72\x6d").onsubmit = async _0x714b6c_0 => {
+  if (_0x714b6c_0.preventDefault(), !_0x714b6c_34) {
+    if (_0x714b6c_b("\x6c\x6f\x67\x69\x6e\x45\x72\x72\x6f\x72").textContent = "", _0x714b6c_33 && _0x714b6c_b("\x70\x61\x73\x73\x77\x6f\x72\x64").value !== _0x714b6c_b("\x63\x6f\x6e\x66\x69\x72\x6d\x50\x61\x73\x73\x77\x6f\x72\x64").value) return _0x714b6c_b("\x6c\x6f\x67\x69\x6e\x45\x72\x72\x6f\x72").textContent = "\x50\x61\x73\x73\x77\x6f\x72\x64\x73\x20\x64\x6f\x20\x6e\x6f\x74\x20\x6d\x61\x74\x63\x68\x2e", 
+    void _0x714b6c_b("\x63\x6f\x6e\x66\x69\x72\x6d\x50\x61\x73\x73\x77\x6f\x72\x64").focus();
+    _0x714b6c_34 = !0;
+    for (const _0x714b6c_0 of [ "\x61\x75\x74\x68\x53\x75\x62\x6d\x69\x74", "\x61\x75\x74\x68\x53\x77\x69\x74\x63\x68", "\x63\x6c\x6f\x73\x65\x4c\x6f\x67\x69\x6e", "\x65\x6d\x61\x69\x6c", "\x70\x61\x73\x73\x77\x6f\x72\x64", "\x63\x6f\x6e\x66\x69\x72\x6d\x50\x61\x73\x73\x77\x6f\x72\x64", "\x73\x69\x67\x6e\x75\x70\x55\x73\x65\x72\x6e\x61\x6d\x65" ]) _0x714b6c_b(_0x714b6c_0).disabled = !0;
+    _0x714b6c_b("\x61\x75\x74\x68\x53\x75\x62\x6d\x69\x74").textContent = _0x714b6c_33 ? "\x43\x72\x65\x61\x74\x69\x6e\x67\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e\x2e\x2e" : "\x53\x69\x67\x6e\x69\x6e\x67\x20\x69\x6e\x2e\x2e\x2e";
     try {
-      if (!C) throw Error("Sign-in is still loading. Try again shortly.");
-      if (X) {
-        const e = await fetch(o ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/account/register" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nook-account/register", {
-          method: "POST",
+      if (!_0x714b6c_16) throw Error("\x53\x69\x67\x6e\x2d\x69\x6e\x20\x69\x73\x20\x73\x74\x69\x6c\x6c\x20\x6c\x6f\x61\x64\x69\x6e\x67\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x73\x68\x6f\x72\x74\x6c\x79\x2e");
+      if (_0x714b6c_33) {
+        const _0x714b6c_0 = await fetch(_0x714b6c_2 ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x61\x63\x63\x6f\x75\x6e\x74\x2f\x72\x65\x67\x69\x73\x74\x65\x72" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x6f\x6f\x6b\x2d\x61\x63\x63\x6f\x75\x6e\x74\x2f\x72\x65\x67\x69\x73\x74\x65\x72", {
+          method: "\x50\x4f\x53\x54",
           headers: {
-            "Content-Type": "application/json"
+            "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
           },
           body: JSON.stringify({
-            username: m("signupUsername").value.trim().toLowerCase(),
-            email: m("email").value.trim(),
-            password: m("password").value
+            username: _0x714b6c_b("\x73\x69\x67\x6e\x75\x70\x55\x73\x65\x72\x6e\x61\x6d\x65").value.trim().toLowerCase(),
+            email: _0x714b6c_b("\x65\x6d\x61\x69\x6c").value.trim(),
+            password: _0x714b6c_b("\x70\x61\x73\x73\x77\x6f\x72\x64").value
           })
-        }), t = await e.json();
-        if (!e.ok) throw Object.assign(new Error(t.error || "Could not create your account."), {
+        }), _0x714b6c_1 = await _0x714b6c_0.json();
+        if (!_0x714b6c_0.ok) throw Object.assign(new Error(_0x714b6c_1.error || "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x72\x65\x61\x74\x65\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e"), {
           registration: !0
         });
-        if (!t.customToken) throw Error("Missing sign-in token");
+        if (!_0x714b6c_1.customToken) throw Error("\x4d\x69\x73\x73\x69\x6e\x67\x20\x73\x69\x67\x6e\x2d\x69\x6e\x20\x74\x6f\x6b\x65\x6e");
         try {
-          await M.signInWithCustomToken(C, t.customToken);
+          await _0x714b6c_17.signInWithCustomToken(_0x714b6c_16, _0x714b6c_1.customToken);
         } catch {
-          throw Object.assign(new Error("Account created. Switch to Sign in to access it."), {
+          throw Object.assign(new Error("\x41\x63\x63\x6f\x75\x6e\x74\x20\x63\x72\x65\x61\x74\x65\x64\x2e\x20\x53\x77\x69\x74\x63\x68\x20\x74\x6f\x20\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x61\x63\x63\x65\x73\x73\x20\x69\x74\x2e"), {
             registration: !0
           });
         }
-      } else await M.signInWithEmailAndPassword(C, m("email").value.trim(), m("password").value);
-      m("login").close(), X && I("Account created. You are signed in.");
-    } catch (t) {
-      const e = {
-        "auth/invalid-credential": "Email or password is incorrect.",
-        "auth/email-already-in-use": "This email already has an account. Sign in instead.",
-        "auth/weak-password": "Choose a stronger password with at least 6 characters.",
-        "auth/password-does-not-meet-requirements": "This password does not meet the account password requirements.",
-        "auth/invalid-email": "Enter a valid email address.",
-        "auth/too-many-requests": "Too many attempts. Please try again later.",
-        "auth/network-request-failed": "Could not connect. Check your connection and try again.",
-        "auth/operation-not-allowed": "Account registration is not enabled on this server."
+      } else await _0x714b6c_17.signInWithEmailAndPassword(_0x714b6c_16, _0x714b6c_b("\x65\x6d\x61\x69\x6c").value.trim(), _0x714b6c_b("\x70\x61\x73\x73\x77\x6f\x72\x64").value);
+      _0x714b6c_b("\x6c\x6f\x67\x69\x6e").close(), _0x714b6c_33 && _0x714b6c_24("\x41\x63\x63\x6f\x75\x6e\x74\x20\x63\x72\x65\x61\x74\x65\x64\x2e\x20\x59\x6f\x75\x20\x61\x72\x65\x20\x73\x69\x67\x6e\x65\x64\x20\x69\x6e\x2e");
+    } catch (_0x714b6c_1) {
+      const _0x714b6c_0 = {
+        "\x61\x75\x74\x68\x2f\x69\x6e\x76\x61\x6c\x69\x64\x2d\x63\x72\x65\x64\x65\x6e\x74\x69\x61\x6c": "\x45\x6d\x61\x69\x6c\x20\x6f\x72\x20\x70\x61\x73\x73\x77\x6f\x72\x64\x20\x69\x73\x20\x69\x6e\x63\x6f\x72\x72\x65\x63\x74\x2e",
+        "\x61\x75\x74\x68\x2f\x65\x6d\x61\x69\x6c\x2d\x61\x6c\x72\x65\x61\x64\x79\x2d\x69\x6e\x2d\x75\x73\x65": "\x54\x68\x69\x73\x20\x65\x6d\x61\x69\x6c\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x68\x61\x73\x20\x61\x6e\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e\x20\x53\x69\x67\x6e\x20\x69\x6e\x20\x69\x6e\x73\x74\x65\x61\x64\x2e",
+        "\x61\x75\x74\x68\x2f\x77\x65\x61\x6b\x2d\x70\x61\x73\x73\x77\x6f\x72\x64": "\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x73\x74\x72\x6f\x6e\x67\x65\x72\x20\x70\x61\x73\x73\x77\x6f\x72\x64\x20\x77\x69\x74\x68\x20\x61\x74\x20\x6c\x65\x61\x73\x74\x20\x36\x20\x63\x68\x61\x72\x61\x63\x74\x65\x72\x73\x2e",
+        "\x61\x75\x74\x68\x2f\x70\x61\x73\x73\x77\x6f\x72\x64\x2d\x64\x6f\x65\x73\x2d\x6e\x6f\x74\x2d\x6d\x65\x65\x74\x2d\x72\x65\x71\x75\x69\x72\x65\x6d\x65\x6e\x74\x73": "\x54\x68\x69\x73\x20\x70\x61\x73\x73\x77\x6f\x72\x64\x20\x64\x6f\x65\x73\x20\x6e\x6f\x74\x20\x6d\x65\x65\x74\x20\x74\x68\x65\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x70\x61\x73\x73\x77\x6f\x72\x64\x20\x72\x65\x71\x75\x69\x72\x65\x6d\x65\x6e\x74\x73\x2e",
+        "\x61\x75\x74\x68\x2f\x69\x6e\x76\x61\x6c\x69\x64\x2d\x65\x6d\x61\x69\x6c": "\x45\x6e\x74\x65\x72\x20\x61\x20\x76\x61\x6c\x69\x64\x20\x65\x6d\x61\x69\x6c\x20\x61\x64\x64\x72\x65\x73\x73\x2e",
+        "\x61\x75\x74\x68\x2f\x74\x6f\x6f\x2d\x6d\x61\x6e\x79\x2d\x72\x65\x71\x75\x65\x73\x74\x73": "\x54\x6f\x6f\x20\x6d\x61\x6e\x79\x20\x61\x74\x74\x65\x6d\x70\x74\x73\x2e\x20\x50\x6c\x65\x61\x73\x65\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x6c\x61\x74\x65\x72\x2e",
+        "\x61\x75\x74\x68\x2f\x6e\x65\x74\x77\x6f\x72\x6b\x2d\x72\x65\x71\x75\x65\x73\x74\x2d\x66\x61\x69\x6c\x65\x64": "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x6f\x6e\x6e\x65\x63\x74\x2e\x20\x43\x68\x65\x63\x6b\x20\x79\x6f\x75\x72\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x61\x6e\x64\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e",
+        "\x61\x75\x74\x68\x2f\x6f\x70\x65\x72\x61\x74\x69\x6f\x6e\x2d\x6e\x6f\x74\x2d\x61\x6c\x6c\x6f\x77\x65\x64": "\x41\x63\x63\x6f\x75\x6e\x74\x20\x72\x65\x67\x69\x73\x74\x72\x61\x74\x69\x6f\x6e\x20\x69\x73\x20\x6e\x6f\x74\x20\x65\x6e\x61\x62\x6c\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x73\x65\x72\x76\x65\x72\x2e"
       };
-      m("loginError").textContent = t.registration ? t.message : e[t.code] || "Unable to continue. Please try again.";
+      _0x714b6c_b("\x6c\x6f\x67\x69\x6e\x45\x72\x72\x6f\x72").textContent = _0x714b6c_1.registration ? _0x714b6c_1.message : _0x714b6c_0[_0x714b6c_1.code] || "\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2e\x20\x50\x6c\x65\x61\x73\x65\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e";
     } finally {
-      Z = !1;
-      for (const e of [ "authSubmit", "authSwitch", "closeLogin", "email", "password" ]) m(e).disabled = !1;
-      m("confirmPassword").disabled = !X, m("signupUsername").disabled = !X, m("authSubmit").textContent = X ? "Create account" : "Sign in";
+      _0x714b6c_34 = !1;
+      for (const _0x714b6c_0 of [ "\x61\x75\x74\x68\x53\x75\x62\x6d\x69\x74", "\x61\x75\x74\x68\x53\x77\x69\x74\x63\x68", "\x63\x6c\x6f\x73\x65\x4c\x6f\x67\x69\x6e", "\x65\x6d\x61\x69\x6c", "\x70\x61\x73\x73\x77\x6f\x72\x64" ]) _0x714b6c_b(_0x714b6c_0).disabled = !1;
+      _0x714b6c_b("\x63\x6f\x6e\x66\x69\x72\x6d\x50\x61\x73\x73\x77\x6f\x72\x64").disabled = !_0x714b6c_33, _0x714b6c_b("\x73\x69\x67\x6e\x75\x70\x55\x73\x65\x72\x6e\x61\x6d\x65").disabled = !_0x714b6c_33, 
+      _0x714b6c_b("\x61\x75\x74\x68\x53\x75\x62\x6d\x69\x74").textContent = _0x714b6c_33 ? "\x43\x72\x65\x61\x74\x65\x20\x61\x63\x63\x6f\x75\x6e\x74" : "\x53\x69\x67\x6e\x20\x69\x6e";
     }
   }
-}, m("prompt").addEventListener("input", ee), setInterval(() => {
-  !document.hidden && document.querySelector("#welcome h1") && (k++, oe(!0));
-}, 7e3), m("newTask").onclick = () => x.fresh(!1), m("stop").onclick = ce, m("composer").onsubmit = async e => {
-  if (e.preventDefault(), Date.now() < R || A || !T && !N || !C?.currentUser) return;
-  const o = v.voiceActive();
-  let n = v.image();
-  if (E) return;
-  if (!n) {
-    E = !0;
+}, _0x714b6c_b("\x70\x72\x6f\x6d\x70\x74").addEventListener("\x69\x6e\x70\x75\x74", _0x714b6c_36), setInterval(() => {
+  !document.hidden && document.querySelector("\x23\x77\x65\x6c\x63\x6f\x6d\x65\x20\x68\x31") && (_0x714b6c_19++, _0x714b6c_38(!0));
+}, 7e3), _0x714b6c_b("\x6e\x65\x77\x54\x61\x73\x6b").onclick = () => _0x714b6c_15.fresh(!1), _0x714b6c_b("\x73\x74\x6f\x70").onclick = _0x714b6c_3e, 
+_0x714b6c_b("\x63\x6f\x6d\x70\x6f\x73\x65\x72").onsubmit = async _0x714b6c_0 => {
+  if (_0x714b6c_0.preventDefault(), Date.now() < _0x714b6c_28 || _0x714b6c_1d || !_0x714b6c_1b && !_0x714b6c_1c || !_0x714b6c_16?.currentUser) return;
+  const _0x714b6c_2 = _0x714b6c_12.voiceActive();
+  let _0x714b6c_3 = _0x714b6c_12.image();
+  if (_0x714b6c_1a) return;
+  if (!_0x714b6c_3) {
+    _0x714b6c_1a = !0;
     try {
-      n = await b.capture();
-    } catch (r) {
-      return void I(r.message);
+      _0x714b6c_3 = await _0x714b6c_14.capture();
+    } catch (_0x714b6c_6) {
+      return void _0x714b6c_24(_0x714b6c_6.message);
     } finally {
-      E = !1;
+      _0x714b6c_1a = !1;
     }
   }
-  const a = m("prompt").value.trim() || (n ? "Use this image as context for the task." : "");
-  if (!a || v.preparing()) return;
-  if (v.pause(), A = !0, L = new AbortController, B(), m("prompt").value = "", ee(), 
-  m("taskTitle").textContent = a, H.push({
-    role: "user",
-    content: a,
+  const _0x714b6c_4 = _0x714b6c_b("\x70\x72\x6f\x6d\x70\x74").value.trim() || (_0x714b6c_3 ? "\x55\x73\x65\x20\x74\x68\x69\x73\x20\x69\x6d\x61\x67\x65\x20\x61\x73\x20\x63\x6f\x6e\x74\x65\x78\x74\x20\x66\x6f\x72\x20\x74\x68\x65\x20\x74\x61\x73\x6b\x2e" : "");
+  if (!_0x714b6c_4 || _0x714b6c_12.preparing()) return;
+  if (_0x714b6c_12.pause(), _0x714b6c_1d = !0, _0x714b6c_1e = new AbortController, 
+  _0x714b6c_2b(), _0x714b6c_b("\x70\x72\x6f\x6d\x70\x74").value = "", _0x714b6c_36(), _0x714b6c_b("\x74\x61\x73\x6b\x54\x69\x74\x6c\x65").textContent = _0x714b6c_4, 
+  _0x714b6c_20.push({
+    role: "\x75\x73\x65\x72",
+    content: _0x714b6c_4,
     id: crypto.randomUUID()
-  }), q("user", a, null, null, H.at(-1)), n) {
-    const e = document.createElement("img");
-    e.src = n.dataUrl, e.alt = "Attached image", e.className = "message-image", m("feed").lastElementChild.append(e);
+  }), _0x714b6c_25("\x75\x73\x65\x72", _0x714b6c_4, null, null, _0x714b6c_20.at(-1)), _0x714b6c_3) {
+    const _0x714b6c_0 = document.createElement("\x69\x6d\x67");
+    _0x714b6c_0.src = _0x714b6c_3.dataUrl, _0x714b6c_0.alt = "\x41\x74\x74\x61\x63\x68\x65\x64\x20\x69\x6d\x61\x67\x65", _0x714b6c_0.className = "\x6d\x65\x73\x73\x61\x67\x65\x2d\x69\x6d\x61\x67\x65", 
+    _0x714b6c_b("\x66\x65\x65\x64").lastElementChild.append(_0x714b6c_0);
   }
-  v.clearImage();
-  const i = m("model").value;
+  _0x714b6c_12.clearImage();
+  const _0x714b6c_5 = _0x714b6c_b("\x6d\x6f\x64\x65\x6c").value;
   try {
-    if (T) {
-      if ([ ...x.context(), ...H ].reduce((e, t) => e + t.content.length, 0) > 21e3) throw Error("This conversation is full. Start a new chat to continue.");
-      let e;
-      z(i);
-      const r = o => {
-        if (!o.text) return;
-        e ||= q("assistant", "", o.model || i);
-        const n = m("feed").scrollHeight - m("feed").scrollTop - m("feed").clientHeight < 100;
-        t(e.querySelector(".message-content"), o.text, () => {
-          n && (m("feed").scrollTop = m("feed").scrollHeight);
+    if (_0x714b6c_1b) {
+      if ([ ..._0x714b6c_15.context(), ..._0x714b6c_20 ].reduce((_0x714b6c_0, _0x714b6c_1) => _0x714b6c_0 + _0x714b6c_1.content.length, 0) > 21e3) throw Error("\x54\x68\x69\x73\x20\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e\x20\x69\x73\x20\x66\x75\x6c\x6c\x2e\x20\x53\x74\x61\x72\x74\x20\x61\x20\x6e\x65\x77\x20\x63\x68\x61\x74\x20\x74\x6f\x20\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2e");
+      let _0x714b6c_0;
+      _0x714b6c_26(_0x714b6c_5);
+      const _0x714b6c_6 = _0x714b6c_2 => {
+        if (!_0x714b6c_2.text) return;
+        _0x714b6c_0 ||= _0x714b6c_25("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", "", _0x714b6c_2.model || _0x714b6c_5);
+        const _0x714b6c_3 = _0x714b6c_b("\x66\x65\x65\x64").scrollHeight - _0x714b6c_b("\x66\x65\x65\x64").scrollTop - _0x714b6c_b("\x66\x65\x65\x64").clientHeight < 100;
+        _0x714b6c_1(_0x714b6c_0.querySelector("\x2e\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74"), _0x714b6c_2.text, () => {
+          _0x714b6c_3 && (_0x714b6c_b("\x66\x65\x65\x64").scrollTop = _0x714b6c_b("\x66\x65\x65\x64").scrollHeight);
         });
-      }, s = await $("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai", {
-        model: i,
-        message: a,
-        messages: [ ...x.context(), ...H.slice(-18) ],
-        stream: !o,
+      }, _0x714b6c_7 = await _0x714b6c_2e("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69", {
+        model: _0x714b6c_5,
+        message: _0x714b6c_4,
+        messages: [ ..._0x714b6c_15.context(), ..._0x714b6c_20.slice(-18) ],
+        stream: !_0x714b6c_2,
         temporaryChat: !0,
         responseDepth: {
-          low: "off",
-          medium: "normal",
-          high: "extended"
-        }[m("effort").value],
-        reasoningEffort: m("effort").value,
-        ...o ? {
+          low: "\x6f\x66\x66",
+          medium: "\x6e\x6f\x72\x6d\x61\x6c",
+          high: "\x65\x78\x74\x65\x6e\x64\x65\x64"
+        }[_0x714b6c_b("\x65\x66\x66\x6f\x72\x74").value],
+        reasoningEffort: _0x714b6c_b("\x65\x66\x66\x6f\x72\x74").value,
+        ..._0x714b6c_2 ? {
           generateAudio: !0,
-          voice: m("voiceName").value.trim() || "alloy"
+          voice: _0x714b6c_b("\x76\x6f\x69\x63\x65\x4e\x61\x6d\x65").value.trim() || "\x61\x6c\x6c\x6f\x79"
         } : {},
-        ...n ? {
-          image: n
+        ..._0x714b6c_3 ? {
+          image: _0x714b6c_3
         } : {}
-      }, L.signal, r);
-      if ("string" != typeof s.text || !s.text.trim()) throw Error("The model returned no text. Try again or select another model.");
-      return e?.remove(), H.push({
-        role: "assistant",
-        content: s.text,
-        model: s.model || i,
-        finishReason: s.finishReason,
+      }, _0x714b6c_1e.signal, _0x714b6c_6);
+      if ("\x73\x74\x72\x69\x6e\x67" != typeof _0x714b6c_7.text || !_0x714b6c_7.text.trim()) throw Error("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x6e\x6f\x20\x74\x65\x78\x74\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x6f\x72\x20\x73\x65\x6c\x65\x63\x74\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x6d\x6f\x64\x65\x6c\x2e");
+      return _0x714b6c_0?.remove(), _0x714b6c_20.push({
+        role: "\x61\x73\x73\x69\x73\x74\x61\x6e\x74",
+        content: _0x714b6c_7.text,
+        model: _0x714b6c_7.model || _0x714b6c_5,
+        finishReason: _0x714b6c_7.finishReason,
         metadata: {
-          summary: String(s.metadata?.summary || "").slice(0, 2400)
+          summary: String(_0x714b6c_7.metadata?.summary || "").slice(0, 2400)
         }
-      }), q("assistant", s.text, s.model || i, s.metadata, H.at(-1)), void v.reply(s.text, s.audio);
+      }), _0x714b6c_25("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", _0x714b6c_7.text, _0x714b6c_7.model || _0x714b6c_5, _0x714b6c_7.metadata, _0x714b6c_20.at(-1)), 
+      void _0x714b6c_12.reply(_0x714b6c_7.text, _0x714b6c_7.audio);
     }
-    for (let e = 0; e < 12; e++) {
-      if (L.signal.aborted) throw new DOMException("Stopped", "AbortError");
-      if ([ ...x.context(), ...H ].reduce((e, t) => e + t.content.length, 0) > 21e3) throw Error("This task has filled its context. Start a new task; your file changes are saved.");
-      z(i);
-      const t = await $("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai", {
-        task: "computer-agent",
-        model: i,
-        message: a,
-        messages: [ ...x.context(), ...H.slice(-19) ],
+    for (let _0x714b6c_0 = 0; _0x714b6c_0 < 12; _0x714b6c_0++) {
+      if (_0x714b6c_1e.signal.aborted) throw new DOMException("\x53\x74\x6f\x70\x70\x65\x64", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72");
+      if ([ ..._0x714b6c_15.context(), ..._0x714b6c_20 ].reduce((_0x714b6c_0, _0x714b6c_1) => _0x714b6c_0 + _0x714b6c_1.content.length, 0) > 21e3) throw Error("\x54\x68\x69\x73\x20\x74\x61\x73\x6b\x20\x68\x61\x73\x20\x66\x69\x6c\x6c\x65\x64\x20\x69\x74\x73\x20\x63\x6f\x6e\x74\x65\x78\x74\x2e\x20\x53\x74\x61\x72\x74\x20\x61\x20\x6e\x65\x77\x20\x74\x61\x73\x6b\x3b\x20\x79\x6f\x75\x72\x20\x66\x69\x6c\x65\x20\x63\x68\x61\x6e\x67\x65\x73\x20\x61\x72\x65\x20\x73\x61\x76\x65\x64\x2e");
+      _0x714b6c_26(_0x714b6c_5);
+      const _0x714b6c_1 = await _0x714b6c_2e("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69", {
+        task: "\x63\x6f\x6d\x70\x75\x74\x65\x72\x2d\x61\x67\x65\x6e\x74",
+        model: _0x714b6c_5,
+        message: _0x714b6c_4,
+        messages: [ ..._0x714b6c_15.context(), ..._0x714b6c_20.slice(-19) ],
         stream: !1,
         temporaryChat: !0,
         responseDepth: {
-          low: "off",
-          medium: "normal",
-          high: "extended"
-        }[m("effort").value],
-        reasoningEffort: m("effort").value,
-        ...0 === e && n ? {
-          image: n
+          low: "\x6f\x66\x66",
+          medium: "\x6e\x6f\x72\x6d\x61\x6c",
+          high: "\x65\x78\x74\x65\x6e\x64\x65\x64"
+        }[_0x714b6c_b("\x65\x66\x66\x6f\x72\x74").value],
+        reasoningEffort: _0x714b6c_b("\x65\x66\x66\x6f\x72\x74").value,
+        ...0 === _0x714b6c_0 && _0x714b6c_3 ? {
+          image: _0x714b6c_3
         } : {}
-      }, L.signal);
-      if ("length" === t.finishReason) throw Error("The model returned an incomplete action. No new action was executed.");
-      let o;
+      }, _0x714b6c_1e.signal);
+      if ("\x6c\x65\x6e\x67\x74\x68" === _0x714b6c_1.finishReason) throw Error("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x69\x6e\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x61\x63\x74\x69\x6f\x6e\x2e\x20\x4e\x6f\x20\x6e\x65\x77\x20\x61\x63\x74\x69\x6f\x6e\x20\x77\x61\x73\x20\x65\x78\x65\x63\x75\x74\x65\x64\x2e");
+      let _0x714b6c_2;
       try {
-        o = JSON.parse(t.text);
+        _0x714b6c_2 = JSON.parse(_0x714b6c_1.text);
       } catch {
-        throw Error("The model did not return a valid action. No new action was executed.");
+        throw Error("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x75\x72\x6e\x20\x61\x20\x76\x61\x6c\x69\x64\x20\x61\x63\x74\x69\x6f\x6e\x2e\x20\x4e\x6f\x20\x6e\x65\x77\x20\x61\x63\x74\x69\x6f\x6e\x20\x77\x61\x73\x20\x65\x78\x65\x63\x75\x74\x65\x64\x2e");
       }
-      if (!o || "string" != typeof o.message || o.message.length > 6e3) throw Error("Invalid agent response.");
-      if (H.push({
-        role: "assistant",
-        content: t.text,
-        model: t.model || i,
-        finishReason: t.finishReason,
+      if (!_0x714b6c_2 || "\x73\x74\x72\x69\x6e\x67" != typeof _0x714b6c_2.message || _0x714b6c_2.message.length > 6e3) throw Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x61\x67\x65\x6e\x74\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e");
+      if (_0x714b6c_20.push({
+        role: "\x61\x73\x73\x69\x73\x74\x61\x6e\x74",
+        content: _0x714b6c_1.text,
+        model: _0x714b6c_1.model || _0x714b6c_5,
+        finishReason: _0x714b6c_1.finishReason,
         metadata: {
-          summary: String(t.metadata?.summary || "").slice(0, 2400)
+          summary: String(_0x714b6c_1.metadata?.summary || "").slice(0, 2400)
         }
-      }), q("assistant", o.message, t.model || i, t.metadata, H.at(-1)), !0 === o.done && !o.tool) {
-        v.reply(o.message);
+      }), _0x714b6c_25("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", _0x714b6c_2.message, _0x714b6c_1.model || _0x714b6c_5, _0x714b6c_1.metadata, _0x714b6c_20.at(-1)), 
+      !0 === _0x714b6c_2.done && !_0x714b6c_2.tool) {
+        _0x714b6c_12.reply(_0x714b6c_2.message);
         break;
       }
-      if (![ "list", "read", "search", "write", "delete", "command" ].includes(o.tool) || !o.args || "object" != typeof o.args) throw Error("The model requested an unsupported action.");
-      const s = se(o);
-      let c;
+      if (![ "\x6c\x69\x73\x74", "\x72\x65\x61\x64", "\x73\x65\x61\x72\x63\x68", "\x77\x72\x69\x74\x65", "\x64\x65\x6c\x65\x74\x65", "\x63\x6f\x6d\x6d\x61\x6e\x64" ].includes(_0x714b6c_2.tool) || !_0x714b6c_2.args || "\x6f\x62\x6a\x65\x63\x74" != typeof _0x714b6c_2.args) throw Error("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x71\x75\x65\x73\x74\x65\x64\x20\x61\x6e\x20\x75\x6e\x73\x75\x70\x70\x6f\x72\x74\x65\x64\x20\x61\x63\x74\x69\x6f\x6e\x2e");
+      const _0x714b6c_7 = _0x714b6c_3d(_0x714b6c_2);
+      let _0x714b6c_8;
       try {
-        c = await J("/tool", {
-          tool: o.tool,
-          args: o.args
-        }, L.signal);
-      } catch (r) {
-        if ("AbortError" === r.name) throw r;
-        c = {
-          error: r.message
+        _0x714b6c_8 = await _0x714b6c_2c("\x2f\x74\x6f\x6f\x6c", {
+          tool: _0x714b6c_2.tool,
+          args: _0x714b6c_2.args
+        }, _0x714b6c_1e.signal);
+      } catch (_0x714b6c_6) {
+        if ("\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x714b6c_6.name) throw _0x714b6c_6;
+        _0x714b6c_8 = {
+          error: _0x714b6c_6.message
         };
       }
-      if (s.status.textContent = c.denied ? "Declined" : c.error ? c.error : void 0 !== c.exitCode ? "Exit " + c.exitCode + (c.stopped ? " \xb7 stopped" : "") : "Done", 
-      c.output) {
-        const e = document.createElement("pre");
-        e.textContent = c.output, s.row.append(e);
+      if (_0x714b6c_7.status.textContent = _0x714b6c_8.denied ? "\x44\x65\x63\x6c\x69\x6e\x65\x64" : _0x714b6c_8.error ? _0x714b6c_8.error : void 0 !== _0x714b6c_8.exitCode ? "\x45\x78\x69\x74\x20" + _0x714b6c_8.exitCode + (_0x714b6c_8.stopped ? "\x20\xb7\x20\x73\x74\x6f\x70\x70\x65\x64" : "") : "\x44\x6f\x6e\x65", 
+      _0x714b6c_8.output) {
+        const _0x714b6c_0 = document.createElement("\x70\x72\x65");
+        _0x714b6c_0.textContent = _0x714b6c_8.output, _0x714b6c_7.row.append(_0x714b6c_0);
       }
-      if (c.changed) {
-        const e = document.createElement("button");
-        e.textContent = "Undo edit", e.onclick = async () => {
-          e.disabled = !0;
+      if (_0x714b6c_8.changed) {
+        const _0x714b6c_0 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+        _0x714b6c_0.textContent = "\x55\x6e\x64\x6f\x20\x65\x64\x69\x74", _0x714b6c_0.onclick = async () => {
+          _0x714b6c_0.disabled = !0;
           try {
-            if ((await J("/tool", {
-              tool: "undo",
+            if ((await _0x714b6c_2c("\x2f\x74\x6f\x6f\x6c", {
+              tool: "\x75\x6e\x64\x6f",
               args: {
-                id: c.id
+                id: _0x714b6c_8.id
               }
-            })).denied) return void (e.disabled = !1);
-            e.textContent = "Undone", await F(P);
-          } catch (r) {
-            I(r.message), e.disabled = !1;
+            })).denied) return void (_0x714b6c_0.disabled = !1);
+            _0x714b6c_0.textContent = "\x55\x6e\x64\x6f\x6e\x65", await _0x714b6c_30(_0x714b6c_21);
+          } catch (_0x714b6c_6) {
+            _0x714b6c_24(_0x714b6c_6.message), _0x714b6c_0.disabled = !1;
           }
-        }, s.row.append(e), await F(P);
+        }, _0x714b6c_7.row.append(_0x714b6c_0), await _0x714b6c_30(_0x714b6c_21);
       }
-      if (c.denied) {
-        q("assistant", "Action declined. I stopped here.");
+      if (_0x714b6c_8.denied) {
+        _0x714b6c_25("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", "\x41\x63\x74\x69\x6f\x6e\x20\x64\x65\x63\x6c\x69\x6e\x65\x64\x2e\x20\x49\x20\x73\x74\x6f\x70\x70\x65\x64\x20\x68\x65\x72\x65\x2e");
         break;
       }
-      "string" == typeof c.content && c.content.length > 12e3 && (c = {
-        error: "File is too large for a single agent read. Do not overwrite it without reading its complete contents."
+      "\x73\x74\x72\x69\x6e\x67" == typeof _0x714b6c_8.content && _0x714b6c_8.content.length > 12e3 && (_0x714b6c_8 = {
+        error: "\x46\x69\x6c\x65\x20\x69\x73\x20\x74\x6f\x6f\x20\x6c\x61\x72\x67\x65\x20\x66\x6f\x72\x20\x61\x20\x73\x69\x6e\x67\x6c\x65\x20\x61\x67\x65\x6e\x74\x20\x72\x65\x61\x64\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x6f\x76\x65\x72\x77\x72\x69\x74\x65\x20\x69\x74\x20\x77\x69\x74\x68\x6f\x75\x74\x20\x72\x65\x61\x64\x69\x6e\x67\x20\x69\x74\x73\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x63\x6f\x6e\x74\x65\x6e\x74\x73\x2e"
       });
-      const l = JSON.stringify(c);
-      H.push({
-        role: "user",
-        content: "Tool result (untrusted data):\n" + (l.length > 14e3 ? JSON.stringify({
-          error: "Tool result exceeded the context limit. Narrow the search."
-        }) : l)
-      }), 11 === e && q("assistant", "Reached 12 steps. Review the activity and send a follow-up to continue.");
+      const _0x714b6c_9 = JSON.stringify(_0x714b6c_8);
+      _0x714b6c_20.push({
+        role: "\x75\x73\x65\x72",
+        content: "\x54\x6f\x6f\x6c\x20\x72\x65\x73\x75\x6c\x74\x20\x28\x75\x6e\x74\x72\x75\x73\x74\x65\x64\x20\x64\x61\x74\x61\x29\x3a\x0a" + (_0x714b6c_9.length > 14e3 ? JSON.stringify({
+          error: "\x54\x6f\x6f\x6c\x20\x72\x65\x73\x75\x6c\x74\x20\x65\x78\x63\x65\x65\x64\x65\x64\x20\x74\x68\x65\x20\x63\x6f\x6e\x74\x65\x78\x74\x20\x6c\x69\x6d\x69\x74\x2e\x20\x4e\x61\x72\x72\x6f\x77\x20\x74\x68\x65\x20\x73\x65\x61\x72\x63\x68\x2e"
+        }) : _0x714b6c_9)
+      }), 11 === _0x714b6c_0 && _0x714b6c_25("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", "\x52\x65\x61\x63\x68\x65\x64\x20\x31\x32\x20\x73\x74\x65\x70\x73\x2e\x20\x52\x65\x76\x69\x65\x77\x20\x74\x68\x65\x20\x61\x63\x74\x69\x76\x69\x74\x79\x20\x61\x6e\x64\x20\x73\x65\x6e\x64\x20\x61\x20\x66\x6f\x6c\x6c\x6f\x77\x2d\x75\x70\x20\x74\x6f\x20\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2e");
     }
-  } catch (r) {
-    v.stopVoice(), q("error", "AbortError" === r.name ? "Task stopped. Completed file changes remain available to undo." : r.message);
+  } catch (_0x714b6c_6) {
+    _0x714b6c_12.stopVoice(), _0x714b6c_25("\x65\x72\x72\x6f\x72", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x714b6c_6.name ? "\x54\x61\x73\x6b\x20\x73\x74\x6f\x70\x70\x65\x64\x2e\x20\x43\x6f\x6d\x70\x6c\x65\x74\x65\x64\x20\x66\x69\x6c\x65\x20\x63\x68\x61\x6e\x67\x65\x73\x20\x72\x65\x6d\x61\x69\x6e\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x74\x6f\x20\x75\x6e\x64\x6f\x2e" : _0x714b6c_6.message);
   } finally {
-    m("feed").querySelector(".thinking-message")?.remove(), A = !1, L = null, x.save(H, i, !T, m("effort").value), 
-    B(), v.resume();
+    _0x714b6c_b("\x66\x65\x65\x64").querySelector("\x2e\x74\x68\x69\x6e\x6b\x69\x6e\x67\x2d\x6d\x65\x73\x73\x61\x67\x65")?.remove(), _0x714b6c_1d = !1, 
+    _0x714b6c_1e = null, _0x714b6c_15.save(_0x714b6c_20, _0x714b6c_5, !_0x714b6c_1b, _0x714b6c_b("\x65\x66\x66\x6f\x72\x74").value), 
+    _0x714b6c_2b(), _0x714b6c_12.resume();
   }
-}, m("prompt").addEventListener("keydown", e => {
-  "Enter" !== e.key || e.shiftKey || (e.preventDefault(), m("composer").requestSubmit());
-}), m("chatMode").onclick = () => {
-  le(!0), x.fresh(!1);
-}, m("computerMode").onclick = () => {
-  le(!1), x.fresh(!1);
+}, _0x714b6c_b("\x70\x72\x6f\x6d\x70\x74").addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x714b6c_0 => {
+  "\x45\x6e\x74\x65\x72" !== _0x714b6c_0.key || _0x714b6c_0.shiftKey || (_0x714b6c_0.preventDefault(), 
+  _0x714b6c_b("\x63\x6f\x6d\x70\x6f\x73\x65\x72").requestSubmit());
+}), _0x714b6c_b("\x63\x68\x61\x74\x4d\x6f\x64\x65").onclick = () => {
+  _0x714b6c_3f(!0), _0x714b6c_15.fresh(!1);
+}, _0x714b6c_b("\x63\x6f\x6d\x70\x75\x74\x65\x72\x4d\x6f\x64\x65").onclick = () => {
+  _0x714b6c_3f(!1), _0x714b6c_15.fresh(!1);
 };
 
-const de = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>';
+const _0x714b6c_40 = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x33\x22\x20\x79\x3d\x22\x33\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x31\x38\x22\x20\x72\x78\x3d\x22\x32\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x39\x20\x33\x76\x31\x38\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e";
 
-function me() {
-  const e = document.body.classList.toggle("sidebar-collapsed");
-  m("collapseChats").setAttribute("aria-expanded", String(!e)), m("collapseChats").setAttribute("aria-label", e ? "Expand sidebar" : "Collapse sidebar"), 
-  m("collapseChats").title = e ? "Expand sidebar" : "Collapse sidebar";
+function _0x714b6c_41() {
+  const _0x714b6c_0 = document.body.classList.toggle("\x73\x69\x64\x65\x62\x61\x72\x2d\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64");
+  _0x714b6c_b("\x63\x6f\x6c\x6c\x61\x70\x73\x65\x43\x68\x61\x74\x73").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String(!_0x714b6c_0)), 
+  _0x714b6c_b("\x63\x6f\x6c\x6c\x61\x70\x73\x65\x43\x68\x61\x74\x73").setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x714b6c_0 ? "\x45\x78\x70\x61\x6e\x64\x20\x73\x69\x64\x65\x62\x61\x72" : "\x43\x6f\x6c\x6c\x61\x70\x73\x65\x20\x73\x69\x64\x65\x62\x61\x72"), 
+  _0x714b6c_b("\x63\x6f\x6c\x6c\x61\x70\x73\x65\x43\x68\x61\x74\x73").title = _0x714b6c_0 ? "\x45\x78\x70\x61\x6e\x64\x20\x73\x69\x64\x65\x62\x61\x72" : "\x43\x6f\x6c\x6c\x61\x70\x73\x65\x20\x73\x69\x64\x65\x62\x61\x72";
   try {
-    localStorage.setItem("agents.sidebar.collapsed", String(e));
+    localStorage.setItem("\x61\x67\x65\x6e\x74\x73\x2e\x73\x69\x64\x65\x62\x61\x72\x2e\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64", String(_0x714b6c_0));
   } catch {}
 }
 
-m("collapseChats").innerHTML = de, m("collapseChats").onclick = me;
+_0x714b6c_b("\x63\x6f\x6c\x6c\x61\x70\x73\x65\x43\x68\x61\x74\x73").innerHTML = _0x714b6c_40, _0x714b6c_b("\x63\x6f\x6c\x6c\x61\x70\x73\x65\x43\x68\x61\x74\x73").onclick = _0x714b6c_41;
 
 try {
-  "true" === localStorage.getItem("agents.sidebar.collapsed") && me();
+  "\x74\x72\x75\x65" === localStorage.getItem("\x61\x67\x65\x6e\x74\x73\x2e\x73\x69\x64\x65\x62\x61\x72\x2e\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64") && _0x714b6c_41();
 } catch {}
 
-for (const [fe, we, ve] of [ [ "chatMode", "chat", "Chat" ], [ "computerMode", "code", "Code" ] ]) m(fe).insertAdjacentHTML("afterbegin", p(we)), 
-m(fe).title = ve, m(fe).setAttribute("aria-label", ve);
+for (const [_0x714b6c_46, _0x714b6c_47, _0x714b6c_48] of [ [ "\x63\x68\x61\x74\x4d\x6f\x64\x65", "\x63\x68\x61\x74", "\x43\x68\x61\x74" ], [ "\x63\x6f\x6d\x70\x75\x74\x65\x72\x4d\x6f\x64\x65", "\x63\x6f\x64\x65", "\x43\x6f\x64\x65" ] ]) _0x714b6c_b(_0x714b6c_46).insertAdjacentHTML("\x61\x66\x74\x65\x72\x62\x65\x67\x69\x6e", _0x714b6c_d(_0x714b6c_47)), 
+_0x714b6c_b(_0x714b6c_46).title = _0x714b6c_48, _0x714b6c_b(_0x714b6c_46).setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x714b6c_48);
 
-for (const fe of [ "sidebarNewChat", "tempChat", "pinnedMessages" ]) m(fe).title = m(fe).textContent, 
-m(fe).setAttribute("aria-label", m(fe).textContent);
+for (const _0x714b6c_46 of [ "\x73\x69\x64\x65\x62\x61\x72\x4e\x65\x77\x43\x68\x61\x74", "\x74\x65\x6d\x70\x43\x68\x61\x74", "\x70\x69\x6e\x6e\x65\x64\x4d\x65\x73\x73\x61\x67\x65\x73" ]) _0x714b6c_b(_0x714b6c_46).title = _0x714b6c_b(_0x714b6c_46).textContent, 
+_0x714b6c_b(_0x714b6c_46).setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x714b6c_b(_0x714b6c_46).textContent);
 
-m("sidebarNewChat").insertAdjacentHTML("afterbegin", p("compose")), m("tempChat").insertAdjacentHTML("afterbegin", '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9M12 7v5l3 2M17 3h4v4"/></svg>'), 
-m("taskTitle").textContent = "New chat", Q();
+_0x714b6c_b("\x73\x69\x64\x65\x62\x61\x72\x4e\x65\x77\x43\x68\x61\x74").insertAdjacentHTML("\x61\x66\x74\x65\x72\x62\x65\x67\x69\x6e", _0x714b6c_d("\x63\x6f\x6d\x70\x6f\x73\x65")), 
+_0x714b6c_b("\x74\x65\x6d\x70\x43\x68\x61\x74").insertAdjacentHTML("\x61\x66\x74\x65\x72\x62\x65\x67\x69\x6e", "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x32\x20\x33\x61\x39\x20\x39\x20\x30\x20\x31\x20\x30\x20\x39\x20\x39\x4d\x31\x32\x20\x37\x76\x35\x6c\x33\x20\x32\x4d\x31\x37\x20\x33\x68\x34\x76\x34\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e"), 
+_0x714b6c_b("\x74\x61\x73\x6b\x54\x69\x74\x6c\x65").textContent = "\x4e\x65\x77\x20\x63\x68\x61\x74", _0x714b6c_32();
 
-const ue = m("voiceDialog");
+const _0x714b6c_42 = _0x714b6c_b("\x76\x6f\x69\x63\x65\x44\x69\x61\x6c\x6f\x67");
 
-function pe() {
-  const e = U.find(e => e.id === m("model").value), t = T && r(e);
-  if (m("voiceModelLabel").textContent = e?.label || "No model selected", m("voicePresets").replaceChildren(), 
-  t && e.id.startsWith("openai/")) for (const o of [ "alloy", "echo", "fable", "onyx", "nova", "shimmer" ]) {
-    const e = document.createElement("button");
-    e.type = "button", e.textContent = o[0].toUpperCase() + o.slice(1), e.setAttribute("aria-pressed", String(m("voiceName").value === o)), 
-    e.onclick = () => {
-      m("voiceName").value = o, pe();
-    }, m("voicePresets").append(e);
+function _0x714b6c_43() {
+  const _0x714b6c_0 = _0x714b6c_1f.find(_0x714b6c_0 => _0x714b6c_0.id === _0x714b6c_b("\x6d\x6f\x64\x65\x6c").value), _0x714b6c_1 = _0x714b6c_1b && _0x714b6c_6(_0x714b6c_0);
+  if (_0x714b6c_b("\x76\x6f\x69\x63\x65\x4d\x6f\x64\x65\x6c\x4c\x61\x62\x65\x6c").textContent = _0x714b6c_0?.label || "\x4e\x6f\x20\x6d\x6f\x64\x65\x6c\x20\x73\x65\x6c\x65\x63\x74\x65\x64", 
+  _0x714b6c_b("\x76\x6f\x69\x63\x65\x50\x72\x65\x73\x65\x74\x73").replaceChildren(), _0x714b6c_1 && _0x714b6c_0.id.startsWith("\x6f\x70\x65\x6e\x61\x69\x2f")) for (const _0x714b6c_2 of [ "\x61\x6c\x6c\x6f\x79", "\x65\x63\x68\x6f", "\x66\x61\x62\x6c\x65", "\x6f\x6e\x79\x78", "\x6e\x6f\x76\x61", "\x73\x68\x69\x6d\x6d\x65\x72" ]) {
+    const _0x714b6c_0 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x714b6c_0.type = "\x62\x75\x74\x74\x6f\x6e", _0x714b6c_0.textContent = _0x714b6c_2[0].toUpperCase() + _0x714b6c_2.slice(1), 
+    _0x714b6c_0.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x714b6c_b("\x76\x6f\x69\x63\x65\x4e\x61\x6d\x65").value === _0x714b6c_2)), 
+    _0x714b6c_0.onclick = () => {
+      _0x714b6c_b("\x76\x6f\x69\x63\x65\x4e\x61\x6d\x65").value = _0x714b6c_2, _0x714b6c_43();
+    }, _0x714b6c_b("\x76\x6f\x69\x63\x65\x50\x72\x65\x73\x65\x74\x73").append(_0x714b6c_0);
   }
-  m("voiceName").disabled = !t, m("voiceName").parentElement.hidden = !t, m("voiceHelp").textContent = t ? "Uses the selected model\u2019s audio. Voice availability varies by provider." : "This model does not support voice output in Chat. Choose a voice-capable model.", 
-  m("chooseVoiceModel").hidden = !!t;
+  _0x714b6c_b("\x76\x6f\x69\x63\x65\x4e\x61\x6d\x65").disabled = !_0x714b6c_1, _0x714b6c_b("\x76\x6f\x69\x63\x65\x4e\x61\x6d\x65").parentElement.hidden = !_0x714b6c_1, 
+  _0x714b6c_b("\x76\x6f\x69\x63\x65\x48\x65\x6c\x70").textContent = _0x714b6c_1 ? "\x55\x73\x65\x73\x20\x74\x68\x65\x20\x73\x65\x6c\x65\x63\x74\x65\x64\x20\x6d\x6f\x64\x65\x6c\u2019\x73\x20\x61\x75\x64\x69\x6f\x2e\x20\x56\x6f\x69\x63\x65\x20\x61\x76\x61\x69\x6c\x61\x62\x69\x6c\x69\x74\x79\x20\x76\x61\x72\x69\x65\x73\x20\x62\x79\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x2e" : "\x54\x68\x69\x73\x20\x6d\x6f\x64\x65\x6c\x20\x64\x6f\x65\x73\x20\x6e\x6f\x74\x20\x73\x75\x70\x70\x6f\x72\x74\x20\x76\x6f\x69\x63\x65\x20\x6f\x75\x74\x70\x75\x74\x20\x69\x6e\x20\x43\x68\x61\x74\x2e\x20\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x76\x6f\x69\x63\x65\x2d\x63\x61\x70\x61\x62\x6c\x65\x20\x6d\x6f\x64\x65\x6c\x2e", 
+  _0x714b6c_b("\x63\x68\x6f\x6f\x73\x65\x56\x6f\x69\x63\x65\x4d\x6f\x64\x65\x6c").hidden = !!_0x714b6c_1;
 }
 
-m("voiceSettings").onclick = () => {
-  pe(), ue.showModal();
-}, m("closeVoiceSettings").onclick = m("doneVoiceSettings").onclick = () => ue.close(), 
-m("chooseVoiceModel").onclick = () => {
-  ue.close(), w.openVoice();
+_0x714b6c_b("\x76\x6f\x69\x63\x65\x53\x65\x74\x74\x69\x6e\x67\x73").onclick = () => {
+  _0x714b6c_43(), _0x714b6c_42.showModal();
+}, _0x714b6c_b("\x63\x6c\x6f\x73\x65\x56\x6f\x69\x63\x65\x53\x65\x74\x74\x69\x6e\x67\x73").onclick = _0x714b6c_b("\x64\x6f\x6e\x65\x56\x6f\x69\x63\x65\x53\x65\x74\x74\x69\x6e\x67\x73").onclick = () => _0x714b6c_42.close(), 
+_0x714b6c_b("\x63\x68\x6f\x6f\x73\x65\x56\x6f\x69\x63\x65\x4d\x6f\x64\x65\x6c").onclick = () => {
+  _0x714b6c_42.close(), _0x714b6c_11.openVoice();
 };
 
-const he = [ "low", "medium", "high" ];
+const _0x714b6c_44 = [ "\x6c\x6f\x77", "\x6d\x65\x64\x69\x75\x6d", "\x68\x69\x67\x68" ];
 
-function ge() {
-  const e = Math.max(0, he.indexOf(m("effort").value)), t = he[e][0].toUpperCase() + he[e].slice(1);
-  m("effortSlider").value = e, m("effortSlider").setAttribute("aria-valuetext", t), 
-  m("effortLevel").textContent = t, m("effortSlider").style.setProperty("--effort-fill", 50 * e + "%"), 
-  m("effortTrigger").title = "Thinking effort: " + t;
+function _0x714b6c_45() {
+  const _0x714b6c_0 = Math.max(0, _0x714b6c_44.indexOf(_0x714b6c_b("\x65\x66\x66\x6f\x72\x74").value)), _0x714b6c_1 = _0x714b6c_44[_0x714b6c_0][0].toUpperCase() + _0x714b6c_44[_0x714b6c_0].slice(1);
+  _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x53\x6c\x69\x64\x65\x72").value = _0x714b6c_0, _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x53\x6c\x69\x64\x65\x72").setAttribute("\x61\x72\x69\x61\x2d\x76\x61\x6c\x75\x65\x74\x65\x78\x74", _0x714b6c_1), 
+  _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x4c\x65\x76\x65\x6c").textContent = _0x714b6c_1, _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x53\x6c\x69\x64\x65\x72").style.setProperty("\x2d\x2d\x65\x66\x66\x6f\x72\x74\x2d\x66\x69\x6c\x6c", 50 * _0x714b6c_0 + "\x25"), 
+  _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x54\x72\x69\x67\x67\x65\x72").title = "\x54\x68\x69\x6e\x6b\x69\x6e\x67\x20\x65\x66\x66\x6f\x72\x74\x3a\x20" + _0x714b6c_1;
 }
 
-m("effort").addEventListener("change", ge), m("effortSlider").oninput = () => {
-  m("effort").value = he[Number(m("effortSlider").value)], ge();
-}, m("effortPanel").addEventListener("beforetoggle", e => {
-  if ("open" === e.newState) {
-    ge();
-    const e = m("effortTrigger").getBoundingClientRect(), t = m("effortPanel");
-    t.style.left = Math.max(12, Math.min(innerWidth - 292, e.left - 90)) + "px", t.style.top = Math.max(12, m("composer").getBoundingClientRect().top - 138) + "px";
+_0x714b6c_b("\x65\x66\x66\x6f\x72\x74").addEventListener("\x63\x68\x61\x6e\x67\x65", _0x714b6c_45), _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x53\x6c\x69\x64\x65\x72").oninput = () => {
+  _0x714b6c_b("\x65\x66\x66\x6f\x72\x74").value = _0x714b6c_44[Number(_0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x53\x6c\x69\x64\x65\x72").value)], 
+  _0x714b6c_45();
+}, _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x50\x61\x6e\x65\x6c").addEventListener("\x62\x65\x66\x6f\x72\x65\x74\x6f\x67\x67\x6c\x65", _0x714b6c_0 => {
+  if ("\x6f\x70\x65\x6e" === _0x714b6c_0.newState) {
+    _0x714b6c_45();
+    const _0x714b6c_0 = _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x54\x72\x69\x67\x67\x65\x72").getBoundingClientRect(), _0x714b6c_1 = _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x50\x61\x6e\x65\x6c");
+    _0x714b6c_1.style.left = Math.max(12, Math.min(innerWidth - 292, _0x714b6c_0.left - 90)) + "\x70\x78", 
+    _0x714b6c_1.style.top = Math.max(12, _0x714b6c_b("\x63\x6f\x6d\x70\x6f\x73\x65\x72").getBoundingClientRect().top - 138) + "\x70\x78";
   }
-}), m("effortPanel").addEventListener("toggle", e => {
-  m("effortTrigger").setAttribute("aria-expanded", String("open" === e.newState));
-}), ge(), o && n({
-  user: () => C?.currentUser,
+}), _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x50\x61\x6e\x65\x6c").addEventListener("\x74\x6f\x67\x67\x6c\x65", _0x714b6c_0 => {
+  _0x714b6c_b("\x65\x66\x66\x6f\x72\x74\x54\x72\x69\x67\x67\x65\x72").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String("\x6f\x70\x65\x6e" === _0x714b6c_0.newState));
+}), _0x714b6c_45(), _0x714b6c_2 && _0x714b6c_3({
+  user: () => _0x714b6c_16?.currentUser,
   signup: () => {
-    _(!0), m("login").showModal();
+    _0x714b6c_35(!0), _0x714b6c_b("\x6c\x6f\x67\x69\x6e").showModal();
   }
 });

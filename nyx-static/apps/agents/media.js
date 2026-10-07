@@ -1,126 +1,139 @@
-export function setupMedia({notice: e, sizePrompt: t, canSend: o, voiceModel: i}) {
-  const n = e => document.getElementById(e), a = e => '<svg viewBox="0 0 24 24" aria-hidden="true">' + e + "</svg>";
-  n("attachImage").innerHTML = a('<path d="M13 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 3-3 6 6M19 2v6M16 5h6"/>'), 
-  n("dictate").innerHTML = a('<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/>'), 
-  n("voice").innerHTML = a('<path d="M3 10v4M7 6v12M12 3v18M17 6v12M21 10v4"/>'), 
-  n("removeImage").innerHTML = a('<path d="m6 6 12 12M18 6 6 18"/>');
-  let r, c = null, d = !1, s = 0, l = null, u = !1, m = !1, h = !1, p = "", g = "", v = "", w = null, f = "";
-  const y = window.SpeechRecognition || window.webkitSpeechRecognition;
-  function b(e = "") {
-    n("voiceStatus").textContent = e, n("voiceStatus").hidden = !e, n("voice").setAttribute("aria-pressed", String(u)), 
-    n("dictate").setAttribute("aria-pressed", String(!!l && "dictation" === p));
+export function setupMedia({notice: _0x90e815_0, sizePrompt: _0x90e815_1, canSend: _0x90e815_2, voiceModel: _0x90e815_3}) {
+  const _0x90e815_4 = _0x90e815_0 => document.getElementById(_0x90e815_0), _0x90e815_5 = _0x90e815_0 => "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e" + _0x90e815_0 + "\x3c\x2f\x73\x76\x67\x3e";
+  _0x90e815_4("\x61\x74\x74\x61\x63\x68\x49\x6d\x61\x67\x65").innerHTML = _0x90e815_5("\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x33\x20\x33\x48\x35\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x2d\x32\x20\x32\x76\x31\x34\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x20\x32\x20\x32\x68\x31\x34\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x20\x32\x2d\x32\x76\x2d\x38\x22\x2f\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x38\x22\x20\x63\x79\x3d\x22\x38\x22\x20\x72\x3d\x22\x31\x2e\x35\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x33\x20\x31\x37\x20\x35\x2d\x35\x20\x34\x20\x34\x20\x33\x2d\x33\x20\x36\x20\x36\x4d\x31\x39\x20\x32\x76\x36\x4d\x31\x36\x20\x35\x68\x36\x22\x2f\x3e"), 
+  _0x90e815_4("\x64\x69\x63\x74\x61\x74\x65").innerHTML = _0x90e815_5("\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x39\x22\x20\x79\x3d\x22\x32\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x36\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x31\x32\x22\x20\x72\x78\x3d\x22\x33\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x35\x20\x31\x30\x76\x32\x61\x37\x20\x37\x20\x30\x20\x30\x20\x30\x20\x31\x34\x20\x30\x76\x2d\x32\x4d\x31\x32\x20\x31\x39\x76\x33\x4d\x38\x20\x32\x32\x68\x38\x22\x2f\x3e"), 
+  _0x90e815_4("\x76\x6f\x69\x63\x65").innerHTML = _0x90e815_5("\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x33\x20\x31\x30\x76\x34\x4d\x37\x20\x36\x76\x31\x32\x4d\x31\x32\x20\x33\x76\x31\x38\x4d\x31\x37\x20\x36\x76\x31\x32\x4d\x32\x31\x20\x31\x30\x76\x34\x22\x2f\x3e"), 
+  _0x90e815_4("\x72\x65\x6d\x6f\x76\x65\x49\x6d\x61\x67\x65").innerHTML = _0x90e815_5("\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x36\x20\x36\x20\x31\x32\x20\x31\x32\x4d\x31\x38\x20\x36\x20\x36\x20\x31\x38\x22\x2f\x3e");
+  let _0x90e815_6, _0x90e815_7 = null, _0x90e815_8 = !1, _0x90e815_9 = 0, _0x90e815_a = null, _0x90e815_b = !1, _0x90e815_c = !1, _0x90e815_d = !1, _0x90e815_e = "", _0x90e815_f = "", _0x90e815_10 = "", _0x90e815_11 = null, _0x90e815_12 = "";
+  const _0x90e815_13 = window.SpeechRecognition || window.webkitSpeechRecognition;
+  function _0x90e815_14(_0x90e815_0 = "") {
+    _0x90e815_4("\x76\x6f\x69\x63\x65\x53\x74\x61\x74\x75\x73").textContent = _0x90e815_0, _0x90e815_4("\x76\x6f\x69\x63\x65\x53\x74\x61\x74\x75\x73").hidden = !_0x90e815_0, 
+    _0x90e815_4("\x76\x6f\x69\x63\x65").setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x90e815_b)), _0x90e815_4("\x64\x69\x63\x74\x61\x74\x65").setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(!!_0x90e815_a && "\x64\x69\x63\x74\x61\x74\x69\x6f\x6e" === _0x90e815_e));
   }
-  function M() {
-    s++, c = null, n("attachment").hidden = !0, n("attachmentImage").removeAttribute("src"), 
-    n("imageInput").value = "";
+  function _0x90e815_15() {
+    _0x90e815_9++, _0x90e815_7 = null, _0x90e815_4("\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74").hidden = !0, _0x90e815_4("\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x49\x6d\x61\x67\x65").removeAttribute("\x73\x72\x63"), 
+    _0x90e815_4("\x69\x6d\x61\x67\x65\x49\x6e\x70\x75\x74").value = "";
   }
-  async function k(t) {
-    if (!t) return;
-    if (!/^image\/(png|jpeg|webp|gif)$/.test(t.type)) return void e("Choose a PNG, JPEG, WebP or GIF image.");
-    if (t.size > 10485760) return void e("Choose an image under 10 MB.");
-    const o = ++s;
-    d = !0, n("attachImage").disabled = !0;
+  async function _0x90e815_16(_0x90e815_1) {
+    if (!_0x90e815_1) return;
+    if (!/^image\/(png|jpeg|webp|gif)$/.test(_0x90e815_1.type)) return void _0x90e815_0("\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x50\x4e\x47\x2c\x20\x4a\x50\x45\x47\x2c\x20\x57\x65\x62\x50\x20\x6f\x72\x20\x47\x49\x46\x20\x69\x6d\x61\x67\x65\x2e");
+    if (_0x90e815_1.size > 10485760) return void _0x90e815_0("\x43\x68\x6f\x6f\x73\x65\x20\x61\x6e\x20\x69\x6d\x61\x67\x65\x20\x75\x6e\x64\x65\x72\x20\x31\x30\x20\x4d\x42\x2e");
+    const _0x90e815_2 = ++_0x90e815_9;
+    _0x90e815_8 = !0, _0x90e815_4("\x61\x74\x74\x61\x63\x68\x49\x6d\x61\x67\x65").disabled = !0;
     try {
-      const e = await createImageBitmap(t), i = Math.min(1, 1280 / Math.max(e.width, e.height)), a = document.createElement("canvas");
-      a.width = Math.max(1, Math.round(e.width * i)), a.height = Math.max(1, Math.round(e.height * i));
-      const r = a.getContext("2d");
-      let d;
-      r.fillStyle = "#fff", r.fillRect(0, 0, a.width, a.height), r.drawImage(e, 0, 0, a.width, a.height), 
-      e.close();
-      for (const t of [ .85, .7, .5, .3 ]) if (d = a.toDataURL("image/jpeg", t), d.length < 28e4) break;
-      if (d.length >= 28e4) throw Error("This image is too detailed. Crop it or choose a smaller image.");
-      if (o !== s) return;
-      c = {
-        dataUrl: d
-      }, n("attachmentImage").src = d, n("attachmentName").textContent = t.name || "Pasted image", 
-      n("attachment").hidden = !1;
-    } catch (i) {
-      e(i.message || "Could not open that image.");
+      const _0x90e815_0 = await createImageBitmap(_0x90e815_1), _0x90e815_3 = Math.min(1, 1280 / Math.max(_0x90e815_0.width, _0x90e815_0.height)), _0x90e815_5 = document.createElement("\x63\x61\x6e\x76\x61\x73");
+      _0x90e815_5.width = Math.max(1, Math.round(_0x90e815_0.width * _0x90e815_3)), _0x90e815_5.height = Math.max(1, Math.round(_0x90e815_0.height * _0x90e815_3));
+      const _0x90e815_6 = _0x90e815_5.getContext("\x32\x64");
+      let _0x90e815_8;
+      _0x90e815_6.fillStyle = "\x23\x66\x66\x66", _0x90e815_6.fillRect(0, 0, _0x90e815_5.width, _0x90e815_5.height), 
+      _0x90e815_6.drawImage(_0x90e815_0, 0, 0, _0x90e815_5.width, _0x90e815_5.height), 
+      _0x90e815_0.close();
+      for (const _0x90e815_1 of [ .85, .7, .5, .3 ]) if (_0x90e815_8 = _0x90e815_5.toDataURL("\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67", _0x90e815_1), 
+      _0x90e815_8.length < 28e4) break;
+      if (_0x90e815_8.length >= 28e4) throw Error("\x54\x68\x69\x73\x20\x69\x6d\x61\x67\x65\x20\x69\x73\x20\x74\x6f\x6f\x20\x64\x65\x74\x61\x69\x6c\x65\x64\x2e\x20\x43\x72\x6f\x70\x20\x69\x74\x20\x6f\x72\x20\x63\x68\x6f\x6f\x73\x65\x20\x61\x20\x73\x6d\x61\x6c\x6c\x65\x72\x20\x69\x6d\x61\x67\x65\x2e");
+      if (_0x90e815_2 !== _0x90e815_9) return;
+      _0x90e815_7 = {
+        dataUrl: _0x90e815_8
+      }, _0x90e815_4("\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x49\x6d\x61\x67\x65").src = _0x90e815_8, _0x90e815_4("\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x4e\x61\x6d\x65").textContent = _0x90e815_1.name || "\x50\x61\x73\x74\x65\x64\x20\x69\x6d\x61\x67\x65", 
+      _0x90e815_4("\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74").hidden = !1;
+    } catch (_0x90e815_3) {
+      _0x90e815_0(_0x90e815_3.message || "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6f\x70\x65\x6e\x20\x74\x68\x61\x74\x20\x69\x6d\x61\x67\x65\x2e");
     } finally {
-      d = !1, n("attachImage").disabled = !1;
+      _0x90e815_8 = !1, _0x90e815_4("\x61\x74\x74\x61\x63\x68\x49\x6d\x61\x67\x65").disabled = !1;
     }
   }
-  function I() {
-    const e = l;
-    l = null, e && (e.onend = null, e.onresult = null, e.onerror = null, e.abort());
+  function _0x90e815_17() {
+    const _0x90e815_0 = _0x90e815_a;
+    _0x90e815_a = null, _0x90e815_0 && (_0x90e815_0.onend = null, _0x90e815_0.onresult = null, 
+    _0x90e815_0.onerror = null, _0x90e815_0.abort());
   }
-  function C() {
-    u = !1, h = !1, m = !1, clearTimeout(r), I(), w && (w.pause(), w.removeAttribute("src"), 
-    w = null), f && (URL.revokeObjectURL(f), f = ""), b();
+  function _0x90e815_18() {
+    _0x90e815_b = !1, _0x90e815_d = !1, _0x90e815_c = !1, clearTimeout(_0x90e815_6), 
+    _0x90e815_17(), _0x90e815_11 && (_0x90e815_11.pause(), _0x90e815_11.removeAttribute("\x73\x72\x63"), 
+    _0x90e815_11 = null), _0x90e815_12 && (URL.revokeObjectURL(_0x90e815_12), _0x90e815_12 = ""), 
+    _0x90e815_14();
   }
-  function L(i) {
-    if (!y) return void e("Voice input is unavailable in this browser. Try Chrome or Edge.");
-    I(), p = i, g = n("prompt").value, v = "";
-    const a = new y;
-    l = a, a.lang = navigator.language || "en-US", a.continuous = "dictation" === i, 
-    a.interimResults = !0, a.onresult = e => {
-      l === a && (v = Array.from(e.results).map(e => e[0].transcript).join(" "), n("prompt").value = (g + (g ? " " : "") + v).slice(0, 3500), 
-      t());
-    }, a.onerror = t => {
-      C(), e("not-allowed" === t.error ? "Microphone permission was denied. Allow it in your browser to use voice." : {
-        network: "The browser speech service could not connect. Check your connection and try again.",
-        "audio-capture": "No microphone was found. Check your microphone settings.",
-        "no-speech": "No speech was heard. Click the microphone to try again."
-      }[t.error] || "Voice input stopped: " + t.error);
-    }, a.onend = () => {
-      l === a && (l = null, b(), "conversation" === i && u && (v.trim() && o() ? n("composer").requestSubmit() : (u = !1, 
-      b())));
+  function _0x90e815_19(_0x90e815_3) {
+    if (!_0x90e815_13) return void _0x90e815_0("\x56\x6f\x69\x63\x65\x20\x69\x6e\x70\x75\x74\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e\x20\x54\x72\x79\x20\x43\x68\x72\x6f\x6d\x65\x20\x6f\x72\x20\x45\x64\x67\x65\x2e");
+    _0x90e815_17(), _0x90e815_e = _0x90e815_3, _0x90e815_f = _0x90e815_4("\x70\x72\x6f\x6d\x70\x74").value, 
+    _0x90e815_10 = "";
+    const _0x90e815_5 = new _0x90e815_13;
+    _0x90e815_a = _0x90e815_5, _0x90e815_5.lang = navigator.language || "\x65\x6e\x2d\x55\x53", _0x90e815_5.continuous = "\x64\x69\x63\x74\x61\x74\x69\x6f\x6e" === _0x90e815_3, 
+    _0x90e815_5.interimResults = !0, _0x90e815_5.onresult = _0x90e815_0 => {
+      _0x90e815_a === _0x90e815_5 && (_0x90e815_10 = Array.from(_0x90e815_0.results).map(_0x90e815_0 => _0x90e815_0[0].transcript).join("\x20"), 
+      _0x90e815_4("\x70\x72\x6f\x6d\x70\x74").value = (_0x90e815_f + (_0x90e815_f ? "\x20" : "") + _0x90e815_10).slice(0, 3500), 
+      _0x90e815_1());
+    }, _0x90e815_5.onerror = _0x90e815_1 => {
+      _0x90e815_18(), _0x90e815_0("\x6e\x6f\x74\x2d\x61\x6c\x6c\x6f\x77\x65\x64" === _0x90e815_1.error ? "\x4d\x69\x63\x72\x6f\x70\x68\x6f\x6e\x65\x20\x70\x65\x72\x6d\x69\x73\x73\x69\x6f\x6e\x20\x77\x61\x73\x20\x64\x65\x6e\x69\x65\x64\x2e\x20\x41\x6c\x6c\x6f\x77\x20\x69\x74\x20\x69\x6e\x20\x79\x6f\x75\x72\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x74\x6f\x20\x75\x73\x65\x20\x76\x6f\x69\x63\x65\x2e" : {
+        network: "\x54\x68\x65\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x73\x70\x65\x65\x63\x68\x20\x73\x65\x72\x76\x69\x63\x65\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x6f\x6e\x6e\x65\x63\x74\x2e\x20\x43\x68\x65\x63\x6b\x20\x79\x6f\x75\x72\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x61\x6e\x64\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e",
+        "\x61\x75\x64\x69\x6f\x2d\x63\x61\x70\x74\x75\x72\x65": "\x4e\x6f\x20\x6d\x69\x63\x72\x6f\x70\x68\x6f\x6e\x65\x20\x77\x61\x73\x20\x66\x6f\x75\x6e\x64\x2e\x20\x43\x68\x65\x63\x6b\x20\x79\x6f\x75\x72\x20\x6d\x69\x63\x72\x6f\x70\x68\x6f\x6e\x65\x20\x73\x65\x74\x74\x69\x6e\x67\x73\x2e",
+        "\x6e\x6f\x2d\x73\x70\x65\x65\x63\x68": "\x4e\x6f\x20\x73\x70\x65\x65\x63\x68\x20\x77\x61\x73\x20\x68\x65\x61\x72\x64\x2e\x20\x43\x6c\x69\x63\x6b\x20\x74\x68\x65\x20\x6d\x69\x63\x72\x6f\x70\x68\x6f\x6e\x65\x20\x74\x6f\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e"
+      }[_0x90e815_1.error] || "\x56\x6f\x69\x63\x65\x20\x69\x6e\x70\x75\x74\x20\x73\x74\x6f\x70\x70\x65\x64\x3a\x20" + _0x90e815_1.error);
+    }, _0x90e815_5.onend = () => {
+      _0x90e815_a === _0x90e815_5 && (_0x90e815_a = null, _0x90e815_14(), "\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e" === _0x90e815_3 && _0x90e815_b && (_0x90e815_10.trim() && _0x90e815_2() ? _0x90e815_4("\x63\x6f\x6d\x70\x6f\x73\x65\x72").requestSubmit() : (_0x90e815_b = !1, 
+      _0x90e815_14())));
     };
     try {
-      a.start(), b("conversation" === i ? "Listening \u2014 speak your task. Click the waveform to end." : "Listening \u2014 your words will appear above.");
+      _0x90e815_5.start(), _0x90e815_14("\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e" === _0x90e815_3 ? "\x4c\x69\x73\x74\x65\x6e\x69\x6e\x67\x20\u2014\x20\x73\x70\x65\x61\x6b\x20\x79\x6f\x75\x72\x20\x74\x61\x73\x6b\x2e\x20\x43\x6c\x69\x63\x6b\x20\x74\x68\x65\x20\x77\x61\x76\x65\x66\x6f\x72\x6d\x20\x74\x6f\x20\x65\x6e\x64\x2e" : "\x4c\x69\x73\x74\x65\x6e\x69\x6e\x67\x20\u2014\x20\x79\x6f\x75\x72\x20\x77\x6f\x72\x64\x73\x20\x77\x69\x6c\x6c\x20\x61\x70\x70\x65\x61\x72\x20\x61\x62\x6f\x76\x65\x2e");
     } catch {
-      C(), e("Could not start the microphone. Try again.");
+      _0x90e815_18(), _0x90e815_0("\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x74\x61\x72\x74\x20\x74\x68\x65\x20\x6d\x69\x63\x72\x6f\x70\x68\x6f\x6e\x65\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x2e");
     }
   }
-  function S() {
-    !u || h || m || !o() || l || (clearTimeout(r), r = setTimeout(() => {
-      u && !m && o() && L("conversation");
+  function _0x90e815_1a() {
+    !_0x90e815_b || _0x90e815_d || _0x90e815_c || !_0x90e815_2() || _0x90e815_a || (clearTimeout(_0x90e815_6), 
+    _0x90e815_6 = setTimeout(() => {
+      _0x90e815_b && !_0x90e815_c && _0x90e815_2() && _0x90e815_19("\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e");
     }, 250));
   }
-  return n("attachImage").onclick = () => n("imageInput").click(), n("imageInput").onchange = () => {
-    k(n("imageInput").files[0]), n("imageInput").value = "";
-  }, n("removeImage").onclick = M, n("prompt").addEventListener("paste", e => {
-    const t = [ ...e.clipboardData.items ].find(e => e.type.startsWith("image/"))?.getAsFile();
-    t && (e.preventDefault(), k(t));
-  }), n("dictate").onclick = () => {
-    l && "dictation" === p ? l.stop() : (C(), L("dictation"));
-  }, n("voice").onclick = () => {
-    u ? C() : y ? o() ? i() && (C(), u = !0, L("conversation")) : e("Sign in and select a model first. Computer mode also needs a connected folder.") : e("Voice conversation is unavailable in this browser. Try Chrome or Edge.");
-  }, window.addEventListener("pagehide", C), document.addEventListener("visibilitychange", () => {
-    document.hidden && C();
+  return _0x90e815_4("\x61\x74\x74\x61\x63\x68\x49\x6d\x61\x67\x65").onclick = () => _0x90e815_4("\x69\x6d\x61\x67\x65\x49\x6e\x70\x75\x74").click(), 
+  _0x90e815_4("\x69\x6d\x61\x67\x65\x49\x6e\x70\x75\x74").onchange = () => {
+    _0x90e815_16(_0x90e815_4("\x69\x6d\x61\x67\x65\x49\x6e\x70\x75\x74").files[0]), _0x90e815_4("\x69\x6d\x61\x67\x65\x49\x6e\x70\x75\x74").value = "";
+  }, _0x90e815_4("\x72\x65\x6d\x6f\x76\x65\x49\x6d\x61\x67\x65").onclick = _0x90e815_15, _0x90e815_4("\x70\x72\x6f\x6d\x70\x74").addEventListener("\x70\x61\x73\x74\x65", _0x90e815_0 => {
+    const _0x90e815_1 = [ ..._0x90e815_0.clipboardData.items ].find(_0x90e815_0 => _0x90e815_0.type.startsWith("\x69\x6d\x61\x67\x65\x2f"))?.getAsFile();
+    _0x90e815_1 && (_0x90e815_0.preventDefault(), _0x90e815_16(_0x90e815_1));
+  }), _0x90e815_4("\x64\x69\x63\x74\x61\x74\x65").onclick = () => {
+    _0x90e815_a && "\x64\x69\x63\x74\x61\x74\x69\x6f\x6e" === _0x90e815_e ? _0x90e815_a.stop() : (_0x90e815_18(), 
+    _0x90e815_19("\x64\x69\x63\x74\x61\x74\x69\x6f\x6e"));
+  }, _0x90e815_4("\x76\x6f\x69\x63\x65").onclick = () => {
+    _0x90e815_b ? _0x90e815_18() : _0x90e815_13 ? _0x90e815_2() ? _0x90e815_3() && (_0x90e815_18(), 
+    _0x90e815_b = !0, _0x90e815_19("\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e")) : _0x90e815_0("\x53\x69\x67\x6e\x20\x69\x6e\x20\x61\x6e\x64\x20\x73\x65\x6c\x65\x63\x74\x20\x61\x20\x6d\x6f\x64\x65\x6c\x20\x66\x69\x72\x73\x74\x2e\x20\x43\x6f\x6d\x70\x75\x74\x65\x72\x20\x6d\x6f\x64\x65\x20\x61\x6c\x73\x6f\x20\x6e\x65\x65\x64\x73\x20\x61\x20\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64\x20\x66\x6f\x6c\x64\x65\x72\x2e") : _0x90e815_0("\x56\x6f\x69\x63\x65\x20\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e\x20\x54\x72\x79\x20\x43\x68\x72\x6f\x6d\x65\x20\x6f\x72\x20\x45\x64\x67\x65\x2e");
+  }, window.addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", _0x90e815_18), document.addEventListener("\x76\x69\x73\x69\x62\x69\x6c\x69\x74\x79\x63\x68\x61\x6e\x67\x65", () => {
+    document.hidden && _0x90e815_18();
   }), {
-    voiceActive: () => u,
-    image: () => c,
-    preparing: () => d,
-    clearImage: M,
-    stopVoice: C,
+    voiceActive: () => _0x90e815_b,
+    image: () => _0x90e815_7,
+    preparing: () => _0x90e815_8,
+    clearImage: _0x90e815_15,
+    stopVoice: _0x90e815_18,
     pause: function() {
-      h = !0, I(), u && b("Working \u2014 click the waveform to end voice.");
+      _0x90e815_d = !0, _0x90e815_17(), _0x90e815_b && _0x90e815_14("\x57\x6f\x72\x6b\x69\x6e\x67\x20\u2014\x20\x63\x6c\x69\x63\x6b\x20\x74\x68\x65\x20\x77\x61\x76\x65\x66\x6f\x72\x6d\x20\x74\x6f\x20\x65\x6e\x64\x20\x76\x6f\x69\x63\x65\x2e");
     },
-    reply: function(t, o) {
-      if (u) {
-        if (!o?.data || ![ "audio/mpeg", "audio/wav" ].includes(o.mime)) return C(), void e("No model audio was returned. Browser read-aloud is not used.");
+    reply: function(_0x90e815_1, _0x90e815_2) {
+      if (_0x90e815_b) {
+        if (!_0x90e815_2?.data || ![ "\x61\x75\x64\x69\x6f\x2f\x6d\x70\x65\x67", "\x61\x75\x64\x69\x6f\x2f\x77\x61\x76" ].includes(_0x90e815_2.mime)) return _0x90e815_18(), 
+        void _0x90e815_0("\x4e\x6f\x20\x6d\x6f\x64\x65\x6c\x20\x61\x75\x64\x69\x6f\x20\x77\x61\x73\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x2e\x20\x42\x72\x6f\x77\x73\x65\x72\x20\x72\x65\x61\x64\x2d\x61\x6c\x6f\x75\x64\x20\x69\x73\x20\x6e\x6f\x74\x20\x75\x73\x65\x64\x2e");
         try {
-          const t = atob(o.data), i = Uint8Array.from(t, e => e.charCodeAt(0));
-          f = URL.createObjectURL(new Blob([ i ], {
-            type: o.mime
-          })), w = new Audio(f), m = !0, w.onended = () => {
-            m = !1, URL.revokeObjectURL(f), f = "", w = null, S();
-          }, w.onerror = () => {
-            C(), e("Could not play the model voice.");
-          }, b("Speaking - click the waveform to end voice."), w.play().catch(() => {
-            C(), e("Audio playback was blocked. Start voice again to retry.");
+          const _0x90e815_1 = atob(_0x90e815_2.data), _0x90e815_3 = Uint8Array.from(_0x90e815_1, _0x90e815_0 => _0x90e815_0.charCodeAt(0));
+          _0x90e815_12 = URL.createObjectURL(new Blob([ _0x90e815_3 ], {
+            type: _0x90e815_2.mime
+          })), _0x90e815_11 = new Audio(_0x90e815_12), _0x90e815_c = !0, _0x90e815_11.onended = () => {
+            _0x90e815_c = !1, URL.revokeObjectURL(_0x90e815_12), _0x90e815_12 = "", _0x90e815_11 = null, 
+            _0x90e815_1a();
+          }, _0x90e815_11.onerror = () => {
+            _0x90e815_18(), _0x90e815_0("\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x70\x6c\x61\x79\x20\x74\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x76\x6f\x69\x63\x65\x2e");
+          }, _0x90e815_14("\x53\x70\x65\x61\x6b\x69\x6e\x67\x20\x2d\x20\x63\x6c\x69\x63\x6b\x20\x74\x68\x65\x20\x77\x61\x76\x65\x66\x6f\x72\x6d\x20\x74\x6f\x20\x65\x6e\x64\x20\x76\x6f\x69\x63\x65\x2e"), _0x90e815_11.play().catch(() => {
+            _0x90e815_18(), _0x90e815_0("\x41\x75\x64\x69\x6f\x20\x70\x6c\x61\x79\x62\x61\x63\x6b\x20\x77\x61\x73\x20\x62\x6c\x6f\x63\x6b\x65\x64\x2e\x20\x53\x74\x61\x72\x74\x20\x76\x6f\x69\x63\x65\x20\x61\x67\x61\x69\x6e\x20\x74\x6f\x20\x72\x65\x74\x72\x79\x2e");
           });
         } catch {
-          C(), e("The model returned invalid audio.");
+          _0x90e815_18(), _0x90e815_0("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x69\x6e\x76\x61\x6c\x69\x64\x20\x61\x75\x64\x69\x6f\x2e");
         }
       }
     },
     resume() {
-      h = !1, S();
+      _0x90e815_d = !1, _0x90e815_1a();
     },
     reset() {
-      C(), M();
+      _0x90e815_18(), _0x90e815_15();
     }
   };
 }

@@ -1,703 +1,760 @@
-import { additionalSources as _n, movieSourceUrl as Kn } from "./@rfadd4f9595b413bd55e20a33!.js?v=20260915-aniembed-v1";
+import { additionalSources as _0x984456_0, movieSourceUrl as _0x984456_1 } from "\x2e\x2f\x40\x72\x66\x61\x64\x64\x34\x66\x39\x35\x39\x35\x62\x34\x31\x33\x62\x64\x35\x35\x65\x32\x30\x61\x33\x33\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x31\x35\x2d\x61\x6e\x69\x65\x6d\x62\x65\x64\x2d\x76\x31";
 
-import { launchMovieProxy as Zn, inspectMovieProxy as Xn, styleMovieVideo as Yn, startMovieProxy as Qn, canStartMovieProxy as ia } from "./@re874b847568a139e69119ffa!.js?v=20260928-playback-recovery-v4";
+import { launchMovieProxy as _0x984456_2, inspectMovieProxy as _0x984456_3, styleMovieVideo as _0x984456_4, startMovieProxy as _0x984456_5, canStartMovieProxy as _0x984456_6 } from "\x2e\x2f\x40\x72\x65\x38\x37\x34\x62\x38\x34\x37\x35\x36\x38\x61\x31\x33\x39\x65\x36\x39\x31\x31\x39\x66\x66\x61\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x32\x38\x2d\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x72\x65\x63\x6f\x76\x65\x72\x79\x2d\x76\x34";
 
 (() => {
   "use strict";
-  const e = e => document.getElementById(e), t = window.parent !== window;
-  document.querySelector(".home-link").addEventListener("click", e => {
-    t && (e.preventDefault(), parent.postMessage({
-      type: "nyx:close-tab"
+  const _0x984456_7 = _0x984456_0 => document.getElementById(_0x984456_0), _0x984456_8 = window.parent !== window;
+  document.querySelector("\x2e\x68\x6f\x6d\x65\x2d\x6c\x69\x6e\x6b").addEventListener("\x63\x6c\x69\x63\x6b", _0x984456_0 => {
+    _0x984456_8 && (_0x984456_0.preventDefault(), parent.postMessage({
+      type: "\x6e\x79\x78\x3a\x63\x6c\x6f\x73\x65\x2d\x74\x61\x62"
     }, location.origin));
   });
-  const n = (e, t) => {
+  const _0x984456_9 = (_0x984456_0, _0x984456_1) => {
     try {
-      return localStorage.getItem(e) || t;
+      return localStorage.getItem(_0x984456_0) || _0x984456_1;
     } catch {
-      return t;
+      return _0x984456_1;
     }
   };
-  function a() {
-    if (t) {
+  function _0x984456_a() {
+    if (_0x984456_8) {
       try {
-        document.documentElement.style.setProperty("--nyx-font", getComputedStyle(parent.document.body).fontFamily);
+        document.documentElement.style.setProperty("\x2d\x2d\x6e\x79\x78\x2d\x66\x6f\x6e\x74", getComputedStyle(parent.document.body).fontFamily);
       } catch {}
       return;
     }
-    const e = {
-      outfit: "Outfit",
-      raleway: "Raleway",
-      nunito: "Nunito",
-      inter: "Inter",
-      poppins: "Poppins",
-      quicksand: "Quicksand",
-      lexend: "Lexend",
-      montserrat: "Montserrat",
-      atkinson: "Atkinson Hyperlegible"
-    }[n("nyx.font", "outfit")] || "Outfit";
-    document.documentElement.style.setProperty("--nyx-font", `"${e}",Arial,sans-serif`);
-    let a = document.getElementById("nyx-movies-font");
-    a || (a = document.createElement("link"), a.id = "nyx-movies-font", a.rel = "stylesheet", 
-    document.head.append(a));
-    const o = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(e).replaceAll("%20", "+")}:wght@400;500;600;700&display=swap`;
-    a.href !== o && (a.href = o);
-    const i = n("nyx.beamWallpaper", "frost");
-    document.documentElement.dataset.nyxBeamWallpaper = i;
-    const r = n("nyx.customThemeColor", ""), s = "custom" === n("nyx.theme", "default") && /^#[a-f0-9]{6}$/i.test(r) ? {
-      lightColor: r
+    const _0x984456_0 = {
+      outfit: "\x4f\x75\x74\x66\x69\x74",
+      raleway: "\x52\x61\x6c\x65\x77\x61\x79",
+      nunito: "\x4e\x75\x6e\x69\x74\x6f",
+      inter: "\x49\x6e\x74\x65\x72",
+      poppins: "\x50\x6f\x70\x70\x69\x6e\x73",
+      quicksand: "\x51\x75\x69\x63\x6b\x73\x61\x6e\x64",
+      lexend: "\x4c\x65\x78\x65\x6e\x64",
+      montserrat: "\x4d\x6f\x6e\x74\x73\x65\x72\x72\x61\x74",
+      atkinson: "\x41\x74\x6b\x69\x6e\x73\x6f\x6e\x20\x48\x79\x70\x65\x72\x6c\x65\x67\x69\x62\x6c\x65"
+    }[_0x984456_9("\x6e\x79\x78\x2e\x66\x6f\x6e\x74", "\x6f\x75\x74\x66\x69\x74")] || "\x4f\x75\x74\x66\x69\x74";
+    document.documentElement.style.setProperty("\x2d\x2d\x6e\x79\x78\x2d\x66\x6f\x6e\x74", `\x22${_0x984456_0}\x22\x2c\x41\x72\x69\x61\x6c\x2c\x73\x61\x6e\x73\x2d\x73\x65\x72\x69\x66`);
+    let _0x984456_1 = document.getElementById("\x6e\x79\x78\x2d\x6d\x6f\x76\x69\x65\x73\x2d\x66\x6f\x6e\x74");
+    _0x984456_1 || (_0x984456_1 = document.createElement("\x6c\x69\x6e\x6b"), _0x984456_1.id = "\x6e\x79\x78\x2d\x6d\x6f\x76\x69\x65\x73\x2d\x66\x6f\x6e\x74", 
+    _0x984456_1.rel = "\x73\x74\x79\x6c\x65\x73\x68\x65\x65\x74", document.head.append(_0x984456_1));
+    const _0x984456_2 = `\x68\x74\x74\x70\x73\x3a\x2f\x2f\x66\x6f\x6e\x74\x73\x2e\x67\x6f\x6f\x67\x6c\x65\x61\x70\x69\x73\x2e\x63\x6f\x6d\x2f\x63\x73\x73\x32\x3f\x66\x61\x6d\x69\x6c\x79\x3d${encodeURIComponent(_0x984456_0).replaceAll("\x25\x32\x30", "\x2b")}\x3a\x77\x67\x68\x74\x40\x34\x30\x30\x3b\x35\x30\x30\x3b\x36\x30\x30\x3b\x37\x30\x30\x26\x64\x69\x73\x70\x6c\x61\x79\x3d\x73\x77\x61\x70`;
+    _0x984456_1.href !== _0x984456_2 && (_0x984456_1.href = _0x984456_2);
+    const _0x984456_3 = _0x984456_9("\x6e\x79\x78\x2e\x62\x65\x61\x6d\x57\x61\x6c\x6c\x70\x61\x70\x65\x72", "\x66\x72\x6f\x73\x74");
+    document.documentElement.dataset.nyxBeamWallpaper = _0x984456_3;
+    const _0x984456_4 = _0x984456_9("\x6e\x79\x78\x2e\x63\x75\x73\x74\x6f\x6d\x54\x68\x65\x6d\x65\x43\x6f\x6c\x6f\x72", ""), _0x984456_5 = "\x63\x75\x73\x74\x6f\x6d" === _0x984456_9("\x6e\x79\x78\x2e\x74\x68\x65\x6d\x65", "\x64\x65\x66\x61\x75\x6c\x74") && /^#[a-f0-9]{6}$/i.test(_0x984456_4) ? {
+      lightColor: _0x984456_4
     } : {};
-    window.NyxBeamsWallpaper?.apply(i, s), window.NyxLineWavesWallpaper?.apply(i, {
-      colorVariant: n("nyx.lineWaves.colorVariant", "frost")
+    window.NyxBeamsWallpaper?.apply(_0x984456_3, _0x984456_5), window.NyxLineWavesWallpaper?.apply(_0x984456_3, {
+      colorVariant: _0x984456_9("\x6e\x79\x78\x2e\x6c\x69\x6e\x65\x57\x61\x76\x65\x73\x2e\x63\x6f\x6c\x6f\x72\x56\x61\x72\x69\x61\x6e\x74", "\x66\x72\x6f\x73\x74")
     });
   }
-  if (!t) {
-    document.documentElement.classList.add("nyx-movies-standalone");
-    for (const e of [ "nyxBeamsBg", "nyxLineWavesBg" ]) {
-      const t = document.createElement("canvas");
-      t.id = e, t.setAttribute("aria-hidden", "true"), document.body.prepend(t);
+  if (!_0x984456_8) {
+    document.documentElement.classList.add("\x6e\x79\x78\x2d\x6d\x6f\x76\x69\x65\x73\x2d\x73\x74\x61\x6e\x64\x61\x6c\x6f\x6e\x65");
+    for (const _0x984456_0 of [ "\x6e\x79\x78\x42\x65\x61\x6d\x73\x42\x67", "\x6e\x79\x78\x4c\x69\x6e\x65\x57\x61\x76\x65\x73\x42\x67" ]) {
+      const _0x984456_1 = document.createElement("\x63\x61\x6e\x76\x61\x73");
+      _0x984456_1.id = _0x984456_0, _0x984456_1.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), document.body.prepend(_0x984456_1);
     }
     (async () => {
-      for (const e of [ "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/three.r134.min.js", "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@rb68750c01c864a9ef9f8eae1!.js", "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@rd53edf8afd9e3315fe3c5521!.js" ]) await new Promise((t, n) => {
-        const a = document.createElement("script");
-        a.src = e, a.onload = t, a.onerror = n, document.head.append(a);
+      for (const _0x984456_0 of [ "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x76\x65\x6e\x64\x6f\x72\x2f\x74\x68\x72\x65\x65\x2e\x72\x31\x33\x34\x2e\x6d\x69\x6e\x2e\x6a\x73", "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x6a\x73\x2f\x40\x72\x62\x36\x38\x37\x35\x30\x63\x30\x31\x63\x38\x36\x34\x61\x39\x65\x66\x39\x66\x38\x65\x61\x65\x31\x21\x2e\x6a\x73", "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x6a\x73\x2f\x40\x72\x64\x35\x33\x65\x64\x66\x38\x61\x66\x64\x39\x65\x33\x33\x31\x35\x66\x65\x33\x63\x35\x35\x32\x31\x21\x2e\x6a\x73" ]) await new Promise((_0x984456_1, _0x984456_2) => {
+        const _0x984456_3 = document.createElement("\x73\x63\x72\x69\x70\x74");
+        _0x984456_3.src = _0x984456_0, _0x984456_3.onload = _0x984456_1, _0x984456_3.onerror = _0x984456_2, 
+        document.head.append(_0x984456_3);
       });
-      a();
+      _0x984456_a();
     })().catch(() => {});
   }
-  a(), addEventListener("storage", a), addEventListener("message", e => {
-    e.source === parent && e.origin === location.origin && "nyx:theme-sync" === e.data?.type && a();
+  _0x984456_a(), addEventListener("\x73\x74\x6f\x72\x61\x67\x65", _0x984456_a), addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x984456_0 => {
+    _0x984456_0.source === parent && _0x984456_0.origin === location.origin && "\x6e\x79\x78\x3a\x74\x68\x65\x6d\x65\x2d\x73\x79\x6e\x63" === _0x984456_0.data?.type && _0x984456_a();
   });
-  let o, i, r, s = "", l = 1, c = 1, d = null;
-  async function u(e, t, n = 0) {
-    for (let o = 0; ;o++) try {
-      const n = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/movies/" + e, {
-        signal: t,
-        cache: "no-store"
-      }), a = JSON.parse(await n.text(), (e, t) => "string" == typeof t ? t.replace(/^https:\/\/image\.tmdb\.org\/t\/p\/(w185|w342|w500|w780|w1280|original)\/([a-zA-Z0-9_-]+\.(?:jpg|png|webp))$/, "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/movies/image/$1/$2") : t);
-      if (!n.ok) throw Object.assign(Error(a.error || "Movies could not be loaded."), {
-        retryable: [ 502, 503, 504 ].includes(n.status)
+  let _0x984456_b, _0x984456_c, _0x984456_d, _0x984456_e = "", _0x984456_f = 1, _0x984456_10 = 1, _0x984456_11 = null;
+  async function _0x984456_12(_0x984456_0, _0x984456_1, _0x984456_2 = 0) {
+    for (let _0x984456_4 = 0; ;_0x984456_4++) try {
+      const _0x984456_2 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6d\x6f\x76\x69\x65\x73\x2f" + _0x984456_0, {
+        signal: _0x984456_1,
+        cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+      }), _0x984456_3 = JSON.parse(await _0x984456_2.text(), (_0x984456_0, _0x984456_1) => "\x73\x74\x72\x69\x6e\x67" == typeof _0x984456_1 ? _0x984456_1.replace(/^https:\/\/image\.tmdb\.org\/t\/p\/(w185|w342|w500|w780|w1280|original)\/([a-zA-Z0-9_-]+\.(?:jpg|png|webp))$/, "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6d\x6f\x76\x69\x65\x73\x2f\x69\x6d\x61\x67\x65\x2f\x24\x31\x2f\x24\x32") : _0x984456_1);
+      if (!_0x984456_2.ok) throw Object.assign(Error(_0x984456_3.error || "\x4d\x6f\x76\x69\x65\x73\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x6c\x6f\x61\x64\x65\x64\x2e"), {
+        retryable: [ 502, 503, 504 ].includes(_0x984456_2.status)
       });
-      return a;
-    } catch (a) {
-      if (t?.aborted || o >= n || !(a.retryable || a instanceof TypeError)) throw a;
-      await new Promise((e, n) => {
-        const a = () => {
-          clearTimeout(i), n(t.reason);
-        }, i = setTimeout(() => {
-          t?.removeEventListener("abort", a), e();
-        }, 400 * (o + 1));
-        t?.addEventListener("abort", a, {
+      return _0x984456_3;
+    } catch (_0x984456_3) {
+      if (_0x984456_1?.aborted || _0x984456_4 >= _0x984456_2 || !(_0x984456_3.retryable || _0x984456_3 instanceof TypeError)) throw _0x984456_3;
+      await new Promise((_0x984456_0, _0x984456_2) => {
+        const _0x984456_3 = () => {
+          clearTimeout(_0x984456_5), _0x984456_2(_0x984456_1.reason);
+        }, _0x984456_5 = setTimeout(() => {
+          _0x984456_1?.removeEventListener("\x61\x62\x6f\x72\x74", _0x984456_3), _0x984456_0();
+        }, 400 * (_0x984456_4 + 1));
+        _0x984456_1?.addEventListener("\x61\x62\x6f\x72\x74", _0x984456_3, {
           once: !0
-        }), t?.aborted && a();
+        }), _0x984456_1?.aborted && _0x984456_3();
       });
     }
   }
-  function p(e, t = "") {
-    const n = document.createElement("img");
-    n.alt = t, n.loading = "lazy";
-    let a = !1;
-    const o = () => {
-      n.onerror = null, n.classList.add("poster-fallback"), n.src = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/nyx-cat-moon.svg?v=3";
+  function _0x984456_13(_0x984456_0, _0x984456_1 = "") {
+    const _0x984456_2 = document.createElement("\x69\x6d\x67");
+    _0x984456_2.alt = _0x984456_1, _0x984456_2.loading = "\x6c\x61\x7a\x79";
+    let _0x984456_3 = !1;
+    const _0x984456_4 = () => {
+      _0x984456_2.onerror = null, _0x984456_2.classList.add("\x70\x6f\x73\x74\x65\x72\x2d\x66\x61\x6c\x6c\x62\x61\x63\x6b"), _0x984456_2.src = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x6e\x79\x78\x2d\x63\x61\x74\x2d\x6d\x6f\x6f\x6e\x2e\x73\x76\x67\x3f\x76\x3d\x33";
     };
-    return n.onerror = () => {
-      a || !e?.startsWith("https://image.tmdb.org/t/p/") && !e?.startsWith("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/movies/image/") ? o() : (a = !0, 
-      n.src = e.replace(/\/w\d+\//, "/w185/"));
-    }, e ? n.src = e : o(), n;
+    return _0x984456_2.onerror = () => {
+      _0x984456_3 || !_0x984456_0?.startsWith("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x69\x6d\x61\x67\x65\x2e\x74\x6d\x64\x62\x2e\x6f\x72\x67\x2f\x74\x2f\x70\x2f") && !_0x984456_0?.startsWith("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6d\x6f\x76\x69\x65\x73\x2f\x69\x6d\x61\x67\x65\x2f") ? _0x984456_4() : (_0x984456_3 = !0, 
+      _0x984456_2.src = _0x984456_0.replace(/\/w\d+\//, "\x2f\x77\x31\x38\x35\x2f"));
+    }, _0x984456_0 ? _0x984456_2.src = _0x984456_0 : _0x984456_4(), _0x984456_2;
   }
-  const m = matchMedia("(prefers-reduced-motion: reduce)"), h = document.createElement("div");
-  h.id = "movie-backdrop", h.setAttribute("aria-hidden", "true"), document.body.prepend(h);
-  let y = 0, f = "";
-  function v(t) {
-    const n = t?.backdrop;
-    if (!n || e("featured").hidden) return h.hidden = !0, void document.body.classList.remove("movie-backdrop-active");
-    if (h.hidden = !1, document.body.classList.add("movie-backdrop-active"), n === f) return;
-    const a = ++y;
-    f = n;
-    const o = new Image;
-    o.alt = "", o.onload = () => {
-      if (a !== y) return;
-      const e = [ ...h.children ];
-      h.append(o), o.animate([ {
+  const _0x984456_14 = matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29"), _0x984456_15 = document.createElement("\x64\x69\x76");
+  _0x984456_15.id = "\x6d\x6f\x76\x69\x65\x2d\x62\x61\x63\x6b\x64\x72\x6f\x70", _0x984456_15.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), 
+  document.body.prepend(_0x984456_15);
+  let _0x984456_16 = 0, _0x984456_17 = "";
+  function _0x984456_18(_0x984456_0) {
+    const _0x984456_1 = _0x984456_0?.backdrop;
+    if (!_0x984456_1 || _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").hidden) return _0x984456_15.hidden = !0, 
+    void document.body.classList.remove("\x6d\x6f\x76\x69\x65\x2d\x62\x61\x63\x6b\x64\x72\x6f\x70\x2d\x61\x63\x74\x69\x76\x65");
+    if (_0x984456_15.hidden = !1, document.body.classList.add("\x6d\x6f\x76\x69\x65\x2d\x62\x61\x63\x6b\x64\x72\x6f\x70\x2d\x61\x63\x74\x69\x76\x65"), 
+    _0x984456_1 === _0x984456_17) return;
+    const _0x984456_2 = ++_0x984456_16;
+    _0x984456_17 = _0x984456_1;
+    const _0x984456_3 = new Image;
+    _0x984456_3.alt = "", _0x984456_3.onload = () => {
+      if (_0x984456_2 !== _0x984456_16) return;
+      const _0x984456_0 = [ ..._0x984456_15.children ];
+      _0x984456_15.append(_0x984456_3), _0x984456_3.animate([ {
         opacity: 0
       }, {
         opacity: 1
       } ], {
-        duration: m.matches ? 0 : 650
-      }).finished.then(() => e.forEach(e => e.remove())).catch(() => {});
-    }, o.onerror = () => {
-      a === y && (f = "");
-    }, o.src = n;
+        duration: _0x984456_14.matches ? 0 : 650
+      }).finished.then(() => _0x984456_0.forEach(_0x984456_0 => _0x984456_0.remove())).catch(() => {});
+    }, _0x984456_3.onerror = () => {
+      _0x984456_2 === _0x984456_16 && (_0x984456_17 = "");
+    }, _0x984456_3.src = _0x984456_1;
   }
-  let g, b = [], x = 0, k = m.matches, w = !1, E = !0, C = !1;
-  function L() {
-    clearTimeout(g), b.length < 2 || k || m.matches || w || !E || document.hidden || e("featured").hidden || e("detail").open || !e("watch-area").hidden || (g = setTimeout(() => T(x + 1), 4e3));
+  let _0x984456_19, _0x984456_1a = [], _0x984456_1b = 0, _0x984456_1c = _0x984456_14.matches, _0x984456_1d = !1, _0x984456_1e = !0, _0x984456_1f = !1;
+  function _0x984456_20() {
+    clearTimeout(_0x984456_19), _0x984456_1a.length < 2 || _0x984456_1c || _0x984456_14.matches || _0x984456_1d || !_0x984456_1e || document.hidden || _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").hidden || _0x984456_7("\x64\x65\x74\x61\x69\x6c").open || !_0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").hidden || (_0x984456_19 = setTimeout(() => _0x984456_21(_0x984456_1b + 1), 4e3));
   }
-  function T(t, {recenter: n = !0} = {}) {
-    if (!b.length) return;
-    const a = (t + b.length) % b.length, o = C && a !== x, i = t >= x ? 1 : -1, r = new Map([ ...e("accordion-gallery").children ].map(e => [ e, e.getBoundingClientRect() ]));
-    for (const e of r.keys()) e.getAnimations().forEach(e => e.cancel());
-    x = (t + b.length) % b.length;
-    const s = b[x];
-    v(s), e("featured-title").textContent = s.title, e("featured-overview").textContent = s.overview || "", 
-    e("featured-meta").textContent = [ s.releaseDate?.slice(0, 4), s.rating > 0 ? s.rating.toFixed(1) + " / 10" : "" ].filter(Boolean).join(" \xb7 ");
-    const l = [ ...e("accordion-gallery").children ].sort((e, t) => Number(e.dataset.index) - Number(t.dataset.index));
-    l.forEach((e, t) => {
-      const n = t === x;
-      e.classList.toggle("ag-panel--active", n), e.style.setProperty("--ag-grow", n ? String(.6 * (l.length - 1) / .4 || 1) : "1"), 
-      e.style.setProperty("--ag-tilt", n ? "0deg" : t < x ? "5deg" : "-5deg"), e.style.setProperty("--ag-shift", n ? "0px" : 10 * Math.max(-1.5, Math.min(1.5, x - t)) + "px"), 
-      e.querySelector(".ag-panel-trigger").setAttribute("aria-expanded", String(n));
-    }), l[x] && l[x].append(document.querySelector(".featured-copy"));
-    const c = Math.floor(l.length / 2);
-    for (let d = 0; n && d < l.length; d++) {
-      const t = (x + c - d + l.length) % l.length, n = l[t];
-      n.style.setProperty("--ag-tilt", d < c ? "5deg" : d > c ? "-5deg" : "0deg"), e("accordion-gallery").append(n);
+  function _0x984456_21(_0x984456_0, {recenter: _0x984456_1 = !0} = {}) {
+    if (!_0x984456_1a.length) return;
+    const _0x984456_2 = (_0x984456_0 + _0x984456_1a.length) % _0x984456_1a.length, _0x984456_3 = _0x984456_1f && _0x984456_2 !== _0x984456_1b, _0x984456_4 = _0x984456_0 >= _0x984456_1b ? 1 : -1, _0x984456_5 = new Map([ ..._0x984456_7("\x61\x63\x63\x6f\x72\x64\x69\x6f\x6e\x2d\x67\x61\x6c\x6c\x65\x72\x79").children ].map(_0x984456_0 => [ _0x984456_0, _0x984456_0.getBoundingClientRect() ]));
+    for (const _0x984456_7 of _0x984456_5.keys()) _0x984456_7.getAnimations().forEach(_0x984456_0 => _0x984456_0.cancel());
+    _0x984456_1b = (_0x984456_0 + _0x984456_1a.length) % _0x984456_1a.length;
+    const _0x984456_6 = _0x984456_1a[_0x984456_1b];
+    _0x984456_18(_0x984456_6), _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64\x2d\x74\x69\x74\x6c\x65").textContent = _0x984456_6.title, 
+    _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64\x2d\x6f\x76\x65\x72\x76\x69\x65\x77").textContent = _0x984456_6.overview || "", _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64\x2d\x6d\x65\x74\x61").textContent = [ _0x984456_6.releaseDate?.slice(0, 4), _0x984456_6.rating > 0 ? _0x984456_6.rating.toFixed(1) + "\x20\x2f\x20\x31\x30" : "" ].filter(Boolean).join("\x20\xb7\x20");
+    const _0x984456_8 = [ ..._0x984456_7("\x61\x63\x63\x6f\x72\x64\x69\x6f\x6e\x2d\x67\x61\x6c\x6c\x65\x72\x79").children ].sort((_0x984456_0, _0x984456_1) => Number(_0x984456_0.dataset.index) - Number(_0x984456_1.dataset.index));
+    _0x984456_8.forEach((_0x984456_0, _0x984456_1) => {
+      const _0x984456_2 = _0x984456_1 === _0x984456_1b;
+      _0x984456_0.classList.toggle("\x61\x67\x2d\x70\x61\x6e\x65\x6c\x2d\x2d\x61\x63\x74\x69\x76\x65", _0x984456_2), _0x984456_0.style.setProperty("\x2d\x2d\x61\x67\x2d\x67\x72\x6f\x77", _0x984456_2 ? String(.6 * (_0x984456_8.length - 1) / .4 || 1) : "\x31"), 
+      _0x984456_0.style.setProperty("\x2d\x2d\x61\x67\x2d\x74\x69\x6c\x74", _0x984456_2 ? "\x30\x64\x65\x67" : _0x984456_1 < _0x984456_1b ? "\x35\x64\x65\x67" : "\x2d\x35\x64\x65\x67"), 
+      _0x984456_0.style.setProperty("\x2d\x2d\x61\x67\x2d\x73\x68\x69\x66\x74", _0x984456_2 ? "\x30\x70\x78" : 10 * Math.max(-1.5, Math.min(1.5, _0x984456_1b - _0x984456_1)) + "\x70\x78"), 
+      _0x984456_0.querySelector("\x2e\x61\x67\x2d\x70\x61\x6e\x65\x6c\x2d\x74\x72\x69\x67\x67\x65\x72").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String(_0x984456_2));
+    }), _0x984456_8[_0x984456_1b] && _0x984456_8[_0x984456_1b].append(document.querySelector("\x2e\x66\x65\x61\x74\x75\x72\x65\x64\x2d\x63\x6f\x70\x79"));
+    const _0x984456_9 = Math.floor(_0x984456_8.length / 2);
+    for (let _0x984456_a = 0; _0x984456_1 && _0x984456_a < _0x984456_8.length; _0x984456_a++) {
+      const _0x984456_0 = (_0x984456_1b + _0x984456_9 - _0x984456_a + _0x984456_8.length) % _0x984456_8.length, _0x984456_1 = _0x984456_8[_0x984456_0];
+      _0x984456_1.style.setProperty("\x2d\x2d\x61\x67\x2d\x74\x69\x6c\x74", _0x984456_a < _0x984456_9 ? "\x35\x64\x65\x67" : _0x984456_a > _0x984456_9 ? "\x2d\x35\x64\x65\x67" : "\x30\x64\x65\x67"), 
+      _0x984456_7("\x61\x63\x63\x6f\x72\x64\x69\x6f\x6e\x2d\x67\x61\x6c\x6c\x65\x72\x79").append(_0x984456_1);
     }
-    if (o && !m.matches) {
-      const t = e("accordion-gallery").getBoundingClientRect(), a = matchMedia("(max-width:600px)").matches;
-      for (const e of l) {
-        const o = r.get(e), s = e.getBoundingClientRect();
-        if (!o || !s.width || !s.height) continue;
-        let l = o.left - s.left, c = o.top - s.top;
-        !a && Math.abs(l) > .65 * t.width && (l = -i * (s.width + 12)), a && Math.abs(c) > .65 * t.height && (c = -i * (s.height + 7)), 
-        e.animate([ {
-          transform: `translate(${l}px,${c}px) scale(${o.width / s.width},${o.height / s.height})`
+    if (_0x984456_3 && !_0x984456_14.matches) {
+      const _0x984456_0 = _0x984456_7("\x61\x63\x63\x6f\x72\x64\x69\x6f\x6e\x2d\x67\x61\x6c\x6c\x65\x72\x79").getBoundingClientRect(), _0x984456_2 = matchMedia("\x28\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x36\x30\x30\x70\x78\x29").matches;
+      for (const _0x984456_6 of _0x984456_8) {
+        const _0x984456_3 = _0x984456_5.get(_0x984456_6), _0x984456_7 = _0x984456_6.getBoundingClientRect();
+        if (!_0x984456_3 || !_0x984456_7.width || !_0x984456_7.height) continue;
+        let _0x984456_8 = _0x984456_3.left - _0x984456_7.left, _0x984456_9 = _0x984456_3.top - _0x984456_7.top;
+        !_0x984456_2 && Math.abs(_0x984456_8) > .65 * _0x984456_0.width && (_0x984456_8 = -_0x984456_4 * (_0x984456_7.width + 12)), 
+        _0x984456_2 && Math.abs(_0x984456_9) > .65 * _0x984456_0.height && (_0x984456_9 = -_0x984456_4 * (_0x984456_7.height + 7)), 
+        _0x984456_6.animate([ {
+          transform: `\x74\x72\x61\x6e\x73\x6c\x61\x74\x65\x28${_0x984456_8}\x70\x78\x2c${_0x984456_9}\x70\x78\x29\x20\x73\x63\x61\x6c\x65\x28${_0x984456_3.width / _0x984456_7.width}\x2c${_0x984456_3.height / _0x984456_7.height}\x29`
         }, {
-          transform: "none"
+          transform: "\x6e\x6f\x6e\x65"
         } ], {
-          duration: n ? 500 : 450,
-          easing: "cubic-bezier(.22,1,.36,1)"
+          duration: _0x984456_1 ? 500 : 450,
+          easing: "\x63\x75\x62\x69\x63\x2d\x62\x65\x7a\x69\x65\x72\x28\x2e\x32\x32\x2c\x31\x2c\x2e\x33\x36\x2c\x31\x29"
         });
       }
-      const o = document.querySelector(".featured-copy");
-      o.getAnimations().forEach(e => e.cancel()), o.animate([ {
+      const _0x984456_3 = document.querySelector("\x2e\x66\x65\x61\x74\x75\x72\x65\x64\x2d\x63\x6f\x70\x79");
+      _0x984456_3.getAnimations().forEach(_0x984456_0 => _0x984456_0.cancel()), _0x984456_3.animate([ {
         opacity: 0
       }, {
         opacity: 1
       } ], {
-        duration: n ? 350 : 280
+        duration: _0x984456_1 ? 350 : 280
       });
     }
-    C = !0, e("featured-open").onclick = () => location.hash = "movie=" + s.id, e("slide-count").textContent = `${x + 1} / ${b.length}`, 
-    [ ...e("slide-dots").children ].forEach((e, t) => e.setAttribute("aria-current", String(t === x))), 
-    L();
+    _0x984456_1f = !0, _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64\x2d\x6f\x70\x65\x6e").onclick = () => location.hash = "\x6d\x6f\x76\x69\x65\x3d" + _0x984456_6.id, 
+    _0x984456_7("\x73\x6c\x69\x64\x65\x2d\x63\x6f\x75\x6e\x74").textContent = `${_0x984456_1b + 1}\x20\x2f\x20${_0x984456_1a.length}`, 
+    [ ..._0x984456_7("\x73\x6c\x69\x64\x65\x2d\x64\x6f\x74\x73").children ].forEach((_0x984456_0, _0x984456_1) => _0x984456_0.setAttribute("\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74", String(_0x984456_1 === _0x984456_1b))), 
+    _0x984456_20();
   }
-  e("slide-previous").onclick = () => T(x - 1), e("slide-next").onclick = () => T(x + 1);
-  let S, A = "";
-  async function M() {
-    clearTimeout(g), o?.abort();
-    const t = o = new AbortController;
-    e("notice").textContent = "Loading movies...", e("retry-search").hidden = !0, e("clear-search").hidden = !s, 
-    e("featured").hidden = !0, v(null), e("grid").setAttribute("aria-busy", "true"), 
-    e("result-page").textContent = "", e("grid").replaceChildren(), e("previous").disabled = e("next").disabled = !0;
+  _0x984456_7("\x73\x6c\x69\x64\x65\x2d\x70\x72\x65\x76\x69\x6f\x75\x73").onclick = () => _0x984456_21(_0x984456_1b - 1), _0x984456_7("\x73\x6c\x69\x64\x65\x2d\x6e\x65\x78\x74").onclick = () => _0x984456_21(_0x984456_1b + 1);
+  let _0x984456_22, _0x984456_23 = "";
+  async function _0x984456_24() {
+    clearTimeout(_0x984456_19), _0x984456_b?.abort();
+    const _0x984456_0 = _0x984456_b = new AbortController;
+    _0x984456_7("\x6e\x6f\x74\x69\x63\x65").textContent = "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x6d\x6f\x76\x69\x65\x73\x2e\x2e\x2e", _0x984456_7("\x72\x65\x74\x72\x79\x2d\x73\x65\x61\x72\x63\x68").hidden = !0, 
+    _0x984456_7("\x63\x6c\x65\x61\x72\x2d\x73\x65\x61\x72\x63\x68").hidden = !_0x984456_e, _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").hidden = !0, 
+    _0x984456_18(null), _0x984456_7("\x67\x72\x69\x64").setAttribute("\x61\x72\x69\x61\x2d\x62\x75\x73\x79", "\x74\x72\x75\x65"), _0x984456_7("\x72\x65\x73\x75\x6c\x74\x2d\x70\x61\x67\x65").textContent = "", 
+    _0x984456_7("\x67\x72\x69\x64").replaceChildren(), _0x984456_7("\x70\x72\x65\x76\x69\x6f\x75\x73").disabled = _0x984456_7("\x6e\x65\x78\x74").disabled = !0;
     try {
-      const n = await u("search?" + new URLSearchParams({
-        q: s,
-        page: l
-      }), t.signal, 2);
-      if (t !== o) return;
-      c = n.totalPages, function(t) {
-        if (clearTimeout(g), C = !1, b = [ ...new Map(t.filter(e => e.backdrop && !/^coyote\s+vs\.?\s+acme$/i.test(e.title)).map(e => [ e.id, e ])).values() ].slice(0, 5), 
-        b.length > 1 && b.length % 2 == 0 && b.pop(), !b.length) {
-          const e = t.find(e => !/^coyote\s+vs\.?\s+acme$/i.test(e.title));
-          e && (b = [ e ]);
+      const _0x984456_1 = await _0x984456_12("\x73\x65\x61\x72\x63\x68\x3f" + new URLSearchParams({
+        q: _0x984456_e,
+        page: _0x984456_f
+      }), _0x984456_0.signal, 2);
+      if (_0x984456_0 !== _0x984456_b) return;
+      _0x984456_10 = _0x984456_1.totalPages, function(_0x984456_0) {
+        if (clearTimeout(_0x984456_19), _0x984456_1f = !1, _0x984456_1a = [ ...new Map(_0x984456_0.filter(_0x984456_0 => _0x984456_0.backdrop && !/^coyote\s+vs\.?\s+acme$/i.test(_0x984456_0.title)).map(_0x984456_0 => [ _0x984456_0.id, _0x984456_0 ])).values() ].slice(0, 5), 
+        _0x984456_1a.length > 1 && _0x984456_1a.length % 2 == 0 && _0x984456_1a.pop(), !_0x984456_1a.length) {
+          const _0x984456_1 = _0x984456_0.find(_0x984456_0 => !/^coyote\s+vs\.?\s+acme$/i.test(_0x984456_0.title));
+          _0x984456_1 && (_0x984456_1a = [ _0x984456_1 ]);
         }
-        e("featured").hidden = !b.length || !!s || 1 !== l, e("gallery-controls").hidden = b.length < 2;
-        const n = document.querySelector(".featured-copy");
-        e("featured").append(n), e("accordion-gallery").replaceChildren(...b.map((e, t) => {
-          const n = document.createElement("article");
-          n.className = "ag-panel", n.dataset.index = String(t);
-          const a = document.createElement("div");
-          a.className = "ag-panel__media";
-          const o = document.createElement("img");
-          o.alt = "", o.draggable = !1, o.src = e.backdrop || e.poster || "", o.onerror = () => o.hidden = !0, 
-          a.append(o);
-          const i = document.createElement("span");
-          i.className = "ag-panel__overlay", i.setAttribute("aria-hidden", "true");
-          const r = document.createElement("button");
-          r.type = "button", r.className = "ag-panel-trigger", r.setAttribute("aria-label", "Feature " + e.title), 
-          r.title = "Feature " + e.title, r.setAttribute("aria-expanded", "false"), r.onclick = () => {
-            T(t);
+        _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").hidden = !_0x984456_1a.length || !!_0x984456_e || 1 !== _0x984456_f, 
+        _0x984456_7("\x67\x61\x6c\x6c\x65\x72\x79\x2d\x63\x6f\x6e\x74\x72\x6f\x6c\x73").hidden = _0x984456_1a.length < 2;
+        const _0x984456_1 = document.querySelector("\x2e\x66\x65\x61\x74\x75\x72\x65\x64\x2d\x63\x6f\x70\x79");
+        _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").append(_0x984456_1), _0x984456_7("\x61\x63\x63\x6f\x72\x64\x69\x6f\x6e\x2d\x67\x61\x6c\x6c\x65\x72\x79").replaceChildren(..._0x984456_1a.map((_0x984456_0, _0x984456_1) => {
+          const _0x984456_2 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+          _0x984456_2.className = "\x61\x67\x2d\x70\x61\x6e\x65\x6c", _0x984456_2.dataset.index = String(_0x984456_1);
+          const _0x984456_3 = document.createElement("\x64\x69\x76");
+          _0x984456_3.className = "\x61\x67\x2d\x70\x61\x6e\x65\x6c\x5f\x5f\x6d\x65\x64\x69\x61";
+          const _0x984456_4 = document.createElement("\x69\x6d\x67");
+          _0x984456_4.alt = "", _0x984456_4.draggable = !1, _0x984456_4.src = _0x984456_0.backdrop || _0x984456_0.poster || "", 
+          _0x984456_4.onerror = () => _0x984456_4.hidden = !0, _0x984456_3.append(_0x984456_4);
+          const _0x984456_5 = document.createElement("\x73\x70\x61\x6e");
+          _0x984456_5.className = "\x61\x67\x2d\x70\x61\x6e\x65\x6c\x5f\x5f\x6f\x76\x65\x72\x6c\x61\x79", _0x984456_5.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65");
+          const _0x984456_6 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+          _0x984456_6.type = "\x62\x75\x74\x74\x6f\x6e", _0x984456_6.className = "\x61\x67\x2d\x70\x61\x6e\x65\x6c\x2d\x74\x72\x69\x67\x67\x65\x72", _0x984456_6.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x46\x65\x61\x74\x75\x72\x65\x20" + _0x984456_0.title), 
+          _0x984456_6.title = "\x46\x65\x61\x74\x75\x72\x65\x20" + _0x984456_0.title, _0x984456_6.setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x66\x61\x6c\x73\x65"), 
+          _0x984456_6.onclick = () => {
+            _0x984456_21(_0x984456_1);
           };
-          const s = document.createElement("span");
-          return s.className = "ag-panel__label", s.textContent = e.title, s.setAttribute("aria-hidden", "true"), 
-          n.append(a, i, r, s), n;
-        })), e("slide-dots").replaceChildren(), b.forEach((t, n) => {
-          const a = document.createElement("button");
-          a.type = "button", a.setAttribute("aria-label", `Show ${t.title}`), a.title = `Show ${t.title}`, 
-          a.onclick = () => T(n), e("slide-dots").append(a);
-        }), b.length ? T(0) : v(null);
-      }(n.featured || n.results), e("results-title").textContent = s ? "Results for " + s : "Popular movies", 
-      e("result-page").textContent = `Page ${l} of ${c}`;
-      for (const t of n.results) {
-        const n = document.createElement("button");
-        n.type = "button", n.className = "movie-card";
-        const a = document.createElement("div");
-        a.className = "poster", a.append(p(t.poster, t.title + " poster"));
-        const o = document.createElement("div");
-        o.className = "card-copy";
-        const i = document.createElement("strong");
-        i.textContent = t.title;
-        const r = document.createElement("span");
-        r.textContent = [ "tv" === t.kind ? "Series" : "Movie", t.releaseDate?.slice(0, 4) || "Date unavailable", t.rating > 0 ? "\u2605 " + t.rating.toFixed(1) : "" ].filter(Boolean).join(" \xb7 "), 
-        o.append(i, r), n.append(a, o), n.onclick = () => location.hash = ("tv" === t.kind ? "tv=" : "movie=") + t.id, 
-        e("grid").append(n);
+          const _0x984456_7 = document.createElement("\x73\x70\x61\x6e");
+          return _0x984456_7.className = "\x61\x67\x2d\x70\x61\x6e\x65\x6c\x5f\x5f\x6c\x61\x62\x65\x6c", _0x984456_7.textContent = _0x984456_0.title, 
+          _0x984456_7.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), _0x984456_2.append(_0x984456_3, _0x984456_5, _0x984456_6, _0x984456_7), 
+          _0x984456_2;
+        })), _0x984456_7("\x73\x6c\x69\x64\x65\x2d\x64\x6f\x74\x73").replaceChildren(), _0x984456_1a.forEach((_0x984456_0, _0x984456_1) => {
+          const _0x984456_2 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+          _0x984456_2.type = "\x62\x75\x74\x74\x6f\x6e", _0x984456_2.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", `\x53\x68\x6f\x77\x20${_0x984456_0.title}`), 
+          _0x984456_2.title = `\x53\x68\x6f\x77\x20${_0x984456_0.title}`, _0x984456_2.onclick = () => _0x984456_21(_0x984456_1), 
+          _0x984456_7("\x73\x6c\x69\x64\x65\x2d\x64\x6f\x74\x73").append(_0x984456_2);
+        }), _0x984456_1a.length ? _0x984456_21(0) : _0x984456_18(null);
+      }(_0x984456_1.featured || _0x984456_1.results), _0x984456_7("\x72\x65\x73\x75\x6c\x74\x73\x2d\x74\x69\x74\x6c\x65").textContent = _0x984456_e ? "\x52\x65\x73\x75\x6c\x74\x73\x20\x66\x6f\x72\x20" + _0x984456_e : "\x50\x6f\x70\x75\x6c\x61\x72\x20\x6d\x6f\x76\x69\x65\x73", 
+      _0x984456_7("\x72\x65\x73\x75\x6c\x74\x2d\x70\x61\x67\x65").textContent = `\x50\x61\x67\x65\x20${_0x984456_f}\x20\x6f\x66\x20${_0x984456_10}`;
+      for (const _0x984456_0 of _0x984456_1.results) {
+        const _0x984456_1 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+        _0x984456_1.type = "\x62\x75\x74\x74\x6f\x6e", _0x984456_1.className = "\x6d\x6f\x76\x69\x65\x2d\x63\x61\x72\x64";
+        const _0x984456_2 = document.createElement("\x64\x69\x76");
+        _0x984456_2.className = "\x70\x6f\x73\x74\x65\x72", _0x984456_2.append(_0x984456_13(_0x984456_0.poster, _0x984456_0.title + "\x20\x70\x6f\x73\x74\x65\x72"));
+        const _0x984456_3 = document.createElement("\x64\x69\x76");
+        _0x984456_3.className = "\x63\x61\x72\x64\x2d\x63\x6f\x70\x79";
+        const _0x984456_4 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+        _0x984456_4.textContent = _0x984456_0.title;
+        const _0x984456_5 = document.createElement("\x73\x70\x61\x6e");
+        _0x984456_5.textContent = [ "\x74\x76" === _0x984456_0.kind ? "\x53\x65\x72\x69\x65\x73" : "\x4d\x6f\x76\x69\x65", _0x984456_0.releaseDate?.slice(0, 4) || "\x44\x61\x74\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", _0x984456_0.rating > 0 ? "\u2605\x20" + _0x984456_0.rating.toFixed(1) : "" ].filter(Boolean).join("\x20\xb7\x20"), 
+        _0x984456_3.append(_0x984456_4, _0x984456_5), _0x984456_1.append(_0x984456_2, _0x984456_3), 
+        _0x984456_1.onclick = () => location.hash = ("\x74\x76" === _0x984456_0.kind ? "\x74\x76\x3d" : "\x6d\x6f\x76\x69\x65\x3d") + _0x984456_0.id, 
+        _0x984456_7("\x67\x72\x69\x64").append(_0x984456_1);
       }
-      e("notice").textContent = n.results.length ? "" : "No movies or series found. Try another title.", 
-      e("previous").disabled = l <= 1, e("next").disabled = l >= c;
-    } catch (n) {
-      t !== o || t.signal.aborted || (e("notice").textContent = n.message, e("retry-search").hidden = !1);
+      _0x984456_7("\x6e\x6f\x74\x69\x63\x65").textContent = _0x984456_1.results.length ? "" : "\x4e\x6f\x20\x6d\x6f\x76\x69\x65\x73\x20\x6f\x72\x20\x73\x65\x72\x69\x65\x73\x20\x66\x6f\x75\x6e\x64\x2e\x20\x54\x72\x79\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x74\x69\x74\x6c\x65\x2e", 
+      _0x984456_7("\x70\x72\x65\x76\x69\x6f\x75\x73").disabled = _0x984456_f <= 1, _0x984456_7("\x6e\x65\x78\x74").disabled = _0x984456_f >= _0x984456_10;
+    } catch (_0x984456_1) {
+      _0x984456_0 !== _0x984456_b || _0x984456_0.signal.aborted || (_0x984456_7("\x6e\x6f\x74\x69\x63\x65").textContent = _0x984456_1.message, 
+      _0x984456_7("\x72\x65\x74\x72\x79\x2d\x73\x65\x61\x72\x63\x68").hidden = !1);
     } finally {
-      t === o && e("grid").setAttribute("aria-busy", "false");
+      _0x984456_0 === _0x984456_b && _0x984456_7("\x67\x72\x69\x64").setAttribute("\x61\x72\x69\x61\x2d\x62\x75\x73\x79", "\x66\x61\x6c\x73\x65");
     }
   }
-  e("accordion-gallery").addEventListener("pointermove", e => {
-    if ("mouse" !== e.pointerType) return;
-    const t = e.clientX + "," + e.clientY;
-    if (t === A) return;
-    A = t;
-    const n = e.target.closest(".ag-panel");
-    if (n) {
-      const e = Number(n.dataset.index);
-      e !== x && T(e, {
+  _0x984456_7("\x61\x63\x63\x6f\x72\x64\x69\x6f\x6e\x2d\x67\x61\x6c\x6c\x65\x72\x79").addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x6d\x6f\x76\x65", _0x984456_0 => {
+    if ("\x6d\x6f\x75\x73\x65" !== _0x984456_0.pointerType) return;
+    const _0x984456_1 = _0x984456_0.clientX + "\x2c" + _0x984456_0.clientY;
+    if (_0x984456_1 === _0x984456_23) return;
+    _0x984456_23 = _0x984456_1;
+    const _0x984456_2 = _0x984456_0.target.closest("\x2e\x61\x67\x2d\x70\x61\x6e\x65\x6c");
+    if (_0x984456_2) {
+      const _0x984456_0 = Number(_0x984456_2.dataset.index);
+      _0x984456_0 !== _0x984456_1b && _0x984456_21(_0x984456_0, {
         recenter: !1
       });
     }
-  }), e("accordion-gallery").addEventListener("pointerleave", () => {
-    A = "";
-  }), e("featured").addEventListener("focusin", () => {
-    w = document.activeElement.matches(":focus-visible"), L();
-  }), e("featured").addEventListener("focusout", () => {
+  }), _0x984456_7("\x61\x63\x63\x6f\x72\x64\x69\x6f\x6e\x2d\x67\x61\x6c\x6c\x65\x72\x79").addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x6c\x65\x61\x76\x65", () => {
+    _0x984456_23 = "";
+  }), _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").addEventListener("\x66\x6f\x63\x75\x73\x69\x6e", () => {
+    _0x984456_1d = document.activeElement.matches("\x3a\x66\x6f\x63\x75\x73\x2d\x76\x69\x73\x69\x62\x6c\x65"), _0x984456_20();
+  }), _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").addEventListener("\x66\x6f\x63\x75\x73\x6f\x75\x74", () => {
     queueMicrotask(() => {
-      w = e("featured").contains(document.activeElement) && document.activeElement.matches(":focus-visible"), 
-      L();
+      _0x984456_1d = _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").contains(document.activeElement) && document.activeElement.matches("\x3a\x66\x6f\x63\x75\x73\x2d\x76\x69\x73\x69\x62\x6c\x65"), 
+      _0x984456_20();
     });
-  }), e("featured").addEventListener("keydown", e => {
-    e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || "ArrowLeft" !== e.key && "ArrowRight" !== e.key || (e.preventDefault(), 
-    T(x + ("ArrowRight" === e.key ? 1 : -1)));
-  }), e("featured").addEventListener("pointerdown", e => {
-    "touch" !== e.pointerType || e.target.closest("button,a") || (S = {
-      x: e.clientX,
-      y: e.clientY
+  }), _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x984456_0 => {
+    _0x984456_0.altKey || _0x984456_0.ctrlKey || _0x984456_0.metaKey || _0x984456_0.shiftKey || "\x41\x72\x72\x6f\x77\x4c\x65\x66\x74" !== _0x984456_0.key && "\x41\x72\x72\x6f\x77\x52\x69\x67\x68\x74" !== _0x984456_0.key || (_0x984456_0.preventDefault(), 
+    _0x984456_21(_0x984456_1b + ("\x41\x72\x72\x6f\x77\x52\x69\x67\x68\x74" === _0x984456_0.key ? 1 : -1)));
+  }), _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x64\x6f\x77\x6e", _0x984456_0 => {
+    "\x74\x6f\x75\x63\x68" !== _0x984456_0.pointerType || _0x984456_0.target.closest("\x62\x75\x74\x74\x6f\x6e\x2c\x61") || (_0x984456_22 = {
+      x: _0x984456_0.clientX,
+      y: _0x984456_0.clientY
     });
-  }), e("featured").addEventListener("pointerup", e => {
-    if (!S) return;
-    const t = e.clientX - S.x, n = e.clientY - S.y;
-    S = null, Math.abs(t) > 60 && Math.abs(t) > 1.5 * Math.abs(n) && T(x + (t < 0 ? 1 : -1));
-  }), e("featured").addEventListener("pointercancel", () => {
-    S = null;
-  }), addEventListener("visibilitychange", L), addEventListener("pageshow", L), m.addEventListener("change", () => {
-    k = m.matches, L();
-  }), "IntersectionObserver" in window && new IntersectionObserver(e => {
-    E = e[0].isIntersecting, L();
+  }), _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x75\x70", _0x984456_0 => {
+    if (!_0x984456_22) return;
+    const _0x984456_1 = _0x984456_0.clientX - _0x984456_22.x, _0x984456_2 = _0x984456_0.clientY - _0x984456_22.y;
+    _0x984456_22 = null, Math.abs(_0x984456_1) > 60 && Math.abs(_0x984456_1) > 1.5 * Math.abs(_0x984456_2) && _0x984456_21(_0x984456_1b + (_0x984456_1 < 0 ? 1 : -1));
+  }), _0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64").addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x63\x61\x6e\x63\x65\x6c", () => {
+    _0x984456_22 = null;
+  }), addEventListener("\x76\x69\x73\x69\x62\x69\x6c\x69\x74\x79\x63\x68\x61\x6e\x67\x65", _0x984456_20), addEventListener("\x70\x61\x67\x65\x73\x68\x6f\x77", _0x984456_20), 
+  _0x984456_14.addEventListener("\x63\x68\x61\x6e\x67\x65", () => {
+    _0x984456_1c = _0x984456_14.matches, _0x984456_20();
+  }), "\x49\x6e\x74\x65\x72\x73\x65\x63\x74\x69\x6f\x6e\x4f\x62\x73\x65\x72\x76\x65\x72" in window && new IntersectionObserver(_0x984456_0 => {
+    _0x984456_1e = _0x984456_0[0].isIntersecting, _0x984456_20();
   }, {
     threshold: .1
-  }).observe(e("featured"));
-  let P = [ {
-    id: "vixsrc",
-    name: "VixSrc"
-  } ], N = [];
-  const I = Kn;
-  let R = {}, B = "", q = 0;
-  const D = new Map, $ = e => (e.kind || "movie") + ":" + e.id;
-  function F(e, t) {
-    const n = D.get($(e))?.[t];
-    return n && Date.now() - n.updated < 18e5 ? n : {};
+  }).observe(_0x984456_7("\x66\x65\x61\x74\x75\x72\x65\x64"));
+  let _0x984456_25 = [ {
+    id: "\x76\x69\x78\x73\x72\x63",
+    name: "\x56\x69\x78\x53\x72\x63"
+  } ], _0x984456_26 = [];
+  const _0x984456_27 = _0x984456_1;
+  let _0x984456_28 = {}, _0x984456_29 = "", _0x984456_2a = 0;
+  const _0x984456_2b = new Map, _0x984456_2c = _0x984456_0 => (_0x984456_0.kind || "\x6d\x6f\x76\x69\x65") + "\x3a" + _0x984456_0.id;
+  function _0x984456_2d(_0x984456_0, _0x984456_1) {
+    const _0x984456_2 = _0x984456_2b.get(_0x984456_2c(_0x984456_0))?.[_0x984456_1];
+    return _0x984456_2 && Date.now() - _0x984456_2.updated < 18e5 ? _0x984456_2 : {};
   }
-  function H(e, t, n) {
-    const a = $(e);
-    !D.has(a) && D.size >= 100 && D.delete(D.keys().next().value);
-    const o = D.get(a) || {};
-    o[t] = {
-      ...F(e, t),
-      ...n,
+  function _0x984456_2e(_0x984456_0, _0x984456_1, _0x984456_2) {
+    const _0x984456_3 = _0x984456_2c(_0x984456_0);
+    !_0x984456_2b.has(_0x984456_3) && _0x984456_2b.size >= 100 && _0x984456_2b.delete(_0x984456_2b.keys().next().value);
+    const _0x984456_4 = _0x984456_2b.get(_0x984456_3) || {};
+    _0x984456_4[_0x984456_1] = {
+      ..._0x984456_2d(_0x984456_0, _0x984456_1),
+      ..._0x984456_2,
       updated: Date.now()
-    }, D.set(a, o);
+    }, _0x984456_2b.set(_0x984456_3, _0x984456_4);
   }
-  function U(t) {
-    e("sources-panel").hidden = !t, e("choose-source").setAttribute("aria-expanded", String(t)), 
-    t && (e("episode-picker").hidden = !0, e("choose-episodes").setAttribute("aria-expanded", "false"));
+  function _0x984456_2f(_0x984456_0) {
+    _0x984456_7("\x73\x6f\x75\x72\x63\x65\x73\x2d\x70\x61\x6e\x65\x6c").hidden = !_0x984456_0, _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x73\x6f\x75\x72\x63\x65").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String(_0x984456_0)), 
+    _0x984456_0 && (_0x984456_7("\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72").hidden = !0, _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x66\x61\x6c\x73\x65"));
   }
-  function j() {
-    e("source-list").replaceChildren(...P.map(e => {
-      const t = document.createElement("li"), n = document.createElement("button"), a = document.createElement("span"), o = document.createElement("span"), i = document.createElement("strong"), r = document.createElement("small"), s = F(d, e.id), l = R[e.id] || (s.failed ? "Recently unavailable" : s.played ? "Previously played" : "Waiting");
-      return t.dataset.state = l, n.type = "button", n.dataset.provider = e.id, n.setAttribute("aria-current", String(e.id === B)), 
-      a.className = "source-mark", a.setAttribute("aria-hidden", "true"), i.textContent = e.name, 
-      r.textContent = l + " \xb7 " + (s.width && s.height ? s.width + " \xd7 " + s.height : "Quality unknown"), 
-      o.append(i, r), n.append(a, o), n.onclick = () => {
+  function _0x984456_30() {
+    _0x984456_7("\x73\x6f\x75\x72\x63\x65\x2d\x6c\x69\x73\x74").replaceChildren(..._0x984456_25.map(_0x984456_0 => {
+      const _0x984456_1 = document.createElement("\x6c\x69"), _0x984456_2 = document.createElement("\x62\x75\x74\x74\x6f\x6e"), _0x984456_3 = document.createElement("\x73\x70\x61\x6e"), _0x984456_4 = document.createElement("\x73\x70\x61\x6e"), _0x984456_5 = document.createElement("\x73\x74\x72\x6f\x6e\x67"), _0x984456_6 = document.createElement("\x73\x6d\x61\x6c\x6c"), _0x984456_7 = _0x984456_2d(_0x984456_11, _0x984456_0.id), _0x984456_8 = _0x984456_28[_0x984456_0.id] || (_0x984456_7.failed ? "\x52\x65\x63\x65\x6e\x74\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65" : _0x984456_7.played ? "\x50\x72\x65\x76\x69\x6f\x75\x73\x6c\x79\x20\x70\x6c\x61\x79\x65\x64" : "\x57\x61\x69\x74\x69\x6e\x67");
+      return _0x984456_1.dataset.state = _0x984456_8, _0x984456_2.type = "\x62\x75\x74\x74\x6f\x6e", _0x984456_2.dataset.provider = _0x984456_0.id, 
+      _0x984456_2.setAttribute("\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74", String(_0x984456_0.id === _0x984456_29)), 
+      _0x984456_3.className = "\x73\x6f\x75\x72\x63\x65\x2d\x6d\x61\x72\x6b", _0x984456_3.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), 
+      _0x984456_5.textContent = _0x984456_0.name, _0x984456_6.textContent = _0x984456_8 + "\x20\xb7\x20" + (_0x984456_7.width && _0x984456_7.height ? _0x984456_7.width + "\x20\xd7\x20" + _0x984456_7.height : "\x51\x75\x61\x6c\x69\x74\x79\x20\x75\x6e\x6b\x6e\x6f\x77\x6e"), 
+      _0x984456_4.append(_0x984456_5, _0x984456_6), _0x984456_2.append(_0x984456_3, _0x984456_4), 
+      _0x984456_2.onclick = () => {
         try {
-          localStorage.setItem("nyx.movies.preferredSource", e.id);
+          localStorage.setItem("\x6e\x79\x78\x2e\x6d\x6f\x76\x69\x65\x73\x2e\x70\x72\x65\x66\x65\x72\x72\x65\x64\x53\x6f\x75\x72\x63\x65", _0x984456_0.id);
         } catch {}
-        ne(e.id);
-      }, t.append(n), t;
+        _0x984456_3f(_0x984456_0.id);
+      }, _0x984456_1.append(_0x984456_2), _0x984456_1;
     }));
   }
-  let W = null, _ = null, O = "", z = null, K = null, Z = null, V = null;
-  function X() {
-    clearTimeout(ce), e("watch-area").classList.remove("controls-idle"), K?.(), K = null, 
-    Z?.(), Z = null, V = null, e("proxy-loading").hidden = !0, e("start-proxy").hidden = !0, 
-    e("watch-area").classList.remove("proxy-playback", "proxy-ready");
+  let _0x984456_31 = null, _0x984456_32 = null, _0x984456_33 = "", _0x984456_34 = null, _0x984456_35 = null, _0x984456_36 = null, _0x984456_37 = null;
+  function _0x984456_38() {
+    clearTimeout(_0x984456_46), _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").classList.remove("\x63\x6f\x6e\x74\x72\x6f\x6c\x73\x2d\x69\x64\x6c\x65"), 
+    _0x984456_35?.(), _0x984456_35 = null, _0x984456_36?.(), _0x984456_36 = null, _0x984456_37 = null, 
+    _0x984456_7("\x70\x72\x6f\x78\x79\x2d\x6c\x6f\x61\x64\x69\x6e\x67").hidden = !0, _0x984456_7("\x73\x74\x61\x72\x74\x2d\x70\x72\x6f\x78\x79").hidden = !0, 
+    _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").classList.remove("\x70\x72\x6f\x78\x79\x2d\x70\x6c\x61\x79\x62\x61\x63\x6b", "\x70\x72\x6f\x78\x79\x2d\x72\x65\x61\x64\x79");
   }
-  function Y(t) {
-    for (const n of [ "skip-back", "skip-forward", "mute", "volume", "player-settings" ]) e(n).disabled = !t;
+  function _0x984456_39(_0x984456_0) {
+    for (const _0x984456_1 of [ "\x73\x6b\x69\x70\x2d\x62\x61\x63\x6b", "\x73\x6b\x69\x70\x2d\x66\x6f\x72\x77\x61\x72\x64", "\x6d\x75\x74\x65", "\x76\x6f\x6c\x75\x6d\x65", "\x70\x6c\x61\x79\x65\x72\x2d\x73\x65\x74\x74\x69\x6e\x67\x73" ]) _0x984456_7(_0x984456_1).disabled = !_0x984456_0;
   }
-  function J() {
-    q++, X(), U(!1), e("episode-picker").hidden = !0, e("choose-episodes").setAttribute("aria-expanded", "false"), 
-    document.getElementById("watch-area").classList.remove("external-playback"), e("watch-area").insertBefore(document.querySelector(".playback-controls"), e("episode-picker")), 
-    clearTimeout(r), _?.abort(), _ = null, W?.destroy(), W = null, z && (z.pause(), 
-    z.removeAttribute("src"), z.load(), z = null), O && (fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/movies/playback/" + encodeURIComponent(O), {
-      method: "DELETE",
+  function _0x984456_3a() {
+    _0x984456_2a++, _0x984456_38(), _0x984456_2f(!1), _0x984456_7("\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72").hidden = !0, 
+    _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x66\x61\x6c\x73\x65"), document.getElementById("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").classList.remove("\x65\x78\x74\x65\x72\x6e\x61\x6c\x2d\x70\x6c\x61\x79\x62\x61\x63\x6b"), 
+    _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").insertBefore(document.querySelector("\x2e\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x63\x6f\x6e\x74\x72\x6f\x6c\x73"), _0x984456_7("\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72")), 
+    clearTimeout(_0x984456_d), _0x984456_32?.abort(), _0x984456_32 = null, _0x984456_31?.destroy(), 
+    _0x984456_31 = null, _0x984456_34 && (_0x984456_34.pause(), _0x984456_34.removeAttribute("\x73\x72\x63"), 
+    _0x984456_34.load(), _0x984456_34 = null), _0x984456_33 && (fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6d\x6f\x76\x69\x65\x73\x2f\x70\x6c\x61\x79\x62\x61\x63\x6b\x2f" + encodeURIComponent(_0x984456_33), {
+      method: "\x44\x45\x4c\x45\x54\x45",
       keepalive: !0
-    }).catch(() => {}), O = ""), e("player").replaceChildren(), e("watch-area").hidden = !0, 
-    e("settings-panel").hidden = !0, e("player-settings").setAttribute("aria-expanded", "false"), 
-    document.body.classList.remove("movie-playing"), document.querySelectorAll("main>header,main>#browse,main>footer").forEach(e => e.inert = !1), 
-    document.fullscreenElement === e("watch-area") && document.exitFullscreen().catch(() => {});
+    }).catch(() => {}), _0x984456_33 = ""), _0x984456_7("\x70\x6c\x61\x79\x65\x72").replaceChildren(), 
+    _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").hidden = !0, _0x984456_7("\x73\x65\x74\x74\x69\x6e\x67\x73\x2d\x70\x61\x6e\x65\x6c").hidden = !0, 
+    _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x65\x74\x74\x69\x6e\x67\x73").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x66\x61\x6c\x73\x65"), document.body.classList.remove("\x6d\x6f\x76\x69\x65\x2d\x70\x6c\x61\x79\x69\x6e\x67"), 
+    document.querySelectorAll("\x6d\x61\x69\x6e\x3e\x68\x65\x61\x64\x65\x72\x2c\x6d\x61\x69\x6e\x3e\x23\x62\x72\x6f\x77\x73\x65\x2c\x6d\x61\x69\x6e\x3e\x66\x6f\x6f\x74\x65\x72").forEach(_0x984456_0 => _0x984456_0.inert = !1), 
+    document.fullscreenElement === _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61") && document.exitFullscreen().catch(() => {});
   }
-  let Q = null;
-  function G() {
-    e("detail").open || (document.body.classList.contains("movie-overlay") || (Q = document.activeElement), 
-    e("detail").showModal()), document.body.classList.add("movie-overlay"), L();
+  let _0x984456_3b = null;
+  function _0x984456_3c() {
+    _0x984456_7("\x64\x65\x74\x61\x69\x6c").open || (document.body.classList.contains("\x6d\x6f\x76\x69\x65\x2d\x6f\x76\x65\x72\x6c\x61\x79") || (_0x984456_3b = document.activeElement), 
+    _0x984456_7("\x64\x65\x74\x61\x69\x6c").showModal()), document.body.classList.add("\x6d\x6f\x76\x69\x65\x2d\x6f\x76\x65\x72\x6c\x61\x79"), 
+    _0x984456_20();
   }
-  function ee() {
-    e("detail").open && e("detail").close(), document.body.classList.remove("movie-overlay"), 
-    Q?.focus(), L();
+  function _0x984456_3d() {
+    _0x984456_7("\x64\x65\x74\x61\x69\x6c").open && _0x984456_7("\x64\x65\x74\x61\x69\x6c").close(), document.body.classList.remove("\x6d\x6f\x76\x69\x65\x2d\x6f\x76\x65\x72\x6c\x61\x79"), 
+    _0x984456_3b?.focus(), _0x984456_20();
   }
-  async function te() {
-    J(), i?.abort(), e("retry-detail").hidden = !0, d = null, e("watch").hidden = !1, 
-    e("series-episodes").replaceChildren(), e("series-note").textContent = "";
-    const t = location.hash, n = location.hash.match(/^#watch=([1-9]\d{0,9})\/(\d{1,3})\/([1-9]\d{0,3})$/);
-    if (n) {
-      G(), e("detail-content").hidden = !0, e("detail-notice").textContent = "Loading episode\u2026";
+  async function _0x984456_3e() {
+    _0x984456_3a(), _0x984456_c?.abort(), _0x984456_7("\x72\x65\x74\x72\x79\x2d\x64\x65\x74\x61\x69\x6c").hidden = !0, _0x984456_11 = null, 
+    _0x984456_7("\x77\x61\x74\x63\x68").hidden = !1, _0x984456_7("\x73\x65\x72\x69\x65\x73\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").replaceChildren(), 
+    _0x984456_7("\x73\x65\x72\x69\x65\x73\x2d\x6e\x6f\x74\x65").textContent = "";
+    const _0x984456_0 = location.hash, _0x984456_1 = location.hash.match(/^#watch=([1-9]\d{0,9})\/(\d{1,3})\/([1-9]\d{0,3})$/);
+    if (_0x984456_1) {
+      _0x984456_3c(), _0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x63\x6f\x6e\x74\x65\x6e\x74").hidden = !0, _0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x6e\x6f\x74\x69\x63\x65").textContent = "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x65\x70\x69\x73\x6f\x64\x65\u2026";
       try {
-        const e = await u(`tv/${n[1]}/season/${n[2]}/episode/${n[3]}`);
-        if (location.hash !== t) return;
-        d = e, await ne();
-      } catch (l) {
-        location.hash === t && (e("detail-notice").textContent = l.message);
+        const _0x984456_2 = await _0x984456_12(`\x74\x76\x2f${_0x984456_1[1]}\x2f\x73\x65\x61\x73\x6f\x6e\x2f${_0x984456_1[2]}\x2f\x65\x70\x69\x73\x6f\x64\x65\x2f${_0x984456_1[3]}`);
+        if (location.hash !== _0x984456_0) return;
+        _0x984456_11 = _0x984456_2, await _0x984456_3f();
+      } catch (_0x984456_6) {
+        location.hash === _0x984456_0 && (_0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x6e\x6f\x74\x69\x63\x65").textContent = _0x984456_6.message);
       }
       return;
     }
-    const a = location.hash.match(/^#episode=([a-z0-9-]+)$/)?.[1];
-    if (a) {
-      if (!N.length) try {
-        N = (await u("episodes")).results || [];
+    const _0x984456_2 = location.hash.match(/^#episode=([a-z0-9-]+)$/)?.[1];
+    if (_0x984456_2) {
+      if (!_0x984456_26.length) try {
+        _0x984456_26 = (await _0x984456_12("\x65\x70\x69\x73\x6f\x64\x65\x73")).results || [];
       } catch {}
-      if (location.hash !== t) return;
-      const n = N.find(e => e.id === a);
-      if (n) {
-        let a;
+      if (location.hash !== _0x984456_0) return;
+      const _0x984456_1 = _0x984456_26.find(_0x984456_0 => _0x984456_0.id === _0x984456_2);
+      if (_0x984456_1) {
+        let _0x984456_2;
         try {
-          a = [ ...(await u("tv/" + n.tmdbSeriesId + "/season/" + n.season + "/episode/" + n.episode)).sources, {
-            id: n.provider,
-            name: n.providerName,
-            url: n.embedUrl
+          _0x984456_2 = [ ...(await _0x984456_12("\x74\x76\x2f" + _0x984456_1.tmdbSeriesId + "\x2f\x73\x65\x61\x73\x6f\x6e\x2f" + _0x984456_1.season + "\x2f\x65\x70\x69\x73\x6f\x64\x65\x2f" + _0x984456_1.episode)).sources, {
+            id: _0x984456_1.provider,
+            name: _0x984456_1.providerName,
+            url: _0x984456_1.embedUrl
           } ];
         } catch {}
-        if (location.hash !== t) return;
-        return d = {
-          ...n,
-          kind: "episode",
-          sources: a,
+        if (location.hash !== _0x984456_0) return;
+        return _0x984456_11 = {
+          ..._0x984456_1,
+          kind: "\x65\x70\x69\x73\x6f\x64\x65",
+          sources: _0x984456_2,
           genres: [],
           cast: []
-        }, e("movie-title").textContent = n.title, e("movie-meta").textContent = n.episodeLabel, 
-        e("movie-overview").textContent = "", e("movie-facts").replaceChildren(), e("movie-genres").replaceChildren(), 
-        e("cast-section").hidden = !0, e("detail-backdrop").hidden = !0, e("detail-content").hidden = !1, 
-        e("detail-notice").textContent = "", void G();
+        }, _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x74\x69\x74\x6c\x65").textContent = _0x984456_1.title, _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x6d\x65\x74\x61").textContent = _0x984456_1.episodeLabel, 
+        _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x6f\x76\x65\x72\x76\x69\x65\x77").textContent = "", _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x66\x61\x63\x74\x73").replaceChildren(), 
+        _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x67\x65\x6e\x72\x65\x73").replaceChildren(), _0x984456_7("\x63\x61\x73\x74\x2d\x73\x65\x63\x74\x69\x6f\x6e").hidden = !0, 
+        _0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x62\x61\x63\x6b\x64\x72\x6f\x70").hidden = !0, _0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x63\x6f\x6e\x74\x65\x6e\x74").hidden = !1, 
+        _0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x6e\x6f\x74\x69\x63\x65").textContent = "", void _0x984456_3c();
       }
-      return void ee();
+      return void _0x984456_3d();
     }
-    const o = location.hash.startsWith("#tv="), r = location.hash.match(/^#(?:movie|tv)=([1-9]\d{0,9})$/)?.[1];
-    if (!r) return void ee();
-    G();
-    const s = i = new AbortController;
-    e("detail-content").hidden = !0, e("detail-notice").textContent = "Loading movie details...";
+    const _0x984456_3 = location.hash.startsWith("\x23\x74\x76\x3d"), _0x984456_4 = location.hash.match(/^#(?:movie|tv)=([1-9]\d{0,9})$/)?.[1];
+    if (!_0x984456_4) return void _0x984456_3d();
+    _0x984456_3c();
+    const _0x984456_5 = _0x984456_c = new AbortController;
+    _0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x63\x6f\x6e\x74\x65\x6e\x74").hidden = !0, _0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x6e\x6f\x74\x69\x63\x65").textContent = "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x6d\x6f\x76\x69\x65\x20\x64\x65\x74\x61\x69\x6c\x73\x2e\x2e\x2e";
     try {
-      const t = await u((o ? "tv/" : "") + r, s.signal);
-      if (s !== i) return;
-      d = t;
-      const n = e("detail-backdrop");
-      n.hidden = !t.backdrop, n.onerror = () => n.hidden = !0, t.backdrop && (n.src = t.backdrop), 
-      e("movie-title").textContent = t.title, e("movie-meta").textContent = [ t.rating > 0 ? "TMDB " + t.rating.toFixed(1) + " / 10" + (t.votes ? " (" + t.votes.toLocaleString() + ")" : "") : "", t.releaseDate?.slice(0, 4) ].filter(Boolean).join(" \xb7 "), 
-      e("movie-overview").textContent = t.overview || "No description available.", e("movie-genres").replaceChildren();
-      for (const a of t.genres) {
-        const t = document.createElement("span");
-        t.textContent = a, e("movie-genres").append(t);
+      const _0x984456_0 = await _0x984456_12((_0x984456_3 ? "\x74\x76\x2f" : "") + _0x984456_4, _0x984456_5.signal);
+      if (_0x984456_5 !== _0x984456_c) return;
+      _0x984456_11 = _0x984456_0;
+      const _0x984456_1 = _0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x62\x61\x63\x6b\x64\x72\x6f\x70");
+      _0x984456_1.hidden = !_0x984456_0.backdrop, _0x984456_1.onerror = () => _0x984456_1.hidden = !0, 
+      _0x984456_0.backdrop && (_0x984456_1.src = _0x984456_0.backdrop), _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x74\x69\x74\x6c\x65").textContent = _0x984456_0.title, 
+      _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x6d\x65\x74\x61").textContent = [ _0x984456_0.rating > 0 ? "\x54\x4d\x44\x42\x20" + _0x984456_0.rating.toFixed(1) + "\x20\x2f\x20\x31\x30" + (_0x984456_0.votes ? "\x20\x28" + _0x984456_0.votes.toLocaleString() + "\x29" : "") : "", _0x984456_0.releaseDate?.slice(0, 4) ].filter(Boolean).join("\x20\xb7\x20"), 
+      _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x6f\x76\x65\x72\x76\x69\x65\x77").textContent = _0x984456_0.overview || "\x4e\x6f\x20\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6f\x6e\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e", 
+      _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x67\x65\x6e\x72\x65\x73").replaceChildren();
+      for (const _0x984456_2 of _0x984456_0.genres) {
+        const _0x984456_0 = document.createElement("\x73\x70\x61\x6e");
+        _0x984456_0.textContent = _0x984456_2, _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x67\x65\x6e\x72\x65\x73").append(_0x984456_0);
       }
-      e("movie-facts").replaceChildren();
-      for (const [a, o] of [ [ "Runtime", t.runtime ? Math.floor(t.runtime / 60) + "h " + t.runtime % 60 + "m" : null ], [ "Language", t.language?.toUpperCase() ], [ "Release date", t.releaseDate ] ]) {
-        if (!o) continue;
-        const t = document.createElement("dt"), n = document.createElement("dd");
-        t.textContent = a, n.textContent = o, e("movie-facts").append(t, n);
+      _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x66\x61\x63\x74\x73").replaceChildren();
+      for (const [_0x984456_2, _0x984456_3] of [ [ "\x52\x75\x6e\x74\x69\x6d\x65", _0x984456_0.runtime ? Math.floor(_0x984456_0.runtime / 60) + "\x68\x20" + _0x984456_0.runtime % 60 + "\x6d" : null ], [ "\x4c\x61\x6e\x67\x75\x61\x67\x65", _0x984456_0.language?.toUpperCase() ], [ "\x52\x65\x6c\x65\x61\x73\x65\x20\x64\x61\x74\x65", _0x984456_0.releaseDate ] ]) {
+        if (!_0x984456_3) continue;
+        const _0x984456_0 = document.createElement("\x64\x74"), _0x984456_1 = document.createElement("\x64\x64");
+        _0x984456_0.textContent = _0x984456_2, _0x984456_1.textContent = _0x984456_3, _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x66\x61\x63\x74\x73").append(_0x984456_0, _0x984456_1);
       }
-      e("movie-cast").replaceChildren(), e("cast-section").hidden = !t.cast?.length;
-      for (const a of t.cast || []) {
-        const t = document.createElement("div");
-        t.className = "cast-person";
-        const n = document.createElement("div");
-        n.className = "cast-photo", a.photo ? n.append(p(a.photo, a.name)) : n.textContent = a.name.split(" ").map(e => e[0]).slice(0, 2).join("");
-        const o = document.createElement("strong"), i = document.createElement("span");
-        o.textContent = a.name, i.textContent = a.role, t.append(n, o, i), e("movie-cast").append(t);
+      _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x63\x61\x73\x74").replaceChildren(), _0x984456_7("\x63\x61\x73\x74\x2d\x73\x65\x63\x74\x69\x6f\x6e").hidden = !_0x984456_0.cast?.length;
+      for (const _0x984456_2 of _0x984456_0.cast || []) {
+        const _0x984456_0 = document.createElement("\x64\x69\x76");
+        _0x984456_0.className = "\x63\x61\x73\x74\x2d\x70\x65\x72\x73\x6f\x6e";
+        const _0x984456_1 = document.createElement("\x64\x69\x76");
+        _0x984456_1.className = "\x63\x61\x73\x74\x2d\x70\x68\x6f\x74\x6f", _0x984456_2.photo ? _0x984456_1.append(_0x984456_13(_0x984456_2.photo, _0x984456_2.name)) : _0x984456_1.textContent = _0x984456_2.name.split("\x20").map(_0x984456_0 => _0x984456_0[0]).slice(0, 2).join("");
+        const _0x984456_3 = document.createElement("\x73\x74\x72\x6f\x6e\x67"), _0x984456_4 = document.createElement("\x73\x70\x61\x6e");
+        _0x984456_3.textContent = _0x984456_2.name, _0x984456_4.textContent = _0x984456_2.role, 
+        _0x984456_0.append(_0x984456_1, _0x984456_3, _0x984456_4), _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x63\x61\x73\x74").append(_0x984456_0);
       }
-      "tv" === t.kind && (e("watch").hidden = !0, e("series-note").textContent = "Seasons & episodes", 
-      ae(e("series-episodes"), t)), e("detail-notice").textContent = "", e("detail-content").hidden = !1, 
-      e("movie-title").focus();
-    } catch (c) {
-      s.signal.aborted || (e("detail-notice").textContent = c.message, e("retry-detail").hidden = !1);
+      "\x74\x76" === _0x984456_0.kind && (_0x984456_7("\x77\x61\x74\x63\x68").hidden = !0, _0x984456_7("\x73\x65\x72\x69\x65\x73\x2d\x6e\x6f\x74\x65").textContent = "\x53\x65\x61\x73\x6f\x6e\x73\x20\x26\x20\x65\x70\x69\x73\x6f\x64\x65\x73", 
+      _0x984456_40(_0x984456_7("\x73\x65\x72\x69\x65\x73\x2d\x65\x70\x69\x73\x6f\x64\x65\x73"), _0x984456_0)), _0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x6e\x6f\x74\x69\x63\x65").textContent = "", 
+      _0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x63\x6f\x6e\x74\x65\x6e\x74").hidden = !1, _0x984456_7("\x6d\x6f\x76\x69\x65\x2d\x74\x69\x74\x6c\x65").focus();
+    } catch (_0x984456_8) {
+      _0x984456_5.signal.aborted || (_0x984456_7("\x64\x65\x74\x61\x69\x6c\x2d\x6e\x6f\x74\x69\x63\x65").textContent = _0x984456_8.message, 
+      _0x984456_7("\x72\x65\x74\x72\x79\x2d\x64\x65\x74\x61\x69\x6c").hidden = !1);
     }
   }
-  async function ne(t) {
-    if (!d) return;
-    const a = d;
-    e("choose-episodes").hidden = !a.tmdbSeriesId, P = function(e, t) {
-      if (("episode" === e.kind || "tv" === e.kind) && !t.some(e => e.proxy)) {
-        const e = e => "rive" === e.id ? -1 : "framextv" === e.id ? 1 : 0;
-        return [ ...t ].sort((t, n) => e(t) - e(n));
+  async function _0x984456_3f(_0x984456_1) {
+    if (!_0x984456_11) return;
+    const _0x984456_8 = _0x984456_11;
+    _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").hidden = !_0x984456_8.tmdbSeriesId, _0x984456_25 = function(_0x984456_0, _0x984456_1) {
+      if (("\x65\x70\x69\x73\x6f\x64\x65" === _0x984456_0.kind || "\x74\x76" === _0x984456_0.kind) && !_0x984456_1.some(_0x984456_0 => _0x984456_0.proxy)) {
+        const _0x984456_0 = _0x984456_0 => "\x72\x69\x76\x65" === _0x984456_0.id ? -1 : "\x66\x72\x61\x6d\x65\x78\x74\x76" === _0x984456_0.id ? 1 : 0;
+        return [ ..._0x984456_1 ].sort((_0x984456_1, _0x984456_2) => _0x984456_0(_0x984456_1) - _0x984456_0(_0x984456_2));
       }
-      const n = e => e.failed ? 3 : e.played ? e.stalls >= 3 ? 1 : 0 : 2;
-      return [ ...t ].sort((t, a) => {
-        const o = F(e, t.id), i = F(e, a.id);
-        return n(o) - n(i) || (o.played && i.played ? (i.width || 0) * (i.height || 0) - (o.width || 0) * (o.height || 0) : 0);
+      const _0x984456_2 = _0x984456_0 => _0x984456_0.failed ? 3 : _0x984456_0.played ? _0x984456_0.stalls >= 3 ? 1 : 0 : 2;
+      return [ ..._0x984456_1 ].sort((_0x984456_1, _0x984456_3) => {
+        const _0x984456_4 = _0x984456_2d(_0x984456_0, _0x984456_1.id), _0x984456_5 = _0x984456_2d(_0x984456_0, _0x984456_3.id);
+        return _0x984456_2(_0x984456_4) - _0x984456_2(_0x984456_5) || (_0x984456_4.played && _0x984456_5.played ? (_0x984456_5.width || 0) * (_0x984456_5.height || 0) - (_0x984456_4.width || 0) * (_0x984456_4.height || 0) : 0);
       });
-    }(a, function(e) {
-      const t = function(e) {
-        if ("tv" === e.kind) return [];
-        if (e.sources) return e.sources.map(e => ({
-          ...e,
-          url: I(e.url)
-        })).filter(e => e.url);
-        if ("episode" === e.kind) {
-          const t = I(e.embedUrl);
-          return t ? [ {
-            id: e.provider,
-            name: e.providerName,
-            url: t
+    }(_0x984456_8, function(_0x984456_1) {
+      const _0x984456_2 = function(_0x984456_0) {
+        if ("\x74\x76" === _0x984456_0.kind) return [];
+        if (_0x984456_0.sources) return _0x984456_0.sources.map(_0x984456_0 => ({
+          ..._0x984456_0,
+          url: _0x984456_27(_0x984456_0.url)
+        })).filter(_0x984456_0 => _0x984456_0.url);
+        if ("\x65\x70\x69\x73\x6f\x64\x65" === _0x984456_0.kind) {
+          const _0x984456_1 = _0x984456_27(_0x984456_0.embedUrl);
+          return _0x984456_1 ? [ {
+            id: _0x984456_0.provider,
+            name: _0x984456_0.providerName,
+            url: _0x984456_1
           } ] : [];
         }
-        const t = (e.providerMappings || []).filter(e => "supaplay" === e.provider).map(e => I("https://supaplay.fun/mw/" + e.detailPath)).filter(Boolean);
+        const _0x984456_1 = (_0x984456_0.providerMappings || []).filter(_0x984456_0 => "\x73\x75\x70\x61\x70\x6c\x61\x79" === _0x984456_0.provider).map(_0x984456_0 => _0x984456_27("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x73\x75\x70\x61\x70\x6c\x61\x79\x2e\x66\x75\x6e\x2f\x6d\x77\x2f" + _0x984456_0.detailPath)).filter(Boolean);
         return [ {
-          id: "vixsrc",
-          name: "VixSrc"
-        }, ...t.length ? [ {
-          id: "supaplay",
-          name: "SupaPlay \xb7 MovieBox",
-          url: t[0]
+          id: "\x76\x69\x78\x73\x72\x63",
+          name: "\x56\x69\x78\x53\x72\x63"
+        }, ..._0x984456_1.length ? [ {
+          id: "\x73\x75\x70\x61\x70\x6c\x61\x79",
+          name: "\x53\x75\x70\x61\x50\x6c\x61\x79\x20\xb7\x20\x4d\x6f\x76\x69\x65\x42\x6f\x78",
+          url: _0x984456_1[0]
         } ] : [], {
-          id: "nhd",
-          name: "NHD",
-          url: "https://nhdapi.com/movie/" + e.id
+          id: "\x6e\x68\x64",
+          name: "\x4e\x48\x44",
+          url: "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6e\x68\x64\x61\x70\x69\x2e\x63\x6f\x6d\x2f\x6d\x6f\x76\x69\x65\x2f" + _0x984456_0.id
         }, {
-          id: "rive",
-          name: "Rive",
-          url: "https://watch.rivestream.app/embed?type=movie&id=" + e.id
+          id: "\x72\x69\x76\x65",
+          name: "\x52\x69\x76\x65",
+          url: "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x61\x74\x63\x68\x2e\x72\x69\x76\x65\x73\x74\x72\x65\x61\x6d\x2e\x61\x70\x70\x2f\x65\x6d\x62\x65\x64\x3f\x74\x79\x70\x65\x3d\x6d\x6f\x76\x69\x65\x26\x69\x64\x3d" + _0x984456_0.id
         }, {
-          id: "framextv",
-          name: "FrameXTV",
-          url: "https://framextv.tech/embed/" + e.id
+          id: "\x66\x72\x61\x6d\x65\x78\x74\x76",
+          name: "\x46\x72\x61\x6d\x65\x58\x54\x56",
+          url: "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x66\x72\x61\x6d\x65\x78\x74\x76\x2e\x74\x65\x63\x68\x2f\x65\x6d\x62\x65\x64\x2f" + _0x984456_0.id
         } ];
-      }(e), n = "episode" === e.kind ? "tv" : "movie";
-      return [ ..."tv" === e.kind ? [] : "episode" === e.kind ? _n(n, e.tmdbSeriesId, e.sourceSeason, e.sourceEpisode) : _n(n, e.id), ...t ].map(e => e.url ? {
-        ...e,
+      }(_0x984456_1), _0x984456_3 = "\x65\x70\x69\x73\x6f\x64\x65" === _0x984456_1.kind ? "\x74\x76" : "\x6d\x6f\x76\x69\x65";
+      return [ ..."\x74\x76" === _0x984456_1.kind ? [] : "\x65\x70\x69\x73\x6f\x64\x65" === _0x984456_1.kind ? _0x984456_0(_0x984456_3, _0x984456_1.tmdbSeriesId, _0x984456_1.sourceSeason, _0x984456_1.sourceEpisode) : _0x984456_0(_0x984456_3, _0x984456_1.id), ..._0x984456_2 ].map(_0x984456_0 => _0x984456_0.url ? {
+        ..._0x984456_0,
         proxy: !0
-      } : e);
-    }(a));
-    let o = z ? {
-      time: z.currentTime,
-      volume: z.volume,
-      muted: z.muted
+      } : _0x984456_0);
+    }(_0x984456_8));
+    let _0x984456_a = _0x984456_34 ? {
+      time: _0x984456_34.currentTime,
+      volume: _0x984456_34.volume,
+      muted: _0x984456_34.muted
     } : null;
-    J();
-    const i = q;
-    R = {}, B = "", j(), U(!0), e("detail").close(), e("watch-area").hidden = !1, document.body.classList.add("movie-playing"), 
-    document.querySelectorAll("main>header,main>#browse,main>footer").forEach(e => e.inert = !0), 
-    e("watch-title").textContent = a.title, e("watch-area").focus(), L(), t = t || n("nyx.movies.preferredSource", "");
-    const s = P.some(e => e.id === t) ? P.filter(e => e.id === t).concat(P.filter(e => e.id !== t)) : P;
-    let l = !1, c = !1;
-    await async function t(n) {
-      if (i !== q) return;
-      if (X(), clearTimeout(r), _?.abort(), W?.destroy(), W = null, z && (z.pause(), z.removeAttribute("src"), 
-      z.load()), O && (fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/movies/playback/" + encodeURIComponent(O), {
-        method: "DELETE",
+    _0x984456_3a();
+    const _0x984456_b = _0x984456_2a;
+    _0x984456_28 = {}, _0x984456_29 = "", _0x984456_30(), _0x984456_2f(!0), _0x984456_7("\x64\x65\x74\x61\x69\x6c").close(), 
+    _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").hidden = !1, document.body.classList.add("\x6d\x6f\x76\x69\x65\x2d\x70\x6c\x61\x79\x69\x6e\x67"), 
+    document.querySelectorAll("\x6d\x61\x69\x6e\x3e\x68\x65\x61\x64\x65\x72\x2c\x6d\x61\x69\x6e\x3e\x23\x62\x72\x6f\x77\x73\x65\x2c\x6d\x61\x69\x6e\x3e\x66\x6f\x6f\x74\x65\x72").forEach(_0x984456_0 => _0x984456_0.inert = !0), 
+    _0x984456_7("\x77\x61\x74\x63\x68\x2d\x74\x69\x74\x6c\x65").textContent = _0x984456_8.title, _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").focus(), 
+    _0x984456_20(), _0x984456_1 = _0x984456_1 || _0x984456_9("\x6e\x79\x78\x2e\x6d\x6f\x76\x69\x65\x73\x2e\x70\x72\x65\x66\x65\x72\x72\x65\x64\x53\x6f\x75\x72\x63\x65", "");
+    const _0x984456_c = _0x984456_25.some(_0x984456_0 => _0x984456_0.id === _0x984456_1) ? _0x984456_25.filter(_0x984456_0 => _0x984456_0.id === _0x984456_1).concat(_0x984456_25.filter(_0x984456_0 => _0x984456_0.id !== _0x984456_1)) : _0x984456_25;
+    let _0x984456_e = !1, _0x984456_f = !1;
+    await async function _0x984456_0(_0x984456_1) {
+      if (_0x984456_b !== _0x984456_2a) return;
+      if (_0x984456_38(), clearTimeout(_0x984456_d), _0x984456_32?.abort(), _0x984456_31?.destroy(), 
+      _0x984456_31 = null, _0x984456_34 && (_0x984456_34.pause(), _0x984456_34.removeAttribute("\x73\x72\x63"), 
+      _0x984456_34.load()), _0x984456_33 && (fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6d\x6f\x76\x69\x65\x73\x2f\x70\x6c\x61\x79\x62\x61\x63\x6b\x2f" + encodeURIComponent(_0x984456_33), {
+        method: "\x44\x45\x4c\x45\x54\x45",
         keepalive: !0
-      }).catch(() => {}), O = ""), e("player").replaceChildren(), z = null, e("watch-area").classList.remove("external-playback"), 
-      e("watch-area").insertBefore(document.querySelector(".playback-controls"), e("episode-picker")), 
-      n >= s.length && !l && s.some(e => e.proxy)) return l = !0, c = !0, R = {}, j(), 
-      U(!0), e("player-status").textContent = "Reconnecting to Nyx?", t(0);
-      if (n >= s.length) return z = null, B = "", j(), U(!0), e("player-status").textContent = "No source could start this movie. Try again shortly.", 
-      void (e("retry-player").hidden = !1);
-      const d = s[n];
-      B = d.id, R[d.id] = "Checking", j(), U(!0);
-      const u = _ = new AbortController;
-      let p = !1, m = !1, h = !1;
-      const y = () => i === q && _ === u && !u.signal.aborted;
-      if (d.url) {
-        const i = document.createElement("iframe");
-        i.title = a.title + " \u2014 " + d.name, i.sandbox = "allow-scripts allow-same-origin allow-forms allow-presentation", 
-        i.allow = "autoplay; fullscreen; picture-in-picture", i.referrerPolicy = "strict-origin-when-cross-origin", 
-        i.allowFullscreen = !0, d.proxy ? (e("watch-area").classList.add("proxy-playback"), 
-        Y(!1), e("seek").disabled = !0, e("seek").value = 0, e("seek").style.setProperty("--played", "0%"), 
-        e("seek").style.setProperty("--buffered", "0%"), e("playback-time").textContent = "0:00 / 0:00", 
-        ie(e("toggle-play"), "play"), e("toggle-play").setAttribute("aria-label", "Play"), 
-        e("picture-in-picture").hidden = !0, e("start-proxy").hidden = !0, e("proxy-loading").hidden = !1, 
-        V = async () => {
-          if (y() && !h) {
-            h = !0, clearTimeout(r), r = setTimeout(l, 3e4);
+      }).catch(() => {}), _0x984456_33 = ""), _0x984456_7("\x70\x6c\x61\x79\x65\x72").replaceChildren(), 
+      _0x984456_34 = null, _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").classList.remove("\x65\x78\x74\x65\x72\x6e\x61\x6c\x2d\x70\x6c\x61\x79\x62\x61\x63\x6b"), 
+      _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").insertBefore(document.querySelector("\x2e\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x63\x6f\x6e\x74\x72\x6f\x6c\x73"), _0x984456_7("\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72")), 
+      _0x984456_1 >= _0x984456_c.length && !_0x984456_e && _0x984456_c.some(_0x984456_0 => _0x984456_0.proxy)) return _0x984456_e = !0, 
+      _0x984456_f = !0, _0x984456_28 = {}, _0x984456_30(), _0x984456_2f(!0), _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x52\x65\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\x20\x74\x6f\x20\x4e\x79\x78\x3f", 
+      _0x984456_0(0);
+      if (_0x984456_1 >= _0x984456_c.length) return _0x984456_34 = null, _0x984456_29 = "", 
+      _0x984456_30(), _0x984456_2f(!0), _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x4e\x6f\x20\x73\x6f\x75\x72\x63\x65\x20\x63\x6f\x75\x6c\x64\x20\x73\x74\x61\x72\x74\x20\x74\x68\x69\x73\x20\x6d\x6f\x76\x69\x65\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x73\x68\x6f\x72\x74\x6c\x79\x2e", 
+      void (_0x984456_7("\x72\x65\x74\x72\x79\x2d\x70\x6c\x61\x79\x65\x72").hidden = !1);
+      const _0x984456_9 = _0x984456_c[_0x984456_1];
+      _0x984456_29 = _0x984456_9.id, _0x984456_28[_0x984456_9.id] = "\x43\x68\x65\x63\x6b\x69\x6e\x67", _0x984456_30(), 
+      _0x984456_2f(!0);
+      const _0x984456_10 = _0x984456_32 = new AbortController;
+      let _0x984456_11 = !1, _0x984456_12 = !1, _0x984456_13 = !1;
+      const _0x984456_14 = () => _0x984456_b === _0x984456_2a && _0x984456_32 === _0x984456_10 && !_0x984456_10.signal.aborted;
+      if (_0x984456_9.url) {
+        const _0x984456_b = document.createElement("\x69\x66\x72\x61\x6d\x65");
+        _0x984456_b.title = _0x984456_8.title + "\x20\u2014\x20" + _0x984456_9.name, _0x984456_b.sandbox = "\x61\x6c\x6c\x6f\x77\x2d\x73\x63\x72\x69\x70\x74\x73\x20\x61\x6c\x6c\x6f\x77\x2d\x73\x61\x6d\x65\x2d\x6f\x72\x69\x67\x69\x6e\x20\x61\x6c\x6c\x6f\x77\x2d\x66\x6f\x72\x6d\x73\x20\x61\x6c\x6c\x6f\x77\x2d\x70\x72\x65\x73\x65\x6e\x74\x61\x74\x69\x6f\x6e", 
+        _0x984456_b.allow = "\x61\x75\x74\x6f\x70\x6c\x61\x79\x3b\x20\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x3b\x20\x70\x69\x63\x74\x75\x72\x65\x2d\x69\x6e\x2d\x70\x69\x63\x74\x75\x72\x65", _0x984456_b.referrerPolicy = "\x73\x74\x72\x69\x63\x74\x2d\x6f\x72\x69\x67\x69\x6e\x2d\x77\x68\x65\x6e\x2d\x63\x72\x6f\x73\x73\x2d\x6f\x72\x69\x67\x69\x6e", 
+        _0x984456_b.allowFullscreen = !0, _0x984456_9.proxy ? (_0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").classList.add("\x70\x72\x6f\x78\x79\x2d\x70\x6c\x61\x79\x62\x61\x63\x6b"), 
+        _0x984456_39(!1), _0x984456_7("\x73\x65\x65\x6b").disabled = !0, _0x984456_7("\x73\x65\x65\x6b").value = 0, 
+        _0x984456_7("\x73\x65\x65\x6b").style.setProperty("\x2d\x2d\x70\x6c\x61\x79\x65\x64", "\x30\x25"), _0x984456_7("\x73\x65\x65\x6b").style.setProperty("\x2d\x2d\x62\x75\x66\x66\x65\x72\x65\x64", "\x30\x25"), 
+        _0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x74\x69\x6d\x65").textContent = "\x30\x3a\x30\x30\x20\x2f\x20\x30\x3a\x30\x30", _0x984456_42(_0x984456_7("\x74\x6f\x67\x67\x6c\x65\x2d\x70\x6c\x61\x79"), "\x70\x6c\x61\x79"), 
+        _0x984456_7("\x74\x6f\x67\x67\x6c\x65\x2d\x70\x6c\x61\x79").setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x50\x6c\x61\x79"), _0x984456_7("\x70\x69\x63\x74\x75\x72\x65\x2d\x69\x6e\x2d\x70\x69\x63\x74\x75\x72\x65").hidden = !0, 
+        _0x984456_7("\x73\x74\x61\x72\x74\x2d\x70\x72\x6f\x78\x79").hidden = !0, _0x984456_7("\x70\x72\x6f\x78\x79\x2d\x6c\x6f\x61\x64\x69\x6e\x67").hidden = !1, 
+        _0x984456_37 = async () => {
+          if (_0x984456_14() && !_0x984456_13) {
+            _0x984456_13 = !0, clearTimeout(_0x984456_d), _0x984456_d = setTimeout(_0x984456_e, 3e4);
             try {
-              e("start-proxy").hidden = !0, e("proxy-loading").hidden = !1, U(!0), e("player-status").textContent = "Starting video...", 
-              await Qn(i);
+              _0x984456_7("\x73\x74\x61\x72\x74\x2d\x70\x72\x6f\x78\x79").hidden = !0, _0x984456_7("\x70\x72\x6f\x78\x79\x2d\x6c\x6f\x61\x64\x69\x6e\x67").hidden = !1, 
+              _0x984456_2f(!0), _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x53\x74\x61\x72\x74\x69\x6e\x67\x20\x76\x69\x64\x65\x6f\x2e\x2e\x2e", 
+              await _0x984456_5(_0x984456_b);
             } catch {
-              y() && l();
+              _0x984456_14() && _0x984456_e();
             }
           }
-        }) : (e("watch-area").classList.add("external-playback"), document.querySelector(".watch-header").insertBefore(document.querySelector(".playback-controls"), document.querySelector(".watch-brand"))), 
-        e("player").append(i), e("player-status").textContent = "Loading player\u2026", 
-        e("retry-player").hidden = !0;
-        let s = null;
-        const l = () => {
-          y() && !p && (p = !0, H(a, d.id, {
+        }) : (_0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").classList.add("\x65\x78\x74\x65\x72\x6e\x61\x6c\x2d\x70\x6c\x61\x79\x62\x61\x63\x6b"), document.querySelector("\x2e\x77\x61\x74\x63\x68\x2d\x68\x65\x61\x64\x65\x72").insertBefore(document.querySelector("\x2e\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x63\x6f\x6e\x74\x72\x6f\x6c\x73"), document.querySelector("\x2e\x77\x61\x74\x63\x68\x2d\x62\x72\x61\x6e\x64"))), 
+        _0x984456_7("\x70\x6c\x61\x79\x65\x72").append(_0x984456_b), _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x70\x6c\x61\x79\x65\x72\u2026", 
+        _0x984456_7("\x72\x65\x74\x72\x79\x2d\x70\x6c\x61\x79\x65\x72").hidden = !0;
+        let _0x984456_c = null;
+        const _0x984456_e = () => {
+          _0x984456_14() && !_0x984456_11 && (_0x984456_11 = !0, _0x984456_2e(_0x984456_8, _0x984456_9.id, {
             failed: !0
-          }), R[d.id] = "Unavailable", j(), t(n + 1));
-        }, f = t => {
-          if (Number.isFinite(t) && !(t < 0)) {
-            if (null !== s && t > s + .1) {
-              const t = "Playing" !== R[d.id];
-              m || U(!1), m = !0, e("retry-player").hidden = !0, H(a, d.id, {
+          }), _0x984456_28[_0x984456_9.id] = "\x55\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", _0x984456_30(), _0x984456_0(_0x984456_1 + 1));
+        }, _0x984456_15 = _0x984456_0 => {
+          if (Number.isFinite(_0x984456_0) && !(_0x984456_0 < 0)) {
+            if (null !== _0x984456_c && _0x984456_0 > _0x984456_c + .1) {
+              const _0x984456_0 = "\x50\x6c\x61\x79\x69\x6e\x67" !== _0x984456_28[_0x984456_9.id];
+              _0x984456_12 || _0x984456_2f(!1), _0x984456_12 = !0, _0x984456_7("\x72\x65\x74\x72\x79\x2d\x70\x6c\x61\x79\x65\x72").hidden = !0, 
+              _0x984456_2e(_0x984456_8, _0x984456_9.id, {
                 played: !0,
                 failed: !1
-              }), clearTimeout(r), R[d.id] = "Playing", e("player-status").textContent = "", t && j();
+              }), clearTimeout(_0x984456_d), _0x984456_28[_0x984456_9.id] = "\x50\x6c\x61\x79\x69\x6e\x67", _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "", 
+              _0x984456_0 && _0x984456_30();
             }
-            s = t;
+            _0x984456_c = _0x984456_0;
           }
-        }, v = e => {
-          if (!y() || e.source !== i.contentWindow || e.origin !== new URL(d.url).origin) return;
-          let t = e.data;
-          if ("string" == typeof t) {
-            if (t.length > 1e4) return;
+        }, _0x984456_16 = _0x984456_0 => {
+          if (!_0x984456_14() || _0x984456_0.source !== _0x984456_b.contentWindow || _0x984456_0.origin !== new URL(_0x984456_9.url).origin) return;
+          let _0x984456_1 = _0x984456_0.data;
+          if ("\x73\x74\x72\x69\x6e\x67" == typeof _0x984456_1) {
+            if (_0x984456_1.length > 1e4) return;
             try {
-              t = JSON.parse(t);
+              _0x984456_1 = JSON.parse(_0x984456_1);
             } catch {
               return;
             }
           }
-          t && "object" == typeof t && ("timeUpdate" !== t.type && "watching-log" !== t.type || f(t.currentTime), 
-          "framextv" === d.id && "frameXTV:timeupdate" === t.event && f(t.currentTime), [ "animex", "aniembed" ].includes(d.id) && "aniembed" === t.source && 1 === t.version && "event" === t.type && "progress" === t.name && f(t.data?.currentTime), 
-          "aniembed" === d.id && "aniembed" === t.source && 1 === t.version && "event" === t.type && "error" === t.name && l(), 
-          [ "kisskh", "megacloud" ].includes(t.channel) && "time" === t.event && f(t.currentTime ?? t.time), 
-          "pause" === t.type && m && (R[d.id] = "Paused", j()), ("error" === t.type || [ "kisskh", "megacloud" ].includes(t.channel) && "error" === t.event) && l());
+          _0x984456_1 && "\x6f\x62\x6a\x65\x63\x74" == typeof _0x984456_1 && ("\x74\x69\x6d\x65\x55\x70\x64\x61\x74\x65" !== _0x984456_1.type && "\x77\x61\x74\x63\x68\x69\x6e\x67\x2d\x6c\x6f\x67" !== _0x984456_1.type || _0x984456_15(_0x984456_1.currentTime), 
+          "\x66\x72\x61\x6d\x65\x78\x74\x76" === _0x984456_9.id && "\x66\x72\x61\x6d\x65\x58\x54\x56\x3a\x74\x69\x6d\x65\x75\x70\x64\x61\x74\x65" === _0x984456_1.event && _0x984456_15(_0x984456_1.currentTime), 
+          [ "\x61\x6e\x69\x6d\x65\x78", "\x61\x6e\x69\x65\x6d\x62\x65\x64" ].includes(_0x984456_9.id) && "\x61\x6e\x69\x65\x6d\x62\x65\x64" === _0x984456_1.source && 1 === _0x984456_1.version && "\x65\x76\x65\x6e\x74" === _0x984456_1.type && "\x70\x72\x6f\x67\x72\x65\x73\x73" === _0x984456_1.name && _0x984456_15(_0x984456_1.data?.currentTime), 
+          "\x61\x6e\x69\x65\x6d\x62\x65\x64" === _0x984456_9.id && "\x61\x6e\x69\x65\x6d\x62\x65\x64" === _0x984456_1.source && 1 === _0x984456_1.version && "\x65\x76\x65\x6e\x74" === _0x984456_1.type && "\x65\x72\x72\x6f\x72" === _0x984456_1.name && _0x984456_e(), 
+          [ "\x6b\x69\x73\x73\x6b\x68", "\x6d\x65\x67\x61\x63\x6c\x6f\x75\x64" ].includes(_0x984456_1.channel) && "\x74\x69\x6d\x65" === _0x984456_1.event && _0x984456_15(_0x984456_1.currentTime ?? _0x984456_1.time), 
+          "\x70\x61\x75\x73\x65" === _0x984456_1.type && _0x984456_12 && (_0x984456_28[_0x984456_9.id] = "\x50\x61\x75\x73\x65\x64", 
+          _0x984456_30()), ("\x65\x72\x72\x6f\x72" === _0x984456_1.type || [ "\x6b\x69\x73\x73\x6b\x68", "\x6d\x65\x67\x61\x63\x6c\x6f\x75\x64" ].includes(_0x984456_1.channel) && "\x65\x72\x72\x6f\x72" === _0x984456_1.event) && _0x984456_e());
         };
-        if (addEventListener("message", v), u.signal.addEventListener("abort", () => removeEventListener("message", v), {
+        if (addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x984456_16), _0x984456_10.signal.addEventListener("\x61\x62\x6f\x72\x74", () => removeEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x984456_16), {
           once: !0
-        }), i.addEventListener("load", () => {
-          y() && !m && (R[d.id] = d.proxy ? "Loading video" : "Player loaded", j(), e("player-status").textContent = "");
-        }), i.addEventListener("error", l), d.proxy) {
-          r = setTimeout(l, 3e4);
+        }), _0x984456_b.addEventListener("\x6c\x6f\x61\x64", () => {
+          _0x984456_14() && !_0x984456_12 && (_0x984456_28[_0x984456_9.id] = _0x984456_9.proxy ? "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x76\x69\x64\x65\x6f" : "\x50\x6c\x61\x79\x65\x72\x20\x6c\x6f\x61\x64\x65\x64", 
+          _0x984456_30(), _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "");
+        }), _0x984456_b.addEventListener("\x65\x72\x72\x6f\x72", _0x984456_e), _0x984456_9.proxy) {
+          _0x984456_d = setTimeout(_0x984456_e, 3e4);
           try {
-            const e = c;
-            if (c = !1, await Zn(i, d.url, u.signal, {
-              recover: e
-            }), !y()) return void i.remove();
+            const _0x984456_0 = _0x984456_f;
+            if (_0x984456_f = !1, await _0x984456_2(_0x984456_b, _0x984456_9.url, _0x984456_10.signal, {
+              recover: _0x984456_0
+            }), !_0x984456_14()) return void _0x984456_b.remove();
           } catch {
-            return void (y() && l());
+            return void (_0x984456_14() && _0x984456_e());
           }
-          const t = setInterval(() => {
-            if (!y()) return;
-            const t = Xn(i);
-            if (!t.video) {
-              const n = !h && !t.failed && ia(i), a = n && e("start-proxy").hidden;
-              e("start-proxy").hidden = !n, e("proxy-loading").hidden = n, n && (clearTimeout(r), 
-              e("player-status").textContent = "Press Play to start the movie."), a && U(!1);
+          const _0x984456_0 = setInterval(() => {
+            if (!_0x984456_14()) return;
+            const _0x984456_0 = _0x984456_3(_0x984456_b);
+            if (!_0x984456_0.video) {
+              const _0x984456_1 = !_0x984456_13 && !_0x984456_0.failed && _0x984456_6(_0x984456_b), _0x984456_2 = _0x984456_1 && _0x984456_7("\x73\x74\x61\x72\x74\x2d\x70\x72\x6f\x78\x79").hidden;
+              _0x984456_7("\x73\x74\x61\x72\x74\x2d\x70\x72\x6f\x78\x79").hidden = !_0x984456_1, _0x984456_7("\x70\x72\x6f\x78\x79\x2d\x6c\x6f\x61\x64\x69\x6e\x67").hidden = _0x984456_1, 
+              _0x984456_1 && (clearTimeout(_0x984456_d), _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x50\x72\x65\x73\x73\x20\x50\x6c\x61\x79\x20\x74\x6f\x20\x73\x74\x61\x72\x74\x20\x74\x68\x65\x20\x6d\x6f\x76\x69\x65\x2e"), 
+              _0x984456_2 && _0x984456_2f(!1);
             }
-            if (t.video && t.video !== z) try {
-              K?.(), Z?.(), K = Yn(t.video, t.frames), z = t.video, Z = ue(z), e("watch-area").classList.add("proxy-ready"), 
-              e("proxy-loading").hidden = !0, e("start-proxy").hidden = !0, e("player-status").textContent = "", 
-              o && (z.volume = o.volume, z.muted = o.muted, Number.isFinite(z.duration) && (z.currentTime = Math.min(o.time, z.duration)), 
-              o = null);
+            if (_0x984456_0.video && _0x984456_0.video !== _0x984456_34) try {
+              _0x984456_35?.(), _0x984456_36?.(), _0x984456_35 = _0x984456_4(_0x984456_0.video, _0x984456_0.frames), 
+              _0x984456_34 = _0x984456_0.video, _0x984456_36 = _0x984456_48(_0x984456_34), _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").classList.add("\x70\x72\x6f\x78\x79\x2d\x72\x65\x61\x64\x79"), 
+              _0x984456_7("\x70\x72\x6f\x78\x79\x2d\x6c\x6f\x61\x64\x69\x6e\x67").hidden = !0, _0x984456_7("\x73\x74\x61\x72\x74\x2d\x70\x72\x6f\x78\x79").hidden = !0, 
+              _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "", _0x984456_a && (_0x984456_34.volume = _0x984456_a.volume, 
+              _0x984456_34.muted = _0x984456_a.muted, Number.isFinite(_0x984456_34.duration) && (_0x984456_34.currentTime = Math.min(_0x984456_a.time, _0x984456_34.duration)), 
+              _0x984456_a = null);
             } catch {
-              return void l();
+              return void _0x984456_e();
             }
-            Number.isFinite(t.time) ? (t.paused || f(t.time), H(a, d.id, {
-              width: t.width,
-              height: t.height
-            })) : z && !z.isConnected && (K?.(), Z?.(), K = null, Z = null, z = null, Y(!1), 
-            e("watch-area").classList.remove("proxy-ready"), e("start-proxy").hidden = !1), 
-            t.failed && l();
+            Number.isFinite(_0x984456_0.time) ? (_0x984456_0.paused || _0x984456_15(_0x984456_0.time), 
+            _0x984456_2e(_0x984456_8, _0x984456_9.id, {
+              width: _0x984456_0.width,
+              height: _0x984456_0.height
+            })) : _0x984456_34 && !_0x984456_34.isConnected && (_0x984456_35?.(), _0x984456_36?.(), 
+            _0x984456_35 = null, _0x984456_36 = null, _0x984456_34 = null, _0x984456_39(!1), 
+            _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").classList.remove("\x70\x72\x6f\x78\x79\x2d\x72\x65\x61\x64\x79"), _0x984456_7("\x73\x74\x61\x72\x74\x2d\x70\x72\x6f\x78\x79").hidden = !1), 
+            _0x984456_0.failed && _0x984456_e();
           }, 1e3);
-          u.signal.addEventListener("abort", () => clearInterval(t), {
+          _0x984456_10.signal.addEventListener("\x61\x62\x6f\x72\x74", () => clearInterval(_0x984456_0), {
             once: !0
           });
-        } else i.src = d.url;
-        return void (d.proxy || (r = setTimeout(() => {
-          if (y() && !m) {
-            if ("aniembed" === d.id || d.proxy && !z) return void l();
-            e("player-status").textContent = "Use the player\u2019s Play button. If it cannot start, choose another source or reload.", 
-            e("retry-player").hidden = !1;
+        } else _0x984456_b.src = _0x984456_9.url;
+        return void (_0x984456_9.proxy || (_0x984456_d = setTimeout(() => {
+          if (_0x984456_14() && !_0x984456_12) {
+            if ("\x61\x6e\x69\x65\x6d\x62\x65\x64" === _0x984456_9.id || _0x984456_9.proxy && !_0x984456_34) return void _0x984456_e();
+            _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x55\x73\x65\x20\x74\x68\x65\x20\x70\x6c\x61\x79\x65\x72\u2019\x73\x20\x50\x6c\x61\x79\x20\x62\x75\x74\x74\x6f\x6e\x2e\x20\x49\x66\x20\x69\x74\x20\x63\x61\x6e\x6e\x6f\x74\x20\x73\x74\x61\x72\x74\x2c\x20\x63\x68\x6f\x6f\x73\x65\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x73\x6f\x75\x72\x63\x65\x20\x6f\x72\x20\x72\x65\x6c\x6f\x61\x64\x2e", 
+            _0x984456_7("\x72\x65\x74\x72\x79\x2d\x70\x6c\x61\x79\x65\x72").hidden = !1;
           }
         }, 45e3)));
       }
-      const f = z = document.createElement("video");
-      f.controls = !1, f.playsInline = !0, f.preload = "metadata", f.setAttribute("aria-label", a.title + " video player");
-      const v = document.createElement("div");
-      v.className = "player-loading", v.setAttribute("aria-hidden", "true");
-      const g = document.createElement("span");
-      g.className = "spinner", v.append(g), e("player").append(f, v), e("player-status").textContent = "", 
-      e("retry-player").hidden = !0, ue(f);
-      const b = () => {
-        y() && !p && (p = !0, H(a, d.id, {
+      const _0x984456_15 = _0x984456_34 = document.createElement("\x76\x69\x64\x65\x6f");
+      _0x984456_15.controls = !1, _0x984456_15.playsInline = !0, _0x984456_15.preload = "\x6d\x65\x74\x61\x64\x61\x74\x61", 
+      _0x984456_15.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x984456_8.title + "\x20\x76\x69\x64\x65\x6f\x20\x70\x6c\x61\x79\x65\x72");
+      const _0x984456_16 = document.createElement("\x64\x69\x76");
+      _0x984456_16.className = "\x70\x6c\x61\x79\x65\x72\x2d\x6c\x6f\x61\x64\x69\x6e\x67", _0x984456_16.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65");
+      const _0x984456_17 = document.createElement("\x73\x70\x61\x6e");
+      _0x984456_17.className = "\x73\x70\x69\x6e\x6e\x65\x72", _0x984456_16.append(_0x984456_17), _0x984456_7("\x70\x6c\x61\x79\x65\x72").append(_0x984456_15, _0x984456_16), 
+      _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "", _0x984456_7("\x72\x65\x74\x72\x79\x2d\x70\x6c\x61\x79\x65\x72").hidden = !0, 
+      _0x984456_48(_0x984456_15);
+      const _0x984456_18 = () => {
+        _0x984456_14() && !_0x984456_11 && (_0x984456_11 = !0, _0x984456_2e(_0x984456_8, _0x984456_9.id, {
           failed: !0
-        }), m && (o = {
-          time: f.currentTime,
-          volume: f.volume,
-          muted: f.muted
-        }), clearTimeout(r), R[d.id] = "Unavailable", j(), U(!0), t(n + 1));
+        }), _0x984456_12 && (_0x984456_a = {
+          time: _0x984456_15.currentTime,
+          volume: _0x984456_15.volume,
+          muted: _0x984456_15.muted
+        }), clearTimeout(_0x984456_d), _0x984456_28[_0x984456_9.id] = "\x55\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", _0x984456_30(), 
+        _0x984456_2f(!0), _0x984456_0(_0x984456_1 + 1));
       };
-      let x = 0;
-      const k = () => {
-        y() && !f.paused && (!m || f.seeking || x || (x = performance.now()), v.hidden = !1, 
-        e("player-status").textContent = "Buffering...");
+      let _0x984456_19 = 0;
+      const _0x984456_1a = () => {
+        _0x984456_14() && !_0x984456_15.paused && (!_0x984456_12 || _0x984456_15.seeking || _0x984456_19 || (_0x984456_19 = performance.now()), 
+        _0x984456_16.hidden = !1, _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x42\x75\x66\x66\x65\x72\x69\x6e\x67\x2e\x2e\x2e");
       };
-      f.addEventListener("waiting", k), f.addEventListener("stalled", k), f.addEventListener("playing", () => {
-        y() && (x && performance.now() - x > 1500 && H(a, d.id, {
-          stalls: (F(a, d.id).stalls || 0) + 1
-        }), x = 0, clearTimeout(r), e("retry-player").hidden = !0, v.hidden = !0, e("player-status").textContent = "");
+      _0x984456_15.addEventListener("\x77\x61\x69\x74\x69\x6e\x67", _0x984456_1a), _0x984456_15.addEventListener("\x73\x74\x61\x6c\x6c\x65\x64", _0x984456_1a), 
+      _0x984456_15.addEventListener("\x70\x6c\x61\x79\x69\x6e\x67", () => {
+        _0x984456_14() && (_0x984456_19 && performance.now() - _0x984456_19 > 1500 && _0x984456_2e(_0x984456_8, _0x984456_9.id, {
+          stalls: (_0x984456_2d(_0x984456_8, _0x984456_9.id).stalls || 0) + 1
+        }), _0x984456_19 = 0, clearTimeout(_0x984456_d), _0x984456_7("\x72\x65\x74\x72\x79\x2d\x70\x6c\x61\x79\x65\x72").hidden = !0, 
+        _0x984456_16.hidden = !0, _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "");
       });
-      let w = o?.time || 0;
-      f.addEventListener("timeupdate", () => {
-        if (y() && !f.paused && !f.seeking && f.videoWidth > 0 && f.currentTime > w + .2) {
-          const e = F(a, d.id);
-          H(a, d.id, {
+      let _0x984456_1b = _0x984456_a?.time || 0;
+      _0x984456_15.addEventListener("\x74\x69\x6d\x65\x75\x70\x64\x61\x74\x65", () => {
+        if (_0x984456_14() && !_0x984456_15.paused && !_0x984456_15.seeking && _0x984456_15.videoWidth > 0 && _0x984456_15.currentTime > _0x984456_1b + .2) {
+          const _0x984456_0 = _0x984456_2d(_0x984456_8, _0x984456_9.id);
+          _0x984456_2e(_0x984456_8, _0x984456_9.id, {
             played: !0,
             failed: !1,
-            width: f.videoWidth,
-            height: f.videoHeight
+            width: _0x984456_15.videoWidth,
+            height: _0x984456_15.videoHeight
           });
-          const t = e.width !== f.videoWidth || e.height !== f.videoHeight;
-          m ? t && j() : (m = !0, R[d.id] = "Playing", j(), U(!1)), w = f.currentTime;
+          const _0x984456_1 = _0x984456_0.width !== _0x984456_15.videoWidth || _0x984456_0.height !== _0x984456_15.videoHeight;
+          _0x984456_12 ? _0x984456_1 && _0x984456_30() : (_0x984456_12 = !0, _0x984456_28[_0x984456_9.id] = "\x50\x6c\x61\x79\x69\x6e\x67", 
+          _0x984456_30(), _0x984456_2f(!1)), _0x984456_1b = _0x984456_15.currentTime;
         }
-      }), f.addEventListener("pause", () => {
-        y() && (v.hidden = !0, m && (R[d.id] = "Paused", j()));
-      }), f.addEventListener("play", () => {
-        y() && m && (R[d.id] = "Playing", j());
-      }), f.addEventListener("error", b);
+      }), _0x984456_15.addEventListener("\x70\x61\x75\x73\x65", () => {
+        _0x984456_14() && (_0x984456_16.hidden = !0, _0x984456_12 && (_0x984456_28[_0x984456_9.id] = "\x50\x61\x75\x73\x65\x64", 
+        _0x984456_30()));
+      }), _0x984456_15.addEventListener("\x70\x6c\x61\x79", () => {
+        _0x984456_14() && _0x984456_12 && (_0x984456_28[_0x984456_9.id] = "\x50\x6c\x61\x79\x69\x6e\x67", _0x984456_30());
+      }), _0x984456_15.addEventListener("\x65\x72\x72\x6f\x72", _0x984456_18);
       try {
-        const t = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/movies/" + a.id + "/playback?provider=" + d.id, {
-          method: "POST",
-          signal: u.signal
-        }), n = await t.json();
-        if (!t.ok) throw Error("Source unavailable");
-        if (!/^\/api\/movies\/media\/[A-Za-z0-9_-]+\/\d+$/.test(n.url)) throw Error("Invalid source");
-        if (!y()) return void fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/movies/playback/" + n.url.split("/")[4], {
-          method: "DELETE",
+        const _0x984456_0 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6d\x6f\x76\x69\x65\x73\x2f" + _0x984456_8.id + "\x2f\x70\x6c\x61\x79\x62\x61\x63\x6b\x3f\x70\x72\x6f\x76\x69\x64\x65\x72\x3d" + _0x984456_9.id, {
+          method: "\x50\x4f\x53\x54",
+          signal: _0x984456_10.signal
+        }), _0x984456_1 = await _0x984456_0.json();
+        if (!_0x984456_0.ok) throw Error("\x53\x6f\x75\x72\x63\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65");
+        if (!/^\/api\/movies\/media\/[A-Za-z0-9_-]+\/\d+$/.test(_0x984456_1.url)) throw Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x73\x6f\x75\x72\x63\x65");
+        if (!_0x984456_14()) return void fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6d\x6f\x76\x69\x65\x73\x2f\x70\x6c\x61\x79\x62\x61\x63\x6b\x2f" + _0x984456_1.url.split("\x2f")[4], {
+          method: "\x44\x45\x4c\x45\x54\x45",
           keepalive: !0
         }).catch(() => {});
-        O = n.url.split("/")[4], R[d.id] = "Loading video", j();
-        const i = () => {
-          y() && (o && (f.currentTime = o.time || 0, f.volume = o.volume, f.muted = o.muted), 
-          f.play().catch(() => {
-            y() && (clearTimeout(r), v.hidden = !0, R[d.id] = "Ready \u2014 press Play", j(), 
-            U(!1), e("player-status").textContent = "Press Play to start the movie.");
+        _0x984456_33 = _0x984456_1.url.split("\x2f")[4], _0x984456_28[_0x984456_9.id] = "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x76\x69\x64\x65\x6f", 
+        _0x984456_30();
+        const _0x984456_2 = () => {
+          _0x984456_14() && (_0x984456_a && (_0x984456_15.currentTime = _0x984456_a.time || 0, 
+          _0x984456_15.volume = _0x984456_a.volume, _0x984456_15.muted = _0x984456_a.muted), 
+          _0x984456_15.play().catch(() => {
+            _0x984456_14() && (clearTimeout(_0x984456_d), _0x984456_16.hidden = !0, _0x984456_28[_0x984456_9.id] = "\x52\x65\x61\x64\x79\x20\u2014\x20\x70\x72\x65\x73\x73\x20\x50\x6c\x61\x79", 
+            _0x984456_30(), _0x984456_2f(!1), _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x50\x72\x65\x73\x73\x20\x50\x6c\x61\x79\x20\x74\x6f\x20\x73\x74\x61\x72\x74\x20\x74\x68\x65\x20\x6d\x6f\x76\x69\x65\x2e");
           }));
         };
-        if (r = setTimeout(b, 3e4), window.Hls?.isSupported()) {
-          const e = W = new Hls({
+        if (_0x984456_d = setTimeout(_0x984456_18, 3e4), window.Hls?.isSupported()) {
+          const _0x984456_0 = _0x984456_31 = new Hls({
             maxBufferLength: 12,
             maxMaxBufferLength: 24,
             backBufferLength: 12,
@@ -705,264 +762,277 @@ import { launchMovieProxy as Zn, inspectMovieProxy as Xn, styleMovieVideo as Yn,
             capLevelToPlayerSize: !0,
             startLevel: -1
           });
-          e.on(Hls.Events.MANIFEST_PARSED, () => {
-            y() && (me(), i());
-          }), e.on(Hls.Events.AUDIO_TRACKS_UPDATED, () => {
-            if (!y()) return;
-            const t = e.audioTracks.findIndex(e => /^(en|eng)$/i.test(e.lang || "") || /english/i.test(e.name || ""));
-            t >= 0 && (e.audioTrack = t), me();
-          }), e.on(Hls.Events.SUBTITLE_TRACKS_UPDATED, () => {
-            y() && me();
-          }), e.on(Hls.Events.ERROR, (e, t) => {
-            t.fatal && b();
-          }), e.loadSource(n.url), e.attachMedia(f);
-        } else f.canPlayType("application/vnd.apple.mpegurl") ? (f.src = n.url, f.addEventListener("loadedmetadata", i, {
+          _0x984456_0.on(Hls.Events.MANIFEST_PARSED, () => {
+            _0x984456_14() && (_0x984456_4a(), _0x984456_2());
+          }), _0x984456_0.on(Hls.Events.AUDIO_TRACKS_UPDATED, () => {
+            if (!_0x984456_14()) return;
+            const _0x984456_1 = _0x984456_0.audioTracks.findIndex(_0x984456_0 => /^(en|eng)$/i.test(_0x984456_0.lang || "") || /english/i.test(_0x984456_0.name || ""));
+            _0x984456_1 >= 0 && (_0x984456_0.audioTrack = _0x984456_1), _0x984456_4a();
+          }), _0x984456_0.on(Hls.Events.SUBTITLE_TRACKS_UPDATED, () => {
+            _0x984456_14() && _0x984456_4a();
+          }), _0x984456_0.on(Hls.Events.ERROR, (_0x984456_0, _0x984456_1) => {
+            _0x984456_1.fatal && _0x984456_18();
+          }), _0x984456_0.loadSource(_0x984456_1.url), _0x984456_0.attachMedia(_0x984456_15);
+        } else _0x984456_15.canPlayType("\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x76\x6e\x64\x2e\x61\x70\x70\x6c\x65\x2e\x6d\x70\x65\x67\x75\x72\x6c") ? (_0x984456_15.src = _0x984456_1.url, 
+        _0x984456_15.addEventListener("\x6c\x6f\x61\x64\x65\x64\x6d\x65\x74\x61\x64\x61\x74\x61", _0x984456_2, {
           once: !0
-        })) : (clearTimeout(r), v.hidden = !0, U(!1), e("player-status").textContent = "This browser does not support this video player.");
+        })) : (clearTimeout(_0x984456_d), _0x984456_16.hidden = !0, _0x984456_2f(!1), _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x54\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x64\x6f\x65\x73\x20\x6e\x6f\x74\x20\x73\x75\x70\x70\x6f\x72\x74\x20\x74\x68\x69\x73\x20\x76\x69\x64\x65\x6f\x20\x70\x6c\x61\x79\x65\x72\x2e");
       } catch {
-        y() && b();
+        _0x984456_14() && _0x984456_18();
       }
     }(0);
   }
-  async function ae(t, n, a, o) {
-    const i = document.createElement("form");
-    i.className = "episode-form";
-    let r = 0;
-    const s = document.createElement("select"), l = document.createElement("select"), c = document.createElement("button"), d = document.createElement("p");
-    d.setAttribute("role", "status"), c.type = "submit", c.className = "icon-control", 
-    c.setAttribute("aria-label", "Play selected episode"), c.title = "Play selected episode", 
-    ie(c, "play");
-    for (const [e, u] of [ [ "Season", s ], [ "Episode", l ] ]) {
-      const t = document.createElement("label");
-      t.textContent = e, t.append(u), i.append(t);
+  async function _0x984456_40(_0x984456_0, _0x984456_1, _0x984456_2, _0x984456_3) {
+    const _0x984456_4 = document.createElement("\x66\x6f\x72\x6d");
+    _0x984456_4.className = "\x65\x70\x69\x73\x6f\x64\x65\x2d\x66\x6f\x72\x6d";
+    let _0x984456_5 = 0;
+    const _0x984456_6 = document.createElement("\x73\x65\x6c\x65\x63\x74"), _0x984456_8 = document.createElement("\x73\x65\x6c\x65\x63\x74"), _0x984456_9 = document.createElement("\x62\x75\x74\x74\x6f\x6e"), _0x984456_a = document.createElement("\x70");
+    _0x984456_a.setAttribute("\x72\x6f\x6c\x65", "\x73\x74\x61\x74\x75\x73"), _0x984456_9.type = "\x73\x75\x62\x6d\x69\x74", _0x984456_9.className = "\x69\x63\x6f\x6e\x2d\x63\x6f\x6e\x74\x72\x6f\x6c", 
+    _0x984456_9.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x50\x6c\x61\x79\x20\x73\x65\x6c\x65\x63\x74\x65\x64\x20\x65\x70\x69\x73\x6f\x64\x65"), _0x984456_9.title = "\x50\x6c\x61\x79\x20\x73\x65\x6c\x65\x63\x74\x65\x64\x20\x65\x70\x69\x73\x6f\x64\x65", 
+    _0x984456_42(_0x984456_9, "\x70\x6c\x61\x79");
+    for (const [_0x984456_7, _0x984456_d] of [ [ "\x53\x65\x61\x73\x6f\x6e", _0x984456_6 ], [ "\x45\x70\x69\x73\x6f\x64\x65", _0x984456_8 ] ]) {
+      const _0x984456_0 = document.createElement("\x6c\x61\x62\x65\x6c");
+      _0x984456_0.textContent = _0x984456_7, _0x984456_0.append(_0x984456_d), _0x984456_4.append(_0x984456_0);
     }
-    i.append(c, d), t.replaceChildren(i);
-    for (const e of n.seasons || []) {
-      const t = document.createElement("option");
-      t.value = e.number, t.textContent = e.name || "Season " + e.number, s.append(t);
+    _0x984456_4.append(_0x984456_9, _0x984456_a), _0x984456_0.replaceChildren(_0x984456_4);
+    for (const _0x984456_7 of _0x984456_1.seasons || []) {
+      const _0x984456_0 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+      _0x984456_0.value = _0x984456_7.number, _0x984456_0.textContent = _0x984456_7.name || "\x53\x65\x61\x73\x6f\x6e\x20" + _0x984456_7.number, 
+      _0x984456_6.append(_0x984456_0);
     }
-    const p = (n.seasons || []).some(e => e.number === Number(a)) ? Number(a) : (n.seasons || []).find(e => e.number > 0)?.number ?? n.seasons?.[0]?.number;
-    if (void 0 === p) return d.textContent = "No episodes are listed yet.", void (c.disabled = s.disabled = l.disabled = !0);
-    async function m() {
-      const e = ++r;
-      l.replaceChildren(), l.disabled = c.disabled = !0, d.textContent = "Loading episodes\u2026";
+    const _0x984456_b = (_0x984456_1.seasons || []).some(_0x984456_0 => _0x984456_0.number === Number(_0x984456_2)) ? Number(_0x984456_2) : (_0x984456_1.seasons || []).find(_0x984456_0 => _0x984456_0.number > 0)?.number ?? _0x984456_1.seasons?.[0]?.number;
+    if (void 0 === _0x984456_b) return _0x984456_a.textContent = "\x4e\x6f\x20\x65\x70\x69\x73\x6f\x64\x65\x73\x20\x61\x72\x65\x20\x6c\x69\x73\x74\x65\x64\x20\x79\x65\x74\x2e", 
+    void (_0x984456_9.disabled = _0x984456_6.disabled = _0x984456_8.disabled = !0);
+    async function _0x984456_c() {
+      const _0x984456_2 = ++_0x984456_5;
+      _0x984456_8.replaceChildren(), _0x984456_8.disabled = _0x984456_9.disabled = !0, 
+      _0x984456_a.textContent = "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x65\x70\x69\x73\x6f\x64\x65\x73\u2026";
       try {
-        const a = await u("tv/" + n.id + "/season/" + s.value);
-        if (e !== r || !t.contains(i)) return;
-        for (const e of a.episodes) {
-          const t = document.createElement("option");
-          t.value = e.number, t.textContent = e.number + ". " + e.name, l.append(t);
+        const _0x984456_7 = await _0x984456_12("\x74\x76\x2f" + _0x984456_1.id + "\x2f\x73\x65\x61\x73\x6f\x6e\x2f" + _0x984456_6.value);
+        if (_0x984456_2 !== _0x984456_5 || !_0x984456_0.contains(_0x984456_4)) return;
+        for (const _0x984456_0 of _0x984456_7.episodes) {
+          const _0x984456_1 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+          _0x984456_1.value = _0x984456_0.number, _0x984456_1.textContent = _0x984456_0.number + "\x2e\x20" + _0x984456_0.name, 
+          _0x984456_8.append(_0x984456_1);
         }
-        [ ...l.options ].some(e => e.value === String(o)) && (l.value = String(o)), o = null, 
-        d.textContent = a.episodes.length ? "" : "No episodes are listed yet.", c.disabled = l.disabled = !a.episodes.length, 
-        ie(c, "play");
-      } catch (a) {
-        if (e !== r) return;
-        d.textContent = a.message, c.disabled = !1, ie(c, "reload");
+        [ ..._0x984456_8.options ].some(_0x984456_0 => _0x984456_0.value === String(_0x984456_3)) && (_0x984456_8.value = String(_0x984456_3)), 
+        _0x984456_3 = null, _0x984456_a.textContent = _0x984456_7.episodes.length ? "" : "\x4e\x6f\x20\x65\x70\x69\x73\x6f\x64\x65\x73\x20\x61\x72\x65\x20\x6c\x69\x73\x74\x65\x64\x20\x79\x65\x74\x2e", 
+        _0x984456_9.disabled = _0x984456_8.disabled = !_0x984456_7.episodes.length, _0x984456_42(_0x984456_9, "\x70\x6c\x61\x79");
+      } catch (_0x984456_7) {
+        if (_0x984456_2 !== _0x984456_5) return;
+        _0x984456_a.textContent = _0x984456_7.message, _0x984456_9.disabled = !1, _0x984456_42(_0x984456_9, "\x72\x65\x6c\x6f\x61\x64");
       }
     }
-    s.value = String(p), s.onchange = m, i.onsubmit = t => {
-      if (t.preventDefault(), !l.value) return void m();
-      e("episode-picker").hidden = !0, e("choose-episodes").setAttribute("aria-expanded", "false");
-      const a = "#watch=" + n.id + "/" + s.value + "/" + l.value;
-      location.hash === a ? ne() : location.hash = a;
-    }, await m();
+    _0x984456_6.value = String(_0x984456_b), _0x984456_6.onchange = _0x984456_c, _0x984456_4.onsubmit = _0x984456_0 => {
+      if (_0x984456_0.preventDefault(), !_0x984456_8.value) return void _0x984456_c();
+      _0x984456_7("\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72").hidden = !0, _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x66\x61\x6c\x73\x65");
+      const _0x984456_2 = "\x23\x77\x61\x74\x63\x68\x3d" + _0x984456_1.id + "\x2f" + _0x984456_6.value + "\x2f" + _0x984456_8.value;
+      location.hash === _0x984456_2 ? _0x984456_3f() : location.hash = _0x984456_2;
+    }, await _0x984456_c();
   }
-  e("detail").addEventListener("cancel", e => {
-    e.preventDefault(), location.hash = "";
-  }), e("detail").addEventListener("click", t => {
-    if (t.target === e("detail")) {
-      const n = e("detail").getBoundingClientRect();
-      (t.clientX < n.left || t.clientX > n.right || t.clientY < n.top || t.clientY > n.bottom) && (location.hash = "");
+  _0x984456_7("\x64\x65\x74\x61\x69\x6c").addEventListener("\x63\x61\x6e\x63\x65\x6c", _0x984456_0 => {
+    _0x984456_0.preventDefault(), location.hash = "";
+  }), _0x984456_7("\x64\x65\x74\x61\x69\x6c").addEventListener("\x63\x6c\x69\x63\x6b", _0x984456_0 => {
+    if (_0x984456_0.target === _0x984456_7("\x64\x65\x74\x61\x69\x6c")) {
+      const _0x984456_1 = _0x984456_7("\x64\x65\x74\x61\x69\x6c").getBoundingClientRect();
+      (_0x984456_0.clientX < _0x984456_1.left || _0x984456_0.clientX > _0x984456_1.right || _0x984456_0.clientY < _0x984456_1.top || _0x984456_0.clientY > _0x984456_1.bottom) && (location.hash = "");
     }
-  }), e("choose-source").onclick = () => U(e("sources-panel").hidden), e("auto-source").onclick = () => {
+  }), _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x73\x6f\x75\x72\x63\x65").onclick = () => _0x984456_2f(_0x984456_7("\x73\x6f\x75\x72\x63\x65\x73\x2d\x70\x61\x6e\x65\x6c").hidden), 
+  _0x984456_7("\x61\x75\x74\x6f\x2d\x73\x6f\x75\x72\x63\x65").onclick = () => {
     try {
-      localStorage.removeItem("nyx.movies.preferredSource");
+      localStorage.removeItem("\x6e\x79\x78\x2e\x6d\x6f\x76\x69\x65\x73\x2e\x70\x72\x65\x66\x65\x72\x72\x65\x64\x53\x6f\x75\x72\x63\x65");
     } catch {}
-    ne();
-  }, e("close-sources").onclick = () => {
-    U(!1), e("choose-source").focus();
-  }, e("choose-episodes").onclick = async () => {
-    const t = e("episode-picker").hidden;
-    if (e("episode-picker").hidden = !t, e("choose-episodes").setAttribute("aria-expanded", String(t)), 
-    !t) return;
-    U(!1), e("settings-panel").hidden = !0;
-    const n = d;
-    e("watch-episode-fields").textContent = "Loading seasons\u2026";
+    _0x984456_3f();
+  }, _0x984456_7("\x63\x6c\x6f\x73\x65\x2d\x73\x6f\x75\x72\x63\x65\x73").onclick = () => {
+    _0x984456_2f(!1), _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x73\x6f\x75\x72\x63\x65").focus();
+  }, _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").onclick = async () => {
+    const _0x984456_0 = _0x984456_7("\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72").hidden;
+    if (_0x984456_7("\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72").hidden = !_0x984456_0, _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String(_0x984456_0)), 
+    !_0x984456_0) return;
+    _0x984456_2f(!1), _0x984456_7("\x73\x65\x74\x74\x69\x6e\x67\x73\x2d\x70\x61\x6e\x65\x6c").hidden = !0;
+    const _0x984456_1 = _0x984456_11;
+    _0x984456_7("\x77\x61\x74\x63\x68\x2d\x65\x70\x69\x73\x6f\x64\x65\x2d\x66\x69\x65\x6c\x64\x73").textContent = "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x73\x65\x61\x73\x6f\x6e\x73\u2026";
     try {
-      const t = await u("tv/" + n.tmdbSeriesId);
-      if (d !== n || e("episode-picker").hidden) return;
-      await ae(e("watch-episode-fields"), t, n.season, n.episode);
-    } catch (a) {
-      e("watch-episode-fields").textContent = a.message;
+      const _0x984456_0 = await _0x984456_12("\x74\x76\x2f" + _0x984456_1.tmdbSeriesId);
+      if (_0x984456_11 !== _0x984456_1 || _0x984456_7("\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72").hidden) return;
+      await _0x984456_40(_0x984456_7("\x77\x61\x74\x63\x68\x2d\x65\x70\x69\x73\x6f\x64\x65\x2d\x66\x69\x65\x6c\x64\x73"), _0x984456_0, _0x984456_1.season, _0x984456_1.episode);
+    } catch (_0x984456_2) {
+      _0x984456_7("\x77\x61\x74\x63\x68\x2d\x65\x70\x69\x73\x6f\x64\x65\x2d\x66\x69\x65\x6c\x64\x73").textContent = _0x984456_2.message;
     }
-  }, e("close-episodes").onclick = () => {
-    e("episode-picker").hidden = !0, e("choose-episodes").setAttribute("aria-expanded", "false"), 
-    e("choose-episodes").focus();
+  }, _0x984456_7("\x63\x6c\x6f\x73\x65\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").onclick = () => {
+    _0x984456_7("\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72").hidden = !0, _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x66\x61\x6c\x73\x65"), 
+    _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").focus();
   };
-  const oe = {
-    episodes: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16M3 9h5M3 15h5m4-6h5m-5 6h5"/>',
-    search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',
-    next: '<path d="m9 5 7 7-7 7"/>',
-    previous: '<path d="m15 5-7 7 7 7"/>',
-    reload: '<path d="M20 7v5h-5M20 12a8 8 0 1 0-2 5"/>',
-    sources: '<path d="m12 3 9 5-9 5-9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/>',
-    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.5"/>',
-    home: '<path d="m3 10 9-7 9 7v11h-7v-7h-4v7H3Z"/>',
-    play: '<path d="m8 5 11 7-11 7Z"/>',
-    pause: '<path d="M8 5v14M16 5v14"/>',
-    close: '<path d="m6 6 12 12M18 6 6 18"/>',
-    back: '<path d="M20 12H4m7-7-7 7 7 7"/>',
-    rewind: '<path d="M6.35 7.35A8 8 0 1 1 4 13M6.35 3.5v3.85h3.85"/><text x="12" y="13.5" text-anchor="middle" dominant-baseline="central" stroke="none" fill="currentColor" font-family="Arial, sans-serif" font-weight="600" font-size="8">10</text>',
-    forward: '<path d="M17.65 7.35A8 8 0 1 0 20 13M17.65 3.5v3.85H13.8"/><text x="12" y="13.5" text-anchor="middle" dominant-baseline="central" stroke="none" fill="currentColor" font-family="Arial, sans-serif" font-weight="600" font-size="8">10</text>',
-    volume: '<path d="M11 5 6 9H3v6h3l5 4ZM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/>',
-    muted: '<path d="M11 5 6 9H3v6h3l5 4Zm5 4 5 6m0-6-5 6"/>',
-    pip: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 12h6v4h-6Z"/>',
-    fullscreen: '<path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/>',
-    settings: '<path d="m9 3-.6 3-2.6 1.5L3 7l-1 3 2.2 2L4 15l-1 2 2.5 2 2.5-1 3 1 1 2 3-.5.5-2.5 2.5-2 3 .2.8-3-2-2 .2-3 1-2L18 4l-2.5 1-3-1-1-2Z"/><circle cx="12" cy="12" r="3"/>'
+  const _0x984456_41 = {
+    episodes: "\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x33\x22\x20\x79\x3d\x22\x34\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x31\x36\x22\x20\x72\x78\x3d\x22\x32\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x38\x20\x34\x76\x31\x36\x4d\x33\x20\x39\x68\x35\x4d\x33\x20\x31\x35\x68\x35\x6d\x34\x2d\x36\x68\x35\x6d\x2d\x35\x20\x36\x68\x35\x22\x2f\x3e",
+    search: "\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x30\x2e\x35\x22\x20\x63\x79\x3d\x22\x31\x30\x2e\x35\x22\x20\x72\x3d\x22\x36\x2e\x35\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x31\x36\x20\x31\x36\x20\x35\x20\x35\x22\x2f\x3e",
+    next: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x39\x20\x35\x20\x37\x20\x37\x2d\x37\x20\x37\x22\x2f\x3e",
+    previous: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x31\x35\x20\x35\x2d\x37\x20\x37\x20\x37\x20\x37\x22\x2f\x3e",
+    reload: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x32\x30\x20\x37\x76\x35\x68\x2d\x35\x4d\x32\x30\x20\x31\x32\x61\x38\x20\x38\x20\x30\x20\x31\x20\x30\x2d\x32\x20\x35\x22\x2f\x3e",
+    sources: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x31\x32\x20\x33\x20\x39\x20\x35\x2d\x39\x20\x35\x2d\x39\x2d\x35\x5a\x6d\x2d\x39\x20\x39\x20\x39\x20\x35\x20\x39\x2d\x35\x4d\x33\x20\x31\x36\x6c\x39\x20\x35\x20\x39\x2d\x35\x22\x2f\x3e",
+    info: "\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x32\x22\x20\x63\x79\x3d\x22\x31\x32\x22\x20\x72\x3d\x22\x39\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x32\x20\x31\x31\x76\x36\x6d\x30\x2d\x31\x30\x76\x2e\x35\x22\x2f\x3e",
+    home: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x33\x20\x31\x30\x20\x39\x2d\x37\x20\x39\x20\x37\x76\x31\x31\x68\x2d\x37\x76\x2d\x37\x68\x2d\x34\x76\x37\x48\x33\x5a\x22\x2f\x3e",
+    play: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x38\x20\x35\x20\x31\x31\x20\x37\x2d\x31\x31\x20\x37\x5a\x22\x2f\x3e",
+    pause: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x38\x20\x35\x76\x31\x34\x4d\x31\x36\x20\x35\x76\x31\x34\x22\x2f\x3e",
+    close: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x36\x20\x36\x20\x31\x32\x20\x31\x32\x4d\x31\x38\x20\x36\x20\x36\x20\x31\x38\x22\x2f\x3e",
+    back: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x32\x30\x20\x31\x32\x48\x34\x6d\x37\x2d\x37\x2d\x37\x20\x37\x20\x37\x20\x37\x22\x2f\x3e",
+    rewind: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x36\x2e\x33\x35\x20\x37\x2e\x33\x35\x41\x38\x20\x38\x20\x30\x20\x31\x20\x31\x20\x34\x20\x31\x33\x4d\x36\x2e\x33\x35\x20\x33\x2e\x35\x76\x33\x2e\x38\x35\x68\x33\x2e\x38\x35\x22\x2f\x3e\x3c\x74\x65\x78\x74\x20\x78\x3d\x22\x31\x32\x22\x20\x79\x3d\x22\x31\x33\x2e\x35\x22\x20\x74\x65\x78\x74\x2d\x61\x6e\x63\x68\x6f\x72\x3d\x22\x6d\x69\x64\x64\x6c\x65\x22\x20\x64\x6f\x6d\x69\x6e\x61\x6e\x74\x2d\x62\x61\x73\x65\x6c\x69\x6e\x65\x3d\x22\x63\x65\x6e\x74\x72\x61\x6c\x22\x20\x73\x74\x72\x6f\x6b\x65\x3d\x22\x6e\x6f\x6e\x65\x22\x20\x66\x69\x6c\x6c\x3d\x22\x63\x75\x72\x72\x65\x6e\x74\x43\x6f\x6c\x6f\x72\x22\x20\x66\x6f\x6e\x74\x2d\x66\x61\x6d\x69\x6c\x79\x3d\x22\x41\x72\x69\x61\x6c\x2c\x20\x73\x61\x6e\x73\x2d\x73\x65\x72\x69\x66\x22\x20\x66\x6f\x6e\x74\x2d\x77\x65\x69\x67\x68\x74\x3d\x22\x36\x30\x30\x22\x20\x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3d\x22\x38\x22\x3e\x31\x30\x3c\x2f\x74\x65\x78\x74\x3e",
+    forward: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x37\x2e\x36\x35\x20\x37\x2e\x33\x35\x41\x38\x20\x38\x20\x30\x20\x31\x20\x30\x20\x32\x30\x20\x31\x33\x4d\x31\x37\x2e\x36\x35\x20\x33\x2e\x35\x76\x33\x2e\x38\x35\x48\x31\x33\x2e\x38\x22\x2f\x3e\x3c\x74\x65\x78\x74\x20\x78\x3d\x22\x31\x32\x22\x20\x79\x3d\x22\x31\x33\x2e\x35\x22\x20\x74\x65\x78\x74\x2d\x61\x6e\x63\x68\x6f\x72\x3d\x22\x6d\x69\x64\x64\x6c\x65\x22\x20\x64\x6f\x6d\x69\x6e\x61\x6e\x74\x2d\x62\x61\x73\x65\x6c\x69\x6e\x65\x3d\x22\x63\x65\x6e\x74\x72\x61\x6c\x22\x20\x73\x74\x72\x6f\x6b\x65\x3d\x22\x6e\x6f\x6e\x65\x22\x20\x66\x69\x6c\x6c\x3d\x22\x63\x75\x72\x72\x65\x6e\x74\x43\x6f\x6c\x6f\x72\x22\x20\x66\x6f\x6e\x74\x2d\x66\x61\x6d\x69\x6c\x79\x3d\x22\x41\x72\x69\x61\x6c\x2c\x20\x73\x61\x6e\x73\x2d\x73\x65\x72\x69\x66\x22\x20\x66\x6f\x6e\x74\x2d\x77\x65\x69\x67\x68\x74\x3d\x22\x36\x30\x30\x22\x20\x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3d\x22\x38\x22\x3e\x31\x30\x3c\x2f\x74\x65\x78\x74\x3e",
+    volume: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x31\x20\x35\x20\x36\x20\x39\x48\x33\x76\x36\x68\x33\x6c\x35\x20\x34\x5a\x4d\x31\x35\x20\x38\x61\x36\x20\x36\x20\x30\x20\x30\x20\x31\x20\x30\x20\x38\x6d\x33\x2d\x31\x31\x61\x31\x30\x20\x31\x30\x20\x30\x20\x30\x20\x31\x20\x30\x20\x31\x34\x22\x2f\x3e",
+    muted: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x31\x20\x35\x20\x36\x20\x39\x48\x33\x76\x36\x68\x33\x6c\x35\x20\x34\x5a\x6d\x35\x20\x34\x20\x35\x20\x36\x6d\x30\x2d\x36\x2d\x35\x20\x36\x22\x2f\x3e",
+    pip: "\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x33\x22\x20\x79\x3d\x22\x35\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x31\x34\x22\x20\x72\x78\x3d\x22\x32\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x32\x20\x31\x32\x68\x36\x76\x34\x68\x2d\x36\x5a\x22\x2f\x3e",
+    fullscreen: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x38\x20\x33\x48\x33\x76\x35\x6d\x31\x33\x2d\x35\x68\x35\x76\x35\x4d\x33\x20\x31\x36\x76\x35\x68\x35\x6d\x31\x33\x2d\x35\x76\x35\x68\x2d\x35\x22\x2f\x3e",
+    settings: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x39\x20\x33\x2d\x2e\x36\x20\x33\x2d\x32\x2e\x36\x20\x31\x2e\x35\x4c\x33\x20\x37\x6c\x2d\x31\x20\x33\x20\x32\x2e\x32\x20\x32\x4c\x34\x20\x31\x35\x6c\x2d\x31\x20\x32\x20\x32\x2e\x35\x20\x32\x20\x32\x2e\x35\x2d\x31\x20\x33\x20\x31\x20\x31\x20\x32\x20\x33\x2d\x2e\x35\x2e\x35\x2d\x32\x2e\x35\x20\x32\x2e\x35\x2d\x32\x20\x33\x20\x2e\x32\x2e\x38\x2d\x33\x2d\x32\x2d\x32\x20\x2e\x32\x2d\x33\x20\x31\x2d\x32\x4c\x31\x38\x20\x34\x6c\x2d\x32\x2e\x35\x20\x31\x2d\x33\x2d\x31\x2d\x31\x2d\x32\x5a\x22\x2f\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x32\x22\x20\x63\x79\x3d\x22\x31\x32\x22\x20\x72\x3d\x22\x33\x22\x2f\x3e"
   };
-  function ie(e, t) {
-    e.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + oe[t] + "</svg>";
+  function _0x984456_42(_0x984456_0, _0x984456_1) {
+    _0x984456_0.innerHTML = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x66\x69\x6c\x6c\x3d\x22\x6e\x6f\x6e\x65\x22\x20\x73\x74\x72\x6f\x6b\x65\x3d\x22\x63\x75\x72\x72\x65\x6e\x74\x43\x6f\x6c\x6f\x72\x22\x20\x73\x74\x72\x6f\x6b\x65\x2d\x77\x69\x64\x74\x68\x3d\x22\x31\x2e\x37\x22\x20\x73\x74\x72\x6f\x6b\x65\x2d\x6c\x69\x6e\x65\x63\x61\x70\x3d\x22\x72\x6f\x75\x6e\x64\x22\x20\x73\x74\x72\x6f\x6b\x65\x2d\x6c\x69\x6e\x65\x6a\x6f\x69\x6e\x3d\x22\x72\x6f\x75\x6e\x64\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e" + _0x984456_41[_0x984456_1] + "\x3c\x2f\x73\x76\x67\x3e";
   }
-  document.querySelectorAll("[data-icon]").forEach(e => ie(e, e.dataset.icon));
-  for (const [ye, fe, ve] of [ [ "#featured-open", "info", "View movie details" ], [ "#watch", "play", "Play movie" ], [ "#search button", "search", "Search movies" ], [ "#clear-search", "close", "Clear search" ], [ "#retry-search", "reload", "Retry movie search" ], [ "#retry-detail", "reload", "Retry movie details" ], [ "#retry-player", "reload", "Reload player" ], [ "#previous", "previous", "Previous page" ], [ "#next", "next", "Next page" ], [ "#choose-source", "sources", "Video sources" ], [ ".home-link", "home", "Back to Nyx" ] ]) {
-    const e = document.querySelector(ye);
-    e.classList.add("icon-control"), e.setAttribute("aria-label", ve), e.title = ve, 
-    ie(e, fe);
+  document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x69\x63\x6f\x6e\x5d").forEach(_0x984456_0 => _0x984456_42(_0x984456_0, _0x984456_0.dataset.icon));
+  for (const [_0x984456_0, _0x984456_1, _0x984456_2] of [ [ "\x23\x66\x65\x61\x74\x75\x72\x65\x64\x2d\x6f\x70\x65\x6e", "\x69\x6e\x66\x6f", "\x56\x69\x65\x77\x20\x6d\x6f\x76\x69\x65\x20\x64\x65\x74\x61\x69\x6c\x73" ], [ "\x23\x77\x61\x74\x63\x68", "\x70\x6c\x61\x79", "\x50\x6c\x61\x79\x20\x6d\x6f\x76\x69\x65" ], [ "\x23\x73\x65\x61\x72\x63\x68\x20\x62\x75\x74\x74\x6f\x6e", "\x73\x65\x61\x72\x63\x68", "\x53\x65\x61\x72\x63\x68\x20\x6d\x6f\x76\x69\x65\x73" ], [ "\x23\x63\x6c\x65\x61\x72\x2d\x73\x65\x61\x72\x63\x68", "\x63\x6c\x6f\x73\x65", "\x43\x6c\x65\x61\x72\x20\x73\x65\x61\x72\x63\x68" ], [ "\x23\x72\x65\x74\x72\x79\x2d\x73\x65\x61\x72\x63\x68", "\x72\x65\x6c\x6f\x61\x64", "\x52\x65\x74\x72\x79\x20\x6d\x6f\x76\x69\x65\x20\x73\x65\x61\x72\x63\x68" ], [ "\x23\x72\x65\x74\x72\x79\x2d\x64\x65\x74\x61\x69\x6c", "\x72\x65\x6c\x6f\x61\x64", "\x52\x65\x74\x72\x79\x20\x6d\x6f\x76\x69\x65\x20\x64\x65\x74\x61\x69\x6c\x73" ], [ "\x23\x72\x65\x74\x72\x79\x2d\x70\x6c\x61\x79\x65\x72", "\x72\x65\x6c\x6f\x61\x64", "\x52\x65\x6c\x6f\x61\x64\x20\x70\x6c\x61\x79\x65\x72" ], [ "\x23\x70\x72\x65\x76\x69\x6f\x75\x73", "\x70\x72\x65\x76\x69\x6f\x75\x73", "\x50\x72\x65\x76\x69\x6f\x75\x73\x20\x70\x61\x67\x65" ], [ "\x23\x6e\x65\x78\x74", "\x6e\x65\x78\x74", "\x4e\x65\x78\x74\x20\x70\x61\x67\x65" ], [ "\x23\x63\x68\x6f\x6f\x73\x65\x2d\x73\x6f\x75\x72\x63\x65", "\x73\x6f\x75\x72\x63\x65\x73", "\x56\x69\x64\x65\x6f\x20\x73\x6f\x75\x72\x63\x65\x73" ], [ "\x2e\x68\x6f\x6d\x65\x2d\x6c\x69\x6e\x6b", "\x68\x6f\x6d\x65", "\x42\x61\x63\x6b\x20\x74\x6f\x20\x4e\x79\x78" ] ]) {
+    const _0x984456_3 = document.querySelector(_0x984456_0);
+    _0x984456_3.classList.add("\x69\x63\x6f\x6e\x2d\x63\x6f\x6e\x74\x72\x6f\x6c"), _0x984456_3.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x984456_2), 
+    _0x984456_3.title = _0x984456_2, _0x984456_42(_0x984456_3, _0x984456_1);
   }
-  document.querySelectorAll("button[aria-label]").forEach(e => e.title = e.getAttribute("aria-label"));
-  const re = e => {
-    const t = Math.max(0, Math.floor(Number.isFinite(e) ? e : 0));
-    return (t >= 3600 ? Math.floor(t / 3600) + ":" : "") + String(Math.floor(t / 60) % 60).padStart(t >= 3600 ? 2 : 1, "0") + ":" + String(t % 60).padStart(2, "0");
+  document.querySelectorAll("\x62\x75\x74\x74\x6f\x6e\x5b\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x5d").forEach(_0x984456_0 => _0x984456_0.title = _0x984456_0.getAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c"));
+  const _0x984456_43 = _0x984456_0 => {
+    const _0x984456_1 = Math.max(0, Math.floor(Number.isFinite(_0x984456_0) ? _0x984456_0 : 0));
+    return (_0x984456_1 >= 3600 ? Math.floor(_0x984456_1 / 3600) + "\x3a" : "") + String(Math.floor(_0x984456_1 / 60) % 60).padStart(_0x984456_1 >= 3600 ? 2 : 1, "\x30") + "\x3a" + String(_0x984456_1 % 60).padStart(2, "\x30");
   };
-  function se() {
-    const t = z;
-    t ? t.paused ? t.play().catch(() => {
-      e("player-status").textContent = "Unable to start playback. Try reloading the player.", 
-      e("retry-player").hidden = !1;
-    }) : t.pause() : V?.();
+  function _0x984456_44() {
+    const _0x984456_0 = _0x984456_34;
+    _0x984456_0 ? _0x984456_0.paused ? _0x984456_0.play().catch(() => {
+      _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x73\x74\x61\x72\x74\x20\x70\x6c\x61\x79\x62\x61\x63\x6b\x2e\x20\x54\x72\x79\x20\x72\x65\x6c\x6f\x61\x64\x69\x6e\x67\x20\x74\x68\x65\x20\x70\x6c\x61\x79\x65\x72\x2e", 
+      _0x984456_7("\x72\x65\x74\x72\x79\x2d\x70\x6c\x61\x79\x65\x72").hidden = !1;
+    }) : _0x984456_0.pause() : _0x984456_37?.();
   }
-  function le(e) {
-    const t = z;
-    t && Number.isFinite(t.duration) && (t.currentTime = Math.max(0, Math.min(t.duration, t.currentTime + e)));
+  function _0x984456_45(_0x984456_0) {
+    const _0x984456_1 = _0x984456_34;
+    _0x984456_1 && Number.isFinite(_0x984456_1.duration) && (_0x984456_1.currentTime = Math.max(0, Math.min(_0x984456_1.duration, _0x984456_1.currentTime + _0x984456_0)));
   }
-  let ce = 0;
-  function de() {
-    clearTimeout(ce);
-    const t = e("watch-area");
-    t.classList.remove("controls-idle"), t.hidden || (ce = setTimeout(() => {
-      const n = [ "settings-panel", "sources-panel", "episode-picker" ].some(t => !e(t).hidden), a = t.querySelector(":focus-visible");
-      t.hidden || !z || z.paused || z.ended || n || a || t.classList.add("controls-idle");
+  let _0x984456_46 = 0;
+  function _0x984456_47() {
+    clearTimeout(_0x984456_46);
+    const _0x984456_0 = _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61");
+    _0x984456_0.classList.remove("\x63\x6f\x6e\x74\x72\x6f\x6c\x73\x2d\x69\x64\x6c\x65"), _0x984456_0.hidden || (_0x984456_46 = setTimeout(() => {
+      const _0x984456_1 = [ "\x73\x65\x74\x74\x69\x6e\x67\x73\x2d\x70\x61\x6e\x65\x6c", "\x73\x6f\x75\x72\x63\x65\x73\x2d\x70\x61\x6e\x65\x6c", "\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72" ].some(_0x984456_0 => !_0x984456_7(_0x984456_0).hidden), _0x984456_2 = _0x984456_0.querySelector("\x3a\x66\x6f\x63\x75\x73\x2d\x76\x69\x73\x69\x62\x6c\x65");
+      _0x984456_0.hidden || !_0x984456_34 || _0x984456_34.paused || _0x984456_34.ended || _0x984456_1 || _0x984456_2 || _0x984456_0.classList.add("\x63\x6f\x6e\x74\x72\x6f\x6c\x73\x2d\x69\x64\x6c\x65");
     }, 1e3));
   }
-  for (const ye of [ "pointermove", "pointerdown", "keydown", "focusin" ]) e("watch-area").addEventListener(ye, de);
-  function ue(t) {
-    Y(!0);
-    const n = () => {
-      if (t !== z) return;
-      const n = Number.isFinite(t.duration) ? t.duration : 0;
-      e("seek").disabled = !n, e("seek").max = n || 100, e("seek").value = t.currentTime || 0, 
-      e("seek").setAttribute("aria-valuetext", re(t.currentTime) + " of " + re(n));
-      let a = 0;
-      for (let e = 0; e < t.buffered.length; e++) t.buffered.start(e) <= t.currentTime + .5 && (a = Math.max(a, t.buffered.end(e)));
-      e("seek").style.setProperty("--played", n ? t.currentTime / n * 100 + "%" : "0%"), 
-      e("seek").style.setProperty("--buffered", n ? a / n * 100 + "%" : "0%"), e("playback-time").textContent = re(t.currentTime) + " / " + re(n), 
-      ie(e("toggle-play"), t.paused ? "play" : "pause"), e("toggle-play").setAttribute("aria-label", t.paused ? "Play" : "Pause"), 
-      ie(e("mute"), t.muted || !t.volume ? "muted" : "volume"), e("mute").setAttribute("aria-label", t.muted ? "Unmute" : "Mute"), 
-      e("volume").value = t.muted ? 0 : t.volume;
-    }, a = [ "loadedmetadata", "durationchange", "seeking", "seeked", "timeupdate", "progress", "play", "pause", "ended", "volumechange" ];
-    for (const e of a) t.addEventListener(e, n);
-    const o = [ "play", "pause", "ended" ];
-    for (const e of o) t.addEventListener(e, de);
-    de();
-    const i = t.onclick, r = t.ondblclick;
-    return t.onclick = se, t.ondblclick = he, e("playback-speed").value = "1", me(), 
-    n(), e("picture-in-picture").hidden = !document.pictureInPictureEnabled || !t.requestPictureInPicture, 
-    e("fullscreen").hidden = !document.fullscreenEnabled, () => {
-      clearTimeout(ce);
-      for (const e of o) t.removeEventListener(e, de);
-      for (const e of a) t.removeEventListener(e, n);
-      t.onclick = i, t.ondblclick = r;
+  for (const _0x984456_0 of [ "\x70\x6f\x69\x6e\x74\x65\x72\x6d\x6f\x76\x65", "\x70\x6f\x69\x6e\x74\x65\x72\x64\x6f\x77\x6e", "\x6b\x65\x79\x64\x6f\x77\x6e", "\x66\x6f\x63\x75\x73\x69\x6e" ]) _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").addEventListener(_0x984456_0, _0x984456_47);
+  function _0x984456_48(_0x984456_0) {
+    _0x984456_39(!0);
+    const _0x984456_1 = () => {
+      if (_0x984456_0 !== _0x984456_34) return;
+      const _0x984456_1 = Number.isFinite(_0x984456_0.duration) ? _0x984456_0.duration : 0;
+      _0x984456_7("\x73\x65\x65\x6b").disabled = !_0x984456_1, _0x984456_7("\x73\x65\x65\x6b").max = _0x984456_1 || 100, 
+      _0x984456_7("\x73\x65\x65\x6b").value = _0x984456_0.currentTime || 0, _0x984456_7("\x73\x65\x65\x6b").setAttribute("\x61\x72\x69\x61\x2d\x76\x61\x6c\x75\x65\x74\x65\x78\x74", _0x984456_43(_0x984456_0.currentTime) + "\x20\x6f\x66\x20" + _0x984456_43(_0x984456_1));
+      let _0x984456_2 = 0;
+      for (let _0x984456_3 = 0; _0x984456_3 < _0x984456_0.buffered.length; _0x984456_3++) _0x984456_0.buffered.start(_0x984456_3) <= _0x984456_0.currentTime + .5 && (_0x984456_2 = Math.max(_0x984456_2, _0x984456_0.buffered.end(_0x984456_3)));
+      _0x984456_7("\x73\x65\x65\x6b").style.setProperty("\x2d\x2d\x70\x6c\x61\x79\x65\x64", _0x984456_1 ? _0x984456_0.currentTime / _0x984456_1 * 100 + "\x25" : "\x30\x25"), 
+      _0x984456_7("\x73\x65\x65\x6b").style.setProperty("\x2d\x2d\x62\x75\x66\x66\x65\x72\x65\x64", _0x984456_1 ? _0x984456_2 / _0x984456_1 * 100 + "\x25" : "\x30\x25"), 
+      _0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x74\x69\x6d\x65").textContent = _0x984456_43(_0x984456_0.currentTime) + "\x20\x2f\x20" + _0x984456_43(_0x984456_1), 
+      _0x984456_42(_0x984456_7("\x74\x6f\x67\x67\x6c\x65\x2d\x70\x6c\x61\x79"), _0x984456_0.paused ? "\x70\x6c\x61\x79" : "\x70\x61\x75\x73\x65"), 
+      _0x984456_7("\x74\x6f\x67\x67\x6c\x65\x2d\x70\x6c\x61\x79").setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x984456_0.paused ? "\x50\x6c\x61\x79" : "\x50\x61\x75\x73\x65"), 
+      _0x984456_42(_0x984456_7("\x6d\x75\x74\x65"), _0x984456_0.muted || !_0x984456_0.volume ? "\x6d\x75\x74\x65\x64" : "\x76\x6f\x6c\x75\x6d\x65"), 
+      _0x984456_7("\x6d\x75\x74\x65").setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x984456_0.muted ? "\x55\x6e\x6d\x75\x74\x65" : "\x4d\x75\x74\x65"), 
+      _0x984456_7("\x76\x6f\x6c\x75\x6d\x65").value = _0x984456_0.muted ? 0 : _0x984456_0.volume;
+    }, _0x984456_2 = [ "\x6c\x6f\x61\x64\x65\x64\x6d\x65\x74\x61\x64\x61\x74\x61", "\x64\x75\x72\x61\x74\x69\x6f\x6e\x63\x68\x61\x6e\x67\x65", "\x73\x65\x65\x6b\x69\x6e\x67", "\x73\x65\x65\x6b\x65\x64", "\x74\x69\x6d\x65\x75\x70\x64\x61\x74\x65", "\x70\x72\x6f\x67\x72\x65\x73\x73", "\x70\x6c\x61\x79", "\x70\x61\x75\x73\x65", "\x65\x6e\x64\x65\x64", "\x76\x6f\x6c\x75\x6d\x65\x63\x68\x61\x6e\x67\x65" ];
+    for (const _0x984456_6 of _0x984456_2) _0x984456_0.addEventListener(_0x984456_6, _0x984456_1);
+    const _0x984456_3 = [ "\x70\x6c\x61\x79", "\x70\x61\x75\x73\x65", "\x65\x6e\x64\x65\x64" ];
+    for (const _0x984456_6 of _0x984456_3) _0x984456_0.addEventListener(_0x984456_6, _0x984456_47);
+    _0x984456_47();
+    const _0x984456_4 = _0x984456_0.onclick, _0x984456_5 = _0x984456_0.ondblclick;
+    return _0x984456_0.onclick = _0x984456_44, _0x984456_0.ondblclick = _0x984456_4b, 
+    _0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x73\x70\x65\x65\x64").value = "\x31", _0x984456_4a(), _0x984456_1(), _0x984456_7("\x70\x69\x63\x74\x75\x72\x65\x2d\x69\x6e\x2d\x70\x69\x63\x74\x75\x72\x65").hidden = !document.pictureInPictureEnabled || !_0x984456_0.requestPictureInPicture, 
+    _0x984456_7("\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e").hidden = !document.fullscreenEnabled, () => {
+      clearTimeout(_0x984456_46);
+      for (const _0x984456_1 of _0x984456_3) _0x984456_0.removeEventListener(_0x984456_1, _0x984456_47);
+      for (const _0x984456_3 of _0x984456_2) _0x984456_0.removeEventListener(_0x984456_3, _0x984456_1);
+      _0x984456_0.onclick = _0x984456_4, _0x984456_0.ondblclick = _0x984456_5;
     };
   }
-  function pe(t, n, a) {
-    const o = e(t);
-    o.replaceChildren(...n.map(([e, t]) => {
-      const n = document.createElement("option");
-      return n.value = e, n.textContent = t, n;
-    })), o.value = String(a), o.disabled = n.length < 2;
+  function _0x984456_49(_0x984456_0, _0x984456_1, _0x984456_2) {
+    const _0x984456_3 = _0x984456_7(_0x984456_0);
+    _0x984456_3.replaceChildren(..._0x984456_1.map(([_0x984456_0, _0x984456_1]) => {
+      const _0x984456_2 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+      return _0x984456_2.value = _0x984456_0, _0x984456_2.textContent = _0x984456_1, _0x984456_2;
+    })), _0x984456_3.value = String(_0x984456_2), _0x984456_3.disabled = _0x984456_1.length < 2;
   }
-  function me() {
-    const e = W?.levels || [], t = W?.audioTracks || [], n = W?.subtitleTracks || [];
-    pe("playback-quality", W ? [ [ -1, "Auto" ], ...e.map((e, t) => [ t, e.height ? e.height + "p" : Math.round(e.bitrate / 1e3) + " kbps" ]) ] : [ [ -1, z?.videoHeight ? z.videoHeight + "p" : "Source default" ] ], W?.currentLevel ?? -1), 
-    pe("playback-audio", t.length ? t.map((e, t) => [ t, e.name || e.lang || "Track " + (t + 1) ]) : [ [ -1, "Default" ] ], W?.audioTrack ?? -1);
-    const a = W ? n : [ ...z?.textTracks || [] ];
-    pe("playback-subtitles", [ [ -1, "Off" ], ...a.map((e, t) => [ t, e.name || e.label || e.lang || e.language || "Track " + (t + 1) ]) ], W ? W.subtitleTrack : a.findIndex(e => "showing" === e.mode));
+  function _0x984456_4a() {
+    const _0x984456_0 = _0x984456_31?.levels || [], _0x984456_1 = _0x984456_31?.audioTracks || [], _0x984456_2 = _0x984456_31?.subtitleTracks || [];
+    _0x984456_49("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x71\x75\x61\x6c\x69\x74\x79", _0x984456_31 ? [ [ -1, "\x41\x75\x74\x6f" ], ..._0x984456_0.map((_0x984456_0, _0x984456_1) => [ _0x984456_1, _0x984456_0.height ? _0x984456_0.height + "\x70" : Math.round(_0x984456_0.bitrate / 1e3) + "\x20\x6b\x62\x70\x73" ]) ] : [ [ -1, _0x984456_34?.videoHeight ? _0x984456_34.videoHeight + "\x70" : "\x53\x6f\x75\x72\x63\x65\x20\x64\x65\x66\x61\x75\x6c\x74" ] ], _0x984456_31?.currentLevel ?? -1), 
+    _0x984456_49("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x61\x75\x64\x69\x6f", _0x984456_1.length ? _0x984456_1.map((_0x984456_0, _0x984456_1) => [ _0x984456_1, _0x984456_0.name || _0x984456_0.lang || "\x54\x72\x61\x63\x6b\x20" + (_0x984456_1 + 1) ]) : [ [ -1, "\x44\x65\x66\x61\x75\x6c\x74" ] ], _0x984456_31?.audioTrack ?? -1);
+    const _0x984456_3 = _0x984456_31 ? _0x984456_2 : [ ..._0x984456_34?.textTracks || [] ];
+    _0x984456_49("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x73\x75\x62\x74\x69\x74\x6c\x65\x73", [ [ -1, "\x4f\x66\x66" ], ..._0x984456_3.map((_0x984456_0, _0x984456_1) => [ _0x984456_1, _0x984456_0.name || _0x984456_0.label || _0x984456_0.lang || _0x984456_0.language || "\x54\x72\x61\x63\x6b\x20" + (_0x984456_1 + 1) ]) ], _0x984456_31 ? _0x984456_31.subtitleTrack : _0x984456_3.findIndex(_0x984456_0 => "\x73\x68\x6f\x77\x69\x6e\x67" === _0x984456_0.mode));
   }
-  async function he() {
+  async function _0x984456_4b() {
     try {
-      document.fullscreenElement ? await document.exitFullscreen() : await e("watch-area").requestFullscreen();
+      document.fullscreenElement ? await document.exitFullscreen() : await _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").requestFullscreen();
     } catch {
-      e("player-status").textContent = "Fullscreen is unavailable in this browser.";
+      _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x46\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e";
     }
   }
-  e("start-proxy").onclick = () => {
-    V?.();
-  }, e("player").onclick = () => {
-    e("watch-area").classList.contains("proxy-ready") && se();
-  }, e("toggle-play").onclick = se, e("skip-back").onclick = () => le(-10), e("skip-forward").onclick = () => le(10), 
-  e("seek").oninput = () => {
-    z && Number.isFinite(z.duration) && (z.currentTime = Number(e("seek").value));
-  }, e("mute").onclick = () => {
-    z && (z.muted = !z.muted);
-  }, e("volume").oninput = () => {
-    z && (z.volume = Number(e("volume").value), z.muted = !1);
-  }, e("player-settings").onclick = () => {
-    e("settings-panel").hidden = !e("settings-panel").hidden, e("player-settings").setAttribute("aria-expanded", String(!e("settings-panel").hidden));
-  }, e("playback-speed").onchange = () => {
-    z && (z.playbackRate = Number(e("playback-speed").value));
-  }, e("playback-quality").onchange = () => {
-    W && (W.currentLevel = Number(e("playback-quality").value));
-  }, e("playback-audio").onchange = () => {
-    W && (W.audioTrack = Number(e("playback-audio").value));
-  }, e("playback-subtitles").onchange = () => {
-    W ? (W.subtitleTrack = Number(e("playback-subtitles").value), W.subtitleDisplay = W.subtitleTrack >= 0) : z && [ ...z.textTracks ].forEach((t, n) => t.mode = n === Number(e("playback-subtitles").value) ? "showing" : "disabled");
-  }, e("fullscreen").onclick = he, e("picture-in-picture").onclick = async () => {
+  _0x984456_7("\x73\x74\x61\x72\x74\x2d\x70\x72\x6f\x78\x79").onclick = () => {
+    _0x984456_37?.();
+  }, _0x984456_7("\x70\x6c\x61\x79\x65\x72").onclick = () => {
+    _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").classList.contains("\x70\x72\x6f\x78\x79\x2d\x72\x65\x61\x64\x79") && _0x984456_44();
+  }, _0x984456_7("\x74\x6f\x67\x67\x6c\x65\x2d\x70\x6c\x61\x79").onclick = _0x984456_44, _0x984456_7("\x73\x6b\x69\x70\x2d\x62\x61\x63\x6b").onclick = () => _0x984456_45(-10), 
+  _0x984456_7("\x73\x6b\x69\x70\x2d\x66\x6f\x72\x77\x61\x72\x64").onclick = () => _0x984456_45(10), _0x984456_7("\x73\x65\x65\x6b").oninput = () => {
+    _0x984456_34 && Number.isFinite(_0x984456_34.duration) && (_0x984456_34.currentTime = Number(_0x984456_7("\x73\x65\x65\x6b").value));
+  }, _0x984456_7("\x6d\x75\x74\x65").onclick = () => {
+    _0x984456_34 && (_0x984456_34.muted = !_0x984456_34.muted);
+  }, _0x984456_7("\x76\x6f\x6c\x75\x6d\x65").oninput = () => {
+    _0x984456_34 && (_0x984456_34.volume = Number(_0x984456_7("\x76\x6f\x6c\x75\x6d\x65").value), _0x984456_34.muted = !1);
+  }, _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x65\x74\x74\x69\x6e\x67\x73").onclick = () => {
+    _0x984456_7("\x73\x65\x74\x74\x69\x6e\x67\x73\x2d\x70\x61\x6e\x65\x6c").hidden = !_0x984456_7("\x73\x65\x74\x74\x69\x6e\x67\x73\x2d\x70\x61\x6e\x65\x6c").hidden, _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x65\x74\x74\x69\x6e\x67\x73").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String(!_0x984456_7("\x73\x65\x74\x74\x69\x6e\x67\x73\x2d\x70\x61\x6e\x65\x6c").hidden));
+  }, _0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x73\x70\x65\x65\x64").onchange = () => {
+    _0x984456_34 && (_0x984456_34.playbackRate = Number(_0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x73\x70\x65\x65\x64").value));
+  }, _0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x71\x75\x61\x6c\x69\x74\x79").onchange = () => {
+    _0x984456_31 && (_0x984456_31.currentLevel = Number(_0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x71\x75\x61\x6c\x69\x74\x79").value));
+  }, _0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x61\x75\x64\x69\x6f").onchange = () => {
+    _0x984456_31 && (_0x984456_31.audioTrack = Number(_0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x61\x75\x64\x69\x6f").value));
+  }, _0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x73\x75\x62\x74\x69\x74\x6c\x65\x73").onchange = () => {
+    _0x984456_31 ? (_0x984456_31.subtitleTrack = Number(_0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x73\x75\x62\x74\x69\x74\x6c\x65\x73").value), 
+    _0x984456_31.subtitleDisplay = _0x984456_31.subtitleTrack >= 0) : _0x984456_34 && [ ..._0x984456_34.textTracks ].forEach((_0x984456_0, _0x984456_1) => _0x984456_0.mode = _0x984456_1 === Number(_0x984456_7("\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x73\x75\x62\x74\x69\x74\x6c\x65\x73").value) ? "\x73\x68\x6f\x77\x69\x6e\x67" : "\x64\x69\x73\x61\x62\x6c\x65\x64");
+  }, _0x984456_7("\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e").onclick = _0x984456_4b, _0x984456_7("\x70\x69\x63\x74\x75\x72\x65\x2d\x69\x6e\x2d\x70\x69\x63\x74\x75\x72\x65").onclick = async () => {
     try {
-      document.pictureInPictureElement ? await document.exitPictureInPicture() : await (z?.requestPictureInPicture());
+      document.pictureInPictureElement ? await document.exitPictureInPicture() : await (_0x984456_34?.requestPictureInPicture());
     } catch {
-      e("player-status").textContent = "Picture in picture is unavailable for this video.";
+      _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x74\x61\x74\x75\x73").textContent = "\x50\x69\x63\x74\x75\x72\x65\x20\x69\x6e\x20\x70\x69\x63\x74\x75\x72\x65\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x66\x6f\x72\x20\x74\x68\x69\x73\x20\x76\x69\x64\x65\x6f\x2e";
     }
-  }, e("watch-area").addEventListener("keydown", t => {
-    if (t.target.closest("input,select") || t.ctrlKey || t.altKey || t.metaKey) return;
-    if ("Escape" === t.key) return void (e("episode-picker").hidden ? e("sources-panel").hidden ? e("settings-panel").hidden ? document.fullscreenElement || e("close-player").click() : (e("settings-panel").hidden = !0, 
-    e("player-settings").setAttribute("aria-expanded", "false"), e("player-settings").focus()) : (U(!1), 
-    e("choose-source").focus()) : e("close-episodes").click());
-    if (t.target.closest("button,a") && " " === t.key) return;
-    const n = {
-      " ": se,
-      k: se,
-      ArrowLeft: () => le(-10),
-      ArrowRight: () => le(10),
-      m: () => e("mute").click(),
-      f: he
-    }[t.key];
-    n && (t.preventDefault(), n());
-  }), addEventListener("fullscreenchange", () => {
-    e("fullscreen").setAttribute("aria-label", document.fullscreenElement ? "Exit fullscreen" : "Enter fullscreen");
-  }), e("retry-detail").onclick = te, e("retry-search").onclick = M, e("clear-search").onclick = () => {
-    s = "", e("query").value = "", l = 1, M();
-  }, e("search").onsubmit = t => {
-    t.preventDefault(), s = e("query").value.trim(), l = 1, M();
-  }, e("previous").onclick = () => {
-    l--, M();
-  }, e("next").onclick = () => {
-    l++, M();
-  }, e("back").onclick = () => location.hash = "", e("watch").onclick = () => ne(), 
-  e("retry-player").onclick = () => ne(), e("close-player").onclick = () => {
-    const t = d?.tmdbSeriesId;
-    J(), t ? location.hash = "tv=" + t : (G(), e("watch").focus());
-  }, addEventListener("hashchange", te), addEventListener("pagehide", () => {
-    clearTimeout(g), J(), o?.abort(), i?.abort();
-  }), M(), te();
+  }, _0x984456_7("\x77\x61\x74\x63\x68\x2d\x61\x72\x65\x61").addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x984456_0 => {
+    if (_0x984456_0.target.closest("\x69\x6e\x70\x75\x74\x2c\x73\x65\x6c\x65\x63\x74") || _0x984456_0.ctrlKey || _0x984456_0.altKey || _0x984456_0.metaKey) return;
+    if ("\x45\x73\x63\x61\x70\x65" === _0x984456_0.key) return void (_0x984456_7("\x65\x70\x69\x73\x6f\x64\x65\x2d\x70\x69\x63\x6b\x65\x72").hidden ? _0x984456_7("\x73\x6f\x75\x72\x63\x65\x73\x2d\x70\x61\x6e\x65\x6c").hidden ? _0x984456_7("\x73\x65\x74\x74\x69\x6e\x67\x73\x2d\x70\x61\x6e\x65\x6c").hidden ? document.fullscreenElement || _0x984456_7("\x63\x6c\x6f\x73\x65\x2d\x70\x6c\x61\x79\x65\x72").click() : (_0x984456_7("\x73\x65\x74\x74\x69\x6e\x67\x73\x2d\x70\x61\x6e\x65\x6c").hidden = !0, 
+    _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x65\x74\x74\x69\x6e\x67\x73").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x66\x61\x6c\x73\x65"), _0x984456_7("\x70\x6c\x61\x79\x65\x72\x2d\x73\x65\x74\x74\x69\x6e\x67\x73").focus()) : (_0x984456_2f(!1), 
+    _0x984456_7("\x63\x68\x6f\x6f\x73\x65\x2d\x73\x6f\x75\x72\x63\x65").focus()) : _0x984456_7("\x63\x6c\x6f\x73\x65\x2d\x65\x70\x69\x73\x6f\x64\x65\x73").click());
+    if (_0x984456_0.target.closest("\x62\x75\x74\x74\x6f\x6e\x2c\x61") && "\x20" === _0x984456_0.key) return;
+    const _0x984456_1 = {
+      "\x20": _0x984456_44,
+      k: _0x984456_44,
+      ArrowLeft: () => _0x984456_45(-10),
+      ArrowRight: () => _0x984456_45(10),
+      m: () => _0x984456_7("\x6d\x75\x74\x65").click(),
+      f: _0x984456_4b
+    }[_0x984456_0.key];
+    _0x984456_1 && (_0x984456_0.preventDefault(), _0x984456_1());
+  }), addEventListener("\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x63\x68\x61\x6e\x67\x65", () => {
+    _0x984456_7("\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e").setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", document.fullscreenElement ? "\x45\x78\x69\x74\x20\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e" : "\x45\x6e\x74\x65\x72\x20\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e");
+  }), _0x984456_7("\x72\x65\x74\x72\x79\x2d\x64\x65\x74\x61\x69\x6c").onclick = _0x984456_3e, _0x984456_7("\x72\x65\x74\x72\x79\x2d\x73\x65\x61\x72\x63\x68").onclick = _0x984456_24, 
+  _0x984456_7("\x63\x6c\x65\x61\x72\x2d\x73\x65\x61\x72\x63\x68").onclick = () => {
+    _0x984456_e = "", _0x984456_7("\x71\x75\x65\x72\x79").value = "", _0x984456_f = 1, _0x984456_24();
+  }, _0x984456_7("\x73\x65\x61\x72\x63\x68").onsubmit = _0x984456_0 => {
+    _0x984456_0.preventDefault(), _0x984456_e = _0x984456_7("\x71\x75\x65\x72\x79").value.trim(), _0x984456_f = 1, 
+    _0x984456_24();
+  }, _0x984456_7("\x70\x72\x65\x76\x69\x6f\x75\x73").onclick = () => {
+    _0x984456_f--, _0x984456_24();
+  }, _0x984456_7("\x6e\x65\x78\x74").onclick = () => {
+    _0x984456_f++, _0x984456_24();
+  }, _0x984456_7("\x62\x61\x63\x6b").onclick = () => location.hash = "", _0x984456_7("\x77\x61\x74\x63\x68").onclick = () => _0x984456_3f(), 
+  _0x984456_7("\x72\x65\x74\x72\x79\x2d\x70\x6c\x61\x79\x65\x72").onclick = () => _0x984456_3f(), _0x984456_7("\x63\x6c\x6f\x73\x65\x2d\x70\x6c\x61\x79\x65\x72").onclick = () => {
+    const _0x984456_0 = _0x984456_11?.tmdbSeriesId;
+    _0x984456_3a(), _0x984456_0 ? location.hash = "\x74\x76\x3d" + _0x984456_0 : (_0x984456_3c(), 
+    _0x984456_7("\x77\x61\x74\x63\x68").focus());
+  }, addEventListener("\x68\x61\x73\x68\x63\x68\x61\x6e\x67\x65", _0x984456_3e), addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", () => {
+    clearTimeout(_0x984456_19), _0x984456_3a(), _0x984456_b?.abort(), _0x984456_c?.abort();
+  }), _0x984456_24(), _0x984456_3e();
 })();

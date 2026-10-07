@@ -1,6 +1,6 @@
 (() => {
   "use strict";
-  const e = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/cloud-gaming", t = {
+  const _0x1b90bf_0 = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x63\x6c\x6f\x75\x64\x2d\x67\x61\x6d\x69\x6e\x67", _0x1b90bf_1 = {
     games: [],
     filtered: [],
     configured: !1,
@@ -19,399 +19,415 @@
     pingTimer: null,
     elapsedTimer: null,
     pingFailures: 0
-  }, n = {
-    network: document.querySelector("[data-network-mode]"),
-    provider: document.querySelector("[data-provider-state]"),
-    notice: document.querySelector("[data-notice]"),
-    grid: document.querySelector("[data-grid]"),
-    empty: document.querySelector("[data-empty]"),
-    search: document.querySelector("[data-search]"),
-    tag: document.querySelector("[data-tag]"),
-    launchLayer: document.querySelector("[data-launch-layer]"),
-    launchTitle: document.querySelector("[data-launch-title]"),
-    launchStatus: document.querySelector("[data-launch-status]"),
-    launchProgress: document.querySelector("[data-launch-progress]"),
-    cancel: document.querySelector("[data-cancel]"),
-    playerLayer: document.querySelector("[data-player-layer]"),
-    player: document.querySelector("[data-player]"),
-    playerTitle: document.querySelector("[data-player-title]"),
-    playerTime: document.querySelector("[data-player-time]"),
-    fullscreen: document.querySelector("[data-fullscreen]"),
-    close: document.querySelector("[data-close]")
-  }, a = e => new Promise(t => setTimeout(t, e));
-  function r(e, t = "") {
-    n.notice.textContent = e, n.notice.className = "notice" + (t ? ` ${t}` : "");
+  }, _0x1b90bf_2 = {
+    network: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6e\x65\x74\x77\x6f\x72\x6b\x2d\x6d\x6f\x64\x65\x5d"),
+    provider: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x72\x6f\x76\x69\x64\x65\x72\x2d\x73\x74\x61\x74\x65\x5d"),
+    notice: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6e\x6f\x74\x69\x63\x65\x5d"),
+    grid: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x67\x72\x69\x64\x5d"),
+    empty: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x65\x6d\x70\x74\x79\x5d"),
+    search: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x65\x61\x72\x63\x68\x5d"),
+    tag: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x74\x61\x67\x5d"),
+    launchLayer: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x61\x75\x6e\x63\x68\x2d\x6c\x61\x79\x65\x72\x5d"),
+    launchTitle: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x61\x75\x6e\x63\x68\x2d\x74\x69\x74\x6c\x65\x5d"),
+    launchStatus: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x61\x75\x6e\x63\x68\x2d\x73\x74\x61\x74\x75\x73\x5d"),
+    launchProgress: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x61\x75\x6e\x63\x68\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x5d"),
+    cancel: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x63\x61\x6e\x63\x65\x6c\x5d"),
+    playerLayer: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x6c\x61\x79\x65\x72\x2d\x6c\x61\x79\x65\x72\x5d"),
+    player: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x6c\x61\x79\x65\x72\x5d"),
+    playerTitle: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x6c\x61\x79\x65\x72\x2d\x74\x69\x74\x6c\x65\x5d"),
+    playerTime: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x6c\x61\x79\x65\x72\x2d\x74\x69\x6d\x65\x5d"),
+    fullscreen: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x5d"),
+    close: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x63\x6c\x6f\x73\x65\x5d")
+  }, _0x1b90bf_3 = _0x1b90bf_0 => new Promise(_0x1b90bf_1 => setTimeout(_0x1b90bf_1, _0x1b90bf_0));
+  function _0x1b90bf_4(_0x1b90bf_0, _0x1b90bf_1 = "") {
+    _0x1b90bf_2.notice.textContent = _0x1b90bf_0, _0x1b90bf_2.notice.className = "\x6e\x6f\x74\x69\x63\x65" + (_0x1b90bf_1 ? `\x20${_0x1b90bf_1}` : "");
   }
-  function o(e, t = "") {
-    n.provider.querySelector("b").textContent = e, n.provider.className = "provider-state" + (t ? ` ${t}` : "");
+  function _0x1b90bf_5(_0x1b90bf_0, _0x1b90bf_1 = "") {
+    _0x1b90bf_2.provider.querySelector("\x62").textContent = _0x1b90bf_0, _0x1b90bf_2.provider.className = "\x70\x72\x6f\x76\x69\x64\x65\x72\x2d\x73\x74\x61\x74\x65" + (_0x1b90bf_1 ? `\x20${_0x1b90bf_1}` : "");
   }
-  async function i(e = !1) {
-    if (!e && t.token && t.tokenExpiresAt > Date.now() + 3e4) return t.token;
-    const n = await async function() {
+  async function _0x1b90bf_6(_0x1b90bf_0 = !1) {
+    if (!_0x1b90bf_0 && _0x1b90bf_1.token && _0x1b90bf_1.tokenExpiresAt > Date.now() + 3e4) return _0x1b90bf_1.token;
+    const _0x1b90bf_2 = await async function() {
       if (window.parent === window) return null;
-      const e = `cloud-${Date.now()}-${Math.random().toString(36).slice(2)}`;
-      return new Promise(t => {
-        let n = !1;
-        const a = e => {
-          n || (n = !0, clearTimeout(o), window.removeEventListener("message", r), t(e));
-        }, r = t => {
-          t.source === window.parent && t.origin === location.origin && "nyx:account-token-response" === t.data?.type && t.data?.requestId === e && a({
+      const _0x1b90bf_0 = `\x63\x6c\x6f\x75\x64\x2d${Date.now()}\x2d${Math.random().toString(36).slice(2)}`;
+      return new Promise(_0x1b90bf_1 => {
+        let _0x1b90bf_2 = !1;
+        const _0x1b90bf_3 = _0x1b90bf_0 => {
+          _0x1b90bf_2 || (_0x1b90bf_2 = !0, clearTimeout(_0x1b90bf_5), window.removeEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x1b90bf_4), 
+          _0x1b90bf_1(_0x1b90bf_0));
+        }, _0x1b90bf_4 = _0x1b90bf_1 => {
+          _0x1b90bf_1.source === window.parent && _0x1b90bf_1.origin === location.origin && "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65" === _0x1b90bf_1.data?.type && _0x1b90bf_1.data?.requestId === _0x1b90bf_0 && _0x1b90bf_3({
             available: !0,
-            token: String(t.data.token || "")
+            token: String(_0x1b90bf_1.data.token || "")
           });
-        }, o = setTimeout(() => a(null), 2500);
-        window.addEventListener("message", r), window.parent.postMessage({
-          type: "nyx:account-token-request",
-          requestId: e
+        }, _0x1b90bf_5 = setTimeout(() => _0x1b90bf_3(null), 2500);
+        window.addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x1b90bf_4), window.parent.postMessage({
+          type: "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74",
+          requestId: _0x1b90bf_0
         }, location.origin);
       });
     }();
-    if (n?.available) return t.parentAuth = !0, t.token = n.token, t.tokenExpiresAt = t.token ? Date.now() + 27e5 : 0, 
-    t.token;
-    t.parentAuth = !1;
-    const a = await async function() {
-      if (t.directAuthPromise) return t.directAuthPromise;
-      t.directAuthPromise = (async () => {
-        const e = await c("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/founder-profile/auth-config", {
-          cache: "no-store"
+    if (_0x1b90bf_2?.available) return _0x1b90bf_1.parentAuth = !0, _0x1b90bf_1.token = _0x1b90bf_2.token, 
+    _0x1b90bf_1.tokenExpiresAt = _0x1b90bf_1.token ? Date.now() + 27e5 : 0, _0x1b90bf_1.token;
+    _0x1b90bf_1.parentAuth = !1;
+    const _0x1b90bf_3 = await async function() {
+      if (_0x1b90bf_1.directAuthPromise) return _0x1b90bf_1.directAuthPromise;
+      _0x1b90bf_1.directAuthPromise = (async () => {
+        const _0x1b90bf_0 = await _0x1b90bf_8("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x66\x6f\x75\x6e\x64\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67", {
+          cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
         }, !1);
-        if (!e?.enabled) return null;
-        const [{initializeApp: t, getApps: n}, {getAuth: a, setPersistence: r, browserLocalPersistence: o}] = await Promise.all([ import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"), import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js") ]), i = a(n().find(e => "nyx-founder-owner" === e.name) || t({
-          apiKey: e.apiKey,
-          authDomain: `${e.projectId}.firebaseapp.com`,
-          projectId: e.projectId
-        }, "nyx-founder-owner"));
+        if (!_0x1b90bf_0?.enabled) return null;
+        const [{initializeApp: _0x1b90bf_1, getApps: _0x1b90bf_2}, {getAuth: _0x1b90bf_3, setPersistence: _0x1b90bf_4, browserLocalPersistence: _0x1b90bf_5}] = await Promise.all([ import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x70\x70\x2e\x6a\x73"), import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x75\x74\x68\x2e\x6a\x73") ]), _0x1b90bf_6 = _0x1b90bf_3(_0x1b90bf_2().find(_0x1b90bf_0 => "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72" === _0x1b90bf_0.name) || _0x1b90bf_1({
+          apiKey: _0x1b90bf_0.apiKey,
+          authDomain: `${_0x1b90bf_0.projectId}\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d`,
+          projectId: _0x1b90bf_0.projectId
+        }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72"));
         try {
-          await r(i, o);
+          await _0x1b90bf_4(_0x1b90bf_6, _0x1b90bf_5);
         } catch {}
-        return "function" == typeof i.authStateReady && await i.authStateReady(), i;
+        return "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x1b90bf_6.authStateReady && await _0x1b90bf_6.authStateReady(), 
+        _0x1b90bf_6;
       })();
       try {
-        return await t.directAuthPromise;
-      } catch (e) {
-        throw t.directAuthPromise = null, e;
+        return await _0x1b90bf_1.directAuthPromise;
+      } catch (_0x1b90bf_0) {
+        throw _0x1b90bf_1.directAuthPromise = null, _0x1b90bf_0;
       }
     }();
-    return t.token = a?.currentUser ? await a.currentUser.getIdToken(e) : "", t.tokenExpiresAt = t.token ? Date.now() + 27e5 : 0, 
-    t.token;
+    return _0x1b90bf_1.token = _0x1b90bf_3?.currentUser ? await _0x1b90bf_3.currentUser.getIdToken(_0x1b90bf_0) : "", 
+    _0x1b90bf_1.tokenExpiresAt = _0x1b90bf_1.token ? Date.now() + 27e5 : 0, _0x1b90bf_1.token;
   }
-  function s(e, t = "Cloud Gaming received an invalid provider response. Try again in a moment.") {
-    const n = String(e || "").trim();
-    return !n || /<!doctype\s+html|<html\b|<body\b|cloudflare|unexpected token.+json|not valid json/i.test(n) || /<[a-z][\s\S]*>/i.test(n) ? t : n.replace(/\s+/g, " ").slice(0, 240);
+  function _0x1b90bf_7(_0x1b90bf_0, _0x1b90bf_1 = "\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x61\x6e\x20\x69\x6e\x76\x61\x6c\x69\x64\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x69\x6e\x20\x61\x20\x6d\x6f\x6d\x65\x6e\x74\x2e") {
+    const _0x1b90bf_2 = String(_0x1b90bf_0 || "").trim();
+    return !_0x1b90bf_2 || /<!doctype\s+html|<html\b|<body\b|cloudflare|unexpected token.+json|not valid json/i.test(_0x1b90bf_2) || /<[a-z][\s\S]*>/i.test(_0x1b90bf_2) ? _0x1b90bf_1 : _0x1b90bf_2.replace(/\s+/g, "\x20").slice(0, 240);
   }
-  async function c(e, t = {}, n = !0, a = !0) {
-    const r = new Headers(t.headers || {});
-    if (n) {
-      const e = await i(!a);
-      if (!e) {
-        const e = new Error("Sign in to use Cloud Gaming.");
-        throw e.status = 401, e;
+  async function _0x1b90bf_8(_0x1b90bf_0, _0x1b90bf_1 = {}, _0x1b90bf_2 = !0, _0x1b90bf_3 = !0) {
+    const _0x1b90bf_4 = new Headers(_0x1b90bf_1.headers || {});
+    if (_0x1b90bf_2) {
+      const _0x1b90bf_0 = await _0x1b90bf_6(!_0x1b90bf_3);
+      if (!_0x1b90bf_0) {
+        const _0x1b90bf_0 = new Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x75\x73\x65\x20\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x2e");
+        throw _0x1b90bf_0.status = 401, _0x1b90bf_0;
       }
-      r.set("Authorization", `Bearer ${e}`);
+      _0x1b90bf_4.set("\x41\x75\x74\x68\x6f\x72\x69\x7a\x61\x74\x69\x6f\x6e", `\x42\x65\x61\x72\x65\x72\x20${_0x1b90bf_0}`);
     }
-    const o = await fetch(e, {
-      ...t,
-      headers: r
+    const _0x1b90bf_5 = await fetch(_0x1b90bf_0, {
+      ..._0x1b90bf_1,
+      headers: _0x1b90bf_4
     });
-    let l = null;
-    if ((o.headers.get("content-type") || "").includes("application/json")) try {
-      l = await o.json();
+    let _0x1b90bf_9 = null;
+    if ((_0x1b90bf_5.headers.get("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65") || "").includes("\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e")) try {
+      _0x1b90bf_9 = await _0x1b90bf_5.json();
     } catch {
-      l = {
-        error: s("", `Cloud Gaming returned an unreadable response (${o.status}). Try again in a moment.`)
+      _0x1b90bf_9 = {
+        error: _0x1b90bf_7("", `\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x75\x6e\x72\x65\x61\x64\x61\x62\x6c\x65\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x28${_0x1b90bf_5.status}\x29\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x69\x6e\x20\x61\x20\x6d\x6f\x6d\x65\x6e\x74\x2e`)
       };
-    } else l = {
-      error: s(await o.text(), `Cloud Gaming returned an invalid response (${o.status}). Try again in a moment.`)
+    } else _0x1b90bf_9 = {
+      error: _0x1b90bf_7(await _0x1b90bf_5.text(), `\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x69\x6e\x76\x61\x6c\x69\x64\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x28${_0x1b90bf_5.status}\x29\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x69\x6e\x20\x61\x20\x6d\x6f\x6d\x65\x6e\x74\x2e`)
     };
-    if (!o.ok) {
-      if (401 === o.status && n && a) return c(e, t, !0, !1);
-      const r = new Error(s(l?.error, `Cloud Gaming is temporarily unavailable (${o.status}). Try again in a moment.`));
-      throw r.status = o.status, r;
+    if (!_0x1b90bf_5.ok) {
+      if (401 === _0x1b90bf_5.status && _0x1b90bf_2 && _0x1b90bf_3) return _0x1b90bf_8(_0x1b90bf_0, _0x1b90bf_1, !0, !1);
+      const _0x1b90bf_4 = new Error(_0x1b90bf_7(_0x1b90bf_9?.error, `\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x69\x73\x20\x74\x65\x6d\x70\x6f\x72\x61\x72\x69\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x28${_0x1b90bf_5.status}\x29\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x69\x6e\x20\x61\x20\x6d\x6f\x6d\x65\x6e\x74\x2e`));
+      throw _0x1b90bf_4.status = _0x1b90bf_5.status, _0x1b90bf_4;
     }
-    return l;
+    return _0x1b90bf_9;
   }
-  function l(e, a) {
-    const o = document.createElement("article");
-    o.className = "game-card";
-    const i = document.createElement("div");
-    i.className = "game-art";
-    const s = function(e) {
+  function _0x1b90bf_9(_0x1b90bf_0, _0x1b90bf_3) {
+    const _0x1b90bf_5 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+    _0x1b90bf_5.className = "\x67\x61\x6d\x65\x2d\x63\x61\x72\x64";
+    const _0x1b90bf_6 = document.createElement("\x64\x69\x76");
+    _0x1b90bf_6.className = "\x67\x61\x6d\x65\x2d\x61\x72\x74";
+    const _0x1b90bf_7 = function(_0x1b90bf_0) {
       try {
-        const t = new URL(String(e || ""), location.href);
-        return "https:" === t.protocol ? t.href : "";
+        const _0x1b90bf_1 = new URL(String(_0x1b90bf_0 || ""), location.href);
+        return "\x68\x74\x74\x70\x73\x3a" === _0x1b90bf_1.protocol ? _0x1b90bf_1.href : "";
       } catch {
         return "";
       }
-    }(e.image || e.cover);
-    if (s) {
-      const e = document.createElement("img");
-      e.src = s, e.alt = "", e.loading = a < 18 ? "eager" : "lazy", e.decoding = "async", 
-      a < 8 && (e.fetchPriority = "high"), e.referrerPolicy = "same-origin", e.addEventListener("error", () => e.remove(), {
+    }(_0x1b90bf_0.image || _0x1b90bf_0.cover);
+    if (_0x1b90bf_7) {
+      const _0x1b90bf_0 = document.createElement("\x69\x6d\x67");
+      _0x1b90bf_0.src = _0x1b90bf_7, _0x1b90bf_0.alt = "", _0x1b90bf_0.loading = _0x1b90bf_3 < 18 ? "\x65\x61\x67\x65\x72" : "\x6c\x61\x7a\x79", 
+      _0x1b90bf_0.decoding = "\x61\x73\x79\x6e\x63", _0x1b90bf_3 < 8 && (_0x1b90bf_0.fetchPriority = "\x68\x69\x67\x68"), 
+      _0x1b90bf_0.referrerPolicy = "\x73\x61\x6d\x65\x2d\x6f\x72\x69\x67\x69\x6e", _0x1b90bf_0.addEventListener("\x65\x72\x72\x6f\x72", () => _0x1b90bf_0.remove(), {
         once: !0
-      }), i.append(e);
+      }), _0x1b90bf_6.append(_0x1b90bf_0);
     }
-    const c = document.createElement("div");
-    c.className = "game-copy";
-    const l = document.createElement("h3");
-    l.textContent = e.name, l.title = e.name;
-    const w = document.createElement("div");
-    w.className = "tags", (e.tags || []).slice(0, 3).forEach(e => {
-      const t = document.createElement("span");
-      t.textContent = e, w.append(t);
+    const _0x1b90bf_8 = document.createElement("\x64\x69\x76");
+    _0x1b90bf_8.className = "\x67\x61\x6d\x65\x2d\x63\x6f\x70\x79";
+    const _0x1b90bf_9 = document.createElement("\x68\x33");
+    _0x1b90bf_9.textContent = _0x1b90bf_0.name, _0x1b90bf_9.title = _0x1b90bf_0.name;
+    const _0x1b90bf_11 = document.createElement("\x64\x69\x76");
+    _0x1b90bf_11.className = "\x74\x61\x67\x73", (_0x1b90bf_0.tags || []).slice(0, 3).forEach(_0x1b90bf_0 => {
+      const _0x1b90bf_1 = document.createElement("\x73\x70\x61\x6e");
+      _0x1b90bf_1.textContent = _0x1b90bf_0, _0x1b90bf_11.append(_0x1b90bf_1);
     });
-    const f = document.createElement("button");
-    return f.type = "button", f.className = "play", f.textContent = "Play", f.disabled = !t.configured || t.launching || Date.now() < t.retryUntil, 
-    f.addEventListener("click", () => {
-      !async function(e) {
-        if (!(t.launching || Date.now() < t.retryUntil) && p()) {
-          t.launching = !0, t.cancelled = !1, t.launchTimedOut = !1, t.launchController = new AbortController, 
-          clearTimeout(t.launchDeadlineTimer), t.launchDeadlineTimer = setTimeout(() => {
-            t.launchTimedOut = !0, t.launchController?.abort();
-          }, 15e4), u(), n.launchLayer.hidden = !1, m(!0), n.launchTitle.textContent = e.name, 
-          d("starting");
+    const _0x1b90bf_12 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    return _0x1b90bf_12.type = "\x62\x75\x74\x74\x6f\x6e", _0x1b90bf_12.className = "\x70\x6c\x61\x79", _0x1b90bf_12.textContent = "\x50\x6c\x61\x79", 
+    _0x1b90bf_12.disabled = !_0x1b90bf_1.configured || _0x1b90bf_1.launching || Date.now() < _0x1b90bf_1.retryUntil, 
+    _0x1b90bf_12.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      !async function(_0x1b90bf_0) {
+        if (!(_0x1b90bf_1.launching || Date.now() < _0x1b90bf_1.retryUntil) && _0x1b90bf_10()) {
+          _0x1b90bf_1.launching = !0, _0x1b90bf_1.cancelled = !1, _0x1b90bf_1.launchTimedOut = !1, 
+          _0x1b90bf_1.launchController = new AbortController, clearTimeout(_0x1b90bf_1.launchDeadlineTimer), 
+          _0x1b90bf_1.launchDeadlineTimer = setTimeout(() => {
+            _0x1b90bf_1.launchTimedOut = !0, _0x1b90bf_1.launchController?.abort();
+          }, 15e4), _0x1b90bf_a(), _0x1b90bf_2.launchLayer.hidden = !1, _0x1b90bf_c(!0), _0x1b90bf_2.launchTitle.textContent = _0x1b90bf_0.name, 
+          _0x1b90bf_b("\x73\x74\x61\x72\x74\x69\x6e\x67");
           try {
-            const n = await g(e);
-            if (t.cancelled) return;
-            if ("queue" === n?.status && await y(), t.cancelled) return;
-            if (!t.session?.id) throw new Error("Cloud Gaming did not create a session.");
-            await h();
-          } catch (a) {
-            t.cancelled || (r(t.launchTimedOut ? "The provider took too long to prepare this game. Try again in a moment." : "AbortError" === a?.name ? "Cloud Gaming could not finish preparing this game." : a.message || "Cloud Gaming could not launch this game.", "error"), 
-            a.retryUntil && function(e) {
-              t.retryUntil = e, clearInterval(t.retryTimer);
-              const n = () => {
-                const e = Math.max(0, Math.ceil((t.retryUntil - Date.now()) / 1e3));
-                if (!e) return clearInterval(t.retryTimer), t.retryTimer = null, t.retryUntil = 0, 
-                r("You can try launching a game again.", "ready"), void u();
-                r(`Please wait ${e} seconds before trying again.`, "error");
+            const _0x1b90bf_2 = await _0x1b90bf_d(_0x1b90bf_0);
+            if (_0x1b90bf_1.cancelled) return;
+            if ("\x71\x75\x65\x75\x65" === _0x1b90bf_2?.status && await _0x1b90bf_e(), _0x1b90bf_1.cancelled) return;
+            if (!_0x1b90bf_1.session?.id) throw new Error("\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x63\x72\x65\x61\x74\x65\x20\x61\x20\x73\x65\x73\x73\x69\x6f\x6e\x2e");
+            await _0x1b90bf_f();
+          } catch (_0x1b90bf_3) {
+            _0x1b90bf_1.cancelled || (_0x1b90bf_4(_0x1b90bf_1.launchTimedOut ? "\x54\x68\x65\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x74\x6f\x6f\x6b\x20\x74\x6f\x6f\x20\x6c\x6f\x6e\x67\x20\x74\x6f\x20\x70\x72\x65\x70\x61\x72\x65\x20\x74\x68\x69\x73\x20\x67\x61\x6d\x65\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x69\x6e\x20\x61\x20\x6d\x6f\x6d\x65\x6e\x74\x2e" : "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x1b90bf_3?.name ? "\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x66\x69\x6e\x69\x73\x68\x20\x70\x72\x65\x70\x61\x72\x69\x6e\x67\x20\x74\x68\x69\x73\x20\x67\x61\x6d\x65\x2e" : _0x1b90bf_3.message || "\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x61\x75\x6e\x63\x68\x20\x74\x68\x69\x73\x20\x67\x61\x6d\x65\x2e", "\x65\x72\x72\x6f\x72"), 
+            _0x1b90bf_3.retryUntil && function(_0x1b90bf_0) {
+              _0x1b90bf_1.retryUntil = _0x1b90bf_0, clearInterval(_0x1b90bf_1.retryTimer);
+              const _0x1b90bf_2 = () => {
+                const _0x1b90bf_0 = Math.max(0, Math.ceil((_0x1b90bf_1.retryUntil - Date.now()) / 1e3));
+                if (!_0x1b90bf_0) return clearInterval(_0x1b90bf_1.retryTimer), _0x1b90bf_1.retryTimer = null, 
+                _0x1b90bf_1.retryUntil = 0, _0x1b90bf_4("\x59\x6f\x75\x20\x63\x61\x6e\x20\x74\x72\x79\x20\x6c\x61\x75\x6e\x63\x68\x69\x6e\x67\x20\x61\x20\x67\x61\x6d\x65\x20\x61\x67\x61\x69\x6e\x2e", "\x72\x65\x61\x64\x79"), 
+                void _0x1b90bf_a();
+                _0x1b90bf_4(`\x50\x6c\x65\x61\x73\x65\x20\x77\x61\x69\x74\x20${_0x1b90bf_0}\x20\x73\x65\x63\x6f\x6e\x64\x73\x20\x62\x65\x66\x6f\x72\x65\x20\x74\x72\x79\x69\x6e\x67\x20\x61\x67\x61\x69\x6e\x2e`, "\x65\x72\x72\x6f\x72");
               };
-              n(), t.retryTimer = setInterval(n, 1e3), u();
-            }(a.retryUntil)), await T(!1);
+              _0x1b90bf_2(), _0x1b90bf_1.retryTimer = setInterval(_0x1b90bf_2, 1e3), _0x1b90bf_a();
+            }(_0x1b90bf_3.retryUntil)), await _0x1b90bf_14(!1);
           } finally {
-            clearTimeout(t.launchDeadlineTimer), t.launchDeadlineTimer = null, t.launchController = null, 
-            t.launching = !1, n.launchLayer.hidden = !0, u();
+            clearTimeout(_0x1b90bf_1.launchDeadlineTimer), _0x1b90bf_1.launchDeadlineTimer = null, 
+            _0x1b90bf_1.launchController = null, _0x1b90bf_1.launching = !1, _0x1b90bf_2.launchLayer.hidden = !0, 
+            _0x1b90bf_a();
           }
         }
-      }(e);
-    }), c.append(l, w, f), o.append(i, c), o;
+      }(_0x1b90bf_0);
+    }), _0x1b90bf_8.append(_0x1b90bf_9, _0x1b90bf_11, _0x1b90bf_12), _0x1b90bf_5.append(_0x1b90bf_6, _0x1b90bf_8), 
+    _0x1b90bf_5;
   }
-  function u() {
-    n.network.disabled = t.launching;
-    const e = n.search.value.trim().toLowerCase(), a = n.tag.value.toLowerCase();
-    t.filtered = t.games.filter(t => (!e || `${t.name} ${t.description} ${(t.tags || []).join(" ")}`.toLowerCase().includes(e)) && (!a || (t.tags || []).some(e => e.toLowerCase() === a))), 
-    n.grid.replaceChildren(...t.filtered.map(l)), n.empty.hidden = t.filtered.length > 0;
+  function _0x1b90bf_a() {
+    _0x1b90bf_2.network.disabled = _0x1b90bf_1.launching;
+    const _0x1b90bf_0 = _0x1b90bf_2.search.value.trim().toLowerCase(), _0x1b90bf_3 = _0x1b90bf_2.tag.value.toLowerCase();
+    _0x1b90bf_1.filtered = _0x1b90bf_1.games.filter(_0x1b90bf_1 => (!_0x1b90bf_0 || `${_0x1b90bf_1.name}\x20${_0x1b90bf_1.description}\x20${(_0x1b90bf_1.tags || []).join("\x20")}`.toLowerCase().includes(_0x1b90bf_0)) && (!_0x1b90bf_3 || (_0x1b90bf_1.tags || []).some(_0x1b90bf_0 => _0x1b90bf_0.toLowerCase() === _0x1b90bf_3))), 
+    _0x1b90bf_2.grid.replaceChildren(..._0x1b90bf_1.filtered.map(_0x1b90bf_9)), _0x1b90bf_2.empty.hidden = _0x1b90bf_1.filtered.length > 0;
   }
-  function d(e, t) {
-    n.launchProgress.style.width = `${{
+  function _0x1b90bf_b(_0x1b90bf_0, _0x1b90bf_1) {
+    _0x1b90bf_2.launchProgress.style.width = `${{
       creating_account: 18,
       account_ready: 40,
       requesting_game: 58,
       queue: 70,
       finished_queue: 88
-    }[e] || 12}%`;
-    const a = {
-      creating_account: "Preparing a provider session\u2026",
-      account_ready: "Provider session ready.",
-      requesting_game: "Requesting a game server\u2026",
-      queue: `Waiting for a game server${Number.isFinite(t) ? ` \xb7 position ${t}` : ""}.`,
-      finished_queue: "Game server acquired. Starting stream\u2026"
+    }[_0x1b90bf_0] || 12}\x25`;
+    const _0x1b90bf_3 = {
+      creating_account: "\x50\x72\x65\x70\x61\x72\x69\x6e\x67\x20\x61\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x73\x65\x73\x73\x69\x6f\x6e\u2026",
+      account_ready: "\x50\x72\x6f\x76\x69\x64\x65\x72\x20\x73\x65\x73\x73\x69\x6f\x6e\x20\x72\x65\x61\x64\x79\x2e",
+      requesting_game: "\x52\x65\x71\x75\x65\x73\x74\x69\x6e\x67\x20\x61\x20\x67\x61\x6d\x65\x20\x73\x65\x72\x76\x65\x72\u2026",
+      queue: `\x57\x61\x69\x74\x69\x6e\x67\x20\x66\x6f\x72\x20\x61\x20\x67\x61\x6d\x65\x20\x73\x65\x72\x76\x65\x72${Number.isFinite(_0x1b90bf_1) ? `\x20\xb7\x20\x70\x6f\x73\x69\x74\x69\x6f\x6e\x20${_0x1b90bf_1}` : ""}\x2e`,
+      finished_queue: "\x47\x61\x6d\x65\x20\x73\x65\x72\x76\x65\x72\x20\x61\x63\x71\x75\x69\x72\x65\x64\x2e\x20\x53\x74\x61\x72\x74\x69\x6e\x67\x20\x73\x74\x72\x65\x61\x6d\u2026"
     };
-    n.launchStatus.textContent = a[e] || "Connecting to the cloud provider\u2026";
+    _0x1b90bf_2.launchStatus.textContent = _0x1b90bf_3[_0x1b90bf_0] || "\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\x20\x74\x6f\x20\x74\x68\x65\x20\x63\x6c\x6f\x75\x64\x20\x70\x72\x6f\x76\x69\x64\x65\x72\u2026";
   }
-  function m(e) {
-    document.documentElement.classList.toggle("cloud-session-active", Boolean(e)), window.parent !== window && window.parent.postMessage({
-      type: "nyx:cloud-player",
-      active: Boolean(e)
+  function _0x1b90bf_c(_0x1b90bf_0) {
+    document.documentElement.classList.toggle("\x63\x6c\x6f\x75\x64\x2d\x73\x65\x73\x73\x69\x6f\x6e\x2d\x61\x63\x74\x69\x76\x65", Boolean(_0x1b90bf_0)), 
+    window.parent !== window && window.parent.postMessage({
+      type: "\x6e\x79\x78\x3a\x63\x6c\x6f\x75\x64\x2d\x70\x6c\x61\x79\x65\x72",
+      active: Boolean(_0x1b90bf_0)
     }, location.origin);
   }
-  async function g(n, a = !0) {
-    const r = new Headers({
-      "Content-Type": "application/json"
-    }), o = await i(!a);
-    if (!o) throw new Error("Sign in to use Cloud Gaming.");
-    r.set("Authorization", `Bearer ${o}`);
-    const c = await fetch(`${e}/sessions`, {
-      method: "POST",
-      headers: r,
+  async function _0x1b90bf_d(_0x1b90bf_2, _0x1b90bf_3 = !0) {
+    const _0x1b90bf_4 = new Headers({
+      "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
+    }), _0x1b90bf_5 = await _0x1b90bf_6(!_0x1b90bf_3);
+    if (!_0x1b90bf_5) throw new Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x75\x73\x65\x20\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x2e");
+    _0x1b90bf_4.set("\x41\x75\x74\x68\x6f\x72\x69\x7a\x61\x74\x69\x6f\x6e", `\x42\x65\x61\x72\x65\x72\x20${_0x1b90bf_5}`);
+    const _0x1b90bf_8 = await fetch(`${_0x1b90bf_0}\x2f\x73\x65\x73\x73\x69\x6f\x6e\x73`, {
+      method: "\x50\x4f\x53\x54",
+      headers: _0x1b90bf_4,
       body: JSON.stringify({
-        gameKey: n.key
+        gameKey: _0x1b90bf_2.key
       }),
-      signal: t.launchController?.signal
+      signal: _0x1b90bf_1.launchController?.signal
     });
-    if (401 === c.status && a) return g(n, !1);
-    if (!c.ok) {
-      let e = {};
+    if (401 === _0x1b90bf_8.status && _0x1b90bf_3) return _0x1b90bf_d(_0x1b90bf_2, !1);
+    if (!_0x1b90bf_8.ok) {
+      let _0x1b90bf_0 = {};
       try {
-        e = await c.json();
+        _0x1b90bf_0 = await _0x1b90bf_8.json();
       } catch {}
-      const t = new Error(s(e.error, `Cloud Gaming is temporarily unavailable (${c.status}). Try again in a moment.`));
-      if (429 === c.status) {
-        const e = c.headers.get("Retry-After"), n = Number(e), a = e && Number.isFinite(n) ? Date.now() + 1e3 * Math.max(0, n) : Date.parse(e || "");
-        Number.isFinite(a) && a > Date.now() && (t.retryUntil = a);
+      const _0x1b90bf_1 = new Error(_0x1b90bf_7(_0x1b90bf_0.error, `\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x69\x73\x20\x74\x65\x6d\x70\x6f\x72\x61\x72\x69\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x28${_0x1b90bf_8.status}\x29\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x69\x6e\x20\x61\x20\x6d\x6f\x6d\x65\x6e\x74\x2e`));
+      if (429 === _0x1b90bf_8.status) {
+        const _0x1b90bf_0 = _0x1b90bf_8.headers.get("\x52\x65\x74\x72\x79\x2d\x41\x66\x74\x65\x72"), _0x1b90bf_2 = Number(_0x1b90bf_0), _0x1b90bf_3 = _0x1b90bf_0 && Number.isFinite(_0x1b90bf_2) ? Date.now() + 1e3 * Math.max(0, _0x1b90bf_2) : Date.parse(_0x1b90bf_0 || "");
+        Number.isFinite(_0x1b90bf_3) && _0x1b90bf_3 > Date.now() && (_0x1b90bf_1.retryUntil = _0x1b90bf_3);
       }
-      throw t;
+      throw _0x1b90bf_1;
     }
-    if (!c.body) throw new Error("Cloud Gaming did not return session progress.");
-    const l = c.body.getReader(), u = new TextDecoder;
-    let m = "", y = null;
+    if (!_0x1b90bf_8.body) throw new Error("\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x75\x72\x6e\x20\x73\x65\x73\x73\x69\x6f\x6e\x20\x70\x72\x6f\x67\x72\x65\x73\x73\x2e");
+    const _0x1b90bf_9 = _0x1b90bf_8.body.getReader(), _0x1b90bf_a = new TextDecoder;
+    let _0x1b90bf_c = "", _0x1b90bf_e = null;
     for (;;) {
-      const {done: e, value: a} = await l.read();
-      m += u.decode(a || new Uint8Array, {
-        stream: !e
+      const {done: _0x1b90bf_0, value: _0x1b90bf_3} = await _0x1b90bf_9.read();
+      _0x1b90bf_c += _0x1b90bf_a.decode(_0x1b90bf_3 || new Uint8Array, {
+        stream: !_0x1b90bf_0
       });
-      const r = m.split(/\r?\n/);
-      m = e ? "" : r.pop() || "";
-      for (const o of r) {
-        if (!o.trim()) continue;
-        let e;
+      const _0x1b90bf_4 = _0x1b90bf_c.split(/\r?\n/);
+      _0x1b90bf_c = _0x1b90bf_0 ? "" : _0x1b90bf_4.pop() || "";
+      for (const _0x1b90bf_5 of _0x1b90bf_4) {
+        if (!_0x1b90bf_5.trim()) continue;
+        let _0x1b90bf_0;
         try {
-          e = JSON.parse(o);
+          _0x1b90bf_0 = JSON.parse(_0x1b90bf_5);
         } catch {
           continue;
         }
-        if (e.id && (t.session = {
-          id: e.id,
-          gameKey: n.key,
-          gameName: n.name,
-          state: "queue" === e.status ? "queued" : "ready"
-        }), d(e.status, e.queuePosition), y = e, "error" === e.status) throw new Error(s(e.error, "The cloud provider could not prepare this game. Try again in a moment."));
+        if (_0x1b90bf_0.id && (_0x1b90bf_1.session = {
+          id: _0x1b90bf_0.id,
+          gameKey: _0x1b90bf_2.key,
+          gameName: _0x1b90bf_2.name,
+          state: "\x71\x75\x65\x75\x65" === _0x1b90bf_0.status ? "\x71\x75\x65\x75\x65\x64" : "\x72\x65\x61\x64\x79"
+        }), _0x1b90bf_b(_0x1b90bf_0.status, _0x1b90bf_0.queuePosition), _0x1b90bf_e = _0x1b90bf_0, 
+        "\x65\x72\x72\x6f\x72" === _0x1b90bf_0.status) throw new Error(_0x1b90bf_7(_0x1b90bf_0.error, "\x54\x68\x65\x20\x63\x6c\x6f\x75\x64\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x70\x72\x65\x70\x61\x72\x65\x20\x74\x68\x69\x73\x20\x67\x61\x6d\x65\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x69\x6e\x20\x61\x20\x6d\x6f\x6d\x65\x6e\x74\x2e"));
       }
-      if (e) break;
+      if (_0x1b90bf_0) break;
     }
-    return y;
+    return _0x1b90bf_e;
   }
-  async function y() {
-    for (;!t.cancelled && "queued" === t.session?.state; ) {
-      if (await a(4e3), t.cancelled) return;
-      const n = await c(`${e}/sessions/${encodeURIComponent(t.session.id)}/queue`);
-      if (t.session = n.session || t.session, d(n.status, n.queuePosition), "finished_queue" === n.status || "ready" === t.session.state) return;
+  async function _0x1b90bf_e() {
+    for (;!_0x1b90bf_1.cancelled && "\x71\x75\x65\x75\x65\x64" === _0x1b90bf_1.session?.state; ) {
+      if (await _0x1b90bf_3(4e3), _0x1b90bf_1.cancelled) return;
+      const _0x1b90bf_2 = await _0x1b90bf_8(`${_0x1b90bf_0}\x2f\x73\x65\x73\x73\x69\x6f\x6e\x73\x2f${encodeURIComponent(_0x1b90bf_1.session.id)}\x2f\x71\x75\x65\x75\x65`);
+      if (_0x1b90bf_1.session = _0x1b90bf_2.session || _0x1b90bf_1.session, _0x1b90bf_b(_0x1b90bf_2.status, _0x1b90bf_2.queuePosition), 
+      "\x66\x69\x6e\x69\x73\x68\x65\x64\x5f\x71\x75\x65\x75\x65" === _0x1b90bf_2.status || "\x72\x65\x61\x64\x79" === _0x1b90bf_1.session.state) return;
     }
-    if (t.cancelled) throw new Error("Launch cancelled.");
+    if (_0x1b90bf_1.cancelled) throw new Error("\x4c\x61\x75\x6e\x63\x68\x20\x63\x61\x6e\x63\x65\x6c\x6c\x65\x64\x2e");
   }
-  async function h() {
-    const n = await c(`${e}/sessions/${encodeURIComponent(t.session.id)}/start`, {
-      method: "POST"
+  async function _0x1b90bf_f() {
+    const _0x1b90bf_2 = await _0x1b90bf_8(`${_0x1b90bf_0}\x2f\x73\x65\x73\x73\x69\x6f\x6e\x73\x2f${encodeURIComponent(_0x1b90bf_1.session.id)}\x2f\x73\x74\x61\x72\x74`, {
+      method: "\x50\x4f\x53\x54"
     });
-    if (t.session = n.session, !t.session?.embedUrl) throw new Error("Cloud Gaming did not return a player address.");
-    w();
+    if (_0x1b90bf_1.session = _0x1b90bf_2.session, !_0x1b90bf_1.session?.embedUrl) throw new Error("\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x75\x72\x6e\x20\x61\x20\x70\x6c\x61\x79\x65\x72\x20\x61\x64\x64\x72\x65\x73\x73\x2e");
+    _0x1b90bf_11();
   }
-  function p() {
-    let e;
+  function _0x1b90bf_10() {
+    let _0x1b90bf_0;
     try {
-      if ("function" != typeof RTCPeerConnection) throw new Error;
-      return e = new RTCPeerConnection({
+      if ("\x66\x75\x6e\x63\x74\x69\x6f\x6e" != typeof RTCPeerConnection) throw new Error;
+      return _0x1b90bf_0 = new RTCPeerConnection({
         iceServers: []
-      }), e.createDataChannel("support-check"), !0;
+      }), _0x1b90bf_0.createDataChannel("\x73\x75\x70\x70\x6f\x72\x74\x2d\x63\x68\x65\x63\x6b"), !0;
     } catch {
-      return r("WebRTC is unavailable in this browser. Cloud streaming needs it. Try Browser games, another browser, or ask your device administrator to enable it.", "error"), 
+      return _0x1b90bf_4("\x57\x65\x62\x52\x54\x43\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e\x20\x43\x6c\x6f\x75\x64\x20\x73\x74\x72\x65\x61\x6d\x69\x6e\x67\x20\x6e\x65\x65\x64\x73\x20\x69\x74\x2e\x20\x54\x72\x79\x20\x42\x72\x6f\x77\x73\x65\x72\x20\x67\x61\x6d\x65\x73\x2c\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x62\x72\x6f\x77\x73\x65\x72\x2c\x20\x6f\x72\x20\x61\x73\x6b\x20\x79\x6f\x75\x72\x20\x64\x65\x76\x69\x63\x65\x20\x61\x64\x6d\x69\x6e\x69\x73\x74\x72\x61\x74\x6f\x72\x20\x74\x6f\x20\x65\x6e\x61\x62\x6c\x65\x20\x69\x74\x2e", "\x65\x72\x72\x6f\x72"), 
       !1;
     } finally {
-      e?.close();
+      _0x1b90bf_0?.close();
     }
   }
-  function w() {
-    n.playerTitle.textContent = t.session.gameName || "Cloud Gaming";
-    const e = new URL(t.session.embedUrl, location.href);
-    "restricted" === n.network.value ? e.searchParams.set("network", "restricted") : e.searchParams.delete("network"), 
-    n.player.src = e.href, n.playerLayer.hidden = !1, n.launchLayer.hidden = !0, m(!0), 
-    t.pingFailures = 0, clearInterval(t.pingTimer), t.pingTimer = setInterval(() => {
-      v();
-    }, 15e3), clearInterval(t.elapsedTimer), t.elapsedTimer = setInterval(f, 1e3), f(), 
-    v();
+  function _0x1b90bf_11() {
+    _0x1b90bf_2.playerTitle.textContent = _0x1b90bf_1.session.gameName || "\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67";
+    const _0x1b90bf_0 = new URL(_0x1b90bf_1.session.embedUrl, location.href);
+    "\x72\x65\x73\x74\x72\x69\x63\x74\x65\x64" === _0x1b90bf_2.network.value ? _0x1b90bf_0.searchParams.set("\x6e\x65\x74\x77\x6f\x72\x6b", "\x72\x65\x73\x74\x72\x69\x63\x74\x65\x64") : _0x1b90bf_0.searchParams.delete("\x6e\x65\x74\x77\x6f\x72\x6b"), 
+    _0x1b90bf_2.player.src = _0x1b90bf_0.href, _0x1b90bf_2.playerLayer.hidden = !1, 
+    _0x1b90bf_2.launchLayer.hidden = !0, _0x1b90bf_c(!0), _0x1b90bf_1.pingFailures = 0, 
+    clearInterval(_0x1b90bf_1.pingTimer), _0x1b90bf_1.pingTimer = setInterval(() => {
+      _0x1b90bf_13();
+    }, 15e3), clearInterval(_0x1b90bf_1.elapsedTimer), _0x1b90bf_1.elapsedTimer = setInterval(_0x1b90bf_12, 1e3), 
+    _0x1b90bf_12(), _0x1b90bf_13();
   }
-  function f() {
-    if (!t.session?.startedAtMs) return void (n.playerTime.textContent = "Connected");
-    const e = Math.max(0, Math.floor((Date.now() - t.session.startedAtMs) / 1e3)), a = Math.max(0, Number(t.session.maxSeconds || 0));
-    n.playerTime.textContent = a ? `${Math.floor(e / 60)}:${String(e % 60).padStart(2, "0")} / ${Math.floor(a / 60)}:${String(a % 60).padStart(2, "0")}` : `${Math.floor(e / 60)}:${String(e % 60).padStart(2, "0")}`;
+  function _0x1b90bf_12() {
+    if (!_0x1b90bf_1.session?.startedAtMs) return void (_0x1b90bf_2.playerTime.textContent = "\x43\x6f\x6e\x6e\x65\x63\x74\x65\x64");
+    const _0x1b90bf_0 = Math.max(0, Math.floor((Date.now() - _0x1b90bf_1.session.startedAtMs) / 1e3)), _0x1b90bf_3 = Math.max(0, Number(_0x1b90bf_1.session.maxSeconds || 0));
+    _0x1b90bf_2.playerTime.textContent = _0x1b90bf_3 ? `${Math.floor(_0x1b90bf_0 / 60)}\x3a${String(_0x1b90bf_0 % 60).padStart(2, "\x30")}\x20\x2f\x20${Math.floor(_0x1b90bf_3 / 60)}\x3a${String(_0x1b90bf_3 % 60).padStart(2, "\x30")}` : `${Math.floor(_0x1b90bf_0 / 60)}\x3a${String(_0x1b90bf_0 % 60).padStart(2, "\x30")}`;
   }
-  async function v() {
-    if (t.session?.id && "active" === t.session.state) try {
-      const n = await c(`${e}/sessions/${encodeURIComponent(t.session.id)}/ping`, {
-        method: "POST"
+  async function _0x1b90bf_13() {
+    if (_0x1b90bf_1.session?.id && "\x61\x63\x74\x69\x76\x65" === _0x1b90bf_1.session.state) try {
+      const _0x1b90bf_2 = await _0x1b90bf_8(`${_0x1b90bf_0}\x2f\x73\x65\x73\x73\x69\x6f\x6e\x73\x2f${encodeURIComponent(_0x1b90bf_1.session.id)}\x2f\x70\x69\x6e\x67`, {
+        method: "\x50\x4f\x53\x54"
       });
-      t.pingFailures = 0, n.sessionTimeLimitSeconds && (t.session.maxSeconds = n.sessionTimeLimitSeconds, 
-      t.session.startedAtMs = Date.now() - 1e3 * n.sessionTimeUsedSeconds, f());
-    } catch (n) {
-      t.pingFailures += 1, t.pingFailures >= 2 && r(n.message || "The Cloud Gaming session lost its keepalive.", "error");
+      _0x1b90bf_1.pingFailures = 0, _0x1b90bf_2.sessionTimeLimitSeconds && (_0x1b90bf_1.session.maxSeconds = _0x1b90bf_2.sessionTimeLimitSeconds, 
+      _0x1b90bf_1.session.startedAtMs = Date.now() - 1e3 * _0x1b90bf_2.sessionTimeUsedSeconds, 
+      _0x1b90bf_12());
+    } catch (_0x1b90bf_2) {
+      _0x1b90bf_1.pingFailures += 1, _0x1b90bf_1.pingFailures >= 2 && _0x1b90bf_4(_0x1b90bf_2.message || "\x54\x68\x65\x20\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x73\x65\x73\x73\x69\x6f\x6e\x20\x6c\x6f\x73\x74\x20\x69\x74\x73\x20\x6b\x65\x65\x70\x61\x6c\x69\x76\x65\x2e", "\x65\x72\x72\x6f\x72");
     }
   }
-  async function T(a = !0) {
-    const o = t.session;
-    if (t.cancelled = !0, clearTimeout(t.launchDeadlineTimer), t.launchDeadlineTimer = null, 
-    t.launchController?.abort(), t.session = null, clearInterval(t.pingTimer), clearInterval(t.elapsedTimer), 
-    t.pingTimer = null, t.elapsedTimer = null, n.player.removeAttribute("src"), n.playerLayer.hidden = !0, 
-    m(!1), o?.id) try {
-      await c(`${e}/sessions/${encodeURIComponent(o.id)}`, {
-        method: "DELETE"
+  async function _0x1b90bf_14(_0x1b90bf_3 = !0) {
+    const _0x1b90bf_5 = _0x1b90bf_1.session;
+    if (_0x1b90bf_1.cancelled = !0, clearTimeout(_0x1b90bf_1.launchDeadlineTimer), _0x1b90bf_1.launchDeadlineTimer = null, 
+    _0x1b90bf_1.launchController?.abort(), _0x1b90bf_1.session = null, clearInterval(_0x1b90bf_1.pingTimer), 
+    clearInterval(_0x1b90bf_1.elapsedTimer), _0x1b90bf_1.pingTimer = null, _0x1b90bf_1.elapsedTimer = null, 
+    _0x1b90bf_2.player.removeAttribute("\x73\x72\x63"), _0x1b90bf_2.playerLayer.hidden = !0, 
+    _0x1b90bf_c(!1), _0x1b90bf_5?.id) try {
+      await _0x1b90bf_8(`${_0x1b90bf_0}\x2f\x73\x65\x73\x73\x69\x6f\x6e\x73\x2f${encodeURIComponent(_0x1b90bf_5.id)}`, {
+        method: "\x44\x45\x4c\x45\x54\x45"
       });
     } catch {}
-    a && r("Cloud Gaming session ended.", "ready");
+    _0x1b90bf_3 && _0x1b90bf_4("\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x73\x65\x73\x73\x69\x6f\x6e\x20\x65\x6e\x64\x65\x64\x2e", "\x72\x65\x61\x64\x79");
   }
-  async function S() {
+  async function _0x1b90bf_15() {
     try {
-      n.network.value = "restricted" === localStorage.getItem("nyx-cloud-network") ? "restricted" : "auto";
+      _0x1b90bf_2.network.value = "\x72\x65\x73\x74\x72\x69\x63\x74\x65\x64" === localStorage.getItem("\x6e\x79\x78\x2d\x63\x6c\x6f\x75\x64\x2d\x6e\x65\x74\x77\x6f\x72\x6b") ? "\x72\x65\x73\x74\x72\x69\x63\x74\x65\x64" : "\x61\x75\x74\x6f";
     } catch {}
-    n.network.addEventListener("change", () => {
+    _0x1b90bf_2.network.addEventListener("\x63\x68\x61\x6e\x67\x65", () => {
       try {
-        localStorage.setItem("nyx-cloud-network", n.network.value);
+        localStorage.setItem("\x6e\x79\x78\x2d\x63\x6c\x6f\x75\x64\x2d\x6e\x65\x74\x77\x6f\x72\x6b", _0x1b90bf_2.network.value);
       } catch {}
-    }), n.search.addEventListener("input", u), n.tag.addEventListener("change", u), 
-    n.cancel.addEventListener("click", () => {
-      T(!1);
-    }), n.close.addEventListener("click", () => {
-      T();
-    }), n.fullscreen.addEventListener("click", () => n.playerLayer.requestFullscreen?.()), 
-    document.addEventListener("visibilitychange", () => {
-      document.hidden || v();
-    }), addEventListener("online", () => {
-      v();
-    }), addEventListener("message", e => {
-      e.origin === location.origin && e.source === n.player.contentWindow && "nyx:cloud-player-error" === e.data?.type && (r(s(e.data.message, "The cloud stream could not play on this device."), "error"), 
-      T(!1));
-    }), document.querySelector("[data-home]").addEventListener("click", e => {
-      window.parent !== window && (e.preventDefault(), window.parent.postMessage({
-        type: "nyx:go-home"
+    }), _0x1b90bf_2.search.addEventListener("\x69\x6e\x70\x75\x74", _0x1b90bf_a), _0x1b90bf_2.tag.addEventListener("\x63\x68\x61\x6e\x67\x65", _0x1b90bf_a), 
+    _0x1b90bf_2.cancel.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x1b90bf_14(!1);
+    }), _0x1b90bf_2.close.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x1b90bf_14();
+    }), _0x1b90bf_2.fullscreen.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x1b90bf_2.playerLayer.requestFullscreen?.()), 
+    document.addEventListener("\x76\x69\x73\x69\x62\x69\x6c\x69\x74\x79\x63\x68\x61\x6e\x67\x65", () => {
+      document.hidden || _0x1b90bf_13();
+    }), addEventListener("\x6f\x6e\x6c\x69\x6e\x65", () => {
+      _0x1b90bf_13();
+    }), addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x1b90bf_0 => {
+      _0x1b90bf_0.origin === location.origin && _0x1b90bf_0.source === _0x1b90bf_2.player.contentWindow && "\x6e\x79\x78\x3a\x63\x6c\x6f\x75\x64\x2d\x70\x6c\x61\x79\x65\x72\x2d\x65\x72\x72\x6f\x72" === _0x1b90bf_0.data?.type && (_0x1b90bf_4(_0x1b90bf_7(_0x1b90bf_0.data.message, "\x54\x68\x65\x20\x63\x6c\x6f\x75\x64\x20\x73\x74\x72\x65\x61\x6d\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x70\x6c\x61\x79\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e"), "\x65\x72\x72\x6f\x72"), 
+      _0x1b90bf_14(!1));
+    }), document.querySelector("\x5b\x64\x61\x74\x61\x2d\x68\x6f\x6d\x65\x5d").addEventListener("\x63\x6c\x69\x63\x6b", _0x1b90bf_0 => {
+      window.parent !== window && (_0x1b90bf_0.preventDefault(), window.parent.postMessage({
+        type: "\x6e\x79\x78\x3a\x67\x6f\x2d\x68\x6f\x6d\x65"
       }, location.origin));
     });
     try {
-      const a = await c(`${e}/status`, {}, !1);
-      if (!0 === a.maintenance) return t.configured = !1, o("Stratus unavailable", "error"), 
-      r("Stratus is currently unavailable. Luna is available above.", "error"), n.network.disabled = !0, 
-      n.search.disabled = !0, void (n.tag.disabled = !0);
-      if (!p()) return void o("Streaming unavailable", "error");
-      if (t.configured = !0 === a.configured, o(t.configured ? "Stratus ready" : "Setup required", t.configured ? "ready" : "error"), 
-      t.configured || r(a.setupMessage || "Cloud Gaming needs a configured provider account. Ask the owner to finish setup.", "error"), 
-      !await i()) throw new Error("Sign in to view and launch Cloud Gaming titles.");
-      const s = await c(`${e}/catalog`);
-      t.games = Array.isArray(s.games) ? s.games : [], function() {
-        const e = [ ...new Set(t.games.flatMap(e => e.tags || [])) ].sort((e, t) => e.localeCompare(t));
-        n.tag.replaceChildren(new Option("All categories", ""), ...e.map(e => new Option(e, e)));
-      }(), u(), t.configured && r(`${t.games.length} games available.`, "ready"), await async function() {
-        const a = await c(`${e}/session`);
-        if (a.session) if (t.session = a.session, "active" === t.session.state && t.session.embedUrl) w(); else if ("queued" === t.session.state) {
-          t.launching = !0, n.launchLayer.hidden = !1, m(!0), n.launchTitle.textContent = t.session.gameName || "Cloud game";
+      const _0x1b90bf_3 = await _0x1b90bf_8(`${_0x1b90bf_0}\x2f\x73\x74\x61\x74\x75\x73`, {}, !1);
+      if (!0 === _0x1b90bf_3.maintenance) return _0x1b90bf_1.configured = !1, _0x1b90bf_5("\x53\x74\x72\x61\x74\x75\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", "\x65\x72\x72\x6f\x72"), 
+      _0x1b90bf_4("\x53\x74\x72\x61\x74\x75\x73\x20\x69\x73\x20\x63\x75\x72\x72\x65\x6e\x74\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x4c\x75\x6e\x61\x20\x69\x73\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x61\x62\x6f\x76\x65\x2e", "\x65\x72\x72\x6f\x72"), 
+      _0x1b90bf_2.network.disabled = !0, _0x1b90bf_2.search.disabled = !0, void (_0x1b90bf_2.tag.disabled = !0);
+      if (!_0x1b90bf_10()) return void _0x1b90bf_5("\x53\x74\x72\x65\x61\x6d\x69\x6e\x67\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", "\x65\x72\x72\x6f\x72");
+      if (_0x1b90bf_1.configured = !0 === _0x1b90bf_3.configured, _0x1b90bf_5(_0x1b90bf_1.configured ? "\x53\x74\x72\x61\x74\x75\x73\x20\x72\x65\x61\x64\x79" : "\x53\x65\x74\x75\x70\x20\x72\x65\x71\x75\x69\x72\x65\x64", _0x1b90bf_1.configured ? "\x72\x65\x61\x64\x79" : "\x65\x72\x72\x6f\x72"), 
+      _0x1b90bf_1.configured || _0x1b90bf_4(_0x1b90bf_3.setupMessage || "\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x6e\x65\x65\x64\x73\x20\x61\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e\x20\x41\x73\x6b\x20\x74\x68\x65\x20\x6f\x77\x6e\x65\x72\x20\x74\x6f\x20\x66\x69\x6e\x69\x73\x68\x20\x73\x65\x74\x75\x70\x2e", "\x65\x72\x72\x6f\x72"), 
+      !await _0x1b90bf_6()) throw new Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x76\x69\x65\x77\x20\x61\x6e\x64\x20\x6c\x61\x75\x6e\x63\x68\x20\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x74\x69\x74\x6c\x65\x73\x2e");
+      const _0x1b90bf_7 = await _0x1b90bf_8(`${_0x1b90bf_0}\x2f\x63\x61\x74\x61\x6c\x6f\x67`);
+      _0x1b90bf_1.games = Array.isArray(_0x1b90bf_7.games) ? _0x1b90bf_7.games : [], function() {
+        const _0x1b90bf_0 = [ ...new Set(_0x1b90bf_1.games.flatMap(_0x1b90bf_0 => _0x1b90bf_0.tags || [])) ].sort((_0x1b90bf_0, _0x1b90bf_1) => _0x1b90bf_0.localeCompare(_0x1b90bf_1));
+        _0x1b90bf_2.tag.replaceChildren(new Option("\x41\x6c\x6c\x20\x63\x61\x74\x65\x67\x6f\x72\x69\x65\x73", ""), ..._0x1b90bf_0.map(_0x1b90bf_0 => new Option(_0x1b90bf_0, _0x1b90bf_0)));
+      }(), _0x1b90bf_a(), _0x1b90bf_1.configured && _0x1b90bf_4(`${_0x1b90bf_1.games.length}\x20\x67\x61\x6d\x65\x73\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e`, "\x72\x65\x61\x64\x79"), 
+      await async function() {
+        const _0x1b90bf_3 = await _0x1b90bf_8(`${_0x1b90bf_0}\x2f\x73\x65\x73\x73\x69\x6f\x6e`);
+        if (_0x1b90bf_3.session) if (_0x1b90bf_1.session = _0x1b90bf_3.session, "\x61\x63\x74\x69\x76\x65" === _0x1b90bf_1.session.state && _0x1b90bf_1.session.embedUrl) _0x1b90bf_11(); else if ("\x71\x75\x65\x75\x65\x64" === _0x1b90bf_1.session.state) {
+          _0x1b90bf_1.launching = !0, _0x1b90bf_2.launchLayer.hidden = !1, _0x1b90bf_c(!0), 
+          _0x1b90bf_2.launchTitle.textContent = _0x1b90bf_1.session.gameName || "\x43\x6c\x6f\x75\x64\x20\x67\x61\x6d\x65";
           try {
-            await y(), t.cancelled || await h();
+            await _0x1b90bf_e(), _0x1b90bf_1.cancelled || await _0x1b90bf_f();
           } finally {
-            t.launching = !1, n.launchLayer.hidden = !0, u();
+            _0x1b90bf_1.launching = !1, _0x1b90bf_2.launchLayer.hidden = !0, _0x1b90bf_a();
           }
-        } else if ("ready" === t.session.state) {
-          t.launching = !0;
+        } else if ("\x72\x65\x61\x64\x79" === _0x1b90bf_1.session.state) {
+          _0x1b90bf_1.launching = !0;
           try {
-            await h();
+            await _0x1b90bf_f();
           } finally {
-            t.launching = !1, u();
+            _0x1b90bf_1.launching = !1, _0x1b90bf_a();
           }
         }
       }();
-    } catch (a) {
-      r(a.message || "Cloud Gaming is unavailable.", "error"), t.games.length || (n.empty.hidden = !1);
+    } catch (_0x1b90bf_3) {
+      _0x1b90bf_4(_0x1b90bf_3.message || "\x43\x6c\x6f\x75\x64\x20\x47\x61\x6d\x69\x6e\x67\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e", "\x65\x72\x72\x6f\x72"), _0x1b90bf_1.games.length || (_0x1b90bf_2.empty.hidden = !1);
     }
   }
-  const C = document.querySelector("[data-luna-dialog]");
-  C?.open ? C.addEventListener("close", () => {
-    S();
+  const _0x1b90bf_16 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x75\x6e\x61\x2d\x64\x69\x61\x6c\x6f\x67\x5d");
+  _0x1b90bf_16?.open ? _0x1b90bf_16.addEventListener("\x63\x6c\x6f\x73\x65", () => {
+    _0x1b90bf_15();
   }, {
     once: !0
-  }) : S();
+  }) : _0x1b90bf_15();
 })();

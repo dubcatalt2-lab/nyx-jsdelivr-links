@@ -1,6 +1,6 @@
 (() => {
   "use strict";
-  const e = Object.freeze({
+  const _0xfb2f40_0 = Object.freeze({
     UNSTARTED: -1,
     ENDED: 0,
     PLAYING: 1,
@@ -9,98 +9,100 @@
     CUED: 5
   });
   window.NyxTubePlayerCore = Object.freeze({
-    PlayerState: e,
-    createDirectYoutubeApi: function({optimisticState: t = !0} = {}) {
+    PlayerState: _0xfb2f40_0,
+    createDirectYoutubeApi: function({optimisticState: _0xfb2f40_1 = !0} = {}) {
       return Object.freeze({
         Player: class {
-          constructor(t, i) {
-            this.config = i, this.container = document.getElementById(t), this.stage = this.container?.closest(".watch-player,.short-card") || null, 
-            this.state = e.UNSTARTED, this.currentTime = 0, this.total = Number(i.expectedDuration) || 0, 
-            this.muted = Boolean(i.playerVars?.mute), this.volume = 100, this.playbackRate = 1, 
-            this.destroyed = !1, this.handleMessage = e => this.receive(e), this.iframe = document.createElement("iframe"), 
-            this.iframe.dataset.directYoutube = "true", this.iframe.title = "YouTube video player", 
-            this.iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen", 
-            this.iframe.allowFullscreen = !0, this.iframe.referrerPolicy = "strict-origin-when-cross-origin";
-            const a = new URLSearchParams({
-              ...Object.fromEntries(Object.entries(i.playerVars || {}).map(([e, t]) => [ e, String(t) ])),
-              controls: String(i.playerVars?.controls ?? 1),
-              enablejsapi: "1",
+          constructor(_0xfb2f40_1, _0xfb2f40_2) {
+            this.config = _0xfb2f40_2, this.container = document.getElementById(_0xfb2f40_1), 
+            this.stage = this.container?.closest("\x2e\x77\x61\x74\x63\x68\x2d\x70\x6c\x61\x79\x65\x72\x2c\x2e\x73\x68\x6f\x72\x74\x2d\x63\x61\x72\x64") || null, this.state = _0xfb2f40_0.UNSTARTED, 
+            this.currentTime = 0, this.total = Number(_0xfb2f40_2.expectedDuration) || 0, this.muted = Boolean(_0xfb2f40_2.playerVars?.mute), 
+            this.volume = 100, this.playbackRate = 1, this.destroyed = !1, this.handleMessage = _0xfb2f40_0 => this.receive(_0xfb2f40_0), 
+            this.iframe = document.createElement("\x69\x66\x72\x61\x6d\x65"), this.iframe.dataset.directYoutube = "\x74\x72\x75\x65", 
+            this.iframe.title = "\x59\x6f\x75\x54\x75\x62\x65\x20\x76\x69\x64\x65\x6f\x20\x70\x6c\x61\x79\x65\x72", this.iframe.allow = "\x61\x75\x74\x6f\x70\x6c\x61\x79\x3b\x20\x65\x6e\x63\x72\x79\x70\x74\x65\x64\x2d\x6d\x65\x64\x69\x61\x3b\x20\x70\x69\x63\x74\x75\x72\x65\x2d\x69\x6e\x2d\x70\x69\x63\x74\x75\x72\x65\x3b\x20\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e", 
+            this.iframe.allowFullscreen = !0, this.iframe.referrerPolicy = "\x73\x74\x72\x69\x63\x74\x2d\x6f\x72\x69\x67\x69\x6e\x2d\x77\x68\x65\x6e\x2d\x63\x72\x6f\x73\x73\x2d\x6f\x72\x69\x67\x69\x6e";
+            const _0xfb2f40_3 = new URLSearchParams({
+              ...Object.fromEntries(Object.entries(_0xfb2f40_2.playerVars || {}).map(([_0xfb2f40_0, _0xfb2f40_1]) => [ _0xfb2f40_0, String(_0xfb2f40_1) ])),
+              controls: String(_0xfb2f40_2.playerVars?.controls ?? 1),
+              enablejsapi: "\x31",
               origin: location.origin,
               widget_referrer: location.href
             });
-            this.iframe.src = `${i.host || "https://www.youtube-nocookie.com"}/embed/${encodeURIComponent(i.videoId)}?${a}`, 
-            addEventListener("message", this.handleMessage), this.iframe.addEventListener("load", () => {
-              this.destroyed || (this.stage?.classList.add("direct-player"), this.post({
-                event: "listening",
-                id: t
-              }), this.command("addEventListener", [ "onStateChange" ]), this.command("addEventListener", [ "onError" ]), 
-              i.events?.onReady?.({
+            this.iframe.src = `${_0xfb2f40_2.host || "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x79\x6f\x75\x74\x75\x62\x65\x2d\x6e\x6f\x63\x6f\x6f\x6b\x69\x65\x2e\x63\x6f\x6d"}\x2f\x65\x6d\x62\x65\x64\x2f${encodeURIComponent(_0xfb2f40_2.videoId)}\x3f${_0xfb2f40_3}`, 
+            addEventListener("\x6d\x65\x73\x73\x61\x67\x65", this.handleMessage), this.iframe.addEventListener("\x6c\x6f\x61\x64", () => {
+              this.destroyed || (this.stage?.classList.add("\x64\x69\x72\x65\x63\x74\x2d\x70\x6c\x61\x79\x65\x72"), this.post({
+                event: "\x6c\x69\x73\x74\x65\x6e\x69\x6e\x67",
+                id: _0xfb2f40_1
+              }), this.command("\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72", [ "\x6f\x6e\x53\x74\x61\x74\x65\x43\x68\x61\x6e\x67\x65" ]), this.command("\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72", [ "\x6f\x6e\x45\x72\x72\x6f\x72" ]), 
+              _0xfb2f40_2.events?.onReady?.({
                 target: this
               }));
             }, {
               once: !0
             }), this.container?.replaceChildren(this.iframe);
           }
-          post(e) {
-            this.iframe?.contentWindow?.postMessage(JSON.stringify(e), "*");
+          post(_0xfb2f40_0) {
+            this.iframe?.contentWindow?.postMessage(JSON.stringify(_0xfb2f40_0), "\x2a");
           }
-          command(e, t = []) {
+          command(_0xfb2f40_0, _0xfb2f40_1 = []) {
             this.post({
-              event: "command",
-              func: e,
-              args: t
+              event: "\x63\x6f\x6d\x6d\x61\x6e\x64",
+              func: _0xfb2f40_0,
+              args: _0xfb2f40_1
             });
           }
-          emitState(e) {
-            Number.isFinite(e) && this.state !== e && (this.state = e, this.config.events?.onStateChange?.({
+          emitState(_0xfb2f40_0) {
+            Number.isFinite(_0xfb2f40_0) && this.state !== _0xfb2f40_0 && (this.state = _0xfb2f40_0, 
+            this.config.events?.onStateChange?.({
               target: this,
-              data: e
+              data: _0xfb2f40_0
             }));
           }
-          receive(e) {
-            if (e.source !== this.iframe?.contentWindow || !/^https:\/\/(?:www\.)?(?:youtube\.com|youtube-nocookie\.com)$/.test(e.origin)) return;
-            let t = e.data;
-            if ("string" == typeof t) try {
-              t = JSON.parse(t);
+          receive(_0xfb2f40_0) {
+            if (_0xfb2f40_0.source !== this.iframe?.contentWindow || !/^https:\/\/(?:www\.)?(?:youtube\.com|youtube-nocookie\.com)$/.test(_0xfb2f40_0.origin)) return;
+            let _0xfb2f40_1 = _0xfb2f40_0.data;
+            if ("\x73\x74\x72\x69\x6e\x67" == typeof _0xfb2f40_1) try {
+              _0xfb2f40_1 = JSON.parse(_0xfb2f40_1);
             } catch {
               return;
             }
-            t && "object" == typeof t && ("onStateChange" === t.event && this.emitState(Number(t.info)), 
-            "onError" === t.event && this.config.events?.onError?.({
+            _0xfb2f40_1 && "\x6f\x62\x6a\x65\x63\x74" == typeof _0xfb2f40_1 && ("\x6f\x6e\x53\x74\x61\x74\x65\x43\x68\x61\x6e\x67\x65" === _0xfb2f40_1.event && this.emitState(Number(_0xfb2f40_1.info)), 
+            "\x6f\x6e\x45\x72\x72\x6f\x72" === _0xfb2f40_1.event && this.config.events?.onError?.({
               target: this,
-              data: t.info
-            }), "infoDelivery" === t.event && t.info && "object" == typeof t.info && (Number.isFinite(Number(t.info.currentTime)) && (this.currentTime = Number(t.info.currentTime)), 
-            Number.isFinite(Number(t.info.duration)) && Number(t.info.duration) > 0 && (this.total = Number(t.info.duration)), 
-            Number.isFinite(Number(t.info.playerState)) && this.emitState(Number(t.info.playerState)), 
-            "boolean" == typeof t.info.muted && (this.muted = t.info.muted), Number.isFinite(Number(t.info.volume)) && (this.volume = Number(t.info.volume)), 
-            Number.isFinite(Number(t.info.playbackRate)) && Number(t.info.playbackRate) > 0 && (this.playbackRate = Number(t.info.playbackRate))));
+              data: _0xfb2f40_1.info
+            }), "\x69\x6e\x66\x6f\x44\x65\x6c\x69\x76\x65\x72\x79" === _0xfb2f40_1.event && _0xfb2f40_1.info && "\x6f\x62\x6a\x65\x63\x74" == typeof _0xfb2f40_1.info && (Number.isFinite(Number(_0xfb2f40_1.info.currentTime)) && (this.currentTime = Number(_0xfb2f40_1.info.currentTime)), 
+            Number.isFinite(Number(_0xfb2f40_1.info.duration)) && Number(_0xfb2f40_1.info.duration) > 0 && (this.total = Number(_0xfb2f40_1.info.duration)), 
+            Number.isFinite(Number(_0xfb2f40_1.info.playerState)) && this.emitState(Number(_0xfb2f40_1.info.playerState)), 
+            "\x62\x6f\x6f\x6c\x65\x61\x6e" == typeof _0xfb2f40_1.info.muted && (this.muted = _0xfb2f40_1.info.muted), 
+            Number.isFinite(Number(_0xfb2f40_1.info.volume)) && (this.volume = Number(_0xfb2f40_1.info.volume)), 
+            Number.isFinite(Number(_0xfb2f40_1.info.playbackRate)) && Number(_0xfb2f40_1.info.playbackRate) > 0 && (this.playbackRate = Number(_0xfb2f40_1.info.playbackRate))));
           }
           playVideo() {
-            this.command("playVideo"), t && this.emitState(e.PLAYING);
+            this.command("\x70\x6c\x61\x79\x56\x69\x64\x65\x6f"), _0xfb2f40_1 && this.emitState(_0xfb2f40_0.PLAYING);
           }
           pauseVideo() {
-            this.command("pauseVideo"), t && this.emitState(e.PAUSED);
+            this.command("\x70\x61\x75\x73\x65\x56\x69\x64\x65\x6f"), _0xfb2f40_1 && this.emitState(_0xfb2f40_0.PAUSED);
           }
           stopVideo() {
-            this.command("stopVideo"), t && this.emitState(e.PAUSED);
+            this.command("\x73\x74\x6f\x70\x56\x69\x64\x65\x6f"), _0xfb2f40_1 && this.emitState(_0xfb2f40_0.PAUSED);
           }
-          loadVideoById(t) {
-            this.currentTime = 0, this.total = 0, this.state = e.UNSTARTED, this.command("loadVideoById", [ String(t || "") ]);
+          loadVideoById(_0xfb2f40_1) {
+            this.currentTime = 0, this.total = 0, this.state = _0xfb2f40_0.UNSTARTED, this.command("\x6c\x6f\x61\x64\x56\x69\x64\x65\x6f\x42\x79\x49\x64", [ String(_0xfb2f40_1 || "") ]);
           }
-          seekTo(e) {
-            this.currentTime = Math.max(0, Number(e) || 0), this.command("seekTo", [ this.currentTime, !0 ]);
+          seekTo(_0xfb2f40_0) {
+            this.currentTime = Math.max(0, Number(_0xfb2f40_0) || 0), this.command("\x73\x65\x65\x6b\x54\x6f", [ this.currentTime, !0 ]);
           }
           mute() {
-            this.muted = !0, this.command("mute");
+            this.muted = !0, this.command("\x6d\x75\x74\x65");
           }
           unMute() {
-            this.muted = !1, this.command("unMute");
+            this.muted = !1, this.command("\x75\x6e\x4d\x75\x74\x65");
           }
           isMuted() {
             return this.muted;
           }
-          setVolume(e) {
-            this.volume = Math.max(0, Math.min(100, Number(e) || 0)), this.command("setVolume", [ this.volume ]);
+          setVolume(_0xfb2f40_0) {
+            this.volume = Math.max(0, Math.min(100, Number(_0xfb2f40_0) || 0)), this.command("\x73\x65\x74\x56\x6f\x6c\x75\x6d\x65", [ this.volume ]);
           }
           getVolume() {
             return this.volume;
@@ -120,21 +122,21 @@
           getPlaybackRate() {
             return this.playbackRate;
           }
-          setPlaybackRate(e) {
-            this.playbackRate = Math.max(.25, Math.min(2, Number(e) || 1)), this.command("setPlaybackRate", [ this.playbackRate ]);
+          setPlaybackRate(_0xfb2f40_0) {
+            this.playbackRate = Math.max(.25, Math.min(2, Number(_0xfb2f40_0) || 1)), this.command("\x73\x65\x74\x50\x6c\x61\x79\x62\x61\x63\x6b\x52\x61\x74\x65", [ this.playbackRate ]);
           }
-          loadModule(e) {
-            this.command("loadModule", [ e ]);
+          loadModule(_0xfb2f40_0) {
+            this.command("\x6c\x6f\x61\x64\x4d\x6f\x64\x75\x6c\x65", [ _0xfb2f40_0 ]);
           }
-          unloadModule(e) {
-            this.command("unloadModule", [ e ]);
+          unloadModule(_0xfb2f40_0) {
+            this.command("\x75\x6e\x6c\x6f\x61\x64\x4d\x6f\x64\x75\x6c\x65", [ _0xfb2f40_0 ]);
           }
           destroy() {
-            this.destroyed = !0, removeEventListener("message", this.handleMessage), this.stage?.classList.remove("direct-player"), 
+            this.destroyed = !0, removeEventListener("\x6d\x65\x73\x73\x61\x67\x65", this.handleMessage), this.stage?.classList.remove("\x64\x69\x72\x65\x63\x74\x2d\x70\x6c\x61\x79\x65\x72"), 
             this.iframe?.remove();
           }
         },
-        PlayerState: e
+        PlayerState: _0xfb2f40_0
       });
     }
   });

@@ -34,53 +34,53 @@ html {
   <body>
     <div id="unity-container"></div>
     <div id="progress" role="status">Loading Gladihoppers…</div>
-    <script>const progress = document.getElementById("progress");
+    <script>const progress = document.getElementById("\x70\x72\x6f\x67\x72\x65\x73\x73");
 
 document.xURL = document.URL, window.config = {
   cachedDecompressedFileSizes: {
-    "Gladihoppers.data.unityweb": 17409938,
-    "Gladihoppers.wasm.code.unityweb": 6410659,
-    "Gladihoppers.wasm.framework.unityweb": 91463
+    "\x47\x6c\x61\x64\x69\x68\x6f\x70\x70\x65\x72\x73\x2e\x64\x61\x74\x61\x2e\x75\x6e\x69\x74\x79\x77\x65\x62": 17409938,
+    "\x47\x6c\x61\x64\x69\x68\x6f\x70\x70\x65\x72\x73\x2e\x77\x61\x73\x6d\x2e\x63\x6f\x64\x65\x2e\x75\x6e\x69\x74\x79\x77\x65\x62": 6410659,
+    "\x47\x6c\x61\x64\x69\x68\x6f\x70\x70\x65\x72\x73\x2e\x77\x61\x73\x6d\x2e\x66\x72\x61\x6d\x65\x77\x6f\x72\x6b\x2e\x75\x6e\x69\x74\x79\x77\x65\x62": 91463
   }
-}, window.initPokiBridge = function(e) {
-  const send = (t, o) => window.unityGame.SendMessage(e, t, o);
-  window.commercialBreak = () => Promise.resolve().then(() => send("commercialBreakCompleted")), 
-  window.rewardedBreak = () => Promise.resolve().then(() => send("rewardedBreakCompleted", "false")), 
-  queueMicrotask(() => send("ready"));
+}, window.initPokiBridge = function(_0xbf43d8_0) {
+  const send = (_0xbf43d8_1, _0xbf43d8_2) => window.unityGame.SendMessage(_0xbf43d8_0, _0xbf43d8_1, _0xbf43d8_2);
+  window.commercialBreak = () => Promise.resolve().then(() => send("\x63\x6f\x6d\x6d\x65\x72\x63\x69\x61\x6c\x42\x72\x65\x61\x6b\x43\x6f\x6d\x70\x6c\x65\x74\x65\x64")), 
+  window.rewardedBreak = () => Promise.resolve().then(() => send("\x72\x65\x77\x61\x72\x64\x65\x64\x42\x72\x65\x61\x6b\x43\x6f\x6d\x70\x6c\x65\x74\x65\x64", "\x66\x61\x6c\x73\x65")), 
+  queueMicrotask(() => send("\x72\x65\x61\x64\x79"));
 };
 
 const updateProgress = UnityLoader.Progress.update;
 
-UnityLoader.Progress.update = function(e, t, o) {
-  if (o && !o.lengthComputable && o.target) {
-    const e = new URL(o.target.responseURL, document.baseURI), t = e.searchParams.get("url") || e.href;
-    t.includes("/Build/") && (o = {
-      type: o.type,
+UnityLoader.Progress.update = function(_0xbf43d8_0, _0xbf43d8_1, _0xbf43d8_2) {
+  if (_0xbf43d8_2 && !_0xbf43d8_2.lengthComputable && _0xbf43d8_2.target) {
+    const _0xbf43d8_0 = new URL(_0xbf43d8_2.target.responseURL, document.baseURI), _0xbf43d8_1 = _0xbf43d8_0.searchParams.get("\x75\x72\x6c") || _0xbf43d8_0.href;
+    _0xbf43d8_1.includes("\x2f\x42\x75\x69\x6c\x64\x2f") && (_0xbf43d8_2 = {
+      type: _0xbf43d8_2.type,
       lengthComputable: !1,
-      loaded: o.loaded,
-      total: o.total,
+      loaded: _0xbf43d8_2.loaded,
+      total: _0xbf43d8_2.total,
       target: {
-        responseURL: t
+        responseURL: _0xbf43d8_1
       }
     });
   }
-  return updateProgress.call(this, e, t, o);
+  return updateProgress.call(this, _0xbf43d8_0, _0xbf43d8_1, _0xbf43d8_2);
 };
 
 try {
-  window.unityGame = window.gameInstance = UnityLoader.instantiate("unity-container", "https://cdn.jsdelivr.net/gh/Toaster68/gh@bd6bd0189e8f6579756fbc78ef89241c28e0101b/Build/Gladihoppers.json", {
-    onProgress(e, t) {
-      progress.textContent = `Loading Gladihoppers\u2026 ${Math.round(100 * t)}%`, 1 === t && (progress.hidden = !0, 
-      parent.postMessage({
-        type: "gn-math:ready"
-      }, "*"));
+  window.unityGame = window.gameInstance = UnityLoader.instantiate("\x75\x6e\x69\x74\x79\x2d\x63\x6f\x6e\x74\x61\x69\x6e\x65\x72", "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x63\x64\x6e\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74\x2f\x67\x68\x2f\x54\x6f\x61\x73\x74\x65\x72\x36\x38\x2f\x67\x68\x40\x62\x64\x36\x62\x64\x30\x31\x38\x39\x65\x38\x66\x36\x35\x37\x39\x37\x35\x36\x66\x62\x63\x37\x38\x65\x66\x38\x39\x32\x34\x31\x63\x32\x38\x65\x30\x31\x30\x31\x62\x2f\x42\x75\x69\x6c\x64\x2f\x47\x6c\x61\x64\x69\x68\x6f\x70\x70\x65\x72\x73\x2e\x6a\x73\x6f\x6e", {
+    onProgress(_0xbf43d8_0, _0xbf43d8_1) {
+      progress.textContent = `\x4c\x6f\x61\x64\x69\x6e\x67\x20\x47\x6c\x61\x64\x69\x68\x6f\x70\x70\x65\x72\x73\u2026\x20${Math.round(100 * _0xbf43d8_1)}\x25`, 
+      1 === _0xbf43d8_1 && (progress.hidden = !0, parent.postMessage({
+        type: "\x67\x6e\x2d\x6d\x61\x74\x68\x3a\x72\x65\x61\x64\x79"
+      }, "\x2a"));
     }
   });
-} catch (e) {
-  progress.textContent = "Gladihoppers could not start. Reload to try again.", parent.postMessage({
-    type: "gn-math:error",
+} catch (_0xbf43d8_0) {
+  progress.textContent = "\x47\x6c\x61\x64\x69\x68\x6f\x70\x70\x65\x72\x73\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x74\x61\x72\x74\x2e\x20\x52\x65\x6c\x6f\x61\x64\x20\x74\x6f\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e", parent.postMessage({
+    type: "\x67\x6e\x2d\x6d\x61\x74\x68\x3a\x65\x72\x72\x6f\x72",
     message: progress.textContent
-  }, "*");
+  }, "\x2a");
 }</script>
   </body>
 

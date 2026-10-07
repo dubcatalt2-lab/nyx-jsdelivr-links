@@ -1,110 +1,118 @@
 (async () => {
-  await async function I(g) {
+  await async function _0xe95f62_0(_0xe95f62_1) {
     if (!globalThis.indexedDB?.databases) return;
-    const C = async () => {
-      const I = await indexedDB.databases();
-      for (const [C, A] of Object.entries(g)) {
-        if (!I.some(I => I.name === C) || I.some(I => I.name === A)) continue;
-        const g = (I, g, C) => new Promise((A, G) => {
-          const i = g ? indexedDB.open(I, g) : indexedDB.open(I);
-          i.onerror = () => G(i.error);
-          i.onblocked = () => G(Error("Close other site tabs and reload to update saved browser data."));
-          i.onupgradeneeded = () => C?.(i.result);
-          i.onsuccess = () => A(i.result);
-        });
-        const G = await g(C);
-        const i = [...G.objectStoreNames];
-        let b;
+    const _0xe95f62_2 = async () => {
+      const _0xe95f62_0 = await indexedDB.databases();
+      for (const [_0xe95f62_2, _0xe95f62_3] of Object.entries(_0xe95f62_1)) {
+        if (!_0xe95f62_0.some(_0xe95f62_0 => _0xe95f62_0.name === _0xe95f62_2) || _0xe95f62_0.some(
+            _0xe95f62_0 => _0xe95f62_0.name === _0xe95f62_3)) continue;
+        const _0xe95f62_1 = (_0xe95f62_0, _0xe95f62_1, _0xe95f62_2) => new Promise((_0xe95f62_3,
+          _0xe95f62_4) => {
+            const _0xe95f62_5 = _0xe95f62_1 ? indexedDB.open(_0xe95f62_0, _0xe95f62_1) : indexedDB.open(
+              _0xe95f62_0);
+            _0xe95f62_5.onerror = () => _0xe95f62_4(_0xe95f62_5.error);
+            _0xe95f62_5.onblocked = () => _0xe95f62_4(Error(
+              "\x43\x6c\x6f\x73\x65\x20\x6f\x74\x68\x65\x72\x20\x73\x69\x74\x65\x20\x74\x61\x62\x73\x20\x61\x6e\x64\x20\x72\x65\x6c\x6f\x61\x64\x20\x74\x6f\x20\x75\x70\x64\x61\x74\x65\x20\x73\x61\x76\x65\x64\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x64\x61\x74\x61\x2e"));
+            _0xe95f62_5.onupgradeneeded = () => _0xe95f62_2?.(_0xe95f62_5.result);
+            _0xe95f62_5.onsuccess = () => _0xe95f62_3(_0xe95f62_5.result);
+          });
+        const _0xe95f62_4 = await _0xe95f62_1(_0xe95f62_2);
+        const _0xe95f62_5 = [..._0xe95f62_4.objectStoreNames];
+        let _0xe95f62_6;
         try {
-          b = await new Promise((I, g) => {
-            if (!i.length) return I([]);
-            const C = G.transaction(i, "readonly"),
-              A = [];
-            for (const I of i) {
-              const g = C.objectStore(I),
-                G = {
-                  name: I,
-                  keyPath: g.keyPath,
-                  autoIncrement: g.autoIncrement,
-                  indexes: [...g.indexNames].map(I => {
-                    const C = g.index(I);
+          _0xe95f62_6 = await new Promise((_0xe95f62_0, _0xe95f62_1) => {
+            if (!_0xe95f62_5.length) return _0xe95f62_0([]);
+            const _0xe95f62_2 = _0xe95f62_4.transaction(_0xe95f62_5, "\x72\x65\x61\x64\x6f\x6e\x6c\x79"),
+              _0xe95f62_3 = [];
+            for (const _0xe95f62_0 of _0xe95f62_5) {
+              const _0xe95f62_1 = _0xe95f62_2.objectStore(_0xe95f62_0),
+                _0xe95f62_4 = {
+                  name: _0xe95f62_0,
+                  keyPath: _0xe95f62_1.keyPath,
+                  autoIncrement: _0xe95f62_1.autoIncrement,
+                  indexes: [..._0xe95f62_1.indexNames].map(_0xe95f62_0 => {
+                    const _0xe95f62_2 = _0xe95f62_1.index(_0xe95f62_0);
                     return {
-                      name: I,
-                      keyPath: C.keyPath,
-                      unique: C.unique,
-                      multiEntry: C.multiEntry
+                      name: _0xe95f62_0,
+                      keyPath: _0xe95f62_2.keyPath,
+                      unique: _0xe95f62_2.unique,
+                      multiEntry: _0xe95f62_2.multiEntry
                     };
                   }),
                   rows: []
                 };
-              A.push(G);
-              const i = g.openCursor();
-              i.onsuccess = () => {
-                const I = i.result;
-                if (I) {
-                  G.rows.push({
-                    key: I.primaryKey,
-                    value: I.value
+              _0xe95f62_3.push(_0xe95f62_4);
+              const _0xe95f62_5 = _0xe95f62_1.openCursor();
+              _0xe95f62_5.onsuccess = () => {
+                const _0xe95f62_0 = _0xe95f62_5.result;
+                if (_0xe95f62_0) {
+                  _0xe95f62_4.rows.push({
+                    key: _0xe95f62_0.primaryKey,
+                    value: _0xe95f62_0.value
                   });
-                  I.continue();
+                  _0xe95f62_0.continue();
                 }
               };
             }
-            C.oncomplete = () => I(A);
-            C.onerror = () => g(C.error);
-            C.onabort = () => g(C.error || Error("Storage copy interrupted."));
+            _0xe95f62_2.oncomplete = () => _0xe95f62_0(_0xe95f62_3);
+            _0xe95f62_2.onerror = () => _0xe95f62_1(_0xe95f62_2.error);
+            _0xe95f62_2.onabort = () => _0xe95f62_1(_0xe95f62_2.error || Error(
+              "\x53\x74\x6f\x72\x61\x67\x65\x20\x63\x6f\x70\x79\x20\x69\x6e\x74\x65\x72\x72\x75\x70\x74\x65\x64\x2e"));
           });
         } finally {
-          G.close();
+          _0xe95f62_4.close();
         }
-        const c = await g(A, G.version, I => {
-          for (const g of b) {
-            const C = I.createObjectStore(g.name, {
-              keyPath: g.keyPath,
-              autoIncrement: g.autoIncrement
+        const _0xe95f62_7 = await _0xe95f62_1(_0xe95f62_3, _0xe95f62_4.version, _0xe95f62_0 => {
+          for (const _0xe95f62_1 of _0xe95f62_6) {
+            const _0xe95f62_2 = _0xe95f62_0.createObjectStore(_0xe95f62_1.name, {
+              keyPath: _0xe95f62_1.keyPath,
+              autoIncrement: _0xe95f62_1.autoIncrement
             });
-            for (const I of g.indexes) C.createIndex(I.name, I.keyPath, {
-              unique: I.unique,
-              multiEntry: I.multiEntry
-            });
+            for (const _0xe95f62_0 of _0xe95f62_1.indexes) _0xe95f62_2.createIndex(_0xe95f62_0.name,
+              _0xe95f62_0.keyPath, {
+                unique: _0xe95f62_0.unique,
+                multiEntry: _0xe95f62_0.multiEntry
+              });
           }
         });
         try {
-          await new Promise((I, g) => {
-            if (!i.length) return I();
-            const C = c.transaction(i, "readwrite");
-            for (const I of b) {
-              const g = C.objectStore(I.name);
-              for (const C of I.rows) I.keyPath === null ? g.put(C.value, C.key) : g.put(C.value);
+          await new Promise((_0xe95f62_0, _0xe95f62_1) => {
+            if (!_0xe95f62_5.length) return _0xe95f62_0();
+            const _0xe95f62_2 = _0xe95f62_7.transaction(_0xe95f62_5, "\x72\x65\x61\x64\x77\x72\x69\x74\x65");
+            for (const _0xe95f62_0 of _0xe95f62_6) {
+              const _0xe95f62_1 = _0xe95f62_2.objectStore(_0xe95f62_0.name);
+              for (const _0xe95f62_2 of _0xe95f62_0.rows) _0xe95f62_0.keyPath === null ? _0xe95f62_1.put(
+                _0xe95f62_2.value, _0xe95f62_2.key) : _0xe95f62_1.put(_0xe95f62_2.value);
             }
-            C.oncomplete = I;
-            C.onerror = () => g(C.error);
-            C.onabort = () => g(C.error || Error("Storage copy interrupted."));
+            _0xe95f62_2.oncomplete = _0xe95f62_0;
+            _0xe95f62_2.onerror = () => _0xe95f62_1(_0xe95f62_2.error);
+            _0xe95f62_2.onabort = () => _0xe95f62_1(_0xe95f62_2.error || Error(
+              "\x53\x74\x6f\x72\x61\x67\x65\x20\x63\x6f\x70\x79\x20\x69\x6e\x74\x65\x72\x72\x75\x70\x74\x65\x64\x2e"));
           });
-        } catch (I) {
-          c.close();
-          await new Promise(I => {
-            const g = indexedDB.deleteDatabase(A);
-            g.onsuccess = g.onerror = g.onblocked = I;
+        } catch (_0xe95f62_0) {
+          _0xe95f62_7.close();
+          await new Promise(_0xe95f62_0 => {
+            const _0xe95f62_1 = indexedDB.deleteDatabase(_0xe95f62_3);
+            _0xe95f62_1.onsuccess = _0xe95f62_1.onerror = _0xe95f62_1.onblocked = _0xe95f62_0;
           });
-          throw I;
+          throw _0xe95f62_0;
         } finally {
-          c.close();
+          _0xe95f62_7.close();
         }
       }
     };
-    if (navigator.locks) await navigator.locks.request("saved-data-update", C);
-    else await C();
+    if (navigator.locks) await navigator.locks.request("\x73\x61\x76\x65\x64\x2d\x64\x61\x74\x61\x2d\x75\x70\x64\x61\x74\x65", _0xe95f62_2);
+    else await _0xe95f62_2();
   }(JSON.parse(atob(
-    "eyIkc2NyYW1qZXQiOiJAZDdhNjQzMWI5MmUiLCJfX3NjcmFtamV0X2NvbnRyb2xsZXIiOiJAZDk0MWJjNjVhZjMifQ==")));
-  const I = (new TextDecoder).decode(Uint8Array.from(atob([
+    "\x65\x79\x49\x6b\x63\x32\x4e\x79\x59\x57\x31\x71\x5a\x58\x51\x69\x4f\x69\x4a\x41\x5a\x44\x64\x68\x4e\x6a\x51\x7a\x4d\x57\x49\x35\x4d\x6d\x55\x69\x4c\x43\x4a\x66\x58\x33\x4e\x6a\x63\x6d\x46\x74\x61\x6d\x56\x30\x58\x32\x4e\x76\x62\x6e\x52\x79\x62\x32\x78\x73\x5a\x58\x49\x69\x4f\x69\x4a\x41\x5a\x44\x6b\x30\x4d\x57\x4a\x6a\x4e\x6a\x56\x68\x5a\x6a\x4d\x69\x66\x51\x3d\x3d")));
+  const _0xe95f62_0 = (new TextDecoder).decode(Uint8Array.from(atob([
     "PCFkb2N0eXBlIGh0bWw+CjxodG1sIGxhbmc9ImVuIiBjbGFzcz0ic3RhcnR1cC1jb3ZlcmVkIj4KCiAgPGhlYWQ+CiAgICA8bWV0YSBjaGFyc2V0",
     "PSJ1dGYtOCI+CiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLGluaXRpYWwtc2NhbGU9MSI+CiAg",
     "ICA8bWV0YSBuYW1lPSJyZWZlcnJlciIgY29udGVudD0ibm8tcmVmZXJyZXIiPgogICAgPHRpdGxlPlN0dWR5UmVhZHk8L3RpdGxlPgogICAgPGxp",
     "bmsgcmVsPSJpY29uIiBocmVmPSIvYXBwcy9kcm9wL2xvZ28uc3ZnIiB0eXBlPSJpbWFnZS9zdmcreG1sIj4KICAgIDxsaW5rIHJlbD0ic3R5bGVz",
-    "aGVldCIgaHJlZj0iL2Nzcy9vd25lci1kYXNoYm9hcmQuY3NzP3Jldj1hNDBhZmM5MWVjN2MxOTk5Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVl",
-    "dCIgaHJlZj0iL2Nzcy9vd25lci1kYXNoYm9hcmQtcG9saXNoLmNzcz9yZXY9YTQwYWZjOTFlYzdjMTk5OSI+CiAgICA8bGluayByZWw9InN0eWxl",
-    "c2hlZXQiIGhyZWY9Ii9hcHBzL2Ryb3Avc3R5bGUuY3NzP3Jldj1hNDBhZmM5MWVjN2MxOTk5Ij4KICAgIDxzY3JpcHQgc3JjPSIvcnVudGltZS1j",
+    "aGVldCIgaHJlZj0iL2Nzcy9vd25lci1kYXNoYm9hcmQuY3NzP3Jldj05YWUzMTEzYTA0NmIzYTU3Ij4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVl",
+    "dCIgaHJlZj0iL2Nzcy9vd25lci1kYXNoYm9hcmQtcG9saXNoLmNzcz9yZXY9OWFlMzExM2EwNDZiM2E1NyI+CiAgICA8bGluayByZWw9InN0eWxl",
+    "c2hlZXQiIGhyZWY9Ii9hcHBzL2Ryb3Avc3R5bGUuY3NzP3Jldj05YWUzMTEzYTA0NmIzYTU3Ij4KICAgIDxzY3JpcHQgc3JjPSIvcnVudGltZS1j",
     "b25maWcuanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCB0eXBlPSJtb2R1bGUiIHNyYz0iL2FwcHMvZHJvcC9AcjZlY2QwMTU2MWYyNTM1MzljY2Zj",
     "ZWUzNSEuanMiPjwvc2NyaXB0PgogICAgPHN0eWxlPmh0bWwuc3RhcnR1cC1jb3ZlcmVkIHsKICBvdmVyZmxvdzogaGlkZGVuOwogIGJhY2tncm91",
     "bmQ6ICNmNWY3ZmEKfQpodG1sLnN0YXJ0dXAtY292ZXJlZCBib2R5ID4gOm5vdCgjc3R1ZHlyZWFkeS1zdGFydHVwKTpub3Qoc2NyaXB0KSB7CiAg",
@@ -228,13 +236,13 @@
     "Ij5TaWduIGluPC9idXR0b24+PGJ1dHRvbiBpZD0iY3JlYXRlQWNjb3VudCIgY2xhc3M9InNldHRpbmciPiBDcmVhdGUgYSBEcm9wCiAgICAgICAg",
     "YWNjb3VudDwvYnV0dG9uPjxidXR0b24gaWQ9ImFjY291bnRLZXlzIiBjbGFzcz0ic2V0dGluZyI+QVBJIGtleXM8L2J1dHRvbj4KICAgIDwvZGlh",
     "bG9nPgogICAgPGRpdiBpZD0ibm90aWNlIiByb2xlPSJzdGF0dXMiIGhpZGRlbj48L2Rpdj4KICA8L2JvZHk+Cgo8L2h0bWw+Cgo="
-  ].join("")), I => I.charCodeAt(0)));
+  ].join("")), _0xe95f62_0 => _0xe95f62_0.charCodeAt(0)));
   document.open();
-  document.write(I);
+  document.write(_0xe95f62_0);
   document.close();
 })().catch(() => {
-  const I = document.createElement("p");
-  I.setAttribute("role", "alert");
-  I.textContent = "Saved browser data could not be updated. Close other site tabs and reload.";
-  document.body.prepend(I);
+  const _0xe95f62_0 = document.createElement("\x70");
+  _0xe95f62_0.setAttribute("\x72\x6f\x6c\x65", "\x61\x6c\x65\x72\x74");
+  _0xe95f62_0.textContent = "\x53\x61\x76\x65\x64\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x64\x61\x74\x61\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x75\x70\x64\x61\x74\x65\x64\x2e\x20\x43\x6c\x6f\x73\x65\x20\x6f\x74\x68\x65\x72\x20\x73\x69\x74\x65\x20\x74\x61\x62\x73\x20\x61\x6e\x64\x20\x72\x65\x6c\x6f\x61\x64\x2e";
+  document.body.prepend(_0xe95f62_0);
 });

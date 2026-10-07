@@ -7,7 +7,7 @@
  *
  */
 
-import TightDecoder from './tight.js';
+import TightDecoder from "./tight.js";
 
 export default class TightPNGDecoder extends TightDecoder {
     _pngRect(x, y, width, height, sock, display, depth) {

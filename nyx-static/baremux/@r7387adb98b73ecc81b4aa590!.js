@@ -1,8 +1,8 @@
-!function(_5bc9cb9138eb, _d11a62f2b8f1) {
-  "object" == typeof exports && "undefined" != typeof module ? _d11a62f2b8f1(exports) : "function" == typeof define && define.amd ? define([ "exports" ], _d11a62f2b8f1) : _d11a62f2b8f1((_5bc9cb9138eb = "undefined" != typeof globalThis ? globalThis : _5bc9cb9138eb || self).BareMux = {});
-}(this, function(_5bc9cb9138eb) {
+!function(_5995852ff2b8, _5b8d834290ae) {
+  "\x6f\x62\x6a\x65\x63\x74" == typeof exports && "\x75\x6e\x64\x65\x66\x69\x6e\x65\x64" != typeof module ? _5b8d834290ae(exports) : "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof define && define.amd ? define([ "\x65\x78\x70\x6f\x72\x74\x73" ], _5b8d834290ae) : _5b8d834290ae((_5995852ff2b8 = "\x75\x6e\x64\x65\x66\x69\x6e\x65\x64" != typeof globalThis ? globalThis : _5995852ff2b8 || self).BareMux = {});
+}(this, function(_5995852ff2b8) {
   "use strict";
-  const _d11a62f2b8f1 = globalThis.fetch, _74c283c5ed0e = globalThis.SharedWorker, _42cb97372cb8 = globalThis.localStorage, _acbd9f40a2f3 = globalThis.navigator.serviceWorker, _3110c31d8ff0 = MessagePort.prototype.postMessage, _b5e54cf546ce = {
+  const _5b8d834290ae = globalThis.fetch, _2f149434b242 = globalThis.SharedWorker, _7cb27c4fcb51 = globalThis.localStorage, _f620f4b69795 = globalThis.navigator.serviceWorker, _c6b8f6894827 = MessagePort.prototype.postMessage, _4f199c724125 = {
     prototype: {
       send: WebSocket.prototype.send
     },
@@ -12,347 +12,347 @@
     OPEN: WebSocket.OPEN
   };
   async function c() {
-    const _5bc9cb9138eb = (await self.clients.matchAll({
-      type: "window",
+    const _5995852ff2b8 = (await self.clients.matchAll({
+      type: "\x77\x69\x6e\x64\x6f\x77",
       includeUncontrolled: !0
-    })).map(async _5bc9cb9138eb => {
-      const _d11a62f2b8f1 = await function(_5bc9cb9138eb) {
-        let _d11a62f2b8f1 = new MessageChannel;
-        return new Promise(_74c283c5ed0e => {
-          _5bc9cb9138eb.postMessage({
-            type: "getPort",
-            port: _d11a62f2b8f1.port2
-          }, [ _d11a62f2b8f1.port2 ]), _d11a62f2b8f1.port1.onmessage = _5bc9cb9138eb => {
-            _74c283c5ed0e(_5bc9cb9138eb.data);
+    })).map(async _5995852ff2b8 => {
+      const _5b8d834290ae = await function(_5995852ff2b8) {
+        let _5b8d834290ae = new MessageChannel;
+        return new Promise(_2f149434b242 => {
+          _5995852ff2b8.postMessage({
+            type: "\x67\x65\x74\x50\x6f\x72\x74",
+            port: _5b8d834290ae.port2
+          }, [ _5b8d834290ae.port2 ]), _5b8d834290ae.port1.onmessage = _5995852ff2b8 => {
+            _2f149434b242(_5995852ff2b8.data);
           };
         });
-      }(_5bc9cb9138eb);
-      return await i(_d11a62f2b8f1), _d11a62f2b8f1;
-    }), _d11a62f2b8f1 = Promise.race([ Promise.any(_5bc9cb9138eb), new Promise((_5bc9cb9138eb, _d11a62f2b8f1) => setTimeout(_d11a62f2b8f1, 1e3, new TypeError("timeout"))) ]);
+      }(_5995852ff2b8);
+      return await i(_5b8d834290ae), _5b8d834290ae;
+    }), _5b8d834290ae = Promise.race([ Promise.any(_5995852ff2b8), new Promise((_5995852ff2b8, _5b8d834290ae) => setTimeout(_5b8d834290ae, 1e3, new TypeError("\x74\x69\x6d\x65\x6f\x75\x74"))) ]);
     try {
-      return await _d11a62f2b8f1;
-    } catch (_5bc9cb9138eb) {
-      if (_5bc9cb9138eb instanceof AggregateError) throw console.error("bare-mux: failed to get a bare-mux SharedWorker MessagePort as all clients returned an invalid MessagePort."), 
-      new Error("All clients returned an invalid MessagePort.", {
-        cause: _5bc9cb9138eb
+      return await _5b8d834290ae;
+    } catch (_5995852ff2b8) {
+      if (_5995852ff2b8 instanceof AggregateError) throw console.error("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x66\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x67\x65\x74\x20\x61\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x20\x53\x68\x61\x72\x65\x64\x57\x6f\x72\x6b\x65\x72\x20\x4d\x65\x73\x73\x61\x67\x65\x50\x6f\x72\x74\x20\x61\x73\x20\x61\x6c\x6c\x20\x63\x6c\x69\x65\x6e\x74\x73\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x69\x6e\x76\x61\x6c\x69\x64\x20\x4d\x65\x73\x73\x61\x67\x65\x50\x6f\x72\x74\x2e"), 
+      new Error("\x41\x6c\x6c\x20\x63\x6c\x69\x65\x6e\x74\x73\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x69\x6e\x76\x61\x6c\x69\x64\x20\x4d\x65\x73\x73\x61\x67\x65\x50\x6f\x72\x74\x2e", {
+        cause: _5995852ff2b8
       });
-      return console.warn("bare-mux: failed to get a bare-mux SharedWorker MessagePort within 1s, retrying"), 
+      return console.warn("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x66\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x67\x65\x74\x20\x61\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x20\x53\x68\x61\x72\x65\x64\x57\x6f\x72\x6b\x65\x72\x20\x4d\x65\x73\x73\x61\x67\x65\x50\x6f\x72\x74\x20\x77\x69\x74\x68\x69\x6e\x20\x31\x73\x2c\x20\x72\x65\x74\x72\x79\x69\x6e\x67"), 
       await c();
     }
   }
-  function i(_5bc9cb9138eb) {
-    const _d11a62f2b8f1 = new MessageChannel, _74c283c5ed0e = new Promise((_5bc9cb9138eb, _74c283c5ed0e) => {
-      _d11a62f2b8f1.port1.onmessage = _d11a62f2b8f1 => {
-        "pong" === _d11a62f2b8f1.data.type && _5bc9cb9138eb();
-      }, setTimeout(_74c283c5ed0e, 1500);
+  function i(_5995852ff2b8) {
+    const _5b8d834290ae = new MessageChannel, _2f149434b242 = new Promise((_5995852ff2b8, _2f149434b242) => {
+      _5b8d834290ae.port1.onmessage = _5b8d834290ae => {
+        "\x70\x6f\x6e\x67" === _5b8d834290ae.data.type && _5995852ff2b8();
+      }, setTimeout(_2f149434b242, 1500);
     });
-    return _3110c31d8ff0.call(_5bc9cb9138eb, {
+    return _c6b8f6894827.call(_5995852ff2b8, {
       message: {
-        type: "ping"
+        type: "\x70\x69\x6e\x67"
       },
-      port: _d11a62f2b8f1.port2
-    }, [ _d11a62f2b8f1.port2 ]), _74c283c5ed0e;
+      port: _5b8d834290ae.port2
+    }, [ _5b8d834290ae.port2 ]), _2f149434b242;
   }
-  function l(_5bc9cb9138eb, _d11a62f2b8f1) {
-    const _42cb97372cb8 = new _74c283c5ed0e(_5bc9cb9138eb, "ridgewood-stem-worker");
-    return _d11a62f2b8f1 && _acbd9f40a2f3.addEventListener("message", _d11a62f2b8f1 => {
-      if ("getPort" === _d11a62f2b8f1.data.type && _d11a62f2b8f1.data.port) {
-        console.debug("bare-mux: recieved request for port from sw");
-        const _42cb97372cb8 = new _74c283c5ed0e(_5bc9cb9138eb, "ridgewood-stem-worker");
-        _3110c31d8ff0.call(_d11a62f2b8f1.data.port, _42cb97372cb8.port, [ _42cb97372cb8.port ]);
+  function l(_5995852ff2b8, _5b8d834290ae) {
+    const _7cb27c4fcb51 = new _2f149434b242(_5995852ff2b8, "\x72\x69\x64\x67\x65\x77\x6f\x6f\x64\x2d\x73\x74\x65\x6d\x2d\x77\x6f\x72\x6b\x65\x72");
+    return _5b8d834290ae && _f620f4b69795.addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _5b8d834290ae => {
+      if ("\x67\x65\x74\x50\x6f\x72\x74" === _5b8d834290ae.data.type && _5b8d834290ae.data.port) {
+        console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x72\x65\x63\x69\x65\x76\x65\x64\x20\x72\x65\x71\x75\x65\x73\x74\x20\x66\x6f\x72\x20\x70\x6f\x72\x74\x20\x66\x72\x6f\x6d\x20\x73\x77");
+        const _7cb27c4fcb51 = new _2f149434b242(_5995852ff2b8, "\x72\x69\x64\x67\x65\x77\x6f\x6f\x64\x2d\x73\x74\x65\x6d\x2d\x77\x6f\x72\x6b\x65\x72");
+        _c6b8f6894827.call(_5b8d834290ae.data.port, _7cb27c4fcb51.port, [ _7cb27c4fcb51.port ]);
       }
-    }), _42cb97372cb8.port;
+    }), _7cb27c4fcb51.port;
   }
-  let _c8c22a65ce11 = null;
+  let _12fb538101aa = null;
   function d() {
-    if (null === _c8c22a65ce11) {
-      const _5bc9cb9138eb = new MessageChannel, _d11a62f2b8f1 = new ReadableStream;
-      let _74c283c5ed0e;
+    if (null === _12fb538101aa) {
+      const _5995852ff2b8 = new MessageChannel, _5b8d834290ae = new ReadableStream;
+      let _2f149434b242;
       try {
-        _3110c31d8ff0.call(_5bc9cb9138eb.port1, _d11a62f2b8f1, [ _d11a62f2b8f1 ]), _74c283c5ed0e = !0;
-      } catch (_5bc9cb9138eb) {
-        _74c283c5ed0e = !1;
+        _c6b8f6894827.call(_5995852ff2b8.port1, _5b8d834290ae, [ _5b8d834290ae ]), _2f149434b242 = !0;
+      } catch (_5995852ff2b8) {
+        _2f149434b242 = !1;
       }
-      return _c8c22a65ce11 = _74c283c5ed0e, _74c283c5ed0e;
+      return _12fb538101aa = _2f149434b242, _2f149434b242;
     }
-    return _c8c22a65ce11;
+    return _12fb538101aa;
   }
   class p {
     channel;
     port;
     workerPath;
-    constructor(_5bc9cb9138eb) {
-      this.channel = new BroadcastChannel("bare-mux"), _5bc9cb9138eb instanceof MessagePort || _5bc9cb9138eb instanceof Promise ? this.port = _5bc9cb9138eb : this.createChannel(_5bc9cb9138eb, !0);
+    constructor(_5995852ff2b8) {
+      this.channel = new BroadcastChannel("\x62\x61\x72\x65\x2d\x6d\x75\x78"), _5995852ff2b8 instanceof MessagePort || _5995852ff2b8 instanceof Promise ? this.port = _5995852ff2b8 : this.createChannel(_5995852ff2b8, !0);
     }
-    createChannel(_5bc9cb9138eb, _d11a62f2b8f1) {
-      if (self.clients) this.port = c(), this.channel.onmessage = _5bc9cb9138eb => {
-        "refreshPort" === _5bc9cb9138eb.data.type && (this.port = c());
-      }; else if (_5bc9cb9138eb && SharedWorker) {
-        if (!_5bc9cb9138eb.startsWith("/") && !_5bc9cb9138eb.includes(":")) throw new Error("Invalid URL. Must be absolute or start at the root.");
-        this.port = l(_5bc9cb9138eb, _d11a62f2b8f1), console.debug("bare-mux: setting localStorage bare-mux-path to", _5bc9cb9138eb), 
-        _42cb97372cb8["bare-mux-path"] = _5bc9cb9138eb;
+    createChannel(_5995852ff2b8, _5b8d834290ae) {
+      if (self.clients) this.port = c(), this.channel.onmessage = _5995852ff2b8 => {
+        "\x72\x65\x66\x72\x65\x73\x68\x50\x6f\x72\x74" === _5995852ff2b8.data.type && (this.port = c());
+      }; else if (_5995852ff2b8 && SharedWorker) {
+        if (!_5995852ff2b8.startsWith("\x2f") && !_5995852ff2b8.includes("\x3a")) throw new Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x55\x52\x4c\x2e\x20\x4d\x75\x73\x74\x20\x62\x65\x20\x61\x62\x73\x6f\x6c\x75\x74\x65\x20\x6f\x72\x20\x73\x74\x61\x72\x74\x20\x61\x74\x20\x74\x68\x65\x20\x72\x6f\x6f\x74\x2e");
+        this.port = l(_5995852ff2b8, _5b8d834290ae), console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x73\x65\x74\x74\x69\x6e\x67\x20\x6c\x6f\x63\x61\x6c\x53\x74\x6f\x72\x61\x67\x65\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68\x20\x74\x6f", _5995852ff2b8), 
+        _7cb27c4fcb51["\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68"] = _5995852ff2b8;
       } else {
-        if (!SharedWorker) throw new Error("Unable to get a channel to the SharedWorker.");
+        if (!SharedWorker) throw new Error("\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x67\x65\x74\x20\x61\x20\x63\x68\x61\x6e\x6e\x65\x6c\x20\x74\x6f\x20\x74\x68\x65\x20\x53\x68\x61\x72\x65\x64\x57\x6f\x72\x6b\x65\x72\x2e");
         {
-          const _5bc9cb9138eb = _42cb97372cb8["bare-mux-path"];
-          if (console.debug("bare-mux: got localStorage bare-mux-path:", _5bc9cb9138eb), !_5bc9cb9138eb) throw new Error("Unable to get bare-mux workerPath from localStorage.");
-          this.port = l(_5bc9cb9138eb, _d11a62f2b8f1);
+          const _5995852ff2b8 = _7cb27c4fcb51["\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68"];
+          if (console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x67\x6f\x74\x20\x6c\x6f\x63\x61\x6c\x53\x74\x6f\x72\x61\x67\x65\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68\x3a", _5995852ff2b8), !_5995852ff2b8) throw new Error("\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x67\x65\x74\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x20\x77\x6f\x72\x6b\x65\x72\x50\x61\x74\x68\x20\x66\x72\x6f\x6d\x20\x6c\x6f\x63\x61\x6c\x53\x74\x6f\x72\x61\x67\x65\x2e");
+          this.port = l(_5995852ff2b8, _5b8d834290ae);
         }
       }
     }
-    async sendMessage(_5bc9cb9138eb, _d11a62f2b8f1) {
+    async sendMessage(_5995852ff2b8, _5b8d834290ae) {
       this.port instanceof Promise && (this.port = await this.port);
       try {
         await i(this.port);
       } catch {
-        return console.warn("bare-mux: Failed to get a ping response from the worker within 1.5s. Assuming port is dead."), 
-        this.createChannel(), await this.sendMessage(_5bc9cb9138eb, _d11a62f2b8f1);
+        return console.warn("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x67\x65\x74\x20\x61\x20\x70\x69\x6e\x67\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x66\x72\x6f\x6d\x20\x74\x68\x65\x20\x77\x6f\x72\x6b\x65\x72\x20\x77\x69\x74\x68\x69\x6e\x20\x31\x2e\x35\x73\x2e\x20\x41\x73\x73\x75\x6d\x69\x6e\x67\x20\x70\x6f\x72\x74\x20\x69\x73\x20\x64\x65\x61\x64\x2e"), 
+        this.createChannel(), await this.sendMessage(_5995852ff2b8, _5b8d834290ae);
       }
-      const _74c283c5ed0e = new MessageChannel, _42cb97372cb8 = [ _74c283c5ed0e.port2, ..._d11a62f2b8f1 || [] ], _acbd9f40a2f3 = new Promise((_5bc9cb9138eb, _d11a62f2b8f1) => {
-        _74c283c5ed0e.port1.onmessage = _74c283c5ed0e => {
-          const _42cb97372cb8 = _74c283c5ed0e.data;
-          "error" === _42cb97372cb8.type ? _d11a62f2b8f1(_42cb97372cb8.error) : _5bc9cb9138eb(_42cb97372cb8);
+      const _2f149434b242 = new MessageChannel, _7cb27c4fcb51 = [ _2f149434b242.port2, ..._5b8d834290ae || [] ], _f620f4b69795 = new Promise((_5995852ff2b8, _5b8d834290ae) => {
+        _2f149434b242.port1.onmessage = _2f149434b242 => {
+          const _7cb27c4fcb51 = _2f149434b242.data;
+          "\x65\x72\x72\x6f\x72" === _7cb27c4fcb51.type ? _5b8d834290ae(_7cb27c4fcb51.error) : _5995852ff2b8(_7cb27c4fcb51);
         };
       });
-      return _3110c31d8ff0.call(this.port, {
-        message: _5bc9cb9138eb,
-        port: _74c283c5ed0e.port2
-      }, _42cb97372cb8), await _acbd9f40a2f3;
+      return _c6b8f6894827.call(this.port, {
+        message: _5995852ff2b8,
+        port: _2f149434b242.port2
+      }, _7cb27c4fcb51), await _f620f4b69795;
     }
   }
   class u extends EventTarget {
     protocols;
     url;
-    readyState=_b5e54cf546ce.CONNECTING;
+    readyState=_4f199c724125.CONNECTING;
     channel;
-    constructor(_5bc9cb9138eb, _d11a62f2b8f1 = [], _74c283c5ed0e, _42cb97372cb8) {
-      super(), this.protocols = _d11a62f2b8f1, this.url = _5bc9cb9138eb.toString(), this.protocols = _d11a62f2b8f1;
-      const s = _5bc9cb9138eb => {
-        this.protocols = _5bc9cb9138eb, this.readyState = _b5e54cf546ce.OPEN;
-        const _d11a62f2b8f1 = new Event("open");
-        this.dispatchEvent(_d11a62f2b8f1);
-      }, o = async _5bc9cb9138eb => {
-        const _d11a62f2b8f1 = new MessageEvent("message", {
-          data: _5bc9cb9138eb
+    constructor(_5995852ff2b8, _5b8d834290ae = [], _2f149434b242, _7cb27c4fcb51) {
+      super(), this.protocols = _5b8d834290ae, this.url = _5995852ff2b8.toString(), this.protocols = _5b8d834290ae;
+      const s = _5995852ff2b8 => {
+        this.protocols = _5995852ff2b8, this.readyState = _4f199c724125.OPEN;
+        const _5b8d834290ae = new Event("\x6f\x70\x65\x6e");
+        this.dispatchEvent(_5b8d834290ae);
+      }, o = async _5995852ff2b8 => {
+        const _5b8d834290ae = new MessageEvent("\x6d\x65\x73\x73\x61\x67\x65", {
+          data: _5995852ff2b8
         });
-        this.dispatchEvent(_d11a62f2b8f1);
-      }, c = (_5bc9cb9138eb, _d11a62f2b8f1) => {
-        this.readyState = _b5e54cf546ce.CLOSED;
-        const _74c283c5ed0e = new CloseEvent("close", {
-          code: _5bc9cb9138eb,
-          reason: _d11a62f2b8f1
+        this.dispatchEvent(_5b8d834290ae);
+      }, c = (_5995852ff2b8, _5b8d834290ae) => {
+        this.readyState = _4f199c724125.CLOSED;
+        const _2f149434b242 = new CloseEvent("\x63\x6c\x6f\x73\x65", {
+          code: _5995852ff2b8,
+          reason: _5b8d834290ae
         });
-        this.dispatchEvent(_74c283c5ed0e);
+        this.dispatchEvent(_2f149434b242);
       }, i = () => {
-        this.readyState = _b5e54cf546ce.CLOSED;
-        const _5bc9cb9138eb = new Event("error");
-        this.dispatchEvent(_5bc9cb9138eb);
+        this.readyState = _4f199c724125.CLOSED;
+        const _5995852ff2b8 = new Event("\x65\x72\x72\x6f\x72");
+        this.dispatchEvent(_5995852ff2b8);
       };
-      this.channel = new MessageChannel, this.channel.port1.onmessage = _5bc9cb9138eb => {
-        "open" === _5bc9cb9138eb.data.type ? s(_5bc9cb9138eb.data.args[0]) : "message" === _5bc9cb9138eb.data.type ? o(_5bc9cb9138eb.data.args[0]) : "close" === _5bc9cb9138eb.data.type ? c(_5bc9cb9138eb.data.args[0], _5bc9cb9138eb.data.args[1]) : "error" === _5bc9cb9138eb.data.type && i();
-      }, _74c283c5ed0e.sendMessage({
-        type: "websocket",
+      this.channel = new MessageChannel, this.channel.port1.onmessage = _5995852ff2b8 => {
+        "\x6f\x70\x65\x6e" === _5995852ff2b8.data.type ? s(_5995852ff2b8.data.args[0]) : "\x6d\x65\x73\x73\x61\x67\x65" === _5995852ff2b8.data.type ? o(_5995852ff2b8.data.args[0]) : "\x63\x6c\x6f\x73\x65" === _5995852ff2b8.data.type ? c(_5995852ff2b8.data.args[0], _5995852ff2b8.data.args[1]) : "\x65\x72\x72\x6f\x72" === _5995852ff2b8.data.type && i();
+      }, _2f149434b242.sendMessage({
+        type: "\x77\x65\x62\x73\x6f\x63\x6b\x65\x74",
         websocket: {
-          url: _5bc9cb9138eb.toString(),
-          protocols: _d11a62f2b8f1,
-          requestHeaders: _42cb97372cb8,
+          url: _5995852ff2b8.toString(),
+          protocols: _5b8d834290ae,
+          requestHeaders: _7cb27c4fcb51,
           channel: this.channel.port2
         }
       }, [ this.channel.port2 ]);
     }
-    send(..._5bc9cb9138eb) {
-      if (this.readyState === _b5e54cf546ce.CONNECTING) throw new DOMException("Failed to execute 'send' on 'WebSocket': Still in CONNECTING state.");
-      let _d11a62f2b8f1 = _5bc9cb9138eb[0];
-      _d11a62f2b8f1.buffer && (_d11a62f2b8f1 = _d11a62f2b8f1.buffer.slice(_d11a62f2b8f1.byteOffset, _d11a62f2b8f1.byteOffset + _d11a62f2b8f1.byteLength)), 
-      _3110c31d8ff0.call(this.channel.port1, {
-        type: "data",
-        data: _d11a62f2b8f1
-      }, _d11a62f2b8f1 instanceof ArrayBuffer ? [ _d11a62f2b8f1 ] : []);
+    send(..._5995852ff2b8) {
+      if (this.readyState === _4f199c724125.CONNECTING) throw new DOMException("\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x65\x78\x65\x63\x75\x74\x65\x20\x27\x73\x65\x6e\x64\x27\x20\x6f\x6e\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x53\x74\x69\x6c\x6c\x20\x69\x6e\x20\x43\x4f\x4e\x4e\x45\x43\x54\x49\x4e\x47\x20\x73\x74\x61\x74\x65\x2e");
+      let _5b8d834290ae = _5995852ff2b8[0];
+      _5b8d834290ae.buffer && (_5b8d834290ae = _5b8d834290ae.buffer.slice(_5b8d834290ae.byteOffset, _5b8d834290ae.byteOffset + _5b8d834290ae.byteLength)), 
+      _c6b8f6894827.call(this.channel.port1, {
+        type: "\x64\x61\x74\x61",
+        data: _5b8d834290ae
+      }, _5b8d834290ae instanceof ArrayBuffer ? [ _5b8d834290ae ] : []);
     }
-    close(_5bc9cb9138eb, _d11a62f2b8f1) {
-      _3110c31d8ff0.call(this.channel.port1, {
-        type: "close",
-        closeCode: _5bc9cb9138eb,
-        closeReason: _d11a62f2b8f1
+    close(_5995852ff2b8, _5b8d834290ae) {
+      _c6b8f6894827.call(this.channel.port1, {
+        type: "\x63\x6c\x6f\x73\x65",
+        closeCode: _5995852ff2b8,
+        closeReason: _5b8d834290ae
       });
     }
   }
-  function w(_5bc9cb9138eb, _d11a62f2b8f1, _74c283c5ed0e) {
-    console.error(`error while processing '${_74c283c5ed0e}': `, _d11a62f2b8f1), _5bc9cb9138eb.postMessage({
-      type: "error",
-      error: _d11a62f2b8f1
+  function w(_5995852ff2b8, _5b8d834290ae, _2f149434b242) {
+    console.error(`\x65\x72\x72\x6f\x72\x20\x77\x68\x69\x6c\x65\x20\x70\x72\x6f\x63\x65\x73\x73\x69\x6e\x67\x20\x27${_2f149434b242}\x27\x3a\x20`, _5b8d834290ae), _5995852ff2b8.postMessage({
+      type: "\x65\x72\x72\x6f\x72",
+      error: _5b8d834290ae
     });
   }
-  function f(_5bc9cb9138eb) {
-    for (let _d11a62f2b8f1 = 0; _d11a62f2b8f1 < _5bc9cb9138eb.length; _d11a62f2b8f1++) {
-      const _74c283c5ed0e = _5bc9cb9138eb[_d11a62f2b8f1];
-      if (!"!#$%&'*+-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ^_`abcdefghijklmnopqrstuvwxyz|~".includes(_74c283c5ed0e)) return !1;
+  function f(_5995852ff2b8) {
+    for (let _5b8d834290ae = 0; _5b8d834290ae < _5995852ff2b8.length; _5b8d834290ae++) {
+      const _2f149434b242 = _5995852ff2b8[_5b8d834290ae];
+      if (!"\x21\x23\x24\x25\x26\x27\x2a\x2b\x2d\x2e\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5e\x5f\x60\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7c\x7e".includes(_2f149434b242)) return !1;
     }
     return !0;
   }
-  const _6d002fd8b73b = [ "ws:", "wss:" ], _040c56f9b594 = [ 101, 204, 205, 304 ], _46773b6d3bb8 = [ 301, 302, 303, 307, 308 ];
+  const _946d8fab26c3 = [ "\x77\x73\x3a", "\x77\x73\x73\x3a" ], _3846db1e0671 = [ 101, 204, 205, 304 ], _d954d90da060 = [ 301, 302, 303, 307, 308 ];
   class m {
     worker;
-    constructor(_5bc9cb9138eb) {
-      this.worker = new p(_5bc9cb9138eb);
+    constructor(_5995852ff2b8) {
+      this.worker = new p(_5995852ff2b8);
     }
-    createWebSocket(_5bc9cb9138eb, _d11a62f2b8f1 = [], _74c283c5ed0e, _42cb97372cb8) {
+    createWebSocket(_5995852ff2b8, _5b8d834290ae = [], _2f149434b242, _7cb27c4fcb51) {
       try {
-        _5bc9cb9138eb = new URL(_5bc9cb9138eb);
-      } catch (_d11a62f2b8f1) {
-        throw new DOMException(`Faiiled to construct 'WebSocket': The URL '${_5bc9cb9138eb}' is invalid.`);
+        _5995852ff2b8 = new URL(_5995852ff2b8);
+      } catch (_5b8d834290ae) {
+        throw new DOMException(`\x46\x61\x69\x69\x6c\x65\x64\x20\x74\x6f\x20\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x54\x68\x65\x20\x55\x52\x4c\x20\x27${_5995852ff2b8}\x27\x20\x69\x73\x20\x69\x6e\x76\x61\x6c\x69\x64\x2e`);
       }
-      if (!_6d002fd8b73b.includes(_5bc9cb9138eb.protocol)) throw new DOMException(`Failed to construct 'WebSocket': The URL's scheme must be either 'ws' or 'wss'. '${_5bc9cb9138eb.protocol}' is not allowed.`);
-      Array.isArray(_d11a62f2b8f1) || (_d11a62f2b8f1 = [ _d11a62f2b8f1 ]), _d11a62f2b8f1 = _d11a62f2b8f1.map(String);
-      for (const _5bc9cb9138eb of _d11a62f2b8f1) if (!f(_5bc9cb9138eb)) throw new DOMException(`Failed to construct 'WebSocket': The subprotocol '${_5bc9cb9138eb}' is invalid.`);
-      _42cb97372cb8 = _42cb97372cb8 || {};
-      return new u(_5bc9cb9138eb, _d11a62f2b8f1, this.worker, _42cb97372cb8);
+      if (!_946d8fab26c3.includes(_5995852ff2b8.protocol)) throw new DOMException(`\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x54\x68\x65\x20\x55\x52\x4c\x27\x73\x20\x73\x63\x68\x65\x6d\x65\x20\x6d\x75\x73\x74\x20\x62\x65\x20\x65\x69\x74\x68\x65\x72\x20\x27\x77\x73\x27\x20\x6f\x72\x20\x27\x77\x73\x73\x27\x2e\x20\x27${_5995852ff2b8.protocol}\x27\x20\x69\x73\x20\x6e\x6f\x74\x20\x61\x6c\x6c\x6f\x77\x65\x64\x2e`);
+      Array.isArray(_5b8d834290ae) || (_5b8d834290ae = [ _5b8d834290ae ]), _5b8d834290ae = _5b8d834290ae.map(String);
+      for (const _5995852ff2b8 of _5b8d834290ae) if (!f(_5995852ff2b8)) throw new DOMException(`\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x54\x68\x65\x20\x73\x75\x62\x70\x72\x6f\x74\x6f\x63\x6f\x6c\x20\x27${_5995852ff2b8}\x27\x20\x69\x73\x20\x69\x6e\x76\x61\x6c\x69\x64\x2e`);
+      _7cb27c4fcb51 = _7cb27c4fcb51 || {};
+      return new u(_5995852ff2b8, _5b8d834290ae, this.worker, _7cb27c4fcb51);
     }
-    async fetch(_5bc9cb9138eb, _74c283c5ed0e) {
-      const _42cb97372cb8 = new Request(_5bc9cb9138eb, _74c283c5ed0e), _acbd9f40a2f3 = _74c283c5ed0e?.headers || _42cb97372cb8.headers, _3110c31d8ff0 = _acbd9f40a2f3 instanceof Headers ? Object.fromEntries(_acbd9f40a2f3) : _acbd9f40a2f3, _b5e54cf546ce = _42cb97372cb8.body;
-      let _c8c22a65ce11 = new URL(_42cb97372cb8.url);
-      if (_c8c22a65ce11.protocol.startsWith("blob:")) {
-        const _5bc9cb9138eb = await _d11a62f2b8f1(_c8c22a65ce11), _74c283c5ed0e = new Response(_5bc9cb9138eb.body, _5bc9cb9138eb);
-        return _74c283c5ed0e.rawHeaders = Object.fromEntries(_5bc9cb9138eb.headers), _74c283c5ed0e.rawResponse = {
-          body: _5bc9cb9138eb.body,
-          headers: Object.fromEntries(_5bc9cb9138eb.headers),
-          status: _5bc9cb9138eb.status,
-          statusText: _5bc9cb9138eb.statusText
-        }, _74c283c5ed0e.finalURL = _c8c22a65ce11.toString(), _74c283c5ed0e;
+    async fetch(_5995852ff2b8, _2f149434b242) {
+      const _7cb27c4fcb51 = new Request(_5995852ff2b8, _2f149434b242), _f620f4b69795 = _2f149434b242?.headers || _7cb27c4fcb51.headers, _c6b8f6894827 = _f620f4b69795 instanceof Headers ? Object.fromEntries(_f620f4b69795) : _f620f4b69795, _4f199c724125 = _7cb27c4fcb51.body;
+      let _12fb538101aa = new URL(_7cb27c4fcb51.url);
+      if (_12fb538101aa.protocol.startsWith("\x62\x6c\x6f\x62\x3a")) {
+        const _5995852ff2b8 = await _5b8d834290ae(_12fb538101aa), _2f149434b242 = new Response(_5995852ff2b8.body, _5995852ff2b8);
+        return _2f149434b242.rawHeaders = Object.fromEntries(_5995852ff2b8.headers), _2f149434b242.rawResponse = {
+          body: _5995852ff2b8.body,
+          headers: Object.fromEntries(_5995852ff2b8.headers),
+          status: _5995852ff2b8.status,
+          statusText: _5995852ff2b8.statusText
+        }, _2f149434b242.finalURL = _12fb538101aa.toString(), _2f149434b242;
       }
-      for (let _5bc9cb9138eb = 0; ;_5bc9cb9138eb++) {
-        let _d11a62f2b8f1 = (await this.worker.sendMessage({
-          type: "fetch",
+      for (let _5995852ff2b8 = 0; ;_5995852ff2b8++) {
+        let _5b8d834290ae = (await this.worker.sendMessage({
+          type: "\x66\x65\x74\x63\x68",
           fetch: {
-            remote: _c8c22a65ce11.toString(),
-            method: _42cb97372cb8.method,
-            headers: _3110c31d8ff0,
-            body: _b5e54cf546ce || void 0
+            remote: _12fb538101aa.toString(),
+            method: _7cb27c4fcb51.method,
+            headers: _c6b8f6894827,
+            body: _4f199c724125 || void 0
           }
-        }, _b5e54cf546ce ? [ _b5e54cf546ce ] : [])).fetch, _acbd9f40a2f3 = new Response(_040c56f9b594.includes(_d11a62f2b8f1.status) ? void 0 : _d11a62f2b8f1.body, {
-          headers: new Headers(_d11a62f2b8f1.headers),
-          status: _d11a62f2b8f1.status,
-          statusText: _d11a62f2b8f1.statusText
+        }, _4f199c724125 ? [ _4f199c724125 ] : [])).fetch, _f620f4b69795 = new Response(_3846db1e0671.includes(_5b8d834290ae.status) ? void 0 : _5b8d834290ae.body, {
+          headers: new Headers(_5b8d834290ae.headers),
+          status: _5b8d834290ae.status,
+          statusText: _5b8d834290ae.statusText
         });
-        _acbd9f40a2f3.rawHeaders = _d11a62f2b8f1.headers, _acbd9f40a2f3.rawResponse = _d11a62f2b8f1, 
-        _acbd9f40a2f3.finalURL = _c8c22a65ce11.toString();
-        const _6d002fd8b73b = _74c283c5ed0e?.redirect || _42cb97372cb8.redirect;
-        if (!_46773b6d3bb8.includes(_acbd9f40a2f3.status)) return _acbd9f40a2f3;
-        switch (_6d002fd8b73b) {
-         case "follow":
+        _f620f4b69795.rawHeaders = _5b8d834290ae.headers, _f620f4b69795.rawResponse = _5b8d834290ae, 
+        _f620f4b69795.finalURL = _12fb538101aa.toString();
+        const _946d8fab26c3 = _2f149434b242?.redirect || _7cb27c4fcb51.redirect;
+        if (!_d954d90da060.includes(_f620f4b69795.status)) return _f620f4b69795;
+        switch (_946d8fab26c3) {
+         case "\x66\x6f\x6c\x6c\x6f\x77":
           {
-            const _d11a62f2b8f1 = _acbd9f40a2f3.headers.get("location");
-            if (20 > _5bc9cb9138eb && null !== _d11a62f2b8f1) {
-              _c8c22a65ce11 = new URL(_d11a62f2b8f1, _c8c22a65ce11);
+            const _5b8d834290ae = _f620f4b69795.headers.get("\x6c\x6f\x63\x61\x74\x69\x6f\x6e");
+            if (20 > _5995852ff2b8 && null !== _5b8d834290ae) {
+              _12fb538101aa = new URL(_5b8d834290ae, _12fb538101aa);
               continue;
             }
-            throw new TypeError("Failed to fetch");
+            throw new TypeError("\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x66\x65\x74\x63\x68");
           }
 
-         case "error":
-          throw new TypeError("Failed to fetch");
+         case "\x65\x72\x72\x6f\x72":
+          throw new TypeError("\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x66\x65\x74\x63\x68");
 
-         case "manual":
-          return _acbd9f40a2f3;
+         case "\x6d\x61\x6e\x75\x61\x6c":
+          return _f620f4b69795;
         }
       }
     }
   }
-  console.debug("bare-mux: running v2.1.9 (build dc9dc6e)"), _5bc9cb9138eb.BareClient = m, 
-  _5bc9cb9138eb.BareMuxConnection = class {
+  console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x72\x75\x6e\x6e\x69\x6e\x67\x20\x76\x32\x2e\x31\x2e\x39\x20\x28\x62\x75\x69\x6c\x64\x20\x64\x63\x39\x64\x63\x36\x65\x29"), _5995852ff2b8.BareClient = m, 
+  _5995852ff2b8.BareMuxConnection = class {
     worker;
-    constructor(_5bc9cb9138eb) {
-      this.worker = new p(_5bc9cb9138eb);
+    constructor(_5995852ff2b8) {
+      this.worker = new p(_5995852ff2b8);
     }
     async getTransport() {
       return (await this.worker.sendMessage({
-        type: "get"
+        type: "\x67\x65\x74"
       })).name;
     }
-    async setTransport(_5bc9cb9138eb, _d11a62f2b8f1, _74c283c5ed0e) {
-      await this.setManualTransport(`\n\t\t\tconst { default: BareTransport } = await import("${_5bc9cb9138eb}");\n\t\t\treturn [BareTransport, "${_5bc9cb9138eb}"];\n\t\t`, _d11a62f2b8f1, _74c283c5ed0e);
+    async setTransport(_5995852ff2b8, _5b8d834290ae, _2f149434b242) {
+      await this.setManualTransport(`\x0a\x09\x09\x09\x63\x6f\x6e\x73\x74\x20\x7b\x20\x64\x65\x66\x61\x75\x6c\x74\x3a\x20\x42\x61\x72\x65\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x20\x7d\x20\x3d\x20\x61\x77\x61\x69\x74\x20\x69\x6d\x70\x6f\x72\x74\x28\x22${_5995852ff2b8}\x22\x29\x3b\x0a\x09\x09\x09\x72\x65\x74\x75\x72\x6e\x20\x5b\x42\x61\x72\x65\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x2c\x20\x22${_5995852ff2b8}\x22\x5d\x3b\x0a\x09\x09`, _5b8d834290ae, _2f149434b242);
     }
-    async setManualTransport(_5bc9cb9138eb, _d11a62f2b8f1, _74c283c5ed0e) {
-      if ("bare-mux-remote" === _5bc9cb9138eb) throw new Error("Use setRemoteTransport.");
+    async setManualTransport(_5995852ff2b8, _5b8d834290ae, _2f149434b242) {
+      if ("\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x72\x65\x6d\x6f\x74\x65" === _5995852ff2b8) throw new Error("\x55\x73\x65\x20\x73\x65\x74\x52\x65\x6d\x6f\x74\x65\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x2e");
       await this.worker.sendMessage({
-        type: "set",
+        type: "\x73\x65\x74",
         client: {
-          function: _5bc9cb9138eb,
-          args: _d11a62f2b8f1
+          function: _5995852ff2b8,
+          args: _5b8d834290ae
         }
-      }, _74c283c5ed0e);
+      }, _2f149434b242);
     }
-    async setRemoteTransport(_5bc9cb9138eb, _d11a62f2b8f1) {
-      const _74c283c5ed0e = new MessageChannel;
-      _74c283c5ed0e.port1.onmessage = async _d11a62f2b8f1 => {
-        const _74c283c5ed0e = _d11a62f2b8f1.data.port, _42cb97372cb8 = _d11a62f2b8f1.data.message;
-        if ("fetch" === _42cb97372cb8.type) try {
-          _5bc9cb9138eb.ready || await _5bc9cb9138eb.init(), await async function(_5bc9cb9138eb, _d11a62f2b8f1, _74c283c5ed0e) {
-            const _42cb97372cb8 = await _74c283c5ed0e.request(new URL(_5bc9cb9138eb.fetch.remote), _5bc9cb9138eb.fetch.method, _5bc9cb9138eb.fetch.body, _5bc9cb9138eb.fetch.headers, null);
-            if (!d() && _42cb97372cb8.body instanceof ReadableStream) {
-              const _5bc9cb9138eb = new Response(_42cb97372cb8.body);
-              _42cb97372cb8.body = await _5bc9cb9138eb.arrayBuffer();
+    async setRemoteTransport(_5995852ff2b8, _5b8d834290ae) {
+      const _2f149434b242 = new MessageChannel;
+      _2f149434b242.port1.onmessage = async _5b8d834290ae => {
+        const _2f149434b242 = _5b8d834290ae.data.port, _7cb27c4fcb51 = _5b8d834290ae.data.message;
+        if ("\x66\x65\x74\x63\x68" === _7cb27c4fcb51.type) try {
+          _5995852ff2b8.ready || await _5995852ff2b8.init(), await async function(_5995852ff2b8, _5b8d834290ae, _2f149434b242) {
+            const _7cb27c4fcb51 = await _2f149434b242.request(new URL(_5995852ff2b8.fetch.remote), _5995852ff2b8.fetch.method, _5995852ff2b8.fetch.body, _5995852ff2b8.fetch.headers, null);
+            if (!d() && _7cb27c4fcb51.body instanceof ReadableStream) {
+              const _5995852ff2b8 = new Response(_7cb27c4fcb51.body);
+              _7cb27c4fcb51.body = await _5995852ff2b8.arrayBuffer();
             }
-            _42cb97372cb8.body instanceof ReadableStream || _42cb97372cb8.body instanceof ArrayBuffer ? _3110c31d8ff0.call(_d11a62f2b8f1, {
-              type: "fetch",
-              fetch: _42cb97372cb8
-            }, [ _42cb97372cb8.body ]) : _3110c31d8ff0.call(_d11a62f2b8f1, {
-              type: "fetch",
-              fetch: _42cb97372cb8
+            _7cb27c4fcb51.body instanceof ReadableStream || _7cb27c4fcb51.body instanceof ArrayBuffer ? _c6b8f6894827.call(_5b8d834290ae, {
+              type: "\x66\x65\x74\x63\x68",
+              fetch: _7cb27c4fcb51
+            }, [ _7cb27c4fcb51.body ]) : _c6b8f6894827.call(_5b8d834290ae, {
+              type: "\x66\x65\x74\x63\x68",
+              fetch: _7cb27c4fcb51
             });
-          }(_42cb97372cb8, _74c283c5ed0e, _5bc9cb9138eb);
-        } catch (_5bc9cb9138eb) {
-          w(_74c283c5ed0e, _5bc9cb9138eb, "fetch");
-        } else if ("websocket" === _42cb97372cb8.type) try {
-          _5bc9cb9138eb.ready || await _5bc9cb9138eb.init(), await async function(_5bc9cb9138eb, _d11a62f2b8f1, _74c283c5ed0e) {
-            const [_42cb97372cb8, _acbd9f40a2f3] = _74c283c5ed0e.connect(new URL(_5bc9cb9138eb.websocket.url), _5bc9cb9138eb.websocket.protocols, _5bc9cb9138eb.websocket.requestHeaders, _d11a62f2b8f1 => {
-              _3110c31d8ff0.call(_5bc9cb9138eb.websocket.channel, {
-                type: "open",
-                args: [ _d11a62f2b8f1 ]
+          }(_7cb27c4fcb51, _2f149434b242, _5995852ff2b8);
+        } catch (_5995852ff2b8) {
+          w(_2f149434b242, _5995852ff2b8, "\x66\x65\x74\x63\x68");
+        } else if ("\x77\x65\x62\x73\x6f\x63\x6b\x65\x74" === _7cb27c4fcb51.type) try {
+          _5995852ff2b8.ready || await _5995852ff2b8.init(), await async function(_5995852ff2b8, _5b8d834290ae, _2f149434b242) {
+            const [_7cb27c4fcb51, _f620f4b69795] = _2f149434b242.connect(new URL(_5995852ff2b8.websocket.url), _5995852ff2b8.websocket.protocols, _5995852ff2b8.websocket.requestHeaders, _5b8d834290ae => {
+              _c6b8f6894827.call(_5995852ff2b8.websocket.channel, {
+                type: "\x6f\x70\x65\x6e",
+                args: [ _5b8d834290ae ]
               });
-            }, _d11a62f2b8f1 => {
-              _d11a62f2b8f1 instanceof ArrayBuffer ? _3110c31d8ff0.call(_5bc9cb9138eb.websocket.channel, {
-                type: "message",
-                args: [ _d11a62f2b8f1 ]
-              }, [ _d11a62f2b8f1 ]) : _3110c31d8ff0.call(_5bc9cb9138eb.websocket.channel, {
-                type: "message",
-                args: [ _d11a62f2b8f1 ]
+            }, _5b8d834290ae => {
+              _5b8d834290ae instanceof ArrayBuffer ? _c6b8f6894827.call(_5995852ff2b8.websocket.channel, {
+                type: "\x6d\x65\x73\x73\x61\x67\x65",
+                args: [ _5b8d834290ae ]
+              }, [ _5b8d834290ae ]) : _c6b8f6894827.call(_5995852ff2b8.websocket.channel, {
+                type: "\x6d\x65\x73\x73\x61\x67\x65",
+                args: [ _5b8d834290ae ]
               });
-            }, (_d11a62f2b8f1, _74c283c5ed0e) => {
-              _3110c31d8ff0.call(_5bc9cb9138eb.websocket.channel, {
-                type: "close",
-                args: [ _d11a62f2b8f1, _74c283c5ed0e ]
+            }, (_5b8d834290ae, _2f149434b242) => {
+              _c6b8f6894827.call(_5995852ff2b8.websocket.channel, {
+                type: "\x63\x6c\x6f\x73\x65",
+                args: [ _5b8d834290ae, _2f149434b242 ]
               });
-            }, _d11a62f2b8f1 => {
-              _3110c31d8ff0.call(_5bc9cb9138eb.websocket.channel, {
-                type: "error",
-                args: [ _d11a62f2b8f1 ]
+            }, _5b8d834290ae => {
+              _c6b8f6894827.call(_5995852ff2b8.websocket.channel, {
+                type: "\x65\x72\x72\x6f\x72",
+                args: [ _5b8d834290ae ]
               });
             });
-            _5bc9cb9138eb.websocket.channel.onmessage = _5bc9cb9138eb => {
-              "data" === _5bc9cb9138eb.data.type ? _42cb97372cb8(_5bc9cb9138eb.data.data) : "close" === _5bc9cb9138eb.data.type && _acbd9f40a2f3(_5bc9cb9138eb.data.closeCode, _5bc9cb9138eb.data.closeReason);
-            }, _3110c31d8ff0.call(_d11a62f2b8f1, {
-              type: "websocket"
+            _5995852ff2b8.websocket.channel.onmessage = _5995852ff2b8 => {
+              "\x64\x61\x74\x61" === _5995852ff2b8.data.type ? _7cb27c4fcb51(_5995852ff2b8.data.data) : "\x63\x6c\x6f\x73\x65" === _5995852ff2b8.data.type && _f620f4b69795(_5995852ff2b8.data.closeCode, _5995852ff2b8.data.closeReason);
+            }, _c6b8f6894827.call(_5b8d834290ae, {
+              type: "\x77\x65\x62\x73\x6f\x63\x6b\x65\x74"
             });
-          }(_42cb97372cb8, _74c283c5ed0e, _5bc9cb9138eb);
-        } catch (_5bc9cb9138eb) {
-          w(_74c283c5ed0e, _5bc9cb9138eb, "websocket");
+          }(_7cb27c4fcb51, _2f149434b242, _5995852ff2b8);
+        } catch (_5995852ff2b8) {
+          w(_2f149434b242, _5995852ff2b8, "\x77\x65\x62\x73\x6f\x63\x6b\x65\x74");
         }
       }, await this.worker.sendMessage({
-        type: "set",
+        type: "\x73\x65\x74",
         client: {
-          function: "bare-mux-remote",
-          args: [ _74c283c5ed0e.port2, _d11a62f2b8f1 ]
+          function: "\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x72\x65\x6d\x6f\x74\x65",
+          args: [ _2f149434b242.port2, _5b8d834290ae ]
         }
-      }, [ _74c283c5ed0e.port2 ]);
+      }, [ _2f149434b242.port2 ]);
     }
     getInnerPort() {
       return this.worker.port;
     }
-  }, _5bc9cb9138eb.BareWebSocket = u, _5bc9cb9138eb.WebSocketFields = _b5e54cf546ce, 
-  _5bc9cb9138eb.WorkerConnection = p, _5bc9cb9138eb.browserSupportsTransferringStreams = d, 
-  _5bc9cb9138eb.default = m, _5bc9cb9138eb.maxRedirects = 20, _5bc9cb9138eb.validProtocol = f, 
-  Object.defineProperty(_5bc9cb9138eb, "__esModule", {
+  }, _5995852ff2b8.BareWebSocket = u, _5995852ff2b8.WebSocketFields = _4f199c724125, 
+  _5995852ff2b8.WorkerConnection = p, _5995852ff2b8.browserSupportsTransferringStreams = d, 
+  _5995852ff2b8.default = m, _5995852ff2b8.maxRedirects = 20, _5995852ff2b8.validProtocol = f, 
+  Object.defineProperty(_5995852ff2b8, "\x5f\x5f\x65\x73\x4d\x6f\x64\x75\x6c\x65", {
     value: !0
   });
 });

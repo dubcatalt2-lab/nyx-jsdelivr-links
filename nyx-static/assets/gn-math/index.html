@@ -137,7 +137,7 @@ main {
     gap: 12px
   }
 }</style>
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/obsidian.css?rev=a40afc91ec7c1999">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/obsidian.css?rev=9ae3113a046b3a57">
   </head>
 
   <body>
@@ -154,52 +154,53 @@ main {
       <div id="empty" class="empty">No games found.</div>
     </main>
     <script>
-const grid = document.getElementById("grid"), empty = document.getElementById("empty"), search = document.getElementById("search"), source = document.getElementById("source");
+const grid = document.getElementById("\x67\x72\x69\x64"), empty = document.getElementById("\x65\x6d\x70\x74\x79"), search = document.getElementById("\x73\x65\x61\x72\x63\x68"), source = document.getElementById("\x73\x6f\x75\x72\x63\x65");
 let games = [];
 
-function titleFromPath(t, e) {
-  if (e) return e;
-  const a = String(t || "").replace(/\.html?$/i, ""), n = (a.match(/^\d+/) || [ "" ])[0];
-  return n ? `GN Math ${n}` : a.replace(/[-_]+/g, " ");
+function titleFromPath(_0x83511f_0, _0x83511f_1) {
+  if (_0x83511f_1) return _0x83511f_1;
+  const _0x83511f_2 = String(_0x83511f_0 || "").replace(/\.html?$/i, ""), _0x83511f_3 = (_0x83511f_2.match(/^\d+/) || [ "" ])[0];
+  return _0x83511f_3 ? `\x47\x4e\x20\x4d\x61\x74\x68\x20${_0x83511f_3}` : _0x83511f_2.replace(/[-_]+/g, "\x20");
 }
 
-function gameUrl(t) {
-  return new URL(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/gn-math/play.html?v=20260903-game-ad-guard-v1&game=${encodeURIComponent(t)}`, location.origin).href;
+function gameUrl(_0x83511f_0) {
+  return new URL(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x67\x6e\x2d\x6d\x61\x74\x68\x2f\x70\x6c\x61\x79\x2e\x68\x74\x6d\x6c\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x30\x33\x2d\x67\x61\x6d\x65\x2d\x61\x64\x2d\x67\x75\x61\x72\x64\x2d\x76\x31\x26\x67\x61\x6d\x65\x3d${encodeURIComponent(_0x83511f_0)}`, location.origin).href;
 }
 
 function render() {
-  const t = search.value.trim().toLowerCase(), e = games.filter(e => {
-    const a = `${e.title} ${e.path}`.toLowerCase();
-    return !t || a.includes(t);
+  const _0x83511f_0 = search.value.trim().toLowerCase(), _0x83511f_1 = games.filter(_0x83511f_1 => {
+    const _0x83511f_2 = `${_0x83511f_1.title}\x20${_0x83511f_1.path}`.toLowerCase();
+    return !_0x83511f_0 || _0x83511f_2.includes(_0x83511f_0);
   });
-  grid.innerHTML = e.map(t => `\n        <button class="card" type="button" data-url="${t.url}" data-path="${t.path}">\n          ${t.cover ? `<img class="thumb" alt="" loading="lazy" src="${t.cover}" data-fallback="${t.coverFallback || ""}">` : '<span class="thumb broken" aria-hidden="true"></span>'}\n          <span class="thumb-fallback ${t.cover ? "" : "generated"}" aria-hidden="true">${t.title.slice(0, 1).toUpperCase()}</span>\n          <span class="name">${t.title}</span>\n          <span class="meta">${t.path}</span>\n        </button>\n      `).join(""), 
-  empty.style.display = e.length ? "none" : "block";
+  grid.innerHTML = _0x83511f_1.map(_0x83511f_0 => `\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x62\x75\x74\x74\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x63\x61\x72\x64\x22\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x75\x72\x6c\x3d\x22${_0x83511f_0.url}\x22\x20\x64\x61\x74\x61\x2d\x70\x61\x74\x68\x3d\x22${_0x83511f_0.path}\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20${_0x83511f_0.cover ? `\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x68\x75\x6d\x62\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x6c\x6f\x61\x64\x69\x6e\x67\x3d\x22\x6c\x61\x7a\x79\x22\x20\x73\x72\x63\x3d\x22${_0x83511f_0.cover}\x22\x20\x64\x61\x74\x61\x2d\x66\x61\x6c\x6c\x62\x61\x63\x6b\x3d\x22${_0x83511f_0.coverFallback || ""}\x22\x3e` : "\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x68\x75\x6d\x62\x20\x62\x72\x6f\x6b\x65\x6e\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x2f\x73\x70\x61\x6e\x3e"}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x68\x75\x6d\x62\x2d\x66\x61\x6c\x6c\x62\x61\x63\x6b\x20${_0x83511f_0.cover ? "" : "\x67\x65\x6e\x65\x72\x61\x74\x65\x64"}\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e${_0x83511f_0.title.slice(0, 1).toUpperCase()}\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x6e\x61\x6d\x65\x22\x3e${_0x83511f_0.title}\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x6d\x65\x74\x61\x22\x3e${_0x83511f_0.path}\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20`).join(""), 
+  empty.style.display = _0x83511f_1.length ? "\x6e\x6f\x6e\x65" : "\x62\x6c\x6f\x63\x6b";
 }
 
-grid.addEventListener("click", t => {
-  const e = t.target.closest("[data-url]");
-  e && (parent.postMessage({
-    type: "nyx:game-loading"
-  }, "*"), location.href = e.dataset.url);
-}), grid.addEventListener("error", t => {
-  const e = t.target;
-  if (!e?.classList?.contains("thumb")) return;
-  const a = e.dataset.fallback;
-  if (a && e.src !== a) return e.dataset.fallback = "", void (e.src = a);
-  e.classList.add("broken");
-}, !0), search.addEventListener("input", render), fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/gn-math/games.json", {
-  cache: "no-store"
-}).then(t => t.json()).then(t => {
-  games = (Array.isArray(t.games) ? t.games : []).map(t => ({
-    ...t,
-    title: titleFromPath(t.path, t.title),
-    url: gameUrl(t.path)
-  })).sort((t, e) => t.path.localeCompare(e.path, void 0, {
+grid.addEventListener("\x63\x6c\x69\x63\x6b", _0x83511f_0 => {
+  const _0x83511f_1 = _0x83511f_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x75\x72\x6c\x5d");
+  _0x83511f_1 && (parent.postMessage({
+    type: "\x6e\x79\x78\x3a\x67\x61\x6d\x65\x2d\x6c\x6f\x61\x64\x69\x6e\x67"
+  }, "\x2a"), location.href = _0x83511f_1.dataset.url);
+}), grid.addEventListener("\x65\x72\x72\x6f\x72", _0x83511f_0 => {
+  const _0x83511f_1 = _0x83511f_0.target;
+  if (!_0x83511f_1?.classList?.contains("\x74\x68\x75\x6d\x62")) return;
+  const _0x83511f_2 = _0x83511f_1.dataset.fallback;
+  if (_0x83511f_2 && _0x83511f_1.src !== _0x83511f_2) return _0x83511f_1.dataset.fallback = "", 
+  void (_0x83511f_1.src = _0x83511f_2);
+  _0x83511f_1.classList.add("\x62\x72\x6f\x6b\x65\x6e");
+}, !0), search.addEventListener("\x69\x6e\x70\x75\x74", render), fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x67\x6e\x2d\x6d\x61\x74\x68\x2f\x67\x61\x6d\x65\x73\x2e\x6a\x73\x6f\x6e", {
+  cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+}).then(_0x83511f_0 => _0x83511f_0.json()).then(_0x83511f_0 => {
+  games = (Array.isArray(_0x83511f_0.games) ? _0x83511f_0.games : []).map(_0x83511f_0 => ({
+    ..._0x83511f_0,
+    title: titleFromPath(_0x83511f_0.path, _0x83511f_0.title),
+    url: gameUrl(_0x83511f_0.path)
+  })).sort((_0x83511f_0, _0x83511f_1) => _0x83511f_0.path.localeCompare(_0x83511f_1.path, void 0, {
     numeric: !0
-  })), source.textContent = `${games.length} games from GN Math.`, render();
+  })), source.textContent = `${games.length}\x20\x67\x61\x6d\x65\x73\x20\x66\x72\x6f\x6d\x20\x47\x4e\x20\x4d\x61\x74\x68\x2e`, render();
 }).catch(() => {
-  source.textContent = "Could not load GN Math.", empty.textContent = "Could not load the GN Math game list.", 
-  empty.style.display = "block";
+  source.textContent = "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x20\x47\x4e\x20\x4d\x61\x74\x68\x2e", empty.textContent = "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x20\x74\x68\x65\x20\x47\x4e\x20\x4d\x61\x74\x68\x20\x67\x61\x6d\x65\x20\x6c\x69\x73\x74\x2e", 
+  empty.style.display = "\x62\x6c\x6f\x63\x6b";
 })</script>
   </body>
 

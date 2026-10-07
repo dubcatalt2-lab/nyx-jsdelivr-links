@@ -1,956 +1,995 @@
 (() => {
   "use strict";
-  const e = "nyx.codeStudio.v1", t = 24e3, n = {
+  const _0x9bc55b_0 = "\x6e\x79\x78\x2e\x63\x6f\x64\x65\x53\x74\x75\x64\x69\x6f\x2e\x76\x31", _0x9bc55b_1 = 24e3, _0x9bc55b_2 = {
     html: {
-      file: "index.html",
-      help: "Build a small page and see it safely in the preview.",
-      starter: "<!doctype html>\n<html>\n  <head>\n    <style>\n      body { font-family: system-ui; padding: 2rem; color: #172033; }\n      button { padding: .7rem 1rem; border: 0; border-radius: .6rem; background: #4f6ee8; color: white; }\n    </style>\n  </head>\n  <body>\n    <h1>Hello, Nyx</h1>\n    <p>Make this page your own.</p>\n    <button onclick=\"this.textContent = 'Nice work!'\">Try it</button>\n  </body>\n</html>",
+      file: "\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c",
+      help: "\x42\x75\x69\x6c\x64\x20\x61\x20\x73\x6d\x61\x6c\x6c\x20\x70\x61\x67\x65\x20\x61\x6e\x64\x20\x73\x65\x65\x20\x69\x74\x20\x73\x61\x66\x65\x6c\x79\x20\x69\x6e\x20\x74\x68\x65\x20\x70\x72\x65\x76\x69\x65\x77\x2e",
+      starter: "\x3c\x21\x64\x6f\x63\x74\x79\x70\x65\x20\x68\x74\x6d\x6c\x3e\x0a\x3c\x68\x74\x6d\x6c\x3e\x0a\x20\x20\x3c\x68\x65\x61\x64\x3e\x0a\x20\x20\x20\x20\x3c\x73\x74\x79\x6c\x65\x3e\x0a\x20\x20\x20\x20\x20\x20\x62\x6f\x64\x79\x20\x7b\x20\x66\x6f\x6e\x74\x2d\x66\x61\x6d\x69\x6c\x79\x3a\x20\x73\x79\x73\x74\x65\x6d\x2d\x75\x69\x3b\x20\x70\x61\x64\x64\x69\x6e\x67\x3a\x20\x32\x72\x65\x6d\x3b\x20\x63\x6f\x6c\x6f\x72\x3a\x20\x23\x31\x37\x32\x30\x33\x33\x3b\x20\x7d\x0a\x20\x20\x20\x20\x20\x20\x62\x75\x74\x74\x6f\x6e\x20\x7b\x20\x70\x61\x64\x64\x69\x6e\x67\x3a\x20\x2e\x37\x72\x65\x6d\x20\x31\x72\x65\x6d\x3b\x20\x62\x6f\x72\x64\x65\x72\x3a\x20\x30\x3b\x20\x62\x6f\x72\x64\x65\x72\x2d\x72\x61\x64\x69\x75\x73\x3a\x20\x2e\x36\x72\x65\x6d\x3b\x20\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x20\x23\x34\x66\x36\x65\x65\x38\x3b\x20\x63\x6f\x6c\x6f\x72\x3a\x20\x77\x68\x69\x74\x65\x3b\x20\x7d\x0a\x20\x20\x20\x20\x3c\x2f\x73\x74\x79\x6c\x65\x3e\x0a\x20\x20\x3c\x2f\x68\x65\x61\x64\x3e\x0a\x20\x20\x3c\x62\x6f\x64\x79\x3e\x0a\x20\x20\x20\x20\x3c\x68\x31\x3e\x48\x65\x6c\x6c\x6f\x2c\x20\x4e\x79\x78\x3c\x2f\x68\x31\x3e\x0a\x20\x20\x20\x20\x3c\x70\x3e\x4d\x61\x6b\x65\x20\x74\x68\x69\x73\x20\x70\x61\x67\x65\x20\x79\x6f\x75\x72\x20\x6f\x77\x6e\x2e\x3c\x2f\x70\x3e\x0a\x20\x20\x20\x20\x3c\x62\x75\x74\x74\x6f\x6e\x20\x6f\x6e\x63\x6c\x69\x63\x6b\x3d\x22\x74\x68\x69\x73\x2e\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74\x20\x3d\x20\x27\x4e\x69\x63\x65\x20\x77\x6f\x72\x6b\x21\x27\x22\x3e\x54\x72\x79\x20\x69\x74\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x0a\x20\x20\x3c\x2f\x62\x6f\x64\x79\x3e\x0a\x3c\x2f\x68\x74\x6d\x6c\x3e",
       run: !0
     },
     css: {
-      file: "styles.css",
-      help: "Write styles and preview them on a small sample card.",
-      starter: "body {\n  margin: 0;\n  min-height: 100vh;\n  display: grid;\n  place-items: center;\n  background: #e8eefc;\n  font-family: system-ui;\n}\n\n.card {\n  max-width: 20rem;\n  padding: 2rem;\n  border-radius: 1.25rem;\n  background: white;\n  box-shadow: 0 18px 45px rgba(46, 67, 122, .18);\n}",
+      file: "\x73\x74\x79\x6c\x65\x73\x2e\x63\x73\x73",
+      help: "\x57\x72\x69\x74\x65\x20\x73\x74\x79\x6c\x65\x73\x20\x61\x6e\x64\x20\x70\x72\x65\x76\x69\x65\x77\x20\x74\x68\x65\x6d\x20\x6f\x6e\x20\x61\x20\x73\x6d\x61\x6c\x6c\x20\x73\x61\x6d\x70\x6c\x65\x20\x63\x61\x72\x64\x2e",
+      starter: "\x62\x6f\x64\x79\x20\x7b\x0a\x20\x20\x6d\x61\x72\x67\x69\x6e\x3a\x20\x30\x3b\x0a\x20\x20\x6d\x69\x6e\x2d\x68\x65\x69\x67\x68\x74\x3a\x20\x31\x30\x30\x76\x68\x3b\x0a\x20\x20\x64\x69\x73\x70\x6c\x61\x79\x3a\x20\x67\x72\x69\x64\x3b\x0a\x20\x20\x70\x6c\x61\x63\x65\x2d\x69\x74\x65\x6d\x73\x3a\x20\x63\x65\x6e\x74\x65\x72\x3b\x0a\x20\x20\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x20\x23\x65\x38\x65\x65\x66\x63\x3b\x0a\x20\x20\x66\x6f\x6e\x74\x2d\x66\x61\x6d\x69\x6c\x79\x3a\x20\x73\x79\x73\x74\x65\x6d\x2d\x75\x69\x3b\x0a\x7d\x0a\x0a\x2e\x63\x61\x72\x64\x20\x7b\x0a\x20\x20\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x20\x32\x30\x72\x65\x6d\x3b\x0a\x20\x20\x70\x61\x64\x64\x69\x6e\x67\x3a\x20\x32\x72\x65\x6d\x3b\x0a\x20\x20\x62\x6f\x72\x64\x65\x72\x2d\x72\x61\x64\x69\x75\x73\x3a\x20\x31\x2e\x32\x35\x72\x65\x6d\x3b\x0a\x20\x20\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x20\x77\x68\x69\x74\x65\x3b\x0a\x20\x20\x62\x6f\x78\x2d\x73\x68\x61\x64\x6f\x77\x3a\x20\x30\x20\x31\x38\x70\x78\x20\x34\x35\x70\x78\x20\x72\x67\x62\x61\x28\x34\x36\x2c\x20\x36\x37\x2c\x20\x31\x32\x32\x2c\x20\x2e\x31\x38\x29\x3b\x0a\x7d",
       run: !0
     },
     javascript: {
-      file: "app.js",
-      help: "Run JavaScript in an isolated browser preview.",
-      starter: 'const message = document.querySelector("#message");\nconst button = document.querySelector("button");\n\nbutton.addEventListener("click", () => {\n  message.textContent = "You changed the page with JavaScript.";\n});',
+      file: "\x61\x70\x70\x2e\x6a\x73",
+      help: "\x52\x75\x6e\x20\x4a\x61\x76\x61\x53\x63\x72\x69\x70\x74\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x70\x72\x65\x76\x69\x65\x77\x2e",
+      starter: "\x63\x6f\x6e\x73\x74\x20\x6d\x65\x73\x73\x61\x67\x65\x20\x3d\x20\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72\x28\x22\x23\x6d\x65\x73\x73\x61\x67\x65\x22\x29\x3b\x0a\x63\x6f\x6e\x73\x74\x20\x62\x75\x74\x74\x6f\x6e\x20\x3d\x20\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72\x28\x22\x62\x75\x74\x74\x6f\x6e\x22\x29\x3b\x0a\x0a\x62\x75\x74\x74\x6f\x6e\x2e\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72\x28\x22\x63\x6c\x69\x63\x6b\x22\x2c\x20\x28\x29\x20\x3d\x3e\x20\x7b\x0a\x20\x20\x6d\x65\x73\x73\x61\x67\x65\x2e\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74\x20\x3d\x20\x22\x59\x6f\x75\x20\x63\x68\x61\x6e\x67\x65\x64\x20\x74\x68\x65\x20\x70\x61\x67\x65\x20\x77\x69\x74\x68\x20\x4a\x61\x76\x61\x53\x63\x72\x69\x70\x74\x2e\x22\x3b\x0a\x7d\x29\x3b",
       run: !0
     },
     typescript: {
-      file: "app.ts",
-      help: "Compile and run TypeScript in an isolated environment. Do not include secrets.",
-      starter: 'type Student = {\n  name: string;\n  projects: number;\n};\n\nconst student: Student = { name: "Nyx learner", projects: 1 };\nconsole.log(`${student.name} has ${student.projects} project.`);',
+      file: "\x61\x70\x70\x2e\x74\x73",
+      help: "\x43\x6f\x6d\x70\x69\x6c\x65\x20\x61\x6e\x64\x20\x72\x75\x6e\x20\x54\x79\x70\x65\x53\x63\x72\x69\x70\x74\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x65\x6e\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x74\x79\x70\x65\x20\x53\x74\x75\x64\x65\x6e\x74\x20\x3d\x20\x7b\x0a\x20\x20\x6e\x61\x6d\x65\x3a\x20\x73\x74\x72\x69\x6e\x67\x3b\x0a\x20\x20\x70\x72\x6f\x6a\x65\x63\x74\x73\x3a\x20\x6e\x75\x6d\x62\x65\x72\x3b\x0a\x7d\x3b\x0a\x0a\x63\x6f\x6e\x73\x74\x20\x73\x74\x75\x64\x65\x6e\x74\x3a\x20\x53\x74\x75\x64\x65\x6e\x74\x20\x3d\x20\x7b\x20\x6e\x61\x6d\x65\x3a\x20\x22\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x22\x2c\x20\x70\x72\x6f\x6a\x65\x63\x74\x73\x3a\x20\x31\x20\x7d\x3b\x0a\x63\x6f\x6e\x73\x6f\x6c\x65\x2e\x6c\x6f\x67\x28\x60\x24\x7b\x73\x74\x75\x64\x65\x6e\x74\x2e\x6e\x61\x6d\x65\x7d\x20\x68\x61\x73\x20\x24\x7b\x73\x74\x75\x64\x65\x6e\x74\x2e\x70\x72\x6f\x6a\x65\x63\x74\x73\x7d\x20\x70\x72\x6f\x6a\x65\x63\x74\x2e\x60\x29\x3b",
       runner: !0
     },
     python: {
-      file: "main.py",
-      help: "Run Python in an isolated environment. Do not include secrets.",
-      starter: 'def greet(name: str) -> str:\n    return f"Hello, {name}!"\n\nprint(greet("Nyx learner"))',
+      file: "\x6d\x61\x69\x6e\x2e\x70\x79",
+      help: "\x52\x75\x6e\x20\x50\x79\x74\x68\x6f\x6e\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x65\x6e\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x64\x65\x66\x20\x67\x72\x65\x65\x74\x28\x6e\x61\x6d\x65\x3a\x20\x73\x74\x72\x29\x20\x2d\x3e\x20\x73\x74\x72\x3a\x0a\x20\x20\x20\x20\x72\x65\x74\x75\x72\x6e\x20\x66\x22\x48\x65\x6c\x6c\x6f\x2c\x20\x7b\x6e\x61\x6d\x65\x7d\x21\x22\x0a\x0a\x70\x72\x69\x6e\x74\x28\x67\x72\x65\x65\x74\x28\x22\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x22\x29\x29",
       runner: !0
     },
     java: {
-      file: "Main.java",
-      help: "Compile and run Java in an isolated environment. Do not include secrets.",
-      starter: 'public class Main {\n  public static void main(String[] args) {\n    System.out.println("Hello, Nyx learner!");\n  }\n}',
+      file: "\x4d\x61\x69\x6e\x2e\x6a\x61\x76\x61",
+      help: "\x43\x6f\x6d\x70\x69\x6c\x65\x20\x61\x6e\x64\x20\x72\x75\x6e\x20\x4a\x61\x76\x61\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x65\x6e\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x70\x75\x62\x6c\x69\x63\x20\x63\x6c\x61\x73\x73\x20\x4d\x61\x69\x6e\x20\x7b\x0a\x20\x20\x70\x75\x62\x6c\x69\x63\x20\x73\x74\x61\x74\x69\x63\x20\x76\x6f\x69\x64\x20\x6d\x61\x69\x6e\x28\x53\x74\x72\x69\x6e\x67\x5b\x5d\x20\x61\x72\x67\x73\x29\x20\x7b\x0a\x20\x20\x20\x20\x53\x79\x73\x74\x65\x6d\x2e\x6f\x75\x74\x2e\x70\x72\x69\x6e\x74\x6c\x6e\x28\x22\x48\x65\x6c\x6c\x6f\x2c\x20\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x21\x22\x29\x3b\x0a\x20\x20\x7d\x0a\x7d",
       runner: !0
     },
     c: {
-      file: "main.c",
-      help: "Compile and run C in an isolated environment. Do not include secrets.",
-      starter: '#include <stdio.h>\n\nint main(void) {\n  puts("Hello, Nyx learner!");\n  return 0;\n}',
+      file: "\x6d\x61\x69\x6e\x2e\x63",
+      help: "\x43\x6f\x6d\x70\x69\x6c\x65\x20\x61\x6e\x64\x20\x72\x75\x6e\x20\x43\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x65\x6e\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x23\x69\x6e\x63\x6c\x75\x64\x65\x20\x3c\x73\x74\x64\x69\x6f\x2e\x68\x3e\x0a\x0a\x69\x6e\x74\x20\x6d\x61\x69\x6e\x28\x76\x6f\x69\x64\x29\x20\x7b\x0a\x20\x20\x70\x75\x74\x73\x28\x22\x48\x65\x6c\x6c\x6f\x2c\x20\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x21\x22\x29\x3b\x0a\x20\x20\x72\x65\x74\x75\x72\x6e\x20\x30\x3b\x0a\x7d",
       runner: !0
     },
     cpp: {
-      file: "main.cpp",
-      help: "Compile and run C++ in an isolated environment. Do not include secrets.",
-      starter: '#include <iostream>\n\nint main() {\n  std::cout << "Hello, Nyx learner!\\n";\n  return 0;\n}',
+      file: "\x6d\x61\x69\x6e\x2e\x63\x70\x70",
+      help: "\x43\x6f\x6d\x70\x69\x6c\x65\x20\x61\x6e\x64\x20\x72\x75\x6e\x20\x43\x2b\x2b\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x65\x6e\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x23\x69\x6e\x63\x6c\x75\x64\x65\x20\x3c\x69\x6f\x73\x74\x72\x65\x61\x6d\x3e\x0a\x0a\x69\x6e\x74\x20\x6d\x61\x69\x6e\x28\x29\x20\x7b\x0a\x20\x20\x73\x74\x64\x3a\x3a\x63\x6f\x75\x74\x20\x3c\x3c\x20\x22\x48\x65\x6c\x6c\x6f\x2c\x20\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x21\x5c\x6e\x22\x3b\x0a\x20\x20\x72\x65\x74\x75\x72\x6e\x20\x30\x3b\x0a\x7d",
       runner: !0
     },
     csharp: {
-      file: "Program.cs",
-      help: "Compile and run C# in an isolated environment. Do not include secrets.",
-      starter: 'using System;\n\npublic class Program {\n  public static void Main() {\n    Console.WriteLine("Hello, Nyx learner!");\n  }\n}',
+      file: "\x50\x72\x6f\x67\x72\x61\x6d\x2e\x63\x73",
+      help: "\x43\x6f\x6d\x70\x69\x6c\x65\x20\x61\x6e\x64\x20\x72\x75\x6e\x20\x43\x23\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x65\x6e\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x75\x73\x69\x6e\x67\x20\x53\x79\x73\x74\x65\x6d\x3b\x0a\x0a\x70\x75\x62\x6c\x69\x63\x20\x63\x6c\x61\x73\x73\x20\x50\x72\x6f\x67\x72\x61\x6d\x20\x7b\x0a\x20\x20\x70\x75\x62\x6c\x69\x63\x20\x73\x74\x61\x74\x69\x63\x20\x76\x6f\x69\x64\x20\x4d\x61\x69\x6e\x28\x29\x20\x7b\x0a\x20\x20\x20\x20\x43\x6f\x6e\x73\x6f\x6c\x65\x2e\x57\x72\x69\x74\x65\x4c\x69\x6e\x65\x28\x22\x48\x65\x6c\x6c\x6f\x2c\x20\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x21\x22\x29\x3b\x0a\x20\x20\x7d\x0a\x7d",
       runner: !0
     },
     go: {
-      file: "main.go",
-      help: "Compile and run Go in an isolated environment. Do not include secrets.",
-      starter: 'package main\n\nimport "fmt"\n\nfunc main() {\n  fmt.Println("Hello, Nyx learner!")\n}',
+      file: "\x6d\x61\x69\x6e\x2e\x67\x6f",
+      help: "\x43\x6f\x6d\x70\x69\x6c\x65\x20\x61\x6e\x64\x20\x72\x75\x6e\x20\x47\x6f\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x65\x6e\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x70\x61\x63\x6b\x61\x67\x65\x20\x6d\x61\x69\x6e\x0a\x0a\x69\x6d\x70\x6f\x72\x74\x20\x22\x66\x6d\x74\x22\x0a\x0a\x66\x75\x6e\x63\x20\x6d\x61\x69\x6e\x28\x29\x20\x7b\x0a\x20\x20\x66\x6d\x74\x2e\x50\x72\x69\x6e\x74\x6c\x6e\x28\x22\x48\x65\x6c\x6c\x6f\x2c\x20\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x21\x22\x29\x0a\x7d",
       runner: !0
     },
     rust: {
-      file: "main.rs",
-      help: "Compile and run Rust in an isolated environment. Do not include secrets.",
-      starter: 'fn main() {\n    println!("Hello, Nyx learner!");\n}',
+      file: "\x6d\x61\x69\x6e\x2e\x72\x73",
+      help: "\x43\x6f\x6d\x70\x69\x6c\x65\x20\x61\x6e\x64\x20\x72\x75\x6e\x20\x52\x75\x73\x74\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x65\x6e\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x66\x6e\x20\x6d\x61\x69\x6e\x28\x29\x20\x7b\x0a\x20\x20\x20\x20\x70\x72\x69\x6e\x74\x6c\x6e\x21\x28\x22\x48\x65\x6c\x6c\x6f\x2c\x20\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x21\x22\x29\x3b\x0a\x7d",
       runner: !0
     },
     php: {
-      file: "index.php",
-      help: "Run PHP in an isolated environment. Do not include secrets.",
-      starter: '<?php\n$name = "Nyx learner";\necho "Hello, {$name}!\\n";',
+      file: "\x69\x6e\x64\x65\x78\x2e\x70\x68\x70",
+      help: "\x52\x75\x6e\x20\x50\x48\x50\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x65\x6e\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x3c\x3f\x70\x68\x70\x0a\x24\x6e\x61\x6d\x65\x20\x3d\x20\x22\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x22\x3b\x0a\x65\x63\x68\x6f\x20\x22\x48\x65\x6c\x6c\x6f\x2c\x20\x7b\x24\x6e\x61\x6d\x65\x7d\x21\x5c\x6e\x22\x3b",
       runner: !0
     },
     ruby: {
-      file: "main.rb",
-      help: "Run Ruby in an isolated environment. Do not include secrets.",
-      starter: 'def greet(name)\n  "Hello, #{name}!"\nend\n\nputs greet("Nyx learner")',
+      file: "\x6d\x61\x69\x6e\x2e\x72\x62",
+      help: "\x52\x75\x6e\x20\x52\x75\x62\x79\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x65\x6e\x76\x69\x72\x6f\x6e\x6d\x65\x6e\x74\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x64\x65\x66\x20\x67\x72\x65\x65\x74\x28\x6e\x61\x6d\x65\x29\x0a\x20\x20\x22\x48\x65\x6c\x6c\x6f\x2c\x20\x23\x7b\x6e\x61\x6d\x65\x7d\x21\x22\x0a\x65\x6e\x64\x0a\x0a\x70\x75\x74\x73\x20\x67\x72\x65\x65\x74\x28\x22\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x22\x29",
       runner: !0
     },
     sql: {
-      file: "query.sql",
-      help: "Run SQLite statements in an isolated temporary database. Do not include secrets.",
-      starter: 'CREATE TABLE learners (\n  student_name TEXT,\n  completed_projects INTEGER\n);\n\nINSERT INTO learners VALUES ("Nyx learner", 2);\n\nSELECT student_name, completed_projects\nFROM learners\nORDER BY completed_projects DESC;',
+      file: "\x71\x75\x65\x72\x79\x2e\x73\x71\x6c",
+      help: "\x52\x75\x6e\x20\x53\x51\x4c\x69\x74\x65\x20\x73\x74\x61\x74\x65\x6d\x65\x6e\x74\x73\x20\x69\x6e\x20\x61\x6e\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x74\x65\x6d\x70\x6f\x72\x61\x72\x79\x20\x64\x61\x74\x61\x62\x61\x73\x65\x2e\x20\x44\x6f\x20\x6e\x6f\x74\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x73\x65\x63\x72\x65\x74\x73\x2e",
+      starter: "\x43\x52\x45\x41\x54\x45\x20\x54\x41\x42\x4c\x45\x20\x6c\x65\x61\x72\x6e\x65\x72\x73\x20\x28\x0a\x20\x20\x73\x74\x75\x64\x65\x6e\x74\x5f\x6e\x61\x6d\x65\x20\x54\x45\x58\x54\x2c\x0a\x20\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x64\x5f\x70\x72\x6f\x6a\x65\x63\x74\x73\x20\x49\x4e\x54\x45\x47\x45\x52\x0a\x29\x3b\x0a\x0a\x49\x4e\x53\x45\x52\x54\x20\x49\x4e\x54\x4f\x20\x6c\x65\x61\x72\x6e\x65\x72\x73\x20\x56\x41\x4c\x55\x45\x53\x20\x28\x22\x4e\x79\x78\x20\x6c\x65\x61\x72\x6e\x65\x72\x22\x2c\x20\x32\x29\x3b\x0a\x0a\x53\x45\x4c\x45\x43\x54\x20\x73\x74\x75\x64\x65\x6e\x74\x5f\x6e\x61\x6d\x65\x2c\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x64\x5f\x70\x72\x6f\x6a\x65\x63\x74\x73\x0a\x46\x52\x4f\x4d\x20\x6c\x65\x61\x72\x6e\x65\x72\x73\x0a\x4f\x52\x44\x45\x52\x20\x42\x59\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x64\x5f\x70\x72\x6f\x6a\x65\x63\x74\x73\x20\x44\x45\x53\x43\x3b",
       runner: !0
     },
     json: {
-      file: "data.json",
-      help: "Validate JSON and inspect its formatted result.",
-      starter: '{\n  "project": "Nyx Code Studio",\n  "languages": ["JavaScript", "Python", "Rust"],\n  "ready": true\n}',
+      file: "\x64\x61\x74\x61\x2e\x6a\x73\x6f\x6e",
+      help: "\x56\x61\x6c\x69\x64\x61\x74\x65\x20\x4a\x53\x4f\x4e\x20\x61\x6e\x64\x20\x69\x6e\x73\x70\x65\x63\x74\x20\x69\x74\x73\x20\x66\x6f\x72\x6d\x61\x74\x74\x65\x64\x20\x72\x65\x73\x75\x6c\x74\x2e",
+      starter: "\x7b\x0a\x20\x20\x22\x70\x72\x6f\x6a\x65\x63\x74\x22\x3a\x20\x22\x4e\x79\x78\x20\x43\x6f\x64\x65\x20\x53\x74\x75\x64\x69\x6f\x22\x2c\x0a\x20\x20\x22\x6c\x61\x6e\x67\x75\x61\x67\x65\x73\x22\x3a\x20\x5b\x22\x4a\x61\x76\x61\x53\x63\x72\x69\x70\x74\x22\x2c\x20\x22\x50\x79\x74\x68\x6f\x6e\x22\x2c\x20\x22\x52\x75\x73\x74\x22\x5d\x2c\x0a\x20\x20\x22\x72\x65\x61\x64\x79\x22\x3a\x20\x74\x72\x75\x65\x0a\x7d",
       run: !0
     },
     markdown: {
-      file: "README.md",
-      help: "Write Markdown and see a safe rendered preview.",
-      starter: "# My project\n\nBuild something useful, then write down what it does.\n\n- Clear goal\n- Small next step\n- Test your work",
+      file: "\x52\x45\x41\x44\x4d\x45\x2e\x6d\x64",
+      help: "\x57\x72\x69\x74\x65\x20\x4d\x61\x72\x6b\x64\x6f\x77\x6e\x20\x61\x6e\x64\x20\x73\x65\x65\x20\x61\x20\x73\x61\x66\x65\x20\x72\x65\x6e\x64\x65\x72\x65\x64\x20\x70\x72\x65\x76\x69\x65\x77\x2e",
+      starter: "\x23\x20\x4d\x79\x20\x70\x72\x6f\x6a\x65\x63\x74\x0a\x0a\x42\x75\x69\x6c\x64\x20\x73\x6f\x6d\x65\x74\x68\x69\x6e\x67\x20\x75\x73\x65\x66\x75\x6c\x2c\x20\x74\x68\x65\x6e\x20\x77\x72\x69\x74\x65\x20\x64\x6f\x77\x6e\x20\x77\x68\x61\x74\x20\x69\x74\x20\x64\x6f\x65\x73\x2e\x0a\x0a\x2d\x20\x43\x6c\x65\x61\x72\x20\x67\x6f\x61\x6c\x0a\x2d\x20\x53\x6d\x61\x6c\x6c\x20\x6e\x65\x78\x74\x20\x73\x74\x65\x70\x0a\x2d\x20\x54\x65\x73\x74\x20\x79\x6f\x75\x72\x20\x77\x6f\x72\x6b",
       run: !0
     }
-  }, r = {
-    html: [ "Landing page", "<main><h1>My project</h1><p>A clear place to start.</p></main>" ],
-    javascript: [ "Click counter", 'let count = 0;\ndocument.querySelector("button").addEventListener("click", () => {\n  count += 1;\n  document.querySelector("#message").textContent = `Clicked ${count} times`;\n});' ],
-    python: [ "Simple list", 'tasks = ["Plan", "Build", "Test"]\nfor task in tasks:\n    print(f"- {task}")' ],
-    json: [ "Project data", '{\n  "name": "My project",\n  "version": 1,\n  "complete": false\n}' ],
-    markdown: [ "Project notes", "# Project notes\n\n## Next up\n\n1. Build a small version\n2. Test it\n3. Improve it" ]
-  }, o = {
-    shell: document.querySelector("[data-code-studio]"),
-    workbench: document.querySelector("[data-workbench]"),
-    language: document.querySelector("[data-language]"),
-    help: document.querySelector("[data-language-help]"),
-    files: document.querySelectorAll("[data-file-name]"),
-    input: document.querySelector("[data-code-input]"),
-    highlight: document.querySelector("[data-highlight] code"),
-    lineNumbers: document.querySelector("[data-line-numbers]"),
-    cursor: document.querySelector("[data-cursor-position]"),
-    editorWrap: document.querySelector("[data-editor-wrap]"),
-    editorCard: document.querySelector(".editor-card"),
-    languageBadge: document.querySelector("[data-language-badge]"),
-    languageStatus: document.querySelector("[data-language-status]"),
-    starters: document.querySelector("[data-starters]"),
-    runButtons: document.querySelectorAll("[data-run], [data-run-empty]"),
-    reset: document.querySelector("[data-reset]"),
-    clear: document.querySelector("[data-clear-code]"),
-    download: document.querySelector("[data-download-code]"),
-    preview: document.querySelector("[data-preview]"),
-    previewEmpty: document.querySelector("[data-preview-empty]"),
-    output: document.querySelector("[data-output]"),
-    previewState: document.querySelector("[data-preview-state]"),
-    previewStateLabel: document.querySelector("[data-preview-state-label]"),
-    refreshPreview: document.querySelector("[data-refresh-preview]"),
-    fullscreenPreview: document.querySelector("[data-fullscreen-preview]"),
-    resultCard: document.querySelector("[data-result-card]"),
-    problemCount: document.querySelector("[data-problem-count]"),
-    resultTabs: document.querySelectorAll("[data-result-mode]"),
-    saveState: document.querySelector("[data-save-state]"),
-    saveLabel: document.querySelector("[data-save-label]"),
-    form: document.querySelector("[data-ai-form]"),
-    prompt: document.querySelector("[data-ai-prompt-input]"),
-    send: document.querySelector("[data-ai-send]"),
-    answer: document.querySelector("[data-ai-answer]"),
-    aiStatus: document.querySelector("[data-ai-status]"),
-    aiStatusLabel: document.querySelector("[data-ai-status-label]")
-  }, a = /^(?:as|async|await|break|case|catch|class|const|continue|def|default|delete|do|else|enum|export|extends|false|finally|fn|for|from|function|go|if|implements|import|in|instanceof|interface|let|match|new|null|package|private|protected|public|return|select|static|struct|switch|this|throw|true|try|type|typeof|using|var|void|while|yield|SELECT|FROM|WHERE|ORDER|BY|GROUP|INSERT|UPDATE|DELETE|CREATE|TABLE|JOIN|AS|AND|OR|NOT|NULL)$/, s = "nyx.codeStudio.layout.v1";
-  let i = function() {
-    let r = {};
+  }, _0x9bc55b_3 = {
+    html: [ "\x4c\x61\x6e\x64\x69\x6e\x67\x20\x70\x61\x67\x65", "\x3c\x6d\x61\x69\x6e\x3e\x3c\x68\x31\x3e\x4d\x79\x20\x70\x72\x6f\x6a\x65\x63\x74\x3c\x2f\x68\x31\x3e\x3c\x70\x3e\x41\x20\x63\x6c\x65\x61\x72\x20\x70\x6c\x61\x63\x65\x20\x74\x6f\x20\x73\x74\x61\x72\x74\x2e\x3c\x2f\x70\x3e\x3c\x2f\x6d\x61\x69\x6e\x3e" ],
+    javascript: [ "\x43\x6c\x69\x63\x6b\x20\x63\x6f\x75\x6e\x74\x65\x72", "\x6c\x65\x74\x20\x63\x6f\x75\x6e\x74\x20\x3d\x20\x30\x3b\x0a\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72\x28\x22\x62\x75\x74\x74\x6f\x6e\x22\x29\x2e\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72\x28\x22\x63\x6c\x69\x63\x6b\x22\x2c\x20\x28\x29\x20\x3d\x3e\x20\x7b\x0a\x20\x20\x63\x6f\x75\x6e\x74\x20\x2b\x3d\x20\x31\x3b\x0a\x20\x20\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72\x28\x22\x23\x6d\x65\x73\x73\x61\x67\x65\x22\x29\x2e\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74\x20\x3d\x20\x60\x43\x6c\x69\x63\x6b\x65\x64\x20\x24\x7b\x63\x6f\x75\x6e\x74\x7d\x20\x74\x69\x6d\x65\x73\x60\x3b\x0a\x7d\x29\x3b" ],
+    python: [ "\x53\x69\x6d\x70\x6c\x65\x20\x6c\x69\x73\x74", "\x74\x61\x73\x6b\x73\x20\x3d\x20\x5b\x22\x50\x6c\x61\x6e\x22\x2c\x20\x22\x42\x75\x69\x6c\x64\x22\x2c\x20\x22\x54\x65\x73\x74\x22\x5d\x0a\x66\x6f\x72\x20\x74\x61\x73\x6b\x20\x69\x6e\x20\x74\x61\x73\x6b\x73\x3a\x0a\x20\x20\x20\x20\x70\x72\x69\x6e\x74\x28\x66\x22\x2d\x20\x7b\x74\x61\x73\x6b\x7d\x22\x29" ],
+    json: [ "\x50\x72\x6f\x6a\x65\x63\x74\x20\x64\x61\x74\x61", "\x7b\x0a\x20\x20\x22\x6e\x61\x6d\x65\x22\x3a\x20\x22\x4d\x79\x20\x70\x72\x6f\x6a\x65\x63\x74\x22\x2c\x0a\x20\x20\x22\x76\x65\x72\x73\x69\x6f\x6e\x22\x3a\x20\x31\x2c\x0a\x20\x20\x22\x63\x6f\x6d\x70\x6c\x65\x74\x65\x22\x3a\x20\x66\x61\x6c\x73\x65\x0a\x7d" ],
+    markdown: [ "\x50\x72\x6f\x6a\x65\x63\x74\x20\x6e\x6f\x74\x65\x73", "\x23\x20\x50\x72\x6f\x6a\x65\x63\x74\x20\x6e\x6f\x74\x65\x73\x0a\x0a\x23\x23\x20\x4e\x65\x78\x74\x20\x75\x70\x0a\x0a\x31\x2e\x20\x42\x75\x69\x6c\x64\x20\x61\x20\x73\x6d\x61\x6c\x6c\x20\x76\x65\x72\x73\x69\x6f\x6e\x0a\x32\x2e\x20\x54\x65\x73\x74\x20\x69\x74\x0a\x33\x2e\x20\x49\x6d\x70\x72\x6f\x76\x65\x20\x69\x74" ]
+  }, _0x9bc55b_4 = {
+    shell: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x64\x65\x2d\x73\x74\x75\x64\x69\x6f\x5d"),
+    workbench: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x77\x6f\x72\x6b\x62\x65\x6e\x63\x68\x5d"),
+    language: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x61\x6e\x67\x75\x61\x67\x65\x5d"),
+    help: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x61\x6e\x67\x75\x61\x67\x65\x2d\x68\x65\x6c\x70\x5d"),
+    files: document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x66\x69\x6c\x65\x2d\x6e\x61\x6d\x65\x5d"),
+    input: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x64\x65\x2d\x69\x6e\x70\x75\x74\x5d"),
+    highlight: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x68\x69\x67\x68\x6c\x69\x67\x68\x74\x5d\x20\x63\x6f\x64\x65"),
+    lineNumbers: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x69\x6e\x65\x2d\x6e\x75\x6d\x62\x65\x72\x73\x5d"),
+    cursor: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x63\x75\x72\x73\x6f\x72\x2d\x70\x6f\x73\x69\x74\x69\x6f\x6e\x5d"),
+    editorWrap: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x65\x64\x69\x74\x6f\x72\x2d\x77\x72\x61\x70\x5d"),
+    editorCard: document.querySelector("\x2e\x65\x64\x69\x74\x6f\x72\x2d\x63\x61\x72\x64"),
+    languageBadge: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x61\x6e\x67\x75\x61\x67\x65\x2d\x62\x61\x64\x67\x65\x5d"),
+    languageStatus: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x61\x6e\x67\x75\x61\x67\x65\x2d\x73\x74\x61\x74\x75\x73\x5d"),
+    starters: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x74\x61\x72\x74\x65\x72\x73\x5d"),
+    runButtons: document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x72\x75\x6e\x5d\x2c\x20\x5b\x64\x61\x74\x61\x2d\x72\x75\x6e\x2d\x65\x6d\x70\x74\x79\x5d"),
+    reset: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x65\x74\x5d"),
+    clear: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x63\x6c\x65\x61\x72\x2d\x63\x6f\x64\x65\x5d"),
+    download: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x64\x6f\x77\x6e\x6c\x6f\x61\x64\x2d\x63\x6f\x64\x65\x5d"),
+    preview: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x72\x65\x76\x69\x65\x77\x5d"),
+    previewEmpty: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x72\x65\x76\x69\x65\x77\x2d\x65\x6d\x70\x74\x79\x5d"),
+    output: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6f\x75\x74\x70\x75\x74\x5d"),
+    previewState: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x72\x65\x76\x69\x65\x77\x2d\x73\x74\x61\x74\x65\x5d"),
+    previewStateLabel: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x72\x65\x76\x69\x65\x77\x2d\x73\x74\x61\x74\x65\x2d\x6c\x61\x62\x65\x6c\x5d"),
+    refreshPreview: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x72\x65\x66\x72\x65\x73\x68\x2d\x70\x72\x65\x76\x69\x65\x77\x5d"),
+    fullscreenPreview: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x2d\x70\x72\x65\x76\x69\x65\x77\x5d"),
+    resultCard: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x2d\x63\x61\x72\x64\x5d"),
+    problemCount: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x72\x6f\x62\x6c\x65\x6d\x2d\x63\x6f\x75\x6e\x74\x5d"),
+    resultTabs: document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x2d\x6d\x6f\x64\x65\x5d"),
+    saveState: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x61\x76\x65\x2d\x73\x74\x61\x74\x65\x5d"),
+    saveLabel: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x61\x76\x65\x2d\x6c\x61\x62\x65\x6c\x5d"),
+    form: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x66\x6f\x72\x6d\x5d"),
+    prompt: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x70\x72\x6f\x6d\x70\x74\x2d\x69\x6e\x70\x75\x74\x5d"),
+    send: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x73\x65\x6e\x64\x5d"),
+    answer: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x61\x6e\x73\x77\x65\x72\x5d"),
+    aiStatus: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x73\x74\x61\x74\x75\x73\x5d"),
+    aiStatusLabel: document.querySelector("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x73\x74\x61\x74\x75\x73\x2d\x6c\x61\x62\x65\x6c\x5d")
+  }, _0x9bc55b_5 = /^(?:as|async|await|break|case|catch|class|const|continue|def|default|delete|do|else|enum|export|extends|false|finally|fn|for|from|function|go|if|implements|import|in|instanceof|interface|let|match|new|null|package|private|protected|public|return|select|static|struct|switch|this|throw|true|try|type|typeof|using|var|void|while|yield|SELECT|FROM|WHERE|ORDER|BY|GROUP|INSERT|UPDATE|DELETE|CREATE|TABLE|JOIN|AS|AND|OR|NOT|NULL)$/, _0x9bc55b_6 = "\x6e\x79\x78\x2e\x63\x6f\x64\x65\x53\x74\x75\x64\x69\x6f\x2e\x6c\x61\x79\x6f\x75\x74\x2e\x76\x31";
+  let _0x9bc55b_7 = function() {
+    let _0x9bc55b_3 = {};
     try {
-      r = JSON.parse(localStorage.getItem(e) || "{}") || {};
+      _0x9bc55b_3 = JSON.parse(localStorage.getItem(_0x9bc55b_0) || "\x7b\x7d") || {};
     } catch {}
-    const o = {};
-    for (const [e, l] of Object.entries(r.codes || {})) {
-      const a = 2 === r.schema ? e : n[e]?.file;
-      b(a) && "string" == typeof l && (o[a] = l.slice(0, t));
+    const _0x9bc55b_4 = {};
+    for (const [_0x9bc55b_0, _0x9bc55b_8] of Object.entries(_0x9bc55b_3.codes || {})) {
+      const _0x9bc55b_5 = 2 === _0x9bc55b_3.schema ? _0x9bc55b_0 : _0x9bc55b_2[_0x9bc55b_0]?.file;
+      _0x9bc55b_14(_0x9bc55b_5) && "\x73\x74\x72\x69\x6e\x67" == typeof _0x9bc55b_8 && (_0x9bc55b_4[_0x9bc55b_5] = _0x9bc55b_8.slice(0, _0x9bc55b_1));
     }
-    const a = 2 === r.schema ? r.file : n[r.language]?.file, s = b(a) ? a : Object.keys(o)[0] || "index.html";
-    Object.hasOwn(o, s) || (o[s] = n[w(s)].starter);
-    const i = (Array.isArray(r.versions) ? r.versions : []).map(e => ({
-      ...e,
-      file: e.file || n[e.language]?.file
-    })).filter(e => b(e.file) && "string" == typeof e.code).slice(-20);
+    const _0x9bc55b_5 = 2 === _0x9bc55b_3.schema ? _0x9bc55b_3.file : _0x9bc55b_2[_0x9bc55b_3.language]?.file, _0x9bc55b_6 = _0x9bc55b_14(_0x9bc55b_5) ? _0x9bc55b_5 : Object.keys(_0x9bc55b_4)[0] || "\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c";
+    Object.hasOwn(_0x9bc55b_4, _0x9bc55b_6) || (_0x9bc55b_4[_0x9bc55b_6] = _0x9bc55b_2[_0x9bc55b_13(_0x9bc55b_6)].starter);
+    const _0x9bc55b_7 = (Array.isArray(_0x9bc55b_3.versions) ? _0x9bc55b_3.versions : []).map(_0x9bc55b_0 => ({
+      ..._0x9bc55b_0,
+      file: _0x9bc55b_0.file || _0x9bc55b_2[_0x9bc55b_0.language]?.file
+    })).filter(_0x9bc55b_0 => _0x9bc55b_14(_0x9bc55b_0.file) && "\x73\x74\x72\x69\x6e\x67" == typeof _0x9bc55b_0.code).slice(-20);
     return {
       schema: 2,
-      file: s,
-      language: w(s),
-      codes: o,
-      versions: i
+      file: _0x9bc55b_6,
+      language: _0x9bc55b_13(_0x9bc55b_6),
+      codes: _0x9bc55b_4,
+      versions: _0x9bc55b_7
     };
-  }(), l = null, c = [], d = null, u = "Run a file to see activity here.", p = "", m = !1, h = "", g = [], f = [], y = 0, v = !1;
-  function w(e) {
+  }(), _0x9bc55b_8 = null, _0x9bc55b_9 = [], _0x9bc55b_a = null, _0x9bc55b_b = "\x52\x75\x6e\x20\x61\x20\x66\x69\x6c\x65\x20\x74\x6f\x20\x73\x65\x65\x20\x61\x63\x74\x69\x76\x69\x74\x79\x20\x68\x65\x72\x65\x2e", _0x9bc55b_c = "", _0x9bc55b_d = !1, _0x9bc55b_e = "", _0x9bc55b_f = [], _0x9bc55b_10 = [], _0x9bc55b_11 = 0, _0x9bc55b_12 = !1;
+  function _0x9bc55b_13(_0x9bc55b_0) {
     return {
-      html: "html",
-      htm: "html",
-      css: "css",
-      js: "javascript",
-      mjs: "javascript",
-      ts: "typescript",
-      py: "python",
-      java: "java",
-      c: "c",
-      cpp: "cpp",
-      cs: "csharp",
-      go: "go",
-      rs: "rust",
-      php: "php",
-      rb: "ruby",
-      sql: "sql",
-      json: "json",
-      md: "markdown"
-    }[String(e).split(".").pop().toLowerCase()] || null;
+      html: "\x68\x74\x6d\x6c",
+      htm: "\x68\x74\x6d\x6c",
+      css: "\x63\x73\x73",
+      js: "\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74",
+      mjs: "\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74",
+      ts: "\x74\x79\x70\x65\x73\x63\x72\x69\x70\x74",
+      py: "\x70\x79\x74\x68\x6f\x6e",
+      java: "\x6a\x61\x76\x61",
+      c: "\x63",
+      cpp: "\x63\x70\x70",
+      cs: "\x63\x73\x68\x61\x72\x70",
+      go: "\x67\x6f",
+      rs: "\x72\x75\x73\x74",
+      php: "\x70\x68\x70",
+      rb: "\x72\x75\x62\x79",
+      sql: "\x73\x71\x6c",
+      json: "\x6a\x73\x6f\x6e",
+      md: "\x6d\x61\x72\x6b\x64\x6f\x77\x6e"
+    }[String(_0x9bc55b_0).split("\x2e").pop().toLowerCase()] || null;
   }
-  function b(e) {
-    return "string" == typeof e && e.length <= 120 && /^[a-zA-Z0-9_-][a-zA-Z0-9_./-]*$/.test(e) && !e.split("/").some(e => !e || "." === e || ".." === e) && Boolean(w(e));
+  function _0x9bc55b_14(_0x9bc55b_0) {
+    return "\x73\x74\x72\x69\x6e\x67" == typeof _0x9bc55b_0 && _0x9bc55b_0.length <= 120 && /^[a-zA-Z0-9_-][a-zA-Z0-9_./-]*$/.test(_0x9bc55b_0) && !_0x9bc55b_0.split("\x2f").some(_0x9bc55b_0 => !_0x9bc55b_0 || "\x2e" === _0x9bc55b_0 || "\x2e\x2e" === _0x9bc55b_0) && Boolean(_0x9bc55b_13(_0x9bc55b_0));
   }
-  function S(e, t = "") {
-    o.saveLabel.textContent = e, o.saveState.classList.toggle("is-saving", "saving" === t), 
-    o.saveState.classList.toggle("is-error", "error" === t);
+  function _0x9bc55b_15(_0x9bc55b_0, _0x9bc55b_1 = "") {
+    _0x9bc55b_4.saveLabel.textContent = _0x9bc55b_0, _0x9bc55b_4.saveState.classList.toggle("\x69\x73\x2d\x73\x61\x76\x69\x6e\x67", "\x73\x61\x76\x69\x6e\x67" === _0x9bc55b_1), 
+    _0x9bc55b_4.saveState.classList.toggle("\x69\x73\x2d\x65\x72\x72\x6f\x72", "\x65\x72\x72\x6f\x72" === _0x9bc55b_1);
   }
-  function x() {
+  function _0x9bc55b_16() {
     try {
-      return localStorage.setItem(e, JSON.stringify(i)), S("Saved locally"), !0;
+      return localStorage.setItem(_0x9bc55b_0, JSON.stringify(_0x9bc55b_7)), _0x9bc55b_15("\x53\x61\x76\x65\x64\x20\x6c\x6f\x63\x61\x6c\x6c\x79"), 
+      !0;
     } catch {
-      return S("Could not save", "error"), !1;
+      return _0x9bc55b_15("\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x61\x76\x65", "\x65\x72\x72\x6f\x72"), !1;
     }
   }
-  function E() {
-    return String(i.codes[i.file] ?? n[i.language].starter).slice(0, t);
+  function _0x9bc55b_17() {
+    return String(_0x9bc55b_7.codes[_0x9bc55b_7.file] ?? _0x9bc55b_2[_0x9bc55b_7.language].starter).slice(0, _0x9bc55b_1);
   }
-  function C(e) {
-    i.codes[i.file] = String(e || "").slice(0, t), o.input.value = E(), A(), T(), x();
+  function _0x9bc55b_18(_0x9bc55b_0) {
+    _0x9bc55b_7.codes[_0x9bc55b_7.file] = String(_0x9bc55b_0 || "").slice(0, _0x9bc55b_1), 
+    _0x9bc55b_4.input.value = _0x9bc55b_17(), _0x9bc55b_1d(), _0x9bc55b_20(), _0x9bc55b_16();
   }
-  function k(e) {
-    return String(e || "").replace(/[&<>"']/g, e => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    }[e]));
+  function _0x9bc55b_19(_0x9bc55b_0) {
+    return String(_0x9bc55b_0 || "").replace(/[&<>"']/g, _0x9bc55b_0 => ({
+      "\x26": "\x26\x61\x6d\x70\x3b",
+      "\x3c": "\x26\x6c\x74\x3b",
+      "\x3e": "\x26\x67\x74\x3b",
+      "\x22": "\x26\x71\x75\x6f\x74\x3b",
+      "\x27": "\x26\x23\x33\x39\x3b"
+    }[_0x9bc55b_0]));
   }
-  function L(e, t, n) {
-    let r = "";
-    for (let o = 0; o < e.length; o += 1) {
-      const a = k(e[o]);
-      r += n.has(t + o) ? `<span class="matching-bracket">${a}</span>` : a;
+  function _0x9bc55b_1a(_0x9bc55b_0, _0x9bc55b_1, _0x9bc55b_2) {
+    let _0x9bc55b_3 = "";
+    for (let _0x9bc55b_4 = 0; _0x9bc55b_4 < _0x9bc55b_0.length; _0x9bc55b_4 += 1) {
+      const _0x9bc55b_5 = _0x9bc55b_19(_0x9bc55b_0[_0x9bc55b_4]);
+      _0x9bc55b_3 += _0x9bc55b_2.has(_0x9bc55b_1 + _0x9bc55b_4) ? `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x6d\x61\x74\x63\x68\x69\x6e\x67\x2d\x62\x72\x61\x63\x6b\x65\x74\x22\x3e${_0x9bc55b_5}\x3c\x2f\x73\x70\x61\x6e\x3e` : _0x9bc55b_5;
     }
-    return r;
+    return _0x9bc55b_3;
   }
-  function N(e, t, n) {
-    return /^<!--|^\/\*|^\/\/|^#(?![0-9a-f]{3,8}\b)/i.test(e) ? "syntax-comment" : /^<\/?[a-z]/i.test(e) ? "syntax-tag" : /^['"`]/.test(e) ? t.slice(n).trimStart().startsWith(":") ? "syntax-property" : "syntax-string" : /^\d/.test(e) ? "syntax-number" : a.test(e) ? "syntax-keyword" : "syntax-operator";
+  function _0x9bc55b_1b(_0x9bc55b_0, _0x9bc55b_1, _0x9bc55b_2) {
+    return /^<!--|^\/\*|^\/\/|^#(?![0-9a-f]{3,8}\b)/i.test(_0x9bc55b_0) ? "\x73\x79\x6e\x74\x61\x78\x2d\x63\x6f\x6d\x6d\x65\x6e\x74" : /^<\/?[a-z]/i.test(_0x9bc55b_0) ? "\x73\x79\x6e\x74\x61\x78\x2d\x74\x61\x67" : /^['"`]/.test(_0x9bc55b_0) ? _0x9bc55b_1.slice(_0x9bc55b_2).trimStart().startsWith("\x3a") ? "\x73\x79\x6e\x74\x61\x78\x2d\x70\x72\x6f\x70\x65\x72\x74\x79" : "\x73\x79\x6e\x74\x61\x78\x2d\x73\x74\x72\x69\x6e\x67" : /^\d/.test(_0x9bc55b_0) ? "\x73\x79\x6e\x74\x61\x78\x2d\x6e\x75\x6d\x62\x65\x72" : _0x9bc55b_5.test(_0x9bc55b_0) ? "\x73\x79\x6e\x74\x61\x78\x2d\x6b\x65\x79\x77\x6f\x72\x64" : "\x73\x79\x6e\x74\x61\x78\x2d\x6f\x70\x65\x72\x61\x74\x6f\x72";
   }
-  function q(e) {
-    const t = String(e || ""), n = function(e, t) {
-      const n = {
-        "(": ")",
-        "[": "]",
-        "{": "}"
-      }, r = {
-        ")": "(",
-        "]": "[",
-        "}": "{"
+  function _0x9bc55b_1c(_0x9bc55b_0) {
+    const _0x9bc55b_1 = String(_0x9bc55b_0 || ""), _0x9bc55b_2 = function(_0x9bc55b_0, _0x9bc55b_1) {
+      const _0x9bc55b_2 = {
+        "\x28": "\x29",
+        "\x5b": "\x5d",
+        "\x7b": "\x7d"
+      }, _0x9bc55b_3 = {
+        "\x29": "\x28",
+        "\x5d": "\x5b",
+        "\x7d": "\x7b"
       };
-      let o = t;
-      n[e[o]] || r[e[o]] || (o = t - 1);
-      const a = e[o];
-      if (!a || !n[a] && !r[a]) return new Set;
-      const s = Boolean(n[a]), i = s ? n[a] : r[a];
-      let l = 0;
-      for (let c = o; s ? c < e.length : c >= 0; c += s ? 1 : -1) {
-        const t = e[c];
-        if (t === a) l += 1; else if (t === i && (l -= 1, 0 === l)) return new Set([ o, c ]);
+      let _0x9bc55b_4 = _0x9bc55b_1;
+      _0x9bc55b_2[_0x9bc55b_0[_0x9bc55b_4]] || _0x9bc55b_3[_0x9bc55b_0[_0x9bc55b_4]] || (_0x9bc55b_4 = _0x9bc55b_1 - 1);
+      const _0x9bc55b_5 = _0x9bc55b_0[_0x9bc55b_4];
+      if (!_0x9bc55b_5 || !_0x9bc55b_2[_0x9bc55b_5] && !_0x9bc55b_3[_0x9bc55b_5]) return new Set;
+      const _0x9bc55b_6 = Boolean(_0x9bc55b_2[_0x9bc55b_5]), _0x9bc55b_7 = _0x9bc55b_6 ? _0x9bc55b_2[_0x9bc55b_5] : _0x9bc55b_3[_0x9bc55b_5];
+      let _0x9bc55b_8 = 0;
+      for (let _0x9bc55b_9 = _0x9bc55b_4; _0x9bc55b_6 ? _0x9bc55b_9 < _0x9bc55b_0.length : _0x9bc55b_9 >= 0; _0x9bc55b_9 += _0x9bc55b_6 ? 1 : -1) {
+        const _0x9bc55b_1 = _0x9bc55b_0[_0x9bc55b_9];
+        if (_0x9bc55b_1 === _0x9bc55b_5) _0x9bc55b_8 += 1; else if (_0x9bc55b_1 === _0x9bc55b_7 && (_0x9bc55b_8 -= 1, 
+        0 === _0x9bc55b_8)) return new Set([ _0x9bc55b_4, _0x9bc55b_9 ]);
       }
-      return new Set([ o ]);
-    }(t, o.input.selectionStart), r = "html" === i.language ? /<!--[\s\S]*?-->|<\/?[A-Za-z][^>]*>|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b\d+(?:\.\d+)?\b/g : /\/\*[\s\S]*?\*\/|\/\/[^\n]*|#(?![0-9a-fA-F]{3,8}\b)[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_][\w$]*\b|[=+\-*\/%!<>:&|]+/g;
-    let a = "", s = 0;
-    for (const o of t.matchAll(r)) {
-      const e = o.index || 0;
-      a += L(t.slice(s, e), s, n), a += `<span class="${N(o[0], t, e + o[0].length)}">${L(o[0], e, n)}</span>`, 
-      s = e + o[0].length;
+      return new Set([ _0x9bc55b_4 ]);
+    }(_0x9bc55b_1, _0x9bc55b_4.input.selectionStart), _0x9bc55b_3 = "\x68\x74\x6d\x6c" === _0x9bc55b_7.language ? /<!--[\s\S]*?-->|<\/?[A-Za-z][^>]*>|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b\d+(?:\.\d+)?\b/g : /\/\*[\s\S]*?\*\/|\/\/[^\n]*|#(?![0-9a-fA-F]{3,8}\b)[^\n]*|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|\b\d+(?:\.\d+)?\b|\b[A-Za-z_][\w$]*\b|[=+\-*\/%!<>:&|]+/g;
+    let _0x9bc55b_5 = "", _0x9bc55b_6 = 0;
+    for (const _0x9bc55b_4 of _0x9bc55b_1.matchAll(_0x9bc55b_3)) {
+      const _0x9bc55b_0 = _0x9bc55b_4.index || 0;
+      _0x9bc55b_5 += _0x9bc55b_1a(_0x9bc55b_1.slice(_0x9bc55b_6, _0x9bc55b_0), _0x9bc55b_6, _0x9bc55b_2), 
+      _0x9bc55b_5 += `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22${_0x9bc55b_1b(_0x9bc55b_4[0], _0x9bc55b_1, _0x9bc55b_0 + _0x9bc55b_4[0].length)}\x22\x3e${_0x9bc55b_1a(_0x9bc55b_4[0], _0x9bc55b_0, _0x9bc55b_2)}\x3c\x2f\x73\x70\x61\x6e\x3e`, 
+      _0x9bc55b_6 = _0x9bc55b_0 + _0x9bc55b_4[0].length;
     }
-    return a + L(t.slice(s), s, n) + "\n";
+    return _0x9bc55b_5 + _0x9bc55b_1a(_0x9bc55b_1.slice(_0x9bc55b_6), _0x9bc55b_6, _0x9bc55b_2) + "\x0a";
   }
-  function A() {
-    o.highlight.innerHTML = q(o.input.value), o.lineNumbers.textContent = Array.from({
-      length: o.input.value.split("\n").length
-    }, (e, t) => t + 1).join("\n"), document.querySelectorAll("[data-starters] button").forEach(e => e.classList.toggle("is-active", o.input.value === e.dataset.code)), 
-    j(), o.input.scrollTop = o.highlight.parentElement.scrollTop, o.input.scrollLeft = o.highlight.parentElement.scrollLeft;
+  function _0x9bc55b_1d() {
+    _0x9bc55b_4.highlight.innerHTML = _0x9bc55b_1c(_0x9bc55b_4.input.value), _0x9bc55b_4.lineNumbers.textContent = Array.from({
+      length: _0x9bc55b_4.input.value.split("\x0a").length
+    }, (_0x9bc55b_0, _0x9bc55b_1) => _0x9bc55b_1 + 1).join("\x0a"), document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x73\x74\x61\x72\x74\x65\x72\x73\x5d\x20\x62\x75\x74\x74\x6f\x6e").forEach(_0x9bc55b_0 => _0x9bc55b_0.classList.toggle("\x69\x73\x2d\x61\x63\x74\x69\x76\x65", _0x9bc55b_4.input.value === _0x9bc55b_0.dataset.code)), 
+    _0x9bc55b_1e(), _0x9bc55b_4.input.scrollTop = _0x9bc55b_4.highlight.parentElement.scrollTop, 
+    _0x9bc55b_4.input.scrollLeft = _0x9bc55b_4.highlight.parentElement.scrollLeft;
   }
-  function j() {
-    const e = o.input.value.slice(0, o.input.selectionStart), t = e.split("\n").length, n = `Ln ${t}, Col ${e.length - e.lastIndexOf("\n")}`;
-    o.cursor.textContent = n, o.editorWrap.style.setProperty("--active-line", String(t - 1)), 
-    document.querySelectorAll("[data-cursor-status]").forEach(e => e.textContent = n), 
-    o.highlight.innerHTML = q(o.input.value);
+  function _0x9bc55b_1e() {
+    const _0x9bc55b_0 = _0x9bc55b_4.input.value.slice(0, _0x9bc55b_4.input.selectionStart), _0x9bc55b_1 = _0x9bc55b_0.split("\x0a").length, _0x9bc55b_2 = `\x4c\x6e\x20${_0x9bc55b_1}\x2c\x20\x43\x6f\x6c\x20${_0x9bc55b_0.length - _0x9bc55b_0.lastIndexOf("\x0a")}`;
+    _0x9bc55b_4.cursor.textContent = _0x9bc55b_2, _0x9bc55b_4.editorWrap.style.setProperty("\x2d\x2d\x61\x63\x74\x69\x76\x65\x2d\x6c\x69\x6e\x65", String(_0x9bc55b_1 - 1)), 
+    document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x63\x75\x72\x73\x6f\x72\x2d\x73\x74\x61\x74\x75\x73\x5d").forEach(_0x9bc55b_0 => _0x9bc55b_0.textContent = _0x9bc55b_2), 
+    _0x9bc55b_4.highlight.innerHTML = _0x9bc55b_1c(_0x9bc55b_4.input.value);
   }
-  function O() {
-    return "cpp" === i.language ? "C++" : "csharp" === i.language ? "C#" : i.language[0].toUpperCase() + i.language.slice(1);
+  function _0x9bc55b_1f() {
+    return "\x63\x70\x70" === _0x9bc55b_7.language ? "\x43\x2b\x2b" : "\x63\x73\x68\x61\x72\x70" === _0x9bc55b_7.language ? "\x43\x23" : _0x9bc55b_7.language[0].toUpperCase() + _0x9bc55b_7.language.slice(1);
   }
-  function T() {
-    y += 1, P(!1), m = !1, p = "", h = "", g = [], f = [], o.preview.removeAttribute("srcdoc"), 
-    o.refreshPreview.disabled = !0, o.problemCount.textContent = "0", $("Not run", ""), 
-    J("output");
+  function _0x9bc55b_20() {
+    _0x9bc55b_11 += 1, _0x9bc55b_23(!1), _0x9bc55b_d = !1, _0x9bc55b_c = "", _0x9bc55b_e = "", 
+    _0x9bc55b_f = [], _0x9bc55b_10 = [], _0x9bc55b_4.preview.removeAttribute("\x73\x72\x63\x64\x6f\x63"), 
+    _0x9bc55b_4.refreshPreview.disabled = !0, _0x9bc55b_4.problemCount.textContent = "\x30", 
+    _0x9bc55b_22("\x4e\x6f\x74\x20\x72\x75\x6e", ""), _0x9bc55b_26("\x6f\x75\x74\x70\x75\x74");
   }
-  function R() {
-    const e = n[i.language];
-    o.language.value = i.language, o.help.textContent = e.help, o.files.forEach(e => e.textContent = i.file), 
-    o.languageStatus.textContent = O(), o.languageBadge.textContent = O(), o.input.value = E(), 
-    function() {
-      ce.replaceChildren();
-      for (const e of Object.keys(i.codes)) {
-        const t = document.createElement("option");
-        t.value = e, t.textContent = e, ce.append(t);
+  function _0x9bc55b_21() {
+    const _0x9bc55b_0 = _0x9bc55b_2[_0x9bc55b_7.language];
+    _0x9bc55b_4.language.value = _0x9bc55b_7.language, _0x9bc55b_4.help.textContent = _0x9bc55b_0.help, 
+    _0x9bc55b_4.files.forEach(_0x9bc55b_0 => _0x9bc55b_0.textContent = _0x9bc55b_7.file), 
+    _0x9bc55b_4.languageStatus.textContent = _0x9bc55b_1f(), _0x9bc55b_4.languageBadge.textContent = _0x9bc55b_1f(), 
+    _0x9bc55b_4.input.value = _0x9bc55b_17(), function() {
+      _0x9bc55b_3f.replaceChildren();
+      for (const _0x9bc55b_0 of Object.keys(_0x9bc55b_7.codes)) {
+        const _0x9bc55b_1 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+        _0x9bc55b_1.value = _0x9bc55b_0, _0x9bc55b_1.textContent = _0x9bc55b_0, _0x9bc55b_3f.append(_0x9bc55b_1);
       }
-      ce.value = i.file;
+      _0x9bc55b_3f.value = _0x9bc55b_7.file;
     }(), function() {
-      const e = [ [ "Default starter", n[i.language].starter ] ];
-      r[i.language] && e.push(r[i.language]), o.starters.replaceChildren(), e.forEach(([e, t]) => {
-        const n = document.createElement("button");
-        n.type = "button", n.textContent = e, n.dataset.code = t, n.classList.toggle("is-active", E() === t), 
-        n.addEventListener("click", () => C(t)), o.starters.append(n);
+      const _0x9bc55b_0 = [ [ "\x44\x65\x66\x61\x75\x6c\x74\x20\x73\x74\x61\x72\x74\x65\x72", _0x9bc55b_2[_0x9bc55b_7.language].starter ] ];
+      _0x9bc55b_3[_0x9bc55b_7.language] && _0x9bc55b_0.push(_0x9bc55b_3[_0x9bc55b_7.language]), 
+      _0x9bc55b_4.starters.replaceChildren(), _0x9bc55b_0.forEach(([_0x9bc55b_0, _0x9bc55b_1]) => {
+        const _0x9bc55b_2 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+        _0x9bc55b_2.type = "\x62\x75\x74\x74\x6f\x6e", _0x9bc55b_2.textContent = _0x9bc55b_0, _0x9bc55b_2.dataset.code = _0x9bc55b_1, 
+        _0x9bc55b_2.classList.toggle("\x69\x73\x2d\x61\x63\x74\x69\x76\x65", _0x9bc55b_17() === _0x9bc55b_1), _0x9bc55b_2.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9bc55b_18(_0x9bc55b_1)), 
+        _0x9bc55b_4.starters.append(_0x9bc55b_2);
       });
-    }(), A(), T(), x();
+    }(), _0x9bc55b_1d(), _0x9bc55b_20(), _0x9bc55b_16();
   }
-  function $(e, t) {
-    o.previewStateLabel.textContent = e, o.previewState.className = "preview-state" + (t ? ` is-${t}` : "");
+  function _0x9bc55b_22(_0x9bc55b_0, _0x9bc55b_1) {
+    _0x9bc55b_4.previewStateLabel.textContent = _0x9bc55b_0, _0x9bc55b_4.previewState.className = "\x70\x72\x65\x76\x69\x65\x77\x2d\x73\x74\x61\x74\x65" + (_0x9bc55b_1 ? `\x20\x69\x73\x2d${_0x9bc55b_1}` : "");
   }
-  function P(e) {
-    v = Boolean(e), o.runButtons.forEach(e => {
-      e.disabled = v, e.classList.toggle("is-running", v);
-      const t = e.querySelector("[data-run-label]");
-      t ? t.textContent = v ? "Running..." : "Run code" : e.matches("[data-run-empty]") && (e.textContent = v ? "Running..." : "Run code");
-    }), o.refreshPreview.disabled = v || !m;
+  function _0x9bc55b_23(_0x9bc55b_0) {
+    _0x9bc55b_12 = Boolean(_0x9bc55b_0), _0x9bc55b_4.runButtons.forEach(_0x9bc55b_0 => {
+      _0x9bc55b_0.disabled = _0x9bc55b_12, _0x9bc55b_0.classList.toggle("\x69\x73\x2d\x72\x75\x6e\x6e\x69\x6e\x67", _0x9bc55b_12);
+      const _0x9bc55b_1 = _0x9bc55b_0.querySelector("\x5b\x64\x61\x74\x61\x2d\x72\x75\x6e\x2d\x6c\x61\x62\x65\x6c\x5d");
+      _0x9bc55b_1 ? _0x9bc55b_1.textContent = _0x9bc55b_12 ? "\x52\x75\x6e\x6e\x69\x6e\x67\x2e\x2e\x2e" : "\x52\x75\x6e\x20\x63\x6f\x64\x65" : _0x9bc55b_0.matches("\x5b\x64\x61\x74\x61\x2d\x72\x75\x6e\x2d\x65\x6d\x70\x74\x79\x5d") && (_0x9bc55b_0.textContent = _0x9bc55b_12 ? "\x52\x75\x6e\x6e\x69\x6e\x67\x2e\x2e\x2e" : "\x52\x75\x6e\x20\x63\x6f\x64\x65");
+    }), _0x9bc55b_4.refreshPreview.disabled = _0x9bc55b_12 || !_0x9bc55b_d;
   }
-  function M() {
-    const e = function() {
-      const e = f.map(e => ({
-        ...e
+  function _0x9bc55b_24() {
+    const _0x9bc55b_0 = function() {
+      const _0x9bc55b_0 = _0x9bc55b_10.map(_0x9bc55b_0 => ({
+        ..._0x9bc55b_0
       }));
-      if ("json" === i.language && !e.some(e => "Invalid JSON" === e.title)) try {
-        JSON.parse(E());
-      } catch (t) {
-        e.push({
-          title: "Invalid JSON",
-          detail: t.message
+      if ("\x6a\x73\x6f\x6e" === _0x9bc55b_7.language && !_0x9bc55b_0.some(_0x9bc55b_0 => "\x49\x6e\x76\x61\x6c\x69\x64\x20\x4a\x53\x4f\x4e" === _0x9bc55b_0.title)) try {
+        JSON.parse(_0x9bc55b_17());
+      } catch (_0x9bc55b_1) {
+        _0x9bc55b_0.push({
+          title: "\x49\x6e\x76\x61\x6c\x69\x64\x20\x4a\x53\x4f\x4e",
+          detail: _0x9bc55b_1.message
         });
       }
-      return o.problemCount.textContent = String(e.length), e;
-    }(), t = document.createElement("div");
-    t.className = "problem-list", (e.length ? e : [ {
-      title: "No problems found",
-      detail: `${i.file} passed the available browser checks.`,
+      return _0x9bc55b_4.problemCount.textContent = String(_0x9bc55b_0.length), _0x9bc55b_0;
+    }(), _0x9bc55b_1 = document.createElement("\x64\x69\x76");
+    _0x9bc55b_1.className = "\x70\x72\x6f\x62\x6c\x65\x6d\x2d\x6c\x69\x73\x74", (_0x9bc55b_0.length ? _0x9bc55b_0 : [ {
+      title: "\x4e\x6f\x20\x70\x72\x6f\x62\x6c\x65\x6d\x73\x20\x66\x6f\x75\x6e\x64",
+      detail: `${_0x9bc55b_7.file}\x20\x70\x61\x73\x73\x65\x64\x20\x74\x68\x65\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x63\x68\x65\x63\x6b\x73\x2e`,
       clear: !0
-    } ]).forEach(e => {
-      const n = document.createElement("div");
-      n.className = "problem-row" + (e.clear ? " is-clear" : "");
-      const r = document.createElement("i");
-      r.textContent = e.clear ? "\u2713" : "!";
-      const o = document.createElement("div"), a = document.createElement("strong"), s = document.createElement("span");
-      a.textContent = e.title, s.textContent = e.detail, o.append(a, s), n.append(r, o), 
-      t.append(n);
-    }), o.output.replaceChildren(t);
+    } ]).forEach(_0x9bc55b_0 => {
+      const _0x9bc55b_2 = document.createElement("\x64\x69\x76");
+      _0x9bc55b_2.className = "\x70\x72\x6f\x62\x6c\x65\x6d\x2d\x72\x6f\x77" + (_0x9bc55b_0.clear ? "\x20\x69\x73\x2d\x63\x6c\x65\x61\x72" : "");
+      const _0x9bc55b_3 = document.createElement("\x69");
+      _0x9bc55b_3.textContent = _0x9bc55b_0.clear ? "\u2713" : "\x21";
+      const _0x9bc55b_4 = document.createElement("\x64\x69\x76"), _0x9bc55b_5 = document.createElement("\x73\x74\x72\x6f\x6e\x67"), _0x9bc55b_6 = document.createElement("\x73\x70\x61\x6e");
+      _0x9bc55b_5.textContent = _0x9bc55b_0.title, _0x9bc55b_6.textContent = _0x9bc55b_0.detail, 
+      _0x9bc55b_4.append(_0x9bc55b_5, _0x9bc55b_6), _0x9bc55b_2.append(_0x9bc55b_3, _0x9bc55b_4), 
+      _0x9bc55b_1.append(_0x9bc55b_2);
+    }), _0x9bc55b_4.output.replaceChildren(_0x9bc55b_1);
   }
-  function I() {
-    o.output.replaceChildren(), (g.length ? g : u.split("\n").map((e, t) => ({
-      text: e.replace(/^>\s*/, ""),
-      tone: 0 === t ? "prompt" : "muted"
-    }))).forEach((e, t) => {
-      const n = document.createElement("div");
-      n.className = "terminal-line";
-      const r = document.createElement("span");
-      r.className = "prompt" === e.tone ? "terminal-prompt" : "terminal-muted", r.textContent = "prompt" === e.tone ? "\u276f" : "\xb7";
-      const a = document.createElement("span");
-      a.textContent = e.text, n.append(r, a), o.output.append(n);
+  function _0x9bc55b_25() {
+    _0x9bc55b_4.output.replaceChildren(), (_0x9bc55b_f.length ? _0x9bc55b_f : _0x9bc55b_b.split("\x0a").map((_0x9bc55b_0, _0x9bc55b_1) => ({
+      text: _0x9bc55b_0.replace(/^>\s*/, ""),
+      tone: 0 === _0x9bc55b_1 ? "\x70\x72\x6f\x6d\x70\x74" : "\x6d\x75\x74\x65\x64"
+    }))).forEach((_0x9bc55b_0, _0x9bc55b_1) => {
+      const _0x9bc55b_2 = document.createElement("\x64\x69\x76");
+      _0x9bc55b_2.className = "\x74\x65\x72\x6d\x69\x6e\x61\x6c\x2d\x6c\x69\x6e\x65";
+      const _0x9bc55b_3 = document.createElement("\x73\x70\x61\x6e");
+      _0x9bc55b_3.className = "\x70\x72\x6f\x6d\x70\x74" === _0x9bc55b_0.tone ? "\x74\x65\x72\x6d\x69\x6e\x61\x6c\x2d\x70\x72\x6f\x6d\x70\x74" : "\x74\x65\x72\x6d\x69\x6e\x61\x6c\x2d\x6d\x75\x74\x65\x64", 
+      _0x9bc55b_3.textContent = "\x70\x72\x6f\x6d\x70\x74" === _0x9bc55b_0.tone ? "\u276f" : "\xb7";
+      const _0x9bc55b_5 = document.createElement("\x73\x70\x61\x6e");
+      _0x9bc55b_5.textContent = _0x9bc55b_0.text, _0x9bc55b_2.append(_0x9bc55b_3, _0x9bc55b_5), 
+      _0x9bc55b_4.output.append(_0x9bc55b_2);
     });
   }
-  function J(e = "output") {
-    return o.resultTabs.forEach(t => t.classList.toggle("is-active", t.dataset.resultMode === e)), 
-    o.preview.hidden = !0, o.previewEmpty.hidden = !0, o.output.hidden = !0, "terminal" === e ? (o.output.hidden = !1, 
-    void I()) : "problems" === e ? (o.output.hidden = !1, void M()) : o.preview.srcdoc ? void (o.preview.hidden = !1) : m ? (o.output.hidden = !1, 
-    void (o.output.textContent = p)) : void (o.previewEmpty.hidden = !1);
+  function _0x9bc55b_26(_0x9bc55b_0 = "\x6f\x75\x74\x70\x75\x74") {
+    return _0x9bc55b_4.resultTabs.forEach(_0x9bc55b_1 => _0x9bc55b_1.classList.toggle("\x69\x73\x2d\x61\x63\x74\x69\x76\x65", _0x9bc55b_1.dataset.resultMode === _0x9bc55b_0)), 
+    _0x9bc55b_4.preview.hidden = !0, _0x9bc55b_4.previewEmpty.hidden = !0, _0x9bc55b_4.output.hidden = !0, 
+    "\x74\x65\x72\x6d\x69\x6e\x61\x6c" === _0x9bc55b_0 ? (_0x9bc55b_4.output.hidden = !1, void _0x9bc55b_25()) : "\x70\x72\x6f\x62\x6c\x65\x6d\x73" === _0x9bc55b_0 ? (_0x9bc55b_4.output.hidden = !1, 
+    void _0x9bc55b_24()) : _0x9bc55b_4.preview.srcdoc ? void (_0x9bc55b_4.preview.hidden = !1) : _0x9bc55b_d ? (_0x9bc55b_4.output.hidden = !1, 
+    void (_0x9bc55b_4.output.textContent = _0x9bc55b_c)) : void (_0x9bc55b_4.previewEmpty.hidden = !1);
   }
-  async function D() {
-    if (v) return;
-    const e = E(), t = i.language, r = ++y;
-    if (m = !0, o.refreshPreview.disabled = !1, u = `Run ${i.file}\nCompleted ${(new Date).toLocaleTimeString([], {
-      hour: "numeric",
-      minute: "2-digit"
-    })}`, g = [ {
-      text: `Run ${i.file}`,
-      tone: "prompt"
+  async function _0x9bc55b_27() {
+    if (_0x9bc55b_12) return;
+    const _0x9bc55b_0 = _0x9bc55b_17(), _0x9bc55b_1 = _0x9bc55b_7.language, _0x9bc55b_3 = ++_0x9bc55b_11;
+    if (_0x9bc55b_d = !0, _0x9bc55b_4.refreshPreview.disabled = !1, _0x9bc55b_b = `\x52\x75\x6e\x20${_0x9bc55b_7.file}\x0a\x43\x6f\x6d\x70\x6c\x65\x74\x65\x64\x20${(new Date).toLocaleTimeString([], {
+      hour: "\x6e\x75\x6d\x65\x72\x69\x63",
+      minute: "\x32\x2d\x64\x69\x67\x69\x74"
+    })}`, _0x9bc55b_f = [ {
+      text: `\x52\x75\x6e\x20${_0x9bc55b_7.file}`,
+      tone: "\x70\x72\x6f\x6d\x70\x74"
     }, {
-      text: `Started ${(new Date).toLocaleTimeString([], {
-        hour: "numeric",
-        minute: "2-digit"
+      text: `\x53\x74\x61\x72\x74\x65\x64\x20${(new Date).toLocaleTimeString([], {
+        hour: "\x6e\x75\x6d\x65\x72\x69\x63",
+        minute: "\x32\x2d\x64\x69\x67\x69\x74"
       })}`,
-      tone: "muted"
-    } ], f = [], o.problemCount.textContent = "0", n[i.language].run && [ "html", "css", "javascript" ].includes(i.language)) {
-      const t = "<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:\">";
-      h = `preview-${Date.now()}-${Math.random().toString(36).slice(2)}`;
-      const n = `<script>(()=>{const runId=${JSON.stringify(h)};const send=(kind,args)=>parent.postMessage({type:'nyx-code-preview',runId,kind,text:args.map(value=>{try{return typeof value==='string'?value:JSON.stringify(value)}catch{return String(value)}}).join(' ')},'*');['log','info','warn','error'].forEach(kind=>{const original=console[kind]?.bind(console);console[kind]=(...args)=>{original?.(...args);send(kind,args)}});addEventListener('error',event=>send('error',[event.message||'Preview error']));addEventListener('unhandledrejection',event=>send('error',[event.reason?.message||event.reason||'Unhandled promise rejection']))})()<\/script>`;
+      tone: "\x6d\x75\x74\x65\x64"
+    } ], _0x9bc55b_10 = [], _0x9bc55b_4.problemCount.textContent = "\x30", _0x9bc55b_2[_0x9bc55b_7.language].run && [ "\x68\x74\x6d\x6c", "\x63\x73\x73", "\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74" ].includes(_0x9bc55b_7.language)) {
+      const _0x9bc55b_1 = "\x3c\x6d\x65\x74\x61\x20\x68\x74\x74\x70\x2d\x65\x71\x75\x69\x76\x3d\x22\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x53\x65\x63\x75\x72\x69\x74\x79\x2d\x50\x6f\x6c\x69\x63\x79\x22\x20\x63\x6f\x6e\x74\x65\x6e\x74\x3d\x22\x64\x65\x66\x61\x75\x6c\x74\x2d\x73\x72\x63\x20\x27\x6e\x6f\x6e\x65\x27\x3b\x20\x73\x74\x79\x6c\x65\x2d\x73\x72\x63\x20\x27\x75\x6e\x73\x61\x66\x65\x2d\x69\x6e\x6c\x69\x6e\x65\x27\x3b\x20\x73\x63\x72\x69\x70\x74\x2d\x73\x72\x63\x20\x27\x75\x6e\x73\x61\x66\x65\x2d\x69\x6e\x6c\x69\x6e\x65\x27\x3b\x20\x69\x6d\x67\x2d\x73\x72\x63\x20\x64\x61\x74\x61\x3a\x22\x3e";
+      _0x9bc55b_e = `\x70\x72\x65\x76\x69\x65\x77\x2d${Date.now()}\x2d${Math.random().toString(36).slice(2)}`;
+      const _0x9bc55b_2 = `\x3c\x73\x63\x72\x69\x70\x74\x3e\x28\x28\x29\x3d\x3e\x7b\x63\x6f\x6e\x73\x74\x20\x72\x75\x6e\x49\x64\x3d${JSON.stringify(_0x9bc55b_e)}\x3b\x63\x6f\x6e\x73\x74\x20\x73\x65\x6e\x64\x3d\x28\x6b\x69\x6e\x64\x2c\x61\x72\x67\x73\x29\x3d\x3e\x70\x61\x72\x65\x6e\x74\x2e\x70\x6f\x73\x74\x4d\x65\x73\x73\x61\x67\x65\x28\x7b\x74\x79\x70\x65\x3a\x27\x6e\x79\x78\x2d\x63\x6f\x64\x65\x2d\x70\x72\x65\x76\x69\x65\x77\x27\x2c\x72\x75\x6e\x49\x64\x2c\x6b\x69\x6e\x64\x2c\x74\x65\x78\x74\x3a\x61\x72\x67\x73\x2e\x6d\x61\x70\x28\x76\x61\x6c\x75\x65\x3d\x3e\x7b\x74\x72\x79\x7b\x72\x65\x74\x75\x72\x6e\x20\x74\x79\x70\x65\x6f\x66\x20\x76\x61\x6c\x75\x65\x3d\x3d\x3d\x27\x73\x74\x72\x69\x6e\x67\x27\x3f\x76\x61\x6c\x75\x65\x3a\x4a\x53\x4f\x4e\x2e\x73\x74\x72\x69\x6e\x67\x69\x66\x79\x28\x76\x61\x6c\x75\x65\x29\x7d\x63\x61\x74\x63\x68\x7b\x72\x65\x74\x75\x72\x6e\x20\x53\x74\x72\x69\x6e\x67\x28\x76\x61\x6c\x75\x65\x29\x7d\x7d\x29\x2e\x6a\x6f\x69\x6e\x28\x27\x20\x27\x29\x7d\x2c\x27\x2a\x27\x29\x3b\x5b\x27\x6c\x6f\x67\x27\x2c\x27\x69\x6e\x66\x6f\x27\x2c\x27\x77\x61\x72\x6e\x27\x2c\x27\x65\x72\x72\x6f\x72\x27\x5d\x2e\x66\x6f\x72\x45\x61\x63\x68\x28\x6b\x69\x6e\x64\x3d\x3e\x7b\x63\x6f\x6e\x73\x74\x20\x6f\x72\x69\x67\x69\x6e\x61\x6c\x3d\x63\x6f\x6e\x73\x6f\x6c\x65\x5b\x6b\x69\x6e\x64\x5d\x3f\x2e\x62\x69\x6e\x64\x28\x63\x6f\x6e\x73\x6f\x6c\x65\x29\x3b\x63\x6f\x6e\x73\x6f\x6c\x65\x5b\x6b\x69\x6e\x64\x5d\x3d\x28\x2e\x2e\x2e\x61\x72\x67\x73\x29\x3d\x3e\x7b\x6f\x72\x69\x67\x69\x6e\x61\x6c\x3f\x2e\x28\x2e\x2e\x2e\x61\x72\x67\x73\x29\x3b\x73\x65\x6e\x64\x28\x6b\x69\x6e\x64\x2c\x61\x72\x67\x73\x29\x7d\x7d\x29\x3b\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72\x28\x27\x65\x72\x72\x6f\x72\x27\x2c\x65\x76\x65\x6e\x74\x3d\x3e\x73\x65\x6e\x64\x28\x27\x65\x72\x72\x6f\x72\x27\x2c\x5b\x65\x76\x65\x6e\x74\x2e\x6d\x65\x73\x73\x61\x67\x65\x7c\x7c\x27\x50\x72\x65\x76\x69\x65\x77\x20\x65\x72\x72\x6f\x72\x27\x5d\x29\x29\x3b\x61\x64\x64\x45\x76\x65\x6e\x74\x4c\x69\x73\x74\x65\x6e\x65\x72\x28\x27\x75\x6e\x68\x61\x6e\x64\x6c\x65\x64\x72\x65\x6a\x65\x63\x74\x69\x6f\x6e\x27\x2c\x65\x76\x65\x6e\x74\x3d\x3e\x73\x65\x6e\x64\x28\x27\x65\x72\x72\x6f\x72\x27\x2c\x5b\x65\x76\x65\x6e\x74\x2e\x72\x65\x61\x73\x6f\x6e\x3f\x2e\x6d\x65\x73\x73\x61\x67\x65\x7c\x7c\x65\x76\x65\x6e\x74\x2e\x72\x65\x61\x73\x6f\x6e\x7c\x7c\x27\x55\x6e\x68\x61\x6e\x64\x6c\x65\x64\x20\x70\x72\x6f\x6d\x69\x73\x65\x20\x72\x65\x6a\x65\x63\x74\x69\x6f\x6e\x27\x5d\x29\x29\x7d\x29\x28\x29\x3c\x2f\x73\x63\x72\x69\x70\x74\x3e`;
       try {
-        o.preview.srcdoc = `${t}${n}${function(e) {
-          let t = "html" === i.language ? i.file : Object.hasOwn(i.codes, "index.html") ? "index.html" : Object.keys(i.codes).find(e => "html" === w(e));
-          if (t && "html" !== i.language) {
-            const e = (new DOMParser).parseFromString(i.codes[t], "text/html"), n = new URL(t, "https://workspace.invalid/");
-            [ ...e.querySelectorAll("link[href],script[src]") ].some(e => {
+        _0x9bc55b_4.preview.srcdoc = `${_0x9bc55b_1}${_0x9bc55b_2}${function(_0x9bc55b_0) {
+          let _0x9bc55b_1 = "\x68\x74\x6d\x6c" === _0x9bc55b_7.language ? _0x9bc55b_7.file : Object.hasOwn(_0x9bc55b_7.codes, "\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c") ? "\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c" : Object.keys(_0x9bc55b_7.codes).find(_0x9bc55b_0 => "\x68\x74\x6d\x6c" === _0x9bc55b_13(_0x9bc55b_0));
+          if (_0x9bc55b_1 && "\x68\x74\x6d\x6c" !== _0x9bc55b_7.language) {
+            const _0x9bc55b_0 = (new DOMParser).parseFromString(_0x9bc55b_7.codes[_0x9bc55b_1], "\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c"), _0x9bc55b_2 = new URL(_0x9bc55b_1, "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2e\x69\x6e\x76\x61\x6c\x69\x64\x2f");
+            [ ..._0x9bc55b_0.querySelectorAll("\x6c\x69\x6e\x6b\x5b\x68\x72\x65\x66\x5d\x2c\x73\x63\x72\x69\x70\x74\x5b\x73\x72\x63\x5d") ].some(_0x9bc55b_0 => {
               try {
-                return new URL(e.getAttribute("href") || e.getAttribute("src"), n).pathname.slice(1) === i.file;
+                return new URL(_0x9bc55b_0.getAttribute("\x68\x72\x65\x66") || _0x9bc55b_0.getAttribute("\x73\x72\x63"), _0x9bc55b_2).pathname.slice(1) === _0x9bc55b_7.file;
               } catch {
                 return !1;
               }
-            }) || (t = null);
+            }) || (_0x9bc55b_1 = null);
           }
-          if (t) {
-            const n = (new DOMParser).parseFromString(t === i.file ? e : i.codes[t], "text/html"), r = new URL(t, "https://workspace.invalid/"), o = e => {
-              const t = new URL(e, r);
-              return t.origin === r.origin ? decodeURIComponent(t.pathname.slice(1)) : null;
+          if (_0x9bc55b_1) {
+            const _0x9bc55b_2 = (new DOMParser).parseFromString(_0x9bc55b_1 === _0x9bc55b_7.file ? _0x9bc55b_0 : _0x9bc55b_7.codes[_0x9bc55b_1], "\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c"), _0x9bc55b_3 = new URL(_0x9bc55b_1, "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2e\x69\x6e\x76\x61\x6c\x69\x64\x2f"), _0x9bc55b_4 = _0x9bc55b_0 => {
+              const _0x9bc55b_1 = new URL(_0x9bc55b_0, _0x9bc55b_3);
+              return _0x9bc55b_1.origin === _0x9bc55b_3.origin ? decodeURIComponent(_0x9bc55b_1.pathname.slice(1)) : null;
             };
-            for (const e of n.querySelectorAll('link[rel="stylesheet"][href]')) {
-              const t = o(e.getAttribute("href"));
-              if (!t) continue;
-              if (!Object.hasOwn(i.codes, t)) throw Error("Missing workspace file: " + t);
-              const r = n.createElement("style");
-              r.textContent = i.codes[t], e.replaceWith(r);
+            for (const _0x9bc55b_0 of _0x9bc55b_2.querySelectorAll("\x6c\x69\x6e\x6b\x5b\x72\x65\x6c\x3d\x22\x73\x74\x79\x6c\x65\x73\x68\x65\x65\x74\x22\x5d\x5b\x68\x72\x65\x66\x5d")) {
+              const _0x9bc55b_1 = _0x9bc55b_4(_0x9bc55b_0.getAttribute("\x68\x72\x65\x66"));
+              if (!_0x9bc55b_1) continue;
+              if (!Object.hasOwn(_0x9bc55b_7.codes, _0x9bc55b_1)) throw Error("\x4d\x69\x73\x73\x69\x6e\x67\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x66\x69\x6c\x65\x3a\x20" + _0x9bc55b_1);
+              const _0x9bc55b_3 = _0x9bc55b_2.createElement("\x73\x74\x79\x6c\x65");
+              _0x9bc55b_3.textContent = _0x9bc55b_7.codes[_0x9bc55b_1], _0x9bc55b_0.replaceWith(_0x9bc55b_3);
             }
-            for (const e of n.querySelectorAll("script[src]")) {
-              const t = o(e.getAttribute("src"));
-              if (t) {
-                if (!Object.hasOwn(i.codes, t)) throw Error("Missing workspace file: " + t);
-                if ("module" === e.type) throw Error("Use classic scripts for this preview. Module imports need a build server.");
-                e.hasAttribute("defer") && (e.removeAttribute("defer"), n.body.append(e)), e.removeAttribute("src"), 
-                e.removeAttribute("integrity"), e.textContent = i.codes[t].replace(/<\/script/gi, "<\\/script");
+            for (const _0x9bc55b_0 of _0x9bc55b_2.querySelectorAll("\x73\x63\x72\x69\x70\x74\x5b\x73\x72\x63\x5d")) {
+              const _0x9bc55b_1 = _0x9bc55b_4(_0x9bc55b_0.getAttribute("\x73\x72\x63"));
+              if (_0x9bc55b_1) {
+                if (!Object.hasOwn(_0x9bc55b_7.codes, _0x9bc55b_1)) throw Error("\x4d\x69\x73\x73\x69\x6e\x67\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x66\x69\x6c\x65\x3a\x20" + _0x9bc55b_1);
+                if ("\x6d\x6f\x64\x75\x6c\x65" === _0x9bc55b_0.type) throw Error("\x55\x73\x65\x20\x63\x6c\x61\x73\x73\x69\x63\x20\x73\x63\x72\x69\x70\x74\x73\x20\x66\x6f\x72\x20\x74\x68\x69\x73\x20\x70\x72\x65\x76\x69\x65\x77\x2e\x20\x4d\x6f\x64\x75\x6c\x65\x20\x69\x6d\x70\x6f\x72\x74\x73\x20\x6e\x65\x65\x64\x20\x61\x20\x62\x75\x69\x6c\x64\x20\x73\x65\x72\x76\x65\x72\x2e");
+                _0x9bc55b_0.hasAttribute("\x64\x65\x66\x65\x72") && (_0x9bc55b_0.removeAttribute("\x64\x65\x66\x65\x72"), _0x9bc55b_2.body.append(_0x9bc55b_0)), 
+                _0x9bc55b_0.removeAttribute("\x73\x72\x63"), _0x9bc55b_0.removeAttribute("\x69\x6e\x74\x65\x67\x72\x69\x74\x79"), _0x9bc55b_0.textContent = _0x9bc55b_7.codes[_0x9bc55b_1].replace(/<\/script/gi, "\x3c\x5c\x2f\x73\x63\x72\x69\x70\x74");
               }
             }
-            return "<!doctype html>" + n.documentElement.outerHTML;
+            return "\x3c\x21\x64\x6f\x63\x74\x79\x70\x65\x20\x68\x74\x6d\x6c\x3e" + _0x9bc55b_2.documentElement.outerHTML;
           }
-          return "css" === i.language ? `<!doctype html><style>${e}</style><article class="card"><h1>Styled card</h1><p>Your CSS is running in this safe preview.</p></article>` : `<!doctype html><h1>JavaScript preview</h1><p id="message">Press the button to test your code.</p><button>Try it</button><script>${e.replace(/<\/script/gi, "<\\/script")}<\/script>`;
-        }(e)}`;
-      } catch (a) {
-        return p = a.message, f = [ {
-          title: "Preview needs a file",
-          detail: a.message
-        } ], o.preview.removeAttribute("srcdoc"), $("Needs a fix", "note"), void J("problems");
+          return "\x63\x73\x73" === _0x9bc55b_7.language ? `\x3c\x21\x64\x6f\x63\x74\x79\x70\x65\x20\x68\x74\x6d\x6c\x3e\x3c\x73\x74\x79\x6c\x65\x3e${_0x9bc55b_0}\x3c\x2f\x73\x74\x79\x6c\x65\x3e\x3c\x61\x72\x74\x69\x63\x6c\x65\x20\x63\x6c\x61\x73\x73\x3d\x22\x63\x61\x72\x64\x22\x3e\x3c\x68\x31\x3e\x53\x74\x79\x6c\x65\x64\x20\x63\x61\x72\x64\x3c\x2f\x68\x31\x3e\x3c\x70\x3e\x59\x6f\x75\x72\x20\x43\x53\x53\x20\x69\x73\x20\x72\x75\x6e\x6e\x69\x6e\x67\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x73\x61\x66\x65\x20\x70\x72\x65\x76\x69\x65\x77\x2e\x3c\x2f\x70\x3e\x3c\x2f\x61\x72\x74\x69\x63\x6c\x65\x3e` : `\x3c\x21\x64\x6f\x63\x74\x79\x70\x65\x20\x68\x74\x6d\x6c\x3e\x3c\x68\x31\x3e\x4a\x61\x76\x61\x53\x63\x72\x69\x70\x74\x20\x70\x72\x65\x76\x69\x65\x77\x3c\x2f\x68\x31\x3e\x3c\x70\x20\x69\x64\x3d\x22\x6d\x65\x73\x73\x61\x67\x65\x22\x3e\x50\x72\x65\x73\x73\x20\x74\x68\x65\x20\x62\x75\x74\x74\x6f\x6e\x20\x74\x6f\x20\x74\x65\x73\x74\x20\x79\x6f\x75\x72\x20\x63\x6f\x64\x65\x2e\x3c\x2f\x70\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x3e\x54\x72\x79\x20\x69\x74\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x73\x63\x72\x69\x70\x74\x3e${_0x9bc55b_0.replace(/<\/script/gi, "\x3c\x5c\x2f\x73\x63\x72\x69\x70\x74")}\x3c\x2f\x73\x63\x72\x69\x70\x74\x3e`;
+        }(_0x9bc55b_0)}`;
+      } catch (_0x9bc55b_5) {
+        return _0x9bc55b_c = _0x9bc55b_5.message, _0x9bc55b_10 = [ {
+          title: "\x50\x72\x65\x76\x69\x65\x77\x20\x6e\x65\x65\x64\x73\x20\x61\x20\x66\x69\x6c\x65",
+          detail: _0x9bc55b_5.message
+        } ], _0x9bc55b_4.preview.removeAttribute("\x73\x72\x63\x64\x6f\x63"), _0x9bc55b_22("\x4e\x65\x65\x64\x73\x20\x61\x20\x66\x69\x78", "\x6e\x6f\x74\x65"), 
+        void _0x9bc55b_26("\x70\x72\x6f\x62\x6c\x65\x6d\x73");
       }
-      return $("Live", "live"), void J("output");
+      return _0x9bc55b_22("\x4c\x69\x76\x65", "\x6c\x69\x76\x65"), void _0x9bc55b_26("\x6f\x75\x74\x70\x75\x74");
     }
-    if (o.preview.removeAttribute("srcdoc"), "json" !== i.language) {
-      if ("markdown" === i.language) return h = "", o.preview.srcdoc = `<!doctype html><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'"><style>html,body{min-height:100%;margin:0;background:#fff}body{font:15px/1.6 system-ui;padding:1.4rem;color:#172033}code{background:#edf1f9;padding:.1rem .25rem;border-radius:.25rem}h1,h2,h3{line-height:1.2}</style><p>${function(e) {
-        return k(e).replace(/^### (.*)$/gm, "<h3>$1</h3>").replace(/^## (.*)$/gm, "<h2>$1</h2>").replace(/^# (.*)$/gm, "<h1>$1</h1>").replace(/^[-*] (.*)$/gm, "<li>$1</li>").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\n{2,}/g, "</p><p>").replace(/\n/g, "<br>");
-      }(e)}</p>`, $("Rendered", "live"), void J("output");
-      if (n[i.language].runner) {
-        p = "Running your code...", $("Running...", "note"), P(!0), J("output");
-        const n = new AbortController, s = setTimeout(() => n.abort(), 18e3);
+    if (_0x9bc55b_4.preview.removeAttribute("\x73\x72\x63\x64\x6f\x63"), "\x6a\x73\x6f\x6e" !== _0x9bc55b_7.language) {
+      if ("\x6d\x61\x72\x6b\x64\x6f\x77\x6e" === _0x9bc55b_7.language) return _0x9bc55b_e = "", _0x9bc55b_4.preview.srcdoc = `\x3c\x21\x64\x6f\x63\x74\x79\x70\x65\x20\x68\x74\x6d\x6c\x3e\x3c\x6d\x65\x74\x61\x20\x68\x74\x74\x70\x2d\x65\x71\x75\x69\x76\x3d\x22\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x53\x65\x63\x75\x72\x69\x74\x79\x2d\x50\x6f\x6c\x69\x63\x79\x22\x20\x63\x6f\x6e\x74\x65\x6e\x74\x3d\x22\x64\x65\x66\x61\x75\x6c\x74\x2d\x73\x72\x63\x20\x27\x6e\x6f\x6e\x65\x27\x3b\x20\x73\x74\x79\x6c\x65\x2d\x73\x72\x63\x20\x27\x75\x6e\x73\x61\x66\x65\x2d\x69\x6e\x6c\x69\x6e\x65\x27\x22\x3e\x3c\x73\x74\x79\x6c\x65\x3e\x68\x74\x6d\x6c\x2c\x62\x6f\x64\x79\x7b\x6d\x69\x6e\x2d\x68\x65\x69\x67\x68\x74\x3a\x31\x30\x30\x25\x3b\x6d\x61\x72\x67\x69\x6e\x3a\x30\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x66\x66\x66\x7d\x62\x6f\x64\x79\x7b\x66\x6f\x6e\x74\x3a\x31\x35\x70\x78\x2f\x31\x2e\x36\x20\x73\x79\x73\x74\x65\x6d\x2d\x75\x69\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x31\x2e\x34\x72\x65\x6d\x3b\x63\x6f\x6c\x6f\x72\x3a\x23\x31\x37\x32\x30\x33\x33\x7d\x63\x6f\x64\x65\x7b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x65\x64\x66\x31\x66\x39\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x2e\x31\x72\x65\x6d\x20\x2e\x32\x35\x72\x65\x6d\x3b\x62\x6f\x72\x64\x65\x72\x2d\x72\x61\x64\x69\x75\x73\x3a\x2e\x32\x35\x72\x65\x6d\x7d\x68\x31\x2c\x68\x32\x2c\x68\x33\x7b\x6c\x69\x6e\x65\x2d\x68\x65\x69\x67\x68\x74\x3a\x31\x2e\x32\x7d\x3c\x2f\x73\x74\x79\x6c\x65\x3e\x3c\x70\x3e${function(_0x9bc55b_0) {
+        return _0x9bc55b_19(_0x9bc55b_0).replace(/^### (.*)$/gm, "\x3c\x68\x33\x3e\x24\x31\x3c\x2f\x68\x33\x3e").replace(/^## (.*)$/gm, "\x3c\x68\x32\x3e\x24\x31\x3c\x2f\x68\x32\x3e").replace(/^# (.*)$/gm, "\x3c\x68\x31\x3e\x24\x31\x3c\x2f\x68\x31\x3e").replace(/^[-*] (.*)$/gm, "\x3c\x6c\x69\x3e\x24\x31\x3c\x2f\x6c\x69\x3e").replace(/\*\*(.*?)\*\*/g, "\x3c\x73\x74\x72\x6f\x6e\x67\x3e\x24\x31\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e").replace(/`([^`]+)`/g, "\x3c\x63\x6f\x64\x65\x3e\x24\x31\x3c\x2f\x63\x6f\x64\x65\x3e").replace(/\n{2,}/g, "\x3c\x2f\x70\x3e\x3c\x70\x3e").replace(/\n/g, "\x3c\x62\x72\x3e");
+      }(_0x9bc55b_0)}\x3c\x2f\x70\x3e`, _0x9bc55b_22("\x52\x65\x6e\x64\x65\x72\x65\x64", "\x6c\x69\x76\x65"), void _0x9bc55b_26("\x6f\x75\x74\x70\x75\x74");
+      if (_0x9bc55b_2[_0x9bc55b_7.language].runner) {
+        _0x9bc55b_c = "\x52\x75\x6e\x6e\x69\x6e\x67\x20\x79\x6f\x75\x72\x20\x63\x6f\x64\x65\x2e\x2e\x2e", _0x9bc55b_22("\x52\x75\x6e\x6e\x69\x6e\x67\x2e\x2e\x2e", "\x6e\x6f\x74\x65"), _0x9bc55b_23(!0), 
+        _0x9bc55b_26("\x6f\x75\x74\x70\x75\x74");
+        const _0x9bc55b_2 = new AbortController, _0x9bc55b_6 = setTimeout(() => _0x9bc55b_2.abort(), 18e3);
         try {
-          const o = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/code-studio/run", {
-            method: "POST",
+          const _0x9bc55b_4 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x63\x6f\x64\x65\x2d\x73\x74\x75\x64\x69\x6f\x2f\x72\x75\x6e", {
+            method: "\x50\x4f\x53\x54",
             headers: {
-              "content-type": "application/json"
+              "\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
             },
             body: JSON.stringify({
-              language: t,
-              code: e
+              language: _0x9bc55b_1,
+              code: _0x9bc55b_0
             }),
-            signal: n.signal
-          }), a = (o.headers.get("content-type") || "").includes("application/json") ? await o.json() : {};
-          if (r !== y) return;
-          if (!o.ok) throw new Error(a.error || "The isolated code runner could not complete this request.");
-          const s = String(a.stdout || "").trimEnd(), i = String(a.diagnostics || "").trimEnd();
-          p = [ s, i ].filter(Boolean).join("\n\n") || "Program finished with no output.";
-          const l = Number.isFinite(Number(a.time)) ? ` in ${Number(a.time).toFixed(3)}s` : "";
-          g.push({
-            text: `${a.status || "Finished"}${l}`,
-            tone: a.ok ? "prompt" : "muted"
-          }), a.ok ? $("Completed", "live") : (f = [ {
-            title: a.status || "Run failed",
-            detail: i || s || "The program did not finish successfully."
-          } ], $("Needs a fix", "note"));
-        } catch (a) {
-          if (r !== y) return;
-          const e = "AbortError" === a?.name ? "The code run took too long. Try a smaller program." : String(a?.message || "The isolated code runner is temporarily unavailable.");
-          p = e, f = [ {
-            title: "Could not run code",
-            detail: e
-          } ], g.push({
-            text: e,
-            tone: "muted"
-          }), $("Run failed", "note");
+            signal: _0x9bc55b_2.signal
+          }), _0x9bc55b_5 = (_0x9bc55b_4.headers.get("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65") || "").includes("\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e") ? await _0x9bc55b_4.json() : {};
+          if (_0x9bc55b_3 !== _0x9bc55b_11) return;
+          if (!_0x9bc55b_4.ok) throw new Error(_0x9bc55b_5.error || "\x54\x68\x65\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x63\x6f\x64\x65\x20\x72\x75\x6e\x6e\x65\x72\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x74\x68\x69\x73\x20\x72\x65\x71\x75\x65\x73\x74\x2e");
+          const _0x9bc55b_6 = String(_0x9bc55b_5.stdout || "").trimEnd(), _0x9bc55b_7 = String(_0x9bc55b_5.diagnostics || "").trimEnd();
+          _0x9bc55b_c = [ _0x9bc55b_6, _0x9bc55b_7 ].filter(Boolean).join("\x0a\x0a") || "\x50\x72\x6f\x67\x72\x61\x6d\x20\x66\x69\x6e\x69\x73\x68\x65\x64\x20\x77\x69\x74\x68\x20\x6e\x6f\x20\x6f\x75\x74\x70\x75\x74\x2e";
+          const _0x9bc55b_8 = Number.isFinite(Number(_0x9bc55b_5.time)) ? `\x20\x69\x6e\x20${Number(_0x9bc55b_5.time).toFixed(3)}\x73` : "";
+          _0x9bc55b_f.push({
+            text: `${_0x9bc55b_5.status || "\x46\x69\x6e\x69\x73\x68\x65\x64"}${_0x9bc55b_8}`,
+            tone: _0x9bc55b_5.ok ? "\x70\x72\x6f\x6d\x70\x74" : "\x6d\x75\x74\x65\x64"
+          }), _0x9bc55b_5.ok ? _0x9bc55b_22("\x43\x6f\x6d\x70\x6c\x65\x74\x65\x64", "\x6c\x69\x76\x65") : (_0x9bc55b_10 = [ {
+            title: _0x9bc55b_5.status || "\x52\x75\x6e\x20\x66\x61\x69\x6c\x65\x64",
+            detail: _0x9bc55b_7 || _0x9bc55b_6 || "\x54\x68\x65\x20\x70\x72\x6f\x67\x72\x61\x6d\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x66\x69\x6e\x69\x73\x68\x20\x73\x75\x63\x63\x65\x73\x73\x66\x75\x6c\x6c\x79\x2e"
+          } ], _0x9bc55b_22("\x4e\x65\x65\x64\x73\x20\x61\x20\x66\x69\x78", "\x6e\x6f\x74\x65"));
+        } catch (_0x9bc55b_5) {
+          if (_0x9bc55b_3 !== _0x9bc55b_11) return;
+          const _0x9bc55b_0 = "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x9bc55b_5?.name ? "\x54\x68\x65\x20\x63\x6f\x64\x65\x20\x72\x75\x6e\x20\x74\x6f\x6f\x6b\x20\x74\x6f\x6f\x20\x6c\x6f\x6e\x67\x2e\x20\x54\x72\x79\x20\x61\x20\x73\x6d\x61\x6c\x6c\x65\x72\x20\x70\x72\x6f\x67\x72\x61\x6d\x2e" : String(_0x9bc55b_5?.message || "\x54\x68\x65\x20\x69\x73\x6f\x6c\x61\x74\x65\x64\x20\x63\x6f\x64\x65\x20\x72\x75\x6e\x6e\x65\x72\x20\x69\x73\x20\x74\x65\x6d\x70\x6f\x72\x61\x72\x69\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+          _0x9bc55b_c = _0x9bc55b_0, _0x9bc55b_10 = [ {
+            title: "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x72\x75\x6e\x20\x63\x6f\x64\x65",
+            detail: _0x9bc55b_0
+          } ], _0x9bc55b_f.push({
+            text: _0x9bc55b_0,
+            tone: "\x6d\x75\x74\x65\x64"
+          }), _0x9bc55b_22("\x52\x75\x6e\x20\x66\x61\x69\x6c\x65\x64", "\x6e\x6f\x74\x65");
         } finally {
-          clearTimeout(s), r === y && (o.problemCount.textContent = String(f.length), P(!1), 
-          J(document.querySelector(".result-tab.is-active")?.dataset.resultMode || "output"));
+          clearTimeout(_0x9bc55b_6), _0x9bc55b_3 === _0x9bc55b_11 && (_0x9bc55b_4.problemCount.textContent = String(_0x9bc55b_10.length), 
+          _0x9bc55b_23(!1), _0x9bc55b_26(document.querySelector("\x2e\x72\x65\x73\x75\x6c\x74\x2d\x74\x61\x62\x2e\x69\x73\x2d\x61\x63\x74\x69\x76\x65")?.dataset.resultMode || "\x6f\x75\x74\x70\x75\x74"));
         }
       }
     } else {
       try {
-        p = JSON.stringify(JSON.parse(e), null, 2), $("Valid JSON", "live");
-      } catch (a) {
-        p = `JSON error: ${a.message}`, f = [ {
-          title: "Invalid JSON",
-          detail: a.message
-        } ], o.problemCount.textContent = "1", $("Needs a fix", "note");
+        _0x9bc55b_c = JSON.stringify(JSON.parse(_0x9bc55b_0), null, 2), _0x9bc55b_22("\x56\x61\x6c\x69\x64\x20\x4a\x53\x4f\x4e", "\x6c\x69\x76\x65");
+      } catch (_0x9bc55b_5) {
+        _0x9bc55b_c = `\x4a\x53\x4f\x4e\x20\x65\x72\x72\x6f\x72\x3a\x20${_0x9bc55b_5.message}`, _0x9bc55b_10 = [ {
+          title: "\x49\x6e\x76\x61\x6c\x69\x64\x20\x4a\x53\x4f\x4e",
+          detail: _0x9bc55b_5.message
+        } ], _0x9bc55b_4.problemCount.textContent = "\x31", _0x9bc55b_22("\x4e\x65\x65\x64\x73\x20\x61\x20\x66\x69\x78", "\x6e\x6f\x74\x65");
       }
-      J("output");
+      _0x9bc55b_26("\x6f\x75\x74\x70\x75\x74");
     }
   }
-  const B = [ "--studio-accent", "--studio-accent-strong", "--studio-accent-soft", "--studio-accent-line", "--studio-theme-hover-accent", "--studio-theme-hover-soft", "--studio-theme-hover-line" ];
-  function U() {
-    document.body.classList.remove("theme-ruby", "theme-emerald", "theme-sakura", "theme-fresh", "theme-custom"), 
-    B.forEach(e => document.documentElement.style.removeProperty(e));
+  const _0x9bc55b_28 = [ "\x2d\x2d\x73\x74\x75\x64\x69\x6f\x2d\x61\x63\x63\x65\x6e\x74", "\x2d\x2d\x73\x74\x75\x64\x69\x6f\x2d\x61\x63\x63\x65\x6e\x74\x2d\x73\x74\x72\x6f\x6e\x67", "\x2d\x2d\x73\x74\x75\x64\x69\x6f\x2d\x61\x63\x63\x65\x6e\x74\x2d\x73\x6f\x66\x74", "\x2d\x2d\x73\x74\x75\x64\x69\x6f\x2d\x61\x63\x63\x65\x6e\x74\x2d\x6c\x69\x6e\x65", "\x2d\x2d\x73\x74\x75\x64\x69\x6f\x2d\x74\x68\x65\x6d\x65\x2d\x68\x6f\x76\x65\x72\x2d\x61\x63\x63\x65\x6e\x74", "\x2d\x2d\x73\x74\x75\x64\x69\x6f\x2d\x74\x68\x65\x6d\x65\x2d\x68\x6f\x76\x65\x72\x2d\x73\x6f\x66\x74", "\x2d\x2d\x73\x74\x75\x64\x69\x6f\x2d\x74\x68\x65\x6d\x65\x2d\x68\x6f\x76\x65\x72\x2d\x6c\x69\x6e\x65" ];
+  function _0x9bc55b_29() {
+    document.body.classList.remove("\x74\x68\x65\x6d\x65\x2d\x72\x75\x62\x79", "\x74\x68\x65\x6d\x65\x2d\x65\x6d\x65\x72\x61\x6c\x64", "\x74\x68\x65\x6d\x65\x2d\x73\x61\x6b\x75\x72\x61", "\x74\x68\x65\x6d\x65\x2d\x66\x72\x65\x73\x68", "\x74\x68\x65\x6d\x65\x2d\x63\x75\x73\x74\x6f\x6d"), 
+    _0x9bc55b_28.forEach(_0x9bc55b_0 => document.documentElement.style.removeProperty(_0x9bc55b_0));
   }
-  function Y(e, t) {
-    i.versions = i.versions || [], i.versions.at(-1)?.file === e && i.versions.at(-1)?.code === t || (i.versions.push({
-      file: e,
-      language: w(e),
-      code: t,
+  function _0x9bc55b_2a(_0x9bc55b_0, _0x9bc55b_1) {
+    _0x9bc55b_7.versions = _0x9bc55b_7.versions || [], _0x9bc55b_7.versions.at(-1)?.file === _0x9bc55b_0 && _0x9bc55b_7.versions.at(-1)?.code === _0x9bc55b_1 || (_0x9bc55b_7.versions.push({
+      file: _0x9bc55b_0,
+      language: _0x9bc55b_13(_0x9bc55b_0),
+      code: _0x9bc55b_1,
       at: Date.now()
-    }), i.versions = i.versions.slice(-20));
+    }), _0x9bc55b_7.versions = _0x9bc55b_7.versions.slice(-20));
   }
-  function W(e) {
-    Object.hasOwn(i.codes, e) && (i.codes[i.file] = E(), i.file = e, i.language = w(e), 
-    R());
+  function _0x9bc55b_2b(_0x9bc55b_0) {
+    Object.hasOwn(_0x9bc55b_7.codes, _0x9bc55b_0) && (_0x9bc55b_7.codes[_0x9bc55b_7.file] = _0x9bc55b_17(), 
+    _0x9bc55b_7.file = _0x9bc55b_0, _0x9bc55b_7.language = _0x9bc55b_13(_0x9bc55b_0), 
+    _0x9bc55b_21());
   }
-  const H = document.createElement("button");
-  H.type = "button", H.className = "tool-button", H.textContent = "Versions", H.title = "Restore a saved code version", 
-  document.querySelector("[data-download-code]").after(H);
-  const F = document.createElement("dialog");
-  F.className = "studio-versions", F.setAttribute("aria-label", "Saved code versions");
-  const z = document.createElement("h2");
-  z.textContent = "Saved versions (last 20)";
-  const K = document.createElement("select");
-  K.setAttribute("aria-label", "Saved version");
-  const _ = document.createElement("textarea");
-  _.readOnly = !0, _.setAttribute("aria-label", "Saved code");
-  const V = document.createElement("button");
-  V.textContent = "Restore version", V.className = "tool-button";
-  const G = document.createElement("button");
-  G.textContent = "Close", G.className = "tool-button", F.append(z, K, _, V, G), document.body.append(F), 
-  K.onchange = () => {
-    _.value = i.versions?.[Number(K.value)]?.code || "";
-  }, H.onclick = () => {
-    K.replaceChildren(), (i.versions || []).forEach((e, t) => {
-      const n = document.createElement("option");
-      n.value = t, n.textContent = e.file + " - " + new Date(e.at).toLocaleString(), K.append(n);
-    }), V.disabled = !i.versions?.length, K.onchange(), F.showModal();
-  }, G.onclick = () => F.close(), V.onclick = () => {
-    const e = i.versions?.[Number(K.value)];
-    e && (Y(i.file, E()), i.codes[e.file] = e.code, i.file = e.file, i.language = w(e.file), 
-    R(), F.close());
+  const _0x9bc55b_2c = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+  _0x9bc55b_2c.type = "\x62\x75\x74\x74\x6f\x6e", _0x9bc55b_2c.className = "\x74\x6f\x6f\x6c\x2d\x62\x75\x74\x74\x6f\x6e", _0x9bc55b_2c.textContent = "\x56\x65\x72\x73\x69\x6f\x6e\x73", 
+  _0x9bc55b_2c.title = "\x52\x65\x73\x74\x6f\x72\x65\x20\x61\x20\x73\x61\x76\x65\x64\x20\x63\x6f\x64\x65\x20\x76\x65\x72\x73\x69\x6f\x6e", document.querySelector("\x5b\x64\x61\x74\x61\x2d\x64\x6f\x77\x6e\x6c\x6f\x61\x64\x2d\x63\x6f\x64\x65\x5d").after(_0x9bc55b_2c);
+  const _0x9bc55b_2d = document.createElement("\x64\x69\x61\x6c\x6f\x67");
+  _0x9bc55b_2d.className = "\x73\x74\x75\x64\x69\x6f\x2d\x76\x65\x72\x73\x69\x6f\x6e\x73", _0x9bc55b_2d.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x53\x61\x76\x65\x64\x20\x63\x6f\x64\x65\x20\x76\x65\x72\x73\x69\x6f\x6e\x73");
+  const _0x9bc55b_2e = document.createElement("\x68\x32");
+  _0x9bc55b_2e.textContent = "\x53\x61\x76\x65\x64\x20\x76\x65\x72\x73\x69\x6f\x6e\x73\x20\x28\x6c\x61\x73\x74\x20\x32\x30\x29";
+  const _0x9bc55b_2f = document.createElement("\x73\x65\x6c\x65\x63\x74");
+  _0x9bc55b_2f.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x53\x61\x76\x65\x64\x20\x76\x65\x72\x73\x69\x6f\x6e");
+  const _0x9bc55b_30 = document.createElement("\x74\x65\x78\x74\x61\x72\x65\x61");
+  _0x9bc55b_30.readOnly = !0, _0x9bc55b_30.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x53\x61\x76\x65\x64\x20\x63\x6f\x64\x65");
+  const _0x9bc55b_31 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+  _0x9bc55b_31.textContent = "\x52\x65\x73\x74\x6f\x72\x65\x20\x76\x65\x72\x73\x69\x6f\x6e", _0x9bc55b_31.className = "\x74\x6f\x6f\x6c\x2d\x62\x75\x74\x74\x6f\x6e";
+  const _0x9bc55b_32 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+  _0x9bc55b_32.textContent = "\x43\x6c\x6f\x73\x65", _0x9bc55b_32.className = "\x74\x6f\x6f\x6c\x2d\x62\x75\x74\x74\x6f\x6e", _0x9bc55b_2d.append(_0x9bc55b_2e, _0x9bc55b_2f, _0x9bc55b_30, _0x9bc55b_31, _0x9bc55b_32), 
+  document.body.append(_0x9bc55b_2d), _0x9bc55b_2f.onchange = () => {
+    _0x9bc55b_30.value = _0x9bc55b_7.versions?.[Number(_0x9bc55b_2f.value)]?.code || "";
+  }, _0x9bc55b_2c.onclick = () => {
+    _0x9bc55b_2f.replaceChildren(), (_0x9bc55b_7.versions || []).forEach((_0x9bc55b_0, _0x9bc55b_1) => {
+      const _0x9bc55b_2 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+      _0x9bc55b_2.value = _0x9bc55b_1, _0x9bc55b_2.textContent = _0x9bc55b_0.file + "\x20\x2d\x20" + new Date(_0x9bc55b_0.at).toLocaleString(), 
+      _0x9bc55b_2f.append(_0x9bc55b_2);
+    }), _0x9bc55b_31.disabled = !_0x9bc55b_7.versions?.length, _0x9bc55b_2f.onchange(), 
+    _0x9bc55b_2d.showModal();
+  }, _0x9bc55b_32.onclick = () => _0x9bc55b_2d.close(), _0x9bc55b_31.onclick = () => {
+    const _0x9bc55b_0 = _0x9bc55b_7.versions?.[Number(_0x9bc55b_2f.value)];
+    _0x9bc55b_0 && (_0x9bc55b_2a(_0x9bc55b_7.file, _0x9bc55b_17()), _0x9bc55b_7.codes[_0x9bc55b_0.file] = _0x9bc55b_0.code, 
+    _0x9bc55b_7.file = _0x9bc55b_0.file, _0x9bc55b_7.language = _0x9bc55b_13(_0x9bc55b_0.file), 
+    _0x9bc55b_21(), _0x9bc55b_2d.close());
   };
-  const Z = document.createElement("select");
-  Z.className = "studio-model-picker", Z.setAttribute("aria-label", "AI model"), Z.disabled = !0, 
-  document.querySelector(".assistant-brand").after(Z);
-  let X = "";
+  const _0x9bc55b_33 = document.createElement("\x73\x65\x6c\x65\x63\x74");
+  _0x9bc55b_33.className = "\x73\x74\x75\x64\x69\x6f\x2d\x6d\x6f\x64\x65\x6c\x2d\x70\x69\x63\x6b\x65\x72", _0x9bc55b_33.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x41\x49\x20\x6d\x6f\x64\x65\x6c"), 
+  _0x9bc55b_33.disabled = !0, document.querySelector("\x2e\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x2d\x62\x72\x61\x6e\x64").after(_0x9bc55b_33);
+  let _0x9bc55b_34 = "";
   try {
-    X = localStorage.getItem("nyx.codeStudio.model") || "";
+    _0x9bc55b_34 = localStorage.getItem("\x6e\x79\x78\x2e\x63\x6f\x64\x65\x53\x74\x75\x64\x69\x6f\x2e\x6d\x6f\x64\x65\x6c") || "";
   } catch {}
-  function Q() {
-    return c.filter(e => e.model === X).slice(0, 1);
+  function _0x9bc55b_35() {
+    return _0x9bc55b_9.filter(_0x9bc55b_0 => _0x9bc55b_0.model === _0x9bc55b_34).slice(0, 1);
   }
-  async function ee() {
+  async function _0x9bc55b_36() {
     if (parent !== window) {
-      const e = `code-${Date.now()}-${Math.random().toString(36).slice(2)}`, t = await new Promise(t => {
-        let n = !1;
-        const r = e => {
-          n || (n = !0, clearTimeout(a), removeEventListener("message", o), t(String(e || "")));
-        }, o = t => {
-          t.source === parent && t.origin === location.origin && "nyx:account-token-response" === t.data?.type && t.data.requestId === e && r(t.data.token);
-        }, a = setTimeout(() => r(""), 2200);
-        addEventListener("message", o), parent.postMessage({
-          type: "nyx:account-token-request",
-          requestId: e
+      const _0x9bc55b_0 = `\x63\x6f\x64\x65\x2d${Date.now()}\x2d${Math.random().toString(36).slice(2)}`, _0x9bc55b_1 = await new Promise(_0x9bc55b_1 => {
+        let _0x9bc55b_2 = !1;
+        const _0x9bc55b_3 = _0x9bc55b_0 => {
+          _0x9bc55b_2 || (_0x9bc55b_2 = !0, clearTimeout(_0x9bc55b_5), removeEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x9bc55b_4), 
+          _0x9bc55b_1(String(_0x9bc55b_0 || "")));
+        }, _0x9bc55b_4 = _0x9bc55b_1 => {
+          _0x9bc55b_1.source === parent && _0x9bc55b_1.origin === location.origin && "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65" === _0x9bc55b_1.data?.type && _0x9bc55b_1.data.requestId === _0x9bc55b_0 && _0x9bc55b_3(_0x9bc55b_1.data.token);
+        }, _0x9bc55b_5 = setTimeout(() => _0x9bc55b_3(""), 2200);
+        addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x9bc55b_4), parent.postMessage({
+          type: "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74",
+          requestId: _0x9bc55b_0
         }, location.origin);
       });
-      if (t) return t;
+      if (_0x9bc55b_1) return _0x9bc55b_1;
     }
-    l || (l = (async () => {
+    _0x9bc55b_8 || (_0x9bc55b_8 = (async () => {
       try {
-        const e = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/founder-profile/auth-config", {
-          cache: "no-store"
-        }), t = await e.json();
-        if (!t?.enabled || !t?.apiKey || !t?.projectId) return null;
-        const [{initializeApp: n, getApps: r}, {getAuth: o, setPersistence: a, browserLocalPersistence: s}] = await Promise.all([ import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"), import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js") ]), i = o(r().find(e => "nyx-code-studio" === e.name) || n({
-          apiKey: t.apiKey,
-          authDomain: `${t.projectId}.firebaseapp.com`,
-          projectId: t.projectId
-        }, "nyx-code-studio"));
+        const _0x9bc55b_0 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x66\x6f\x75\x6e\x64\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67", {
+          cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+        }), _0x9bc55b_1 = await _0x9bc55b_0.json();
+        if (!_0x9bc55b_1?.enabled || !_0x9bc55b_1?.apiKey || !_0x9bc55b_1?.projectId) return null;
+        const [{initializeApp: _0x9bc55b_2, getApps: _0x9bc55b_3}, {getAuth: _0x9bc55b_4, setPersistence: _0x9bc55b_5, browserLocalPersistence: _0x9bc55b_6}] = await Promise.all([ import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x70\x70\x2e\x6a\x73"), import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x75\x74\x68\x2e\x6a\x73") ]), _0x9bc55b_7 = _0x9bc55b_4(_0x9bc55b_3().find(_0x9bc55b_0 => "\x6e\x79\x78\x2d\x63\x6f\x64\x65\x2d\x73\x74\x75\x64\x69\x6f" === _0x9bc55b_0.name) || _0x9bc55b_2({
+          apiKey: _0x9bc55b_1.apiKey,
+          authDomain: `${_0x9bc55b_1.projectId}\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d`,
+          projectId: _0x9bc55b_1.projectId
+        }, "\x6e\x79\x78\x2d\x63\x6f\x64\x65\x2d\x73\x74\x75\x64\x69\x6f"));
         try {
-          await a(i, s);
+          await _0x9bc55b_5(_0x9bc55b_7, _0x9bc55b_6);
         } catch {}
-        return "function" == typeof i.authStateReady && await i.authStateReady(), i;
+        return "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x9bc55b_7.authStateReady && await _0x9bc55b_7.authStateReady(), 
+        _0x9bc55b_7;
       } catch {
         return null;
       }
     })());
     try {
-      const e = await l;
-      return e?.currentUser ? await e.currentUser.getIdToken() : "";
+      const _0x9bc55b_0 = await _0x9bc55b_8;
+      return _0x9bc55b_0?.currentUser ? await _0x9bc55b_0.currentUser.getIdToken() : "";
     } catch {
       return "";
     }
   }
-  async function te(e = "shared", t = null) {
-    const n = null === t ? await ee() : t;
+  async function _0x9bc55b_37(_0x9bc55b_0 = "\x73\x68\x61\x72\x65\x64", _0x9bc55b_1 = null) {
+    const _0x9bc55b_2 = null === _0x9bc55b_1 ? await _0x9bc55b_36() : _0x9bc55b_1;
     return {
-      "content-type": "application/json",
-      "x-nyx-ai-provider": e,
-      ...n ? {
-        Authorization: `Bearer ${n}`
+      "\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+      "\x78\x2d\x6e\x79\x78\x2d\x61\x69\x2d\x70\x72\x6f\x76\x69\x64\x65\x72": _0x9bc55b_0,
+      ..._0x9bc55b_2 ? {
+        Authorization: `\x42\x65\x61\x72\x65\x72\x20${_0x9bc55b_2}`
       } : {}
     };
   }
-  function ne(e = !1) {
-    return !e && c.length ? Promise.resolve(Q()) : (!e && d || (d = async function() {
+  function _0x9bc55b_38(_0x9bc55b_0 = !1) {
+    return !_0x9bc55b_0 && _0x9bc55b_9.length ? Promise.resolve(_0x9bc55b_35()) : (!_0x9bc55b_0 && _0x9bc55b_a || (_0x9bc55b_a = async function() {
       try {
-        const e = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai/providers", {
+        const _0x9bc55b_0 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x70\x72\x6f\x76\x69\x64\x65\x72\x73", {
           headers: {
-            accept: "application/json"
+            accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
           }
-        }), t = await e.json(), n = e.ok && Array.isArray(t?.providers) ? t.providers.map(e => String(e?.id || "")) : [], r = [ "shared" ].filter(e => n.includes(e)), o = await ee(), a = (await Promise.all(r.map(async e => {
+        }), _0x9bc55b_1 = await _0x9bc55b_0.json(), _0x9bc55b_2 = _0x9bc55b_0.ok && Array.isArray(_0x9bc55b_1?.providers) ? _0x9bc55b_1.providers.map(_0x9bc55b_0 => String(_0x9bc55b_0?.id || "")) : [], _0x9bc55b_3 = [ "\x73\x68\x61\x72\x65\x64" ].filter(_0x9bc55b_0 => _0x9bc55b_2.includes(_0x9bc55b_0)), _0x9bc55b_4 = await _0x9bc55b_36(), _0x9bc55b_5 = (await Promise.all(_0x9bc55b_3.map(async _0x9bc55b_0 => {
           try {
-            const t = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai/models", {
-              headers: await te(e, o)
-            }), n = await t.json();
-            return (t.ok && Array.isArray(n?.models) ? n.models : []).filter(e => e?.id).map(t => ({
-              provider: e,
-              model: String(t.id),
-              label: String(t.label || t.id)
+            const _0x9bc55b_1 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x6d\x6f\x64\x65\x6c\x73", {
+              headers: await _0x9bc55b_37(_0x9bc55b_0, _0x9bc55b_4)
+            }), _0x9bc55b_2 = await _0x9bc55b_1.json();
+            return (_0x9bc55b_1.ok && Array.isArray(_0x9bc55b_2?.models) ? _0x9bc55b_2.models : []).filter(_0x9bc55b_0 => _0x9bc55b_0?.id).map(_0x9bc55b_1 => ({
+              provider: _0x9bc55b_0,
+              model: String(_0x9bc55b_1.id),
+              label: String(_0x9bc55b_1.label || _0x9bc55b_1.id)
             }));
           } catch {
             return null;
           }
         }))).flat().filter(Boolean);
-        c = a;
+        _0x9bc55b_9 = _0x9bc55b_5;
       } catch {
-        c = [];
+        _0x9bc55b_9 = [];
       }
       return function() {
-        Z.replaceChildren();
-        for (const e of c) {
-          const t = document.createElement("option");
-          t.value = e.model, t.textContent = e.label || e.model, Z.append(t);
+        _0x9bc55b_33.replaceChildren();
+        for (const _0x9bc55b_0 of _0x9bc55b_9) {
+          const _0x9bc55b_1 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+          _0x9bc55b_1.value = _0x9bc55b_0.model, _0x9bc55b_1.textContent = _0x9bc55b_0.label || _0x9bc55b_0.model, 
+          _0x9bc55b_33.append(_0x9bc55b_1);
         }
-        if (c.some(e => e.model === X) || (X = c[0]?.model || ""), Z.value = X, Z.disabled = !c.length, 
-        !c.length) {
-          const e = document.createElement("option");
-          e.textContent = "Models unavailable", Z.append(e);
+        if (_0x9bc55b_9.some(_0x9bc55b_0 => _0x9bc55b_0.model === _0x9bc55b_34) || (_0x9bc55b_34 = _0x9bc55b_9[0]?.model || ""), 
+        _0x9bc55b_33.value = _0x9bc55b_34, _0x9bc55b_33.disabled = !_0x9bc55b_9.length, 
+        !_0x9bc55b_9.length) {
+          const _0x9bc55b_0 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+          _0x9bc55b_0.textContent = "\x4d\x6f\x64\x65\x6c\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", _0x9bc55b_33.append(_0x9bc55b_0);
         }
-      }(), c;
-    }()), d.then(() => Q()));
+      }(), _0x9bc55b_9;
+    }()), _0x9bc55b_a.then(() => _0x9bc55b_35()));
   }
-  async function re(e, t, n) {
-    const r = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai", {
-      method: "POST",
+  async function _0x9bc55b_39(_0x9bc55b_0, _0x9bc55b_1, _0x9bc55b_2) {
+    const _0x9bc55b_3 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69", {
+      method: "\x50\x4f\x53\x54",
       signal: AbortSignal.timeout(125e3),
-      headers: await te(e.provider, n),
+      headers: await _0x9bc55b_37(_0x9bc55b_0.provider, _0x9bc55b_2),
       body: JSON.stringify({
-        ...t,
-        model: e.model
+        ..._0x9bc55b_1,
+        model: _0x9bc55b_0.model
       })
-    }), o = await r.json().catch(() => ({}));
-    if (!r.ok) {
-      const e = new Error(o?.error || (r.status >= 500 ? "Nyx AI is temporarily unavailable. Please try again." : `Nyx AI could not help (${r.status}).`));
-      throw e.status = r.status, e;
+    }), _0x9bc55b_4 = await _0x9bc55b_3.json().catch(() => ({}));
+    if (!_0x9bc55b_3.ok) {
+      const _0x9bc55b_0 = new Error(_0x9bc55b_4?.error || (_0x9bc55b_3.status >= 500 ? "\x4e\x79\x78\x20\x41\x49\x20\x69\x73\x20\x74\x65\x6d\x70\x6f\x72\x61\x72\x69\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x50\x6c\x65\x61\x73\x65\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e" : `\x4e\x79\x78\x20\x41\x49\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x68\x65\x6c\x70\x20\x28${_0x9bc55b_3.status}\x29\x2e`));
+      throw _0x9bc55b_0.status = _0x9bc55b_3.status, _0x9bc55b_0;
     }
-    const a = function(e) {
-      const t = e?.text || e?.response || e?.choices?.[0]?.message?.content || e?.choices?.[0]?.text || "";
-      return (Array.isArray(t) ? t.filter(e => "text" === e?.type).map(e => e.text || "").join("") : "string" == typeof t ? t : "").trim();
-    }(o);
-    if ("code-edit" === t.task && "length" === o?.finishReason) throw new Error("The model reached its reply limit. Your files are unchanged. Ask for one smaller change at a time.");
-    if (!a) throw new Error("The model returned no answer. Try another model or a smaller request. Your files are unchanged.");
-    return a;
+    const _0x9bc55b_5 = function(_0x9bc55b_0) {
+      const _0x9bc55b_1 = _0x9bc55b_0?.text || _0x9bc55b_0?.response || _0x9bc55b_0?.choices?.[0]?.message?.content || _0x9bc55b_0?.choices?.[0]?.text || "";
+      return (Array.isArray(_0x9bc55b_1) ? _0x9bc55b_1.filter(_0x9bc55b_0 => "\x74\x65\x78\x74" === _0x9bc55b_0?.type).map(_0x9bc55b_0 => _0x9bc55b_0.text || "").join("") : "\x73\x74\x72\x69\x6e\x67" == typeof _0x9bc55b_1 ? _0x9bc55b_1 : "").trim();
+    }(_0x9bc55b_4);
+    if ("\x63\x6f\x64\x65\x2d\x65\x64\x69\x74" === _0x9bc55b_1.task && "\x6c\x65\x6e\x67\x74\x68" === _0x9bc55b_4?.finishReason) throw new Error("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x61\x63\x68\x65\x64\x20\x69\x74\x73\x20\x72\x65\x70\x6c\x79\x20\x6c\x69\x6d\x69\x74\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e\x20\x41\x73\x6b\x20\x66\x6f\x72\x20\x6f\x6e\x65\x20\x73\x6d\x61\x6c\x6c\x65\x72\x20\x63\x68\x61\x6e\x67\x65\x20\x61\x74\x20\x61\x20\x74\x69\x6d\x65\x2e");
+    if (!_0x9bc55b_5) throw new Error("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x6e\x6f\x20\x61\x6e\x73\x77\x65\x72\x2e\x20\x54\x72\x79\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x6d\x6f\x64\x65\x6c\x20\x6f\x72\x20\x61\x20\x73\x6d\x61\x6c\x6c\x65\x72\x20\x72\x65\x71\x75\x65\x73\x74\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e");
+    return _0x9bc55b_5;
   }
-  function oe(e, t = !1) {
-    o.aiStatusLabel.textContent = e, o.aiStatus.classList.toggle("is-working", t);
+  function _0x9bc55b_3a(_0x9bc55b_0, _0x9bc55b_1 = !1) {
+    _0x9bc55b_4.aiStatusLabel.textContent = _0x9bc55b_0, _0x9bc55b_4.aiStatus.classList.toggle("\x69\x73\x2d\x77\x6f\x72\x6b\x69\x6e\x67", _0x9bc55b_1);
   }
-  function ae(e, t, n = !1) {
-    o.answer.querySelector("[data-ai-empty]")?.remove();
-    const r = document.createElement("article");
-    r.className = `ai-message is-${e}${n ? " is-error" : ""}`;
-    const a = document.createElement("header");
-    a.textContent = "user" === e ? "You" : "Nyx AI";
-    const s = document.createElement("p");
-    return s.textContent = t, r.append(a, s), o.answer.append(r), o.answer.scrollTop = o.answer.scrollHeight, 
-    r;
+  function _0x9bc55b_3b(_0x9bc55b_0, _0x9bc55b_1, _0x9bc55b_2 = !1) {
+    _0x9bc55b_4.answer.querySelector("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x65\x6d\x70\x74\x79\x5d")?.remove();
+    const _0x9bc55b_3 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+    _0x9bc55b_3.className = `\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x20\x69\x73\x2d${_0x9bc55b_0}${_0x9bc55b_2 ? "\x20\x69\x73\x2d\x65\x72\x72\x6f\x72" : ""}`;
+    const _0x9bc55b_5 = document.createElement("\x68\x65\x61\x64\x65\x72");
+    _0x9bc55b_5.textContent = "\x75\x73\x65\x72" === _0x9bc55b_0 ? "\x59\x6f\x75" : "\x4e\x79\x78\x20\x41\x49";
+    const _0x9bc55b_6 = document.createElement("\x70");
+    return _0x9bc55b_6.textContent = _0x9bc55b_1, _0x9bc55b_3.append(_0x9bc55b_5, _0x9bc55b_6), 
+    _0x9bc55b_4.answer.append(_0x9bc55b_3), _0x9bc55b_4.answer.scrollTop = _0x9bc55b_4.answer.scrollHeight, 
+    _0x9bc55b_3;
   }
-  Z.onchange = () => {
-    X = Z.value;
+  _0x9bc55b_33.onchange = () => {
+    _0x9bc55b_34 = _0x9bc55b_33.value;
     try {
-      localStorage.setItem("nyx.codeStudio.model", X);
+      localStorage.setItem("\x6e\x79\x78\x2e\x63\x6f\x64\x65\x53\x74\x75\x64\x69\x6f\x2e\x6d\x6f\x64\x65\x6c", _0x9bc55b_34);
     } catch {}
   };
-  let se = !1;
-  const ie = document.createElement("select");
-  ie.className = "studio-model-picker", ie.setAttribute("aria-label", "Assistant mode");
-  for (const [ve, we] of [ [ "agent", "Agent - edit code" ], [ "ask", "Ask - explain code" ] ]) {
-    const e = document.createElement("option");
-    e.value = ve, e.textContent = we, ie.append(e);
+  let _0x9bc55b_3c = !1;
+  const _0x9bc55b_3d = document.createElement("\x73\x65\x6c\x65\x63\x74");
+  _0x9bc55b_3d.className = "\x73\x74\x75\x64\x69\x6f\x2d\x6d\x6f\x64\x65\x6c\x2d\x70\x69\x63\x6b\x65\x72", _0x9bc55b_3d.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x41\x73\x73\x69\x73\x74\x61\x6e\x74\x20\x6d\x6f\x64\x65");
+  for (const [_0x9bc55b_48, _0x9bc55b_49] of [ [ "\x61\x67\x65\x6e\x74", "\x41\x67\x65\x6e\x74\x20\x2d\x20\x65\x64\x69\x74\x20\x63\x6f\x64\x65" ], [ "\x61\x73\x6b", "\x41\x73\x6b\x20\x2d\x20\x65\x78\x70\x6c\x61\x69\x6e\x20\x63\x6f\x64\x65" ] ]) {
+    const _0x9bc55b_0 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+    _0x9bc55b_0.value = _0x9bc55b_48, _0x9bc55b_0.textContent = _0x9bc55b_49, _0x9bc55b_3d.append(_0x9bc55b_0);
   }
-  const le = document.createElement("div");
-  le.className = "assistant-settings", Z.before(le);
-  for (const [ve, we] of [ [ "Model", Z ], [ "Mode", ie ] ]) {
-    const e = document.createElement("label");
-    e.textContent = ve, e.append(we), le.append(e);
+  const _0x9bc55b_3e = document.createElement("\x64\x69\x76");
+  _0x9bc55b_3e.className = "\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x2d\x73\x65\x74\x74\x69\x6e\x67\x73", _0x9bc55b_33.before(_0x9bc55b_3e);
+  for (const [_0x9bc55b_48, _0x9bc55b_49] of [ [ "\x4d\x6f\x64\x65\x6c", _0x9bc55b_33 ], [ "\x4d\x6f\x64\x65", _0x9bc55b_3d ] ]) {
+    const _0x9bc55b_0 = document.createElement("\x6c\x61\x62\x65\x6c");
+    _0x9bc55b_0.textContent = _0x9bc55b_48, _0x9bc55b_0.append(_0x9bc55b_49), _0x9bc55b_3e.append(_0x9bc55b_0);
   }
-  ie.onchange = () => {
-    o.prompt.placeholder = "agent" === ie.value ? "Describe the change to make\u2026" : "Ask a question about your code\u2026", 
-    document.querySelector("#assistant-title").textContent = "agent" === ie.value ? "Code agent" : "Ask Nyx";
+  _0x9bc55b_3d.onchange = () => {
+    _0x9bc55b_4.prompt.placeholder = "\x61\x67\x65\x6e\x74" === _0x9bc55b_3d.value ? "\x44\x65\x73\x63\x72\x69\x62\x65\x20\x74\x68\x65\x20\x63\x68\x61\x6e\x67\x65\x20\x74\x6f\x20\x6d\x61\x6b\x65\u2026" : "\x41\x73\x6b\x20\x61\x20\x71\x75\x65\x73\x74\x69\x6f\x6e\x20\x61\x62\x6f\x75\x74\x20\x79\x6f\x75\x72\x20\x63\x6f\x64\x65\u2026", 
+    document.querySelector("\x23\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x2d\x74\x69\x74\x6c\x65").textContent = "\x61\x67\x65\x6e\x74" === _0x9bc55b_3d.value ? "\x43\x6f\x64\x65\x20\x61\x67\x65\x6e\x74" : "\x41\x73\x6b\x20\x4e\x79\x78";
   };
-  const ce = document.createElement("select");
-  ce.className = "studio-model-picker", ce.setAttribute("aria-label", "Workspace files");
-  const de = document.createElement("label");
-  de.className = "workspace-file-field", de.textContent = "Open file", de.append(ce), 
-  document.querySelector(".project-controls").prepend(de), ce.onchange = () => W(ce.value);
-  const ue = document.createElement("button");
-  ue.type = "button", ue.className = "tool-button", ue.textContent = "+ New file", 
-  ue.dataset.newFile = "", de.after(ue);
-  const pe = document.createElement("dialog");
-  async function me(e) {
-    const r = String(e || "").trim();
-    if (!r || se || o.language.disabled) return;
-    se = !0;
-    const a = "agent" === ie.value, s = {
-      codes: JSON.stringify(i.codes),
-      language: i.language,
-      file: i.file,
-      current: E()
+  const _0x9bc55b_3f = document.createElement("\x73\x65\x6c\x65\x63\x74");
+  _0x9bc55b_3f.className = "\x73\x74\x75\x64\x69\x6f\x2d\x6d\x6f\x64\x65\x6c\x2d\x70\x69\x63\x6b\x65\x72", _0x9bc55b_3f.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x57\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x66\x69\x6c\x65\x73");
+  const _0x9bc55b_40 = document.createElement("\x6c\x61\x62\x65\x6c");
+  _0x9bc55b_40.className = "\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2d\x66\x69\x6c\x65\x2d\x66\x69\x65\x6c\x64", _0x9bc55b_40.textContent = "\x4f\x70\x65\x6e\x20\x66\x69\x6c\x65", 
+  _0x9bc55b_40.append(_0x9bc55b_3f), document.querySelector("\x2e\x70\x72\x6f\x6a\x65\x63\x74\x2d\x63\x6f\x6e\x74\x72\x6f\x6c\x73").prepend(_0x9bc55b_40), 
+  _0x9bc55b_3f.onchange = () => _0x9bc55b_2b(_0x9bc55b_3f.value);
+  const _0x9bc55b_41 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+  _0x9bc55b_41.type = "\x62\x75\x74\x74\x6f\x6e", _0x9bc55b_41.className = "\x74\x6f\x6f\x6c\x2d\x62\x75\x74\x74\x6f\x6e", _0x9bc55b_41.textContent = "\x2b\x20\x4e\x65\x77\x20\x66\x69\x6c\x65", 
+  _0x9bc55b_41.dataset.newFile = "", _0x9bc55b_40.after(_0x9bc55b_41);
+  const _0x9bc55b_42 = document.createElement("\x64\x69\x61\x6c\x6f\x67");
+  async function _0x9bc55b_43(_0x9bc55b_0) {
+    const _0x9bc55b_3 = String(_0x9bc55b_0 || "").trim();
+    if (!_0x9bc55b_3 || _0x9bc55b_3c || _0x9bc55b_4.language.disabled) return;
+    _0x9bc55b_3c = !0;
+    const _0x9bc55b_5 = "\x61\x67\x65\x6e\x74" === _0x9bc55b_3d.value, _0x9bc55b_6 = {
+      codes: JSON.stringify(_0x9bc55b_7.codes),
+      language: _0x9bc55b_7.language,
+      file: _0x9bc55b_7.file,
+      current: _0x9bc55b_17()
     };
-    o.send.disabled = !0, document.querySelectorAll("[data-ai-prompt]").forEach(e => {
-      e.disabled = !0;
-    }), oe("Thinking", !0), ae("user", r);
-    const l = ae("assistant", "Looking through your code\u2026");
-    l.classList.add("is-loading");
+    _0x9bc55b_4.send.disabled = !0, document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x70\x72\x6f\x6d\x70\x74\x5d").forEach(_0x9bc55b_0 => {
+      _0x9bc55b_0.disabled = !0;
+    }), _0x9bc55b_3a("\x54\x68\x69\x6e\x6b\x69\x6e\x67", !0), _0x9bc55b_3b("\x75\x73\x65\x72", _0x9bc55b_3);
+    const _0x9bc55b_8 = _0x9bc55b_3b("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", "\x4c\x6f\x6f\x6b\x69\x6e\x67\x20\x74\x68\x72\x6f\x75\x67\x68\x20\x79\x6f\x75\x72\x20\x63\x6f\x64\x65\u2026");
+    _0x9bc55b_8.classList.add("\x69\x73\x2d\x6c\x6f\x61\x64\x69\x6e\x67");
     try {
-      let e = await ne();
-      if (e.length || (e = await ne(!0)), !e.length) throw new Error("Nyx AI is not available right now. Please try again in a moment.");
-      const u = i.file, p = E(), m = 18e3, h = p.slice(0, m);
-      let g = `You are helping in Nyx Code Studio. Give a practical, friendly answer for a ${u} file. Focus on the request, point out the most important issue first, and include a small corrected snippet only when it helps.\n\nUser request: ${r}\n\nCurrent code${p.length > m ? " (first 18,000 characters)" : ""}:\n\n${h}`;
-      if (a) {
-        let e = {
-          ...JSON.parse(s.codes),
-          [s.file]: s.current
+      let _0x9bc55b_0 = await _0x9bc55b_38();
+      if (_0x9bc55b_0.length || (_0x9bc55b_0 = await _0x9bc55b_38(!0)), !_0x9bc55b_0.length) throw new Error("\x4e\x79\x78\x20\x41\x49\x20\x69\x73\x20\x6e\x6f\x74\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x72\x69\x67\x68\x74\x20\x6e\x6f\x77\x2e\x20\x50\x6c\x65\x61\x73\x65\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x69\x6e\x20\x61\x20\x6d\x6f\x6d\x65\x6e\x74\x2e");
+      const _0x9bc55b_b = _0x9bc55b_7.file, _0x9bc55b_c = _0x9bc55b_17(), _0x9bc55b_d = 18e3, _0x9bc55b_e = _0x9bc55b_c.slice(0, _0x9bc55b_d);
+      let _0x9bc55b_f = `\x59\x6f\x75\x20\x61\x72\x65\x20\x68\x65\x6c\x70\x69\x6e\x67\x20\x69\x6e\x20\x4e\x79\x78\x20\x43\x6f\x64\x65\x20\x53\x74\x75\x64\x69\x6f\x2e\x20\x47\x69\x76\x65\x20\x61\x20\x70\x72\x61\x63\x74\x69\x63\x61\x6c\x2c\x20\x66\x72\x69\x65\x6e\x64\x6c\x79\x20\x61\x6e\x73\x77\x65\x72\x20\x66\x6f\x72\x20\x61\x20${_0x9bc55b_b}\x20\x66\x69\x6c\x65\x2e\x20\x46\x6f\x63\x75\x73\x20\x6f\x6e\x20\x74\x68\x65\x20\x72\x65\x71\x75\x65\x73\x74\x2c\x20\x70\x6f\x69\x6e\x74\x20\x6f\x75\x74\x20\x74\x68\x65\x20\x6d\x6f\x73\x74\x20\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x20\x69\x73\x73\x75\x65\x20\x66\x69\x72\x73\x74\x2c\x20\x61\x6e\x64\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x61\x20\x73\x6d\x61\x6c\x6c\x20\x63\x6f\x72\x72\x65\x63\x74\x65\x64\x20\x73\x6e\x69\x70\x70\x65\x74\x20\x6f\x6e\x6c\x79\x20\x77\x68\x65\x6e\x20\x69\x74\x20\x68\x65\x6c\x70\x73\x2e\x0a\x0a\x55\x73\x65\x72\x20\x72\x65\x71\x75\x65\x73\x74\x3a\x20${_0x9bc55b_3}\x0a\x0a\x43\x75\x72\x72\x65\x6e\x74\x20\x63\x6f\x64\x65${_0x9bc55b_c.length > _0x9bc55b_d ? "\x20\x28\x66\x69\x72\x73\x74\x20\x31\x38\x2c\x30\x30\x30\x20\x63\x68\x61\x72\x61\x63\x74\x65\x72\x73\x29" : ""}\x3a\x0a\x0a${_0x9bc55b_e}`;
+      if (_0x9bc55b_5) {
+        let _0x9bc55b_0 = {
+          ...JSON.parse(_0x9bc55b_6.codes),
+          [_0x9bc55b_6.file]: _0x9bc55b_6.current
         };
-        if (JSON.stringify(e).length > 2e4 && (e = {
-          [s.file]: s.current
-        }), s.provided = Object.keys(e), g = 'You are the code editing agent in Nyx Code Sandbox. Return ONLY JSON: {"summary":"short explanation","files":[{"name":"index.html","edits":[{"search":"exact old text","replace":"new text"}]}]}. Each search must match exactly once; edits apply in order. For new files or small rewrites use {"name":"styles.css","code":"complete contents"}. Never combine code and edits. Use real relative file names; multiple files of the same language are allowed. Supported extensions: html, css, js, mjs, ts, py, java, c, cpp, cs, go, rs, php, rb, sql, json, md. No parent paths. Link CSS and classic JavaScript from HTML using relative href/src paths; the preview resolves workspace files. No build tools or external dependencies in browser previews. Return only changed files, at most 8, each at most 24000 characters. Keep the response compact; prefer exact edits. No placeholders, ellipses, shell commands or automatic execution. For explanations return files: []. Preserve unrelated code. Focus on ' + s.file + " unless asked otherwise. Edit supplied files or create new files. Supplied files (data): " + JSON.stringify(e) + "\nUser request: " + r, 
-        g.length > 24e3) throw Error("This workspace exceeds the AI context limit. Keep a smaller workspace for this edit; your files are unchanged.");
+        if (JSON.stringify(_0x9bc55b_0).length > 2e4 && (_0x9bc55b_0 = {
+          [_0x9bc55b_6.file]: _0x9bc55b_6.current
+        }), _0x9bc55b_6.provided = Object.keys(_0x9bc55b_0), _0x9bc55b_f = "\x59\x6f\x75\x20\x61\x72\x65\x20\x74\x68\x65\x20\x63\x6f\x64\x65\x20\x65\x64\x69\x74\x69\x6e\x67\x20\x61\x67\x65\x6e\x74\x20\x69\x6e\x20\x4e\x79\x78\x20\x43\x6f\x64\x65\x20\x53\x61\x6e\x64\x62\x6f\x78\x2e\x20\x52\x65\x74\x75\x72\x6e\x20\x4f\x4e\x4c\x59\x20\x4a\x53\x4f\x4e\x3a\x20\x7b\x22\x73\x75\x6d\x6d\x61\x72\x79\x22\x3a\x22\x73\x68\x6f\x72\x74\x20\x65\x78\x70\x6c\x61\x6e\x61\x74\x69\x6f\x6e\x22\x2c\x22\x66\x69\x6c\x65\x73\x22\x3a\x5b\x7b\x22\x6e\x61\x6d\x65\x22\x3a\x22\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c\x22\x2c\x22\x65\x64\x69\x74\x73\x22\x3a\x5b\x7b\x22\x73\x65\x61\x72\x63\x68\x22\x3a\x22\x65\x78\x61\x63\x74\x20\x6f\x6c\x64\x20\x74\x65\x78\x74\x22\x2c\x22\x72\x65\x70\x6c\x61\x63\x65\x22\x3a\x22\x6e\x65\x77\x20\x74\x65\x78\x74\x22\x7d\x5d\x7d\x5d\x7d\x2e\x20\x45\x61\x63\x68\x20\x73\x65\x61\x72\x63\x68\x20\x6d\x75\x73\x74\x20\x6d\x61\x74\x63\x68\x20\x65\x78\x61\x63\x74\x6c\x79\x20\x6f\x6e\x63\x65\x3b\x20\x65\x64\x69\x74\x73\x20\x61\x70\x70\x6c\x79\x20\x69\x6e\x20\x6f\x72\x64\x65\x72\x2e\x20\x46\x6f\x72\x20\x6e\x65\x77\x20\x66\x69\x6c\x65\x73\x20\x6f\x72\x20\x73\x6d\x61\x6c\x6c\x20\x72\x65\x77\x72\x69\x74\x65\x73\x20\x75\x73\x65\x20\x7b\x22\x6e\x61\x6d\x65\x22\x3a\x22\x73\x74\x79\x6c\x65\x73\x2e\x63\x73\x73\x22\x2c\x22\x63\x6f\x64\x65\x22\x3a\x22\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x63\x6f\x6e\x74\x65\x6e\x74\x73\x22\x7d\x2e\x20\x4e\x65\x76\x65\x72\x20\x63\x6f\x6d\x62\x69\x6e\x65\x20\x63\x6f\x64\x65\x20\x61\x6e\x64\x20\x65\x64\x69\x74\x73\x2e\x20\x55\x73\x65\x20\x72\x65\x61\x6c\x20\x72\x65\x6c\x61\x74\x69\x76\x65\x20\x66\x69\x6c\x65\x20\x6e\x61\x6d\x65\x73\x3b\x20\x6d\x75\x6c\x74\x69\x70\x6c\x65\x20\x66\x69\x6c\x65\x73\x20\x6f\x66\x20\x74\x68\x65\x20\x73\x61\x6d\x65\x20\x6c\x61\x6e\x67\x75\x61\x67\x65\x20\x61\x72\x65\x20\x61\x6c\x6c\x6f\x77\x65\x64\x2e\x20\x53\x75\x70\x70\x6f\x72\x74\x65\x64\x20\x65\x78\x74\x65\x6e\x73\x69\x6f\x6e\x73\x3a\x20\x68\x74\x6d\x6c\x2c\x20\x63\x73\x73\x2c\x20\x6a\x73\x2c\x20\x6d\x6a\x73\x2c\x20\x74\x73\x2c\x20\x70\x79\x2c\x20\x6a\x61\x76\x61\x2c\x20\x63\x2c\x20\x63\x70\x70\x2c\x20\x63\x73\x2c\x20\x67\x6f\x2c\x20\x72\x73\x2c\x20\x70\x68\x70\x2c\x20\x72\x62\x2c\x20\x73\x71\x6c\x2c\x20\x6a\x73\x6f\x6e\x2c\x20\x6d\x64\x2e\x20\x4e\x6f\x20\x70\x61\x72\x65\x6e\x74\x20\x70\x61\x74\x68\x73\x2e\x20\x4c\x69\x6e\x6b\x20\x43\x53\x53\x20\x61\x6e\x64\x20\x63\x6c\x61\x73\x73\x69\x63\x20\x4a\x61\x76\x61\x53\x63\x72\x69\x70\x74\x20\x66\x72\x6f\x6d\x20\x48\x54\x4d\x4c\x20\x75\x73\x69\x6e\x67\x20\x72\x65\x6c\x61\x74\x69\x76\x65\x20\x68\x72\x65\x66\x2f\x73\x72\x63\x20\x70\x61\x74\x68\x73\x3b\x20\x74\x68\x65\x20\x70\x72\x65\x76\x69\x65\x77\x20\x72\x65\x73\x6f\x6c\x76\x65\x73\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x66\x69\x6c\x65\x73\x2e\x20\x4e\x6f\x20\x62\x75\x69\x6c\x64\x20\x74\x6f\x6f\x6c\x73\x20\x6f\x72\x20\x65\x78\x74\x65\x72\x6e\x61\x6c\x20\x64\x65\x70\x65\x6e\x64\x65\x6e\x63\x69\x65\x73\x20\x69\x6e\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x70\x72\x65\x76\x69\x65\x77\x73\x2e\x20\x52\x65\x74\x75\x72\x6e\x20\x6f\x6e\x6c\x79\x20\x63\x68\x61\x6e\x67\x65\x64\x20\x66\x69\x6c\x65\x73\x2c\x20\x61\x74\x20\x6d\x6f\x73\x74\x20\x38\x2c\x20\x65\x61\x63\x68\x20\x61\x74\x20\x6d\x6f\x73\x74\x20\x32\x34\x30\x30\x30\x20\x63\x68\x61\x72\x61\x63\x74\x65\x72\x73\x2e\x20\x4b\x65\x65\x70\x20\x74\x68\x65\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x63\x6f\x6d\x70\x61\x63\x74\x3b\x20\x70\x72\x65\x66\x65\x72\x20\x65\x78\x61\x63\x74\x20\x65\x64\x69\x74\x73\x2e\x20\x4e\x6f\x20\x70\x6c\x61\x63\x65\x68\x6f\x6c\x64\x65\x72\x73\x2c\x20\x65\x6c\x6c\x69\x70\x73\x65\x73\x2c\x20\x73\x68\x65\x6c\x6c\x20\x63\x6f\x6d\x6d\x61\x6e\x64\x73\x20\x6f\x72\x20\x61\x75\x74\x6f\x6d\x61\x74\x69\x63\x20\x65\x78\x65\x63\x75\x74\x69\x6f\x6e\x2e\x20\x46\x6f\x72\x20\x65\x78\x70\x6c\x61\x6e\x61\x74\x69\x6f\x6e\x73\x20\x72\x65\x74\x75\x72\x6e\x20\x66\x69\x6c\x65\x73\x3a\x20\x5b\x5d\x2e\x20\x50\x72\x65\x73\x65\x72\x76\x65\x20\x75\x6e\x72\x65\x6c\x61\x74\x65\x64\x20\x63\x6f\x64\x65\x2e\x20\x46\x6f\x63\x75\x73\x20\x6f\x6e\x20" + _0x9bc55b_6.file + "\x20\x75\x6e\x6c\x65\x73\x73\x20\x61\x73\x6b\x65\x64\x20\x6f\x74\x68\x65\x72\x77\x69\x73\x65\x2e\x20\x45\x64\x69\x74\x20\x73\x75\x70\x70\x6c\x69\x65\x64\x20\x66\x69\x6c\x65\x73\x20\x6f\x72\x20\x63\x72\x65\x61\x74\x65\x20\x6e\x65\x77\x20\x66\x69\x6c\x65\x73\x2e\x20\x53\x75\x70\x70\x6c\x69\x65\x64\x20\x66\x69\x6c\x65\x73\x20\x28\x64\x61\x74\x61\x29\x3a\x20" + JSON.stringify(_0x9bc55b_0) + "\x0a\x55\x73\x65\x72\x20\x72\x65\x71\x75\x65\x73\x74\x3a\x20" + _0x9bc55b_3, 
+        _0x9bc55b_f.length > 24e3) throw Error("\x54\x68\x69\x73\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x65\x78\x63\x65\x65\x64\x73\x20\x74\x68\x65\x20\x41\x49\x20\x63\x6f\x6e\x74\x65\x78\x74\x20\x6c\x69\x6d\x69\x74\x2e\x20\x4b\x65\x65\x70\x20\x61\x20\x73\x6d\x61\x6c\x6c\x65\x72\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x66\x6f\x72\x20\x74\x68\x69\x73\x20\x65\x64\x69\x74\x3b\x20\x79\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e");
       }
-      const f = {
-        message: r,
+      const _0x9bc55b_10 = {
+        message: _0x9bc55b_3,
         messages: [ {
-          role: "user",
-          content: g
+          role: "\x75\x73\x65\x72",
+          content: _0x9bc55b_f
         } ],
-        responseDepth: "normal",
+        responseDepth: "\x6e\x6f\x72\x6d\x61\x6c",
         stream: !1,
-        ...a ? {
-          task: "code-edit"
+        ..._0x9bc55b_5 ? {
+          task: "\x63\x6f\x64\x65\x2d\x65\x64\x69\x74"
         } : {}
-      }, y = await ee();
-      let v = "", S = null;
-      for (let t = 0; t < e.length; t += 1) {
-        const n = e[t];
+      }, _0x9bc55b_11 = await _0x9bc55b_36();
+      let _0x9bc55b_12 = "", _0x9bc55b_15 = null;
+      for (let _0x9bc55b_1 = 0; _0x9bc55b_1 < _0x9bc55b_0.length; _0x9bc55b_1 += 1) {
+        const _0x9bc55b_2 = _0x9bc55b_0[_0x9bc55b_1];
         try {
-          v = await re(n, f, y), t > 0 && (c = [ n, ...e.filter(e => e !== n) ]);
+          _0x9bc55b_12 = await _0x9bc55b_39(_0x9bc55b_2, _0x9bc55b_10, _0x9bc55b_11), _0x9bc55b_1 > 0 && (_0x9bc55b_9 = [ _0x9bc55b_2, ..._0x9bc55b_0.filter(_0x9bc55b_0 => _0x9bc55b_0 !== _0x9bc55b_2) ]);
           break;
-        } catch (d) {
-          if (S = d, !(d?.status >= 500) || t === e.length - 1) throw d;
+        } catch (_0x9bc55b_a) {
+          if (_0x9bc55b_15 = _0x9bc55b_a, !(_0x9bc55b_a?.status >= 500) || _0x9bc55b_1 === _0x9bc55b_0.length - 1) throw _0x9bc55b_a;
         }
       }
-      if (!v) throw S || new Error("Nyx AI did not return a suggestion.");
-      const C = a ? function(e, r, o) {
-        let a;
+      if (!_0x9bc55b_12) throw _0x9bc55b_15 || new Error("\x4e\x79\x78\x20\x41\x49\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x75\x72\x6e\x20\x61\x20\x73\x75\x67\x67\x65\x73\x74\x69\x6f\x6e\x2e");
+      const _0x9bc55b_18 = _0x9bc55b_5 ? function(_0x9bc55b_0, _0x9bc55b_3, _0x9bc55b_4) {
+        let _0x9bc55b_5;
         try {
-          const t = e.indexOf("{"), n = e.lastIndexOf("}");
-          a = JSON.parse(e.slice(t, n + 1));
+          const _0x9bc55b_1 = _0x9bc55b_0.indexOf("\x7b"), _0x9bc55b_2 = _0x9bc55b_0.lastIndexOf("\x7d");
+          _0x9bc55b_5 = JSON.parse(_0x9bc55b_0.slice(_0x9bc55b_1, _0x9bc55b_2 + 1));
         } catch {
-          throw Error("The model did not return a complete edit. Your files are unchanged. Ask for one smaller change or choose another model.");
+          throw Error("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x75\x72\x6e\x20\x61\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x65\x64\x69\x74\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e\x20\x41\x73\x6b\x20\x66\x6f\x72\x20\x6f\x6e\x65\x20\x73\x6d\x61\x6c\x6c\x65\x72\x20\x63\x68\x61\x6e\x67\x65\x20\x6f\x72\x20\x63\x68\x6f\x6f\x73\x65\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x6d\x6f\x64\x65\x6c\x2e");
         }
-        if (!a || "string" != typeof a.summary || !Array.isArray(a.files) || a.files.length > 8) throw Error("Invalid edit response. Your files are unchanged.");
-        const s = {
-          ...JSON.parse(r.codes),
-          [r.file]: r.current
-        }, l = new Set;
-        for (const i of a.files) {
-          if (i && !i.name && Object.hasOwn(n, i.language) && (i.name = n[i.language].file), 
-          !i || !b(i.name) || l.has(i.name.toLowerCase()) || Object.keys(s).some(e => e !== i.name && e.toLowerCase() === i.name.toLowerCase())) throw Error("Invalid edit response. Your files are unchanged.");
-          if (!r.provided.includes(i.name) && "string" == typeof s[i.name]) throw Error("Select the other saved file before asking Nyx to edit it. Your files are unchanged.");
-          if (l.add(i.name.toLowerCase()), Array.isArray(i.edits)) {
-            if (void 0 !== i.code || !i.edits.length || i.edits.length > 16 || "string" != typeof s[i.name]) throw Error("Invalid edit response. Your files are unchanged.");
-            let e = s[i.name];
-            for (const n of i.edits) {
-              if ("string" != typeof n?.search || !n.search || "string" != typeof n.replace) throw Error("Invalid edit response. Your files are unchanged.");
-              const r = e.indexOf(n.search);
-              if (r < 0 || e.indexOf(n.search, r + 1) >= 0) throw Error("The edit did not match a unique part of your file. Your files are unchanged. Try a more specific request.");
-              if (e = e.slice(0, r) + n.replace + e.slice(r + n.search.length), e.length > t) throw Error("The edited file is too large. Your files are unchanged.");
+        if (!_0x9bc55b_5 || "\x73\x74\x72\x69\x6e\x67" != typeof _0x9bc55b_5.summary || !Array.isArray(_0x9bc55b_5.files) || _0x9bc55b_5.files.length > 8) throw Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x65\x64\x69\x74\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e");
+        const _0x9bc55b_6 = {
+          ...JSON.parse(_0x9bc55b_3.codes),
+          [_0x9bc55b_3.file]: _0x9bc55b_3.current
+        }, _0x9bc55b_8 = new Set;
+        for (const _0x9bc55b_7 of _0x9bc55b_5.files) {
+          if (_0x9bc55b_7 && !_0x9bc55b_7.name && Object.hasOwn(_0x9bc55b_2, _0x9bc55b_7.language) && (_0x9bc55b_7.name = _0x9bc55b_2[_0x9bc55b_7.language].file), 
+          !_0x9bc55b_7 || !_0x9bc55b_14(_0x9bc55b_7.name) || _0x9bc55b_8.has(_0x9bc55b_7.name.toLowerCase()) || Object.keys(_0x9bc55b_6).some(_0x9bc55b_0 => _0x9bc55b_0 !== _0x9bc55b_7.name && _0x9bc55b_0.toLowerCase() === _0x9bc55b_7.name.toLowerCase())) throw Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x65\x64\x69\x74\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e");
+          if (!_0x9bc55b_3.provided.includes(_0x9bc55b_7.name) && "\x73\x74\x72\x69\x6e\x67" == typeof _0x9bc55b_6[_0x9bc55b_7.name]) throw Error("\x53\x65\x6c\x65\x63\x74\x20\x74\x68\x65\x20\x6f\x74\x68\x65\x72\x20\x73\x61\x76\x65\x64\x20\x66\x69\x6c\x65\x20\x62\x65\x66\x6f\x72\x65\x20\x61\x73\x6b\x69\x6e\x67\x20\x4e\x79\x78\x20\x74\x6f\x20\x65\x64\x69\x74\x20\x69\x74\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e");
+          if (_0x9bc55b_8.add(_0x9bc55b_7.name.toLowerCase()), Array.isArray(_0x9bc55b_7.edits)) {
+            if (void 0 !== _0x9bc55b_7.code || !_0x9bc55b_7.edits.length || _0x9bc55b_7.edits.length > 16 || "\x73\x74\x72\x69\x6e\x67" != typeof _0x9bc55b_6[_0x9bc55b_7.name]) throw Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x65\x64\x69\x74\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e");
+            let _0x9bc55b_0 = _0x9bc55b_6[_0x9bc55b_7.name];
+            for (const _0x9bc55b_2 of _0x9bc55b_7.edits) {
+              if ("\x73\x74\x72\x69\x6e\x67" != typeof _0x9bc55b_2?.search || !_0x9bc55b_2.search || "\x73\x74\x72\x69\x6e\x67" != typeof _0x9bc55b_2.replace) throw Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x65\x64\x69\x74\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e");
+              const _0x9bc55b_3 = _0x9bc55b_0.indexOf(_0x9bc55b_2.search);
+              if (_0x9bc55b_3 < 0 || _0x9bc55b_0.indexOf(_0x9bc55b_2.search, _0x9bc55b_3 + 1) >= 0) throw Error("\x54\x68\x65\x20\x65\x64\x69\x74\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x6d\x61\x74\x63\x68\x20\x61\x20\x75\x6e\x69\x71\x75\x65\x20\x70\x61\x72\x74\x20\x6f\x66\x20\x79\x6f\x75\x72\x20\x66\x69\x6c\x65\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e\x20\x54\x72\x79\x20\x61\x20\x6d\x6f\x72\x65\x20\x73\x70\x65\x63\x69\x66\x69\x63\x20\x72\x65\x71\x75\x65\x73\x74\x2e");
+              if (_0x9bc55b_0 = _0x9bc55b_0.slice(0, _0x9bc55b_3) + _0x9bc55b_2.replace + _0x9bc55b_0.slice(_0x9bc55b_3 + _0x9bc55b_2.search.length), 
+              _0x9bc55b_0.length > _0x9bc55b_1) throw Error("\x54\x68\x65\x20\x65\x64\x69\x74\x65\x64\x20\x66\x69\x6c\x65\x20\x69\x73\x20\x74\x6f\x6f\x20\x6c\x61\x72\x67\x65\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e");
             }
-            i.code = e;
+            _0x9bc55b_7.code = _0x9bc55b_0;
           }
-          if ("string" != typeof i.code || i.code.length > t) throw Error("Invalid or oversized file. Your files are unchanged.");
+          if ("\x73\x74\x72\x69\x6e\x67" != typeof _0x9bc55b_7.code || _0x9bc55b_7.code.length > _0x9bc55b_1) throw Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x6f\x72\x20\x6f\x76\x65\x72\x73\x69\x7a\x65\x64\x20\x66\x69\x6c\x65\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e");
         }
-        if (JSON.stringify(i.codes) !== r.codes || i.file !== r.file || E() !== r.current) throw Error("Your code changed while Nyx was working. Keeping your edits; ask again to use the latest version.");
-        if (a.files = a.files.filter(e => e.code !== s[e.name]), !a.files.length) return o.querySelector("p").textContent = "No files changed. " + a.summary, 
+        if (JSON.stringify(_0x9bc55b_7.codes) !== _0x9bc55b_3.codes || _0x9bc55b_7.file !== _0x9bc55b_3.file || _0x9bc55b_17() !== _0x9bc55b_3.current) throw Error("\x59\x6f\x75\x72\x20\x63\x6f\x64\x65\x20\x63\x68\x61\x6e\x67\x65\x64\x20\x77\x68\x69\x6c\x65\x20\x4e\x79\x78\x20\x77\x61\x73\x20\x77\x6f\x72\x6b\x69\x6e\x67\x2e\x20\x4b\x65\x65\x70\x69\x6e\x67\x20\x79\x6f\x75\x72\x20\x65\x64\x69\x74\x73\x3b\x20\x61\x73\x6b\x20\x61\x67\x61\x69\x6e\x20\x74\x6f\x20\x75\x73\x65\x20\x74\x68\x65\x20\x6c\x61\x74\x65\x73\x74\x20\x76\x65\x72\x73\x69\x6f\x6e\x2e");
+        if (_0x9bc55b_5.files = _0x9bc55b_5.files.filter(_0x9bc55b_0 => _0x9bc55b_0.code !== _0x9bc55b_6[_0x9bc55b_0.name]), 
+        !_0x9bc55b_5.files.length) return _0x9bc55b_4.querySelector("\x70").textContent = "\x4e\x6f\x20\x66\x69\x6c\x65\x73\x20\x63\x68\x61\x6e\x67\x65\x64\x2e\x20" + _0x9bc55b_5.summary, 
         !1;
-        if (new Set([ ...Object.keys(i.codes), ...a.files.map(e => e.name) ]).size > 32) throw Error("This workspace can hold 32 files.");
-        const c = JSON.parse(JSON.stringify(i));
-        Y(i.file, E());
-        for (const t of a.files) "string" == typeof i.codes[t.name] && Y(t.name, i.codes[t.name]), 
-        i.codes[t.name] = t.code;
-        if (i.file = a.files[0].name, i.language = w(i.file), !x()) throw i = c, Error("Could not save the edited files. Your original code is unchanged.");
-        R();
-        const d = JSON.stringify(i.codes);
-        o.querySelector("p").textContent = a.summary + "\nUpdated: " + a.files.map(e => e.name).join(", ") + ". Review your files, then press Run code.";
-        const u = document.createElement("button");
-        return u.type = "button", u.className = "tool-button", u.textContent = "Undo changes", 
-        u.onclick = () => {
-          if (JSON.stringify(i.codes) !== d) return void ae("assistant", "You have edited these files since this change. Use Versions to restore an earlier file without losing your work.", !0);
-          const e = i;
-          i = c, x() ? (R(), u.disabled = !0, u.textContent = "Changes undone") : i = e;
-        }, o.append(u), !0;
-      }(v, s, l) : (l.querySelector("p").textContent = v, !0);
-      C && (o.prompt.value = "");
-    } catch (d) {
-      l.classList.add("is-error"), l.querySelector("p").textContent = "TimeoutError" === d?.name ? "Nyx AI timed out. Your files are unchanged. Try again." : d?.message || "Nyx AI could not complete that suggestion.";
+        if (new Set([ ...Object.keys(_0x9bc55b_7.codes), ..._0x9bc55b_5.files.map(_0x9bc55b_0 => _0x9bc55b_0.name) ]).size > 32) throw Error("\x54\x68\x69\x73\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x63\x61\x6e\x20\x68\x6f\x6c\x64\x20\x33\x32\x20\x66\x69\x6c\x65\x73\x2e");
+        const _0x9bc55b_9 = JSON.parse(JSON.stringify(_0x9bc55b_7));
+        _0x9bc55b_2a(_0x9bc55b_7.file, _0x9bc55b_17());
+        for (const _0x9bc55b_1 of _0x9bc55b_5.files) "\x73\x74\x72\x69\x6e\x67" == typeof _0x9bc55b_7.codes[_0x9bc55b_1.name] && _0x9bc55b_2a(_0x9bc55b_1.name, _0x9bc55b_7.codes[_0x9bc55b_1.name]), 
+        _0x9bc55b_7.codes[_0x9bc55b_1.name] = _0x9bc55b_1.code;
+        if (_0x9bc55b_7.file = _0x9bc55b_5.files[0].name, _0x9bc55b_7.language = _0x9bc55b_13(_0x9bc55b_7.file), 
+        !_0x9bc55b_16()) throw _0x9bc55b_7 = _0x9bc55b_9, Error("\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x61\x76\x65\x20\x74\x68\x65\x20\x65\x64\x69\x74\x65\x64\x20\x66\x69\x6c\x65\x73\x2e\x20\x59\x6f\x75\x72\x20\x6f\x72\x69\x67\x69\x6e\x61\x6c\x20\x63\x6f\x64\x65\x20\x69\x73\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e");
+        _0x9bc55b_21();
+        const _0x9bc55b_a = JSON.stringify(_0x9bc55b_7.codes);
+        _0x9bc55b_4.querySelector("\x70").textContent = _0x9bc55b_5.summary + "\x0a\x55\x70\x64\x61\x74\x65\x64\x3a\x20" + _0x9bc55b_5.files.map(_0x9bc55b_0 => _0x9bc55b_0.name).join("\x2c\x20") + "\x2e\x20\x52\x65\x76\x69\x65\x77\x20\x79\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x2c\x20\x74\x68\x65\x6e\x20\x70\x72\x65\x73\x73\x20\x52\x75\x6e\x20\x63\x6f\x64\x65\x2e";
+        const _0x9bc55b_b = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+        return _0x9bc55b_b.type = "\x62\x75\x74\x74\x6f\x6e", _0x9bc55b_b.className = "\x74\x6f\x6f\x6c\x2d\x62\x75\x74\x74\x6f\x6e", _0x9bc55b_b.textContent = "\x55\x6e\x64\x6f\x20\x63\x68\x61\x6e\x67\x65\x73", 
+        _0x9bc55b_b.onclick = () => {
+          if (JSON.stringify(_0x9bc55b_7.codes) !== _0x9bc55b_a) return void _0x9bc55b_3b("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", "\x59\x6f\x75\x20\x68\x61\x76\x65\x20\x65\x64\x69\x74\x65\x64\x20\x74\x68\x65\x73\x65\x20\x66\x69\x6c\x65\x73\x20\x73\x69\x6e\x63\x65\x20\x74\x68\x69\x73\x20\x63\x68\x61\x6e\x67\x65\x2e\x20\x55\x73\x65\x20\x56\x65\x72\x73\x69\x6f\x6e\x73\x20\x74\x6f\x20\x72\x65\x73\x74\x6f\x72\x65\x20\x61\x6e\x20\x65\x61\x72\x6c\x69\x65\x72\x20\x66\x69\x6c\x65\x20\x77\x69\x74\x68\x6f\x75\x74\x20\x6c\x6f\x73\x69\x6e\x67\x20\x79\x6f\x75\x72\x20\x77\x6f\x72\x6b\x2e", !0);
+          const _0x9bc55b_0 = _0x9bc55b_7;
+          _0x9bc55b_7 = _0x9bc55b_9, _0x9bc55b_16() ? (_0x9bc55b_21(), _0x9bc55b_b.disabled = !0, 
+          _0x9bc55b_b.textContent = "\x43\x68\x61\x6e\x67\x65\x73\x20\x75\x6e\x64\x6f\x6e\x65") : _0x9bc55b_7 = _0x9bc55b_0;
+        }, _0x9bc55b_4.append(_0x9bc55b_b), !0;
+      }(_0x9bc55b_12, _0x9bc55b_6, _0x9bc55b_8) : (_0x9bc55b_8.querySelector("\x70").textContent = _0x9bc55b_12, 
+      !0);
+      _0x9bc55b_18 && (_0x9bc55b_4.prompt.value = "");
+    } catch (_0x9bc55b_a) {
+      _0x9bc55b_8.classList.add("\x69\x73\x2d\x65\x72\x72\x6f\x72"), _0x9bc55b_8.querySelector("\x70").textContent = "\x54\x69\x6d\x65\x6f\x75\x74\x45\x72\x72\x6f\x72" === _0x9bc55b_a?.name ? "\x4e\x79\x78\x20\x41\x49\x20\x74\x69\x6d\x65\x64\x20\x6f\x75\x74\x2e\x20\x59\x6f\x75\x72\x20\x66\x69\x6c\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x63\x68\x61\x6e\x67\x65\x64\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x2e" : _0x9bc55b_a?.message || "\x4e\x79\x78\x20\x41\x49\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x74\x68\x61\x74\x20\x73\x75\x67\x67\x65\x73\x74\x69\x6f\x6e\x2e";
     } finally {
-      l.classList.remove("is-loading"), se = !1, o.send.disabled = !1, document.querySelectorAll("[data-ai-prompt]").forEach(e => {
-        e.disabled = !1;
-      }), oe("Ready"), o.answer.scrollTop = o.answer.scrollHeight;
+      _0x9bc55b_8.classList.remove("\x69\x73\x2d\x6c\x6f\x61\x64\x69\x6e\x67"), _0x9bc55b_3c = !1, _0x9bc55b_4.send.disabled = !1, 
+      document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x70\x72\x6f\x6d\x70\x74\x5d").forEach(_0x9bc55b_0 => {
+        _0x9bc55b_0.disabled = !1;
+      }), _0x9bc55b_3a("\x52\x65\x61\x64\x79"), _0x9bc55b_4.answer.scrollTop = _0x9bc55b_4.answer.scrollHeight;
     }
   }
-  function he() {
+  function _0x9bc55b_44() {
     try {
-      return JSON.parse(localStorage.getItem(s) || "{}");
+      return JSON.parse(localStorage.getItem(_0x9bc55b_6) || "\x7b\x7d");
     } catch {
       return {};
     }
   }
-  function ge() {
-    const e = he(), t = {
-      assistantWidth: document.querySelector(".assistant-panel").getBoundingClientRect().width || e.assistantWidth || 318,
-      previewWidth: o.resultCard.getBoundingClientRect().width || e.previewWidth || 420,
-      aiCollapsed: document.body.classList.contains("ai-collapsed"),
-      previewCollapsed: document.body.classList.contains("preview-collapsed")
+  function _0x9bc55b_45() {
+    const _0x9bc55b_0 = _0x9bc55b_44(), _0x9bc55b_1 = {
+      assistantWidth: document.querySelector("\x2e\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x2d\x70\x61\x6e\x65\x6c").getBoundingClientRect().width || _0x9bc55b_0.assistantWidth || 318,
+      previewWidth: _0x9bc55b_4.resultCard.getBoundingClientRect().width || _0x9bc55b_0.previewWidth || 420,
+      aiCollapsed: document.body.classList.contains("\x61\x69\x2d\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64"),
+      previewCollapsed: document.body.classList.contains("\x70\x72\x65\x76\x69\x65\x77\x2d\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64")
     };
     try {
-      localStorage.setItem(s, JSON.stringify(t));
+      localStorage.setItem(_0x9bc55b_6, JSON.stringify(_0x9bc55b_1));
     } catch {}
   }
-  function fe(e, t, n = !0) {
-    const r = "assistant" === e ? "ai-collapsed" : "preview-collapsed";
-    document.body.classList.toggle(r, t), document.querySelectorAll(`[data-toggle-panel="${e}"]`).forEach(e => e.setAttribute("aria-pressed", String(!t))), 
-    n && ge();
+  function _0x9bc55b_46(_0x9bc55b_0, _0x9bc55b_1, _0x9bc55b_2 = !0) {
+    const _0x9bc55b_3 = "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9bc55b_0 ? "\x61\x69\x2d\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64" : "\x70\x72\x65\x76\x69\x65\x77\x2d\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64";
+    document.body.classList.toggle(_0x9bc55b_3, _0x9bc55b_1), document.querySelectorAll(`\x5b\x64\x61\x74\x61\x2d\x74\x6f\x67\x67\x6c\x65\x2d\x70\x61\x6e\x65\x6c\x3d\x22${_0x9bc55b_0}\x22\x5d`).forEach(_0x9bc55b_0 => _0x9bc55b_0.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(!_0x9bc55b_1))), 
+    _0x9bc55b_2 && _0x9bc55b_45();
   }
-  function ye(e) {
-    document.body.classList.toggle("mobile-show-ai", "ai" === e), document.body.classList.toggle("mobile-show-preview", "preview" === e), 
-    document.querySelectorAll(".mobile-view-switcher [data-mobile-view]").forEach(t => t.classList.toggle("is-active", t.dataset.mobileView === e));
+  function _0x9bc55b_47(_0x9bc55b_0) {
+    document.body.classList.toggle("\x6d\x6f\x62\x69\x6c\x65\x2d\x73\x68\x6f\x77\x2d\x61\x69", "\x61\x69" === _0x9bc55b_0), document.body.classList.toggle("\x6d\x6f\x62\x69\x6c\x65\x2d\x73\x68\x6f\x77\x2d\x70\x72\x65\x76\x69\x65\x77", "\x70\x72\x65\x76\x69\x65\x77" === _0x9bc55b_0), 
+    document.querySelectorAll("\x2e\x6d\x6f\x62\x69\x6c\x65\x2d\x76\x69\x65\x77\x2d\x73\x77\x69\x74\x63\x68\x65\x72\x20\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x62\x69\x6c\x65\x2d\x76\x69\x65\x77\x5d").forEach(_0x9bc55b_1 => _0x9bc55b_1.classList.toggle("\x69\x73\x2d\x61\x63\x74\x69\x76\x65", _0x9bc55b_1.dataset.mobileView === _0x9bc55b_0));
   }
-  pe.className = "studio-file-dialog", pe.setAttribute("aria-label", "Create file"), 
-  pe.innerHTML = '<form><h2>New file</h2><label>File name<input name="filename" placeholder="styles.css" maxlength="120" required autocomplete="off"></label><p role="alert"></p><div><button type="button" class="tool-button" data-cancel>Cancel</button><button class="tool-button" type="submit">Create file</button></div></form>', 
-  document.body.append(pe), ue.onclick = () => {
-    pe.querySelector("form").reset(), pe.querySelector("[role=alert]").textContent = "", 
-    pe.showModal(), pe.querySelector("input").focus();
-  }, pe.querySelector("[data-cancel]").onclick = () => pe.close(), pe.querySelector("form").onsubmit = e => {
-    e.preventDefault();
-    const t = pe.querySelector("input").value.trim(), n = pe.querySelector("[role=alert]");
-    if (!b(t)) return void (n.textContent = "Use a file name such as index.html, styles.css or app.js.");
-    if (Object.keys(i.codes).some(e => e.toLowerCase() === t.toLowerCase())) return void (n.textContent = "A file with that name already exists.");
-    if (Object.keys(i.codes).length >= 32) return void (n.textContent = "This workspace can hold 32 files.");
-    const r = JSON.parse(JSON.stringify(i));
-    if (i.codes[t] = "", i.file = t, i.language = w(t), !x()) return i = r, void (n.textContent = "Could not save the new file.");
-    R(), pe.close(), o.input.focus();
-  }, document.querySelector("[data-close-assistant]").addEventListener("click", () => {
-    matchMedia("(min-width: 941px)").matches ? fe("assistant", !0) : ye("editor");
-  }), o.language.addEventListener("change", () => function(e) {
-    if (!n[e]) return;
-    const t = Object.keys(i.codes).find(t => w(t) === e) || n[e].file;
-    Object.hasOwn(i.codes, t) || (i.codes[t] = n[e].starter), W(t);
-  }(o.language.value)), o.input.addEventListener("input", () => {
-    i.codes[i.file] = o.input.value.slice(0, t), S("Saving\u2026", "saving"), A(), x();
-  }), o.input.addEventListener("scroll", () => {
-    o.highlight.parentElement.scrollTop = o.input.scrollTop, o.highlight.parentElement.scrollLeft = o.input.scrollLeft, 
-    o.lineNumbers.scrollTop = o.input.scrollTop, o.editorWrap.style.setProperty("--editor-scroll-top", `${o.input.scrollTop}px`);
-  }), o.input.addEventListener("keyup", j), o.input.addEventListener("click", j), 
-  o.input.addEventListener("keydown", e => {
-    if ("Tab" === e.key) {
-      e.preventDefault();
-      const t = o.input.selectionStart, n = o.input.selectionEnd;
-      o.input.setRangeText("  ", t, n, "end"), o.input.dispatchEvent(new Event("input"));
-    } else (e.ctrlKey || e.metaKey) && "Enter" === e.key && (e.preventDefault(), D(), 
-    matchMedia("(max-width: 940px)").matches && ye("preview"));
-  }), o.runButtons.forEach(e => e.addEventListener("click", () => {
-    D(), matchMedia("(max-width: 940px)").matches && ye("preview");
-  })), document.querySelectorAll("[data-reset]").forEach(e => e.addEventListener("click", () => {
-    C(n[i.language].starter);
-  })), document.querySelector("[data-load-starter]").addEventListener("click", () => C(n[i.language].starter)), 
-  o.clear.addEventListener("click", () => C("")), o.download.addEventListener("click", function() {
-    const e = new Blob([ E() ], {
-      type: "text/plain;charset=utf-8"
-    }), t = URL.createObjectURL(e), n = document.createElement("a");
-    n.href = t, n.download = i.file, document.body.append(n), n.click(), n.remove(), 
-    setTimeout(() => URL.revokeObjectURL(t), 0), u = `Exported ${i.file}\nSaved from this browser`, 
-    g = [ {
-      text: `Exported ${i.file}`,
-      tone: "prompt"
+  _0x9bc55b_42.className = "\x73\x74\x75\x64\x69\x6f\x2d\x66\x69\x6c\x65\x2d\x64\x69\x61\x6c\x6f\x67", _0x9bc55b_42.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x43\x72\x65\x61\x74\x65\x20\x66\x69\x6c\x65"), 
+  _0x9bc55b_42.innerHTML = "\x3c\x66\x6f\x72\x6d\x3e\x3c\x68\x32\x3e\x4e\x65\x77\x20\x66\x69\x6c\x65\x3c\x2f\x68\x32\x3e\x3c\x6c\x61\x62\x65\x6c\x3e\x46\x69\x6c\x65\x20\x6e\x61\x6d\x65\x3c\x69\x6e\x70\x75\x74\x20\x6e\x61\x6d\x65\x3d\x22\x66\x69\x6c\x65\x6e\x61\x6d\x65\x22\x20\x70\x6c\x61\x63\x65\x68\x6f\x6c\x64\x65\x72\x3d\x22\x73\x74\x79\x6c\x65\x73\x2e\x63\x73\x73\x22\x20\x6d\x61\x78\x6c\x65\x6e\x67\x74\x68\x3d\x22\x31\x32\x30\x22\x20\x72\x65\x71\x75\x69\x72\x65\x64\x20\x61\x75\x74\x6f\x63\x6f\x6d\x70\x6c\x65\x74\x65\x3d\x22\x6f\x66\x66\x22\x3e\x3c\x2f\x6c\x61\x62\x65\x6c\x3e\x3c\x70\x20\x72\x6f\x6c\x65\x3d\x22\x61\x6c\x65\x72\x74\x22\x3e\x3c\x2f\x70\x3e\x3c\x64\x69\x76\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x6f\x6f\x6c\x2d\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x63\x61\x6e\x63\x65\x6c\x3e\x43\x61\x6e\x63\x65\x6c\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x6f\x6f\x6c\x2d\x62\x75\x74\x74\x6f\x6e\x22\x20\x74\x79\x70\x65\x3d\x22\x73\x75\x62\x6d\x69\x74\x22\x3e\x43\x72\x65\x61\x74\x65\x20\x66\x69\x6c\x65\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x66\x6f\x72\x6d\x3e", 
+  document.body.append(_0x9bc55b_42), _0x9bc55b_41.onclick = () => {
+    _0x9bc55b_42.querySelector("\x66\x6f\x72\x6d").reset(), _0x9bc55b_42.querySelector("\x5b\x72\x6f\x6c\x65\x3d\x61\x6c\x65\x72\x74\x5d").textContent = "", 
+    _0x9bc55b_42.showModal(), _0x9bc55b_42.querySelector("\x69\x6e\x70\x75\x74").focus();
+  }, _0x9bc55b_42.querySelector("\x5b\x64\x61\x74\x61\x2d\x63\x61\x6e\x63\x65\x6c\x5d").onclick = () => _0x9bc55b_42.close(), 
+  _0x9bc55b_42.querySelector("\x66\x6f\x72\x6d").onsubmit = _0x9bc55b_0 => {
+    _0x9bc55b_0.preventDefault();
+    const _0x9bc55b_1 = _0x9bc55b_42.querySelector("\x69\x6e\x70\x75\x74").value.trim(), _0x9bc55b_2 = _0x9bc55b_42.querySelector("\x5b\x72\x6f\x6c\x65\x3d\x61\x6c\x65\x72\x74\x5d");
+    if (!_0x9bc55b_14(_0x9bc55b_1)) return void (_0x9bc55b_2.textContent = "\x55\x73\x65\x20\x61\x20\x66\x69\x6c\x65\x20\x6e\x61\x6d\x65\x20\x73\x75\x63\x68\x20\x61\x73\x20\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c\x2c\x20\x73\x74\x79\x6c\x65\x73\x2e\x63\x73\x73\x20\x6f\x72\x20\x61\x70\x70\x2e\x6a\x73\x2e");
+    if (Object.keys(_0x9bc55b_7.codes).some(_0x9bc55b_0 => _0x9bc55b_0.toLowerCase() === _0x9bc55b_1.toLowerCase())) return void (_0x9bc55b_2.textContent = "\x41\x20\x66\x69\x6c\x65\x20\x77\x69\x74\x68\x20\x74\x68\x61\x74\x20\x6e\x61\x6d\x65\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x65\x78\x69\x73\x74\x73\x2e");
+    if (Object.keys(_0x9bc55b_7.codes).length >= 32) return void (_0x9bc55b_2.textContent = "\x54\x68\x69\x73\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x63\x61\x6e\x20\x68\x6f\x6c\x64\x20\x33\x32\x20\x66\x69\x6c\x65\x73\x2e");
+    const _0x9bc55b_3 = JSON.parse(JSON.stringify(_0x9bc55b_7));
+    if (_0x9bc55b_7.codes[_0x9bc55b_1] = "", _0x9bc55b_7.file = _0x9bc55b_1, _0x9bc55b_7.language = _0x9bc55b_13(_0x9bc55b_1), 
+    !_0x9bc55b_16()) return _0x9bc55b_7 = _0x9bc55b_3, void (_0x9bc55b_2.textContent = "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x61\x76\x65\x20\x74\x68\x65\x20\x6e\x65\x77\x20\x66\x69\x6c\x65\x2e");
+    _0x9bc55b_21(), _0x9bc55b_42.close(), _0x9bc55b_4.input.focus();
+  }, document.querySelector("\x5b\x64\x61\x74\x61\x2d\x63\x6c\x6f\x73\x65\x2d\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    matchMedia("\x28\x6d\x69\x6e\x2d\x77\x69\x64\x74\x68\x3a\x20\x39\x34\x31\x70\x78\x29").matches ? _0x9bc55b_46("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", !0) : _0x9bc55b_47("\x65\x64\x69\x74\x6f\x72");
+  }), _0x9bc55b_4.language.addEventListener("\x63\x68\x61\x6e\x67\x65", () => function(_0x9bc55b_0) {
+    if (!_0x9bc55b_2[_0x9bc55b_0]) return;
+    const _0x9bc55b_1 = Object.keys(_0x9bc55b_7.codes).find(_0x9bc55b_1 => _0x9bc55b_13(_0x9bc55b_1) === _0x9bc55b_0) || _0x9bc55b_2[_0x9bc55b_0].file;
+    Object.hasOwn(_0x9bc55b_7.codes, _0x9bc55b_1) || (_0x9bc55b_7.codes[_0x9bc55b_1] = _0x9bc55b_2[_0x9bc55b_0].starter), 
+    _0x9bc55b_2b(_0x9bc55b_1);
+  }(_0x9bc55b_4.language.value)), _0x9bc55b_4.input.addEventListener("\x69\x6e\x70\x75\x74", () => {
+    _0x9bc55b_7.codes[_0x9bc55b_7.file] = _0x9bc55b_4.input.value.slice(0, _0x9bc55b_1), 
+    _0x9bc55b_15("\x53\x61\x76\x69\x6e\x67\u2026", "\x73\x61\x76\x69\x6e\x67"), _0x9bc55b_1d(), _0x9bc55b_16();
+  }), _0x9bc55b_4.input.addEventListener("\x73\x63\x72\x6f\x6c\x6c", () => {
+    _0x9bc55b_4.highlight.parentElement.scrollTop = _0x9bc55b_4.input.scrollTop, _0x9bc55b_4.highlight.parentElement.scrollLeft = _0x9bc55b_4.input.scrollLeft, 
+    _0x9bc55b_4.lineNumbers.scrollTop = _0x9bc55b_4.input.scrollTop, _0x9bc55b_4.editorWrap.style.setProperty("\x2d\x2d\x65\x64\x69\x74\x6f\x72\x2d\x73\x63\x72\x6f\x6c\x6c\x2d\x74\x6f\x70", `${_0x9bc55b_4.input.scrollTop}\x70\x78`);
+  }), _0x9bc55b_4.input.addEventListener("\x6b\x65\x79\x75\x70", _0x9bc55b_1e), _0x9bc55b_4.input.addEventListener("\x63\x6c\x69\x63\x6b", _0x9bc55b_1e), 
+  _0x9bc55b_4.input.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x9bc55b_0 => {
+    if ("\x54\x61\x62" === _0x9bc55b_0.key) {
+      _0x9bc55b_0.preventDefault();
+      const _0x9bc55b_1 = _0x9bc55b_4.input.selectionStart, _0x9bc55b_2 = _0x9bc55b_4.input.selectionEnd;
+      _0x9bc55b_4.input.setRangeText("\x20\x20", _0x9bc55b_1, _0x9bc55b_2, "\x65\x6e\x64"), _0x9bc55b_4.input.dispatchEvent(new Event("\x69\x6e\x70\x75\x74"));
+    } else (_0x9bc55b_0.ctrlKey || _0x9bc55b_0.metaKey) && "\x45\x6e\x74\x65\x72" === _0x9bc55b_0.key && (_0x9bc55b_0.preventDefault(), 
+    _0x9bc55b_27(), matchMedia("\x28\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x20\x39\x34\x30\x70\x78\x29").matches && _0x9bc55b_47("\x70\x72\x65\x76\x69\x65\x77"));
+  }), _0x9bc55b_4.runButtons.forEach(_0x9bc55b_0 => _0x9bc55b_0.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x9bc55b_27(), matchMedia("\x28\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x20\x39\x34\x30\x70\x78\x29").matches && _0x9bc55b_47("\x70\x72\x65\x76\x69\x65\x77");
+  })), document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x65\x74\x5d").forEach(_0x9bc55b_0 => _0x9bc55b_0.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x9bc55b_18(_0x9bc55b_2[_0x9bc55b_7.language].starter);
+  })), document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x6f\x61\x64\x2d\x73\x74\x61\x72\x74\x65\x72\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9bc55b_18(_0x9bc55b_2[_0x9bc55b_7.language].starter)), 
+  _0x9bc55b_4.clear.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9bc55b_18("")), _0x9bc55b_4.download.addEventListener("\x63\x6c\x69\x63\x6b", function() {
+    const _0x9bc55b_0 = new Blob([ _0x9bc55b_17() ], {
+      type: "\x74\x65\x78\x74\x2f\x70\x6c\x61\x69\x6e\x3b\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
+    }), _0x9bc55b_1 = URL.createObjectURL(_0x9bc55b_0), _0x9bc55b_2 = document.createElement("\x61");
+    _0x9bc55b_2.href = _0x9bc55b_1, _0x9bc55b_2.download = _0x9bc55b_7.file, document.body.append(_0x9bc55b_2), 
+    _0x9bc55b_2.click(), _0x9bc55b_2.remove(), setTimeout(() => URL.revokeObjectURL(_0x9bc55b_1), 0), 
+    _0x9bc55b_b = `\x45\x78\x70\x6f\x72\x74\x65\x64\x20${_0x9bc55b_7.file}\x0a\x53\x61\x76\x65\x64\x20\x66\x72\x6f\x6d\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72`, _0x9bc55b_f = [ {
+      text: `\x45\x78\x70\x6f\x72\x74\x65\x64\x20${_0x9bc55b_7.file}`,
+      tone: "\x70\x72\x6f\x6d\x70\x74"
     }, {
-      text: "Saved from this browser",
-      tone: "muted"
+      text: "\x53\x61\x76\x65\x64\x20\x66\x72\x6f\x6d\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72",
+      tone: "\x6d\x75\x74\x65\x64"
     } ];
-  }), o.refreshPreview.addEventListener("click", D), o.fullscreenPreview.addEventListener("click", async () => {
+  }), _0x9bc55b_4.refreshPreview.addEventListener("\x63\x6c\x69\x63\x6b", _0x9bc55b_27), _0x9bc55b_4.fullscreenPreview.addEventListener("\x63\x6c\x69\x63\x6b", async () => {
     try {
-      document.fullscreenElement ? await document.exitFullscreen() : await o.resultCard.requestFullscreen();
+      document.fullscreenElement ? await document.exitFullscreen() : await _0x9bc55b_4.resultCard.requestFullscreen();
     } catch {}
-  }), o.resultTabs.forEach(e => e.addEventListener("click", () => J(e.dataset.resultMode))), 
-  document.querySelectorAll("[data-toggle-panel]").forEach(e => e.addEventListener("click", () => fe(e.dataset.togglePanel, !document.body.classList.contains("assistant" === e.dataset.togglePanel ? "ai-collapsed" : "preview-collapsed")))), 
-  document.querySelectorAll("[data-resize-panel]").forEach(function(e) {
-    const t = e.dataset.resizePanel;
-    e.addEventListener("pointerdown", e => {
-      if (0 !== e.button) return;
-      e.preventDefault();
-      const n = e.clientX, r = document.querySelector(".assistant-panel").getBoundingClientRect().width, a = o.resultCard.getBoundingClientRect().width, s = e => {
-        const s = e.clientX - n;
-        if ("assistant" === t) document.documentElement.style.setProperty("--assistant-width", `${Math.max(250, Math.min(420, r + s))}px`); else {
-          const e = Math.max(280, o.workbench.getBoundingClientRect().width - 380);
-          document.documentElement.style.setProperty("--preview-width", `${Math.max(280, Math.min(e, a - s))}px`);
+  }), _0x9bc55b_4.resultTabs.forEach(_0x9bc55b_0 => _0x9bc55b_0.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9bc55b_26(_0x9bc55b_0.dataset.resultMode))), 
+  document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x74\x6f\x67\x67\x6c\x65\x2d\x70\x61\x6e\x65\x6c\x5d").forEach(_0x9bc55b_0 => _0x9bc55b_0.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9bc55b_46(_0x9bc55b_0.dataset.togglePanel, !document.body.classList.contains("\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9bc55b_0.dataset.togglePanel ? "\x61\x69\x2d\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64" : "\x70\x72\x65\x76\x69\x65\x77\x2d\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64")))), 
+  document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x69\x7a\x65\x2d\x70\x61\x6e\x65\x6c\x5d").forEach(function(_0x9bc55b_0) {
+    const _0x9bc55b_1 = _0x9bc55b_0.dataset.resizePanel;
+    _0x9bc55b_0.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x64\x6f\x77\x6e", _0x9bc55b_0 => {
+      if (0 !== _0x9bc55b_0.button) return;
+      _0x9bc55b_0.preventDefault();
+      const _0x9bc55b_2 = _0x9bc55b_0.clientX, _0x9bc55b_3 = document.querySelector("\x2e\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x2d\x70\x61\x6e\x65\x6c").getBoundingClientRect().width, _0x9bc55b_5 = _0x9bc55b_4.resultCard.getBoundingClientRect().width, _0x9bc55b_6 = _0x9bc55b_0 => {
+        const _0x9bc55b_6 = _0x9bc55b_0.clientX - _0x9bc55b_2;
+        if ("\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9bc55b_1) document.documentElement.style.setProperty("\x2d\x2d\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x2d\x77\x69\x64\x74\x68", `${Math.max(250, Math.min(420, _0x9bc55b_3 + _0x9bc55b_6))}\x70\x78`); else {
+          const _0x9bc55b_0 = Math.max(280, _0x9bc55b_4.workbench.getBoundingClientRect().width - 380);
+          document.documentElement.style.setProperty("\x2d\x2d\x70\x72\x65\x76\x69\x65\x77\x2d\x77\x69\x64\x74\x68", `${Math.max(280, Math.min(_0x9bc55b_0, _0x9bc55b_5 - _0x9bc55b_6))}\x70\x78`);
         }
-      }, i = () => {
-        document.body.classList.remove("is-resizing"), removeEventListener("pointermove", s), 
-        removeEventListener("pointerup", i), ge();
+      }, _0x9bc55b_7 = () => {
+        document.body.classList.remove("\x69\x73\x2d\x72\x65\x73\x69\x7a\x69\x6e\x67"), removeEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x6d\x6f\x76\x65", _0x9bc55b_6), 
+        removeEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x75\x70", _0x9bc55b_7), _0x9bc55b_45();
       };
-      document.body.classList.add("is-resizing"), addEventListener("pointermove", s), 
-      addEventListener("pointerup", i, {
+      document.body.classList.add("\x69\x73\x2d\x72\x65\x73\x69\x7a\x69\x6e\x67"), addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x6d\x6f\x76\x65", _0x9bc55b_6), 
+      addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x75\x70", _0x9bc55b_7, {
         once: !0
       });
-    }), e.addEventListener("keydown", e => {
-      [ "ArrowLeft", "ArrowRight" ].includes(e.key) && (e.preventDefault(), (e => {
-        if ("assistant" === t) {
-          const t = document.querySelector(".assistant-panel").getBoundingClientRect().width;
-          document.documentElement.style.setProperty("--assistant-width", `${Math.max(250, Math.min(420, t + e))}px`);
+    }), _0x9bc55b_0.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x9bc55b_0 => {
+      [ "\x41\x72\x72\x6f\x77\x4c\x65\x66\x74", "\x41\x72\x72\x6f\x77\x52\x69\x67\x68\x74" ].includes(_0x9bc55b_0.key) && (_0x9bc55b_0.preventDefault(), 
+      (_0x9bc55b_0 => {
+        if ("\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9bc55b_1) {
+          const _0x9bc55b_1 = document.querySelector("\x2e\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x2d\x70\x61\x6e\x65\x6c").getBoundingClientRect().width;
+          document.documentElement.style.setProperty("\x2d\x2d\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x2d\x77\x69\x64\x74\x68", `${Math.max(250, Math.min(420, _0x9bc55b_1 + _0x9bc55b_0))}\x70\x78`);
         } else {
-          const t = o.resultCard.getBoundingClientRect().width, n = Math.max(280, o.workbench.getBoundingClientRect().width - 380);
-          document.documentElement.style.setProperty("--preview-width", `${Math.max(280, Math.min(n, t - e))}px`);
+          const _0x9bc55b_1 = _0x9bc55b_4.resultCard.getBoundingClientRect().width, _0x9bc55b_2 = Math.max(280, _0x9bc55b_4.workbench.getBoundingClientRect().width - 380);
+          document.documentElement.style.setProperty("\x2d\x2d\x70\x72\x65\x76\x69\x65\x77\x2d\x77\x69\x64\x74\x68", `${Math.max(280, Math.min(_0x9bc55b_2, _0x9bc55b_1 - _0x9bc55b_0))}\x70\x78`);
         }
-      })("ArrowRight" === e.key ? 16 : -16), ge());
-    }), e.addEventListener("dblclick", () => {
-      document.documentElement.style.removeProperty("assistant" === t ? "--assistant-width" : "--preview-width"), 
-      ge();
+      })("\x41\x72\x72\x6f\x77\x52\x69\x67\x68\x74" === _0x9bc55b_0.key ? 16 : -16), _0x9bc55b_45());
+    }), _0x9bc55b_0.addEventListener("\x64\x62\x6c\x63\x6c\x69\x63\x6b", () => {
+      document.documentElement.style.removeProperty("\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9bc55b_1 ? "\x2d\x2d\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x2d\x77\x69\x64\x74\x68" : "\x2d\x2d\x70\x72\x65\x76\x69\x65\x77\x2d\x77\x69\x64\x74\x68"), 
+      _0x9bc55b_45();
     });
-  }), document.querySelectorAll("[data-mobile-view]").forEach(e => e.addEventListener("click", () => ye(e.dataset.mobileView))), 
-  document.querySelectorAll("[data-command]").forEach(e => e.addEventListener("click", () => function(e) {
-    if ("reset" !== e) {
-      if ("edit" !== e) return "select" === e ? (o.input.focus(), void o.input.select()) : void ("preview" !== e ? "language" !== e ? "run" !== e ? "terminal" === e && J("terminal") : D() : o.language.focus() : J("output"));
-      o.input.focus();
-    } else C(n[i.language].starter);
-  }(e.dataset.command))), o.form.addEventListener("submit", e => {
-    e.preventDefault(), me(o.prompt.value);
-  }), o.prompt.addEventListener("keydown", e => {
-    "Enter" !== e.key || e.shiftKey || (e.preventDefault(), o.form.requestSubmit());
-  }), document.querySelectorAll("[data-ai-prompt]").forEach(e => e.addEventListener("click", () => {
-    ie.value = e.dataset.aiMode || "agent", ie.onchange(), me(e.dataset.aiPrompt);
-  })), addEventListener("message", e => {
-    const t = e.data;
-    if (e.source !== o.preview.contentWindow || "nyx-code-preview" !== t?.type || t.runId !== h) return;
-    const n = [ "log", "info", "warn", "error" ].includes(t.kind) ? t.kind : "log", r = String(t.text || "(empty message)").slice(0, 2e3);
-    g.push({
-      text: `${n}: ${r}`,
-      tone: "error" === n || "warn" === n ? "muted" : "prompt"
-    }), "warn" !== n && "error" !== n || f.push({
-      title: "error" === n ? "Preview error" : "Preview warning",
-      detail: r
-    }), o.problemCount.textContent = String(f.length);
-    const a = document.querySelector(".result-tab.is-active")?.dataset.resultMode;
-    "terminal" === a && I(), "problems" === a && M();
-  }), addEventListener("storage", e => {
-    "nyx.theme" !== e.key && "nyx.customThemeColor" !== e.key || U();
+  }), document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x62\x69\x6c\x65\x2d\x76\x69\x65\x77\x5d").forEach(_0x9bc55b_0 => _0x9bc55b_0.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9bc55b_47(_0x9bc55b_0.dataset.mobileView))), 
+  document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x6d\x6d\x61\x6e\x64\x5d").forEach(_0x9bc55b_0 => _0x9bc55b_0.addEventListener("\x63\x6c\x69\x63\x6b", () => function(_0x9bc55b_0) {
+    if ("\x72\x65\x73\x65\x74" !== _0x9bc55b_0) {
+      if ("\x65\x64\x69\x74" !== _0x9bc55b_0) return "\x73\x65\x6c\x65\x63\x74" === _0x9bc55b_0 ? (_0x9bc55b_4.input.focus(), 
+      void _0x9bc55b_4.input.select()) : void ("\x70\x72\x65\x76\x69\x65\x77" !== _0x9bc55b_0 ? "\x6c\x61\x6e\x67\x75\x61\x67\x65" !== _0x9bc55b_0 ? "\x72\x75\x6e" !== _0x9bc55b_0 ? "\x74\x65\x72\x6d\x69\x6e\x61\x6c" === _0x9bc55b_0 && _0x9bc55b_26("\x74\x65\x72\x6d\x69\x6e\x61\x6c") : _0x9bc55b_27() : _0x9bc55b_4.language.focus() : _0x9bc55b_26("\x6f\x75\x74\x70\x75\x74"));
+      _0x9bc55b_4.input.focus();
+    } else _0x9bc55b_18(_0x9bc55b_2[_0x9bc55b_7.language].starter);
+  }(_0x9bc55b_0.dataset.command))), _0x9bc55b_4.form.addEventListener("\x73\x75\x62\x6d\x69\x74", _0x9bc55b_0 => {
+    _0x9bc55b_0.preventDefault(), _0x9bc55b_43(_0x9bc55b_4.prompt.value);
+  }), _0x9bc55b_4.prompt.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x9bc55b_0 => {
+    "\x45\x6e\x74\x65\x72" !== _0x9bc55b_0.key || _0x9bc55b_0.shiftKey || (_0x9bc55b_0.preventDefault(), 
+    _0x9bc55b_4.form.requestSubmit());
+  }), document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x70\x72\x6f\x6d\x70\x74\x5d").forEach(_0x9bc55b_0 => _0x9bc55b_0.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x9bc55b_3d.value = _0x9bc55b_0.dataset.aiMode || "\x61\x67\x65\x6e\x74", _0x9bc55b_3d.onchange(), 
+    _0x9bc55b_43(_0x9bc55b_0.dataset.aiPrompt);
+  })), addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x9bc55b_0 => {
+    const _0x9bc55b_1 = _0x9bc55b_0.data;
+    if (_0x9bc55b_0.source !== _0x9bc55b_4.preview.contentWindow || "\x6e\x79\x78\x2d\x63\x6f\x64\x65\x2d\x70\x72\x65\x76\x69\x65\x77" !== _0x9bc55b_1?.type || _0x9bc55b_1.runId !== _0x9bc55b_e) return;
+    const _0x9bc55b_2 = [ "\x6c\x6f\x67", "\x69\x6e\x66\x6f", "\x77\x61\x72\x6e", "\x65\x72\x72\x6f\x72" ].includes(_0x9bc55b_1.kind) ? _0x9bc55b_1.kind : "\x6c\x6f\x67", _0x9bc55b_3 = String(_0x9bc55b_1.text || "\x28\x65\x6d\x70\x74\x79\x20\x6d\x65\x73\x73\x61\x67\x65\x29").slice(0, 2e3);
+    _0x9bc55b_f.push({
+      text: `${_0x9bc55b_2}\x3a\x20${_0x9bc55b_3}`,
+      tone: "\x65\x72\x72\x6f\x72" === _0x9bc55b_2 || "\x77\x61\x72\x6e" === _0x9bc55b_2 ? "\x6d\x75\x74\x65\x64" : "\x70\x72\x6f\x6d\x70\x74"
+    }), "\x77\x61\x72\x6e" !== _0x9bc55b_2 && "\x65\x72\x72\x6f\x72" !== _0x9bc55b_2 || _0x9bc55b_10.push({
+      title: "\x65\x72\x72\x6f\x72" === _0x9bc55b_2 ? "\x50\x72\x65\x76\x69\x65\x77\x20\x65\x72\x72\x6f\x72" : "\x50\x72\x65\x76\x69\x65\x77\x20\x77\x61\x72\x6e\x69\x6e\x67",
+      detail: _0x9bc55b_3
+    }), _0x9bc55b_4.problemCount.textContent = String(_0x9bc55b_10.length);
+    const _0x9bc55b_5 = document.querySelector("\x2e\x72\x65\x73\x75\x6c\x74\x2d\x74\x61\x62\x2e\x69\x73\x2d\x61\x63\x74\x69\x76\x65")?.dataset.resultMode;
+    "\x74\x65\x72\x6d\x69\x6e\x61\x6c" === _0x9bc55b_5 && _0x9bc55b_25(), "\x70\x72\x6f\x62\x6c\x65\x6d\x73" === _0x9bc55b_5 && _0x9bc55b_24();
+  }), addEventListener("\x73\x74\x6f\x72\x61\x67\x65", _0x9bc55b_0 => {
+    "\x6e\x79\x78\x2e\x74\x68\x65\x6d\x65" !== _0x9bc55b_0.key && "\x6e\x79\x78\x2e\x63\x75\x73\x74\x6f\x6d\x54\x68\x65\x6d\x65\x43\x6f\x6c\x6f\x72" !== _0x9bc55b_0.key || _0x9bc55b_29();
   }), function() {
-    const e = he();
-    Number.isFinite(e.assistantWidth) && e.assistantWidth > 0 && document.documentElement.style.setProperty("--assistant-width", `${Math.max(250, Math.min(420, e.assistantWidth))}px`), 
-    Number.isFinite(e.previewWidth) && e.previewWidth > 0 && document.documentElement.style.setProperty("--preview-width", `${Math.max(280, Math.min(680, e.previewWidth))}px`), 
-    fe("assistant", Boolean(e.aiCollapsed), !1), fe("preview", Boolean(e.previewCollapsed), !1);
-  }(), U(), R(), ye("editor"), ne();
+    const _0x9bc55b_0 = _0x9bc55b_44();
+    Number.isFinite(_0x9bc55b_0.assistantWidth) && _0x9bc55b_0.assistantWidth > 0 && document.documentElement.style.setProperty("\x2d\x2d\x61\x73\x73\x69\x73\x74\x61\x6e\x74\x2d\x77\x69\x64\x74\x68", `${Math.max(250, Math.min(420, _0x9bc55b_0.assistantWidth))}\x70\x78`), 
+    Number.isFinite(_0x9bc55b_0.previewWidth) && _0x9bc55b_0.previewWidth > 0 && document.documentElement.style.setProperty("\x2d\x2d\x70\x72\x65\x76\x69\x65\x77\x2d\x77\x69\x64\x74\x68", `${Math.max(280, Math.min(680, _0x9bc55b_0.previewWidth))}\x70\x78`), 
+    _0x9bc55b_46("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", Boolean(_0x9bc55b_0.aiCollapsed), !1), _0x9bc55b_46("\x70\x72\x65\x76\x69\x65\x77", Boolean(_0x9bc55b_0.previewCollapsed), !1);
+  }(), _0x9bc55b_29(), _0x9bc55b_21(), _0x9bc55b_47("\x65\x64\x69\x74\x6f\x72"), _0x9bc55b_38();
 })();

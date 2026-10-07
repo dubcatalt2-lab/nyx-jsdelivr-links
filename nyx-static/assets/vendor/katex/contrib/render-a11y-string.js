@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
+	if(typeof exports === "object" && typeof module === "object")
 		module.exports = factory(require("katex"));
-	else if(typeof define === 'function' && define.amd)
+	else if(typeof define === "function" && define.amd)
 		define(["katex"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("katex")) : factory(root["katex"]);
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+		var a = typeof exports === "object" ? factory(require("katex")) : factory(root["katex"]);
+		for(var i in a) (typeof exports === "object" ? exports : root)[i] = a[i];
 	}
-})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__757__) {
+})((typeof self !== "undefined" ? self : this), function(__WEBPACK_EXTERNAL_MODULE__757__) {
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
@@ -51,7 +51,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__757__;
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
 /******/ 		__webpack_require__.n = function(module) {
 /******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module["default"]; } :
 /******/ 				function() { return module; };
 /******/ 			__webpack_require__.d(getter, { a: getter });
 /******/ 			return getter;
@@ -228,7 +228,7 @@ const relMap = {
   "\\leq": "is less than or equal to",
   "\\le": "is less than or equal to",
   ">": "is greater than",
-  "<": "is less than",
+  "\u003c": "is less than",
   "\\leftarrow": "left arrow",
   "\\Leftarrow": "left arrow",
   "\\rightarrow": "right arrow",

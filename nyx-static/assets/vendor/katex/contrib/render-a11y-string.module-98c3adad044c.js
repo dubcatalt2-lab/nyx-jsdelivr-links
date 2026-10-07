@@ -1,4 +1,4 @@
-import katex from '../katex.module-787e827f6610.js';
+import katex from "../katex.module-787e827f6610.js";
 
 /**
  * Small module for atom-group constants and type guard.  Kept separate from
@@ -135,7 +135,7 @@ var relMap = {
   "\\leq": "is less than or equal to",
   "\\le": "is less than or equal to",
   ">": "is greater than",
-  "<": "is less than",
+  "\u003c": "is less than",
   "\\leftarrow": "left arrow",
   "\\Leftarrow": "left arrow",
   "\\rightarrow": "right arrow",

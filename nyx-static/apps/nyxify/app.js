@@ -1,1605 +1,1696 @@
-const la = new Map, sa = {
-  getItem(e) {
-    if (la.has(e)) return la.get(e);
+const _0x84b660_0 = new Map, _0x84b660_1 = {
+  getItem(_0x84b660_1) {
+    if (_0x84b660_0.has(_0x84b660_1)) return _0x84b660_0.get(_0x84b660_1);
     try {
-      return localStorage.getItem(e);
+      return localStorage.getItem(_0x84b660_1);
     } catch {
       return null;
     }
   },
-  setItem(e, t) {
+  setItem(_0x84b660_1, _0x84b660_2) {
     try {
-      localStorage.setItem(e, t), la.delete(e);
+      localStorage.setItem(_0x84b660_1, _0x84b660_2), _0x84b660_0.delete(_0x84b660_1);
     } catch {
-      la.set(e, String(t));
+      _0x84b660_0.set(_0x84b660_1, String(_0x84b660_2));
     }
   }
-}, ca = document.getElementById("audio"), da = document.getElementById("player"), ua = document.getElementById("trackList"), ma = document.getElementById("cardGrid"), ya = document.getElementById("detailView"), pa = document.getElementById("emptyState"), ga = document.getElementById("emptyTitle"), fa = document.getElementById("emptySub"), ha = document.getElementById("crumb"), va = document.getElementById("crumbText"), ba = document.getElementById("seekBar"), Ea = document.getElementById("playBtn"), wa = document.getElementById("playIcon"), ka = document.getElementById("searchInput"), xa = document.getElementById("playlistList"), La = document.getElementById("sidebarPlaylistList"), Ca = document.getElementById("playlistSync"), Ia = document.getElementById("playlistDialog"), Sa = document.getElementById("playlistChoices"), $a = document.getElementById("playlistName"), Ma = document.getElementById("playlistMessage"), Na = document.getElementById("pPlaylist"), Ta = document.getElementById("nowPlayingModule"), Aa = document.getElementById("nowPlayingMedia"), Ba = document.getElementById("nowPlayingArt"), Pa = document.getElementById("nowPlayingContext"), Fa = document.getElementById("nowPlayingTitle"), Ha = document.getElementById("nowPlayingArtist"), qa = document.getElementById("nowPlayingAlbum"), _a = document.getElementById("nowPlayingPlaylists"), Da = document.getElementById("nowPlayingNext"), Ra = document.getElementById("fullTrackStage"), ja = document.getElementById("fullTrackTitle"), Ua = document.getElementById("fullTrackStatus"), za = document.getElementById("fullTrackVideo"), Oa = document.getElementById("fullTrackVideoLabel"), Ja = document.getElementById("fullTrackFullscreen");
+}, _0x84b660_2 = document.getElementById("\x61\x75\x64\x69\x6f"), _0x84b660_3 = document.getElementById("\x70\x6c\x61\x79\x65\x72"), _0x84b660_4 = document.getElementById("\x74\x72\x61\x63\x6b\x4c\x69\x73\x74"), _0x84b660_5 = document.getElementById("\x63\x61\x72\x64\x47\x72\x69\x64"), _0x84b660_6 = document.getElementById("\x64\x65\x74\x61\x69\x6c\x56\x69\x65\x77"), _0x84b660_7 = document.getElementById("\x65\x6d\x70\x74\x79\x53\x74\x61\x74\x65"), _0x84b660_8 = document.getElementById("\x65\x6d\x70\x74\x79\x54\x69\x74\x6c\x65"), _0x84b660_9 = document.getElementById("\x65\x6d\x70\x74\x79\x53\x75\x62"), _0x84b660_a = document.getElementById("\x63\x72\x75\x6d\x62"), _0x84b660_b = document.getElementById("\x63\x72\x75\x6d\x62\x54\x65\x78\x74"), _0x84b660_c = document.getElementById("\x73\x65\x65\x6b\x42\x61\x72"), _0x84b660_d = document.getElementById("\x70\x6c\x61\x79\x42\x74\x6e"), _0x84b660_e = document.getElementById("\x70\x6c\x61\x79\x49\x63\x6f\x6e"), _0x84b660_f = document.getElementById("\x73\x65\x61\x72\x63\x68\x49\x6e\x70\x75\x74"), _0x84b660_10 = document.getElementById("\x70\x6c\x61\x79\x6c\x69\x73\x74\x4c\x69\x73\x74"), _0x84b660_11 = document.getElementById("\x73\x69\x64\x65\x62\x61\x72\x50\x6c\x61\x79\x6c\x69\x73\x74\x4c\x69\x73\x74"), _0x84b660_12 = document.getElementById("\x70\x6c\x61\x79\x6c\x69\x73\x74\x53\x79\x6e\x63"), _0x84b660_13 = document.getElementById("\x70\x6c\x61\x79\x6c\x69\x73\x74\x44\x69\x61\x6c\x6f\x67"), _0x84b660_14 = document.getElementById("\x70\x6c\x61\x79\x6c\x69\x73\x74\x43\x68\x6f\x69\x63\x65\x73"), _0x84b660_15 = document.getElementById("\x70\x6c\x61\x79\x6c\x69\x73\x74\x4e\x61\x6d\x65"), _0x84b660_16 = document.getElementById("\x70\x6c\x61\x79\x6c\x69\x73\x74\x4d\x65\x73\x73\x61\x67\x65"), _0x84b660_17 = document.getElementById("\x70\x50\x6c\x61\x79\x6c\x69\x73\x74"), _0x84b660_18 = document.getElementById("\x6e\x6f\x77\x50\x6c\x61\x79\x69\x6e\x67\x4d\x6f\x64\x75\x6c\x65"), _0x84b660_19 = document.getElementById("\x6e\x6f\x77\x50\x6c\x61\x79\x69\x6e\x67\x4d\x65\x64\x69\x61"), _0x84b660_1a = document.getElementById("\x6e\x6f\x77\x50\x6c\x61\x79\x69\x6e\x67\x41\x72\x74"), _0x84b660_1b = document.getElementById("\x6e\x6f\x77\x50\x6c\x61\x79\x69\x6e\x67\x43\x6f\x6e\x74\x65\x78\x74"), _0x84b660_1c = document.getElementById("\x6e\x6f\x77\x50\x6c\x61\x79\x69\x6e\x67\x54\x69\x74\x6c\x65"), _0x84b660_1d = document.getElementById("\x6e\x6f\x77\x50\x6c\x61\x79\x69\x6e\x67\x41\x72\x74\x69\x73\x74"), _0x84b660_1e = document.getElementById("\x6e\x6f\x77\x50\x6c\x61\x79\x69\x6e\x67\x41\x6c\x62\x75\x6d"), _0x84b660_1f = document.getElementById("\x6e\x6f\x77\x50\x6c\x61\x79\x69\x6e\x67\x50\x6c\x61\x79\x6c\x69\x73\x74\x73"), _0x84b660_20 = document.getElementById("\x6e\x6f\x77\x50\x6c\x61\x79\x69\x6e\x67\x4e\x65\x78\x74"), _0x84b660_21 = document.getElementById("\x66\x75\x6c\x6c\x54\x72\x61\x63\x6b\x53\x74\x61\x67\x65"), _0x84b660_22 = document.getElementById("\x66\x75\x6c\x6c\x54\x72\x61\x63\x6b\x54\x69\x74\x6c\x65"), _0x84b660_23 = document.getElementById("\x66\x75\x6c\x6c\x54\x72\x61\x63\x6b\x53\x74\x61\x74\x75\x73"), _0x84b660_24 = document.getElementById("\x66\x75\x6c\x6c\x54\x72\x61\x63\x6b\x56\x69\x64\x65\x6f"), _0x84b660_25 = document.getElementById("\x66\x75\x6c\x6c\x54\x72\x61\x63\x6b\x56\x69\x64\x65\x6f\x4c\x61\x62\x65\x6c"), _0x84b660_26 = document.getElementById("\x66\x75\x6c\x6c\x54\x72\x61\x63\x6b\x46\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e");
 
-let Va = null, Zt = [], Ya = "", Wa = "home", Za = {
+let _0x84b660_27 = null, _0xf24d16_18 = [], _0x84b660_28 = "", _0x84b660_29 = "\x68\x6f\x6d\x65", _0x84b660_2a = {
   tracks: [],
   artists: [],
   albums: []
-}, Ga = !0, Ka = "", Qa = "Nyxify", Xa = null, ei = 0, ti = !1, ni = "", ai = "", ii = null, ri = [], oi = "", li = 0, si = null, ci = Promise.resolve(), di = 0;
+}, _0x84b660_2b = !0, _0x84b660_2c = "", _0x84b660_2d = "\x4e\x79\x78\x69\x66\x79", _0x84b660_2e = null, _0x84b660_2f = 0, _0x84b660_30 = !1, _0x84b660_31 = "", _0x84b660_32 = "", _0x84b660_33 = null, _0x84b660_34 = [], _0x84b660_35 = "", _0x84b660_36 = 0, _0x84b660_37 = null, _0x84b660_38 = Promise.resolve(), _0x84b660_39 = 0;
 
-const ui = 18e3, mi = 8388608, yi = new Map;
+const _0x84b660_3a = 18e3, _0x84b660_3b = 8388608, _0x84b660_3c = new Map;
 
-let pi = [], gi = -1, fi = "idle", hi = null, vi = !1, bi = 0, Ei = null, wi = null, ki = !1, xi = null, Li = "1" === sa.getItem("nyx_nyxify_video_in_cover");
+let _0x84b660_3d = [], _0x84b660_3e = -1, _0x84b660_3f = "\x69\x64\x6c\x65", _0x84b660_40 = null, _0x84b660_41 = !1, _0x84b660_42 = 0, _0x84b660_43 = null, _0x84b660_44 = null, _0x84b660_45 = !1, _0x84b660_46 = null, _0x84b660_47 = "\x31" === _0x84b660_1.getItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x76\x69\x64\x65\x6f\x5f\x69\x6e\x5f\x63\x6f\x76\x65\x72");
 
-const Ci = window.NyxTubePlayerCore.createDirectYoutubeApi({
+const _0x84b660_48 = window.NyxTubePlayerCore.createDirectYoutubeApi({
   optimisticState: !1
-}), Ii = new Map, Si = new Map, $i = "nyx_nyxify_full_track_matches_v1", Mi = 3e5, Ni = 24;
+}), _0x84b660_49 = new Map, _0x84b660_4a = new Map, _0x84b660_4b = "\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x66\x75\x6c\x6c\x5f\x74\x72\x61\x63\x6b\x5f\x6d\x61\x74\x63\x68\x65\x73\x5f\x76\x31", _0x84b660_4c = 3e5, _0x84b660_4d = 24;
 
-let Ti = 0, Ai = "1" === sa.getItem("nyx_nyxify_shuffle"), Bi = sa.getItem("nyx_nyxify_repeat") || "off";
+let _0x84b660_4e = 0, _0x84b660_4f = "\x31" === _0x84b660_1.getItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x73\x68\x75\x66\x66\x6c\x65"), _0x84b660_50 = _0x84b660_1.getItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x72\x65\x70\x65\x61\x74") || "\x6f\x66\x66";
 
-[ "off", "one", "all" ].includes(Bi) || (Bi = "off");
+[ "\x6f\x66\x66", "\x6f\x6e\x65", "\x61\x6c\x6c" ].includes(_0x84b660_50) || (_0x84b660_50 = "\x6f\x66\x66");
 
-let Pi = !1, Fi = !1;
+let _0x84b660_51 = !1, _0x84b660_52 = !1;
 
-const Hi = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/shortcut-nyxify.svg?v=3";
+const _0x84b660_53 = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x73\x68\x6f\x72\x74\x63\x75\x74\x2d\x6e\x79\x78\x69\x66\x79\x2e\x73\x76\x67\x3f\x76\x3d\x33";
 
-function qi(e, t, n = "") {
-  if (!e) return;
-  const a = Boolean(String(t || "").trim());
-  a ? (delete e.dataset.coverFallback, e.classList.remove("cover-fallback")) : (e.dataset.coverFallback = "1", 
-  e.classList.add("cover-fallback")), e.alt = n, e.src = a ? t : Hi;
+function _0x84b660_54(_0x84b660_0, _0x84b660_1, _0x84b660_2 = "") {
+  if (!_0x84b660_0) return;
+  const _0x84b660_3 = Boolean(String(_0x84b660_1 || "").trim());
+  _0x84b660_3 ? (delete _0x84b660_0.dataset.coverFallback, _0x84b660_0.classList.remove("\x63\x6f\x76\x65\x72\x2d\x66\x61\x6c\x6c\x62\x61\x63\x6b")) : (_0x84b660_0.dataset.coverFallback = "\x31", 
+  _0x84b660_0.classList.add("\x63\x6f\x76\x65\x72\x2d\x66\x61\x6c\x6c\x62\x61\x63\x6b")), _0x84b660_0.alt = _0x84b660_2, _0x84b660_0.src = _0x84b660_3 ? _0x84b660_1 : _0x84b660_53;
 }
 
-function _i(e) {
-  e = Math.max(0, Math.floor(e || 0));
-  const t = Math.floor(e / 3600), n = Math.floor(e % 3600 / 60), a = e % 60;
-  return t ? `${t}:${String(n).padStart(2, "0")}:${String(a).padStart(2, "0")}` : `${n}:${String(a).padStart(2, "0")}`;
+function _0x84b660_55(_0x84b660_0) {
+  _0x84b660_0 = Math.max(0, Math.floor(_0x84b660_0 || 0));
+  const _0x84b660_1 = Math.floor(_0x84b660_0 / 3600), _0x84b660_2 = Math.floor(_0x84b660_0 % 3600 / 60), _0x84b660_3 = _0x84b660_0 % 60;
+  return _0x84b660_1 ? `${_0x84b660_1}\x3a${String(_0x84b660_2).padStart(2, "\x30")}\x3a${String(_0x84b660_3).padStart(2, "\x30")}` : `${_0x84b660_2}\x3a${String(_0x84b660_3).padStart(2, "\x30")}`;
 }
 
-function Di(e) {
-  const t = document.createElement("div");
-  return t.textContent = e ?? "", t.innerHTML;
+function _0x84b660_56(_0x84b660_0) {
+  const _0x84b660_1 = document.createElement("\x64\x69\x76");
+  return _0x84b660_1.textContent = _0x84b660_0 ?? "", _0x84b660_1.innerHTML;
 }
 
-async function Ri(e, t = {}) {
-  const n = new AbortController, a = t.signal ? null : setTimeout(() => n.abort(), 25e3);
+async function _0x84b660_57(_0x84b660_0, _0x84b660_1 = {}) {
+  const _0x84b660_2 = new AbortController, _0x84b660_3 = _0x84b660_1.signal ? null : setTimeout(() => _0x84b660_2.abort(), 25e3);
   try {
-    const a = await fetch(e, {
-      cache: "no-store",
-      ...t,
-      signal: t.signal || n.signal
-    }), r = String(a.headers.get("content-type") || "").toLowerCase(), o = await a.text();
-    let l = null;
-    if (o && (r.includes("application/json") || /^[\s\r\n]*[\[{]/.test(o))) try {
-      l = JSON.parse(o);
-    } catch (i) {}
-    if (!a.ok) throw Object.assign(new Error(l?.error || `Nyxify is temporarily unavailable (${a.status}).`), {
-      status: a.status,
-      retryAfter: Math.min(5, Math.max(1, Number(a.headers.get("retry-after")) || 1))
+    const _0x84b660_3 = await fetch(_0x84b660_0, {
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65",
+      ..._0x84b660_1,
+      signal: _0x84b660_1.signal || _0x84b660_2.signal
+    }), _0x84b660_5 = String(_0x84b660_3.headers.get("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65") || "").toLowerCase(), _0x84b660_6 = await _0x84b660_3.text();
+    let _0x84b660_7 = null;
+    if (_0x84b660_6 && (_0x84b660_5.includes("\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e") || /^[\s\r\n]*[\[{]/.test(_0x84b660_6))) try {
+      _0x84b660_7 = JSON.parse(_0x84b660_6);
+    } catch (_0x84b660_4) {}
+    if (!_0x84b660_3.ok) throw Object.assign(new Error(_0x84b660_7?.error || `\x4e\x79\x78\x69\x66\x79\x20\x69\x73\x20\x74\x65\x6d\x70\x6f\x72\x61\x72\x69\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x28${_0x84b660_3.status}\x29\x2e`), {
+      status: _0x84b660_3.status,
+      retryAfter: Math.min(5, Math.max(1, Number(_0x84b660_3.headers.get("\x72\x65\x74\x72\x79\x2d\x61\x66\x74\x65\x72")) || 1))
     });
-    if (!l || "object" != typeof l) throw new Error("Nyxify received a web page instead of music data. Reload Nyx and try again.");
-    return l;
+    if (!_0x84b660_7 || "\x6f\x62\x6a\x65\x63\x74" != typeof _0x84b660_7) throw new Error("\x4e\x79\x78\x69\x66\x79\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x61\x20\x77\x65\x62\x20\x70\x61\x67\x65\x20\x69\x6e\x73\x74\x65\x61\x64\x20\x6f\x66\x20\x6d\x75\x73\x69\x63\x20\x64\x61\x74\x61\x2e\x20\x52\x65\x6c\x6f\x61\x64\x20\x4e\x79\x78\x20\x61\x6e\x64\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e");
+    return _0x84b660_7;
   } finally {
-    clearTimeout(a);
+    clearTimeout(_0x84b660_3);
   }
 }
 
-function ji(e) {
-  return JSON.stringify([ String(e?.catalog || "").toLowerCase(), String(e?.id || ""), String(e?.title || "").trim().toLowerCase(), String(e?.artist || "").trim().toLowerCase(), Math.max(0, Number(e?.duration) || 0) ]);
+function _0x84b660_58(_0x84b660_0) {
+  return JSON.stringify([ String(_0x84b660_0?.catalog || "").toLowerCase(), String(_0x84b660_0?.id || ""), String(_0x84b660_0?.title || "").trim().toLowerCase(), String(_0x84b660_0?.artist || "").trim().toLowerCase(), Math.max(0, Number(_0x84b660_0?.duration) || 0) ]);
 }
 
-function Ui(e) {
-  return "meting" === e?.mode && /^\/api\/nyxify\/audio\/\d{1,16}$/.test(String(e.streamUrl || ""));
+function _0x84b660_59(_0x84b660_0) {
+  return "\x6d\x65\x74\x69\x6e\x67" === _0x84b660_0?.mode && /^\/api\/nyxify\/audio\/\d{1,16}$/.test(String(_0x84b660_0.streamUrl || ""));
 }
 
-function zi() {
+function _0x84b660_5a() {
   try {
-    const e = Date.now(), t = [ ...Ii.entries() ].filter(([, t]) => t?.expiresAt > e && Ui(t.match)).slice(-24).map(([e, t]) => ({
-      key: e,
-      expiresAt: t.expiresAt,
-      match: t.match
+    const _0x84b660_0 = Date.now(), _0x84b660_1 = [ ..._0x84b660_49.entries() ].filter(([, _0x84b660_1]) => _0x84b660_1?.expiresAt > _0x84b660_0 && _0x84b660_59(_0x84b660_1.match)).slice(-24).map(([_0x84b660_0, _0x84b660_1]) => ({
+      key: _0x84b660_0,
+      expiresAt: _0x84b660_1.expiresAt,
+      match: _0x84b660_1.match
     }));
-    sessionStorage.setItem($i, JSON.stringify(t));
-  } catch (e) {}
+    sessionStorage.setItem(_0x84b660_4b, JSON.stringify(_0x84b660_1));
+  } catch (_0x84b660_0) {}
 }
 
-function Oi() {
+function _0x84b660_5b() {
   try {
-    const e = Date.now(), t = JSON.parse(sessionStorage.getItem($i) || "[]");
-    if (!Array.isArray(t)) return;
-    t.slice(-24).forEach(t => {
-      "string" == typeof t?.key && t.expiresAt > e && Ui(t.match) && Ii.set(t.key, {
-        expiresAt: t.expiresAt,
-        match: t.match
+    const _0x84b660_0 = Date.now(), _0x84b660_1 = JSON.parse(sessionStorage.getItem(_0x84b660_4b) || "\x5b\x5d");
+    if (!Array.isArray(_0x84b660_1)) return;
+    _0x84b660_1.slice(-24).forEach(_0x84b660_1 => {
+      "\x73\x74\x72\x69\x6e\x67" == typeof _0x84b660_1?.key && _0x84b660_1.expiresAt > _0x84b660_0 && _0x84b660_59(_0x84b660_1.match) && _0x84b660_49.set(_0x84b660_1.key, {
+        expiresAt: _0x84b660_1.expiresAt,
+        match: _0x84b660_1.match
       });
     });
-  } catch (e) {}
+  } catch (_0x84b660_0) {}
 }
 
-function Ji(e, t) {
-  if (!Ui(t)) return t;
-  const n = ji(e);
-  for (Ii.delete(n), Ii.set(n, {
-    expiresAt: Date.now() + Mi,
-    match: t
-  }); Ii.size > Ni; ) Ii.delete(Ii.keys().next().value);
-  return zi(), t;
+function _0x84b660_5c(_0x84b660_0, _0x84b660_1) {
+  if (!_0x84b660_59(_0x84b660_1)) return _0x84b660_1;
+  const _0x84b660_2 = _0x84b660_58(_0x84b660_0);
+  for (_0x84b660_49.delete(_0x84b660_2), _0x84b660_49.set(_0x84b660_2, {
+    expiresAt: Date.now() + _0x84b660_4c,
+    match: _0x84b660_1
+  }); _0x84b660_49.size > _0x84b660_4d; ) _0x84b660_49.delete(_0x84b660_49.keys().next().value);
+  return _0x84b660_5a(), _0x84b660_1;
 }
 
-function Vi(e) {
-  e && (Ii.delete(ji(e)), zi());
+function _0x84b660_5d(_0x84b660_0) {
+  _0x84b660_0 && (_0x84b660_49.delete(_0x84b660_58(_0x84b660_0)), _0x84b660_5a());
 }
 
-function Yi(e) {
-  const t = new URLSearchParams({
-    title: String(e?.title || ""),
-    artist: String(e?.artist || ""),
-    duration: String(Math.max(0, Number(e?.duration) || 0)),
-    catalog: String(e?.catalog || "")
+function _0x84b660_5e(_0x84b660_0) {
+  const _0x84b660_1 = new URLSearchParams({
+    title: String(_0x84b660_0?.title || ""),
+    artist: String(_0x84b660_0?.artist || ""),
+    duration: String(Math.max(0, Number(_0x84b660_0?.duration) || 0)),
+    catalog: String(_0x84b660_0?.catalog || "")
   });
-  return `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxify/playback/${encodeURIComponent(e?.id || "")}?${t.toString()}`;
+  return `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x69\x66\x79\x2f\x70\x6c\x61\x79\x62\x61\x63\x6b\x2f${encodeURIComponent(_0x84b660_0?.id || "")}\x3f${_0x84b660_1.toString()}`;
 }
 
-function Wi(e, t = !1) {
-  const n = ji(e), a = Ii.get(n);
-  if (a?.expiresAt > Date.now() && Ui(a.match)) return Ii.delete(n), Ii.set(n, a), 
-  Promise.resolve(a.match);
-  a && Ii.delete(n), Si.get(n)?.controller.signal.aborted && Si.delete(n);
-  const i = Si.get(n);
-  if (i) return !t && i.background ? i.promise.catch(t => {
-    if (Va && ji(Va) !== n) throw t;
-    return Wi(e);
-  }) : i.promise;
-  if (t && ([ ...Si.values() ].some(e => e.background) || !navigator.onLine || navigator.connection?.saveData)) return Promise.resolve(null);
-  const r = new AbortController, o = (async () => {
-    for (let a = 0; a < (t ? 1 : 2); a++) {
-      const i = setTimeout(() => r.abort(), t ? 8e3 : 25e3);
+function _0x84b660_5f(_0x84b660_0, _0x84b660_1 = !1) {
+  const _0x84b660_2 = _0x84b660_58(_0x84b660_0), _0x84b660_3 = _0x84b660_49.get(_0x84b660_2);
+  if (_0x84b660_3?.expiresAt > Date.now() && _0x84b660_59(_0x84b660_3.match)) return _0x84b660_49.delete(_0x84b660_2), 
+  _0x84b660_49.set(_0x84b660_2, _0x84b660_3), Promise.resolve(_0x84b660_3.match);
+  _0x84b660_3 && _0x84b660_49.delete(_0x84b660_2), _0x84b660_4a.get(_0x84b660_2)?.controller.signal.aborted && _0x84b660_4a.delete(_0x84b660_2);
+  const _0x84b660_4 = _0x84b660_4a.get(_0x84b660_2);
+  if (_0x84b660_4) return !_0x84b660_1 && _0x84b660_4.background ? _0x84b660_4.promise.catch(_0x84b660_1 => {
+    if (_0x84b660_27 && _0x84b660_58(_0x84b660_27) !== _0x84b660_2) throw _0x84b660_1;
+    return _0x84b660_5f(_0x84b660_0);
+  }) : _0x84b660_4.promise;
+  if (_0x84b660_1 && ([ ..._0x84b660_4a.values() ].some(_0x84b660_0 => _0x84b660_0.background) || !navigator.onLine || navigator.connection?.saveData)) return Promise.resolve(null);
+  const _0x84b660_5 = new AbortController, _0x84b660_6 = (async () => {
+    for (let _0x84b660_3 = 0; _0x84b660_3 < (_0x84b660_1 ? 1 : 2); _0x84b660_3++) {
+      const _0x84b660_4 = setTimeout(() => _0x84b660_5.abort(), _0x84b660_1 ? 8e3 : 25e3);
       try {
-        return await Ri(Yi(e) + (t ? "&prefetch=1" : ""), {
-          signal: r.signal
+        return await _0x84b660_57(_0x84b660_5e(_0x84b660_0) + (_0x84b660_1 ? "\x26\x70\x72\x65\x66\x65\x74\x63\x68\x3d\x31" : ""), {
+          signal: _0x84b660_5.signal
         });
-      } catch (n) {
-        if (r.signal.aborted) throw new Error("Music lookup took too long or was cancelled. Select the song to try again.");
-        if (t || a || !navigator.onLine || ![ 429, 502, 503, 504 ].includes(n.status) && "TypeError" !== n.name) throw n;
-        if (await new Promise(e => setTimeout(e, 1e3 * (n.retryAfter || 1))), r.signal.aborted) throw n;
+      } catch (_0x84b660_2) {
+        if (_0x84b660_5.signal.aborted) throw new Error("\x4d\x75\x73\x69\x63\x20\x6c\x6f\x6f\x6b\x75\x70\x20\x74\x6f\x6f\x6b\x20\x74\x6f\x6f\x20\x6c\x6f\x6e\x67\x20\x6f\x72\x20\x77\x61\x73\x20\x63\x61\x6e\x63\x65\x6c\x6c\x65\x64\x2e\x20\x53\x65\x6c\x65\x63\x74\x20\x74\x68\x65\x20\x73\x6f\x6e\x67\x20\x74\x6f\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e");
+        if (_0x84b660_1 || _0x84b660_3 || !navigator.onLine || ![ 429, 502, 503, 504 ].includes(_0x84b660_2.status) && "\x54\x79\x70\x65\x45\x72\x72\x6f\x72" !== _0x84b660_2.name) throw _0x84b660_2;
+        if (await new Promise(_0x84b660_0 => setTimeout(_0x84b660_0, 1e3 * (_0x84b660_2.retryAfter || 1))), 
+        _0x84b660_5.signal.aborted) throw _0x84b660_2;
       } finally {
-        clearTimeout(i);
+        clearTimeout(_0x84b660_4);
       }
     }
-  })().then(t => Ji(e, t)).finally(() => {
-    Si.get(n)?.controller === r && Si.delete(n);
+  })().then(_0x84b660_1 => _0x84b660_5c(_0x84b660_0, _0x84b660_1)).finally(() => {
+    _0x84b660_4a.get(_0x84b660_2)?.controller === _0x84b660_5 && _0x84b660_4a.delete(_0x84b660_2);
   });
-  return Si.set(n, {
-    promise: o,
-    controller: r,
-    background: t
-  }), o;
+  return _0x84b660_4a.set(_0x84b660_2, {
+    promise: _0x84b660_6,
+    controller: _0x84b660_5,
+    background: _0x84b660_1
+  }), _0x84b660_6;
 }
 
-function Zi() {
-  const e = ++Ti, t = pi[gi + 1] || ("all" === Bi ? pi[0] : null);
-  if (!t || t.id === Va?.id) return;
-  const n = () => {
-    e === Ti && Wi(t, !0).catch(() => {});
+function _0x84b660_60() {
+  const _0x84b660_0 = ++_0x84b660_4e, _0x84b660_1 = _0x84b660_3d[_0x84b660_3e + 1] || ("\x61\x6c\x6c" === _0x84b660_50 ? _0x84b660_3d[0] : null);
+  if (!_0x84b660_1 || _0x84b660_1.id === _0x84b660_27?.id) return;
+  const _0x84b660_2 = () => {
+    _0x84b660_0 === _0x84b660_4e && _0x84b660_5f(_0x84b660_1, !0).catch(() => {});
   };
-  "requestIdleCallback" in window ? requestIdleCallback(n, {
+  "\x72\x65\x71\x75\x65\x73\x74\x49\x64\x6c\x65\x43\x61\x6c\x6c\x62\x61\x63\x6b" in window ? requestIdleCallback(_0x84b660_2, {
     timeout: 1e3
-  }) : setTimeout(n, 150);
+  }) : setTimeout(_0x84b660_2, 150);
 }
 
-document.addEventListener("error", e => {
-  const t = e.target;
-  t instanceof HTMLImageElement && "1" !== t.dataset.coverFallback && (t.dataset.coverFallback = "1", 
-  t.classList.add("cover-fallback"), t.src = Hi);
+document.addEventListener("\x65\x72\x72\x6f\x72", _0x84b660_0 => {
+  const _0x84b660_1 = _0x84b660_0.target;
+  _0x84b660_1 instanceof HTMLImageElement && "\x31" !== _0x84b660_1.dataset.coverFallback && (_0x84b660_1.dataset.coverFallback = "\x31", 
+  _0x84b660_1.classList.add("\x63\x6f\x76\x65\x72\x2d\x66\x61\x6c\x6c\x62\x61\x63\x6b"), _0x84b660_1.src = _0x84b660_53);
 }, !0);
 
-let Gi = 0;
+let _0x84b660_61 = 0;
 
-function Ki(e, t) {
-  let n;
-  const a = () => clearTimeout(n), i = () => {
-    a(), n = setTimeout(() => {
-      !e.isConnected || document.hidden || Date.now() < Gi || (Gi = Date.now() + 1e4, 
-      Wi(t, !0).catch(() => {}));
+function _0x84b660_62(_0x84b660_0, _0x84b660_1) {
+  let _0x84b660_2;
+  const _0x84b660_3 = () => clearTimeout(_0x84b660_2), _0x84b660_4 = () => {
+    _0x84b660_3(), _0x84b660_2 = setTimeout(() => {
+      !_0x84b660_0.isConnected || document.hidden || Date.now() < _0x84b660_61 || (_0x84b660_61 = Date.now() + 1e4, 
+      _0x84b660_5f(_0x84b660_1, !0).catch(() => {}));
     }, 300);
   };
-  e.addEventListener("pointerenter", e => {
-    "mouse" === e.pointerType && i();
-  }), e.addEventListener("pointerleave", a), e.addEventListener("focus", i), e.addEventListener("blur", a);
+  _0x84b660_0.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x65\x6e\x74\x65\x72", _0x84b660_0 => {
+    "\x6d\x6f\x75\x73\x65" === _0x84b660_0.pointerType && _0x84b660_4();
+  }), _0x84b660_0.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x6c\x65\x61\x76\x65", _0x84b660_3), _0x84b660_0.addEventListener("\x66\x6f\x63\x75\x73", _0x84b660_4), 
+  _0x84b660_0.addEventListener("\x62\x6c\x75\x72", _0x84b660_3);
 }
 
-function Qi(e) {
+function _0x84b660_63(_0x84b660_0) {
   return {
-    id: String(e?.id || ""),
-    title: String(e?.title || "").slice(0, 180),
-    artist: String(e?.artist || "").slice(0, 120),
-    artistId: String(e?.artistId || ""),
-    album: String(e?.album || "").slice(0, 160),
-    albumId: String(e?.albumId || ""),
-    cover: String(e?.cover || "").slice(0, 500),
-    catalog: [ "deezer", "tidal", "netease" ].includes(String(e?.catalog || "").toLowerCase()) ? String(e.catalog).toLowerCase() : "",
-    duration: Math.max(0, Math.min(14400, Math.round(Number(e?.duration) || 0)))
+    id: String(_0x84b660_0?.id || ""),
+    title: String(_0x84b660_0?.title || "").slice(0, 180),
+    artist: String(_0x84b660_0?.artist || "").slice(0, 120),
+    artistId: String(_0x84b660_0?.artistId || ""),
+    album: String(_0x84b660_0?.album || "").slice(0, 160),
+    albumId: String(_0x84b660_0?.albumId || ""),
+    cover: String(_0x84b660_0?.cover || "").slice(0, 500),
+    catalog: [ "\x64\x65\x65\x7a\x65\x72", "\x74\x69\x64\x61\x6c", "\x6e\x65\x74\x65\x61\x73\x65" ].includes(String(_0x84b660_0?.catalog || "").toLowerCase()) ? String(_0x84b660_0.catalog).toLowerCase() : "",
+    duration: Math.max(0, Math.min(14400, Math.round(Number(_0x84b660_0?.duration) || 0)))
   };
 }
 
-function Xi(e) {
-  const t = String(e || "").replace(/\s/g, "");
-  return /^data:image\/(?:jpeg|png|webp);base64,[a-z0-9+/=]+$/i.test(t) && t.length <= ui ? t : "";
+function _0x84b660_64(_0x84b660_0) {
+  const _0x84b660_1 = String(_0x84b660_0 || "").replace(/\s/g, "");
+  return /^data:image\/(?:jpeg|png|webp);base64,[a-z0-9+/=]+$/i.test(_0x84b660_1) && _0x84b660_1.length <= _0x84b660_3a ? _0x84b660_1 : "";
 }
 
-function dr(e) {
-  const t = String(e || "").trim();
-  return zl(t) ? t.toLowerCase() : "";
+function _0x84b660_65(_0x84b660_0) {
+  const _0x84b660_1 = String(_0x84b660_0 || "").trim();
+  return _0x84b660_ee(_0x84b660_1) ? _0x84b660_1.toLowerCase() : "";
 }
 
-function mr() {
+function _0x84b660_66() {
   try {
-    const e = JSON.parse(sa.getItem("nyx_nyxify_playlists") || "[]");
-    return Array.isArray(e) ? e.slice(0, 16).map(e => ({
-      id: /^[A-Za-z0-9_-]{8,64}$/.test(String(e?.id || "")) ? String(e.id) : `playlist_${crypto.randomUUID().replace(/-/g, "")}`,
-      name: String(e?.name || "Playlist").trim().slice(0, 48) || "Playlist",
-      cover: Xi(e?.cover),
-      accent: dr(e?.accent),
-      tracks: (Array.isArray(e?.tracks) ? e.tracks : []).slice(0, 150).map(Qi).filter(e => e.id && e.title)
+    const _0x84b660_0 = JSON.parse(_0x84b660_1.getItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x70\x6c\x61\x79\x6c\x69\x73\x74\x73") || "\x5b\x5d");
+    return Array.isArray(_0x84b660_0) ? _0x84b660_0.slice(0, 16).map(_0x84b660_0 => ({
+      id: /^[A-Za-z0-9_-]{8,64}$/.test(String(_0x84b660_0?.id || "")) ? String(_0x84b660_0.id) : `\x70\x6c\x61\x79\x6c\x69\x73\x74\x5f${crypto.randomUUID().replace(/-/g, "")}`,
+      name: String(_0x84b660_0?.name || "\x50\x6c\x61\x79\x6c\x69\x73\x74").trim().slice(0, 48) || "\x50\x6c\x61\x79\x6c\x69\x73\x74",
+      cover: _0x84b660_64(_0x84b660_0?.cover),
+      accent: _0x84b660_65(_0x84b660_0?.accent),
+      tracks: (Array.isArray(_0x84b660_0?.tracks) ? _0x84b660_0.tracks : []).slice(0, 150).map(_0x84b660_63).filter(_0x84b660_0 => _0x84b660_0.id && _0x84b660_0.title)
     })) : [];
-  } catch (e) {
+  } catch (_0x84b660_0) {
     return [];
   }
 }
 
-function yr() {
-  sa.setItem("nyx_nyxify_playlists", JSON.stringify(ri));
+function _0x84b660_67() {
+  _0x84b660_1.setItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x70\x6c\x61\x79\x6c\x69\x73\x74\x73", JSON.stringify(_0x84b660_34));
 }
 
-async function gr() {
+async function _0x84b660_68() {
   if (window.parent === window) return null;
-  const e = `nyxify-${Date.now()}-${Math.random().toString(36).slice(2)}`;
-  return new Promise(t => {
-    let n = !1;
-    const a = e => {
-      n || (n = !0, clearTimeout(r), window.removeEventListener("message", i), t(e));
-    }, i = t => {
-      t.source === window.parent && t.origin === location.origin && "nyx:account-token-response" === t.data?.type && t.data?.requestId === e && a({
+  const _0x84b660_0 = `\x6e\x79\x78\x69\x66\x79\x2d${Date.now()}\x2d${Math.random().toString(36).slice(2)}`;
+  return new Promise(_0x84b660_1 => {
+    let _0x84b660_2 = !1;
+    const _0x84b660_3 = _0x84b660_0 => {
+      _0x84b660_2 || (_0x84b660_2 = !0, clearTimeout(_0x84b660_5), window.removeEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x84b660_4), 
+      _0x84b660_1(_0x84b660_0));
+    }, _0x84b660_4 = _0x84b660_1 => {
+      _0x84b660_1.source === window.parent && _0x84b660_1.origin === location.origin && "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65" === _0x84b660_1.data?.type && _0x84b660_1.data?.requestId === _0x84b660_0 && _0x84b660_3({
         available: !0,
-        token: String(t.data.token || "")
+        token: String(_0x84b660_1.data.token || "")
       });
-    }, r = setTimeout(() => a(null), 2500);
-    window.addEventListener("message", i), window.parent.postMessage({
-      type: "nyx:account-token-request",
-      requestId: e
+    }, _0x84b660_5 = setTimeout(() => _0x84b660_3(null), 2500);
+    window.addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x84b660_4), window.parent.postMessage({
+      type: "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74",
+      requestId: _0x84b660_0
     }, location.origin);
   });
 }
 
-async function fr() {
-  if (si) return si;
-  si = (async () => {
-    const e = await Ri("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/founder-profile/auth-config");
-    if (!e?.enabled) return null;
-    const [{initializeApp: t, getApps: n}, {getAuth: a, setPersistence: i, browserLocalPersistence: r}] = await Promise.all([ import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"), import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js") ]), o = a(n().find(e => "nyx-founder-owner" === e.name) || t({
-      apiKey: e.apiKey,
-      authDomain: `${e.projectId}.firebaseapp.com`,
-      projectId: e.projectId
-    }, "nyx-founder-owner"));
+async function _0x84b660_69() {
+  if (_0x84b660_37) return _0x84b660_37;
+  _0x84b660_37 = (async () => {
+    const _0x84b660_0 = await _0x84b660_57("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x66\x6f\x75\x6e\x64\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67");
+    if (!_0x84b660_0?.enabled) return null;
+    const [{initializeApp: _0x84b660_1, getApps: _0x84b660_2}, {getAuth: _0x84b660_3, setPersistence: _0x84b660_4, browserLocalPersistence: _0x84b660_5}] = await Promise.all([ import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x70\x70\x2e\x6a\x73"), import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x75\x74\x68\x2e\x6a\x73") ]), _0x84b660_6 = _0x84b660_3(_0x84b660_2().find(_0x84b660_0 => "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72" === _0x84b660_0.name) || _0x84b660_1({
+      apiKey: _0x84b660_0.apiKey,
+      authDomain: `${_0x84b660_0.projectId}\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d`,
+      projectId: _0x84b660_0.projectId
+    }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72"));
     try {
-      await i(o, r);
-    } catch (l) {}
-    return "function" == typeof o.authStateReady && await o.authStateReady(), o;
+      await _0x84b660_4(_0x84b660_6, _0x84b660_5);
+    } catch (_0x84b660_7) {}
+    return "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x84b660_6.authStateReady && await _0x84b660_6.authStateReady(), 
+    _0x84b660_6;
   })();
   try {
-    return await si;
-  } catch (e) {
-    throw si = null, e;
+    return await _0x84b660_37;
+  } catch (_0x84b660_0) {
+    throw _0x84b660_37 = null, _0x84b660_0;
   }
 }
 
-async function hr(e = !1) {
-  if (!e && oi && li > Date.now() + 3e4) return oi;
-  const t = await gr();
-  if (t?.available) return oi = t.token, li = oi ? Date.now() + 27e5 : 0, oi;
-  const n = await fr();
-  return oi = n?.currentUser ? await n.currentUser.getIdToken(e) : "", li = oi ? Date.now() + 27e5 : 0, 
-  oi;
+async function _0x84b660_6a(_0x84b660_0 = !1) {
+  if (!_0x84b660_0 && _0x84b660_35 && _0x84b660_36 > Date.now() + 3e4) return _0x84b660_35;
+  const _0x84b660_1 = await _0x84b660_68();
+  if (_0x84b660_1?.available) return _0x84b660_35 = _0x84b660_1.token, _0x84b660_36 = _0x84b660_35 ? Date.now() + 27e5 : 0, 
+  _0x84b660_35;
+  const _0x84b660_2 = await _0x84b660_69();
+  return _0x84b660_35 = _0x84b660_2?.currentUser ? await _0x84b660_2.currentUser.getIdToken(_0x84b660_0) : "", 
+  _0x84b660_36 = _0x84b660_35 ? Date.now() + 27e5 : 0, _0x84b660_35;
 }
 
-async function vr(e, t = {}, n = !0) {
-  const a = await hr(!n);
-  if (!a) return null;
-  const i = new Headers(t.headers || {});
-  i.set("Authorization", `Bearer ${a}`);
-  const r = await fetch(e, {
-    ...t,
-    headers: i,
-    cache: "no-store"
+async function _0x84b660_6b(_0x84b660_0, _0x84b660_1 = {}, _0x84b660_2 = !0) {
+  const _0x84b660_3 = await _0x84b660_6a(!_0x84b660_2);
+  if (!_0x84b660_3) return null;
+  const _0x84b660_4 = new Headers(_0x84b660_1.headers || {});
+  _0x84b660_4.set("\x41\x75\x74\x68\x6f\x72\x69\x7a\x61\x74\x69\x6f\x6e", `\x42\x65\x61\x72\x65\x72\x20${_0x84b660_3}`);
+  const _0x84b660_5 = await fetch(_0x84b660_0, {
+    ..._0x84b660_1,
+    headers: _0x84b660_4,
+    cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
   });
-  if (401 === r.status && n) return vr(e, t, !1);
-  const o = await r.json().catch(() => ({}));
-  if (!r.ok) throw new Error(o.error || `Playlist request failed (${r.status}).`);
-  return o;
+  if (401 === _0x84b660_5.status && _0x84b660_2) return _0x84b660_6b(_0x84b660_0, _0x84b660_1, !1);
+  const _0x84b660_6 = await _0x84b660_5.json().catch(() => ({}));
+  if (!_0x84b660_5.ok) throw new Error(_0x84b660_6.error || `\x50\x6c\x61\x79\x6c\x69\x73\x74\x20\x72\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64\x20\x28${_0x84b660_5.status}\x29\x2e`);
+  return _0x84b660_6;
 }
 
-function br() {
-  return `playlist_${crypto.randomUUID().replace(/-/g, "")}`;
+function _0x84b660_6c() {
+  return `\x70\x6c\x61\x79\x6c\x69\x73\x74\x5f${crypto.randomUUID().replace(/-/g, "")}`;
 }
 
-function Er() {
+function _0x84b660_6d() {
   try {
-    const e = JSON.parse(sa.getItem("nyx_nyxify_likes"));
-    return Array.isArray(e) ? e.filter(e => e && "string" == typeof e.id) : [];
-  } catch (e) {
+    const _0x84b660_0 = JSON.parse(_0x84b660_1.getItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x6c\x69\x6b\x65\x73"));
+    return Array.isArray(_0x84b660_0) ? _0x84b660_0.filter(_0x84b660_0 => _0x84b660_0 && "\x73\x74\x72\x69\x6e\x67" == typeof _0x84b660_0.id) : [];
+  } catch (_0x84b660_0) {
     return [];
   }
 }
 
-function wr(e) {
-  return Er().some(t => t.id === e);
+function _0x84b660_6e(_0x84b660_0) {
+  return _0x84b660_6d().some(_0x84b660_1 => _0x84b660_1.id === _0x84b660_0);
 }
 
-function kr(e) {
-  let t = Er();
-  return t.some(t => t.id === e.id) ? t = t.filter(t => t.id !== e.id) : t.push(e), 
-  sa.setItem("nyx_nyxify_likes", JSON.stringify(t)), wr(e.id);
+function _0x84b660_6f(_0x84b660_0) {
+  let _0x84b660_2 = _0x84b660_6d();
+  return _0x84b660_2.some(_0x84b660_1 => _0x84b660_1.id === _0x84b660_0.id) ? _0x84b660_2 = _0x84b660_2.filter(_0x84b660_1 => _0x84b660_1.id !== _0x84b660_0.id) : _0x84b660_2.push(_0x84b660_0), 
+  _0x84b660_1.setItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x6c\x69\x6b\x65\x73", JSON.stringify(_0x84b660_2)), _0x84b660_6e(_0x84b660_0.id);
 }
 
-function xr() {
+function _0x84b660_70() {
   try {
-    const e = JSON.parse(sa.getItem("nyx_nyxify_history"));
-    return Array.isArray(e) ? e.filter(e => e && "string" == typeof e.id) : [];
-  } catch (e) {
+    const _0x84b660_0 = JSON.parse(_0x84b660_1.getItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x68\x69\x73\x74\x6f\x72\x79"));
+    return Array.isArray(_0x84b660_0) ? _0x84b660_0.filter(_0x84b660_0 => _0x84b660_0 && "\x73\x74\x72\x69\x6e\x67" == typeof _0x84b660_0.id) : [];
+  } catch (_0x84b660_0) {
     return [];
   }
 }
 
-function Lr(e) {
-  let t = xr().filter(t => t.id !== e.id);
-  t.unshift({
-    ...e
-  }), sa.setItem("nyx_nyxify_history", JSON.stringify(t.slice(0, 25)));
+function _0x84b660_71(_0x84b660_0) {
+  let _0x84b660_2 = _0x84b660_70().filter(_0x84b660_1 => _0x84b660_1.id !== _0x84b660_0.id);
+  _0x84b660_2.unshift({
+    ..._0x84b660_0
+  }), _0x84b660_1.setItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x68\x69\x73\x74\x6f\x72\x79", JSON.stringify(_0x84b660_2.slice(0, 25)));
 }
 
-function Cr(e, t, n) {
-  e.setAttribute("role", "button"), e.tabIndex = 0, t && e.setAttribute("aria-label", t), 
-  e.addEventListener("keydown", e => {
-    "Enter" !== e.key && " " !== e.key || (e.preventDefault(), e.stopPropagation(), 
-    n(e));
+function _0x84b660_72(_0x84b660_0, _0x84b660_1, _0x84b660_2) {
+  _0x84b660_0.setAttribute("\x72\x6f\x6c\x65", "\x62\x75\x74\x74\x6f\x6e"), _0x84b660_0.tabIndex = 0, _0x84b660_1 && _0x84b660_0.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x84b660_1), 
+  _0x84b660_0.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x84b660_1 => {
+    _0x84b660_1.target === _0x84b660_0 && ("\x45\x6e\x74\x65\x72" !== _0x84b660_1.key && "\x20" !== _0x84b660_1.key || (_0x84b660_1.preventDefault(), 
+    _0x84b660_1.stopPropagation(), _0x84b660_2(_0x84b660_1)));
   });
 }
 
-function Ir(e, t) {
-  e.classList.toggle("liked", t), e.setAttribute("aria-pressed", String(t)), e.setAttribute("aria-label", t ? "unlike" : "like"), 
-  e.firstElementChild.className = t ? "mingcute--heart-fill" : "ic-heart";
+function _0x84b660_73(_0x84b660_0, _0x84b660_1) {
+  _0x84b660_0.classList.toggle("\x6c\x69\x6b\x65\x64", _0x84b660_1), _0x84b660_0.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x84b660_1)), 
+  _0x84b660_0.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x84b660_1 ? "\x75\x6e\x6c\x69\x6b\x65" : "\x6c\x69\x6b\x65"), _0x84b660_0.firstElementChild.className = _0x84b660_1 ? "\x6d\x69\x6e\x67\x63\x75\x74\x65\x2d\x2d\x68\x65\x61\x72\x74\x2d\x66\x69\x6c\x6c" : "\x69\x63\x2d\x68\x65\x61\x72\x74";
 }
 
-function Sr(e) {
-  e.classList.remove("pop"), e.offsetWidth, e.classList.add("pop");
+function _0x84b660_74(_0x84b660_0) {
+  _0x84b660_0.classList.remove("\x70\x6f\x70"), _0x84b660_0.offsetWidth, _0x84b660_0.classList.add("\x70\x6f\x70");
 }
 
-function $r(e, t) {
-  e.addEventListener("click", n => {
-    n.stopPropagation();
-    const a = kr(t);
-    Ir(e, a), Sr(e), Eo();
+function _0x84b660_75(_0x84b660_0, _0x84b660_1) {
+  _0x84b660_0.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_2 => {
+    _0x84b660_2.stopPropagation();
+    const _0x84b660_3 = _0x84b660_6f(_0x84b660_1);
+    _0x84b660_73(_0x84b660_0, _0x84b660_3), _0x84b660_74(_0x84b660_0), _0x84b660_a1();
   });
 }
 
-function Mr(e, t = Zt) {
-  const n = new Map;
-  for (const a of t) {
-    const t = "artist" === e ? a.artist : a.album, i = "artist" === e ? a.artistId : a.albumId;
-    t && i && (n.has(t) || n.set(t, {
-      key: t,
-      id: i,
+function _0x84b660_76(_0x84b660_0, _0x84b660_1 = _0xf24d16_18) {
+  const _0x84b660_2 = new Map;
+  for (const _0x84b660_3 of _0x84b660_1) {
+    const _0x84b660_1 = "\x61\x72\x74\x69\x73\x74" === _0x84b660_0 ? _0x84b660_3.artist : _0x84b660_3.album, _0x84b660_4 = "\x61\x72\x74\x69\x73\x74" === _0x84b660_0 ? _0x84b660_3.artistId : _0x84b660_3.albumId;
+    _0x84b660_1 && _0x84b660_4 && (_0x84b660_2.has(_0x84b660_1) || _0x84b660_2.set(_0x84b660_1, {
+      key: _0x84b660_1,
+      id: _0x84b660_4,
       count: 0,
-      cover: a.cover
-    }), n.get(t).count++);
+      cover: _0x84b660_3.cover
+    }), _0x84b660_2.get(_0x84b660_1).count++);
   }
-  return [ ...n.values() ];
+  return [ ..._0x84b660_2.values() ];
 }
 
-function Nr(e) {
-  document.querySelectorAll("[data-id]").forEach(t => t.classList.toggle("playing", t.dataset.id === e)), 
-  gl();
+function _0x84b660_77(_0x84b660_0) {
+  document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x69\x64\x5d").forEach(_0x84b660_1 => _0x84b660_1.classList.toggle("\x70\x6c\x61\x79\x69\x6e\x67", _0x84b660_1.dataset.id === _0x84b660_0)), 
+  _0x84b660_d2();
 }
 
-function Tr(e) {
-  Wa = e, document.querySelectorAll(".filter").forEach(t => t.classList.toggle("active", t.dataset.filter === e));
+function _0x84b660_78(_0x84b660_0) {
+  _0x84b660_29 = _0x84b660_0, document.querySelectorAll("\x2e\x66\x69\x6c\x74\x65\x72").forEach(_0x84b660_1 => _0x84b660_1.classList.toggle("\x61\x63\x74\x69\x76\x65", _0x84b660_1.dataset.filter === _0x84b660_0));
 }
 
-function Ar() {
-  pa.style.display = "none", ua.style.display = "none", ma.style.display = "none", 
-  ya.style.display = "none";
+function _0x84b660_79() {
+  _0x84b660_7.style.display = "\x6e\x6f\x6e\x65", _0x84b660_4.style.display = "\x6e\x6f\x6e\x65", _0x84b660_5.style.display = "\x6e\x6f\x6e\x65", 
+  _0x84b660_6.style.display = "\x6e\x6f\x6e\x65";
 }
 
-function Br(e, t, n) {
-  Ar(), pa.style.display = "", ga.textContent = e, fa.textContent = t || "", pa.classList.toggle("error", !!n), 
-  ha.style.display = "none";
+function _0x84b660_7a(_0x84b660_0, _0x84b660_1, _0x84b660_2) {
+  _0x84b660_79(), _0x84b660_7.style.display = "", _0x84b660_8.textContent = _0x84b660_0, 
+  _0x84b660_9.textContent = _0x84b660_1 || "", _0x84b660_7.classList.toggle("\x65\x72\x72\x6f\x72", !!_0x84b660_2), 
+  _0x84b660_a.style.display = "\x6e\x6f\x6e\x65";
 }
 
-function Pr(e) {
-  Ar(), e ? (ha.style.display = "", va.textContent = e) : ha.style.display = "none", 
-  ua.innerHTML = "";
-  for (let t = 0; t < 7; t++) {
-    const e = document.createElement("div");
-    e.className = "skel", e.innerHTML = '\n      <span class="sk sk-art"></span>\n      <div class="sk-lines">\n        <span class="sk sk-l w-70"></span>\n        <span class="sk sk-l w-45"></span>\n      </div>', 
-    ua.appendChild(e);
+function _0x84b660_7b(_0x84b660_0) {
+  _0x84b660_79(), _0x84b660_0 ? (_0x84b660_a.style.display = "", _0x84b660_b.textContent = _0x84b660_0) : _0x84b660_a.style.display = "\x6e\x6f\x6e\x65", 
+  _0x84b660_4.innerHTML = "";
+  for (let _0x84b660_1 = 0; _0x84b660_1 < 7; _0x84b660_1++) {
+    const _0x84b660_0 = document.createElement("\x64\x69\x76");
+    _0x84b660_0.className = "\x73\x6b\x65\x6c", _0x84b660_0.innerHTML = "\x0a\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x73\x6b\x20\x73\x6b\x2d\x61\x72\x74\x22\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x73\x6b\x2d\x6c\x69\x6e\x65\x73\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x73\x6b\x20\x73\x6b\x2d\x6c\x20\x77\x2d\x37\x30\x22\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x73\x6b\x20\x73\x6b\x2d\x6c\x20\x77\x2d\x34\x35\x22\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e", 
+    _0x84b660_4.appendChild(_0x84b660_0);
   }
-  ua.style.display = "";
+  _0x84b660_4.style.display = "";
 }
 
-function Fr(e, t, n = {}) {
-  const a = document.createElement("div");
-  a.className = "row" + (Va && Va.id === e.id ? " playing" : ""), a.dataset.id = e.id;
-  const i = wr(e.id), r = ai ? ri.find(e => e.id === ai) : null, o = !!r?.tracks.some(t => t.id === e.id), l = n.playlistId ? `<span class="playlist-track-actions"><button type="button" class="playlist-track-action playlist-track-seed" aria-label="Create a new playlist from ${Di(e.title)}" title="Create a new playlist from this song"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 .9 3.1L16 7l-3.1.9L12 11l-.9-3.1L8 7l3.1-.9L12 3Zm6 8 .7 2.3L21 14l-2.3.7L18 17l-.7-2.3L15 14l2.3-.7L18 11ZM8 11l1.4 4.6L14 17l-4.6 1.4L8 23l-1.4-4.6L2 17l4.6-1.4L8 11Z"></path></svg></button><button type="button" class="playlist-track-action playlist-track-shuffle" aria-label="Shuffle ${Di(n.playlistName || "this playlist")}" title="Shuffle this playlist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h2.2c4.8 0 6.7 10 11.6 10H20M17 14l3 3-3 3M4 17h2.2c1.8 0 3.2-1.4 4.5-3.2M14.2 9.4c1-1.4 2.1-2.4 3.6-2.4H20M17 4l3 3-3 3"></path></svg></button><button type="button" class="playlist-track-action playlist-track-remove" aria-label="Remove ${Di(e.title)} from playlist">&times;</button></span>` : r ? `<button type="button" class="playlist-track-action playlist-track-add${o ? " added" : ""}" aria-label="${o ? "Already in playlist" : `Add ${Di(e.title)} to playlist`}" ${o ? "disabled" : ""}>${o ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12.5 2.2 2.2 4.8-5.2"></path></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg>'}</button>` : "", s = `<span class="alink">${Di(e.artist)}</span>`, c = e.album ? `${s} \xb7 ${Di(e.album)}` : s;
-  return a.innerHTML = `\n    <img src="${Di(e.cover)}" alt="" loading="lazy">\n    <div class="t-meta">\n      <div class="t-top">\n        <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>\n        <span class="t-title">${Di(e.title)}</span>${e.audioAvailable ? '<small class="audio-available">Audio found</small>' : ""}\n      </div>\n      <div class="t-sub">${c}</div>\n    </div>\n    <span class="t-duration">${_i(e.duration)}</span>\n    ${l}\n    <button type="button" class="like-btn${i ? " liked" : ""}" aria-pressed="${i}" aria-label="${i ? "unlike" : "like"}">\n      <i class="${i ? "mingcute--heart-fill" : "ic-heart"}"></i>\n    </button>`, 
-  qi(a.querySelector(":scope > img"), e.cover), Ki(a, e), Cr(a, `play ${e.title} by ${e.artist}`, () => el(e, t)), 
-  a.addEventListener("click", n => {
-    if (!n.target.closest(".like-btn, .playlist-track-action")) return n.target.closest(".alink") && !ai ? (n.stopPropagation(), 
-    void (e.artistId && Or("artist", e.artistId, e.artist))) : void el(e, t);
-  }), a.querySelector(".playlist-track-add")?.addEventListener("click", t => {
-    t.stopPropagation(), ai && po(ai, e) && (t.currentTarget.classList.add("added"), 
-    t.currentTarget.disabled = !0, t.currentTarget.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8.5 12.5 2.2 2.2 4.8-5.2"></path></svg>', 
-    t.currentTarget.setAttribute("aria-label", "Already in playlist"));
-  }), a.querySelector(".playlist-track-remove")?.addEventListener("click", t => {
-    t.stopPropagation(), go(n.playlistId, e.id);
-  }), a.querySelector(".playlist-track-seed")?.addEventListener("click", t => {
-    t.stopPropagation(), vo(e, t.currentTarget);
-  }), a.querySelector(".playlist-track-shuffle")?.addEventListener("click", e => {
-    e.stopPropagation(), ho(n.playlistId);
-  }), $r(a.querySelector(".like-btn"), e), a;
+function _0x84b660_7c(_0x84b660_0, _0x84b660_1, _0x84b660_2 = {}) {
+  const _0x84b660_3 = document.createElement("\x64\x69\x76");
+  _0x84b660_3.className = "\x72\x6f\x77" + (_0x84b660_27 && _0x84b660_27.id === _0x84b660_0.id ? "\x20\x70\x6c\x61\x79\x69\x6e\x67" : ""), 
+  _0x84b660_3.dataset.id = _0x84b660_0.id;
+  const _0x84b660_4 = _0x84b660_6e(_0x84b660_0.id), _0x84b660_5 = _0x84b660_32 ? _0x84b660_34.find(_0x84b660_0 => _0x84b660_0.id === _0x84b660_32) : null, _0x84b660_6 = !!_0x84b660_5?.tracks.some(_0x84b660_1 => _0x84b660_1.id === _0x84b660_0.id), _0x84b660_7 = _0x84b660_2.playlistId ? `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x61\x63\x74\x69\x6f\x6e\x73\x22\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x61\x63\x74\x69\x6f\x6e\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x73\x65\x65\x64\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x43\x72\x65\x61\x74\x65\x20\x61\x20\x6e\x65\x77\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x66\x72\x6f\x6d\x20${_0x84b660_56(_0x84b660_0.title)}\x22\x20\x74\x69\x74\x6c\x65\x3d\x22\x43\x72\x65\x61\x74\x65\x20\x61\x20\x6e\x65\x77\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x66\x72\x6f\x6d\x20\x74\x68\x69\x73\x20\x73\x6f\x6e\x67\x22\x3e\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x31\x32\x20\x33\x20\x2e\x39\x20\x33\x2e\x31\x4c\x31\x36\x20\x37\x6c\x2d\x33\x2e\x31\x2e\x39\x4c\x31\x32\x20\x31\x31\x6c\x2d\x2e\x39\x2d\x33\x2e\x31\x4c\x38\x20\x37\x6c\x33\x2e\x31\x2d\x2e\x39\x4c\x31\x32\x20\x33\x5a\x6d\x36\x20\x38\x20\x2e\x37\x20\x32\x2e\x33\x4c\x32\x31\x20\x31\x34\x6c\x2d\x32\x2e\x33\x2e\x37\x4c\x31\x38\x20\x31\x37\x6c\x2d\x2e\x37\x2d\x32\x2e\x33\x4c\x31\x35\x20\x31\x34\x6c\x32\x2e\x33\x2d\x2e\x37\x4c\x31\x38\x20\x31\x31\x5a\x4d\x38\x20\x31\x31\x6c\x31\x2e\x34\x20\x34\x2e\x36\x4c\x31\x34\x20\x31\x37\x6c\x2d\x34\x2e\x36\x20\x31\x2e\x34\x4c\x38\x20\x32\x33\x6c\x2d\x31\x2e\x34\x2d\x34\x2e\x36\x4c\x32\x20\x31\x37\x6c\x34\x2e\x36\x2d\x31\x2e\x34\x4c\x38\x20\x31\x31\x5a\x22\x3e\x3c\x2f\x70\x61\x74\x68\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x61\x63\x74\x69\x6f\x6e\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x73\x68\x75\x66\x66\x6c\x65\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x53\x68\x75\x66\x66\x6c\x65\x20${_0x84b660_56(_0x84b660_2.playlistName || "\x74\x68\x69\x73\x20\x70\x6c\x61\x79\x6c\x69\x73\x74")}\x22\x20\x74\x69\x74\x6c\x65\x3d\x22\x53\x68\x75\x66\x66\x6c\x65\x20\x74\x68\x69\x73\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x22\x3e\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x34\x20\x37\x68\x32\x2e\x32\x63\x34\x2e\x38\x20\x30\x20\x36\x2e\x37\x20\x31\x30\x20\x31\x31\x2e\x36\x20\x31\x30\x48\x32\x30\x4d\x31\x37\x20\x31\x34\x6c\x33\x20\x33\x2d\x33\x20\x33\x4d\x34\x20\x31\x37\x68\x32\x2e\x32\x63\x31\x2e\x38\x20\x30\x20\x33\x2e\x32\x2d\x31\x2e\x34\x20\x34\x2e\x35\x2d\x33\x2e\x32\x4d\x31\x34\x2e\x32\x20\x39\x2e\x34\x63\x31\x2d\x31\x2e\x34\x20\x32\x2e\x31\x2d\x32\x2e\x34\x20\x33\x2e\x36\x2d\x32\x2e\x34\x48\x32\x30\x4d\x31\x37\x20\x34\x6c\x33\x20\x33\x2d\x33\x20\x33\x22\x3e\x3c\x2f\x70\x61\x74\x68\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x61\x63\x74\x69\x6f\x6e\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x72\x65\x6d\x6f\x76\x65\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x52\x65\x6d\x6f\x76\x65\x20${_0x84b660_56(_0x84b660_0.title)}\x20\x66\x72\x6f\x6d\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x22\x3e\x26\x74\x69\x6d\x65\x73\x3b\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x2f\x73\x70\x61\x6e\x3e` : _0x84b660_5 ? `\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x61\x63\x74\x69\x6f\x6e\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x61\x64\x64${_0x84b660_6 ? "\x20\x61\x64\x64\x65\x64" : ""}\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22${_0x84b660_6 ? "\x41\x6c\x72\x65\x61\x64\x79\x20\x69\x6e\x20\x70\x6c\x61\x79\x6c\x69\x73\x74" : `\x41\x64\x64\x20${_0x84b660_56(_0x84b660_0.title)}\x20\x74\x6f\x20\x70\x6c\x61\x79\x6c\x69\x73\x74`}\x22\x20${_0x84b660_6 ? "\x64\x69\x73\x61\x62\x6c\x65\x64" : ""}\x3e${_0x84b660_6 ? "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x32\x22\x20\x63\x79\x3d\x22\x31\x32\x22\x20\x72\x3d\x22\x39\x22\x3e\x3c\x2f\x63\x69\x72\x63\x6c\x65\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x38\x2e\x35\x20\x31\x32\x2e\x35\x20\x32\x2e\x32\x20\x32\x2e\x32\x20\x34\x2e\x38\x2d\x35\x2e\x32\x22\x3e\x3c\x2f\x70\x61\x74\x68\x3e\x3c\x2f\x73\x76\x67\x3e" : "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x32\x22\x20\x63\x79\x3d\x22\x31\x32\x22\x20\x72\x3d\x22\x39\x22\x3e\x3c\x2f\x63\x69\x72\x63\x6c\x65\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x32\x20\x38\x76\x38\x4d\x38\x20\x31\x32\x68\x38\x22\x3e\x3c\x2f\x70\x61\x74\x68\x3e\x3c\x2f\x73\x76\x67\x3e"}\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e` : "", _0x84b660_8 = `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x6c\x69\x6e\x6b\x22\x3e${_0x84b660_56(_0x84b660_0.artist)}\x3c\x2f\x73\x70\x61\x6e\x3e`, _0x84b660_9 = _0x84b660_0.album ? `${_0x84b660_8}\x20\xb7\x20${_0x84b660_56(_0x84b660_0.album)}` : _0x84b660_8;
+  return _0x84b660_3.innerHTML = `\x0a\x20\x20\x20\x20\x3c\x69\x6d\x67\x20\x73\x72\x63\x3d\x22${_0x84b660_56(_0x84b660_0.cover)}\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x6c\x6f\x61\x64\x69\x6e\x67\x3d\x22\x6c\x61\x7a\x79\x22\x3e\x0a\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x2d\x6d\x65\x74\x61\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x2d\x74\x6f\x70\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x65\x71\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x69\x3e\x3c\x2f\x69\x3e\x3c\x69\x3e\x3c\x2f\x69\x3e\x3c\x69\x3e\x3c\x2f\x69\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x2d\x74\x69\x74\x6c\x65\x22\x3e${_0x84b660_56(_0x84b660_0.title)}\x3c\x2f\x73\x70\x61\x6e\x3e${_0x84b660_0.audioAvailable ? "\x3c\x73\x6d\x61\x6c\x6c\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x75\x64\x69\x6f\x2d\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x22\x3e\x41\x75\x64\x69\x6f\x20\x66\x6f\x75\x6e\x64\x3c\x2f\x73\x6d\x61\x6c\x6c\x3e" : ""}\x0a\x20\x20\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x2d\x73\x75\x62\x22\x3e${_0x84b660_9}\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x74\x2d\x64\x75\x72\x61\x74\x69\x6f\x6e\x22\x3e${_0x84b660_55(_0x84b660_0.duration)}\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20${_0x84b660_7}\x0a\x20\x20\x20\x20\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x6c\x69\x6b\x65\x2d\x62\x74\x6e${_0x84b660_4 ? "\x20\x6c\x69\x6b\x65\x64" : ""}\x22\x20\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64\x3d\x22${_0x84b660_4}\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22${_0x84b660_4 ? "\x75\x6e\x6c\x69\x6b\x65" : "\x6c\x69\x6b\x65"}\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x69\x20\x63\x6c\x61\x73\x73\x3d\x22${_0x84b660_4 ? "\x6d\x69\x6e\x67\x63\x75\x74\x65\x2d\x2d\x68\x65\x61\x72\x74\x2d\x66\x69\x6c\x6c" : "\x69\x63\x2d\x68\x65\x61\x72\x74"}\x22\x3e\x3c\x2f\x69\x3e\x0a\x20\x20\x20\x20\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e`, 
+  _0x84b660_54(_0x84b660_3.querySelector("\x3a\x73\x63\x6f\x70\x65\x20\x3e\x20\x69\x6d\x67"), _0x84b660_0.cover), _0x84b660_62(_0x84b660_3, _0x84b660_0), 
+  _0x84b660_72(_0x84b660_3, `\x70\x6c\x61\x79\x20${_0x84b660_0.title}\x20\x62\x79\x20${_0x84b660_0.artist}`, () => _0x84b660_c3(_0x84b660_0, _0x84b660_1)), 
+  _0x84b660_3.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_2 => {
+    if (!_0x84b660_2.target.closest("\x2e\x6c\x69\x6b\x65\x2d\x62\x74\x6e\x2c\x20\x2e\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x61\x63\x74\x69\x6f\x6e")) return _0x84b660_2.target.closest("\x2e\x61\x6c\x69\x6e\x6b") && !_0x84b660_32 ? (_0x84b660_2.stopPropagation(), 
+    void (_0x84b660_0.artistId && _0x84b660_85("\x61\x72\x74\x69\x73\x74", _0x84b660_0.artistId, _0x84b660_0.artist))) : void _0x84b660_c3(_0x84b660_0, _0x84b660_1);
+  }), _0x84b660_3.querySelector("\x2e\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x61\x64\x64")?.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_1 => {
+    _0x84b660_1.stopPropagation(), _0x84b660_32 && _0x84b660_9b(_0x84b660_32, _0x84b660_0) && (_0x84b660_1.currentTarget.classList.add("\x61\x64\x64\x65\x64"), 
+    _0x84b660_1.currentTarget.disabled = !0, _0x84b660_1.currentTarget.innerHTML = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x32\x22\x20\x63\x79\x3d\x22\x31\x32\x22\x20\x72\x3d\x22\x39\x22\x3e\x3c\x2f\x63\x69\x72\x63\x6c\x65\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x38\x2e\x35\x20\x31\x32\x2e\x35\x20\x32\x2e\x32\x20\x32\x2e\x32\x20\x34\x2e\x38\x2d\x35\x2e\x32\x22\x3e\x3c\x2f\x70\x61\x74\x68\x3e\x3c\x2f\x73\x76\x67\x3e", 
+    _0x84b660_1.currentTarget.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x41\x6c\x72\x65\x61\x64\x79\x20\x69\x6e\x20\x70\x6c\x61\x79\x6c\x69\x73\x74"));
+  }), _0x84b660_3.querySelector("\x2e\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x72\x65\x6d\x6f\x76\x65")?.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_1 => {
+    _0x84b660_1.stopPropagation(), _0x84b660_9c(_0x84b660_2.playlistId, _0x84b660_0.id);
+  }), _0x84b660_3.querySelector("\x2e\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x73\x65\x65\x64")?.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_1 => {
+    _0x84b660_1.stopPropagation(), _0x84b660_9f(_0x84b660_0, _0x84b660_1.currentTarget);
+  }), _0x84b660_3.querySelector("\x2e\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x73\x68\x75\x66\x66\x6c\x65")?.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_0 => {
+    _0x84b660_0.stopPropagation(), _0x84b660_9e(_0x84b660_2.playlistId);
+  }), _0x84b660_75(_0x84b660_3.querySelector("\x2e\x6c\x69\x6b\x65\x2d\x62\x74\x6e"), _0x84b660_0), _0x84b660_3;
 }
 
-function Hr(e, t) {
-  const n = document.createElement("div");
-  n.className = "card";
-  const a = e.artist ? e.artist : Number(e.count) > 0 ? `${e.count} ${1 === e.count ? "track" : "tracks"}` : Number(e.position) > 0 ? `#${e.position} this week` : "artist" === t ? "Popular artist" : "Popular album";
-  return n.innerHTML = `\n    <div class="card-art">\n      <img src="${Di(e.cover)}" alt="" loading="lazy">\n      <button type="button" class="card-play" aria-label="play ${Di(e.key)}"><i class="line-md--play-filled"></i></button>\n    </div>\n    <span class="c-name">${Di(e.key)}</span>\n    <span class="c-count">${Di(a)}</span>`, 
-  qi(n.querySelector(".card-art img"), e.cover), Cr(n, `open ${e.key}`, () => Or(t, e.id, e.key)), 
-  n.addEventListener("click", n => {
-    n.target.closest(".card-play") || Or(t, e.id, e.key);
-  }), n.querySelector(".card-play").addEventListener("click", n => {
-    n.stopPropagation(), Or(t, e.id, e.key, !0);
-  }), n;
+function _0x84b660_7d(_0x84b660_0, _0x84b660_1) {
+  const _0x84b660_2 = document.createElement("\x64\x69\x76");
+  _0x84b660_2.className = "\x63\x61\x72\x64";
+  const _0x84b660_3 = _0x84b660_0.artist ? _0x84b660_0.artist : Number(_0x84b660_0.count) > 0 ? `${_0x84b660_0.count}\x20${1 === _0x84b660_0.count ? "\x74\x72\x61\x63\x6b" : "\x74\x72\x61\x63\x6b\x73"}` : Number(_0x84b660_0.position) > 0 ? `\x23${_0x84b660_0.position}\x20\x74\x68\x69\x73\x20\x77\x65\x65\x6b` : "\x61\x72\x74\x69\x73\x74" === _0x84b660_1 ? "\x50\x6f\x70\x75\x6c\x61\x72\x20\x61\x72\x74\x69\x73\x74" : "\x50\x6f\x70\x75\x6c\x61\x72\x20\x61\x6c\x62\x75\x6d";
+  return _0x84b660_2.innerHTML = `\x0a\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x63\x61\x72\x64\x2d\x61\x72\x74\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x69\x6d\x67\x20\x73\x72\x63\x3d\x22${_0x84b660_56(_0x84b660_0.cover)}\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x6c\x6f\x61\x64\x69\x6e\x67\x3d\x22\x6c\x61\x7a\x79\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x63\x61\x72\x64\x2d\x70\x6c\x61\x79\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x70\x6c\x61\x79\x20${_0x84b660_56(_0x84b660_0.key)}\x22\x3e\x3c\x69\x20\x63\x6c\x61\x73\x73\x3d\x22\x6c\x69\x6e\x65\x2d\x6d\x64\x2d\x2d\x70\x6c\x61\x79\x2d\x66\x69\x6c\x6c\x65\x64\x22\x3e\x3c\x2f\x69\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x0a\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x63\x2d\x6e\x61\x6d\x65\x22\x3e${_0x84b660_56(_0x84b660_0.key)}\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x63\x2d\x63\x6f\x75\x6e\x74\x22\x3e${_0x84b660_56(_0x84b660_3)}\x3c\x2f\x73\x70\x61\x6e\x3e`, 
+  _0x84b660_54(_0x84b660_2.querySelector("\x2e\x63\x61\x72\x64\x2d\x61\x72\x74\x20\x69\x6d\x67"), _0x84b660_0.cover), _0x84b660_72(_0x84b660_2, `\x6f\x70\x65\x6e\x20${_0x84b660_0.key}`, () => _0x84b660_85(_0x84b660_1, _0x84b660_0.id, _0x84b660_0.key)), 
+  _0x84b660_2.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_2 => {
+    _0x84b660_2.target.closest("\x2e\x63\x61\x72\x64\x2d\x70\x6c\x61\x79") || _0x84b660_85(_0x84b660_1, _0x84b660_0.id, _0x84b660_0.key);
+  }), _0x84b660_2.querySelector("\x2e\x63\x61\x72\x64\x2d\x70\x6c\x61\x79").addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_2 => {
+    _0x84b660_2.stopPropagation(), _0x84b660_85(_0x84b660_1, _0x84b660_0.id, _0x84b660_0.key, !0);
+  }), _0x84b660_2;
 }
 
-function qr(e, t, n = {}) {
-  e.innerHTML = "", e.style.display = t.length ? "" : "none", t.forEach(a => e.appendChild(Fr(a, t, n)));
+function _0x84b660_7e(_0x84b660_0, _0x84b660_1, _0x84b660_2 = {}) {
+  _0x84b660_0.innerHTML = "", _0x84b660_0.style.display = _0x84b660_1.length ? "" : "\x6e\x6f\x6e\x65", 
+  _0x84b660_1.forEach(_0x84b660_3 => _0x84b660_0.appendChild(_0x84b660_7c(_0x84b660_3, _0x84b660_1, _0x84b660_2)));
 }
 
-function _r(e) {
-  Ar(), ha.style.display = "none", qr(ua, e);
+function _0x84b660_7f(_0x84b660_0) {
+  _0x84b660_79(), _0x84b660_a.style.display = "\x6e\x6f\x6e\x65", _0x84b660_7e(_0x84b660_4, _0x84b660_0);
 }
 
-function Dr(e, t = Mr(e)) {
-  Ar(), ha.style.display = "none";
-  const n = t;
-  ma.innerHTML = "", ma.style.display = n.length ? "" : "none", n.forEach(t => ma.appendChild(Hr(t, e))), 
-  n.length || Br(`No ${e}s yet`, "Results will appear here after you search.");
+function _0x84b660_80(_0x84b660_0, _0x84b660_1 = _0x84b660_76(_0x84b660_0)) {
+  _0x84b660_79(), _0x84b660_a.style.display = "\x6e\x6f\x6e\x65";
+  const _0x84b660_2 = _0x84b660_1;
+  _0x84b660_5.innerHTML = "", _0x84b660_5.style.display = _0x84b660_2.length ? "" : "\x6e\x6f\x6e\x65", 
+  _0x84b660_2.forEach(_0x84b660_1 => _0x84b660_5.appendChild(_0x84b660_7d(_0x84b660_1, _0x84b660_0))), 
+  _0x84b660_2.length || _0x84b660_7a(`\x4e\x6f\x20${_0x84b660_0}\x73\x20\x79\x65\x74`, "\x52\x65\x73\x75\x6c\x74\x73\x20\x77\x69\x6c\x6c\x20\x61\x70\x70\x65\x61\x72\x20\x68\x65\x72\x65\x20\x61\x66\x74\x65\x72\x20\x79\x6f\x75\x20\x73\x65\x61\x72\x63\x68\x2e");
 }
 
-function Rr(e, t, n, a = "") {
-  const i = document.createElement("section");
-  i.className = `home-section ${a}`.trim();
-  const r = document.createElement("div");
-  r.className = "home-section-head";
-  const o = document.createElement("div"), l = document.createElement("h2");
-  l.textContent = e;
-  const s = document.createElement("p");
-  return s.textContent = t, o.append(l, s), r.appendChild(o), i.append(r, n), i;
+function _0x84b660_81(_0x84b660_0, _0x84b660_1, _0x84b660_2, _0x84b660_3 = "") {
+  const _0x84b660_4 = document.createElement("\x73\x65\x63\x74\x69\x6f\x6e");
+  _0x84b660_4.className = `\x68\x6f\x6d\x65\x2d\x73\x65\x63\x74\x69\x6f\x6e\x20${_0x84b660_3}`.trim();
+  const _0x84b660_5 = document.createElement("\x64\x69\x76");
+  _0x84b660_5.className = "\x68\x6f\x6d\x65\x2d\x73\x65\x63\x74\x69\x6f\x6e\x2d\x68\x65\x61\x64";
+  const _0x84b660_6 = document.createElement("\x64\x69\x76"), _0x84b660_7 = document.createElement("\x68\x32");
+  _0x84b660_7.textContent = _0x84b660_0;
+  const _0x84b660_8 = document.createElement("\x70");
+  return _0x84b660_8.textContent = _0x84b660_1, _0x84b660_6.append(_0x84b660_7, _0x84b660_8), 
+  _0x84b660_5.appendChild(_0x84b660_6), _0x84b660_4.append(_0x84b660_5, _0x84b660_2), 
+  _0x84b660_4;
 }
 
-function jr() {
-  Ar(), ha.style.display = "none", ya.innerHTML = "";
-  const e = document.createElement("div");
-  e.className = "home-track-list", qr(e, Za.tracks.slice(0, 12)), ya.appendChild(Rr("Popular tracks this week", "What people are playing right now.", e, "home-tracks"));
-  const t = document.createElement("div");
-  t.className = "cards home-cards", Za.artists.slice(0, 8).forEach(e => t.appendChild(Hr(e, "artist"))), 
-  ya.appendChild(Rr("Popular artists", "Artists trending across the current chart.", t));
-  const n = document.createElement("div");
-  n.className = "cards home-cards", Za.albums.slice(0, 8).forEach(e => n.appendChild(Hr(e, "album"))), 
-  ya.appendChild(Rr("Popular albums", "Albums listeners are coming back to this week.", n)), 
-  ya.style.display = "";
+function _0x84b660_82() {
+  _0x84b660_79(), _0x84b660_a.style.display = "\x6e\x6f\x6e\x65", _0x84b660_6.innerHTML = "";
+  const _0x84b660_0 = document.createElement("\x64\x69\x76");
+  _0x84b660_0.className = "\x68\x6f\x6d\x65\x2d\x74\x72\x61\x63\x6b\x2d\x6c\x69\x73\x74", _0x84b660_7e(_0x84b660_0, _0x84b660_2a.tracks.slice(0, 12)), 
+  _0x84b660_6.appendChild(_0x84b660_81("\x50\x6f\x70\x75\x6c\x61\x72\x20\x74\x72\x61\x63\x6b\x73\x20\x74\x68\x69\x73\x20\x77\x65\x65\x6b", "\x57\x68\x61\x74\x20\x70\x65\x6f\x70\x6c\x65\x20\x61\x72\x65\x20\x70\x6c\x61\x79\x69\x6e\x67\x20\x72\x69\x67\x68\x74\x20\x6e\x6f\x77\x2e", _0x84b660_0, "\x68\x6f\x6d\x65\x2d\x74\x72\x61\x63\x6b\x73"));
+  const _0x84b660_1 = document.createElement("\x64\x69\x76");
+  _0x84b660_1.className = "\x63\x61\x72\x64\x73\x20\x68\x6f\x6d\x65\x2d\x63\x61\x72\x64\x73", _0x84b660_2a.artists.slice(0, 8).forEach(_0x84b660_0 => _0x84b660_1.appendChild(_0x84b660_7d(_0x84b660_0, "\x61\x72\x74\x69\x73\x74"))), 
+  _0x84b660_6.appendChild(_0x84b660_81("\x50\x6f\x70\x75\x6c\x61\x72\x20\x61\x72\x74\x69\x73\x74\x73", "\x41\x72\x74\x69\x73\x74\x73\x20\x74\x72\x65\x6e\x64\x69\x6e\x67\x20\x61\x63\x72\x6f\x73\x73\x20\x74\x68\x65\x20\x63\x75\x72\x72\x65\x6e\x74\x20\x63\x68\x61\x72\x74\x2e", _0x84b660_1));
+  const _0x84b660_2 = document.createElement("\x64\x69\x76");
+  _0x84b660_2.className = "\x63\x61\x72\x64\x73\x20\x68\x6f\x6d\x65\x2d\x63\x61\x72\x64\x73", _0x84b660_2a.albums.slice(0, 8).forEach(_0x84b660_0 => _0x84b660_2.appendChild(_0x84b660_7d(_0x84b660_0, "\x61\x6c\x62\x75\x6d"))), 
+  _0x84b660_6.appendChild(_0x84b660_81("\x50\x6f\x70\x75\x6c\x61\x72\x20\x61\x6c\x62\x75\x6d\x73", "\x41\x6c\x62\x75\x6d\x73\x20\x6c\x69\x73\x74\x65\x6e\x65\x72\x73\x20\x61\x72\x65\x20\x63\x6f\x6d\x69\x6e\x67\x20\x62\x61\x63\x6b\x20\x74\x6f\x20\x74\x68\x69\x73\x20\x77\x65\x65\x6b\x2e", _0x84b660_2)), 
+  _0x84b660_6.style.display = "";
 }
 
-function Ur() {
-  Ar(), ha.style.display = "none";
-  const e = Mr("artist"), t = Mr("album");
-  ya.innerHTML = "";
-  const n = document.createElement("div");
-  if (qr(n, Zt), ya.appendChild(n), e.length) {
-    const t = document.createElement("div");
-    t.className = "cards", e.forEach(e => t.appendChild(Hr(e, "artist"))), ya.appendChild(t);
+function _0x84b660_83() {
+  _0x84b660_79(), _0x84b660_a.style.display = "\x6e\x6f\x6e\x65";
+  const _0x84b660_0 = _0x84b660_76("\x61\x72\x74\x69\x73\x74"), _0x84b660_1 = _0x84b660_76("\x61\x6c\x62\x75\x6d");
+  _0x84b660_6.innerHTML = "";
+  const _0x84b660_2 = document.createElement("\x64\x69\x76");
+  if (_0x84b660_7e(_0x84b660_2, _0xf24d16_18), _0x84b660_6.appendChild(_0x84b660_2), 
+  _0x84b660_0.length) {
+    const _0x84b660_1 = document.createElement("\x64\x69\x76");
+    _0x84b660_1.className = "\x63\x61\x72\x64\x73", _0x84b660_0.forEach(_0x84b660_0 => _0x84b660_1.appendChild(_0x84b660_7d(_0x84b660_0, "\x61\x72\x74\x69\x73\x74"))), 
+    _0x84b660_6.appendChild(_0x84b660_1);
   }
-  if (t.length > 1) {
-    const e = document.createElement("div");
-    e.className = "cards", t.forEach(t => e.appendChild(Hr(t, "album"))), ya.appendChild(e);
+  if (_0x84b660_1.length > 1) {
+    const _0x84b660_0 = document.createElement("\x64\x69\x76");
+    _0x84b660_0.className = "\x63\x61\x72\x64\x73", _0x84b660_1.forEach(_0x84b660_1 => _0x84b660_0.appendChild(_0x84b660_7d(_0x84b660_1, "\x61\x6c\x62\x75\x6d"))), 
+    _0x84b660_6.appendChild(_0x84b660_0);
   }
-  ya.style.display = "";
+  _0x84b660_6.style.display = "";
 }
 
-function zr(e, t, n, a) {
-  const i = document.createElement("div");
-  return i.className = "group-head", i.innerHTML = `\n    <img src="${Di(e)}" alt="">\n    <div>\n      <div class="g-name">${Di(t)}</div>\n      <div class="g-sub">${Di(n)}</div>\n    </div>\n    <div class="g-actions">\n      <button type="button" class="g-play" aria-label="play all"><i class="line-md--play-filled"></i>Play</button>\n    </div>`, 
-  i.querySelector(".g-play").addEventListener("click", () => {
-    a.length && el(a[0], a);
-  }), i;
+function _0x84b660_84(_0x84b660_0, _0x84b660_1, _0x84b660_2, _0x84b660_3) {
+  const _0x84b660_4 = document.createElement("\x64\x69\x76");
+  return _0x84b660_4.className = "\x67\x72\x6f\x75\x70\x2d\x68\x65\x61\x64", _0x84b660_4.innerHTML = `\x0a\x20\x20\x20\x20\x3c\x69\x6d\x67\x20\x73\x72\x63\x3d\x22${_0x84b660_56(_0x84b660_0)}\x22\x20\x61\x6c\x74\x3d\x22\x22\x3e\x0a\x20\x20\x20\x20\x3c\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x67\x2d\x6e\x61\x6d\x65\x22\x3e${_0x84b660_56(_0x84b660_1)}\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x67\x2d\x73\x75\x62\x22\x3e${_0x84b660_56(_0x84b660_2)}\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x67\x2d\x61\x63\x74\x69\x6f\x6e\x73\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x67\x2d\x70\x6c\x61\x79\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x70\x6c\x61\x79\x20\x61\x6c\x6c\x22\x3e\x3c\x69\x20\x63\x6c\x61\x73\x73\x3d\x22\x6c\x69\x6e\x65\x2d\x6d\x64\x2d\x2d\x70\x6c\x61\x79\x2d\x66\x69\x6c\x6c\x65\x64\x22\x3e\x3c\x2f\x69\x3e\x50\x6c\x61\x79\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x0a\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e`, 
+  _0x84b660_4.querySelector("\x2e\x67\x2d\x70\x6c\x61\x79").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x84b660_3.length && _0x84b660_c3(_0x84b660_3[0], _0x84b660_3);
+  }), _0x84b660_4;
 }
 
-async function Or(e, t, n, a) {
-  const i = ++ei;
-  Xa = {
-    type: e,
-    id: t,
-    name: n,
+async function _0x84b660_85(_0x84b660_0, _0x84b660_1, _0x84b660_2, _0x84b660_3) {
+  const _0x84b660_4 = ++_0x84b660_2f;
+  _0x84b660_2e = {
+    type: _0x84b660_0,
+    id: _0x84b660_1,
+    name: _0x84b660_2,
     data: null
-  }, Pr(n);
+  }, _0x84b660_7b(_0x84b660_2);
   try {
-    const n = await Ri(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxify/${e}/${t}`);
-    if (i !== ei) return;
-    Xa.data = n, Jr(), a && n.tracks.length && el(n.tracks[0], n.tracks);
-  } catch (r) {
-    if (i !== ei) return;
-    Xa = null, Br("Could not load " + e, r.message, !0);
+    const _0x84b660_2 = await _0x84b660_57(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x69\x66\x79\x2f${_0x84b660_0}\x2f${_0x84b660_1}`);
+    if (_0x84b660_4 !== _0x84b660_2f) return;
+    _0x84b660_2e.data = _0x84b660_2, _0x84b660_86(), _0x84b660_3 && _0x84b660_2.tracks.length && _0x84b660_c3(_0x84b660_2.tracks[0], _0x84b660_2.tracks);
+  } catch (_0x84b660_5) {
+    if (_0x84b660_4 !== _0x84b660_2f) return;
+    _0x84b660_2e = null, _0x84b660_7a("\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x20" + _0x84b660_0, _0x84b660_5.message, !0);
   }
 }
 
-function Jr() {
-  const e = Xa.data, t = "artist" === Xa.type && e.total ? e.total : e.tracks.length;
-  if (Ar(), ha.style.display = "", va.textContent = `${Xa.name} \xb7 ${t} tracks`, 
-  ya.innerHTML = "", ya.appendChild(zr(e.cover, e.name, e.artist ? `${e.artist} \xb7 ${t} tracks` : `${t} tracks`, e.tracks)), 
-  "artist" === Xa.type && e.albums.length) {
-    const t = document.createElement("div");
-    t.className = "cards", e.albums.forEach(e => {
-      const n = document.createElement("div");
-      n.className = "card", n.innerHTML = `\n        <div class="card-art">\n          <img src="${Di(e.cover)}" alt="" loading="lazy">\n          <button type="button" class="card-play" aria-label="play ${Di(e.title)}"><i class="line-md--play-filled"></i></button>\n        </div>\n        <span class="c-name">${Di(e.title)}</span>`, 
-      Cr(n, `open ${e.title}`, () => Or("album", e.id, e.title)), n.addEventListener("click", t => {
-        t.target.closest(".card-play") || Or("album", e.id, e.title);
-      }), n.querySelector(".card-play").addEventListener("click", t => {
-        t.stopPropagation(), Or("album", e.id, e.title, !0);
-      }), t.appendChild(n);
-    }), ya.appendChild(t);
+function _0x84b660_86() {
+  const _0x84b660_0 = _0x84b660_2e.data, _0x84b660_1 = "\x61\x72\x74\x69\x73\x74" === _0x84b660_2e.type && _0x84b660_0.total ? _0x84b660_0.total : _0x84b660_0.tracks.length;
+  if (_0x84b660_79(), _0x84b660_a.style.display = "", _0x84b660_b.textContent = `${_0x84b660_2e.name}\x20\xb7\x20${_0x84b660_1}\x20\x74\x72\x61\x63\x6b\x73`, 
+  _0x84b660_6.innerHTML = "", _0x84b660_6.appendChild(_0x84b660_84(_0x84b660_0.cover, _0x84b660_0.name, _0x84b660_0.artist ? `${_0x84b660_0.artist}\x20\xb7\x20${_0x84b660_1}\x20\x74\x72\x61\x63\x6b\x73` : `${_0x84b660_1}\x20\x74\x72\x61\x63\x6b\x73`, _0x84b660_0.tracks)), 
+  "\x61\x72\x74\x69\x73\x74" === _0x84b660_2e.type && _0x84b660_0.albums.length) {
+    const _0x84b660_1 = document.createElement("\x64\x69\x76");
+    _0x84b660_1.className = "\x63\x61\x72\x64\x73", _0x84b660_0.albums.forEach(_0x84b660_0 => {
+      const _0x84b660_2 = document.createElement("\x64\x69\x76");
+      _0x84b660_2.className = "\x63\x61\x72\x64", _0x84b660_2.innerHTML = `\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x63\x61\x72\x64\x2d\x61\x72\x74\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x69\x6d\x67\x20\x73\x72\x63\x3d\x22${_0x84b660_56(_0x84b660_0.cover)}\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x6c\x6f\x61\x64\x69\x6e\x67\x3d\x22\x6c\x61\x7a\x79\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x63\x61\x72\x64\x2d\x70\x6c\x61\x79\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x70\x6c\x61\x79\x20${_0x84b660_56(_0x84b660_0.title)}\x22\x3e\x3c\x69\x20\x63\x6c\x61\x73\x73\x3d\x22\x6c\x69\x6e\x65\x2d\x6d\x64\x2d\x2d\x70\x6c\x61\x79\x2d\x66\x69\x6c\x6c\x65\x64\x22\x3e\x3c\x2f\x69\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x63\x2d\x6e\x61\x6d\x65\x22\x3e${_0x84b660_56(_0x84b660_0.title)}\x3c\x2f\x73\x70\x61\x6e\x3e`, 
+      _0x84b660_72(_0x84b660_2, `\x6f\x70\x65\x6e\x20${_0x84b660_0.title}`, () => _0x84b660_85("\x61\x6c\x62\x75\x6d", _0x84b660_0.id, _0x84b660_0.title)), 
+      _0x84b660_2.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_1 => {
+        _0x84b660_1.target.closest("\x2e\x63\x61\x72\x64\x2d\x70\x6c\x61\x79") || _0x84b660_85("\x61\x6c\x62\x75\x6d", _0x84b660_0.id, _0x84b660_0.title);
+      }), _0x84b660_2.querySelector("\x2e\x63\x61\x72\x64\x2d\x70\x6c\x61\x79").addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_1 => {
+        _0x84b660_1.stopPropagation(), _0x84b660_85("\x61\x6c\x62\x75\x6d", _0x84b660_0.id, _0x84b660_0.title, !0);
+      }), _0x84b660_1.appendChild(_0x84b660_2);
+    }), _0x84b660_6.appendChild(_0x84b660_1);
   }
-  const n = document.createElement("div");
-  qr(n, e.tracks), ya.appendChild(n), ya.style.display = "";
+  const _0x84b660_2 = document.createElement("\x64\x69\x76");
+  _0x84b660_7e(_0x84b660_2, _0x84b660_0.tracks), _0x84b660_6.appendChild(_0x84b660_2), 
+  _0x84b660_6.style.display = "";
 }
 
-function Vr() {
-  return io(), ni ? co() : ai ? mo() : Xa ? Xa.data ? Jr() : Pr(Xa.name) : Ya ? Zt.length ? "home" === Wa ? Ur() : "artists" === Wa ? Dr("artist") : "albums" === Wa ? Dr("album") : _r(Zt) : Br("No results", `Nothing matched "${Ya}".`) : Ga ? Pr() : Ka && !Za.tracks.length ? Br("Home is unavailable", Ka, !0) : "home" === Wa ? jr() : "artists" === Wa ? Dr("artist", Za.artists) : "albums" === Wa ? Dr("album", Za.albums) : Za.tracks.length ? _r(Za.tracks) : void Br("Nothing is charting yet", "Try searching for a song, artist, or album.");
+function _0x84b660_87() {
+  return _0x84b660_92(), _0x84b660_31 ? _0x84b660_97() : _0x84b660_32 ? _0x84b660_99() : _0x84b660_2e ? _0x84b660_2e.data ? _0x84b660_86() : _0x84b660_7b(_0x84b660_2e.name) : _0x84b660_28 ? _0xf24d16_18.length ? "\x68\x6f\x6d\x65" === _0x84b660_29 ? _0x84b660_83() : "\x61\x72\x74\x69\x73\x74\x73" === _0x84b660_29 ? _0x84b660_80("\x61\x72\x74\x69\x73\x74") : "\x61\x6c\x62\x75\x6d\x73" === _0x84b660_29 ? _0x84b660_80("\x61\x6c\x62\x75\x6d") : _0x84b660_7f(_0xf24d16_18) : _0x84b660_7a("\x4e\x6f\x20\x72\x65\x73\x75\x6c\x74\x73", `\x4e\x6f\x74\x68\x69\x6e\x67\x20\x6d\x61\x74\x63\x68\x65\x64\x20\x22${_0x84b660_28}\x22\x2e`) : _0x84b660_2b ? _0x84b660_7b() : _0x84b660_2c && !_0x84b660_2a.tracks.length ? _0x84b660_7a("\x48\x6f\x6d\x65\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", _0x84b660_2c, !0) : "\x68\x6f\x6d\x65" === _0x84b660_29 ? _0x84b660_82() : "\x61\x72\x74\x69\x73\x74\x73" === _0x84b660_29 ? _0x84b660_80("\x61\x72\x74\x69\x73\x74", _0x84b660_2a.artists) : "\x61\x6c\x62\x75\x6d\x73" === _0x84b660_29 ? _0x84b660_80("\x61\x6c\x62\x75\x6d", _0x84b660_2a.albums) : _0x84b660_2a.tracks.length ? _0x84b660_7f(_0x84b660_2a.tracks) : void _0x84b660_7a("\x4e\x6f\x74\x68\x69\x6e\x67\x20\x69\x73\x20\x63\x68\x61\x72\x74\x69\x6e\x67\x20\x79\x65\x74", "\x54\x72\x79\x20\x73\x65\x61\x72\x63\x68\x69\x6e\x67\x20\x66\x6f\x72\x20\x61\x20\x73\x6f\x6e\x67\x2c\x20\x61\x72\x74\x69\x73\x74\x2c\x20\x6f\x72\x20\x61\x6c\x62\x75\x6d\x2e");
 }
 
-async function Yr() {
-  Ga = !0, Ka = "", Ya || ni || Xa || Vr();
+async function _0x84b660_88() {
+  _0x84b660_2b = !0, _0x84b660_2c = "", _0x84b660_28 || _0x84b660_31 || _0x84b660_2e || _0x84b660_87();
   try {
-    const e = await Ri("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxify/home");
-    Za = {
-      tracks: Array.isArray(e.tracks) ? e.tracks : [],
-      artists: Array.isArray(e.artists) ? e.artists : [],
-      albums: Array.isArray(e.albums) ? e.albums : []
+    const _0x84b660_0 = await _0x84b660_57("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x69\x66\x79\x2f\x68\x6f\x6d\x65");
+    _0x84b660_2a = {
+      tracks: Array.isArray(_0x84b660_0.tracks) ? _0x84b660_0.tracks : [],
+      artists: Array.isArray(_0x84b660_0.artists) ? _0x84b660_0.artists : [],
+      albums: Array.isArray(_0x84b660_0.albums) ? _0x84b660_0.albums : []
     };
-  } catch (e) {
-    Ka = e.message || "The weekly chart could not load.";
+  } catch (_0x84b660_0) {
+    _0x84b660_2c = _0x84b660_0.message || "\x54\x68\x65\x20\x77\x65\x65\x6b\x6c\x79\x20\x63\x68\x61\x72\x74\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x2e";
   } finally {
-    Ga = !1, Ya || ni || Xa || ai || Vr();
+    _0x84b660_2b = !1, _0x84b660_28 || _0x84b660_31 || _0x84b660_2e || _0x84b660_32 || _0x84b660_87();
   }
 }
 
-function Wr(e, t, n) {
-  if (e.innerHTML = "", !t.length) {
-    const t = document.createElement("div");
-    return t.className = "mod-empty", t.textContent = n, void e.appendChild(t);
+function _0x84b660_89(_0x84b660_0, _0x84b660_1, _0x84b660_2) {
+  if (_0x84b660_0.innerHTML = "", !_0x84b660_1.length) {
+    const _0x84b660_1 = document.createElement("\x64\x69\x76");
+    return _0x84b660_1.className = "\x6d\x6f\x64\x2d\x65\x6d\x70\x74\x79", _0x84b660_1.textContent = _0x84b660_2, 
+    void _0x84b660_0.appendChild(_0x84b660_1);
   }
-  t.forEach(n => {
-    const a = document.createElement("div");
-    a.className = "mini" + (Va && Va.id === n.id ? " playing" : ""), a.dataset.id = n.id;
-    const i = wr(n.id);
-    a.innerHTML = `\n      <img src="${Di(n.cover)}" alt="" loading="lazy">\n      <div class="mini-m">\n        <div class="mini-t">${Di(n.title)}</div>\n        <div class="mini-a">${Di(n.artist)}</div>\n      </div>\n      <button type="button" class="like-btn${i ? " liked" : ""}" aria-pressed="${i}" aria-label="${i ? "unlike" : "like"}"><i class="${i ? "mingcute--heart-fill" : "ic-heart"}"></i></button>`, 
-    Ki(a, n), Cr(a, `play ${n.title} by ${n.artist}`, () => el(n, t)), a.addEventListener("click", e => {
-      e.target.closest(".like-btn") || el(n, t);
-    }), $r(a.querySelector(".like-btn"), n), e.appendChild(a);
+  _0x84b660_1.forEach(_0x84b660_2 => {
+    const _0x84b660_3 = document.createElement("\x64\x69\x76");
+    _0x84b660_3.className = "\x6d\x69\x6e\x69" + (_0x84b660_27 && _0x84b660_27.id === _0x84b660_2.id ? "\x20\x70\x6c\x61\x79\x69\x6e\x67" : ""), 
+    _0x84b660_3.dataset.id = _0x84b660_2.id;
+    const _0x84b660_4 = _0x84b660_6e(_0x84b660_2.id);
+    _0x84b660_3.innerHTML = `\x0a\x20\x20\x20\x20\x20\x20\x3c\x69\x6d\x67\x20\x73\x72\x63\x3d\x22${_0x84b660_56(_0x84b660_2.cover)}\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x6c\x6f\x61\x64\x69\x6e\x67\x3d\x22\x6c\x61\x7a\x79\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x6d\x69\x6e\x69\x2d\x6d\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x6d\x69\x6e\x69\x2d\x74\x22\x3e${_0x84b660_56(_0x84b660_2.title)}\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x6d\x69\x6e\x69\x2d\x61\x22\x3e${_0x84b660_56(_0x84b660_2.artist)}\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x63\x6c\x61\x73\x73\x3d\x22\x6c\x69\x6b\x65\x2d\x62\x74\x6e${_0x84b660_4 ? "\x20\x6c\x69\x6b\x65\x64" : ""}\x22\x20\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64\x3d\x22${_0x84b660_4}\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22${_0x84b660_4 ? "\x75\x6e\x6c\x69\x6b\x65" : "\x6c\x69\x6b\x65"}\x22\x3e\x3c\x69\x20\x63\x6c\x61\x73\x73\x3d\x22${_0x84b660_4 ? "\x6d\x69\x6e\x67\x63\x75\x74\x65\x2d\x2d\x68\x65\x61\x72\x74\x2d\x66\x69\x6c\x6c" : "\x69\x63\x2d\x68\x65\x61\x72\x74"}\x22\x3e\x3c\x2f\x69\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e`, 
+    _0x84b660_62(_0x84b660_3, _0x84b660_2), _0x84b660_72(_0x84b660_3, `\x70\x6c\x61\x79\x20${_0x84b660_2.title}\x20\x62\x79\x20${_0x84b660_2.artist}`, () => _0x84b660_c3(_0x84b660_2, _0x84b660_1)), 
+    _0x84b660_3.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_0 => {
+      _0x84b660_0.target.closest("\x2e\x6c\x69\x6b\x65\x2d\x62\x74\x6e") || _0x84b660_c3(_0x84b660_2, _0x84b660_1);
+    }), _0x84b660_75(_0x84b660_3.querySelector("\x2e\x6c\x69\x6b\x65\x2d\x62\x74\x6e"), _0x84b660_2), _0x84b660_0.appendChild(_0x84b660_3);
   });
 }
 
-function Zr(e, t = !1) {
-  const n = document.createElement("span");
-  n.className = "playlist-cover" + (t ? " compact" : "");
-  const a = e?.cover ? [ e.cover ] : [];
-  if (!a.length) for (const i of e?.tracks || []) if (i.cover && !a.includes(i.cover) && (a.push(i.cover), 
-  4 === a.length)) break;
-  if (n.dataset.count = String(a.length), !a.length) {
-    const e = document.createElement("i");
-    return e.className = "mingcute--music-line", n.appendChild(e), n;
+function _0x84b660_8a(_0x84b660_0, _0x84b660_1 = !1) {
+  const _0x84b660_2 = document.createElement("\x73\x70\x61\x6e");
+  _0x84b660_2.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x6f\x76\x65\x72" + (_0x84b660_1 ? "\x20\x63\x6f\x6d\x70\x61\x63\x74" : "");
+  const _0x84b660_3 = _0x84b660_0?.cover ? [ _0x84b660_0.cover ] : [];
+  if (!_0x84b660_3.length) for (const _0x84b660_4 of _0x84b660_0?.tracks || []) if (_0x84b660_4.cover && !_0x84b660_3.includes(_0x84b660_4.cover) && (_0x84b660_3.push(_0x84b660_4.cover), 
+  4 === _0x84b660_3.length)) break;
+  if (_0x84b660_2.dataset.count = String(_0x84b660_3.length), !_0x84b660_3.length) {
+    const _0x84b660_0 = document.createElement("\x69");
+    return _0x84b660_0.className = "\x6d\x69\x6e\x67\x63\x75\x74\x65\x2d\x2d\x6d\x75\x73\x69\x63\x2d\x6c\x69\x6e\x65", _0x84b660_2.appendChild(_0x84b660_0), 
+    _0x84b660_2;
   }
-  return a.forEach(e => {
-    const t = document.createElement("img");
-    t.src = e, t.alt = "", t.loading = "lazy", n.appendChild(t);
-  }), n;
+  return _0x84b660_3.forEach(_0x84b660_0 => {
+    const _0x84b660_1 = document.createElement("\x69\x6d\x67");
+    _0x84b660_1.src = _0x84b660_0, _0x84b660_1.alt = "", _0x84b660_1.loading = "\x6c\x61\x7a\x79", 
+    _0x84b660_2.appendChild(_0x84b660_1);
+  }), _0x84b660_2;
 }
 
-function Gr(e, t) {
-  if (!e || !zl(t)) return;
-  const n = Ol(t), a = .299 * n[0] + .587 * n[1] + .114 * n[2];
-  e.style.setProperty("--playlist-cover-rgb", n.join(", ")), e.style.setProperty("--playlist-cover-ink", a > 158 ? "#06070a" : "#f7f8fb");
+function _0x84b660_8b(_0x84b660_0, _0x84b660_1) {
+  if (!_0x84b660_0 || !_0x84b660_ee(_0x84b660_1)) return;
+  const _0x84b660_2 = _0x84b660_ef(_0x84b660_1), _0x84b660_3 = .299 * _0x84b660_2[0] + .587 * _0x84b660_2[1] + .114 * _0x84b660_2[2];
+  _0x84b660_0.style.setProperty("\x2d\x2d\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x6f\x76\x65\x72\x2d\x72\x67\x62", _0x84b660_2.join("\x2c\x20")), _0x84b660_0.style.setProperty("\x2d\x2d\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x6f\x76\x65\x72\x2d\x69\x6e\x6b", _0x84b660_3 > 158 ? "\x23\x30\x36\x30\x37\x30\x61" : "\x23\x66\x37\x66\x38\x66\x62");
 }
 
-function Kr(e) {
-  const t = e.getContext("2d", {
+function _0x84b660_8c(_0x84b660_0) {
+  const _0x84b660_1 = _0x84b660_0.getContext("\x32\x64", {
     willReadFrequently: !0
-  }), {width: n, height: a} = e, i = t.getImageData(0, 0, n, a).data, r = Math.max(1, Math.round(.16 * n)), o = Math.max(1, Math.round(.16 * a)), l = new Map;
-  for (let u = 0; u < a; u += 2) for (let e = 0; e < n; e += 2) {
-    if (e >= r && e < n - r && u >= o && u < a - o) continue;
-    const t = 4 * (u * n + e);
-    if (i[t + 3] < 180) continue;
-    const s = i[t], c = i[t + 1], d = i[t + 2], m = Math.max(s, c, d), y = Math.min(s, c, d), p = m ? (m - y) / m : 0, g = `${s >> 5}-${c >> 5}-${d >> 5}`, f = l.get(g) || {
+  }), {width: _0x84b660_2, height: _0x84b660_3} = _0x84b660_0, _0x84b660_4 = _0x84b660_1.getImageData(0, 0, _0x84b660_2, _0x84b660_3).data, _0x84b660_5 = Math.max(1, Math.round(.16 * _0x84b660_2)), _0x84b660_6 = Math.max(1, Math.round(.16 * _0x84b660_3)), _0x84b660_7 = new Map;
+  for (let _0x84b660_b = 0; _0x84b660_b < _0x84b660_3; _0x84b660_b += 2) for (let _0x84b660_0 = 0; _0x84b660_0 < _0x84b660_2; _0x84b660_0 += 2) {
+    if (_0x84b660_0 >= _0x84b660_5 && _0x84b660_0 < _0x84b660_2 - _0x84b660_5 && _0x84b660_b >= _0x84b660_6 && _0x84b660_b < _0x84b660_3 - _0x84b660_6) continue;
+    const _0x84b660_1 = 4 * (_0x84b660_b * _0x84b660_2 + _0x84b660_0);
+    if (_0x84b660_4[_0x84b660_1 + 3] < 180) continue;
+    const _0x84b660_8 = _0x84b660_4[_0x84b660_1], _0x84b660_9 = _0x84b660_4[_0x84b660_1 + 1], _0x84b660_a = _0x84b660_4[_0x84b660_1 + 2], _0x84b660_c = Math.max(_0x84b660_8, _0x84b660_9, _0x84b660_a), _0x84b660_d = Math.min(_0x84b660_8, _0x84b660_9, _0x84b660_a), _0x84b660_e = _0x84b660_c ? (_0x84b660_c - _0x84b660_d) / _0x84b660_c : 0, _0x84b660_f = `${_0x84b660_8 >> 5}\x2d${_0x84b660_9 >> 5}\x2d${_0x84b660_a >> 5}`, _0x84b660_10 = _0x84b660_7.get(_0x84b660_f) || {
       count: 0,
       score: 0,
       r: 0,
       g: 0,
       b: 0
     };
-    f.count += 1, f.score += .7 + .7 * p, f.r += s, f.g += c, f.b += d, l.set(g, f);
+    _0x84b660_10.count += 1, _0x84b660_10.score += .7 + .7 * _0x84b660_e, _0x84b660_10.r += _0x84b660_8, 
+    _0x84b660_10.g += _0x84b660_9, _0x84b660_10.b += _0x84b660_a, _0x84b660_7.set(_0x84b660_f, _0x84b660_10);
   }
-  const s = [ ...l.values() ].sort((e, t) => t.score - e.score)[0];
-  if (!s) return "#777b86";
-  let c = [ s.r, s.g, s.b ].map(e => Math.round(e / s.count));
-  const d = .299 * c[0] + .587 * c[1] + .114 * c[2];
-  return d < 42 && (c = c.map(e => Math.round(e + .22 * (255 - e)))), d > 225 && (c = c.map(e => Math.round(.82 * e))), 
-  `#${c.map(e => e.toString(16).padStart(2, "0")).join("")}`;
+  const _0x84b660_8 = [ ..._0x84b660_7.values() ].sort((_0x84b660_0, _0x84b660_1) => _0x84b660_1.score - _0x84b660_0.score)[0];
+  if (!_0x84b660_8) return "\x23\x37\x37\x37\x62\x38\x36";
+  let _0x84b660_9 = [ _0x84b660_8.r, _0x84b660_8.g, _0x84b660_8.b ].map(_0x84b660_0 => Math.round(_0x84b660_0 / _0x84b660_8.count));
+  const _0x84b660_a = .299 * _0x84b660_9[0] + .587 * _0x84b660_9[1] + .114 * _0x84b660_9[2];
+  return _0x84b660_a < 42 && (_0x84b660_9 = _0x84b660_9.map(_0x84b660_0 => Math.round(_0x84b660_0 + .22 * (255 - _0x84b660_0)))), 
+  _0x84b660_a > 225 && (_0x84b660_9 = _0x84b660_9.map(_0x84b660_0 => Math.round(.82 * _0x84b660_0))), 
+  `\x23${_0x84b660_9.map(_0x84b660_0 => _0x84b660_0.toString(16).padStart(2, "\x30")).join("")}`;
 }
 
-function Qr(e) {
-  return new Promise((t, n) => {
-    const a = new Image;
-    a.decoding = "async", a.onload = () => t(a), a.onerror = () => n(new Error("That image could not be opened.")), 
-    a.src = e;
+function _0x84b660_8d(_0x84b660_0) {
+  return new Promise((_0x84b660_1, _0x84b660_2) => {
+    const _0x84b660_3 = new Image;
+    _0x84b660_3.decoding = "\x61\x73\x79\x6e\x63", _0x84b660_3.onload = () => _0x84b660_1(_0x84b660_3), 
+    _0x84b660_3.onerror = () => _0x84b660_2(new Error("\x54\x68\x61\x74\x20\x69\x6d\x61\x67\x65\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x6f\x70\x65\x6e\x65\x64\x2e")), 
+    _0x84b660_3.src = _0x84b660_0;
   });
 }
 
-function Xr(e) {
-  return new Promise((t, n) => {
-    const a = new FileReader;
-    a.onerror = () => n(new Error("That image could not be read.")), a.onload = () => t(String(a.result || "")), 
-    a.readAsDataURL(e);
+function _0x84b660_8e(_0x84b660_0) {
+  return new Promise((_0x84b660_1, _0x84b660_2) => {
+    const _0x84b660_3 = new FileReader;
+    _0x84b660_3.onerror = () => _0x84b660_2(new Error("\x54\x68\x61\x74\x20\x69\x6d\x61\x67\x65\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x72\x65\x61\x64\x2e")), 
+    _0x84b660_3.onload = () => _0x84b660_1(String(_0x84b660_3.result || "")), _0x84b660_3.readAsDataURL(_0x84b660_0);
   });
 }
 
-async function to(e) {
-  if (!e || !new Set([ "image/jpeg", "image/png", "image/webp" ]).has(e.type)) throw new Error("Choose a PNG, JPG, or WebP image.");
-  if (e.size > mi) throw new Error("Playlist covers must be 8 MB or smaller.");
-  const t = await Xr(e), n = await Qr(t), a = Math.min(n.naturalWidth, n.naturalHeight);
-  if (!a) throw new Error("That image has no usable pixels.");
-  const i = (n.naturalWidth - a) / 2, r = (n.naturalHeight - a) / 2, o = document.createElement("canvas");
-  o.width = 128, o.height = 128, o.getContext("2d", {
+async function _0x84b660_8f(_0x84b660_0) {
+  if (!_0x84b660_0 || !new Set([ "\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67", "\x69\x6d\x61\x67\x65\x2f\x70\x6e\x67", "\x69\x6d\x61\x67\x65\x2f\x77\x65\x62\x70" ]).has(_0x84b660_0.type)) throw new Error("\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x50\x4e\x47\x2c\x20\x4a\x50\x47\x2c\x20\x6f\x72\x20\x57\x65\x62\x50\x20\x69\x6d\x61\x67\x65\x2e");
+  if (_0x84b660_0.size > _0x84b660_3b) throw new Error("\x50\x6c\x61\x79\x6c\x69\x73\x74\x20\x63\x6f\x76\x65\x72\x73\x20\x6d\x75\x73\x74\x20\x62\x65\x20\x38\x20\x4d\x42\x20\x6f\x72\x20\x73\x6d\x61\x6c\x6c\x65\x72\x2e");
+  const _0x84b660_1 = await _0x84b660_8e(_0x84b660_0), _0x84b660_2 = await _0x84b660_8d(_0x84b660_1), _0x84b660_3 = Math.min(_0x84b660_2.naturalWidth, _0x84b660_2.naturalHeight);
+  if (!_0x84b660_3) throw new Error("\x54\x68\x61\x74\x20\x69\x6d\x61\x67\x65\x20\x68\x61\x73\x20\x6e\x6f\x20\x75\x73\x61\x62\x6c\x65\x20\x70\x69\x78\x65\x6c\x73\x2e");
+  const _0x84b660_4 = (_0x84b660_2.naturalWidth - _0x84b660_3) / 2, _0x84b660_5 = (_0x84b660_2.naturalHeight - _0x84b660_3) / 2, _0x84b660_6 = document.createElement("\x63\x61\x6e\x76\x61\x73");
+  _0x84b660_6.width = 128, _0x84b660_6.height = 128, _0x84b660_6.getContext("\x32\x64", {
     alpha: !1
-  }).drawImage(n, i, r, a, a, 0, 0, 128, 128);
-  const l = Kr(o), s = [ [ 320, .82 ], [ 288, .74 ], [ 256, .66 ], [ 224, .58 ], [ 192, .52 ], [ 160, .46 ], [ 128, .42 ] ];
-  for (const [c, d] of s) {
-    const e = document.createElement("canvas");
-    e.width = c, e.height = c, e.getContext("2d", {
+  }).drawImage(_0x84b660_2, _0x84b660_4, _0x84b660_5, _0x84b660_3, _0x84b660_3, 0, 0, 128, 128);
+  const _0x84b660_7 = _0x84b660_8c(_0x84b660_6), _0x84b660_8 = [ [ 320, .82 ], [ 288, .74 ], [ 256, .66 ], [ 224, .58 ], [ 192, .52 ], [ 160, .46 ], [ 128, .42 ] ];
+  for (const [_0x84b660_9, _0x84b660_a] of _0x84b660_8) {
+    const _0x84b660_0 = document.createElement("\x63\x61\x6e\x76\x61\x73");
+    _0x84b660_0.width = _0x84b660_9, _0x84b660_0.height = _0x84b660_9, _0x84b660_0.getContext("\x32\x64", {
       alpha: !1
-    }).drawImage(n, i, r, a, a, 0, 0, c, c);
-    const t = e.toDataURL("image/webp", d);
-    if (t.length <= ui) return {
-      cover: t,
-      accent: l
+    }).drawImage(_0x84b660_2, _0x84b660_4, _0x84b660_5, _0x84b660_3, _0x84b660_3, 0, 0, _0x84b660_9, _0x84b660_9);
+    const _0x84b660_1 = _0x84b660_0.toDataURL("\x69\x6d\x61\x67\x65\x2f\x77\x65\x62\x70", _0x84b660_a);
+    if (_0x84b660_1.length <= _0x84b660_3a) return {
+      cover: _0x84b660_1,
+      accent: _0x84b660_7
     };
   }
-  throw new Error("That image could not be compressed enough. Try a simpler image.");
+  throw new Error("\x54\x68\x61\x74\x20\x69\x6d\x61\x67\x65\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x63\x6f\x6d\x70\x72\x65\x73\x73\x65\x64\x20\x65\x6e\x6f\x75\x67\x68\x2e\x20\x54\x72\x79\x20\x61\x20\x73\x69\x6d\x70\x6c\x65\x72\x20\x69\x6d\x61\x67\x65\x2e");
 }
 
-async function no(e) {
-  return e ? (yi.has(e) || yi.set(e, (async () => {
+async function _0x84b660_90(_0x84b660_0) {
+  return _0x84b660_0 ? (_0x84b660_3c.has(_0x84b660_0) || _0x84b660_3c.set(_0x84b660_0, (async () => {
     try {
-      const t = await Qr(e), n = Math.min(t.naturalWidth, t.naturalHeight), a = document.createElement("canvas");
-      return a.width = 64, a.height = 64, a.getContext("2d", {
+      const _0x84b660_1 = await _0x84b660_8d(_0x84b660_0), _0x84b660_2 = Math.min(_0x84b660_1.naturalWidth, _0x84b660_1.naturalHeight), _0x84b660_3 = document.createElement("\x63\x61\x6e\x76\x61\x73");
+      return _0x84b660_3.width = 64, _0x84b660_3.height = 64, _0x84b660_3.getContext("\x32\x64", {
         alpha: !1
-      }).drawImage(t, (t.naturalWidth - n) / 2, (t.naturalHeight - n) / 2, n, n, 0, 0, 64, 64), 
-      Kr(a);
-    } catch (t) {
+      }).drawImage(_0x84b660_1, (_0x84b660_1.naturalWidth - _0x84b660_2) / 2, (_0x84b660_1.naturalHeight - _0x84b660_2) / 2, _0x84b660_2, _0x84b660_2, 0, 0, 64, 64), 
+      _0x84b660_8c(_0x84b660_3);
+    } catch (_0x84b660_1) {
       return "";
     }
-  })()), yi.get(e)) : "";
+  })()), _0x84b660_3c.get(_0x84b660_0)) : "";
 }
 
-function ao(e) {
-  const t = document.createElement("div");
-  t.className = "playlist-cover-editor";
-  const n = document.createElement("button");
-  n.type = "button", n.className = "playlist-cover-change", n.setAttribute("aria-label", `Change cover for ${e.name}`), 
-  n.appendChild(Zr(e));
-  const a = document.createElement("span");
-  a.className = "playlist-cover-prompt", a.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 6.5 9.5 4h5l1.3 2.5H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h3.2Z"></path><circle cx="12" cy="13" r="3.5"></circle></svg><span>Change cover</span>', 
-  n.appendChild(a);
-  const i = document.createElement("input");
-  return i.className = "playlist-cover-input", i.type = "file", i.accept = "image/png,image/jpeg,image/webp", 
-  i.hidden = !0, n.addEventListener("click", () => i.click()), i.addEventListener("change", async () => {
-    const t = i.files?.[0];
-    if (!t) return;
-    const a = ya.querySelector(".playlist-cover-status");
-    n.disabled = !0, a && (a.textContent = "Preparing cover\u2026");
+function _0x84b660_91(_0x84b660_0) {
+  const _0x84b660_1 = document.createElement("\x64\x69\x76");
+  _0x84b660_1.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x6f\x76\x65\x72\x2d\x65\x64\x69\x74\x6f\x72";
+  const _0x84b660_2 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+  _0x84b660_2.type = "\x62\x75\x74\x74\x6f\x6e", _0x84b660_2.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x6f\x76\x65\x72\x2d\x63\x68\x61\x6e\x67\x65", _0x84b660_2.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", `\x43\x68\x61\x6e\x67\x65\x20\x63\x6f\x76\x65\x72\x20\x66\x6f\x72\x20${_0x84b660_0.name}`), 
+  _0x84b660_2.appendChild(_0x84b660_8a(_0x84b660_0));
+  const _0x84b660_3 = document.createElement("\x73\x70\x61\x6e");
+  _0x84b660_3.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x6f\x76\x65\x72\x2d\x70\x72\x6f\x6d\x70\x74", _0x84b660_3.innerHTML = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x38\x2e\x32\x20\x36\x2e\x35\x20\x39\x2e\x35\x20\x34\x68\x35\x6c\x31\x2e\x33\x20\x32\x2e\x35\x48\x31\x39\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x32\x20\x32\x76\x39\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x2d\x32\x20\x32\x48\x35\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x2d\x32\x2d\x32\x76\x2d\x39\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x32\x2d\x32\x68\x33\x2e\x32\x5a\x22\x3e\x3c\x2f\x70\x61\x74\x68\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x32\x22\x20\x63\x79\x3d\x22\x31\x33\x22\x20\x72\x3d\x22\x33\x2e\x35\x22\x3e\x3c\x2f\x63\x69\x72\x63\x6c\x65\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x73\x70\x61\x6e\x3e\x43\x68\x61\x6e\x67\x65\x20\x63\x6f\x76\x65\x72\x3c\x2f\x73\x70\x61\x6e\x3e", 
+  _0x84b660_2.appendChild(_0x84b660_3);
+  const _0x84b660_4 = document.createElement("\x69\x6e\x70\x75\x74");
+  return _0x84b660_4.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x6f\x76\x65\x72\x2d\x69\x6e\x70\x75\x74", _0x84b660_4.type = "\x66\x69\x6c\x65", 
+  _0x84b660_4.accept = "\x69\x6d\x61\x67\x65\x2f\x70\x6e\x67\x2c\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67\x2c\x69\x6d\x61\x67\x65\x2f\x77\x65\x62\x70", _0x84b660_4.hidden = !0, 
+  _0x84b660_2.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_4.click()), _0x84b660_4.addEventListener("\x63\x68\x61\x6e\x67\x65", async () => {
+    const _0x84b660_1 = _0x84b660_4.files?.[0];
+    if (!_0x84b660_1) return;
+    const _0x84b660_3 = _0x84b660_6.querySelector("\x2e\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x6f\x76\x65\x72\x2d\x73\x74\x61\x74\x75\x73");
+    _0x84b660_2.disabled = !0, _0x84b660_3 && (_0x84b660_3.textContent = "\x50\x72\x65\x70\x61\x72\x69\x6e\x67\x20\x63\x6f\x76\x65\x72\u2026");
     try {
-      const n = await to(t);
-      e.cover = n.cover, e.accent = n.accent;
-      const a = await yo({
+      const _0x84b660_2 = await _0x84b660_8f(_0x84b660_1);
+      _0x84b660_0.cover = _0x84b660_2.cover, _0x84b660_0.accent = _0x84b660_2.accent;
+      const _0x84b660_3 = await _0x84b660_9a({
         verifyCover: {
-          id: e.id,
-          cover: n.cover
+          id: _0x84b660_0.id,
+          cover: _0x84b660_2.cover
         }
       });
-      co();
-      const i = ya.querySelector(".playlist-cover-status");
-      i && (a.synced ? i.textContent = "Cover synced to your account." : a.error ? i.textContent = `Cover saved on this device. ${a.error.message}` : i.textContent = "Cover saved on this device. Sign in to sync it.");
-    } catch (r) {
-      n.disabled = !1, a && (a.textContent = r.message);
+      _0x84b660_97();
+      const _0x84b660_4 = _0x84b660_6.querySelector("\x2e\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x6f\x76\x65\x72\x2d\x73\x74\x61\x74\x75\x73");
+      _0x84b660_4 && (_0x84b660_3.synced ? _0x84b660_4.textContent = "\x43\x6f\x76\x65\x72\x20\x73\x79\x6e\x63\x65\x64\x20\x74\x6f\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e" : _0x84b660_3.error ? _0x84b660_4.textContent = `\x43\x6f\x76\x65\x72\x20\x73\x61\x76\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e\x20${_0x84b660_3.error.message}` : _0x84b660_4.textContent = "\x43\x6f\x76\x65\x72\x20\x73\x61\x76\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e\x20\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x73\x79\x6e\x63\x20\x69\x74\x2e");
+    } catch (_0x84b660_5) {
+      _0x84b660_2.disabled = !1, _0x84b660_3 && (_0x84b660_3.textContent = _0x84b660_5.message);
     } finally {
-      i.value = "";
+      _0x84b660_4.value = "";
     }
-  }), t.append(n, i), zl(e.accent) && Gr(t, e.accent), t;
+  }), _0x84b660_1.append(_0x84b660_2, _0x84b660_4), _0x84b660_ee(_0x84b660_0.accent) && _0x84b660_8b(_0x84b660_1, _0x84b660_0.accent), 
+  _0x84b660_1;
 }
 
-function io() {
-  if (La.innerHTML = "", !ri.length) {
-    const e = document.createElement("span");
-    return e.className = "sidebar-playlist-empty", e.textContent = "No playlists yet", 
-    void La.appendChild(e);
+function _0x84b660_92() {
+  if (_0x84b660_11.innerHTML = "", !_0x84b660_34.length) {
+    const _0x84b660_0 = document.createElement("\x73\x70\x61\x6e");
+    return _0x84b660_0.className = "\x73\x69\x64\x65\x62\x61\x72\x2d\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x65\x6d\x70\x74\x79", _0x84b660_0.textContent = "\x4e\x6f\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x73\x20\x79\x65\x74", 
+    void _0x84b660_11.appendChild(_0x84b660_0);
   }
-  ri.forEach(e => {
-    const t = document.createElement("button");
-    t.type = "button", t.className = "sidebar-playlist", t.classList.toggle("active", ni === e.id);
-    const n = document.createElement("span"), a = document.createElement("strong");
-    a.textContent = e.name;
-    const i = document.createElement("small");
-    i.textContent = `${e.tracks.length} songs`, n.append(a, i), t.append(Zr(e, !0), n), 
-    t.addEventListener("click", () => so(e.id)), La.appendChild(t);
+  _0x84b660_34.forEach(_0x84b660_0 => {
+    const _0x84b660_1 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x84b660_1.type = "\x62\x75\x74\x74\x6f\x6e", _0x84b660_1.className = "\x73\x69\x64\x65\x62\x61\x72\x2d\x70\x6c\x61\x79\x6c\x69\x73\x74", _0x84b660_1.classList.toggle("\x61\x63\x74\x69\x76\x65", _0x84b660_31 === _0x84b660_0.id);
+    const _0x84b660_2 = document.createElement("\x73\x70\x61\x6e"), _0x84b660_3 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+    _0x84b660_3.textContent = _0x84b660_0.name;
+    const _0x84b660_4 = document.createElement("\x73\x6d\x61\x6c\x6c");
+    _0x84b660_4.textContent = `${_0x84b660_0.tracks.length}\x20\x73\x6f\x6e\x67\x73`, _0x84b660_2.append(_0x84b660_3, _0x84b660_4), 
+    _0x84b660_1.append(_0x84b660_8a(_0x84b660_0, !0), _0x84b660_2), _0x84b660_1.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_96(_0x84b660_0.id)), 
+    _0x84b660_11.appendChild(_0x84b660_1);
   });
 }
 
-function ro() {
-  if (xa.innerHTML = "", io(), Co(), !ri.length) {
-    const e = document.createElement("div");
-    return e.className = "mod-empty", e.textContent = "Create a playlist to save songs together.", 
-    void xa.appendChild(e);
+function _0x84b660_93() {
+  if (_0x84b660_10.innerHTML = "", _0x84b660_92(), _0x84b660_a6(), !_0x84b660_34.length) {
+    const _0x84b660_0 = document.createElement("\x64\x69\x76");
+    return _0x84b660_0.className = "\x6d\x6f\x64\x2d\x65\x6d\x70\x74\x79", _0x84b660_0.textContent = "\x43\x72\x65\x61\x74\x65\x20\x61\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x74\x6f\x20\x73\x61\x76\x65\x20\x73\x6f\x6e\x67\x73\x20\x74\x6f\x67\x65\x74\x68\x65\x72\x2e", 
+    void _0x84b660_10.appendChild(_0x84b660_0);
   }
-  ri.forEach(e => {
-    const t = document.createElement("div");
-    t.className = "playlist-entry", zl(e.accent) && Gr(t, e.accent);
-    const n = document.createElement("button");
-    n.type = "button", n.className = "playlist-open";
-    const a = document.createElement("span");
-    a.className = "playlist-open-meta";
-    const i = document.createElement("strong");
-    i.textContent = e.name;
-    const r = document.createElement("small");
-    r.textContent = `${e.tracks.length} ${1 === e.tracks.length ? "track" : "tracks"}`, 
-    a.append(i, r), n.append(Zr(e, !0), a), n.addEventListener("click", () => so(e.id));
-    const o = document.createElement("button");
-    o.type = "button", o.className = "playlist-delete", o.textContent = "\xd7", o.setAttribute("aria-label", `Delete ${e.name}`), 
-    o.addEventListener("click", () => {
-      confirm(`Delete "${e.name}"?`) && (ri = ri.filter(t => t.id !== e.id), ni === e.id && (ni = ""), 
-      ai === e.id && (ai = ""), yo(), Vr());
-    }), t.append(n, o), xa.appendChild(t);
+  _0x84b660_34.forEach(_0x84b660_0 => {
+    const _0x84b660_1 = document.createElement("\x64\x69\x76");
+    _0x84b660_1.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x65\x6e\x74\x72\x79", _0x84b660_ee(_0x84b660_0.accent) && _0x84b660_8b(_0x84b660_1, _0x84b660_0.accent);
+    const _0x84b660_2 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x84b660_2.type = "\x62\x75\x74\x74\x6f\x6e", _0x84b660_2.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x6f\x70\x65\x6e";
+    const _0x84b660_3 = document.createElement("\x73\x70\x61\x6e");
+    _0x84b660_3.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x6f\x70\x65\x6e\x2d\x6d\x65\x74\x61";
+    const _0x84b660_4 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+    _0x84b660_4.textContent = _0x84b660_0.name;
+    const _0x84b660_5 = document.createElement("\x73\x6d\x61\x6c\x6c");
+    _0x84b660_5.textContent = `${_0x84b660_0.tracks.length}\x20${1 === _0x84b660_0.tracks.length ? "\x74\x72\x61\x63\x6b" : "\x74\x72\x61\x63\x6b\x73"}`, 
+    _0x84b660_3.append(_0x84b660_4, _0x84b660_5), _0x84b660_2.append(_0x84b660_8a(_0x84b660_0, !0), _0x84b660_3), 
+    _0x84b660_2.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_96(_0x84b660_0.id));
+    const _0x84b660_6 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x84b660_6.type = "\x62\x75\x74\x74\x6f\x6e", _0x84b660_6.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x64\x65\x6c\x65\x74\x65", _0x84b660_6.textContent = "\xd7", 
+    _0x84b660_6.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", `\x44\x65\x6c\x65\x74\x65\x20${_0x84b660_0.name}`), _0x84b660_6.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      confirm(`\x44\x65\x6c\x65\x74\x65\x20\x22${_0x84b660_0.name}\x22\x3f`) && (_0x84b660_34 = _0x84b660_34.filter(_0x84b660_1 => _0x84b660_1.id !== _0x84b660_0.id), 
+      _0x84b660_31 === _0x84b660_0.id && (_0x84b660_31 = ""), _0x84b660_32 === _0x84b660_0.id && (_0x84b660_32 = ""), 
+      _0x84b660_9a(), _0x84b660_87());
+    }), _0x84b660_1.append(_0x84b660_2, _0x84b660_6), _0x84b660_10.appendChild(_0x84b660_1);
   });
 }
 
-function oo() {
-  if (Sa.innerHTML = "", !ri.length) {
-    const e = document.createElement("div");
-    return e.className = "mod-empty", e.textContent = "No playlists yet.", void Sa.appendChild(e);
+function _0x84b660_94() {
+  if (_0x84b660_14.innerHTML = "", !_0x84b660_34.length) {
+    const _0x84b660_0 = document.createElement("\x64\x69\x76");
+    return _0x84b660_0.className = "\x6d\x6f\x64\x2d\x65\x6d\x70\x74\x79", _0x84b660_0.textContent = "\x4e\x6f\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x73\x20\x79\x65\x74\x2e", 
+    void _0x84b660_14.appendChild(_0x84b660_0);
   }
-  ri.forEach(e => {
-    const t = document.createElement("button");
-    t.type = "button", t.className = "playlist-choice";
-    const n = document.createElement("span");
-    n.textContent = e.name;
-    const a = document.createElement("small");
-    a.textContent = `${e.tracks.length} tracks`, t.append(n, a), t.addEventListener("click", () => {
-      ii ? po(e.id, ii) : (Ia.close(), so(e.id));
-    }), Sa.appendChild(t);
+  _0x84b660_34.forEach(_0x84b660_0 => {
+    const _0x84b660_1 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x84b660_1.type = "\x62\x75\x74\x74\x6f\x6e", _0x84b660_1.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x68\x6f\x69\x63\x65";
+    const _0x84b660_2 = document.createElement("\x73\x70\x61\x6e");
+    _0x84b660_2.textContent = _0x84b660_0.name;
+    const _0x84b660_3 = document.createElement("\x73\x6d\x61\x6c\x6c");
+    _0x84b660_3.textContent = `${_0x84b660_0.tracks.length}\x20\x74\x72\x61\x63\x6b\x73`, _0x84b660_1.append(_0x84b660_2, _0x84b660_3), 
+    _0x84b660_1.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x84b660_33 ? _0x84b660_9b(_0x84b660_0.id, _0x84b660_33) : (_0x84b660_13.close(), 
+      _0x84b660_96(_0x84b660_0.id));
+    }), _0x84b660_14.appendChild(_0x84b660_1);
   });
 }
 
-function lo(e = null) {
-  ii = e ? Qi(e) : null, Ma.textContent = "", document.getElementById("playlistDialogHint").textContent = ii ? `Add \u201c${ii.title}\u201d to a playlist.` : "Create a playlist or choose one below.", 
-  oo(), Ia.showModal(), $a.focus();
+function _0x84b660_95(_0x84b660_0 = null) {
+  _0x84b660_33 = _0x84b660_0 ? _0x84b660_63(_0x84b660_0) : null, _0x84b660_16.textContent = "", 
+  document.getElementById("\x70\x6c\x61\x79\x6c\x69\x73\x74\x44\x69\x61\x6c\x6f\x67\x48\x69\x6e\x74").textContent = _0x84b660_33 ? `\x41\x64\x64\x20\u201c${_0x84b660_33.title}\u201d\x20\x74\x6f\x20\x61\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x2e` : "\x43\x72\x65\x61\x74\x65\x20\x61\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x6f\x72\x20\x63\x68\x6f\x6f\x73\x65\x20\x6f\x6e\x65\x20\x62\x65\x6c\x6f\x77\x2e", 
+  _0x84b660_94(), _0x84b660_13.showModal(), _0x84b660_15.focus();
 }
 
-function so(e) {
-  ri.find(t => t.id === e) && (ni = e, ai = "", Xa = null, io(), co());
+function _0x84b660_96(_0x84b660_0) {
+  _0x84b660_34.find(_0x84b660_1 => _0x84b660_1.id === _0x84b660_0) && (++_0x84b660_2f, 
+  _0x84b660_31 = _0x84b660_0, _0x84b660_32 = "", _0x84b660_2e = null, _0x84b660_92(), 
+  _0x84b660_97());
 }
 
-function co() {
-  const e = ri.find(e => e.id === ni);
-  if (!e) return ni = "", Vr();
-  Ar(), ha.style.display = "", va.textContent = "Playlists", ya.innerHTML = "";
-  const t = document.createElement("section");
-  t.className = "playlist-hero";
-  const n = dr(e.accent);
-  n ? Gr(t, n) : no(e.cover || e.tracks.find(e => e.cover)?.cover || "").then(e => {
-    t.isConnected && e && Gr(t, e);
+function _0x84b660_97() {
+  const _0x84b660_0 = _0x84b660_34.find(_0x84b660_0 => _0x84b660_0.id === _0x84b660_31);
+  if (!_0x84b660_0) return _0x84b660_31 = "", _0x84b660_87();
+  _0x84b660_79(), _0x84b660_a.style.display = "", _0x84b660_b.textContent = "\x50\x6c\x61\x79\x6c\x69\x73\x74\x73", 
+  _0x84b660_6.innerHTML = "";
+  const _0x84b660_1 = document.createElement("\x73\x65\x63\x74\x69\x6f\x6e");
+  _0x84b660_1.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x68\x65\x72\x6f";
+  const _0x84b660_2 = _0x84b660_65(_0x84b660_0.accent);
+  _0x84b660_2 ? _0x84b660_8b(_0x84b660_1, _0x84b660_2) : _0x84b660_90(_0x84b660_0.cover || _0x84b660_0.tracks.find(_0x84b660_0 => _0x84b660_0.cover)?.cover || "").then(_0x84b660_0 => {
+    _0x84b660_1.isConnected && _0x84b660_0 && _0x84b660_8b(_0x84b660_1, _0x84b660_0);
   });
-  const a = document.createElement("div");
-  a.className = "playlist-hero-info";
-  const i = document.createElement("span");
-  i.className = "playlist-eyebrow", i.textContent = "Playlist";
-  const r = document.createElement("h2");
-  r.textContent = e.name;
-  const o = document.createElement("p");
-  o.textContent = `${e.tracks.length} ${1 === e.tracks.length ? "song" : "songs"} \xb7 Nyxify/built in music`;
-  const l = document.createElement("div");
-  l.className = "playlist-hero-actions";
-  const s = document.createElement("button");
-  s.type = "button", s.className = "playlist-play-all", s.disabled = !e.tracks.length, 
-  s.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.8v12.4L18 12Z"></path></svg><span>Play</span>', 
-  s.addEventListener("click", () => {
-    e.tracks.length && el(e.tracks[0], e.tracks);
+  const _0x84b660_3 = document.createElement("\x64\x69\x76");
+  _0x84b660_3.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x68\x65\x72\x6f\x2d\x69\x6e\x66\x6f";
+  const _0x84b660_4 = document.createElement("\x73\x70\x61\x6e");
+  _0x84b660_4.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x65\x79\x65\x62\x72\x6f\x77", _0x84b660_4.textContent = "\x50\x6c\x61\x79\x6c\x69\x73\x74";
+  const _0x84b660_5 = document.createElement("\x68\x32");
+  _0x84b660_5.textContent = _0x84b660_0.name;
+  const _0x84b660_7 = document.createElement("\x70");
+  _0x84b660_7.textContent = `${_0x84b660_0.tracks.length}\x20${1 === _0x84b660_0.tracks.length ? "\x73\x6f\x6e\x67" : "\x73\x6f\x6e\x67\x73"}\x20\xb7\x20\x4e\x79\x78\x69\x66\x79\x2f\x62\x75\x69\x6c\x74\x20\x69\x6e\x20\x6d\x75\x73\x69\x63`;
+  const _0x84b660_8 = document.createElement("\x64\x69\x76");
+  _0x84b660_8.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x68\x65\x72\x6f\x2d\x61\x63\x74\x69\x6f\x6e\x73";
+  const _0x84b660_9 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+  _0x84b660_9.type = "\x62\x75\x74\x74\x6f\x6e", _0x84b660_9.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x70\x6c\x61\x79\x2d\x61\x6c\x6c", _0x84b660_9.disabled = !_0x84b660_0.tracks.length, 
+  _0x84b660_9.innerHTML = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x38\x20\x35\x2e\x38\x76\x31\x32\x2e\x34\x4c\x31\x38\x20\x31\x32\x5a\x22\x3e\x3c\x2f\x70\x61\x74\x68\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x73\x70\x61\x6e\x3e\x50\x6c\x61\x79\x3c\x2f\x73\x70\x61\x6e\x3e", 
+  _0x84b660_9.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x84b660_0.tracks.length && _0x84b660_c3(_0x84b660_0.tracks[0], _0x84b660_0.tracks);
   });
-  const c = document.createElement("button");
-  if (c.type = "button", c.className = "playlist-add-songs", c.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><span>Add songs</span>', 
-  c.addEventListener("click", () => uo(e.id)), l.append(s, c), e.cover) {
-    const t = document.createElement("button");
-    t.type = "button", t.className = "playlist-reset-cover", t.textContent = "Use song covers", 
-    t.addEventListener("click", async () => {
-      e.cover = "", e.accent = "", await yo(), co();
-    }), l.appendChild(t);
+  const _0x84b660_c = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+  if (_0x84b660_c.type = "\x62\x75\x74\x74\x6f\x6e", _0x84b660_c.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x61\x64\x64\x2d\x73\x6f\x6e\x67\x73", _0x84b660_c.innerHTML = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x32\x22\x20\x63\x79\x3d\x22\x31\x32\x22\x20\x72\x3d\x22\x39\x22\x3e\x3c\x2f\x63\x69\x72\x63\x6c\x65\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x32\x20\x38\x76\x38\x4d\x38\x20\x31\x32\x68\x38\x22\x3e\x3c\x2f\x70\x61\x74\x68\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x73\x70\x61\x6e\x3e\x41\x64\x64\x20\x73\x6f\x6e\x67\x73\x3c\x2f\x73\x70\x61\x6e\x3e", 
+  _0x84b660_c.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_98(_0x84b660_0.id)), _0x84b660_8.append(_0x84b660_9, _0x84b660_c), 
+  _0x84b660_0.cover) {
+    const _0x84b660_1 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x84b660_1.type = "\x62\x75\x74\x74\x6f\x6e", _0x84b660_1.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x72\x65\x73\x65\x74\x2d\x63\x6f\x76\x65\x72", _0x84b660_1.textContent = "\x55\x73\x65\x20\x73\x6f\x6e\x67\x20\x63\x6f\x76\x65\x72\x73", 
+    _0x84b660_1.addEventListener("\x63\x6c\x69\x63\x6b", async () => {
+      _0x84b660_0.cover = "", _0x84b660_0.accent = "", await _0x84b660_9a(), _0x84b660_97();
+    }), _0x84b660_8.appendChild(_0x84b660_1);
   }
-  const d = document.createElement("span");
-  if (d.className = "playlist-cover-status", d.setAttribute("role", "status"), a.append(i, r, o, l, d), 
-  t.append(ao(e), a), ya.appendChild(t), e.tracks.length) {
-    const t = document.createElement("div");
-    t.className = "playlist-seed-hint", t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 .9 3.1L16 7l-3.1.9L12 11l-.9-3.1L8 7l3.1-.9L12 3Zm6 8 .7 2.3L21 14l-2.3.7L18 17l-.7-2.3L15 14l2.3-.7L18 11ZM8 11l1.4 4.6L14 17l-4.6 1.4L8 23l-1.4-4.6L2 17l4.6-1.4L8 11Z"></path></svg><span>Sparkle creates a separate playlist from a song. Shuffle randomizes this playlist for playback.</span>', 
-    ya.appendChild(t);
-    const n = document.createElement("div");
-    n.className = "playlist-track-list", qr(n, e.tracks, {
-      playlistId: e.id,
-      playlistName: e.name
-    }), ya.appendChild(n);
+  const _0x84b660_d = document.createElement("\x73\x70\x61\x6e");
+  if (_0x84b660_d.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x63\x6f\x76\x65\x72\x2d\x73\x74\x61\x74\x75\x73", _0x84b660_d.setAttribute("\x72\x6f\x6c\x65", "\x73\x74\x61\x74\x75\x73"), 
+  _0x84b660_3.append(_0x84b660_4, _0x84b660_5, _0x84b660_7, _0x84b660_8, _0x84b660_d), 
+  _0x84b660_1.append(_0x84b660_91(_0x84b660_0), _0x84b660_3), _0x84b660_6.appendChild(_0x84b660_1), 
+  _0x84b660_0.tracks.length) {
+    const _0x84b660_1 = document.createElement("\x64\x69\x76");
+    _0x84b660_1.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x73\x65\x65\x64\x2d\x68\x69\x6e\x74", _0x84b660_1.innerHTML = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x31\x32\x20\x33\x20\x2e\x39\x20\x33\x2e\x31\x4c\x31\x36\x20\x37\x6c\x2d\x33\x2e\x31\x2e\x39\x4c\x31\x32\x20\x31\x31\x6c\x2d\x2e\x39\x2d\x33\x2e\x31\x4c\x38\x20\x37\x6c\x33\x2e\x31\x2d\x2e\x39\x4c\x31\x32\x20\x33\x5a\x6d\x36\x20\x38\x20\x2e\x37\x20\x32\x2e\x33\x4c\x32\x31\x20\x31\x34\x6c\x2d\x32\x2e\x33\x2e\x37\x4c\x31\x38\x20\x31\x37\x6c\x2d\x2e\x37\x2d\x32\x2e\x33\x4c\x31\x35\x20\x31\x34\x6c\x32\x2e\x33\x2d\x2e\x37\x4c\x31\x38\x20\x31\x31\x5a\x4d\x38\x20\x31\x31\x6c\x31\x2e\x34\x20\x34\x2e\x36\x4c\x31\x34\x20\x31\x37\x6c\x2d\x34\x2e\x36\x20\x31\x2e\x34\x4c\x38\x20\x32\x33\x6c\x2d\x31\x2e\x34\x2d\x34\x2e\x36\x4c\x32\x20\x31\x37\x6c\x34\x2e\x36\x2d\x31\x2e\x34\x4c\x38\x20\x31\x31\x5a\x22\x3e\x3c\x2f\x70\x61\x74\x68\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x73\x70\x61\x6e\x3e\x53\x70\x61\x72\x6b\x6c\x65\x20\x63\x72\x65\x61\x74\x65\x73\x20\x61\x20\x73\x65\x70\x61\x72\x61\x74\x65\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x66\x72\x6f\x6d\x20\x61\x20\x73\x6f\x6e\x67\x2e\x20\x53\x68\x75\x66\x66\x6c\x65\x20\x72\x61\x6e\x64\x6f\x6d\x69\x7a\x65\x73\x20\x74\x68\x69\x73\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x66\x6f\x72\x20\x70\x6c\x61\x79\x62\x61\x63\x6b\x2e\x3c\x2f\x73\x70\x61\x6e\x3e", 
+    _0x84b660_6.appendChild(_0x84b660_1);
+    const _0x84b660_2 = document.createElement("\x64\x69\x76");
+    _0x84b660_2.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x6c\x69\x73\x74", _0x84b660_7e(_0x84b660_2, _0x84b660_0.tracks, {
+      playlistId: _0x84b660_0.id,
+      playlistName: _0x84b660_0.name
+    }), _0x84b660_6.appendChild(_0x84b660_2);
   } else {
-    const e = document.createElement("section");
-    e.className = "playlist-empty", e.innerHTML = "<strong>Your playlist is empty</strong><span>Use Add songs to find music for it.</span>", 
-    ya.appendChild(e);
+    const _0x84b660_0 = document.createElement("\x73\x65\x63\x74\x69\x6f\x6e");
+    _0x84b660_0.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x65\x6d\x70\x74\x79", _0x84b660_0.innerHTML = "\x3c\x73\x74\x72\x6f\x6e\x67\x3e\x59\x6f\x75\x72\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x69\x73\x20\x65\x6d\x70\x74\x79\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e\x3c\x73\x70\x61\x6e\x3e\x55\x73\x65\x20\x41\x64\x64\x20\x73\x6f\x6e\x67\x73\x20\x74\x6f\x20\x66\x69\x6e\x64\x20\x6d\x75\x73\x69\x63\x20\x66\x6f\x72\x20\x69\x74\x2e\x3c\x2f\x73\x70\x61\x6e\x3e", 
+    _0x84b660_6.appendChild(_0x84b660_0);
   }
-  ya.style.display = "";
+  _0x84b660_6.style.display = "";
 }
 
-function uo(e) {
-  ri.find(t => t.id === e) && (ai = e, ni = "", Xa = null, Ya = "", Zt = [], ka.value = "", 
-  mo(), ka.focus());
+function _0x84b660_98(_0x84b660_0) {
+  _0x84b660_34.find(_0x84b660_1 => _0x84b660_1.id === _0x84b660_0) && (++_0x84b660_2f, 
+  _0x84b660_32 = _0x84b660_0, _0x84b660_31 = "", _0x84b660_2e = null, _0x84b660_28 = "", 
+  _0xf24d16_18 = [], _0x84b660_f.value = "", _0x84b660_99(), _0x84b660_f.focus());
 }
 
-function mo() {
-  const e = ri.find(e => e.id === ai);
-  if (!e) return ai = "", Vr();
-  Ar(), ha.style.display = "", va.textContent = `Back to ${e.name}`, ya.innerHTML = "";
-  const t = document.createElement("section");
-  t.className = "playlist-add-heading";
-  const n = document.createElement("div");
-  if (n.innerHTML = `<span>Add to playlist</span><strong>${Di(e.name)}</strong><small>Search above, then use + beside any song.</small>`, 
-  t.append(Zr(e, !0), n), ya.appendChild(t), Zt.length) {
-    const e = document.createElement("div");
-    e.className = "playlist-track-list playlist-add-results", qr(e, Zt), ya.appendChild(e);
+function _0x84b660_99() {
+  const _0x84b660_0 = _0x84b660_34.find(_0x84b660_0 => _0x84b660_0.id === _0x84b660_32);
+  if (!_0x84b660_0) return _0x84b660_32 = "", _0x84b660_87();
+  _0x84b660_79(), _0x84b660_a.style.display = "", _0x84b660_b.textContent = `\x42\x61\x63\x6b\x20\x74\x6f\x20${_0x84b660_0.name}`, 
+  _0x84b660_6.innerHTML = "";
+  const _0x84b660_1 = document.createElement("\x73\x65\x63\x74\x69\x6f\x6e");
+  _0x84b660_1.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x61\x64\x64\x2d\x68\x65\x61\x64\x69\x6e\x67";
+  const _0x84b660_2 = document.createElement("\x64\x69\x76");
+  if (_0x84b660_2.innerHTML = `\x3c\x73\x70\x61\x6e\x3e\x41\x64\x64\x20\x74\x6f\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x73\x74\x72\x6f\x6e\x67\x3e${_0x84b660_56(_0x84b660_0.name)}\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e\x3c\x73\x6d\x61\x6c\x6c\x3e\x53\x65\x61\x72\x63\x68\x20\x61\x62\x6f\x76\x65\x2c\x20\x74\x68\x65\x6e\x20\x75\x73\x65\x20\x2b\x20\x62\x65\x73\x69\x64\x65\x20\x61\x6e\x79\x20\x73\x6f\x6e\x67\x2e\x3c\x2f\x73\x6d\x61\x6c\x6c\x3e`, 
+  _0x84b660_1.append(_0x84b660_8a(_0x84b660_0, !0), _0x84b660_2), _0x84b660_6.appendChild(_0x84b660_1), 
+  _0xf24d16_18.length) {
+    const _0x84b660_0 = document.createElement("\x64\x69\x76");
+    _0x84b660_0.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x74\x72\x61\x63\x6b\x2d\x6c\x69\x73\x74\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x61\x64\x64\x2d\x72\x65\x73\x75\x6c\x74\x73", _0x84b660_7e(_0x84b660_0, _0xf24d16_18), 
+    _0x84b660_6.appendChild(_0x84b660_0);
   } else {
-    const e = document.createElement("section");
-    e.className = "playlist-empty compact", e.innerHTML = `<strong>${Ya ? "No songs found" : "Find songs for this playlist"}</strong><span>${Ya ? `Nothing matched \u201c${Di(Ya)}\u201d.` : "Type a song or artist into the search bar."}</span>`, 
-    ya.appendChild(e);
+    const _0x84b660_0 = document.createElement("\x73\x65\x63\x74\x69\x6f\x6e");
+    _0x84b660_0.className = "\x70\x6c\x61\x79\x6c\x69\x73\x74\x2d\x65\x6d\x70\x74\x79\x20\x63\x6f\x6d\x70\x61\x63\x74", _0x84b660_0.innerHTML = `\x3c\x73\x74\x72\x6f\x6e\x67\x3e${_0x84b660_28 ? "\x4e\x6f\x20\x73\x6f\x6e\x67\x73\x20\x66\x6f\x75\x6e\x64" : "\x46\x69\x6e\x64\x20\x73\x6f\x6e\x67\x73\x20\x66\x6f\x72\x20\x74\x68\x69\x73\x20\x70\x6c\x61\x79\x6c\x69\x73\x74"}\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e\x3c\x73\x70\x61\x6e\x3e${_0x84b660_28 ? `\x4e\x6f\x74\x68\x69\x6e\x67\x20\x6d\x61\x74\x63\x68\x65\x64\x20\u201c${_0x84b660_56(_0x84b660_28)}\u201d\x2e` : "\x54\x79\x70\x65\x20\x61\x20\x73\x6f\x6e\x67\x20\x6f\x72\x20\x61\x72\x74\x69\x73\x74\x20\x69\x6e\x74\x6f\x20\x74\x68\x65\x20\x73\x65\x61\x72\x63\x68\x20\x62\x61\x72\x2e"}\x3c\x2f\x73\x70\x61\x6e\x3e`, 
+    _0x84b660_6.appendChild(_0x84b660_0);
   }
-  ya.style.display = "";
+  _0x84b660_6.style.display = "";
 }
 
-async function yo(e = {}) {
-  const t = ++di, n = JSON.parse(JSON.stringify(ri));
-  yr(), ro(), oo();
-  const a = async () => {
-    const t = await vr("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxify/playlists", {
-      method: "PUT",
+async function _0x84b660_9a(_0x84b660_0 = {}) {
+  const _0x84b660_1 = ++_0x84b660_39, _0x84b660_2 = JSON.parse(JSON.stringify(_0x84b660_34));
+  _0x84b660_67(), _0x84b660_93(), _0x84b660_94();
+  const _0x84b660_3 = async () => {
+    const _0x84b660_1 = await _0x84b660_6b("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x69\x66\x79\x2f\x70\x6c\x61\x79\x6c\x69\x73\x74\x73", {
+      method: "\x50\x55\x54",
       headers: {
-        "Content-Type": "application/json"
+        "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
       },
       body: JSON.stringify({
-        playlists: n
+        playlists: _0x84b660_2
       })
     });
-    if (!t) return {
+    if (!_0x84b660_1) return {
       synced: !1,
-      reason: "signed-out"
+      reason: "\x73\x69\x67\x6e\x65\x64\x2d\x6f\x75\x74"
     };
-    if (e.verifyCover) {
-      const n = Xi(e.verifyCover.cover), a = (Array.isArray(t.playlists) ? t.playlists : []).find(t => t?.id === e.verifyCover.id);
-      if (!n || Xi(a?.cover) !== n) throw new Error("Account sync did not retain the custom cover. Try it again.");
+    if (_0x84b660_0.verifyCover) {
+      const _0x84b660_2 = _0x84b660_64(_0x84b660_0.verifyCover.cover), _0x84b660_3 = (Array.isArray(_0x84b660_1.playlists) ? _0x84b660_1.playlists : []).find(_0x84b660_1 => _0x84b660_1?.id === _0x84b660_0.verifyCover.id);
+      if (!_0x84b660_2 || _0x84b660_64(_0x84b660_3?.cover) !== _0x84b660_2) throw new Error("\x41\x63\x63\x6f\x75\x6e\x74\x20\x73\x79\x6e\x63\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x61\x69\x6e\x20\x74\x68\x65\x20\x63\x75\x73\x74\x6f\x6d\x20\x63\x6f\x76\x65\x72\x2e\x20\x54\x72\x79\x20\x69\x74\x20\x61\x67\x61\x69\x6e\x2e");
     }
     return {
       synced: !0,
-      payload: t
+      payload: _0x84b660_1
     };
-  }, i = ci.then(a, a);
-  ci = i.catch(() => {});
+  }, _0x84b660_4 = _0x84b660_38.then(_0x84b660_3, _0x84b660_3);
+  _0x84b660_38 = _0x84b660_4.catch(() => {});
   try {
-    const e = await i;
-    return t === di && (Ca.textContent = e.synced ? "Synced to your account" : "Saved on this device"), 
-    e;
-  } catch (r) {
-    return t === di && (Ca.textContent = "Saved locally \xb7 account sync unavailable"), 
-    Ma.textContent = r.message || "Account sync is unavailable.", {
+    const _0x84b660_0 = await _0x84b660_4;
+    return _0x84b660_1 === _0x84b660_39 && (_0x84b660_12.textContent = _0x84b660_0.synced ? "\x53\x79\x6e\x63\x65\x64\x20\x74\x6f\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74" : "\x53\x61\x76\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65"), 
+    _0x84b660_0;
+  } catch (_0x84b660_5) {
+    return _0x84b660_1 === _0x84b660_39 && (_0x84b660_12.textContent = "\x53\x61\x76\x65\x64\x20\x6c\x6f\x63\x61\x6c\x6c\x79\x20\xb7\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x73\x79\x6e\x63\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65"), 
+    _0x84b660_16.textContent = _0x84b660_5.message || "\x41\x63\x63\x6f\x75\x6e\x74\x20\x73\x79\x6e\x63\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e", 
+    {
       synced: !1,
-      reason: "error",
-      error: r
+      reason: "\x65\x72\x72\x6f\x72",
+      error: _0x84b660_5
     };
   }
 }
 
-function po(e, t) {
-  const n = ri.find(t => t.id === e);
-  return !(!n || !t || (n.tracks.some(e => e.id === t.id) ? (Ma.textContent = `Already in ${n.name}.`, 
-  1) : n.tracks.length >= 150 ? (Ma.textContent = "This playlist has reached 150 tracks.", 
-  1) : (n.tracks.push(Qi(t)), Ma.textContent = `Added to ${n.name}.`, yo(), 0)));
+function _0x84b660_9b(_0x84b660_0, _0x84b660_1) {
+  const _0x84b660_2 = _0x84b660_34.find(_0x84b660_1 => _0x84b660_1.id === _0x84b660_0);
+  return !(!_0x84b660_2 || !_0x84b660_1 || (_0x84b660_2.tracks.some(_0x84b660_0 => _0x84b660_0.id === _0x84b660_1.id) ? (_0x84b660_16.textContent = `\x41\x6c\x72\x65\x61\x64\x79\x20\x69\x6e\x20${_0x84b660_2.name}\x2e`, 
+  1) : _0x84b660_2.tracks.length >= 150 ? (_0x84b660_16.textContent = "\x54\x68\x69\x73\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x68\x61\x73\x20\x72\x65\x61\x63\x68\x65\x64\x20\x31\x35\x30\x20\x74\x72\x61\x63\x6b\x73\x2e", 
+  1) : (_0x84b660_2.tracks.push(_0x84b660_63(_0x84b660_1)), _0x84b660_16.textContent = `\x41\x64\x64\x65\x64\x20\x74\x6f\x20${_0x84b660_2.name}\x2e`, 
+  _0x84b660_9a(), 0)));
 }
 
-function go(e, t) {
-  const n = ri.find(t => t.id === e);
-  if (!n) return;
-  const a = n.tracks.filter(e => e.id !== t);
-  a.length !== n.tracks.length && (n.tracks = a, Ma.textContent = `Removed from ${n.name}.`, 
-  yo(), co());
+function _0x84b660_9c(_0x84b660_0, _0x84b660_1) {
+  const _0x84b660_2 = _0x84b660_34.find(_0x84b660_1 => _0x84b660_1.id === _0x84b660_0);
+  if (!_0x84b660_2) return;
+  const _0x84b660_3 = _0x84b660_2.tracks.filter(_0x84b660_0 => _0x84b660_0.id !== _0x84b660_1);
+  _0x84b660_3.length !== _0x84b660_2.tracks.length && (_0x84b660_2.tracks = _0x84b660_3, 
+  _0x84b660_16.textContent = `\x52\x65\x6d\x6f\x76\x65\x64\x20\x66\x72\x6f\x6d\x20${_0x84b660_2.name}\x2e`, _0x84b660_9a(), 
+  _0x84b660_97());
 }
 
-function fo(e) {
-  const t = `${String(e?.title || "Song").trim() || "Song"} Mix`, n = new Set(ri.map(e => e.name.toLowerCase()));
-  for (let a = 1; a <= ri.length + 2; a++) {
-    const e = 1 === a ? "" : ` ${a}`, i = `${t.slice(0, 48 - e.length).trim()}${e}`;
-    if (!n.has(i.toLowerCase())) return i;
+function _0x84b660_9d(_0x84b660_0) {
+  const _0x84b660_1 = `${String(_0x84b660_0?.title || "\x53\x6f\x6e\x67").trim() || "\x53\x6f\x6e\x67"}\x20\x4d\x69\x78`, _0x84b660_2 = new Set(_0x84b660_34.map(_0x84b660_0 => _0x84b660_0.name.toLowerCase()));
+  for (let _0x84b660_3 = 1; _0x84b660_3 <= _0x84b660_34.length + 2; _0x84b660_3++) {
+    const _0x84b660_0 = 1 === _0x84b660_3 ? "" : `\x20${_0x84b660_3}`, _0x84b660_4 = `${_0x84b660_1.slice(0, 48 - _0x84b660_0.length).trim()}${_0x84b660_0}`;
+    if (!_0x84b660_2.has(_0x84b660_4.toLowerCase())) return _0x84b660_4;
   }
-  return `New Mix ${Date.now().toString(36).slice(-5)}`;
+  return `\x4e\x65\x77\x20\x4d\x69\x78\x20${Date.now().toString(36).slice(-5)}`;
 }
 
-function ho(e) {
-  const t = ri.find(t => t.id === e);
-  if (!t?.tracks.length) return;
-  const n = t.tracks.map(Qi);
-  for (let a = n.length - 1; a > 0; a--) {
-    const e = Math.floor(Math.random() * (a + 1));
-    [n[a], n[e]] = [ n[e], n[a] ];
+function _0x84b660_9e(_0x84b660_0) {
+  const _0x84b660_1 = _0x84b660_34.find(_0x84b660_1 => _0x84b660_1.id === _0x84b660_0);
+  if (!_0x84b660_1?.tracks.length) return;
+  const _0x84b660_2 = _0x84b660_1.tracks.map(_0x84b660_63);
+  for (let _0x84b660_3 = _0x84b660_2.length - 1; _0x84b660_3 > 0; _0x84b660_3--) {
+    const _0x84b660_0 = Math.floor(Math.random() * (_0x84b660_3 + 1));
+    [_0x84b660_2[_0x84b660_3], _0x84b660_2[_0x84b660_0]] = [ _0x84b660_2[_0x84b660_0], _0x84b660_2[_0x84b660_3] ];
   }
-  el(n[0], n), Ma.textContent = `Shuffling ${t.name}.`;
+  _0x84b660_c3(_0x84b660_2[0], _0x84b660_2), _0x84b660_16.textContent = `\x53\x68\x75\x66\x66\x6c\x69\x6e\x67\x20${_0x84b660_1.name}\x2e`;
 }
 
-async function vo(e, t) {
-  if (!e || t?.disabled) return;
-  if (ri.length >= 16) return void (Ma.textContent = "You can have up to 16 playlists.");
-  const n = ri.reduce((e, t) => e + t.tracks.length, 0), a = Math.max(0, 1200 - n);
-  if (!a) return void (Ma.textContent = "Your playlist library has reached its track limit.");
-  t && (t.disabled = !0), Ma.textContent = `Creating a new playlist from ${e.title}\u2026`;
-  let i = [], r = !1;
+async function _0x84b660_9f(_0x84b660_0, _0x84b660_1) {
+  if (!_0x84b660_0 || _0x84b660_1?.disabled) return;
+  if (_0x84b660_34.length >= 16) return void (_0x84b660_16.textContent = "\x59\x6f\x75\x20\x63\x61\x6e\x20\x68\x61\x76\x65\x20\x75\x70\x20\x74\x6f\x20\x31\x36\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x73\x2e");
+  const _0x84b660_2 = _0x84b660_34.reduce((_0x84b660_0, _0x84b660_1) => _0x84b660_0 + _0x84b660_1.tracks.length, 0), _0x84b660_3 = Math.max(0, 1200 - _0x84b660_2);
+  if (!_0x84b660_3) return void (_0x84b660_16.textContent = "\x59\x6f\x75\x72\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x6c\x69\x62\x72\x61\x72\x79\x20\x68\x61\x73\x20\x72\x65\x61\x63\x68\x65\x64\x20\x69\x74\x73\x20\x74\x72\x61\x63\x6b\x20\x6c\x69\x6d\x69\x74\x2e");
+  _0x84b660_1 && (_0x84b660_1.disabled = !0), _0x84b660_16.textContent = `\x43\x72\x65\x61\x74\x69\x6e\x67\x20\x61\x20\x6e\x65\x77\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x66\x72\x6f\x6d\x20${_0x84b660_0.title}\u2026`;
+  let _0x84b660_4 = [], _0x84b660_5 = !1;
   try {
-    const t = String(e.artist || e.title || "").trim();
-    if (!t) throw new Error("This song does not have enough catalog information.");
-    const n = await Ri(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxify/search?q=${encodeURIComponent(t)}`);
-    i = Array.isArray(n.data) ? n.data : [];
-  } catch (o) {
-    r = !0;
+    const _0x84b660_1 = String(_0x84b660_0.artist || _0x84b660_0.title || "").trim();
+    if (!_0x84b660_1) throw new Error("\x54\x68\x69\x73\x20\x73\x6f\x6e\x67\x20\x64\x6f\x65\x73\x20\x6e\x6f\x74\x20\x68\x61\x76\x65\x20\x65\x6e\x6f\x75\x67\x68\x20\x63\x61\x74\x61\x6c\x6f\x67\x20\x69\x6e\x66\x6f\x72\x6d\x61\x74\x69\x6f\x6e\x2e");
+    const _0x84b660_2 = await _0x84b660_57(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x69\x66\x79\x2f\x73\x65\x61\x72\x63\x68\x3f\x71\x3d${encodeURIComponent(_0x84b660_1)}`);
+    _0x84b660_4 = Array.isArray(_0x84b660_2.data) ? _0x84b660_2.data : [];
+  } catch (_0x84b660_6) {
+    _0x84b660_5 = !0;
   }
   try {
-    const t = new Set([ String(e.id) ]), n = Math.max(0, Math.min(17, a - 1)), o = i.filter(e => {
-      const n = String(e?.id || "");
-      return !(!n || t.has(n) || (t.add(n), 0));
-    }).slice(0, n).map(Qi), l = {
-      id: br(),
-      name: fo(e),
+    const _0x84b660_1 = new Set([ String(_0x84b660_0.id) ]), _0x84b660_2 = Math.max(0, Math.min(17, _0x84b660_3 - 1)), _0x84b660_6 = _0x84b660_4.filter(_0x84b660_0 => {
+      const _0x84b660_2 = String(_0x84b660_0?.id || "");
+      return !(!_0x84b660_2 || _0x84b660_1.has(_0x84b660_2) || (_0x84b660_1.add(_0x84b660_2), 
+      0));
+    }).slice(0, _0x84b660_2).map(_0x84b660_63), _0x84b660_7 = {
+      id: _0x84b660_6c(),
+      name: _0x84b660_9d(_0x84b660_0),
       cover: "",
-      accent: await no(e.cover),
-      tracks: [ Qi(e), ...o ]
+      accent: await _0x84b660_90(_0x84b660_0.cover),
+      tracks: [ _0x84b660_63(_0x84b660_0), ..._0x84b660_6 ]
     };
-    ri.push(l), await yo(), so(l.id), Ma.textContent = r ? `Created ${l.name} with ${e.title}; more matches were unavailable.` : `Created ${l.name} with ${l.tracks.length} ${1 === l.tracks.length ? "song" : "songs"}.`;
-  } catch (l) {
-    Ma.textContent = `Could not create the playlist: ${l.message}`, t?.isConnected && (t.disabled = !1);
+    _0x84b660_34.push(_0x84b660_7), await _0x84b660_9a(), _0x84b660_96(_0x84b660_7.id), 
+    _0x84b660_16.textContent = _0x84b660_5 ? `\x43\x72\x65\x61\x74\x65\x64\x20${_0x84b660_7.name}\x20\x77\x69\x74\x68\x20${_0x84b660_0.title}\x3b\x20\x6d\x6f\x72\x65\x20\x6d\x61\x74\x63\x68\x65\x73\x20\x77\x65\x72\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e` : `\x43\x72\x65\x61\x74\x65\x64\x20${_0x84b660_7.name}\x20\x77\x69\x74\x68\x20${_0x84b660_7.tracks.length}\x20${1 === _0x84b660_7.tracks.length ? "\x73\x6f\x6e\x67" : "\x73\x6f\x6e\x67\x73"}\x2e`;
+  } catch (_0x84b660_7) {
+    _0x84b660_16.textContent = `\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x72\x65\x61\x74\x65\x20\x74\x68\x65\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x3a\x20${_0x84b660_7.message}`, 
+    _0x84b660_1?.isConnected && (_0x84b660_1.disabled = !1);
   }
 }
 
-async function bo() {
-  ri = mr(), ro();
-  const e = di;
+async function _0x84b660_a0() {
+  _0x84b660_34 = _0x84b660_66(), _0x84b660_93();
+  const _0x84b660_0 = _0x84b660_39;
   try {
-    const t = await vr("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxify/playlists");
-    if (!t) return void (Ca.textContent = "Saved on this device");
-    if (di !== e) return void await ci;
-    const n = Array.isArray(t.playlists) ? t.playlists : [];
-    if (!n.length && ri.length) return void await yo();
-    ri = n, yr(), ro(), Ca.textContent = "Synced to your account";
-  } catch (t) {
-    Ca.textContent = "Saved locally \xb7 account sync unavailable";
+    const _0x84b660_1 = await _0x84b660_6b("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x69\x66\x79\x2f\x70\x6c\x61\x79\x6c\x69\x73\x74\x73");
+    if (!_0x84b660_1) return void (_0x84b660_12.textContent = "\x53\x61\x76\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65");
+    if (_0x84b660_39 !== _0x84b660_0) return void await _0x84b660_38;
+    const _0x84b660_2 = Array.isArray(_0x84b660_1.playlists) ? _0x84b660_1.playlists : [];
+    if (!_0x84b660_2.length && _0x84b660_34.length) return void await _0x84b660_9a();
+    _0x84b660_34 = _0x84b660_2, _0x84b660_67(), _0x84b660_93(), _0x84b660_12.textContent = "\x53\x79\x6e\x63\x65\x64\x20\x74\x6f\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74";
+  } catch (_0x84b660_1) {
+    _0x84b660_12.textContent = "\x53\x61\x76\x65\x64\x20\x6c\x6f\x63\x61\x6c\x6c\x79\x20\xb7\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x73\x79\x6e\x63\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65";
   }
 }
 
-function Eo() {
-  const e = Er();
-  document.getElementById("likedCount").textContent = e.length, Wr(document.getElementById("likedList"), e, "Songs you like will appear here."), 
-  Wr(document.getElementById("historyList"), xr(), "Songs you play will appear here."), 
-  Va && Ir(document.getElementById("pLike"), wr(Va.id)), document.querySelectorAll("#trackList .row, #detailView .row").forEach(e => {
-    const t = e.querySelector(".like-btn");
-    t && Ir(t, wr(e.dataset.id));
+function _0x84b660_a1() {
+  const _0x84b660_0 = _0x84b660_6d();
+  document.getElementById("\x6c\x69\x6b\x65\x64\x43\x6f\x75\x6e\x74").textContent = _0x84b660_0.length, _0x84b660_89(document.getElementById("\x6c\x69\x6b\x65\x64\x4c\x69\x73\x74"), _0x84b660_0, "\x53\x6f\x6e\x67\x73\x20\x79\x6f\x75\x20\x6c\x69\x6b\x65\x20\x77\x69\x6c\x6c\x20\x61\x70\x70\x65\x61\x72\x20\x68\x65\x72\x65\x2e"), 
+  _0x84b660_89(document.getElementById("\x68\x69\x73\x74\x6f\x72\x79\x4c\x69\x73\x74"), _0x84b660_70(), "\x53\x6f\x6e\x67\x73\x20\x79\x6f\x75\x20\x70\x6c\x61\x79\x20\x77\x69\x6c\x6c\x20\x61\x70\x70\x65\x61\x72\x20\x68\x65\x72\x65\x2e"), 
+  _0x84b660_27 && _0x84b660_73(document.getElementById("\x70\x4c\x69\x6b\x65"), _0x84b660_6e(_0x84b660_27.id)), 
+  document.querySelectorAll("\x23\x74\x72\x61\x63\x6b\x4c\x69\x73\x74\x20\x2e\x72\x6f\x77\x2c\x20\x23\x64\x65\x74\x61\x69\x6c\x56\x69\x65\x77\x20\x2e\x72\x6f\x77").forEach(_0x84b660_0 => {
+    const _0x84b660_1 = _0x84b660_0.querySelector("\x2e\x6c\x69\x6b\x65\x2d\x62\x74\x6e");
+    _0x84b660_1 && _0x84b660_73(_0x84b660_1, _0x84b660_6e(_0x84b660_0.dataset.id));
   });
 }
 
-Oi(), ha.addEventListener("click", () => {
-  if (ai) {
-    const e = ai;
-    return ai = "", so(e);
+_0x84b660_5b(), _0x84b660_a.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+  if (++_0x84b660_2f, _0x84b660_32) {
+    const _0x84b660_0 = _0x84b660_32;
+    return _0x84b660_32 = "", _0x84b660_96(_0x84b660_0);
   }
-  Xa = null, ni = "", Vr();
-}), document.querySelectorAll(".filter").forEach(e => {
-  e.addEventListener("click", () => {
-    ai = "", Xa = null, ni = "", Tr(e.dataset.filter), "home" === e.dataset.filter && (Ya = "", 
-    Zt = [], ka.value = ""), Vr();
+  _0x84b660_2e = null, _0x84b660_31 = "", _0x84b660_87();
+}), document.querySelectorAll("\x2e\x66\x69\x6c\x74\x65\x72").forEach(_0x84b660_0 => {
+  _0x84b660_0.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    ++_0x84b660_2f, _0x84b660_32 = "", _0x84b660_2e = null, _0x84b660_31 = "", _0x84b660_78(_0x84b660_0.dataset.filter), 
+    "\x68\x6f\x6d\x65" === _0x84b660_0.dataset.filter && (_0x84b660_28 = "", _0xf24d16_18 = [], 
+    _0x84b660_f.value = ""), _0x84b660_87();
   });
-}), document.getElementById("newPlaylistBtn").addEventListener("click", () => lo()), 
-document.getElementById("sidebarNewPlaylist").addEventListener("click", () => lo()), 
-document.getElementById("playlistDialogClose").addEventListener("click", () => Ia.close()), 
-document.getElementById("playlistCreateForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const t = $a.value.trim().slice(0, 48);
-  if (!t) return Ma.textContent = "Enter a playlist name.", void $a.focus();
-  if (ri.length >= 16) return void (Ma.textContent = "You can have up to 16 playlists.");
-  if (ri.some(e => e.name.toLowerCase() === t.toLowerCase())) return void (Ma.textContent = "A playlist with that name already exists.");
-  const n = {
-    id: br(),
-    name: t,
+}), document.getElementById("\x6e\x65\x77\x50\x6c\x61\x79\x6c\x69\x73\x74\x42\x74\x6e").addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_95()), 
+document.getElementById("\x73\x69\x64\x65\x62\x61\x72\x4e\x65\x77\x50\x6c\x61\x79\x6c\x69\x73\x74").addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_95()), 
+document.getElementById("\x70\x6c\x61\x79\x6c\x69\x73\x74\x44\x69\x61\x6c\x6f\x67\x43\x6c\x6f\x73\x65").addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_13.close()), 
+document.getElementById("\x70\x6c\x61\x79\x6c\x69\x73\x74\x43\x72\x65\x61\x74\x65\x46\x6f\x72\x6d").addEventListener("\x73\x75\x62\x6d\x69\x74", _0x84b660_0 => {
+  _0x84b660_0.preventDefault();
+  const _0x84b660_1 = _0x84b660_15.value.trim().slice(0, 48);
+  if (!_0x84b660_1) return _0x84b660_16.textContent = "\x45\x6e\x74\x65\x72\x20\x61\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x6e\x61\x6d\x65\x2e", void _0x84b660_15.focus();
+  if (_0x84b660_34.length >= 16) return void (_0x84b660_16.textContent = "\x59\x6f\x75\x20\x63\x61\x6e\x20\x68\x61\x76\x65\x20\x75\x70\x20\x74\x6f\x20\x31\x36\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x73\x2e");
+  if (_0x84b660_34.some(_0x84b660_0 => _0x84b660_0.name.toLowerCase() === _0x84b660_1.toLowerCase())) return void (_0x84b660_16.textContent = "\x41\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x20\x77\x69\x74\x68\x20\x74\x68\x61\x74\x20\x6e\x61\x6d\x65\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x65\x78\x69\x73\x74\x73\x2e");
+  const _0x84b660_2 = {
+    id: _0x84b660_6c(),
+    name: _0x84b660_1,
     cover: "",
     accent: "",
-    tracks: ii ? [ Qi(ii) ] : []
+    tracks: _0x84b660_33 ? [ _0x84b660_63(_0x84b660_33) ] : []
   };
-  ri.push(n), $a.value = "", Ma.textContent = ii ? `Created ${t} and added the song.` : `Created ${t}.`, 
-  yo(), ii || (Ia.close(), so(n.id));
-}), Na.disabled = !0, Na.addEventListener("click", () => {
-  Va && lo(Va);
-}), document.getElementById("searchForm").addEventListener("submit", async e => {
-  e.preventDefault();
-  const t = ka.value.trim();
-  if (t) {
-    Pr();
-    try {
-      const e = await Ri(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxify/search?q=${encodeURIComponent(t)}`);
-      Ya = t, Zt = e.data || [], Xa = null, ni = "", Tr("home"), Vr();
-    } catch (n) {
-      ai ? (Ya = t, Zt = [], mo(), Ma.textContent = `Search failed: ${n.message}`) : Br("Search failed", n.message, !0);
-    }
+  _0x84b660_34.push(_0x84b660_2), _0x84b660_15.value = "", _0x84b660_16.textContent = _0x84b660_33 ? `\x43\x72\x65\x61\x74\x65\x64\x20${_0x84b660_1}\x20\x61\x6e\x64\x20\x61\x64\x64\x65\x64\x20\x74\x68\x65\x20\x73\x6f\x6e\x67\x2e` : `\x43\x72\x65\x61\x74\x65\x64\x20${_0x84b660_1}\x2e`, 
+  _0x84b660_9a(), _0x84b660_33 || (_0x84b660_13.close(), _0x84b660_96(_0x84b660_2.id));
+}), _0x84b660_17.disabled = !0, _0x84b660_17.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+  _0x84b660_27 && _0x84b660_95(_0x84b660_27);
+}), document.getElementById("\x73\x65\x61\x72\x63\x68\x46\x6f\x72\x6d").addEventListener("\x73\x75\x62\x6d\x69\x74", async _0x84b660_0 => {
+  _0x84b660_0.preventDefault();
+  const _0x84b660_1 = _0x84b660_f.value.trim();
+  if (!_0x84b660_1) return;
+  const _0x84b660_2 = ++_0x84b660_2f;
+  _0x84b660_28 = _0x84b660_1, _0xf24d16_18 = [], _0x84b660_2e = null, _0x84b660_31 = "", 
+  _0x84b660_7b();
+  try {
+    const _0x84b660_0 = await _0x84b660_57(`/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x69\x66\x79\x2f\x73\x65\x61\x72\x63\x68\x3f\x71\x3d${encodeURIComponent(_0x84b660_1)}`);
+    if (_0x84b660_2 !== _0x84b660_2f) return;
+    _0xf24d16_18 = Array.isArray(_0x84b660_0.data) ? _0x84b660_0.data : [], _0x84b660_78("\x68\x6f\x6d\x65"), 
+    _0x84b660_87();
+  } catch (_0x84b660_3) {
+    if (_0x84b660_2 !== _0x84b660_2f) return;
+    _0x84b660_32 ? (_0x84b660_28 = _0x84b660_1, _0xf24d16_18 = [], _0x84b660_99(), _0x84b660_16.textContent = `\x53\x65\x61\x72\x63\x68\x20\x66\x61\x69\x6c\x65\x64\x3a\x20${_0x84b660_3.message}`) : _0x84b660_7a("\x53\x65\x61\x72\x63\x68\x20\x66\x61\x69\x6c\x65\x64", _0x84b660_3.message, !0);
   }
 });
 
-const wo = document.getElementById("dlBtn");
+const _0x84b660_a2 = document.getElementById("\x64\x6c\x42\x74\x6e");
 
-function ko() {
-  if (!Pi) return void (document.body.style.paddingBottom = "");
-  const e = da.getBoundingClientRect().height;
-  document.body.style.paddingBottom = Math.ceil(e + 14 + 26) + "px";
+function _0x84b660_a3() {
+  if (!_0x84b660_51) return void (document.body.style.paddingBottom = "");
+  const _0x84b660_0 = _0x84b660_3.getBoundingClientRect().height;
+  document.body.style.paddingBottom = Math.ceil(_0x84b660_0 + 14 + 26) + "\x70\x78";
 }
 
-function xo(e) {
-  Pi !== e && (Pi = e, da.classList.toggle("visible", e), da.toggleAttribute("inert", !e), 
-  e || pl(!1), requestAnimationFrame(ko));
+function _0x84b660_a4(_0x84b660_0) {
+  _0x84b660_51 !== _0x84b660_0 && (_0x84b660_51 = _0x84b660_0, _0x84b660_3.classList.toggle("\x76\x69\x73\x69\x62\x6c\x65", _0x84b660_0), 
+  _0x84b660_3.toggleAttribute("\x69\x6e\x65\x72\x74", !_0x84b660_0), _0x84b660_0 || _0x84b660_d1(!1), 
+  requestAnimationFrame(_0x84b660_a3));
 }
 
-function Lo(e) {
-  const t = ri.find(e => e.id === ni) || ri.find(t => t.tracks === e);
-  return t ? `Playlist \xb7 ${t.name}` : Xa?.name ? `${"artist" === Xa.type ? "Artist" : "Album"} \xb7 ${Xa.name}` : Ya ? `Search \xb7 ${Ya}` : e === Za.tracks || Array.isArray(e) && e.length && e.every(e => Za.tracks.some(t => t.id === e.id)) ? "Popular this week" : "Nyxify";
+function _0x84b660_a5(_0x84b660_0) {
+  const _0x84b660_1 = _0x84b660_34.find(_0x84b660_0 => _0x84b660_0.id === _0x84b660_31) || _0x84b660_34.find(_0x84b660_1 => _0x84b660_1.tracks === _0x84b660_0);
+  return _0x84b660_1 ? `\x50\x6c\x61\x79\x6c\x69\x73\x74\x20\xb7\x20${_0x84b660_1.name}` : _0x84b660_2e?.name ? `${"\x61\x72\x74\x69\x73\x74" === _0x84b660_2e.type ? "\x41\x72\x74\x69\x73\x74" : "\x41\x6c\x62\x75\x6d"}\x20\xb7\x20${_0x84b660_2e.name}` : _0x84b660_28 ? `\x53\x65\x61\x72\x63\x68\x20\xb7\x20${_0x84b660_28}` : _0x84b660_0 === _0x84b660_2a.tracks || Array.isArray(_0x84b660_0) && _0x84b660_0.length && _0x84b660_0.every(_0x84b660_0 => _0x84b660_2a.tracks.some(_0x84b660_1 => _0x84b660_1.id === _0x84b660_0.id)) ? "\x50\x6f\x70\x75\x6c\x61\x72\x20\x74\x68\x69\x73\x20\x77\x65\x65\x6b" : "\x4e\x79\x78\x69\x66\x79";
 }
 
-function Co() {
-  if (Ta.hidden = !Va, !Va) return;
-  qi(Ba, Va.cover, `${Va.title} cover`), Pa.textContent = Qa || "Nyxify", Fa.textContent = Va.title, 
-  Ha.textContent = Va.artist || "Unknown artist", Ha.disabled = !Va.artistId, Ha.onclick = () => {
-    Va?.artistId && Or("artist", Va.artistId, Va.artist);
-  }, qa.hidden = !Va.album, qa.textContent = Va.album || "", qa.disabled = !Va.albumId, 
-  qa.onclick = () => {
-    Va?.albumId && Or("album", Va.albumId, Va.album);
+function _0x84b660_a6() {
+  if (_0x84b660_18.hidden = !_0x84b660_27, !_0x84b660_27) return;
+  _0x84b660_54(_0x84b660_1a, _0x84b660_27.cover, `${_0x84b660_27.title}\x20\x63\x6f\x76\x65\x72`), _0x84b660_1b.textContent = _0x84b660_2d || "\x4e\x79\x78\x69\x66\x79", 
+  _0x84b660_1c.textContent = _0x84b660_27.title, _0x84b660_1d.textContent = _0x84b660_27.artist || "\x55\x6e\x6b\x6e\x6f\x77\x6e\x20\x61\x72\x74\x69\x73\x74", 
+  _0x84b660_1d.disabled = !_0x84b660_27.artistId, _0x84b660_1d.onclick = () => {
+    _0x84b660_27?.artistId && _0x84b660_85("\x61\x72\x74\x69\x73\x74", _0x84b660_27.artistId, _0x84b660_27.artist);
+  }, _0x84b660_1e.hidden = !_0x84b660_27.album, _0x84b660_1e.textContent = _0x84b660_27.album || "", 
+  _0x84b660_1e.disabled = !_0x84b660_27.albumId, _0x84b660_1e.onclick = () => {
+    _0x84b660_27?.albumId && _0x84b660_85("\x61\x6c\x62\x75\x6d", _0x84b660_27.albumId, _0x84b660_27.album);
   };
-  const e = ri.filter(e => e.tracks.some(e => e.id === Va.id));
-  if (_a.innerHTML = "", e.length) {
-    const t = document.createElement("span");
-    t.textContent = "In your playlists", _a.appendChild(t), e.forEach(e => {
-      const t = document.createElement("button");
-      t.type = "button", t.textContent = e.name, t.addEventListener("click", () => so(e.id)), 
-      _a.appendChild(t);
+  const _0x84b660_0 = _0x84b660_34.filter(_0x84b660_0 => _0x84b660_0.tracks.some(_0x84b660_0 => _0x84b660_0.id === _0x84b660_27.id));
+  if (_0x84b660_1f.innerHTML = "", _0x84b660_0.length) {
+    const _0x84b660_1 = document.createElement("\x73\x70\x61\x6e");
+    _0x84b660_1.textContent = "\x49\x6e\x20\x79\x6f\x75\x72\x20\x70\x6c\x61\x79\x6c\x69\x73\x74\x73", _0x84b660_1f.appendChild(_0x84b660_1), 
+    _0x84b660_0.forEach(_0x84b660_0 => {
+      const _0x84b660_1 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+      _0x84b660_1.type = "\x62\x75\x74\x74\x6f\x6e", _0x84b660_1.textContent = _0x84b660_0.name, _0x84b660_1.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_96(_0x84b660_0.id)), 
+      _0x84b660_1f.appendChild(_0x84b660_1);
     });
   }
-  const t = pi[gi + 1];
-  if (Da.innerHTML = "", t) {
-    const e = document.createElement("span");
-    e.textContent = "Next in queue";
-    const n = document.createElement("button");
-    n.type = "button", n.textContent = `${t.title} \xb7 ${t.artist}`, n.addEventListener("click", () => tl(gi + 1)), 
-    Da.append(e, n);
+  const _0x84b660_1 = _0x84b660_3d[_0x84b660_3e + 1];
+  if (_0x84b660_20.innerHTML = "", _0x84b660_1) {
+    const _0x84b660_0 = document.createElement("\x73\x70\x61\x6e");
+    _0x84b660_0.textContent = "\x4e\x65\x78\x74\x20\x69\x6e\x20\x71\x75\x65\x75\x65";
+    const _0x84b660_2 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x84b660_2.type = "\x62\x75\x74\x74\x6f\x6e", _0x84b660_2.textContent = `${_0x84b660_1.title}\x20\xb7\x20${_0x84b660_1.artist}`, 
+    _0x84b660_2.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_c4(_0x84b660_3e + 1)), _0x84b660_20.append(_0x84b660_0, _0x84b660_2);
   }
 }
 
-function Io() {
-  let e = document.getElementById("fullTrackFrame");
-  if (!e || "IFRAME" === e.tagName) {
-    const t = document.createElement("div");
-    t.id = "fullTrackFrame", e ? e.replaceWith(t) : Aa.appendChild(t), e = t;
+function _0x84b660_a7() {
+  let _0x84b660_0 = document.getElementById("\x66\x75\x6c\x6c\x54\x72\x61\x63\x6b\x46\x72\x61\x6d\x65");
+  if (!_0x84b660_0 || "\x49\x46\x52\x41\x4d\x45" === _0x84b660_0.tagName) {
+    const _0x84b660_1 = document.createElement("\x64\x69\x76");
+    _0x84b660_1.id = "\x66\x75\x6c\x6c\x54\x72\x61\x63\x6b\x46\x72\x61\x6d\x65", _0x84b660_0 ? _0x84b660_0.replaceWith(_0x84b660_1) : _0x84b660_19.appendChild(_0x84b660_1), 
+    _0x84b660_0 = _0x84b660_1;
   }
-  return e;
+  return _0x84b660_0;
 }
 
-function So() {
-  return /\bCrOS\b/i.test(navigator.userAgent) ? Promise.resolve(Ci) : window.YT?.Player ? Promise.resolve(window.YT) : wi || (wi = new Promise(e => {
-    const t = window.onYouTubeIframeAPIReady;
-    let n = !1;
-    const a = t => {
-      n || (n = !0, clearTimeout(i), e(t));
-    }, i = setTimeout(() => a(Ci), 5e3);
+function _0x84b660_a8() {
+  return /\bCrOS\b/i.test(navigator.userAgent) ? Promise.resolve(_0x84b660_48) : window.YT?.Player ? Promise.resolve(window.YT) : _0x84b660_44 || (_0x84b660_44 = new Promise(_0x84b660_0 => {
+    const _0x84b660_1 = window.onYouTubeIframeAPIReady;
+    let _0x84b660_2 = !1;
+    const _0x84b660_3 = _0x84b660_1 => {
+      _0x84b660_2 || (_0x84b660_2 = !0, clearTimeout(_0x84b660_4), _0x84b660_0(_0x84b660_1));
+    }, _0x84b660_4 = setTimeout(() => _0x84b660_3(_0x84b660_48), 5e3);
     window.onYouTubeIframeAPIReady = () => {
       try {
-        t?.();
-      } catch (e) {}
-      a(window.YT?.Player ? window.YT : Ci);
+        _0x84b660_1?.();
+      } catch (_0x84b660_0) {}
+      _0x84b660_3(window.YT?.Player ? window.YT : _0x84b660_48);
     };
-    let r = document.querySelector("script[data-nyx-octave-player]");
-    r || (r = document.createElement("script"), r.src = "https://www.youtube.com/iframe_api", 
-    r.async = !0, r.dataset.nyxOctavePlayer = "1", r.addEventListener("error", () => a(Ci), {
+    let _0x84b660_5 = document.querySelector("\x73\x63\x72\x69\x70\x74\x5b\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x6f\x63\x74\x61\x76\x65\x2d\x70\x6c\x61\x79\x65\x72\x5d");
+    _0x84b660_5 || (_0x84b660_5 = document.createElement("\x73\x63\x72\x69\x70\x74"), _0x84b660_5.src = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x79\x6f\x75\x74\x75\x62\x65\x2e\x63\x6f\x6d\x2f\x69\x66\x72\x61\x6d\x65\x5f\x61\x70\x69", 
+    _0x84b660_5.async = !0, _0x84b660_5.dataset.nyxOctavePlayer = "\x31", _0x84b660_5.addEventListener("\x65\x72\x72\x6f\x72", () => _0x84b660_3(_0x84b660_48), {
       once: !0
-    }), document.head.appendChild(r));
-  }), wi);
+    }), document.head.appendChild(_0x84b660_5));
+  }), _0x84b660_44);
 }
 
-function $o() {
-  null != Ei && clearInterval(Ei), Ei = null;
+function _0x84b660_a9() {
+  null != _0x84b660_43 && clearInterval(_0x84b660_43), _0x84b660_43 = null;
 }
 
-function Mo() {
-  $o(), Ei = setInterval(() => {
-    if ("octave" !== fi || ti || !hi) return;
-    const e = Number(hi.getCurrentTime?.()) || 0, t = Number(hi.getDuration?.()) || Number(Va?.duration) || 0;
-    t && (document.getElementById("timeTotal").textContent = _i(t)), kl(e), Zl();
+function _0x84b660_aa() {
+  _0x84b660_a9(), _0x84b660_43 = setInterval(() => {
+    if ("\x6f\x63\x74\x61\x76\x65" !== _0x84b660_3f || _0x84b660_30 || !_0x84b660_40) return;
+    const _0x84b660_0 = Number(_0x84b660_40.getCurrentTime?.()) || 0, _0x84b660_1 = Number(_0x84b660_40.getDuration?.()) || Number(_0x84b660_27?.duration) || 0;
+    _0x84b660_1 && (document.getElementById("\x74\x69\x6d\x65\x54\x6f\x74\x61\x6c").textContent = _0x84b660_55(_0x84b660_1)), 
+    _0x84b660_d9(_0x84b660_0), _0x84b660_f4();
   }, 500);
 }
 
-function No() {
-  $o();
+function _0x84b660_ab() {
+  _0x84b660_a9();
   try {
-    hi?.stopVideo?.();
-  } catch (e) {}
+    _0x84b660_40?.stopVideo?.();
+  } catch (_0x84b660_0) {}
   try {
-    hi?.destroy?.();
-  } catch (e) {}
-  hi = null, vi = !1, ki = !1, Io(), Ra.hidden = !0, Ra.dataset.playbackState = "idle";
+    _0x84b660_40?.destroy?.();
+  } catch (_0x84b660_0) {}
+  _0x84b660_40 = null, _0x84b660_41 = !1, _0x84b660_45 = !1, _0x84b660_a7(), _0x84b660_21.hidden = !0, 
+  _0x84b660_21.dataset.playbackState = "\x69\x64\x6c\x65";
 }
 
-function To(e, t = !1) {
-  t && (Li = Boolean(e), sa.setItem("nyx_nyxify_video_in_cover", Li ? "1" : "0"));
-  const n = Boolean(e && xi);
-  if (Aa.classList.toggle("is-video", n), za.setAttribute("aria-pressed", String(n)), 
-  za.setAttribute("aria-label", n ? "Switch to album cover" : xi ? "Switch to music video" : "Music video unavailable"), 
-  Oa.textContent = n ? "Switch to cover" : "Switch to video", Ja.hidden = !n, Ja.disabled = !n, 
-  !n && (document.fullscreenElement === Aa || document.webkitFullscreenElement === Aa)) {
-    const e = document.exitFullscreen || document.webkitExitFullscreen;
-    e && Promise.resolve(e.call(document)).catch(() => {});
+function _0x84b660_ac(_0x84b660_0, _0x84b660_2 = !1) {
+  _0x84b660_2 && (_0x84b660_47 = Boolean(_0x84b660_0), _0x84b660_1.setItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x76\x69\x64\x65\x6f\x5f\x69\x6e\x5f\x63\x6f\x76\x65\x72", _0x84b660_47 ? "\x31" : "\x30"));
+  const _0x84b660_3 = Boolean(_0x84b660_0 && _0x84b660_46);
+  if (_0x84b660_19.classList.toggle("\x69\x73\x2d\x76\x69\x64\x65\x6f", _0x84b660_3), _0x84b660_24.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x84b660_3)), 
+  _0x84b660_24.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x84b660_3 ? "\x53\x77\x69\x74\x63\x68\x20\x74\x6f\x20\x61\x6c\x62\x75\x6d\x20\x63\x6f\x76\x65\x72" : _0x84b660_46 ? "\x53\x77\x69\x74\x63\x68\x20\x74\x6f\x20\x6d\x75\x73\x69\x63\x20\x76\x69\x64\x65\x6f" : "\x4d\x75\x73\x69\x63\x20\x76\x69\x64\x65\x6f\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65"), 
+  _0x84b660_25.textContent = _0x84b660_3 ? "\x53\x77\x69\x74\x63\x68\x20\x74\x6f\x20\x63\x6f\x76\x65\x72" : "\x53\x77\x69\x74\x63\x68\x20\x74\x6f\x20\x76\x69\x64\x65\x6f", 
+  _0x84b660_26.hidden = !_0x84b660_3, _0x84b660_26.disabled = !_0x84b660_3, !_0x84b660_3 && (document.fullscreenElement === _0x84b660_19 || document.webkitFullscreenElement === _0x84b660_19)) {
+    const _0x84b660_0 = document.exitFullscreen || document.webkitExitFullscreen;
+    _0x84b660_0 && Promise.resolve(_0x84b660_0.call(document)).catch(() => {});
   }
 }
 
-function Ao() {
-  const e = document.fullscreenElement === Aa || document.webkitFullscreenElement === Aa;
-  Ja.setAttribute("aria-label", e ? "Exit fullscreen" : "Enter fullscreen"), Ja.title = e ? "Exit fullscreen" : "Enter fullscreen";
+function _0x84b660_ad() {
+  const _0x84b660_0 = document.fullscreenElement === _0x84b660_19 || document.webkitFullscreenElement === _0x84b660_19;
+  _0x84b660_26.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x84b660_0 ? "\x45\x78\x69\x74\x20\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e" : "\x45\x6e\x74\x65\x72\x20\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e"), 
+  _0x84b660_26.title = _0x84b660_0 ? "\x45\x78\x69\x74\x20\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e" : "\x45\x6e\x74\x65\x72\x20\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e";
 }
 
-async function Bo() {
-  if (!Aa.classList.contains("is-video")) return;
-  const e = document.fullscreenElement === Aa || document.webkitFullscreenElement === Aa, t = e ? document.exitFullscreen || document.webkitExitFullscreen : Aa.requestFullscreen || Aa.webkitRequestFullscreen;
-  if (t) {
+async function _0x84b660_ae() {
+  if (!_0x84b660_19.classList.contains("\x69\x73\x2d\x76\x69\x64\x65\x6f")) return;
+  const _0x84b660_0 = document.fullscreenElement === _0x84b660_19 || document.webkitFullscreenElement === _0x84b660_19, _0x84b660_1 = _0x84b660_0 ? document.exitFullscreen || document.webkitExitFullscreen : _0x84b660_19.requestFullscreen || _0x84b660_19.webkitRequestFullscreen;
+  if (_0x84b660_1) {
     try {
-      await Promise.resolve(t.call(e ? document : Aa));
+      await Promise.resolve(_0x84b660_1.call(_0x84b660_0 ? document : _0x84b660_19));
     } catch {
-      const e = document.querySelector("#fullTrackFrame iframe"), t = e?.requestFullscreen || e?.webkitRequestFullscreen;
-      t && await Promise.resolve(t.call(e)).catch(() => {});
+      const _0x84b660_0 = document.querySelector("\x23\x66\x75\x6c\x6c\x54\x72\x61\x63\x6b\x46\x72\x61\x6d\x65\x20\x69\x66\x72\x61\x6d\x65"), _0x84b660_1 = _0x84b660_0?.requestFullscreen || _0x84b660_0?.webkitRequestFullscreen;
+      _0x84b660_1 && await Promise.resolve(_0x84b660_1.call(_0x84b660_0)).catch(() => {});
     }
-    Ao();
+    _0x84b660_ad();
   }
 }
 
-function Po(e = null) {
-  xi = e && /^[A-Za-z0-9_-]{11}$/.test(String(e.videoId || "")) ? e : null, za.disabled = !xi, 
-  za.hidden = !xi, To(Boolean(xi && Li));
+function _0x84b660_af(_0x84b660_0 = null) {
+  _0x84b660_46 = _0x84b660_0 && /^[A-Za-z0-9_-]{11}$/.test(String(_0x84b660_0.videoId || "")) ? _0x84b660_0 : null, 
+  _0x84b660_24.disabled = !_0x84b660_46, _0x84b660_24.hidden = !_0x84b660_46, _0x84b660_ac(Boolean(_0x84b660_46 && _0x84b660_47));
 }
 
-function Fo() {
-  bi += 1, No(), Po(), fi = "idle", qo = !1, document.getElementById("playBtn").classList.remove("is-loading"), 
-  ca.pause(), ca.removeAttribute("src"), ca.load(), wo.hidden = !0, wa.className = "line-md--play-filled";
+function _0x84b660_b0() {
+  _0x84b660_42 += 1, _0x84b660_ab(), _0x84b660_af(), _0x84b660_3f = "\x69\x64\x6c\x65", _0x84b660_b2 = !1, 
+  document.getElementById("\x70\x6c\x61\x79\x42\x74\x6e").classList.remove("\x69\x73\x2d\x6c\x6f\x61\x64\x69\x6e\x67"), _0x84b660_2.pause(), 
+  _0x84b660_2.removeAttribute("\x73\x72\x63"), _0x84b660_2.load(), _0x84b660_a2.hidden = !0, 
+  _0x84b660_e.className = "\x6c\x69\x6e\x65\x2d\x6d\x64\x2d\x2d\x70\x6c\x61\x79\x2d\x66\x69\x6c\x6c\x65\x64";
 }
 
-function Ho(e) {
-  Vo(e);
+function _0x84b660_b1(_0x84b660_0) {
+  _0x84b660_bb(_0x84b660_0);
 }
 
-let qo = !1, _o = !0, Do = 0, Ro = performance.now(), jo = 0;
+let _0x84b660_b2 = !1, _0x84b660_b3 = !0, _0x84b660_b4 = 0, _0x84b660_b5 = performance.now(), _0x84b660_b6 = 0;
 
-const Uo = document.getElementById("musicPlaybackStatus");
+const _0x84b660_b7 = document.getElementById("\x6d\x75\x73\x69\x63\x50\x6c\x61\x79\x62\x61\x63\x6b\x53\x74\x61\x74\x75\x73");
 
-function zo(e, t = !1) {
-  Uo.textContent = e, document.getElementById("playerPlaybackStatus").textContent = e, 
-  Ua.textContent = e, document.getElementById("playBtn").classList.toggle("is-loading", t), 
-  requestAnimationFrame(ko);
+function _0x84b660_b8(_0x84b660_0, _0x84b660_1 = !1) {
+  _0x84b660_b7.textContent = _0x84b660_0, document.getElementById("\x70\x6c\x61\x79\x65\x72\x50\x6c\x61\x79\x62\x61\x63\x6b\x53\x74\x61\x74\x75\x73").textContent = _0x84b660_0, 
+  _0x84b660_23.textContent = _0x84b660_0, document.getElementById("\x70\x6c\x61\x79\x42\x74\x6e").classList.toggle("\x69\x73\x2d\x6c\x6f\x61\x64\x69\x6e\x67", _0x84b660_1), 
+  requestAnimationFrame(_0x84b660_a3);
 }
 
-function Oo(e, t) {
-  return new Promise((n, a) => {
-    const i = e => {
-      clearTimeout(l), ca.removeEventListener("loadedmetadata", r), ca.removeEventListener("error", o), 
-      e ? a(e) : n();
-    }, r = () => {
-      if (!t()) return i(new DOMException("Superseded playback", "AbortError"));
-      const n = Number(ca.duration), a = Number(e);
-      if (!(Number.isFinite(n) && n > 0 && a > 0) || Math.abs(n - a) > Math.max(4, .03 * a)) return i(new Error("The provider returned a different or incomplete recording."));
-      i();
-    }, o = () => i(new Error("Full audio could not load.")), l = setTimeout(() => i(new Error("Full audio took too long to load.")), 2e4);
-    ca.addEventListener("loadedmetadata", r), ca.addEventListener("error", o), ca.load();
+function _0x84b660_b9(_0x84b660_0, _0x84b660_1) {
+  return new Promise((_0x84b660_3, _0x84b660_4) => {
+    const _0x84b660_5 = _0x84b660_0 => {
+      clearTimeout(_0x84b660_8), _0x84b660_2.removeEventListener("\x6c\x6f\x61\x64\x65\x64\x6d\x65\x74\x61\x64\x61\x74\x61", _0x84b660_6), 
+      _0x84b660_2.removeEventListener("\x65\x72\x72\x6f\x72", _0x84b660_7), _0x84b660_0 ? _0x84b660_4(_0x84b660_0) : _0x84b660_3();
+    }, _0x84b660_6 = () => {
+      if (!_0x84b660_1()) return _0x84b660_5(new DOMException("\x53\x75\x70\x65\x72\x73\x65\x64\x65\x64\x20\x70\x6c\x61\x79\x62\x61\x63\x6b", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72"));
+      const _0x84b660_3 = Number(_0x84b660_2.duration), _0x84b660_4 = Number(_0x84b660_0);
+      if (!(Number.isFinite(_0x84b660_3) && _0x84b660_3 > 0 && _0x84b660_4 > 0) || Math.abs(_0x84b660_3 - _0x84b660_4) > Math.max(4, .03 * _0x84b660_4)) return _0x84b660_5(new Error("\x54\x68\x65\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x20\x64\x69\x66\x66\x65\x72\x65\x6e\x74\x20\x6f\x72\x20\x69\x6e\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x72\x65\x63\x6f\x72\x64\x69\x6e\x67\x2e"));
+      _0x84b660_5();
+    }, _0x84b660_7 = () => _0x84b660_5(new Error("\x46\x75\x6c\x6c\x20\x61\x75\x64\x69\x6f\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x2e")), _0x84b660_8 = setTimeout(() => _0x84b660_5(new Error("\x46\x75\x6c\x6c\x20\x61\x75\x64\x69\x6f\x20\x74\x6f\x6f\x6b\x20\x74\x6f\x6f\x20\x6c\x6f\x6e\x67\x20\x74\x6f\x20\x6c\x6f\x61\x64\x2e")), 2e4);
+    _0x84b660_2.addEventListener("\x6c\x6f\x61\x64\x65\x64\x6d\x65\x74\x61\x64\x61\x74\x61", _0x84b660_6), _0x84b660_2.addEventListener("\x65\x72\x72\x6f\x72", _0x84b660_7), 
+    _0x84b660_2.load();
   });
 }
 
-async function Jo(e, t, n = 0) {
-  qo = !0, Ro = performance.now(), jo = n, fi = "meting", Po(), ca.pause(), ca.removeAttribute("src"), 
-  ca.load(), ja.textContent = e.title || "Full track", zo("Finding the full song\u2026", !0), 
-  wa.className = _o ? "material-symbols--pause-rounded" : "line-md--play-filled";
+async function _0x84b660_ba(_0x84b660_0, _0x84b660_1, _0x84b660_3 = 0) {
+  _0x84b660_b2 = !0, _0x84b660_b5 = performance.now(), _0x84b660_b6 = _0x84b660_3, 
+  _0x84b660_3f = "\x6d\x65\x74\x69\x6e\x67", _0x84b660_af(), _0x84b660_2.pause(), _0x84b660_2.removeAttribute("\x73\x72\x63"), 
+  _0x84b660_2.load(), _0x84b660_22.textContent = _0x84b660_0.title || "\x46\x75\x6c\x6c\x20\x74\x72\x61\x63\x6b", 
+  _0x84b660_b8("\x46\x69\x6e\x64\x69\x6e\x67\x20\x74\x68\x65\x20\x66\x75\x6c\x6c\x20\x73\x6f\x6e\x67\u2026", !0), _0x84b660_e.className = _0x84b660_b3 ? "\x6d\x61\x74\x65\x72\x69\x61\x6c\x2d\x73\x79\x6d\x62\x6f\x6c\x73\x2d\x2d\x70\x61\x75\x73\x65\x2d\x72\x6f\x75\x6e\x64\x65\x64" : "\x6c\x69\x6e\x65\x2d\x6d\x64\x2d\x2d\x70\x6c\x61\x79\x2d\x66\x69\x6c\x6c\x65\x64";
   try {
-    const i = await Wi(e);
-    if (t !== bi || Va !== e) return;
-    if (!Ui(i)) throw new Error("No matching full recording is available.");
-    if (hl = n > 0 ? n : null, ca.src = i.streamUrl, await Oo(i.durationSeconds, () => t === bi && Va === e), 
-    t !== bi || Va !== e) return;
-    if (qo = !1, Ro = performance.now(), zo("Loading full song\u2026", !0), wo.hidden = !0, 
-    Zi(), _o) try {
-      await ca.play();
-    } catch (a) {
-      if (t !== bi || Va !== e) return;
-      "NotAllowedError" === a.name ? (_o = !1, zo("Full song ready \u2014 press play.")) : "AbortError" === a.name || ca.error || zo("Unable to start audio. Press play to retry.");
-    } else zo("Full song ready \u2014 press play.");
-  } catch (a) {
-    if (t !== bi || Va !== e) return;
-    if (!navigator.onLine) return qo = !1, void zo("You\u2019re offline. Playback will retry when connected.");
-    if ("Full audio could not load." === a.message && Do < 1) return qo = !1, void Yo(a.message);
-    Vo(a.message);
+    const _0x84b660_5 = await _0x84b660_5f(_0x84b660_0);
+    if (_0x84b660_1 !== _0x84b660_42 || _0x84b660_27 !== _0x84b660_0) return;
+    if (!_0x84b660_59(_0x84b660_5)) throw new Error("\x4e\x6f\x20\x6d\x61\x74\x63\x68\x69\x6e\x67\x20\x66\x75\x6c\x6c\x20\x72\x65\x63\x6f\x72\x64\x69\x6e\x67\x20\x69\x73\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+    if (_0x84b660_d4 = _0x84b660_3 > 0 ? _0x84b660_3 : null, _0x84b660_2.src = _0x84b660_5.streamUrl, 
+    await _0x84b660_b9(_0x84b660_5.durationSeconds, () => _0x84b660_1 === _0x84b660_42 && _0x84b660_27 === _0x84b660_0), 
+    _0x84b660_1 !== _0x84b660_42 || _0x84b660_27 !== _0x84b660_0) return;
+    if (_0x84b660_b2 = !1, _0x84b660_b5 = performance.now(), _0x84b660_b8("\x4c\x6f\x61\x64\x69\x6e\x67\x20\x66\x75\x6c\x6c\x20\x73\x6f\x6e\x67\u2026", !0), 
+    _0x84b660_a2.hidden = !0, _0x84b660_60(), _0x84b660_b3) try {
+      await _0x84b660_2.play();
+    } catch (_0x84b660_4) {
+      if (_0x84b660_1 !== _0x84b660_42 || _0x84b660_27 !== _0x84b660_0) return;
+      "\x4e\x6f\x74\x41\x6c\x6c\x6f\x77\x65\x64\x45\x72\x72\x6f\x72" === _0x84b660_4.name ? (_0x84b660_b3 = !1, _0x84b660_b8("\x46\x75\x6c\x6c\x20\x73\x6f\x6e\x67\x20\x72\x65\x61\x64\x79\x20\u2014\x20\x70\x72\x65\x73\x73\x20\x70\x6c\x61\x79\x2e")) : "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x84b660_4.name || _0x84b660_2.error || _0x84b660_b8("\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x73\x74\x61\x72\x74\x20\x61\x75\x64\x69\x6f\x2e\x20\x50\x72\x65\x73\x73\x20\x70\x6c\x61\x79\x20\x74\x6f\x20\x72\x65\x74\x72\x79\x2e");
+    } else _0x84b660_b8("\x46\x75\x6c\x6c\x20\x73\x6f\x6e\x67\x20\x72\x65\x61\x64\x79\x20\u2014\x20\x70\x72\x65\x73\x73\x20\x70\x6c\x61\x79\x2e");
+  } catch (_0x84b660_4) {
+    if (_0x84b660_1 !== _0x84b660_42 || _0x84b660_27 !== _0x84b660_0) return;
+    if (!navigator.onLine) return _0x84b660_b2 = !1, void _0x84b660_b8("\x59\x6f\x75\u2019\x72\x65\x20\x6f\x66\x66\x6c\x69\x6e\x65\x2e\x20\x50\x6c\x61\x79\x62\x61\x63\x6b\x20\x77\x69\x6c\x6c\x20\x72\x65\x74\x72\x79\x20\x77\x68\x65\x6e\x20\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64\x2e");
+    if ("\x46\x75\x6c\x6c\x20\x61\x75\x64\x69\x6f\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x2e" === _0x84b660_4.message && _0x84b660_b4 < 1) return _0x84b660_b2 = !1, 
+    void _0x84b660_bc(_0x84b660_4.message);
+    _0x84b660_bb(_0x84b660_4.message);
   }
 }
 
-function Vo(e) {
-  Vi(Va), Fo(), zo(e + " Full-song playback is unavailable. Press play to retry.");
+function _0x84b660_bb(_0x84b660_0) {
+  _0x84b660_5d(_0x84b660_27), _0x84b660_b0(), _0x84b660_b8(_0x84b660_0 + "\x20\x46\x75\x6c\x6c\x2d\x73\x6f\x6e\x67\x20\x70\x6c\x61\x79\x62\x61\x63\x6b\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x50\x72\x65\x73\x73\x20\x70\x6c\x61\x79\x20\x74\x6f\x20\x72\x65\x74\x72\x79\x2e");
 }
 
-function Yo(e) {
-  if ("meting" === fi && !qo && Va) if (0 === Do++) {
-    const e = ca.currentTime || 0;
-    Vi(Va), Jo(Va, bi, e);
-  } else Vo(e);
+function _0x84b660_bc(_0x84b660_0) {
+  if ("\x6d\x65\x74\x69\x6e\x67" === _0x84b660_3f && !_0x84b660_b2 && _0x84b660_27) if (0 === _0x84b660_b4++) {
+    const _0x84b660_0 = _0x84b660_2.currentTime || 0;
+    _0x84b660_5d(_0x84b660_27), _0x84b660_ba(_0x84b660_27, _0x84b660_42, _0x84b660_0);
+  } else _0x84b660_bb(_0x84b660_0);
 }
 
-function Wo() {
-  return qo ? !_o : "octave" === fi ? !vi : ca.paused;
+function _0x84b660_bd() {
+  return _0x84b660_b2 ? !_0x84b660_b3 : "\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f ? !_0x84b660_41 : _0x84b660_2.paused;
 }
 
-function Zo() {
-  if (_o = !0, Ro = performance.now(), !qo) return "idle" === fi && Va ? (Do = 0, 
-  void Jo(Va, bi)) : void ("octave" === fi || ki ? hi?.playVideo?.() : ca.play().catch(() => zo("Unable to play. Select the song again to retry.")));
-  wa.className = "material-symbols--pause-rounded";
+function _0x84b660_be() {
+  if (_0x84b660_b3 = !0, _0x84b660_b5 = performance.now(), !_0x84b660_b2) return "\x69\x64\x6c\x65" === _0x84b660_3f && _0x84b660_27 ? (_0x84b660_b4 = 0, 
+  void _0x84b660_ba(_0x84b660_27, _0x84b660_42)) : void ("\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f || _0x84b660_45 ? _0x84b660_40?.playVideo?.() : _0x84b660_2.play().catch(() => _0x84b660_b8("\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x70\x6c\x61\x79\x2e\x20\x53\x65\x6c\x65\x63\x74\x20\x74\x68\x65\x20\x73\x6f\x6e\x67\x20\x61\x67\x61\x69\x6e\x20\x74\x6f\x20\x72\x65\x74\x72\x79\x2e")));
+  _0x84b660_e.className = "\x6d\x61\x74\x65\x72\x69\x61\x6c\x2d\x73\x79\x6d\x62\x6f\x6c\x73\x2d\x2d\x70\x61\x75\x73\x65\x2d\x72\x6f\x75\x6e\x64\x65\x64";
 }
 
-function Go() {
-  _o = !1, qo ? (wa.className = "line-md--play-filled", zo("Song is loading \u2014 playback paused.")) : "meting" === fi && zo("Full song paused"), 
-  "octave" === fi ? hi?.pauseVideo?.() : ca.pause();
+function _0x84b660_bf() {
+  _0x84b660_b3 = !1, _0x84b660_b2 ? (_0x84b660_e.className = "\x6c\x69\x6e\x65\x2d\x6d\x64\x2d\x2d\x70\x6c\x61\x79\x2d\x66\x69\x6c\x6c\x65\x64", 
+  _0x84b660_b8("\x53\x6f\x6e\x67\x20\x69\x73\x20\x6c\x6f\x61\x64\x69\x6e\x67\x20\u2014\x20\x70\x6c\x61\x79\x62\x61\x63\x6b\x20\x70\x61\x75\x73\x65\x64\x2e")) : "\x6d\x65\x74\x69\x6e\x67" === _0x84b660_3f && _0x84b660_b8("\x46\x75\x6c\x6c\x20\x73\x6f\x6e\x67\x20\x70\x61\x75\x73\x65\x64"), 
+  "\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f ? _0x84b660_40?.pauseVideo?.() : _0x84b660_2.pause();
 }
 
-function Ko() {
-  return "octave" === fi ? Number(hi?.getCurrentTime?.()) || 0 : Number(ca.currentTime) || 0;
+function _0x84b660_c0() {
+  return "\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f ? Number(_0x84b660_40?.getCurrentTime?.()) || 0 : Number(_0x84b660_2.currentTime) || 0;
 }
 
-function Qo() {
-  return "octave" === fi ? Number(hi?.getDuration?.()) || Number(Va?.duration) || 0 : isFinite(ca.duration) && ca.duration ? ca.duration : Number(Va?.duration) || 0;
+function _0x84b660_c1() {
+  return "\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f ? Number(_0x84b660_40?.getDuration?.()) || Number(_0x84b660_27?.duration) || 0 : isFinite(_0x84b660_2.duration) && _0x84b660_2.duration ? _0x84b660_2.duration : Number(_0x84b660_27?.duration) || 0;
 }
 
-function Xo(e) {
-  "octave" === fi ? hi?.seekTo?.(e, !0) : ca.currentTime = e;
+function _0x84b660_c2(_0x84b660_0) {
+  "\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f ? _0x84b660_40?.seekTo?.(_0x84b660_0, !0) : _0x84b660_2.currentTime = _0x84b660_0;
 }
 
-function el(e, t, n = "") {
-  ++Ti;
-  for (const [i, r] of Si) i !== ji(e) && r.controller.abort();
-  Sl();
-  const a = n || Lo(t);
-  Va = e, pi = (t || Zt).slice(), gi = pi.findIndex(t => t.id === e.id), -1 === gi && (pi.unshift(e), 
-  gi = 0), Qa = a, Lr(e), Fo(), Do = 0, _o = !0, Jo(e, bi), qi(document.getElementById("pArt"), e.cover, `${e.title} cover`), 
-  document.getElementById("pTitle").textContent = e.title, document.getElementById("pTitle").title = e.title, 
-  document.getElementById("pArtist").textContent = e.artist, document.getElementById("pArtist").title = e.artist, 
-  document.getElementById("timeTotal").textContent = _i(e.duration), wo.removeAttribute("href"), 
-  wo.hidden = !0, wo.setAttribute("download", `${e.artist || "unknown"} - ${e.title || "song"}.mp3`.replace(/["\\]/g, "")), 
-  wo.setAttribute("aria-label", `download ${e.title}`), Na.disabled = !1, Wl(e), ba.value = 0, 
-  ba.style.setProperty("--fill", "0%"), document.getElementById("timeCur").textContent = "0:00", 
-  Nr(e.id), Eo(), gl(), Co(), xo(!0);
+function _0x84b660_c3(_0x84b660_0, _0x84b660_1, _0x84b660_2 = "") {
+  ++_0x84b660_4e;
+  for (const [_0x84b660_4, _0x84b660_5] of _0x84b660_4a) _0x84b660_4 !== _0x84b660_58(_0x84b660_0) && _0x84b660_5.controller.abort();
+  _0x84b660_de();
+  const _0x84b660_3 = _0x84b660_2 || _0x84b660_a5(_0x84b660_1);
+  _0x84b660_27 = _0x84b660_0, _0x84b660_3d = (_0x84b660_1 || _0xf24d16_18).slice(), 
+  _0x84b660_3e = _0x84b660_3d.findIndex(_0x84b660_1 => _0x84b660_1.id === _0x84b660_0.id), 
+  -1 === _0x84b660_3e && (_0x84b660_3d.unshift(_0x84b660_0), _0x84b660_3e = 0), _0x84b660_2d = _0x84b660_3, 
+  _0x84b660_71(_0x84b660_0), _0x84b660_b0(), _0x84b660_b4 = 0, _0x84b660_b3 = !0, 
+  _0x84b660_ba(_0x84b660_0, _0x84b660_42), _0x84b660_54(document.getElementById("\x70\x41\x72\x74"), _0x84b660_0.cover, `${_0x84b660_0.title}\x20\x63\x6f\x76\x65\x72`), 
+  document.getElementById("\x70\x54\x69\x74\x6c\x65").textContent = _0x84b660_0.title, document.getElementById("\x70\x54\x69\x74\x6c\x65").title = _0x84b660_0.title, 
+  document.getElementById("\x70\x41\x72\x74\x69\x73\x74").textContent = _0x84b660_0.artist, document.getElementById("\x70\x41\x72\x74\x69\x73\x74").title = _0x84b660_0.artist, 
+  document.getElementById("\x74\x69\x6d\x65\x54\x6f\x74\x61\x6c").textContent = _0x84b660_55(_0x84b660_0.duration), 
+  _0x84b660_a2.removeAttribute("\x68\x72\x65\x66"), _0x84b660_a2.hidden = !0, _0x84b660_a2.setAttribute("\x64\x6f\x77\x6e\x6c\x6f\x61\x64", `${_0x84b660_0.artist || "\x75\x6e\x6b\x6e\x6f\x77\x6e"}\x20\x2d\x20${_0x84b660_0.title || "\x73\x6f\x6e\x67"}\x2e\x6d\x70\x33`.replace(/["\\]/g, "")), 
+  _0x84b660_a2.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", `\x64\x6f\x77\x6e\x6c\x6f\x61\x64\x20${_0x84b660_0.title}`), _0x84b660_17.disabled = !1, 
+  _0x84b660_f3(_0x84b660_0), _0x84b660_c.value = 0, _0x84b660_c.style.setProperty("\x2d\x2d\x66\x69\x6c\x6c", "\x30\x25"), 
+  document.getElementById("\x74\x69\x6d\x65\x43\x75\x72").textContent = "\x30\x3a\x30\x30", _0x84b660_77(_0x84b660_0.id), 
+  _0x84b660_a1(), _0x84b660_d2(), _0x84b660_a6(), _0x84b660_a4(!0);
 }
 
-function tl(e) {
-  e >= 0 && e < pi.length && el(pi[e], pi, Qa);
+function _0x84b660_c4(_0x84b660_0) {
+  _0x84b660_0 >= 0 && _0x84b660_0 < _0x84b660_3d.length && _0x84b660_c3(_0x84b660_3d[_0x84b660_0], _0x84b660_3d, _0x84b660_2d);
 }
 
-function nl() {
-  wa.className = "line-md--play-filled", ba.value = 0, ba.style.setProperty("--fill", "0%"), 
-  document.getElementById("timeCur").textContent = "0:00";
+function _0x84b660_c5() {
+  _0x84b660_e.className = "\x6c\x69\x6e\x65\x2d\x6d\x64\x2d\x2d\x70\x6c\x61\x79\x2d\x66\x69\x6c\x6c\x65\x64", _0x84b660_c.value = 0, _0x84b660_c.style.setProperty("\x2d\x2d\x66\x69\x6c\x6c", "\x30\x25"), 
+  document.getElementById("\x74\x69\x6d\x65\x43\x75\x72").textContent = "\x30\x3a\x30\x30";
 }
 
-function al(e) {
-  if (!pi.length) return;
-  if (Ai && pi.length > 1) {
-    let e;
+function _0x84b660_c6(_0x84b660_0) {
+  if (!_0x84b660_3d.length) return;
+  if (_0x84b660_4f && _0x84b660_3d.length > 1) {
+    let _0x84b660_0;
     do {
-      e = Math.floor(Math.random() * pi.length);
-    } while (e === gi);
-    return tl(e);
+      _0x84b660_0 = Math.floor(Math.random() * _0x84b660_3d.length);
+    } while (_0x84b660_0 === _0x84b660_3e);
+    return _0x84b660_c4(_0x84b660_0);
   }
-  let t = gi + 1;
-  if (t >= pi.length) {
-    if ("all" !== Bi && !e) return nl();
-    t = 0;
+  let _0x84b660_1 = _0x84b660_3e + 1;
+  if (_0x84b660_1 >= _0x84b660_3d.length) {
+    if ("\x61\x6c\x6c" !== _0x84b660_50 && !_0x84b660_0) return _0x84b660_c5();
+    _0x84b660_1 = 0;
   }
-  tl(t);
+  _0x84b660_c4(_0x84b660_1);
 }
 
-function il() {
-  Ko() > 3 ? Xo(0) : gi > 0 ? tl(gi - 1) : Xo(0);
+function _0x84b660_c7() {
+  _0x84b660_c0() > 3 ? _0x84b660_c2(0) : _0x84b660_3e > 0 ? _0x84b660_c4(_0x84b660_3e - 1) : _0x84b660_c2(0);
 }
 
-ca.addEventListener("playing", () => {
-  "meting" === fi && zo("Playing full song");
-}), ca.addEventListener("waiting", () => {
-  "meting" === fi && _o && zo("Buffering full song\u2026", !0);
-}), ca.addEventListener("canplay", () => {
-  "meting" === fi && ca.paused && zo("Full song ready \u2014 press play.");
-}), ca.addEventListener("error", () => {
-  "meting" === fi && !qo && Va && ca.error && (navigator.onLine ? Yo("Full audio is unavailable right now.") : zo("You\u2019re offline. Playback will retry when connected."));
-}), ca.addEventListener("timeupdate", () => {
-  ca.currentTime !== jo && (jo = ca.currentTime, Ro = performance.now());
+_0x84b660_2.addEventListener("\x70\x6c\x61\x79\x69\x6e\x67", () => {
+  "\x6d\x65\x74\x69\x6e\x67" === _0x84b660_3f && _0x84b660_b8("\x50\x6c\x61\x79\x69\x6e\x67\x20\x66\x75\x6c\x6c\x20\x73\x6f\x6e\x67");
+}), _0x84b660_2.addEventListener("\x77\x61\x69\x74\x69\x6e\x67", () => {
+  "\x6d\x65\x74\x69\x6e\x67" === _0x84b660_3f && _0x84b660_b3 && _0x84b660_b8("\x42\x75\x66\x66\x65\x72\x69\x6e\x67\x20\x66\x75\x6c\x6c\x20\x73\x6f\x6e\x67\u2026", !0);
+}), _0x84b660_2.addEventListener("\x63\x61\x6e\x70\x6c\x61\x79", () => {
+  "\x6d\x65\x74\x69\x6e\x67" === _0x84b660_3f && _0x84b660_2.paused && _0x84b660_b8("\x46\x75\x6c\x6c\x20\x73\x6f\x6e\x67\x20\x72\x65\x61\x64\x79\x20\u2014\x20\x70\x72\x65\x73\x73\x20\x70\x6c\x61\x79\x2e");
+}), _0x84b660_2.addEventListener("\x65\x72\x72\x6f\x72", () => {
+  "\x6d\x65\x74\x69\x6e\x67" === _0x84b660_3f && !_0x84b660_b2 && _0x84b660_27 && _0x84b660_2.error && (navigator.onLine ? _0x84b660_bc("\x46\x75\x6c\x6c\x20\x61\x75\x64\x69\x6f\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x72\x69\x67\x68\x74\x20\x6e\x6f\x77\x2e") : _0x84b660_b8("\x59\x6f\x75\u2019\x72\x65\x20\x6f\x66\x66\x6c\x69\x6e\x65\x2e\x20\x50\x6c\x61\x79\x62\x61\x63\x6b\x20\x77\x69\x6c\x6c\x20\x72\x65\x74\x72\x79\x20\x77\x68\x65\x6e\x20\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64\x2e"));
+}), _0x84b660_2.addEventListener("\x74\x69\x6d\x65\x75\x70\x64\x61\x74\x65", () => {
+  _0x84b660_2.currentTime !== _0x84b660_b6 && (_0x84b660_b6 = _0x84b660_2.currentTime, 
+  _0x84b660_b5 = performance.now());
 }), setInterval(() => {
-  "meting" === fi && !qo && _o && !ca.ended && navigator.onLine && performance.now() - Ro > 45e3 && Yo("Full audio stopped responding.");
-}, 5e3), window.addEventListener("offline", () => {
-  "meting" === fi && zo("You\u2019re offline. Buffered audio may continue playing.");
-}), window.addEventListener("online", () => {
-  "meting" === fi && _o && (ca.error || ca.readyState < 3) && Yo("Full audio could not reconnect.");
-}), za.addEventListener("click", () => {
-  xi && To(!Aa.classList.contains("is-video"), !0);
-}), Ja.addEventListener("click", Bo), document.addEventListener("fullscreenchange", Ao), 
-document.addEventListener("webkitfullscreenchange", Ao), Po(), document.getElementById("nextBtn").addEventListener("click", () => al(!0)), 
-document.getElementById("prevBtn").addEventListener("click", il), ca.addEventListener("ended", () => {
-  if ("octave" !== fi) return ki && hi ? (wa.className = "line-md--play-filled", Ra.dataset.playbackState = "ready", 
-  void (Ua.textContent = "Full song ready - press play")) : "one" === Bi ? (ca.currentTime = 0, 
-  void Zo()) : void al(!1);
+  "\x6d\x65\x74\x69\x6e\x67" === _0x84b660_3f && !_0x84b660_b2 && _0x84b660_b3 && !_0x84b660_2.ended && navigator.onLine && performance.now() - _0x84b660_b5 > 45e3 && _0x84b660_bc("\x46\x75\x6c\x6c\x20\x61\x75\x64\x69\x6f\x20\x73\x74\x6f\x70\x70\x65\x64\x20\x72\x65\x73\x70\x6f\x6e\x64\x69\x6e\x67\x2e");
+}, 5e3), window.addEventListener("\x6f\x66\x66\x6c\x69\x6e\x65", () => {
+  "\x6d\x65\x74\x69\x6e\x67" === _0x84b660_3f && _0x84b660_b8("\x59\x6f\x75\u2019\x72\x65\x20\x6f\x66\x66\x6c\x69\x6e\x65\x2e\x20\x42\x75\x66\x66\x65\x72\x65\x64\x20\x61\x75\x64\x69\x6f\x20\x6d\x61\x79\x20\x63\x6f\x6e\x74\x69\x6e\x75\x65\x20\x70\x6c\x61\x79\x69\x6e\x67\x2e");
+}), window.addEventListener("\x6f\x6e\x6c\x69\x6e\x65", () => {
+  "\x6d\x65\x74\x69\x6e\x67" === _0x84b660_3f && _0x84b660_b3 && (_0x84b660_2.error || _0x84b660_2.readyState < 3) && _0x84b660_bc("\x46\x75\x6c\x6c\x20\x61\x75\x64\x69\x6f\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x72\x65\x63\x6f\x6e\x6e\x65\x63\x74\x2e");
+}), _0x84b660_24.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+  _0x84b660_46 && _0x84b660_ac(!_0x84b660_19.classList.contains("\x69\x73\x2d\x76\x69\x64\x65\x6f"), !0);
+}), _0x84b660_26.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_ae), document.addEventListener("\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x63\x68\x61\x6e\x67\x65", _0x84b660_ad), 
+document.addEventListener("\x77\x65\x62\x6b\x69\x74\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x63\x68\x61\x6e\x67\x65", _0x84b660_ad), _0x84b660_af(), 
+document.getElementById("\x6e\x65\x78\x74\x42\x74\x6e").addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_c6(!0)), 
+document.getElementById("\x70\x72\x65\x76\x42\x74\x6e").addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_c7), _0x84b660_2.addEventListener("\x65\x6e\x64\x65\x64", () => {
+  if ("\x6f\x63\x74\x61\x76\x65" !== _0x84b660_3f) return _0x84b660_45 && _0x84b660_40 ? (_0x84b660_e.className = "\x6c\x69\x6e\x65\x2d\x6d\x64\x2d\x2d\x70\x6c\x61\x79\x2d\x66\x69\x6c\x6c\x65\x64", 
+  _0x84b660_21.dataset.playbackState = "\x72\x65\x61\x64\x79", void (_0x84b660_23.textContent = "\x46\x75\x6c\x6c\x20\x73\x6f\x6e\x67\x20\x72\x65\x61\x64\x79\x20\x2d\x20\x70\x72\x65\x73\x73\x20\x70\x6c\x61\x79")) : "\x6f\x6e\x65" === _0x84b660_50 ? (_0x84b660_2.currentTime = 0, 
+  void _0x84b660_be()) : void _0x84b660_c6(!1);
 });
 
-const rl = document.getElementById("shuffleBtn");
+const _0x84b660_c8 = document.getElementById("\x73\x68\x75\x66\x66\x6c\x65\x42\x74\x6e");
 
-rl.classList.toggle("on", Ai), rl.setAttribute("aria-pressed", String(Ai)), rl.title = "shuffle: " + (Ai ? "on" : "off"), 
-rl.addEventListener("click", () => {
-  Ai = !Ai, sa.setItem("nyx_nyxify_shuffle", Ai ? "1" : "0"), rl.classList.toggle("on", Ai), 
-  rl.setAttribute("aria-pressed", String(Ai)), rl.title = "shuffle: " + (Ai ? "on" : "off");
+_0x84b660_c8.classList.toggle("\x6f\x6e", _0x84b660_4f), _0x84b660_c8.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x84b660_4f)), 
+_0x84b660_c8.title = "\x73\x68\x75\x66\x66\x6c\x65\x3a\x20" + (_0x84b660_4f ? "\x6f\x6e" : "\x6f\x66\x66"), _0x84b660_c8.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+  _0x84b660_4f = !_0x84b660_4f, _0x84b660_1.setItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x73\x68\x75\x66\x66\x6c\x65", _0x84b660_4f ? "\x31" : "\x30"), 
+  _0x84b660_c8.classList.toggle("\x6f\x6e", _0x84b660_4f), _0x84b660_c8.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x84b660_4f)), 
+  _0x84b660_c8.title = "\x73\x68\x75\x66\x66\x6c\x65\x3a\x20" + (_0x84b660_4f ? "\x6f\x6e" : "\x6f\x66\x66");
 });
 
-const ol = document.getElementById("repeatBtn"), ll = document.getElementById("repeatIcon"), sl = {
-  off: "all",
-  all: "one",
-  one: "off"
+const _0x84b660_c9 = document.getElementById("\x72\x65\x70\x65\x61\x74\x42\x74\x6e"), _0x84b660_ca = document.getElementById("\x72\x65\x70\x65\x61\x74\x49\x63\x6f\x6e"), _0x84b660_cb = {
+  off: "\x61\x6c\x6c",
+  all: "\x6f\x6e\x65",
+  one: "\x6f\x66\x66"
 };
 
-function cl() {
-  const e = "all" === Bi ? "Queue" : "one" === Bi ? "Song" : "Off", t = "off" === Bi ? "repeat the queue" : "all" === Bi ? "repeat this song" : "turn repeat off";
-  ll.className = "one" === Bi ? "ic-repeat-one" : "ic-repeat", ol.classList.toggle("on", "off" !== Bi), 
-  ol.setAttribute("aria-pressed", String("off" !== Bi)), ol.setAttribute("aria-label", "Repeat: " + e + ". Click to " + t + "."), 
-  ol.title = "Repeat: " + e + ". Click to " + t + ".";
+function _0x84b660_cc() {
+  const _0x84b660_0 = "\x61\x6c\x6c" === _0x84b660_50 ? "\x51\x75\x65\x75\x65" : "\x6f\x6e\x65" === _0x84b660_50 ? "\x53\x6f\x6e\x67" : "\x4f\x66\x66", _0x84b660_1 = "\x6f\x66\x66" === _0x84b660_50 ? "\x72\x65\x70\x65\x61\x74\x20\x74\x68\x65\x20\x71\x75\x65\x75\x65" : "\x61\x6c\x6c" === _0x84b660_50 ? "\x72\x65\x70\x65\x61\x74\x20\x74\x68\x69\x73\x20\x73\x6f\x6e\x67" : "\x74\x75\x72\x6e\x20\x72\x65\x70\x65\x61\x74\x20\x6f\x66\x66";
+  _0x84b660_ca.className = "\x6f\x6e\x65" === _0x84b660_50 ? "\x69\x63\x2d\x72\x65\x70\x65\x61\x74\x2d\x6f\x6e\x65" : "\x69\x63\x2d\x72\x65\x70\x65\x61\x74", 
+  _0x84b660_c9.classList.toggle("\x6f\x6e", "\x6f\x66\x66" !== _0x84b660_50), _0x84b660_c9.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String("\x6f\x66\x66" !== _0x84b660_50)), 
+  _0x84b660_c9.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x52\x65\x70\x65\x61\x74\x3a\x20" + _0x84b660_0 + "\x2e\x20\x43\x6c\x69\x63\x6b\x20\x74\x6f\x20" + _0x84b660_1 + "\x2e"), 
+  _0x84b660_c9.title = "\x52\x65\x70\x65\x61\x74\x3a\x20" + _0x84b660_0 + "\x2e\x20\x43\x6c\x69\x63\x6b\x20\x74\x6f\x20" + _0x84b660_1 + "\x2e";
 }
 
-cl(), ol.addEventListener("click", () => {
-  Bi = sl[Bi], sa.setItem("nyx_nyxify_repeat", Bi), cl(), Zi();
-}), Ea.addEventListener("click", () => {
-  Va ? ki || Wo() ? Zo() : Go() : Zt.length ? el(Zt[0]) : Za.tracks.length ? el(Za.tracks[0], Za.tracks, "Popular this week") : Er().length && el(Er()[0]);
-}), ca.addEventListener("play", () => {
-  "octave" !== fi && (wa.className = "material-symbols--pause-rounded");
-}), ca.addEventListener("pause", () => {
-  "octave" !== fi && (wa.className = "line-md--play-filled");
+_0x84b660_cc(), _0x84b660_c9.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+  _0x84b660_50 = _0x84b660_cb[_0x84b660_50], _0x84b660_1.setItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x72\x65\x70\x65\x61\x74", _0x84b660_50), 
+  _0x84b660_cc(), _0x84b660_60();
+}), _0x84b660_d.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+  _0x84b660_27 ? _0x84b660_45 || _0x84b660_bd() ? _0x84b660_be() : _0x84b660_bf() : _0xf24d16_18.length ? _0x84b660_c3(_0xf24d16_18[0]) : _0x84b660_2a.tracks.length ? _0x84b660_c3(_0x84b660_2a.tracks[0], _0x84b660_2a.tracks, "\x50\x6f\x70\x75\x6c\x61\x72\x20\x74\x68\x69\x73\x20\x77\x65\x65\x6b") : _0x84b660_6d().length && _0x84b660_c3(_0x84b660_6d()[0]);
+}), _0x84b660_2.addEventListener("\x70\x6c\x61\x79", () => {
+  "\x6f\x63\x74\x61\x76\x65" !== _0x84b660_3f && (_0x84b660_e.className = "\x6d\x61\x74\x65\x72\x69\x61\x6c\x2d\x73\x79\x6d\x62\x6f\x6c\x73\x2d\x2d\x70\x61\x75\x73\x65\x2d\x72\x6f\x75\x6e\x64\x65\x64");
+}), _0x84b660_2.addEventListener("\x70\x61\x75\x73\x65", () => {
+  "\x6f\x63\x74\x61\x76\x65" !== _0x84b660_3f && (_0x84b660_e.className = "\x6c\x69\x6e\x65\x2d\x6d\x64\x2d\x2d\x70\x6c\x61\x79\x2d\x66\x69\x6c\x6c\x65\x64");
 });
 
-const dl = document.getElementById("pLike");
+const _0x84b660_cd = document.getElementById("\x70\x4c\x69\x6b\x65");
 
-dl.addEventListener("click", e => {
-  if (e.stopPropagation(), !Va) return;
-  const t = kr(Va);
-  Ir(dl, t), Sr(dl), Eo();
+_0x84b660_cd.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_0 => {
+  if (_0x84b660_0.stopPropagation(), !_0x84b660_27) return;
+  const _0x84b660_1 = _0x84b660_6f(_0x84b660_27);
+  _0x84b660_73(_0x84b660_cd, _0x84b660_1), _0x84b660_74(_0x84b660_cd), _0x84b660_a1();
 });
 
-const ul = document.getElementById("queueToggle"), ml = document.getElementById("queuePanel"), yl = document.getElementById("qBadge");
+const _0x84b660_ce = document.getElementById("\x71\x75\x65\x75\x65\x54\x6f\x67\x67\x6c\x65"), _0x84b660_cf = document.getElementById("\x71\x75\x65\x75\x65\x50\x61\x6e\x65\x6c"), _0x84b660_d0 = document.getElementById("\x71\x42\x61\x64\x67\x65");
 
-function pl(e) {
-  Fi = e, ml.classList.toggle("open", e), ul.classList.toggle("on", e), ul.setAttribute("aria-expanded", String(e)), 
-  ml.setAttribute("aria-hidden", String(!e));
+function _0x84b660_d1(_0x84b660_0) {
+  _0x84b660_52 = _0x84b660_0, _0x84b660_cf.classList.toggle("\x6f\x70\x65\x6e", _0x84b660_0), 
+  _0x84b660_ce.classList.toggle("\x6f\x6e", _0x84b660_0), _0x84b660_ce.setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String(_0x84b660_0)), 
+  _0x84b660_cf.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", String(!_0x84b660_0));
 }
 
-function gl() {
-  const e = document.getElementById("qList"), t = pi.slice(gi + 1);
-  if (e.innerHTML = "", yl.textContent = t.length, yl.hidden = 0 === t.length, !t.length) {
-    const t = document.createElement("div");
-    return t.className = "q-empty", t.textContent = Va ? "End of queue. Turn on repeat to keep listening." : "Play a song to start a queue.", 
-    void e.appendChild(t);
+function _0x84b660_d2() {
+  const _0x84b660_0 = document.getElementById("\x71\x4c\x69\x73\x74"), _0x84b660_1 = _0x84b660_3d.slice(_0x84b660_3e + 1);
+  if (_0x84b660_0.innerHTML = "", _0x84b660_d0.textContent = _0x84b660_1.length, _0x84b660_d0.hidden = 0 === _0x84b660_1.length, 
+  !_0x84b660_1.length) {
+    const _0x84b660_1 = document.createElement("\x64\x69\x76");
+    return _0x84b660_1.className = "\x71\x2d\x65\x6d\x70\x74\x79", _0x84b660_1.textContent = _0x84b660_27 ? "\x45\x6e\x64\x20\x6f\x66\x20\x71\x75\x65\x75\x65\x2e\x20\x54\x75\x72\x6e\x20\x6f\x6e\x20\x72\x65\x70\x65\x61\x74\x20\x74\x6f\x20\x6b\x65\x65\x70\x20\x6c\x69\x73\x74\x65\x6e\x69\x6e\x67\x2e" : "\x50\x6c\x61\x79\x20\x61\x20\x73\x6f\x6e\x67\x20\x74\x6f\x20\x73\x74\x61\x72\x74\x20\x61\x20\x71\x75\x65\x75\x65\x2e", 
+    void _0x84b660_0.appendChild(_0x84b660_1);
   }
-  t.forEach((t, n) => {
-    const a = gi + 1 + n, i = document.createElement("div");
-    i.className = "mini", i.innerHTML = `\n      <img src="${Di(t.cover)}" alt="">\n      <div class="mini-m">\n        <div class="mini-t">${Di(t.title)}</div>\n        <div class="mini-a">${Di(t.artist)}</div>\n      </div>`, 
-    Cr(i, `play ${t.title}`, () => tl(a)), i.addEventListener("click", () => tl(a)), 
-    e.appendChild(i);
+  _0x84b660_1.forEach((_0x84b660_1, _0x84b660_2) => {
+    const _0x84b660_3 = _0x84b660_3e + 1 + _0x84b660_2, _0x84b660_4 = document.createElement("\x64\x69\x76");
+    _0x84b660_4.className = "\x6d\x69\x6e\x69", _0x84b660_4.innerHTML = `\x0a\x20\x20\x20\x20\x20\x20\x3c\x69\x6d\x67\x20\x73\x72\x63\x3d\x22${_0x84b660_56(_0x84b660_1.cover)}\x22\x20\x61\x6c\x74\x3d\x22\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x6d\x69\x6e\x69\x2d\x6d\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x6d\x69\x6e\x69\x2d\x74\x22\x3e${_0x84b660_56(_0x84b660_1.title)}\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x6d\x69\x6e\x69\x2d\x61\x22\x3e${_0x84b660_56(_0x84b660_1.artist)}\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e`, 
+    _0x84b660_72(_0x84b660_4, `\x70\x6c\x61\x79\x20${_0x84b660_1.title}`, () => _0x84b660_c4(_0x84b660_3)), 
+    _0x84b660_4.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_c4(_0x84b660_3)), _0x84b660_0.appendChild(_0x84b660_4);
   });
 }
 
-ul.addEventListener("click", () => pl(!Fi)), document.getElementById("qHide").addEventListener("click", () => pl(!1)), 
-document.getElementById("qClear").addEventListener("click", () => {
-  pi = pi.slice(0, gi + 1), gl(), Co();
+_0x84b660_ce.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_d1(!_0x84b660_52)), document.getElementById("\x71\x48\x69\x64\x65").addEventListener("\x63\x6c\x69\x63\x6b", () => _0x84b660_d1(!1)), 
+document.getElementById("\x71\x43\x6c\x65\x61\x72").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+  _0x84b660_3d = _0x84b660_3d.slice(0, _0x84b660_3e + 1), _0x84b660_d2(), _0x84b660_a6();
 });
 
-const fl = document.getElementById("timeCur");
+const _0x84b660_d3 = document.getElementById("\x74\x69\x6d\x65\x43\x75\x72");
 
-let hl = null, vl = null, bl = null;
+let _0x84b660_d4 = null, _0x84b660_d5 = null, _0x84b660_d6 = null;
 
-function El() {
-  return Qo();
+function _0x84b660_d7() {
+  return _0x84b660_c1();
 }
 
-function wl() {
-  let e = 0;
-  const t = Number(ca.duration);
-  if (Number.isFinite(t) && t > 0) for (let n = 0; n < ca.buffered.length; n++) ca.buffered.start(n) <= ca.currentTime && ca.buffered.end(n) >= ca.currentTime && (e = ca.buffered.end(n));
-  ba.style.setProperty("--buffered", t > 0 ? Math.min(100, e / t * 100) + "%" : "0%");
+function _0x84b660_d8() {
+  let _0x84b660_0 = 0;
+  const _0x84b660_1 = Number(_0x84b660_2.duration);
+  if (Number.isFinite(_0x84b660_1) && _0x84b660_1 > 0) for (let _0x84b660_3 = 0; _0x84b660_3 < _0x84b660_2.buffered.length; _0x84b660_3++) _0x84b660_2.buffered.start(_0x84b660_3) <= _0x84b660_2.currentTime && _0x84b660_2.buffered.end(_0x84b660_3) >= _0x84b660_2.currentTime && (_0x84b660_0 = _0x84b660_2.buffered.end(_0x84b660_3));
+  _0x84b660_c.style.setProperty("\x2d\x2d\x62\x75\x66\x66\x65\x72\x65\x64", _0x84b660_1 > 0 ? Math.min(100, _0x84b660_0 / _0x84b660_1 * 100) + "\x25" : "\x30\x25");
 }
 
-function kl(e) {
-  wl();
-  const t = El();
-  if (!t) return;
-  const n = Math.min(100, Math.max(0, e / t * 100));
-  ba.value = n, ba.style.setProperty("--fill", n + "%"), fl.textContent = _i(e);
+function _0x84b660_d9(_0x84b660_0) {
+  _0x84b660_d8();
+  const _0x84b660_1 = _0x84b660_d7();
+  if (!_0x84b660_1) return;
+  const _0x84b660_2 = Math.min(100, Math.max(0, _0x84b660_0 / _0x84b660_1 * 100));
+  _0x84b660_c.value = _0x84b660_2, _0x84b660_c.style.setProperty("\x2d\x2d\x66\x69\x6c\x6c", _0x84b660_2 + "\x25"), 
+  _0x84b660_d3.textContent = _0x84b660_55(_0x84b660_0);
 }
 
-function xl() {
-  let e = Math.min(100, Math.max(0, Number.parseFloat(ba.value) || 0)) / 100 * El();
-  e = Math.max(e, 0);
-  const t = Qo();
-  return t && (e = Math.min(e, Math.max(t - .25, 0))), e;
+function _0x84b660_da() {
+  let _0x84b660_0 = Math.min(100, Math.max(0, Number.parseFloat(_0x84b660_c.value) || 0)) / 100 * _0x84b660_d7();
+  _0x84b660_0 = Math.max(_0x84b660_0, 0);
+  const _0x84b660_1 = _0x84b660_c1();
+  return _0x84b660_1 && (_0x84b660_0 = Math.min(_0x84b660_0, Math.max(_0x84b660_1 - .25, 0))), 
+  _0x84b660_0;
 }
 
-function Ll(e) {
-  if (Va) {
-    if ("octave" === fi) return Xo(e), void (hl = null);
-    if (ca.readyState >= HTMLMediaElement.HAVE_METADATA && isFinite(ca.duration) && ca.duration) try {
-      return ca.currentTime = e, void (hl = null);
-    } catch (t) {}
-    hl = e;
+function _0x84b660_db(_0x84b660_0) {
+  if (_0x84b660_27) {
+    if ("\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f) return _0x84b660_c2(_0x84b660_0), void (_0x84b660_d4 = null);
+    if (_0x84b660_2.readyState >= HTMLMediaElement.HAVE_METADATA && isFinite(_0x84b660_2.duration) && _0x84b660_2.duration) try {
+      return _0x84b660_2.currentTime = _0x84b660_0, void (_0x84b660_d4 = null);
+    } catch (_0x84b660_1) {}
+    _0x84b660_d4 = _0x84b660_0;
   }
 }
 
-function Cl(e) {
-  vl = e, null == bl && (bl = setTimeout(() => {
-    bl = null;
-    const e = vl;
-    vl = null, Ll(e);
+function _0x84b660_dc(_0x84b660_0) {
+  _0x84b660_d5 = _0x84b660_0, null == _0x84b660_d6 && (_0x84b660_d6 = setTimeout(() => {
+    _0x84b660_d6 = null;
+    const _0x84b660_0 = _0x84b660_d5;
+    _0x84b660_d5 = null, _0x84b660_db(_0x84b660_0);
   }, 75));
 }
 
-function Il(e) {
-  null != bl && clearTimeout(bl), bl = null, vl = null, Ll(e);
+function _0x84b660_dd(_0x84b660_0) {
+  null != _0x84b660_d6 && clearTimeout(_0x84b660_d6), _0x84b660_d6 = null, _0x84b660_d5 = null, 
+  _0x84b660_db(_0x84b660_0);
 }
 
-function Sl() {
-  null != bl && clearTimeout(bl), bl = null, vl = null, hl = null, ti = !1, ba.classList.remove("dragging");
+function _0x84b660_de() {
+  null != _0x84b660_d6 && clearTimeout(_0x84b660_d6), _0x84b660_d6 = null, _0x84b660_d5 = null, 
+  _0x84b660_d4 = null, _0x84b660_30 = !1, _0x84b660_c.classList.remove("\x64\x72\x61\x67\x67\x69\x6e\x67");
 }
 
-function $l() {
-  ti = !0, ba.classList.add("dragging");
+function _0x84b660_df() {
+  _0x84b660_30 = !0, _0x84b660_c.classList.add("\x64\x72\x61\x67\x67\x69\x6e\x67");
 }
 
-function Ml() {
-  if (ba.classList.remove("dragging"), ti = !1, !Va) return;
-  const e = xl();
-  Il(e), kl(e);
+function _0x84b660_e0() {
+  if (_0x84b660_c.classList.remove("\x64\x72\x61\x67\x67\x69\x6e\x67"), _0x84b660_30 = !1, !_0x84b660_27) return;
+  const _0x84b660_0 = _0x84b660_da();
+  _0x84b660_dd(_0x84b660_0), _0x84b660_d9(_0x84b660_0);
 }
 
-function Nl(e) {
-  if (!Va) return;
-  const t = El(), n = Ko(), a = Math.min(Math.max(n + e, 0), Math.max(t - .25, 0));
+function _0x84b660_e1(_0x84b660_0) {
+  if (!_0x84b660_27) return;
+  const _0x84b660_1 = _0x84b660_d7(), _0x84b660_2 = _0x84b660_c0(), _0x84b660_3 = Math.min(Math.max(_0x84b660_2 + _0x84b660_0, 0), Math.max(_0x84b660_1 - .25, 0));
   try {
-    Xo(a);
-  } catch (i) {}
-  kl(a);
+    _0x84b660_c2(_0x84b660_3);
+  } catch (_0x84b660_4) {}
+  _0x84b660_d9(_0x84b660_3);
 }
 
-ca.addEventListener("progress", wl), ca.addEventListener("emptied", wl), ca.addEventListener("loadedmetadata", () => {
-  if ("meting" === fi && !qo && Number(Va?.duration) > 0 && Number.isFinite(ca.duration) && Math.abs(ca.duration - Number(Va.duration)) > Math.max(4, .03 * Number(Va.duration))) Vo("The provider returned a different or incomplete recording."); else if (document.getElementById("timeTotal").textContent = _i(ca.duration), 
-  null != hl) {
+_0x84b660_2.addEventListener("\x70\x72\x6f\x67\x72\x65\x73\x73", _0x84b660_d8), _0x84b660_2.addEventListener("\x65\x6d\x70\x74\x69\x65\x64", _0x84b660_d8), 
+_0x84b660_2.addEventListener("\x6c\x6f\x61\x64\x65\x64\x6d\x65\x74\x61\x64\x61\x74\x61", () => {
+  if ("\x6d\x65\x74\x69\x6e\x67" === _0x84b660_3f && !_0x84b660_b2 && Number(_0x84b660_27?.duration) > 0 && Number.isFinite(_0x84b660_2.duration) && Math.abs(_0x84b660_2.duration - Number(_0x84b660_27.duration)) > Math.max(4, .03 * Number(_0x84b660_27.duration))) _0x84b660_bb("\x54\x68\x65\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x20\x64\x69\x66\x66\x65\x72\x65\x6e\x74\x20\x6f\x72\x20\x69\x6e\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x72\x65\x63\x6f\x72\x64\x69\x6e\x67\x2e"); else if (document.getElementById("\x74\x69\x6d\x65\x54\x6f\x74\x61\x6c").textContent = _0x84b660_55(_0x84b660_2.duration), 
+  null != _0x84b660_d4) {
     try {
-      ca.currentTime = hl;
-    } catch (e) {}
-    hl = null;
+      _0x84b660_2.currentTime = _0x84b660_d4;
+    } catch (_0x84b660_0) {}
+    _0x84b660_d4 = null;
   }
-}), ca.addEventListener("seeked", () => {
-  ti || kl(ca.currentTime);
-}), ca.addEventListener("timeupdate", () => {
-  ti || ca.seeking || kl(ca.currentTime);
-}), ba.addEventListener("pointerdown", $l), ba.addEventListener("input", () => {
-  $l();
-  const e = xl();
-  ba.style.setProperty("--fill", ba.value + "%"), fl.textContent = _i(e), Cl(e);
-}), ba.addEventListener("change", Ml), ba.addEventListener("pointerup", Ml), ba.addEventListener("pointercancel", Ml), 
-ba.addEventListener("blur", Ml);
+}), _0x84b660_2.addEventListener("\x73\x65\x65\x6b\x65\x64", () => {
+  _0x84b660_30 || _0x84b660_d9(_0x84b660_2.currentTime);
+}), _0x84b660_2.addEventListener("\x74\x69\x6d\x65\x75\x70\x64\x61\x74\x65", () => {
+  _0x84b660_30 || _0x84b660_2.seeking || _0x84b660_d9(_0x84b660_2.currentTime);
+}), _0x84b660_c.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x64\x6f\x77\x6e", _0x84b660_df), _0x84b660_c.addEventListener("\x69\x6e\x70\x75\x74", () => {
+  _0x84b660_df();
+  const _0x84b660_0 = _0x84b660_da();
+  _0x84b660_c.style.setProperty("\x2d\x2d\x66\x69\x6c\x6c", _0x84b660_c.value + "\x25"), _0x84b660_d3.textContent = _0x84b660_55(_0x84b660_0), 
+  _0x84b660_dc(_0x84b660_0);
+}), _0x84b660_c.addEventListener("\x63\x68\x61\x6e\x67\x65", _0x84b660_e0), _0x84b660_c.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x75\x70", _0x84b660_e0), 
+_0x84b660_c.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x63\x61\x6e\x63\x65\x6c", _0x84b660_e0), _0x84b660_c.addEventListener("\x62\x6c\x75\x72", _0x84b660_e0);
 
-const Tl = document.getElementById("volBar"), Al = document.getElementById("volBtn"), Bl = document.getElementById("volIcon"), Pl = document.getElementById("volWrap"), Fl = document.getElementById("volPopup");
+const _0x84b660_e2 = document.getElementById("\x76\x6f\x6c\x42\x61\x72"), _0x84b660_e3 = document.getElementById("\x76\x6f\x6c\x42\x74\x6e"), _0x84b660_e4 = document.getElementById("\x76\x6f\x6c\x49\x63\x6f\x6e"), _0x84b660_e5 = document.getElementById("\x76\x6f\x6c\x57\x72\x61\x70"), _0x84b660_e6 = document.getElementById("\x76\x6f\x6c\x50\x6f\x70\x75\x70");
 
-let Hl = !1;
+let _0x84b660_e7 = !1;
 
-function ql(e) {
-  e = Math.min(100, Math.max(0, e)), ca.volume = e / 100, ca.muted = !1, "octave" === fi && (hi?.unMute?.(), 
-  hi?.setVolume?.(e)), Tl.value = e, Tl.style.setProperty("--fill", e + "%"), sa.setItem("nyx_nyxify_volume", e), 
-  _l();
+function _0x84b660_e8(_0x84b660_0) {
+  _0x84b660_0 = Math.min(100, Math.max(0, _0x84b660_0)), _0x84b660_2.volume = _0x84b660_0 / 100, 
+  _0x84b660_2.muted = !1, "\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f && (_0x84b660_40?.unMute?.(), 
+  _0x84b660_40?.setVolume?.(_0x84b660_0)), _0x84b660_e2.value = _0x84b660_0, _0x84b660_e2.style.setProperty("\x2d\x2d\x66\x69\x6c\x6c", _0x84b660_0 + "\x25"), 
+  _0x84b660_1.setItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x76\x6f\x6c\x75\x6d\x65", _0x84b660_0), _0x84b660_e9();
 }
 
-function _l() {
-  const e = "octave" === fi ? (Number(hi?.getVolume?.()) || 0) / 100 : ca.volume, t = "octave" === fi ? Boolean(hi?.isMuted?.()) || 0 === e : ca.muted || 0 === e;
-  Bl.className = t ? "lucide--volume-x" : e < .5 ? "lucide--volume-1" : "lucide--volume-2";
+function _0x84b660_e9() {
+  const _0x84b660_0 = "\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f ? (Number(_0x84b660_40?.getVolume?.()) || 0) / 100 : _0x84b660_2.volume, _0x84b660_1 = "\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f ? Boolean(_0x84b660_40?.isMuted?.()) || 0 === _0x84b660_0 : _0x84b660_2.muted || 0 === _0x84b660_0;
+  _0x84b660_e4.className = _0x84b660_1 ? "\x6c\x75\x63\x69\x64\x65\x2d\x2d\x76\x6f\x6c\x75\x6d\x65\x2d\x78" : _0x84b660_0 < .5 ? "\x6c\x75\x63\x69\x64\x65\x2d\x2d\x76\x6f\x6c\x75\x6d\x65\x2d\x31" : "\x6c\x75\x63\x69\x64\x65\x2d\x2d\x76\x6f\x6c\x75\x6d\x65\x2d\x32";
 }
 
-function Dl(e) {
-  Hl = e, Fl.classList.toggle("open", e), Al.setAttribute("aria-expanded", String(e));
+function _0x84b660_ea(_0x84b660_0) {
+  _0x84b660_e7 = _0x84b660_0, _0x84b660_e6.classList.toggle("\x6f\x70\x65\x6e", _0x84b660_0), 
+  _0x84b660_e3.setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String(_0x84b660_0));
 }
 
-Al.addEventListener("click", e => {
-  e.stopPropagation(), Dl(!Hl);
-}), document.addEventListener("click", e => {
-  Hl && !Pl.contains(e.target) && Dl(!1);
-}), Tl.addEventListener("input", () => {
-  ql(parseFloat(Tl.value));
+_0x84b660_e3.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_0 => {
+  _0x84b660_0.stopPropagation(), _0x84b660_ea(!_0x84b660_e7);
+}), document.addEventListener("\x63\x6c\x69\x63\x6b", _0x84b660_0 => {
+  _0x84b660_e7 && !_0x84b660_e5.contains(_0x84b660_0.target) && _0x84b660_ea(!1);
+}), _0x84b660_e2.addEventListener("\x69\x6e\x70\x75\x74", () => {
+  _0x84b660_e8(parseFloat(_0x84b660_e2.value));
 });
 
-const Rl = sa.getItem("nyx_nyxify_volume"), jl = null !== Rl && "" !== Rl && Number.isFinite(Number(Rl)) ? Math.min(100, Math.max(0, Number(Rl))) : 80;
+const _0x84b660_eb = _0x84b660_1.getItem("\x6e\x79\x78\x5f\x6e\x79\x78\x69\x66\x79\x5f\x76\x6f\x6c\x75\x6d\x65"), _0x84b660_ec = null !== _0x84b660_eb && "" !== _0x84b660_eb && Number.isFinite(Number(_0x84b660_eb)) ? Math.min(100, Math.max(0, Number(_0x84b660_eb))) : 80;
 
-Tl.value = jl, ca.volume = jl / 100, Tl.style.setProperty("--fill", jl + "%"), _l(), 
-document.addEventListener("keydown", e => {
-  const t = (e.target.tagName || "").toLowerCase(), n = "input" === t || "textarea" === t || e.target.isContentEditable;
-  if ("Escape" === e.key) return Fi && pl(!1), void (Hl && Dl(!1));
-  "/" !== e.key ? n || ("ArrowRight" !== e.key || e.target.matches('input[type="range"]') ? "ArrowLeft" !== e.key || e.target.matches('input[type="range"]') ? "ArrowUp" !== e.key || e.target.matches('input[type="range"]') ? "ArrowDown" !== e.key || e.target.matches('input[type="range"]') ? "Space" !== e.code || "button" === t || e.target.closest('[role="button"]') || (e.preventDefault(), 
-  Ea.click()) : (e.preventDefault(), ql(("octave" === fi ? Number(hi?.getVolume?.()) || 0 : ca.muted ? 0 : 100 * ca.volume) - 5)) : (e.preventDefault(), 
-  ql(("octave" === fi ? Number(hi?.getVolume?.()) || 0 : ca.muted ? 0 : 100 * ca.volume) + 5)) : (e.preventDefault(), 
-  Nl(-10)) : (e.preventDefault(), Nl(10))) : n || (e.preventDefault(), ka.focus());
-}), window.addEventListener("resize", ko);
+_0x84b660_e2.value = _0x84b660_ec, _0x84b660_2.volume = _0x84b660_ec / 100, _0x84b660_e2.style.setProperty("\x2d\x2d\x66\x69\x6c\x6c", _0x84b660_ec + "\x25"), 
+_0x84b660_e9(), document.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x84b660_0 => {
+  const _0x84b660_1 = (_0x84b660_0.target.tagName || "").toLowerCase(), _0x84b660_3 = "\x69\x6e\x70\x75\x74" === _0x84b660_1 || "\x74\x65\x78\x74\x61\x72\x65\x61" === _0x84b660_1 || _0x84b660_0.target.isContentEditable;
+  if ("\x45\x73\x63\x61\x70\x65" === _0x84b660_0.key) return _0x84b660_52 && _0x84b660_d1(!1), void (_0x84b660_e7 && _0x84b660_ea(!1));
+  "\x2f" !== _0x84b660_0.key ? _0x84b660_3 || ("\x41\x72\x72\x6f\x77\x52\x69\x67\x68\x74" !== _0x84b660_0.key || _0x84b660_0.target.matches("\x69\x6e\x70\x75\x74\x5b\x74\x79\x70\x65\x3d\x22\x72\x61\x6e\x67\x65\x22\x5d") ? "\x41\x72\x72\x6f\x77\x4c\x65\x66\x74" !== _0x84b660_0.key || _0x84b660_0.target.matches("\x69\x6e\x70\x75\x74\x5b\x74\x79\x70\x65\x3d\x22\x72\x61\x6e\x67\x65\x22\x5d") ? "\x41\x72\x72\x6f\x77\x55\x70" !== _0x84b660_0.key || _0x84b660_0.target.matches("\x69\x6e\x70\x75\x74\x5b\x74\x79\x70\x65\x3d\x22\x72\x61\x6e\x67\x65\x22\x5d") ? "\x41\x72\x72\x6f\x77\x44\x6f\x77\x6e" !== _0x84b660_0.key || _0x84b660_0.target.matches("\x69\x6e\x70\x75\x74\x5b\x74\x79\x70\x65\x3d\x22\x72\x61\x6e\x67\x65\x22\x5d") ? "\x53\x70\x61\x63\x65" !== _0x84b660_0.code || "\x62\x75\x74\x74\x6f\x6e" === _0x84b660_1 || _0x84b660_0.target.closest("\x5b\x72\x6f\x6c\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x5d") || (_0x84b660_0.preventDefault(), 
+  _0x84b660_d.click()) : (_0x84b660_0.preventDefault(), _0x84b660_e8(("\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f ? Number(_0x84b660_40?.getVolume?.()) || 0 : _0x84b660_2.muted ? 0 : 100 * _0x84b660_2.volume) - 5)) : (_0x84b660_0.preventDefault(), 
+  _0x84b660_e8(("\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f ? Number(_0x84b660_40?.getVolume?.()) || 0 : _0x84b660_2.muted ? 0 : 100 * _0x84b660_2.volume) + 5)) : (_0x84b660_0.preventDefault(), 
+  _0x84b660_e1(-10)) : (_0x84b660_0.preventDefault(), _0x84b660_e1(10))) : _0x84b660_3 || (_0x84b660_0.preventDefault(), 
+  _0x84b660_f.focus());
+}), window.addEventListener("\x72\x65\x73\x69\x7a\x65", _0x84b660_a3);
 
-const Ul = Object.freeze({
-  default: "#9b8cf5",
-  midnight: "#9eb7d9",
-  ruby: "#d58b9a",
-  emerald: "#82c4ae",
-  sakura: "#d5a2c6",
-  fresh: "#a6c99c"
+const _0x84b660_ed = Object.freeze({
+  default: "\x23\x39\x62\x38\x63\x66\x35",
+  midnight: "\x23\x39\x65\x62\x37\x64\x39",
+  ruby: "\x23\x64\x35\x38\x62\x39\x61",
+  emerald: "\x23\x38\x32\x63\x34\x61\x65",
+  sakura: "\x23\x64\x35\x61\x32\x63\x36",
+  fresh: "\x23\x61\x36\x63\x39\x39\x63"
 });
 
-function zl(e) {
-  return /^#[0-9a-f]{6}$/i.test(String(e || "").trim());
+function _0x84b660_ee(_0x84b660_0) {
+  return /^#[0-9a-f]{6}$/i.test(String(_0x84b660_0 || "").trim());
 }
 
-function Ol(e) {
-  const t = zl(e) ? e.slice(1) : Ul.default.slice(1);
-  return [ 0, 2, 4 ].map(e => parseInt(t.slice(e, e + 2), 16));
+function _0x84b660_ef(_0x84b660_0) {
+  const _0x84b660_1 = _0x84b660_ee(_0x84b660_0) ? _0x84b660_0.slice(1) : _0x84b660_ed.default.slice(1);
+  return [ 0, 2, 4 ].map(_0x84b660_0 => parseInt(_0x84b660_1.slice(_0x84b660_0, _0x84b660_0 + 2), 16));
 }
 
-let Jl = null;
+let _0x84b660_f0 = null;
 
-function Vl() {
-  if ("tutsi" === document.documentElement.dataset.appShell) return;
-  const e = sa.getItem("nyx.theme") || "default";
-  let t = "custom" === e ? sa.getItem("nyx.customThemeColor") : Ul[e];
-  zl(t) || (t = Ul.default);
-  const n = Ol(t);
-  Math.max(...n) < 72 && (t = "#f1f3f7"), document.documentElement.dataset.nyxifyTheme = e, 
-  document.documentElement.style.setProperty("--accent", t), document.documentElement.style.setProperty("--accent-rgb", Ol(t).join(", ")), 
-  Jl?.refreshColor();
+function _0x84b660_f1() {
+  if ("\x74\x75\x74\x73\x69" === document.documentElement.dataset.appShell) return;
+  const _0x84b660_0 = _0x84b660_1.getItem("\x6e\x79\x78\x2e\x74\x68\x65\x6d\x65") || "\x64\x65\x66\x61\x75\x6c\x74";
+  let _0x84b660_2 = "\x63\x75\x73\x74\x6f\x6d" === _0x84b660_0 ? _0x84b660_1.getItem("\x6e\x79\x78\x2e\x63\x75\x73\x74\x6f\x6d\x54\x68\x65\x6d\x65\x43\x6f\x6c\x6f\x72") : _0x84b660_ed[_0x84b660_0];
+  _0x84b660_ee(_0x84b660_2) || (_0x84b660_2 = _0x84b660_ed.default);
+  const _0x84b660_3 = _0x84b660_ef(_0x84b660_2);
+  Math.max(..._0x84b660_3) < 72 && (_0x84b660_2 = "\x23\x66\x31\x66\x33\x66\x37"), document.documentElement.dataset.nyxifyTheme = _0x84b660_0, 
+  document.documentElement.style.setProperty("\x2d\x2d\x61\x63\x63\x65\x6e\x74", _0x84b660_2), document.documentElement.style.setProperty("\x2d\x2d\x61\x63\x63\x65\x6e\x74\x2d\x72\x67\x62", _0x84b660_ef(_0x84b660_2).join("\x2c\x20")), 
+  _0x84b660_f0?.refreshColor();
 }
 
-function Yl(e) {
-  if (!e) return null;
-  const t = e.getContext("2d"), n = window.matchMedia("(prefers-reduced-motion: reduce)").matches, a = Array.from({
+function _0x84b660_f2(_0x84b660_0) {
+  if (!_0x84b660_0) return null;
+  const _0x84b660_1 = _0x84b660_0.getContext("\x32\x64"), _0x84b660_2 = window.matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").matches, _0x84b660_3 = Array.from({
     length: 54
-  }, (e, t) => ({
-    x: 47 * t % 101 / 100,
-    y: (71 * t + 13) % 103 / 102,
-    r: .45 + t % 4 * .18,
-    o: .12 + t % 5 * .035
-  })), i = [ {
+  }, (_0x84b660_0, _0x84b660_1) => ({
+    x: 47 * _0x84b660_1 % 101 / 100,
+    y: (71 * _0x84b660_1 + 13) % 103 / 102,
+    r: .45 + _0x84b660_1 % 4 * .18,
+    o: .12 + _0x84b660_1 % 5 * .035
+  })), _0x84b660_4 = [ {
     x: .13,
     y: .24,
     s: 74,
@@ -1636,65 +1727,69 @@ function Yl(e) {
     points: [ [ -.76, .32 ], [ -.38, -.28 ], [ .12, -.5 ], [ .6, -.12 ], [ .76, .48 ], [ .04, .58 ] ],
     lines: [ [ 0, 1 ], [ 1, 2 ], [ 2, 3 ], [ 3, 4 ], [ 4, 5 ], [ 5, 1 ] ]
   } ];
-  let r = 0, o = 0, l = Ol(getComputedStyle(document.documentElement).getPropertyValue("--accent").trim()), s = 0;
-  function c() {
-    const n = Math.min(2, window.devicePixelRatio || 1);
-    r = window.innerWidth, o = window.innerHeight, e.width = Math.round(r * n), e.height = Math.round(o * n), 
-    e.style.width = `${r}px`, e.style.height = `${o}px`, t.setTransform(n, 0, 0, n, 0, 0);
+  let _0x84b660_5 = 0, _0x84b660_6 = 0, _0x84b660_7 = _0x84b660_ef(getComputedStyle(document.documentElement).getPropertyValue("\x2d\x2d\x61\x63\x63\x65\x6e\x74").trim()), _0x84b660_8 = 0;
+  function _0x84b660_9() {
+    const _0x84b660_2 = Math.min(2, window.devicePixelRatio || 1);
+    _0x84b660_5 = window.innerWidth, _0x84b660_6 = window.innerHeight, _0x84b660_0.width = Math.round(_0x84b660_5 * _0x84b660_2), 
+    _0x84b660_0.height = Math.round(_0x84b660_6 * _0x84b660_2), _0x84b660_0.style.width = `${_0x84b660_5}\x70\x78`, 
+    _0x84b660_0.style.height = `${_0x84b660_6}\x70\x78`, _0x84b660_1.setTransform(_0x84b660_2, 0, 0, _0x84b660_2, 0, 0);
   }
-  function d() {
-    l = Ol(getComputedStyle(document.documentElement).getPropertyValue("--accent").trim());
+  function _0x84b660_a() {
+    _0x84b660_7 = _0x84b660_ef(getComputedStyle(document.documentElement).getPropertyValue("\x2d\x2d\x61\x63\x63\x65\x6e\x74").trim());
   }
-  return window.addEventListener("resize", c, {
+  return window.addEventListener("\x72\x65\x73\x69\x7a\x65", _0x84b660_9, {
     passive: !0
-  }), c(), d(), function e(c = 0) {
-    if (!n && c - s < 42) return void requestAnimationFrame(e);
-    s = c, t.clearRect(0, 0, r, o);
-    const d = n ? 0 : .035 * Math.sin(c / 1700);
-    for (const n of a) t.beginPath(), t.arc(n.x * r, n.y * o, n.r, 0, 2 * Math.PI), 
-    t.fillStyle = `rgba(${l.join(",")},${n.o + d})`, t.fill();
-    for (let a = 0; a < i.length; a += 1) {
-      const e = i[a], s = n ? 0 : 2 * Math.sin(c / 2600 + a), d = e.points.map(([t, n]) => [ e.x * r + t * e.s, e.y * o + n * e.s + s ]);
-      t.lineWidth = 1, t.strokeStyle = `rgba(${l.join(",")},.16)`;
-      for (const [n, a] of e.lines) t.beginPath(), t.moveTo(...d[n]), t.lineTo(...d[a]), 
-      t.stroke();
-      for (const [n, a] of d) t.beginPath(), t.arc(n, a, 1.45, 0, 2 * Math.PI), t.fillStyle = `rgba(${l.join(",")},.72)`, 
-      t.fill();
+  }), _0x84b660_9(), _0x84b660_a(), function _0x84b660_0(_0x84b660_9 = 0) {
+    if (!_0x84b660_2 && _0x84b660_9 - _0x84b660_8 < 42) return void requestAnimationFrame(_0x84b660_0);
+    _0x84b660_8 = _0x84b660_9, _0x84b660_1.clearRect(0, 0, _0x84b660_5, _0x84b660_6);
+    const _0x84b660_a = _0x84b660_2 ? 0 : .035 * Math.sin(_0x84b660_9 / 1700);
+    for (const _0x84b660_2 of _0x84b660_3) _0x84b660_1.beginPath(), _0x84b660_1.arc(_0x84b660_2.x * _0x84b660_5, _0x84b660_2.y * _0x84b660_6, _0x84b660_2.r, 0, 2 * Math.PI), 
+    _0x84b660_1.fillStyle = `\x72\x67\x62\x61\x28${_0x84b660_7.join("\x2c")}\x2c${_0x84b660_2.o + _0x84b660_a}\x29`, 
+    _0x84b660_1.fill();
+    for (let _0x84b660_3 = 0; _0x84b660_3 < _0x84b660_4.length; _0x84b660_3 += 1) {
+      const _0x84b660_0 = _0x84b660_4[_0x84b660_3], _0x84b660_8 = _0x84b660_2 ? 0 : 2 * Math.sin(_0x84b660_9 / 2600 + _0x84b660_3), _0x84b660_a = _0x84b660_0.points.map(([_0x84b660_1, _0x84b660_2]) => [ _0x84b660_0.x * _0x84b660_5 + _0x84b660_1 * _0x84b660_0.s, _0x84b660_0.y * _0x84b660_6 + _0x84b660_2 * _0x84b660_0.s + _0x84b660_8 ]);
+      _0x84b660_1.lineWidth = 1, _0x84b660_1.strokeStyle = `\x72\x67\x62\x61\x28${_0x84b660_7.join("\x2c")}\x2c\x2e\x31\x36\x29`;
+      for (const [_0x84b660_2, _0x84b660_3] of _0x84b660_0.lines) _0x84b660_1.beginPath(), 
+      _0x84b660_1.moveTo(..._0x84b660_a[_0x84b660_2]), _0x84b660_1.lineTo(..._0x84b660_a[_0x84b660_3]), 
+      _0x84b660_1.stroke();
+      for (const [_0x84b660_2, _0x84b660_3] of _0x84b660_a) _0x84b660_1.beginPath(), _0x84b660_1.arc(_0x84b660_2, _0x84b660_3, 1.45, 0, 2 * Math.PI), 
+      _0x84b660_1.fillStyle = `\x72\x67\x62\x61\x28${_0x84b660_7.join("\x2c")}\x2c\x2e\x37\x32\x29`, _0x84b660_1.fill();
     }
-    n || requestAnimationFrame(e);
+    _0x84b660_2 || requestAnimationFrame(_0x84b660_0);
   }(), {
-    refreshColor: d
+    refreshColor: _0x84b660_a
   };
 }
 
-function Wl(e) {
-  "mediaSession" in navigator && (navigator.mediaSession.metadata = new MediaMetadata({
-    title: e.title,
-    artist: e.artist,
-    album: e.album || "mizu",
-    artwork: e.cover ? [ {
-      src: e.cover,
-      sizes: "250x250",
-      type: "image/jpeg"
+function _0x84b660_f3(_0x84b660_0) {
+  "\x6d\x65\x64\x69\x61\x53\x65\x73\x73\x69\x6f\x6e" in navigator && (navigator.mediaSession.metadata = new MediaMetadata({
+    title: _0x84b660_0.title,
+    artist: _0x84b660_0.artist,
+    album: _0x84b660_0.album || "\x6d\x69\x7a\x75",
+    artwork: _0x84b660_0.cover ? [ {
+      src: _0x84b660_0.cover,
+      sizes: "\x32\x35\x30\x78\x32\x35\x30",
+      type: "\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67"
     } ] : []
   }));
 }
 
-function Zl() {
-  if (!("mediaSession" in navigator) || !navigator.mediaSession.setPositionState) return;
-  const e = Qo(), t = Math.min(Ko(), Math.max(e - .01, 0));
-  if (isFinite(e) && e) try {
+function _0x84b660_f4() {
+  if (!("\x6d\x65\x64\x69\x61\x53\x65\x73\x73\x69\x6f\x6e" in navigator) || !navigator.mediaSession.setPositionState) return;
+  const _0x84b660_0 = _0x84b660_c1(), _0x84b660_1 = Math.min(_0x84b660_c0(), Math.max(_0x84b660_0 - .01, 0));
+  if (isFinite(_0x84b660_0) && _0x84b660_0) try {
     navigator.mediaSession.setPositionState({
-      duration: e,
-      position: t,
-      playbackRate: "octave" === fi ? Number(hi?.getPlaybackRate?.()) || 1 : ca.playbackRate
+      duration: _0x84b660_0,
+      position: _0x84b660_1,
+      playbackRate: "\x6f\x63\x74\x61\x76\x65" === _0x84b660_3f ? Number(_0x84b660_40?.getPlaybackRate?.()) || 1 : _0x84b660_2.playbackRate
     });
-  } catch (n) {}
+  } catch (_0x84b660_3) {}
 }
 
-Vl(), Jl = Yl(document.getElementById("stars")), window.addEventListener("storage", e => {
-  "nyx.theme" !== e.key && "nyx.customThemeColor" !== e.key || Vl();
-}), xo(!1), Eo(), gl(), bo(), Yr(), "mediaSession" in navigator && (navigator.mediaSession.setActionHandler("play", Zo), 
-navigator.mediaSession.setActionHandler("pause", Go), navigator.mediaSession.setActionHandler("previoustrack", il), 
-navigator.mediaSession.setActionHandler("nexttrack", () => al(!0))), ca.addEventListener("loadedmetadata", Zl), 
-ca.addEventListener("seeked", Zl);
+_0x84b660_f1(), _0x84b660_f0 = _0x84b660_f2(document.getElementById("\x73\x74\x61\x72\x73")), window.addEventListener("\x73\x74\x6f\x72\x61\x67\x65", _0x84b660_0 => {
+  "\x6e\x79\x78\x2e\x74\x68\x65\x6d\x65" !== _0x84b660_0.key && "\x6e\x79\x78\x2e\x63\x75\x73\x74\x6f\x6d\x54\x68\x65\x6d\x65\x43\x6f\x6c\x6f\x72" !== _0x84b660_0.key || _0x84b660_f1();
+}), _0x84b660_a4(!1), _0x84b660_a1(), _0x84b660_d2(), _0x84b660_a0(), _0x84b660_88(), 
+"\x6d\x65\x64\x69\x61\x53\x65\x73\x73\x69\x6f\x6e" in navigator && (navigator.mediaSession.setActionHandler("\x70\x6c\x61\x79", _0x84b660_be), 
+navigator.mediaSession.setActionHandler("\x70\x61\x75\x73\x65", _0x84b660_bf), navigator.mediaSession.setActionHandler("\x70\x72\x65\x76\x69\x6f\x75\x73\x74\x72\x61\x63\x6b", _0x84b660_c7), 
+navigator.mediaSession.setActionHandler("\x6e\x65\x78\x74\x74\x72\x61\x63\x6b", () => _0x84b660_c6(!0))), _0x84b660_2.addEventListener("\x6c\x6f\x61\x64\x65\x64\x6d\x65\x74\x61\x64\x61\x74\x61", _0x84b660_f4), 
+_0x84b660_2.addEventListener("\x73\x65\x65\x6b\x65\x64", _0x84b660_f4);

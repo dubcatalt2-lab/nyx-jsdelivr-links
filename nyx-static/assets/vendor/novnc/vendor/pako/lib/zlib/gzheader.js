@@ -21,11 +21,11 @@ export default function GZheader() {
   /* space at extra (only when reading header) */
   // this.extra_max  = 0;
   /* pointer to zero-terminated file name or Z_NULL */
-  this.name       = '';
+  this.name       = "";
   /* space at name (only when reading header) */
   // this.name_max   = 0;
   /* pointer to zero-terminated comment or Z_NULL */
-  this.comment    = '';
+  this.comment    = "";
   /* space at comment (only when reading header) */
   // this.comm_max   = 0;
   /* true if there was or will be a header crc */

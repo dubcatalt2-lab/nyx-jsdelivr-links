@@ -1,4 +1,4 @@
-import katex from '../katex.module-787e827f6610.js';
+import katex from "../katex.module-787e827f6610.js";
 
 /* eslint no-constant-condition:0 */
 var findEndOfMath = function findEndOfMath(delimiter, text, startIndex) {
@@ -73,7 +73,7 @@ var splitAtDelimiters = function splitAtDelimiters(text, delimiters) {
  */
 var renderMathInText = function renderMathInText(text, optionsCopy) {
   var data = splitAtDelimiters(text, optionsCopy.delimiters);
-  if (data.length === 1 && data[0].type === 'text') {
+  if (data.length === 1 && data[0].type === "text") {
     // There is no formula in the text.
     // Let's return null which means there is no need to replace
     // the current text node with a new one.
@@ -140,8 +140,8 @@ var _renderElem = function renderElem(elem, optionsCopy) {
       }
     } else if (childNode.nodeType === 1) {
       // Element node
-      var className = ' ' + childNode.className + ' ';
-      var shouldRender = !optionsCopy.ignoredTags.has(childNode.nodeName.toLowerCase()) && optionsCopy.ignoredClasses.every(x => !className.includes(' ' + x + ' '));
+      var className = " " + childNode.className + " ";
+      var shouldRender = !optionsCopy.ignoredTags.has(childNode.nodeName.toLowerCase()) && optionsCopy.ignoredClasses.every(x => !className.includes(" " + x + " "));
       if (shouldRender) {
         _renderElem(childNode, optionsCopy);
       }

@@ -1,28 +1,30 @@
 (() => {
-  const e = document.createElement("style");
-  e.textContent = "html,body{width:100%;height:100%;margin:0;padding:0;overflow:hidden;background:#05070d}canvas,object,embed,ruffle-player,ruffle-object{max-width:100%;max-height:100%}", 
-  (document.head || document.documentElement).append(e);
-  let t = !1;
-  function n() {
-    t = !1;
-    let e = !1;
-    for (const t of document.querySelectorAll("canvas,object,embed,ruffle-player,ruffle-object")) {
-      const n = [];
-      for (let e = t.parentElement; e && e !== document.body; e = e.parentElement) n.unshift(e);
-      for (const t of n) {
-        if ("none" === getComputedStyle(t).display) break;
-        const n = t.getBoundingClientRect();
-        n.height < 1 && "100%" !== t.style.height && (t.style.height = "100%", e = !0), 
-        n.width < 1 && "100%" !== t.style.width && (t.style.width = "100%", e = !0);
+  const _0xec9097_0 = document.createElement("\x73\x74\x79\x6c\x65");
+  _0xec9097_0.textContent = "\x68\x74\x6d\x6c\x2c\x62\x6f\x64\x79\x7b\x77\x69\x64\x74\x68\x3a\x31\x30\x30\x25\x3b\x68\x65\x69\x67\x68\x74\x3a\x31\x30\x30\x25\x3b\x6d\x61\x72\x67\x69\x6e\x3a\x30\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x30\x3b\x6f\x76\x65\x72\x66\x6c\x6f\x77\x3a\x68\x69\x64\x64\x65\x6e\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x30\x35\x30\x37\x30\x64\x7d\x63\x61\x6e\x76\x61\x73\x2c\x6f\x62\x6a\x65\x63\x74\x2c\x65\x6d\x62\x65\x64\x2c\x72\x75\x66\x66\x6c\x65\x2d\x70\x6c\x61\x79\x65\x72\x2c\x72\x75\x66\x66\x6c\x65\x2d\x6f\x62\x6a\x65\x63\x74\x7b\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x31\x30\x30\x25\x3b\x6d\x61\x78\x2d\x68\x65\x69\x67\x68\x74\x3a\x31\x30\x30\x25\x7d", 
+  (document.head || document.documentElement).append(_0xec9097_0);
+  let _0xec9097_1 = !1;
+  function _0xec9097_2() {
+    _0xec9097_1 = !1;
+    let _0xec9097_0 = !1;
+    for (const _0xec9097_1 of document.querySelectorAll("\x63\x61\x6e\x76\x61\x73\x2c\x6f\x62\x6a\x65\x63\x74\x2c\x65\x6d\x62\x65\x64\x2c\x72\x75\x66\x66\x6c\x65\x2d\x70\x6c\x61\x79\x65\x72\x2c\x72\x75\x66\x66\x6c\x65\x2d\x6f\x62\x6a\x65\x63\x74")) {
+      const _0xec9097_2 = [];
+      for (let _0xec9097_0 = _0xec9097_1.parentElement; _0xec9097_0 && _0xec9097_0 !== document.body; _0xec9097_0 = _0xec9097_0.parentElement) _0xec9097_2.unshift(_0xec9097_0);
+      for (const _0xec9097_1 of _0xec9097_2) {
+        if ("\x6e\x6f\x6e\x65" === getComputedStyle(_0xec9097_1).display) break;
+        const _0xec9097_2 = _0xec9097_1.getBoundingClientRect();
+        _0xec9097_2.height < 1 && "\x31\x30\x30\x25" !== _0xec9097_1.style.height && (_0xec9097_1.style.height = "\x31\x30\x30\x25", 
+        _0xec9097_0 = !0), _0xec9097_2.width < 1 && "\x31\x30\x30\x25" !== _0xec9097_1.style.width && (_0xec9097_1.style.width = "\x31\x30\x30\x25", 
+        _0xec9097_0 = !0);
       }
     }
-    e && window.dispatchEvent(new Event("resize"));
+    _0xec9097_0 && window.dispatchEvent(new Event("\x72\x65\x73\x69\x7a\x65"));
   }
-  const o = () => {
-    t || (t = !0, requestAnimationFrame(n));
+  const _0xec9097_3 = () => {
+    _0xec9097_1 || (_0xec9097_1 = !0, requestAnimationFrame(_0xec9097_2));
   };
-  new MutationObserver(o).observe(document.documentElement, {
+  new MutationObserver(_0xec9097_3).observe(document.documentElement, {
     childList: !0,
     subtree: !0
-  }), addEventListener("DOMContentLoaded", o), addEventListener("resize", o), addEventListener("load", o);
+  }), addEventListener("\x44\x4f\x4d\x43\x6f\x6e\x74\x65\x6e\x74\x4c\x6f\x61\x64\x65\x64", _0xec9097_3), addEventListener("\x72\x65\x73\x69\x7a\x65", _0xec9097_3), 
+  addEventListener("\x6c\x6f\x61\x64", _0xec9097_3);
 })();

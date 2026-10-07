@@ -1,53 +1,54 @@
 (() => {
-  let e = !1;
-  const t = new WeakSet, o = new WeakSet, n = [], a = () => {
-    e || (e = !0, n.forEach(e => e.disconnect()), clearTimeout(c), parent.postMessage({
-      type: "nyx:sponsor-ready"
-    }, "*"));
-  }, s = o => {
-    if (!e) {
-      for (const e of o.querySelectorAll("iframe,img,video")) if (!t.has(e)) if (t.add(e), 
-      "IMG" === e.tagName) {
-        const t = () => {
-          e.naturalWidth > 1 && e.naturalHeight > 1 && a();
+  let _0xf7a1f1_0 = !1;
+  const _0xf7a1f1_1 = new WeakSet, _0xf7a1f1_2 = new WeakSet, _0xf7a1f1_3 = [], _0xf7a1f1_4 = () => {
+    _0xf7a1f1_0 || (_0xf7a1f1_0 = !0, _0xf7a1f1_3.forEach(_0xf7a1f1_0 => _0xf7a1f1_0.disconnect()), 
+    clearTimeout(_0xf7a1f1_7), parent.postMessage({
+      type: "\x6e\x79\x78\x3a\x73\x70\x6f\x6e\x73\x6f\x72\x2d\x72\x65\x61\x64\x79"
+    }, "\x2a"));
+  }, _0xf7a1f1_5 = _0xf7a1f1_2 => {
+    if (!_0xf7a1f1_0) {
+      for (const _0xf7a1f1_0 of _0xf7a1f1_2.querySelectorAll("\x69\x66\x72\x61\x6d\x65\x2c\x69\x6d\x67\x2c\x76\x69\x64\x65\x6f")) if (!_0xf7a1f1_1.has(_0xf7a1f1_0)) if (_0xf7a1f1_1.add(_0xf7a1f1_0), 
+      "\x49\x4d\x47" === _0xf7a1f1_0.tagName) {
+        const _0xf7a1f1_1 = () => {
+          _0xf7a1f1_0.naturalWidth > 1 && _0xf7a1f1_0.naturalHeight > 1 && _0xf7a1f1_4();
         };
-        e.addEventListener("load", t, {
+        _0xf7a1f1_0.addEventListener("\x6c\x6f\x61\x64", _0xf7a1f1_1, {
           once: !0
-        }), e.complete && t();
-      } else if ("VIDEO" === e.tagName) e.addEventListener("loadeddata", a, {
+        }), _0xf7a1f1_0.complete && _0xf7a1f1_1();
+      } else if ("\x56\x49\x44\x45\x4f" === _0xf7a1f1_0.tagName) _0xf7a1f1_0.addEventListener("\x6c\x6f\x61\x64\x65\x64\x64\x61\x74\x61", _0xf7a1f1_4, {
         once: !0
       }); else {
-        const t = () => {
+        const _0xf7a1f1_1 = () => {
           try {
-            const t = e.contentDocument;
-            if (t) return void r(t);
+            const _0xf7a1f1_1 = _0xf7a1f1_0.contentDocument;
+            if (_0xf7a1f1_1) return void _0xf7a1f1_6(_0xf7a1f1_1);
           } catch {}
-          Number(e.width) > 20 && Number(e.height) > 20 && a();
+          Number(_0xf7a1f1_0.width) > 20 && Number(_0xf7a1f1_0.height) > 20 && _0xf7a1f1_4();
         };
-        e.addEventListener("load", t);
+        _0xf7a1f1_0.addEventListener("\x6c\x6f\x61\x64", _0xf7a1f1_1);
         try {
-          "complete" === e.contentDocument?.readyState && t();
+          "\x63\x6f\x6d\x70\x6c\x65\x74\x65" === _0xf7a1f1_0.contentDocument?.readyState && _0xf7a1f1_1();
         } catch {}
       }
-      o !== document && [ ...o.querySelectorAll("a[href]") ].some(e => e.textContent.trim()) && a();
+      _0xf7a1f1_2 !== document && [ ..._0xf7a1f1_2.querySelectorAll("\x61\x5b\x68\x72\x65\x66\x5d") ].some(_0xf7a1f1_0 => _0xf7a1f1_0.textContent.trim()) && _0xf7a1f1_4();
     }
   };
-  function r(e) {
-    if (!e.body || o.has(e)) return;
-    o.add(e);
-    const t = new MutationObserver(() => s(e));
-    t.observe(e.body, {
+  function _0xf7a1f1_6(_0xf7a1f1_0) {
+    if (!_0xf7a1f1_0.body || _0xf7a1f1_2.has(_0xf7a1f1_0)) return;
+    _0xf7a1f1_2.add(_0xf7a1f1_0);
+    const _0xf7a1f1_1 = new MutationObserver(() => _0xf7a1f1_5(_0xf7a1f1_0));
+    _0xf7a1f1_1.observe(_0xf7a1f1_0.body, {
       childList: !0,
       subtree: !0
-    }), n.push(t), s(e);
+    }), _0xf7a1f1_3.push(_0xf7a1f1_1), _0xf7a1f1_5(_0xf7a1f1_0);
   }
-  const c = setTimeout(() => {
-    e || (n.forEach(e => e.disconnect()), parent.postMessage({
-      type: "nyx:sponsor-unavailable"
-    }, "*"));
+  const _0xf7a1f1_7 = setTimeout(() => {
+    _0xf7a1f1_0 || (_0xf7a1f1_3.forEach(_0xf7a1f1_0 => _0xf7a1f1_0.disconnect()), parent.postMessage({
+      type: "\x6e\x79\x78\x3a\x73\x70\x6f\x6e\x73\x6f\x72\x2d\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65"
+    }, "\x2a"));
   }, 12e3);
-  r(document), document.body.hasAttribute("data-resize-ad") && new ResizeObserver(() => parent.postMessage({
-    type: "nyx:sponsor-size",
+  _0xf7a1f1_6(document), document.body.hasAttribute("\x64\x61\x74\x61\x2d\x72\x65\x73\x69\x7a\x65\x2d\x61\x64") && new ResizeObserver(() => parent.postMessage({
+    type: "\x6e\x79\x78\x3a\x73\x70\x6f\x6e\x73\x6f\x72\x2d\x73\x69\x7a\x65",
     height: document.body.scrollHeight
-  }, "*")).observe(document.body);
+  }, "\x2a")).observe(document.body);
 })();

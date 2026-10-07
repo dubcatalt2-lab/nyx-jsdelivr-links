@@ -12,7 +12,7 @@
  * read binary data off of the receive queue.
  */
 
-import * as Log from './util/logging.js';
+import * as Log from "./util/logging.js";
 
 // this has performance issues in some versions Chromium, and
 // doesn't gain a tremendous amount of performance increase in Firefox
@@ -199,7 +199,7 @@ export default class Websock {
     }
 
     sQpushString(str) {
-        let bytes = str.split('').map(chr => chr.charCodeAt(0));
+        let bytes = str.split("").map(chr => chr.charCodeAt(0));
         this.sQpushBytes(new Uint8Array(bytes));
     }
 
@@ -219,7 +219,7 @@ export default class Websock {
     }
 
     flush() {
-        if (this._sQlen > 0 && this.readyState === 'open') {
+        if (this._sQlen > 0 && this.readyState === "open") {
             this._websocket.send(new Uint8Array(this._sQ.buffer, 0, this._sQlen));
             this._sQlen = 0;
         }
@@ -263,7 +263,7 @@ export default class Websock {
         for (let i = 0; i < rawChannelProps.length; i++) {
             const prop = rawChannelProps[i];
             if (channelProps.indexOf(prop) < 0) {
-                throw new Error('Raw channel missing property: ' + prop);
+                throw new Error("Raw channel missing property: " + prop);
             }
         }
 
@@ -272,32 +272,32 @@ export default class Websock {
         this._websocket.onmessage = this._recvMessage.bind(this);
 
         this._websocket.onopen = () => {
-            Log.Debug('>> WebSock.onopen');
+            Log.Debug(">> WebSock.onopen");
             if (this._websocket.protocol) {
                 Log.Info("Server choose sub-protocol: " + this._websocket.protocol);
             }
 
             this._eventHandlers.open();
-            Log.Debug("<< WebSock.onopen");
+            Log.Debug("\u003c\u003c WebSock.onopen");
         };
 
         this._websocket.onclose = (e) => {
             Log.Debug(">> WebSock.onclose");
             this._eventHandlers.close(e);
-            Log.Debug("<< WebSock.onclose");
+            Log.Debug("\u003c\u003c WebSock.onclose");
         };
 
         this._websocket.onerror = (e) => {
             Log.Debug(">> WebSock.onerror: " + e);
             this._eventHandlers.error(e);
-            Log.Debug("<< WebSock.onerror: " + e);
+            Log.Debug("\u003c\u003c WebSock.onerror: " + e);
         };
     }
 
     close() {
         if (this._websocket) {
-            if (this.readyState === 'connecting' ||
-                this.readyState === 'open') {
+            if (this.readyState === "connecting" ||
+                this.readyState === "open") {
                 Log.Info("Closing WebSocket connection");
                 this._websocket.close();
             }

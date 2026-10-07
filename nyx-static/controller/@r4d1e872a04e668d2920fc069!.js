@@ -1,27 +1,27 @@
 var $studyjetController;
 
 (() => {
-  var λ24dd8541fd12 = {
-    286(λ24dd8541fd12, λ46d44fb37353, λ0bee367a7c9a) {
-      λ0bee367a7c9a.d(λ46d44fb37353, {
-        I: () => λ1ade8ac64c25
+  var λ31a61a25ed22 = {
+    286(λ31a61a25ed22, λf0ee71997855, λ21dc7faa0f91) {
+      λ21dc7faa0f91.d(λf0ee71997855, {
+        I: () => λ45ef238a60a0
       });
-      let λ1ade8ac64c25 = Symbol.for("controller frame handle");
+      let λ45ef238a60a0 = Symbol.for("\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x20\x66\x72\x61\x6d\x65\x20\x68\x61\x6e\x64\x6c\x65");
     },
-    355(λ24dd8541fd12, λ46d44fb37353, λ0bee367a7c9a) {
-      λ0bee367a7c9a.d(λ46d44fb37353, {
+    355(λ31a61a25ed22, λf0ee71997855, λ21dc7faa0f91) {
+      λ21dc7faa0f91.d(λf0ee71997855, {
         O: () => s,
-        x: () => λ1ade8ac64c25
+        x: () => λ45ef238a60a0
       });
-      let λ1ade8ac64c25 = "0.0.14";
+      let λ45ef238a60a0 = "\x30\x2e\x30\x2e\x31\x34";
       function s() {
-        if ("undefined" == typeof $studyjet) throw Error("@mercuryworkshop/studyjet is not loaded. Load studyjet before the controller.");
-        var λ24dd8541fd12 = "2.0.67-alpha.2", λ46d44fb37353 = $studyjet.versionInfo.version;
-        if (λ24dd8541fd12 !== λ46d44fb37353) throw Error(`@mercuryworkshop/studyjet version mismatch: this build expects ${λ24dd8541fd12}, but the loaded runtime is ${λ46d44fb37353}`);
+        if ("\x75\x6e\x64\x65\x66\x69\x6e\x65\x64" == typeof $studyjet) throw Error("\x40\x6d\x65\x72\x63\x75\x72\x79\x77\x6f\x72\x6b\x73\x68\x6f\x70\x2f\x73\x74\x75\x64\x79\x6a\x65\x74\x20\x69\x73\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x65\x64\x2e\x20\x4c\x6f\x61\x64\x20\x73\x74\x75\x64\x79\x6a\x65\x74\x20\x62\x65\x66\x6f\x72\x65\x20\x74\x68\x65\x20\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x2e");
+        var λ31a61a25ed22 = "\x32\x2e\x30\x2e\x36\x37\x2d\x61\x6c\x70\x68\x61\x2e\x32", λf0ee71997855 = $studyjet.versionInfo.version;
+        if (λ31a61a25ed22 !== λf0ee71997855) throw Error(`\x40\x6d\x65\x72\x63\x75\x72\x79\x77\x6f\x72\x6b\x73\x68\x6f\x70\x2f\x73\x74\x75\x64\x79\x6a\x65\x74\x20\x76\x65\x72\x73\x69\x6f\x6e\x20\x6d\x69\x73\x6d\x61\x74\x63\x68\x3a\x20\x74\x68\x69\x73\x20\x62\x75\x69\x6c\x64\x20\x65\x78\x70\x65\x63\x74\x73\x20${λ31a61a25ed22}\x2c\x20\x62\x75\x74\x20\x74\x68\x65\x20\x6c\x6f\x61\x64\x65\x64\x20\x72\x75\x6e\x74\x69\x6d\x65\x20\x69\x73\x20${λf0ee71997855}`);
       }
     },
-    805(λ24dd8541fd12, λ46d44fb37353, λ0bee367a7c9a) {
-      λ0bee367a7c9a.d(λ46d44fb37353, {
+    805(λ31a61a25ed22, λf0ee71997855, λ21dc7faa0f91) {
+      λ21dc7faa0f91.d(λf0ee71997855, {
         C: () => o
       });
       class o {
@@ -30,111 +30,111 @@ var $studyjetController;
         sendRaw;
         counter=0;
         promiseCallbacks=new Map;
-        constructor(λ24dd8541fd12, λ46d44fb37353, λ0bee367a7c9a) {
-          this.methods = λ24dd8541fd12, this.id = λ46d44fb37353, this.sendRaw = λ0bee367a7c9a;
+        constructor(λ31a61a25ed22, λf0ee71997855, λ21dc7faa0f91) {
+          this.methods = λ31a61a25ed22, this.id = λf0ee71997855, this.sendRaw = λ21dc7faa0f91;
         }
-        recieve(λ24dd8541fd12) {
-          if (null == λ24dd8541fd12 || "object" != typeof λ24dd8541fd12) return;
-          let λ46d44fb37353 = λ24dd8541fd12[this.id];
-          if (null == λ46d44fb37353 || "object" != typeof λ46d44fb37353) return;
-          let λ0bee367a7c9a = λ46d44fb37353.$type;
-          if ("response" === λ0bee367a7c9a) {
-            let λ24dd8541fd12 = λ46d44fb37353.$token, λ0bee367a7c9a = λ46d44fb37353.$data, λ1ade8ac64c25 = λ46d44fb37353.$error, λcde243751cc9 = this.promiseCallbacks.get(λ24dd8541fd12);
-            if (!λcde243751cc9) return;
-            this.promiseCallbacks.delete(λ24dd8541fd12), void 0 !== λ1ade8ac64c25 ? λcde243751cc9.reject(Error(λ1ade8ac64c25)) : λcde243751cc9.resolve(λ0bee367a7c9a);
-          } else if ("request" === λ0bee367a7c9a) {
-            let λ24dd8541fd12 = λ46d44fb37353.$method, λ0bee367a7c9a = λ46d44fb37353.$args;
-            this.methods[λ24dd8541fd12](λ0bee367a7c9a).then(λ24dd8541fd12 => {
+        recieve(λ31a61a25ed22) {
+          if (null == λ31a61a25ed22 || "\x6f\x62\x6a\x65\x63\x74" != typeof λ31a61a25ed22) return;
+          let λf0ee71997855 = λ31a61a25ed22[this.id];
+          if (null == λf0ee71997855 || "\x6f\x62\x6a\x65\x63\x74" != typeof λf0ee71997855) return;
+          let λ21dc7faa0f91 = λf0ee71997855.$type;
+          if ("\x72\x65\x73\x70\x6f\x6e\x73\x65" === λ21dc7faa0f91) {
+            let λ31a61a25ed22 = λf0ee71997855.$token, λ21dc7faa0f91 = λf0ee71997855.$data, λ45ef238a60a0 = λf0ee71997855.$error, λ01091640872e = this.promiseCallbacks.get(λ31a61a25ed22);
+            if (!λ01091640872e) return;
+            this.promiseCallbacks.delete(λ31a61a25ed22), void 0 !== λ45ef238a60a0 ? λ01091640872e.reject(Error(λ45ef238a60a0)) : λ01091640872e.resolve(λ21dc7faa0f91);
+          } else if ("\x72\x65\x71\x75\x65\x73\x74" === λ21dc7faa0f91) {
+            let λ31a61a25ed22 = λf0ee71997855.$method, λ21dc7faa0f91 = λf0ee71997855.$args;
+            this.methods[λ31a61a25ed22](λ21dc7faa0f91).then(λ31a61a25ed22 => {
               this.sendRaw({
                 [this.id]: {
-                  $type: "response",
-                  $token: λ46d44fb37353.$token,
-                  $data: λ24dd8541fd12?.[0]
+                  $type: "\x72\x65\x73\x70\x6f\x6e\x73\x65",
+                  $token: λf0ee71997855.$token,
+                  $data: λ31a61a25ed22?.[0]
                 }
-              }, λ24dd8541fd12?.[1]);
-            }).catch(λ24dd8541fd12 => {
-              console.error(λ24dd8541fd12), this.sendRaw({
+              }, λ31a61a25ed22?.[1]);
+            }).catch(λ31a61a25ed22 => {
+              console.error(λ31a61a25ed22), this.sendRaw({
                 [this.id]: {
-                  $type: "response",
-                  $token: λ46d44fb37353.$token,
-                  $error: λ24dd8541fd12?.toString() || "Unknown error"
+                  $type: "\x72\x65\x73\x70\x6f\x6e\x73\x65",
+                  $token: λf0ee71997855.$token,
+                  $error: λ31a61a25ed22?.toString() || "\x55\x6e\x6b\x6e\x6f\x77\x6e\x20\x65\x72\x72\x6f\x72"
                 }
               }, []);
             });
           }
         }
-        call(λ24dd8541fd12, λ46d44fb37353, λ0bee367a7c9a = []) {
-          let λ1ade8ac64c25 = this.counter++;
-          return new Promise((λcde243751cc9, λ0a85859d196f) => {
-            this.promiseCallbacks.set(λ1ade8ac64c25, {
-              resolve: λcde243751cc9,
-              reject: λ0a85859d196f
+        call(λ31a61a25ed22, λf0ee71997855, λ21dc7faa0f91 = []) {
+          let λ45ef238a60a0 = this.counter++;
+          return new Promise((λ01091640872e, λca2bbd3ff204) => {
+            this.promiseCallbacks.set(λ45ef238a60a0, {
+              resolve: λ01091640872e,
+              reject: λca2bbd3ff204
             }), this.sendRaw({
               [this.id]: {
-                $type: "request",
-                $method: λ24dd8541fd12,
-                $args: λ46d44fb37353,
-                $token: λ1ade8ac64c25
+                $type: "\x72\x65\x71\x75\x65\x73\x74",
+                $method: λ31a61a25ed22,
+                $args: λf0ee71997855,
+                $token: λ45ef238a60a0
               }
-            }, λ0bee367a7c9a);
+            }, λ21dc7faa0f91);
           });
         }
       }
     },
-    986(λ24dd8541fd12) {
-      let λ46d44fb37353 = Object.getPrototypeOf({});
+    986(λ31a61a25ed22) {
+      let λf0ee71997855 = Object.getPrototypeOf({});
       function r() {
-        return function(λ24dd8541fd12) {
-          return "object" == typeof λ24dd8541fd12 && null !== λ24dd8541fd12 && !(λ24dd8541fd12 instanceof RegExp) && !(λ24dd8541fd12 instanceof Date);
+        return function(λ31a61a25ed22) {
+          return "\x6f\x62\x6a\x65\x63\x74" == typeof λ31a61a25ed22 && null !== λ31a61a25ed22 && !(λ31a61a25ed22 instanceof RegExp) && !(λ31a61a25ed22 instanceof Date);
         };
       }
-      function o(λ24dd8541fd12) {
-        function o(λ24dd8541fd12) {
-          return "constructor" !== λ24dd8541fd12 && "prototype" !== λ24dd8541fd12 && "__proto__" !== λ24dd8541fd12;
+      function o(λ31a61a25ed22) {
+        function o(λ31a61a25ed22) {
+          return "\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x6f\x72" !== λ31a61a25ed22 && "\x70\x72\x6f\x74\x6f\x74\x79\x70\x65" !== λ31a61a25ed22 && "\x5f\x5f\x70\x72\x6f\x74\x6f\x5f\x5f" !== λ31a61a25ed22;
         }
-        let λ0bee367a7c9a = Object.prototype.propertyIsEnumerable, λ1ade8ac64c25 = λ24dd8541fd12?.symbols ? function(λ24dd8541fd12) {
-          let λ46d44fb37353 = Object.keys(λ24dd8541fd12), λ1ade8ac64c25 = Object.getOwnPropertySymbols(λ24dd8541fd12);
-          for (let λcde243751cc9 = 0, λ0a85859d196f = λ1ade8ac64c25.length; λcde243751cc9 < λ0a85859d196f; ++λcde243751cc9) λ0bee367a7c9a.call(λ24dd8541fd12, λ1ade8ac64c25[λcde243751cc9]) && λ46d44fb37353.push(λ1ade8ac64c25[λcde243751cc9]);
-          return λ46d44fb37353;
-        } : Object.keys, λcde243751cc9 = "function" == typeof λ24dd8541fd12?.cloneProtoObject ? λ24dd8541fd12.cloneProtoObject : void 0, λ0a85859d196f = "function" == typeof λ24dd8541fd12?.isMergeableObject ? λ24dd8541fd12.isMergeableObject : r(), λac59aea7cf55 = λ24dd8541fd12?.onlyDefinedProperties === !0, λa254fa47882b = λ24dd8541fd12 && "function" == typeof λ24dd8541fd12.mergeArray ? λ24dd8541fd12.mergeArray({
+        let λ21dc7faa0f91 = Object.prototype.propertyIsEnumerable, λ45ef238a60a0 = λ31a61a25ed22?.symbols ? function(λ31a61a25ed22) {
+          let λf0ee71997855 = Object.keys(λ31a61a25ed22), λ45ef238a60a0 = Object.getOwnPropertySymbols(λ31a61a25ed22);
+          for (let λ01091640872e = 0, λca2bbd3ff204 = λ45ef238a60a0.length; λ01091640872e < λca2bbd3ff204; ++λ01091640872e) λ21dc7faa0f91.call(λ31a61a25ed22, λ45ef238a60a0[λ01091640872e]) && λf0ee71997855.push(λ45ef238a60a0[λ01091640872e]);
+          return λf0ee71997855;
+        } : Object.keys, λ01091640872e = "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof λ31a61a25ed22?.cloneProtoObject ? λ31a61a25ed22.cloneProtoObject : void 0, λca2bbd3ff204 = "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof λ31a61a25ed22?.isMergeableObject ? λ31a61a25ed22.isMergeableObject : r(), λfc2801196c9b = λ31a61a25ed22?.onlyDefinedProperties === !0, λdb843be3ae7e = λ31a61a25ed22 && "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof λ31a61a25ed22.mergeArray ? λ31a61a25ed22.mergeArray({
           clone: d,
           deepmerge: h,
-          getKeys: λ1ade8ac64c25,
-          isMergeableObject: λ0a85859d196f
-        }) : function(λ24dd8541fd12, λ46d44fb37353) {
-          let λ0bee367a7c9a = λ24dd8541fd12.length, λ1ade8ac64c25 = λ46d44fb37353.length, λcde243751cc9 = 0, λ0a85859d196f = Array(λ0bee367a7c9a + λ1ade8ac64c25);
-          for (;λcde243751cc9 < λ0bee367a7c9a; ++λcde243751cc9) λ0a85859d196f[λcde243751cc9] = d(λ24dd8541fd12[λcde243751cc9]);
-          for (λcde243751cc9 = 0; λcde243751cc9 < λ1ade8ac64c25; ++λcde243751cc9) λ0a85859d196f[λcde243751cc9 + λ0bee367a7c9a] = d(λ46d44fb37353[λcde243751cc9]);
-          return λ0a85859d196f;
+          getKeys: λ45ef238a60a0,
+          isMergeableObject: λca2bbd3ff204
+        }) : function(λ31a61a25ed22, λf0ee71997855) {
+          let λ21dc7faa0f91 = λ31a61a25ed22.length, λ45ef238a60a0 = λf0ee71997855.length, λ01091640872e = 0, λca2bbd3ff204 = Array(λ21dc7faa0f91 + λ45ef238a60a0);
+          for (;λ01091640872e < λ21dc7faa0f91; ++λ01091640872e) λca2bbd3ff204[λ01091640872e] = d(λ31a61a25ed22[λ01091640872e]);
+          for (λ01091640872e = 0; λ01091640872e < λ45ef238a60a0; ++λ01091640872e) λca2bbd3ff204[λ01091640872e + λ21dc7faa0f91] = d(λf0ee71997855[λ01091640872e]);
+          return λca2bbd3ff204;
         };
-        function d(λ24dd8541fd12) {
-          return λ0a85859d196f(λ24dd8541fd12) ? Array.isArray(λ24dd8541fd12) ? function(λ24dd8541fd12) {
-            let λ46d44fb37353 = 0, λ0bee367a7c9a = λ24dd8541fd12.length, λ1ade8ac64c25 = Array(λ0bee367a7c9a);
-            for (;λ46d44fb37353 < λ0bee367a7c9a; ++λ46d44fb37353) λ1ade8ac64c25[λ46d44fb37353] = d(λ24dd8541fd12[λ46d44fb37353]);
-            return λ1ade8ac64c25;
-          }(λ24dd8541fd12) : function(λ24dd8541fd12) {
-            let λ0bee367a7c9a, λ0a85859d196f, λac59aea7cf55, λa254fa47882b = {};
-            if (λcde243751cc9 && Object.getPrototypeOf(λ24dd8541fd12) !== λ46d44fb37353) return λcde243751cc9(λ24dd8541fd12);
-            let λd757f8d911c7 = λ1ade8ac64c25(λ24dd8541fd12);
-            for (λ0bee367a7c9a = 0, λ0a85859d196f = λd757f8d911c7.length; λ0bee367a7c9a < λ0a85859d196f; ++λ0bee367a7c9a) o(λac59aea7cf55 = λd757f8d911c7[λ0bee367a7c9a]) && (λa254fa47882b[λac59aea7cf55] = d(λ24dd8541fd12[λac59aea7cf55]));
-            return λa254fa47882b;
-          }(λ24dd8541fd12) : λ24dd8541fd12;
+        function d(λ31a61a25ed22) {
+          return λca2bbd3ff204(λ31a61a25ed22) ? Array.isArray(λ31a61a25ed22) ? function(λ31a61a25ed22) {
+            let λf0ee71997855 = 0, λ21dc7faa0f91 = λ31a61a25ed22.length, λ45ef238a60a0 = Array(λ21dc7faa0f91);
+            for (;λf0ee71997855 < λ21dc7faa0f91; ++λf0ee71997855) λ45ef238a60a0[λf0ee71997855] = d(λ31a61a25ed22[λf0ee71997855]);
+            return λ45ef238a60a0;
+          }(λ31a61a25ed22) : function(λ31a61a25ed22) {
+            let λ21dc7faa0f91, λca2bbd3ff204, λfc2801196c9b, λdb843be3ae7e = {};
+            if (λ01091640872e && Object.getPrototypeOf(λ31a61a25ed22) !== λf0ee71997855) return λ01091640872e(λ31a61a25ed22);
+            let λc8cae73b71a2 = λ45ef238a60a0(λ31a61a25ed22);
+            for (λ21dc7faa0f91 = 0, λca2bbd3ff204 = λc8cae73b71a2.length; λ21dc7faa0f91 < λca2bbd3ff204; ++λ21dc7faa0f91) o(λfc2801196c9b = λc8cae73b71a2[λ21dc7faa0f91]) && (λdb843be3ae7e[λfc2801196c9b] = d(λ31a61a25ed22[λfc2801196c9b]));
+            return λdb843be3ae7e;
+          }(λ31a61a25ed22) : λ31a61a25ed22;
         }
-        function h(λ24dd8541fd12, λ0bee367a7c9a) {
-          if (λac59aea7cf55 && void 0 === λ0bee367a7c9a) return d(λ24dd8541fd12);
-          let λd757f8d911c7 = Array.isArray(λ0bee367a7c9a), λ41c8cb866c51 = Array.isArray(λ24dd8541fd12);
-          return "object" != typeof λ0bee367a7c9a || null === λ0bee367a7c9a ? λ0bee367a7c9a : λ0a85859d196f(λ24dd8541fd12) ? λd757f8d911c7 && λ41c8cb866c51 ? λa254fa47882b(λ24dd8541fd12, λ0bee367a7c9a) : λd757f8d911c7 !== λ41c8cb866c51 ? d(λ0bee367a7c9a) : function(λ24dd8541fd12, λ0bee367a7c9a) {
-            let λa254fa47882b, λd757f8d911c7, λ41c8cb866c51, λ699ed39f8682 = {}, λf06fcd46b9b4 = λ1ade8ac64c25(λ24dd8541fd12), λ6de571c1f8cf = λ1ade8ac64c25(λ0bee367a7c9a);
-            for (λa254fa47882b = 0, λd757f8d911c7 = λf06fcd46b9b4.length; λa254fa47882b < λd757f8d911c7; ++λa254fa47882b) o(λ41c8cb866c51 = λf06fcd46b9b4[λa254fa47882b]) && -1 === λ6de571c1f8cf.indexOf(λ41c8cb866c51) && (λ699ed39f8682[λ41c8cb866c51] = d(λ24dd8541fd12[λ41c8cb866c51]));
-            for (λa254fa47882b = 0, λd757f8d911c7 = λ6de571c1f8cf.length; λa254fa47882b < λd757f8d911c7; ++λa254fa47882b) if (o(λ41c8cb866c51 = λ6de571c1f8cf[λa254fa47882b])) if (λ41c8cb866c51 in λ24dd8541fd12) -1 !== λf06fcd46b9b4.indexOf(λ41c8cb866c51) && (λcde243751cc9 && λ0a85859d196f(λ0bee367a7c9a[λ41c8cb866c51]) && Object.getPrototypeOf(λ0bee367a7c9a[λ41c8cb866c51]) !== λ46d44fb37353 ? λ699ed39f8682[λ41c8cb866c51] = λcde243751cc9(λ0bee367a7c9a[λ41c8cb866c51]) : λ699ed39f8682[λ41c8cb866c51] = h(λ24dd8541fd12[λ41c8cb866c51], λ0bee367a7c9a[λ41c8cb866c51])); else {
-              if (λac59aea7cf55 && void 0 === λ0bee367a7c9a[λ41c8cb866c51]) continue;
-              λ699ed39f8682[λ41c8cb866c51] = d(λ0bee367a7c9a[λ41c8cb866c51]);
+        function h(λ31a61a25ed22, λ21dc7faa0f91) {
+          if (λfc2801196c9b && void 0 === λ21dc7faa0f91) return d(λ31a61a25ed22);
+          let λc8cae73b71a2 = Array.isArray(λ21dc7faa0f91), λ0a90bd9dcdc9 = Array.isArray(λ31a61a25ed22);
+          return "\x6f\x62\x6a\x65\x63\x74" != typeof λ21dc7faa0f91 || null === λ21dc7faa0f91 ? λ21dc7faa0f91 : λca2bbd3ff204(λ31a61a25ed22) ? λc8cae73b71a2 && λ0a90bd9dcdc9 ? λdb843be3ae7e(λ31a61a25ed22, λ21dc7faa0f91) : λc8cae73b71a2 !== λ0a90bd9dcdc9 ? d(λ21dc7faa0f91) : function(λ31a61a25ed22, λ21dc7faa0f91) {
+            let λdb843be3ae7e, λc8cae73b71a2, λ0a90bd9dcdc9, λfae867df8a32 = {}, λ362243d11ac2 = λ45ef238a60a0(λ31a61a25ed22), λf66666167a64 = λ45ef238a60a0(λ21dc7faa0f91);
+            for (λdb843be3ae7e = 0, λc8cae73b71a2 = λ362243d11ac2.length; λdb843be3ae7e < λc8cae73b71a2; ++λdb843be3ae7e) o(λ0a90bd9dcdc9 = λ362243d11ac2[λdb843be3ae7e]) && -1 === λf66666167a64.indexOf(λ0a90bd9dcdc9) && (λfae867df8a32[λ0a90bd9dcdc9] = d(λ31a61a25ed22[λ0a90bd9dcdc9]));
+            for (λdb843be3ae7e = 0, λc8cae73b71a2 = λf66666167a64.length; λdb843be3ae7e < λc8cae73b71a2; ++λdb843be3ae7e) if (o(λ0a90bd9dcdc9 = λf66666167a64[λdb843be3ae7e])) if (λ0a90bd9dcdc9 in λ31a61a25ed22) -1 !== λ362243d11ac2.indexOf(λ0a90bd9dcdc9) && (λ01091640872e && λca2bbd3ff204(λ21dc7faa0f91[λ0a90bd9dcdc9]) && Object.getPrototypeOf(λ21dc7faa0f91[λ0a90bd9dcdc9]) !== λf0ee71997855 ? λfae867df8a32[λ0a90bd9dcdc9] = λ01091640872e(λ21dc7faa0f91[λ0a90bd9dcdc9]) : λfae867df8a32[λ0a90bd9dcdc9] = h(λ31a61a25ed22[λ0a90bd9dcdc9], λ21dc7faa0f91[λ0a90bd9dcdc9])); else {
+              if (λfc2801196c9b && void 0 === λ21dc7faa0f91[λ0a90bd9dcdc9]) continue;
+              λfae867df8a32[λ0a90bd9dcdc9] = d(λ21dc7faa0f91[λ0a90bd9dcdc9]);
             }
-            return λ699ed39f8682;
-          }(λ24dd8541fd12, λ0bee367a7c9a) : d(λ0bee367a7c9a);
+            return λfae867df8a32;
+          }(λ31a61a25ed22, λ21dc7faa0f91) : d(λ21dc7faa0f91);
         }
-        return λ24dd8541fd12?.all ? function() {
-          let λ24dd8541fd12;
+        return λ31a61a25ed22?.all ? function() {
+          let λ31a61a25ed22;
           switch (arguments.length) {
            case 0:
             return {};
@@ -145,177 +145,177 @@ var $studyjetController;
            case 2:
             return h(arguments[0], arguments[1]);
           }
-          for (let λ46d44fb37353 = 0, λ0bee367a7c9a = arguments.length; λ46d44fb37353 < λ0bee367a7c9a; ++λ46d44fb37353) λ24dd8541fd12 = h(λ24dd8541fd12, arguments[λ46d44fb37353]);
-          return λ24dd8541fd12;
+          for (let λf0ee71997855 = 0, λ21dc7faa0f91 = arguments.length; λf0ee71997855 < λ21dc7faa0f91; ++λf0ee71997855) λ31a61a25ed22 = h(λ31a61a25ed22, arguments[λf0ee71997855]);
+          return λ31a61a25ed22;
         } : h;
       }
-      λ24dd8541fd12.exports = o, λ24dd8541fd12.exports.default = o, λ24dd8541fd12.exports.deepmerge = o, 
-      Object.defineProperty(λ24dd8541fd12.exports, "isMergeableObject", {
+      λ31a61a25ed22.exports = o, λ31a61a25ed22.exports.default = o, λ31a61a25ed22.exports.deepmerge = o, 
+      Object.defineProperty(λ31a61a25ed22.exports, "\x69\x73\x4d\x65\x72\x67\x65\x61\x62\x6c\x65\x4f\x62\x6a\x65\x63\x74", {
         get: r
       });
     },
-    235(λ24dd8541fd12, λ46d44fb37353, λ0bee367a7c9a) {
-      λ0bee367a7c9a.d(λ46d44fb37353, {
+    235(λ31a61a25ed22, λf0ee71997855, λ21dc7faa0f91) {
+      λ21dc7faa0f91.d(λf0ee71997855, {
         Sr: () => s
       }), WebSocket.CLOSED, WebSocket.CONNECTING, WebSocket.OPEN, EventTarget;
-      let λ1ade8ac64c25 = [ 101, 204, 205, 304 ];
+      let λ45ef238a60a0 = [ 101, 204, 205, 304 ];
       class s extends Response {
         url;
         rawHeaders;
         redirected=!1;
-        static fromTransferrableResponse(λ24dd8541fd12, λ46d44fb37353) {
-          let λ0bee367a7c9a = new s(λ1ade8ac64c25.includes(λ24dd8541fd12.status) ? void 0 : λ24dd8541fd12.body, {
-            headers: new Headers(λ24dd8541fd12.headers),
-            status: λ24dd8541fd12.status,
-            statusText: λ24dd8541fd12.statusText
+        static fromTransferrableResponse(λ31a61a25ed22, λf0ee71997855) {
+          let λ21dc7faa0f91 = new s(λ45ef238a60a0.includes(λ31a61a25ed22.status) ? void 0 : λ31a61a25ed22.body, {
+            headers: new Headers(λ31a61a25ed22.headers),
+            status: λ31a61a25ed22.status,
+            statusText: λ31a61a25ed22.statusText
           });
-          return λ0bee367a7c9a.url = λ46d44fb37353, λ0bee367a7c9a.redirected = λ24dd8541fd12.status >= 300 && λ24dd8541fd12.status < 400 && void 0 !== λ24dd8541fd12.headers.location, 
-          λ0bee367a7c9a.rawHeaders = λ24dd8541fd12.headers, λ0bee367a7c9a;
+          return λ21dc7faa0f91.url = λf0ee71997855, λ21dc7faa0f91.redirected = λ31a61a25ed22.status >= 300 && λ31a61a25ed22.status < 400 && void 0 !== λ31a61a25ed22.headers.location, 
+          λ21dc7faa0f91.rawHeaders = λ31a61a25ed22.headers, λ21dc7faa0f91;
         }
-        static fromNativeResponse(λ24dd8541fd12) {
-          let λ46d44fb37353 = new s(λ1ade8ac64c25.includes(λ24dd8541fd12.status) ? void 0 : λ24dd8541fd12.body, {
-            headers: λ24dd8541fd12.headers,
-            status: λ24dd8541fd12.status,
-            statusText: λ24dd8541fd12.statusText
+        static fromNativeResponse(λ31a61a25ed22) {
+          let λf0ee71997855 = new s(λ45ef238a60a0.includes(λ31a61a25ed22.status) ? void 0 : λ31a61a25ed22.body, {
+            headers: λ31a61a25ed22.headers,
+            status: λ31a61a25ed22.status,
+            statusText: λ31a61a25ed22.statusText
           });
-          return λ46d44fb37353.url = λ24dd8541fd12.url, λ46d44fb37353.rawHeaders = [ ...λ24dd8541fd12.headers ], 
-          λ46d44fb37353.redirected = λ24dd8541fd12.redirected, λ46d44fb37353;
+          return λf0ee71997855.url = λ31a61a25ed22.url, λf0ee71997855.rawHeaders = [ ...λ31a61a25ed22.headers ], 
+          λf0ee71997855.redirected = λ31a61a25ed22.redirected, λf0ee71997855;
         }
       }
     },
-    423(λ24dd8541fd12, λ46d44fb37353, λ0bee367a7c9a) {
-      λ0bee367a7c9a.d(λ46d44fb37353, {
-        Cx: () => λe449a8968f71,
-        Oy: () => λ5f97c30f3392,
-        cP: () => λcde243751cc9,
-        ht: () => λ633426eee57a,
-        k_: () => λac59aea7cf55,
-        mK: () => λ699ed39f8682,
-        sb: () => λ2292098498f4,
-        uh: () => λ6de571c1f8cf
+    423(λ31a61a25ed22, λf0ee71997855, λ21dc7faa0f91) {
+      λ21dc7faa0f91.d(λf0ee71997855, {
+        Cx: () => λacf4aad24c6d,
+        Oy: () => λ0560ef429403,
+        cP: () => λ01091640872e,
+        ht: () => λ32931c74e381,
+        k_: () => λfc2801196c9b,
+        mK: () => λfae867df8a32,
+        sb: () => λ14eddaaff353,
+        uh: () => λf66666167a64
       });
-      let {BareResponse: λ1ade8ac64c25, CookieJar: λcde243751cc9, IncrementalHtmlRewriter: λ0a85859d196f, Plugin: λac59aea7cf55, STUDYJETCLIENT: λa254fa47882b, STUDYJETCLIENTNAME: λd757f8d911c7, StudyJetClient: λ41c8cb866c51, StudyJetFetchHandler: λ699ed39f8682, StudyJetFetchTrackedClient: λf06fcd46b9b4, StudyJetHeaders: λ6de571c1f8cf, Tap: λe449a8968f71, createLocationProxy: λdf231c107ca7, defaultConfig: λ2292098498f4, defaultConfigDev: λ730c70da80bc, flagEnabled: λ501822995218, getOwnPropertyDescriptorHandler: λ52c37981f30d, getRewriter: λed7ac44e545a, getScriptBlockTypeString: λ69bd04f30828, htmlRules: λa75d659eec04, isArchiveMimeType: λ6c69b7676f22, isAudioOrVideoMimeType: λ060af014dc18, isFontMimeType: λd36805f02635, isHtmlMimeType: λ9957da354586, isImageMimeType: λ422b44cfc14f, isInlineDisplayableMimeType: λa2a9972bc0d7, isJavascriptMimeType: λ08d348cc7199, isJavascriptMimeTypeEssenceMatch: λ221a6affb828, isModuleScriptType: λ6edc73848daf, isScriptType: λa9e212e5a819, isScriptableMimeType: λa347c5edb7b9, isXmlMimeType: λ012e08f2c0f2, isZipBasedMimeType: λ1b7694c4cc6e, isdedicated: λ4c268d176da0, isshared: λ4389186bef47, issw: λ7d421b5fc815, iswindow: λ03bf0a1f21bb, isworker: λ2150801c49a8, parseMimeType: λcbd483c53777, rewriteBlob: λce06de8dffc4, rewriteCss: λ99ee43030237, rewriteHtml: λ80b4c6513246, rewriteJs: λ8478bbf35d2b, rewriteJsInner: λ6eb9f0423413, rewriteSrcset: λe191f03d7c6e, rewriteUrl: λ5f97c30f3392, rewriteWorkers: λ1b41f0c28b3e, setWasm: λ633426eee57a, unrewriteBlob: λ5f3b6fdb82f6, unrewriteCss: λfd646529c3a9, unrewriteHtml: λ944189ec94d3, unrewriteUrl: λ3c388453753c, versionInfo: λ6ea49152d63c} = globalThis.$studyjet;
+      let {BareResponse: λ45ef238a60a0, CookieJar: λ01091640872e, IncrementalHtmlRewriter: λca2bbd3ff204, Plugin: λfc2801196c9b, STUDYJETCLIENT: λdb843be3ae7e, STUDYJETCLIENTNAME: λc8cae73b71a2, StudyJetClient: λ0a90bd9dcdc9, StudyJetFetchHandler: λfae867df8a32, StudyJetFetchTrackedClient: λ362243d11ac2, StudyJetHeaders: λf66666167a64, Tap: λacf4aad24c6d, createLocationProxy: λa836852155ec, defaultConfig: λ14eddaaff353, defaultConfigDev: λe2752c4e9b67, flagEnabled: λa6795a34c2c0, getOwnPropertyDescriptorHandler: λ3c0da939af0a, getRewriter: λ6f97c520ff82, getScriptBlockTypeString: λ0e48d11995aa, htmlRules: λ6d26a759c164, isArchiveMimeType: λ72cf382f87f3, isAudioOrVideoMimeType: λ7792da0c8c97, isFontMimeType: λd1d1cb0307fb, isHtmlMimeType: λ17147c3fee20, isImageMimeType: λ594950f8ff7c, isInlineDisplayableMimeType: λ48cf03785628, isJavascriptMimeType: λ3f474be3138f, isJavascriptMimeTypeEssenceMatch: λ67c3245e7744, isModuleScriptType: λ7a193bd0c78f, isScriptType: λ6b1b2eed0ec5, isScriptableMimeType: λ4f180c8cdc6e, isXmlMimeType: λ0d66c5db8e27, isZipBasedMimeType: λ8de046af483a, isdedicated: λe554b67e7f54, isshared: λf84543979236, issw: λfdd165db43b9, iswindow: λ5820c4357ac8, isworker: λ02dd1ec11fe1, parseMimeType: λa218740d08d3, rewriteBlob: λ0a52e2888823, rewriteCss: λ732f25cc4942, rewriteHtml: λ63e5fab75070, rewriteJs: λf54b6a16e3a0, rewriteJsInner: λbc6c99ee6423, rewriteSrcset: λcabf1a9598a1, rewriteUrl: λ0560ef429403, rewriteWorkers: λe9670fbda6f6, setWasm: λ32931c74e381, unrewriteBlob: λ430dd5605a07, unrewriteCss: λ8ed567f1cc72, unrewriteHtml: λ5753220a1ed1, unrewriteUrl: λda9b422a7e57, versionInfo: λ915ae6b2825d} = globalThis.$studyjet;
     }
-  }, λ46d44fb37353 = {};
-  function r(λ0bee367a7c9a) {
-    var λ1ade8ac64c25 = λ46d44fb37353[λ0bee367a7c9a];
-    if (void 0 !== λ1ade8ac64c25) return λ1ade8ac64c25.exports;
-    var λcde243751cc9 = λ46d44fb37353[λ0bee367a7c9a] = {
+  }, λf0ee71997855 = {};
+  function r(λ21dc7faa0f91) {
+    var λ45ef238a60a0 = λf0ee71997855[λ21dc7faa0f91];
+    if (void 0 !== λ45ef238a60a0) return λ45ef238a60a0.exports;
+    var λ01091640872e = λf0ee71997855[λ21dc7faa0f91] = {
       exports: {}
     };
-    return λ24dd8541fd12[λ0bee367a7c9a](λcde243751cc9, λcde243751cc9.exports, r), λcde243751cc9.exports;
+    return λ31a61a25ed22[λ21dc7faa0f91](λ01091640872e, λ01091640872e.exports, r), λ01091640872e.exports;
   }
-  r.n = λ24dd8541fd12 => {
-    var λ46d44fb37353 = λ24dd8541fd12 && λ24dd8541fd12.__esModule ? () => λ24dd8541fd12.default : () => λ24dd8541fd12;
-    return r.d(λ46d44fb37353, {
-      a: λ46d44fb37353
-    }), λ46d44fb37353;
-  }, r.d = (λ24dd8541fd12, λ46d44fb37353) => {
-    for (var λ0bee367a7c9a in λ46d44fb37353) r.o(λ46d44fb37353, λ0bee367a7c9a) && !r.o(λ24dd8541fd12, λ0bee367a7c9a) && Object.defineProperty(λ24dd8541fd12, λ0bee367a7c9a, {
+  r.n = λ31a61a25ed22 => {
+    var λf0ee71997855 = λ31a61a25ed22 && λ31a61a25ed22.__esModule ? () => λ31a61a25ed22.default : () => λ31a61a25ed22;
+    return r.d(λf0ee71997855, {
+      a: λf0ee71997855
+    }), λf0ee71997855;
+  }, r.d = (λ31a61a25ed22, λf0ee71997855) => {
+    for (var λ21dc7faa0f91 in λf0ee71997855) r.o(λf0ee71997855, λ21dc7faa0f91) && !r.o(λ31a61a25ed22, λ21dc7faa0f91) && Object.defineProperty(λ31a61a25ed22, λ21dc7faa0f91, {
       enumerable: !0,
-      get: λ46d44fb37353[λ0bee367a7c9a]
+      get: λf0ee71997855[λ21dc7faa0f91]
     });
-  }, r.o = (λ24dd8541fd12, λ46d44fb37353) => Object.prototype.hasOwnProperty.call(λ24dd8541fd12, λ46d44fb37353), 
-  r.r = λ24dd8541fd12 => {
-    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(λ24dd8541fd12, Symbol.toStringTag, {
-      value: "Module"
-    }), Object.defineProperty(λ24dd8541fd12, "__esModule", {
+  }, r.o = (λ31a61a25ed22, λf0ee71997855) => Object.prototype.hasOwnProperty.call(λ31a61a25ed22, λf0ee71997855), 
+  r.r = λ31a61a25ed22 => {
+    "\x75\x6e\x64\x65\x66\x69\x6e\x65\x64" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(λ31a61a25ed22, Symbol.toStringTag, {
+      value: "\x4d\x6f\x64\x75\x6c\x65"
+    }), Object.defineProperty(λ31a61a25ed22, "\x5f\x5f\x65\x73\x4d\x6f\x64\x75\x6c\x65", {
       value: !0
     });
   };
-  var λ0bee367a7c9a = {};
+  var λ21dc7faa0f91 = {};
   (() => {
-    r.r(λ0bee367a7c9a), r.d(λ0bee367a7c9a, {
+    r.r(λ21dc7faa0f91), r.d(λ21dc7faa0f91, {
       Controller: () => S,
       Frame: () => v,
       ManagedPlugin: () => d,
-      VERSION: () => λac59aea7cf55.x,
-      assertRuntimeStudyJetVersion: () => λac59aea7cf55.O,
-      config: () => λa254fa47882b
+      VERSION: () => λfc2801196c9b.x,
+      assertRuntimeStudyJetVersion: () => λfc2801196c9b.O,
+      config: () => λdb843be3ae7e
     });
-    var λ24dd8541fd12 = r(805), λ46d44fb37353 = r(235), λ1ade8ac64c25 = r(986), λcde243751cc9 = r(423), λ0a85859d196f = r(286), λac59aea7cf55 = r(355);
-    let λa254fa47882b = {
-      prefix: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/~/study/",
-      studyjetPath: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/studyjet/@r69c18f9bd4ed175c9ea505b8!.js",
-      injectPath: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/controller/@r9e855ac82edc4b51e1340564!.js",
-      wasmPath: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/studyjet/@r55286cfe09d741023cc3e1d6!.wasm",
-      virtualWasmPath: "studyjet.wasm.js",
+    var λ31a61a25ed22 = r(805), λf0ee71997855 = r(235), λ45ef238a60a0 = r(986), λ01091640872e = r(423), λca2bbd3ff204 = r(286), λfc2801196c9b = r(355);
+    let λdb843be3ae7e = {
+      prefix: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x7e\x2f\x73\x74\x75\x64\x79\x2f",
+      studyjetPath: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x73\x74\x75\x64\x79\x6a\x65\x74\x2f\x40\x72\x36\x39\x63\x31\x38\x66\x39\x62\x64\x34\x65\x64\x31\x37\x35\x63\x39\x65\x61\x35\x30\x35\x62\x38\x21\x2e\x6a\x73",
+      injectPath: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x2f\x40\x72\x39\x65\x38\x35\x35\x61\x63\x38\x32\x65\x64\x63\x34\x62\x35\x31\x65\x31\x33\x34\x30\x35\x36\x34\x21\x2e\x6a\x73",
+      wasmPath: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x73\x74\x75\x64\x79\x6a\x65\x74\x2f\x40\x72\x35\x35\x32\x38\x36\x63\x66\x65\x30\x39\x64\x37\x34\x31\x30\x32\x33\x63\x63\x33\x65\x31\x64\x36\x21\x2e\x77\x61\x73\x6d",
+      virtualWasmPath: "\x73\x74\x75\x64\x79\x6a\x65\x74\x2e\x77\x61\x73\x6d\x2e\x6a\x73",
       codec: {
-        encode: λ24dd8541fd12 => λ24dd8541fd12 ? encodeURIComponent(λ24dd8541fd12) : λ24dd8541fd12,
-        decode: λ24dd8541fd12 => λ24dd8541fd12 ? decodeURIComponent(λ24dd8541fd12) : λ24dd8541fd12
+        encode: λ31a61a25ed22 => λ31a61a25ed22 ? encodeURIComponent(λ31a61a25ed22) : λ31a61a25ed22,
+        decode: λ31a61a25ed22 => λ31a61a25ed22 ? decodeURIComponent(λ31a61a25ed22) : λ31a61a25ed22
       }
-    }, λd757f8d911c7 = {
+    }, λc8cae73b71a2 = {
       flags: {
-        ...λcde243751cc9.sb.flags,
+        ...λ01091640872e.sb.flags,
         allowFailedIntercepts: !0
       },
-      maskedfiles: [ "inject.js", "studyjet.wasm.js" ]
+      maskedfiles: [ "\x69\x6e\x6a\x65\x63\x74\x2e\x6a\x73", "\x73\x74\x75\x64\x79\x6a\x65\x74\x2e\x77\x61\x73\x6d\x2e\x6a\x73" ]
     };
-    class d extends λcde243751cc9.k_ {
+    class d extends λ01091640872e.k_ {
       frame=null;
       dependencies=[];
-      constructor(λ24dd8541fd12, λ46d44fb37353) {
-        super(λ24dd8541fd12), this.dependencies = λ46d44fb37353;
+      constructor(λ31a61a25ed22, λf0ee71997855) {
+        super(λ31a61a25ed22), this.dependencies = λf0ee71997855;
       }
-      install(λ24dd8541fd12) {
-        this.frame = λ24dd8541fd12;
+      install(λ31a61a25ed22) {
+        this.frame = λ31a61a25ed22;
       }
     }
-    let λ41c8cb866c51 = "state", λ699ed39f8682 = "cookies", λf06fcd46b9b4 = null;
-    function u(λ24dd8541fd12) {
-      return "object" == typeof λ24dd8541fd12 && null !== λ24dd8541fd12 && "number" == typeof λ24dd8541fd12.updatedAt && Number.isFinite(λ24dd8541fd12.updatedAt) && "string" == typeof λ24dd8541fd12.cookies ? λ24dd8541fd12 : null;
+    let λ0a90bd9dcdc9 = "\x73\x74\x61\x74\x65", λfae867df8a32 = "\x63\x6f\x6f\x6b\x69\x65\x73", λ362243d11ac2 = null;
+    function u(λ31a61a25ed22) {
+      return "\x6f\x62\x6a\x65\x63\x74" == typeof λ31a61a25ed22 && null !== λ31a61a25ed22 && "\x6e\x75\x6d\x62\x65\x72" == typeof λ31a61a25ed22.updatedAt && Number.isFinite(λ31a61a25ed22.updatedAt) && "\x73\x74\x72\x69\x6e\x67" == typeof λ31a61a25ed22.cookies ? λ31a61a25ed22 : null;
     }
-    function y(λ24dd8541fd12) {
-      return new Promise((λ46d44fb37353, λ0bee367a7c9a) => {
-        λ24dd8541fd12.onsuccess = () => λ46d44fb37353(λ24dd8541fd12.result), λ24dd8541fd12.onerror = () => λ0bee367a7c9a(λ24dd8541fd12.error ?? Error("IndexedDB request failed"));
+    function y(λ31a61a25ed22) {
+      return new Promise((λf0ee71997855, λ21dc7faa0f91) => {
+        λ31a61a25ed22.onsuccess = () => λf0ee71997855(λ31a61a25ed22.result), λ31a61a25ed22.onerror = () => λ21dc7faa0f91(λ31a61a25ed22.error ?? Error("\x49\x6e\x64\x65\x78\x65\x64\x44\x42\x20\x72\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64"));
       });
     }
-    function m(λ24dd8541fd12) {
-      return new Promise((λ46d44fb37353, λ0bee367a7c9a) => {
-        λ24dd8541fd12.oncomplete = () => λ46d44fb37353(), λ24dd8541fd12.onabort = () => λ0bee367a7c9a(λ24dd8541fd12.error ?? Error("IndexedDB transaction aborted")), 
-        λ24dd8541fd12.onerror = () => λ0bee367a7c9a(λ24dd8541fd12.error ?? Error("IndexedDB transaction failed"));
+    function m(λ31a61a25ed22) {
+      return new Promise((λf0ee71997855, λ21dc7faa0f91) => {
+        λ31a61a25ed22.oncomplete = () => λf0ee71997855(), λ31a61a25ed22.onabort = () => λ21dc7faa0f91(λ31a61a25ed22.error ?? Error("\x49\x6e\x64\x65\x78\x65\x64\x44\x42\x20\x74\x72\x61\x6e\x73\x61\x63\x74\x69\x6f\x6e\x20\x61\x62\x6f\x72\x74\x65\x64")), 
+        λ31a61a25ed22.onerror = () => λ21dc7faa0f91(λ31a61a25ed22.error ?? Error("\x49\x6e\x64\x65\x78\x65\x64\x44\x42\x20\x74\x72\x61\x6e\x73\x61\x63\x74\x69\x6f\x6e\x20\x66\x61\x69\x6c\x65\x64"));
       });
     }
     function g() {
-      return λf06fcd46b9b4 || (λf06fcd46b9b4 = new Promise((λ24dd8541fd12, λ46d44fb37353) => {
-        let λ0bee367a7c9a = indexedDB.open("@d941bc65af3", 1);
-        λ0bee367a7c9a.onupgradeneeded = () => {
-          let λ24dd8541fd12 = λ0bee367a7c9a.result;
-          λ24dd8541fd12.objectStoreNames.contains(λ41c8cb866c51) || λ24dd8541fd12.createObjectStore(λ41c8cb866c51);
-        }, λ0bee367a7c9a.onsuccess = () => λ24dd8541fd12(λ0bee367a7c9a.result), λ0bee367a7c9a.onerror = () => λ46d44fb37353(λ0bee367a7c9a.error ?? Error("Failed to open cookie database"));
+      return λ362243d11ac2 || (λ362243d11ac2 = new Promise((λ31a61a25ed22, λf0ee71997855) => {
+        let λ21dc7faa0f91 = indexedDB.open("\x40\x64\x39\x34\x31\x62\x63\x36\x35\x61\x66\x33", 1);
+        λ21dc7faa0f91.onupgradeneeded = () => {
+          let λ31a61a25ed22 = λ21dc7faa0f91.result;
+          λ31a61a25ed22.objectStoreNames.contains(λ0a90bd9dcdc9) || λ31a61a25ed22.createObjectStore(λ0a90bd9dcdc9);
+        }, λ21dc7faa0f91.onsuccess = () => λ31a61a25ed22(λ21dc7faa0f91.result), λ21dc7faa0f91.onerror = () => λf0ee71997855(λ21dc7faa0f91.error ?? Error("\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x6f\x70\x65\x6e\x20\x63\x6f\x6f\x6b\x69\x65\x20\x64\x61\x74\x61\x62\x61\x73\x65"));
       }));
     }
     async function w() {
       try {
-        let λ24dd8541fd12 = (await g()).transaction(λ41c8cb866c51, "readonly"), λ46d44fb37353 = λ24dd8541fd12.objectStore(λ41c8cb866c51), λ0bee367a7c9a = await y(λ46d44fb37353.get(λ699ed39f8682));
-        return await m(λ24dd8541fd12), u(λ0bee367a7c9a);
-      } catch (λ24dd8541fd12) {
-        return console.error("Failed to read persisted controller cookies:", λ24dd8541fd12), 
+        let λ31a61a25ed22 = (await g()).transaction(λ0a90bd9dcdc9, "\x72\x65\x61\x64\x6f\x6e\x6c\x79"), λf0ee71997855 = λ31a61a25ed22.objectStore(λ0a90bd9dcdc9), λ21dc7faa0f91 = await y(λf0ee71997855.get(λfae867df8a32));
+        return await m(λ31a61a25ed22), u(λ21dc7faa0f91);
+      } catch (λ31a61a25ed22) {
+        return console.error("\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x72\x65\x61\x64\x20\x70\x65\x72\x73\x69\x73\x74\x65\x64\x20\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x20\x63\x6f\x6f\x6b\x69\x65\x73\x3a", λ31a61a25ed22), 
         null;
       }
     }
-    async function k(λ24dd8541fd12, λ46d44fb37353) {
+    async function k(λ31a61a25ed22, λf0ee71997855) {
       try {
-        let λ0bee367a7c9a = (await g()).transaction(λ41c8cb866c51, "readwrite"), λ1ade8ac64c25 = λ0bee367a7c9a.objectStore(λ41c8cb866c51), λcde243751cc9 = u(await y(λ1ade8ac64c25.get(λ699ed39f8682))), λ0a85859d196f = Math.max(Date.now(), λ46d44fb37353 + 1, (λcde243751cc9?.updatedAt ?? 0) + 1);
-        return λ1ade8ac64c25.put({
-          updatedAt: λ0a85859d196f,
-          cookies: λ24dd8541fd12
-        }, λ699ed39f8682), await m(λ0bee367a7c9a), λ0a85859d196f;
-      } catch (λ24dd8541fd12) {
-        return console.error("Failed to persist controller cookies:", λ24dd8541fd12), λ46d44fb37353;
+        let λ21dc7faa0f91 = (await g()).transaction(λ0a90bd9dcdc9, "\x72\x65\x61\x64\x77\x72\x69\x74\x65"), λ45ef238a60a0 = λ21dc7faa0f91.objectStore(λ0a90bd9dcdc9), λ01091640872e = u(await y(λ45ef238a60a0.get(λfae867df8a32))), λca2bbd3ff204 = Math.max(Date.now(), λf0ee71997855 + 1, (λ01091640872e?.updatedAt ?? 0) + 1);
+        return λ45ef238a60a0.put({
+          updatedAt: λca2bbd3ff204,
+          cookies: λ31a61a25ed22
+        }, λfae867df8a32), await m(λ21dc7faa0f91), λca2bbd3ff204;
+      } catch (λ31a61a25ed22) {
+        return console.error("\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x70\x65\x72\x73\x69\x73\x74\x20\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x20\x63\x6f\x6f\x6b\x69\x65\x73\x3a", λ31a61a25ed22), λf0ee71997855;
       }
     }
     function b() {
       return Math.random().toString(36).substring(2, 10);
     }
-    let λ6de571c1f8cf = (0, λ1ade8ac64c25.deepmerge)();
+    let λf66666167a64 = (0, λ45ef238a60a0.deepmerge)();
     class S {
       init;
       id;
       config;
       studyjetConfig;
       prefix;
-      cookieJar=new λcde243751cc9.cP;
+      cookieJar=new λ01091640872e.cP;
       frames=[];
       serviceWorkerController;
       guardServiceWorkerRevive=!0;
@@ -328,21 +328,21 @@ var $studyjetController;
       cookieUpdatedAt=0;
       cookieSyncPromise=null;
       cookieSyncDirty=!0;
-      cookieSyncChannel=new BroadcastChannel("__studyjet_controller_channel");
+      cookieSyncChannel=new BroadcastChannel("\x5f\x5f\x73\x74\x75\x64\x79\x6a\x65\x74\x5f\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x5f\x63\x68\x61\x6e\x6e\x65\x6c");
       wasmAlreadyFetched=!1;
       wasmPayload=null;
-      onTabChannelMessage=λ24dd8541fd12 => {
-        this.rpc.recieve(λ24dd8541fd12.data);
+      onTabChannelMessage=λ31a61a25ed22 => {
+        this.rpc.recieve(λ31a61a25ed22.data);
       };
-      onCookieSyncMessage=λ24dd8541fd12 => {
-        let λ46d44fb37353 = "object" == typeof λ24dd8541fd12.data && null !== λ24dd8541fd12.data ? λ24dd8541fd12.data.updatedAt : void 0;
-        "number" != typeof λ46d44fb37353 || λ46d44fb37353 <= this.cookieUpdatedAt || (this.cookieSyncDirty = !0, 
+      onCookieSyncMessage=λ31a61a25ed22 => {
+        let λf0ee71997855 = "\x6f\x62\x6a\x65\x63\x74" == typeof λ31a61a25ed22.data && null !== λ31a61a25ed22.data ? λ31a61a25ed22.data.updatedAt : void 0;
+        "\x6e\x75\x6d\x62\x65\x72" != typeof λf0ee71997855 || λf0ee71997855 <= this.cookieUpdatedAt || (this.cookieSyncDirty = !0, 
         this.loadSavedCookies());
       };
       async loadStudyJetWasm() {
         if (this.wasmAlreadyFetched) return;
-        let λ24dd8541fd12 = await fetch(this.config.wasmPath);
-        (0, λcde243751cc9.ht)(await λ24dd8541fd12.arrayBuffer()), this.wasmAlreadyFetched = !0;
+        let λ31a61a25ed22 = await fetch(this.config.wasmPath);
+        (0, λ01091640872e.ht)(await λ31a61a25ed22.arrayBuffer()), this.wasmAlreadyFetched = !0;
       }
       methods={
         ready: async () => {
@@ -350,126 +350,126 @@ var $studyjetController;
             this.guardServiceWorkerRevive = !1;
           }, 5e3);
         },
-        request: async λ24dd8541fd12 => {
-          let λ46d44fb37353 = new URL(λ24dd8541fd12.rawUrl).pathname, λ0bee367a7c9a = this.frames.find(λ24dd8541fd12 => λ46d44fb37353.startsWith(λ24dd8541fd12.prefix));
-          if (!λ0bee367a7c9a) throw Error("No frame found for request");
+        request: async λ31a61a25ed22 => {
+          let λf0ee71997855 = new URL(λ31a61a25ed22.rawUrl).pathname, λ21dc7faa0f91 = this.frames.find(λ31a61a25ed22 => λf0ee71997855.startsWith(λ31a61a25ed22.prefix));
+          if (!λ21dc7faa0f91) throw Error("\x4e\x6f\x20\x66\x72\x61\x6d\x65\x20\x66\x6f\x75\x6e\x64\x20\x66\x6f\x72\x20\x72\x65\x71\x75\x65\x73\x74");
           try {
-            if (await this.loadSavedCookies(), λ46d44fb37353 === λ0bee367a7c9a.prefix + this.config.virtualWasmPath) {
+            if (await this.loadSavedCookies(), λf0ee71997855 === λ21dc7faa0f91.prefix + this.config.virtualWasmPath) {
               if (!this.wasmPayload) {
-                let λ24dd8541fd12 = await fetch(this.config.wasmPath), λ46d44fb37353 = await λ24dd8541fd12.arrayBuffer(), λ0bee367a7c9a = btoa(new Uint8Array(λ46d44fb37353).reduce((λ24dd8541fd12, λ46d44fb37353) => (λ24dd8541fd12.push(String.fromCharCode(λ46d44fb37353)), 
-                λ24dd8541fd12), []).join(""));
-                this.wasmPayload = `self.WASM = '${λ0bee367a7c9a}';`;
+                let λ31a61a25ed22 = await fetch(this.config.wasmPath), λf0ee71997855 = await λ31a61a25ed22.arrayBuffer(), λ21dc7faa0f91 = btoa(new Uint8Array(λf0ee71997855).reduce((λ31a61a25ed22, λf0ee71997855) => (λ31a61a25ed22.push(String.fromCharCode(λf0ee71997855)), 
+                λ31a61a25ed22), []).join(""));
+                this.wasmPayload = `\x73\x65\x6c\x66\x2e\x57\x41\x53\x4d\x20\x3d\x20\x27${λ21dc7faa0f91}\x27\x3b`;
               }
               return [ {
                 body: this.wasmPayload,
                 status: 200,
-                statusText: "OK",
-                headers: [ [ "Content-Type", "application/javascript" ] ]
+                statusText: "\x4f\x4b",
+                headers: [ [ "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65", "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74" ] ]
               }, [] ];
             }
-            let λ1ade8ac64c25 = λcde243751cc9.uh.fromRawHeaders(λ24dd8541fd12.initialHeaders), λ0a85859d196f = await λ0bee367a7c9a.fetchHandler.handleFetch({
-              initialHeaders: λ1ade8ac64c25,
-              rawClientUrl: λ24dd8541fd12.rawClientUrl ? new URL(λ24dd8541fd12.rawClientUrl) : void 0,
-              rawUrl: new URL(λ24dd8541fd12.rawUrl),
-              rawReferrer: λ24dd8541fd12.rawReferrer,
-              rawDestination: λ24dd8541fd12.destination,
-              method: λ24dd8541fd12.method,
-              mode: λ24dd8541fd12.mode,
-              referrer: λ24dd8541fd12.referrer,
-              body: λ24dd8541fd12.body,
-              cache: λ24dd8541fd12.cache,
-              clientId: λ24dd8541fd12.clientId
+            let λ45ef238a60a0 = λ01091640872e.uh.fromRawHeaders(λ31a61a25ed22.initialHeaders), λca2bbd3ff204 = await λ21dc7faa0f91.fetchHandler.handleFetch({
+              initialHeaders: λ45ef238a60a0,
+              rawClientUrl: λ31a61a25ed22.rawClientUrl ? new URL(λ31a61a25ed22.rawClientUrl) : void 0,
+              rawUrl: new URL(λ31a61a25ed22.rawUrl),
+              rawReferrer: λ31a61a25ed22.rawReferrer,
+              rawDestination: λ31a61a25ed22.destination,
+              method: λ31a61a25ed22.method,
+              mode: λ31a61a25ed22.mode,
+              referrer: λ31a61a25ed22.referrer,
+              body: λ31a61a25ed22.body,
+              cache: λ31a61a25ed22.cache,
+              clientId: λ31a61a25ed22.clientId
             });
             return [ {
-              body: λ0a85859d196f.body,
-              status: λ0a85859d196f.status,
-              statusText: λ0a85859d196f.statusText,
-              headers: λ0a85859d196f.headers.toRawHeaders()
-            }, λ0a85859d196f.body instanceof ReadableStream || λ0a85859d196f.body instanceof ArrayBuffer ? [ λ0a85859d196f.body ] : [] ];
-          } catch (λ46d44fb37353) {
-            let λ1ade8ac64c25 = {
+              body: λca2bbd3ff204.body,
+              status: λca2bbd3ff204.status,
+              statusText: λca2bbd3ff204.statusText,
+              headers: λca2bbd3ff204.headers.toRawHeaders()
+            }, λca2bbd3ff204.body instanceof ReadableStream || λca2bbd3ff204.body instanceof ArrayBuffer ? [ λca2bbd3ff204.body ] : [] ];
+          } catch (λf0ee71997855) {
+            let λ45ef238a60a0 = {
               setResponse: void 0,
               suppressError: !1
             };
-            if (await λcde243751cc9.Cx.dispatch(λ0bee367a7c9a.hooks.error.request, {
-              rawrequest: λ24dd8541fd12,
-              error: λ46d44fb37353
-            }, λ1ade8ac64c25), λ1ade8ac64c25.suppressError || console.error("Error in controller request handler:", λ46d44fb37353), 
-            λ1ade8ac64c25.setResponse) return [ λ1ade8ac64c25.setResponse, [] ];
-            throw λ46d44fb37353;
+            if (await λ01091640872e.Cx.dispatch(λ21dc7faa0f91.hooks.error.request, {
+              rawrequest: λ31a61a25ed22,
+              error: λf0ee71997855
+            }, λ45ef238a60a0), λ45ef238a60a0.suppressError || console.error("\x45\x72\x72\x6f\x72\x20\x69\x6e\x20\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x20\x72\x65\x71\x75\x65\x73\x74\x20\x68\x61\x6e\x64\x6c\x65\x72\x3a", λf0ee71997855), 
+            λ45ef238a60a0.setResponse) return [ λ45ef238a60a0.setResponse, [] ];
+            throw λf0ee71997855;
           }
         },
-        initRemoteTransport: async λ46d44fb37353 => {
-          let λ0bee367a7c9a = new λ24dd8541fd12.C({
-            request: async ({remote: λ24dd8541fd12, method: λ46d44fb37353, body: λ0bee367a7c9a, headers: λ1ade8ac64c25}) => {
-              let λcde243751cc9 = await this.transport.request(new URL(λ24dd8541fd12), λ46d44fb37353, λ0bee367a7c9a, λ1ade8ac64c25, void 0);
-              return [ λcde243751cc9, [ λcde243751cc9.body ] ];
+        initRemoteTransport: async λf0ee71997855 => {
+          let λ21dc7faa0f91 = new λ31a61a25ed22.C({
+            request: async ({remote: λ31a61a25ed22, method: λf0ee71997855, body: λ21dc7faa0f91, headers: λ45ef238a60a0}) => {
+              let λ01091640872e = await this.transport.request(new URL(λ31a61a25ed22), λf0ee71997855, λ21dc7faa0f91, λ45ef238a60a0, void 0);
+              return [ λ01091640872e, [ λ01091640872e.body ] ];
             },
-            sendSetCookie: async ({cookies: λ24dd8541fd12, options: λ46d44fb37353}) => {
-              await this.loadSavedCookies(!0), λ46d44fb37353?.clear && this.cookieJar.clear(), 
-              this.applyCookieSyncEntries(λ24dd8541fd12), await this.persistCookies(), await this.propagateCookieSync(λ24dd8541fd12, λ46d44fb37353);
+            sendSetCookie: async ({cookies: λ31a61a25ed22, options: λf0ee71997855}) => {
+              await this.loadSavedCookies(!0), λf0ee71997855?.clear && this.cookieJar.clear(), 
+              this.applyCookieSyncEntries(λ31a61a25ed22), await this.persistCookies(), await this.propagateCookieSync(λ31a61a25ed22, λf0ee71997855);
             },
-            connect: async ({url: λ24dd8541fd12, protocols: λ46d44fb37353, requestHeaders: λ0bee367a7c9a, port: λ1ade8ac64c25}) => {
-              let λcde243751cc9, λ0a85859d196f = new Promise(λ24dd8541fd12 => λcde243751cc9 = λ24dd8541fd12), [λac59aea7cf55, λa254fa47882b] = this.transport.connect(new URL(λ24dd8541fd12), λ46d44fb37353, λ0bee367a7c9a, (λ24dd8541fd12, λ46d44fb37353) => {
-                λcde243751cc9({
-                  result: "success",
-                  protocol: λ24dd8541fd12,
-                  extensions: λ46d44fb37353
+            connect: async ({url: λ31a61a25ed22, protocols: λf0ee71997855, requestHeaders: λ21dc7faa0f91, port: λ45ef238a60a0}) => {
+              let λ01091640872e, λca2bbd3ff204 = new Promise(λ31a61a25ed22 => λ01091640872e = λ31a61a25ed22), [λfc2801196c9b, λdb843be3ae7e] = this.transport.connect(new URL(λ31a61a25ed22), λf0ee71997855, λ21dc7faa0f91, (λ31a61a25ed22, λf0ee71997855) => {
+                λ01091640872e({
+                  result: "\x73\x75\x63\x63\x65\x73\x73",
+                  protocol: λ31a61a25ed22,
+                  extensions: λf0ee71997855
                 });
-              }, λ24dd8541fd12 => {
-                λ1ade8ac64c25.postMessage({
-                  type: "data",
-                  data: λ24dd8541fd12
-                }, λ24dd8541fd12 instanceof ArrayBuffer ? [ λ24dd8541fd12 ] : []);
-              }, (λ24dd8541fd12, λ46d44fb37353) => {
-                λ1ade8ac64c25.postMessage({
-                  type: "close",
-                  code: λ24dd8541fd12,
-                  reason: λ46d44fb37353
+              }, λ31a61a25ed22 => {
+                λ45ef238a60a0.postMessage({
+                  type: "\x64\x61\x74\x61",
+                  data: λ31a61a25ed22
+                }, λ31a61a25ed22 instanceof ArrayBuffer ? [ λ31a61a25ed22 ] : []);
+              }, (λ31a61a25ed22, λf0ee71997855) => {
+                λ45ef238a60a0.postMessage({
+                  type: "\x63\x6c\x6f\x73\x65",
+                  code: λ31a61a25ed22,
+                  reason: λf0ee71997855
                 });
-              }, λ24dd8541fd12 => {
-                λcde243751cc9({
-                  result: "failure",
-                  error: λ24dd8541fd12
+              }, λ31a61a25ed22 => {
+                λ01091640872e({
+                  result: "\x66\x61\x69\x6c\x75\x72\x65",
+                  error: λ31a61a25ed22
                 });
               });
-              return λ1ade8ac64c25.onmessageerror = λ24dd8541fd12 => {
-                console.error("Transport port messageerror (this should never happen!)", λ24dd8541fd12);
-              }, λ1ade8ac64c25.onmessage = ({data: λ24dd8541fd12}) => {
-                "data" === λ24dd8541fd12.type ? λac59aea7cf55(λ24dd8541fd12.data) : "close" === λ24dd8541fd12.type && λa254fa47882b(λ24dd8541fd12.code, λ24dd8541fd12.reason);
-              }, [ await λ0a85859d196f, [] ];
+              return λ45ef238a60a0.onmessageerror = λ31a61a25ed22 => {
+                console.error("\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x20\x70\x6f\x72\x74\x20\x6d\x65\x73\x73\x61\x67\x65\x65\x72\x72\x6f\x72\x20\x28\x74\x68\x69\x73\x20\x73\x68\x6f\x75\x6c\x64\x20\x6e\x65\x76\x65\x72\x20\x68\x61\x70\x70\x65\x6e\x21\x29", λ31a61a25ed22);
+              }, λ45ef238a60a0.onmessage = ({data: λ31a61a25ed22}) => {
+                "\x64\x61\x74\x61" === λ31a61a25ed22.type ? λfc2801196c9b(λ31a61a25ed22.data) : "\x63\x6c\x6f\x73\x65" === λ31a61a25ed22.type && λdb843be3ae7e(λ31a61a25ed22.code, λ31a61a25ed22.reason);
+              }, [ await λca2bbd3ff204, [] ];
             }
-          }, "transport", (λ24dd8541fd12, λ0bee367a7c9a) => λ46d44fb37353.postMessage(λ24dd8541fd12, λ0bee367a7c9a));
-          λ46d44fb37353.onmessageerror = λ24dd8541fd12 => {
-            console.error("Transport port messageerror (this should never happen!)", λ24dd8541fd12);
-          }, λ46d44fb37353.onmessage = λ24dd8541fd12 => {
-            λ0bee367a7c9a.recieve(λ24dd8541fd12.data);
-          }, λ0bee367a7c9a.call("ready", void 0, []);
+          }, "\x74\x72\x61\x6e\x73\x70\x6f\x72\x74", (λ31a61a25ed22, λ21dc7faa0f91) => λf0ee71997855.postMessage(λ31a61a25ed22, λ21dc7faa0f91));
+          λf0ee71997855.onmessageerror = λ31a61a25ed22 => {
+            console.error("\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x20\x70\x6f\x72\x74\x20\x6d\x65\x73\x73\x61\x67\x65\x65\x72\x72\x6f\x72\x20\x28\x74\x68\x69\x73\x20\x73\x68\x6f\x75\x6c\x64\x20\x6e\x65\x76\x65\x72\x20\x68\x61\x70\x70\x65\x6e\x21\x29", λ31a61a25ed22);
+          }, λf0ee71997855.onmessage = λ31a61a25ed22 => {
+            λ21dc7faa0f91.recieve(λ31a61a25ed22.data);
+          }, λ21dc7faa0f91.call("\x72\x65\x61\x64\x79", void 0, []);
         }
       };
-      constructor(λ46d44fb37353) {
-        this.init = λ46d44fb37353, (0, λac59aea7cf55.O)(), this.id = b(), this.config = λ6de571c1f8cf(λa254fa47882b, λ46d44fb37353.config || {}), 
-        this.studyjetConfig = λ6de571c1f8cf(λd757f8d911c7, λcde243751cc9.sb), this.studyjetConfig = λ6de571c1f8cf(this.studyjetConfig, λ46d44fb37353.studyjetConfig || {}), 
-        this.prefix = this.config.prefix + this.id + "/", this.serviceWorkerController = λ46d44fb37353.serviceworker, 
-        this.ready = Promise.all([ new Promise(λ24dd8541fd12 => {
-          this.readyResolve = λ24dd8541fd12;
-        }), this.loadStudyJetWasm(), this.loadSavedCookies(!0) ]).then(() => void 0), this.rpc = new λ24dd8541fd12.C(this.methods, "tabchannel-" + this.id, (λ24dd8541fd12, λ46d44fb37353) => {
-          if (!this.port) throw Error("Port not found");
-          this.port.postMessage(λ24dd8541fd12, λ46d44fb37353);
-        }), this.transport = λ46d44fb37353.transport, this.cookieSyncChannel.addEventListener("message", this.onCookieSyncMessage), 
-        this.setupMessagePort(), navigator.serviceWorker.addEventListener("message", λ24dd8541fd12 => {
-          if (λ24dd8541fd12.data?.$controller$setCookie && "object" == typeof λ24dd8541fd12.data.$controller$setCookie) {
-            let λ46d44fb37353 = λ24dd8541fd12.data.$controller$setCookie;
-            if (λ46d44fb37353.controllerId && λ46d44fb37353.controllerId !== this.id) return;
-            λ46d44fb37353.options?.clear && this.cookieJar.clear(), this.applyCookieSyncEntries(λ46d44fb37353.cookies), 
-            "string" == typeof λ46d44fb37353.id && this.serviceWorkerController.postMessage({
+      constructor(λf0ee71997855) {
+        this.init = λf0ee71997855, (0, λfc2801196c9b.O)(), this.id = b(), this.config = λf66666167a64(λdb843be3ae7e, λf0ee71997855.config || {}), 
+        this.studyjetConfig = λf66666167a64(λc8cae73b71a2, λ01091640872e.sb), this.studyjetConfig = λf66666167a64(this.studyjetConfig, λf0ee71997855.studyjetConfig || {}), 
+        this.prefix = this.config.prefix + this.id + "\x2f", this.serviceWorkerController = λf0ee71997855.serviceworker, 
+        this.ready = Promise.all([ new Promise(λ31a61a25ed22 => {
+          this.readyResolve = λ31a61a25ed22;
+        }), this.loadStudyJetWasm(), this.loadSavedCookies(!0) ]).then(() => void 0), this.rpc = new λ31a61a25ed22.C(this.methods, "\x74\x61\x62\x63\x68\x61\x6e\x6e\x65\x6c\x2d" + this.id, (λ31a61a25ed22, λf0ee71997855) => {
+          if (!this.port) throw Error("\x50\x6f\x72\x74\x20\x6e\x6f\x74\x20\x66\x6f\x75\x6e\x64");
+          this.port.postMessage(λ31a61a25ed22, λf0ee71997855);
+        }), this.transport = λf0ee71997855.transport, this.cookieSyncChannel.addEventListener("\x6d\x65\x73\x73\x61\x67\x65", this.onCookieSyncMessage), 
+        this.setupMessagePort(), navigator.serviceWorker.addEventListener("\x6d\x65\x73\x73\x61\x67\x65", λ31a61a25ed22 => {
+          if (λ31a61a25ed22.data?.$controller$setCookie && "\x6f\x62\x6a\x65\x63\x74" == typeof λ31a61a25ed22.data.$controller$setCookie) {
+            let λf0ee71997855 = λ31a61a25ed22.data.$controller$setCookie;
+            if (λf0ee71997855.controllerId && λf0ee71997855.controllerId !== this.id) return;
+            λf0ee71997855.options?.clear && this.cookieJar.clear(), this.applyCookieSyncEntries(λf0ee71997855.cookies), 
+            "\x73\x74\x72\x69\x6e\x67" == typeof λf0ee71997855.id && this.serviceWorkerController.postMessage({
               $sw$setCookieDone: {
-                id: λ46d44fb37353.id
+                id: λf0ee71997855.id
               }
             });
             return;
           }
-          if (λ24dd8541fd12.data.$controller$swrevive) {
+          if (λ31a61a25ed22.data.$controller$swrevive) {
             if (this.guardServiceWorkerRevive) return;
             this.setupMessagePort();
           }
@@ -477,54 +477,54 @@ var $studyjetController;
       }
       setupMessagePort() {
         if (this.port) {
-          this.port.removeEventListener("message", this.onTabChannelMessage);
+          this.port.removeEventListener("\x6d\x65\x73\x73\x61\x67\x65", this.onTabChannelMessage);
           try {
             this.port.close();
           } catch {}
           this.port = null;
         }
-        let λ24dd8541fd12 = new MessageChannel;
-        this.port = λ24dd8541fd12.port1, this.port.addEventListener("message", this.onTabChannelMessage), 
+        let λ31a61a25ed22 = new MessageChannel;
+        this.port = λ31a61a25ed22.port1, this.port.addEventListener("\x6d\x65\x73\x73\x61\x67\x65", this.onTabChannelMessage), 
         this.port.start(), this.serviceWorkerController.postMessage({
           $controller$init: {
             prefix: this.prefix,
             id: this.id
           }
-        }, [ λ24dd8541fd12.port2 ]);
+        }, [ λ31a61a25ed22.port2 ]);
       }
-      applyCookieSyncEntries(λ24dd8541fd12) {
-        if (Array.isArray(λ24dd8541fd12)) for (let λ46d44fb37353 of λ24dd8541fd12) "string" == typeof λ46d44fb37353?.url && "string" == typeof λ46d44fb37353.cookie && this.cookieJar.setCookies(λ46d44fb37353.cookie, new URL(λ46d44fb37353.url));
+      applyCookieSyncEntries(λ31a61a25ed22) {
+        if (Array.isArray(λ31a61a25ed22)) for (let λf0ee71997855 of λ31a61a25ed22) "\x73\x74\x72\x69\x6e\x67" == typeof λf0ee71997855?.url && "\x73\x74\x72\x69\x6e\x67" == typeof λf0ee71997855.cookie && this.cookieJar.setCookies(λf0ee71997855.cookie, new URL(λf0ee71997855.url));
       }
-      async propagateCookieSync(λ24dd8541fd12, λ46d44fb37353 = {}) {
-        this.port && await this.rpc.call("sendSetCookie", {
-          cookies: λ24dd8541fd12,
-          options: λ46d44fb37353
+      async propagateCookieSync(λ31a61a25ed22, λf0ee71997855 = {}) {
+        this.port && await this.rpc.call("\x73\x65\x6e\x64\x53\x65\x74\x43\x6f\x6f\x6b\x69\x65", {
+          cookies: λ31a61a25ed22,
+          options: λf0ee71997855
         });
       }
-      async loadSavedCookies(λ24dd8541fd12 = !1) {
-        if (λ24dd8541fd12 || this.cookieSyncDirty) return this.cookieSyncPromise || (this.cookieSyncPromise = (async () => {
-          let λ24dd8541fd12 = await w();
-          λ24dd8541fd12 && λ24dd8541fd12.updatedAt > this.cookieUpdatedAt && (this.cookieJar.load(λ24dd8541fd12.cookies), 
-          this.cookieUpdatedAt = λ24dd8541fd12.updatedAt), this.cookieSyncDirty = !1;
+      async loadSavedCookies(λ31a61a25ed22 = !1) {
+        if (λ31a61a25ed22 || this.cookieSyncDirty) return this.cookieSyncPromise || (this.cookieSyncPromise = (async () => {
+          let λ31a61a25ed22 = await w();
+          λ31a61a25ed22 && λ31a61a25ed22.updatedAt > this.cookieUpdatedAt && (this.cookieJar.load(λ31a61a25ed22.cookies), 
+          this.cookieUpdatedAt = λ31a61a25ed22.updatedAt), this.cookieSyncDirty = !1;
         })().finally(() => {
           this.cookieSyncPromise = null;
         })), this.cookieSyncPromise;
       }
       async persistCookies() {
-        let λ24dd8541fd12 = await k(this.cookieJar.dump(), this.cookieUpdatedAt);
-        λ24dd8541fd12 <= this.cookieUpdatedAt || (this.cookieUpdatedAt = λ24dd8541fd12, 
+        let λ31a61a25ed22 = await k(this.cookieJar.dump(), this.cookieUpdatedAt);
+        λ31a61a25ed22 <= this.cookieUpdatedAt || (this.cookieUpdatedAt = λ31a61a25ed22, 
         this.cookieSyncDirty = !1, this.cookieSyncChannel.postMessage({
-          updatedAt: λ24dd8541fd12
+          updatedAt: λ31a61a25ed22
         }));
       }
-      setTransport(λ24dd8541fd12) {
-        for (let λ46d44fb37353 of (this.transport = λ24dd8541fd12, this.frames)) λ46d44fb37353.controller.transport = λ24dd8541fd12, 
-        λ46d44fb37353.fetchHandler.client.transport = λ24dd8541fd12;
+      setTransport(λ31a61a25ed22) {
+        for (let λf0ee71997855 of (this.transport = λ31a61a25ed22, this.frames)) λf0ee71997855.controller.transport = λ31a61a25ed22, 
+        λf0ee71997855.fetchHandler.client.transport = λ31a61a25ed22;
       }
-      createFrame(λ24dd8541fd12, λ46d44fb37353 = {}) {
-        if (!this.ready) throw Error("Controller is not ready! Try awaiting controller.wait()");
-        let λ0bee367a7c9a = new v(this, λ24dd8541fd12 ??= document.createElement("iframe"), λ46d44fb37353);
-        return this.frames.push(λ0bee367a7c9a), λ0bee367a7c9a;
+      createFrame(λ31a61a25ed22, λf0ee71997855 = {}) {
+        if (!this.ready) throw Error("\x43\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x20\x69\x73\x20\x6e\x6f\x74\x20\x72\x65\x61\x64\x79\x21\x20\x54\x72\x79\x20\x61\x77\x61\x69\x74\x69\x6e\x67\x20\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x2e\x77\x61\x69\x74\x28\x29");
+        let λ21dc7faa0f91 = new v(this, λ31a61a25ed22 ??= document.createElement("\x69\x66\x72\x61\x6d\x65"), λf0ee71997855);
+        return this.frames.push(λ21dc7faa0f91), λ21dc7faa0f91;
       }
       async wait() {
         await this.ready;
@@ -544,21 +544,21 @@ var $studyjetController;
           prefix: new URL(this.prefix, location.href),
           cookieJar: this.controller.cookieJar,
           interface: {
-            getInjectScripts: function e(λ24dd8541fd12, λ46d44fb37353, λ0bee367a7c9a, λ1ade8ac64c25, λcde243751cc9, λ0a85859d196f) {
-              return (λac59aea7cf55, λa254fa47882b, λd757f8d911c7, λ41c8cb866c51) => {
-                var λ699ed39f8682;
-                return [ λ41c8cb866c51(λ24dd8541fd12.studyjetPath), λ41c8cb866c51(λ0bee367a7c9a.href + λ24dd8541fd12.virtualWasmPath), λ41c8cb866c51(λ24dd8541fd12.injectPath), λ41c8cb866c51("data:text/javascript;charset=utf-8;base64," + (λ699ed39f8682 = `\n\t\t\t\t\tdocument.querySelectorAll("script[studyjet-injected]").forEach(script => script.remove());\n\t\t\t\t\t$studyjetController.load({\n\t\t\t\t\t\tconfig: ${JSON.stringify(λ24dd8541fd12)},\n\t\t\t\t\t\tsjconfig: ${JSON.stringify(λ46d44fb37353)},\n\t\t\t\t\t\tprefix: new URL("${λ0bee367a7c9a.href}"),\n\t\t\t\t\t\tcookies: ${JSON.stringify(λ1ade8ac64c25.dump())},\n\t\t\t\t\t\tyieldGetInjectScripts: ${e.toString()},\n\t\t\t\t\t\tcodecEncode: ${λcde243751cc9.toString()},\n\t\t\t\t\t\tcodecDecode: ${λ0a85859d196f.toString()},\n\t\t\t\t\t\tinitHeaders: ${JSON.stringify(λd757f8d911c7.headers ?? [])},\n\t\t\t\t\t\thistory: ${JSON.stringify(λd757f8d911c7.history ?? [])},\n\t\t\t\t\t})\n\t\t\t\t`, 
-                btoa((new TextEncoder).encode(λ699ed39f8682).reduce((λ24dd8541fd12, λ46d44fb37353) => (λ24dd8541fd12.push(String.fromCharCode(λ46d44fb37353)), 
-                λ24dd8541fd12), []).join("")))) ];
+            getInjectScripts: function e(λ31a61a25ed22, λf0ee71997855, λ21dc7faa0f91, λ45ef238a60a0, λ01091640872e, λca2bbd3ff204) {
+              return (λfc2801196c9b, λdb843be3ae7e, λc8cae73b71a2, λ0a90bd9dcdc9) => {
+                var λfae867df8a32;
+                return [ λ0a90bd9dcdc9(λ31a61a25ed22.studyjetPath), λ0a90bd9dcdc9(λ21dc7faa0f91.href + λ31a61a25ed22.virtualWasmPath), λ0a90bd9dcdc9(λ31a61a25ed22.injectPath), λ0a90bd9dcdc9("data:text/javascript;charset=utf-8;base64," + (λfae867df8a32 = `\x0a\x09\x09\x09\x09\x09\x64\x6f\x63\x75\x6d\x65\x6e\x74\x2e\x71\x75\x65\x72\x79\x53\x65\x6c\x65\x63\x74\x6f\x72\x41\x6c\x6c\x28\x22\x73\x63\x72\x69\x70\x74\x5b\x73\x74\x75\x64\x79\x6a\x65\x74\x2d\x69\x6e\x6a\x65\x63\x74\x65\x64\x5d\x22\x29\x2e\x66\x6f\x72\x45\x61\x63\x68\x28\x73\x63\x72\x69\x70\x74\x20\x3d\x3e\x20\x73\x63\x72\x69\x70\x74\x2e\x72\x65\x6d\x6f\x76\x65\x28\x29\x29\x3b\x0a\x09\x09\x09\x09\x09\x24\x73\x74\x75\x64\x79\x6a\x65\x74\x43\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x2e\x6c\x6f\x61\x64\x28\x7b\x0a\x09\x09\x09\x09\x09\x09\x63\x6f\x6e\x66\x69\x67\x3a\x20${JSON.stringify(λ31a61a25ed22)}\x2c\x0a\x09\x09\x09\x09\x09\x09\x73\x6a\x63\x6f\x6e\x66\x69\x67\x3a\x20${JSON.stringify(λf0ee71997855)}\x2c\x0a\x09\x09\x09\x09\x09\x09\x70\x72\x65\x66\x69\x78\x3a\x20\x6e\x65\x77\x20\x55\x52\x4c\x28\x22${λ21dc7faa0f91.href}\x22\x29\x2c\x0a\x09\x09\x09\x09\x09\x09\x63\x6f\x6f\x6b\x69\x65\x73\x3a\x20${JSON.stringify(λ45ef238a60a0.dump())}\x2c\x0a\x09\x09\x09\x09\x09\x09\x79\x69\x65\x6c\x64\x47\x65\x74\x49\x6e\x6a\x65\x63\x74\x53\x63\x72\x69\x70\x74\x73\x3a\x20${e.toString()}\x2c\x0a\x09\x09\x09\x09\x09\x09\x63\x6f\x64\x65\x63\x45\x6e\x63\x6f\x64\x65\x3a\x20${λ01091640872e.toString()}\x2c\x0a\x09\x09\x09\x09\x09\x09\x63\x6f\x64\x65\x63\x44\x65\x63\x6f\x64\x65\x3a\x20${λca2bbd3ff204.toString()}\x2c\x0a\x09\x09\x09\x09\x09\x09\x69\x6e\x69\x74\x48\x65\x61\x64\x65\x72\x73\x3a\x20${JSON.stringify(λc8cae73b71a2.headers ?? [])}\x2c\x0a\x09\x09\x09\x09\x09\x09\x68\x69\x73\x74\x6f\x72\x79\x3a\x20${JSON.stringify(λc8cae73b71a2.history ?? [])}\x2c\x0a\x09\x09\x09\x09\x09\x7d\x29\x0a\x09\x09\x09\x09`, 
+                btoa((new TextEncoder).encode(λfae867df8a32).reduce((λ31a61a25ed22, λf0ee71997855) => (λ31a61a25ed22.push(String.fromCharCode(λf0ee71997855)), 
+                λ31a61a25ed22), []).join("")))) ];
               };
             }(this.controller.config, this.controller.studyjetConfig, new URL(this.prefix, location.href), this.controller.cookieJar, this.controller.config.codec.encode, this.controller.config.codec.decode),
-            getWorkerInjectScripts: (λ24dd8541fd12, λ46d44fb37353, λ0bee367a7c9a) => {
-              var λ1ade8ac64c25;
-              let λcde243751cc9 = "";
-              return λcde243751cc9 += λ0bee367a7c9a(this.controller.config.studyjetPath), λcde243751cc9 += λ0bee367a7c9a(this.prefix + this.controller.config.virtualWasmPath), 
-              λcde243751cc9 += λ0bee367a7c9a("data:text/javascript;charset=utf-8;base64," + (λ1ade8ac64c25 = `\n\t\t\t\t\t(()=>{\n\t\t\t\t\t\tconst { StudyJetClient, CookieJar, setWasm } = $studyjet;\n\n\t\t\t\t\t\tsetWasm(Uint8Array.from(atob(self.WASM), (c) => c.charCodeAt(0)));\n\t\t\t\t\t\tdelete self.WASM;\n\n\t\t\t\t\t\tconst sjconfig = ${JSON.stringify(this.controller.studyjetConfig)};\n\t\t\t\t\t\tconst prefix = new URL("${this.prefix}", location.href);\n\n\t\t\t\t\t\tconst context = {\n\t\t\t\t\t\t\tconfig: sjconfig,\n\t\t\t\t\t\t\tprefix,\n\t\t\t\t\t\t\tinterface: {\n\t\t\t\t\t\t\t\tcodecEncode: ${this.controller.config.codec.encode.toString()},\n\t\t\t\t\t\t\t\tcodecDecode: ${this.controller.config.codec.decode.toString()},\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t};\n\n\t\t\t\t\t\tconst client = new StudyJetClient(globalThis, {\n\t\t\t\t\t\t\tcontext,\n\t\t\t\t\t\t\ttransport: null,\n\t\t\t\t\t\t});\n\n\t\t\t\t\t\tclient.hook();\n\t\t\t\t\t})();\n\t\t\t\t\t`, 
-              btoa((new TextEncoder).encode(λ1ade8ac64c25).reduce((λ24dd8541fd12, λ46d44fb37353) => (λ24dd8541fd12.push(String.fromCharCode(λ46d44fb37353)), 
-              λ24dd8541fd12), []).join(""))));
+            getWorkerInjectScripts: (λ31a61a25ed22, λf0ee71997855, λ21dc7faa0f91) => {
+              var λ45ef238a60a0;
+              let λ01091640872e = "";
+              return λ01091640872e += λ21dc7faa0f91(this.controller.config.studyjetPath), λ01091640872e += λ21dc7faa0f91(this.prefix + this.controller.config.virtualWasmPath), 
+              λ01091640872e += λ21dc7faa0f91("data:text/javascript;charset=utf-8;base64," + (λ45ef238a60a0 = `\x0a\x09\x09\x09\x09\x09\x28\x28\x29\x3d\x3e\x7b\x0a\x09\x09\x09\x09\x09\x09\x63\x6f\x6e\x73\x74\x20\x7b\x20\x53\x74\x75\x64\x79\x4a\x65\x74\x43\x6c\x69\x65\x6e\x74\x2c\x20\x43\x6f\x6f\x6b\x69\x65\x4a\x61\x72\x2c\x20\x73\x65\x74\x57\x61\x73\x6d\x20\x7d\x20\x3d\x20\x24\x73\x74\x75\x64\x79\x6a\x65\x74\x3b\x0a\x0a\x09\x09\x09\x09\x09\x09\x73\x65\x74\x57\x61\x73\x6d\x28\x55\x69\x6e\x74\x38\x41\x72\x72\x61\x79\x2e\x66\x72\x6f\x6d\x28\x61\x74\x6f\x62\x28\x73\x65\x6c\x66\x2e\x57\x41\x53\x4d\x29\x2c\x20\x28\x63\x29\x20\x3d\x3e\x20\x63\x2e\x63\x68\x61\x72\x43\x6f\x64\x65\x41\x74\x28\x30\x29\x29\x29\x3b\x0a\x09\x09\x09\x09\x09\x09\x64\x65\x6c\x65\x74\x65\x20\x73\x65\x6c\x66\x2e\x57\x41\x53\x4d\x3b\x0a\x0a\x09\x09\x09\x09\x09\x09\x63\x6f\x6e\x73\x74\x20\x73\x6a\x63\x6f\x6e\x66\x69\x67\x20\x3d\x20${JSON.stringify(this.controller.studyjetConfig)}\x3b\x0a\x09\x09\x09\x09\x09\x09\x63\x6f\x6e\x73\x74\x20\x70\x72\x65\x66\x69\x78\x20\x3d\x20\x6e\x65\x77\x20\x55\x52\x4c\x28\x22${this.prefix}\x22\x2c\x20\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x68\x72\x65\x66\x29\x3b\x0a\x0a\x09\x09\x09\x09\x09\x09\x63\x6f\x6e\x73\x74\x20\x63\x6f\x6e\x74\x65\x78\x74\x20\x3d\x20\x7b\x0a\x09\x09\x09\x09\x09\x09\x09\x63\x6f\x6e\x66\x69\x67\x3a\x20\x73\x6a\x63\x6f\x6e\x66\x69\x67\x2c\x0a\x09\x09\x09\x09\x09\x09\x09\x70\x72\x65\x66\x69\x78\x2c\x0a\x09\x09\x09\x09\x09\x09\x09\x69\x6e\x74\x65\x72\x66\x61\x63\x65\x3a\x20\x7b\x0a\x09\x09\x09\x09\x09\x09\x09\x09\x63\x6f\x64\x65\x63\x45\x6e\x63\x6f\x64\x65\x3a\x20${this.controller.config.codec.encode.toString()}\x2c\x0a\x09\x09\x09\x09\x09\x09\x09\x09\x63\x6f\x64\x65\x63\x44\x65\x63\x6f\x64\x65\x3a\x20${this.controller.config.codec.decode.toString()}\x2c\x0a\x09\x09\x09\x09\x09\x09\x09\x7d\x2c\x0a\x09\x09\x09\x09\x09\x09\x7d\x3b\x0a\x0a\x09\x09\x09\x09\x09\x09\x63\x6f\x6e\x73\x74\x20\x63\x6c\x69\x65\x6e\x74\x20\x3d\x20\x6e\x65\x77\x20\x53\x74\x75\x64\x79\x4a\x65\x74\x43\x6c\x69\x65\x6e\x74\x28\x67\x6c\x6f\x62\x61\x6c\x54\x68\x69\x73\x2c\x20\x7b\x0a\x09\x09\x09\x09\x09\x09\x09\x63\x6f\x6e\x74\x65\x78\x74\x2c\x0a\x09\x09\x09\x09\x09\x09\x09\x74\x72\x61\x6e\x73\x70\x6f\x72\x74\x3a\x20\x6e\x75\x6c\x6c\x2c\x0a\x09\x09\x09\x09\x09\x09\x7d\x29\x3b\x0a\x0a\x09\x09\x09\x09\x09\x09\x63\x6c\x69\x65\x6e\x74\x2e\x68\x6f\x6f\x6b\x28\x29\x3b\x0a\x09\x09\x09\x09\x09\x7d\x29\x28\x29\x3b\x0a\x09\x09\x09\x09\x09`, 
+              btoa((new TextEncoder).encode(λ45ef238a60a0).reduce((λ31a61a25ed22, λf0ee71997855) => (λ31a61a25ed22.push(String.fromCharCode(λf0ee71997855)), 
+              λ31a61a25ed22), []).join(""))));
             },
             codecEncode: this.controller.config.codec.encode,
             codecDecode: this.controller.config.codec.decode
@@ -566,35 +566,35 @@ var $studyjetController;
         };
       }
       plugins=[];
-      constructor(λ24dd8541fd12, λ0bee367a7c9a, λ1ade8ac64c25 = {}) {
-        for (const λac59aea7cf55 of (this.controller = λ24dd8541fd12, this.element = λ0bee367a7c9a, 
-        this.options = λ1ade8ac64c25, this.id = b(), this.prefix = this.controller.prefix + this.id + "/", 
-        this.fetchHandler = new λcde243751cc9.mK({
+      constructor(λ31a61a25ed22, λ21dc7faa0f91, λ45ef238a60a0 = {}) {
+        for (const λfc2801196c9b of (this.controller = λ31a61a25ed22, this.element = λ21dc7faa0f91, 
+        this.options = λ45ef238a60a0, this.id = b(), this.prefix = this.controller.prefix + this.id + "\x2f", 
+        this.fetchHandler = new λ01091640872e.mK({
           crossOriginIsolated: self.crossOriginIsolated,
           context: this.context,
-          transport: λ24dd8541fd12.transport,
-          async sendSetCookie(λ46d44fb37353, λ0bee367a7c9a) {
-            await λ24dd8541fd12.persistCookies(), await λ24dd8541fd12.propagateCookieSync(λ46d44fb37353.map(({url: λ24dd8541fd12, cookie: λ46d44fb37353}) => ({
-              url: λ24dd8541fd12.href,
-              cookie: λ46d44fb37353
-            })), λ0bee367a7c9a);
+          transport: λ31a61a25ed22.transport,
+          async sendSetCookie(λf0ee71997855, λ21dc7faa0f91) {
+            await λ31a61a25ed22.persistCookies(), await λ31a61a25ed22.propagateCookieSync(λf0ee71997855.map(({url: λ31a61a25ed22, cookie: λf0ee71997855}) => ({
+              url: λ31a61a25ed22.href,
+              cookie: λf0ee71997855
+            })), λ21dc7faa0f91);
           },
-          fetchBlobUrl: async λ24dd8541fd12 => λ46d44fb37353.Sr.fromNativeResponse(await fetch(λ24dd8541fd12)),
-          fetchDataUrl: async λ24dd8541fd12 => λ46d44fb37353.Sr.fromNativeResponse(await fetch(λ24dd8541fd12))
+          fetchBlobUrl: async λ31a61a25ed22 => λf0ee71997855.Sr.fromNativeResponse(await fetch(λ31a61a25ed22)),
+          fetchDataUrl: async λ31a61a25ed22 => λf0ee71997855.Sr.fromNativeResponse(await fetch(λ31a61a25ed22))
         }), this.hooks = {
           fetch: this.fetchHandler.hooks.fetch,
-          init: λcde243751cc9.Cx.create(),
-          error: λcde243751cc9.Cx.create()
-        }, λ0bee367a7c9a[λ0a85859d196f.I] = this, this.plugins = λ1ade8ac64c25.plugins ?? [], 
+          init: λ01091640872e.Cx.create(),
+          error: λ01091640872e.Cx.create()
+        }, λ21dc7faa0f91[λca2bbd3ff204.I] = this, this.plugins = λ45ef238a60a0.plugins ?? [], 
         this.plugins)) {
-          for (const λ24dd8541fd12 of λac59aea7cf55.dependencies) if (!this.plugins.find(λ46d44fb37353 => λ46d44fb37353.name === λ24dd8541fd12)) throw Error(`Dependency ${λ24dd8541fd12} not found for plugin ${λac59aea7cf55.name}`);
-          λac59aea7cf55.install(this);
+          for (const λ31a61a25ed22 of λfc2801196c9b.dependencies) if (!this.plugins.find(λf0ee71997855 => λf0ee71997855.name === λ31a61a25ed22)) throw Error(`\x44\x65\x70\x65\x6e\x64\x65\x6e\x63\x79\x20${λ31a61a25ed22}\x20\x6e\x6f\x74\x20\x66\x6f\x75\x6e\x64\x20\x66\x6f\x72\x20\x70\x6c\x75\x67\x69\x6e\x20${λfc2801196c9b.name}`);
+          λfc2801196c9b.install(this);
         }
       }
-      getPlugin(λ24dd8541fd12) {
-        let λ46d44fb37353 = this.plugins.find(λ46d44fb37353 => λ46d44fb37353.name === λ24dd8541fd12);
-        if (!λ46d44fb37353) throw Error(`Plugin ${λ24dd8541fd12} not found`);
-        return λ46d44fb37353;
+      getPlugin(λ31a61a25ed22) {
+        let λf0ee71997855 = this.plugins.find(λf0ee71997855 => λf0ee71997855.name === λ31a61a25ed22);
+        if (!λf0ee71997855) throw Error(`\x50\x6c\x75\x67\x69\x6e\x20${λ31a61a25ed22}\x20\x6e\x6f\x74\x20\x66\x6f\x75\x6e\x64`);
+        return λf0ee71997855;
       }
       back() {
         this.element.contentWindow?.history.back();
@@ -605,13 +605,13 @@ var $studyjetController;
       reload() {
         this.element.contentWindow?.location.reload();
       }
-      go(λ24dd8541fd12) {
-        let λ46d44fb37353 = (0, λcde243751cc9.Oy)(λ24dd8541fd12, this.context, {
+      go(λ31a61a25ed22) {
+        let λf0ee71997855 = (0, λ01091640872e.Oy)(λ31a61a25ed22, this.context, {
           origin: new URL(location.href),
           base: new URL(location.href)
         });
-        this.element.src = λ46d44fb37353;
+        this.element.src = λf0ee71997855;
       }
     }
-  })(), $studyjetController = λ0bee367a7c9a;
+  })(), $studyjetController = λ21dc7faa0f91;
 })();

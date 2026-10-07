@@ -1,81 +1,81 @@
-import { measureFetch as qe } from "./@r6a249696b59d7622cdfdfd08!.js";
+import { measureFetch as _0xd63c32_0 } from "\x2e\x2f\x40\x72\x36\x61\x32\x34\x39\x36\x39\x36\x62\x35\x39\x64\x37\x36\x32\x32\x63\x64\x66\x64\x66\x64\x30\x38\x21\x2e\x6a\x73";
 
-export function setupDropEmbed({user: e = () => null, signup: t = () => {}} = {}) {
-  window.fetch = qe(window.fetch.bind(window), (e, t) => parent.postMessage({
-    type: "drop:activity",
-    kind: e,
-    bytes: t
-  }, location.origin)), document.documentElement.classList.add("drop-ai"), document.documentElement.dataset.theme = "dark", 
-  document.title = "Drop AI", document.getElementById("accountKeyLabel").value = "Drop";
-  const o = document.createElement("link");
-  o.rel = "stylesheet", o.href = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/ai.css", document.head.append(o);
-  const n = document.querySelector(".brand");
-  n.textContent = "AI chats", n.removeAttribute("href"), n.setAttribute("aria-label", "Drop AI chats"), 
-  document.getElementById("useCreatedKey").textContent = "Use in Drop", document.querySelector('link[rel="icon"]').href = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/logo.svg", 
-  document.querySelector(".footnote").textContent = "", new MutationObserver(() => {
-    "dark" !== document.documentElement.dataset.theme && (document.documentElement.dataset.theme = "dark");
+export function setupDropEmbed({user: _0xd63c32_1 = () => null, signup: _0xd63c32_2 = () => {}} = {}) {
+  window.fetch = _0xd63c32_0(window.fetch.bind(window), (_0xd63c32_0, _0xd63c32_1) => parent.postMessage({
+    type: "\x64\x72\x6f\x70\x3a\x61\x63\x74\x69\x76\x69\x74\x79",
+    kind: _0xd63c32_0,
+    bytes: _0xd63c32_1
+  }, location.origin)), document.documentElement.classList.add("\x64\x72\x6f\x70\x2d\x61\x69"), document.documentElement.dataset.theme = "\x64\x61\x72\x6b", 
+  document.title = "\x44\x72\x6f\x70\x20\x41\x49", document.getElementById("\x61\x63\x63\x6f\x75\x6e\x74\x4b\x65\x79\x4c\x61\x62\x65\x6c").value = "\x44\x72\x6f\x70";
+  const _0xd63c32_3 = document.createElement("\x6c\x69\x6e\x6b");
+  _0xd63c32_3.rel = "\x73\x74\x79\x6c\x65\x73\x68\x65\x65\x74", _0xd63c32_3.href = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x64\x72\x6f\x70\x2f\x61\x69\x2e\x63\x73\x73", document.head.append(_0xd63c32_3);
+  const _0xd63c32_4 = document.querySelector("\x2e\x62\x72\x61\x6e\x64");
+  _0xd63c32_4.textContent = "\x41\x49\x20\x63\x68\x61\x74\x73", _0xd63c32_4.removeAttribute("\x68\x72\x65\x66"), _0xd63c32_4.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x44\x72\x6f\x70\x20\x41\x49\x20\x63\x68\x61\x74\x73"), 
+  document.getElementById("\x75\x73\x65\x43\x72\x65\x61\x74\x65\x64\x4b\x65\x79").textContent = "\x55\x73\x65\x20\x69\x6e\x20\x44\x72\x6f\x70", document.querySelector("\x6c\x69\x6e\x6b\x5b\x72\x65\x6c\x3d\x22\x69\x63\x6f\x6e\x22\x5d").href = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x64\x72\x6f\x70\x2f\x6c\x6f\x67\x6f\x2e\x73\x76\x67", 
+  document.querySelector("\x2e\x66\x6f\x6f\x74\x6e\x6f\x74\x65").textContent = "", new MutationObserver(() => {
+    "\x64\x61\x72\x6b" !== document.documentElement.dataset.theme && (document.documentElement.dataset.theme = "\x64\x61\x72\x6b");
   }).observe(document.documentElement, {
     attributes: !0,
-    attributeFilter: [ "data-theme" ]
-  }), addEventListener("message", e => {
-    if (e.origin !== location.origin || e.source !== parent || "drop:command" !== e.data?.type) return;
-    const o = e.data.action;
-    "signup" === o && t(), "keys" === o && document.getElementById("apiKeys").click(), 
-    "signin" === o && document.getElementById("account").textContent.includes("Sign in") && document.getElementById("account").click(), 
-    "signout" === o && document.getElementById("account").textContent.includes("Sign out") && document.getElementById("account").click();
-  }), addEventListener("message", async t => {
-    if (t.origin !== location.origin || t.source !== parent || "drop:game-account" !== t.data?.type) return;
-    const o = t.data.request;
-    if (![ "nyx:cloud-game-load", "nyx:cloud-game-save", "nyx:account-token-request" ].includes(o?.type)) return;
-    const n = {
-      type: "nyx:account-token-request" === o.type ? "nyx:account-token-response" : "nyx:cloud-game-result",
-      requestId: o.requestId
+    attributeFilter: [ "\x64\x61\x74\x61\x2d\x74\x68\x65\x6d\x65" ]
+  }), addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0xd63c32_0 => {
+    if (_0xd63c32_0.origin !== location.origin || _0xd63c32_0.source !== parent || "\x64\x72\x6f\x70\x3a\x63\x6f\x6d\x6d\x61\x6e\x64" !== _0xd63c32_0.data?.type) return;
+    const _0xd63c32_1 = _0xd63c32_0.data.action;
+    "\x73\x69\x67\x6e\x75\x70" === _0xd63c32_1 && _0xd63c32_2(), "\x6b\x65\x79\x73" === _0xd63c32_1 && document.getElementById("\x61\x70\x69\x4b\x65\x79\x73").click(), 
+    "\x73\x69\x67\x6e\x69\x6e" === _0xd63c32_1 && document.getElementById("\x61\x63\x63\x6f\x75\x6e\x74").textContent.includes("\x53\x69\x67\x6e\x20\x69\x6e") && document.getElementById("\x61\x63\x63\x6f\x75\x6e\x74").click(), 
+    "\x73\x69\x67\x6e\x6f\x75\x74" === _0xd63c32_1 && document.getElementById("\x61\x63\x63\x6f\x75\x6e\x74").textContent.includes("\x53\x69\x67\x6e\x20\x6f\x75\x74") && document.getElementById("\x61\x63\x63\x6f\x75\x6e\x74").click();
+  }), addEventListener("\x6d\x65\x73\x73\x61\x67\x65", async _0xd63c32_0 => {
+    if (_0xd63c32_0.origin !== location.origin || _0xd63c32_0.source !== parent || "\x64\x72\x6f\x70\x3a\x67\x61\x6d\x65\x2d\x61\x63\x63\x6f\x75\x6e\x74" !== _0xd63c32_0.data?.type) return;
+    const _0xd63c32_2 = _0xd63c32_0.data.request;
+    if (![ "\x6e\x79\x78\x3a\x63\x6c\x6f\x75\x64\x2d\x67\x61\x6d\x65\x2d\x6c\x6f\x61\x64", "\x6e\x79\x78\x3a\x63\x6c\x6f\x75\x64\x2d\x67\x61\x6d\x65\x2d\x73\x61\x76\x65", "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74" ].includes(_0xd63c32_2?.type)) return;
+    const _0xd63c32_3 = {
+      type: "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74" === _0xd63c32_2.type ? "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65" : "\x6e\x79\x78\x3a\x63\x6c\x6f\x75\x64\x2d\x67\x61\x6d\x65\x2d\x72\x65\x73\x75\x6c\x74",
+      requestId: _0xd63c32_2.requestId
     };
     try {
-      const t = await (e()?.getIdToken());
-      if ("nyx:account-token-request" === o.type) n.token = t || ""; else if (t) {
-        const e = "nyx:cloud-game-save" === o.type, a = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/account/cloud-games/" + encodeURIComponent(String(o.gameKey || "")), {
-          method: e ? "PUT" : "GET",
+      const _0xd63c32_0 = await (_0xd63c32_1()?.getIdToken());
+      if ("\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74" === _0xd63c32_2.type) _0xd63c32_3.token = _0xd63c32_0 || ""; else if (_0xd63c32_0) {
+        const _0xd63c32_1 = "\x6e\x79\x78\x3a\x63\x6c\x6f\x75\x64\x2d\x67\x61\x6d\x65\x2d\x73\x61\x76\x65" === _0xd63c32_2.type, _0xd63c32_4 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x61\x63\x63\x6f\x75\x6e\x74\x2f\x63\x6c\x6f\x75\x64\x2d\x67\x61\x6d\x65\x73\x2f" + encodeURIComponent(String(_0xd63c32_2.gameKey || "")), {
+          method: _0xd63c32_1 ? "\x50\x55\x54" : "\x47\x45\x54",
           headers: {
-            Authorization: "Bearer " + t,
-            "Content-Type": "application/json"
+            Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0xd63c32_0,
+            "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
           },
-          ...e ? {
+          ..._0xd63c32_1 ? {
             body: JSON.stringify({
-              storage: o.storage,
-              removed: o.removed
+              storage: _0xd63c32_2.storage,
+              removed: _0xd63c32_2.removed
             })
           } : {}
-        }), r = await a.json();
-        if (!a.ok) throw Error(r.error || "Cloud save unavailable.");
-        Object.assign(n, r);
-      } else n.storage = {};
-    } catch (a) {
-      n.error = a.message;
+        }), _0xd63c32_5 = await _0xd63c32_4.json();
+        if (!_0xd63c32_4.ok) throw Error(_0xd63c32_5.error || "\x43\x6c\x6f\x75\x64\x20\x73\x61\x76\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+        Object.assign(_0xd63c32_3, _0xd63c32_5);
+      } else _0xd63c32_3.storage = {};
+    } catch (_0xd63c32_4) {
+      _0xd63c32_3.error = _0xd63c32_4.message;
     }
     parent.postMessage({
-      type: "drop:game-result",
-      result: n
+      type: "\x64\x72\x6f\x70\x3a\x67\x61\x6d\x65\x2d\x72\x65\x73\x75\x6c\x74",
+      result: _0xd63c32_3
     }, location.origin);
-  }), addEventListener("message", async t => {
-    if (t.origin !== location.origin || t.source !== parent || "drop:session-token" !== t.data?.type) return;
-    let o = "";
+  }), addEventListener("\x6d\x65\x73\x73\x61\x67\x65", async _0xd63c32_0 => {
+    if (_0xd63c32_0.origin !== location.origin || _0xd63c32_0.source !== parent || "\x64\x72\x6f\x70\x3a\x73\x65\x73\x73\x69\x6f\x6e\x2d\x74\x6f\x6b\x65\x6e" !== _0xd63c32_0.data?.type) return;
+    let _0xd63c32_2 = "";
     try {
-      o = await (e()?.getIdToken()) || "";
+      _0xd63c32_2 = await (_0xd63c32_1()?.getIdToken()) || "";
     } catch {}
     parent.postMessage({
-      type: "drop:session-token-result",
-      requestId: t.data.requestId,
-      token: o
+      type: "\x64\x72\x6f\x70\x3a\x73\x65\x73\x73\x69\x6f\x6e\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x73\x75\x6c\x74",
+      requestId: _0xd63c32_0.data.requestId,
+      token: _0xd63c32_2
     }, location.origin);
   });
-  const a = document.createElement("button");
-  a.id = "dropHistory", a.type = "button", a.title = "Chat history", a.setAttribute("aria-label", "Chat history"), 
-  a.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4z"/></svg>', 
-  document.querySelector(".chat-toolbar").prepend(a), a.onclick = () => {
-    document.body.classList.remove("sidebar-collapsed"), document.body.classList.toggle("history-open");
-  }, document.getElementById("collapseChats").onclick = () => document.body.classList.remove("history-open"), 
+  const _0xd63c32_5 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+  _0xd63c32_5.id = "\x64\x72\x6f\x70\x48\x69\x73\x74\x6f\x72\x79", _0xd63c32_5.type = "\x62\x75\x74\x74\x6f\x6e", _0xd63c32_5.title = "\x43\x68\x61\x74\x20\x68\x69\x73\x74\x6f\x72\x79", 
+  _0xd63c32_5.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x43\x68\x61\x74\x20\x68\x69\x73\x74\x6f\x72\x79"), _0xd63c32_5.innerHTML = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x34\x20\x34\x68\x31\x36\x76\x31\x32\x48\x39\x6c\x2d\x35\x20\x34\x7a\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e", 
+  document.querySelector("\x2e\x63\x68\x61\x74\x2d\x74\x6f\x6f\x6c\x62\x61\x72").prepend(_0xd63c32_5), _0xd63c32_5.onclick = () => {
+    document.body.classList.remove("\x73\x69\x64\x65\x62\x61\x72\x2d\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64"), document.body.classList.toggle("\x68\x69\x73\x74\x6f\x72\x79\x2d\x6f\x70\x65\x6e");
+  }, document.getElementById("\x63\x6f\x6c\x6c\x61\x70\x73\x65\x43\x68\x61\x74\x73").onclick = () => document.body.classList.remove("\x68\x69\x73\x74\x6f\x72\x79\x2d\x6f\x70\x65\x6e"), 
   parent.postMessage({
-    type: "drop:ready"
+    type: "\x64\x72\x6f\x70\x3a\x72\x65\x61\x64\x79"
   }, location.origin);
 }

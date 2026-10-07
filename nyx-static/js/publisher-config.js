@@ -1,53 +1,53 @@
 export const publisherConfig = Object.freeze({
-  hosts: [ "nyxlearning.org", "www.nyxlearning.org", "localhost", "127.0.0.1", "[::1]" ],
-  bannerPath: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/sponsor/banner.html",
+  hosts: [ "\x6e\x79\x78\x6c\x65\x61\x72\x6e\x69\x6e\x67\x2e\x6f\x72\x67", "\x77\x77\x77\x2e\x6e\x79\x78\x6c\x65\x61\x72\x6e\x69\x6e\x67\x2e\x6f\x72\x67", "\x6c\x6f\x63\x61\x6c\x68\x6f\x73\x74", "\x31\x32\x37\x2e\x30\x2e\x30\x2e\x31", "\x5b\x3a\x3a\x31\x5d" ],
+  bannerPath: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x73\x70\x6f\x6e\x73\x6f\x72\x2f\x62\x61\x6e\x6e\x65\x72\x2e\x68\x74\x6d\x6c",
   bannerWidth: 468,
   bannerHeight: 60,
   homeBanners: [ {
-    path: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/sponsor/side.html",
+    path: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x73\x70\x6f\x6e\x73\x6f\x72\x2f\x73\x69\x64\x65\x2e\x68\x74\x6d\x6c",
     width: 160,
     height: 600
   }, {
-    path: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/sponsor/side.html",
+    path: "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x73\x70\x6f\x6e\x73\x6f\x72\x2f\x73\x69\x64\x65\x2e\x68\x74\x6d\x6c",
     width: 160,
     height: 600
   } ],
-  homeLink: "https://asiafilm.org/4/4e423fea224eac7374c037f143e080e3",
+  homeLink: "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x61\x73\x69\x61\x66\x69\x6c\x6d\x2e\x6f\x72\x67\x2f\x34\x2f\x34\x65\x34\x32\x33\x66\x65\x61\x32\x32\x34\x65\x61\x63\x37\x33\x37\x34\x63\x30\x33\x37\x66\x31\x34\x33\x65\x30\x38\x30\x65\x33",
   homeLimit: 2,
   homePeriodMs: 24e4,
   homeSpacingMs: 1e3
 });
 
-export function publisherHostAllowed(e = location.hostname) {
-  return publisherConfig.hosts.includes(e);
+export function publisherHostAllowed(_0x86f066_0 = location.hostname) {
+  return publisherConfig.hosts.includes(_0x86f066_0);
 }
 
 export function publisherBaseMode() {
   try {
-    const e = window.parent === window ? window : window.parent;
-    return !1 === e.__NYX_RUNTIME_CONFIG__?.publisherAdsEnabled ? "off" : e.__nyxPublisherMode || (e.document.body?.classList.contains("browser-shell") ? "pending" : "standard");
+    const _0x86f066_0 = window.parent === window ? window : window.parent;
+    return !1 === _0x86f066_0.__NYX_RUNTIME_CONFIG__?.publisherAdsEnabled ? "\x6f\x66\x66" : _0x86f066_0.__nyxPublisherMode || (_0x86f066_0.document.body?.classList.contains("\x62\x72\x6f\x77\x73\x65\x72\x2d\x73\x68\x65\x6c\x6c") ? "\x70\x65\x6e\x64\x69\x6e\x67" : "\x73\x74\x61\x6e\x64\x61\x72\x64");
   } catch {
-    return "off";
+    return "\x6f\x66\x66";
   }
 }
 
 export function publisherMode() {
-  const e = publisherBaseMode();
+  const _0x86f066_0 = publisherBaseMode();
   try {
-    const n = window.parent === window ? window : window.parent;
-    if (n.__nyxAdcoinsFreeUntil > Date.now()) return "off";
-    if ("standard" === e) {
-      if (n !== window || document.hidden || document.body?.classList.contains("nyx-loading-active")) return "off";
-      if (![ ...document.querySelectorAll(".browser-window.browser-blank .browser-home.nyx-minimal-home:not(.hidden)") ].some(e => e.getClientRects().length && "visible" === getComputedStyle(e).visibility)) return "off";
+    const _0x86f066_1 = window.parent === window ? window : window.parent;
+    if (_0x86f066_1.__nyxAdcoinsFreeUntil > Date.now()) return "\x6f\x66\x66";
+    if ("\x73\x74\x61\x6e\x64\x61\x72\x64" === _0x86f066_0) {
+      if (_0x86f066_1 !== window || document.hidden || document.body?.classList.contains("\x6e\x79\x78\x2d\x6c\x6f\x61\x64\x69\x6e\x67\x2d\x61\x63\x74\x69\x76\x65")) return "\x6f\x66\x66";
+      if (![ ...document.querySelectorAll("\x2e\x62\x72\x6f\x77\x73\x65\x72\x2d\x77\x69\x6e\x64\x6f\x77\x2e\x62\x72\x6f\x77\x73\x65\x72\x2d\x62\x6c\x61\x6e\x6b\x20\x2e\x62\x72\x6f\x77\x73\x65\x72\x2d\x68\x6f\x6d\x65\x2e\x6e\x79\x78\x2d\x6d\x69\x6e\x69\x6d\x61\x6c\x2d\x68\x6f\x6d\x65\x3a\x6e\x6f\x74\x28\x2e\x68\x69\x64\x64\x65\x6e\x29") ].some(_0x86f066_0 => _0x86f066_0.getClientRects().length && "\x76\x69\x73\x69\x62\x6c\x65" === getComputedStyle(_0x86f066_0).visibility)) return "\x6f\x66\x66";
     }
-    return e;
+    return _0x86f066_0;
   } catch {
-    return "off";
+    return "\x6f\x66\x66";
   }
 }
 
-export function popupPolicy(e = publisherMode()) {
-  return "off" === e || "pending" === e ? null : "adkid" === e ? {
+export function popupPolicy(_0x86f066_0 = publisherMode()) {
+  return "\x6f\x66\x66" === _0x86f066_0 || "\x70\x65\x6e\x64\x69\x6e\x67" === _0x86f066_0 ? null : "\x61\x64\x6b\x69\x64" === _0x86f066_0 ? {
     limit: 100,
     period: 6e4,
     spacing: 600

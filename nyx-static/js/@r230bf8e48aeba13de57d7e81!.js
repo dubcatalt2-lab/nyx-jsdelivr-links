@@ -1,93 +1,102 @@
 (() => {
-  let e = 0, t = 0, n = 0, o = "", i = null, r = null, a = !1, l = null, d = null, s = 0, c = !1, u = !1, p = null;
-  const h = new Set;
-  let m = "";
-  function f() {
-    const e = !1 === navigator.onLine;
-    if (e || h.delete("offline"), c || h.delete("host"), !u) for (const o of h) o.startsWith("relay:") && h.delete(o);
-    m = e ? "offline" : c ? "host" : u ? "relay:" + o : "";
-    const t = e ? "You are offline. Check your internet connection." : c ? "Nyx VPS is unreachable and may be down. Report to vdrtes on Discord immediately!" : u ? i?.().custom ? "Having trouble connecting to your custom Wisp relay. Retrying automatically..." : "Having trouble connecting to Wisp. Retrying automatically..." : "";
-    if (!t || h.has(m)) return void (p && (p.hidden = !0));
-    if (!p) {
-      p = document.createElement("div"), p.id = "nyxAvailabilityWarning";
-      const e = p.attachShadow({
-        mode: "open"
+  let _0x3f8598_0 = 0, _0x3f8598_1 = 0, _0x3f8598_2 = 0, _0x3f8598_3 = "", _0x3f8598_4 = null, _0x3f8598_5 = null, _0x3f8598_6 = !1, _0x3f8598_7 = null, _0x3f8598_8 = null, _0x3f8598_9 = 0, _0x3f8598_a = !1, _0x3f8598_b = !1, _0x3f8598_c = null;
+  const _0x3f8598_d = new Set;
+  let _0x3f8598_e = "";
+  function _0x3f8598_f() {
+    const _0x3f8598_0 = !1 === navigator.onLine;
+    if (_0x3f8598_0 || _0x3f8598_d.delete("\x6f\x66\x66\x6c\x69\x6e\x65"), _0x3f8598_a || _0x3f8598_d.delete("\x68\x6f\x73\x74"), 
+    !_0x3f8598_b) for (const _0x3f8598_3 of _0x3f8598_d) _0x3f8598_3.startsWith("\x72\x65\x6c\x61\x79\x3a") && _0x3f8598_d.delete(_0x3f8598_3);
+    _0x3f8598_e = _0x3f8598_0 ? "\x6f\x66\x66\x6c\x69\x6e\x65" : _0x3f8598_a ? "\x68\x6f\x73\x74" : _0x3f8598_b ? "\x72\x65\x6c\x61\x79\x3a" + _0x3f8598_3 : "";
+    const _0x3f8598_1 = _0x3f8598_0 ? "\x59\x6f\x75\x20\x61\x72\x65\x20\x6f\x66\x66\x6c\x69\x6e\x65\x2e\x20\x43\x68\x65\x63\x6b\x20\x79\x6f\x75\x72\x20\x69\x6e\x74\x65\x72\x6e\x65\x74\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x2e" : _0x3f8598_a ? "\x4e\x79\x78\x20\x56\x50\x53\x20\x69\x73\x20\x75\x6e\x72\x65\x61\x63\x68\x61\x62\x6c\x65\x20\x61\x6e\x64\x20\x6d\x61\x79\x20\x62\x65\x20\x64\x6f\x77\x6e\x2e\x20\x52\x65\x70\x6f\x72\x74\x20\x74\x6f\x20\x76\x64\x72\x74\x65\x73\x20\x6f\x6e\x20\x44\x69\x73\x63\x6f\x72\x64\x20\x69\x6d\x6d\x65\x64\x69\x61\x74\x65\x6c\x79\x21" : _0x3f8598_b ? _0x3f8598_4?.().custom ? "\x48\x61\x76\x69\x6e\x67\x20\x74\x72\x6f\x75\x62\x6c\x65\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\x20\x74\x6f\x20\x79\x6f\x75\x72\x20\x63\x75\x73\x74\x6f\x6d\x20\x57\x69\x73\x70\x20\x72\x65\x6c\x61\x79\x2e\x20\x52\x65\x74\x72\x79\x69\x6e\x67\x20\x61\x75\x74\x6f\x6d\x61\x74\x69\x63\x61\x6c\x6c\x79\x2e\x2e\x2e" : "\x48\x61\x76\x69\x6e\x67\x20\x74\x72\x6f\x75\x62\x6c\x65\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\x20\x74\x6f\x20\x57\x69\x73\x70\x2e\x20\x52\x65\x74\x72\x79\x69\x6e\x67\x20\x61\x75\x74\x6f\x6d\x61\x74\x69\x63\x61\x6c\x6c\x79\x2e\x2e\x2e" : "";
+    if (!_0x3f8598_1 || _0x3f8598_d.has(_0x3f8598_e)) return void (_0x3f8598_c && (_0x3f8598_c.hidden = !0));
+    if (!_0x3f8598_c) {
+      _0x3f8598_c = document.createElement("\x64\x69\x76"), _0x3f8598_c.id = "\x6e\x79\x78\x41\x76\x61\x69\x6c\x61\x62\x69\x6c\x69\x74\x79\x57\x61\x72\x6e\x69\x6e\x67";
+      const _0x3f8598_0 = _0x3f8598_c.attachShadow({
+        mode: "\x6f\x70\x65\x6e"
       });
-      e.innerHTML = '<style>:host{position:fixed!important;left:12px!important;right:12px!important;bottom:14px!important;z-index:2147483647!important;pointer-events:none!important}:host([hidden]){display:none!important}.notice{box-sizing:border-box;display:flex;align-items:center;gap:12px;max-width:650px;margin:auto;padding:14px 18px;border:1px solid #9c3f49;border-radius:14px;background:#201014;color:#ff9aa5;box-shadow:0 6px 24px #0006;font:600 14px/1.5 system-ui,sans-serif;overflow-wrap:anywhere}svg{width:25px;height:25px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8}@media(max-width:480px){.notice{padding:12px;font-size:13px}}</style><div class="notice" role="alert" aria-atomic="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 4.2 2.1 18.5A1.7 1.7 0 0 0 3.6 21h16.8a1.7 1.7 0 0 0 1.5-2.5L13.7 4.2a2 2 0 0 0-3.4 0Z"/><path d="M12 9v5m0 3v1"/></svg><span></span></div>', 
-      document.body.append(p);
-      const t = document.createElement("button");
-      t.type = "button", t.setAttribute("aria-label", "Dismiss connection warning"), t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>', 
-      t.style.cssText = "pointer-events:auto;display:grid;place-items:center;flex:none;margin-left:auto;width:32px;height:32px;border:0;border-radius:8px;background:transparent;color:inherit;cursor:pointer", 
-      t.querySelector("svg").style.cssText = "width:18px;height:18px", t.addEventListener("click", () => {
-        h.add(m), p.hidden = !0;
-      }), e.querySelector(".notice").append(t);
+      _0x3f8598_0.innerHTML = "\x3c\x73\x74\x79\x6c\x65\x3e\x3a\x68\x6f\x73\x74\x7b\x70\x6f\x73\x69\x74\x69\x6f\x6e\x3a\x66\x69\x78\x65\x64\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x6c\x65\x66\x74\x3a\x31\x32\x70\x78\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x72\x69\x67\x68\x74\x3a\x31\x32\x70\x78\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x62\x6f\x74\x74\x6f\x6d\x3a\x31\x34\x70\x78\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x7a\x2d\x69\x6e\x64\x65\x78\x3a\x32\x31\x34\x37\x34\x38\x33\x36\x34\x37\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x70\x6f\x69\x6e\x74\x65\x72\x2d\x65\x76\x65\x6e\x74\x73\x3a\x6e\x6f\x6e\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x7d\x3a\x68\x6f\x73\x74\x28\x5b\x68\x69\x64\x64\x65\x6e\x5d\x29\x7b\x64\x69\x73\x70\x6c\x61\x79\x3a\x6e\x6f\x6e\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x7d\x2e\x6e\x6f\x74\x69\x63\x65\x7b\x62\x6f\x78\x2d\x73\x69\x7a\x69\x6e\x67\x3a\x62\x6f\x72\x64\x65\x72\x2d\x62\x6f\x78\x3b\x64\x69\x73\x70\x6c\x61\x79\x3a\x66\x6c\x65\x78\x3b\x61\x6c\x69\x67\x6e\x2d\x69\x74\x65\x6d\x73\x3a\x63\x65\x6e\x74\x65\x72\x3b\x67\x61\x70\x3a\x31\x32\x70\x78\x3b\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x36\x35\x30\x70\x78\x3b\x6d\x61\x72\x67\x69\x6e\x3a\x61\x75\x74\x6f\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x31\x34\x70\x78\x20\x31\x38\x70\x78\x3b\x62\x6f\x72\x64\x65\x72\x3a\x31\x70\x78\x20\x73\x6f\x6c\x69\x64\x20\x23\x39\x63\x33\x66\x34\x39\x3b\x62\x6f\x72\x64\x65\x72\x2d\x72\x61\x64\x69\x75\x73\x3a\x31\x34\x70\x78\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x32\x30\x31\x30\x31\x34\x3b\x63\x6f\x6c\x6f\x72\x3a\x23\x66\x66\x39\x61\x61\x35\x3b\x62\x6f\x78\x2d\x73\x68\x61\x64\x6f\x77\x3a\x30\x20\x36\x70\x78\x20\x32\x34\x70\x78\x20\x23\x30\x30\x30\x36\x3b\x66\x6f\x6e\x74\x3a\x36\x30\x30\x20\x31\x34\x70\x78\x2f\x31\x2e\x35\x20\x73\x79\x73\x74\x65\x6d\x2d\x75\x69\x2c\x73\x61\x6e\x73\x2d\x73\x65\x72\x69\x66\x3b\x6f\x76\x65\x72\x66\x6c\x6f\x77\x2d\x77\x72\x61\x70\x3a\x61\x6e\x79\x77\x68\x65\x72\x65\x7d\x73\x76\x67\x7b\x77\x69\x64\x74\x68\x3a\x32\x35\x70\x78\x3b\x68\x65\x69\x67\x68\x74\x3a\x32\x35\x70\x78\x3b\x66\x6c\x65\x78\x3a\x6e\x6f\x6e\x65\x3b\x66\x69\x6c\x6c\x3a\x6e\x6f\x6e\x65\x3b\x73\x74\x72\x6f\x6b\x65\x3a\x63\x75\x72\x72\x65\x6e\x74\x43\x6f\x6c\x6f\x72\x3b\x73\x74\x72\x6f\x6b\x65\x2d\x77\x69\x64\x74\x68\x3a\x31\x2e\x38\x7d\x40\x6d\x65\x64\x69\x61\x28\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x34\x38\x30\x70\x78\x29\x7b\x2e\x6e\x6f\x74\x69\x63\x65\x7b\x70\x61\x64\x64\x69\x6e\x67\x3a\x31\x32\x70\x78\x3b\x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3a\x31\x33\x70\x78\x7d\x7d\x3c\x2f\x73\x74\x79\x6c\x65\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x6e\x6f\x74\x69\x63\x65\x22\x20\x72\x6f\x6c\x65\x3d\x22\x61\x6c\x65\x72\x74\x22\x20\x61\x72\x69\x61\x2d\x61\x74\x6f\x6d\x69\x63\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x30\x2e\x33\x20\x34\x2e\x32\x20\x32\x2e\x31\x20\x31\x38\x2e\x35\x41\x31\x2e\x37\x20\x31\x2e\x37\x20\x30\x20\x30\x20\x30\x20\x33\x2e\x36\x20\x32\x31\x68\x31\x36\x2e\x38\x61\x31\x2e\x37\x20\x31\x2e\x37\x20\x30\x20\x30\x20\x30\x20\x31\x2e\x35\x2d\x32\x2e\x35\x4c\x31\x33\x2e\x37\x20\x34\x2e\x32\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x2d\x33\x2e\x34\x20\x30\x5a\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x32\x20\x39\x76\x35\x6d\x30\x20\x33\x76\x31\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x73\x70\x61\x6e\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x2f\x64\x69\x76\x3e", 
+      document.body.append(_0x3f8598_c);
+      const _0x3f8598_1 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+      _0x3f8598_1.type = "\x62\x75\x74\x74\x6f\x6e", _0x3f8598_1.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x44\x69\x73\x6d\x69\x73\x73\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x77\x61\x72\x6e\x69\x6e\x67"), 
+      _0x3f8598_1.innerHTML = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x36\x20\x36\x20\x31\x32\x20\x31\x32\x4d\x36\x20\x31\x38\x20\x31\x38\x20\x36\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e", 
+      _0x3f8598_1.style.cssText = "\x70\x6f\x69\x6e\x74\x65\x72\x2d\x65\x76\x65\x6e\x74\x73\x3a\x61\x75\x74\x6f\x3b\x64\x69\x73\x70\x6c\x61\x79\x3a\x67\x72\x69\x64\x3b\x70\x6c\x61\x63\x65\x2d\x69\x74\x65\x6d\x73\x3a\x63\x65\x6e\x74\x65\x72\x3b\x66\x6c\x65\x78\x3a\x6e\x6f\x6e\x65\x3b\x6d\x61\x72\x67\x69\x6e\x2d\x6c\x65\x66\x74\x3a\x61\x75\x74\x6f\x3b\x77\x69\x64\x74\x68\x3a\x33\x32\x70\x78\x3b\x68\x65\x69\x67\x68\x74\x3a\x33\x32\x70\x78\x3b\x62\x6f\x72\x64\x65\x72\x3a\x30\x3b\x62\x6f\x72\x64\x65\x72\x2d\x72\x61\x64\x69\x75\x73\x3a\x38\x70\x78\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x74\x72\x61\x6e\x73\x70\x61\x72\x65\x6e\x74\x3b\x63\x6f\x6c\x6f\x72\x3a\x69\x6e\x68\x65\x72\x69\x74\x3b\x63\x75\x72\x73\x6f\x72\x3a\x70\x6f\x69\x6e\x74\x65\x72", 
+      _0x3f8598_1.querySelector("\x73\x76\x67").style.cssText = "\x77\x69\x64\x74\x68\x3a\x31\x38\x70\x78\x3b\x68\x65\x69\x67\x68\x74\x3a\x31\x38\x70\x78", _0x3f8598_1.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+        _0x3f8598_d.add(_0x3f8598_e), _0x3f8598_c.hidden = !0;
+      }), _0x3f8598_0.querySelector("\x2e\x6e\x6f\x74\x69\x63\x65").append(_0x3f8598_1);
     }
-    const n = p.shadowRoot.querySelector("span");
-    n.textContent !== t && (n.textContent = t), p.hidden = !1;
+    const _0x3f8598_2 = _0x3f8598_c.shadowRoot.querySelector("\x73\x70\x61\x6e");
+    _0x3f8598_2.textContent !== _0x3f8598_1 && (_0x3f8598_2.textContent = _0x3f8598_1), 
+    _0x3f8598_c.hidden = !1;
   }
-  function x() {
-    e = 0, t = 0, c = !1, n = 0, u = !1;
+  function _0x3f8598_10() {
+    _0x3f8598_0 = 0, _0x3f8598_1 = 0, _0x3f8598_a = !1, _0x3f8598_2 = 0, _0x3f8598_b = !1;
   }
-  function v(e) {
-    clearTimeout(l), l = setTimeout(() => {
-      g();
-    }, e);
+  function _0x3f8598_11(_0x3f8598_0) {
+    clearTimeout(_0x3f8598_7), _0x3f8598_7 = setTimeout(() => {
+      _0x3f8598_13();
+    }, _0x3f8598_0);
   }
-  function y() {
-    s++, d?.(), clearTimeout(l), n = 0, document.hidden || !1 === navigator.onLine || v(0);
+  function _0x3f8598_12() {
+    _0x3f8598_9++, _0x3f8598_8?.(), clearTimeout(_0x3f8598_7), _0x3f8598_2 = 0, document.hidden || !1 === navigator.onLine || _0x3f8598_11(0);
   }
-  async function g() {
-    if (a || document.hidden || !1 === navigator.onLine || c || !i) return;
-    const e = i();
-    if (!/^wss?:\/\//i.test(e.url)) return o = "", n = 0, u = !1, f(), void v(3e4);
-    o !== e.url && (o = e.url, n = 0, u = !1, f());
-    const t = s;
-    a = !0;
+  async function _0x3f8598_13() {
+    if (_0x3f8598_6 || document.hidden || !1 === navigator.onLine || _0x3f8598_a || !_0x3f8598_4) return;
+    const _0x3f8598_0 = _0x3f8598_4();
+    if (!/^wss?:\/\//i.test(_0x3f8598_0.url)) return _0x3f8598_3 = "", _0x3f8598_2 = 0, 
+    _0x3f8598_b = !1, _0x3f8598_f(), void _0x3f8598_11(3e4);
+    _0x3f8598_3 !== _0x3f8598_0.url && (_0x3f8598_3 = _0x3f8598_0.url, _0x3f8598_2 = 0, 
+    _0x3f8598_b = !1, _0x3f8598_f());
+    const _0x3f8598_1 = _0x3f8598_9;
+    _0x3f8598_6 = !0;
     try {
-      const o = await (l = e.url, new Promise(e => {
-        let t, n, o = !1;
-        const i = i => {
-          if (!o) {
-            if (o = !0, clearTimeout(n), d = null, t) {
-              t.onopen = t.onerror = t.onclose = null;
+      const _0x3f8598_3 = await (_0x3f8598_7 = _0x3f8598_0.url, new Promise(_0x3f8598_0 => {
+        let _0x3f8598_1, _0x3f8598_2, _0x3f8598_3 = !1;
+        const _0x3f8598_4 = _0x3f8598_4 => {
+          if (!_0x3f8598_3) {
+            if (_0x3f8598_3 = !0, clearTimeout(_0x3f8598_2), _0x3f8598_8 = null, _0x3f8598_1) {
+              _0x3f8598_1.onopen = _0x3f8598_1.onerror = _0x3f8598_1.onclose = null;
               try {
-                t.close();
+                _0x3f8598_1.close();
               } catch {}
             }
-            e(i);
+            _0x3f8598_0(_0x3f8598_4);
           }
         };
-        d = () => i(null), n = setTimeout(() => i(!1), 1e4);
+        _0x3f8598_8 = () => _0x3f8598_4(null), _0x3f8598_2 = setTimeout(() => _0x3f8598_4(!1), 1e4);
         try {
-          t = new WebSocket(l), t.onopen = () => i(!0), t.onerror = t.onclose = () => i(!1);
+          _0x3f8598_1 = new WebSocket(_0x3f8598_7), _0x3f8598_1.onopen = () => _0x3f8598_4(!0), 
+          _0x3f8598_1.onerror = _0x3f8598_1.onclose = () => _0x3f8598_4(!1);
         } catch {
-          i(!1);
+          _0x3f8598_4(!1);
         }
       }));
-      if (t !== s || null === o || document.hidden || !1 === navigator.onLine) return;
-      if (i().url !== e.url) return n = 0, u = !1, f(), void v(0);
-      n = o ? 0 : n + 1, u = !o && (u || n >= 3), !o && n >= 3 && await (r?.(e.url)), 
-      f(), v(o ? 3e4 : 5e3);
+      if (_0x3f8598_1 !== _0x3f8598_9 || null === _0x3f8598_3 || document.hidden || !1 === navigator.onLine) return;
+      if (_0x3f8598_4().url !== _0x3f8598_0.url) return _0x3f8598_2 = 0, _0x3f8598_b = !1, 
+      _0x3f8598_f(), void _0x3f8598_11(0);
+      _0x3f8598_2 = _0x3f8598_3 ? 0 : _0x3f8598_2 + 1, _0x3f8598_b = !_0x3f8598_3 && (_0x3f8598_b || _0x3f8598_2 >= 3), 
+      !_0x3f8598_3 && _0x3f8598_2 >= 3 && await (_0x3f8598_5?.(_0x3f8598_0.url)), _0x3f8598_f(), 
+      _0x3f8598_11(_0x3f8598_3 ? 3e4 : 5e3);
     } finally {
-      a = !1;
+      _0x3f8598_6 = !1;
     }
-    var l;
+    var _0x3f8598_7;
   }
   window.NyxAvailability = {
-    recordHealth: function(n) {
-      if (!1 === navigator.onLine) return x(), void f();
-      if (n) {
-        const n = c;
-        e = 0, t = 0, c = !1, n && v(0);
-      } else e || (t = Date.now()), e++, e >= 3 && Date.now() - t >= 1e4 && (c = !0);
-      f();
+    recordHealth: function(_0x3f8598_2) {
+      if (!1 === navigator.onLine) return _0x3f8598_10(), void _0x3f8598_f();
+      if (_0x3f8598_2) {
+        const _0x3f8598_2 = _0x3f8598_a;
+        _0x3f8598_0 = 0, _0x3f8598_1 = 0, _0x3f8598_a = !1, _0x3f8598_2 && _0x3f8598_11(0);
+      } else _0x3f8598_0 || (_0x3f8598_1 = Date.now()), _0x3f8598_0++, _0x3f8598_0 >= 3 && Date.now() - _0x3f8598_1 >= 1e4 && (_0x3f8598_a = !0);
+      _0x3f8598_f();
     },
-    start(e, t) {
-      i || (i = e, r = t, g(), addEventListener("offline", () => {
-        x(), y(), f();
-      }), addEventListener("online", () => {
-        x(), y(), f();
-      }), document.addEventListener("visibilitychange", y));
+    start(_0x3f8598_0, _0x3f8598_1) {
+      _0x3f8598_4 || (_0x3f8598_4 = _0x3f8598_0, _0x3f8598_5 = _0x3f8598_1, _0x3f8598_13(), 
+      addEventListener("\x6f\x66\x66\x6c\x69\x6e\x65", () => {
+        _0x3f8598_10(), _0x3f8598_12(), _0x3f8598_f();
+      }), addEventListener("\x6f\x6e\x6c\x69\x6e\x65", () => {
+        _0x3f8598_10(), _0x3f8598_12(), _0x3f8598_f();
+      }), document.addEventListener("\x76\x69\x73\x69\x62\x69\x6c\x69\x74\x79\x63\x68\x61\x6e\x67\x65", _0x3f8598_12));
     }
   };
 })();

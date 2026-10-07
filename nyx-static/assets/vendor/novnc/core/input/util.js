@@ -14,8 +14,8 @@ export function getKeycode(evt) {
     if (evt.code) {
         // Mozilla isn't fully in sync with the spec yet
         switch (evt.code) {
-            case 'OSLeft': return 'MetaLeft';
-            case 'OSRight': return 'MetaRight';
+            case "OSLeft": return "MetaLeft";
+            case "OSRight": return "MetaRight";
         }
 
         return evt.code;
@@ -27,66 +27,66 @@ export function getKeycode(evt) {
         let code = vkeys[evt.keyCode];
 
         // macOS has messed up this code for some reason
-        if (browser.isMac() && (code === 'ContextMenu')) {
-            code = 'MetaRight';
+        if (browser.isMac() && (code === "ContextMenu")) {
+            code = "MetaRight";
         }
 
         // The keyCode doesn't distinguish between left and right
         // for the standard modifiers
         if (evt.location === 2) {
             switch (code) {
-                case 'ShiftLeft': return 'ShiftRight';
-                case 'ControlLeft': return 'ControlRight';
-                case 'AltLeft': return 'AltRight';
+                case "ShiftLeft": return "ShiftRight";
+                case "ControlLeft": return "ControlRight";
+                case "AltLeft": return "AltRight";
             }
         }
 
         // Nor a bunch of the numpad keys
         if (evt.location === 3) {
             switch (code) {
-                case 'Delete': return 'NumpadDecimal';
-                case 'Insert': return 'Numpad0';
-                case 'End': return 'Numpad1';
-                case 'ArrowDown': return 'Numpad2';
-                case 'PageDown': return 'Numpad3';
-                case 'ArrowLeft': return 'Numpad4';
-                case 'ArrowRight': return 'Numpad6';
-                case 'Home': return 'Numpad7';
-                case 'ArrowUp': return 'Numpad8';
-                case 'PageUp': return 'Numpad9';
-                case 'Enter': return 'NumpadEnter';
+                case "Delete": return "NumpadDecimal";
+                case "Insert": return "Numpad0";
+                case "End": return "Numpad1";
+                case "ArrowDown": return "Numpad2";
+                case "PageDown": return "Numpad3";
+                case "ArrowLeft": return "Numpad4";
+                case "ArrowRight": return "Numpad6";
+                case "Home": return "Numpad7";
+                case "ArrowUp": return "Numpad8";
+                case "PageUp": return "Numpad9";
+                case "Enter": return "NumpadEnter";
             }
         }
 
         return code;
     }
 
-    return 'Unidentified';
+    return "Unidentified";
 }
 
 // Get 'KeyboardEvent.key', handling legacy browsers
 export function getKey(evt) {
     // Are we getting a proper key value?
-    if ((evt.key !== undefined) && (evt.key !== 'Unidentified')) {
+    if ((evt.key !== undefined) && (evt.key !== "Unidentified")) {
         // Mozilla isn't fully in sync with the spec yet
         switch (evt.key) {
-            case 'OS': return 'Meta';
-            case 'LaunchMyComputer': return 'LaunchApplication1';
-            case 'LaunchCalculator': return 'LaunchApplication2';
+            case "OS": return "Meta";
+            case "LaunchMyComputer": return "LaunchApplication1";
+            case "LaunchCalculator": return "LaunchApplication2";
         }
 
         // iOS leaks some OS names
         switch (evt.key) {
-            case 'UIKeyInputUpArrow': return 'ArrowUp';
-            case 'UIKeyInputDownArrow': return 'ArrowDown';
-            case 'UIKeyInputLeftArrow': return 'ArrowLeft';
-            case 'UIKeyInputRightArrow': return 'ArrowRight';
-            case 'UIKeyInputEscape': return 'Escape';
+            case "UIKeyInputUpArrow": return "ArrowUp";
+            case "UIKeyInputDownArrow": return "ArrowDown";
+            case "UIKeyInputLeftArrow": return "ArrowLeft";
+            case "UIKeyInputRightArrow": return "ArrowRight";
+            case "UIKeyInputEscape": return "Escape";
         }
 
         // Broken behaviour in Chrome
-        if ((evt.key === '\x00') && (evt.code === 'NumpadDecimal')) {
-            return 'Delete';
+        if ((evt.key === "\u0000") && (evt.code === "NumpadDecimal")) {
+            return "Delete";
         }
 
         return evt.key;
@@ -104,14 +104,14 @@ export function getKey(evt) {
     }
 
     // At this point we have nothing left to go on
-    return 'Unidentified';
+    return "Unidentified";
 }
 
 // Get the most reliable keysym value we can get from a key event
 export function getKeysym(evt) {
     const key = getKey(evt);
 
-    if (key === 'Unidentified') {
+    if (key === "Unidentified") {
         return null;
     }
 
@@ -120,14 +120,14 @@ export function getKeysym(evt) {
         let location = evt.location;
 
         // Safari screws up location for the right cmd key
-        if ((key === 'Meta') && (location === 0)) {
+        if ((key === "Meta") && (location === 0)) {
             location = 2;
         }
 
         // And for Clear
-        if ((key === 'Clear') && (location === 3)) {
+        if ((key === "Clear") && (location === 3)) {
             let code = getKeycode(evt);
-            if (code === 'NumLock') {
+            if (code === "NumLock") {
                 location = 0;
             }
         }
@@ -139,20 +139,20 @@ export function getKeysym(evt) {
         // The original Meta key now gets confused with the Windows key
         // https://bugs.chromium.org/p/chromium/issues/detail?id=1020141
         // https://bugzilla.mozilla.org/show_bug.cgi?id=1232918
-        if (key === 'Meta') {
+        if (key === "Meta") {
             let code = getKeycode(evt);
-            if (code === 'AltLeft') {
+            if (code === "AltLeft") {
                 return KeyTable.XK_Meta_L;
-            } else if (code === 'AltRight') {
+            } else if (code === "AltRight") {
                 return KeyTable.XK_Meta_R;
             }
         }
 
         // macOS has Clear instead of NumLock, but the remote system is
         // probably not macOS, so lying here is probably best...
-        if (key === 'Clear') {
+        if (key === "Clear") {
             let code = getKeycode(evt);
-            if (code === 'NumLock') {
+            if (code === "NumLock") {
                 return KeyTable.XK_Num_Lock;
             }
         }
@@ -163,11 +163,11 @@ export function getKeysym(evt) {
         // instead and hope for the best.
         if (browser.isWindows()) {
             switch (key) {
-                case 'Zenkaku':
-                case 'Hankaku':
+                case "Zenkaku":
+                case "Hankaku":
                     return KeyTable.XK_Zenkaku_Hankaku;
-                case 'Romaji':
-                case 'KanaMode':
+                case "Romaji":
+                case "KanaMode":
                     return KeyTable.XK_Romaji;
             }
         }

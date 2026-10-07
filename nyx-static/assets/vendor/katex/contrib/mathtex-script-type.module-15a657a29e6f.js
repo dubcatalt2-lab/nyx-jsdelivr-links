@@ -1,4 +1,4 @@
-import katex from '../katex.module-787e827f6610.js';
+import katex from "../katex.module-787e827f6610.js";
 
 var scripts = document.body.getElementsByTagName("script");
 scripts = Array.prototype.slice.call(scripts);

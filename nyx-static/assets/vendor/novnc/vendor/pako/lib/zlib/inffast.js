@@ -162,7 +162,7 @@ export default function inflate_fast(strm, start) {
             dist += hold & ((1 << op) - 1);
 //#ifdef INFLATE_STRICT
             if (dist > dmax) {
-              strm.msg = 'invalid distance too far back';
+              strm.msg = "invalid distance too far back";
               state.mode = BAD;
               break top;
             }
@@ -175,7 +175,7 @@ export default function inflate_fast(strm, start) {
               op = dist - op;               /* distance back in window */
               if (op > whave) {
                 if (state.sane) {
-                  strm.msg = 'invalid distance too far back';
+                  strm.msg = "invalid distance too far back";
                   state.mode = BAD;
                   break top;
                 }
@@ -280,7 +280,7 @@ export default function inflate_fast(strm, start) {
             continue dodist;
           }
           else {
-            strm.msg = 'invalid distance code';
+            strm.msg = "invalid distance code";
             state.mode = BAD;
             break top;
           }
@@ -298,7 +298,7 @@ export default function inflate_fast(strm, start) {
         break top;
       }
       else {
-        strm.msg = 'invalid literal/length code';
+        strm.msg = "invalid literal/length code";
         state.mode = BAD;
         break top;
       }

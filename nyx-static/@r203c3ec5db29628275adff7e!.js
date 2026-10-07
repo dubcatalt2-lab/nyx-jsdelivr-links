@@ -1,168 +1,168 @@
-importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/controller/@rbaca5a754ca5a40676a66757!.js?v=20260905-cookie-owner-v1");
+importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x2f\x40\x72\x62\x61\x63\x61\x35\x61\x37\x35\x34\x63\x61\x35\x61\x34\x30\x36\x37\x36\x61\x36\x36\x37\x35\x37\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x30\x35\x2d\x63\x6f\x6f\x6b\x69\x65\x2d\x6f\x77\x6e\x65\x72\x2d\x76\x31");
 
-let Xm = null;
+let _0x84e457_0 = null;
 
-function Ym() {
-  return '<!doctype html>\n<meta charset="utf-8">\n<meta name="nyx-route-miss" content="1">\n<style>\n  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#101318;color:#f5f7fb;font:15px/1.45 system-ui,sans-serif}\n  main{max-width:560px;padding:28px;text-align:center}\n  h1{font-size:20px;margin:0 0 10px}\n  p{margin:0;color:#c8ced8}\n  button{margin-top:18px;border:1px solid #445066;border-radius:10px;background:#1b2230;color:#f5f7fb;padding:10px 15px;font:600 14px system-ui,sans-serif;cursor:pointer}\n</style>\n<main>\n  <h1>Reconnecting StudyJet</h1>\n  <p>Nyx is reconnecting this tab to the proxy service worker.</p>\n  <button type="button" data-nyx-repair onclick="if(parent===window){location.reload()}else{window.nyxRepairing=true;parent.postMessage({type:\'nyx:repair-connection\'},parent.location.origin)}">Repair connection</button>\n</main>\n<script>\n  (() => {\n    const key=\'nyx.studyjet-route-retry:\'+location.pathname;\n    const attempts=Number(sessionStorage.getItem(key)||0);\n    if(attempts<2){\n      sessionStorage.setItem(key,String(attempts+1));\n      setTimeout(()=>{if(!window.nyxRepairing)location.reload()},900);\n    }else{\n      sessionStorage.removeItem(key);\n    }\n  })();\n<\/script>';
+function _0x84e457_1() {
+  return "\x3c\x21\x64\x6f\x63\x74\x79\x70\x65\x20\x68\x74\x6d\x6c\x3e\x0a\x3c\x6d\x65\x74\x61\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x22\x75\x74\x66\x2d\x38\x22\x3e\x0a\x3c\x6d\x65\x74\x61\x20\x6e\x61\x6d\x65\x3d\x22\x6e\x79\x78\x2d\x72\x6f\x75\x74\x65\x2d\x6d\x69\x73\x73\x22\x20\x63\x6f\x6e\x74\x65\x6e\x74\x3d\x22\x31\x22\x3e\x0a\x3c\x73\x74\x79\x6c\x65\x3e\x0a\x20\x20\x62\x6f\x64\x79\x7b\x6d\x61\x72\x67\x69\x6e\x3a\x30\x3b\x6d\x69\x6e\x2d\x68\x65\x69\x67\x68\x74\x3a\x31\x30\x30\x76\x68\x3b\x64\x69\x73\x70\x6c\x61\x79\x3a\x67\x72\x69\x64\x3b\x70\x6c\x61\x63\x65\x2d\x69\x74\x65\x6d\x73\x3a\x63\x65\x6e\x74\x65\x72\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x31\x30\x31\x33\x31\x38\x3b\x63\x6f\x6c\x6f\x72\x3a\x23\x66\x35\x66\x37\x66\x62\x3b\x66\x6f\x6e\x74\x3a\x31\x35\x70\x78\x2f\x31\x2e\x34\x35\x20\x73\x79\x73\x74\x65\x6d\x2d\x75\x69\x2c\x73\x61\x6e\x73\x2d\x73\x65\x72\x69\x66\x7d\x0a\x20\x20\x6d\x61\x69\x6e\x7b\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x35\x36\x30\x70\x78\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x32\x38\x70\x78\x3b\x74\x65\x78\x74\x2d\x61\x6c\x69\x67\x6e\x3a\x63\x65\x6e\x74\x65\x72\x7d\x0a\x20\x20\x68\x31\x7b\x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3a\x32\x30\x70\x78\x3b\x6d\x61\x72\x67\x69\x6e\x3a\x30\x20\x30\x20\x31\x30\x70\x78\x7d\x0a\x20\x20\x70\x7b\x6d\x61\x72\x67\x69\x6e\x3a\x30\x3b\x63\x6f\x6c\x6f\x72\x3a\x23\x63\x38\x63\x65\x64\x38\x7d\x0a\x20\x20\x62\x75\x74\x74\x6f\x6e\x7b\x6d\x61\x72\x67\x69\x6e\x2d\x74\x6f\x70\x3a\x31\x38\x70\x78\x3b\x62\x6f\x72\x64\x65\x72\x3a\x31\x70\x78\x20\x73\x6f\x6c\x69\x64\x20\x23\x34\x34\x35\x30\x36\x36\x3b\x62\x6f\x72\x64\x65\x72\x2d\x72\x61\x64\x69\x75\x73\x3a\x31\x30\x70\x78\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x31\x62\x32\x32\x33\x30\x3b\x63\x6f\x6c\x6f\x72\x3a\x23\x66\x35\x66\x37\x66\x62\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x31\x30\x70\x78\x20\x31\x35\x70\x78\x3b\x66\x6f\x6e\x74\x3a\x36\x30\x30\x20\x31\x34\x70\x78\x20\x73\x79\x73\x74\x65\x6d\x2d\x75\x69\x2c\x73\x61\x6e\x73\x2d\x73\x65\x72\x69\x66\x3b\x63\x75\x72\x73\x6f\x72\x3a\x70\x6f\x69\x6e\x74\x65\x72\x7d\x0a\x3c\x2f\x73\x74\x79\x6c\x65\x3e\x0a\x3c\x6d\x61\x69\x6e\x3e\x0a\x20\x20\x3c\x68\x31\x3e\x52\x65\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\x20\x53\x74\x75\x64\x79\x4a\x65\x74\x3c\x2f\x68\x31\x3e\x0a\x20\x20\x3c\x70\x3e\x4e\x79\x78\x20\x69\x73\x20\x72\x65\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\x20\x74\x68\x69\x73\x20\x74\x61\x62\x20\x74\x6f\x20\x74\x68\x65\x20\x70\x72\x6f\x78\x79\x20\x73\x65\x72\x76\x69\x63\x65\x20\x77\x6f\x72\x6b\x65\x72\x2e\x3c\x2f\x70\x3e\x0a\x20\x20\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x72\x65\x70\x61\x69\x72\x20\x6f\x6e\x63\x6c\x69\x63\x6b\x3d\x22\x69\x66\x28\x70\x61\x72\x65\x6e\x74\x3d\x3d\x3d\x77\x69\x6e\x64\x6f\x77\x29\x7b\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x72\x65\x6c\x6f\x61\x64\x28\x29\x7d\x65\x6c\x73\x65\x7b\x77\x69\x6e\x64\x6f\x77\x2e\x6e\x79\x78\x52\x65\x70\x61\x69\x72\x69\x6e\x67\x3d\x74\x72\x75\x65\x3b\x70\x61\x72\x65\x6e\x74\x2e\x70\x6f\x73\x74\x4d\x65\x73\x73\x61\x67\x65\x28\x7b\x74\x79\x70\x65\x3a\x27\x6e\x79\x78\x3a\x72\x65\x70\x61\x69\x72\x2d\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x27\x7d\x2c\x70\x61\x72\x65\x6e\x74\x2e\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x6f\x72\x69\x67\x69\x6e\x29\x7d\x22\x3e\x52\x65\x70\x61\x69\x72\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x0a\x3c\x2f\x6d\x61\x69\x6e\x3e\x0a\x3c\x73\x63\x72\x69\x70\x74\x3e\x0a\x20\x20\x28\x28\x29\x20\x3d\x3e\x20\x7b\x0a\x20\x20\x20\x20\x63\x6f\x6e\x73\x74\x20\x6b\x65\x79\x3d\x27\x6e\x79\x78\x2e\x73\x74\x75\x64\x79\x6a\x65\x74\x2d\x72\x6f\x75\x74\x65\x2d\x72\x65\x74\x72\x79\x3a\x27\x2b\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x70\x61\x74\x68\x6e\x61\x6d\x65\x3b\x0a\x20\x20\x20\x20\x63\x6f\x6e\x73\x74\x20\x61\x74\x74\x65\x6d\x70\x74\x73\x3d\x4e\x75\x6d\x62\x65\x72\x28\x73\x65\x73\x73\x69\x6f\x6e\x53\x74\x6f\x72\x61\x67\x65\x2e\x67\x65\x74\x49\x74\x65\x6d\x28\x6b\x65\x79\x29\x7c\x7c\x30\x29\x3b\x0a\x20\x20\x20\x20\x69\x66\x28\x61\x74\x74\x65\x6d\x70\x74\x73\x3c\x32\x29\x7b\x0a\x20\x20\x20\x20\x20\x20\x73\x65\x73\x73\x69\x6f\x6e\x53\x74\x6f\x72\x61\x67\x65\x2e\x73\x65\x74\x49\x74\x65\x6d\x28\x6b\x65\x79\x2c\x53\x74\x72\x69\x6e\x67\x28\x61\x74\x74\x65\x6d\x70\x74\x73\x2b\x31\x29\x29\x3b\x0a\x20\x20\x20\x20\x20\x20\x73\x65\x74\x54\x69\x6d\x65\x6f\x75\x74\x28\x28\x29\x3d\x3e\x7b\x69\x66\x28\x21\x77\x69\x6e\x64\x6f\x77\x2e\x6e\x79\x78\x52\x65\x70\x61\x69\x72\x69\x6e\x67\x29\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x72\x65\x6c\x6f\x61\x64\x28\x29\x7d\x2c\x39\x30\x30\x29\x3b\x0a\x20\x20\x20\x20\x7d\x65\x6c\x73\x65\x7b\x0a\x20\x20\x20\x20\x20\x20\x73\x65\x73\x73\x69\x6f\x6e\x53\x74\x6f\x72\x61\x67\x65\x2e\x72\x65\x6d\x6f\x76\x65\x49\x74\x65\x6d\x28\x6b\x65\x79\x29\x3b\x0a\x20\x20\x20\x20\x7d\x0a\x20\x20\x7d\x29\x28\x29\x3b\x0a\x3c\x2f\x73\x63\x72\x69\x70\x74\x3e";
 }
 
-function Zm(_e0ceaafe629e) {
+function _0x84e457_2(_2fdf4cb86719) {
   try {
-    return new URL(_e0ceaafe629e.request.url).pathname.startsWith(self.NYX_TUTSI_WORKER ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/~/tm/" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/~/study/");
+    return new URL(_2fdf4cb86719.request.url).pathname.startsWith(self.NYX_TUTSI_WORKER ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x7e\x2f\x74\x6d\x2f" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x7e\x2f\x73\x74\x75\x64\x79\x2f");
   } catch {
     return !1;
   }
 }
 
-function sp(_e0ceaafe629e) {
+function _0x84e457_3(_2fdf4cb86719) {
   try {
-    const _2a2cf3609c58 = new URL(_e0ceaafe629e).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:study|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
-    return _2a2cf3609c58 ? new URL(decodeURIComponent(_2a2cf3609c58[1])).pathname : "";
+    const _196c429ad7da = new URL(_2fdf4cb86719).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:study|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
+    return _196c429ad7da ? new URL(decodeURIComponent(_196c429ad7da[1])).pathname : "";
   } catch {
     return "";
   }
 }
 
-function cp(_e0ceaafe629e) {
+function _0x84e457_4(_2fdf4cb86719) {
   try {
-    const _2a2cf3609c58 = new URL(_e0ceaafe629e).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:study|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
-    return _2a2cf3609c58 ? new URL(decodeURIComponent(_2a2cf3609c58[1])).href : "";
+    const _196c429ad7da = new URL(_2fdf4cb86719).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:study|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
+    return _196c429ad7da ? new URL(decodeURIComponent(_196c429ad7da[1])).href : "";
   } catch {
     return "";
   }
 }
 
-self.addEventListener("install", _e0ceaafe629e => {
-  _e0ceaafe629e.waitUntil(self.skipWaiting());
+self.addEventListener("\x69\x6e\x73\x74\x61\x6c\x6c", _2fdf4cb86719 => {
+  _2fdf4cb86719.waitUntil(self.skipWaiting());
 });
 
-const up = [ "pagead2.googlesyndication.com", "googlesyndication.com", "googleads.g.doubleclick.net", "doubleclick.net", "googletagmanager.com", "google-analytics.com", "analytics.google.com", "adservice.google.com", "adtrafficquality.google", "stats.g.doubleclick.net", "static.cloudflareinsights.com", "cloudflareinsights.com", "statcounter.com", "c.statcounter.com", "www.statcounter.com", "inmobi.com", "cmp.inmobi.com", "vntsm.com", "hb.vntsm.com", "facebook.net", "connect.facebook.net", "ads.emulatorjs.org", "cdn.r9x.in", "gamemonetize.com", "html5.api.gamedistribution.com", "imasdk.googleapis.com", "sdk.poki.com" ];
+const _0x84e457_5 = [ "\x70\x61\x67\x65\x61\x64\x32\x2e\x67\x6f\x6f\x67\x6c\x65\x73\x79\x6e\x64\x69\x63\x61\x74\x69\x6f\x6e\x2e\x63\x6f\x6d", "\x67\x6f\x6f\x67\x6c\x65\x73\x79\x6e\x64\x69\x63\x61\x74\x69\x6f\x6e\x2e\x63\x6f\x6d", "\x67\x6f\x6f\x67\x6c\x65\x61\x64\x73\x2e\x67\x2e\x64\x6f\x75\x62\x6c\x65\x63\x6c\x69\x63\x6b\x2e\x6e\x65\x74", "\x64\x6f\x75\x62\x6c\x65\x63\x6c\x69\x63\x6b\x2e\x6e\x65\x74", "\x67\x6f\x6f\x67\x6c\x65\x74\x61\x67\x6d\x61\x6e\x61\x67\x65\x72\x2e\x63\x6f\x6d", "\x67\x6f\x6f\x67\x6c\x65\x2d\x61\x6e\x61\x6c\x79\x74\x69\x63\x73\x2e\x63\x6f\x6d", "\x61\x6e\x61\x6c\x79\x74\x69\x63\x73\x2e\x67\x6f\x6f\x67\x6c\x65\x2e\x63\x6f\x6d", "\x61\x64\x73\x65\x72\x76\x69\x63\x65\x2e\x67\x6f\x6f\x67\x6c\x65\x2e\x63\x6f\x6d", "\x61\x64\x74\x72\x61\x66\x66\x69\x63\x71\x75\x61\x6c\x69\x74\x79\x2e\x67\x6f\x6f\x67\x6c\x65", "\x73\x74\x61\x74\x73\x2e\x67\x2e\x64\x6f\x75\x62\x6c\x65\x63\x6c\x69\x63\x6b\x2e\x6e\x65\x74", "\x73\x74\x61\x74\x69\x63\x2e\x63\x6c\x6f\x75\x64\x66\x6c\x61\x72\x65\x69\x6e\x73\x69\x67\x68\x74\x73\x2e\x63\x6f\x6d", "\x63\x6c\x6f\x75\x64\x66\x6c\x61\x72\x65\x69\x6e\x73\x69\x67\x68\x74\x73\x2e\x63\x6f\x6d", "\x73\x74\x61\x74\x63\x6f\x75\x6e\x74\x65\x72\x2e\x63\x6f\x6d", "\x63\x2e\x73\x74\x61\x74\x63\x6f\x75\x6e\x74\x65\x72\x2e\x63\x6f\x6d", "\x77\x77\x77\x2e\x73\x74\x61\x74\x63\x6f\x75\x6e\x74\x65\x72\x2e\x63\x6f\x6d", "\x69\x6e\x6d\x6f\x62\x69\x2e\x63\x6f\x6d", "\x63\x6d\x70\x2e\x69\x6e\x6d\x6f\x62\x69\x2e\x63\x6f\x6d", "\x76\x6e\x74\x73\x6d\x2e\x63\x6f\x6d", "\x68\x62\x2e\x76\x6e\x74\x73\x6d\x2e\x63\x6f\x6d", "\x66\x61\x63\x65\x62\x6f\x6f\x6b\x2e\x6e\x65\x74", "\x63\x6f\x6e\x6e\x65\x63\x74\x2e\x66\x61\x63\x65\x62\x6f\x6f\x6b\x2e\x6e\x65\x74", "\x61\x64\x73\x2e\x65\x6d\x75\x6c\x61\x74\x6f\x72\x6a\x73\x2e\x6f\x72\x67", "\x63\x64\x6e\x2e\x72\x39\x78\x2e\x69\x6e", "\x67\x61\x6d\x65\x6d\x6f\x6e\x65\x74\x69\x7a\x65\x2e\x63\x6f\x6d", "\x68\x74\x6d\x6c\x35\x2e\x61\x70\x69\x2e\x67\x61\x6d\x65\x64\x69\x73\x74\x72\x69\x62\x75\x74\x69\x6f\x6e\x2e\x63\x6f\x6d", "\x69\x6d\x61\x73\x64\x6b\x2e\x67\x6f\x6f\x67\x6c\x65\x61\x70\x69\x73\x2e\x63\x6f\x6d", "\x73\x64\x6b\x2e\x70\x6f\x6b\x69\x2e\x63\x6f\x6d" ];
 
-function lp(_e0ceaafe629e) {
-  const _2a2cf3609c58 = String(_e0ceaafe629e || "").toLowerCase();
-  return "cmp.inmobi.com" !== _2a2cf3609c58 && !_2a2cf3609c58.endsWith(".cmp.inmobi.com") && up.some(_e0ceaafe629e => _2a2cf3609c58 === _e0ceaafe629e || _2a2cf3609c58.endsWith(`.${_e0ceaafe629e}`));
+function _0x84e457_6(_2fdf4cb86719) {
+  const _196c429ad7da = String(_2fdf4cb86719 || "").toLowerCase();
+  return "\x63\x6d\x70\x2e\x69\x6e\x6d\x6f\x62\x69\x2e\x63\x6f\x6d" !== _196c429ad7da && !_196c429ad7da.endsWith("\x2e\x63\x6d\x70\x2e\x69\x6e\x6d\x6f\x62\x69\x2e\x63\x6f\x6d") && _0x84e457_5.some(_2fdf4cb86719 => _196c429ad7da === _2fdf4cb86719 || _196c429ad7da.endsWith(`\x2e${_2fdf4cb86719}`));
 }
 
-function mp(_e0ceaafe629e) {
-  const _2a2cf3609c58 = cp(_e0ceaafe629e.request.url);
-  if (!_2a2cf3609c58) return !1;
+function _0x84e457_7(_2fdf4cb86719) {
+  const _196c429ad7da = _0x84e457_4(_2fdf4cb86719.request.url);
+  if (!_196c429ad7da) return !1;
   try {
-    const _e0ceaafe629e = new URL(_2a2cf3609c58);
-    return lp(_e0ceaafe629e.hostname) || /(?:^|\/)(?:ads?|ad[-_.]?(?:loader|manager|script)|jump[_-]gamemonetize|poki-(?:master-loader|sdk))\.(?:js|mjs)(?:$|\/)/i.test(_e0ceaafe629e.pathname) || "serve.app.playsaurus.com" === _e0ceaafe629e.hostname && /\/ad-campaigns\//i.test(_e0ceaafe629e.pathname);
+    const _2fdf4cb86719 = new URL(_196c429ad7da);
+    return _0x84e457_6(_2fdf4cb86719.hostname) || /(?:^|\/)(?:ads?|ad[-_.]?(?:loader|manager|script)|jump[_-]gamemonetize|poki-(?:master-loader|sdk))\.(?:js|mjs)(?:$|\/)/i.test(_2fdf4cb86719.pathname) || "\x73\x65\x72\x76\x65\x2e\x61\x70\x70\x2e\x70\x6c\x61\x79\x73\x61\x75\x72\x75\x73\x2e\x63\x6f\x6d" === _2fdf4cb86719.hostname && /\/ad-campaigns\//i.test(_2fdf4cb86719.pathname);
   } catch {
     return !1;
   }
 }
 
-function pp(_e0ceaafe629e) {
-  const _2a2cf3609c58 = _e0ceaafe629e.request.headers.get("accept") || "";
-  return [ "script", "worker", "sharedworker" ].includes(_e0ceaafe629e.request.destination) || /javascript|ecmascript/i.test(_2a2cf3609c58) ? new Response("", {
+function _0x84e457_8(_2fdf4cb86719) {
+  const _196c429ad7da = _2fdf4cb86719.request.headers.get("\x61\x63\x63\x65\x70\x74") || "";
+  return [ "\x73\x63\x72\x69\x70\x74", "\x77\x6f\x72\x6b\x65\x72", "\x73\x68\x61\x72\x65\x64\x77\x6f\x72\x6b\x65\x72" ].includes(_2fdf4cb86719.request.destination) || /javascript|ecmascript/i.test(_196c429ad7da) ? new Response("", {
     status: 200,
     headers: {
-      "Content-Type": "application/javascript; charset=utf-8"
+      "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
     }
-  }) : "style" === _e0ceaafe629e.request.destination || /text\/css/i.test(_2a2cf3609c58) ? new Response("", {
+  }) : "\x73\x74\x79\x6c\x65" === _2fdf4cb86719.request.destination || /text\/css/i.test(_196c429ad7da) ? new Response("", {
     status: 200,
     headers: {
-      "Content-Type": "text/css; charset=utf-8"
+      "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x74\x65\x78\x74\x2f\x63\x73\x73\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
     }
-  }) : "image" === _e0ceaafe629e.request.destination ? new Response("", {
+  }) : "\x69\x6d\x61\x67\x65" === _2fdf4cb86719.request.destination ? new Response("", {
     status: 204
-  }) : "document" === _e0ceaafe629e.request.destination || "iframe" === _e0ceaafe629e.request.destination ? new Response('<!doctype html><meta charset="utf-8">', {
+  }) : "\x64\x6f\x63\x75\x6d\x65\x6e\x74" === _2fdf4cb86719.request.destination || "\x69\x66\x72\x61\x6d\x65" === _2fdf4cb86719.request.destination ? new Response("\x3c\x21\x64\x6f\x63\x74\x79\x70\x65\x20\x68\x74\x6d\x6c\x3e\x3c\x6d\x65\x74\x61\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x22\x75\x74\x66\x2d\x38\x22\x3e", {
     status: 200,
     headers: {
-      "Content-Type": "text/html; charset=utf-8"
+      "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
     }
   }) : new Response(null, {
     status: 204
   });
 }
 
-function dp(_e0ceaafe629e) {
-  const _2a2cf3609c58 = _e0ceaafe629e.request.headers.get("accept") || "", _746a901632b1 = new URL(_e0ceaafe629e.request.url).pathname, _530bcc5273bb = sp(_e0ceaafe629e.request.url);
-  return [ "script", "worker", "sharedworker", "style" ].includes(_e0ceaafe629e.request.destination) || /javascript|ecmascript|text\/css/i.test(_2a2cf3609c58) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_746a901632b1) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_530bcc5273bb);
+function _0x84e457_9(_2fdf4cb86719) {
+  const _196c429ad7da = _2fdf4cb86719.request.headers.get("\x61\x63\x63\x65\x70\x74") || "", _d0dc939f0217 = new URL(_2fdf4cb86719.request.url).pathname, _d90f3f573a05 = _0x84e457_3(_2fdf4cb86719.request.url);
+  return [ "\x73\x63\x72\x69\x70\x74", "\x77\x6f\x72\x6b\x65\x72", "\x73\x68\x61\x72\x65\x64\x77\x6f\x72\x6b\x65\x72", "\x73\x74\x79\x6c\x65" ].includes(_2fdf4cb86719.request.destination) || /javascript|ecmascript|text\/css/i.test(_196c429ad7da) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_d0dc939f0217) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_d90f3f573a05);
 }
 
-function hp(_e0ceaafe629e) {
-  const _2a2cf3609c58 = _e0ceaafe629e.request.headers.get("accept") || "", _746a901632b1 = new URL(_e0ceaafe629e.request.url).pathname, _530bcc5273bb = sp(_e0ceaafe629e.request.url);
-  return [ "script", "worker", "sharedworker" ].includes(_e0ceaafe629e.request.destination) || /javascript|ecmascript/i.test(_2a2cf3609c58) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_746a901632b1) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_530bcc5273bb) ? new Response("", {
+function _0x84e457_a(_2fdf4cb86719) {
+  const _196c429ad7da = _2fdf4cb86719.request.headers.get("\x61\x63\x63\x65\x70\x74") || "", _d0dc939f0217 = new URL(_2fdf4cb86719.request.url).pathname, _d90f3f573a05 = _0x84e457_3(_2fdf4cb86719.request.url);
+  return [ "\x73\x63\x72\x69\x70\x74", "\x77\x6f\x72\x6b\x65\x72", "\x73\x68\x61\x72\x65\x64\x77\x6f\x72\x6b\x65\x72" ].includes(_2fdf4cb86719.request.destination) || /javascript|ecmascript/i.test(_196c429ad7da) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_d0dc939f0217) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_d90f3f573a05) ? new Response("", {
     status: 200,
     headers: {
-      "Content-Type": "application/javascript; charset=utf-8"
+      "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
     }
-  }) : "style" === _e0ceaafe629e.request.destination || /text\/css/i.test(_2a2cf3609c58) ? new Response("", {
+  }) : "\x73\x74\x79\x6c\x65" === _2fdf4cb86719.request.destination || /text\/css/i.test(_196c429ad7da) ? new Response("", {
     status: 200,
     headers: {
-      "Content-Type": "text/css; charset=utf-8"
+      "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x74\x65\x78\x74\x2f\x63\x73\x73\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
     }
   }) : null;
 }
 
-function fp(_e0ceaafe629e) {
-  return /^\s*</.test(_e0ceaafe629e) || /^\s*\)\]\}'/.test(_e0ceaafe629e) || /^\s*\)\]/.test(_e0ceaafe629e);
+function _0x84e457_b(_2fdf4cb86719) {
+  return /^\s*</.test(_2fdf4cb86719) || /^\s*\)\]\}'/.test(_2fdf4cb86719) || /^\s*\)\]/.test(_2fdf4cb86719);
 }
 
-async function gp(_e0ceaafe629e, _2a2cf3609c58) {
-  if (!dp(_e0ceaafe629e)) return _2a2cf3609c58;
-  const _746a901632b1 = _2a2cf3609c58.headers.get("content-type") || "";
-  if (_2a2cf3609c58.status >= 400 || _746a901632b1.includes("text/html") || _746a901632b1.includes("application/json") || _746a901632b1.includes("text/json")) return hp(_e0ceaafe629e) || _2a2cf3609c58;
-  const _530bcc5273bb = await _2a2cf3609c58.clone().text().catch(() => "");
-  if (fp(_530bcc5273bb)) return hp(_e0ceaafe629e) || _2a2cf3609c58;
-  if (!_530bcc5273bb) return _2a2cf3609c58;
-  const _f4b58d9d7872 = new Headers(_2a2cf3609c58.headers);
-  return _f4b58d9d7872.delete("content-length"), new Response(_530bcc5273bb, {
-    status: _2a2cf3609c58.status,
-    statusText: _2a2cf3609c58.statusText,
-    headers: _f4b58d9d7872
+async function _0x84e457_c(_2fdf4cb86719, _196c429ad7da) {
+  if (!_0x84e457_9(_2fdf4cb86719)) return _196c429ad7da;
+  const _d0dc939f0217 = _196c429ad7da.headers.get("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65") || "";
+  if (_196c429ad7da.status >= 400 || _d0dc939f0217.includes("\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c") || _d0dc939f0217.includes("\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e") || _d0dc939f0217.includes("\x74\x65\x78\x74\x2f\x6a\x73\x6f\x6e")) return _0x84e457_a(_2fdf4cb86719) || _196c429ad7da;
+  const _d90f3f573a05 = await _196c429ad7da.clone().text().catch(() => "");
+  if (_0x84e457_b(_d90f3f573a05)) return _0x84e457_a(_2fdf4cb86719) || _196c429ad7da;
+  if (!_d90f3f573a05) return _196c429ad7da;
+  const _c2f6323453c9 = new Headers(_196c429ad7da.headers);
+  return _c2f6323453c9.delete("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x6c\x65\x6e\x67\x74\x68"), new Response(_d90f3f573a05, {
+    status: _196c429ad7da.status,
+    statusText: _196c429ad7da.statusText,
+    headers: _c2f6323453c9
   });
 }
 
-function wp(_e0ceaafe629e) {
-  return new Promise(_2a2cf3609c58 => setTimeout(_2a2cf3609c58, _e0ceaafe629e));
+function _0x84e457_d(_2fdf4cb86719) {
+  return new Promise(_196c429ad7da => setTimeout(_196c429ad7da, _2fdf4cb86719));
 }
 
-async function yp() {
-  return Xm || (Xm = (async () => {
-    const _e0ceaafe629e = await self.clients.matchAll({
+async function _0x84e457_e() {
+  return _0x84e457_0 || (_0x84e457_0 = (async () => {
+    const _2fdf4cb86719 = await self.clients.matchAll({
       includeUncontrolled: !0,
-      type: "window"
+      type: "\x77\x69\x6e\x64\x6f\x77"
     });
-    for (const _2a2cf3609c58 of _e0ceaafe629e) try {
-      _2a2cf3609c58.postMessage({
+    for (const _196c429ad7da of _2fdf4cb86719) try {
+      _196c429ad7da.postMessage({
         $controller$swrevive: {}
       });
     } catch {}
-    await wp(60);
+    await _0x84e457_d(60);
   })().finally(() => {
-    Xm = null;
-  }), Xm);
+    _0x84e457_0 = null;
+  }), _0x84e457_0);
 }
 
-async function jp(_e0ceaafe629e) {
-  const _2a2cf3609c58 = Date.now() + 7e3;
-  let _746a901632b1 = 0;
-  for (;Date.now() < _2a2cf3609c58; ) {
-    const _2a2cf3609c58 = Date.now();
-    if (_2a2cf3609c58 >= _746a901632b1 && (await yp(), _746a901632b1 = _2a2cf3609c58 + 500), 
-    $studyjetController.shouldRoute(_e0ceaafe629e)) return xp(_e0ceaafe629e);
-    await wp(100);
+async function _0x84e457_f(_2fdf4cb86719) {
+  const _196c429ad7da = Date.now() + 7e3;
+  let _d0dc939f0217 = 0;
+  for (;Date.now() < _196c429ad7da; ) {
+    const _196c429ad7da = Date.now();
+    if (_196c429ad7da >= _d0dc939f0217 && (await _0x84e457_e(), _d0dc939f0217 = _196c429ad7da + 500), 
+    $studyjetController.shouldRoute(_2fdf4cb86719)) return _0x84e457_10(_2fdf4cb86719);
+    await _0x84e457_d(100);
   }
-  return new Response(Ym(), {
+  return new Response(_0x84e457_1(), {
     status: 502,
     headers: {
-      "Content-Type": "text/html; charset=utf-8"
+      "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
     }
   });
 }
 
-async function xp(_e0ceaafe629e) {
-  return gp(_e0ceaafe629e, await $studyjetController.route(_e0ceaafe629e));
+async function _0x84e457_10(_2fdf4cb86719) {
+  return _0x84e457_c(_2fdf4cb86719, await $studyjetController.route(_2fdf4cb86719));
 }
 
-self.addEventListener("fetch", _e0ceaafe629e => {
-  self.NYX_TUTSI_WORKER || !mp(_e0ceaafe629e) ? $studyjetController.shouldRoute(_e0ceaafe629e) ? _e0ceaafe629e.respondWith(xp(_e0ceaafe629e)) : Zm(_e0ceaafe629e) && _e0ceaafe629e.respondWith(jp(_e0ceaafe629e)) : _e0ceaafe629e.respondWith(pp(_e0ceaafe629e));
-}), self.addEventListener("activate", _e0ceaafe629e => {
-  _e0ceaafe629e.waitUntil(Promise.all([ self.clients.claim(), yp().catch(() => {}) ]));
+self.addEventListener("\x66\x65\x74\x63\x68", _2fdf4cb86719 => {
+  self.NYX_TUTSI_WORKER || !_0x84e457_7(_2fdf4cb86719) ? $studyjetController.shouldRoute(_2fdf4cb86719) ? _2fdf4cb86719.respondWith(_0x84e457_10(_2fdf4cb86719)) : _0x84e457_2(_2fdf4cb86719) && _2fdf4cb86719.respondWith(_0x84e457_f(_2fdf4cb86719)) : _2fdf4cb86719.respondWith(_0x84e457_8(_2fdf4cb86719));
+}), self.addEventListener("\x61\x63\x74\x69\x76\x61\x74\x65", _2fdf4cb86719 => {
+  _2fdf4cb86719.waitUntil(Promise.all([ self.clients.claim(), _0x84e457_e().catch(() => {}) ]));
 }), setTimeout(() => {
-  yp().catch(() => {});
+  _0x84e457_e().catch(() => {});
 }, 120);

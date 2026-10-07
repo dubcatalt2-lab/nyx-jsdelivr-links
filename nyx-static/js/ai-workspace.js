@@ -1,1456 +1,1512 @@
 !function() {
   "use strict";
-  const e = "nyx.aiMessages", t = "nyx.aiThreads.v1", n = "nyx.aiActiveThread", a = "nyx.aiModel", o = "nyx.aiResponseDepth", i = "nyx.aiUsage.v1", r = "";
-  let s = !1;
-  const l = 12e5, c = 1600, d = 18e3, m = new Set([ "image/png", "image/jpeg", "image/webp", "image/gif" ]), u = new Set, g = document.querySelector("[data-ai-app]"), p = document.getElementById("feed"), h = document.getElementById("conversation"), f = document.getElementById("form"), y = document.getElementById("input"), v = document.getElementById("send"), b = document.getElementById("model"), w = document.getElementById("providerSelect"), x = document.getElementById("providerState"), E = document.getElementById("modelPicker"), k = document.getElementById("modelTrigger"), S = document.getElementById("modelSelected"), I = document.getElementById("modelMenu"), A = document.getElementById("modelOptions"), C = document.getElementById("clear"), L = document.getElementById("threadTitle"), M = document.getElementById("characterCount"), $ = document.getElementById("aiSidebar"), N = document.getElementById("sidebarToggle"), T = document.getElementById("sidebarClose"), B = document.getElementById("sidebarScrim"), R = document.getElementById("newChat"), D = document.getElementById("temporaryChat"), j = document.getElementById("threadList"), U = document.getElementById("threadCount"), O = document.getElementById("historyEmpty"), q = document.getElementById("threadSearch"), _ = [ ...document.querySelectorAll("[data-response-depth]") ], P = document.getElementById("sidebarModelName"), H = document.getElementById("usageWeek"), F = document.getElementById("usageAll"), z = document.getElementById("usageRequests"), W = document.getElementById("aiProfile"), J = document.getElementById("profileAvatar"), K = document.getElementById("profileInitial"), G = document.getElementById("profileName"), V = document.getElementById("profileHandle"), Y = document.getElementById("imageInput"), Z = document.getElementById("attachImage"), X = document.getElementById("attachmentPreview"), Q = document.getElementById("attachmentThumbnail"), ee = document.getElementById("attachmentName"), te = document.getElementById("attachmentStatus"), ne = document.getElementById("removeAttachment"), ae = document.getElementById("screenPreview"), oe = document.getElementById("screenVideo"), ie = document.getElementById("screenStatus"), re = document.getElementById("shareScreen"), se = document.getElementById("stopScreenShare");
-  if (!(g && p && h && f && y && v && b && w && E && k && S && I && A && C && L && $ && N && T && B && R && D && j && U && O && q && 3 === _.length && P && H && F && z && W && J && K && G && V && Y && Z && X && Q && ee && te && ne && ae && oe && ie && re && se)) return;
-  let le, ce = null, de = 0;
-  const me = document.createElement("div");
-  me.className = "ai-send-cooldown", me.hidden = !0, me.setAttribute("role", "status"), 
-  me.style.cssText = "font-size:12px;text-align:center;padding:4px;", f.before(me);
-  let ue = !0, ge = [], pe = !1, he = [], fe = "", ye = !1, ve = [], be = null, we = null, xe = null, Ee = null, ke = [];
-  async function Se(e = {}) {
-    const t = await async function() {
-      const e = await async function() {
+  const _0x9efee5_0 = "\x6e\x79\x78\x2e\x61\x69\x4d\x65\x73\x73\x61\x67\x65\x73", _0x9efee5_1 = "\x6e\x79\x78\x2e\x61\x69\x54\x68\x72\x65\x61\x64\x73\x2e\x76\x31", _0x9efee5_2 = "\x6e\x79\x78\x2e\x61\x69\x41\x63\x74\x69\x76\x65\x54\x68\x72\x65\x61\x64", _0x9efee5_3 = "\x6e\x79\x78\x2e\x61\x69\x4d\x6f\x64\x65\x6c", _0x9efee5_4 = "\x6e\x79\x78\x2e\x61\x69\x52\x65\x73\x70\x6f\x6e\x73\x65\x44\x65\x70\x74\x68", _0x9efee5_5 = "\x6e\x79\x78\x2e\x61\x69\x55\x73\x61\x67\x65\x2e\x76\x31", _0x9efee5_6 = "";
+  let _0x9efee5_7 = !1;
+  const _0x9efee5_8 = 12e5, _0x9efee5_9 = 1600, _0x9efee5_a = 18e3, _0x9efee5_b = new Set([ "\x69\x6d\x61\x67\x65\x2f\x70\x6e\x67", "\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67", "\x69\x6d\x61\x67\x65\x2f\x77\x65\x62\x70", "\x69\x6d\x61\x67\x65\x2f\x67\x69\x66" ]), _0x9efee5_c = new Set, _0x9efee5_d = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x61\x70\x70\x5d"), _0x9efee5_e = document.getElementById("\x66\x65\x65\x64"), _0x9efee5_f = document.getElementById("\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e"), _0x9efee5_10 = document.getElementById("\x66\x6f\x72\x6d"), _0x9efee5_11 = document.getElementById("\x69\x6e\x70\x75\x74"), _0x9efee5_12 = document.getElementById("\x73\x65\x6e\x64"), _0x9efee5_13 = document.getElementById("\x6d\x6f\x64\x65\x6c"), _0x9efee5_14 = document.getElementById("\x70\x72\x6f\x76\x69\x64\x65\x72\x53\x65\x6c\x65\x63\x74"), _0x9efee5_15 = document.getElementById("\x70\x72\x6f\x76\x69\x64\x65\x72\x53\x74\x61\x74\x65"), _0x9efee5_16 = document.getElementById("\x6d\x6f\x64\x65\x6c\x50\x69\x63\x6b\x65\x72"), _0x9efee5_17 = document.getElementById("\x6d\x6f\x64\x65\x6c\x54\x72\x69\x67\x67\x65\x72"), _0x9efee5_18 = document.getElementById("\x6d\x6f\x64\x65\x6c\x53\x65\x6c\x65\x63\x74\x65\x64"), _0x9efee5_19 = document.getElementById("\x6d\x6f\x64\x65\x6c\x4d\x65\x6e\x75"), _0x9efee5_1a = document.getElementById("\x6d\x6f\x64\x65\x6c\x4f\x70\x74\x69\x6f\x6e\x73"), _0x9efee5_1b = document.getElementById("\x63\x6c\x65\x61\x72"), _0x9efee5_1c = document.getElementById("\x74\x68\x72\x65\x61\x64\x54\x69\x74\x6c\x65"), _0x9efee5_1d = document.getElementById("\x63\x68\x61\x72\x61\x63\x74\x65\x72\x43\x6f\x75\x6e\x74"), _0x9efee5_1e = document.getElementById("\x61\x69\x53\x69\x64\x65\x62\x61\x72"), _0x9efee5_1f = document.getElementById("\x73\x69\x64\x65\x62\x61\x72\x54\x6f\x67\x67\x6c\x65"), _0x9efee5_20 = document.getElementById("\x73\x69\x64\x65\x62\x61\x72\x43\x6c\x6f\x73\x65"), _0x9efee5_21 = document.getElementById("\x73\x69\x64\x65\x62\x61\x72\x53\x63\x72\x69\x6d"), _0x9efee5_22 = document.getElementById("\x6e\x65\x77\x43\x68\x61\x74"), _0x9efee5_23 = document.getElementById("\x74\x65\x6d\x70\x6f\x72\x61\x72\x79\x43\x68\x61\x74"), _0x9efee5_24 = document.getElementById("\x74\x68\x72\x65\x61\x64\x4c\x69\x73\x74"), _0x9efee5_25 = document.getElementById("\x74\x68\x72\x65\x61\x64\x43\x6f\x75\x6e\x74"), _0x9efee5_26 = document.getElementById("\x68\x69\x73\x74\x6f\x72\x79\x45\x6d\x70\x74\x79"), _0x9efee5_27 = document.getElementById("\x74\x68\x72\x65\x61\x64\x53\x65\x61\x72\x63\x68"), _0x9efee5_28 = [ ...document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65\x2d\x64\x65\x70\x74\x68\x5d") ], _0x9efee5_29 = document.getElementById("\x73\x69\x64\x65\x62\x61\x72\x4d\x6f\x64\x65\x6c\x4e\x61\x6d\x65"), _0x9efee5_2a = document.getElementById("\x75\x73\x61\x67\x65\x57\x65\x65\x6b"), _0x9efee5_2b = document.getElementById("\x75\x73\x61\x67\x65\x41\x6c\x6c"), _0x9efee5_2c = document.getElementById("\x75\x73\x61\x67\x65\x52\x65\x71\x75\x65\x73\x74\x73"), _0x9efee5_2d = document.getElementById("\x61\x69\x50\x72\x6f\x66\x69\x6c\x65"), _0x9efee5_2e = document.getElementById("\x70\x72\x6f\x66\x69\x6c\x65\x41\x76\x61\x74\x61\x72"), _0x9efee5_2f = document.getElementById("\x70\x72\x6f\x66\x69\x6c\x65\x49\x6e\x69\x74\x69\x61\x6c"), _0x9efee5_30 = document.getElementById("\x70\x72\x6f\x66\x69\x6c\x65\x4e\x61\x6d\x65"), _0x9efee5_31 = document.getElementById("\x70\x72\x6f\x66\x69\x6c\x65\x48\x61\x6e\x64\x6c\x65"), _0x9efee5_32 = document.getElementById("\x69\x6d\x61\x67\x65\x49\x6e\x70\x75\x74"), _0x9efee5_33 = document.getElementById("\x61\x74\x74\x61\x63\x68\x49\x6d\x61\x67\x65"), _0x9efee5_34 = document.getElementById("\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x50\x72\x65\x76\x69\x65\x77"), _0x9efee5_35 = document.getElementById("\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x54\x68\x75\x6d\x62\x6e\x61\x69\x6c"), _0x9efee5_36 = document.getElementById("\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x4e\x61\x6d\x65"), _0x9efee5_37 = document.getElementById("\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x53\x74\x61\x74\x75\x73"), _0x9efee5_38 = document.getElementById("\x72\x65\x6d\x6f\x76\x65\x41\x74\x74\x61\x63\x68\x6d\x65\x6e\x74"), _0x9efee5_39 = document.getElementById("\x73\x63\x72\x65\x65\x6e\x50\x72\x65\x76\x69\x65\x77"), _0x9efee5_3a = document.getElementById("\x73\x63\x72\x65\x65\x6e\x56\x69\x64\x65\x6f"), _0x9efee5_3b = document.getElementById("\x73\x63\x72\x65\x65\x6e\x53\x74\x61\x74\x75\x73"), _0x9efee5_3c = document.getElementById("\x73\x68\x61\x72\x65\x53\x63\x72\x65\x65\x6e"), _0x9efee5_3d = document.getElementById("\x73\x74\x6f\x70\x53\x63\x72\x65\x65\x6e\x53\x68\x61\x72\x65");
+  if (!(_0x9efee5_d && _0x9efee5_e && _0x9efee5_f && _0x9efee5_10 && _0x9efee5_11 && _0x9efee5_12 && _0x9efee5_13 && _0x9efee5_14 && _0x9efee5_16 && _0x9efee5_17 && _0x9efee5_18 && _0x9efee5_19 && _0x9efee5_1a && _0x9efee5_1b && _0x9efee5_1c && _0x9efee5_1e && _0x9efee5_1f && _0x9efee5_20 && _0x9efee5_21 && _0x9efee5_22 && _0x9efee5_23 && _0x9efee5_24 && _0x9efee5_25 && _0x9efee5_26 && _0x9efee5_27 && 3 === _0x9efee5_28.length && _0x9efee5_29 && _0x9efee5_2a && _0x9efee5_2b && _0x9efee5_2c && _0x9efee5_2d && _0x9efee5_2e && _0x9efee5_2f && _0x9efee5_30 && _0x9efee5_31 && _0x9efee5_32 && _0x9efee5_33 && _0x9efee5_34 && _0x9efee5_35 && _0x9efee5_36 && _0x9efee5_37 && _0x9efee5_38 && _0x9efee5_39 && _0x9efee5_3a && _0x9efee5_3b && _0x9efee5_3c && _0x9efee5_3d)) return;
+  let _0x9efee5_3e, _0x9efee5_3f = null, _0x9efee5_40 = 0;
+  const _0x9efee5_41 = document.createElement("\x64\x69\x76");
+  _0x9efee5_41.className = "\x61\x69\x2d\x73\x65\x6e\x64\x2d\x63\x6f\x6f\x6c\x64\x6f\x77\x6e", _0x9efee5_41.hidden = !0, _0x9efee5_41.setAttribute("\x72\x6f\x6c\x65", "\x73\x74\x61\x74\x75\x73"), 
+  _0x9efee5_41.style.cssText = "\x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3a\x31\x32\x70\x78\x3b\x74\x65\x78\x74\x2d\x61\x6c\x69\x67\x6e\x3a\x63\x65\x6e\x74\x65\x72\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x34\x70\x78\x3b", _0x9efee5_10.before(_0x9efee5_41);
+  let _0x9efee5_42 = !0, _0x9efee5_43 = [], _0x9efee5_44 = !1, _0x9efee5_45 = [], _0x9efee5_46 = "", _0x9efee5_47 = !1, _0x9efee5_48 = [], _0x9efee5_49 = null, _0x9efee5_4a = null, _0x9efee5_4b = null, _0x9efee5_4c = null, _0x9efee5_4d = [];
+  async function _0x9efee5_4e(_0x9efee5_0 = {}) {
+    const _0x9efee5_1 = await async function() {
+      const _0x9efee5_0 = await async function() {
         if (parent === window) return "";
-        const e = `ai-${Date.now()}-${Math.random().toString(36).slice(2)}`;
-        return new Promise(t => {
-          let n = !1;
-          const a = e => {
-            n || (n = !0, clearTimeout(i), removeEventListener("message", o), t(String(e || "")));
-          }, o = t => {
-            t.source === parent && t.origin === location.origin && "nyx:account-token-response" === t.data?.type && t.data.requestId === e && a(t.data.token);
-          }, i = setTimeout(() => a(""), 2500);
-          addEventListener("message", o), parent.postMessage({
-            type: "nyx:account-token-request",
-            requestId: e
+        const _0x9efee5_0 = `\x61\x69\x2d${Date.now()}\x2d${Math.random().toString(36).slice(2)}`;
+        return new Promise(_0x9efee5_1 => {
+          let _0x9efee5_2 = !1;
+          const _0x9efee5_3 = _0x9efee5_0 => {
+            _0x9efee5_2 || (_0x9efee5_2 = !0, clearTimeout(_0x9efee5_5), removeEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x9efee5_4), 
+            _0x9efee5_1(String(_0x9efee5_0 || "")));
+          }, _0x9efee5_4 = _0x9efee5_1 => {
+            _0x9efee5_1.source === parent && _0x9efee5_1.origin === location.origin && "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65" === _0x9efee5_1.data?.type && _0x9efee5_1.data.requestId === _0x9efee5_0 && _0x9efee5_3(_0x9efee5_1.data.token);
+          }, _0x9efee5_5 = setTimeout(() => _0x9efee5_3(""), 2500);
+          addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x9efee5_4), parent.postMessage({
+            type: "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74",
+            requestId: _0x9efee5_0
           }, location.origin);
         });
       }();
-      if (e) return e;
-      Ee || (Ee = (async () => {
+      if (_0x9efee5_0) return _0x9efee5_0;
+      _0x9efee5_4c || (_0x9efee5_4c = (async () => {
         try {
-          const e = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/founder-profile/auth-config", {
-            cache: "no-store"
-          }), t = await e.json();
-          if (!t?.enabled || !t?.apiKey || !t?.projectId) return null;
-          const [{initializeApp: n, getApps: a}, {getAuth: o, setPersistence: i, browserLocalPersistence: r, onAuthStateChanged: s}] = await Promise.all([ import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"), import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js") ]), l = o(a().find(e => "nyx-founder-owner" === e.name) || n({
-            apiKey: t.apiKey,
-            authDomain: `${t.projectId}.firebaseapp.com`,
-            projectId: t.projectId
-          }, "nyx-founder-owner"));
+          const _0x9efee5_0 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x66\x6f\x75\x6e\x64\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67", {
+            cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+          }), _0x9efee5_1 = await _0x9efee5_0.json();
+          if (!_0x9efee5_1?.enabled || !_0x9efee5_1?.apiKey || !_0x9efee5_1?.projectId) return null;
+          const [{initializeApp: _0x9efee5_2, getApps: _0x9efee5_3}, {getAuth: _0x9efee5_4, setPersistence: _0x9efee5_5, browserLocalPersistence: _0x9efee5_6, onAuthStateChanged: _0x9efee5_7}] = await Promise.all([ import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x70\x70\x2e\x6a\x73"), import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x75\x74\x68\x2e\x6a\x73") ]), _0x9efee5_8 = _0x9efee5_4(_0x9efee5_3().find(_0x9efee5_0 => "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72" === _0x9efee5_0.name) || _0x9efee5_2({
+            apiKey: _0x9efee5_1.apiKey,
+            authDomain: `${_0x9efee5_1.projectId}\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d`,
+            projectId: _0x9efee5_1.projectId
+          }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72"));
           try {
-            await i(l, r);
+            await _0x9efee5_5(_0x9efee5_8, _0x9efee5_6);
           } catch {}
-          return "function" == typeof l.authStateReady && await l.authStateReady(), "function" == typeof s && s(l, () => {
-            Re();
-          }), l;
+          return "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x9efee5_8.authStateReady && await _0x9efee5_8.authStateReady(), 
+          "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x9efee5_7 && _0x9efee5_7(_0x9efee5_8, () => {
+            _0x9efee5_58();
+          }), _0x9efee5_8;
         } catch {
           return null;
         }
       })());
-      const t = await Ee;
+      const _0x9efee5_1 = await _0x9efee5_4c;
       try {
-        return t?.currentUser ? await t.currentUser.getIdToken() : "";
+        return _0x9efee5_1?.currentUser ? await _0x9efee5_1.currentUser.getIdToken() : "";
       } catch {
         return "";
       }
     }();
     return {
-      ...e,
-      "x-nyx-ai-provider": "shared",
-      ...t ? {
-        Authorization: `Bearer ${t}`
+      ..._0x9efee5_0,
+      "\x78\x2d\x6e\x79\x78\x2d\x61\x69\x2d\x70\x72\x6f\x76\x69\x64\x65\x72": "\x73\x68\x61\x72\x65\x64",
+      ..._0x9efee5_1 ? {
+        Authorization: `\x42\x65\x61\x72\x65\x72\x20${_0x9efee5_1}`
       } : {}
     };
   }
-  let Ie = "";
-  const Ae = () => Ie.startsWith("n_api_") ? "nyx" : "openrouter", Ce = document.getElementById("customKeyDialog");
-  function Le() {
-    w.innerHTML = ke.map(e => `<option value="${je(e.id)}">${je(e.label)}</option>`).join("") || '<option value="shared">OpenRouter</option>', 
-    w.value = "shared", w.disabled = !0, w.title = Ie ? "nyx" === Ae() ? "Nyx custom key" : "OpenRouter custom key" : "Nyx shared", 
-    Ie && (w.options[0].textContent = w.title), x && (x.hidden = !0);
+  let _0x9efee5_4f = "";
+  const _0x9efee5_50 = () => _0x9efee5_4f.startsWith("\x6e\x5f\x61\x70\x69\x5f") ? "\x6e\x79\x78" : "\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72", _0x9efee5_51 = document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x44\x69\x61\x6c\x6f\x67");
+  function _0x9efee5_52() {
+    _0x9efee5_14.innerHTML = _0x9efee5_4d.map(_0x9efee5_0 => `\x3c\x6f\x70\x74\x69\x6f\x6e\x20\x76\x61\x6c\x75\x65\x3d\x22${_0x9efee5_5a(_0x9efee5_0.id)}\x22\x3e${_0x9efee5_5a(_0x9efee5_0.label)}\x3c\x2f\x6f\x70\x74\x69\x6f\x6e\x3e`).join("") || "\x3c\x6f\x70\x74\x69\x6f\x6e\x20\x76\x61\x6c\x75\x65\x3d\x22\x73\x68\x61\x72\x65\x64\x22\x3e\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72\x3c\x2f\x6f\x70\x74\x69\x6f\x6e\x3e", 
+    _0x9efee5_14.value = "\x73\x68\x61\x72\x65\x64", _0x9efee5_14.disabled = !0, _0x9efee5_14.title = _0x9efee5_4f ? "\x6e\x79\x78" === _0x9efee5_50() ? "\x4e\x79\x78\x20\x63\x75\x73\x74\x6f\x6d\x20\x6b\x65\x79" : "\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72\x20\x63\x75\x73\x74\x6f\x6d\x20\x6b\x65\x79" : "\x4e\x79\x78\x20\x73\x68\x61\x72\x65\x64", 
+    _0x9efee5_4f && (_0x9efee5_14.options[0].textContent = _0x9efee5_14.title), _0x9efee5_15 && (_0x9efee5_15.hidden = !0);
   }
-  function Me() {
-    const e = localStorage.getItem(o) || "normal";
-    return [ "off", "normal", "extended" ].includes(e) ? e : "normal";
+  function _0x9efee5_53() {
+    const _0x9efee5_0 = localStorage.getItem(_0x9efee5_4) || "\x6e\x6f\x72\x6d\x61\x6c";
+    return [ "\x6f\x66\x66", "\x6e\x6f\x72\x6d\x61\x6c", "\x65\x78\x74\x65\x6e\x64\x65\x64" ].includes(_0x9efee5_0) ? _0x9efee5_0 : "\x6e\x6f\x72\x6d\x61\x6c";
   }
-  function $e() {
-    const e = Me();
-    _.forEach(t => {
-      const n = t.dataset.responseDepth === e;
-      t.classList.toggle("is-active", n), t.setAttribute("aria-pressed", String(n));
+  function _0x9efee5_54() {
+    const _0x9efee5_0 = _0x9efee5_53();
+    _0x9efee5_28.forEach(_0x9efee5_1 => {
+      const _0x9efee5_2 = _0x9efee5_1.dataset.responseDepth === _0x9efee5_0;
+      _0x9efee5_1.classList.toggle("\x69\x73\x2d\x61\x63\x74\x69\x76\x65", _0x9efee5_2), _0x9efee5_1.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x9efee5_2));
     });
   }
-  Ce?.addEventListener("close", () => {
-    document.getElementById("customKeyInput").value = "";
-  }), document.getElementById("customKeyButton")?.addEventListener("click", () => Ce.showModal()), 
-  document.getElementById("customKeyClose")?.addEventListener("click", () => Ce.close()), 
-  document.getElementById("customKeyRemove")?.addEventListener("click", () => {
-    Ie = "", document.getElementById("customKeyInput").value = "", Ce.close(), Le(), 
-    tn(), Re();
-  }), document.getElementById("customKeyForm")?.addEventListener("submit", e => {
-    e.preventDefault();
-    const t = document.getElementById("customKeyInput"), n = t.value.trim();
-    /^n_api_[A-Za-z0-9_-]{43}$/.test(n) || /^sk-or-[A-Za-z0-9_-]{20,}$/.test(n) ? (Ie = n, 
-    t.value = "", document.getElementById("customKeyError").textContent = "", Ce.close(), 
-    Le(), tn(), Re()) : document.getElementById("customKeyError").textContent = "Enter a valid Nyx or OpenRouter API key.";
+  _0x9efee5_51?.addEventListener("\x63\x6c\x6f\x73\x65", () => {
+    document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x49\x6e\x70\x75\x74").value = "";
+  }), document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x42\x75\x74\x74\x6f\x6e")?.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_51.showModal()), 
+  document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x43\x6c\x6f\x73\x65")?.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_51.close()), 
+  document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x52\x65\x6d\x6f\x76\x65")?.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x9efee5_4f = "", document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x49\x6e\x70\x75\x74").value = "", _0x9efee5_51.close(), 
+    _0x9efee5_52(), _0x9efee5_a3(), _0x9efee5_58();
+  }), document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x46\x6f\x72\x6d")?.addEventListener("\x73\x75\x62\x6d\x69\x74", _0x9efee5_0 => {
+    _0x9efee5_0.preventDefault();
+    const _0x9efee5_1 = document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x49\x6e\x70\x75\x74"), _0x9efee5_2 = _0x9efee5_1.value.trim();
+    /^n_api_[A-Za-z0-9_-]{43}$/.test(_0x9efee5_2) || /^sk-or-[A-Za-z0-9_-]{20,}$/.test(_0x9efee5_2) ? (_0x9efee5_4f = _0x9efee5_2, 
+    _0x9efee5_1.value = "", document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x45\x72\x72\x6f\x72").textContent = "", 
+    _0x9efee5_51.close(), _0x9efee5_52(), _0x9efee5_a3(), _0x9efee5_58()) : document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x45\x72\x72\x6f\x72").textContent = "\x45\x6e\x74\x65\x72\x20\x61\x20\x76\x61\x6c\x69\x64\x20\x4e\x79\x78\x20\x6f\x72\x20\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72\x20\x41\x50\x49\x20\x6b\x65\x79\x2e";
   });
-  let Ne, Te = 0;
-  const Be = document.createElement("p");
-  async function Re() {
-    const e = ++Te;
-    Ne?.abort(), Ne = new AbortController;
-    const t = Ne.signal, n = [ H, F, z ];
-    if ([ "Remaining", "Used", "Pending" ].forEach((e, t) => n[t].parentElement.querySelector("small").textContent = e), 
-    n.forEach(e => e.textContent = "\u2014"), Ie) Be.textContent = "nyx" === Ae() ? "Custom key balance is available in your API account." : "Usage is billed to your own OpenRouter key."; else {
-      Be.textContent = "Checking allowance...";
+  let _0x9efee5_55, _0x9efee5_56 = 0;
+  const _0x9efee5_57 = document.createElement("\x70");
+  async function _0x9efee5_58() {
+    const _0x9efee5_0 = ++_0x9efee5_56;
+    _0x9efee5_55?.abort(), _0x9efee5_55 = new AbortController;
+    const _0x9efee5_1 = _0x9efee5_55.signal, _0x9efee5_2 = [ _0x9efee5_2a, _0x9efee5_2b, _0x9efee5_2c ];
+    if ([ "\x52\x65\x6d\x61\x69\x6e\x69\x6e\x67", "\x55\x73\x65\x64", "\x50\x65\x6e\x64\x69\x6e\x67" ].forEach((_0x9efee5_0, _0x9efee5_1) => _0x9efee5_2[_0x9efee5_1].parentElement.querySelector("\x73\x6d\x61\x6c\x6c").textContent = _0x9efee5_0), 
+    _0x9efee5_2.forEach(_0x9efee5_0 => _0x9efee5_0.textContent = "\u2014"), _0x9efee5_4f) _0x9efee5_57.textContent = "\x6e\x79\x78" === _0x9efee5_50() ? "\x43\x75\x73\x74\x6f\x6d\x20\x6b\x65\x79\x20\x62\x61\x6c\x61\x6e\x63\x65\x20\x69\x73\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x79\x6f\x75\x72\x20\x41\x50\x49\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e" : "\x55\x73\x61\x67\x65\x20\x69\x73\x20\x62\x69\x6c\x6c\x65\x64\x20\x74\x6f\x20\x79\x6f\x75\x72\x20\x6f\x77\x6e\x20\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72\x20\x6b\x65\x79\x2e"; else {
+      _0x9efee5_57.textContent = "\x43\x68\x65\x63\x6b\x69\x6e\x67\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x2e\x2e\x2e";
       try {
-        const n = await Se({
-          accept: "application/json"
+        const _0x9efee5_2 = await _0x9efee5_4e({
+          accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         });
-        if (e !== Te) return;
-        const a = await fetch(_t() ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/tutsi-ai/usage" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai/usage", {
-          headers: n,
-          signal: t,
-          cache: "no-store"
-        }), o = await a.json();
-        if (e !== Te) return;
-        if (!a.ok) throw new Error(401 === a.status ? "Sign in to see your allowance." : o.error || "Allowance unavailable.");
-        const i = o.tokens;
-        if (!i || !Number.isFinite(i.used) || !Number.isFinite(i.pending)) throw new Error("Allowance unavailable.");
-        const r = e => (new Intl.NumberFormat).format(e);
-        H.textContent = o.unlimited ? "Unlimited" : r(i.remaining), F.textContent = r(i.used), 
-        z.textContent = r(i.pending);
-        const s = "browser" === o.scope ? "Shared browser" : "expensive-models" === o.scope ? "Expensive models" : "Account", l = o.resetAt ? ` Resets ${new Date(o.resetAt).toLocaleString()}.` : " Starts with your first request.";
-        Be.textContent = o.unlimited ? "Owner - no account token limit." : `${s} - ${r(i.limit)} tokens / 4 days.${l}`, 
-        i.pending && (Be.textContent += " Pending tokens are reserved for requests awaiting final usage."), 
-        o.pendingCostsUsd > 0 && (Be.textContent += ` Provider costs awaiting confirmation: $${o.pendingCostsUsd.toFixed(4)}.`);
-        const c = "anthropic/claude-haiku-4.5" === b.value ? o.modelCaps?.haiku : /^~?anthropic\/claude-(opus|fable)/.test(b.value) ? o.modelCaps?.claude : null;
-        c && null !== c.limit && (Be.textContent += ` Claude: $${c.remaining.toFixed(4)} of $${c.limit.toFixed(2)} remaining.`), 
-        !o.unlimited && "anthropic/claude-opus-5.5" === b.value && o.modelCaps?.opus55 && (Be.textContent += ` Opus: ${r(o.modelCaps.opus55.remaining)} tokens remaining.`), 
-        !o.unlimited && "google/gemini-2.5-flash-image" === b.value && o.modelCaps?.images && (Be.textContent += ` Images: ${o.modelCaps.images.remaining} remaining.`), 
-        Be.textContent += " Counts input, conversation history and output tokens.";
-      } catch (a) {
-        e === Te && "AbortError" !== a.name && (Be.textContent = a.message || "Allowance unavailable. Try again shortly.");
+        if (_0x9efee5_0 !== _0x9efee5_56) return;
+        const _0x9efee5_3 = await fetch(_0x9efee5_94() ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x74\x75\x74\x73\x69\x2d\x61\x69\x2f\x75\x73\x61\x67\x65" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x75\x73\x61\x67\x65", {
+          headers: _0x9efee5_2,
+          signal: _0x9efee5_1,
+          cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+        }), _0x9efee5_4 = await _0x9efee5_3.json();
+        if (_0x9efee5_0 !== _0x9efee5_56) return;
+        if (!_0x9efee5_3.ok) throw new Error(401 === _0x9efee5_3.status ? "\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x73\x65\x65\x20\x79\x6f\x75\x72\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x2e" : _0x9efee5_4.error || "\x41\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+        const _0x9efee5_5 = _0x9efee5_4.tokens;
+        if (!_0x9efee5_5 || !Number.isFinite(_0x9efee5_5.used) || !Number.isFinite(_0x9efee5_5.pending)) throw new Error("\x41\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+        const _0x9efee5_6 = _0x9efee5_0 => (new Intl.NumberFormat).format(_0x9efee5_0);
+        _0x9efee5_2a.textContent = _0x9efee5_4.unlimited ? "\x55\x6e\x6c\x69\x6d\x69\x74\x65\x64" : _0x9efee5_6(_0x9efee5_5.remaining), 
+        _0x9efee5_2b.textContent = _0x9efee5_6(_0x9efee5_5.used), _0x9efee5_2c.textContent = _0x9efee5_6(_0x9efee5_5.pending);
+        const _0x9efee5_7 = "\x62\x72\x6f\x77\x73\x65\x72" === _0x9efee5_4.scope ? "\x53\x68\x61\x72\x65\x64\x20\x62\x72\x6f\x77\x73\x65\x72" : "\x65\x78\x70\x65\x6e\x73\x69\x76\x65\x2d\x6d\x6f\x64\x65\x6c\x73" === _0x9efee5_4.scope ? "\x45\x78\x70\x65\x6e\x73\x69\x76\x65\x20\x6d\x6f\x64\x65\x6c\x73" : "\x41\x63\x63\x6f\x75\x6e\x74", _0x9efee5_8 = _0x9efee5_4.resetAt ? `\x20\x52\x65\x73\x65\x74\x73\x20${new Date(_0x9efee5_4.resetAt).toLocaleString()}\x2e` : "\x20\x53\x74\x61\x72\x74\x73\x20\x77\x69\x74\x68\x20\x79\x6f\x75\x72\x20\x66\x69\x72\x73\x74\x20\x72\x65\x71\x75\x65\x73\x74\x2e";
+        _0x9efee5_57.textContent = _0x9efee5_4.unlimited ? "\x4f\x77\x6e\x65\x72\x20\x2d\x20\x6e\x6f\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x74\x6f\x6b\x65\x6e\x20\x6c\x69\x6d\x69\x74\x2e" : `${_0x9efee5_7}\x20\x2d\x20${_0x9efee5_6(_0x9efee5_5.limit)}\x20\x74\x6f\x6b\x65\x6e\x73\x20\x2f\x20\x34\x20\x64\x61\x79\x73\x2e${_0x9efee5_8}`, 
+        _0x9efee5_5.pending && (_0x9efee5_57.textContent += "\x20\x50\x65\x6e\x64\x69\x6e\x67\x20\x74\x6f\x6b\x65\x6e\x73\x20\x61\x72\x65\x20\x72\x65\x73\x65\x72\x76\x65\x64\x20\x66\x6f\x72\x20\x72\x65\x71\x75\x65\x73\x74\x73\x20\x61\x77\x61\x69\x74\x69\x6e\x67\x20\x66\x69\x6e\x61\x6c\x20\x75\x73\x61\x67\x65\x2e"), 
+        _0x9efee5_4.pendingCostsUsd > 0 && (_0x9efee5_57.textContent += `\x20\x50\x72\x6f\x76\x69\x64\x65\x72\x20\x63\x6f\x73\x74\x73\x20\x61\x77\x61\x69\x74\x69\x6e\x67\x20\x63\x6f\x6e\x66\x69\x72\x6d\x61\x74\x69\x6f\x6e\x3a\x20\x24${_0x9efee5_4.pendingCostsUsd.toFixed(4)}\x2e`);
+        const _0x9efee5_9 = "\x61\x6e\x74\x68\x72\x6f\x70\x69\x63\x2f\x63\x6c\x61\x75\x64\x65\x2d\x68\x61\x69\x6b\x75\x2d\x34\x2e\x35" === _0x9efee5_13.value ? _0x9efee5_4.modelCaps?.haiku : /^~?anthropic\/claude-(opus|fable)/.test(_0x9efee5_13.value) ? _0x9efee5_4.modelCaps?.claude : null;
+        _0x9efee5_9 && null !== _0x9efee5_9.limit && (_0x9efee5_57.textContent += `\x20\x43\x6c\x61\x75\x64\x65\x3a\x20\x24${_0x9efee5_9.remaining.toFixed(4)}\x20\x6f\x66\x20\x24${_0x9efee5_9.limit.toFixed(2)}\x20\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x2e`), 
+        !_0x9efee5_4.unlimited && "\x61\x6e\x74\x68\x72\x6f\x70\x69\x63\x2f\x63\x6c\x61\x75\x64\x65\x2d\x6f\x70\x75\x73\x2d\x35\x2e\x35" === _0x9efee5_13.value && _0x9efee5_4.modelCaps?.opus55 && (_0x9efee5_57.textContent += `\x20\x4f\x70\x75\x73\x3a\x20${_0x9efee5_6(_0x9efee5_4.modelCaps.opus55.remaining)}\x20\x74\x6f\x6b\x65\x6e\x73\x20\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x2e`), 
+        !_0x9efee5_4.unlimited && "\x67\x6f\x6f\x67\x6c\x65\x2f\x67\x65\x6d\x69\x6e\x69\x2d\x32\x2e\x35\x2d\x66\x6c\x61\x73\x68\x2d\x69\x6d\x61\x67\x65" === _0x9efee5_13.value && _0x9efee5_4.modelCaps?.images && (_0x9efee5_57.textContent += `\x20\x49\x6d\x61\x67\x65\x73\x3a\x20${_0x9efee5_4.modelCaps.images.remaining}\x20\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x2e`), 
+        _0x9efee5_57.textContent += "\x20\x43\x6f\x75\x6e\x74\x73\x20\x69\x6e\x70\x75\x74\x2c\x20\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e\x20\x68\x69\x73\x74\x6f\x72\x79\x20\x61\x6e\x64\x20\x6f\x75\x74\x70\x75\x74\x20\x74\x6f\x6b\x65\x6e\x73\x2e";
+      } catch (_0x9efee5_3) {
+        _0x9efee5_0 === _0x9efee5_56 && "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" !== _0x9efee5_3.name && (_0x9efee5_57.textContent = _0x9efee5_3.message || "\x41\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x73\x68\x6f\x72\x74\x6c\x79\x2e");
       }
     }
   }
-  function De(e = localStorage.getItem("nyx.theme") || "default") {
-    if ("tutsi" === document.documentElement.dataset.appShell) return;
-    const t = String(e || "default").trim().toLowerCase() || "default", n = document.documentElement;
+  function _0x9efee5_59(_0x9efee5_0 = localStorage.getItem("\x6e\x79\x78\x2e\x74\x68\x65\x6d\x65") || "\x64\x65\x66\x61\x75\x6c\x74") {
+    if ("\x74\x75\x74\x73\x69" === document.documentElement.dataset.appShell) return;
+    const _0x9efee5_1 = String(_0x9efee5_0 || "\x64\x65\x66\x61\x75\x6c\x74").trim().toLowerCase() || "\x64\x65\x66\x61\x75\x6c\x74", _0x9efee5_2 = document.documentElement;
     Object.entries({
-      "--ai-bg": "#000000",
-      "--ai-bg-deep": "#000000",
-      "--ai-surface": "#080808",
-      "--ai-surface-raised": "#0e0e0e",
-      "--ai-surface-hover": "#141414",
-      "--ai-border": "rgba(255,255,255,.10)",
-      "--ai-border-strong": "rgba(255,255,255,.18)",
-      "--ai-text": "#f7f7f8",
-      "--ai-text-soft": "#d7d7db",
-      "--ai-muted": "#929299",
-      "--ai-muted-dark": "#68686f",
-      "--ai-accent": "#d7d7dc",
-      "--ai-accent-bright": "#f7f7f8",
-      "--ai-accent-soft": "rgba(255,255,255,.07)",
-      "--ai-accent-border": "rgba(255,255,255,.18)",
-      "--ai-accent-foreground": "#050505",
-      "--ai-accent-glow": "rgba(255,255,255,.08)",
-      "--ai-theme-hover-border": "#8aaee2"
-    }).forEach(([e, t]) => n.style.setProperty(e, t)), n.dataset.nyxTheme = t, document.body.dataset.nyxTheme = t, 
+      "\x2d\x2d\x61\x69\x2d\x62\x67": "\x23\x30\x30\x30\x30\x30\x30",
+      "\x2d\x2d\x61\x69\x2d\x62\x67\x2d\x64\x65\x65\x70": "\x23\x30\x30\x30\x30\x30\x30",
+      "\x2d\x2d\x61\x69\x2d\x73\x75\x72\x66\x61\x63\x65": "\x23\x30\x38\x30\x38\x30\x38",
+      "\x2d\x2d\x61\x69\x2d\x73\x75\x72\x66\x61\x63\x65\x2d\x72\x61\x69\x73\x65\x64": "\x23\x30\x65\x30\x65\x30\x65",
+      "\x2d\x2d\x61\x69\x2d\x73\x75\x72\x66\x61\x63\x65\x2d\x68\x6f\x76\x65\x72": "\x23\x31\x34\x31\x34\x31\x34",
+      "\x2d\x2d\x61\x69\x2d\x62\x6f\x72\x64\x65\x72": "\x72\x67\x62\x61\x28\x32\x35\x35\x2c\x32\x35\x35\x2c\x32\x35\x35\x2c\x2e\x31\x30\x29",
+      "\x2d\x2d\x61\x69\x2d\x62\x6f\x72\x64\x65\x72\x2d\x73\x74\x72\x6f\x6e\x67": "\x72\x67\x62\x61\x28\x32\x35\x35\x2c\x32\x35\x35\x2c\x32\x35\x35\x2c\x2e\x31\x38\x29",
+      "\x2d\x2d\x61\x69\x2d\x74\x65\x78\x74": "\x23\x66\x37\x66\x37\x66\x38",
+      "\x2d\x2d\x61\x69\x2d\x74\x65\x78\x74\x2d\x73\x6f\x66\x74": "\x23\x64\x37\x64\x37\x64\x62",
+      "\x2d\x2d\x61\x69\x2d\x6d\x75\x74\x65\x64": "\x23\x39\x32\x39\x32\x39\x39",
+      "\x2d\x2d\x61\x69\x2d\x6d\x75\x74\x65\x64\x2d\x64\x61\x72\x6b": "\x23\x36\x38\x36\x38\x36\x66",
+      "\x2d\x2d\x61\x69\x2d\x61\x63\x63\x65\x6e\x74": "\x23\x64\x37\x64\x37\x64\x63",
+      "\x2d\x2d\x61\x69\x2d\x61\x63\x63\x65\x6e\x74\x2d\x62\x72\x69\x67\x68\x74": "\x23\x66\x37\x66\x37\x66\x38",
+      "\x2d\x2d\x61\x69\x2d\x61\x63\x63\x65\x6e\x74\x2d\x73\x6f\x66\x74": "\x72\x67\x62\x61\x28\x32\x35\x35\x2c\x32\x35\x35\x2c\x32\x35\x35\x2c\x2e\x30\x37\x29",
+      "\x2d\x2d\x61\x69\x2d\x61\x63\x63\x65\x6e\x74\x2d\x62\x6f\x72\x64\x65\x72": "\x72\x67\x62\x61\x28\x32\x35\x35\x2c\x32\x35\x35\x2c\x32\x35\x35\x2c\x2e\x31\x38\x29",
+      "\x2d\x2d\x61\x69\x2d\x61\x63\x63\x65\x6e\x74\x2d\x66\x6f\x72\x65\x67\x72\x6f\x75\x6e\x64": "\x23\x30\x35\x30\x35\x30\x35",
+      "\x2d\x2d\x61\x69\x2d\x61\x63\x63\x65\x6e\x74\x2d\x67\x6c\x6f\x77": "\x72\x67\x62\x61\x28\x32\x35\x35\x2c\x32\x35\x35\x2c\x32\x35\x35\x2c\x2e\x30\x38\x29",
+      "\x2d\x2d\x61\x69\x2d\x74\x68\x65\x6d\x65\x2d\x68\x6f\x76\x65\x72\x2d\x62\x6f\x72\x64\x65\x72": "\x23\x38\x61\x61\x65\x65\x32"
+    }).forEach(([_0x9efee5_0, _0x9efee5_1]) => _0x9efee5_2.style.setProperty(_0x9efee5_0, _0x9efee5_1)), 
+    _0x9efee5_2.dataset.nyxTheme = _0x9efee5_1, document.body.dataset.nyxTheme = _0x9efee5_1, 
     document.body.className = document.body.className.replace(/\btheme-[\w-]+\b/g, "").trim(), 
-    document.body.classList.add(`theme-${t}`), Qe(t);
+    document.body.classList.add(`\x74\x68\x65\x6d\x65\x2d${_0x9efee5_1}`), _0x9efee5_6b(_0x9efee5_1);
   }
-  function je(e) {
-    return String(e ?? "").replace(/[&<>"']/g, e => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    }[e]));
+  function _0x9efee5_5a(_0x9efee5_0) {
+    return String(_0x9efee5_0 ?? "").replace(/[&<>"']/g, _0x9efee5_0 => ({
+      "\x26": "\x26\x61\x6d\x70\x3b",
+      "\x3c": "\x26\x6c\x74\x3b",
+      "\x3e": "\x26\x67\x74\x3b",
+      "\x22": "\x26\x71\x75\x6f\x74\x3b",
+      "\x27": "\x26\x23\x33\x39\x3b"
+    }[_0x9efee5_0]));
   }
-  function Ue(e) {
-    const t = String(e?.content || "");
-    if (!t || t.length > d) return null;
-    const n = String(e?.name || "pasted-text.txt").replace(/[\\/:*?"<>|\x00-\x1f]/g, "-").slice(0, 100) || "pasted-text.txt";
+  function _0x9efee5_5b(_0x9efee5_0) {
+    const _0x9efee5_1 = String(_0x9efee5_0?.content || "");
+    if (!_0x9efee5_1 || _0x9efee5_1.length > _0x9efee5_a) return null;
+    const _0x9efee5_2 = String(_0x9efee5_0?.name || "\x70\x61\x73\x74\x65\x64\x2d\x74\x65\x78\x74\x2e\x74\x78\x74").replace(/[\\/:*?"<>|\x00-\x1f]/g, "\x2d").slice(0, 100) || "\x70\x61\x73\x74\x65\x64\x2d\x74\x65\x78\x74\x2e\x74\x78\x74";
     return {
-      name: n.toLowerCase().endsWith(".txt") ? n : `${n}.txt`,
-      content: t,
-      size: Number(e?.size) || new Blob([ t ], {
-        type: "text/plain"
+      name: _0x9efee5_2.toLowerCase().endsWith("\x2e\x74\x78\x74") ? _0x9efee5_2 : `${_0x9efee5_2}\x2e\x74\x78\x74`,
+      content: _0x9efee5_1,
+      size: Number(_0x9efee5_0?.size) || new Blob([ _0x9efee5_1 ], {
+        type: "\x74\x65\x78\x74\x2f\x70\x6c\x61\x69\x6e"
       }).size
     };
   }
-  Be.id = "usageStatus", Be.setAttribute("role", "status"), Be.style.cssText = "font-size:12px;line-height:1.5;color:var(--ai-muted);margin:10px 0 0;overflow-wrap:anywhere", 
-  H.closest("section").append(Be);
-  const Oe = new Map;
-  function qe() {
-    return new Promise((e, t) => {
-      const n = indexedDB.open("nyx-ai-images", 1);
-      n.onupgradeneeded = () => n.result.createObjectStore("images", {
-        keyPath: "id"
-      }), n.onsuccess = () => e(n.result), n.onerror = () => t(n.error);
+  _0x9efee5_57.id = "\x75\x73\x61\x67\x65\x53\x74\x61\x74\x75\x73", _0x9efee5_57.setAttribute("\x72\x6f\x6c\x65", "\x73\x74\x61\x74\x75\x73"), _0x9efee5_57.style.cssText = "\x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3a\x31\x32\x70\x78\x3b\x6c\x69\x6e\x65\x2d\x68\x65\x69\x67\x68\x74\x3a\x31\x2e\x35\x3b\x63\x6f\x6c\x6f\x72\x3a\x76\x61\x72\x28\x2d\x2d\x61\x69\x2d\x6d\x75\x74\x65\x64\x29\x3b\x6d\x61\x72\x67\x69\x6e\x3a\x31\x30\x70\x78\x20\x30\x20\x30\x3b\x6f\x76\x65\x72\x66\x6c\x6f\x77\x2d\x77\x72\x61\x70\x3a\x61\x6e\x79\x77\x68\x65\x72\x65", 
+  _0x9efee5_2a.closest("\x73\x65\x63\x74\x69\x6f\x6e").append(_0x9efee5_57);
+  const _0x9efee5_5c = new Map;
+  function _0x9efee5_5d() {
+    return new Promise((_0x9efee5_0, _0x9efee5_1) => {
+      const _0x9efee5_2 = indexedDB.open("\x6e\x79\x78\x2d\x61\x69\x2d\x69\x6d\x61\x67\x65\x73", 1);
+      _0x9efee5_2.onupgradeneeded = () => _0x9efee5_2.result.createObjectStore("\x69\x6d\x61\x67\x65\x73", {
+        keyPath: "\x69\x64"
+      }), _0x9efee5_2.onsuccess = () => _0x9efee5_0(_0x9efee5_2.result), _0x9efee5_2.onerror = () => _0x9efee5_1(_0x9efee5_2.error);
     });
   }
-  async function _e(e) {
-    if ("string" != typeof e || e.length > 6291456 || !/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(e)) throw new Error("The model returned an unsupported or oversized image.");
-    const t = new Image;
-    if (t.src = e, await t.decode().catch(() => {
-      throw new Error("The model returned invalid image data.");
-    }), t.naturalWidth * t.naturalHeight > 2e7) throw new Error("The generated image dimensions are too large.");
-    const n = {
+  async function _0x9efee5_5e(_0x9efee5_0) {
+    if ("\x73\x74\x72\x69\x6e\x67" != typeof _0x9efee5_0 || _0x9efee5_0.length > 6291456 || !/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(_0x9efee5_0)) throw new Error("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x75\x6e\x73\x75\x70\x70\x6f\x72\x74\x65\x64\x20\x6f\x72\x20\x6f\x76\x65\x72\x73\x69\x7a\x65\x64\x20\x69\x6d\x61\x67\x65\x2e");
+    const _0x9efee5_1 = new Image;
+    if (_0x9efee5_1.src = _0x9efee5_0, await _0x9efee5_1.decode().catch(() => {
+      throw new Error("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x69\x6e\x76\x61\x6c\x69\x64\x20\x69\x6d\x61\x67\x65\x20\x64\x61\x74\x61\x2e");
+    }), _0x9efee5_1.naturalWidth * _0x9efee5_1.naturalHeight > 2e7) throw new Error("\x54\x68\x65\x20\x67\x65\x6e\x65\x72\x61\x74\x65\x64\x20\x69\x6d\x61\x67\x65\x20\x64\x69\x6d\x65\x6e\x73\x69\x6f\x6e\x73\x20\x61\x72\x65\x20\x74\x6f\x6f\x20\x6c\x61\x72\x67\x65\x2e");
+    const _0x9efee5_2 = {
       id: crypto.randomUUID(),
-      dataUrl: e,
+      dataUrl: _0x9efee5_0,
       createdAt: Date.now(),
       saved: !1
     };
-    for (Oe.set(n.id, n); Oe.size > 20; ) Oe.delete(Oe.keys().next().value);
-    if (!ye) {
-      let e;
+    for (_0x9efee5_5c.set(_0x9efee5_2.id, _0x9efee5_2); _0x9efee5_5c.size > 20; ) _0x9efee5_5c.delete(_0x9efee5_5c.keys().next().value);
+    if (!_0x9efee5_47) {
+      let _0x9efee5_0;
       try {
-        e = await qe(), await new Promise((t, a) => {
-          const o = e.transaction("images", "readwrite"), i = o.objectStore("images"), r = i.getAll();
-          r.onsuccess = () => {
-            const e = r.result.sort((e, t) => e.createdAt - t.createdAt);
-            for (;e.length >= 20; ) i.delete(e.shift().id);
-            i.put({
-              ...n,
+        _0x9efee5_0 = await _0x9efee5_5d(), await new Promise((_0x9efee5_1, _0x9efee5_3) => {
+          const _0x9efee5_4 = _0x9efee5_0.transaction("\x69\x6d\x61\x67\x65\x73", "\x72\x65\x61\x64\x77\x72\x69\x74\x65"), _0x9efee5_5 = _0x9efee5_4.objectStore("\x69\x6d\x61\x67\x65\x73"), _0x9efee5_6 = _0x9efee5_5.getAll();
+          _0x9efee5_6.onsuccess = () => {
+            const _0x9efee5_0 = _0x9efee5_6.result.sort((_0x9efee5_0, _0x9efee5_1) => _0x9efee5_0.createdAt - _0x9efee5_1.createdAt);
+            for (;_0x9efee5_0.length >= 20; ) _0x9efee5_5.delete(_0x9efee5_0.shift().id);
+            _0x9efee5_5.put({
+              ..._0x9efee5_2,
               saved: !0
             });
-          }, o.oncomplete = t, o.onerror = () => a(o.error), o.onabort = () => a(o.error);
-        }), n.saved = !0;
+          }, _0x9efee5_4.oncomplete = _0x9efee5_1, _0x9efee5_4.onerror = () => _0x9efee5_3(_0x9efee5_4.error), 
+          _0x9efee5_4.onabort = () => _0x9efee5_3(_0x9efee5_4.error);
+        }), _0x9efee5_2.saved = !0;
       } catch {} finally {
-        e?.close();
+        _0x9efee5_0?.close();
       }
     }
-    return n.id;
+    return _0x9efee5_2.id;
   }
-  async function Pe(e, t) {
-    let n, a = Oe.get(t);
-    if (!a) try {
-      n = await qe(), a = await new Promise((e, a) => {
-        const o = n.transaction("images").objectStore("images").get(t);
-        o.onsuccess = () => e(o.result), o.onerror = () => a(o.error);
+  async function _0x9efee5_5f(_0x9efee5_0, _0x9efee5_1) {
+    let _0x9efee5_2, _0x9efee5_3 = _0x9efee5_5c.get(_0x9efee5_1);
+    if (!_0x9efee5_3) try {
+      _0x9efee5_2 = await _0x9efee5_5d(), _0x9efee5_3 = await new Promise((_0x9efee5_0, _0x9efee5_3) => {
+        const _0x9efee5_4 = _0x9efee5_2.transaction("\x69\x6d\x61\x67\x65\x73").objectStore("\x69\x6d\x61\x67\x65\x73").get(_0x9efee5_1);
+        _0x9efee5_4.onsuccess = () => _0x9efee5_0(_0x9efee5_4.result), _0x9efee5_4.onerror = () => _0x9efee5_3(_0x9efee5_4.error);
       });
     } catch {} finally {
-      n?.close();
+      _0x9efee5_2?.close();
     }
-    const o = document.createElement("figure");
-    if (o.className = "ai-message-attachment ai-generated-image", a && /^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(a.dataUrl) && a.dataUrl.length <= 6291456) {
-      const e = document.createElement("img");
-      e.src = a.dataUrl, e.alt = "AI-generated image", e.loading = "lazy";
-      const t = document.createElement("figcaption"), n = document.createElement("a");
-      n.href = a.dataUrl, n.download = "nyx-image." + (a.dataUrl.startsWith("data:image/jpeg") ? "jpg" : a.dataUrl.startsWith("data:image/webp") ? "webp" : "png"), 
-      n.textContent = "Download image", t.append(n, document.createTextNode(a.saved ? " ? Last 20 images saved on this device." : " ? Download to keep this image; it is only available in this session.")), 
-      o.append(e, t);
-    } else o.textContent = "This image is no longer stored on this device.";
-    e.querySelector(".ai-message-content")?.after(o), an();
+    const _0x9efee5_4 = document.createElement("\x66\x69\x67\x75\x72\x65");
+    if (_0x9efee5_4.className = "\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x20\x61\x69\x2d\x67\x65\x6e\x65\x72\x61\x74\x65\x64\x2d\x69\x6d\x61\x67\x65", _0x9efee5_3 && /^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(_0x9efee5_3.dataUrl) && _0x9efee5_3.dataUrl.length <= 6291456) {
+      const _0x9efee5_0 = document.createElement("\x69\x6d\x67");
+      _0x9efee5_0.src = _0x9efee5_3.dataUrl, _0x9efee5_0.alt = "\x41\x49\x2d\x67\x65\x6e\x65\x72\x61\x74\x65\x64\x20\x69\x6d\x61\x67\x65", _0x9efee5_0.loading = "\x6c\x61\x7a\x79";
+      const _0x9efee5_1 = document.createElement("\x66\x69\x67\x63\x61\x70\x74\x69\x6f\x6e"), _0x9efee5_2 = document.createElement("\x61");
+      _0x9efee5_2.href = _0x9efee5_3.dataUrl, _0x9efee5_2.download = "\x6e\x79\x78\x2d\x69\x6d\x61\x67\x65\x2e" + (_0x9efee5_3.dataUrl.startsWith("data:image/jpeg") ? "\x6a\x70\x67" : _0x9efee5_3.dataUrl.startsWith("data:image/webp") ? "\x77\x65\x62\x70" : "\x70\x6e\x67"), 
+      _0x9efee5_2.textContent = "\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x20\x69\x6d\x61\x67\x65", _0x9efee5_1.append(_0x9efee5_2, document.createTextNode(_0x9efee5_3.saved ? "\x20\x3f\x20\x4c\x61\x73\x74\x20\x32\x30\x20\x69\x6d\x61\x67\x65\x73\x20\x73\x61\x76\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e" : "\x20\x3f\x20\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x20\x74\x6f\x20\x6b\x65\x65\x70\x20\x74\x68\x69\x73\x20\x69\x6d\x61\x67\x65\x3b\x20\x69\x74\x20\x69\x73\x20\x6f\x6e\x6c\x79\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x73\x65\x73\x73\x69\x6f\x6e\x2e")), 
+      _0x9efee5_4.append(_0x9efee5_0, _0x9efee5_1);
+    } else _0x9efee5_4.textContent = "\x54\x68\x69\x73\x20\x69\x6d\x61\x67\x65\x20\x69\x73\x20\x6e\x6f\x20\x6c\x6f\x6e\x67\x65\x72\x20\x73\x74\x6f\x72\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e";
+    _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74")?.after(_0x9efee5_4), _0x9efee5_a5();
   }
-  const He = new Map;
-  async function Fe(e, t) {
-    const n = document.createElement("figure");
-    n.className = "ai-message-attachment ai-generated-video";
-    const a = document.createElement("p"), o = document.createElement("button");
-    o.type = "button", o.textContent = "Check progress", n.append(a, o), e.querySelector(".ai-message-content")?.after(n);
-    let i = null, r = !1, s = 0;
-    const l = async () => {
-      if (clearTimeout(i), n.isConnected && !r) {
-        r = !0, o.disabled = !0;
+  const _0x9efee5_60 = new Map;
+  async function _0x9efee5_61(_0x9efee5_0, _0x9efee5_1) {
+    const _0x9efee5_2 = document.createElement("\x66\x69\x67\x75\x72\x65");
+    _0x9efee5_2.className = "\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x20\x61\x69\x2d\x67\x65\x6e\x65\x72\x61\x74\x65\x64\x2d\x76\x69\x64\x65\x6f";
+    const _0x9efee5_3 = document.createElement("\x70"), _0x9efee5_4 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x9efee5_4.type = "\x62\x75\x74\x74\x6f\x6e", _0x9efee5_4.textContent = "\x43\x68\x65\x63\x6b\x20\x70\x72\x6f\x67\x72\x65\x73\x73", _0x9efee5_2.append(_0x9efee5_3, _0x9efee5_4), 
+    _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74")?.after(_0x9efee5_2);
+    let _0x9efee5_5 = null, _0x9efee5_6 = !1, _0x9efee5_7 = 0;
+    const _0x9efee5_8 = async () => {
+      if (clearTimeout(_0x9efee5_5), _0x9efee5_2.isConnected && !_0x9efee5_6) {
+        _0x9efee5_6 = !0, _0x9efee5_4.disabled = !0;
         try {
-          const r = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai/media/" + t, {
-            headers: await Se({
-              accept: "application/json"
+          const _0x9efee5_6 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x6d\x65\x64\x69\x61\x2f" + _0x9efee5_1, {
+            headers: await _0x9efee5_4e({
+              accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
             })
-          }), c = await r.json();
-          if (!r.ok) throw new Error(c.error || "Could not check this generation.");
-          const d = "image" === c.kind ? "image" : "video";
-          "completed" === c.status ? (a.textContent = "image" === d ? "Image ready" : "Video ready", 
-          o.textContent = "image" === d ? "Load image" : "Load video", o.onclick = async () => {
-            o.disabled = !0, a.textContent = "Loading " + d + "...";
+          }), _0x9efee5_9 = await _0x9efee5_6.json();
+          if (!_0x9efee5_6.ok) throw new Error(_0x9efee5_9.error || "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x68\x65\x63\x6b\x20\x74\x68\x69\x73\x20\x67\x65\x6e\x65\x72\x61\x74\x69\x6f\x6e\x2e");
+          const _0x9efee5_a = "\x69\x6d\x61\x67\x65" === _0x9efee5_9.kind ? "\x69\x6d\x61\x67\x65" : "\x76\x69\x64\x65\x6f";
+          "\x63\x6f\x6d\x70\x6c\x65\x74\x65\x64" === _0x9efee5_9.status ? (_0x9efee5_3.textContent = "\x69\x6d\x61\x67\x65" === _0x9efee5_a ? "\x49\x6d\x61\x67\x65\x20\x72\x65\x61\x64\x79" : "\x56\x69\x64\x65\x6f\x20\x72\x65\x61\x64\x79", 
+          _0x9efee5_4.textContent = "\x69\x6d\x61\x67\x65" === _0x9efee5_a ? "\x4c\x6f\x61\x64\x20\x69\x6d\x61\x67\x65" : "\x4c\x6f\x61\x64\x20\x76\x69\x64\x65\x6f", 
+          _0x9efee5_4.onclick = async () => {
+            _0x9efee5_4.disabled = !0, _0x9efee5_3.textContent = "\x4c\x6f\x61\x64\x69\x6e\x67\x20" + _0x9efee5_a + "\x2e\x2e\x2e";
             try {
-              const a = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai/media/" + t + "/content", {
-                headers: await Se({})
+              const _0x9efee5_3 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x6d\x65\x64\x69\x61\x2f" + _0x9efee5_1 + "\x2f\x63\x6f\x6e\x74\x65\x6e\x74", {
+                headers: await _0x9efee5_4e({})
               });
-              if (!a.ok) throw new Error("This " + d + " is unavailable or has expired.");
-              if ("image" === d) {
-                const o = await a.json(), i = await _e(o.images?.[0]?.dataUrl);
-                if (!n.isConnected) return;
-                return await Pe(e, i), n.remove(), Xe(Ze().map(e => e.mediaJobId === t ? {
-                  ...e,
+              if (!_0x9efee5_3.ok) throw new Error("\x54\x68\x69\x73\x20" + _0x9efee5_a + "\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x6f\x72\x20\x68\x61\x73\x20\x65\x78\x70\x69\x72\x65\x64\x2e");
+              if ("\x69\x6d\x61\x67\x65" === _0x9efee5_a) {
+                const _0x9efee5_4 = await _0x9efee5_3.json(), _0x9efee5_5 = await _0x9efee5_5e(_0x9efee5_4.images?.[0]?.dataUrl);
+                if (!_0x9efee5_2.isConnected) return;
+                return await _0x9efee5_5f(_0x9efee5_0, _0x9efee5_5), _0x9efee5_2.remove(), _0x9efee5_6a(_0x9efee5_69().map(_0x9efee5_0 => _0x9efee5_0.mediaJobId === _0x9efee5_1 ? {
+                  ..._0x9efee5_0,
                   mediaJobId: void 0,
-                  imageId: i,
-                  content: "Generated image."
-                } : e)), void gt(e, "Generated image.");
+                  imageId: _0x9efee5_5,
+                  content: "\x47\x65\x6e\x65\x72\x61\x74\x65\x64\x20\x69\x6d\x61\x67\x65\x2e"
+                } : _0x9efee5_0)), void _0x9efee5_79(_0x9efee5_0, "\x47\x65\x6e\x65\x72\x61\x74\x65\x64\x20\x69\x6d\x61\x67\x65\x2e");
               }
-              const o = await a.blob();
-              if (o.size > 104857600) throw new Error("This video is too large.");
-              const i = URL.createObjectURL(o);
-              if (!n.isConnected) return void URL.revokeObjectURL(i);
-              He.set(n, i);
-              const r = document.createElement("video");
-              r.controls = !0, r.playsInline = !0, r.src = i, r.style.cssText = "max-width:100%;max-height:480px;border-radius:12px";
-              const s = document.createElement("a");
-              s.href = i, s.download = "nyx-video.mp4", s.textContent = "Download video", n.replaceChildren(r, s);
-            } catch (i) {
-              a.textContent = i.message, o.disabled = !1;
+              const _0x9efee5_4 = await _0x9efee5_3.blob();
+              if (_0x9efee5_4.size > 104857600) throw new Error("\x54\x68\x69\x73\x20\x76\x69\x64\x65\x6f\x20\x69\x73\x20\x74\x6f\x6f\x20\x6c\x61\x72\x67\x65\x2e");
+              const _0x9efee5_5 = URL.createObjectURL(_0x9efee5_4);
+              if (!_0x9efee5_2.isConnected) return void URL.revokeObjectURL(_0x9efee5_5);
+              _0x9efee5_60.set(_0x9efee5_2, _0x9efee5_5);
+              const _0x9efee5_6 = document.createElement("\x76\x69\x64\x65\x6f");
+              _0x9efee5_6.controls = !0, _0x9efee5_6.playsInline = !0, _0x9efee5_6.src = _0x9efee5_5, 
+              _0x9efee5_6.style.cssText = "\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x31\x30\x30\x25\x3b\x6d\x61\x78\x2d\x68\x65\x69\x67\x68\x74\x3a\x34\x38\x30\x70\x78\x3b\x62\x6f\x72\x64\x65\x72\x2d\x72\x61\x64\x69\x75\x73\x3a\x31\x32\x70\x78";
+              const _0x9efee5_7 = document.createElement("\x61");
+              _0x9efee5_7.href = _0x9efee5_5, _0x9efee5_7.download = "\x6e\x79\x78\x2d\x76\x69\x64\x65\x6f\x2e\x6d\x70\x34", _0x9efee5_7.textContent = "\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x20\x76\x69\x64\x65\x6f", 
+              _0x9efee5_2.replaceChildren(_0x9efee5_6, _0x9efee5_7);
+            } catch (_0x9efee5_5) {
+              _0x9efee5_3.textContent = _0x9efee5_5.message, _0x9efee5_4.disabled = !1;
             }
-          }, "image" === d && await o.onclick()) : [ "failed", "cancelled", "expired" ].includes(c.status) ? (a.textContent = "Generation " + c.status + ". Try a different prompt or model.", 
-          o.hidden = !0) : (a.textContent = "Rendering " + d + "... You can keep chatting.", 
-          ++s < 60 ? i = setTimeout(l, "image" === d ? 5e3 : 3e4) : a.textContent = "This is taking longer than usual. Check again when ready.");
-        } catch (c) {
-          a.textContent = c.message;
+          }, "\x69\x6d\x61\x67\x65" === _0x9efee5_a && await _0x9efee5_4.onclick()) : [ "\x66\x61\x69\x6c\x65\x64", "\x63\x61\x6e\x63\x65\x6c\x6c\x65\x64", "\x65\x78\x70\x69\x72\x65\x64" ].includes(_0x9efee5_9.status) ? (_0x9efee5_3.textContent = "\x47\x65\x6e\x65\x72\x61\x74\x69\x6f\x6e\x20" + _0x9efee5_9.status + "\x2e\x20\x54\x72\x79\x20\x61\x20\x64\x69\x66\x66\x65\x72\x65\x6e\x74\x20\x70\x72\x6f\x6d\x70\x74\x20\x6f\x72\x20\x6d\x6f\x64\x65\x6c\x2e", 
+          _0x9efee5_4.hidden = !0) : (_0x9efee5_3.textContent = "\x52\x65\x6e\x64\x65\x72\x69\x6e\x67\x20" + _0x9efee5_a + "\x2e\x2e\x2e\x20\x59\x6f\x75\x20\x63\x61\x6e\x20\x6b\x65\x65\x70\x20\x63\x68\x61\x74\x74\x69\x6e\x67\x2e", 
+          ++_0x9efee5_7 < 60 ? _0x9efee5_5 = setTimeout(_0x9efee5_8, "\x69\x6d\x61\x67\x65" === _0x9efee5_a ? 5e3 : 3e4) : _0x9efee5_3.textContent = "\x54\x68\x69\x73\x20\x69\x73\x20\x74\x61\x6b\x69\x6e\x67\x20\x6c\x6f\x6e\x67\x65\x72\x20\x74\x68\x61\x6e\x20\x75\x73\x75\x61\x6c\x2e\x20\x43\x68\x65\x63\x6b\x20\x61\x67\x61\x69\x6e\x20\x77\x68\x65\x6e\x20\x72\x65\x61\x64\x79\x2e");
+        } catch (_0x9efee5_9) {
+          _0x9efee5_3.textContent = _0x9efee5_9.message;
         } finally {
-          r = !1, o.disabled = !1;
+          _0x9efee5_6 = !1, _0x9efee5_4.disabled = !1;
         }
       }
     };
-    o.onclick = l, await l();
+    _0x9efee5_4.onclick = _0x9efee5_8, await _0x9efee5_8();
   }
-  function ze(e) {
-    return Array.isArray(e) ? e.map(e => {
-      if (!e || ![ "user", "assistant" ].includes(e.role)) return null;
-      const t = "assistant" === e.role ? ct(e.content).answer.trim() : String(e.content || "").trim();
-      if (!t) return null;
-      const n = {
-        role: e.role,
-        content: t,
-        ..."length" === e.finishReason ? {
-          finishReason: "length"
+  function _0x9efee5_62(_0x9efee5_0) {
+    return Array.isArray(_0x9efee5_0) ? _0x9efee5_0.map(_0x9efee5_0 => {
+      if (!_0x9efee5_0 || ![ "\x75\x73\x65\x72", "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" ].includes(_0x9efee5_0.role)) return null;
+      const _0x9efee5_1 = "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9efee5_0.role ? _0x9efee5_75(_0x9efee5_0.content).answer.trim() : String(_0x9efee5_0.content || "").trim();
+      if (!_0x9efee5_1) return null;
+      const _0x9efee5_2 = {
+        role: _0x9efee5_0.role,
+        content: _0x9efee5_1,
+        ..."\x6c\x65\x6e\x67\x74\x68" === _0x9efee5_0.finishReason ? {
+          finishReason: "\x6c\x65\x6e\x67\x74\x68"
         } : {}
       };
-      "assistant" === e.role && e.metadata && (n.metadata = dt(e.metadata)), "assistant" === e.role && "string" == typeof e.modelId && (n.modelId = e.modelId.slice(0, 200), 
-      n.modelName = String(e.modelName || "").slice(0, 200)), "assistant" === e.role && e.timing && (n.timing = pt(e.timing)), 
-      "assistant" === e.role && /^[a-f0-9-]{36}$/.test(e.imageId || "") && (n.imageId = e.imageId), 
-      "assistant" === e.role && /^[a-f0-9-]{36}$/.test(e.mediaJobId || "") && (n.mediaJobId = e.mediaJobId);
-      const a = "user" === e.role ? Ue(e.textAttachment) : null;
-      return a && (n.textAttachment = a), n;
+      "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9efee5_0.role && _0x9efee5_0.metadata && (_0x9efee5_2.metadata = _0x9efee5_76(_0x9efee5_0.metadata)), 
+      "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9efee5_0.role && "\x73\x74\x72\x69\x6e\x67" == typeof _0x9efee5_0.modelId && (_0x9efee5_2.modelId = _0x9efee5_0.modelId.slice(0, 200), 
+      _0x9efee5_2.modelName = String(_0x9efee5_0.modelName || "").slice(0, 200)), "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9efee5_0.role && _0x9efee5_0.timing && (_0x9efee5_2.timing = _0x9efee5_7a(_0x9efee5_0.timing)), 
+      "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9efee5_0.role && /^[a-f0-9-]{36}$/.test(_0x9efee5_0.imageId || "") && (_0x9efee5_2.imageId = _0x9efee5_0.imageId), 
+      "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" === _0x9efee5_0.role && /^[a-f0-9-]{36}$/.test(_0x9efee5_0.mediaJobId || "") && (_0x9efee5_2.mediaJobId = _0x9efee5_0.mediaJobId);
+      const _0x9efee5_3 = "\x75\x73\x65\x72" === _0x9efee5_0.role ? _0x9efee5_5b(_0x9efee5_0.textAttachment) : null;
+      return _0x9efee5_3 && (_0x9efee5_2.textAttachment = _0x9efee5_3), _0x9efee5_2;
     }).filter(Boolean) : [];
   }
-  function We(e) {
-    const t = ze(e).find(e => "user" === e.role)?.content.trim() || "New conversation";
-    return t.length > 46 ? `${t.slice(0, 46)}\u2026` : t;
+  function _0x9efee5_63(_0x9efee5_0) {
+    const _0x9efee5_1 = _0x9efee5_62(_0x9efee5_0).find(_0x9efee5_0 => "\x75\x73\x65\x72" === _0x9efee5_0.role)?.content.trim() || "\x4e\x65\x77\x20\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e";
+    return _0x9efee5_1.length > 46 ? `${_0x9efee5_1.slice(0, 46)}\u2026` : _0x9efee5_1;
   }
-  function Je(e) {
-    const t = ze(e?.messages), n = Number(e?.createdAt) || Date.now();
+  function _0x9efee5_64(_0x9efee5_0) {
+    const _0x9efee5_1 = _0x9efee5_62(_0x9efee5_0?.messages), _0x9efee5_2 = Number(_0x9efee5_0?.createdAt) || Date.now();
     return {
-      id: String(e?.id || ""),
-      title: String(e?.title || We(t)).trim().slice(0, 64) || "New conversation",
-      messages: t,
-      model: String(e?.model || r),
-      createdAt: n,
-      updatedAt: Number(e?.updatedAt) || n
+      id: String(_0x9efee5_0?.id || ""),
+      title: String(_0x9efee5_0?.title || _0x9efee5_63(_0x9efee5_1)).trim().slice(0, 64) || "\x4e\x65\x77\x20\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e",
+      messages: _0x9efee5_1,
+      model: String(_0x9efee5_0?.model || _0x9efee5_6),
+      createdAt: _0x9efee5_2,
+      updatedAt: Number(_0x9efee5_0?.updatedAt) || _0x9efee5_2
     };
   }
-  function Ke() {
+  function _0x9efee5_65() {
     try {
-      const e = JSON.parse(localStorage.getItem(t) || "[]");
-      return Array.isArray(e) ? e.map(Je).filter(e => e.id && e.messages.length).sort((e, t) => t.updatedAt - e.updatedAt) : [];
+      const _0x9efee5_0 = JSON.parse(localStorage.getItem(_0x9efee5_1) || "\x5b\x5d");
+      return Array.isArray(_0x9efee5_0) ? _0x9efee5_0.map(_0x9efee5_64).filter(_0x9efee5_0 => _0x9efee5_0.id && _0x9efee5_0.messages.length).sort((_0x9efee5_0, _0x9efee5_1) => _0x9efee5_1.updatedAt - _0x9efee5_0.updatedAt) : [];
     } catch {
       return [];
     }
   }
-  function Ge() {
-    he = he.filter(e => e.id && e.messages.length).sort((e, t) => t.updatedAt - e.updatedAt);
+  function _0x9efee5_66() {
+    _0x9efee5_45 = _0x9efee5_45.filter(_0x9efee5_0 => _0x9efee5_0.id && _0x9efee5_0.messages.length).sort((_0x9efee5_0, _0x9efee5_1) => _0x9efee5_1.updatedAt - _0x9efee5_0.updatedAt);
     try {
-      localStorage.setItem(t, JSON.stringify(he)), document.getElementById("ai-save-warning")?.remove();
+      localStorage.setItem(_0x9efee5_1, JSON.stringify(_0x9efee5_45)), document.getElementById("\x61\x69\x2d\x73\x61\x76\x65\x2d\x77\x61\x72\x6e\x69\x6e\x67")?.remove();
     } catch {
-      if (document.getElementById("ai-save-warning")) return;
-      const e = document.createElement("div");
-      e.id = "ai-save-warning", e.className = "ai-save-warning", e.setAttribute("role", "alert"), 
-      e.append("Nyx could not save your chat on this device. Download your chats before reloading. ");
-      const t = document.createElement("button");
-      t.type = "button", t.textContent = "Download chats", t.addEventListener("click", () => {
-        const e = URL.createObjectURL(new Blob([ JSON.stringify({
+      if (document.getElementById("\x61\x69\x2d\x73\x61\x76\x65\x2d\x77\x61\x72\x6e\x69\x6e\x67")) return;
+      const _0x9efee5_0 = document.createElement("\x64\x69\x76");
+      _0x9efee5_0.id = "\x61\x69\x2d\x73\x61\x76\x65\x2d\x77\x61\x72\x6e\x69\x6e\x67", _0x9efee5_0.className = "\x61\x69\x2d\x73\x61\x76\x65\x2d\x77\x61\x72\x6e\x69\x6e\x67", _0x9efee5_0.setAttribute("\x72\x6f\x6c\x65", "\x61\x6c\x65\x72\x74"), 
+      _0x9efee5_0.append("\x4e\x79\x78\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x61\x76\x65\x20\x79\x6f\x75\x72\x20\x63\x68\x61\x74\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e\x20\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x20\x79\x6f\x75\x72\x20\x63\x68\x61\x74\x73\x20\x62\x65\x66\x6f\x72\x65\x20\x72\x65\x6c\x6f\x61\x64\x69\x6e\x67\x2e\x20");
+      const _0x9efee5_1 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+      _0x9efee5_1.type = "\x62\x75\x74\x74\x6f\x6e", _0x9efee5_1.textContent = "\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x20\x63\x68\x61\x74\x73", _0x9efee5_1.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+        const _0x9efee5_0 = URL.createObjectURL(new Blob([ JSON.stringify({
           version: 1,
-          threads: he
+          threads: _0x9efee5_45
         }, null, 2) ], {
-          type: "application/json"
-        })), t = document.createElement("a");
-        t.href = e, t.download = "nyx-ai-chats.json", document.body.append(t), t.click(), 
-        t.remove(), setTimeout(() => URL.revokeObjectURL(e), 1e3);
-      }), e.append(t), f.before(e);
+          type: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
+        })), _0x9efee5_1 = document.createElement("\x61");
+        _0x9efee5_1.href = _0x9efee5_0, _0x9efee5_1.download = "\x6e\x79\x78\x2d\x61\x69\x2d\x63\x68\x61\x74\x73\x2e\x6a\x73\x6f\x6e", document.body.append(_0x9efee5_1), 
+        _0x9efee5_1.click(), _0x9efee5_1.remove(), setTimeout(() => URL.revokeObjectURL(_0x9efee5_0), 1e3);
+      }), _0x9efee5_0.append(_0x9efee5_1), _0x9efee5_10.before(_0x9efee5_0);
     }
   }
-  function Ve(t) {
+  function _0x9efee5_67(_0x9efee5_1) {
     try {
-      t.length ? localStorage.setItem(e, JSON.stringify(t.slice(-40))) : localStorage.removeItem(e);
+      _0x9efee5_1.length ? localStorage.setItem(_0x9efee5_0, JSON.stringify(_0x9efee5_1.slice(-40))) : localStorage.removeItem(_0x9efee5_0);
     } catch {}
   }
-  function Ye() {
-    return he.find(e => e.id === fe) || null;
+  function _0x9efee5_68() {
+    return _0x9efee5_45.find(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_46) || null;
   }
-  function Ze() {
-    return ze(ye ? ve : Ye()?.messages || []);
+  function _0x9efee5_69() {
+    return _0x9efee5_62(_0x9efee5_47 ? _0x9efee5_48 : _0x9efee5_68()?.messages || []);
   }
-  function Xe(e) {
-    const t = ze(e);
-    if (ye) return void (ve = t);
-    const a = Date.now();
-    let o = Ye();
-    if (!o && t.length) {
-      o = Je({
-        id: `chat-${a.toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
-        messages: t,
-        model: b.value || r,
-        createdAt: a,
-        updatedAt: a
-      }), he.unshift(o), fe = o.id;
+  function _0x9efee5_6a(_0x9efee5_0) {
+    const _0x9efee5_1 = _0x9efee5_62(_0x9efee5_0);
+    if (_0x9efee5_47) return void (_0x9efee5_48 = _0x9efee5_1);
+    const _0x9efee5_3 = Date.now();
+    let _0x9efee5_4 = _0x9efee5_68();
+    if (!_0x9efee5_4 && _0x9efee5_1.length) {
+      _0x9efee5_4 = _0x9efee5_64({
+        id: `\x63\x68\x61\x74\x2d${_0x9efee5_3.toString(36)}\x2d${Math.random().toString(36).slice(2, 7)}`,
+        messages: _0x9efee5_1,
+        model: _0x9efee5_13.value || _0x9efee5_6,
+        createdAt: _0x9efee5_3,
+        updatedAt: _0x9efee5_3
+      }), _0x9efee5_45.unshift(_0x9efee5_4), _0x9efee5_46 = _0x9efee5_4.id;
       try {
-        localStorage.setItem(n, fe);
+        localStorage.setItem(_0x9efee5_2, _0x9efee5_46);
       } catch {}
-    } else o && (o.messages = t, o.title = We(t), o.model = b.value || o.model || r, 
-    o.updatedAt = a);
-    Ge(), Ve(t), bt();
+    } else _0x9efee5_4 && (_0x9efee5_4.messages = _0x9efee5_1, _0x9efee5_4.title = _0x9efee5_63(_0x9efee5_1), 
+    _0x9efee5_4.model = _0x9efee5_13.value || _0x9efee5_4.model || _0x9efee5_6, _0x9efee5_4.updatedAt = _0x9efee5_3);
+    _0x9efee5_66(), _0x9efee5_67(_0x9efee5_1), _0x9efee5_7f();
   }
-  function Qe(e) {
-    return window.NyxLogo?.apply(e || localStorage.getItem("nyx.theme") || "default", document).catch?.(() => {});
+  function _0x9efee5_6b(_0x9efee5_0) {
+    return window.NyxLogo?.apply(_0x9efee5_0 || localStorage.getItem("\x6e\x79\x78\x2e\x74\x68\x65\x6d\x65") || "\x64\x65\x66\x61\x75\x6c\x74", document).catch?.(() => {});
   }
-  function et(e) {
-    return window.NyxMarkdown.render(e);
+  function _0x9efee5_6c(_0x9efee5_0) {
+    return window.NyxMarkdown.render(_0x9efee5_0);
   }
-  function tt(e) {
-    te.textContent = String(e || "");
+  function _0x9efee5_6d(_0x9efee5_0) {
+    _0x9efee5_37.textContent = String(_0x9efee5_0 || "");
   }
-  function nt(e) {
-    const t = Math.max(0, Number(e) || 0);
-    return t < 1024 ? `${t} B` : `${(t / 1024).toFixed(t < 10240 ? 1 : 0)} KB`;
+  function _0x9efee5_6e(_0x9efee5_0) {
+    const _0x9efee5_1 = Math.max(0, Number(_0x9efee5_0) || 0);
+    return _0x9efee5_1 < 1024 ? `${_0x9efee5_1}\x20\x42` : `${(_0x9efee5_1 / 1024).toFixed(_0x9efee5_1 < 10240 ? 1 : 0)}\x20\x4b\x42`;
   }
-  function at() {
-    const e = new Date, t = e => String(e).padStart(2, "0");
-    return `pasted-text-${e.getFullYear()}${t(e.getMonth() + 1)}${t(e.getDate())}-${t(e.getHours())}${t(e.getMinutes())}${t(e.getSeconds())}.txt`;
+  function _0x9efee5_6f() {
+    const _0x9efee5_0 = new Date, _0x9efee5_1 = _0x9efee5_0 => String(_0x9efee5_0).padStart(2, "\x30");
+    return `\x70\x61\x73\x74\x65\x64\x2d\x74\x65\x78\x74\x2d${_0x9efee5_0.getFullYear()}${_0x9efee5_1(_0x9efee5_0.getMonth() + 1)}${_0x9efee5_1(_0x9efee5_0.getDate())}\x2d${_0x9efee5_1(_0x9efee5_0.getHours())}${_0x9efee5_1(_0x9efee5_0.getMinutes())}${_0x9efee5_1(_0x9efee5_0.getSeconds())}\x2e\x74\x78\x74`;
   }
-  function ot() {
-    be = null, we = null, Y.value = "", X.hidden = !0, X.classList.remove("is-error", "is-file-error", "is-text-file"), 
-    Q.hidden = !1, Q.removeAttribute("src"), ee.textContent = "", tt("Ready to send"), 
-    Z.classList.remove("has-attachment"), Z.setAttribute("aria-label", "Attach an image"), 
-    ne.title = "Remove attachment", ne.setAttribute("aria-label", "Remove attachment");
+  function _0x9efee5_70() {
+    _0x9efee5_49 = null, _0x9efee5_4a = null, _0x9efee5_32.value = "", _0x9efee5_34.hidden = !0, 
+    _0x9efee5_34.classList.remove("\x69\x73\x2d\x65\x72\x72\x6f\x72", "\x69\x73\x2d\x66\x69\x6c\x65\x2d\x65\x72\x72\x6f\x72", "\x69\x73\x2d\x74\x65\x78\x74\x2d\x66\x69\x6c\x65"), _0x9efee5_35.hidden = !1, 
+    _0x9efee5_35.removeAttribute("\x73\x72\x63"), _0x9efee5_36.textContent = "", _0x9efee5_6d("\x52\x65\x61\x64\x79\x20\x74\x6f\x20\x73\x65\x6e\x64"), 
+    _0x9efee5_33.classList.remove("\x68\x61\x73\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74"), _0x9efee5_33.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x41\x74\x74\x61\x63\x68\x20\x61\x6e\x20\x69\x6d\x61\x67\x65"), 
+    _0x9efee5_38.title = "\x52\x65\x6d\x6f\x76\x65\x20\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74", _0x9efee5_38.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x52\x65\x6d\x6f\x76\x65\x20\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74");
   }
-  function it(e, t = "Image not attached") {
-    ot(), X.hidden = !1, X.classList.add("is-error", "is-file-error"), Q.hidden = !0, 
-    ee.textContent = t, tt(e);
+  function _0x9efee5_71(_0x9efee5_0, _0x9efee5_1 = "\x49\x6d\x61\x67\x65\x20\x6e\x6f\x74\x20\x61\x74\x74\x61\x63\x68\x65\x64") {
+    _0x9efee5_70(), _0x9efee5_34.hidden = !1, _0x9efee5_34.classList.add("\x69\x73\x2d\x65\x72\x72\x6f\x72", "\x69\x73\x2d\x66\x69\x6c\x65\x2d\x65\x72\x72\x6f\x72"), 
+    _0x9efee5_35.hidden = !0, _0x9efee5_36.textContent = _0x9efee5_1, _0x9efee5_6d(_0x9efee5_0);
   }
-  function rt(e) {
-    return e && m.has(String(e.type || "").toLowerCase()) ? e.size > 8388608 ? (it("Choose an image smaller than 8 MB."), 
-    Promise.resolve(null)) : new Promise(t => {
-      const n = new FileReader;
-      n.onload = () => {
-        const a = {
-          name: e.name || "Attached image",
-          size: e.size,
-          type: e.type,
-          dataUrl: String(n.result || "")
+  function _0x9efee5_72(_0x9efee5_0) {
+    return _0x9efee5_0 && _0x9efee5_b.has(String(_0x9efee5_0.type || "").toLowerCase()) ? _0x9efee5_0.size > 8388608 ? (_0x9efee5_71("\x43\x68\x6f\x6f\x73\x65\x20\x61\x6e\x20\x69\x6d\x61\x67\x65\x20\x73\x6d\x61\x6c\x6c\x65\x72\x20\x74\x68\x61\x6e\x20\x38\x20\x4d\x42\x2e"), 
+    Promise.resolve(null)) : new Promise(_0x9efee5_1 => {
+      const _0x9efee5_2 = new FileReader;
+      _0x9efee5_2.onload = () => {
+        const _0x9efee5_3 = {
+          name: _0x9efee5_0.name || "\x41\x74\x74\x61\x63\x68\x65\x64\x20\x69\x6d\x61\x67\x65",
+          size: _0x9efee5_0.size,
+          type: _0x9efee5_0.type,
+          dataUrl: String(_0x9efee5_2.result || "")
         };
-        !function(e) {
-          lt(), we = null, be = e, X.hidden = !1, X.classList.remove("is-error", "is-file-error", "is-text-file"), 
-          Q.hidden = !1, Q.src = e.dataUrl, ee.textContent = e.name, tt("Ready to send"), 
-          Z.classList.add("has-attachment"), Z.setAttribute("aria-label", `Replace attached image: ${e.name}`), 
-          ne.title = "Remove image", ne.setAttribute("aria-label", "Remove attached image");
-        }(a), t(a);
-      }, n.onerror = () => {
-        it("Nyx could not read that image."), t(null);
-      }, n.readAsDataURL(e);
-    }) : (it("Choose a PNG, JPG, WebP, or GIF image."), Promise.resolve(null));
+        !function(_0x9efee5_0) {
+          _0x9efee5_74(), _0x9efee5_4a = null, _0x9efee5_49 = _0x9efee5_0, _0x9efee5_34.hidden = !1, 
+          _0x9efee5_34.classList.remove("\x69\x73\x2d\x65\x72\x72\x6f\x72", "\x69\x73\x2d\x66\x69\x6c\x65\x2d\x65\x72\x72\x6f\x72", "\x69\x73\x2d\x74\x65\x78\x74\x2d\x66\x69\x6c\x65"), _0x9efee5_35.hidden = !1, 
+          _0x9efee5_35.src = _0x9efee5_0.dataUrl, _0x9efee5_36.textContent = _0x9efee5_0.name, 
+          _0x9efee5_6d("\x52\x65\x61\x64\x79\x20\x74\x6f\x20\x73\x65\x6e\x64"), _0x9efee5_33.classList.add("\x68\x61\x73\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74"), _0x9efee5_33.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", `\x52\x65\x70\x6c\x61\x63\x65\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x69\x6d\x61\x67\x65\x3a\x20${_0x9efee5_0.name}`), 
+          _0x9efee5_38.title = "\x52\x65\x6d\x6f\x76\x65\x20\x69\x6d\x61\x67\x65", _0x9efee5_38.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x52\x65\x6d\x6f\x76\x65\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x69\x6d\x61\x67\x65");
+        }(_0x9efee5_3), _0x9efee5_1(_0x9efee5_3);
+      }, _0x9efee5_2.onerror = () => {
+        _0x9efee5_71("\x4e\x79\x78\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x72\x65\x61\x64\x20\x74\x68\x61\x74\x20\x69\x6d\x61\x67\x65\x2e"), _0x9efee5_1(null);
+      }, _0x9efee5_2.readAsDataURL(_0x9efee5_0);
+    }) : (_0x9efee5_71("\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x50\x4e\x47\x2c\x20\x4a\x50\x47\x2c\x20\x57\x65\x62\x50\x2c\x20\x6f\x72\x20\x47\x49\x46\x20\x69\x6d\x61\x67\x65\x2e"), Promise.resolve(null));
   }
   new MutationObserver(() => {
-    for (const [e, t] of He) e.isConnected || (URL.revokeObjectURL(t), He.delete(e));
+    for (const [_0x9efee5_0, _0x9efee5_1] of _0x9efee5_60) _0x9efee5_0.isConnected || (URL.revokeObjectURL(_0x9efee5_1), 
+    _0x9efee5_60.delete(_0x9efee5_0));
   }).observe(document.body, {
     childList: !0,
     subtree: !0
   });
-  const st = window.createNyxScreenChat({
-    conversation: h,
-    input: y,
-    form: f,
-    stop: lt,
-    status: ie,
-    brand: () => mt()
+  const _0x9efee5_73 = window.createNyxScreenChat({
+    conversation: _0x9efee5_f,
+    input: _0x9efee5_11,
+    form: _0x9efee5_10,
+    stop: _0x9efee5_74,
+    status: _0x9efee5_3b,
+    brand: () => _0x9efee5_77()
   });
-  function lt() {
-    st.destroy();
-    const e = xe;
-    xe = null, e && e.getTracks().forEach(e => e.stop()), oe.srcObject = null, ae.hidden = !0, 
-    re.classList.remove("has-attachment"), re.setAttribute("aria-pressed", "false"), 
-    ie.textContent = "A fresh frame is attached only when you send.";
+  function _0x9efee5_74() {
+    _0x9efee5_73.destroy();
+    const _0x9efee5_0 = _0x9efee5_4b;
+    _0x9efee5_4b = null, _0x9efee5_0 && _0x9efee5_0.getTracks().forEach(_0x9efee5_0 => _0x9efee5_0.stop()), 
+    _0x9efee5_3a.srcObject = null, _0x9efee5_39.hidden = !0, _0x9efee5_3c.classList.remove("\x68\x61\x73\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74"), 
+    _0x9efee5_3c.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", "\x66\x61\x6c\x73\x65"), _0x9efee5_3b.textContent = "\x41\x20\x66\x72\x65\x73\x68\x20\x66\x72\x61\x6d\x65\x20\x69\x73\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x6f\x6e\x6c\x79\x20\x77\x68\x65\x6e\x20\x79\x6f\x75\x20\x73\x65\x6e\x64\x2e";
   }
-  function ct(e) {
-    const t = String(e || ""), n = /<\/?think\b[^>]*>/gi;
-    let a, o = "", i = "", r = 0, s = !1;
-    for (;a = n.exec(t); ) {
-      const e = t.slice(r, a.index);
-      s ? i += e : o += e, s = !/^<\//.test(a[0]), r = a.index + a[0].length;
+  function _0x9efee5_75(_0x9efee5_0) {
+    const _0x9efee5_1 = String(_0x9efee5_0 || ""), _0x9efee5_2 = /<\/?think\b[^>]*>/gi;
+    let _0x9efee5_3, _0x9efee5_4 = "", _0x9efee5_5 = "", _0x9efee5_6 = 0, _0x9efee5_7 = !1;
+    for (;_0x9efee5_3 = _0x9efee5_2.exec(_0x9efee5_1); ) {
+      const _0x9efee5_0 = _0x9efee5_1.slice(_0x9efee5_6, _0x9efee5_3.index);
+      _0x9efee5_7 ? _0x9efee5_5 += _0x9efee5_0 : _0x9efee5_4 += _0x9efee5_0, _0x9efee5_7 = !/^<\//.test(_0x9efee5_3[0]), 
+      _0x9efee5_6 = _0x9efee5_3.index + _0x9efee5_3[0].length;
     }
-    const l = t.slice(r);
-    if (s ? i += l : o += l, !s) {
-      const e = o.match(/<\/?t(?:h(?:i(?:n(?:k)?)?)?)?$/i);
-      e && (o = o.slice(0, -e[0].length));
+    const _0x9efee5_8 = _0x9efee5_1.slice(_0x9efee5_6);
+    if (_0x9efee5_7 ? _0x9efee5_5 += _0x9efee5_8 : _0x9efee5_4 += _0x9efee5_8, !_0x9efee5_7) {
+      const _0x9efee5_0 = _0x9efee5_4.match(/<\/?t(?:h(?:i(?:n(?:k)?)?)?)?$/i);
+      _0x9efee5_0 && (_0x9efee5_4 = _0x9efee5_4.slice(0, -_0x9efee5_0[0].length));
     }
     return {
-      answer: o,
-      reasoning: i
+      answer: _0x9efee5_4,
+      reasoning: _0x9efee5_5
     };
   }
-  function dt(e) {
-    const t = [];
-    for (const n of (Array.isArray(e?.sources) ? e.sources : []).slice(0, 12)) try {
-      const e = new URL(String(n.url || ""));
-      if (![ "https:", "http:" ].includes(e.protocol) || e.username || e.password || e.href.length > 2048) continue;
-      t.some(t => t.url === e.href) || t.push({
-        url: e.href,
-        title: String(n.title || e.hostname).slice(0, 160)
+  function _0x9efee5_76(_0x9efee5_0) {
+    const _0x9efee5_1 = [];
+    for (const _0x9efee5_2 of (Array.isArray(_0x9efee5_0?.sources) ? _0x9efee5_0.sources : []).slice(0, 12)) try {
+      const _0x9efee5_0 = new URL(String(_0x9efee5_2.url || ""));
+      if (![ "\x68\x74\x74\x70\x73\x3a", "\x68\x74\x74\x70\x3a" ].includes(_0x9efee5_0.protocol) || _0x9efee5_0.username || _0x9efee5_0.password || _0x9efee5_0.href.length > 2048) continue;
+      _0x9efee5_1.some(_0x9efee5_1 => _0x9efee5_1.url === _0x9efee5_0.href) || _0x9efee5_1.push({
+        url: _0x9efee5_0.href,
+        title: String(_0x9efee5_2.title || _0x9efee5_0.hostname).slice(0, 160)
       });
     } catch {}
     return {
-      sources: t,
-      summary: String(e?.summary || "").slice(0, 2400)
+      sources: _0x9efee5_1,
+      summary: String(_0x9efee5_0?.summary || "").slice(0, 2400)
     };
   }
-  const mt = () => "ai" === document.documentElement.dataset.tutsiApp ? "Tutsi AI" : "Nyx AI", ut = e => String(e || "").replace(/\bNyx AI\b/g, mt());
-  function gt(e, t, {error: n = !1, thinking: a = !1} = {}) {
-    const o = e.querySelector(".ai-message-content");
-    if (!o) return;
-    if (e.classList.toggle("ai-message-error", n), e.classList.toggle("is-thinking", a), 
-    a) return e._nyxMessageText = "", void (o.innerHTML = `<span class="ai-thinking" aria-label="${mt()} is thinking"><i></i><i></i><i></i></span>`);
-    if (e.classList.contains("ai-message-user") || n) {
-      const a = n ? ut(t) : String(t || "");
-      return e._nyxMessageText = a, void (o.textContent = a);
+  const _0x9efee5_77 = () => "\x61\x69" === document.documentElement.dataset.tutsiApp ? "\x54\x75\x74\x73\x69\x20\x41\x49" : "\x4e\x79\x78\x20\x41\x49", _0x9efee5_78 = _0x9efee5_0 => String(_0x9efee5_0 || "").replace(/\bNyx AI\b/g, _0x9efee5_77());
+  function _0x9efee5_79(_0x9efee5_0, _0x9efee5_1, {error: _0x9efee5_2 = !1, thinking: _0x9efee5_3 = !1} = {}) {
+    const _0x9efee5_4 = _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74");
+    if (!_0x9efee5_4) return;
+    if (_0x9efee5_0.classList.toggle("\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x65\x72\x72\x6f\x72", _0x9efee5_2), _0x9efee5_0.classList.toggle("\x69\x73\x2d\x74\x68\x69\x6e\x6b\x69\x6e\x67", _0x9efee5_3), 
+    _0x9efee5_3) return _0x9efee5_0._nyxMessageText = "", void (_0x9efee5_4.innerHTML = `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x74\x68\x69\x6e\x6b\x69\x6e\x67\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22${_0x9efee5_77()}\x20\x69\x73\x20\x74\x68\x69\x6e\x6b\x69\x6e\x67\x22\x3e\x3c\x69\x3e\x3c\x2f\x69\x3e\x3c\x69\x3e\x3c\x2f\x69\x3e\x3c\x69\x3e\x3c\x2f\x69\x3e\x3c\x2f\x73\x70\x61\x6e\x3e`);
+    if (_0x9efee5_0.classList.contains("\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x75\x73\x65\x72") || _0x9efee5_2) {
+      const _0x9efee5_3 = _0x9efee5_2 ? _0x9efee5_78(_0x9efee5_1) : String(_0x9efee5_1 || "");
+      return _0x9efee5_0._nyxMessageText = _0x9efee5_3, void (_0x9efee5_4.textContent = _0x9efee5_3);
     }
-    const i = ct(t), r = dt(e._nyxMetadata), s = o.querySelector(".ai-reasoning")?.open;
-    if (e._nyxMessageText = i.answer.trim(), o.replaceChildren(), (r.summary || i.reasoning.trim()) && (function(e, t) {
-      const n = document.createElement("details");
-      n.className = "ai-reasoning";
-      const a = document.createElement("summary");
-      a.textContent = "Reasoning summary";
-      const o = document.createElement("div");
-      o.className = "ai-reasoning-body", o.innerHTML = et(t), n.append(a, o), e.appendChild(n);
-    }(o, r.summary || i.reasoning.trim()), s && (o.querySelector(".ai-reasoning").open = !0)), 
-    i.answer.trim()) {
-      const e = document.createElement("div");
-      e.className = "ai-answer", e.innerHTML = et(i.answer.trim()), o.appendChild(e);
+    const _0x9efee5_5 = _0x9efee5_75(_0x9efee5_1), _0x9efee5_6 = _0x9efee5_76(_0x9efee5_0._nyxMetadata), _0x9efee5_7 = _0x9efee5_4.querySelector("\x2e\x61\x69\x2d\x72\x65\x61\x73\x6f\x6e\x69\x6e\x67")?.open;
+    if (_0x9efee5_0._nyxMessageText = _0x9efee5_5.answer.trim(), _0x9efee5_4.replaceChildren(), 
+    (_0x9efee5_6.summary || _0x9efee5_5.reasoning.trim()) && (function(_0x9efee5_0, _0x9efee5_1) {
+      const _0x9efee5_2 = document.createElement("\x64\x65\x74\x61\x69\x6c\x73");
+      _0x9efee5_2.className = "\x61\x69\x2d\x72\x65\x61\x73\x6f\x6e\x69\x6e\x67";
+      const _0x9efee5_3 = document.createElement("\x73\x75\x6d\x6d\x61\x72\x79");
+      _0x9efee5_3.textContent = "\x52\x65\x61\x73\x6f\x6e\x69\x6e\x67\x20\x73\x75\x6d\x6d\x61\x72\x79";
+      const _0x9efee5_4 = document.createElement("\x64\x69\x76");
+      _0x9efee5_4.className = "\x61\x69\x2d\x72\x65\x61\x73\x6f\x6e\x69\x6e\x67\x2d\x62\x6f\x64\x79", _0x9efee5_4.innerHTML = _0x9efee5_6c(_0x9efee5_1), 
+      _0x9efee5_2.append(_0x9efee5_3, _0x9efee5_4), _0x9efee5_0.appendChild(_0x9efee5_2);
+    }(_0x9efee5_4, _0x9efee5_6.summary || _0x9efee5_5.reasoning.trim()), _0x9efee5_7 && (_0x9efee5_4.querySelector("\x2e\x61\x69\x2d\x72\x65\x61\x73\x6f\x6e\x69\x6e\x67").open = !0)), 
+    _0x9efee5_5.answer.trim()) {
+      const _0x9efee5_0 = document.createElement("\x64\x69\x76");
+      _0x9efee5_0.className = "\x61\x69\x2d\x61\x6e\x73\x77\x65\x72", _0x9efee5_0.innerHTML = _0x9efee5_6c(_0x9efee5_5.answer.trim()), 
+      _0x9efee5_4.appendChild(_0x9efee5_0);
     }
-    !function(e, t) {
-      if (!t.length) return;
-      const n = document.createElement("section");
-      n.className = "ai-sources", n.setAttribute("aria-label", "Web sources");
-      const a = document.createElement("h3");
-      a.textContent = "Sources";
-      const o = document.createElement("div");
-      o.className = "ai-source-links", t.forEach((e, t) => {
-        const n = document.createElement("a");
-        n.className = "ai-source", n.href = e.url, n.target = "_blank", n.rel = "noopener noreferrer";
-        const a = document.createElement("span");
-        a.className = "ai-source-number", a.textContent = String(t + 1);
-        const i = document.createElement("span"), r = document.createElement("strong");
-        r.textContent = e.title;
-        const s = document.createElement("small");
-        s.textContent = new URL(e.url).hostname.replace(/^www\./, ""), i.append(r, s), n.append(a, i), 
-        o.appendChild(n);
-      }), n.append(a, o), e.appendChild(n);
-    }(o, r.sources);
+    !function(_0x9efee5_0, _0x9efee5_1) {
+      if (!_0x9efee5_1.length) return;
+      const _0x9efee5_2 = document.createElement("\x73\x65\x63\x74\x69\x6f\x6e");
+      _0x9efee5_2.className = "\x61\x69\x2d\x73\x6f\x75\x72\x63\x65\x73", _0x9efee5_2.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x57\x65\x62\x20\x73\x6f\x75\x72\x63\x65\x73");
+      const _0x9efee5_3 = document.createElement("\x68\x33");
+      _0x9efee5_3.textContent = "\x53\x6f\x75\x72\x63\x65\x73";
+      const _0x9efee5_4 = document.createElement("\x64\x69\x76");
+      _0x9efee5_4.className = "\x61\x69\x2d\x73\x6f\x75\x72\x63\x65\x2d\x6c\x69\x6e\x6b\x73", _0x9efee5_1.forEach((_0x9efee5_0, _0x9efee5_1) => {
+        const _0x9efee5_2 = document.createElement("\x61");
+        _0x9efee5_2.className = "\x61\x69\x2d\x73\x6f\x75\x72\x63\x65", _0x9efee5_2.href = _0x9efee5_0.url, _0x9efee5_2.target = "\x5f\x62\x6c\x61\x6e\x6b", 
+        _0x9efee5_2.rel = "\x6e\x6f\x6f\x70\x65\x6e\x65\x72\x20\x6e\x6f\x72\x65\x66\x65\x72\x72\x65\x72";
+        const _0x9efee5_3 = document.createElement("\x73\x70\x61\x6e");
+        _0x9efee5_3.className = "\x61\x69\x2d\x73\x6f\x75\x72\x63\x65\x2d\x6e\x75\x6d\x62\x65\x72", _0x9efee5_3.textContent = String(_0x9efee5_1 + 1);
+        const _0x9efee5_5 = document.createElement("\x73\x70\x61\x6e"), _0x9efee5_6 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+        _0x9efee5_6.textContent = _0x9efee5_0.title;
+        const _0x9efee5_7 = document.createElement("\x73\x6d\x61\x6c\x6c");
+        _0x9efee5_7.textContent = new URL(_0x9efee5_0.url).hostname.replace(/^www\./, ""), 
+        _0x9efee5_5.append(_0x9efee5_6, _0x9efee5_7), _0x9efee5_2.append(_0x9efee5_3, _0x9efee5_5), 
+        _0x9efee5_4.appendChild(_0x9efee5_2);
+      }), _0x9efee5_2.append(_0x9efee5_3, _0x9efee5_4), _0x9efee5_0.appendChild(_0x9efee5_2);
+    }(_0x9efee5_4, _0x9efee5_6.sources);
   }
-  function pt(e) {
-    return !e || !Number.isFinite(e.elapsedMs) || e.elapsedMs < 0 ? null : {
-      elapsedMs: Math.min(e.elapsedMs, 36e5),
-      firstTextMs: Number.isFinite(e.firstTextMs) ? Math.max(0, Math.min(e.firstTextMs, e.elapsedMs)) : null,
-      tokens: Number.isFinite(e.tokens) ? Math.max(0, Math.min(e.tokens, 1e6)) : 0,
-      estimated: !1 !== e.estimated
+  function _0x9efee5_7a(_0x9efee5_0) {
+    return !_0x9efee5_0 || !Number.isFinite(_0x9efee5_0.elapsedMs) || _0x9efee5_0.elapsedMs < 0 ? null : {
+      elapsedMs: Math.min(_0x9efee5_0.elapsedMs, 36e5),
+      firstTextMs: Number.isFinite(_0x9efee5_0.firstTextMs) ? Math.max(0, Math.min(_0x9efee5_0.firstTextMs, _0x9efee5_0.elapsedMs)) : null,
+      tokens: Number.isFinite(_0x9efee5_0.tokens) ? Math.max(0, Math.min(_0x9efee5_0.tokens, 1e6)) : 0,
+      estimated: !1 !== _0x9efee5_0.estimated
     };
   }
-  function ht(e, t, n = !1) {
-    const a = pt(t);
-    if (!a) return;
-    let o = e.querySelector(".ai-response-stats");
-    o || (o = document.createElement("div"), o.className = "ai-response-stats", e.querySelector(".ai-message-body").append(o));
-    const i = (a.elapsedMs / 1e3).toFixed(1), r = null === a.firstTextMs ? n ? "Waiting " + i + "s" : "No answer text" : "First text " + (a.firstTextMs / 1e3).toFixed(1) + "s", s = a.tokens > 0 && a.elapsedMs > 0 ? " | " + (a.estimated ? "~" : "") + (a.tokens / (a.elapsedMs / 1e3)).toFixed(1) + " tok/s" + (a.estimated ? " (estimated)" : "") : "";
-    o.textContent = r + s + (n ? "" : " | " + i + "s total"), o.title = "Measured on this device. Tokens per second averages the entire request, including waiting. Estimates use roughly four characters per token; reported usage may include reasoning tokens.";
+  function _0x9efee5_7b(_0x9efee5_0, _0x9efee5_1, _0x9efee5_2 = !1) {
+    const _0x9efee5_3 = _0x9efee5_7a(_0x9efee5_1);
+    if (!_0x9efee5_3) return;
+    let _0x9efee5_4 = _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65\x2d\x73\x74\x61\x74\x73");
+    _0x9efee5_4 || (_0x9efee5_4 = document.createElement("\x64\x69\x76"), _0x9efee5_4.className = "\x61\x69\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65\x2d\x73\x74\x61\x74\x73", 
+    _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x62\x6f\x64\x79").append(_0x9efee5_4));
+    const _0x9efee5_5 = (_0x9efee5_3.elapsedMs / 1e3).toFixed(1), _0x9efee5_6 = null === _0x9efee5_3.firstTextMs ? _0x9efee5_2 ? "\x57\x61\x69\x74\x69\x6e\x67\x20" + _0x9efee5_5 + "\x73" : "\x4e\x6f\x20\x61\x6e\x73\x77\x65\x72\x20\x74\x65\x78\x74" : "\x46\x69\x72\x73\x74\x20\x74\x65\x78\x74\x20" + (_0x9efee5_3.firstTextMs / 1e3).toFixed(1) + "\x73", _0x9efee5_7 = _0x9efee5_3.tokens > 0 && _0x9efee5_3.elapsedMs > 0 ? "\x20\x7c\x20" + (_0x9efee5_3.estimated ? "\x7e" : "") + (_0x9efee5_3.tokens / (_0x9efee5_3.elapsedMs / 1e3)).toFixed(1) + "\x20\x74\x6f\x6b\x2f\x73" + (_0x9efee5_3.estimated ? "\x20\x28\x65\x73\x74\x69\x6d\x61\x74\x65\x64\x29" : "") : "";
+    _0x9efee5_4.textContent = _0x9efee5_6 + _0x9efee5_7 + (_0x9efee5_2 ? "" : "\x20\x7c\x20" + _0x9efee5_5 + "\x73\x20\x74\x6f\x74\x61\x6c"), 
+    _0x9efee5_4.title = "\x4d\x65\x61\x73\x75\x72\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e\x20\x54\x6f\x6b\x65\x6e\x73\x20\x70\x65\x72\x20\x73\x65\x63\x6f\x6e\x64\x20\x61\x76\x65\x72\x61\x67\x65\x73\x20\x74\x68\x65\x20\x65\x6e\x74\x69\x72\x65\x20\x72\x65\x71\x75\x65\x73\x74\x2c\x20\x69\x6e\x63\x6c\x75\x64\x69\x6e\x67\x20\x77\x61\x69\x74\x69\x6e\x67\x2e\x20\x45\x73\x74\x69\x6d\x61\x74\x65\x73\x20\x75\x73\x65\x20\x72\x6f\x75\x67\x68\x6c\x79\x20\x66\x6f\x75\x72\x20\x63\x68\x61\x72\x61\x63\x74\x65\x72\x73\x20\x70\x65\x72\x20\x74\x6f\x6b\x65\x6e\x3b\x20\x72\x65\x70\x6f\x72\x74\x65\x64\x20\x75\x73\x61\x67\x65\x20\x6d\x61\x79\x20\x69\x6e\x63\x6c\x75\x64\x65\x20\x72\x65\x61\x73\x6f\x6e\x69\x6e\x67\x20\x74\x6f\x6b\x65\x6e\x73\x2e";
   }
-  function ft(e) {
-    if (e.querySelector(".continue-response")) return;
-    const t = document.createElement("button");
-    t.type = "button", t.className = "continue-response", t.textContent = "Continue response", 
-    t.title = "This reply reached its response limit. Continue using your remaining allowance.", 
-    t.onclick = () => {
-      v.disabled || h.querySelector(".ai-message:last-child") === e && (y.value.trim() ? y.focus() : (y.value = "Continue your previous response from where it stopped, without repeating it.", 
-      ln()));
-    }, e.querySelector(".ai-message-body").append(t);
+  function _0x9efee5_7c(_0x9efee5_0) {
+    if (_0x9efee5_0.querySelector("\x2e\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65")) return;
+    const _0x9efee5_1 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0x9efee5_1.type = "\x62\x75\x74\x74\x6f\x6e", _0x9efee5_1.className = "\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65", _0x9efee5_1.textContent = "\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x72\x65\x73\x70\x6f\x6e\x73\x65", 
+    _0x9efee5_1.title = "\x54\x68\x69\x73\x20\x72\x65\x70\x6c\x79\x20\x72\x65\x61\x63\x68\x65\x64\x20\x69\x74\x73\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x6c\x69\x6d\x69\x74\x2e\x20\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x75\x73\x69\x6e\x67\x20\x79\x6f\x75\x72\x20\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x2e", 
+    _0x9efee5_1.onclick = () => {
+      _0x9efee5_12.disabled || _0x9efee5_f.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x3a\x6c\x61\x73\x74\x2d\x63\x68\x69\x6c\x64") === _0x9efee5_0 && (_0x9efee5_11.value.trim() ? _0x9efee5_11.focus() : (_0x9efee5_11.value = "\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x79\x6f\x75\x72\x20\x70\x72\x65\x76\x69\x6f\x75\x73\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x66\x72\x6f\x6d\x20\x77\x68\x65\x72\x65\x20\x69\x74\x20\x73\x74\x6f\x70\x70\x65\x64\x2c\x20\x77\x69\x74\x68\x6f\x75\x74\x20\x72\x65\x70\x65\x61\x74\x69\x6e\x67\x20\x69\x74\x2e", 
+      _0x9efee5_a9()));
+    }, _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x62\x6f\x64\x79").append(_0x9efee5_1);
   }
-  function yt(e, t, {error: n = !1, thinking: a = !1, attachment: o = null, imageId: i = null, mediaJobId: r = null, metadata: s = null, timing: l = null, modelId: c = "", modelName: d = "", finishReason: m = null} = {}) {
-    h.querySelector("[data-ai-welcome]")?.remove(), h.classList.remove("is-empty");
-    const u = "user" !== e, g = document.createElement("article");
-    if (g._nyxMetadata = dt(s), g.className = "ai-message ai-message-" + (u ? "assistant" : "user"), 
-    g.innerHTML = `\n      <div class="ai-message-avatar" aria-hidden="true">${u ? "" : "You"}</div>\n      <div class="ai-message-body">\n        <div class="ai-message-meta"><strong>${u ? "Assistant" : "You"}</strong><div class="ai-message-actions"><button class="ai-message-copy" type="button" data-copy-message title="Copy message" aria-label="Copy message"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg></button></div></div>\n        <div class="ai-message-content"></div>\n      </div>`, 
-    u && qt(g, c, d), u && l && ht(g, l), o?.dataUrl && !u) {
-      const e = document.createElement("figure");
-      e.className = "ai-message-attachment";
-      const t = document.createElement("img");
-      t.src = o.dataUrl, t.alt = o.name || "Attached image";
-      const n = document.createElement("figcaption");
-      n.textContent = o.name || "Attached image", e.append(t, n), g.querySelector(".ai-message-content")?.before(e);
-    } else if (o?.content && !u) {
-      const e = Ue(o);
-      if (e) {
-        const t = document.createElement("button");
-        t.className = "ai-message-attachment ai-message-text-attachment", t.type = "button", 
-        t.dataset.downloadTextAttachment = "", t.title = `Download ${e.name}`, t.innerHTML = `<span class="ai-text-file-icon" aria-hidden="true">TXT</span><span class="ai-text-file-copy"><strong>${je(e.name)}</strong><small>${je(nt(e.size))} \xb7 Download</small></span>`, 
-        t._nyxTextAttachment = e, g.querySelector(".ai-message-content")?.before(t);
+  function _0x9efee5_7d(_0x9efee5_0, _0x9efee5_1, {error: _0x9efee5_2 = !1, thinking: _0x9efee5_3 = !1, attachment: _0x9efee5_4 = null, imageId: _0x9efee5_5 = null, mediaJobId: _0x9efee5_6 = null, metadata: _0x9efee5_7 = null, timing: _0x9efee5_8 = null, modelId: _0x9efee5_9 = "", modelName: _0x9efee5_a = "", finishReason: _0x9efee5_b = null} = {}) {
+    _0x9efee5_f.querySelector("\x5b\x64\x61\x74\x61\x2d\x61\x69\x2d\x77\x65\x6c\x63\x6f\x6d\x65\x5d")?.remove(), _0x9efee5_f.classList.remove("\x69\x73\x2d\x65\x6d\x70\x74\x79");
+    const _0x9efee5_c = "\x75\x73\x65\x72" !== _0x9efee5_0, _0x9efee5_d = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+    if (_0x9efee5_d._nyxMetadata = _0x9efee5_76(_0x9efee5_7), _0x9efee5_d.className = "\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x20\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d" + (_0x9efee5_c ? "\x61\x73\x73\x69\x73\x74\x61\x6e\x74" : "\x75\x73\x65\x72"), 
+    _0x9efee5_d.innerHTML = `\x0a\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x61\x76\x61\x74\x61\x72\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e${_0x9efee5_c ? "" : "\x59\x6f\x75"}\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x62\x6f\x64\x79\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x6d\x65\x74\x61\x22\x3e\x3c\x73\x74\x72\x6f\x6e\x67\x3e${_0x9efee5_c ? "\x41\x73\x73\x69\x73\x74\x61\x6e\x74" : "\x59\x6f\x75"}\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x61\x63\x74\x69\x6f\x6e\x73\x22\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x70\x79\x22\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x2d\x6d\x65\x73\x73\x61\x67\x65\x20\x74\x69\x74\x6c\x65\x3d\x22\x43\x6f\x70\x79\x20\x6d\x65\x73\x73\x61\x67\x65\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x43\x6f\x70\x79\x20\x6d\x65\x73\x73\x61\x67\x65\x22\x3e\x3c\x73\x76\x67\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x3e\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x39\x22\x20\x79\x3d\x22\x39\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x31\x31\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x31\x31\x22\x20\x72\x78\x3d\x22\x32\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x35\x20\x39\x56\x36\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x2d\x32\x2d\x32\x48\x36\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x2d\x32\x20\x32\x76\x37\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x20\x32\x20\x32\x68\x33\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74\x22\x3e\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e`, 
+    _0x9efee5_c && _0x9efee5_93(_0x9efee5_d, _0x9efee5_9, _0x9efee5_a), _0x9efee5_c && _0x9efee5_8 && _0x9efee5_7b(_0x9efee5_d, _0x9efee5_8), 
+    _0x9efee5_4?.dataUrl && !_0x9efee5_c) {
+      const _0x9efee5_0 = document.createElement("\x66\x69\x67\x75\x72\x65");
+      _0x9efee5_0.className = "\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74";
+      const _0x9efee5_1 = document.createElement("\x69\x6d\x67");
+      _0x9efee5_1.src = _0x9efee5_4.dataUrl, _0x9efee5_1.alt = _0x9efee5_4.name || "\x41\x74\x74\x61\x63\x68\x65\x64\x20\x69\x6d\x61\x67\x65";
+      const _0x9efee5_2 = document.createElement("\x66\x69\x67\x63\x61\x70\x74\x69\x6f\x6e");
+      _0x9efee5_2.textContent = _0x9efee5_4.name || "\x41\x74\x74\x61\x63\x68\x65\x64\x20\x69\x6d\x61\x67\x65", _0x9efee5_0.append(_0x9efee5_1, _0x9efee5_2), 
+      _0x9efee5_d.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74")?.before(_0x9efee5_0);
+    } else if (_0x9efee5_4?.content && !_0x9efee5_c) {
+      const _0x9efee5_0 = _0x9efee5_5b(_0x9efee5_4);
+      if (_0x9efee5_0) {
+        const _0x9efee5_1 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+        _0x9efee5_1.className = "\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x20\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x74\x65\x78\x74\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74", _0x9efee5_1.type = "\x62\x75\x74\x74\x6f\x6e", 
+        _0x9efee5_1.dataset.downloadTextAttachment = "", _0x9efee5_1.title = `\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x20${_0x9efee5_0.name}`, 
+        _0x9efee5_1.innerHTML = `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x74\x65\x78\x74\x2d\x66\x69\x6c\x65\x2d\x69\x63\x6f\x6e\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x54\x58\x54\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x74\x65\x78\x74\x2d\x66\x69\x6c\x65\x2d\x63\x6f\x70\x79\x22\x3e\x3c\x73\x74\x72\x6f\x6e\x67\x3e${_0x9efee5_5a(_0x9efee5_0.name)}\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e\x3c\x73\x6d\x61\x6c\x6c\x3e${_0x9efee5_5a(_0x9efee5_6e(_0x9efee5_0.size))}\x20\xb7\x20\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x3c\x2f\x73\x6d\x61\x6c\x6c\x3e\x3c\x2f\x73\x70\x61\x6e\x3e`, 
+        _0x9efee5_1._nyxTextAttachment = _0x9efee5_0, _0x9efee5_d.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74")?.before(_0x9efee5_1);
       }
     }
-    return gt(g, t, {
-      error: n,
-      thinking: a
-    }), "length" === m && ft(g), h.appendChild(g), i && Pe(g, i), r && Fe(g, r), Qe(), 
-    an(!0), g;
+    return _0x9efee5_79(_0x9efee5_d, _0x9efee5_1, {
+      error: _0x9efee5_2,
+      thinking: _0x9efee5_3
+    }), "\x6c\x65\x6e\x67\x74\x68" === _0x9efee5_b && _0x9efee5_7c(_0x9efee5_d), _0x9efee5_f.appendChild(_0x9efee5_d), 
+    _0x9efee5_5 && _0x9efee5_5f(_0x9efee5_d, _0x9efee5_5), _0x9efee5_6 && _0x9efee5_61(_0x9efee5_d, _0x9efee5_6), 
+    _0x9efee5_6b(), _0x9efee5_a5(!0), _0x9efee5_d;
   }
-  function vt(e, t, n) {
-    return `<button class="ai-starter" type="button" data-prompt="${je(e)}"><span class="ai-starter-icon">${function(e) {
-      const t = {
-        project: '<path d="M4 7.5h16M7.5 4v7M16.5 4v7M5 12h14v8H5z"/>',
-        explain: '<path d="M12 3a7 7 0 0 0-4 12.74V19h8v-3.26A7 7 0 0 0 12 3Z"/><path d="M9 22h6M9.5 15h5"/>',
-        code: '<path d="m8 9-3 3 3 3M16 9l3 3-3 3M14 5l-4 14"/>',
-        ideas: '<path d="M12 3v3M4.22 6.22l2.12 2.12M3 14h3M18 14h3M17.66 8.34l2.12-2.12"/><path d="M8.5 18h7M9.5 21h5M12 8a5 5 0 0 0-3 9h6a5 5 0 0 0-3-9Z"/>'
+  function _0x9efee5_7e(_0x9efee5_0, _0x9efee5_1, _0x9efee5_2) {
+    return `\x3c\x62\x75\x74\x74\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x73\x74\x61\x72\x74\x65\x72\x22\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x70\x72\x6f\x6d\x70\x74\x3d\x22${_0x9efee5_5a(_0x9efee5_0)}\x22\x3e\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x73\x74\x61\x72\x74\x65\x72\x2d\x69\x63\x6f\x6e\x22\x3e${function(_0x9efee5_0) {
+      const _0x9efee5_1 = {
+        project: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x34\x20\x37\x2e\x35\x68\x31\x36\x4d\x37\x2e\x35\x20\x34\x76\x37\x4d\x31\x36\x2e\x35\x20\x34\x76\x37\x4d\x35\x20\x31\x32\x68\x31\x34\x76\x38\x48\x35\x7a\x22\x2f\x3e",
+        explain: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x32\x20\x33\x61\x37\x20\x37\x20\x30\x20\x30\x20\x30\x2d\x34\x20\x31\x32\x2e\x37\x34\x56\x31\x39\x68\x38\x76\x2d\x33\x2e\x32\x36\x41\x37\x20\x37\x20\x30\x20\x30\x20\x30\x20\x31\x32\x20\x33\x5a\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x39\x20\x32\x32\x68\x36\x4d\x39\x2e\x35\x20\x31\x35\x68\x35\x22\x2f\x3e",
+        code: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x38\x20\x39\x2d\x33\x20\x33\x20\x33\x20\x33\x4d\x31\x36\x20\x39\x6c\x33\x20\x33\x2d\x33\x20\x33\x4d\x31\x34\x20\x35\x6c\x2d\x34\x20\x31\x34\x22\x2f\x3e",
+        ideas: "\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x32\x20\x33\x76\x33\x4d\x34\x2e\x32\x32\x20\x36\x2e\x32\x32\x6c\x32\x2e\x31\x32\x20\x32\x2e\x31\x32\x4d\x33\x20\x31\x34\x68\x33\x4d\x31\x38\x20\x31\x34\x68\x33\x4d\x31\x37\x2e\x36\x36\x20\x38\x2e\x33\x34\x6c\x32\x2e\x31\x32\x2d\x32\x2e\x31\x32\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x38\x2e\x35\x20\x31\x38\x68\x37\x4d\x39\x2e\x35\x20\x32\x31\x68\x35\x4d\x31\x32\x20\x38\x61\x35\x20\x35\x20\x30\x20\x30\x20\x30\x2d\x33\x20\x39\x68\x36\x61\x35\x20\x35\x20\x30\x20\x30\x20\x30\x2d\x33\x2d\x39\x5a\x22\x2f\x3e"
       };
-      return `<svg aria-hidden="true" viewBox="0 0 24 24">${t[e] || t.ideas}</svg>`;
-    }(n)}</span><span class="ai-starter-copy"><strong>${je(t)}</strong></span></button>`;
+      return `\x3c\x73\x76\x67\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x3e${_0x9efee5_1[_0x9efee5_0] || _0x9efee5_1.ideas}\x3c\x2f\x73\x76\x67\x3e`;
+    }(_0x9efee5_2)}\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x73\x74\x61\x72\x74\x65\x72\x2d\x63\x6f\x70\x79\x22\x3e\x3c\x73\x74\x72\x6f\x6e\x67\x3e${_0x9efee5_5a(_0x9efee5_1)}\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e`;
   }
-  function bt() {
-    const e = [ ...he ].sort((e, t) => t.updatedAt - e.updatedAt), t = q.value.trim().toLowerCase(), n = t ? e.filter(e => `${e.title}\n${e.messages.map(e => e.content).join("\n")}`.toLowerCase().includes(t)) : e;
-    U.textContent = t ? `${n.length}/${e.length}` : String(e.length), O.hidden = n.length > 0, 
-    O.textContent = e.length && t ? "No matching chats." : "No chats yet.", j.innerHTML = n.map(e => `<div role="listitem"><button class="ai-thread-button" type="button" data-thread-id="${je(e.id)}" aria-current="${ye || e.id !== fe ? "false" : "true"}"><span class="ai-thread-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 5h14v11H9l-4 3V5Z"/></svg></span><span class="ai-thread-copy"><strong>${je(e.title)}</strong><small>${je(function(e) {
-      const t = new Date(Number(e) || Date.now()), n = new Date;
-      if (t.toDateString() === n.toDateString()) return t.toLocaleTimeString([], {
-        hour: "numeric",
-        minute: "2-digit"
+  function _0x9efee5_7f() {
+    const _0x9efee5_0 = [ ..._0x9efee5_45 ].sort((_0x9efee5_0, _0x9efee5_1) => _0x9efee5_1.updatedAt - _0x9efee5_0.updatedAt), _0x9efee5_1 = _0x9efee5_27.value.trim().toLowerCase(), _0x9efee5_2 = _0x9efee5_1 ? _0x9efee5_0.filter(_0x9efee5_0 => `${_0x9efee5_0.title}\x0a${_0x9efee5_0.messages.map(_0x9efee5_0 => _0x9efee5_0.content).join("\x0a")}`.toLowerCase().includes(_0x9efee5_1)) : _0x9efee5_0;
+    _0x9efee5_25.textContent = _0x9efee5_1 ? `${_0x9efee5_2.length}\x2f${_0x9efee5_0.length}` : String(_0x9efee5_0.length), 
+    _0x9efee5_26.hidden = _0x9efee5_2.length > 0, _0x9efee5_26.textContent = _0x9efee5_0.length && _0x9efee5_1 ? "\x4e\x6f\x20\x6d\x61\x74\x63\x68\x69\x6e\x67\x20\x63\x68\x61\x74\x73\x2e" : "\x4e\x6f\x20\x63\x68\x61\x74\x73\x20\x79\x65\x74\x2e", 
+    _0x9efee5_24.innerHTML = _0x9efee5_2.map(_0x9efee5_0 => `\x3c\x64\x69\x76\x20\x72\x6f\x6c\x65\x3d\x22\x6c\x69\x73\x74\x69\x74\x65\x6d\x22\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x74\x68\x72\x65\x61\x64\x2d\x62\x75\x74\x74\x6f\x6e\x22\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x74\x68\x72\x65\x61\x64\x2d\x69\x64\x3d\x22${_0x9efee5_5a(_0x9efee5_0.id)}\x22\x20\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74\x3d\x22${_0x9efee5_47 || _0x9efee5_0.id !== _0x9efee5_46 ? "\x66\x61\x6c\x73\x65" : "\x74\x72\x75\x65"}\x22\x3e\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x74\x68\x72\x65\x61\x64\x2d\x69\x63\x6f\x6e\x22\x3e\x3c\x73\x76\x67\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x35\x20\x35\x68\x31\x34\x76\x31\x31\x48\x39\x6c\x2d\x34\x20\x33\x56\x35\x5a\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x74\x68\x72\x65\x61\x64\x2d\x63\x6f\x70\x79\x22\x3e\x3c\x73\x74\x72\x6f\x6e\x67\x3e${_0x9efee5_5a(_0x9efee5_0.title)}\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e\x3c\x73\x6d\x61\x6c\x6c\x3e${_0x9efee5_5a(function(_0x9efee5_0) {
+      const _0x9efee5_1 = new Date(Number(_0x9efee5_0) || Date.now()), _0x9efee5_2 = new Date;
+      if (_0x9efee5_1.toDateString() === _0x9efee5_2.toDateString()) return _0x9efee5_1.toLocaleTimeString([], {
+        hour: "\x6e\x75\x6d\x65\x72\x69\x63",
+        minute: "\x32\x2d\x64\x69\x67\x69\x74"
       });
-      const a = new Date(n);
-      return a.setDate(n.getDate() - 1), t.toDateString() === a.toDateString() ? "Yesterday" : t.toLocaleDateString([], {
-        month: "short",
-        day: "numeric"
+      const _0x9efee5_3 = new Date(_0x9efee5_2);
+      return _0x9efee5_3.setDate(_0x9efee5_2.getDate() - 1), _0x9efee5_1.toDateString() === _0x9efee5_3.toDateString() ? "\x59\x65\x73\x74\x65\x72\x64\x61\x79" : _0x9efee5_1.toLocaleDateString([], {
+        month: "\x73\x68\x6f\x72\x74",
+        day: "\x6e\x75\x6d\x65\x72\x69\x63"
       });
-    }(e.updatedAt))}</small></span></button></div>`).join(""), D.setAttribute("aria-pressed", String(ye));
+    }(_0x9efee5_0.updatedAt))}\x3c\x2f\x73\x6d\x61\x6c\x6c\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x2f\x64\x69\x76\x3e`).join(""), _0x9efee5_23.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x9efee5_47));
   }
-  function wt() {
-    ce?.abort(), ce = null, on(!1);
+  function _0x9efee5_80() {
+    _0x9efee5_3f?.abort(), _0x9efee5_3f = null, _0x9efee5_a6(!1);
   }
-  function xt(e) {
-    g.classList.toggle("is-sidebar-open", Boolean(e)), N.setAttribute("aria-expanded", String(Boolean(e)));
+  function _0x9efee5_81(_0x9efee5_0) {
+    _0x9efee5_d.classList.toggle("\x69\x73\x2d\x73\x69\x64\x65\x62\x61\x72\x2d\x6f\x70\x65\x6e", Boolean(_0x9efee5_0)), _0x9efee5_1f.setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String(Boolean(_0x9efee5_0)));
   }
-  function Et({temporary: e = !1} = {}) {
-    if (wt(), ot(), ye = e, ve = [], fe = "", !e) {
+  function _0x9efee5_82({temporary: _0x9efee5_0 = !1} = {}) {
+    if (_0x9efee5_80(), _0x9efee5_70(), _0x9efee5_47 = _0x9efee5_0, _0x9efee5_48 = [], 
+    _0x9efee5_46 = "", !_0x9efee5_0) {
       try {
-        localStorage.removeItem(n);
+        localStorage.removeItem(_0x9efee5_2);
       } catch {}
-      Ve([]);
+      _0x9efee5_67([]);
     }
-    bt(), Lt(), y.value = "", nn(), y.focus();
+    _0x9efee5_7f(), _0x9efee5_88(), _0x9efee5_11.value = "", _0x9efee5_a4(), _0x9efee5_11.focus();
   }
-  const kt = Object.freeze({
-    0: "#000000",
-    1: "#0000aa",
-    2: "#00aa00",
-    3: "#00aaaa",
-    4: "#aa0000",
-    5: "#aa00aa",
-    6: "#ffaa00",
-    7: "#aaaaaa",
-    8: "#555555",
-    9: "#5555ff",
-    a: "#55ff55",
-    b: "#55ffff",
-    c: "#ff5555",
-    d: "#ff55ff",
-    e: "#ffff55",
-    f: "#ffffff"
+  const _0x9efee5_83 = Object.freeze({
+    0: "\x23\x30\x30\x30\x30\x30\x30",
+    1: "\x23\x30\x30\x30\x30\x61\x61",
+    2: "\x23\x30\x30\x61\x61\x30\x30",
+    3: "\x23\x30\x30\x61\x61\x61\x61",
+    4: "\x23\x61\x61\x30\x30\x30\x30",
+    5: "\x23\x61\x61\x30\x30\x61\x61",
+    6: "\x23\x66\x66\x61\x61\x30\x30",
+    7: "\x23\x61\x61\x61\x61\x61\x61",
+    8: "\x23\x35\x35\x35\x35\x35\x35",
+    9: "\x23\x35\x35\x35\x35\x66\x66",
+    a: "\x23\x35\x35\x66\x66\x35\x35",
+    b: "\x23\x35\x35\x66\x66\x66\x66",
+    c: "\x23\x66\x66\x35\x35\x35\x35",
+    d: "\x23\x66\x66\x35\x35\x66\x66",
+    e: "\x23\x66\x66\x66\x66\x35\x35",
+    f: "\x23\x66\x66\x66\x66\x66\x66"
   });
-  function St(e) {
-    return String(e || "").replace(/&[0-9a-fklmnor]/gi, "").trim();
+  function _0x9efee5_84(_0x9efee5_0) {
+    return String(_0x9efee5_0 || "").replace(/&[0-9a-fklmnor]/gi, "").trim();
   }
-  function It(e = {}) {
-    const t = String(localStorage.getItem("nyx.userName") || "Profile").trim() || "Profile", n = String(e.displayName || t).trim() || "Profile", a = String(e.handle || "Open your Nyx profile").trim(), o = String(e.avatarUrl || "").trim();
-    !function(e, t) {
-      const n = String(t || ""), a = /&([0-9a-fklmnor])/gi, o = document.createDocumentFragment();
-      let i, r = 0, s = {};
-      const l = e => {
-        if (!e) return;
-        const t = document.createElement("span");
-        t.textContent = e, s.color && (t.style.color = s.color), s.bold && (t.style.fontWeight = "900"), 
-        s.italic && (t.style.fontStyle = "italic");
-        const n = [];
-        s.underline && n.push("underline"), s.strike && n.push("line-through"), n.length && (t.style.textDecoration = n.join(" ")), 
-        s.magic && t.classList.add("ai-minecraft-magic"), o.append(t);
+  function _0x9efee5_85(_0x9efee5_0 = {}) {
+    const _0x9efee5_1 = String(localStorage.getItem("\x6e\x79\x78\x2e\x75\x73\x65\x72\x4e\x61\x6d\x65") || "\x50\x72\x6f\x66\x69\x6c\x65").trim() || "\x50\x72\x6f\x66\x69\x6c\x65", _0x9efee5_2 = String(_0x9efee5_0.displayName || _0x9efee5_1).trim() || "\x50\x72\x6f\x66\x69\x6c\x65", _0x9efee5_3 = String(_0x9efee5_0.handle || "\x4f\x70\x65\x6e\x20\x79\x6f\x75\x72\x20\x4e\x79\x78\x20\x70\x72\x6f\x66\x69\x6c\x65").trim(), _0x9efee5_4 = String(_0x9efee5_0.avatarUrl || "").trim();
+    !function(_0x9efee5_0, _0x9efee5_1) {
+      const _0x9efee5_2 = String(_0x9efee5_1 || ""), _0x9efee5_3 = /&([0-9a-fklmnor])/gi, _0x9efee5_4 = document.createDocumentFragment();
+      let _0x9efee5_5, _0x9efee5_6 = 0, _0x9efee5_7 = {};
+      const _0x9efee5_8 = _0x9efee5_0 => {
+        if (!_0x9efee5_0) return;
+        const _0x9efee5_1 = document.createElement("\x73\x70\x61\x6e");
+        _0x9efee5_1.textContent = _0x9efee5_0, _0x9efee5_7.color && (_0x9efee5_1.style.color = _0x9efee5_7.color), 
+        _0x9efee5_7.bold && (_0x9efee5_1.style.fontWeight = "\x39\x30\x30"), _0x9efee5_7.italic && (_0x9efee5_1.style.fontStyle = "\x69\x74\x61\x6c\x69\x63");
+        const _0x9efee5_2 = [];
+        _0x9efee5_7.underline && _0x9efee5_2.push("\x75\x6e\x64\x65\x72\x6c\x69\x6e\x65"), _0x9efee5_7.strike && _0x9efee5_2.push("\x6c\x69\x6e\x65\x2d\x74\x68\x72\x6f\x75\x67\x68"), 
+        _0x9efee5_2.length && (_0x9efee5_1.style.textDecoration = _0x9efee5_2.join("\x20")), 
+        _0x9efee5_7.magic && _0x9efee5_1.classList.add("\x61\x69\x2d\x6d\x69\x6e\x65\x63\x72\x61\x66\x74\x2d\x6d\x61\x67\x69\x63"), _0x9efee5_4.append(_0x9efee5_1);
       };
-      for (;i = a.exec(n); ) {
-        l(n.slice(r, i.index)), r = a.lastIndex;
-        const e = i[1].toLowerCase();
-        kt[e] ? s = {
-          color: kt[e]
-        } : "l" === e ? s.bold = !0 : "o" === e ? s.italic = !0 : "n" === e ? s.underline = !0 : "m" === e ? s.strike = !0 : "k" === e ? s.magic = !0 : "r" === e && (s = {});
+      for (;_0x9efee5_5 = _0x9efee5_3.exec(_0x9efee5_2); ) {
+        _0x9efee5_8(_0x9efee5_2.slice(_0x9efee5_6, _0x9efee5_5.index)), _0x9efee5_6 = _0x9efee5_3.lastIndex;
+        const _0x9efee5_0 = _0x9efee5_5[1].toLowerCase();
+        _0x9efee5_83[_0x9efee5_0] ? _0x9efee5_7 = {
+          color: _0x9efee5_83[_0x9efee5_0]
+        } : "\x6c" === _0x9efee5_0 ? _0x9efee5_7.bold = !0 : "\x6f" === _0x9efee5_0 ? _0x9efee5_7.italic = !0 : "\x6e" === _0x9efee5_0 ? _0x9efee5_7.underline = !0 : "\x6d" === _0x9efee5_0 ? _0x9efee5_7.strike = !0 : "\x6b" === _0x9efee5_0 ? _0x9efee5_7.magic = !0 : "\x72" === _0x9efee5_0 && (_0x9efee5_7 = {});
       }
-      l(n.slice(r)), e.replaceChildren(o), e.title = St(n) || "Profile";
-    }(G, n), V.textContent = a, K.textContent = (Array.from(St(n))[0] || "N").toUpperCase(), 
-    /^(?:https?:|blob:|data:image\/|\/)/i.test(o) ? (J.src = o, J.hidden = !1, K.hidden = !0) : (J.removeAttribute("src"), 
-    J.hidden = !0, K.hidden = !1);
+      _0x9efee5_8(_0x9efee5_2.slice(_0x9efee5_6)), _0x9efee5_0.replaceChildren(_0x9efee5_4), 
+      _0x9efee5_0.title = _0x9efee5_84(_0x9efee5_2) || "\x50\x72\x6f\x66\x69\x6c\x65";
+    }(_0x9efee5_30, _0x9efee5_2), _0x9efee5_31.textContent = _0x9efee5_3, _0x9efee5_2f.textContent = (Array.from(_0x9efee5_84(_0x9efee5_2))[0] || "\x4e").toUpperCase(), 
+    /^(?:https?:|blob:|data:image\/|\/)/i.test(_0x9efee5_4) ? (_0x9efee5_2e.src = _0x9efee5_4, 
+    _0x9efee5_2e.hidden = !1, _0x9efee5_2f.hidden = !0) : (_0x9efee5_2e.removeAttribute("\x73\x72\x63"), 
+    _0x9efee5_2e.hidden = !0, _0x9efee5_2f.hidden = !1);
   }
-  function At() {
-    It(), parent !== window && parent.postMessage({
-      type: "nyx:ai-profile-request"
+  function _0x9efee5_86() {
+    _0x9efee5_85(), parent !== window && parent.postMessage({
+      type: "\x6e\x79\x78\x3a\x61\x69\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2d\x72\x65\x71\x75\x65\x73\x74"
     }, location.origin);
   }
-  function Ct(e) {
-    const t = e.find(e => "user" === e.role)?.content || "";
-    L.textContent = ye && !t ? "Temporary chat" : t ? t.length > 58 ? `${t.slice(0, 58)}\u2026` : t : "New conversation";
+  function _0x9efee5_87(_0x9efee5_0) {
+    const _0x9efee5_1 = _0x9efee5_0.find(_0x9efee5_0 => "\x75\x73\x65\x72" === _0x9efee5_0.role)?.content || "";
+    _0x9efee5_1c.textContent = _0x9efee5_47 && !_0x9efee5_1 ? "\x54\x65\x6d\x70\x6f\x72\x61\x72\x79\x20\x63\x68\x61\x74" : _0x9efee5_1 ? _0x9efee5_1.length > 58 ? `${_0x9efee5_1.slice(0, 58)}\u2026` : _0x9efee5_1 : "\x4e\x65\x77\x20\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e";
   }
-  function Lt() {
-    const e = Ze();
-    if (h.innerHTML = "", e.length) {
-      h.classList.remove("is-empty");
-      let t = Math.max(0, e.length - 40);
-      const n = e => yt(e.role, e.content, {
-        attachment: e.textAttachment || null,
-        imageId: e.imageId,
-        mediaJobId: e.mediaJobId,
-        metadata: e.metadata,
-        timing: e.timing,
-        modelId: e.modelId,
-        modelName: e.modelName,
-        finishReason: e.finishReason
+  function _0x9efee5_88() {
+    const _0x9efee5_0 = _0x9efee5_69();
+    if (_0x9efee5_f.innerHTML = "", _0x9efee5_0.length) {
+      _0x9efee5_f.classList.remove("\x69\x73\x2d\x65\x6d\x70\x74\x79");
+      let _0x9efee5_1 = Math.max(0, _0x9efee5_0.length - 40);
+      const _0x9efee5_2 = _0x9efee5_0 => _0x9efee5_7d(_0x9efee5_0.role, _0x9efee5_0.content, {
+        attachment: _0x9efee5_0.textAttachment || null,
+        imageId: _0x9efee5_0.imageId,
+        mediaJobId: _0x9efee5_0.mediaJobId,
+        metadata: _0x9efee5_0.metadata,
+        timing: _0x9efee5_0.timing,
+        modelId: _0x9efee5_0.modelId,
+        modelName: _0x9efee5_0.modelName,
+        finishReason: _0x9efee5_0.finishReason
       });
-      if (e.slice(t).forEach(n), t) {
-        const a = document.createElement("button");
-        a.type = "button", a.className = "ai-history-earlier", a.textContent = "Load earlier messages", 
-        a.addEventListener("click", () => {
-          const o = p.scrollHeight, i = p.scrollTop, r = Math.max(0, t - 40), l = document.createDocumentFragment();
-          s = !0;
+      if (_0x9efee5_0.slice(_0x9efee5_1).forEach(_0x9efee5_2), _0x9efee5_1) {
+        const _0x9efee5_3 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+        _0x9efee5_3.type = "\x62\x75\x74\x74\x6f\x6e", _0x9efee5_3.className = "\x61\x69\x2d\x68\x69\x73\x74\x6f\x72\x79\x2d\x65\x61\x72\x6c\x69\x65\x72", _0x9efee5_3.textContent = "\x4c\x6f\x61\x64\x20\x65\x61\x72\x6c\x69\x65\x72\x20\x6d\x65\x73\x73\x61\x67\x65\x73", 
+        _0x9efee5_3.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+          const _0x9efee5_4 = _0x9efee5_e.scrollHeight, _0x9efee5_5 = _0x9efee5_e.scrollTop, _0x9efee5_6 = Math.max(0, _0x9efee5_1 - 40), _0x9efee5_8 = document.createDocumentFragment();
+          _0x9efee5_7 = !0;
           try {
-            e.slice(r, t).forEach(e => l.append(n(e)));
+            _0x9efee5_0.slice(_0x9efee5_6, _0x9efee5_1).forEach(_0x9efee5_0 => _0x9efee5_8.append(_0x9efee5_2(_0x9efee5_0)));
           } finally {
-            s = !1;
+            _0x9efee5_7 = !1;
           }
-          a.after(l), t = r, t || a.remove(), p.scrollTop = i + p.scrollHeight - o;
-        }), h.prepend(a);
+          _0x9efee5_3.after(_0x9efee5_8), _0x9efee5_1 = _0x9efee5_6, _0x9efee5_1 || _0x9efee5_3.remove(), 
+          _0x9efee5_e.scrollTop = _0x9efee5_5 + _0x9efee5_e.scrollHeight - _0x9efee5_4;
+        }), _0x9efee5_f.prepend(_0x9efee5_3);
       }
-    } else h.classList.add("is-empty"), h.innerHTML = `<section class="ai-welcome" data-ai-welcome>\n      <h2>What's on your mind?</h2>\n      <div class="ai-starters">\n        ${vt("Help me plan and build a new project from scratch", "Plan a project", "project")}\n        ${vt("Explain quantum computing in simple terms with a useful analogy", "Explain something", "explain")}\n        ${vt("Review this code for bugs, clarity, and performance improvements", "Review my code", "code")}\n        ${vt("Brainstorm ten original ideas for a creative side project", "Brainstorm ideas", "ideas")}\n      </div>\n    </section>`;
-    Ct(e), Qe();
+    } else _0x9efee5_f.classList.add("\x69\x73\x2d\x65\x6d\x70\x74\x79"), _0x9efee5_f.innerHTML = `\x3c\x73\x65\x63\x74\x69\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x77\x65\x6c\x63\x6f\x6d\x65\x22\x20\x64\x61\x74\x61\x2d\x61\x69\x2d\x77\x65\x6c\x63\x6f\x6d\x65\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x68\x32\x3e\x57\x68\x61\x74\x27\x73\x20\x6f\x6e\x20\x79\x6f\x75\x72\x20\x6d\x69\x6e\x64\x3f\x3c\x2f\x68\x32\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x73\x74\x61\x72\x74\x65\x72\x73\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20${_0x9efee5_7e("\x48\x65\x6c\x70\x20\x6d\x65\x20\x70\x6c\x61\x6e\x20\x61\x6e\x64\x20\x62\x75\x69\x6c\x64\x20\x61\x20\x6e\x65\x77\x20\x70\x72\x6f\x6a\x65\x63\x74\x20\x66\x72\x6f\x6d\x20\x73\x63\x72\x61\x74\x63\x68", "\x50\x6c\x61\x6e\x20\x61\x20\x70\x72\x6f\x6a\x65\x63\x74", "\x70\x72\x6f\x6a\x65\x63\x74")}\x0a\x20\x20\x20\x20\x20\x20\x20\x20${_0x9efee5_7e("\x45\x78\x70\x6c\x61\x69\x6e\x20\x71\x75\x61\x6e\x74\x75\x6d\x20\x63\x6f\x6d\x70\x75\x74\x69\x6e\x67\x20\x69\x6e\x20\x73\x69\x6d\x70\x6c\x65\x20\x74\x65\x72\x6d\x73\x20\x77\x69\x74\x68\x20\x61\x20\x75\x73\x65\x66\x75\x6c\x20\x61\x6e\x61\x6c\x6f\x67\x79", "\x45\x78\x70\x6c\x61\x69\x6e\x20\x73\x6f\x6d\x65\x74\x68\x69\x6e\x67", "\x65\x78\x70\x6c\x61\x69\x6e")}\x0a\x20\x20\x20\x20\x20\x20\x20\x20${_0x9efee5_7e("\x52\x65\x76\x69\x65\x77\x20\x74\x68\x69\x73\x20\x63\x6f\x64\x65\x20\x66\x6f\x72\x20\x62\x75\x67\x73\x2c\x20\x63\x6c\x61\x72\x69\x74\x79\x2c\x20\x61\x6e\x64\x20\x70\x65\x72\x66\x6f\x72\x6d\x61\x6e\x63\x65\x20\x69\x6d\x70\x72\x6f\x76\x65\x6d\x65\x6e\x74\x73", "\x52\x65\x76\x69\x65\x77\x20\x6d\x79\x20\x63\x6f\x64\x65", "\x63\x6f\x64\x65")}\x0a\x20\x20\x20\x20\x20\x20\x20\x20${_0x9efee5_7e("\x42\x72\x61\x69\x6e\x73\x74\x6f\x72\x6d\x20\x74\x65\x6e\x20\x6f\x72\x69\x67\x69\x6e\x61\x6c\x20\x69\x64\x65\x61\x73\x20\x66\x6f\x72\x20\x61\x20\x63\x72\x65\x61\x74\x69\x76\x65\x20\x73\x69\x64\x65\x20\x70\x72\x6f\x6a\x65\x63\x74", "\x42\x72\x61\x69\x6e\x73\x74\x6f\x72\x6d\x20\x69\x64\x65\x61\x73", "\x69\x64\x65\x61\x73")}\x0a\x20\x20\x20\x20\x20\x20\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x3c\x2f\x73\x65\x63\x74\x69\x6f\x6e\x3e`;
+    _0x9efee5_87(_0x9efee5_0), _0x9efee5_6b();
   }
-  function Mt(e) {
-    return ge.find(t => t.id === e)?.label || e;
+  function _0x9efee5_89(_0x9efee5_0) {
+    return _0x9efee5_43.find(_0x9efee5_1 => _0x9efee5_1.id === _0x9efee5_0)?.label || _0x9efee5_0;
   }
-  const $t = {
-    openai: [ "OpenAI", "openai" ],
-    anthropic: [ "Anthropic", "anthropic" ],
-    google: [ "Google", "gemini" ],
-    deepseek: [ "DeepSeek", "deepseek" ],
-    qwen: [ "Qwen", "qwen" ],
-    "x-ai": [ "xAI", "xai" ],
-    xai: [ "xAI", "xai" ],
-    mistralai: [ "Mistral", "mistral" ],
-    moonshotai: [ "Moonshot", "moonshot" ],
-    "z-ai": [ "Z.ai", "zai" ],
-    inception: [ "Inception", "inception" ],
-    nvidia: [ "NVIDIA", "nvidia" ],
-    "meta-llama": [ "Meta", "meta" ],
-    cohere: [ "Cohere", "cohere" ],
-    minimax: [ "MiniMax", "minimax" ],
-    openrouter: [ "OpenRouter", "openrouter" ],
-    xiaomi: [ "Xiaomi", "xiaomimimo" ],
-    amazon: [ "Amazon", "aws" ],
-    microsoft: [ "Microsoft", "microsoft" ],
-    perplexity: [ "Perplexity", "perplexity" ],
-    stepfun: [ "StepFun", "stepfun" ],
-    baidu: [ "Baidu", "baidu" ],
-    bytedance: [ "ByteDance", "bytedance" ],
-    arcee: [ "Arcee", "arcee" ],
-    ai21: [ "AI21", "ai21" ],
-    "arcee-ai": [ "Arcee", "arcee" ],
-    "bytedance-seed": [ "ByteDance", "bytedance" ],
-    meta: [ "Meta", "meta" ],
-    "aion-labs": [ "Aion Labs", "aionlabs" ],
-    tencent: [ "Tencent", "tencent" ],
-    sakana: [ "Sakana AI", "sakana" ],
-    poolside: [ "Poolside", "poolside" ],
-    upstage: [ "Upstage", "upstage" ],
-    nousresearch: [ "Nous Research", "nousresearch" ],
-    perceptron: [ "Perceptron", "perceptron" ],
-    "inference-net": [ "Inference.net", "inference" ],
-    "ibm-granite": [ "IBM", "ibm" ],
-    rekaai: [ "Reka", "reka" ],
-    relace: [ "Relace", "relace" ],
-    morph: [ "Morph", "morph" ],
-    fireworks: [ "Fireworks", "fireworks" ],
-    "dots-studio": [ "Dots", "dotsstudio" ],
-    liquid: [ "Liquid AI", "liquid" ],
-    kwaipilot: [ "Kwai", "kwaipilot" ],
-    meituan: [ "Meituan", "longcat" ],
-    thinkingmachines: [ "Thinking Machines", "thinkingmachines" ],
-    inclusionai: [ "InclusionAI", "inclusionai" ],
-    thedrummer: [ "TheDrummer", "thedrummer" ],
-    typesafe: [ "TypeSafe", "typesafe" ],
-    unbiased: [ "Unbiased", "unbiased" ],
-    writer: [ "Writer", "writer" ],
-    stealth: [ "Stealth", "stealth" ],
-    sao10k: [ "Sao10K", "sao10k" ],
-    "anthracite-org": [ "Anthracite", "anthracite-org" ],
-    gryphe: [ "Gryphe", "gryphe" ],
-    undi95: [ "Undi95", "undi95" ],
-    cognitivecomputations: [ "Cognitive Computations", "cognitivecomputations" ],
-    "prism-ml": [ "PrismML", "prism-ml" ],
-    mancer: [ "Mancer", "mancer" ],
-    "black-forest-labs": [ "Black Forest Labs", "flux" ],
-    recraft: [ "Recraft", "recraft" ],
-    runway: [ "Runway", "runway" ],
-    kwaivgi: [ "Kling", "kling" ],
-    elevenlabs: [ "ElevenLabs", "elevenlabs" ],
-    assemblyai: [ "AssemblyAI", "assemblyai" ],
-    suno: [ "Suno", "suno" ],
-    alibaba: [ "Alibaba", "alibaba" ],
-    apodex: [ "Apodex", "apodex" ],
-    heygen: [ "HeyGen", "heygen" ],
-    togethercomputer: [ "Together", "togethercomputer" ],
-    voyageai: [ "Voyage AI", "voyageai" ],
-    respan: [ "Respan", "respan" ],
-    jaredpalmer: [ "Jared Palmer", "jaredpalmer" ],
-    "fish-audio": [ "Fish Audio", "fish-audio" ],
-    "nex-agi": [ "Nex AGI", "nex-agi" ],
-    deepgram: [ "Deepgram", "deepgram" ],
-    krea: [ "Krea", "krea" ],
-    sourceful: [ "Sourceful", "sourceful" ],
-    canopylabs: [ "Canopy Labs", "canopylabs" ],
-    sesame: [ "Sesame", "sesame" ],
-    hexgrad: [ "Hexgrad", "hexgrad" ],
-    thenlper: [ "Thenlper", "thenlper" ],
-    intfloat: [ "Intfloat", "intfloat" ],
-    "sentence-transformers": [ "Sentence Transformers", "sentence-transformers" ],
-    baai: [ "BAAI", "baai" ]
+  const _0x9efee5_8a = {
+    openai: [ "\x4f\x70\x65\x6e\x41\x49", "\x6f\x70\x65\x6e\x61\x69" ],
+    anthropic: [ "\x41\x6e\x74\x68\x72\x6f\x70\x69\x63", "\x61\x6e\x74\x68\x72\x6f\x70\x69\x63" ],
+    google: [ "\x47\x6f\x6f\x67\x6c\x65", "\x67\x65\x6d\x69\x6e\x69" ],
+    deepseek: [ "\x44\x65\x65\x70\x53\x65\x65\x6b", "\x64\x65\x65\x70\x73\x65\x65\x6b" ],
+    qwen: [ "\x51\x77\x65\x6e", "\x71\x77\x65\x6e" ],
+    "\x78\x2d\x61\x69": [ "\x78\x41\x49", "\x78\x61\x69" ],
+    xai: [ "\x78\x41\x49", "\x78\x61\x69" ],
+    mistralai: [ "\x4d\x69\x73\x74\x72\x61\x6c", "\x6d\x69\x73\x74\x72\x61\x6c" ],
+    moonshotai: [ "\x4d\x6f\x6f\x6e\x73\x68\x6f\x74", "\x6d\x6f\x6f\x6e\x73\x68\x6f\x74" ],
+    "\x7a\x2d\x61\x69": [ "\x5a\x2e\x61\x69", "\x7a\x61\x69" ],
+    inception: [ "\x49\x6e\x63\x65\x70\x74\x69\x6f\x6e", "\x69\x6e\x63\x65\x70\x74\x69\x6f\x6e" ],
+    nvidia: [ "\x4e\x56\x49\x44\x49\x41", "\x6e\x76\x69\x64\x69\x61" ],
+    "\x6d\x65\x74\x61\x2d\x6c\x6c\x61\x6d\x61": [ "\x4d\x65\x74\x61", "\x6d\x65\x74\x61" ],
+    cohere: [ "\x43\x6f\x68\x65\x72\x65", "\x63\x6f\x68\x65\x72\x65" ],
+    minimax: [ "\x4d\x69\x6e\x69\x4d\x61\x78", "\x6d\x69\x6e\x69\x6d\x61\x78" ],
+    openrouter: [ "\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72", "\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72" ],
+    xiaomi: [ "\x58\x69\x61\x6f\x6d\x69", "\x78\x69\x61\x6f\x6d\x69\x6d\x69\x6d\x6f" ],
+    amazon: [ "\x41\x6d\x61\x7a\x6f\x6e", "\x61\x77\x73" ],
+    microsoft: [ "\x4d\x69\x63\x72\x6f\x73\x6f\x66\x74", "\x6d\x69\x63\x72\x6f\x73\x6f\x66\x74" ],
+    perplexity: [ "\x50\x65\x72\x70\x6c\x65\x78\x69\x74\x79", "\x70\x65\x72\x70\x6c\x65\x78\x69\x74\x79" ],
+    stepfun: [ "\x53\x74\x65\x70\x46\x75\x6e", "\x73\x74\x65\x70\x66\x75\x6e" ],
+    baidu: [ "\x42\x61\x69\x64\x75", "\x62\x61\x69\x64\x75" ],
+    bytedance: [ "\x42\x79\x74\x65\x44\x61\x6e\x63\x65", "\x62\x79\x74\x65\x64\x61\x6e\x63\x65" ],
+    arcee: [ "\x41\x72\x63\x65\x65", "\x61\x72\x63\x65\x65" ],
+    ai21: [ "\x41\x49\x32\x31", "\x61\x69\x32\x31" ],
+    "\x61\x72\x63\x65\x65\x2d\x61\x69": [ "\x41\x72\x63\x65\x65", "\x61\x72\x63\x65\x65" ],
+    "\x62\x79\x74\x65\x64\x61\x6e\x63\x65\x2d\x73\x65\x65\x64": [ "\x42\x79\x74\x65\x44\x61\x6e\x63\x65", "\x62\x79\x74\x65\x64\x61\x6e\x63\x65" ],
+    meta: [ "\x4d\x65\x74\x61", "\x6d\x65\x74\x61" ],
+    "\x61\x69\x6f\x6e\x2d\x6c\x61\x62\x73": [ "\x41\x69\x6f\x6e\x20\x4c\x61\x62\x73", "\x61\x69\x6f\x6e\x6c\x61\x62\x73" ],
+    tencent: [ "\x54\x65\x6e\x63\x65\x6e\x74", "\x74\x65\x6e\x63\x65\x6e\x74" ],
+    sakana: [ "\x53\x61\x6b\x61\x6e\x61\x20\x41\x49", "\x73\x61\x6b\x61\x6e\x61" ],
+    poolside: [ "\x50\x6f\x6f\x6c\x73\x69\x64\x65", "\x70\x6f\x6f\x6c\x73\x69\x64\x65" ],
+    upstage: [ "\x55\x70\x73\x74\x61\x67\x65", "\x75\x70\x73\x74\x61\x67\x65" ],
+    nousresearch: [ "\x4e\x6f\x75\x73\x20\x52\x65\x73\x65\x61\x72\x63\x68", "\x6e\x6f\x75\x73\x72\x65\x73\x65\x61\x72\x63\x68" ],
+    perceptron: [ "\x50\x65\x72\x63\x65\x70\x74\x72\x6f\x6e", "\x70\x65\x72\x63\x65\x70\x74\x72\x6f\x6e" ],
+    "\x69\x6e\x66\x65\x72\x65\x6e\x63\x65\x2d\x6e\x65\x74": [ "\x49\x6e\x66\x65\x72\x65\x6e\x63\x65\x2e\x6e\x65\x74", "\x69\x6e\x66\x65\x72\x65\x6e\x63\x65" ],
+    "\x69\x62\x6d\x2d\x67\x72\x61\x6e\x69\x74\x65": [ "\x49\x42\x4d", "\x69\x62\x6d" ],
+    rekaai: [ "\x52\x65\x6b\x61", "\x72\x65\x6b\x61" ],
+    relace: [ "\x52\x65\x6c\x61\x63\x65", "\x72\x65\x6c\x61\x63\x65" ],
+    morph: [ "\x4d\x6f\x72\x70\x68", "\x6d\x6f\x72\x70\x68" ],
+    fireworks: [ "\x46\x69\x72\x65\x77\x6f\x72\x6b\x73", "\x66\x69\x72\x65\x77\x6f\x72\x6b\x73" ],
+    "\x64\x6f\x74\x73\x2d\x73\x74\x75\x64\x69\x6f": [ "\x44\x6f\x74\x73", "\x64\x6f\x74\x73\x73\x74\x75\x64\x69\x6f" ],
+    liquid: [ "\x4c\x69\x71\x75\x69\x64\x20\x41\x49", "\x6c\x69\x71\x75\x69\x64" ],
+    kwaipilot: [ "\x4b\x77\x61\x69", "\x6b\x77\x61\x69\x70\x69\x6c\x6f\x74" ],
+    meituan: [ "\x4d\x65\x69\x74\x75\x61\x6e", "\x6c\x6f\x6e\x67\x63\x61\x74" ],
+    thinkingmachines: [ "\x54\x68\x69\x6e\x6b\x69\x6e\x67\x20\x4d\x61\x63\x68\x69\x6e\x65\x73", "\x74\x68\x69\x6e\x6b\x69\x6e\x67\x6d\x61\x63\x68\x69\x6e\x65\x73" ],
+    inclusionai: [ "\x49\x6e\x63\x6c\x75\x73\x69\x6f\x6e\x41\x49", "\x69\x6e\x63\x6c\x75\x73\x69\x6f\x6e\x61\x69" ],
+    thedrummer: [ "\x54\x68\x65\x44\x72\x75\x6d\x6d\x65\x72", "\x74\x68\x65\x64\x72\x75\x6d\x6d\x65\x72" ],
+    typesafe: [ "\x54\x79\x70\x65\x53\x61\x66\x65", "\x74\x79\x70\x65\x73\x61\x66\x65" ],
+    unbiased: [ "\x55\x6e\x62\x69\x61\x73\x65\x64", "\x75\x6e\x62\x69\x61\x73\x65\x64" ],
+    writer: [ "\x57\x72\x69\x74\x65\x72", "\x77\x72\x69\x74\x65\x72" ],
+    stealth: [ "\x53\x74\x65\x61\x6c\x74\x68", "\x73\x74\x65\x61\x6c\x74\x68" ],
+    sao10k: [ "\x53\x61\x6f\x31\x30\x4b", "\x73\x61\x6f\x31\x30\x6b" ],
+    "\x61\x6e\x74\x68\x72\x61\x63\x69\x74\x65\x2d\x6f\x72\x67": [ "\x41\x6e\x74\x68\x72\x61\x63\x69\x74\x65", "\x61\x6e\x74\x68\x72\x61\x63\x69\x74\x65\x2d\x6f\x72\x67" ],
+    gryphe: [ "\x47\x72\x79\x70\x68\x65", "\x67\x72\x79\x70\x68\x65" ],
+    undi95: [ "\x55\x6e\x64\x69\x39\x35", "\x75\x6e\x64\x69\x39\x35" ],
+    cognitivecomputations: [ "\x43\x6f\x67\x6e\x69\x74\x69\x76\x65\x20\x43\x6f\x6d\x70\x75\x74\x61\x74\x69\x6f\x6e\x73", "\x63\x6f\x67\x6e\x69\x74\x69\x76\x65\x63\x6f\x6d\x70\x75\x74\x61\x74\x69\x6f\x6e\x73" ],
+    "\x70\x72\x69\x73\x6d\x2d\x6d\x6c": [ "\x50\x72\x69\x73\x6d\x4d\x4c", "\x70\x72\x69\x73\x6d\x2d\x6d\x6c" ],
+    mancer: [ "\x4d\x61\x6e\x63\x65\x72", "\x6d\x61\x6e\x63\x65\x72" ],
+    "\x62\x6c\x61\x63\x6b\x2d\x66\x6f\x72\x65\x73\x74\x2d\x6c\x61\x62\x73": [ "\x42\x6c\x61\x63\x6b\x20\x46\x6f\x72\x65\x73\x74\x20\x4c\x61\x62\x73", "\x66\x6c\x75\x78" ],
+    recraft: [ "\x52\x65\x63\x72\x61\x66\x74", "\x72\x65\x63\x72\x61\x66\x74" ],
+    runway: [ "\x52\x75\x6e\x77\x61\x79", "\x72\x75\x6e\x77\x61\x79" ],
+    kwaivgi: [ "\x4b\x6c\x69\x6e\x67", "\x6b\x6c\x69\x6e\x67" ],
+    elevenlabs: [ "\x45\x6c\x65\x76\x65\x6e\x4c\x61\x62\x73", "\x65\x6c\x65\x76\x65\x6e\x6c\x61\x62\x73" ],
+    assemblyai: [ "\x41\x73\x73\x65\x6d\x62\x6c\x79\x41\x49", "\x61\x73\x73\x65\x6d\x62\x6c\x79\x61\x69" ],
+    suno: [ "\x53\x75\x6e\x6f", "\x73\x75\x6e\x6f" ],
+    alibaba: [ "\x41\x6c\x69\x62\x61\x62\x61", "\x61\x6c\x69\x62\x61\x62\x61" ],
+    apodex: [ "\x41\x70\x6f\x64\x65\x78", "\x61\x70\x6f\x64\x65\x78" ],
+    heygen: [ "\x48\x65\x79\x47\x65\x6e", "\x68\x65\x79\x67\x65\x6e" ],
+    togethercomputer: [ "\x54\x6f\x67\x65\x74\x68\x65\x72", "\x74\x6f\x67\x65\x74\x68\x65\x72\x63\x6f\x6d\x70\x75\x74\x65\x72" ],
+    voyageai: [ "\x56\x6f\x79\x61\x67\x65\x20\x41\x49", "\x76\x6f\x79\x61\x67\x65\x61\x69" ],
+    respan: [ "\x52\x65\x73\x70\x61\x6e", "\x72\x65\x73\x70\x61\x6e" ],
+    jaredpalmer: [ "\x4a\x61\x72\x65\x64\x20\x50\x61\x6c\x6d\x65\x72", "\x6a\x61\x72\x65\x64\x70\x61\x6c\x6d\x65\x72" ],
+    "\x66\x69\x73\x68\x2d\x61\x75\x64\x69\x6f": [ "\x46\x69\x73\x68\x20\x41\x75\x64\x69\x6f", "\x66\x69\x73\x68\x2d\x61\x75\x64\x69\x6f" ],
+    "\x6e\x65\x78\x2d\x61\x67\x69": [ "\x4e\x65\x78\x20\x41\x47\x49", "\x6e\x65\x78\x2d\x61\x67\x69" ],
+    deepgram: [ "\x44\x65\x65\x70\x67\x72\x61\x6d", "\x64\x65\x65\x70\x67\x72\x61\x6d" ],
+    krea: [ "\x4b\x72\x65\x61", "\x6b\x72\x65\x61" ],
+    sourceful: [ "\x53\x6f\x75\x72\x63\x65\x66\x75\x6c", "\x73\x6f\x75\x72\x63\x65\x66\x75\x6c" ],
+    canopylabs: [ "\x43\x61\x6e\x6f\x70\x79\x20\x4c\x61\x62\x73", "\x63\x61\x6e\x6f\x70\x79\x6c\x61\x62\x73" ],
+    sesame: [ "\x53\x65\x73\x61\x6d\x65", "\x73\x65\x73\x61\x6d\x65" ],
+    hexgrad: [ "\x48\x65\x78\x67\x72\x61\x64", "\x68\x65\x78\x67\x72\x61\x64" ],
+    thenlper: [ "\x54\x68\x65\x6e\x6c\x70\x65\x72", "\x74\x68\x65\x6e\x6c\x70\x65\x72" ],
+    intfloat: [ "\x49\x6e\x74\x66\x6c\x6f\x61\x74", "\x69\x6e\x74\x66\x6c\x6f\x61\x74" ],
+    "\x73\x65\x6e\x74\x65\x6e\x63\x65\x2d\x74\x72\x61\x6e\x73\x66\x6f\x72\x6d\x65\x72\x73": [ "\x53\x65\x6e\x74\x65\x6e\x63\x65\x20\x54\x72\x61\x6e\x73\x66\x6f\x72\x6d\x65\x72\x73", "\x73\x65\x6e\x74\x65\x6e\x63\x65\x2d\x74\x72\x61\x6e\x73\x66\x6f\x72\x6d\x65\x72\x73" ],
+    baai: [ "\x42\x41\x41\x49", "\x62\x61\x61\x69" ]
   };
-  let Nt = "";
-  const Tt = document.getElementById("modelSearch"), Bt = document.getElementById("modelCompanies");
-  function Rt(e) {
-    const t = e.id.split("/")[0].toLowerCase().replace(/^~/, ""), n = $t[t];
+  let _0x9efee5_8b = "";
+  const _0x9efee5_8c = document.getElementById("\x6d\x6f\x64\x65\x6c\x53\x65\x61\x72\x63\x68"), _0x9efee5_8d = document.getElementById("\x6d\x6f\x64\x65\x6c\x43\x6f\x6d\x70\x61\x6e\x69\x65\x73");
+  function _0x9efee5_8e(_0x9efee5_0) {
+    const _0x9efee5_1 = _0x9efee5_0.id.split("\x2f")[0].toLowerCase().replace(/^~/, ""), _0x9efee5_2 = _0x9efee5_8a[_0x9efee5_1];
     return {
-      key: n?.[1] || t,
-      label: n?.[0] || e.company || t || "Other",
-      icon: n?.[1] || ""
+      key: _0x9efee5_2?.[1] || _0x9efee5_1,
+      label: _0x9efee5_2?.[0] || _0x9efee5_0.company || _0x9efee5_1 || "\x4f\x74\x68\x65\x72",
+      icon: _0x9efee5_2?.[1] || ""
     };
   }
-  const Dt = new Set([ "kling", "assemblyai", "alibaba", "aionlabs", "arcee", "aws", "baidu", "bytedance", "claude", "cohere", "deepseek", "fireworks", "gemini", "gemma", "hunyuan", "kimi", "kwaipilot", "longcat", "meta", "microsoft", "minimax", "mistral", "morph", "nvidia", "openrouter", "perplexity", "poolside", "qwen", "sakana", "stepfun", "tencent", "upstage" ]), jt = {
-    thinkingmachines: "thinkingmachines-author.png",
-    inclusionai: "inclusionai-author.png",
-    thedrummer: "thedrummer-author.png",
-    typesafe: "typesafe-author.png",
-    unbiased: "unbiased-author.png",
-    writer: "writer-author.png",
-    stealth: "stealth-author.svg",
-    sao10k: "sao10k-author.webp",
-    "anthracite-org": "anthracite-org-author.webp",
-    gryphe: "gryphe-author.webp",
-    undi95: "undi95-author.webp",
-    cognitivecomputations: "cognitivecomputations-author.png",
-    "prism-ml": "prism-ml-author.png",
-    mancer: "mancer-author.png"
+  const _0x9efee5_8f = new Set([ "\x6b\x6c\x69\x6e\x67", "\x61\x73\x73\x65\x6d\x62\x6c\x79\x61\x69", "\x61\x6c\x69\x62\x61\x62\x61", "\x61\x69\x6f\x6e\x6c\x61\x62\x73", "\x61\x72\x63\x65\x65", "\x61\x77\x73", "\x62\x61\x69\x64\x75", "\x62\x79\x74\x65\x64\x61\x6e\x63\x65", "\x63\x6c\x61\x75\x64\x65", "\x63\x6f\x68\x65\x72\x65", "\x64\x65\x65\x70\x73\x65\x65\x6b", "\x66\x69\x72\x65\x77\x6f\x72\x6b\x73", "\x67\x65\x6d\x69\x6e\x69", "\x67\x65\x6d\x6d\x61", "\x68\x75\x6e\x79\x75\x61\x6e", "\x6b\x69\x6d\x69", "\x6b\x77\x61\x69\x70\x69\x6c\x6f\x74", "\x6c\x6f\x6e\x67\x63\x61\x74", "\x6d\x65\x74\x61", "\x6d\x69\x63\x72\x6f\x73\x6f\x66\x74", "\x6d\x69\x6e\x69\x6d\x61\x78", "\x6d\x69\x73\x74\x72\x61\x6c", "\x6d\x6f\x72\x70\x68", "\x6e\x76\x69\x64\x69\x61", "\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72", "\x70\x65\x72\x70\x6c\x65\x78\x69\x74\x79", "\x70\x6f\x6f\x6c\x73\x69\x64\x65", "\x71\x77\x65\x6e", "\x73\x61\x6b\x61\x6e\x61", "\x73\x74\x65\x70\x66\x75\x6e", "\x74\x65\x6e\x63\x65\x6e\x74", "\x75\x70\x73\x74\x61\x67\x65" ]), _0x9efee5_90 = {
+    thinkingmachines: "\x74\x68\x69\x6e\x6b\x69\x6e\x67\x6d\x61\x63\x68\x69\x6e\x65\x73\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+    inclusionai: "\x69\x6e\x63\x6c\x75\x73\x69\x6f\x6e\x61\x69\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+    thedrummer: "\x74\x68\x65\x64\x72\x75\x6d\x6d\x65\x72\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+    typesafe: "\x74\x79\x70\x65\x73\x61\x66\x65\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+    unbiased: "\x75\x6e\x62\x69\x61\x73\x65\x64\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+    writer: "\x77\x72\x69\x74\x65\x72\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+    stealth: "\x73\x74\x65\x61\x6c\x74\x68\x2d\x61\x75\x74\x68\x6f\x72\x2e\x73\x76\x67",
+    sao10k: "\x73\x61\x6f\x31\x30\x6b\x2d\x61\x75\x74\x68\x6f\x72\x2e\x77\x65\x62\x70",
+    "\x61\x6e\x74\x68\x72\x61\x63\x69\x74\x65\x2d\x6f\x72\x67": "\x61\x6e\x74\x68\x72\x61\x63\x69\x74\x65\x2d\x6f\x72\x67\x2d\x61\x75\x74\x68\x6f\x72\x2e\x77\x65\x62\x70",
+    gryphe: "\x67\x72\x79\x70\x68\x65\x2d\x61\x75\x74\x68\x6f\x72\x2e\x77\x65\x62\x70",
+    undi95: "\x75\x6e\x64\x69\x39\x35\x2d\x61\x75\x74\x68\x6f\x72\x2e\x77\x65\x62\x70",
+    cognitivecomputations: "\x63\x6f\x67\x6e\x69\x74\x69\x76\x65\x63\x6f\x6d\x70\x75\x74\x61\x74\x69\x6f\x6e\x73\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+    "\x70\x72\x69\x73\x6d\x2d\x6d\x6c": "\x70\x72\x69\x73\x6d\x2d\x6d\x6c\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67",
+    mancer: "\x6d\x61\x6e\x63\x65\x72\x2d\x61\x75\x74\x68\x6f\x72\x2e\x70\x6e\x67"
   };
-  function Ut(e) {
-    const t = {
-      apodex: "svg",
-      heygen: "png",
-      togethercomputer: "svg",
-      voyageai: "svg",
-      respan: "png",
-      jaredpalmer: "png",
-      "fish-audio": "svg",
-      "nex-agi": "svg",
-      deepgram: "svg",
-      krea: "svg",
-      sourceful: "png",
-      canopylabs: "png",
-      sesame: "png",
-      hexgrad: "png",
-      thenlper: "png",
-      intfloat: "png",
-      "sentence-transformers": "png",
-      baai: "svg"
+  function _0x9efee5_91(_0x9efee5_0) {
+    const _0x9efee5_1 = {
+      apodex: "\x73\x76\x67",
+      heygen: "\x70\x6e\x67",
+      togethercomputer: "\x73\x76\x67",
+      voyageai: "\x73\x76\x67",
+      respan: "\x70\x6e\x67",
+      jaredpalmer: "\x70\x6e\x67",
+      "\x66\x69\x73\x68\x2d\x61\x75\x64\x69\x6f": "\x73\x76\x67",
+      "\x6e\x65\x78\x2d\x61\x67\x69": "\x73\x76\x67",
+      deepgram: "\x73\x76\x67",
+      krea: "\x73\x76\x67",
+      sourceful: "\x70\x6e\x67",
+      canopylabs: "\x70\x6e\x67",
+      sesame: "\x70\x6e\x67",
+      hexgrad: "\x70\x6e\x67",
+      thenlper: "\x70\x6e\x67",
+      intfloat: "\x70\x6e\x67",
+      "\x73\x65\x6e\x74\x65\x6e\x63\x65\x2d\x74\x72\x61\x6e\x73\x66\x6f\x72\x6d\x65\x72\x73": "\x70\x6e\x67",
+      baai: "\x73\x76\x67"
     };
-    if (t[e.icon]) {
-      const n = `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/ai-companies/${e.icon}-author.${t[e.icon]}`;
-      return [ "baai", "fish-audio", "krea", "deepgram", "voyageai" ].includes(e.icon) ? `<span class="ai-company-logo" style="--company-logo:url('${n}')" aria-hidden="true"></span>` : `<img class="ai-company-logo ai-company-logo-color" src="${n}" alt="" aria-hidden="true" width="22" height="22">`;
+    if (_0x9efee5_1[_0x9efee5_0.icon]) {
+      const _0x9efee5_2 = `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x69\x65\x73\x2f${_0x9efee5_0.icon}\x2d\x61\x75\x74\x68\x6f\x72\x2e${_0x9efee5_1[_0x9efee5_0.icon]}`;
+      return [ "\x62\x61\x61\x69", "\x66\x69\x73\x68\x2d\x61\x75\x64\x69\x6f", "\x6b\x72\x65\x61", "\x64\x65\x65\x70\x67\x72\x61\x6d", "\x76\x6f\x79\x61\x67\x65\x61\x69" ].includes(_0x9efee5_0.icon) ? `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x22\x20\x73\x74\x79\x6c\x65\x3d\x22\x2d\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x3a\x75\x72\x6c\x28\x27${_0x9efee5_2}\x27\x29\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x2f\x73\x70\x61\x6e\x3e` : `\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x20\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x2d\x63\x6f\x6c\x6f\x72\x22\x20\x73\x72\x63\x3d\x22${_0x9efee5_2}\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x32\x32\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x32\x32\x22\x3e`;
     }
-    return jt[e.icon] ? `<img class="ai-company-logo ai-company-logo-color" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/ai-companies/${jt[e.icon]}" alt="" aria-hidden="true" width="22" height="22">` : Dt.has(e.icon) ? `<img class="ai-company-logo ai-company-logo-color" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/ai-companies/${e.icon}-color.svg" alt="" aria-hidden="true" width="22" height="22">` : e.icon ? `<span class="ai-company-logo" style="--company-logo:url('/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/ai-companies/${e.icon}.svg')" aria-hidden="true"></span>` : '<svg class="ai-company-logo ai-company-logo-color" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="6" width="12" height="12" rx="3"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/></svg>';
+    return _0x9efee5_90[_0x9efee5_0.icon] ? `\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x20\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x2d\x63\x6f\x6c\x6f\x72\x22\x20\x73\x72\x63\x3d\x22/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x69\x65\x73\x2f${_0x9efee5_90[_0x9efee5_0.icon]}\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x32\x32\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x32\x32\x22\x3e` : _0x9efee5_8f.has(_0x9efee5_0.icon) ? `\x3c\x69\x6d\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x20\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x2d\x63\x6f\x6c\x6f\x72\x22\x20\x73\x72\x63\x3d\x22/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x69\x65\x73\x2f${_0x9efee5_0.icon}\x2d\x63\x6f\x6c\x6f\x72\x2e\x73\x76\x67\x22\x20\x61\x6c\x74\x3d\x22\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x32\x32\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x32\x32\x22\x3e` : _0x9efee5_0.icon ? `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x22\x20\x73\x74\x79\x6c\x65\x3d\x22\x2d\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x3a\x75\x72\x6c\x28\x27/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x69\x65\x73\x2f${_0x9efee5_0.icon}\x2e\x73\x76\x67\x27\x29\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x2f\x73\x70\x61\x6e\x3e` : "\x3c\x73\x76\x67\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x20\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x6c\x6f\x67\x6f\x2d\x63\x6f\x6c\x6f\x72\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x66\x69\x6c\x6c\x3d\x22\x6e\x6f\x6e\x65\x22\x20\x73\x74\x72\x6f\x6b\x65\x3d\x22\x63\x75\x72\x72\x65\x6e\x74\x43\x6f\x6c\x6f\x72\x22\x20\x73\x74\x72\x6f\x6b\x65\x2d\x77\x69\x64\x74\x68\x3d\x22\x31\x2e\x36\x22\x3e\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x36\x22\x20\x79\x3d\x22\x36\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x31\x32\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x31\x32\x22\x20\x72\x78\x3d\x22\x33\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x39\x20\x32\x76\x34\x6d\x36\x2d\x34\x76\x34\x4d\x39\x20\x31\x38\x76\x34\x6d\x36\x2d\x34\x76\x34\x4d\x32\x20\x39\x68\x34\x6d\x2d\x34\x20\x36\x68\x34\x6d\x31\x32\x2d\x36\x68\x34\x6d\x2d\x34\x20\x36\x68\x34\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e";
   }
-  function Ot(e) {
-    const t = Rt(e), n = e.id.toLowerCase().replace(/^~/, ""), a = n.startsWith("anthropic/claude") ? "claude" : n.startsWith("google/gemma") ? "gemma" : n.startsWith("moonshotai/kimi") ? "kimi" : n.startsWith("x-ai/grok") ? "grok" : n.startsWith("tencent/hunyuan") ? "hunyuan" : "";
-    return Ut(a ? {
-      ...t,
-      icon: a
-    } : t);
+  function _0x9efee5_92(_0x9efee5_0) {
+    const _0x9efee5_1 = _0x9efee5_8e(_0x9efee5_0), _0x9efee5_2 = _0x9efee5_0.id.toLowerCase().replace(/^~/, ""), _0x9efee5_3 = _0x9efee5_2.startsWith("\x61\x6e\x74\x68\x72\x6f\x70\x69\x63\x2f\x63\x6c\x61\x75\x64\x65") ? "\x63\x6c\x61\x75\x64\x65" : _0x9efee5_2.startsWith("\x67\x6f\x6f\x67\x6c\x65\x2f\x67\x65\x6d\x6d\x61") ? "\x67\x65\x6d\x6d\x61" : _0x9efee5_2.startsWith("\x6d\x6f\x6f\x6e\x73\x68\x6f\x74\x61\x69\x2f\x6b\x69\x6d\x69") ? "\x6b\x69\x6d\x69" : _0x9efee5_2.startsWith("\x78\x2d\x61\x69\x2f\x67\x72\x6f\x6b") ? "\x67\x72\x6f\x6b" : _0x9efee5_2.startsWith("\x74\x65\x6e\x63\x65\x6e\x74\x2f\x68\x75\x6e\x79\x75\x61\x6e") ? "\x68\x75\x6e\x79\x75\x61\x6e" : "";
+    return _0x9efee5_91(_0x9efee5_3 ? {
+      ..._0x9efee5_1,
+      icon: _0x9efee5_3
+    } : _0x9efee5_1);
   }
-  function qt(e, t, n = "") {
-    const a = "string" == typeof t ? t.trim().slice(0, 200) : "", o = ge.find(e => e.id === a), i = a && !a.includes("/") ? ge.filter(e => e.id.split("/").slice(1).join("/") === a) : [], r = o || (1 === i.length ? i[0] : null);
-    e._modelId = r?.id || a, e._modelName = r?.label || String(n || a || "Assistant").slice(0, 200), 
-    e.querySelector(".ai-message-meta strong").textContent = e._modelName, e.querySelector(".ai-message-avatar").innerHTML = e._modelId ? Ot({
-      id: e._modelId,
-      company: "Assistant"
-    }) : '<span class="ai-company-initial" aria-hidden="true">AI</span>';
+  function _0x9efee5_93(_0x9efee5_0, _0x9efee5_1, _0x9efee5_2 = "") {
+    const _0x9efee5_3 = "\x73\x74\x72\x69\x6e\x67" == typeof _0x9efee5_1 ? _0x9efee5_1.trim().slice(0, 200) : "", _0x9efee5_4 = _0x9efee5_43.find(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_3), _0x9efee5_5 = _0x9efee5_3 && !_0x9efee5_3.includes("\x2f") ? _0x9efee5_43.filter(_0x9efee5_0 => _0x9efee5_0.id.split("\x2f").slice(1).join("\x2f") === _0x9efee5_3) : [], _0x9efee5_6 = _0x9efee5_4 || (1 === _0x9efee5_5.length ? _0x9efee5_5[0] : null);
+    _0x9efee5_0._modelId = _0x9efee5_6?.id || _0x9efee5_3, _0x9efee5_0._modelName = _0x9efee5_6?.label || String(_0x9efee5_2 || _0x9efee5_3 || "\x41\x73\x73\x69\x73\x74\x61\x6e\x74").slice(0, 200), 
+    _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x6d\x65\x74\x61\x20\x73\x74\x72\x6f\x6e\x67").textContent = _0x9efee5_0._modelName, 
+    _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x61\x76\x61\x74\x61\x72").innerHTML = _0x9efee5_0._modelId ? _0x9efee5_92({
+      id: _0x9efee5_0._modelId,
+      company: "\x41\x73\x73\x69\x73\x74\x61\x6e\x74"
+    }) : "\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x69\x6e\x69\x74\x69\x61\x6c\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x41\x49\x3c\x2f\x73\x70\x61\x6e\x3e";
   }
-  const _t = () => "tutsi" === document.documentElement.dataset.appShell || "ai" === document.documentElement.dataset.tutsiApp;
-  function Pt() {
-    const e = [ "openai", "anthropic", "gemini", "deepseek", "meta", "qwen", "xai", "mistral" ], t = t => e.includes(t) ? e.indexOf(t) : e.length, n = [ ...new Map([ {
-      id: "openai/"
+  const _0x9efee5_94 = () => "\x74\x75\x74\x73\x69" === document.documentElement.dataset.appShell || "\x61\x69" === document.documentElement.dataset.tutsiApp;
+  function _0x9efee5_95() {
+    const _0x9efee5_0 = [ "\x6f\x70\x65\x6e\x61\x69", "\x61\x6e\x74\x68\x72\x6f\x70\x69\x63", "\x67\x65\x6d\x69\x6e\x69", "\x64\x65\x65\x70\x73\x65\x65\x6b", "\x6d\x65\x74\x61", "\x71\x77\x65\x6e", "\x78\x61\x69", "\x6d\x69\x73\x74\x72\x61\x6c" ], _0x9efee5_1 = _0x9efee5_1 => _0x9efee5_0.includes(_0x9efee5_1) ? _0x9efee5_0.indexOf(_0x9efee5_1) : _0x9efee5_0.length, _0x9efee5_2 = [ ...new Map([ {
+      id: "\x6f\x70\x65\x6e\x61\x69\x2f"
     }, {
-      id: "anthropic/"
-    }, ...ge ].map(e => {
-      const t = Rt(e);
-      return [ t.key, t ];
-    })).values() ].sort((e, n) => t(e.key) - t(n.key) || e.label.localeCompare(n.label));
-    n.some(e => e.key === Nt) || (Nt = "");
-    const a = _t();
-    Bt.dataset.layout = a ? "tutsi" : "nyx";
-    const o = (e, t = a) => `<button type="button" data-model-company="${je(e.key)}" title="${je(e.label)}" aria-label="${je(e.label)} models" aria-pressed="${Nt === e.key}">${Ut(e)}${t ? `<span class="ai-company-filter-label">${je(e.label)}</span>` : ""}</button>`;
-    if (a) return Bt.innerHTML = n.map(e => o(e)).join(""), void Ft();
-    const i = n.filter(e => ![ "openai", "anthropic" ].includes(e.key));
-    Bt.innerHTML = [ 0, 1 ].map(e => `<div class="ai-company-column"><div class="ai-company-pinned">${o(n.find(t => t.key === (e ? "anthropic" : "openai")), !0)}</div><div class="ai-company-rail" aria-label="${e ? "Right" : "Left"} company filters"><div class="ai-company-track">${i.filter((t, n) => n % 2 === e).map(e => o(e)).join("")}</div></div></div>`).join(""), 
-    Bt.querySelectorAll(".ai-company-rail").forEach(e => {
-      const t = e.firstElementChild.cloneNode(!0);
-      t.setAttribute("aria-hidden", "true"), t.dataset.loopCopy = "", t.querySelectorAll("button").forEach(e => e.tabIndex = -1), 
-      e.append(t), e.addEventListener("pointerleave", () => {
-        e._loopOffset = e.scrollTop, e._continueOnHover = !1;
-      }), e.addEventListener("focusout", () => {
-        e._loopOffset = e.scrollTop;
+      id: "\x61\x6e\x74\x68\x72\x6f\x70\x69\x63\x2f"
+    }, ..._0x9efee5_43 ].map(_0x9efee5_0 => {
+      const _0x9efee5_1 = _0x9efee5_8e(_0x9efee5_0);
+      return [ _0x9efee5_1.key, _0x9efee5_1 ];
+    })).values() ].sort((_0x9efee5_0, _0x9efee5_2) => _0x9efee5_1(_0x9efee5_0.key) - _0x9efee5_1(_0x9efee5_2.key) || _0x9efee5_0.label.localeCompare(_0x9efee5_2.label));
+    _0x9efee5_2.some(_0x9efee5_0 => _0x9efee5_0.key === _0x9efee5_8b) || (_0x9efee5_8b = "");
+    const _0x9efee5_3 = _0x9efee5_94();
+    _0x9efee5_8d.dataset.layout = _0x9efee5_3 ? "\x74\x75\x74\x73\x69" : "\x6e\x79\x78";
+    const _0x9efee5_4 = (_0x9efee5_0, _0x9efee5_1 = _0x9efee5_3) => `\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x3d\x22${_0x9efee5_5a(_0x9efee5_0.key)}\x22\x20\x74\x69\x74\x6c\x65\x3d\x22${_0x9efee5_5a(_0x9efee5_0.label)}\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22${_0x9efee5_5a(_0x9efee5_0.label)}\x20\x6d\x6f\x64\x65\x6c\x73\x22\x20\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64\x3d\x22${_0x9efee5_8b === _0x9efee5_0.key}\x22\x3e${_0x9efee5_91(_0x9efee5_0)}${_0x9efee5_1 ? `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x66\x69\x6c\x74\x65\x72\x2d\x6c\x61\x62\x65\x6c\x22\x3e${_0x9efee5_5a(_0x9efee5_0.label)}\x3c\x2f\x73\x70\x61\x6e\x3e` : ""}\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e`;
+    if (_0x9efee5_3) return _0x9efee5_8d.innerHTML = _0x9efee5_2.map(_0x9efee5_0 => _0x9efee5_4(_0x9efee5_0)).join(""), 
+    void _0x9efee5_97();
+    const _0x9efee5_5 = _0x9efee5_2.filter(_0x9efee5_0 => ![ "\x6f\x70\x65\x6e\x61\x69", "\x61\x6e\x74\x68\x72\x6f\x70\x69\x63" ].includes(_0x9efee5_0.key));
+    _0x9efee5_8d.innerHTML = [ 0, 1 ].map(_0x9efee5_0 => `\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x63\x6f\x6c\x75\x6d\x6e\x22\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x70\x69\x6e\x6e\x65\x64\x22\x3e${_0x9efee5_4(_0x9efee5_2.find(_0x9efee5_1 => _0x9efee5_1.key === (_0x9efee5_0 ? "\x61\x6e\x74\x68\x72\x6f\x70\x69\x63" : "\x6f\x70\x65\x6e\x61\x69")), !0)}\x3c\x2f\x64\x69\x76\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x72\x61\x69\x6c\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22${_0x9efee5_0 ? "\x52\x69\x67\x68\x74" : "\x4c\x65\x66\x74"}\x20\x63\x6f\x6d\x70\x61\x6e\x79\x20\x66\x69\x6c\x74\x65\x72\x73\x22\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x74\x72\x61\x63\x6b\x22\x3e${_0x9efee5_5.filter((_0x9efee5_1, _0x9efee5_2) => _0x9efee5_2 % 2 === _0x9efee5_0).map(_0x9efee5_0 => _0x9efee5_4(_0x9efee5_0)).join("")}\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x64\x69\x76\x3e`).join(""), 
+    _0x9efee5_8d.querySelectorAll("\x2e\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x72\x61\x69\x6c").forEach(_0x9efee5_0 => {
+      const _0x9efee5_1 = _0x9efee5_0.firstElementChild.cloneNode(!0);
+      _0x9efee5_1.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), _0x9efee5_1.dataset.loopCopy = "", 
+      _0x9efee5_1.querySelectorAll("\x62\x75\x74\x74\x6f\x6e").forEach(_0x9efee5_0 => _0x9efee5_0.tabIndex = -1), 
+      _0x9efee5_0.append(_0x9efee5_1), _0x9efee5_0.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x6c\x65\x61\x76\x65", () => {
+        _0x9efee5_0._loopOffset = _0x9efee5_0.scrollTop, _0x9efee5_0._continueOnHover = !1;
+      }), _0x9efee5_0.addEventListener("\x66\x6f\x63\x75\x73\x6f\x75\x74", () => {
+        _0x9efee5_0._loopOffset = _0x9efee5_0.scrollTop;
       });
-    }), Ft();
+    }), _0x9efee5_97();
   }
-  let Ht = 0;
-  function Ft() {
-    if (cancelAnimationFrame(Ht), Bt.dataset.layout !== (_t() ? "tutsi" : "nyx")) return void Pt();
-    const e = matchMedia("(prefers-reduced-motion: reduce)").matches || _t();
-    if (I.querySelector('[data-model-company=""]').setAttribute("aria-pressed", String(!Nt)), 
-    Bt.querySelectorAll("[data-loop-copy]").forEach(t => t.hidden = e), I.hidden || e) return;
-    let t = 0;
-    const n = e => {
-      const a = t ? Math.min(e - t, 50) : 0;
-      t = e, Bt.querySelectorAll(".ai-company-rail").forEach((e, t) => {
-        const n = e.firstElementChild;
-        if (n.offsetHeight <= e.clientHeight) return void (e.lastElementChild.hidden = !0);
-        if (e.matches(":focus-within") || e.matches(":hover") && !e._continueOnHover || document.hidden) return;
-        const o = (e._loopOffset ?? e.scrollTop) + .018 * a * (0 === t ? 1 : -1);
-        e._loopOffset = (o % n.offsetHeight + n.offsetHeight) % n.offsetHeight, e.scrollTop = e._loopOffset;
-      }), Ht = requestAnimationFrame(n);
+  let _0x9efee5_96 = 0;
+  function _0x9efee5_97() {
+    if (cancelAnimationFrame(_0x9efee5_96), _0x9efee5_8d.dataset.layout !== (_0x9efee5_94() ? "\x74\x75\x74\x73\x69" : "\x6e\x79\x78")) return void _0x9efee5_95();
+    const _0x9efee5_0 = matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").matches || _0x9efee5_94();
+    if (_0x9efee5_19.querySelector("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x3d\x22\x22\x5d").setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(!_0x9efee5_8b)), 
+    _0x9efee5_8d.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6c\x6f\x6f\x70\x2d\x63\x6f\x70\x79\x5d").forEach(_0x9efee5_1 => _0x9efee5_1.hidden = _0x9efee5_0), 
+    _0x9efee5_19.hidden || _0x9efee5_0) return;
+    let _0x9efee5_1 = 0;
+    const _0x9efee5_2 = _0x9efee5_0 => {
+      const _0x9efee5_3 = _0x9efee5_1 ? Math.min(_0x9efee5_0 - _0x9efee5_1, 50) : 0;
+      _0x9efee5_1 = _0x9efee5_0, _0x9efee5_8d.querySelectorAll("\x2e\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x72\x61\x69\x6c").forEach((_0x9efee5_0, _0x9efee5_1) => {
+        const _0x9efee5_2 = _0x9efee5_0.firstElementChild;
+        if (_0x9efee5_2.offsetHeight <= _0x9efee5_0.clientHeight) return void (_0x9efee5_0.lastElementChild.hidden = !0);
+        if (_0x9efee5_0.matches("\x3a\x66\x6f\x63\x75\x73\x2d\x77\x69\x74\x68\x69\x6e") || _0x9efee5_0.matches("\x3a\x68\x6f\x76\x65\x72") && !_0x9efee5_0._continueOnHover || document.hidden) return;
+        const _0x9efee5_4 = (_0x9efee5_0._loopOffset ?? _0x9efee5_0.scrollTop) + .018 * _0x9efee5_3 * (0 === _0x9efee5_1 ? 1 : -1);
+        _0x9efee5_0._loopOffset = (_0x9efee5_4 % _0x9efee5_2.offsetHeight + _0x9efee5_2.offsetHeight) % _0x9efee5_2.offsetHeight, 
+        _0x9efee5_0.scrollTop = _0x9efee5_0._loopOffset;
+      }), _0x9efee5_96 = requestAnimationFrame(_0x9efee5_2);
     };
-    Ht = requestAnimationFrame(n);
+    _0x9efee5_96 = requestAnimationFrame(_0x9efee5_2);
   }
-  function zt(e) {
-    if (!e || I.hidden) return;
-    if (_t()) {
-      const t = [ ...Bt.querySelectorAll("button") ].find(t => t.dataset.modelCompany === e);
-      return void t?.scrollIntoView({
-        block: "nearest",
-        inline: "nearest"
+  function _0x9efee5_98(_0x9efee5_0) {
+    if (!_0x9efee5_0 || _0x9efee5_19.hidden) return;
+    if (_0x9efee5_94()) {
+      const _0x9efee5_1 = [ ..._0x9efee5_8d.querySelectorAll("\x62\x75\x74\x74\x6f\x6e") ].find(_0x9efee5_1 => _0x9efee5_1.dataset.modelCompany === _0x9efee5_0);
+      return void _0x9efee5_1?.scrollIntoView({
+        block: "\x6e\x65\x61\x72\x65\x73\x74",
+        inline: "\x6e\x65\x61\x72\x65\x73\x74"
       });
     }
-    const t = [ ...Bt.querySelectorAll(".ai-company-track:not([data-loop-copy]) button") ].find(t => t.dataset.modelCompany === e), n = t?.closest(".ai-company-rail");
-    if (!n) return;
-    const a = n.firstElementChild, o = t.getBoundingClientRect().top - n.getBoundingClientRect().top + n.scrollTop - (n.clientHeight - t.offsetHeight) / 2, i = !n.lastElementChild.hidden && a.offsetHeight > n.clientHeight;
-    n._loopOffset = i ? (o % a.offsetHeight + a.offsetHeight) % a.offsetHeight : Math.max(0, Math.min(o, n.scrollHeight - n.clientHeight)), 
-    n.scrollTop = n._loopOffset;
+    const _0x9efee5_1 = [ ..._0x9efee5_8d.querySelectorAll("\x2e\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x74\x72\x61\x63\x6b\x3a\x6e\x6f\x74\x28\x5b\x64\x61\x74\x61\x2d\x6c\x6f\x6f\x70\x2d\x63\x6f\x70\x79\x5d\x29\x20\x62\x75\x74\x74\x6f\x6e") ].find(_0x9efee5_1 => _0x9efee5_1.dataset.modelCompany === _0x9efee5_0), _0x9efee5_2 = _0x9efee5_1?.closest("\x2e\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x72\x61\x69\x6c");
+    if (!_0x9efee5_2) return;
+    const _0x9efee5_3 = _0x9efee5_2.firstElementChild, _0x9efee5_4 = _0x9efee5_1.getBoundingClientRect().top - _0x9efee5_2.getBoundingClientRect().top + _0x9efee5_2.scrollTop - (_0x9efee5_2.clientHeight - _0x9efee5_1.offsetHeight) / 2, _0x9efee5_5 = !_0x9efee5_2.lastElementChild.hidden && _0x9efee5_3.offsetHeight > _0x9efee5_2.clientHeight;
+    _0x9efee5_2._loopOffset = _0x9efee5_5 ? (_0x9efee5_4 % _0x9efee5_3.offsetHeight + _0x9efee5_3.offsetHeight) % _0x9efee5_3.offsetHeight : Math.max(0, Math.min(_0x9efee5_4, _0x9efee5_2.scrollHeight - _0x9efee5_2.clientHeight)), 
+    _0x9efee5_2.scrollTop = _0x9efee5_2._loopOffset;
   }
-  function Wt() {
-    const e = (Tt.value || "").trim().toLowerCase(), t = ge.filter(e => !Nt || Rt(e).key === Nt), n = NyxModelSearch.search(t, e, Rt);
-    A.innerHTML = n.length ? function(e, t, n = !1) {
-      return (n ? [ [ "Best matches", e ] ] : Jt(e)).map(([e, n], a) => {
-        const o = `modelGroup${a}`;
-        return `<section class="ai-model-group" role="group" aria-labelledby="${o}">\n        <p class="ai-model-group-label" id="${o}">${je(e)}</p>\n        <div class="ai-model-group-grid">${n.map(e => `<button class="ai-model-option" type="button" role="option" data-model-id="${je(e.id)}" aria-selected="${e.id === t ? "true" : "false"}">\n          ${Ot(e)}<span class="ai-model-option-label"><strong>${je(e.label)}</strong><small>${je(Rt(e).label)} &middot; ${je(Kt(e))}${Gt(e) ? " \xb7 Open in OpenRouter \u2197" : ""}</small></span>\n          <span class="ai-model-option-check" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="m5 10 3 3 7-7"/></svg></span>\n        </button>`).join("")}</div>\n      </section>`;
+  function _0x9efee5_99() {
+    const _0x9efee5_0 = (_0x9efee5_8c.value || "").trim().toLowerCase(), _0x9efee5_1 = _0x9efee5_43.filter(_0x9efee5_0 => !_0x9efee5_8b || _0x9efee5_8e(_0x9efee5_0).key === _0x9efee5_8b), _0x9efee5_2 = NyxModelSearch.search(_0x9efee5_1, _0x9efee5_0, _0x9efee5_8e);
+    _0x9efee5_1a.innerHTML = _0x9efee5_2.length ? function(_0x9efee5_0, _0x9efee5_1, _0x9efee5_2 = !1) {
+      return (_0x9efee5_2 ? [ [ "\x42\x65\x73\x74\x20\x6d\x61\x74\x63\x68\x65\x73", _0x9efee5_0 ] ] : _0x9efee5_9a(_0x9efee5_0)).map(([_0x9efee5_0, _0x9efee5_2], _0x9efee5_3) => {
+        const _0x9efee5_4 = `\x6d\x6f\x64\x65\x6c\x47\x72\x6f\x75\x70${_0x9efee5_3}`;
+        return `\x3c\x73\x65\x63\x74\x69\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x67\x72\x6f\x75\x70\x22\x20\x72\x6f\x6c\x65\x3d\x22\x67\x72\x6f\x75\x70\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x6c\x65\x64\x62\x79\x3d\x22${_0x9efee5_4}\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x70\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x67\x72\x6f\x75\x70\x2d\x6c\x61\x62\x65\x6c\x22\x20\x69\x64\x3d\x22${_0x9efee5_4}\x22\x3e${_0x9efee5_5a(_0x9efee5_0)}\x3c\x2f\x70\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x67\x72\x6f\x75\x70\x2d\x67\x72\x69\x64\x22\x3e${_0x9efee5_2.map(_0x9efee5_0 => `\x3c\x62\x75\x74\x74\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x6f\x70\x74\x69\x6f\x6e\x22\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x72\x6f\x6c\x65\x3d\x22\x6f\x70\x74\x69\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x69\x64\x3d\x22${_0x9efee5_5a(_0x9efee5_0.id)}\x22\x20\x61\x72\x69\x61\x2d\x73\x65\x6c\x65\x63\x74\x65\x64\x3d\x22${_0x9efee5_0.id === _0x9efee5_1 ? "\x74\x72\x75\x65" : "\x66\x61\x6c\x73\x65"}\x22\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20${_0x9efee5_92(_0x9efee5_0)}\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x6f\x70\x74\x69\x6f\x6e\x2d\x6c\x61\x62\x65\x6c\x22\x3e\x3c\x73\x74\x72\x6f\x6e\x67\x3e${_0x9efee5_5a(_0x9efee5_0.label)}\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e\x3c\x73\x6d\x61\x6c\x6c\x3e${_0x9efee5_5a(_0x9efee5_8e(_0x9efee5_0).label)}\x20\x26\x6d\x69\x64\x64\x6f\x74\x3b\x20${_0x9efee5_5a(_0x9efee5_9b(_0x9efee5_0))}${_0x9efee5_9c(_0x9efee5_0) ? "\x20\xb7\x20\x4f\x70\x65\x6e\x20\x69\x6e\x20\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72\x20\u2197" : ""}\x3c\x2f\x73\x6d\x61\x6c\x6c\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x6f\x70\x74\x69\x6f\x6e\x2d\x63\x68\x65\x63\x6b\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x30\x20\x32\x30\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x35\x20\x31\x30\x20\x33\x20\x33\x20\x37\x2d\x37\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e`).join("")}\x3c\x2f\x64\x69\x76\x3e\x0a\x20\x20\x20\x20\x20\x20\x3c\x2f\x73\x65\x63\x74\x69\x6f\x6e\x3e`;
       }).join("");
-    }(n, b.value, Boolean(e)) : `<p class="ai-model-empty" role="status">${Nt && !e ? "No models from this provider are available for this account." : "No matching models."}</p>`, 
-    A.scrollTop = 0;
-    const a = n.find(t => Rt(t).label.toLowerCase() === e) || n[0];
-    e && a ? zt(Rt(a).key) : Nt && zt(Nt);
-    const o = I.querySelector("[data-model-count]");
-    o && (o.textContent = e || Nt ? `${n.length} of ${ge.length}` : `${ge.length} available`);
+    }(_0x9efee5_2, _0x9efee5_13.value, Boolean(_0x9efee5_0)) : `\x3c\x70\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x65\x6d\x70\x74\x79\x22\x20\x72\x6f\x6c\x65\x3d\x22\x73\x74\x61\x74\x75\x73\x22\x3e${_0x9efee5_8b && !_0x9efee5_0 ? "\x4e\x6f\x20\x6d\x6f\x64\x65\x6c\x73\x20\x66\x72\x6f\x6d\x20\x74\x68\x69\x73\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x61\x72\x65\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x66\x6f\x72\x20\x74\x68\x69\x73\x20\x61\x63\x63\x6f\x75\x6e\x74\x2e" : "\x4e\x6f\x20\x6d\x61\x74\x63\x68\x69\x6e\x67\x20\x6d\x6f\x64\x65\x6c\x73\x2e"}\x3c\x2f\x70\x3e`, 
+    _0x9efee5_1a.scrollTop = 0;
+    const _0x9efee5_3 = _0x9efee5_2.find(_0x9efee5_1 => _0x9efee5_8e(_0x9efee5_1).label.toLowerCase() === _0x9efee5_0) || _0x9efee5_2[0];
+    _0x9efee5_0 && _0x9efee5_3 ? _0x9efee5_98(_0x9efee5_8e(_0x9efee5_3).key) : _0x9efee5_8b && _0x9efee5_98(_0x9efee5_8b);
+    const _0x9efee5_4 = _0x9efee5_19.querySelector("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x75\x6e\x74\x5d");
+    _0x9efee5_4 && (_0x9efee5_4.textContent = _0x9efee5_0 || _0x9efee5_8b ? `${_0x9efee5_2.length}\x20\x6f\x66\x20${_0x9efee5_43.length}` : `${_0x9efee5_43.length}\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65`);
   }
-  function Jt(e) {
-    const t = [ "openai/gpt-6-astra", "anthropic/claude-fable-5.1", "openai/gpt-6-sol", "openai/gpt-5.6-sol-pro", "openai/gpt-6-luna-pro", "openai/gpt-6-luna", "openai/gpt-5.6-luna" ], n = e => e.free || e.id.endsWith(":free") || "openrouter/free" === e.id, a = e => Rt(e).label, o = e => {
-      const n = t.indexOf(e.id);
-      return n < 0 ? t.length : n;
-    }, i = [ ...e ].sort((e, t) => Number(n(e)) - Number(n(t)) || Number("OpenAI" === a(t)) - Number("OpenAI" === a(e)) || a(e).localeCompare(a(t)) || o(e) - o(t) || e.label.localeCompare(t.label)), r = new Map;
-    return i.forEach(e => {
-      const t = `${n(e) ? "Free" : "Paid"} \xb7 ${a(e)}`;
-      r.has(t) || r.set(t, []), r.get(t).push(e);
-    }), [ ...r ];
+  function _0x9efee5_9a(_0x9efee5_0) {
+    const _0x9efee5_1 = [ "\x6f\x70\x65\x6e\x61\x69\x2f\x67\x70\x74\x2d\x36\x2d\x61\x73\x74\x72\x61", "\x61\x6e\x74\x68\x72\x6f\x70\x69\x63\x2f\x63\x6c\x61\x75\x64\x65\x2d\x66\x61\x62\x6c\x65\x2d\x35\x2e\x31", "\x6f\x70\x65\x6e\x61\x69\x2f\x67\x70\x74\x2d\x36\x2d\x73\x6f\x6c", "\x6f\x70\x65\x6e\x61\x69\x2f\x67\x70\x74\x2d\x35\x2e\x36\x2d\x73\x6f\x6c\x2d\x70\x72\x6f", "\x6f\x70\x65\x6e\x61\x69\x2f\x67\x70\x74\x2d\x36\x2d\x6c\x75\x6e\x61\x2d\x70\x72\x6f", "\x6f\x70\x65\x6e\x61\x69\x2f\x67\x70\x74\x2d\x36\x2d\x6c\x75\x6e\x61", "\x6f\x70\x65\x6e\x61\x69\x2f\x67\x70\x74\x2d\x35\x2e\x36\x2d\x6c\x75\x6e\x61" ], _0x9efee5_2 = _0x9efee5_0 => _0x9efee5_0.free || _0x9efee5_0.id.endsWith("\x3a\x66\x72\x65\x65") || "\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72\x2f\x66\x72\x65\x65" === _0x9efee5_0.id, _0x9efee5_3 = _0x9efee5_0 => _0x9efee5_8e(_0x9efee5_0).label, _0x9efee5_4 = _0x9efee5_0 => {
+      const _0x9efee5_2 = _0x9efee5_1.indexOf(_0x9efee5_0.id);
+      return _0x9efee5_2 < 0 ? _0x9efee5_1.length : _0x9efee5_2;
+    }, _0x9efee5_5 = [ ..._0x9efee5_0 ].sort((_0x9efee5_0, _0x9efee5_1) => Number(_0x9efee5_2(_0x9efee5_0)) - Number(_0x9efee5_2(_0x9efee5_1)) || Number("\x4f\x70\x65\x6e\x41\x49" === _0x9efee5_3(_0x9efee5_1)) - Number("\x4f\x70\x65\x6e\x41\x49" === _0x9efee5_3(_0x9efee5_0)) || _0x9efee5_3(_0x9efee5_0).localeCompare(_0x9efee5_3(_0x9efee5_1)) || _0x9efee5_4(_0x9efee5_0) - _0x9efee5_4(_0x9efee5_1) || _0x9efee5_0.label.localeCompare(_0x9efee5_1.label)), _0x9efee5_6 = new Map;
+    return _0x9efee5_5.forEach(_0x9efee5_0 => {
+      const _0x9efee5_1 = `${_0x9efee5_2(_0x9efee5_0) ? "\x46\x72\x65\x65" : "\x50\x61\x69\x64"}\x20\xb7\x20${_0x9efee5_3(_0x9efee5_0)}`;
+      _0x9efee5_6.has(_0x9efee5_1) || _0x9efee5_6.set(_0x9efee5_1, []), _0x9efee5_6.get(_0x9efee5_1).push(_0x9efee5_0);
+    }), [ ..._0x9efee5_6 ];
   }
-  function Kt(e) {
-    const t = {
-      text: "Text",
-      image: "Image generation",
-      video: "Video generation",
-      audio: "Audio",
-      speech: "Speech",
-      transcription: "Transcription",
-      embeddings: "Embeddings",
-      rerank: "Rerank",
-      decisions: "Decisions"
-    }, n = e.outputModalities || [ ...!1 !== e.text ? [ "text" ] : [], ...e.imageGeneration ? [ "image" ] : [] ];
-    return [ ...new Set([ ...n.map(e => t[e] || e), e.vision ? "Vision" : "", e.reasoning ? "Reasoning" : "" ]) ].filter(Boolean).join(" \xb7 ");
+  function _0x9efee5_9b(_0x9efee5_0) {
+    const _0x9efee5_1 = {
+      text: "\x54\x65\x78\x74",
+      image: "\x49\x6d\x61\x67\x65\x20\x67\x65\x6e\x65\x72\x61\x74\x69\x6f\x6e",
+      video: "\x56\x69\x64\x65\x6f\x20\x67\x65\x6e\x65\x72\x61\x74\x69\x6f\x6e",
+      audio: "\x41\x75\x64\x69\x6f",
+      speech: "\x53\x70\x65\x65\x63\x68",
+      transcription: "\x54\x72\x61\x6e\x73\x63\x72\x69\x70\x74\x69\x6f\x6e",
+      embeddings: "\x45\x6d\x62\x65\x64\x64\x69\x6e\x67\x73",
+      rerank: "\x52\x65\x72\x61\x6e\x6b",
+      decisions: "\x44\x65\x63\x69\x73\x69\x6f\x6e\x73"
+    }, _0x9efee5_2 = _0x9efee5_0.outputModalities || [ ...!1 !== _0x9efee5_0.text ? [ "\x74\x65\x78\x74" ] : [], ..._0x9efee5_0.imageGeneration ? [ "\x69\x6d\x61\x67\x65" ] : [] ];
+    return [ ...new Set([ ..._0x9efee5_2.map(_0x9efee5_0 => _0x9efee5_1[_0x9efee5_0] || _0x9efee5_0), _0x9efee5_0.vision ? "\x56\x69\x73\x69\x6f\x6e" : "", _0x9efee5_0.reasoning ? "\x52\x65\x61\x73\x6f\x6e\x69\x6e\x67" : "" ]) ].filter(Boolean).join("\x20\xb7\x20");
   }
-  function Gt(e) {
-    return e && !1 === e.text && !e.imageGeneration && !e.outputModalities?.includes("video");
+  function _0x9efee5_9c(_0x9efee5_0) {
+    return _0x9efee5_0 && !1 === _0x9efee5_0.text && !_0x9efee5_0.imageGeneration && !_0x9efee5_0.outputModalities?.includes("\x76\x69\x64\x65\x6f");
   }
-  function Vt() {
-    const e = b.value || r, t = Mt(e);
-    S.textContent = t, k.title = `Model: ${t}${e.endsWith(":free") || "openrouter/free" === e ? ". Uses your account\u2019s token allowance. Provider rate limits also apply." : ""}`, 
-    k.setAttribute("aria-label", `AI model: ${t}`), P.textContent = t, A.querySelectorAll("[data-model-id]").forEach(t => {
-      t.setAttribute("aria-selected", String(t.dataset.modelId === e));
+  function _0x9efee5_9d() {
+    const _0x9efee5_0 = _0x9efee5_13.value || _0x9efee5_6, _0x9efee5_1 = _0x9efee5_89(_0x9efee5_0);
+    _0x9efee5_18.textContent = _0x9efee5_1, _0x9efee5_17.title = `\x4d\x6f\x64\x65\x6c\x3a\x20${_0x9efee5_1}${_0x9efee5_0.endsWith("\x3a\x66\x72\x65\x65") || "\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72\x2f\x66\x72\x65\x65" === _0x9efee5_0 ? "\x2e\x20\x55\x73\x65\x73\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\u2019\x73\x20\x74\x6f\x6b\x65\x6e\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x2e\x20\x50\x72\x6f\x76\x69\x64\x65\x72\x20\x72\x61\x74\x65\x20\x6c\x69\x6d\x69\x74\x73\x20\x61\x6c\x73\x6f\x20\x61\x70\x70\x6c\x79\x2e" : ""}`, 
+    _0x9efee5_17.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", `\x41\x49\x20\x6d\x6f\x64\x65\x6c\x3a\x20${_0x9efee5_1}`), _0x9efee5_29.textContent = _0x9efee5_1, 
+    _0x9efee5_1a.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x69\x64\x5d").forEach(_0x9efee5_1 => {
+      _0x9efee5_1.setAttribute("\x61\x72\x69\x61\x2d\x73\x65\x6c\x65\x63\x74\x65\x64", String(_0x9efee5_1.dataset.modelId === _0x9efee5_0));
     });
   }
-  function Yt(e, t) {
-    b.innerHTML = function(e) {
-      return Jt(e).map(([e, t]) => `<optgroup label="${je(e)}">${t.map(e => `<option value="${je(e.id)}"${Gt(e) ? " disabled" : ""}>${je(e.label)} \xb7 ${je(Kt(e))}</option>`).join("")}</optgroup>`).join("");
-    }(e), b.value = t, Pt(), Wt(), Vt();
+  function _0x9efee5_9e(_0x9efee5_0, _0x9efee5_1) {
+    _0x9efee5_13.innerHTML = function(_0x9efee5_0) {
+      return _0x9efee5_9a(_0x9efee5_0).map(([_0x9efee5_0, _0x9efee5_1]) => `\x3c\x6f\x70\x74\x67\x72\x6f\x75\x70\x20\x6c\x61\x62\x65\x6c\x3d\x22${_0x9efee5_5a(_0x9efee5_0)}\x22\x3e${_0x9efee5_1.map(_0x9efee5_0 => `\x3c\x6f\x70\x74\x69\x6f\x6e\x20\x76\x61\x6c\x75\x65\x3d\x22${_0x9efee5_5a(_0x9efee5_0.id)}\x22${_0x9efee5_9c(_0x9efee5_0) ? "\x20\x64\x69\x73\x61\x62\x6c\x65\x64" : ""}\x3e${_0x9efee5_5a(_0x9efee5_0.label)}\x20\xb7\x20${_0x9efee5_5a(_0x9efee5_9b(_0x9efee5_0))}\x3c\x2f\x6f\x70\x74\x69\x6f\x6e\x3e`).join("")}\x3c\x2f\x6f\x70\x74\x67\x72\x6f\x75\x70\x3e`).join("");
+    }(_0x9efee5_0), _0x9efee5_13.value = _0x9efee5_1, _0x9efee5_95(), _0x9efee5_99(), 
+    _0x9efee5_9d();
   }
-  function Zt() {
-    return [ ...A.querySelectorAll("[data-model-id]") ];
+  function _0x9efee5_9f() {
+    return [ ..._0x9efee5_1a.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x69\x64\x5d") ];
   }
-  function Xt({restoreFocus: e = !1} = {}) {
-    I.hidden || (cancelAnimationFrame(Ht), I.close(), I.hidden = !0, E.classList.remove("is-open"), 
-    k.setAttribute("aria-expanded", "false"), e && k.focus());
+  function _0x9efee5_a0({restoreFocus: _0x9efee5_0 = !1} = {}) {
+    _0x9efee5_19.hidden || (cancelAnimationFrame(_0x9efee5_96), _0x9efee5_19.close(), 
+    _0x9efee5_19.hidden = !0, _0x9efee5_16.classList.remove("\x69\x73\x2d\x6f\x70\x65\x6e"), _0x9efee5_17.setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x66\x61\x6c\x73\x65"), 
+    _0x9efee5_0 && _0x9efee5_17.focus());
   }
-  function Qt(e = 0) {
-    k.disabled || (I.hidden = !1, I.showModal(), Ft(), Nt || Tt.value.trim() || (zt("openai"), 
-    zt("anthropic")), E.classList.add("is-open"), k.setAttribute("aria-expanded", "true"), 
+  function _0x9efee5_a1(_0x9efee5_0 = 0) {
+    _0x9efee5_17.disabled || (_0x9efee5_19.hidden = !1, _0x9efee5_19.showModal(), _0x9efee5_97(), 
+    _0x9efee5_8b || _0x9efee5_8c.value.trim() || (_0x9efee5_98("\x6f\x70\x65\x6e\x61\x69"), _0x9efee5_98("\x61\x6e\x74\x68\x72\x6f\x70\x69\x63")), 
+    _0x9efee5_16.classList.add("\x69\x73\x2d\x6f\x70\x65\x6e"), _0x9efee5_17.setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", "\x74\x72\x75\x65"), 
     requestAnimationFrame(() => {
-      const t = Zt(), n = Math.max(0, t.findIndex(e => "true" === e.getAttribute("aria-selected"))), a = e < 0 ? t.length - 1 : e > 0 ? 0 : n;
-      e ? (t[a]?.focus({
+      const _0x9efee5_1 = _0x9efee5_9f(), _0x9efee5_2 = Math.max(0, _0x9efee5_1.findIndex(_0x9efee5_0 => "\x74\x72\x75\x65" === _0x9efee5_0.getAttribute("\x61\x72\x69\x61\x2d\x73\x65\x6c\x65\x63\x74\x65\x64"))), _0x9efee5_3 = _0x9efee5_0 < 0 ? _0x9efee5_1.length - 1 : _0x9efee5_0 > 0 ? 0 : _0x9efee5_2;
+      _0x9efee5_0 ? (_0x9efee5_1[_0x9efee5_3]?.focus({
         preventScroll: !0
-      }), t[a]?.scrollIntoView({
-        block: "nearest"
-      })) : Tt.focus();
+      }), _0x9efee5_1[_0x9efee5_3]?.scrollIntoView({
+        block: "\x6e\x65\x61\x72\x65\x73\x74"
+      })) : _0x9efee5_8c.focus();
     }));
   }
-  function en(e) {
-    ge.some(t => t.id === e) && (Gt(ge.find(t => t.id === e)) ? window.open("https://openrouter.ai/" + encodeURI(e), "_blank", "noopener") : (b.value = e, 
-    b.dispatchEvent(new Event("change", {
+  function _0x9efee5_a2(_0x9efee5_0) {
+    _0x9efee5_43.some(_0x9efee5_1 => _0x9efee5_1.id === _0x9efee5_0) && (_0x9efee5_9c(_0x9efee5_43.find(_0x9efee5_1 => _0x9efee5_1.id === _0x9efee5_0)) ? window.open("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72\x2e\x61\x69\x2f" + encodeURI(_0x9efee5_0), "\x5f\x62\x6c\x61\x6e\x6b", "\x6e\x6f\x6f\x70\x65\x6e\x65\x72") : (_0x9efee5_13.value = _0x9efee5_0, 
+    _0x9efee5_13.dispatchEvent(new Event("\x63\x68\x61\x6e\x67\x65", {
       bubbles: !0
-    })), Xt({
+    })), _0x9efee5_a0({
       restoreFocus: !0
     })));
   }
-  async function tn() {
-    const e = document.querySelector(".ai-model-status");
-    b.disabled = !0, k.disabled = !0, k.setAttribute("aria-busy", "true");
+  async function _0x9efee5_a3() {
+    const _0x9efee5_0 = document.querySelector("\x2e\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x73\x74\x61\x74\x75\x73");
+    _0x9efee5_13.disabled = !0, _0x9efee5_17.disabled = !0, _0x9efee5_17.setAttribute("\x61\x72\x69\x61\x2d\x62\x75\x73\x79", "\x74\x72\x75\x65");
     try {
-      const t = await fetch((_t() ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/tutsi-ai/models" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai/models") + (Ie ? "?custom=1" : ""), {
-        headers: await Se({
-          accept: "application/json"
+      const _0x9efee5_1 = await fetch((_0x9efee5_94() ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x74\x75\x74\x73\x69\x2d\x61\x69\x2f\x6d\x6f\x64\x65\x6c\x73" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x6d\x6f\x64\x65\x6c\x73") + (_0x9efee5_4f ? "\x3f\x63\x75\x73\x74\x6f\x6d\x3d\x31" : ""), {
+        headers: await _0x9efee5_4e({
+          accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         })
-      }), n = await t.json();
-      if (!t.ok) throw new Error(n?.error || `Model catalog failed (${t.status})`);
-      pe = !0 === n.ownerMediaAccess;
-      const o = Array.isArray(n?.models) ? n.models.flatMap(e => {
-        if (Ie && "nyx" === Ae() && e?.imageGeneration) return [];
-        const t = String(e?.id || "").trim(), n = String(e?.label || t).trim(), a = String(e?.company || "").trim();
-        return t && n ? [ {
-          id: t,
-          label: n,
-          company: a,
-          catalogRank: Number.isFinite(e.catalogRank) ? e.catalogRank : 9999,
-          codingRank: e.codingRank,
-          outputModalities: e.outputModalities,
-          inputModalities: e.inputModalities,
-          poolTokenLimit: Number.isSafeInteger(e?.poolTokenLimit) && e.poolTokenLimit > 0 ? e.poolTokenLimit : null,
-          free: Boolean(e?.free),
-          text: !1 !== e?.text,
-          imageGeneration: !(Ie && "nyx" === Ae()) && Boolean(e?.imageGeneration),
-          vision: (!Ie || "nyx" !== Ae()) && (Boolean(e?.vision) || u.has(t)),
-          reasoning: Boolean(e?.reasoning)
+      }), _0x9efee5_2 = await _0x9efee5_1.json();
+      if (!_0x9efee5_1.ok) throw new Error(_0x9efee5_2?.error || `\x4d\x6f\x64\x65\x6c\x20\x63\x61\x74\x61\x6c\x6f\x67\x20\x66\x61\x69\x6c\x65\x64\x20\x28${_0x9efee5_1.status}\x29`);
+      _0x9efee5_44 = !0 === _0x9efee5_2.ownerMediaAccess;
+      const _0x9efee5_4 = Array.isArray(_0x9efee5_2?.models) ? _0x9efee5_2.models.flatMap(_0x9efee5_0 => {
+        if (_0x9efee5_4f && "\x6e\x79\x78" === _0x9efee5_50() && _0x9efee5_0?.imageGeneration) return [];
+        const _0x9efee5_1 = String(_0x9efee5_0?.id || "").trim(), _0x9efee5_2 = String(_0x9efee5_0?.label || _0x9efee5_1).trim(), _0x9efee5_3 = String(_0x9efee5_0?.company || "").trim();
+        return _0x9efee5_1 && _0x9efee5_2 ? [ {
+          id: _0x9efee5_1,
+          label: _0x9efee5_2,
+          company: _0x9efee5_3,
+          catalogRank: Number.isFinite(_0x9efee5_0.catalogRank) ? _0x9efee5_0.catalogRank : 9999,
+          codingRank: _0x9efee5_0.codingRank,
+          outputModalities: _0x9efee5_0.outputModalities,
+          inputModalities: _0x9efee5_0.inputModalities,
+          poolTokenLimit: Number.isSafeInteger(_0x9efee5_0?.poolTokenLimit) && _0x9efee5_0.poolTokenLimit > 0 ? _0x9efee5_0.poolTokenLimit : null,
+          free: Boolean(_0x9efee5_0?.free),
+          text: !1 !== _0x9efee5_0?.text,
+          imageGeneration: !(_0x9efee5_4f && "\x6e\x79\x78" === _0x9efee5_50()) && Boolean(_0x9efee5_0?.imageGeneration),
+          vision: (!_0x9efee5_4f || "\x6e\x79\x78" !== _0x9efee5_50()) && (Boolean(_0x9efee5_0?.vision) || _0x9efee5_c.has(_0x9efee5_1)),
+          reasoning: Boolean(_0x9efee5_0?.reasoning)
         } ] : [];
       }) : [];
-      if (!o.length) throw new Error("No models are currently available.");
-      const i = Ye()?.model || localStorage.getItem(a) || r, s = ge.find(e => e.id === i)?.label || i;
-      ge = o;
-      const l = o.some(e => e.id === i) ? i : o.some(e => e.id === r) ? r : o[0].id;
-      return Yt(o, l), l === i ? (localStorage.setItem(a, l), e && (e.classList.remove("is-warning"), 
-      e.title = `${o.length} models available`)) : e && (e.classList.add("is-warning"), 
-      e.title = `${s} is temporarily unavailable. Nyx will restore it when it returns.`), 
+      if (!_0x9efee5_4.length) throw new Error("\x4e\x6f\x20\x6d\x6f\x64\x65\x6c\x73\x20\x61\x72\x65\x20\x63\x75\x72\x72\x65\x6e\x74\x6c\x79\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+      const _0x9efee5_5 = _0x9efee5_68()?.model || localStorage.getItem(_0x9efee5_3) || _0x9efee5_6, _0x9efee5_7 = _0x9efee5_43.find(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_5)?.label || _0x9efee5_5;
+      _0x9efee5_43 = _0x9efee5_4;
+      const _0x9efee5_8 = _0x9efee5_4.some(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_5) ? _0x9efee5_5 : _0x9efee5_4.some(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_6) ? _0x9efee5_6 : _0x9efee5_4[0].id;
+      return _0x9efee5_9e(_0x9efee5_4, _0x9efee5_8), _0x9efee5_8 === _0x9efee5_5 ? (localStorage.setItem(_0x9efee5_3, _0x9efee5_8), 
+      _0x9efee5_0 && (_0x9efee5_0.classList.remove("\x69\x73\x2d\x77\x61\x72\x6e\x69\x6e\x67"), _0x9efee5_0.title = `${_0x9efee5_4.length}\x20\x6d\x6f\x64\x65\x6c\x73\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65`)) : _0x9efee5_0 && (_0x9efee5_0.classList.add("\x69\x73\x2d\x77\x61\x72\x6e\x69\x6e\x67"), 
+      _0x9efee5_0.title = `${_0x9efee5_7}\x20\x69\x73\x20\x74\x65\x6d\x70\x6f\x72\x61\x72\x69\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x4e\x79\x78\x20\x77\x69\x6c\x6c\x20\x72\x65\x73\x74\x6f\x72\x65\x20\x69\x74\x20\x77\x68\x65\x6e\x20\x69\x74\x20\x72\x65\x74\x75\x72\x6e\x73\x2e`), 
       !0;
-    } catch (t) {
-      return console.warn("Nyx AI model catalog could not be loaded:", t), ge = [], Yt([], ""), 
-      S.textContent = "Models unavailable", e && (e.classList.add("is-warning"), e.title = "The model list could not be verified"), 
-      !1;
+    } catch (_0x9efee5_1) {
+      return console.warn("\x4e\x79\x78\x20\x41\x49\x20\x6d\x6f\x64\x65\x6c\x20\x63\x61\x74\x61\x6c\x6f\x67\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x6c\x6f\x61\x64\x65\x64\x3a", _0x9efee5_1), _0x9efee5_43 = [], 
+      _0x9efee5_9e([], ""), _0x9efee5_18.textContent = "\x4d\x6f\x64\x65\x6c\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", _0x9efee5_0 && (_0x9efee5_0.classList.add("\x69\x73\x2d\x77\x61\x72\x6e\x69\x6e\x67"), 
+      _0x9efee5_0.title = "\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x6c\x69\x73\x74\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x76\x65\x72\x69\x66\x69\x65\x64"), !1;
     } finally {
-      const e = ge.length > 0;
-      b.disabled = !e, k.disabled = !e, k.removeAttribute("aria-busy");
+      const _0x9efee5_0 = _0x9efee5_43.length > 0;
+      _0x9efee5_13.disabled = !_0x9efee5_0, _0x9efee5_17.disabled = !_0x9efee5_0, _0x9efee5_17.removeAttribute("\x61\x72\x69\x61\x2d\x62\x75\x73\x79");
     }
   }
-  function nn() {
-    y.style.height = "auto", y.style.height = `${Math.min(y.scrollHeight, 190)}px`, 
-    M && (M.textContent = `${y.value.length} / ${y.maxLength}`);
+  function _0x9efee5_a4() {
+    _0x9efee5_11.style.height = "\x61\x75\x74\x6f", _0x9efee5_11.style.height = `${Math.min(_0x9efee5_11.scrollHeight, 190)}\x70\x78`, 
+    _0x9efee5_1d && (_0x9efee5_1d.textContent = `${_0x9efee5_11.value.length}\x20\x2f\x20${_0x9efee5_11.maxLength}`);
   }
-  function an(e = !1) {
-    s || !e && !ue || requestAnimationFrame(() => {
-      p.scrollTop = p.scrollHeight;
+  function _0x9efee5_a5(_0x9efee5_0 = !1) {
+    _0x9efee5_7 || !_0x9efee5_0 && !_0x9efee5_42 || requestAnimationFrame(() => {
+      _0x9efee5_e.scrollTop = _0x9efee5_e.scrollHeight;
     });
   }
-  function on(e) {
-    p.setAttribute("aria-busy", String(e)), f.classList.toggle("is-busy", e), y.disabled = e, 
-    v.disabled = e || Date.now() < de, Y.disabled = e, Z.disabled = e, re.disabled = e, 
-    ne.disabled = e, v.setAttribute("aria-label", e ? `Waiting for ${mt()}` : "Send message");
+  function _0x9efee5_a6(_0x9efee5_0) {
+    _0x9efee5_e.setAttribute("\x61\x72\x69\x61\x2d\x62\x75\x73\x79", String(_0x9efee5_0)), _0x9efee5_10.classList.toggle("\x69\x73\x2d\x62\x75\x73\x79", _0x9efee5_0), 
+    _0x9efee5_11.disabled = _0x9efee5_0, _0x9efee5_12.disabled = _0x9efee5_0 || Date.now() < _0x9efee5_40, 
+    _0x9efee5_32.disabled = _0x9efee5_0, _0x9efee5_33.disabled = _0x9efee5_0, _0x9efee5_3c.disabled = _0x9efee5_0, 
+    _0x9efee5_38.disabled = _0x9efee5_0, _0x9efee5_12.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x9efee5_0 ? `\x57\x61\x69\x74\x69\x6e\x67\x20\x66\x6f\x72\x20${_0x9efee5_77()}` : "\x53\x65\x6e\x64\x20\x6d\x65\x73\x73\x61\x67\x65");
   }
-  async function rn(e) {
-    if (navigator.clipboard?.writeText) return void await navigator.clipboard.writeText(String(e || ""));
-    const t = document.createElement("textarea");
-    t.value = String(e || ""), t.style.position = "fixed", t.style.opacity = "0", document.body.appendChild(t), 
-    t.select(), document.execCommand("copy"), t.remove();
+  async function _0x9efee5_a7(_0x9efee5_0) {
+    if (navigator.clipboard?.writeText) return void await navigator.clipboard.writeText(String(_0x9efee5_0 || ""));
+    const _0x9efee5_1 = document.createElement("\x74\x65\x78\x74\x61\x72\x65\x61");
+    _0x9efee5_1.value = String(_0x9efee5_0 || ""), _0x9efee5_1.style.position = "\x66\x69\x78\x65\x64", 
+    _0x9efee5_1.style.opacity = "\x30", document.body.appendChild(_0x9efee5_1), _0x9efee5_1.select(), 
+    document.execCommand("\x63\x6f\x70\x79"), _0x9efee5_1.remove();
   }
-  function sn(e) {
-    const t = e.querySelector("span"), n = t?.textContent || "";
-    e.classList.add("is-copied"), e.setAttribute("aria-label", "Copied"), t && (t.textContent = "Copied"), 
-    setTimeout(() => {
-      e.classList.remove("is-copied"), e.setAttribute("aria-label", e.hasAttribute("data-copy-code") ? "Copy code" : "Copy message"), 
-      t && (t.textContent = n || "Copy");
+  function _0x9efee5_a8(_0x9efee5_0) {
+    const _0x9efee5_1 = _0x9efee5_0.querySelector("\x73\x70\x61\x6e"), _0x9efee5_2 = _0x9efee5_1?.textContent || "";
+    _0x9efee5_0.classList.add("\x69\x73\x2d\x63\x6f\x70\x69\x65\x64"), _0x9efee5_0.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x43\x6f\x70\x69\x65\x64"), 
+    _0x9efee5_1 && (_0x9efee5_1.textContent = "\x43\x6f\x70\x69\x65\x64"), setTimeout(() => {
+      _0x9efee5_0.classList.remove("\x69\x73\x2d\x63\x6f\x70\x69\x65\x64"), _0x9efee5_0.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x9efee5_0.hasAttribute("\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x2d\x63\x6f\x64\x65") ? "\x43\x6f\x70\x79\x20\x63\x6f\x64\x65" : "\x43\x6f\x70\x79\x20\x6d\x65\x73\x73\x61\x67\x65"), 
+      _0x9efee5_1 && (_0x9efee5_1.textContent = _0x9efee5_2 || "\x43\x6f\x70\x79");
     }, 1200);
   }
-  async function ln() {
-    const e = y.value.trim();
-    let t = be;
-    const n = we, a = Boolean(xe);
-    if (!e && !t && !n && !a || v.disabled) return;
-    if (a) try {
-      ie.textContent = "Capturing the current frame\u2026", t = await function() {
-        if (!xe || "ended" === xe.getVideoTracks()[0]?.readyState) return Promise.reject(new Error("Screen sharing has ended. Start it again to attach your screen."));
-        const e = Math.max(1, oe.videoWidth || Number(xe.getVideoTracks()[0]?.getSettings?.().width) || 0), t = Math.max(1, oe.videoHeight || Number(xe.getVideoTracks()[0]?.getSettings?.().height) || 0);
-        if (e <= 1 || t <= 1) return Promise.reject(new Error("The shared screen is not ready yet. Wait a moment and try again."));
-        const n = Math.min(1, c / Math.max(e, t)), a = document.createElement("canvas"), o = a.getContext("2d");
-        if (!o) return Promise.reject(new Error("Screen capture is unavailable in this browser."));
-        a.width = Math.max(1, Math.round(e * n)), a.height = Math.max(1, Math.round(t * n)), 
-        o.drawImage(oe, 0, 0, a.width, a.height);
-        let i = .88, r = a.toDataURL("image/jpeg", i);
-        for (;r.length > l && i > .5; ) i -= .08, r = a.toDataURL("image/jpeg", i);
-        return r.length > l ? Promise.reject(new Error("Nyx could not prepare that screen frame within the upload limit.")) : Promise.resolve({
-          name: "Shared screen",
-          size: Math.ceil(.75 * r.length),
-          type: "image/jpeg",
-          dataUrl: r,
+  async function _0x9efee5_a9() {
+    const _0x9efee5_0 = _0x9efee5_11.value.trim();
+    let _0x9efee5_1 = _0x9efee5_49;
+    const _0x9efee5_2 = _0x9efee5_4a, _0x9efee5_3 = Boolean(_0x9efee5_4b);
+    if (!_0x9efee5_0 && !_0x9efee5_1 && !_0x9efee5_2 && !_0x9efee5_3 || _0x9efee5_12.disabled) return;
+    if (_0x9efee5_3) try {
+      _0x9efee5_3b.textContent = "\x43\x61\x70\x74\x75\x72\x69\x6e\x67\x20\x74\x68\x65\x20\x63\x75\x72\x72\x65\x6e\x74\x20\x66\x72\x61\x6d\x65\u2026", _0x9efee5_1 = await function() {
+        if (!_0x9efee5_4b || "\x65\x6e\x64\x65\x64" === _0x9efee5_4b.getVideoTracks()[0]?.readyState) return Promise.reject(new Error("\x53\x63\x72\x65\x65\x6e\x20\x73\x68\x61\x72\x69\x6e\x67\x20\x68\x61\x73\x20\x65\x6e\x64\x65\x64\x2e\x20\x53\x74\x61\x72\x74\x20\x69\x74\x20\x61\x67\x61\x69\x6e\x20\x74\x6f\x20\x61\x74\x74\x61\x63\x68\x20\x79\x6f\x75\x72\x20\x73\x63\x72\x65\x65\x6e\x2e"));
+        const _0x9efee5_0 = Math.max(1, _0x9efee5_3a.videoWidth || Number(_0x9efee5_4b.getVideoTracks()[0]?.getSettings?.().width) || 0), _0x9efee5_1 = Math.max(1, _0x9efee5_3a.videoHeight || Number(_0x9efee5_4b.getVideoTracks()[0]?.getSettings?.().height) || 0);
+        if (_0x9efee5_0 <= 1 || _0x9efee5_1 <= 1) return Promise.reject(new Error("\x54\x68\x65\x20\x73\x68\x61\x72\x65\x64\x20\x73\x63\x72\x65\x65\x6e\x20\x69\x73\x20\x6e\x6f\x74\x20\x72\x65\x61\x64\x79\x20\x79\x65\x74\x2e\x20\x57\x61\x69\x74\x20\x61\x20\x6d\x6f\x6d\x65\x6e\x74\x20\x61\x6e\x64\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e"));
+        const _0x9efee5_2 = Math.min(1, _0x9efee5_9 / Math.max(_0x9efee5_0, _0x9efee5_1)), _0x9efee5_3 = document.createElement("\x63\x61\x6e\x76\x61\x73"), _0x9efee5_4 = _0x9efee5_3.getContext("\x32\x64");
+        if (!_0x9efee5_4) return Promise.reject(new Error("\x53\x63\x72\x65\x65\x6e\x20\x63\x61\x70\x74\x75\x72\x65\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e"));
+        _0x9efee5_3.width = Math.max(1, Math.round(_0x9efee5_0 * _0x9efee5_2)), _0x9efee5_3.height = Math.max(1, Math.round(_0x9efee5_1 * _0x9efee5_2)), 
+        _0x9efee5_4.drawImage(_0x9efee5_3a, 0, 0, _0x9efee5_3.width, _0x9efee5_3.height);
+        let _0x9efee5_5 = .88, _0x9efee5_6 = _0x9efee5_3.toDataURL("\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67", _0x9efee5_5);
+        for (;_0x9efee5_6.length > _0x9efee5_8 && _0x9efee5_5 > .5; ) _0x9efee5_5 -= .08, 
+        _0x9efee5_6 = _0x9efee5_3.toDataURL("\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67", _0x9efee5_5);
+        return _0x9efee5_6.length > _0x9efee5_8 ? Promise.reject(new Error("\x4e\x79\x78\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x70\x72\x65\x70\x61\x72\x65\x20\x74\x68\x61\x74\x20\x73\x63\x72\x65\x65\x6e\x20\x66\x72\x61\x6d\x65\x20\x77\x69\x74\x68\x69\x6e\x20\x74\x68\x65\x20\x75\x70\x6c\x6f\x61\x64\x20\x6c\x69\x6d\x69\x74\x2e")) : Promise.resolve({
+          name: "\x53\x68\x61\x72\x65\x64\x20\x73\x63\x72\x65\x65\x6e",
+          size: Math.ceil(.75 * _0x9efee5_6.length),
+          type: "\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67",
+          dataUrl: _0x9efee5_6,
           screenCapture: !0
         });
       }();
-    } catch (B) {
-      return void (ie.textContent = B?.message || "Nyx could not capture the shared screen.");
+    } catch (_0x9efee5_21) {
+      return void (_0x9efee5_3b.textContent = _0x9efee5_21?.message || "\x4e\x79\x78\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x61\x70\x74\x75\x72\x65\x20\x74\x68\x65\x20\x73\x68\x61\x72\x65\x64\x20\x73\x63\x72\x65\x65\x6e\x2e");
     }
-    const o = b.value || r, s = ge.find(e => e.id === o);
-    if (Gt(s)) return void window.open("https://openrouter.ai/" + encodeURI(o), "_blank", "noopener");
-    const d = Boolean(s?.outputModalities?.includes("video")), m = d || (pe || !1 === s?.text) && s?.imageGeneration;
-    if (m && Ie) return void yt("assistant", "Use Nyx shared for dedicated image and video generation, or open the model on OpenRouter.", {
+    const _0x9efee5_4 = _0x9efee5_13.value || _0x9efee5_6, _0x9efee5_7 = _0x9efee5_43.find(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_4);
+    if (_0x9efee5_9c(_0x9efee5_7)) return void window.open("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72\x2e\x61\x69\x2f" + encodeURI(_0x9efee5_4), "\x5f\x62\x6c\x61\x6e\x6b", "\x6e\x6f\x6f\x70\x65\x6e\x65\x72");
+    const _0x9efee5_a = Boolean(_0x9efee5_7?.outputModalities?.includes("\x76\x69\x64\x65\x6f")), _0x9efee5_b = _0x9efee5_a || (_0x9efee5_44 || !1 === _0x9efee5_7?.text) && _0x9efee5_7?.imageGeneration;
+    if (_0x9efee5_b && _0x9efee5_4f) return void _0x9efee5_7d("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", "\x55\x73\x65\x20\x4e\x79\x78\x20\x73\x68\x61\x72\x65\x64\x20\x66\x6f\x72\x20\x64\x65\x64\x69\x63\x61\x74\x65\x64\x20\x69\x6d\x61\x67\x65\x20\x61\x6e\x64\x20\x76\x69\x64\x65\x6f\x20\x67\x65\x6e\x65\x72\x61\x74\x69\x6f\x6e\x2c\x20\x6f\x72\x20\x6f\x70\x65\x6e\x20\x74\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x6f\x6e\x20\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72\x2e", {
       error: !0,
-      modelId: o
+      modelId: _0x9efee5_4
     });
-    const u = Boolean(s?.imageGeneration) && !d, g = e || (a ? "Please analyze what is currently on my screen." : t ? "Please analyze this image." : "Please review the attached text file."), p = Ze();
-    p.length || Ct([ {
-      role: "user",
-      content: g
-    } ]), p.push({
-      role: "user",
-      content: g,
-      ...n ? {
-        textAttachment: n
+    const _0x9efee5_c = Boolean(_0x9efee5_7?.imageGeneration) && !_0x9efee5_a, _0x9efee5_d = _0x9efee5_0 || (_0x9efee5_3 ? "\x50\x6c\x65\x61\x73\x65\x20\x61\x6e\x61\x6c\x79\x7a\x65\x20\x77\x68\x61\x74\x20\x69\x73\x20\x63\x75\x72\x72\x65\x6e\x74\x6c\x79\x20\x6f\x6e\x20\x6d\x79\x20\x73\x63\x72\x65\x65\x6e\x2e" : _0x9efee5_1 ? "\x50\x6c\x65\x61\x73\x65\x20\x61\x6e\x61\x6c\x79\x7a\x65\x20\x74\x68\x69\x73\x20\x69\x6d\x61\x67\x65\x2e" : "\x50\x6c\x65\x61\x73\x65\x20\x72\x65\x76\x69\x65\x77\x20\x74\x68\x65\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x74\x65\x78\x74\x20\x66\x69\x6c\x65\x2e"), _0x9efee5_e = _0x9efee5_69();
+    _0x9efee5_e.length || _0x9efee5_87([ {
+      role: "\x75\x73\x65\x72",
+      content: _0x9efee5_d
+    } ]), _0x9efee5_e.push({
+      role: "\x75\x73\x65\x72",
+      content: _0x9efee5_d,
+      ..._0x9efee5_2 ? {
+        textAttachment: _0x9efee5_2
       } : {}
-    }), Xe(p), yt("user", g, {
-      attachment: t || n
-    }), y.value = "", nn();
-    const h = yt("assistant", "", {
+    }), _0x9efee5_6a(_0x9efee5_e), _0x9efee5_7d("\x75\x73\x65\x72", _0x9efee5_d, {
+      attachment: _0x9efee5_1 || _0x9efee5_2
+    }), _0x9efee5_11.value = "", _0x9efee5_a4();
+    const _0x9efee5_f = _0x9efee5_7d("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", "", {
       thinking: !0,
-      modelId: o,
-      modelName: Mt(o)
+      modelId: _0x9efee5_4,
+      modelName: _0x9efee5_89(_0x9efee5_4)
     });
-    ce = new AbortController, on(!0);
-    let w = "", x = null;
-    const E = performance.now();
-    let k = null, S = 0;
-    const I = () => ({
-      elapsedMs: performance.now() - E,
-      firstTextMs: k,
-      tokens: S || Math.ceil(w.length / 4),
-      estimated: !S
-    }), A = setInterval(() => ht(h, I(), !0), 500);
-    ht(h, I(), !0);
-    let C = null, L = null, M = !1, $ = 0;
-    const N = () => {
-      $ = 0, gt(h, w), an();
+    _0x9efee5_3f = new AbortController, _0x9efee5_a6(!0);
+    let _0x9efee5_14 = "", _0x9efee5_15 = null;
+    const _0x9efee5_16 = performance.now();
+    let _0x9efee5_17 = null, _0x9efee5_18 = 0;
+    const _0x9efee5_19 = () => ({
+      elapsedMs: performance.now() - _0x9efee5_16,
+      firstTextMs: _0x9efee5_17,
+      tokens: _0x9efee5_18 || Math.ceil(_0x9efee5_14.length / 4),
+      estimated: !_0x9efee5_18
+    }), _0x9efee5_1a = setInterval(() => _0x9efee5_7b(_0x9efee5_f, _0x9efee5_19(), !0), 500);
+    _0x9efee5_7b(_0x9efee5_f, _0x9efee5_19(), !0);
+    let _0x9efee5_1b = null, _0x9efee5_1c = null, _0x9efee5_1d = !1, _0x9efee5_1e = 0;
+    const _0x9efee5_1f = () => {
+      _0x9efee5_1e = 0, _0x9efee5_79(_0x9efee5_f, _0x9efee5_14), _0x9efee5_a5();
     };
     try {
-      const e = t ? await (T = t, T?.dataUrl ? new Promise((e, t) => {
-        const n = new Image;
-        n.onload = () => {
+      const _0x9efee5_0 = _0x9efee5_1 ? await (_0x9efee5_20 = _0x9efee5_1, _0x9efee5_20?.dataUrl ? new Promise((_0x9efee5_0, _0x9efee5_1) => {
+        const _0x9efee5_2 = new Image;
+        _0x9efee5_2.onload = () => {
           try {
-            const t = Math.max(1, n.naturalWidth || 1), a = Math.max(1, n.naturalHeight || 1);
-            if (T.dataUrl.length <= l && Math.max(t, a) <= c) return void e({
-              dataUrl: T.dataUrl,
-              mime: T.type,
-              width: t,
-              height: a,
-              screenCapture: !0 === T.screenCapture
+            const _0x9efee5_1 = Math.max(1, _0x9efee5_2.naturalWidth || 1), _0x9efee5_3 = Math.max(1, _0x9efee5_2.naturalHeight || 1);
+            if (_0x9efee5_20.dataUrl.length <= _0x9efee5_8 && Math.max(_0x9efee5_1, _0x9efee5_3) <= _0x9efee5_9) return void _0x9efee5_0({
+              dataUrl: _0x9efee5_20.dataUrl,
+              mime: _0x9efee5_20.type,
+              width: _0x9efee5_1,
+              height: _0x9efee5_3,
+              screenCapture: !0 === _0x9efee5_20.screenCapture
             });
-            const o = document.createElement("canvas"), i = o.getContext("2d");
-            if (!i) throw new Error("Image preparation is unavailable.");
-            let r = Math.min(1, c / Math.max(t, a)), s = "";
-            for (let e = 0; e < 7 && (o.width = Math.max(1, Math.round(t * r)), o.height = Math.max(1, Math.round(a * r)), 
-            i.fillStyle = "#ffffff", i.fillRect(0, 0, o.width, o.height), i.drawImage(n, 0, 0, o.width, o.height), 
-            s = o.toDataURL("image/jpeg", Math.max(.52, .9 - .07 * e)), !(s.length <= l)); e += 1) r *= .82;
-            if (!s || s.length > l) throw new Error("Nyx could not prepare that image within the upload limit.");
-            e({
-              dataUrl: s,
-              mime: "image/jpeg",
-              width: t,
-              height: a,
-              screenCapture: !0 === T.screenCapture
+            const _0x9efee5_4 = document.createElement("\x63\x61\x6e\x76\x61\x73"), _0x9efee5_5 = _0x9efee5_4.getContext("\x32\x64");
+            if (!_0x9efee5_5) throw new Error("\x49\x6d\x61\x67\x65\x20\x70\x72\x65\x70\x61\x72\x61\x74\x69\x6f\x6e\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+            let _0x9efee5_6 = Math.min(1, _0x9efee5_9 / Math.max(_0x9efee5_1, _0x9efee5_3)), _0x9efee5_7 = "";
+            for (let _0x9efee5_0 = 0; _0x9efee5_0 < 7 && (_0x9efee5_4.width = Math.max(1, Math.round(_0x9efee5_1 * _0x9efee5_6)), 
+            _0x9efee5_4.height = Math.max(1, Math.round(_0x9efee5_3 * _0x9efee5_6)), _0x9efee5_5.fillStyle = "\x23\x66\x66\x66\x66\x66\x66", 
+            _0x9efee5_5.fillRect(0, 0, _0x9efee5_4.width, _0x9efee5_4.height), _0x9efee5_5.drawImage(_0x9efee5_2, 0, 0, _0x9efee5_4.width, _0x9efee5_4.height), 
+            _0x9efee5_7 = _0x9efee5_4.toDataURL("\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67", Math.max(.52, .9 - .07 * _0x9efee5_0)), 
+            !(_0x9efee5_7.length <= _0x9efee5_8)); _0x9efee5_0 += 1) _0x9efee5_6 *= .82;
+            if (!_0x9efee5_7 || _0x9efee5_7.length > _0x9efee5_8) throw new Error("\x4e\x79\x78\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x70\x72\x65\x70\x61\x72\x65\x20\x74\x68\x61\x74\x20\x69\x6d\x61\x67\x65\x20\x77\x69\x74\x68\x69\x6e\x20\x74\x68\x65\x20\x75\x70\x6c\x6f\x61\x64\x20\x6c\x69\x6d\x69\x74\x2e");
+            _0x9efee5_0({
+              dataUrl: _0x9efee5_7,
+              mime: "\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67",
+              width: _0x9efee5_1,
+              height: _0x9efee5_3,
+              screenCapture: !0 === _0x9efee5_20.screenCapture
             });
-          } catch (B) {
-            t(B);
+          } catch (_0x9efee5_21) {
+            _0x9efee5_1(_0x9efee5_21);
           }
-        }, n.onerror = () => t(new Error("Nyx could not decode that image.")), n.src = T.dataUrl;
-      }) : Promise.reject(new Error("The attached image is unavailable."))) : null, r = e ? `Original image dimensions: ${e.width}x${e.height}px.` : "";
-      let s;
-      if (e && (a ? ie.textContent = `Nyx is reading this screen frame for ${Mt(o)}\u2026` : tt(`Nyx is reading this image for ${Mt(o)}\u2026`)), 
-      Ie) {
-        const t = Ae();
-        if ((e || u) && "nyx" === t) throw new Error("Nyx API keys currently support text only. Use Nyx shared or an OpenRouter key for images.");
-        const n = p.slice(-20).map(e => ({
-          role: e.role,
-          content: e.content + (e.textAttachment ? "\n\n" + e.textAttachment.content : "")
+        }, _0x9efee5_2.onerror = () => _0x9efee5_1(new Error("\x4e\x79\x78\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x64\x65\x63\x6f\x64\x65\x20\x74\x68\x61\x74\x20\x69\x6d\x61\x67\x65\x2e")), 
+        _0x9efee5_2.src = _0x9efee5_20.dataUrl;
+      }) : Promise.reject(new Error("\x54\x68\x65\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x69\x6d\x61\x67\x65\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e"))) : null, _0x9efee5_6 = _0x9efee5_0 ? `\x4f\x72\x69\x67\x69\x6e\x61\x6c\x20\x69\x6d\x61\x67\x65\x20\x64\x69\x6d\x65\x6e\x73\x69\x6f\x6e\x73\x3a\x20${_0x9efee5_0.width}\x78${_0x9efee5_0.height}\x70\x78\x2e` : "";
+      let _0x9efee5_7;
+      if (_0x9efee5_0 && (_0x9efee5_3 ? _0x9efee5_3b.textContent = `\x4e\x79\x78\x20\x69\x73\x20\x72\x65\x61\x64\x69\x6e\x67\x20\x74\x68\x69\x73\x20\x73\x63\x72\x65\x65\x6e\x20\x66\x72\x61\x6d\x65\x20\x66\x6f\x72\x20${_0x9efee5_89(_0x9efee5_4)}\u2026` : _0x9efee5_6d(`\x4e\x79\x78\x20\x69\x73\x20\x72\x65\x61\x64\x69\x6e\x67\x20\x74\x68\x69\x73\x20\x69\x6d\x61\x67\x65\x20\x66\x6f\x72\x20${_0x9efee5_89(_0x9efee5_4)}\u2026`)), 
+      _0x9efee5_4f) {
+        const _0x9efee5_1 = _0x9efee5_50();
+        if ((_0x9efee5_0 || _0x9efee5_c) && "\x6e\x79\x78" === _0x9efee5_1) throw new Error("\x4e\x79\x78\x20\x41\x50\x49\x20\x6b\x65\x79\x73\x20\x63\x75\x72\x72\x65\x6e\x74\x6c\x79\x20\x73\x75\x70\x70\x6f\x72\x74\x20\x74\x65\x78\x74\x20\x6f\x6e\x6c\x79\x2e\x20\x55\x73\x65\x20\x4e\x79\x78\x20\x73\x68\x61\x72\x65\x64\x20\x6f\x72\x20\x61\x6e\x20\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72\x20\x6b\x65\x79\x20\x66\x6f\x72\x20\x69\x6d\x61\x67\x65\x73\x2e");
+        const _0x9efee5_2 = _0x9efee5_e.slice(-20).map(_0x9efee5_0 => ({
+          role: _0x9efee5_0.role,
+          content: _0x9efee5_0.content + (_0x9efee5_0.textAttachment ? "\x0a\x0a" + _0x9efee5_0.textAttachment.content : "")
         }));
-        if (e && (n[n.length - 1].content = [ {
-          type: "text",
-          text: n[n.length - 1].content
+        if (_0x9efee5_0 && (_0x9efee5_2[_0x9efee5_2.length - 1].content = [ {
+          type: "\x74\x65\x78\x74",
+          text: _0x9efee5_2[_0x9efee5_2.length - 1].content
         }, {
-          type: "image_url",
+          type: "\x69\x6d\x61\x67\x65\x5f\x75\x72\x6c",
           image_url: {
-            url: e.dataUrl
+            url: _0x9efee5_0.dataUrl
           }
-        } ]), s = await fetch("nyx" === t ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/v1/ai" : "https://openrouter.ai/api/v1/chat/completions", {
-          method: "POST",
-          signal: ce.signal,
+        } ]), _0x9efee5_7 = await fetch("\x6e\x79\x78" === _0x9efee5_1 ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x76\x31\x2f\x61\x69" : "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72\x2e\x61\x69\x2f\x61\x70\x69\x2f\x76\x31\x2f\x63\x68\x61\x74\x2f\x63\x6f\x6d\x70\x6c\x65\x74\x69\x6f\x6e\x73", {
+          method: "\x50\x4f\x53\x54",
+          signal: _0x9efee5_3f.signal,
           headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + Ie
+            "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+            Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0x9efee5_4f
           },
           body: JSON.stringify({
-            model: o,
-            messages: n,
-            max_tokens: u ? 2200 : 512,
-            stream: !u && "nyx" !== t,
-            ...u ? {
-              modalities: [ "text", "image" ]
+            model: _0x9efee5_4,
+            messages: _0x9efee5_2,
+            max_tokens: _0x9efee5_c ? 2200 : 512,
+            stream: !_0x9efee5_c && "\x6e\x79\x78" !== _0x9efee5_1,
+            ..._0x9efee5_c ? {
+              modalities: [ "\x74\x65\x78\x74", "\x69\x6d\x61\x67\x65" ]
             } : {}
           })
-        }), "nyx" === t && s.ok) {
-          const e = await s.json(), t = e.choices?.[0]?.message?.content || "";
-          s = new Response("data: " + JSON.stringify({
-            model: e.model,
+        }), "\x6e\x79\x78" === _0x9efee5_1 && _0x9efee5_7.ok) {
+          const _0x9efee5_0 = await _0x9efee5_7.json(), _0x9efee5_1 = _0x9efee5_0.choices?.[0]?.message?.content || "";
+          _0x9efee5_7 = new Response("data: " + JSON.stringify({
+            model: _0x9efee5_0.model,
             choices: [ {
               delta: {
-                content: t
+                content: _0x9efee5_1
               },
-              finish_reason: e.choices?.[0]?.finish_reason
+              finish_reason: _0x9efee5_0.choices?.[0]?.finish_reason
             } ]
-          }) + "\n\ndata: [DONE]\n\n", {
+          }) + "\x0a\x0a\x64\x61\x74\x61\x3a\x20\x5b\x44\x4f\x4e\x45\x5d\x0a\x0a", {
             headers: {
-              "Content-Type": "text/event-stream"
+              "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x74\x65\x78\x74\x2f\x65\x76\x65\x6e\x74\x2d\x73\x74\x72\x65\x61\x6d"
             }
           });
         }
-      } else s = await fetch(m ? _t() ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/tutsi-ai/media" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai/media" : _t() ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/tutsi-ai" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai", {
-        method: "POST",
-        signal: ce.signal,
-        headers: await Se({
-          "content-type": "application/json"
+      } else _0x9efee5_7 = await fetch(_0x9efee5_b ? _0x9efee5_94() ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x74\x75\x74\x73\x69\x2d\x61\x69\x2f\x6d\x65\x64\x69\x61" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x6d\x65\x64\x69\x61" : _0x9efee5_94() ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x74\x75\x74\x73\x69\x2d\x61\x69" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69", {
+        method: "\x50\x4f\x53\x54",
+        signal: _0x9efee5_3f.signal,
+        headers: await _0x9efee5_4e({
+          "\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         }),
         body: JSON.stringify({
           historyNoticeVersion: 1,
-          temporaryChat: ye,
-          model: o,
-          message: g,
-          messages: p.slice(-20),
-          textAttachment: n,
-          imageContext: r,
-          image: e,
-          responseDepth: Me(),
-          generateImage: u,
-          stream: !u
+          temporaryChat: _0x9efee5_47,
+          model: _0x9efee5_4,
+          message: _0x9efee5_d,
+          messages: _0x9efee5_e.slice(-20),
+          textAttachment: _0x9efee5_2,
+          imageContext: _0x9efee5_6,
+          image: _0x9efee5_0,
+          responseDepth: _0x9efee5_53(),
+          generateImage: _0x9efee5_c,
+          stream: !_0x9efee5_c
         })
       });
-      if (!s.ok) {
-        !function(e) {
-          const t = Number(e.headers.get("retry-after"));
-          if (429 !== e.status || !Number.isFinite(t) || t < 1 || t > 60) return;
-          de = Date.now() + 1e3 * t, clearInterval(le);
-          const n = () => {
-            const e = Math.max(0, Math.ceil((de - Date.now()) / 1e3));
-            me.hidden = !e, me.textContent = e ? `You can send another message in ${e}s.` : "", 
-            v.disabled = !!e || f.classList.contains("is-busy"), e || clearInterval(le);
+      if (!_0x9efee5_7.ok) {
+        !function(_0x9efee5_0) {
+          const _0x9efee5_1 = Number(_0x9efee5_0.headers.get("\x72\x65\x74\x72\x79\x2d\x61\x66\x74\x65\x72"));
+          if (429 !== _0x9efee5_0.status || !Number.isFinite(_0x9efee5_1) || _0x9efee5_1 < 1 || _0x9efee5_1 > 60) return;
+          _0x9efee5_40 = Date.now() + 1e3 * _0x9efee5_1, clearInterval(_0x9efee5_3e);
+          const _0x9efee5_2 = () => {
+            const _0x9efee5_0 = Math.max(0, Math.ceil((_0x9efee5_40 - Date.now()) / 1e3));
+            _0x9efee5_41.hidden = !_0x9efee5_0, _0x9efee5_41.textContent = _0x9efee5_0 ? `\x59\x6f\x75\x20\x63\x61\x6e\x20\x73\x65\x6e\x64\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x6d\x65\x73\x73\x61\x67\x65\x20\x69\x6e\x20${_0x9efee5_0}\x73\x2e` : "", 
+            _0x9efee5_12.disabled = !!_0x9efee5_0 || _0x9efee5_10.classList.contains("\x69\x73\x2d\x62\x75\x73\x79"), 
+            _0x9efee5_0 || clearInterval(_0x9efee5_3e);
           };
-          n(), le = setInterval(n, 250);
-        }(s);
-        const e = await s.json().catch(() => ({}));
-        throw new Error(e?.error?.message || e?.error || (u && [ 502, 504 ].includes(s.status) ? "The image provider failed or timed out before finishing. Try again or choose another image model." : `Nyx AI failed (${s.status})`));
+          _0x9efee5_2(), _0x9efee5_3e = setInterval(_0x9efee5_2, 250);
+        }(_0x9efee5_7);
+        const _0x9efee5_0 = await _0x9efee5_7.json().catch(() => ({}));
+        throw new Error(_0x9efee5_0?.error?.message || _0x9efee5_0?.error || (_0x9efee5_c && [ 502, 504 ].includes(_0x9efee5_7.status) ? "\x54\x68\x65\x20\x69\x6d\x61\x67\x65\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x66\x61\x69\x6c\x65\x64\x20\x6f\x72\x20\x74\x69\x6d\x65\x64\x20\x6f\x75\x74\x20\x62\x65\x66\x6f\x72\x65\x20\x66\x69\x6e\x69\x73\x68\x69\x6e\x67\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x6f\x72\x20\x63\x68\x6f\x6f\x73\x65\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x69\x6d\x61\x67\x65\x20\x6d\x6f\x64\x65\x6c\x2e" : `\x4e\x79\x78\x20\x41\x49\x20\x66\x61\x69\x6c\x65\x64\x20\x28${_0x9efee5_7.status}\x29`));
       }
-      if (m) {
-        const e = await s.json();
-        if (!/^[a-f0-9-]{36}$/.test(e.jobId || "")) throw new Error("The video request did not return a job.");
-        L = e.jobId, w = "image" === e.kind ? "Rendering your image. You can keep chatting while it finishes." : `Rendering a ${e.duration}-second video${e.resolution ? " at " + e.resolution : ""}. It may take a few minutes.`, 
-        Fe(h, L);
-      } else if (u) {
-        const e = s.body.getReader(), t = new TextDecoder;
-        let n = "", a = 0;
+      if (_0x9efee5_b) {
+        const _0x9efee5_0 = await _0x9efee5_7.json();
+        if (!/^[a-f0-9-]{36}$/.test(_0x9efee5_0.jobId || "")) throw new Error("\x54\x68\x65\x20\x76\x69\x64\x65\x6f\x20\x72\x65\x71\x75\x65\x73\x74\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x75\x72\x6e\x20\x61\x20\x6a\x6f\x62\x2e");
+        _0x9efee5_1c = _0x9efee5_0.jobId, _0x9efee5_14 = "\x69\x6d\x61\x67\x65" === _0x9efee5_0.kind ? "\x52\x65\x6e\x64\x65\x72\x69\x6e\x67\x20\x79\x6f\x75\x72\x20\x69\x6d\x61\x67\x65\x2e\x20\x59\x6f\x75\x20\x63\x61\x6e\x20\x6b\x65\x65\x70\x20\x63\x68\x61\x74\x74\x69\x6e\x67\x20\x77\x68\x69\x6c\x65\x20\x69\x74\x20\x66\x69\x6e\x69\x73\x68\x65\x73\x2e" : `\x52\x65\x6e\x64\x65\x72\x69\x6e\x67\x20\x61\x20${_0x9efee5_0.duration}\x2d\x73\x65\x63\x6f\x6e\x64\x20\x76\x69\x64\x65\x6f${_0x9efee5_0.resolution ? "\x20\x61\x74\x20" + _0x9efee5_0.resolution : ""}\x2e\x20\x49\x74\x20\x6d\x61\x79\x20\x74\x61\x6b\x65\x20\x61\x20\x66\x65\x77\x20\x6d\x69\x6e\x75\x74\x65\x73\x2e`, 
+        _0x9efee5_61(_0x9efee5_f, _0x9efee5_1c);
+      } else if (_0x9efee5_c) {
+        const _0x9efee5_0 = _0x9efee5_7.body.getReader(), _0x9efee5_1 = new TextDecoder;
+        let _0x9efee5_2 = "", _0x9efee5_3 = 0;
         for (;;) {
-          const o = await e.read();
-          if (o.done) break;
-          if (a += o.value.byteLength, a > 8388608) throw await e.cancel(), new Error("The generated image response is too large.");
-          n += t.decode(o.value, {
+          const _0x9efee5_4 = await _0x9efee5_0.read();
+          if (_0x9efee5_4.done) break;
+          if (_0x9efee5_3 += _0x9efee5_4.value.byteLength, _0x9efee5_3 > 8388608) throw await _0x9efee5_0.cancel(), 
+          new Error("\x54\x68\x65\x20\x67\x65\x6e\x65\x72\x61\x74\x65\x64\x20\x69\x6d\x61\x67\x65\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x69\x73\x20\x74\x6f\x6f\x20\x6c\x61\x72\x67\x65\x2e");
+          _0x9efee5_2 += _0x9efee5_1.decode(_0x9efee5_4.value, {
             stream: !0
           });
         }
-        n += t.decode();
-        const o = JSON.parse(n);
-        if ("string" == typeof o.model && o.model.trim() && qt(h, o.model), o.error) throw new Error(o.error.message || o.error);
-        const i = o.choices?.[0]?.message;
-        w = "string" == typeof o.text ? o.text : "string" == typeof i?.content ? i.content : "";
-        const r = o.images || i?.images || (Array.isArray(i?.content) ? i.content.filter(e => "image_url" === e.type) : []);
-        if (r.length > 1) throw new Error("Ask for one image at a time.");
-        r.length && (C = await _e(r[0].dataUrl || r[0].image_url?.url), w.trim() || (w = "Generated image."), 
-        await Pe(h, C));
-      } else if (s.headers.get("content-type")?.includes("text/event-stream")) {
-        if (!s.body) throw new Error("The selected model did not return a stream.");
-        const e = s.body.getReader(), t = new TextDecoder;
-        let n = "", a = "";
-        const o = e => {
-          if (!e.startsWith("data:")) return;
-          const t = e.slice(5).trim();
-          if (t && "[DONE]" !== t) try {
-            const e = JSON.parse(t);
-            if ("string" == typeof e.model && e.model.trim() && qt(h, e.model), e.error) return void (a = String(e.error.message || e.error));
-            x = e.choices?.[0]?.finish_reason || x;
-            const n = Number(e.nyx_usage?.completion_tokens ?? e.usage?.completion_tokens);
-            if (Number.isFinite(n) && n > 0 && (S = n), e.nyx_metadata) {
-              const t = h._nyxMetadata || {
+        _0x9efee5_2 += _0x9efee5_1.decode();
+        const _0x9efee5_4 = JSON.parse(_0x9efee5_2);
+        if ("\x73\x74\x72\x69\x6e\x67" == typeof _0x9efee5_4.model && _0x9efee5_4.model.trim() && _0x9efee5_93(_0x9efee5_f, _0x9efee5_4.model), 
+        _0x9efee5_4.error) throw new Error(_0x9efee5_4.error.message || _0x9efee5_4.error);
+        const _0x9efee5_5 = _0x9efee5_4.choices?.[0]?.message;
+        _0x9efee5_14 = "\x73\x74\x72\x69\x6e\x67" == typeof _0x9efee5_4.text ? _0x9efee5_4.text : "\x73\x74\x72\x69\x6e\x67" == typeof _0x9efee5_5?.content ? _0x9efee5_5.content : "";
+        const _0x9efee5_6 = _0x9efee5_4.images || _0x9efee5_5?.images || (Array.isArray(_0x9efee5_5?.content) ? _0x9efee5_5.content.filter(_0x9efee5_0 => "\x69\x6d\x61\x67\x65\x5f\x75\x72\x6c" === _0x9efee5_0.type) : []);
+        if (_0x9efee5_6.length > 1) throw new Error("\x41\x73\x6b\x20\x66\x6f\x72\x20\x6f\x6e\x65\x20\x69\x6d\x61\x67\x65\x20\x61\x74\x20\x61\x20\x74\x69\x6d\x65\x2e");
+        _0x9efee5_6.length && (_0x9efee5_1b = await _0x9efee5_5e(_0x9efee5_6[0].dataUrl || _0x9efee5_6[0].image_url?.url), 
+        _0x9efee5_14.trim() || (_0x9efee5_14 = "\x47\x65\x6e\x65\x72\x61\x74\x65\x64\x20\x69\x6d\x61\x67\x65\x2e"), await _0x9efee5_5f(_0x9efee5_f, _0x9efee5_1b));
+      } else if (_0x9efee5_7.headers.get("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65")?.includes("\x74\x65\x78\x74\x2f\x65\x76\x65\x6e\x74\x2d\x73\x74\x72\x65\x61\x6d")) {
+        if (!_0x9efee5_7.body) throw new Error("\x54\x68\x65\x20\x73\x65\x6c\x65\x63\x74\x65\x64\x20\x6d\x6f\x64\x65\x6c\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x74\x75\x72\x6e\x20\x61\x20\x73\x74\x72\x65\x61\x6d\x2e");
+        const _0x9efee5_0 = _0x9efee5_7.body.getReader(), _0x9efee5_1 = new TextDecoder;
+        let _0x9efee5_2 = "", _0x9efee5_3 = "";
+        const _0x9efee5_4 = _0x9efee5_0 => {
+          if (!_0x9efee5_0.startsWith("data:")) return;
+          const _0x9efee5_1 = _0x9efee5_0.slice(5).trim();
+          if (_0x9efee5_1 && "\x5b\x44\x4f\x4e\x45\x5d" !== _0x9efee5_1) try {
+            const _0x9efee5_0 = JSON.parse(_0x9efee5_1);
+            if ("\x73\x74\x72\x69\x6e\x67" == typeof _0x9efee5_0.model && _0x9efee5_0.model.trim() && _0x9efee5_93(_0x9efee5_f, _0x9efee5_0.model), 
+            _0x9efee5_0.error) return void (_0x9efee5_3 = String(_0x9efee5_0.error.message || _0x9efee5_0.error));
+            _0x9efee5_15 = _0x9efee5_0.choices?.[0]?.finish_reason || _0x9efee5_15;
+            const _0x9efee5_2 = Number(_0x9efee5_0.nyx_usage?.completion_tokens ?? _0x9efee5_0.usage?.completion_tokens);
+            if (Number.isFinite(_0x9efee5_2) && _0x9efee5_2 > 0 && (_0x9efee5_18 = _0x9efee5_2), 
+            _0x9efee5_0.nyx_metadata) {
+              const _0x9efee5_1 = _0x9efee5_f._nyxMetadata || {
                 sources: [],
                 summary: ""
               };
-              h._nyxMetadata = dt({
-                sources: [ ...t.sources, ...e.nyx_metadata.sources || [] ],
-                summary: t.summary + (e.nyx_metadata.summary || "")
-              }), $ || ($ = requestAnimationFrame(N));
+              _0x9efee5_f._nyxMetadata = _0x9efee5_76({
+                sources: [ ..._0x9efee5_1.sources, ..._0x9efee5_0.nyx_metadata.sources || [] ],
+                summary: _0x9efee5_1.summary + (_0x9efee5_0.nyx_metadata.summary || "")
+              }), _0x9efee5_1e || (_0x9efee5_1e = requestAnimationFrame(_0x9efee5_1f));
             }
-            const o = e?.choices?.[0]?.delta?.content || e?.choices?.[0]?.text || "";
-            o && (null === k && (k = performance.now() - E), w = !0 === e?.nyx_replace ? String(o) : w + o, 
-            $ || ($ = requestAnimationFrame(N)));
+            const _0x9efee5_4 = _0x9efee5_0?.choices?.[0]?.delta?.content || _0x9efee5_0?.choices?.[0]?.text || "";
+            _0x9efee5_4 && (null === _0x9efee5_17 && (_0x9efee5_17 = performance.now() - _0x9efee5_16), 
+            _0x9efee5_14 = !0 === _0x9efee5_0?.nyx_replace ? String(_0x9efee5_4) : _0x9efee5_14 + _0x9efee5_4, 
+            _0x9efee5_1e || (_0x9efee5_1e = requestAnimationFrame(_0x9efee5_1f)));
           } catch {}
         };
         for (;;) {
-          const a = await e.read();
-          if (a.done) break;
-          n += t.decode(a.value, {
+          const _0x9efee5_3 = await _0x9efee5_0.read();
+          if (_0x9efee5_3.done) break;
+          _0x9efee5_2 += _0x9efee5_1.decode(_0x9efee5_3.value, {
             stream: !0
           });
-          const i = n.split(/\r?\n/);
-          n = i.pop() || "", i.forEach(o);
+          const _0x9efee5_5 = _0x9efee5_2.split(/\r?\n/);
+          _0x9efee5_2 = _0x9efee5_5.pop() || "", _0x9efee5_5.forEach(_0x9efee5_4);
         }
-        if (n += t.decode(), n.split(/\r?\n/).forEach(o), a) throw new Error(a);
-        $ && (cancelAnimationFrame($), N());
+        if (_0x9efee5_2 += _0x9efee5_1.decode(), _0x9efee5_2.split(/\r?\n/).forEach(_0x9efee5_4), 
+        _0x9efee5_3) throw new Error(_0x9efee5_3);
+        _0x9efee5_1e && (cancelAnimationFrame(_0x9efee5_1e), _0x9efee5_1f());
       } else {
-        const e = await s.json();
-        if (e.error) throw new Error(e.error.message || e.error);
-        w = e.text || e.choices?.[0]?.message?.content || "", x = e.finishReason || e.choices?.[0]?.finish_reason || null, 
-        e.model && qt(h, e.model), e.metadata && (h._nyxMetadata = dt(e.metadata));
+        const _0x9efee5_0 = await _0x9efee5_7.json();
+        if (_0x9efee5_0.error) throw new Error(_0x9efee5_0.error.message || _0x9efee5_0.error);
+        _0x9efee5_14 = _0x9efee5_0.text || _0x9efee5_0.choices?.[0]?.message?.content || "", 
+        _0x9efee5_15 = _0x9efee5_0.finishReason || _0x9efee5_0.choices?.[0]?.finish_reason || null, 
+        _0x9efee5_0.model && _0x9efee5_93(_0x9efee5_f, _0x9efee5_0.model), _0x9efee5_0.metadata && (_0x9efee5_f._nyxMetadata = _0x9efee5_76(_0x9efee5_0.metadata));
       }
-      w && null === k && (k = performance.now() - E);
-      const d = w.trim(), y = ct(d).answer.trim();
-      if (!y) throw new Error("This model did not produce a final answer. Try again or choose another available model.");
-      gt(h, d), "length" === x && ft(h), p.push({
-        role: "assistant",
-        content: y,
-        finishReason: x,
-        modelId: h._modelId,
-        modelName: h._modelName,
-        metadata: h._nyxMetadata,
-        timing: I(),
-        ...C ? {
-          imageId: C
+      _0x9efee5_14 && null === _0x9efee5_17 && (_0x9efee5_17 = performance.now() - _0x9efee5_16);
+      const _0x9efee5_a = _0x9efee5_14.trim(), _0x9efee5_11 = _0x9efee5_75(_0x9efee5_a).answer.trim();
+      if (!_0x9efee5_11) throw new Error("\x54\x68\x69\x73\x20\x6d\x6f\x64\x65\x6c\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x70\x72\x6f\x64\x75\x63\x65\x20\x61\x20\x66\x69\x6e\x61\x6c\x20\x61\x6e\x73\x77\x65\x72\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x6f\x72\x20\x63\x68\x6f\x6f\x73\x65\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x6d\x6f\x64\x65\x6c\x2e");
+      _0x9efee5_79(_0x9efee5_f, _0x9efee5_a), "\x6c\x65\x6e\x67\x74\x68" === _0x9efee5_15 && _0x9efee5_7c(_0x9efee5_f), 
+      _0x9efee5_e.push({
+        role: "\x61\x73\x73\x69\x73\x74\x61\x6e\x74",
+        content: _0x9efee5_11,
+        finishReason: _0x9efee5_15,
+        modelId: _0x9efee5_f._modelId,
+        modelName: _0x9efee5_f._modelName,
+        metadata: _0x9efee5_f._nyxMetadata,
+        timing: _0x9efee5_19(),
+        ..._0x9efee5_1b ? {
+          imageId: _0x9efee5_1b
         } : {},
-        ...L ? {
-          mediaJobId: L
+        ..._0x9efee5_1c ? {
+          mediaJobId: _0x9efee5_1c
         } : {}
-      }), Xe(p), function(e, t) {
-        const n = function() {
+      }), _0x9efee5_6a(_0x9efee5_e), function(_0x9efee5_0, _0x9efee5_1) {
+        const _0x9efee5_2 = function() {
           try {
-            const e = JSON.parse(localStorage.getItem(i) || "[]");
-            return Array.isArray(e) ? e.filter(e => Number.isFinite(e?.at) && Number.isFinite(e?.tokens) && e.tokens > 0).slice(-1e3) : [];
+            const _0x9efee5_0 = JSON.parse(localStorage.getItem(_0x9efee5_5) || "\x5b\x5d");
+            return Array.isArray(_0x9efee5_0) ? _0x9efee5_0.filter(_0x9efee5_0 => Number.isFinite(_0x9efee5_0?.at) && Number.isFinite(_0x9efee5_0?.tokens) && _0x9efee5_0.tokens > 0).slice(-1e3) : [];
           } catch {
             return [];
           }
         }();
-        n.push({
+        _0x9efee5_2.push({
           at: Date.now(),
-          tokens: Math.max(1, Math.ceil((String(e || "").length + String(t || "").length) / 4))
+          tokens: Math.max(1, Math.ceil((String(_0x9efee5_0 || "").length + String(_0x9efee5_1 || "").length) / 4))
         });
         try {
-          localStorage.setItem(i, JSON.stringify(n.slice(-1e3)));
+          localStorage.setItem(_0x9efee5_5, JSON.stringify(_0x9efee5_2.slice(-1e3)));
         } catch {}
-      }(g, y), M = !0;
-    } catch (B) {
-      if ("AbortError" === B?.name) return;
-      gt(h, B?.message || "Nyx AI could not complete that request.", {
+      }(_0x9efee5_d, _0x9efee5_11), _0x9efee5_1d = !0;
+    } catch (_0x9efee5_21) {
+      if ("\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x9efee5_21?.name) return;
+      _0x9efee5_79(_0x9efee5_f, _0x9efee5_21?.message || "\x4e\x79\x78\x20\x41\x49\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x74\x68\x61\x74\x20\x72\x65\x71\x75\x65\x73\x74\x2e", {
         error: !0
-      }), Ie || tn();
+      }), _0x9efee5_4f || _0x9efee5_a3();
     } finally {
-      clearInterval(A), ht(h, I()), $ && cancelAnimationFrame($), ce = null, on(!1), M && ot(), 
-      xe && (ie.textContent = "A fresh frame is attached only when you send."), y.focus(), 
-      an(), Re();
+      clearInterval(_0x9efee5_1a), _0x9efee5_7b(_0x9efee5_f, _0x9efee5_19()), _0x9efee5_1e && cancelAnimationFrame(_0x9efee5_1e), 
+      _0x9efee5_3f = null, _0x9efee5_a6(!1), _0x9efee5_1d && _0x9efee5_70(), _0x9efee5_4b && (_0x9efee5_3b.textContent = "\x41\x20\x66\x72\x65\x73\x68\x20\x66\x72\x61\x6d\x65\x20\x69\x73\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x6f\x6e\x6c\x79\x20\x77\x68\x65\x6e\x20\x79\x6f\x75\x20\x73\x65\x6e\x64\x2e"), 
+      _0x9efee5_11.focus(), _0x9efee5_a5(), _0x9efee5_58();
     }
-    var T;
+    var _0x9efee5_20;
   }
-  matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", Ft), De(), 
-  addEventListener("message", e => {
-    e.origin === location.origin && (e.source === parent && "nyx:theme-sync" === e.data?.type && De(e.data.theme), 
-    e.source === parent && "nyx:ai-profile" === e.data?.type && (It(e.data.profile || {}), 
-    Re()));
-  }), addEventListener("focus", () => {
-    At(), Re();
-  }), document.addEventListener("visibilitychange", () => {
-    document.hidden || Re();
-  }), b.addEventListener("change", () => {
-    Re();
-  }), addEventListener("storage", e => {
-    [ "nyx.theme", "nyx.customThemeColor" ].includes(e.key) && De(), e.key === t && (he = Ke(), 
-    fe && !he.some(e => e.id === fe) && (fe = ""), bt(), Lt()), "nyx.userName" === e.key && At();
-  }), p.addEventListener("scroll", () => {
-    ue = p.scrollHeight - p.scrollTop - p.clientHeight < 100;
+  matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").addEventListener("\x63\x68\x61\x6e\x67\x65", _0x9efee5_97), 
+  _0x9efee5_59(), addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x9efee5_0 => {
+    _0x9efee5_0.origin === location.origin && (_0x9efee5_0.source === parent && "\x6e\x79\x78\x3a\x74\x68\x65\x6d\x65\x2d\x73\x79\x6e\x63" === _0x9efee5_0.data?.type && _0x9efee5_59(_0x9efee5_0.data.theme), 
+    _0x9efee5_0.source === parent && "\x6e\x79\x78\x3a\x61\x69\x2d\x70\x72\x6f\x66\x69\x6c\x65" === _0x9efee5_0.data?.type && (_0x9efee5_85(_0x9efee5_0.data.profile || {}), 
+    _0x9efee5_58()));
+  }), addEventListener("\x66\x6f\x63\x75\x73", () => {
+    _0x9efee5_86(), _0x9efee5_58();
+  }), document.addEventListener("\x76\x69\x73\x69\x62\x69\x6c\x69\x74\x79\x63\x68\x61\x6e\x67\x65", () => {
+    document.hidden || _0x9efee5_58();
+  }), _0x9efee5_13.addEventListener("\x63\x68\x61\x6e\x67\x65", () => {
+    _0x9efee5_58();
+  }), addEventListener("\x73\x74\x6f\x72\x61\x67\x65", _0x9efee5_0 => {
+    [ "\x6e\x79\x78\x2e\x74\x68\x65\x6d\x65", "\x6e\x79\x78\x2e\x63\x75\x73\x74\x6f\x6d\x54\x68\x65\x6d\x65\x43\x6f\x6c\x6f\x72" ].includes(_0x9efee5_0.key) && _0x9efee5_59(), 
+    _0x9efee5_0.key === _0x9efee5_1 && (_0x9efee5_45 = _0x9efee5_65(), _0x9efee5_46 && !_0x9efee5_45.some(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_46) && (_0x9efee5_46 = ""), 
+    _0x9efee5_7f(), _0x9efee5_88()), "\x6e\x79\x78\x2e\x75\x73\x65\x72\x4e\x61\x6d\x65" === _0x9efee5_0.key && _0x9efee5_86();
+  }), _0x9efee5_e.addEventListener("\x73\x63\x72\x6f\x6c\x6c", () => {
+    _0x9efee5_42 = _0x9efee5_e.scrollHeight - _0x9efee5_e.scrollTop - _0x9efee5_e.clientHeight < 100;
   }, {
     passive: !0
-  }), p.addEventListener("click", async e => {
-    const t = e.target.closest("[data-prompt]");
-    if (t) return y.value = t.dataset.prompt || "", nn(), y.focus(), void f.requestSubmit();
-    const n = e.target.closest("[data-download-text-attachment]");
-    if (n) return void function(e) {
-      const t = Ue(e);
-      if (!t) return;
-      const n = URL.createObjectURL(new Blob([ t.content ], {
-        type: "text/plain;charset=utf-8"
-      })), a = document.createElement("a");
-      a.href = n, a.download = t.name, document.body.appendChild(a), a.click(), a.remove(), 
-      setTimeout(() => URL.revokeObjectURL(n), 1e3);
-    }(n._nyxTextAttachment);
-    const a = e.target.closest("[data-copy-code]");
-    if (a) return await rn(a.closest(".ai-code-block")?.querySelector("pre code")?.textContent || ""), 
-    void sn(a);
-    const o = e.target.closest("[data-copy-message]");
-    if (o) {
-      const e = o.closest(".ai-message");
-      await rn(e?._nyxMessageText || ""), sn(o);
+  }), _0x9efee5_e.addEventListener("\x63\x6c\x69\x63\x6b", async _0x9efee5_0 => {
+    const _0x9efee5_1 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x70\x72\x6f\x6d\x70\x74\x5d");
+    if (_0x9efee5_1) return _0x9efee5_11.value = _0x9efee5_1.dataset.prompt || "", _0x9efee5_a4(), 
+    _0x9efee5_11.focus(), void _0x9efee5_10.requestSubmit();
+    const _0x9efee5_2 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x64\x6f\x77\x6e\x6c\x6f\x61\x64\x2d\x74\x65\x78\x74\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x5d");
+    if (_0x9efee5_2) return void function(_0x9efee5_0) {
+      const _0x9efee5_1 = _0x9efee5_5b(_0x9efee5_0);
+      if (!_0x9efee5_1) return;
+      const _0x9efee5_2 = URL.createObjectURL(new Blob([ _0x9efee5_1.content ], {
+        type: "\x74\x65\x78\x74\x2f\x70\x6c\x61\x69\x6e\x3b\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
+      })), _0x9efee5_3 = document.createElement("\x61");
+      _0x9efee5_3.href = _0x9efee5_2, _0x9efee5_3.download = _0x9efee5_1.name, document.body.appendChild(_0x9efee5_3), 
+      _0x9efee5_3.click(), _0x9efee5_3.remove(), setTimeout(() => URL.revokeObjectURL(_0x9efee5_2), 1e3);
+    }(_0x9efee5_2._nyxTextAttachment);
+    const _0x9efee5_3 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x2d\x63\x6f\x64\x65\x5d");
+    if (_0x9efee5_3) return await _0x9efee5_a7(_0x9efee5_3.closest("\x2e\x61\x69\x2d\x63\x6f\x64\x65\x2d\x62\x6c\x6f\x63\x6b")?.querySelector("\x70\x72\x65\x20\x63\x6f\x64\x65")?.textContent || ""), 
+    void _0x9efee5_a8(_0x9efee5_3);
+    const _0x9efee5_4 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x2d\x6d\x65\x73\x73\x61\x67\x65\x5d");
+    if (_0x9efee5_4) {
+      const _0x9efee5_0 = _0x9efee5_4.closest("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65");
+      await _0x9efee5_a7(_0x9efee5_0?._nyxMessageText || ""), _0x9efee5_a8(_0x9efee5_4);
     }
-  }), f.addEventListener("submit", e => {
-    e.preventDefault(), ln();
-  }), Z.addEventListener("click", () => Y.click()), re.addEventListener("click", () => {
+  }), _0x9efee5_10.addEventListener("\x73\x75\x62\x6d\x69\x74", _0x9efee5_0 => {
+    _0x9efee5_0.preventDefault(), _0x9efee5_a9();
+  }), _0x9efee5_33.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_32.click()), _0x9efee5_3c.addEventListener("\x63\x6c\x69\x63\x6b", () => {
     !async function() {
       if (navigator.mediaDevices?.getDisplayMedia) {
-        lt(), ot();
+        _0x9efee5_74(), _0x9efee5_70();
         try {
-          const e = await navigator.mediaDevices.getDisplayMedia({
+          const _0x9efee5_0 = await navigator.mediaDevices.getDisplayMedia({
             video: {
               frameRate: {
                 ideal: 5,
@@ -1458,199 +1514,213 @@
               }
             },
             audio: !1
-          }), t = e.getVideoTracks()[0];
-          if (!t) throw new Error("No screen was selected.");
-          xe = e, t.addEventListener("ended", lt, {
+          }), _0x9efee5_1 = _0x9efee5_0.getVideoTracks()[0];
+          if (!_0x9efee5_1) throw new Error("\x4e\x6f\x20\x73\x63\x72\x65\x65\x6e\x20\x77\x61\x73\x20\x73\x65\x6c\x65\x63\x74\x65\x64\x2e");
+          _0x9efee5_4b = _0x9efee5_0, _0x9efee5_1.addEventListener("\x65\x6e\x64\x65\x64", _0x9efee5_74, {
             once: !0
-          }), oe.srcObject = e, ae.hidden = !1, re.classList.add("has-attachment"), re.setAttribute("aria-pressed", "true"), 
-          ie.textContent = "A fresh frame is attached only when you send.", await oe.play().catch(() => {}), 
-          xe === e && st.start();
-        } catch (e) {
-          lt(), "NotAllowedError" !== e?.name && it(e?.message || "Nyx could not start screen sharing.", "Screen sharing unavailable");
+          }), _0x9efee5_3a.srcObject = _0x9efee5_0, _0x9efee5_39.hidden = !1, _0x9efee5_3c.classList.add("\x68\x61\x73\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74"), 
+          _0x9efee5_3c.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", "\x74\x72\x75\x65"), _0x9efee5_3b.textContent = "\x41\x20\x66\x72\x65\x73\x68\x20\x66\x72\x61\x6d\x65\x20\x69\x73\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x6f\x6e\x6c\x79\x20\x77\x68\x65\x6e\x20\x79\x6f\x75\x20\x73\x65\x6e\x64\x2e", 
+          await _0x9efee5_3a.play().catch(() => {}), _0x9efee5_4b === _0x9efee5_0 && _0x9efee5_73.start();
+        } catch (_0x9efee5_0) {
+          _0x9efee5_74(), "\x4e\x6f\x74\x41\x6c\x6c\x6f\x77\x65\x64\x45\x72\x72\x6f\x72" !== _0x9efee5_0?.name && _0x9efee5_71(_0x9efee5_0?.message || "\x4e\x79\x78\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x74\x61\x72\x74\x20\x73\x63\x72\x65\x65\x6e\x20\x73\x68\x61\x72\x69\x6e\x67\x2e", "\x53\x63\x72\x65\x65\x6e\x20\x73\x68\x61\x72\x69\x6e\x67\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65");
         }
-      } else it("Screen sharing is not supported by this browser.", "Screen sharing unavailable");
+      } else _0x9efee5_71("\x53\x63\x72\x65\x65\x6e\x20\x73\x68\x61\x72\x69\x6e\x67\x20\x69\x73\x20\x6e\x6f\x74\x20\x73\x75\x70\x70\x6f\x72\x74\x65\x64\x20\x62\x79\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e", "\x53\x63\x72\x65\x65\x6e\x20\x73\x68\x61\x72\x69\x6e\x67\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65");
     }();
-  }), se.addEventListener("click", () => {
-    lt(), y.focus();
-  }), Y.addEventListener("change", () => {
-    rt(Y.files?.[0]);
-  }), ne.addEventListener("click", () => {
-    ot(), y.focus();
-  }), y.addEventListener("paste", e => {
-    const t = [ ...e.clipboardData?.files || [] ].find(e => String(e.type || "").startsWith("image/"));
-    if (t) return void rt(t);
-    const n = String(e.clipboardData?.getData("text/plain") || ""), a = Math.max(0, (y.selectionEnd || 0) - (y.selectionStart || 0)), o = y.value.length - a + n.length;
-    n && o > Number(y.maxLength || 4e3) && (e.preventDefault(), function(e) {
-      const t = String(e || "");
-      if (!t) return null;
-      if (lt(), t.length > d) return it(`Pasted text is limited to ${d.toLocaleString()} characters.`, "Text file not attached"), 
+  }), _0x9efee5_3d.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x9efee5_74(), _0x9efee5_11.focus();
+  }), _0x9efee5_32.addEventListener("\x63\x68\x61\x6e\x67\x65", () => {
+    _0x9efee5_72(_0x9efee5_32.files?.[0]);
+  }), _0x9efee5_38.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x9efee5_70(), _0x9efee5_11.focus();
+  }), _0x9efee5_11.addEventListener("\x70\x61\x73\x74\x65", _0x9efee5_0 => {
+    const _0x9efee5_1 = [ ..._0x9efee5_0.clipboardData?.files || [] ].find(_0x9efee5_0 => String(_0x9efee5_0.type || "").startsWith("\x69\x6d\x61\x67\x65\x2f"));
+    if (_0x9efee5_1) return void _0x9efee5_72(_0x9efee5_1);
+    const _0x9efee5_2 = String(_0x9efee5_0.clipboardData?.getData("\x74\x65\x78\x74\x2f\x70\x6c\x61\x69\x6e") || ""), _0x9efee5_3 = Math.max(0, (_0x9efee5_11.selectionEnd || 0) - (_0x9efee5_11.selectionStart || 0)), _0x9efee5_4 = _0x9efee5_11.value.length - _0x9efee5_3 + _0x9efee5_2.length;
+    _0x9efee5_2 && _0x9efee5_4 > Number(_0x9efee5_11.maxLength || 4e3) && (_0x9efee5_0.preventDefault(), 
+    function(_0x9efee5_0) {
+      const _0x9efee5_1 = String(_0x9efee5_0 || "");
+      if (!_0x9efee5_1) return null;
+      if (_0x9efee5_74(), _0x9efee5_1.length > _0x9efee5_a) return _0x9efee5_71(`\x50\x61\x73\x74\x65\x64\x20\x74\x65\x78\x74\x20\x69\x73\x20\x6c\x69\x6d\x69\x74\x65\x64\x20\x74\x6f\x20${_0x9efee5_a.toLocaleString()}\x20\x63\x68\x61\x72\x61\x63\x74\x65\x72\x73\x2e`, "\x54\x65\x78\x74\x20\x66\x69\x6c\x65\x20\x6e\x6f\x74\x20\x61\x74\x74\x61\x63\x68\x65\x64"), 
       null;
-      const n = Ue({
-        name: at(),
-        content: t
+      const _0x9efee5_2 = _0x9efee5_5b({
+        name: _0x9efee5_6f(),
+        content: _0x9efee5_1
       });
-      n && (be = null, we = n, Y.value = "", X.hidden = !1, X.classList.remove("is-error", "is-file-error"), 
-      X.classList.add("is-text-file"), Q.hidden = !0, Q.removeAttribute("src"), ee.textContent = n.name, 
-      tt(`${nt(n.size)} \xb7 Ready to send`), Z.classList.remove("has-attachment"), Z.setAttribute("aria-label", "Attach an image (replaces the text file)"), 
-      ne.title = "Remove text file", ne.setAttribute("aria-label", "Remove attached text file"));
-    }(n), nn());
-  }), f.addEventListener("dragenter", e => {
-    [ ...e.dataTransfer?.items || [] ].some(e => "file" === e.kind) && f.classList.add("is-dragging");
-  }), f.addEventListener("dragover", e => {
-    [ ...e.dataTransfer?.items || [] ].some(e => "file" === e.kind) && e.preventDefault();
-  }), f.addEventListener("dragleave", e => {
-    f.contains(e.relatedTarget) || f.classList.remove("is-dragging");
-  }), f.addEventListener("drop", e => {
-    f.classList.remove("is-dragging");
-    const t = [ ...e.dataTransfer?.files || [] ][0];
-    t && (e.preventDefault(), rt(t));
-  }), y.addEventListener("input", nn), y.addEventListener("keydown", e => {
-    "Enter" !== e.key || e.shiftKey || e.ctrlKey || e.altKey || e.metaKey || e.isComposing || (e.preventDefault(), 
-    f.requestSubmit());
-  }), k.addEventListener("click", () => {
-    I.hidden ? Qt() : Xt();
-  }), k.addEventListener("keydown", e => {
-    "ArrowDown" === e.key || "ArrowUp" === e.key ? (e.preventDefault(), Qt("ArrowDown" === e.key ? 1 : -1)) : "Escape" === e.key && (e.preventDefault(), 
-    Xt());
-  }), document.getElementById("modelMenuClose").addEventListener("click", () => Xt({
+      _0x9efee5_2 && (_0x9efee5_49 = null, _0x9efee5_4a = _0x9efee5_2, _0x9efee5_32.value = "", 
+      _0x9efee5_34.hidden = !1, _0x9efee5_34.classList.remove("\x69\x73\x2d\x65\x72\x72\x6f\x72", "\x69\x73\x2d\x66\x69\x6c\x65\x2d\x65\x72\x72\x6f\x72"), 
+      _0x9efee5_34.classList.add("\x69\x73\x2d\x74\x65\x78\x74\x2d\x66\x69\x6c\x65"), _0x9efee5_35.hidden = !0, _0x9efee5_35.removeAttribute("\x73\x72\x63"), 
+      _0x9efee5_36.textContent = _0x9efee5_2.name, _0x9efee5_6d(`${_0x9efee5_6e(_0x9efee5_2.size)}\x20\xb7\x20\x52\x65\x61\x64\x79\x20\x74\x6f\x20\x73\x65\x6e\x64`), 
+      _0x9efee5_33.classList.remove("\x68\x61\x73\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74"), _0x9efee5_33.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x41\x74\x74\x61\x63\x68\x20\x61\x6e\x20\x69\x6d\x61\x67\x65\x20\x28\x72\x65\x70\x6c\x61\x63\x65\x73\x20\x74\x68\x65\x20\x74\x65\x78\x74\x20\x66\x69\x6c\x65\x29"), 
+      _0x9efee5_38.title = "\x52\x65\x6d\x6f\x76\x65\x20\x74\x65\x78\x74\x20\x66\x69\x6c\x65", _0x9efee5_38.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x52\x65\x6d\x6f\x76\x65\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x74\x65\x78\x74\x20\x66\x69\x6c\x65"));
+    }(_0x9efee5_2), _0x9efee5_a4());
+  }), _0x9efee5_10.addEventListener("\x64\x72\x61\x67\x65\x6e\x74\x65\x72", _0x9efee5_0 => {
+    [ ..._0x9efee5_0.dataTransfer?.items || [] ].some(_0x9efee5_0 => "\x66\x69\x6c\x65" === _0x9efee5_0.kind) && _0x9efee5_10.classList.add("\x69\x73\x2d\x64\x72\x61\x67\x67\x69\x6e\x67");
+  }), _0x9efee5_10.addEventListener("\x64\x72\x61\x67\x6f\x76\x65\x72", _0x9efee5_0 => {
+    [ ..._0x9efee5_0.dataTransfer?.items || [] ].some(_0x9efee5_0 => "\x66\x69\x6c\x65" === _0x9efee5_0.kind) && _0x9efee5_0.preventDefault();
+  }), _0x9efee5_10.addEventListener("\x64\x72\x61\x67\x6c\x65\x61\x76\x65", _0x9efee5_0 => {
+    _0x9efee5_10.contains(_0x9efee5_0.relatedTarget) || _0x9efee5_10.classList.remove("\x69\x73\x2d\x64\x72\x61\x67\x67\x69\x6e\x67");
+  }), _0x9efee5_10.addEventListener("\x64\x72\x6f\x70", _0x9efee5_0 => {
+    _0x9efee5_10.classList.remove("\x69\x73\x2d\x64\x72\x61\x67\x67\x69\x6e\x67");
+    const _0x9efee5_1 = [ ..._0x9efee5_0.dataTransfer?.files || [] ][0];
+    _0x9efee5_1 && (_0x9efee5_0.preventDefault(), _0x9efee5_72(_0x9efee5_1));
+  }), _0x9efee5_11.addEventListener("\x69\x6e\x70\x75\x74", _0x9efee5_a4), _0x9efee5_11.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x9efee5_0 => {
+    "\x45\x6e\x74\x65\x72" !== _0x9efee5_0.key || _0x9efee5_0.shiftKey || _0x9efee5_0.ctrlKey || _0x9efee5_0.altKey || _0x9efee5_0.metaKey || _0x9efee5_0.isComposing || (_0x9efee5_0.preventDefault(), 
+    _0x9efee5_10.requestSubmit());
+  }), _0x9efee5_17.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x9efee5_19.hidden ? _0x9efee5_a1() : _0x9efee5_a0();
+  }), _0x9efee5_17.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x9efee5_0 => {
+    "\x41\x72\x72\x6f\x77\x44\x6f\x77\x6e" === _0x9efee5_0.key || "\x41\x72\x72\x6f\x77\x55\x70" === _0x9efee5_0.key ? (_0x9efee5_0.preventDefault(), 
+    _0x9efee5_a1("\x41\x72\x72\x6f\x77\x44\x6f\x77\x6e" === _0x9efee5_0.key ? 1 : -1)) : "\x45\x73\x63\x61\x70\x65" === _0x9efee5_0.key && (_0x9efee5_0.preventDefault(), 
+    _0x9efee5_a0());
+  }), document.getElementById("\x6d\x6f\x64\x65\x6c\x4d\x65\x6e\x75\x43\x6c\x6f\x73\x65").addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_a0({
     restoreFocus: !0
-  })), I.addEventListener("cancel", e => {
-    e.preventDefault(), Xt({
+  })), _0x9efee5_19.addEventListener("\x63\x61\x6e\x63\x65\x6c", _0x9efee5_0 => {
+    _0x9efee5_0.preventDefault(), _0x9efee5_a0({
       restoreFocus: !0
     });
-  }), Tt.addEventListener("input", () => {
-    Nt = "", I.querySelectorAll("[data-model-company]").forEach(e => e.setAttribute("aria-pressed", String("" === e.dataset.modelCompany))), 
-    Wt();
-  }), I.addEventListener("click", e => {
-    const t = e.target.closest("[data-model-company]");
-    if (!t) return;
-    Nt = t.dataset.modelCompany, Tt.value = "", I.querySelectorAll("[data-model-company]").forEach(e => e.setAttribute("aria-pressed", String(e.dataset.modelCompany === Nt))), 
-    Ft(), Wt();
-    const n = t.closest(".ai-company-rail");
-    n && (n._continueOnHover = !0), Tt.focus({
+  }), _0x9efee5_8c.addEventListener("\x69\x6e\x70\x75\x74", () => {
+    _0x9efee5_8b = "", _0x9efee5_19.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x5d").forEach(_0x9efee5_0 => _0x9efee5_0.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String("" === _0x9efee5_0.dataset.modelCompany))), 
+    _0x9efee5_99();
+  }), _0x9efee5_19.addEventListener("\x63\x6c\x69\x63\x6b", _0x9efee5_0 => {
+    const _0x9efee5_1 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x5d");
+    if (!_0x9efee5_1) return;
+    _0x9efee5_8b = _0x9efee5_1.dataset.modelCompany, _0x9efee5_8c.value = "", _0x9efee5_19.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x5d").forEach(_0x9efee5_0 => _0x9efee5_0.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x9efee5_0.dataset.modelCompany === _0x9efee5_8b))), 
+    _0x9efee5_97(), _0x9efee5_99();
+    const _0x9efee5_2 = _0x9efee5_1.closest("\x2e\x61\x69\x2d\x63\x6f\x6d\x70\x61\x6e\x79\x2d\x72\x61\x69\x6c");
+    _0x9efee5_2 && (_0x9efee5_2._continueOnHover = !0), _0x9efee5_8c.focus({
       preventScroll: !0
     });
-  }), I.addEventListener("click", e => {
-    const t = e.target.closest("[data-model-id]");
-    t && en(t.dataset.modelId || "");
-  }), I.addEventListener("keydown", e => {
-    const t = e.target.closest("[data-model-id]");
-    if (!t && "ArrowDown" !== e.key && "Escape" !== e.key) return;
-    const n = Zt(), a = Math.max(0, n.indexOf(t));
-    let o = -1;
-    if ("ArrowDown" === e.key) o = t ? Math.min(n.length - 1, a + 1) : 0; else if ("ArrowUp" === e.key) o = Math.max(0, a - 1); else if ("Home" === e.key) o = 0; else if ("End" === e.key) o = n.length - 1; else {
-      if ("Enter" === e.key || " " === e.key) return e.preventDefault(), void (t && en(t.dataset.modelId || ""));
-      if ("Escape" === e.key) return e.preventDefault(), e.stopPropagation(), void Xt({
+  }), _0x9efee5_19.addEventListener("\x63\x6c\x69\x63\x6b", _0x9efee5_0 => {
+    const _0x9efee5_1 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x69\x64\x5d");
+    _0x9efee5_1 && _0x9efee5_a2(_0x9efee5_1.dataset.modelId || "");
+  }), _0x9efee5_19.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x9efee5_0 => {
+    const _0x9efee5_1 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x6d\x6f\x64\x65\x6c\x2d\x69\x64\x5d");
+    if (!_0x9efee5_1 && "\x41\x72\x72\x6f\x77\x44\x6f\x77\x6e" !== _0x9efee5_0.key && "\x45\x73\x63\x61\x70\x65" !== _0x9efee5_0.key) return;
+    const _0x9efee5_2 = _0x9efee5_9f(), _0x9efee5_3 = Math.max(0, _0x9efee5_2.indexOf(_0x9efee5_1));
+    let _0x9efee5_4 = -1;
+    if ("\x41\x72\x72\x6f\x77\x44\x6f\x77\x6e" === _0x9efee5_0.key) _0x9efee5_4 = _0x9efee5_1 ? Math.min(_0x9efee5_2.length - 1, _0x9efee5_3 + 1) : 0; else if ("\x41\x72\x72\x6f\x77\x55\x70" === _0x9efee5_0.key) _0x9efee5_4 = Math.max(0, _0x9efee5_3 - 1); else if ("\x48\x6f\x6d\x65" === _0x9efee5_0.key) _0x9efee5_4 = 0; else if ("\x45\x6e\x64" === _0x9efee5_0.key) _0x9efee5_4 = _0x9efee5_2.length - 1; else {
+      if ("\x45\x6e\x74\x65\x72" === _0x9efee5_0.key || "\x20" === _0x9efee5_0.key) return _0x9efee5_0.preventDefault(), 
+      void (_0x9efee5_1 && _0x9efee5_a2(_0x9efee5_1.dataset.modelId || ""));
+      if ("\x45\x73\x63\x61\x70\x65" === _0x9efee5_0.key) return _0x9efee5_0.preventDefault(), _0x9efee5_0.stopPropagation(), 
+      void _0x9efee5_a0({
         restoreFocus: !0
       });
     }
-    o >= 0 && (e.preventDefault(), n[o]?.focus(), n[o]?.scrollIntoView({
-      block: "nearest"
+    _0x9efee5_4 >= 0 && (_0x9efee5_0.preventDefault(), _0x9efee5_2[_0x9efee5_4]?.focus(), 
+    _0x9efee5_2[_0x9efee5_4]?.scrollIntoView({
+      block: "\x6e\x65\x61\x72\x65\x73\x74"
     }));
-  }), document.addEventListener("pointerdown", e => {
-    if (!I.hidden && e.target === I) {
-      const t = I.getBoundingClientRect();
-      (e.clientX < t.left || e.clientX > t.right || e.clientY < t.top || e.clientY > t.bottom) && Xt({
+  }), document.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x64\x6f\x77\x6e", _0x9efee5_0 => {
+    if (!_0x9efee5_19.hidden && _0x9efee5_0.target === _0x9efee5_19) {
+      const _0x9efee5_1 = _0x9efee5_19.getBoundingClientRect();
+      (_0x9efee5_0.clientX < _0x9efee5_1.left || _0x9efee5_0.clientX > _0x9efee5_1.right || _0x9efee5_0.clientY < _0x9efee5_1.top || _0x9efee5_0.clientY > _0x9efee5_1.bottom) && _0x9efee5_a0({
         restoreFocus: !0
       });
     }
-  }), b.addEventListener("change", () => {
-    localStorage.setItem(a, b.value || r), b.title = Mt(b.value);
-    const e = Ye();
-    e && (e.model = b.value || r, e.updatedAt = Date.now(), Ge(), bt()), Vt();
-  }), C.addEventListener("click", function() {
-    const e = Ze().map(e => e.imageId).filter(Boolean);
-    for (const t of e) Oe.delete(t);
-    if (e.length && qe().then(t => {
-      const n = t.transaction("images", "readwrite");
-      for (const a of e) n.objectStore("images").delete(a);
-      n.oncomplete = () => t.close(), n.onerror = () => t.close();
-    }).catch(() => {}), wt(), lt(), ot(), ye) ve = []; else if (fe) {
-      he = he.filter(e => e.id !== fe), fe = "";
+  }), _0x9efee5_13.addEventListener("\x63\x68\x61\x6e\x67\x65", () => {
+    localStorage.setItem(_0x9efee5_3, _0x9efee5_13.value || _0x9efee5_6), _0x9efee5_13.title = _0x9efee5_89(_0x9efee5_13.value);
+    const _0x9efee5_0 = _0x9efee5_68();
+    _0x9efee5_0 && (_0x9efee5_0.model = _0x9efee5_13.value || _0x9efee5_6, _0x9efee5_0.updatedAt = Date.now(), 
+    _0x9efee5_66(), _0x9efee5_7f()), _0x9efee5_9d();
+  }), _0x9efee5_1b.addEventListener("\x63\x6c\x69\x63\x6b", function() {
+    const _0x9efee5_0 = _0x9efee5_69().map(_0x9efee5_0 => _0x9efee5_0.imageId).filter(Boolean);
+    for (const _0x9efee5_1 of _0x9efee5_0) _0x9efee5_5c.delete(_0x9efee5_1);
+    if (_0x9efee5_0.length && _0x9efee5_5d().then(_0x9efee5_1 => {
+      const _0x9efee5_2 = _0x9efee5_1.transaction("\x69\x6d\x61\x67\x65\x73", "\x72\x65\x61\x64\x77\x72\x69\x74\x65");
+      for (const _0x9efee5_3 of _0x9efee5_0) _0x9efee5_2.objectStore("\x69\x6d\x61\x67\x65\x73").delete(_0x9efee5_3);
+      _0x9efee5_2.oncomplete = () => _0x9efee5_1.close(), _0x9efee5_2.onerror = () => _0x9efee5_1.close();
+    }).catch(() => {}), _0x9efee5_80(), _0x9efee5_74(), _0x9efee5_70(), _0x9efee5_47) _0x9efee5_48 = []; else if (_0x9efee5_46) {
+      _0x9efee5_45 = _0x9efee5_45.filter(_0x9efee5_0 => _0x9efee5_0.id !== _0x9efee5_46), 
+      _0x9efee5_46 = "";
       try {
-        localStorage.removeItem(n);
+        localStorage.removeItem(_0x9efee5_2);
       } catch {}
-      Ge();
+      _0x9efee5_66();
     }
-    Ve([]), bt(), Lt(), y.value = "", nn(), y.focus();
-  }), R.addEventListener("click", () => Et()), D.addEventListener("click", () => Et({
+    _0x9efee5_67([]), _0x9efee5_7f(), _0x9efee5_88(), _0x9efee5_11.value = "", _0x9efee5_a4(), 
+    _0x9efee5_11.focus();
+  }), _0x9efee5_22.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_82()), _0x9efee5_23.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_82({
     temporary: !0
-  })), j.addEventListener("click", e => {
-    const t = e.target.closest("[data-thread-id]");
-    t && function(e) {
-      const t = he.find(t => t.id === e);
-      if (t) {
-        wt(), ot(), ye = !1, ve = [], fe = t.id;
+  })), _0x9efee5_24.addEventListener("\x63\x6c\x69\x63\x6b", _0x9efee5_0 => {
+    const _0x9efee5_1 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x74\x68\x72\x65\x61\x64\x2d\x69\x64\x5d");
+    _0x9efee5_1 && function(_0x9efee5_0) {
+      const _0x9efee5_1 = _0x9efee5_45.find(_0x9efee5_1 => _0x9efee5_1.id === _0x9efee5_0);
+      if (_0x9efee5_1) {
+        _0x9efee5_80(), _0x9efee5_70(), _0x9efee5_47 = !1, _0x9efee5_48 = [], _0x9efee5_46 = _0x9efee5_1.id;
         try {
-          localStorage.setItem(n, fe);
+          localStorage.setItem(_0x9efee5_2, _0x9efee5_46);
         } catch {}
-        Ve(t.messages), ge.some(e => e.id === t.model) && (b.value = t.model, localStorage.setItem(a, t.model), 
-        Vt()), bt(), Lt(), y.focus();
+        _0x9efee5_67(_0x9efee5_1.messages), _0x9efee5_43.some(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_1.model) && (_0x9efee5_13.value = _0x9efee5_1.model, 
+        localStorage.setItem(_0x9efee5_3, _0x9efee5_1.model), _0x9efee5_9d()), _0x9efee5_7f(), 
+        _0x9efee5_88(), _0x9efee5_11.focus();
       }
-    }(t.dataset.threadId || "");
-  }), q.addEventListener("input", bt), _.forEach(e => e.addEventListener("click", () => {
-    localStorage.setItem(o, e.dataset.responseDepth || "normal"), $e();
-  })), N.addEventListener("click", () => xt(!g.classList.contains("is-sidebar-open"))), 
-  T.addEventListener("click", () => xt(!1)), B.addEventListener("click", () => xt(!1)), 
-  W.addEventListener("click", () => {
-    At(), parent !== window ? parent.postMessage({
-      type: "nyx:ai-open-profile"
-    }, location.origin) : location.href = "/";
-  }), J.addEventListener("error", () => {
-    J.hidden = !0, K.hidden = !1;
-  }), document.addEventListener("keydown", e => {
-    "Escape" === e.key && g.classList.contains("is-sidebar-open") && (e.preventDefault(), 
-    xt(!1), N.focus());
-  }), addEventListener("pagehide", lt), xt(!0), function() {
-    if (he = Ke(), !he.length) {
-      const t = function() {
+    }(_0x9efee5_1.dataset.threadId || "");
+  }), _0x9efee5_27.addEventListener("\x69\x6e\x70\x75\x74", _0x9efee5_7f), _0x9efee5_28.forEach(_0x9efee5_0 => _0x9efee5_0.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    localStorage.setItem(_0x9efee5_4, _0x9efee5_0.dataset.responseDepth || "\x6e\x6f\x72\x6d\x61\x6c"), 
+    _0x9efee5_54();
+  })), _0x9efee5_1f.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_81(!_0x9efee5_d.classList.contains("\x69\x73\x2d\x73\x69\x64\x65\x62\x61\x72\x2d\x6f\x70\x65\x6e"))), 
+  _0x9efee5_20.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_81(!1)), _0x9efee5_21.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_81(!1)), 
+  _0x9efee5_2d.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0x9efee5_86(), parent !== window ? parent.postMessage({
+      type: "\x6e\x79\x78\x3a\x61\x69\x2d\x6f\x70\x65\x6e\x2d\x70\x72\x6f\x66\x69\x6c\x65"
+    }, location.origin) : location.href = "\x2f";
+  }), _0x9efee5_2e.addEventListener("\x65\x72\x72\x6f\x72", () => {
+    _0x9efee5_2e.hidden = !0, _0x9efee5_2f.hidden = !1;
+  }), document.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x9efee5_0 => {
+    "\x45\x73\x63\x61\x70\x65" === _0x9efee5_0.key && _0x9efee5_d.classList.contains("\x69\x73\x2d\x73\x69\x64\x65\x62\x61\x72\x2d\x6f\x70\x65\x6e") && (_0x9efee5_0.preventDefault(), 
+    _0x9efee5_81(!1), _0x9efee5_1f.focus());
+  }), addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", _0x9efee5_74), _0x9efee5_81(!0), function() {
+    if (_0x9efee5_45 = _0x9efee5_65(), !_0x9efee5_45.length) {
+      const _0x9efee5_1 = function() {
         try {
-          return ze(JSON.parse(localStorage.getItem(e) || "[]"));
+          return _0x9efee5_62(JSON.parse(localStorage.getItem(_0x9efee5_0) || "\x5b\x5d"));
         } catch {
           return [];
         }
       }();
-      if (t.length) {
-        const e = Date.now(), n = Je({
-          id: `chat-${e.toString(36)}`,
-          messages: t,
-          model: localStorage.getItem(a) || r,
-          createdAt: e,
-          updatedAt: e
+      if (_0x9efee5_1.length) {
+        const _0x9efee5_0 = Date.now(), _0x9efee5_2 = _0x9efee5_64({
+          id: `\x63\x68\x61\x74\x2d${_0x9efee5_0.toString(36)}`,
+          messages: _0x9efee5_1,
+          model: localStorage.getItem(_0x9efee5_3) || _0x9efee5_6,
+          createdAt: _0x9efee5_0,
+          updatedAt: _0x9efee5_0
         });
-        he = [ n ], fe = n.id, Ge();
+        _0x9efee5_45 = [ _0x9efee5_2 ], _0x9efee5_46 = _0x9efee5_2.id, _0x9efee5_66();
       }
     }
-    if (!fe) {
-      const e = localStorage.getItem(n) || "";
-      fe = he.some(t => t.id === e) ? e : he[0]?.id || "";
+    if (!_0x9efee5_46) {
+      const _0x9efee5_0 = localStorage.getItem(_0x9efee5_2) || "";
+      _0x9efee5_46 = _0x9efee5_45.some(_0x9efee5_1 => _0x9efee5_1.id === _0x9efee5_0) ? _0x9efee5_0 : _0x9efee5_45[0]?.id || "";
     }
-    if (fe) {
+    if (_0x9efee5_46) {
       try {
-        localStorage.setItem(n, fe);
+        localStorage.setItem(_0x9efee5_2, _0x9efee5_46);
       } catch {}
-      Ve(Ye()?.messages || []);
+      _0x9efee5_67(_0x9efee5_68()?.messages || []);
     }
-  }(), Yt(ge, b.value || r), bt(), Lt(), nn(), $e(), Re(), At(), (async () => {
+  }(), _0x9efee5_9e(_0x9efee5_43, _0x9efee5_13.value || _0x9efee5_6), _0x9efee5_7f(), 
+  _0x9efee5_88(), _0x9efee5_a4(), _0x9efee5_54(), _0x9efee5_58(), _0x9efee5_86(), 
+  (async () => {
     await async function() {
       try {
-        const e = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyx-ai/providers", {
-          headers: await Se({
-            accept: "application/json"
+        const _0x9efee5_0 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x70\x72\x6f\x76\x69\x64\x65\x72\x73", {
+          headers: await _0x9efee5_4e({
+            accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
           })
-        }), t = await e.json();
-        if (!e.ok) throw new Error(t?.error || "Shared providers are unavailable.");
-        ke = Array.isArray(t?.providers) ? t.providers.flatMap(e => {
-          const t = String(e?.id || "").trim();
-          return String(e?.label || t).trim(), "shared" === t ? [ {
-            id: t,
-            label: "OpenRouter"
+        }), _0x9efee5_1 = await _0x9efee5_0.json();
+        if (!_0x9efee5_0.ok) throw new Error(_0x9efee5_1?.error || "\x53\x68\x61\x72\x65\x64\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x73\x20\x61\x72\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+        _0x9efee5_4d = Array.isArray(_0x9efee5_1?.providers) ? _0x9efee5_1.providers.flatMap(_0x9efee5_0 => {
+          const _0x9efee5_1 = String(_0x9efee5_0?.id || "").trim();
+          return String(_0x9efee5_0?.label || _0x9efee5_1).trim(), "\x73\x68\x61\x72\x65\x64" === _0x9efee5_1 ? [ {
+            id: _0x9efee5_1,
+            label: "\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72"
           } ] : [];
         }) : [];
       } catch {
-        ke = [];
+        _0x9efee5_4d = [];
       }
-      Le();
-    }(), await tn();
-  })(), y.focus();
+      _0x9efee5_52();
+    }(), await _0x9efee5_a3();
+  })(), _0x9efee5_11.focus();
 }();

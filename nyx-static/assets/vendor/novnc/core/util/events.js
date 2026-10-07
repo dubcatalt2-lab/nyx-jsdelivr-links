@@ -86,10 +86,10 @@ export function setCapture(target) {
 
             // This is to make sure callers don't get confused by having
             // our blocking element as the target
-            proxyElem.addEventListener('contextmenu', _captureProxy);
+            proxyElem.addEventListener("contextmenu", _captureProxy);
 
-            proxyElem.addEventListener('mousemove', _captureProxy);
-            proxyElem.addEventListener('mouseup', _captureProxy);
+            proxyElem.addEventListener("mousemove", _captureProxy);
+            proxyElem.addEventListener("mouseup", _captureProxy);
         }
 
         document.captureElement = target;
@@ -102,8 +102,8 @@ export function setCapture(target) {
 
         // We listen to events on window in order to keep tracking if it
         // happens to leave the viewport
-        window.addEventListener('mousemove', _captureProxy);
-        window.addEventListener('mouseup', _captureProxy);
+        window.addEventListener("mousemove", _captureProxy);
+        window.addEventListener("mouseup", _captureProxy);
     }
 }
 
@@ -132,7 +132,7 @@ export function releaseCapture() {
         const proxyElem = document.getElementById("noVNC_mouse_capture_elem");
         proxyElem.style.display = "none";
 
-        window.removeEventListener('mousemove', _captureProxy);
-        window.removeEventListener('mouseup', _captureProxy);
+        window.removeEventListener("mousemove", _captureProxy);
+        window.removeEventListener("mouseup", _captureProxy);
     }
 }

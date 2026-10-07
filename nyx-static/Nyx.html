@@ -18,32 +18,32 @@
   <section id="localHelp" hidden><p>Extract the complete mini ZIP, then run <code>Start-Nyx-Mini.cmd</code> inside its folder. Keep that window open.</p><a href="http://localhost:8765/" style="color:inherit">Open localhost</a><p>This launcher needs the package files beside it. Proxy browsing cannot start directly from a downloaded HTML or SVG file.</p></section>
   <script>
     (async () => {
-      if (!['http:', 'https:'].includes(location.protocol) || location.origin === 'null') {
-        document.getElementById('status').textContent = 'Start the local server to open Nyx Mini.';
-        document.getElementById('localHelp').hidden = false;
+      if (!["\x68\x74\x74\x70\x3a", "\x68\x74\x74\x70\x73\x3a"].includes(location.protocol) || location.origin === "\x6e\x75\x6c\x6c") {
+        document.getElementById("\x73\x74\x61\x74\x75\x73").textContent = "\x53\x74\x61\x72\x74\x20\x74\x68\x65\x20\x6c\x6f\x63\x61\x6c\x20\x73\x65\x72\x76\x65\x72\x20\x74\x6f\x20\x6f\x70\x65\x6e\x20\x4e\x79\x78\x20\x4d\x69\x6e\x69\x2e";
+        document.getElementById("\x6c\x6f\x63\x61\x6c\x48\x65\x6c\x70").hidden = false;
         return;
       }
-      if (!isSecureContext || !('serviceWorker' in navigator)) {
-        throw new Error('Host the complete package on HTTPS or localhost.');
+      if (!isSecureContext || !("\x73\x65\x72\x76\x69\x63\x65\x57\x6f\x72\x6b\x65\x72" in navigator)) {
+        throw new Error("\x48\x6f\x73\x74\x20\x74\x68\x65\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x70\x61\x63\x6b\x61\x67\x65\x20\x6f\x6e\x20\x48\x54\x54\x50\x53\x20\x6f\x72\x20\x6c\x6f\x63\x61\x6c\x68\x6f\x73\x74\x2e");
       }
-      const base = new URL('.', location.href);
-      await navigator.serviceWorker.register(new URL('library-worker.js', base), {
+      const base = new URL("\x2e", location.href);
+      await navigator.serviceWorker.register(new URL("\x6c\x69\x62\x72\x61\x72\x79\x2d\x77\x6f\x72\x6b\x65\x72\x2e\x6a\x73", base), {
         scope: base.pathname,
-        updateViaCache: 'none'
+        updateViaCache: "\x6e\x6f\x6e\x65"
       });
       await navigator.serviceWorker.ready;
       if (!navigator.serviceWorker.controller) {
         await new Promise((resolve, reject) => {
-          const timer = setTimeout(() => reject(new Error('Reload to retry starting Nyx.')), 15000);
-          navigator.serviceWorker.addEventListener('controllerchange', () => {
+          const timer = setTimeout(() => reject(new Error("\x52\x65\x6c\x6f\x61\x64\x20\x74\x6f\x20\x72\x65\x74\x72\x79\x20\x73\x74\x61\x72\x74\x69\x6e\x67\x20\x4e\x79\x78\x2e")), 15000);
+          navigator.serviceWorker.addEventListener("\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x63\x68\x61\x6e\x67\x65", () => {
             clearTimeout(timer);
             resolve();
           }, { once: true });
         });
       }
-      location.replace(new URL('index.html', base));
+      location.replace(new URL("\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c", base));
     })().catch(error => {
-      document.getElementById('status').textContent = error.message;
+      document.getElementById("\x73\x74\x61\x74\x75\x73").textContent = error.message;
     });
   </script>
 </body>

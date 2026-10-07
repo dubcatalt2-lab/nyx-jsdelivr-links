@@ -1,146 +1,146 @@
-import { movieSourceUrl as Kn } from "./@rfadd4f9595b413bd55e20a33!.js?v=20260915-aniembed-v1";
+import { movieSourceUrl as _0x984456_1 } from "\x2e\x2f\x40\x72\x66\x61\x64\x64\x34\x66\x39\x35\x39\x35\x62\x34\x31\x33\x62\x64\x35\x35\x65\x32\x30\x61\x33\x33\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x31\x35\x2d\x61\x6e\x69\x65\x6d\x62\x65\x64\x2d\x76\x31";
 
-const sr = t => {
+const _0x099e7a_0 = _0x099e7a_0 => {
   try {
-    return localStorage.getItem(t) || "";
+    return localStorage.getItem(_0x099e7a_0) || "";
   } catch {
     return "";
   }
-}, pr = t => {
-  if (t?.aborted) throw t.reason || new DOMException("Cancelled", "AbortError");
+}, _0x099e7a_1 = _0x099e7a_0 => {
+  if (_0x099e7a_0?.aborted) throw _0x099e7a_0.reason || new DOMException("\x43\x61\x6e\x63\x65\x6c\x6c\x65\x64", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72");
 };
 
-export async function launchMovieProxy(t, e, r, {recover: o = !1} = {}) {
-  if (pr(r), !Kn(e) || "allow-scripts allow-same-origin allow-forms allow-presentation" !== t.getAttribute("sandbox")) throw Error("Invalid movie proxy request.");
-  if (window.parent !== window && "function" == typeof parent.nyxLaunchMovieFrame) return void await parent.nyxLaunchMovieFrame(t, e, {
-    signal: r,
-    recover: o
+export async function launchMovieProxy(_0x099e7a_2, _0x099e7a_3, _0x099e7a_4, {recover: _0x099e7a_5 = !1} = {}) {
+  if (_0x099e7a_1(_0x099e7a_4), !_0x984456_1(_0x099e7a_3) || "\x61\x6c\x6c\x6f\x77\x2d\x73\x63\x72\x69\x70\x74\x73\x20\x61\x6c\x6c\x6f\x77\x2d\x73\x61\x6d\x65\x2d\x6f\x72\x69\x67\x69\x6e\x20\x61\x6c\x6c\x6f\x77\x2d\x66\x6f\x72\x6d\x73\x20\x61\x6c\x6c\x6f\x77\x2d\x70\x72\x65\x73\x65\x6e\x74\x61\x74\x69\x6f\x6e" !== _0x099e7a_2.getAttribute("\x73\x61\x6e\x64\x62\x6f\x78")) throw Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x6d\x6f\x76\x69\x65\x20\x70\x72\x6f\x78\x79\x20\x72\x65\x71\x75\x65\x73\x74\x2e");
+  if (window.parent !== window && "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof parent.nyxLaunchMovieFrame) return void await parent.nyxLaunchMovieFrame(_0x099e7a_2, _0x099e7a_3, {
+    signal: _0x099e7a_4,
+    recover: _0x099e7a_5
   });
-  const {loadProxyScript: n} = await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@rced1ec20b0cbcf244d7377f7!.js"));
-  globalThis.__NYX_RUNTIME_CONFIG__ || await n("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/runtime-config.js", () => !!globalThis.__NYX_RUNTIME_CONFIG__);
-  const {browse: i, closeBrowser: a} = await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/tutsi/@r2931fd1ced1f82891e21ea5e!.js"));
-  if (pr(r), !t.isConnected) return;
-  o && a(t);
-  const s = () => a(t);
-  r?.addEventListener("abort", s, {
+  const {loadProxyScript: _0x099e7a_6} = await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x6a\x73\x2f\x40\x72\x63\x65\x64\x31\x65\x63\x32\x30\x62\x30\x63\x62\x63\x66\x32\x34\x34\x64\x37\x33\x37\x37\x66\x37\x21\x2e\x6a\x73"));
+  globalThis.__NYX_RUNTIME_CONFIG__ || await _0x099e7a_6("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x72\x75\x6e\x74\x69\x6d\x65\x2d\x63\x6f\x6e\x66\x69\x67\x2e\x6a\x73", () => !!globalThis.__NYX_RUNTIME_CONFIG__);
+  const {browse: _0x099e7a_7, closeBrowser: _0x099e7a_8} = await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x74\x75\x74\x73\x69\x2f\x40\x72\x32\x39\x33\x31\x66\x64\x31\x63\x65\x64\x31\x66\x38\x32\x38\x39\x31\x65\x32\x31\x65\x61\x35\x65\x21\x2e\x6a\x73"));
+  if (_0x099e7a_1(_0x099e7a_4), !_0x099e7a_2.isConnected) return;
+  _0x099e7a_5 && _0x099e7a_8(_0x099e7a_2);
+  const _0x099e7a_9 = () => _0x099e7a_8(_0x099e7a_2);
+  _0x099e7a_4?.addEventListener("\x61\x62\x6f\x72\x74", _0x099e7a_9, {
     once: !0
   });
   try {
-    await i(e, function() {
-      if (location.hostname.startsWith("tutsi.") || "1" === new URLSearchParams(location.search).get("tutsi") || "tutsi" === document.documentElement.dataset.site) {
-        let t;
+    await _0x099e7a_7(_0x099e7a_3, function() {
+      if (location.hostname.startsWith("\x74\x75\x74\x73\x69\x2e") || "\x31" === new URLSearchParams(location.search).get("\x74\x75\x74\x73\x69") || "\x74\x75\x74\x73\x69" === document.documentElement.dataset.site) {
+        let _0x099e7a_1;
         try {
-          t = JSON.parse(sr("tutsi.settings.v1") || "{}");
+          _0x099e7a_1 = JSON.parse(_0x099e7a_0("\x74\x75\x74\x73\x69\x2e\x73\x65\x74\x74\x69\x6e\x67\x73\x2e\x76\x31") || "\x7b\x7d");
         } catch {}
         return {
-          transport: "textlib",
+          transport: "\x74\x65\x78\x74\x6c\x69\x62",
           httpBridge: !0,
           autoRelay: !0,
-          ...t
+          ..._0x099e7a_1
         };
       }
-      const t = sr("nyx.transport").replace(/^"|"$/g, "");
+      const _0x099e7a_1 = _0x099e7a_0("\x6e\x79\x78\x2e\x74\x72\x61\x6e\x73\x70\x6f\x72\x74").replace(/^"|"$/g, "");
       return {
-        transport: !t || "auto" === t || /^textlib/i.test(t) ? "textlib" : "wisp" === t ? "wisp" : "atlas",
-        httpBridge: "false" !== sr("nyx.httpBridge"),
-        relay: sr("nyx.wispUrl"),
+        transport: !_0x099e7a_1 || "\x61\x75\x74\x6f" === _0x099e7a_1 || /^textlib/i.test(_0x099e7a_1) ? "\x74\x65\x78\x74\x6c\x69\x62" : "\x77\x69\x73\x70" === _0x099e7a_1 ? "\x77\x69\x73\x70" : "\x61\x74\x6c\x61\x73",
+        httpBridge: "\x66\x61\x6c\x73\x65" !== _0x099e7a_0("\x6e\x79\x78\x2e\x68\x74\x74\x70\x42\x72\x69\x64\x67\x65"),
+        relay: _0x099e7a_0("\x6e\x79\x78\x2e\x77\x69\x73\x70\x55\x72\x6c"),
         autoRelay: !0,
-        adBlock: "false" !== sr("nyx.popupProtection"),
+        adBlock: "\x66\x61\x6c\x73\x65" !== _0x099e7a_0("\x6e\x79\x78\x2e\x70\x6f\x70\x75\x70\x50\x72\x6f\x74\x65\x63\x74\x69\x6f\x6e"),
         popupBlock: !0,
         downloadBlock: !0
       };
-    }(), t), pr(r);
-  } catch (c) {
-    throw r?.removeEventListener("abort", s), s(), c;
+    }(), _0x099e7a_2), _0x099e7a_1(_0x099e7a_4);
+  } catch (_0x099e7a_a) {
+    throw _0x099e7a_4?.removeEventListener("\x61\x62\x6f\x72\x74", _0x099e7a_9), _0x099e7a_9(), _0x099e7a_a;
   }
 }
 
-export function inspectMovieProxy(t) {
-  const e = [ {
-    frame: t,
+export function inspectMovieProxy(_0x099e7a_0) {
+  const _0x099e7a_1 = [ {
+    frame: _0x099e7a_0,
     depth: 0,
-    frames: [ t ]
+    frames: [ _0x099e7a_0 ]
   } ];
-  let r = 0, o = !1;
-  for (;e.length && r++ < 16; ) {
-    const t = e.shift();
+  let _0x099e7a_2 = 0, _0x099e7a_3 = !1;
+  for (;_0x099e7a_1.length && _0x099e7a_2++ < 16; ) {
+    const _0x099e7a_0 = _0x099e7a_1.shift();
     try {
-      const r = t.frame.contentDocument;
-      if (!r) continue;
-      for (const e of r.querySelectorAll("video")) if (e.error) o = !0; else if (e.videoWidth > 0 && e.readyState >= 1) return {
-        video: e,
-        frames: t.frames,
-        paused: e.paused,
-        time: e.currentTime,
-        width: e.videoWidth,
-        height: e.videoHeight,
+      const _0x099e7a_2 = _0x099e7a_0.frame.contentDocument;
+      if (!_0x099e7a_2) continue;
+      for (const _0x099e7a_1 of _0x099e7a_2.querySelectorAll("\x76\x69\x64\x65\x6f")) if (_0x099e7a_1.error) _0x099e7a_3 = !0; else if (_0x099e7a_1.videoWidth > 0 && _0x099e7a_1.readyState >= 1) return {
+        video: _0x099e7a_1,
+        frames: _0x099e7a_0.frames,
+        paused: _0x099e7a_1.paused,
+        time: _0x099e7a_1.currentTime,
+        width: _0x099e7a_1.videoWidth,
+        height: _0x099e7a_1.videoHeight,
         failed: !1
       };
-      const n = (r.body?.innerText || "").slice(0, 16e3);
-      if (o ||= /(?:cannot|can't|cannot be|can\u2019t be).*sandbox|sandbox.*(?:not permitted|not allowed|detected)|no sources? found|stream unavailable|error processing your request|SSL connect error|ERR_SSL|request failed with error code/i.test(n), 
-      t.depth < 4) for (const o of [ ...r.querySelectorAll("iframe") ].slice(0, 16)) e.push({
-        frame: o,
-        depth: t.depth + 1,
-        frames: [ ...t.frames, o ]
+      const _0x099e7a_4 = (_0x099e7a_2.body?.innerText || "").slice(0, 16e3);
+      if (_0x099e7a_3 ||= /(?:cannot|can't|cannot be|can\u2019t be).*sandbox|sandbox.*(?:not permitted|not allowed|detected)|no sources? found|stream unavailable|error processing your request|SSL connect error|ERR_SSL|request failed with error code/i.test(_0x099e7a_4), 
+      _0x099e7a_0.depth < 4) for (const _0x099e7a_3 of [ ..._0x099e7a_2.querySelectorAll("\x69\x66\x72\x61\x6d\x65") ].slice(0, 16)) _0x099e7a_1.push({
+        frame: _0x099e7a_3,
+        depth: _0x099e7a_0.depth + 1,
+        frames: [ ..._0x099e7a_0.frames, _0x099e7a_3 ]
       });
     } catch {}
   }
   return {
-    failed: o
+    failed: _0x099e7a_3
   };
 }
 
-export function styleMovieVideo(t, e) {
-  const r = [];
-  for (let i = 0; i < e.length; i++) {
-    const o = e[i].contentDocument;
-    if (!o?.head) throw Error("Player document unavailable.");
-    const n = e[i + 1] || t, a = "data-nyx-player-surface", s = n.getAttribute(a);
-    n.setAttribute(a, "");
-    const c = [];
-    for (let t = n.parentElement; t; t = t.parentElement) c.push([ t, t.getAttribute("data-nyx-player-ancestor") ]), 
-    t.setAttribute("data-nyx-player-ancestor", "");
-    const l = o.createElement("style");
-    l.textContent = "html,body{background:#000!important;overflow:hidden!important}body *{visibility:hidden!important}\n      [data-nyx-player-ancestor]{transform:none!important;filter:none!important;perspective:none!important;contain:none!important;opacity:1!important}\n      [data-nyx-player-surface]{visibility:visible!important;position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;object-fit:contain!important;z-index:2147483647!important;opacity:1!important;background:#000!important;pointer-events:none!important}\n      video::-webkit-media-controls{display:none!important}", 
-    o.head.append(l), r.push(() => {
-      l.remove(), null === s ? n.removeAttribute(a) : n.setAttribute(a, s);
-      for (const [t, e] of c) null === e ? t.removeAttribute("data-nyx-player-ancestor") : t.setAttribute("data-nyx-player-ancestor", e);
+export function styleMovieVideo(_0x099e7a_0, _0x099e7a_1) {
+  const _0x099e7a_2 = [];
+  for (let _0x099e7a_5 = 0; _0x099e7a_5 < _0x099e7a_1.length; _0x099e7a_5++) {
+    const _0x099e7a_3 = _0x099e7a_1[_0x099e7a_5].contentDocument;
+    if (!_0x099e7a_3?.head) throw Error("\x50\x6c\x61\x79\x65\x72\x20\x64\x6f\x63\x75\x6d\x65\x6e\x74\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+    const _0x099e7a_4 = _0x099e7a_1[_0x099e7a_5 + 1] || _0x099e7a_0, _0x099e7a_6 = "\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x70\x6c\x61\x79\x65\x72\x2d\x73\x75\x72\x66\x61\x63\x65", _0x099e7a_7 = _0x099e7a_4.getAttribute(_0x099e7a_6);
+    _0x099e7a_4.setAttribute(_0x099e7a_6, "");
+    const _0x099e7a_8 = [];
+    for (let _0x099e7a_0 = _0x099e7a_4.parentElement; _0x099e7a_0; _0x099e7a_0 = _0x099e7a_0.parentElement) _0x099e7a_8.push([ _0x099e7a_0, _0x099e7a_0.getAttribute("\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x70\x6c\x61\x79\x65\x72\x2d\x61\x6e\x63\x65\x73\x74\x6f\x72") ]), 
+    _0x099e7a_0.setAttribute("\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x70\x6c\x61\x79\x65\x72\x2d\x61\x6e\x63\x65\x73\x74\x6f\x72", "");
+    const _0x099e7a_9 = _0x099e7a_3.createElement("\x73\x74\x79\x6c\x65");
+    _0x099e7a_9.textContent = "\x68\x74\x6d\x6c\x2c\x62\x6f\x64\x79\x7b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x30\x30\x30\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x6f\x76\x65\x72\x66\x6c\x6f\x77\x3a\x68\x69\x64\x64\x65\x6e\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x7d\x62\x6f\x64\x79\x20\x2a\x7b\x76\x69\x73\x69\x62\x69\x6c\x69\x74\x79\x3a\x68\x69\x64\x64\x65\x6e\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x7d\x0a\x20\x20\x20\x20\x20\x20\x5b\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x70\x6c\x61\x79\x65\x72\x2d\x61\x6e\x63\x65\x73\x74\x6f\x72\x5d\x7b\x74\x72\x61\x6e\x73\x66\x6f\x72\x6d\x3a\x6e\x6f\x6e\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x66\x69\x6c\x74\x65\x72\x3a\x6e\x6f\x6e\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x70\x65\x72\x73\x70\x65\x63\x74\x69\x76\x65\x3a\x6e\x6f\x6e\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x63\x6f\x6e\x74\x61\x69\x6e\x3a\x6e\x6f\x6e\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x6f\x70\x61\x63\x69\x74\x79\x3a\x31\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x7d\x0a\x20\x20\x20\x20\x20\x20\x5b\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x70\x6c\x61\x79\x65\x72\x2d\x73\x75\x72\x66\x61\x63\x65\x5d\x7b\x76\x69\x73\x69\x62\x69\x6c\x69\x74\x79\x3a\x76\x69\x73\x69\x62\x6c\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x70\x6f\x73\x69\x74\x69\x6f\x6e\x3a\x66\x69\x78\x65\x64\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x69\x6e\x73\x65\x74\x3a\x30\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x77\x69\x64\x74\x68\x3a\x31\x30\x30\x76\x77\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x68\x65\x69\x67\x68\x74\x3a\x31\x30\x30\x76\x68\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x6e\x6f\x6e\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x6d\x61\x78\x2d\x68\x65\x69\x67\x68\x74\x3a\x6e\x6f\x6e\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x6d\x61\x72\x67\x69\x6e\x3a\x30\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x30\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x62\x6f\x72\x64\x65\x72\x3a\x30\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x6f\x62\x6a\x65\x63\x74\x2d\x66\x69\x74\x3a\x63\x6f\x6e\x74\x61\x69\x6e\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x7a\x2d\x69\x6e\x64\x65\x78\x3a\x32\x31\x34\x37\x34\x38\x33\x36\x34\x37\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x6f\x70\x61\x63\x69\x74\x79\x3a\x31\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x30\x30\x30\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x3b\x70\x6f\x69\x6e\x74\x65\x72\x2d\x65\x76\x65\x6e\x74\x73\x3a\x6e\x6f\x6e\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x7d\x0a\x20\x20\x20\x20\x20\x20\x76\x69\x64\x65\x6f\x3a\x3a\x2d\x77\x65\x62\x6b\x69\x74\x2d\x6d\x65\x64\x69\x61\x2d\x63\x6f\x6e\x74\x72\x6f\x6c\x73\x7b\x64\x69\x73\x70\x6c\x61\x79\x3a\x6e\x6f\x6e\x65\x21\x69\x6d\x70\x6f\x72\x74\x61\x6e\x74\x7d", 
+    _0x099e7a_3.head.append(_0x099e7a_9), _0x099e7a_2.push(() => {
+      _0x099e7a_9.remove(), null === _0x099e7a_7 ? _0x099e7a_4.removeAttribute(_0x099e7a_6) : _0x099e7a_4.setAttribute(_0x099e7a_6, _0x099e7a_7);
+      for (const [_0x099e7a_0, _0x099e7a_1] of _0x099e7a_8) null === _0x099e7a_1 ? _0x099e7a_0.removeAttribute("\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x70\x6c\x61\x79\x65\x72\x2d\x61\x6e\x63\x65\x73\x74\x6f\x72") : _0x099e7a_0.setAttribute("\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x70\x6c\x61\x79\x65\x72\x2d\x61\x6e\x63\x65\x73\x74\x6f\x72", _0x099e7a_1);
     });
   }
-  const o = t.controls;
-  t.controls = !1;
-  const n = new MutationObserver(() => {
-    t.controls && (t.controls = !1);
+  const _0x099e7a_3 = _0x099e7a_0.controls;
+  _0x099e7a_0.controls = !1;
+  const _0x099e7a_4 = new MutationObserver(() => {
+    _0x099e7a_0.controls && (_0x099e7a_0.controls = !1);
   });
-  return n.observe(t, {
+  return _0x099e7a_4.observe(_0x099e7a_0, {
     attributes: !0,
-    attributeFilter: [ "controls" ]
+    attributeFilter: [ "\x63\x6f\x6e\x74\x72\x6f\x6c\x73" ]
   }), () => {
-    n.disconnect(), t.controls = o, r.reverse().forEach(t => t());
+    _0x099e7a_4.disconnect(), _0x099e7a_0.controls = _0x099e7a_3, _0x099e7a_2.reverse().forEach(_0x099e7a_0 => _0x099e7a_0());
   };
 }
 
-function ur(t) {
-  const e = [ t ];
-  let r = 0;
-  for (;e.length && r++ < 16; ) try {
-    const t = e.shift().contentDocument;
-    if (!t) continue;
-    const r = [ ...t.querySelectorAll('button,[role="button"]') ].find(t => /^(play|play video|play movie|start watching|watch now)$/i.test((t.getAttribute("aria-label") || t.getAttribute("title") || t.textContent || "").trim()));
-    if (r) return () => r.click();
-    const o = [ ...t.querySelectorAll("video") ].find(t => t.currentSrc || t.src);
-    if (o) return () => o.play();
-    e.push(...[ ...t.querySelectorAll("iframe") ].slice(0, 16));
+function _0x099e7a_2(_0x099e7a_0) {
+  const _0x099e7a_1 = [ _0x099e7a_0 ];
+  let _0x099e7a_2 = 0;
+  for (;_0x099e7a_1.length && _0x099e7a_2++ < 16; ) try {
+    const _0x099e7a_0 = _0x099e7a_1.shift().contentDocument;
+    if (!_0x099e7a_0) continue;
+    const _0x099e7a_2 = [ ..._0x099e7a_0.querySelectorAll("\x62\x75\x74\x74\x6f\x6e\x2c\x5b\x72\x6f\x6c\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x5d") ].find(_0x099e7a_0 => /^(play|play video|play movie|start watching|watch now)$/i.test((_0x099e7a_0.getAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c") || _0x099e7a_0.getAttribute("\x74\x69\x74\x6c\x65") || _0x099e7a_0.textContent || "").trim()));
+    if (_0x099e7a_2) return () => _0x099e7a_2.click();
+    const _0x099e7a_3 = [ ..._0x099e7a_0.querySelectorAll("\x76\x69\x64\x65\x6f") ].find(_0x099e7a_0 => _0x099e7a_0.currentSrc || _0x099e7a_0.src);
+    if (_0x099e7a_3) return () => _0x099e7a_3.play();
+    _0x099e7a_1.push(...[ ..._0x099e7a_0.querySelectorAll("\x69\x66\x72\x61\x6d\x65") ].slice(0, 16));
   } catch {}
   return null;
 }
 
-export function canStartMovieProxy(t) {
-  return Boolean(ur(t));
+export function canStartMovieProxy(_0x099e7a_0) {
+  return Boolean(_0x099e7a_2(_0x099e7a_0));
 }
 
-export async function startMovieProxy(t) {
-  const e = ur(t);
-  if (!e) throw Error("The player is still loading.");
-  await e();
+export async function startMovieProxy(_0x099e7a_0) {
+  const _0x099e7a_1 = _0x099e7a_2(_0x099e7a_0);
+  if (!_0x099e7a_1) throw Error("\x54\x68\x65\x20\x70\x6c\x61\x79\x65\x72\x20\x69\x73\x20\x73\x74\x69\x6c\x6c\x20\x6c\x6f\x61\x64\x69\x6e\x67\x2e");
+  await _0x099e7a_1();
 }

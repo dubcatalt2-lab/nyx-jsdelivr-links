@@ -1,1215 +1,1261 @@
 (() => {
   "use strict";
-  const e = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/link-checker", t = "nyx.linkChecker.history.v1", n = "nyx.linkChecker.settings.v1", r = "nyx.linkChecker.freedns.v1", a = "nyx.linkChecker.freednsVerdicts.v1", o = 3e5, s = [ "theme-default", "theme-ruby", "theme-emerald", "theme-sakura", "theme-fresh" ], i = e => document.querySelector(e), d = e => [ ...document.querySelectorAll(e) ], c = {
-    form: i("[data-check-form]"),
-    input: i("[data-url-input]"),
-    filter: i("[data-filter-select]"),
-    button: i("[data-check-button]"),
-    apiStatus: i("[data-api-status]"),
-    notice: i("[data-notice]"),
-    resultsSection: i("[data-results-section]"),
-    resultsTitle: i("[data-results-title]"),
-    resultList: i("[data-result-list]"),
-    domainSection: i("[data-domain-section]"),
-    domainTitle: i("[data-domain-title]"),
-    domainSource: i("[data-domain-source]"),
-    domainDetails: i("[data-domain-details]"),
-    dashboardList: i("[data-dashboard-list]"),
-    dashboardEmpty: i("[data-dashboard-empty]"),
-    dashboardPager: i("[data-dashboard-pager]"),
-    historyList: i("[data-history-list]"),
-    historyEmpty: i("[data-history-empty]"),
-    freednsStart: i("[data-freedns-start]"),
-    freednsCheckAll: i("[data-freedns-check-all]"),
-    freednsCheckPage: i("[data-freedns-check-page]"),
-    freednsGodDomains: i("[data-freedns-god-domains]"),
-    freednsDoubleCheck: i("[data-freedns-double-check]"),
-    freednsStop: i("[data-freedns-stop]"),
-    freednsList: i("[data-freedns-list]"),
-    freednsEmpty: i("[data-freedns-empty]"),
-    freednsPager: i("[data-freedns-pager]"),
-    freednsSearch: i("[data-freedns-search]"),
-    freednsStatus: i("[data-freedns-status]"),
-    freednsVendor: i("[data-freedns-vendor]"),
-    freednsProgress: i("[data-freedns-progress]"),
-    freednsDetail: i("[data-freedns-detail]"),
-    freednsDetailTitle: i("[data-freedns-detail-title]"),
-    freednsDetailLink: i("[data-freedns-detail-link]"),
-    freednsDetailSummary: i("[data-freedns-detail-summary]"),
-    freednsDetailMessage: i("[data-freedns-detail-message]"),
-    freednsDetailVendors: i("[data-freedns-detail-vendors]"),
-    freednsRegistration: i("[data-freedns-registration]"),
-    freednsRegistrationSource: i("[data-freedns-registration-source]")
-  }, l = {
+  const _0x703395_0 = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x63\x68\x65\x63\x6b\x65\x72", _0x703395_1 = "\x6e\x79\x78\x2e\x6c\x69\x6e\x6b\x43\x68\x65\x63\x6b\x65\x72\x2e\x68\x69\x73\x74\x6f\x72\x79\x2e\x76\x31", _0x703395_2 = "\x6e\x79\x78\x2e\x6c\x69\x6e\x6b\x43\x68\x65\x63\x6b\x65\x72\x2e\x73\x65\x74\x74\x69\x6e\x67\x73\x2e\x76\x31", _0x703395_3 = "\x6e\x79\x78\x2e\x6c\x69\x6e\x6b\x43\x68\x65\x63\x6b\x65\x72\x2e\x66\x72\x65\x65\x64\x6e\x73\x2e\x76\x31", _0x703395_4 = "\x6e\x79\x78\x2e\x6c\x69\x6e\x6b\x43\x68\x65\x63\x6b\x65\x72\x2e\x66\x72\x65\x65\x64\x6e\x73\x56\x65\x72\x64\x69\x63\x74\x73\x2e\x76\x31", _0x703395_5 = 3e5, _0x703395_6 = [ "\x74\x68\x65\x6d\x65\x2d\x64\x65\x66\x61\x75\x6c\x74", "\x74\x68\x65\x6d\x65\x2d\x72\x75\x62\x79", "\x74\x68\x65\x6d\x65\x2d\x65\x6d\x65\x72\x61\x6c\x64", "\x74\x68\x65\x6d\x65\x2d\x73\x61\x6b\x75\x72\x61", "\x74\x68\x65\x6d\x65\x2d\x66\x72\x65\x73\x68" ], _0x703395_7 = _0x703395_0 => document.querySelector(_0x703395_0), _0x703395_8 = _0x703395_0 => [ ...document.querySelectorAll(_0x703395_0) ], _0x703395_9 = {
+    form: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x63\x68\x65\x63\x6b\x2d\x66\x6f\x72\x6d\x5d"),
+    input: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x75\x72\x6c\x2d\x69\x6e\x70\x75\x74\x5d"),
+    filter: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x69\x6c\x74\x65\x72\x2d\x73\x65\x6c\x65\x63\x74\x5d"),
+    button: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x63\x68\x65\x63\x6b\x2d\x62\x75\x74\x74\x6f\x6e\x5d"),
+    apiStatus: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x61\x70\x69\x2d\x73\x74\x61\x74\x75\x73\x5d"),
+    notice: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x6e\x6f\x74\x69\x63\x65\x5d"),
+    resultsSection: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x73\x2d\x73\x65\x63\x74\x69\x6f\x6e\x5d"),
+    resultsTitle: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x73\x2d\x74\x69\x74\x6c\x65\x5d"),
+    resultList: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x2d\x6c\x69\x73\x74\x5d"),
+    domainSection: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x6f\x6d\x61\x69\x6e\x2d\x73\x65\x63\x74\x69\x6f\x6e\x5d"),
+    domainTitle: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x6f\x6d\x61\x69\x6e\x2d\x74\x69\x74\x6c\x65\x5d"),
+    domainSource: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x6f\x6d\x61\x69\x6e\x2d\x73\x6f\x75\x72\x63\x65\x5d"),
+    domainDetails: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x6f\x6d\x61\x69\x6e\x2d\x64\x65\x74\x61\x69\x6c\x73\x5d"),
+    dashboardList: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x6c\x69\x73\x74\x5d"),
+    dashboardEmpty: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x65\x6d\x70\x74\x79\x5d"),
+    dashboardPager: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x70\x61\x67\x65\x72\x5d"),
+    historyList: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x68\x69\x73\x74\x6f\x72\x79\x2d\x6c\x69\x73\x74\x5d"),
+    historyEmpty: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x68\x69\x73\x74\x6f\x72\x79\x2d\x65\x6d\x70\x74\x79\x5d"),
+    freednsStart: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x73\x74\x61\x72\x74\x5d"),
+    freednsCheckAll: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x63\x68\x65\x63\x6b\x2d\x61\x6c\x6c\x5d"),
+    freednsCheckPage: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x63\x68\x65\x63\x6b\x2d\x70\x61\x67\x65\x5d"),
+    freednsGodDomains: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x67\x6f\x64\x2d\x64\x6f\x6d\x61\x69\x6e\x73\x5d"),
+    freednsDoubleCheck: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x6f\x75\x62\x6c\x65\x2d\x63\x68\x65\x63\x6b\x5d"),
+    freednsStop: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x73\x74\x6f\x70\x5d"),
+    freednsList: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x6c\x69\x73\x74\x5d"),
+    freednsEmpty: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x65\x6d\x70\x74\x79\x5d"),
+    freednsPager: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x61\x67\x65\x72\x5d"),
+    freednsSearch: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x73\x65\x61\x72\x63\x68\x5d"),
+    freednsStatus: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x73\x74\x61\x74\x75\x73\x5d"),
+    freednsVendor: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x76\x65\x6e\x64\x6f\x72\x5d"),
+    freednsProgress: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x5d"),
+    freednsDetail: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x65\x74\x61\x69\x6c\x5d"),
+    freednsDetailTitle: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x65\x74\x61\x69\x6c\x2d\x74\x69\x74\x6c\x65\x5d"),
+    freednsDetailLink: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x65\x74\x61\x69\x6c\x2d\x6c\x69\x6e\x6b\x5d"),
+    freednsDetailSummary: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x65\x74\x61\x69\x6c\x2d\x73\x75\x6d\x6d\x61\x72\x79\x5d"),
+    freednsDetailMessage: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x65\x74\x61\x69\x6c\x2d\x6d\x65\x73\x73\x61\x67\x65\x5d"),
+    freednsDetailVendors: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x65\x74\x61\x69\x6c\x2d\x76\x65\x6e\x64\x6f\x72\x73\x5d"),
+    freednsRegistration: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x72\x65\x67\x69\x73\x74\x72\x61\x74\x69\x6f\x6e\x5d"),
+    freednsRegistrationSource: _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x72\x65\x67\x69\x73\x74\x72\x61\x74\x69\x6f\x6e\x2d\x73\x6f\x75\x72\x63\x65\x5d")
+  }, _0x703395_a = {
     pageSize: 25,
     notifications: !0,
-    theme: "inherit"
+    theme: "\x69\x6e\x68\x65\x72\x69\x74"
   };
-  let u = U(n, l), m = U(t, []);
-  Array.isArray(m) || (m = []);
-  let h = [], f = null, p = null, g = "", b = 1, v = "", y = U(r, {
+  let _0x703395_b = _0x703395_26(_0x703395_2, _0x703395_a), _0x703395_c = _0x703395_26(_0x703395_1, []);
+  Array.isArray(_0x703395_c) || (_0x703395_c = []);
+  let _0x703395_d = [], _0x703395_e = null, _0x703395_f = null, _0x703395_10 = "", _0x703395_11 = 1, _0x703395_12 = "", _0x703395_13 = _0x703395_26(_0x703395_3, {
     domains: [],
     totalPages: 0,
     totalDomains: 0,
     lastScrapedAt: "",
     complete: !1
   });
-  y && Array.isArray(y.domains) || (y = {
+  _0x703395_13 && Array.isArray(_0x703395_13.domains) || (_0x703395_13 = {
     domains: [],
     totalPages: 0,
     totalDomains: 0,
     lastScrapedAt: "",
     complete: !1
   });
-  let k = 1, S = null, w = !1, E = null, C = !1, x = !1, L = !1, $ = 0, A = !1, N = null, D = {
+  let _0x703395_14 = 1, _0x703395_15 = null, _0x703395_16 = !1, _0x703395_17 = null, _0x703395_18 = !1, _0x703395_19 = !1, _0x703395_1a = !1, _0x703395_1b = 0, _0x703395_1c = !1, _0x703395_1d = null, _0x703395_1e = {
     resolved: !1,
     premium: !1,
     expiresAt: 0,
     error: "",
     promise: null
-  }, M = new Set, P = null;
-  const T = U(a, {
+  }, _0x703395_1f = new Set, _0x703395_20 = null;
+  const _0x703395_21 = _0x703395_26(_0x703395_4, {
     vendors: [],
     verdicts: {},
     updatedAt: ""
   });
-  let O = Boolean(T?.verdicts && !Array.isArray(T?.values) && (T.updatedAt || Object.keys(T.verdicts).length)), j = function(e) {
-    if (!e || !Array.isArray(e.vendors)) return {
+  let _0x703395_22 = Boolean(_0x703395_21?.verdicts && !Array.isArray(_0x703395_21?.values) && (_0x703395_21.updatedAt || Object.keys(_0x703395_21.verdicts).length)), _0x703395_23 = function(_0x703395_0) {
+    if (!_0x703395_0 || !Array.isArray(_0x703395_0.vendors)) return {
       vendors: [],
       verdicts: {},
       updatedAt: ""
     };
-    if (Array.isArray(e.values)) {
-      const t = {};
-      return e.values.forEach((e, n) => {
-        const r = y.domains[n]?.domain;
-        r && "string" == typeof e && e && (t[r] = e);
+    if (Array.isArray(_0x703395_0.values)) {
+      const _0x703395_1 = {};
+      return _0x703395_0.values.forEach((_0x703395_0, _0x703395_2) => {
+        const _0x703395_3 = _0x703395_13.domains[_0x703395_2]?.domain;
+        _0x703395_3 && "\x73\x74\x72\x69\x6e\x67" == typeof _0x703395_0 && _0x703395_0 && (_0x703395_1[_0x703395_3] = _0x703395_0);
       }), {
-        vendors: e.vendors.map(String),
-        verdicts: t,
-        updatedAt: String(e.updatedAt || "")
+        vendors: _0x703395_0.vendors.map(String),
+        verdicts: _0x703395_1,
+        updatedAt: String(_0x703395_0.updatedAt || "")
       };
     }
-    return e.verdicts && "object" == typeof e.verdicts ? {
-      vendors: e.vendors.map(String),
-      verdicts: e.verdicts,
-      updatedAt: String(e.updatedAt || "")
+    return _0x703395_0.verdicts && "\x6f\x62\x6a\x65\x63\x74" == typeof _0x703395_0.verdicts ? {
+      vendors: _0x703395_0.vendors.map(String),
+      verdicts: _0x703395_0.verdicts,
+      updatedAt: String(_0x703395_0.updatedAt || "")
     } : {
       vendors: [],
       verdicts: {},
       updatedAt: ""
     };
-  }(T);
-  const R = new Set, I = B();
-  function U(e, t) {
+  }(_0x703395_21);
+  const _0x703395_24 = new Set, _0x703395_25 = _0x703395_28();
+  function _0x703395_26(_0x703395_0, _0x703395_1) {
     try {
-      const n = JSON.parse(localStorage.getItem(e) || "null");
-      return null === n ? t : n;
+      const _0x703395_2 = JSON.parse(localStorage.getItem(_0x703395_0) || "\x6e\x75\x6c\x6c");
+      return null === _0x703395_2 ? _0x703395_1 : _0x703395_2;
     } catch {
-      return t;
+      return _0x703395_1;
     }
   }
-  function z(e, t) {
+  function _0x703395_27(_0x703395_0, _0x703395_1) {
     try {
-      return localStorage.setItem(e, JSON.stringify(t)), !0;
+      return localStorage.setItem(_0x703395_0, JSON.stringify(_0x703395_1)), !0;
     } catch {
       return !1;
     }
   }
-  function B({render: e = !1, notify: t = !1} = {}) {
-    if (w || C || x) return !1;
-    const n = Math.max(Date.parse(y.lastScrapedAt || "") || 0, Date.parse(j.updatedAt || "") || 0);
-    if (!n || Date.now() - n < 288e5) return !1;
-    y = {
+  function _0x703395_28({render: _0x703395_0 = !1, notify: _0x703395_1 = !1} = {}) {
+    if (_0x703395_16 || _0x703395_18 || _0x703395_19) return !1;
+    const _0x703395_2 = Math.max(Date.parse(_0x703395_13.lastScrapedAt || "") || 0, Date.parse(_0x703395_23.updatedAt || "") || 0);
+    if (!_0x703395_2 || Date.now() - _0x703395_2 < 288e5) return !1;
+    _0x703395_13 = {
       domains: [],
       totalPages: 0,
       totalDomains: 0,
       lastScrapedAt: "",
       complete: !1
-    }, j = {
+    }, _0x703395_23 = {
       vendors: [],
       verdicts: {},
       updatedAt: ""
-    }, O = !1, k = 1, L = !1, $ = 0;
+    }, _0x703395_22 = !1, _0x703395_14 = 1, _0x703395_1a = !1, _0x703395_1b = 0;
     try {
-      localStorage.removeItem(r), localStorage.removeItem(a);
+      localStorage.removeItem(_0x703395_3), localStorage.removeItem(_0x703395_4);
     } catch {}
-    return e && Ue(), t && q("Cached FreeDNS domains and verdicts expired after eight hours and were removed from this device."), 
+    return _0x703395_0 && _0x703395_5c(), _0x703395_1 && _0x703395_2a("\x43\x61\x63\x68\x65\x64\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x64\x6f\x6d\x61\x69\x6e\x73\x20\x61\x6e\x64\x20\x76\x65\x72\x64\x69\x63\x74\x73\x20\x65\x78\x70\x69\x72\x65\x64\x20\x61\x66\x74\x65\x72\x20\x65\x69\x67\x68\x74\x20\x68\x6f\x75\x72\x73\x20\x61\x6e\x64\x20\x77\x65\x72\x65\x20\x72\x65\x6d\x6f\x76\x65\x64\x20\x66\x72\x6f\x6d\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e"), 
     !0;
   }
-  function F() {
-    if ("tutsi" === document.documentElement.dataset.appShell) return;
-    document.body.classList.remove(...s);
-    const e = "inherit" === u.theme ? function() {
+  function _0x703395_29() {
+    if ("\x74\x75\x74\x73\x69" === document.documentElement.dataset.appShell) return;
+    document.body.classList.remove(..._0x703395_6);
+    const _0x703395_0 = "\x69\x6e\x68\x65\x72\x69\x74" === _0x703395_b.theme ? function() {
       try {
-        return localStorage.getItem("nyx.theme") || "default";
+        return localStorage.getItem("\x6e\x79\x78\x2e\x74\x68\x65\x6d\x65") || "\x64\x65\x66\x61\x75\x6c\x74";
       } catch {
-        return "default";
+        return "\x64\x65\x66\x61\x75\x6c\x74";
       }
-    }() : u.theme;
-    e && "default" !== e && document.body.classList.add(`theme-${e}`);
+    }() : _0x703395_b.theme;
+    _0x703395_0 && "\x64\x65\x66\x61\x75\x6c\x74" !== _0x703395_0 && document.body.classList.add(`\x74\x68\x65\x6d\x65\x2d${_0x703395_0}`);
   }
-  function q(e, t = "", n = !1) {
-    if (!e) return c.notice.textContent = "", void (c.notice.hidden = !0);
-    (n || "error" === t || u.notifications) && (c.notice.textContent = e, c.notice.className = "notice global-notice" + (t ? ` ${t}` : ""), 
-    c.notice.hidden = !e);
+  function _0x703395_2a(_0x703395_0, _0x703395_1 = "", _0x703395_2 = !1) {
+    if (!_0x703395_0) return _0x703395_9.notice.textContent = "", void (_0x703395_9.notice.hidden = !0);
+    (_0x703395_2 || "\x65\x72\x72\x6f\x72" === _0x703395_1 || _0x703395_b.notifications) && (_0x703395_9.notice.textContent = _0x703395_0, 
+    _0x703395_9.notice.className = "\x6e\x6f\x74\x69\x63\x65\x20\x67\x6c\x6f\x62\x61\x6c\x2d\x6e\x6f\x74\x69\x63\x65" + (_0x703395_1 ? `\x20${_0x703395_1}` : ""), 
+    _0x703395_9.notice.hidden = !_0x703395_0);
   }
-  function V(e) {
-    const t = document.createElementNS("http://www.w3.org/2000/svg", "svg"), n = document.createElementNS("http://www.w3.org/2000/svg", "use");
-    return t.setAttribute("class", "lc-icon"), t.setAttribute("aria-hidden", "true"), 
-    n.setAttribute("href", `#icon-${e}`), t.append(n), t;
+  function _0x703395_2b(_0x703395_0) {
+    const _0x703395_1 = document.createElementNS("\x68\x74\x74\x70\x3a\x2f\x2f\x77\x77\x77\x2e\x77\x33\x2e\x6f\x72\x67\x2f\x32\x30\x30\x30\x2f\x73\x76\x67", "\x73\x76\x67"), _0x703395_2 = document.createElementNS("\x68\x74\x74\x70\x3a\x2f\x2f\x77\x77\x77\x2e\x77\x33\x2e\x6f\x72\x67\x2f\x32\x30\x30\x30\x2f\x73\x76\x67", "\x75\x73\x65");
+    return _0x703395_1.setAttribute("\x63\x6c\x61\x73\x73", "\x6c\x63\x2d\x69\x63\x6f\x6e"), _0x703395_1.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), 
+    _0x703395_2.setAttribute("\x68\x72\x65\x66", `\x23\x69\x63\x6f\x6e\x2d${_0x703395_0}`), _0x703395_1.append(_0x703395_2), 
+    _0x703395_1;
   }
-  function G(e) {
-    document.body.classList.toggle("loading", e), c.button.disabled = e, c.button.querySelector("span").textContent = e ? "Checking..." : "Check";
+  function _0x703395_2c(_0x703395_0) {
+    document.body.classList.toggle("\x6c\x6f\x61\x64\x69\x6e\x67", _0x703395_0), _0x703395_9.button.disabled = _0x703395_0, 
+    _0x703395_9.button.querySelector("\x73\x70\x61\x6e").textContent = _0x703395_0 ? "\x43\x68\x65\x63\x6b\x69\x6e\x67\x2e\x2e\x2e" : "\x43\x68\x65\x63\x6b";
   }
-  function J(e, t = (e ? "API online" : "API unavailable")) {
-    c.apiStatus.classList.toggle("online", e), c.apiStatus.classList.toggle("offline", !e), 
-    c.apiStatus.querySelector("span").textContent = t;
+  function _0x703395_2d(_0x703395_0, _0x703395_1 = (_0x703395_0 ? "\x41\x50\x49\x20\x6f\x6e\x6c\x69\x6e\x65" : "\x41\x50\x49\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65")) {
+    _0x703395_9.apiStatus.classList.toggle("\x6f\x6e\x6c\x69\x6e\x65", _0x703395_0), _0x703395_9.apiStatus.classList.toggle("\x6f\x66\x66\x6c\x69\x6e\x65", !_0x703395_0), 
+    _0x703395_9.apiStatus.querySelector("\x73\x70\x61\x6e").textContent = _0x703395_1;
   }
-  function K(e) {
-    const t = String("string" == typeof e ? e : e?.filter || e?.key || "").trim().toLowerCase(), n = String("string" == typeof e ? e : e?.label || e?.filter || e?.key || "Filter"), r = {
-      blocksi_ai: "Blocksi AI",
-      cisco: "Cisco Umbrella",
-      dnsfilter: "DNSFilter",
-      fortiguard: "FortiGuard",
-      goguardian: "GoGuardian",
-      iboss: "iBoss",
-      lanschool: "LanSchool",
-      paloalto: "Palo Alto"
+  function _0x703395_2e(_0x703395_0) {
+    const _0x703395_1 = String("\x73\x74\x72\x69\x6e\x67" == typeof _0x703395_0 ? _0x703395_0 : _0x703395_0?.filter || _0x703395_0?.key || "").trim().toLowerCase(), _0x703395_2 = String("\x73\x74\x72\x69\x6e\x67" == typeof _0x703395_0 ? _0x703395_0 : _0x703395_0?.label || _0x703395_0?.filter || _0x703395_0?.key || "\x46\x69\x6c\x74\x65\x72"), _0x703395_3 = {
+      blocksi_ai: "\x42\x6c\x6f\x63\x6b\x73\x69\x20\x41\x49",
+      cisco: "\x43\x69\x73\x63\x6f\x20\x55\x6d\x62\x72\x65\x6c\x6c\x61",
+      dnsfilter: "\x44\x4e\x53\x46\x69\x6c\x74\x65\x72",
+      fortiguard: "\x46\x6f\x72\x74\x69\x47\x75\x61\x72\x64",
+      goguardian: "\x47\x6f\x47\x75\x61\x72\x64\x69\x61\x6e",
+      iboss: "\x69\x42\x6f\x73\x73",
+      lanschool: "\x4c\x61\x6e\x53\x63\x68\x6f\x6f\x6c",
+      paloalto: "\x50\x61\x6c\x6f\x20\x41\x6c\x74\x6f"
     };
-    return r[t] ? r[t] : /^cisco talos$/i.test(n) ? "Cisco Umbrella" : n === t ? t.replace(/_/g, " ").replace(/\b\w/g, e => e.toUpperCase()) : n;
+    return _0x703395_3[_0x703395_1] ? _0x703395_3[_0x703395_1] : /^cisco talos$/i.test(_0x703395_2) ? "\x43\x69\x73\x63\x6f\x20\x55\x6d\x62\x72\x65\x6c\x6c\x61" : _0x703395_2 === _0x703395_1 ? _0x703395_1.replace(/_/g, "\x20").replace(/\b\w/g, _0x703395_0 => _0x703395_0.toUpperCase()) : _0x703395_2;
   }
-  async function _(e, t = {}) {
-    const n = await fetch(e, {
-      ...t,
+  async function _0x703395_2f(_0x703395_0, _0x703395_1 = {}) {
+    const _0x703395_2 = await fetch(_0x703395_0, {
+      ..._0x703395_1,
       headers: {
-        Accept: "application/json",
-        ...t.headers || {}
+        Accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+        ..._0x703395_1.headers || {}
       }
-    }), r = await n.text();
-    let a = null;
+    }), _0x703395_3 = await _0x703395_2.text();
+    let _0x703395_4 = null;
     try {
-      a = r ? JSON.parse(r) : null;
+      _0x703395_4 = _0x703395_3 ? JSON.parse(_0x703395_3) : null;
     } catch {
-      const t = (() => {
+      const _0x703395_1 = (() => {
         try {
-          return new URL(e, location.href).pathname;
+          return new URL(_0x703395_0, location.href).pathname;
         } catch {
-          return String(e);
+          return String(_0x703395_0);
         }
       })();
-      throw new Error(`Nyx received a web page instead of API data from ${t}. Refresh Nyx and try again.`);
+      throw new Error(`\x4e\x79\x78\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x61\x20\x77\x65\x62\x20\x70\x61\x67\x65\x20\x69\x6e\x73\x74\x65\x61\x64\x20\x6f\x66\x20\x41\x50\x49\x20\x64\x61\x74\x61\x20\x66\x72\x6f\x6d\x20${_0x703395_1}\x2e\x20\x52\x65\x66\x72\x65\x73\x68\x20\x4e\x79\x78\x20\x61\x6e\x64\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e`);
     }
-    if (!n.ok) {
-      let e = `Request failed (${n.status})`;
-      e = a?.error || a?.message || e;
-      const t = String(n.headers.get("retry-after") || "").trim(), r = /^\d+$/.test(t) ? 1e3 * Number(t) : Math.max(0, (Date.parse(t) || 0) - Date.now()), o = new Error(e);
-      throw o.status = n.status, o.retryAfterMs = r, o;
+    if (!_0x703395_2.ok) {
+      let _0x703395_0 = `\x52\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64\x20\x28${_0x703395_2.status}\x29`;
+      _0x703395_0 = _0x703395_4?.error || _0x703395_4?.message || _0x703395_0;
+      const _0x703395_1 = String(_0x703395_2.headers.get("\x72\x65\x74\x72\x79\x2d\x61\x66\x74\x65\x72") || "").trim(), _0x703395_3 = /^\d+$/.test(_0x703395_1) ? 1e3 * Number(_0x703395_1) : Math.max(0, (Date.parse(_0x703395_1) || 0) - Date.now()), _0x703395_5 = new Error(_0x703395_0);
+      throw _0x703395_5.status = _0x703395_2.status, _0x703395_5.retryAfterMs = _0x703395_3, 
+      _0x703395_5;
     }
-    if (null === a) throw new Error("Nyx received an empty API response.");
-    return a;
+    if (null === _0x703395_4) throw new Error("\x4e\x79\x78\x20\x72\x65\x63\x65\x69\x76\x65\x64\x20\x61\x6e\x20\x65\x6d\x70\x74\x79\x20\x41\x50\x49\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e");
+    return _0x703395_4;
   }
-  function H(e, t) {
-    const n = e?.vendors && "object" == typeof e.vendors ? e.vendors : {}, r = Object.entries(n).map(([e, t]) => ({
-      filter: e,
-      label: K(e),
-      blocked: !0 === t?.blocked || !1 !== t?.blocked && null,
-      category: String(t?.category || ""),
-      error: String(t?.error || ""),
-      ms: Number.isFinite(Number(t?.ms)) ? Number(t.ms) : null
+  function _0x703395_30(_0x703395_0, _0x703395_1) {
+    const _0x703395_2 = _0x703395_0?.vendors && "\x6f\x62\x6a\x65\x63\x74" == typeof _0x703395_0.vendors ? _0x703395_0.vendors : {}, _0x703395_3 = Object.entries(_0x703395_2).map(([_0x703395_0, _0x703395_1]) => ({
+      filter: _0x703395_0,
+      label: _0x703395_2e(_0x703395_0),
+      blocked: !0 === _0x703395_1?.blocked || !1 !== _0x703395_1?.blocked && null,
+      category: String(_0x703395_1?.category || ""),
+      error: String(_0x703395_1?.error || ""),
+      ms: Number.isFinite(Number(_0x703395_1?.ms)) ? Number(_0x703395_1.ms) : null
     }));
-    if (!r.length) throw new Error("The Link Checker returned no vendor results.");
+    if (!_0x703395_3.length) throw new Error("\x54\x68\x65\x20\x4c\x69\x6e\x6b\x20\x43\x68\x65\x63\x6b\x65\x72\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x6e\x6f\x20\x76\x65\x6e\x64\x6f\x72\x20\x72\x65\x73\x75\x6c\x74\x73\x2e");
     return {
-      target: String(e?.host || new URL(t).hostname),
-      url: t,
-      blocked: !0 === e?.blocked,
-      blockedBy: Array.isArray(e?.blockedBy) ? e.blockedBy.map(String) : r.filter(e => !0 === e.blocked).map(e => e.filter),
-      cached: !0 === e?.cached,
-      plan: String(e?.plan || ""),
-      usage: e?.usage || null,
-      results: r
+      target: String(_0x703395_0?.host || new URL(_0x703395_1).hostname),
+      url: _0x703395_1,
+      blocked: !0 === _0x703395_0?.blocked,
+      blockedBy: Array.isArray(_0x703395_0?.blockedBy) ? _0x703395_0.blockedBy.map(String) : _0x703395_3.filter(_0x703395_0 => !0 === _0x703395_0.blocked).map(_0x703395_0 => _0x703395_0.filter),
+      cached: !0 === _0x703395_0?.cached,
+      plan: String(_0x703395_0?.plan || ""),
+      usage: _0x703395_0?.usage || null,
+      results: _0x703395_3
     };
   }
-  async function Y() {
+  async function _0x703395_31() {
     if (window.parent === window) return null;
-    const e = `lc-${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    return new Promise(t => {
-      let n = !1;
-      const r = e => {
-        n || (n = !0, clearTimeout(o), window.removeEventListener("message", a), t(e));
-      }, a = t => {
-        t.source === window.parent && t.origin === location.origin && "nyx:account-token-response" === t.data?.type && t.data?.requestId === e && r({
+    const _0x703395_0 = `\x6c\x63\x2d${Date.now()}\x2d${Math.random().toString(36).slice(2)}`;
+    return new Promise(_0x703395_1 => {
+      let _0x703395_2 = !1;
+      const _0x703395_3 = _0x703395_0 => {
+        _0x703395_2 || (_0x703395_2 = !0, clearTimeout(_0x703395_5), window.removeEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x703395_4), 
+        _0x703395_1(_0x703395_0));
+      }, _0x703395_4 = _0x703395_1 => {
+        _0x703395_1.source === window.parent && _0x703395_1.origin === location.origin && "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65" === _0x703395_1.data?.type && _0x703395_1.data?.requestId === _0x703395_0 && _0x703395_3({
           available: !0,
-          token: String(t.data.token || "")
+          token: String(_0x703395_1.data.token || "")
         });
-      }, o = setTimeout(() => r(null), 2500);
-      window.addEventListener("message", a), window.parent.postMessage({
-        type: "nyx:account-token-request",
-        requestId: e
+      }, _0x703395_5 = setTimeout(() => _0x703395_3(null), 2500);
+      window.addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x703395_4), window.parent.postMessage({
+        type: "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74",
+        requestId: _0x703395_0
       }, location.origin);
     });
   }
-  async function Q(e = !1) {
-    if (!e && D.resolved && D.expiresAt > Date.now()) return D;
-    if (D.promise) return D.promise;
-    const t = (async () => {
-      const e = await async function() {
-        const e = await Y();
-        if (e?.available) return {
-          currentUser: e.token ? {
-            getIdToken: async () => String((await Y())?.token || "")
+  async function _0x703395_32(_0x703395_0 = !1) {
+    if (!_0x703395_0 && _0x703395_1e.resolved && _0x703395_1e.expiresAt > Date.now()) return _0x703395_1e;
+    if (_0x703395_1e.promise) return _0x703395_1e.promise;
+    const _0x703395_1 = (async () => {
+      const _0x703395_0 = await async function() {
+        const _0x703395_0 = await _0x703395_31();
+        if (_0x703395_0?.available) return {
+          currentUser: _0x703395_0.token ? {
+            getIdToken: async () => String((await _0x703395_31())?.token || "")
           } : null
         };
-        N || (N = (async () => {
-          const e = await _("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/founder-profile/auth-config", {
-            cache: "no-store"
+        _0x703395_1d || (_0x703395_1d = (async () => {
+          const _0x703395_0 = await _0x703395_2f("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x66\x6f\x75\x6e\x64\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67", {
+            cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
           });
-          if (!e?.enabled) throw new Error("Nyx account sign-in is not configured.");
-          const [{initializeApp: t, getApps: n}, {getAuth: r, setPersistence: a, browserLocalPersistence: o}] = await Promise.all([ import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"), import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js") ]), s = r(n().find(e => "nyx-founder-owner" === e.name) || t({
-            apiKey: e.apiKey,
-            authDomain: `${e.projectId}.firebaseapp.com`,
-            projectId: e.projectId
-          }, "nyx-founder-owner"));
+          if (!_0x703395_0?.enabled) throw new Error("\x4e\x79\x78\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x73\x69\x67\x6e\x2d\x69\x6e\x20\x69\x73\x20\x6e\x6f\x74\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64\x2e");
+          const [{initializeApp: _0x703395_1, getApps: _0x703395_2}, {getAuth: _0x703395_3, setPersistence: _0x703395_4, browserLocalPersistence: _0x703395_5}] = await Promise.all([ import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x70\x70\x2e\x6a\x73"), import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x75\x74\x68\x2e\x6a\x73") ]), _0x703395_6 = _0x703395_3(_0x703395_2().find(_0x703395_0 => "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72" === _0x703395_0.name) || _0x703395_1({
+            apiKey: _0x703395_0.apiKey,
+            authDomain: `${_0x703395_0.projectId}\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d`,
+            projectId: _0x703395_0.projectId
+          }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72"));
           try {
-            await a(s, o);
+            await _0x703395_4(_0x703395_6, _0x703395_5);
           } catch {}
-          return "function" == typeof s.authStateReady && await s.authStateReady(), s;
+          return "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x703395_6.authStateReady && await _0x703395_6.authStateReady(), 
+          _0x703395_6;
         })());
         try {
-          return await N;
-        } catch (t) {
-          throw N = null, t;
+          return await _0x703395_1d;
+        } catch (_0x703395_1) {
+          throw _0x703395_1d = null, _0x703395_1;
         }
       }();
-      if (!e.currentUser) return {
+      if (!_0x703395_0.currentUser) return {
         resolved: !0,
         premium: !1,
-        expiresAt: Date.now() + o,
-        error: "Sign in to Nyx to use Premium full scans.",
-        auth: e
+        expiresAt: Date.now() + _0x703395_5,
+        error: "\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x4e\x79\x78\x20\x74\x6f\x20\x75\x73\x65\x20\x50\x72\x65\x6d\x69\x75\x6d\x20\x66\x75\x6c\x6c\x20\x73\x63\x61\x6e\x73\x2e",
+        auth: _0x703395_0
       };
-      const t = await e.currentUser.getIdToken(), n = await _("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/account/me", {
-        cache: "no-store",
+      const _0x703395_1 = await _0x703395_0.currentUser.getIdToken(), _0x703395_2 = await _0x703395_2f("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x61\x63\x63\x6f\x75\x6e\x74\x2f\x6d\x65", {
+        cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65",
         headers: {
-          Authorization: `Bearer ${t}`
+          Authorization: `\x42\x65\x61\x72\x65\x72\x20${_0x703395_1}`
         }
-      }), r = [ "owner", "co_owner", "admin", "manager", "developer", "moderator" ].includes(String(n?.role || "")), a = !0 === n?.premiumAccess || r;
+      }), _0x703395_3 = [ "\x6f\x77\x6e\x65\x72", "\x63\x6f\x5f\x6f\x77\x6e\x65\x72", "\x61\x64\x6d\x69\x6e", "\x6d\x61\x6e\x61\x67\x65\x72", "\x64\x65\x76\x65\x6c\x6f\x70\x65\x72", "\x6d\x6f\x64\x65\x72\x61\x74\x6f\x72" ].includes(String(_0x703395_2?.role || "")), _0x703395_4 = !0 === _0x703395_2?.premiumAccess || _0x703395_3;
       return {
         resolved: !0,
-        premium: a,
-        staffAccess: r,
-        expiresAt: Date.now() + o,
-        error: a ? "" : "Premium, Trial, or Moderator access is required to check all domains.",
-        auth: e
+        premium: _0x703395_4,
+        staffAccess: _0x703395_3,
+        expiresAt: Date.now() + _0x703395_5,
+        error: _0x703395_4 ? "" : "\x50\x72\x65\x6d\x69\x75\x6d\x2c\x20\x54\x72\x69\x61\x6c\x2c\x20\x6f\x72\x20\x4d\x6f\x64\x65\x72\x61\x74\x6f\x72\x20\x61\x63\x63\x65\x73\x73\x20\x69\x73\x20\x72\x65\x71\x75\x69\x72\x65\x64\x20\x74\x6f\x20\x63\x68\x65\x63\x6b\x20\x61\x6c\x6c\x20\x64\x6f\x6d\x61\x69\x6e\x73\x2e",
+        auth: _0x703395_0
       };
     })();
-    D = {
-      ...D,
-      promise: t
+    _0x703395_1e = {
+      ..._0x703395_1e,
+      promise: _0x703395_1
     };
     try {
-      return D = {
-        ...await t,
+      return _0x703395_1e = {
+        ...await _0x703395_1,
         promise: null
       };
-    } catch (n) {
-      throw D = {
+    } catch (_0x703395_2) {
+      throw _0x703395_1e = {
         resolved: !0,
         premium: !1,
         expiresAt: Date.now() + 3e4,
-        error: n.message || "Premium access could not be checked.",
+        error: _0x703395_2.message || "\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x65\x73\x73\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x63\x68\x65\x63\x6b\x65\x64\x2e",
         promise: null
-      }, n;
+      }, _0x703395_2;
     } finally {
-      Ee();
+      _0x703395_4d();
     }
   }
-  async function W({force: e = !1} = {}) {
-    const t = await Q(e);
-    if (!t.auth?.currentUser) throw new Error(t.error || "Sign in to Nyx on the homepage before starting a full registry scan.");
-    if (!t.premium) throw new Error(t.error || "Premium, Trial, or Moderator access is required to check all domains.");
-    return t.auth.currentUser.getIdToken();
+  async function _0x703395_33({force: _0x703395_0 = !1} = {}) {
+    const _0x703395_1 = await _0x703395_32(_0x703395_0);
+    if (!_0x703395_1.auth?.currentUser) throw new Error(_0x703395_1.error || "\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x4e\x79\x78\x20\x6f\x6e\x20\x74\x68\x65\x20\x68\x6f\x6d\x65\x70\x61\x67\x65\x20\x62\x65\x66\x6f\x72\x65\x20\x73\x74\x61\x72\x74\x69\x6e\x67\x20\x61\x20\x66\x75\x6c\x6c\x20\x72\x65\x67\x69\x73\x74\x72\x79\x20\x73\x63\x61\x6e\x2e");
+    if (!_0x703395_1.premium) throw new Error(_0x703395_1.error || "\x50\x72\x65\x6d\x69\x75\x6d\x2c\x20\x54\x72\x69\x61\x6c\x2c\x20\x6f\x72\x20\x4d\x6f\x64\x65\x72\x61\x74\x6f\x72\x20\x61\x63\x63\x65\x73\x73\x20\x69\x73\x20\x72\x65\x71\x75\x69\x72\x65\x64\x20\x74\x6f\x20\x63\x68\x65\x63\x6b\x20\x61\x6c\x6c\x20\x64\x6f\x6d\x61\x69\x6e\x73\x2e");
+    return _0x703395_1.auth.currentUser.getIdToken();
   }
-  async function X(t, n = "", r, {bulk: a = !1} = {}) {
-    const o = {
-      "Content-Type": "application/json"
+  async function _0x703395_34(_0x703395_1, _0x703395_2 = "", _0x703395_3, {bulk: _0x703395_4 = !1} = {}) {
+    const _0x703395_5 = {
+      "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
     };
-    return a && (o.Authorization = `Bearer ${await W()}`), H(await _(`${e}/check`, {
-      method: "POST",
-      signal: r,
-      headers: o,
+    return _0x703395_4 && (_0x703395_5.Authorization = `\x42\x65\x61\x72\x65\x72\x20${await _0x703395_33()}`), 
+    _0x703395_30(await _0x703395_2f(`${_0x703395_0}\x2f\x63\x68\x65\x63\x6b`, {
+      method: "\x50\x4f\x53\x54",
+      signal: _0x703395_3,
+      headers: _0x703395_5,
       body: JSON.stringify({
-        url: t,
-        ...n ? {
-          vendor: n
+        url: _0x703395_1,
+        ..._0x703395_2 ? {
+          vendor: _0x703395_2
         } : {},
-        ...a ? {
+        ..._0x703395_4 ? {
           bulk: !0
         } : {}
       })
-    }), t);
+    }), _0x703395_1);
   }
-  function Z(e) {
-    return e?.error ? {
-      key: "error",
-      label: "Error"
-    } : !0 === e?.blocked ? {
-      key: "blocked",
-      label: "Blocked"
-    } : !1 === e?.blocked ? {
-      key: "allowed",
-      label: "Allowed"
+  function _0x703395_35(_0x703395_0) {
+    return _0x703395_0?.error ? {
+      key: "\x65\x72\x72\x6f\x72",
+      label: "\x45\x72\x72\x6f\x72"
+    } : !0 === _0x703395_0?.blocked ? {
+      key: "\x62\x6c\x6f\x63\x6b\x65\x64",
+      label: "\x42\x6c\x6f\x63\x6b\x65\x64"
+    } : !1 === _0x703395_0?.blocked ? {
+      key: "\x61\x6c\x6c\x6f\x77\x65\x64",
+      label: "\x41\x6c\x6c\x6f\x77\x65\x64"
     } : {
-      key: "info",
-      label: "Unknown"
+      key: "\x69\x6e\x66\x6f",
+      label: "\x55\x6e\x6b\x6e\x6f\x77\x6e"
     };
   }
-  function ee(e) {
-    const t = {
+  function _0x703395_36(_0x703395_0) {
+    const _0x703395_1 = {
       blocked: 0,
       allowed: 0,
       info: 0,
       error: 0
     };
-    return (e?.results || []).forEach(e => {
-      t[Z(e).key] += 1;
-    }), t;
+    return (_0x703395_0?.results || []).forEach(_0x703395_0 => {
+      _0x703395_1[_0x703395_35(_0x703395_0).key] += 1;
+    }), _0x703395_1;
   }
-  function te(e) {
-    const t = ee(e);
-    c.resultList.replaceChildren(), e.results.forEach(e => {
-      const t = Z(e), n = document.createElement("article");
-      n.className = `result-row ${t.key}`;
-      const r = document.createElement("span");
-      r.className = "result-dot", r.setAttribute("aria-hidden", "true");
-      const a = document.createElement("div");
-      a.className = "result-copy";
-      const o = document.createElement("strong");
-      o.textContent = e.label || K(e.filter);
-      const s = document.createElement("span");
-      s.textContent = e.error || e.category || "No category returned", a.append(o, s);
-      const i = document.createElement("div");
-      i.className = "result-meta";
-      const d = document.createElement("span");
-      d.className = "result-state", d.textContent = t.label;
-      const l = document.createElement("span");
-      l.className = "result-time", l.textContent = Number.isFinite(e.ms) ? `${Math.round(e.ms)} ms` : "\u2014", 
-      i.append(d, l), n.append(r, a, i), c.resultList.append(n);
-    }), Object.entries(t).forEach(([e, t]) => {
-      const n = i(`[data-count-${e}]`);
-      n && (n.textContent = String(t));
-    }), c.resultsTitle.textContent = `Results for ${e.target}`;
-    const n = i("[data-results-summary]");
-    n && (n.textContent = e.blocked ? `Blocked by ${e.blockedBy.length} vendor${1 === e.blockedBy.length ? "" : "s"}${e.cached ? " \xb7 cached result" : ""}` : "Not blocked by any reporting vendor" + (e.cached ? " \xb7 cached result" : "")), 
-    c.resultsSection.hidden = !1, p = e;
+  function _0x703395_37(_0x703395_0) {
+    const _0x703395_1 = _0x703395_36(_0x703395_0);
+    _0x703395_9.resultList.replaceChildren(), _0x703395_0.results.forEach(_0x703395_0 => {
+      const _0x703395_1 = _0x703395_35(_0x703395_0), _0x703395_2 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+      _0x703395_2.className = `\x72\x65\x73\x75\x6c\x74\x2d\x72\x6f\x77\x20${_0x703395_1.key}`;
+      const _0x703395_3 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_3.className = "\x72\x65\x73\x75\x6c\x74\x2d\x64\x6f\x74", _0x703395_3.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65");
+      const _0x703395_4 = document.createElement("\x64\x69\x76");
+      _0x703395_4.className = "\x72\x65\x73\x75\x6c\x74\x2d\x63\x6f\x70\x79";
+      const _0x703395_5 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+      _0x703395_5.textContent = _0x703395_0.label || _0x703395_2e(_0x703395_0.filter);
+      const _0x703395_6 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_6.textContent = _0x703395_0.error || _0x703395_0.category || "\x4e\x6f\x20\x63\x61\x74\x65\x67\x6f\x72\x79\x20\x72\x65\x74\x75\x72\x6e\x65\x64", 
+      _0x703395_4.append(_0x703395_5, _0x703395_6);
+      const _0x703395_7 = document.createElement("\x64\x69\x76");
+      _0x703395_7.className = "\x72\x65\x73\x75\x6c\x74\x2d\x6d\x65\x74\x61";
+      const _0x703395_8 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_8.className = "\x72\x65\x73\x75\x6c\x74\x2d\x73\x74\x61\x74\x65", _0x703395_8.textContent = _0x703395_1.label;
+      const _0x703395_a = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_a.className = "\x72\x65\x73\x75\x6c\x74\x2d\x74\x69\x6d\x65", _0x703395_a.textContent = Number.isFinite(_0x703395_0.ms) ? `${Math.round(_0x703395_0.ms)}\x20\x6d\x73` : "\u2014", 
+      _0x703395_7.append(_0x703395_8, _0x703395_a), _0x703395_2.append(_0x703395_3, _0x703395_4, _0x703395_7), 
+      _0x703395_9.resultList.append(_0x703395_2);
+    }), Object.entries(_0x703395_1).forEach(([_0x703395_0, _0x703395_1]) => {
+      const _0x703395_2 = _0x703395_7(`\x5b\x64\x61\x74\x61\x2d\x63\x6f\x75\x6e\x74\x2d${_0x703395_0}\x5d`);
+      _0x703395_2 && (_0x703395_2.textContent = String(_0x703395_1));
+    }), _0x703395_9.resultsTitle.textContent = `\x52\x65\x73\x75\x6c\x74\x73\x20\x66\x6f\x72\x20${_0x703395_0.target}`;
+    const _0x703395_2 = _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x72\x65\x73\x75\x6c\x74\x73\x2d\x73\x75\x6d\x6d\x61\x72\x79\x5d");
+    _0x703395_2 && (_0x703395_2.textContent = _0x703395_0.blocked ? `\x42\x6c\x6f\x63\x6b\x65\x64\x20\x62\x79\x20${_0x703395_0.blockedBy.length}\x20\x76\x65\x6e\x64\x6f\x72${1 === _0x703395_0.blockedBy.length ? "" : "\x73"}${_0x703395_0.cached ? "\x20\xb7\x20\x63\x61\x63\x68\x65\x64\x20\x72\x65\x73\x75\x6c\x74" : ""}` : "\x4e\x6f\x74\x20\x62\x6c\x6f\x63\x6b\x65\x64\x20\x62\x79\x20\x61\x6e\x79\x20\x72\x65\x70\x6f\x72\x74\x69\x6e\x67\x20\x76\x65\x6e\x64\x6f\x72" + (_0x703395_0.cached ? "\x20\xb7\x20\x63\x61\x63\x68\x65\x64\x20\x72\x65\x73\x75\x6c\x74" : "")), 
+    _0x703395_9.resultsSection.hidden = !1, _0x703395_f = _0x703395_0;
   }
-  function ne(e, t) {
-    return e.find(e => e.action === t)?.date || "";
+  function _0x703395_38(_0x703395_0, _0x703395_1) {
+    return _0x703395_0.find(_0x703395_0 => _0x703395_0.action === _0x703395_1)?.date || "";
   }
-  function re(e) {
-    if (!e) return "Not reported";
-    const t = new Date(e);
-    return Number.isNaN(t.getTime()) ? String(e) : t.toLocaleString();
+  function _0x703395_39(_0x703395_0) {
+    if (!_0x703395_0) return "\x4e\x6f\x74\x20\x72\x65\x70\x6f\x72\x74\x65\x64";
+    const _0x703395_1 = new Date(_0x703395_0);
+    return Number.isNaN(_0x703395_1.getTime()) ? String(_0x703395_0) : _0x703395_1.toLocaleString();
   }
-  function ae(e, t) {
-    const n = document.createElement("article"), r = document.createElement("span"), a = document.createElement("strong");
-    r.textContent = e, a.textContent = Array.isArray(t) ? t.join(", ") || "Not reported" : t || "Not reported", 
-    n.append(r, a), c.domainDetails.append(n);
+  function _0x703395_3a(_0x703395_0, _0x703395_1) {
+    const _0x703395_2 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65"), _0x703395_3 = document.createElement("\x73\x70\x61\x6e"), _0x703395_4 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+    _0x703395_3.textContent = _0x703395_0, _0x703395_4.textContent = Array.isArray(_0x703395_1) ? _0x703395_1.join("\x2c\x20") || "\x4e\x6f\x74\x20\x72\x65\x70\x6f\x72\x74\x65\x64" : _0x703395_1 || "\x4e\x6f\x74\x20\x72\x65\x70\x6f\x72\x74\x65\x64", 
+    _0x703395_2.append(_0x703395_3, _0x703395_4), _0x703395_9.domainDetails.append(_0x703395_2);
   }
-  async function oe(t, n) {
-    c.domainSection.hidden = !0;
+  async function _0x703395_3b(_0x703395_1, _0x703395_2) {
+    _0x703395_9.domainSection.hidden = !0;
     try {
-      r = await _(`${e}/domain-info`, {
-        method: "POST",
-        signal: n,
+      _0x703395_3 = await _0x703395_2f(`${_0x703395_0}\x2f\x64\x6f\x6d\x61\x69\x6e\x2d\x69\x6e\x66\x6f`, {
+        method: "\x50\x4f\x53\x54",
+        signal: _0x703395_2,
         headers: {
-          "Content-Type": "application/json"
+          "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         },
         body: JSON.stringify({
-          url: t
+          url: _0x703395_1
         })
-      }), c.domainDetails.replaceChildren(), c.domainTitle.textContent = r.domain || "Domain details", 
-      c.domainSource.textContent = r.source || "RDAP", ae("Registrar", r.registrar), ae("Created", re(ne(r.events || [], "registration"))), 
-      ae("Updated", re(ne(r.events || [], "last changed"))), ae("Expires", re(ne(r.events || [], "expiration"))), 
-      ae("Status", r.status), ae("DNSSEC", r.dnssec ? "Signed" : "Not reported as signed"), 
-      ae("Nameservers", r.nameservers), c.domainSection.hidden = !1;
-    } catch (a) {
-      if ("AbortError" === a.name) return;
+      }), _0x703395_9.domainDetails.replaceChildren(), _0x703395_9.domainTitle.textContent = _0x703395_3.domain || "\x44\x6f\x6d\x61\x69\x6e\x20\x64\x65\x74\x61\x69\x6c\x73", 
+      _0x703395_9.domainSource.textContent = _0x703395_3.source || "\x52\x44\x41\x50", _0x703395_3a("\x52\x65\x67\x69\x73\x74\x72\x61\x72", _0x703395_3.registrar), 
+      _0x703395_3a("\x43\x72\x65\x61\x74\x65\x64", _0x703395_39(_0x703395_38(_0x703395_3.events || [], "\x72\x65\x67\x69\x73\x74\x72\x61\x74\x69\x6f\x6e"))), 
+      _0x703395_3a("\x55\x70\x64\x61\x74\x65\x64", _0x703395_39(_0x703395_38(_0x703395_3.events || [], "\x6c\x61\x73\x74\x20\x63\x68\x61\x6e\x67\x65\x64"))), 
+      _0x703395_3a("\x45\x78\x70\x69\x72\x65\x73", _0x703395_39(_0x703395_38(_0x703395_3.events || [], "\x65\x78\x70\x69\x72\x61\x74\x69\x6f\x6e"))), 
+      _0x703395_3a("\x53\x74\x61\x74\x75\x73", _0x703395_3.status), _0x703395_3a("\x44\x4e\x53\x53\x45\x43", _0x703395_3.dnssec ? "\x53\x69\x67\x6e\x65\x64" : "\x4e\x6f\x74\x20\x72\x65\x70\x6f\x72\x74\x65\x64\x20\x61\x73\x20\x73\x69\x67\x6e\x65\x64"), 
+      _0x703395_3a("\x4e\x61\x6d\x65\x73\x65\x72\x76\x65\x72\x73", _0x703395_3.nameservers), _0x703395_9.domainSection.hidden = !1;
+    } catch (_0x703395_4) {
+      if ("\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x703395_4.name) return;
     }
-    var r;
+    var _0x703395_3;
   }
-  function se(e, n = "single", r = !0) {
-    const a = {
-      ...e,
-      id: globalThis.crypto?.randomUUID?.() || `scan-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+  function _0x703395_3c(_0x703395_0, _0x703395_2 = "\x73\x69\x6e\x67\x6c\x65", _0x703395_3 = !0) {
+    const _0x703395_4 = {
+      ..._0x703395_0,
+      id: globalThis.crypto?.randomUUID?.() || `\x73\x63\x61\x6e\x2d${Date.now()}\x2d${Math.random().toString(16).slice(2)}`,
       checkedAt: (new Date).toISOString(),
-      source: n
+      source: _0x703395_2
     };
-    return m.unshift(a), m = m.slice(0, 500), z(t, m), r && Ue(), a;
+    return _0x703395_c.unshift(_0x703395_4), _0x703395_c = _0x703395_c.slice(0, 500), 
+    _0x703395_27(_0x703395_1, _0x703395_c), _0x703395_3 && _0x703395_5c(), _0x703395_4;
   }
-  async function ie(e) {
-    let t;
-    e?.preventDefault();
+  async function _0x703395_3d(_0x703395_0) {
+    let _0x703395_1;
+    _0x703395_0?.preventDefault();
     try {
-      t = function(e) {
-        const t = String(e || "").trim();
-        if (!t) throw new Error("Enter a website to check.");
-        const n = /^[a-z][a-z0-9+.-]*:\/\//i.test(t) ? t : `https://${t}`;
-        let r;
+      _0x703395_1 = function(_0x703395_0) {
+        const _0x703395_1 = String(_0x703395_0 || "").trim();
+        if (!_0x703395_1) throw new Error("\x45\x6e\x74\x65\x72\x20\x61\x20\x77\x65\x62\x73\x69\x74\x65\x20\x74\x6f\x20\x63\x68\x65\x63\x6b\x2e");
+        const _0x703395_2 = /^[a-z][a-z0-9+.-]*:\/\//i.test(_0x703395_1) ? _0x703395_1 : `\x68\x74\x74\x70\x73\x3a\x2f\x2f${_0x703395_1}`;
+        let _0x703395_3;
         try {
-          r = new URL(n);
+          _0x703395_3 = new URL(_0x703395_2);
         } catch {
-          throw new Error("Enter a valid website or URL.");
+          throw new Error("\x45\x6e\x74\x65\x72\x20\x61\x20\x76\x61\x6c\x69\x64\x20\x77\x65\x62\x73\x69\x74\x65\x20\x6f\x72\x20\x55\x52\x4c\x2e");
         }
-        if (![ "http:", "https:" ].includes(r.protocol)) throw new Error("Only HTTP and HTTPS links can be checked.");
-        return r.hash = "", r.href;
-      }(c.input.value);
-    } catch (n) {
-      return q(n.message, "error", !0), void c.input.focus();
+        if (![ "\x68\x74\x74\x70\x3a", "\x68\x74\x74\x70\x73\x3a" ].includes(_0x703395_3.protocol)) throw new Error("\x4f\x6e\x6c\x79\x20\x48\x54\x54\x50\x20\x61\x6e\x64\x20\x48\x54\x54\x50\x53\x20\x6c\x69\x6e\x6b\x73\x20\x63\x61\x6e\x20\x62\x65\x20\x63\x68\x65\x63\x6b\x65\x64\x2e");
+        return _0x703395_3.hash = "", _0x703395_3.href;
+      }(_0x703395_9.input.value);
+    } catch (_0x703395_2) {
+      return _0x703395_2a(_0x703395_2.message, "\x65\x72\x72\x6f\x72", !0), void _0x703395_9.input.focus();
     }
-    f?.abort(), f = new AbortController, g = t, c.resultsSection.hidden = !0, c.domainSection.hidden = !0, 
-    q(""), G(!0);
+    _0x703395_e?.abort(), _0x703395_e = new AbortController, _0x703395_10 = _0x703395_1, 
+    _0x703395_9.resultsSection.hidden = !0, _0x703395_9.domainSection.hidden = !0, _0x703395_2a(""), 
+    _0x703395_2c(!0);
     try {
-      const e = await X(t, c.filter.value, f.signal);
-      te(e), se(e, "single"), J(!0, e.plan ? `${h.length} vendors \xb7 ${e.plan}` : `${h.length} vendors ready`), 
-      oe(t, f.signal), c.resultsSection.scrollIntoView({
-        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-        block: "start"
+      const _0x703395_0 = await _0x703395_34(_0x703395_1, _0x703395_9.filter.value, _0x703395_e.signal);
+      _0x703395_37(_0x703395_0), _0x703395_3c(_0x703395_0, "\x73\x69\x6e\x67\x6c\x65"), _0x703395_2d(!0, _0x703395_0.plan ? `${_0x703395_d.length}\x20\x76\x65\x6e\x64\x6f\x72\x73\x20\xb7\x20${_0x703395_0.plan}` : `${_0x703395_d.length}\x20\x76\x65\x6e\x64\x6f\x72\x73\x20\x72\x65\x61\x64\x79`), 
+      _0x703395_3b(_0x703395_1, _0x703395_e.signal), _0x703395_9.resultsSection.scrollIntoView({
+        behavior: matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").matches ? "\x61\x75\x74\x6f" : "\x73\x6d\x6f\x6f\x74\x68",
+        block: "\x73\x74\x61\x72\x74"
       });
-    } catch (n) {
-      "AbortError" !== n.name && (q(`Check failed: ${n.message}`, "error", !0), J(!1, "Request failed"));
+    } catch (_0x703395_2) {
+      "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" !== _0x703395_2.name && (_0x703395_2a(`\x43\x68\x65\x63\x6b\x20\x66\x61\x69\x6c\x65\x64\x3a\x20${_0x703395_2.message}`, "\x65\x72\x72\x6f\x72", !0), 
+      _0x703395_2d(!1, "\x52\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64"));
     } finally {
-      G(!1);
+      _0x703395_2c(!1);
     }
   }
-  function de() {
-    const e = new Map;
-    return m.forEach(t => {
-      const n = String(t.target || "").toLowerCase();
-      n && !e.has(n) && e.set(n, t);
-    }), [ ...e.values() ];
+  function _0x703395_3e() {
+    const _0x703395_0 = new Map;
+    return _0x703395_c.forEach(_0x703395_1 => {
+      const _0x703395_2 = String(_0x703395_1.target || "").toLowerCase();
+      _0x703395_2 && !_0x703395_0.has(_0x703395_2) && _0x703395_0.set(_0x703395_2, _0x703395_1);
+    }), [ ..._0x703395_0.values() ];
   }
-  function ce(e, t = "") {
-    if (t) return Z((e.results || []).find(e => e.filter === t)).key;
-    const n = ee(e);
-    return n.blocked ? "blocked" : n.allowed ? "allowed" : "unknown";
+  function _0x703395_3f(_0x703395_0, _0x703395_1 = "") {
+    if (_0x703395_1) return _0x703395_35((_0x703395_0.results || []).find(_0x703395_0 => _0x703395_0.filter === _0x703395_1)).key;
+    const _0x703395_2 = _0x703395_36(_0x703395_0);
+    return _0x703395_2.blocked ? "\x62\x6c\x6f\x63\x6b\x65\x64" : _0x703395_2.allowed ? "\x61\x6c\x6c\x6f\x77\x65\x64" : "\x75\x6e\x6b\x6e\x6f\x77\x6e";
   }
-  function le(e) {
-    const t = ce(e), n = document.createElement("span");
-    return n.className = `verdict-pill ${t}`, n.textContent = "blocked" === t ? "Blocked" : "allowed" === t ? "Allowed" : "Unknown", 
-    n;
+  function _0x703395_40(_0x703395_0) {
+    const _0x703395_1 = _0x703395_3f(_0x703395_0), _0x703395_2 = document.createElement("\x73\x70\x61\x6e");
+    return _0x703395_2.className = `\x76\x65\x72\x64\x69\x63\x74\x2d\x70\x69\x6c\x6c\x20${_0x703395_1}`, _0x703395_2.textContent = "\x62\x6c\x6f\x63\x6b\x65\x64" === _0x703395_1 ? "\x42\x6c\x6f\x63\x6b\x65\x64" : "\x61\x6c\x6c\x6f\x77\x65\x64" === _0x703395_1 ? "\x41\x6c\x6c\x6f\x77\x65\x64" : "\x55\x6e\x6b\x6e\x6f\x77\x6e", 
+    _0x703395_2;
   }
-  function ue() {
-    const e = de();
-    i("[data-stat-domains]").textContent = String(e.length), i("[data-stat-checks]").textContent = String(m.length);
-    const t = e.filter(e => "blocked" === ce(e)).length;
-    i("[data-stat-blocked]").textContent = String(t), i("[data-stat-vendors]").textContent = String(h.length);
-    const n = i("[data-usage-bar]");
-    n && (n.style.width = `${e.length ? Math.max(5, Math.round(t / e.length * 100)) : 0}%`);
-    const r = function() {
-      const e = String(i("[data-dashboard-search]")?.value || "").trim().toLowerCase(), t = i("[data-dashboard-vendor]")?.value || "", n = v;
-      return de().filter(r => !(e && !`${r.target} ${r.url}`.toLowerCase().includes(e) || t && !(r.results || []).some(e => e.filter === t) || n && ce(r, t) !== n));
-    }(), a = Number(u.pageSize) || 25, o = Math.max(1, Math.ceil(r.length / a));
-    b = Math.min(Math.max(1, b), o);
-    const s = r.slice((b - 1) * a, b * a);
-    c.dashboardList.replaceChildren(), s.forEach(e => {
-      const t = document.createElement("article");
-      t.className = "domain-row";
-      const n = document.createElement("div");
-      n.className = "domain-identity";
-      const r = document.createElement("strong");
-      r.textContent = e.target;
-      const a = document.createElement("span");
-      a.textContent = e.url || e.target, n.append(r, a);
-      const o = document.createElement("time");
-      o.dateTime = e.checkedAt || "", o.textContent = re(e.checkedAt);
-      const s = le(e), i = document.createElement("span");
-      i.className = "domain-vendor-count", i.textContent = String(e.results?.length || 0);
-      const d = document.createElement("button");
-      d.className = "btn-secondary", d.type = "button", d.append(V("eye"), "Open"), d.addEventListener("click", () => Be(e)), 
-      t.append(n, o, s, i, d), c.dashboardList.append(t);
-    }), c.dashboardEmpty.hidden = r.length > 0, c.dashboardPager.hidden = r.length <= a, 
-    i("[data-dashboard-page-label]").textContent = `Page ${b} of ${o} \xb7 ${r.length} domains`, 
-    i("[data-dashboard-prev]").disabled = b <= 1, i("[data-dashboard-next]").disabled = b >= o;
+  function _0x703395_41() {
+    const _0x703395_0 = _0x703395_3e();
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x74\x61\x74\x2d\x64\x6f\x6d\x61\x69\x6e\x73\x5d").textContent = String(_0x703395_0.length), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x74\x61\x74\x2d\x63\x68\x65\x63\x6b\x73\x5d").textContent = String(_0x703395_c.length);
+    const _0x703395_1 = _0x703395_0.filter(_0x703395_0 => "\x62\x6c\x6f\x63\x6b\x65\x64" === _0x703395_3f(_0x703395_0)).length;
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x74\x61\x74\x2d\x62\x6c\x6f\x63\x6b\x65\x64\x5d").textContent = String(_0x703395_1), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x74\x61\x74\x2d\x76\x65\x6e\x64\x6f\x72\x73\x5d").textContent = String(_0x703395_d.length);
+    const _0x703395_2 = _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x75\x73\x61\x67\x65\x2d\x62\x61\x72\x5d");
+    _0x703395_2 && (_0x703395_2.style.width = `${_0x703395_0.length ? Math.max(5, Math.round(_0x703395_1 / _0x703395_0.length * 100)) : 0}\x25`);
+    const _0x703395_3 = function() {
+      const _0x703395_0 = String(_0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x73\x65\x61\x72\x63\x68\x5d")?.value || "").trim().toLowerCase(), _0x703395_1 = _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x76\x65\x6e\x64\x6f\x72\x5d")?.value || "", _0x703395_2 = _0x703395_12;
+      return _0x703395_3e().filter(_0x703395_3 => !(_0x703395_0 && !`${_0x703395_3.target}\x20${_0x703395_3.url}`.toLowerCase().includes(_0x703395_0) || _0x703395_1 && !(_0x703395_3.results || []).some(_0x703395_0 => _0x703395_0.filter === _0x703395_1) || _0x703395_2 && _0x703395_3f(_0x703395_3, _0x703395_1) !== _0x703395_2));
+    }(), _0x703395_4 = Number(_0x703395_b.pageSize) || 25, _0x703395_5 = Math.max(1, Math.ceil(_0x703395_3.length / _0x703395_4));
+    _0x703395_11 = Math.min(Math.max(1, _0x703395_11), _0x703395_5);
+    const _0x703395_6 = _0x703395_3.slice((_0x703395_11 - 1) * _0x703395_4, _0x703395_11 * _0x703395_4);
+    _0x703395_9.dashboardList.replaceChildren(), _0x703395_6.forEach(_0x703395_0 => {
+      const _0x703395_1 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+      _0x703395_1.className = "\x64\x6f\x6d\x61\x69\x6e\x2d\x72\x6f\x77";
+      const _0x703395_2 = document.createElement("\x64\x69\x76");
+      _0x703395_2.className = "\x64\x6f\x6d\x61\x69\x6e\x2d\x69\x64\x65\x6e\x74\x69\x74\x79";
+      const _0x703395_3 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+      _0x703395_3.textContent = _0x703395_0.target;
+      const _0x703395_4 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_4.textContent = _0x703395_0.url || _0x703395_0.target, _0x703395_2.append(_0x703395_3, _0x703395_4);
+      const _0x703395_5 = document.createElement("\x74\x69\x6d\x65");
+      _0x703395_5.dateTime = _0x703395_0.checkedAt || "", _0x703395_5.textContent = _0x703395_39(_0x703395_0.checkedAt);
+      const _0x703395_6 = _0x703395_40(_0x703395_0), _0x703395_7 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_7.className = "\x64\x6f\x6d\x61\x69\x6e\x2d\x76\x65\x6e\x64\x6f\x72\x2d\x63\x6f\x75\x6e\x74", _0x703395_7.textContent = String(_0x703395_0.results?.length || 0);
+      const _0x703395_8 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+      _0x703395_8.className = "\x62\x74\x6e\x2d\x73\x65\x63\x6f\x6e\x64\x61\x72\x79", _0x703395_8.type = "\x62\x75\x74\x74\x6f\x6e", _0x703395_8.append(_0x703395_2b("\x65\x79\x65"), "\x4f\x70\x65\x6e"), 
+      _0x703395_8.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x703395_5e(_0x703395_0)), _0x703395_1.append(_0x703395_2, _0x703395_5, _0x703395_6, _0x703395_7, _0x703395_8), 
+      _0x703395_9.dashboardList.append(_0x703395_1);
+    }), _0x703395_9.dashboardEmpty.hidden = _0x703395_3.length > 0, _0x703395_9.dashboardPager.hidden = _0x703395_3.length <= _0x703395_4, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x70\x61\x67\x65\x2d\x6c\x61\x62\x65\x6c\x5d").textContent = `\x50\x61\x67\x65\x20${_0x703395_11}\x20\x6f\x66\x20${_0x703395_5}\x20\xb7\x20${_0x703395_3.length}\x20\x64\x6f\x6d\x61\x69\x6e\x73`, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x70\x72\x65\x76\x5d").disabled = _0x703395_11 <= 1, _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x6e\x65\x78\x74\x5d").disabled = _0x703395_11 >= _0x703395_5;
   }
-  function me(e) {
-    const t = String(e?.domain || "").trim().toLowerCase();
-    return t && /^(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/i.test(t) ? {
-      id: String(e?.id || t),
-      domain: t,
-      status: "public" === e?.status ? "public" : "private",
-      hosts: Math.max(0, Number(e?.hosts) || 0),
-      owner: String(e?.owner || "").trim().slice(0, 100),
-      added: String(e?.added || "").trim().slice(0, 40)
+  function _0x703395_42(_0x703395_0) {
+    const _0x703395_1 = String(_0x703395_0?.domain || "").trim().toLowerCase();
+    return _0x703395_1 && /^(?=.{1,253}$)(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/i.test(_0x703395_1) ? {
+      id: String(_0x703395_0?.id || _0x703395_1),
+      domain: _0x703395_1,
+      status: "\x70\x75\x62\x6c\x69\x63" === _0x703395_0?.status ? "\x70\x75\x62\x6c\x69\x63" : "\x70\x72\x69\x76\x61\x74\x65",
+      hosts: Math.max(0, Number(_0x703395_0?.hosts) || 0),
+      owner: String(_0x703395_0?.owner || "").trim().slice(0, 100),
+      added: String(_0x703395_0?.added || "").trim().slice(0, 40)
     } : null;
   }
-  function he(e) {
-    const t = new Map;
-    let n = "";
-    m.forEach(r => {
-      String(r?.target || "").trim().toLowerCase() === e && (n || (n = r.checkedAt || ""), 
-      (r.results || []).forEach(e => {
-        const n = String(e?.filter || "");
-        n && !t.has(n) && t.set(n, e);
+  function _0x703395_43(_0x703395_0) {
+    const _0x703395_1 = new Map;
+    let _0x703395_2 = "";
+    _0x703395_c.forEach(_0x703395_3 => {
+      String(_0x703395_3?.target || "").trim().toLowerCase() === _0x703395_0 && (_0x703395_2 || (_0x703395_2 = _0x703395_3.checkedAt || ""), 
+      (_0x703395_3.results || []).forEach(_0x703395_0 => {
+        const _0x703395_2 = String(_0x703395_0?.filter || "");
+        _0x703395_2 && !_0x703395_1.has(_0x703395_2) && _0x703395_1.set(_0x703395_2, _0x703395_0);
       }));
     });
-    const r = String(j.verdicts[e] || "");
-    return r && !n && (n = j.updatedAt || ""), j.vendors.forEach((e, n) => {
-      if (t.has(e)) return;
-      const a = r[n];
-      "a" === a ? t.set(e, {
-        filter: e,
+    const _0x703395_3 = String(_0x703395_23.verdicts[_0x703395_0] || "");
+    return _0x703395_3 && !_0x703395_2 && (_0x703395_2 = _0x703395_23.updatedAt || ""), 
+    _0x703395_23.vendors.forEach((_0x703395_0, _0x703395_2) => {
+      if (_0x703395_1.has(_0x703395_0)) return;
+      const _0x703395_4 = _0x703395_3[_0x703395_2];
+      "\x61" === _0x703395_4 ? _0x703395_1.set(_0x703395_0, {
+        filter: _0x703395_0,
         blocked: !1
-      }) : "b" === a ? t.set(e, {
-        filter: e,
+      }) : "\x62" === _0x703395_4 ? _0x703395_1.set(_0x703395_0, {
+        filter: _0x703395_0,
         blocked: !0
-      }) : "e" === a ? t.set(e, {
-        filter: e,
+      }) : "\x65" === _0x703395_4 ? _0x703395_1.set(_0x703395_0, {
+        filter: _0x703395_0,
         blocked: null,
-        error: "Stored vendor error"
-      }) : "u" === a && t.set(e, {
-        filter: e,
+        error: "\x53\x74\x6f\x72\x65\x64\x20\x76\x65\x6e\x64\x6f\x72\x20\x65\x72\x72\x6f\x72"
+      }) : "\x75" === _0x703395_4 && _0x703395_1.set(_0x703395_0, {
+        filter: _0x703395_0,
         blocked: null
       });
     }), {
-      results: t,
-      checkedAt: n
+      results: _0x703395_1,
+      checkedAt: _0x703395_2
     };
   }
-  function fe(e = h) {
-    return e.map(String).join("\x1f");
+  function _0x703395_44(_0x703395_0 = _0x703395_d) {
+    return _0x703395_0.map(String).join("\x1f");
   }
-  function pe(e, t = null) {
-    const n = String(j.verdicts[e] || "");
-    if (n) {
-      const e = (n.match(/a/g) || []).length, t = (n.match(/b/g) || []).length;
+  function _0x703395_45(_0x703395_0, _0x703395_1 = null) {
+    const _0x703395_2 = String(_0x703395_23.verdicts[_0x703395_0] || "");
+    if (_0x703395_2) {
+      const _0x703395_0 = (_0x703395_2.match(/a/g) || []).length, _0x703395_1 = (_0x703395_2.match(/b/g) || []).length;
       return {
-        allowed: e,
-        blocked: t,
-        unknown: n.length - e - t,
-        checked: n.length
+        allowed: _0x703395_0,
+        blocked: _0x703395_1,
+        unknown: _0x703395_2.length - _0x703395_0 - _0x703395_1,
+        checked: _0x703395_2.length
       };
     }
-    if (t && !t.has(e)) return {
+    if (_0x703395_1 && !_0x703395_1.has(_0x703395_0)) return {
       allowed: 0,
       blocked: 0,
       unknown: 0,
       checked: 0
     };
-    const r = [ ...he(e).results.values() ], a = r.filter(e => !1 === e?.blocked && !e?.error).length, o = r.filter(e => !0 === e?.blocked).length;
+    const _0x703395_3 = [ ..._0x703395_43(_0x703395_0).results.values() ], _0x703395_4 = _0x703395_3.filter(_0x703395_0 => !1 === _0x703395_0?.blocked && !_0x703395_0?.error).length, _0x703395_5 = _0x703395_3.filter(_0x703395_0 => !0 === _0x703395_0?.blocked).length;
     return {
-      allowed: a,
-      blocked: o,
-      unknown: r.length - a - o,
-      checked: r.length
+      allowed: _0x703395_4,
+      blocked: _0x703395_5,
+      unknown: _0x703395_3.length - _0x703395_4 - _0x703395_5,
+      checked: _0x703395_3.length
     };
   }
-  function ge(e, t = e?.target) {
-    fe(j.vendors) !== fe() && (j = {
-      vendors: [ ...h ],
+  function _0x703395_46(_0x703395_0, _0x703395_1 = _0x703395_0?.target) {
+    _0x703395_44(_0x703395_23.vendors) !== _0x703395_44() && (_0x703395_23 = {
+      vendors: [ ..._0x703395_d ],
       verdicts: {},
       updatedAt: ""
     });
-    const n = new Map((e?.results || []).map(e => [ String(e?.filter || ""), e ]));
-    j.verdicts[String(t || "").toLowerCase()] = h.map(e => {
-      const t = n.get(e);
-      return t ? t.error ? "e" : !0 === t.blocked ? "b" : !1 === t.blocked ? "a" : "u" : "u";
-    }).join(""), j.updatedAt = (new Date).toISOString();
+    const _0x703395_2 = new Map((_0x703395_0?.results || []).map(_0x703395_0 => [ String(_0x703395_0?.filter || ""), _0x703395_0 ]));
+    _0x703395_23.verdicts[String(_0x703395_1 || "").toLowerCase()] = _0x703395_d.map(_0x703395_0 => {
+      const _0x703395_1 = _0x703395_2.get(_0x703395_0);
+      return _0x703395_1 ? _0x703395_1.error ? "\x65" : !0 === _0x703395_1.blocked ? "\x62" : !1 === _0x703395_1.blocked ? "\x61" : "\x75" : "\x75";
+    }).join(""), _0x703395_23.updatedAt = (new Date).toISOString();
   }
-  function be() {
-    const e = z(a, {
+  function _0x703395_47() {
+    const _0x703395_0 = _0x703395_27(_0x703395_4, {
       version: 2,
-      vendors: [ ...j.vendors ],
-      values: y.domains.map(e => String(j.verdicts[e.domain] || "")),
-      updatedAt: j.updatedAt
+      vendors: [ ..._0x703395_23.vendors ],
+      values: _0x703395_13.domains.map(_0x703395_0 => String(_0x703395_23.verdicts[_0x703395_0.domain] || "")),
+      updatedAt: _0x703395_23.updatedAt
     });
-    return e && (O = !1), e;
+    return _0x703395_0 && (_0x703395_22 = !1), _0x703395_0;
   }
-  function ve(e, t) {
-    const n = document.createElement("article"), r = document.createElement("span"), a = document.createElement("strong");
-    r.textContent = e, a.textContent = String(t || "Not reported"), n.append(r, a), 
-    c.freednsDetailSummary.append(n);
+  function _0x703395_48(_0x703395_0, _0x703395_1) {
+    const _0x703395_2 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65"), _0x703395_3 = document.createElement("\x73\x70\x61\x6e"), _0x703395_4 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+    _0x703395_3.textContent = _0x703395_0, _0x703395_4.textContent = String(_0x703395_1 || "\x4e\x6f\x74\x20\x72\x65\x70\x6f\x72\x74\x65\x64"), 
+    _0x703395_2.append(_0x703395_3, _0x703395_4), _0x703395_9.freednsDetailSummary.append(_0x703395_2);
   }
-  function ye(e) {
-    const t = e?.results instanceof Map ? e.results : new Map((e?.results || []).map(e => [ String(e?.filter || ""), e ]));
-    c.freednsDetailVendors.replaceChildren(), h.forEach(e => {
-      const n = t.get(e), r = n ? Z(n) : {
-        key: "unchecked",
-        label: "Not checked"
-      }, a = document.createElement("article");
-      a.className = `freedns-detail-vendor ${r.key}`;
-      const o = document.createElement("span");
-      o.className = "freedns-detail-vendor-icon", o.append(V("blocked" === r.key ? "shield-x" : "allowed" === r.key ? "shield-check" : "shield-question"));
-      const s = document.createElement("strong");
-      s.textContent = K(e);
-      const i = document.createElement("span");
-      i.className = "freedns-detail-vendor-state", i.textContent = "allowed" === r.key ? "Unblocked" : "error" === r.key ? "Unknown" : r.label;
-      const d = document.createElement("small");
-      d.textContent = n?.error || n?.category || (n ? "Category not stored" : "Not checked"), 
-      a.append(o, s, i, d), c.freednsDetailVendors.append(a);
+  function _0x703395_49(_0x703395_0) {
+    const _0x703395_1 = _0x703395_0?.results instanceof Map ? _0x703395_0.results : new Map((_0x703395_0?.results || []).map(_0x703395_0 => [ String(_0x703395_0?.filter || ""), _0x703395_0 ]));
+    _0x703395_9.freednsDetailVendors.replaceChildren(), _0x703395_d.forEach(_0x703395_0 => {
+      const _0x703395_2 = _0x703395_1.get(_0x703395_0), _0x703395_3 = _0x703395_2 ? _0x703395_35(_0x703395_2) : {
+        key: "\x75\x6e\x63\x68\x65\x63\x6b\x65\x64",
+        label: "\x4e\x6f\x74\x20\x63\x68\x65\x63\x6b\x65\x64"
+      }, _0x703395_4 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+      _0x703395_4.className = `\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x65\x74\x61\x69\x6c\x2d\x76\x65\x6e\x64\x6f\x72\x20${_0x703395_3.key}`;
+      const _0x703395_5 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_5.className = "\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x65\x74\x61\x69\x6c\x2d\x76\x65\x6e\x64\x6f\x72\x2d\x69\x63\x6f\x6e", _0x703395_5.append(_0x703395_2b("\x62\x6c\x6f\x63\x6b\x65\x64" === _0x703395_3.key ? "\x73\x68\x69\x65\x6c\x64\x2d\x78" : "\x61\x6c\x6c\x6f\x77\x65\x64" === _0x703395_3.key ? "\x73\x68\x69\x65\x6c\x64\x2d\x63\x68\x65\x63\x6b" : "\x73\x68\x69\x65\x6c\x64\x2d\x71\x75\x65\x73\x74\x69\x6f\x6e"));
+      const _0x703395_6 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+      _0x703395_6.textContent = _0x703395_2e(_0x703395_0);
+      const _0x703395_7 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_7.className = "\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x65\x74\x61\x69\x6c\x2d\x76\x65\x6e\x64\x6f\x72\x2d\x73\x74\x61\x74\x65", _0x703395_7.textContent = "\x61\x6c\x6c\x6f\x77\x65\x64" === _0x703395_3.key ? "\x55\x6e\x62\x6c\x6f\x63\x6b\x65\x64" : "\x65\x72\x72\x6f\x72" === _0x703395_3.key ? "\x55\x6e\x6b\x6e\x6f\x77\x6e" : _0x703395_3.label;
+      const _0x703395_8 = document.createElement("\x73\x6d\x61\x6c\x6c");
+      _0x703395_8.textContent = _0x703395_2?.error || _0x703395_2?.category || (_0x703395_2 ? "\x43\x61\x74\x65\x67\x6f\x72\x79\x20\x6e\x6f\x74\x20\x73\x74\x6f\x72\x65\x64" : "\x4e\x6f\x74\x20\x63\x68\x65\x63\x6b\x65\x64"), 
+      _0x703395_4.append(_0x703395_5, _0x703395_6, _0x703395_7, _0x703395_8), _0x703395_9.freednsDetailVendors.append(_0x703395_4);
     });
   }
-  function ke() {
-    P?.abort(), P = null, c.freednsDetail?.open && c.freednsDetail.close();
+  function _0x703395_4a() {
+    _0x703395_20?.abort(), _0x703395_20 = null, _0x703395_9.freednsDetail?.open && _0x703395_9.freednsDetail.close();
   }
-  async function Se(t) {
-    const n = he(t.domain);
-    if (!n.results.size) return;
-    P?.abort();
-    const r = new AbortController;
-    P = r;
-    const {signal: a} = r;
-    c.freednsDetailTitle.textContent = t.domain, c.freednsDetailLink.href = `https://${t.domain}/`, 
-    c.freednsDetailSummary.replaceChildren(), ve("Subdomains", t.hosts.toLocaleString()), 
-    ve("Owner", t.owner), ve("Added", t.added), ve("Status", t.status), ye(n), c.freednsDetailMessage.textContent = n.checkedAt ? `Saved results from ${re(n.checkedAt)}. Loading categories...` : "Saved compact results. Loading categories...", 
-    c.freednsRegistrationSource.textContent = "RDAP", c.freednsRegistration.textContent = "Loading public registration details...", 
-    c.freednsDetail.open || ("function" == typeof c.freednsDetail.showModal ? c.freednsDetail.showModal() : c.freednsDetail.setAttribute("open", ""));
-    const o = `https://${t.domain}/`, s = X(o, "", a, {
-      bulk: !0 === D.premium
-    }).then(e => {
-      a.aborted || P !== r || (ye(e), c.freednsDetailMessage.textContent = `All ${e.results.length} vendor details loaded${e.cached ? " from the provider cache" : ""}.`);
-    }).catch(e => {
-      "AbortError" === e.name || a.aborted || P !== r || (c.freednsDetailMessage.textContent = `Showing saved compact states. Categories could not be refreshed: ${e.message}`);
-    }), i = _(`${e}/domain-info`, {
-      method: "POST",
-      signal: a,
+  async function _0x703395_4b(_0x703395_1) {
+    const _0x703395_2 = _0x703395_43(_0x703395_1.domain);
+    if (!_0x703395_2.results.size) return;
+    _0x703395_20?.abort();
+    const _0x703395_3 = new AbortController;
+    _0x703395_20 = _0x703395_3;
+    const {signal: _0x703395_4} = _0x703395_3;
+    _0x703395_9.freednsDetailTitle.textContent = _0x703395_1.domain, _0x703395_9.freednsDetailLink.href = `\x68\x74\x74\x70\x73\x3a\x2f\x2f${_0x703395_1.domain}\x2f`, 
+    _0x703395_9.freednsDetailSummary.replaceChildren(), _0x703395_48("\x53\x75\x62\x64\x6f\x6d\x61\x69\x6e\x73", _0x703395_1.hosts.toLocaleString()), 
+    _0x703395_48("\x4f\x77\x6e\x65\x72", _0x703395_1.owner), _0x703395_48("\x41\x64\x64\x65\x64", _0x703395_1.added), 
+    _0x703395_48("\x53\x74\x61\x74\x75\x73", _0x703395_1.status), _0x703395_49(_0x703395_2), _0x703395_9.freednsDetailMessage.textContent = _0x703395_2.checkedAt ? `\x53\x61\x76\x65\x64\x20\x72\x65\x73\x75\x6c\x74\x73\x20\x66\x72\x6f\x6d\x20${_0x703395_39(_0x703395_2.checkedAt)}\x2e\x20\x4c\x6f\x61\x64\x69\x6e\x67\x20\x63\x61\x74\x65\x67\x6f\x72\x69\x65\x73\x2e\x2e\x2e` : "\x53\x61\x76\x65\x64\x20\x63\x6f\x6d\x70\x61\x63\x74\x20\x72\x65\x73\x75\x6c\x74\x73\x2e\x20\x4c\x6f\x61\x64\x69\x6e\x67\x20\x63\x61\x74\x65\x67\x6f\x72\x69\x65\x73\x2e\x2e\x2e", 
+    _0x703395_9.freednsRegistrationSource.textContent = "\x52\x44\x41\x50", _0x703395_9.freednsRegistration.textContent = "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x70\x75\x62\x6c\x69\x63\x20\x72\x65\x67\x69\x73\x74\x72\x61\x74\x69\x6f\x6e\x20\x64\x65\x74\x61\x69\x6c\x73\x2e\x2e\x2e", 
+    _0x703395_9.freednsDetail.open || ("\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x703395_9.freednsDetail.showModal ? _0x703395_9.freednsDetail.showModal() : _0x703395_9.freednsDetail.setAttribute("\x6f\x70\x65\x6e", ""));
+    const _0x703395_5 = `\x68\x74\x74\x70\x73\x3a\x2f\x2f${_0x703395_1.domain}\x2f`, _0x703395_6 = _0x703395_34(_0x703395_5, "", _0x703395_4, {
+      bulk: !0 === _0x703395_1e.premium
+    }).then(_0x703395_0 => {
+      _0x703395_4.aborted || _0x703395_20 !== _0x703395_3 || (_0x703395_49(_0x703395_0), 
+      _0x703395_9.freednsDetailMessage.textContent = `\x41\x6c\x6c\x20${_0x703395_0.results.length}\x20\x76\x65\x6e\x64\x6f\x72\x20\x64\x65\x74\x61\x69\x6c\x73\x20\x6c\x6f\x61\x64\x65\x64${_0x703395_0.cached ? "\x20\x66\x72\x6f\x6d\x20\x74\x68\x65\x20\x70\x72\x6f\x76\x69\x64\x65\x72\x20\x63\x61\x63\x68\x65" : ""}\x2e`);
+    }).catch(_0x703395_0 => {
+      "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x703395_0.name || _0x703395_4.aborted || _0x703395_20 !== _0x703395_3 || (_0x703395_9.freednsDetailMessage.textContent = `\x53\x68\x6f\x77\x69\x6e\x67\x20\x73\x61\x76\x65\x64\x20\x63\x6f\x6d\x70\x61\x63\x74\x20\x73\x74\x61\x74\x65\x73\x2e\x20\x43\x61\x74\x65\x67\x6f\x72\x69\x65\x73\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x72\x65\x66\x72\x65\x73\x68\x65\x64\x3a\x20${_0x703395_0.message}`);
+    }), _0x703395_7 = _0x703395_2f(`${_0x703395_0}\x2f\x64\x6f\x6d\x61\x69\x6e\x2d\x69\x6e\x66\x6f`, {
+      method: "\x50\x4f\x53\x54",
+      signal: _0x703395_4,
       headers: {
-        "Content-Type": "application/json"
+        "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
       },
       body: JSON.stringify({
-        url: o
+        url: _0x703395_5
       })
-    }).then(e => {
-      a.aborted || P !== r || (c.freednsRegistrationSource.textContent = e.source || "RDAP", 
-      c.freednsRegistration.textContent = function(e) {
-        const t = [], n = (e, n) => {
-          (Array.isArray(n) ? n : [ n ]).filter(Boolean).forEach(n => t.push(`${e}: ${n}`));
+    }).then(_0x703395_0 => {
+      _0x703395_4.aborted || _0x703395_20 !== _0x703395_3 || (_0x703395_9.freednsRegistrationSource.textContent = _0x703395_0.source || "\x52\x44\x41\x50", 
+      _0x703395_9.freednsRegistration.textContent = function(_0x703395_0) {
+        const _0x703395_1 = [], _0x703395_2 = (_0x703395_0, _0x703395_2) => {
+          (Array.isArray(_0x703395_2) ? _0x703395_2 : [ _0x703395_2 ]).filter(Boolean).forEach(_0x703395_2 => _0x703395_1.push(`${_0x703395_0}\x3a\x20${_0x703395_2}`));
         };
-        return n("Domain Name", e?.domain), n("Registry Domain ID", e?.handle), n("Registrar", e?.registrar), 
-        n("Created", ne(e?.events || [], "registration")), n("Updated", ne(e?.events || [], "last changed")), 
-        n("Expires", ne(e?.events || [], "expiration")), n("Domain Status", e?.status), 
-        n("Name Server", e?.nameservers), n("DNSSEC", e?.dnssec ? "signedDelegation" : "unsigned"), 
-        t.join("\n") || "No public registration details were reported for this domain.";
-      }(e));
-    }).catch(e => {
-      "AbortError" === e.name || a.aborted || P !== r || (c.freednsRegistration.textContent = `Registration details unavailable: ${e.message}`);
+        return _0x703395_2("\x44\x6f\x6d\x61\x69\x6e\x20\x4e\x61\x6d\x65", _0x703395_0?.domain), _0x703395_2("\x52\x65\x67\x69\x73\x74\x72\x79\x20\x44\x6f\x6d\x61\x69\x6e\x20\x49\x44", _0x703395_0?.handle), 
+        _0x703395_2("\x52\x65\x67\x69\x73\x74\x72\x61\x72", _0x703395_0?.registrar), _0x703395_2("\x43\x72\x65\x61\x74\x65\x64", _0x703395_38(_0x703395_0?.events || [], "\x72\x65\x67\x69\x73\x74\x72\x61\x74\x69\x6f\x6e")), 
+        _0x703395_2("\x55\x70\x64\x61\x74\x65\x64", _0x703395_38(_0x703395_0?.events || [], "\x6c\x61\x73\x74\x20\x63\x68\x61\x6e\x67\x65\x64")), 
+        _0x703395_2("\x45\x78\x70\x69\x72\x65\x73", _0x703395_38(_0x703395_0?.events || [], "\x65\x78\x70\x69\x72\x61\x74\x69\x6f\x6e")), _0x703395_2("\x44\x6f\x6d\x61\x69\x6e\x20\x53\x74\x61\x74\x75\x73", _0x703395_0?.status), 
+        _0x703395_2("\x4e\x61\x6d\x65\x20\x53\x65\x72\x76\x65\x72", _0x703395_0?.nameservers), _0x703395_2("\x44\x4e\x53\x53\x45\x43", _0x703395_0?.dnssec ? "\x73\x69\x67\x6e\x65\x64\x44\x65\x6c\x65\x67\x61\x74\x69\x6f\x6e" : "\x75\x6e\x73\x69\x67\x6e\x65\x64"), 
+        _0x703395_1.join("\x0a") || "\x4e\x6f\x20\x70\x75\x62\x6c\x69\x63\x20\x72\x65\x67\x69\x73\x74\x72\x61\x74\x69\x6f\x6e\x20\x64\x65\x74\x61\x69\x6c\x73\x20\x77\x65\x72\x65\x20\x72\x65\x70\x6f\x72\x74\x65\x64\x20\x66\x6f\x72\x20\x74\x68\x69\x73\x20\x64\x6f\x6d\x61\x69\x6e\x2e";
+      }(_0x703395_0));
+    }).catch(_0x703395_0 => {
+      "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x703395_0.name || _0x703395_4.aborted || _0x703395_20 !== _0x703395_3 || (_0x703395_9.freednsRegistration.textContent = `\x52\x65\x67\x69\x73\x74\x72\x61\x74\x69\x6f\x6e\x20\x64\x65\x74\x61\x69\x6c\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x3a\x20${_0x703395_0.message}`);
     });
-    await Promise.allSettled([ s, i ]);
+    await Promise.allSettled([ _0x703395_6, _0x703395_7 ]);
   }
-  function we() {
-    const e = function() {
-      const e = String(c.freednsSearch?.value || "").trim().toLowerCase(), t = c.freednsStatus?.value || "all", n = y.domains.filter(n => (!e || n.domain.includes(e)) && ("all" === t || n.status === t));
-      if (!L) return n;
-      const r = new Set(m.map(e => String(e?.target || "").trim().toLowerCase()).filter(Boolean));
-      return n.map(e => ({
-        entry: e,
-        score: pe(e.domain, r)
-      })).filter(e => e.score.checked > 0).sort((e, t) => t.score.allowed - e.score.allowed || e.score.blocked - t.score.blocked || e.score.unknown - t.score.unknown || t.score.checked - e.score.checked || Number("public" === t.entry.status) - Number("public" === e.entry.status) || t.entry.hosts - e.entry.hosts || e.entry.domain.localeCompare(t.entry.domain)).map(e => e.entry);
-    }(), t = Math.max(1, Math.ceil(e.length / 25));
-    return k = Math.min(Math.max(1, k), t), {
-      domains: e,
-      pages: t,
-      visible: e.slice(25 * (k - 1), 25 * k)
+  function _0x703395_4c() {
+    const _0x703395_0 = function() {
+      const _0x703395_0 = String(_0x703395_9.freednsSearch?.value || "").trim().toLowerCase(), _0x703395_1 = _0x703395_9.freednsStatus?.value || "\x61\x6c\x6c", _0x703395_2 = _0x703395_13.domains.filter(_0x703395_2 => (!_0x703395_0 || _0x703395_2.domain.includes(_0x703395_0)) && ("\x61\x6c\x6c" === _0x703395_1 || _0x703395_2.status === _0x703395_1));
+      if (!_0x703395_1a) return _0x703395_2;
+      const _0x703395_3 = new Set(_0x703395_c.map(_0x703395_0 => String(_0x703395_0?.target || "").trim().toLowerCase()).filter(Boolean));
+      return _0x703395_2.map(_0x703395_0 => ({
+        entry: _0x703395_0,
+        score: _0x703395_45(_0x703395_0.domain, _0x703395_3)
+      })).filter(_0x703395_0 => _0x703395_0.score.checked > 0).sort((_0x703395_0, _0x703395_1) => _0x703395_1.score.allowed - _0x703395_0.score.allowed || _0x703395_0.score.blocked - _0x703395_1.score.blocked || _0x703395_0.score.unknown - _0x703395_1.score.unknown || _0x703395_1.score.checked - _0x703395_0.score.checked || Number("\x70\x75\x62\x6c\x69\x63" === _0x703395_1.entry.status) - Number("\x70\x75\x62\x6c\x69\x63" === _0x703395_0.entry.status) || _0x703395_1.entry.hosts - _0x703395_0.entry.hosts || _0x703395_0.entry.domain.localeCompare(_0x703395_1.entry.domain)).map(_0x703395_0 => _0x703395_0.entry);
+    }(), _0x703395_1 = Math.max(1, Math.ceil(_0x703395_0.length / 25));
+    return _0x703395_14 = Math.min(Math.max(1, _0x703395_14), _0x703395_1), {
+      domains: _0x703395_0,
+      pages: _0x703395_1,
+      visible: _0x703395_0.slice(25 * (_0x703395_14 - 1), 25 * _0x703395_14)
     };
   }
-  function Ee() {
-    const e = w || C || x, t = w || C;
-    c.freednsStart.disabled = e, c.freednsStart.querySelector("span").textContent = w ? "Scraping\u2026" : "Scrape registry", 
-    c.freednsCheckAll.disabled = e || !h.length || !y.complete || !D.premium, c.freednsCheckAll.querySelector("span").textContent = x ? "Checking all\u2026" : D.resolved ? D.premium ? "Check all domains" : "Premium or Moderator" : "Checking access\u2026", 
-    c.freednsCheckAll.title = D.premium ? "Check every cached domain with all vendors" : D.error || "Premium access is being checked.", 
-    c.freednsCheckPage.disabled = e || !h.length || !we().visible.length, c.freednsCheckPage.querySelector("span").textContent = C ? "Checking\u2026" : "Check this page", 
-    c.freednsGodDomains.disabled = !y.domains.length, c.freednsGodDomains.classList.toggle("active", L), 
-    c.freednsGodDomains.setAttribute("aria-pressed", String(L)), c.freednsDoubleCheck.hidden = e || $ <= 0, 
-    c.freednsDoubleCheck.disabled = e || !D.premium, c.freednsDoubleCheck.querySelector("span").textContent = `Double check (${$.toLocaleString()})`, 
-    c.freednsDoubleCheck.title = D.premium ? "Retry only the domains still missing results" : D.error || "Premium, Trial, or Moderator access is required.", 
-    c.freednsStop.hidden = !e, c.freednsSearch.disabled = t, c.freednsStatus.disabled = t, 
-    c.freednsVendor.disabled = t, i("[data-freedns-clear]").disabled = e, i("[data-freedns-prev]").disabled = t || k <= 1, 
-    i("[data-freedns-next]").disabled = t || k >= we().pages;
+  function _0x703395_4d() {
+    const _0x703395_0 = _0x703395_16 || _0x703395_18 || _0x703395_19, _0x703395_1 = _0x703395_16 || _0x703395_18;
+    _0x703395_9.freednsStart.disabled = _0x703395_0, _0x703395_9.freednsStart.querySelector("\x73\x70\x61\x6e").textContent = _0x703395_16 ? "\x53\x63\x72\x61\x70\x69\x6e\x67\u2026" : "\x53\x63\x72\x61\x70\x65\x20\x72\x65\x67\x69\x73\x74\x72\x79", 
+    _0x703395_9.freednsCheckAll.disabled = _0x703395_0 || !_0x703395_d.length || !_0x703395_13.complete || !_0x703395_1e.premium, 
+    _0x703395_9.freednsCheckAll.querySelector("\x73\x70\x61\x6e").textContent = _0x703395_19 ? "\x43\x68\x65\x63\x6b\x69\x6e\x67\x20\x61\x6c\x6c\u2026" : _0x703395_1e.resolved ? _0x703395_1e.premium ? "\x43\x68\x65\x63\x6b\x20\x61\x6c\x6c\x20\x64\x6f\x6d\x61\x69\x6e\x73" : "\x50\x72\x65\x6d\x69\x75\x6d\x20\x6f\x72\x20\x4d\x6f\x64\x65\x72\x61\x74\x6f\x72" : "\x43\x68\x65\x63\x6b\x69\x6e\x67\x20\x61\x63\x63\x65\x73\x73\u2026", 
+    _0x703395_9.freednsCheckAll.title = _0x703395_1e.premium ? "\x43\x68\x65\x63\x6b\x20\x65\x76\x65\x72\x79\x20\x63\x61\x63\x68\x65\x64\x20\x64\x6f\x6d\x61\x69\x6e\x20\x77\x69\x74\x68\x20\x61\x6c\x6c\x20\x76\x65\x6e\x64\x6f\x72\x73" : _0x703395_1e.error || "\x50\x72\x65\x6d\x69\x75\x6d\x20\x61\x63\x63\x65\x73\x73\x20\x69\x73\x20\x62\x65\x69\x6e\x67\x20\x63\x68\x65\x63\x6b\x65\x64\x2e", 
+    _0x703395_9.freednsCheckPage.disabled = _0x703395_0 || !_0x703395_d.length || !_0x703395_4c().visible.length, 
+    _0x703395_9.freednsCheckPage.querySelector("\x73\x70\x61\x6e").textContent = _0x703395_18 ? "\x43\x68\x65\x63\x6b\x69\x6e\x67\u2026" : "\x43\x68\x65\x63\x6b\x20\x74\x68\x69\x73\x20\x70\x61\x67\x65", 
+    _0x703395_9.freednsGodDomains.disabled = !_0x703395_13.domains.length, _0x703395_9.freednsGodDomains.classList.toggle("\x61\x63\x74\x69\x76\x65", _0x703395_1a), 
+    _0x703395_9.freednsGodDomains.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x703395_1a)), 
+    _0x703395_9.freednsDoubleCheck.hidden = _0x703395_0 || _0x703395_1b <= 0, _0x703395_9.freednsDoubleCheck.disabled = _0x703395_0 || !_0x703395_1e.premium, 
+    _0x703395_9.freednsDoubleCheck.querySelector("\x73\x70\x61\x6e").textContent = `\x44\x6f\x75\x62\x6c\x65\x20\x63\x68\x65\x63\x6b\x20\x28${_0x703395_1b.toLocaleString()}\x29`, 
+    _0x703395_9.freednsDoubleCheck.title = _0x703395_1e.premium ? "\x52\x65\x74\x72\x79\x20\x6f\x6e\x6c\x79\x20\x74\x68\x65\x20\x64\x6f\x6d\x61\x69\x6e\x73\x20\x73\x74\x69\x6c\x6c\x20\x6d\x69\x73\x73\x69\x6e\x67\x20\x72\x65\x73\x75\x6c\x74\x73" : _0x703395_1e.error || "\x50\x72\x65\x6d\x69\x75\x6d\x2c\x20\x54\x72\x69\x61\x6c\x2c\x20\x6f\x72\x20\x4d\x6f\x64\x65\x72\x61\x74\x6f\x72\x20\x61\x63\x63\x65\x73\x73\x20\x69\x73\x20\x72\x65\x71\x75\x69\x72\x65\x64\x2e", 
+    _0x703395_9.freednsStop.hidden = !_0x703395_0, _0x703395_9.freednsSearch.disabled = _0x703395_1, 
+    _0x703395_9.freednsStatus.disabled = _0x703395_1, _0x703395_9.freednsVendor.disabled = _0x703395_1, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x63\x6c\x65\x61\x72\x5d").disabled = _0x703395_0, _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x65\x76\x5d").disabled = _0x703395_1 || _0x703395_14 <= 1, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x6e\x65\x78\x74\x5d").disabled = _0x703395_1 || _0x703395_14 >= _0x703395_4c().pages;
   }
-  function Ce() {
-    const {domains: e, pages: t, visible: n} = we();
-    M = new Set(n.map(e => e.domain)), i("[data-freedns-count]").textContent = y.domains.length.toLocaleString(), 
-    i("[data-freedns-pages]").textContent = y.totalPages ? String(y.totalPages) : "\u2014", 
-    i("[data-freedns-public]").textContent = y.domains.filter(e => "public" === e.status).length.toLocaleString(), 
-    i("[data-freedns-private]").textContent = y.domains.filter(e => "private" === e.status).length.toLocaleString(), 
-    i("[data-freedns-updated]").textContent = y.lastScrapedAt ? `${y.complete ? "Updated" : "Partial scrape"} ${re(y.lastScrapedAt)} \xb7 clears after 8 hours` : "Not scraped on this device", 
-    c.freednsList.replaceChildren(), n.forEach(e => {
-      const t = document.createElement("article");
-      t.className = "freedns-row";
-      const n = document.createElement("div");
-      n.className = "freedns-identity";
-      const r = document.createElement("strong");
-      r.textContent = e.domain;
-      const a = document.createElement("span"), o = L ? pe(e.domain) : null;
-      a.textContent = o ? `${o.allowed}/${o.checked} blockers unblocked \xb7 FreeDNS #${e.id}` : `FreeDNS #${e.id}`, 
-      n.append(r, a);
-      const s = document.createElement("span");
-      s.className = "freedns-hosts", s.textContent = e.hosts.toLocaleString();
-      const i = document.createElement("span");
-      i.className = `freedns-status ${e.status}`, i.textContent = e.status;
-      const d = he(e.domain), l = c.freednsVendor?.value || "", u = l ? [ l ] : h, m = document.createElement("div");
-      if (m.className = "freedns-vendor-states", u.length) if (u.some(e => d.results.has(e))) u.forEach(e => m.append(function(e, t) {
-        const n = t ? Z(t) : {
-          key: "unchecked",
-          label: "Not checked"
-        }, r = document.createElement("span");
-        return r.className = `freedns-vendor-icon ${n.key}`, r.title = `${K(e)}: ${n.label}`, 
-        r.setAttribute("aria-label", r.title), r.append(V("blocked" === n.key ? "shield-x" : "allowed" === n.key ? "shield-check" : "shield-question")), 
-        r;
-      }(e, d.results.get(e)))); else {
-        const e = document.createElement("span");
-        e.className = "freedns-not-checked", e.textContent = "not checked", m.append(e);
+  function _0x703395_4e() {
+    const {domains: _0x703395_0, pages: _0x703395_1, visible: _0x703395_2} = _0x703395_4c();
+    _0x703395_1f = new Set(_0x703395_2.map(_0x703395_0 => _0x703395_0.domain)), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x63\x6f\x75\x6e\x74\x5d").textContent = _0x703395_13.domains.length.toLocaleString(), 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x61\x67\x65\x73\x5d").textContent = _0x703395_13.totalPages ? String(_0x703395_13.totalPages) : "\u2014", 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x75\x62\x6c\x69\x63\x5d").textContent = _0x703395_13.domains.filter(_0x703395_0 => "\x70\x75\x62\x6c\x69\x63" === _0x703395_0.status).length.toLocaleString(), 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x69\x76\x61\x74\x65\x5d").textContent = _0x703395_13.domains.filter(_0x703395_0 => "\x70\x72\x69\x76\x61\x74\x65" === _0x703395_0.status).length.toLocaleString(), 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x75\x70\x64\x61\x74\x65\x64\x5d").textContent = _0x703395_13.lastScrapedAt ? `${_0x703395_13.complete ? "\x55\x70\x64\x61\x74\x65\x64" : "\x50\x61\x72\x74\x69\x61\x6c\x20\x73\x63\x72\x61\x70\x65"}\x20${_0x703395_39(_0x703395_13.lastScrapedAt)}\x20\xb7\x20\x63\x6c\x65\x61\x72\x73\x20\x61\x66\x74\x65\x72\x20\x38\x20\x68\x6f\x75\x72\x73` : "\x4e\x6f\x74\x20\x73\x63\x72\x61\x70\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65", 
+    _0x703395_9.freednsList.replaceChildren(), _0x703395_2.forEach(_0x703395_0 => {
+      const _0x703395_1 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+      _0x703395_1.className = "\x66\x72\x65\x65\x64\x6e\x73\x2d\x72\x6f\x77";
+      const _0x703395_2 = document.createElement("\x64\x69\x76");
+      _0x703395_2.className = "\x66\x72\x65\x65\x64\x6e\x73\x2d\x69\x64\x65\x6e\x74\x69\x74\x79";
+      const _0x703395_3 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+      _0x703395_3.textContent = _0x703395_0.domain;
+      const _0x703395_4 = document.createElement("\x73\x70\x61\x6e"), _0x703395_5 = _0x703395_1a ? _0x703395_45(_0x703395_0.domain) : null;
+      _0x703395_4.textContent = _0x703395_5 ? `${_0x703395_5.allowed}\x2f${_0x703395_5.checked}\x20\x62\x6c\x6f\x63\x6b\x65\x72\x73\x20\x75\x6e\x62\x6c\x6f\x63\x6b\x65\x64\x20\xb7\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x23${_0x703395_0.id}` : `\x46\x72\x65\x65\x44\x4e\x53\x20\x23${_0x703395_0.id}`, 
+      _0x703395_2.append(_0x703395_3, _0x703395_4);
+      const _0x703395_6 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_6.className = "\x66\x72\x65\x65\x64\x6e\x73\x2d\x68\x6f\x73\x74\x73", _0x703395_6.textContent = _0x703395_0.hosts.toLocaleString();
+      const _0x703395_7 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_7.className = `\x66\x72\x65\x65\x64\x6e\x73\x2d\x73\x74\x61\x74\x75\x73\x20${_0x703395_0.status}`, _0x703395_7.textContent = _0x703395_0.status;
+      const _0x703395_8 = _0x703395_43(_0x703395_0.domain), _0x703395_a = _0x703395_9.freednsVendor?.value || "", _0x703395_b = _0x703395_a ? [ _0x703395_a ] : _0x703395_d, _0x703395_c = document.createElement("\x64\x69\x76");
+      if (_0x703395_c.className = "\x66\x72\x65\x65\x64\x6e\x73\x2d\x76\x65\x6e\x64\x6f\x72\x2d\x73\x74\x61\x74\x65\x73", _0x703395_b.length) if (_0x703395_b.some(_0x703395_0 => _0x703395_8.results.has(_0x703395_0))) _0x703395_b.forEach(_0x703395_0 => _0x703395_c.append(function(_0x703395_0, _0x703395_1) {
+        const _0x703395_2 = _0x703395_1 ? _0x703395_35(_0x703395_1) : {
+          key: "\x75\x6e\x63\x68\x65\x63\x6b\x65\x64",
+          label: "\x4e\x6f\x74\x20\x63\x68\x65\x63\x6b\x65\x64"
+        }, _0x703395_3 = document.createElement("\x73\x70\x61\x6e");
+        return _0x703395_3.className = `\x66\x72\x65\x65\x64\x6e\x73\x2d\x76\x65\x6e\x64\x6f\x72\x2d\x69\x63\x6f\x6e\x20${_0x703395_2.key}`, _0x703395_3.title = `${_0x703395_2e(_0x703395_0)}\x3a\x20${_0x703395_2.label}`, 
+        _0x703395_3.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x703395_3.title), _0x703395_3.append(_0x703395_2b("\x62\x6c\x6f\x63\x6b\x65\x64" === _0x703395_2.key ? "\x73\x68\x69\x65\x6c\x64\x2d\x78" : "\x61\x6c\x6c\x6f\x77\x65\x64" === _0x703395_2.key ? "\x73\x68\x69\x65\x6c\x64\x2d\x63\x68\x65\x63\x6b" : "\x73\x68\x69\x65\x6c\x64\x2d\x71\x75\x65\x73\x74\x69\x6f\x6e")), 
+        _0x703395_3;
+      }(_0x703395_0, _0x703395_8.results.get(_0x703395_0)))); else {
+        const _0x703395_0 = document.createElement("\x73\x70\x61\x6e");
+        _0x703395_0.className = "\x66\x72\x65\x65\x64\x6e\x73\x2d\x6e\x6f\x74\x2d\x63\x68\x65\x63\x6b\x65\x64", _0x703395_0.textContent = "\x6e\x6f\x74\x20\x63\x68\x65\x63\x6b\x65\x64", 
+        _0x703395_c.append(_0x703395_0);
       } else {
-        const e = document.createElement("span");
-        e.className = "freedns-not-checked", e.textContent = "vendors loading", m.append(e);
+        const _0x703395_0 = document.createElement("\x73\x70\x61\x6e");
+        _0x703395_0.className = "\x66\x72\x65\x65\x64\x6e\x73\x2d\x6e\x6f\x74\x2d\x63\x68\x65\x63\x6b\x65\x64", _0x703395_0.textContent = "\x76\x65\x6e\x64\x6f\x72\x73\x20\x6c\x6f\x61\x64\x69\x6e\x67", 
+        _0x703395_c.append(_0x703395_0);
       }
-      d.results.size > 0 ? (m.classList.add("has-details"), m.tabIndex = 0, m.setAttribute("role", "button"), 
-      m.setAttribute("aria-label", `Open detailed blocker results for ${e.domain}`), m.title = "Open detailed results" + (d.checkedAt ? ` \xb7 checked ${re(d.checkedAt)}` : ""), 
-      m.addEventListener("click", () => {
-        Se(e);
-      }), m.addEventListener("keydown", t => {
-        "Enter" !== t.key && " " !== t.key || (t.preventDefault(), Se(e));
-      })) : d.checkedAt && (m.title = `Last checked ${re(d.checkedAt)}`);
-      const f = R.has(e.domain), p = document.createElement("button");
-      p.className = "btn-secondary freedns-check-button" + (f ? " checking" : ""), p.type = "button", 
-      p.disabled = f || x || C || w || !h.length, p.title = l ? `Check ${e.domain} with ${K(l)}` : `Check ${e.domain} with all vendors`, 
-      p.setAttribute("aria-label", p.title), p.append(V("refresh")), p.addEventListener("click", () => {
-        !async function(e) {
-          if (R.has(e) || x || C || w) return;
-          const t = c.freednsVendor?.value || "", n = new AbortController;
-          R.add(e), Ce(), q("");
+      _0x703395_8.results.size > 0 ? (_0x703395_c.classList.add("\x68\x61\x73\x2d\x64\x65\x74\x61\x69\x6c\x73"), _0x703395_c.tabIndex = 0, 
+      _0x703395_c.setAttribute("\x72\x6f\x6c\x65", "\x62\x75\x74\x74\x6f\x6e"), _0x703395_c.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", `\x4f\x70\x65\x6e\x20\x64\x65\x74\x61\x69\x6c\x65\x64\x20\x62\x6c\x6f\x63\x6b\x65\x72\x20\x72\x65\x73\x75\x6c\x74\x73\x20\x66\x6f\x72\x20${_0x703395_0.domain}`), 
+      _0x703395_c.title = "\x4f\x70\x65\x6e\x20\x64\x65\x74\x61\x69\x6c\x65\x64\x20\x72\x65\x73\x75\x6c\x74\x73" + (_0x703395_8.checkedAt ? `\x20\xb7\x20\x63\x68\x65\x63\x6b\x65\x64\x20${_0x703395_39(_0x703395_8.checkedAt)}` : ""), 
+      _0x703395_c.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+        _0x703395_4b(_0x703395_0);
+      }), _0x703395_c.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x703395_1 => {
+        "\x45\x6e\x74\x65\x72" !== _0x703395_1.key && "\x20" !== _0x703395_1.key || (_0x703395_1.preventDefault(), 
+        _0x703395_4b(_0x703395_0));
+      })) : _0x703395_8.checkedAt && (_0x703395_c.title = `\x4c\x61\x73\x74\x20\x63\x68\x65\x63\x6b\x65\x64\x20${_0x703395_39(_0x703395_8.checkedAt)}`);
+      const _0x703395_e = _0x703395_24.has(_0x703395_0.domain), _0x703395_f = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+      _0x703395_f.className = "\x62\x74\x6e\x2d\x73\x65\x63\x6f\x6e\x64\x61\x72\x79\x20\x66\x72\x65\x65\x64\x6e\x73\x2d\x63\x68\x65\x63\x6b\x2d\x62\x75\x74\x74\x6f\x6e" + (_0x703395_e ? "\x20\x63\x68\x65\x63\x6b\x69\x6e\x67" : ""), 
+      _0x703395_f.type = "\x62\x75\x74\x74\x6f\x6e", _0x703395_f.disabled = _0x703395_e || _0x703395_19 || _0x703395_18 || _0x703395_16 || !_0x703395_d.length, 
+      _0x703395_f.title = _0x703395_a ? `\x43\x68\x65\x63\x6b\x20${_0x703395_0.domain}\x20\x77\x69\x74\x68\x20${_0x703395_2e(_0x703395_a)}` : `\x43\x68\x65\x63\x6b\x20${_0x703395_0.domain}\x20\x77\x69\x74\x68\x20\x61\x6c\x6c\x20\x76\x65\x6e\x64\x6f\x72\x73`, 
+      _0x703395_f.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x703395_f.title), _0x703395_f.append(_0x703395_2b("\x72\x65\x66\x72\x65\x73\x68")), 
+      _0x703395_f.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+        !async function(_0x703395_0) {
+          if (_0x703395_24.has(_0x703395_0) || _0x703395_19 || _0x703395_18 || _0x703395_16) return;
+          const _0x703395_1 = _0x703395_9.freednsVendor?.value || "", _0x703395_2 = new AbortController;
+          _0x703395_24.add(_0x703395_0), _0x703395_4e(), _0x703395_2a("");
           try {
-            const r = await X(`https://${e}/`, t, n.signal);
-            se(r, "freedns"), q(t ? `${e} checked with ${K(t)}.` : `${e} checked across ${r.results.length} vendors.`);
-          } catch (r) {
-            "AbortError" !== r.name && q(`Could not check ${e}: ${r.message}`, "error", !0);
+            const _0x703395_3 = await _0x703395_34(`\x68\x74\x74\x70\x73\x3a\x2f\x2f${_0x703395_0}\x2f`, _0x703395_1, _0x703395_2.signal);
+            _0x703395_3c(_0x703395_3, "\x66\x72\x65\x65\x64\x6e\x73"), _0x703395_2a(_0x703395_1 ? `${_0x703395_0}\x20\x63\x68\x65\x63\x6b\x65\x64\x20\x77\x69\x74\x68\x20${_0x703395_2e(_0x703395_1)}\x2e` : `${_0x703395_0}\x20\x63\x68\x65\x63\x6b\x65\x64\x20\x61\x63\x72\x6f\x73\x73\x20${_0x703395_3.results.length}\x20\x76\x65\x6e\x64\x6f\x72\x73\x2e`);
+          } catch (_0x703395_3) {
+            "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" !== _0x703395_3.name && _0x703395_2a(`\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x68\x65\x63\x6b\x20${_0x703395_0}\x3a\x20${_0x703395_3.message}`, "\x65\x72\x72\x6f\x72", !0);
           } finally {
-            R.delete(e), Ce();
+            _0x703395_24.delete(_0x703395_0), _0x703395_4e();
           }
-        }(e.domain);
-      }), t.append(n, s, i, m, p), c.freednsList.append(t);
-    }), c.freednsEmpty.querySelector("strong").textContent = L ? "No God Domains yet" : "No registry cache yet", 
-    c.freednsEmpty.querySelector("span").textContent = L ? "Run a domain check or full scan to rank domains by unblocked vendors." : "Scrape FreeDNS to build a searchable local list.", 
-    c.freednsEmpty.hidden = e.length > 0, c.freednsPager.hidden = e.length <= 25, i("[data-freedns-page-label]").textContent = `Page ${k} of ${t} \xb7 ${e.length.toLocaleString()} domains`, 
-    i("[data-freedns-prev]").disabled = k <= 1, i("[data-freedns-next]").disabled = k >= t, 
-    Ee();
+        }(_0x703395_0.domain);
+      }), _0x703395_1.append(_0x703395_2, _0x703395_6, _0x703395_7, _0x703395_c, _0x703395_f), 
+      _0x703395_9.freednsList.append(_0x703395_1);
+    }), _0x703395_9.freednsEmpty.querySelector("\x73\x74\x72\x6f\x6e\x67").textContent = _0x703395_1a ? "\x4e\x6f\x20\x47\x6f\x64\x20\x44\x6f\x6d\x61\x69\x6e\x73\x20\x79\x65\x74" : "\x4e\x6f\x20\x72\x65\x67\x69\x73\x74\x72\x79\x20\x63\x61\x63\x68\x65\x20\x79\x65\x74", 
+    _0x703395_9.freednsEmpty.querySelector("\x73\x70\x61\x6e").textContent = _0x703395_1a ? "\x52\x75\x6e\x20\x61\x20\x64\x6f\x6d\x61\x69\x6e\x20\x63\x68\x65\x63\x6b\x20\x6f\x72\x20\x66\x75\x6c\x6c\x20\x73\x63\x61\x6e\x20\x74\x6f\x20\x72\x61\x6e\x6b\x20\x64\x6f\x6d\x61\x69\x6e\x73\x20\x62\x79\x20\x75\x6e\x62\x6c\x6f\x63\x6b\x65\x64\x20\x76\x65\x6e\x64\x6f\x72\x73\x2e" : "\x53\x63\x72\x61\x70\x65\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x74\x6f\x20\x62\x75\x69\x6c\x64\x20\x61\x20\x73\x65\x61\x72\x63\x68\x61\x62\x6c\x65\x20\x6c\x6f\x63\x61\x6c\x20\x6c\x69\x73\x74\x2e", 
+    _0x703395_9.freednsEmpty.hidden = _0x703395_0.length > 0, _0x703395_9.freednsPager.hidden = _0x703395_0.length <= 25, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x61\x67\x65\x2d\x6c\x61\x62\x65\x6c\x5d").textContent = `\x50\x61\x67\x65\x20${_0x703395_14}\x20\x6f\x66\x20${_0x703395_1}\x20\xb7\x20${_0x703395_0.length.toLocaleString()}\x20\x64\x6f\x6d\x61\x69\x6e\x73`, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x65\x76\x5d").disabled = _0x703395_14 <= 1, _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x6e\x65\x78\x74\x5d").disabled = _0x703395_14 >= _0x703395_1, 
+    _0x703395_4d();
   }
-  function xe(e) {
-    w = e, Ee();
+  function _0x703395_4f(_0x703395_0) {
+    _0x703395_16 = _0x703395_0, _0x703395_4d();
   }
-  function Le(e, t, n) {
-    const r = t ? Math.min(100, Math.round(e / t * 100)) : 0;
-    c.freednsProgress.hidden = !1, i("[data-freedns-progress-label]").textContent = `Scraping page ${e.toLocaleString()} of ${t.toLocaleString()}`, 
-    i("[data-freedns-progress-count]").textContent = `${r}% \xb7 ${n.toLocaleString()} domains`, 
-    i("[data-freedns-progress-bar]").style.width = `${r}%`, i("[data-freedns-progress-detail]").textContent = "The scrape runs one bounded page at a time so FreeDNS is not overloaded.";
+  function _0x703395_50(_0x703395_0, _0x703395_1, _0x703395_2) {
+    const _0x703395_3 = _0x703395_1 ? Math.min(100, Math.round(_0x703395_0 / _0x703395_1 * 100)) : 0;
+    _0x703395_9.freednsProgress.hidden = !1, _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x6c\x61\x62\x65\x6c\x5d").textContent = `\x53\x63\x72\x61\x70\x69\x6e\x67\x20\x70\x61\x67\x65\x20${_0x703395_0.toLocaleString()}\x20\x6f\x66\x20${_0x703395_1.toLocaleString()}`, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x63\x6f\x75\x6e\x74\x5d").textContent = `${_0x703395_3}\x25\x20\xb7\x20${_0x703395_2.toLocaleString()}\x20\x64\x6f\x6d\x61\x69\x6e\x73`, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x62\x61\x72\x5d").style.width = `${_0x703395_3}\x25`, _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x64\x65\x74\x61\x69\x6c\x5d").textContent = "\x54\x68\x65\x20\x73\x63\x72\x61\x70\x65\x20\x72\x75\x6e\x73\x20\x6f\x6e\x65\x20\x62\x6f\x75\x6e\x64\x65\x64\x20\x70\x61\x67\x65\x20\x61\x74\x20\x61\x20\x74\x69\x6d\x65\x20\x73\x6f\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x69\x73\x20\x6e\x6f\x74\x20\x6f\x76\x65\x72\x6c\x6f\x61\x64\x65\x64\x2e";
   }
-  function $e(e, t, n = 0) {
-    const r = t ? Math.min(100, Math.round(e / t * 100)) : 0;
-    c.freednsProgress.hidden = !1, i("[data-freedns-progress-label]").textContent = e >= t ? `Checked ${t.toLocaleString()} domains` : `Checking domain ${(e + 1).toLocaleString()} of ${t.toLocaleString()}`, 
-    i("[data-freedns-progress-count]").textContent = `${r}%${n ? ` \xb7 ${n.toLocaleString()} failed` : ""}`, 
-    i("[data-freedns-progress-bar]").style.width = `${r}%`, i("[data-freedns-progress-detail]").textContent = "Results are saved on this device as each domain finishes. You can stop without losing completed checks.";
+  function _0x703395_51(_0x703395_0, _0x703395_1, _0x703395_2 = 0) {
+    const _0x703395_3 = _0x703395_1 ? Math.min(100, Math.round(_0x703395_0 / _0x703395_1 * 100)) : 0;
+    _0x703395_9.freednsProgress.hidden = !1, _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x6c\x61\x62\x65\x6c\x5d").textContent = _0x703395_0 >= _0x703395_1 ? `\x43\x68\x65\x63\x6b\x65\x64\x20${_0x703395_1.toLocaleString()}\x20\x64\x6f\x6d\x61\x69\x6e\x73` : `\x43\x68\x65\x63\x6b\x69\x6e\x67\x20\x64\x6f\x6d\x61\x69\x6e\x20${(_0x703395_0 + 1).toLocaleString()}\x20\x6f\x66\x20${_0x703395_1.toLocaleString()}`, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x63\x6f\x75\x6e\x74\x5d").textContent = `${_0x703395_3}\x25${_0x703395_2 ? `\x20\xb7\x20${_0x703395_2.toLocaleString()}\x20\x66\x61\x69\x6c\x65\x64` : ""}`, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x62\x61\x72\x5d").style.width = `${_0x703395_3}\x25`, _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x64\x65\x74\x61\x69\x6c\x5d").textContent = "\x52\x65\x73\x75\x6c\x74\x73\x20\x61\x72\x65\x20\x73\x61\x76\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x20\x61\x73\x20\x65\x61\x63\x68\x20\x64\x6f\x6d\x61\x69\x6e\x20\x66\x69\x6e\x69\x73\x68\x65\x73\x2e\x20\x59\x6f\x75\x20\x63\x61\x6e\x20\x73\x74\x6f\x70\x20\x77\x69\x74\x68\x6f\x75\x74\x20\x6c\x6f\x73\x69\x6e\x67\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x64\x20\x63\x68\x65\x63\x6b\x73\x2e";
   }
-  function Ae(e, t, n = 0) {
-    const r = t ? Math.min(100, Math.round(e / t * 100)) : 0;
-    c.freednsProgress.hidden = !1, i("[data-freedns-progress-label]").textContent = e >= t ? `Checked all ${t.toLocaleString()} domains` : `Full scan: ${e.toLocaleString()} of ${t.toLocaleString()} domains`, 
-    i("[data-freedns-progress-count]").textContent = `${r}%${n ? ` \xb7 ${n.toLocaleString()} failed` : ""}`, 
-    i("[data-freedns-progress-bar]").style.width = `${r}%`, i("[data-freedns-progress-detail]").textContent = "Keep this tab open. Saved verdicts let a stopped full scan resume without repeating completed domains.";
+  function _0x703395_52(_0x703395_0, _0x703395_1, _0x703395_2 = 0) {
+    const _0x703395_3 = _0x703395_1 ? Math.min(100, Math.round(_0x703395_0 / _0x703395_1 * 100)) : 0;
+    _0x703395_9.freednsProgress.hidden = !1, _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x6c\x61\x62\x65\x6c\x5d").textContent = _0x703395_0 >= _0x703395_1 ? `\x43\x68\x65\x63\x6b\x65\x64\x20\x61\x6c\x6c\x20${_0x703395_1.toLocaleString()}\x20\x64\x6f\x6d\x61\x69\x6e\x73` : `\x46\x75\x6c\x6c\x20\x73\x63\x61\x6e\x3a\x20${_0x703395_0.toLocaleString()}\x20\x6f\x66\x20${_0x703395_1.toLocaleString()}\x20\x64\x6f\x6d\x61\x69\x6e\x73`, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x63\x6f\x75\x6e\x74\x5d").textContent = `${_0x703395_3}\x25${_0x703395_2 ? `\x20\xb7\x20${_0x703395_2.toLocaleString()}\x20\x66\x61\x69\x6c\x65\x64` : ""}`, 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x62\x61\x72\x5d").style.width = `${_0x703395_3}\x25`, _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x64\x65\x74\x61\x69\x6c\x5d").textContent = "\x4b\x65\x65\x70\x20\x74\x68\x69\x73\x20\x74\x61\x62\x20\x6f\x70\x65\x6e\x2e\x20\x53\x61\x76\x65\x64\x20\x76\x65\x72\x64\x69\x63\x74\x73\x20\x6c\x65\x74\x20\x61\x20\x73\x74\x6f\x70\x70\x65\x64\x20\x66\x75\x6c\x6c\x20\x73\x63\x61\x6e\x20\x72\x65\x73\x75\x6d\x65\x20\x77\x69\x74\x68\x6f\x75\x74\x20\x72\x65\x70\x65\x61\x74\x69\x6e\x67\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x64\x20\x64\x6f\x6d\x61\x69\x6e\x73\x2e";
   }
-  function Ne(e, t) {
-    return t.aborted ? Promise.reject(new DOMException("Stopped", "AbortError")) : new Promise((n, r) => {
-      const a = setTimeout(n, e);
-      t.addEventListener("abort", () => {
-        clearTimeout(a), r(new DOMException("Stopped", "AbortError"));
+  function _0x703395_53(_0x703395_0, _0x703395_1) {
+    return _0x703395_1.aborted ? Promise.reject(new DOMException("\x53\x74\x6f\x70\x70\x65\x64", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72")) : new Promise((_0x703395_2, _0x703395_3) => {
+      const _0x703395_4 = setTimeout(_0x703395_2, _0x703395_0);
+      _0x703395_1.addEventListener("\x61\x62\x6f\x72\x74", () => {
+        clearTimeout(_0x703395_4), _0x703395_3(new DOMException("\x53\x74\x6f\x70\x70\x65\x64", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72"));
       }, {
         once: !0
       });
     });
   }
-  function De() {
-    const e = z(r, y);
-    return e && j.vendors.length && be(), e;
+  function _0x703395_54() {
+    const _0x703395_0 = _0x703395_27(_0x703395_3, _0x703395_13);
+    return _0x703395_0 && _0x703395_23.vendors.length && _0x703395_47(), _0x703395_0;
   }
-  function Me() {
-    S?.abort(), E?.abort();
+  function _0x703395_55() {
+    _0x703395_15?.abort(), _0x703395_17?.abort();
   }
-  function Pe() {
-    if (w || C || x) q("Stop the active work before clearing the cache.", "error", !0); else if (y.domains.length && confirm("Clear the FreeDNS registry cache stored on this device?")) {
-      y = {
+  function _0x703395_56() {
+    if (_0x703395_16 || _0x703395_18 || _0x703395_19) _0x703395_2a("\x53\x74\x6f\x70\x20\x74\x68\x65\x20\x61\x63\x74\x69\x76\x65\x20\x77\x6f\x72\x6b\x20\x62\x65\x66\x6f\x72\x65\x20\x63\x6c\x65\x61\x72\x69\x6e\x67\x20\x74\x68\x65\x20\x63\x61\x63\x68\x65\x2e", "\x65\x72\x72\x6f\x72", !0); else if (_0x703395_13.domains.length && confirm("\x43\x6c\x65\x61\x72\x20\x74\x68\x65\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x72\x65\x67\x69\x73\x74\x72\x79\x20\x63\x61\x63\x68\x65\x20\x73\x74\x6f\x72\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x3f")) {
+      _0x703395_13 = {
         domains: [],
         totalPages: 0,
         totalDomains: 0,
         lastScrapedAt: "",
         complete: !1
-      }, j = {
+      }, _0x703395_23 = {
         vendors: [],
         verdicts: {},
         updatedAt: ""
-      }, O = !1, k = 1, L = !1, $ = 0;
+      }, _0x703395_22 = !1, _0x703395_14 = 1, _0x703395_1a = !1, _0x703395_1b = 0;
       try {
-        localStorage.removeItem(r), localStorage.removeItem(a);
+        localStorage.removeItem(_0x703395_3), localStorage.removeItem(_0x703395_4);
       } catch {}
-      Ce(), q("Local FreeDNS registry cache and saved verdicts cleared.");
+      _0x703395_4e(), _0x703395_2a("\x4c\x6f\x63\x61\x6c\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x72\x65\x67\x69\x73\x74\x72\x79\x20\x63\x61\x63\x68\x65\x20\x61\x6e\x64\x20\x73\x61\x76\x65\x64\x20\x76\x65\x72\x64\x69\x63\x74\x73\x20\x63\x6c\x65\x61\x72\x65\x64\x2e");
     }
   }
-  function Te() {
-    if (!y.domains.length) return void q("Scrape the FreeDNS registry before exporting it.", "error", !0);
-    const e = [ [ "id", "domain", "status", "hostsInUse", "owner", "added" ], ...y.domains.map(e => [ e.id, e.domain, e.status, e.hosts, e.owner, e.added ]) ].map(e => e.map(qe).join(",")).join("\n"), t = new Blob([ e ], {
-      type: "text/csv"
-    }), n = URL.createObjectURL(t), r = document.createElement("a");
-    r.href = n, r.download = `nyx-freedns-registry-${(new Date).toISOString().slice(0, 10)}.csv`, 
-    r.click(), setTimeout(() => URL.revokeObjectURL(n), 1e3), q("FreeDNS registry CSV created.");
+  function _0x703395_57() {
+    if (!_0x703395_13.domains.length) return void _0x703395_2a("\x53\x63\x72\x61\x70\x65\x20\x74\x68\x65\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x72\x65\x67\x69\x73\x74\x72\x79\x20\x62\x65\x66\x6f\x72\x65\x20\x65\x78\x70\x6f\x72\x74\x69\x6e\x67\x20\x69\x74\x2e", "\x65\x72\x72\x6f\x72", !0);
+    const _0x703395_0 = [ [ "\x69\x64", "\x64\x6f\x6d\x61\x69\x6e", "\x73\x74\x61\x74\x75\x73", "\x68\x6f\x73\x74\x73\x49\x6e\x55\x73\x65", "\x6f\x77\x6e\x65\x72", "\x61\x64\x64\x65\x64" ], ..._0x703395_13.domains.map(_0x703395_0 => [ _0x703395_0.id, _0x703395_0.domain, _0x703395_0.status, _0x703395_0.hosts, _0x703395_0.owner, _0x703395_0.added ]) ].map(_0x703395_0 => _0x703395_0.map(_0x703395_60).join("\x2c")).join("\x0a"), _0x703395_1 = new Blob([ _0x703395_0 ], {
+      type: "\x74\x65\x78\x74\x2f\x63\x73\x76"
+    }), _0x703395_2 = URL.createObjectURL(_0x703395_1), _0x703395_3 = document.createElement("\x61");
+    _0x703395_3.href = _0x703395_2, _0x703395_3.download = `\x6e\x79\x78\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x72\x65\x67\x69\x73\x74\x72\x79\x2d${(new Date).toISOString().slice(0, 10)}\x2e\x63\x73\x76`, 
+    _0x703395_3.click(), setTimeout(() => URL.revokeObjectURL(_0x703395_2), 1e3), _0x703395_2a("\x46\x72\x65\x65\x44\x4e\x53\x20\x72\x65\x67\x69\x73\x74\x72\x79\x20\x43\x53\x56\x20\x63\x72\x65\x61\x74\x65\x64\x2e");
   }
-  function Oe(e, t = "") {
-    const n = he(e);
-    return t ? !n.results.has(t) : !h.every(e => n.results.has(e));
+  function _0x703395_58(_0x703395_0, _0x703395_1 = "") {
+    const _0x703395_2 = _0x703395_43(_0x703395_0);
+    return _0x703395_1 ? !_0x703395_2.results.has(_0x703395_1) : !_0x703395_d.every(_0x703395_0 => _0x703395_2.results.has(_0x703395_0));
   }
-  async function je({automatic: t = !1} = {}) {
-    if (w || C || x || !h.length) return;
-    const n = c.freednsVendor?.value || "", r = we().visible.filter(e => Oe(e.domain, n));
-    if (!r.length) return void (t || q("Every domain on this page already has results for the selected vendors."));
-    E?.abort(), E = new AbortController;
-    const {signal: a} = E;
-    C = !0, r.forEach(e => R.add(e.domain)), Ee(), Ce(), q(""), $e(0, r.length), i("[data-freedns-progress-detail]").textContent = "Nyx is checking this page through the paid server session. The page will not pause between domains.";
-    let o = 0, s = 0, d = null;
+  async function _0x703395_59({automatic: _0x703395_1 = !1} = {}) {
+    if (_0x703395_16 || _0x703395_18 || _0x703395_19 || !_0x703395_d.length) return;
+    const _0x703395_2 = _0x703395_9.freednsVendor?.value || "", _0x703395_3 = _0x703395_4c().visible.filter(_0x703395_0 => _0x703395_58(_0x703395_0.domain, _0x703395_2));
+    if (!_0x703395_3.length) return void (_0x703395_1 || _0x703395_2a("\x45\x76\x65\x72\x79\x20\x64\x6f\x6d\x61\x69\x6e\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x70\x61\x67\x65\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x68\x61\x73\x20\x72\x65\x73\x75\x6c\x74\x73\x20\x66\x6f\x72\x20\x74\x68\x65\x20\x73\x65\x6c\x65\x63\x74\x65\x64\x20\x76\x65\x6e\x64\x6f\x72\x73\x2e"));
+    _0x703395_17?.abort(), _0x703395_17 = new AbortController;
+    const {signal: _0x703395_4} = _0x703395_17;
+    _0x703395_18 = !0, _0x703395_3.forEach(_0x703395_0 => _0x703395_24.add(_0x703395_0.domain)), 
+    _0x703395_4d(), _0x703395_4e(), _0x703395_2a(""), _0x703395_51(0, _0x703395_3.length), 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x64\x65\x74\x61\x69\x6c\x5d").textContent = "\x4e\x79\x78\x20\x69\x73\x20\x63\x68\x65\x63\x6b\x69\x6e\x67\x20\x74\x68\x69\x73\x20\x70\x61\x67\x65\x20\x74\x68\x72\x6f\x75\x67\x68\x20\x74\x68\x65\x20\x70\x61\x69\x64\x20\x73\x65\x72\x76\x65\x72\x20\x73\x65\x73\x73\x69\x6f\x6e\x2e\x20\x54\x68\x65\x20\x70\x61\x67\x65\x20\x77\x69\x6c\x6c\x20\x6e\x6f\x74\x20\x70\x61\x75\x73\x65\x20\x62\x65\x74\x77\x65\x65\x6e\x20\x64\x6f\x6d\x61\x69\x6e\x73\x2e";
+    let _0x703395_5 = 0, _0x703395_6 = 0, _0x703395_8 = null;
     try {
-      const t = await _(`${e}/page-scan`, {
-        method: "POST",
-        signal: a,
+      const _0x703395_1 = await _0x703395_2f(`${_0x703395_0}\x2f\x70\x61\x67\x65\x2d\x73\x63\x61\x6e`, {
+        method: "\x50\x4f\x53\x54",
+        signal: _0x703395_4,
         headers: {
-          "Content-Type": "application/json"
+          "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         },
         body: JSON.stringify({
-          urls: r.map(e => `https://${e.domain}/`),
-          ...n ? {
-            vendor: n
+          urls: _0x703395_3.map(_0x703395_0 => `\x68\x74\x74\x70\x73\x3a\x2f\x2f${_0x703395_0.domain}\x2f`),
+          ..._0x703395_2 ? {
+            vendor: _0x703395_2
           } : {}
         })
       });
-      for (const e of Array.isArray(t.results) ? t.results : []) {
-        if (a.aborted) throw new DOMException("Stopped", "AbortError");
-        const t = new URL(e.url).hostname.toLowerCase();
-        e.report ? se(H(e.report, e.url), "freedns", !1) : s += 1, R.delete(t), o += 1, 
-        $e(o, r.length, s), Ce();
+      for (const _0x703395_0 of Array.isArray(_0x703395_1.results) ? _0x703395_1.results : []) {
+        if (_0x703395_4.aborted) throw new DOMException("\x53\x74\x6f\x70\x70\x65\x64", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72");
+        const _0x703395_1 = new URL(_0x703395_0.url).hostname.toLowerCase();
+        _0x703395_0.report ? _0x703395_3c(_0x703395_30(_0x703395_0.report, _0x703395_0.url), "\x66\x72\x65\x65\x64\x6e\x73", !1) : _0x703395_6 += 1, 
+        _0x703395_24.delete(_0x703395_1), _0x703395_5 += 1, _0x703395_51(_0x703395_5, _0x703395_3.length, _0x703395_6), 
+        _0x703395_4e();
       }
-      o < r.length && (s += r.length - o);
-    } catch (l) {
-      "AbortError" === l.name ? d = l : (d = l, s = r.length, o = r.length, $e(o, r.length, s));
+      _0x703395_5 < _0x703395_3.length && (_0x703395_6 += _0x703395_3.length - _0x703395_5);
+    } catch (_0x703395_a) {
+      "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x703395_a.name ? _0x703395_8 = _0x703395_a : (_0x703395_8 = _0x703395_a, 
+      _0x703395_6 = _0x703395_3.length, _0x703395_5 = _0x703395_3.length, _0x703395_51(_0x703395_5, _0x703395_3.length, _0x703395_6));
     } finally {
-      C = !1, R.clear(), Ue(), a.aborted || "AbortError" === d?.name ? q(`Page scan stopped after ${o.toLocaleString()} of ${r.length.toLocaleString()} domains. Completed results were saved.`) : d ? q(`The page scan could not finish: ${d.message}`, "error", !0) : q(`Page scan complete: ${o.toLocaleString()} domains checked${s ? `, ${s.toLocaleString()} failed` : ""}.`, s ? "error" : "", s > 0);
+      _0x703395_18 = !1, _0x703395_24.clear(), _0x703395_5c(), _0x703395_4.aborted || "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x703395_8?.name ? _0x703395_2a(`\x50\x61\x67\x65\x20\x73\x63\x61\x6e\x20\x73\x74\x6f\x70\x70\x65\x64\x20\x61\x66\x74\x65\x72\x20${_0x703395_5.toLocaleString()}\x20\x6f\x66\x20${_0x703395_3.length.toLocaleString()}\x20\x64\x6f\x6d\x61\x69\x6e\x73\x2e\x20\x43\x6f\x6d\x70\x6c\x65\x74\x65\x64\x20\x72\x65\x73\x75\x6c\x74\x73\x20\x77\x65\x72\x65\x20\x73\x61\x76\x65\x64\x2e`) : _0x703395_8 ? _0x703395_2a(`\x54\x68\x65\x20\x70\x61\x67\x65\x20\x73\x63\x61\x6e\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x66\x69\x6e\x69\x73\x68\x3a\x20${_0x703395_8.message}`, "\x65\x72\x72\x6f\x72", !0) : _0x703395_2a(`\x50\x61\x67\x65\x20\x73\x63\x61\x6e\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x3a\x20${_0x703395_5.toLocaleString()}\x20\x64\x6f\x6d\x61\x69\x6e\x73\x20\x63\x68\x65\x63\x6b\x65\x64${_0x703395_6 ? `\x2c\x20${_0x703395_6.toLocaleString()}\x20\x66\x61\x69\x6c\x65\x64` : ""}\x2e`, _0x703395_6 ? "\x65\x72\x72\x6f\x72" : "", _0x703395_6 > 0);
     }
   }
-  async function Re() {
-    if (w || C || x || !h.length) return;
-    if (!y.complete) return void q("Finish scraping the FreeDNS registry before checking every domain.", "error", !0);
+  async function _0x703395_5a() {
+    if (_0x703395_16 || _0x703395_18 || _0x703395_19 || !_0x703395_d.length) return;
+    if (!_0x703395_13.complete) return void _0x703395_2a("\x46\x69\x6e\x69\x73\x68\x20\x73\x63\x72\x61\x70\x69\x6e\x67\x20\x74\x68\x65\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x72\x65\x67\x69\x73\x74\x72\x79\x20\x62\x65\x66\x6f\x72\x65\x20\x63\x68\x65\x63\x6b\x69\x6e\x67\x20\x65\x76\x65\x72\x79\x20\x64\x6f\x6d\x61\x69\x6e\x2e", "\x65\x72\x72\x6f\x72", !0);
     try {
-      await W({
+      await _0x703395_33({
         force: !0
       });
-    } catch (b) {
-      return void q(b.message, "error", !0);
+    } catch (_0x703395_11) {
+      return void _0x703395_2a(_0x703395_11.message, "\x65\x72\x72\x6f\x72", !0);
     }
-    const t = y.domains.length, n = y.domains.filter(e => {
-      return t = e.domain, !(fe(j.vendors) === fe() && String(j.verdicts[t] || "").length === h.length);
-      var t;
+    const _0x703395_1 = _0x703395_13.domains.length, _0x703395_2 = _0x703395_13.domains.filter(_0x703395_0 => {
+      return _0x703395_1 = _0x703395_0.domain, !(_0x703395_44(_0x703395_23.vendors) === _0x703395_44() && String(_0x703395_23.verdicts[_0x703395_1] || "").length === _0x703395_d.length);
+      var _0x703395_1;
     });
-    if (!n.length) return $ = 0, Ee(), q(`All ${t.toLocaleString()} cached FreeDNS domains already have saved vendor results.`), 
-    void Ae(t, t);
-    E?.abort(), E = new AbortController;
-    const {signal: r} = E;
-    x = !0, $ = 0, Ee(), q("");
-    const a = t - n.length, o = new Set(n.map(e => e.domain));
-    let s = 0, d = 0, c = Object.keys(j.verdicts).length, l = !1;
-    Ae(a, t);
-    const u = () => {
-      if (!d) return !0;
-      const e = be();
-      return e && (d = 0, c = Object.keys(j.verdicts).length), e;
-    }, m = async (t, n = {}) => {
-      let a = 0;
-      for (;!r.aborted; ) try {
-        return await _(`${e}${t}`, {
-          ...n,
-          signal: r,
+    if (!_0x703395_2.length) return _0x703395_1b = 0, _0x703395_4d(), _0x703395_2a(`\x41\x6c\x6c\x20${_0x703395_1.toLocaleString()}\x20\x63\x61\x63\x68\x65\x64\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x64\x6f\x6d\x61\x69\x6e\x73\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x68\x61\x76\x65\x20\x73\x61\x76\x65\x64\x20\x76\x65\x6e\x64\x6f\x72\x20\x72\x65\x73\x75\x6c\x74\x73\x2e`), 
+    void _0x703395_52(_0x703395_1, _0x703395_1);
+    _0x703395_17?.abort(), _0x703395_17 = new AbortController;
+    const {signal: _0x703395_3} = _0x703395_17;
+    _0x703395_19 = !0, _0x703395_1b = 0, _0x703395_4d(), _0x703395_2a("");
+    const _0x703395_4 = _0x703395_1 - _0x703395_2.length, _0x703395_5 = new Set(_0x703395_2.map(_0x703395_0 => _0x703395_0.domain));
+    let _0x703395_6 = 0, _0x703395_8 = 0, _0x703395_9 = Object.keys(_0x703395_23.verdicts).length, _0x703395_a = !1;
+    _0x703395_52(_0x703395_4, _0x703395_1);
+    const _0x703395_b = () => {
+      if (!_0x703395_8) return !0;
+      const _0x703395_0 = _0x703395_47();
+      return _0x703395_0 && (_0x703395_8 = 0, _0x703395_9 = Object.keys(_0x703395_23.verdicts).length), 
+      _0x703395_0;
+    }, _0x703395_c = async (_0x703395_1, _0x703395_2 = {}) => {
+      let _0x703395_4 = 0;
+      for (;!_0x703395_3.aborted; ) try {
+        return await _0x703395_2f(`${_0x703395_0}${_0x703395_1}`, {
+          ..._0x703395_2,
+          signal: _0x703395_3,
           headers: {
-            Authorization: `Bearer ${await W()}`,
-            ...n.headers || {}
+            Authorization: `\x42\x65\x61\x72\x65\x72\x20${await _0x703395_33()}`,
+            ..._0x703395_2.headers || {}
           }
         });
-      } catch (b) {
-        if (r.aborted || "AbortError" === b.name) throw b;
-        const t = Number(b.status);
-        if (!([ 429, 502, 504 ].includes(t) || 503 === t && Number(b.retryAfterMs) > 0 || b instanceof TypeError)) throw b;
-        a += 1;
-        const n = Math.max(3e3, Math.min(6e4, Number(b.retryAfterMs) || 3e3 + 1e3 * a));
-        i("[data-freedns-progress-detail]").textContent = "Nocturne is busy. Nyx is retrying automatically without stopping the full scan.", 
-        await Ne(n, r);
+      } catch (_0x703395_11) {
+        if (_0x703395_3.aborted || "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x703395_11.name) throw _0x703395_11;
+        const _0x703395_1 = Number(_0x703395_11.status);
+        if (!([ 429, 502, 504 ].includes(_0x703395_1) || 503 === _0x703395_1 && Number(_0x703395_11.retryAfterMs) > 0 || _0x703395_11 instanceof TypeError)) throw _0x703395_11;
+        _0x703395_4 += 1;
+        const _0x703395_2 = Math.max(3e3, Math.min(6e4, Number(_0x703395_11.retryAfterMs) || 3e3 + 1e3 * _0x703395_4));
+        _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x64\x65\x74\x61\x69\x6c\x5d").textContent = "\x4e\x6f\x63\x74\x75\x72\x6e\x65\x20\x69\x73\x20\x62\x75\x73\x79\x2e\x20\x4e\x79\x78\x20\x69\x73\x20\x72\x65\x74\x72\x79\x69\x6e\x67\x20\x61\x75\x74\x6f\x6d\x61\x74\x69\x63\x61\x6c\x6c\x79\x20\x77\x69\x74\x68\x6f\x75\x74\x20\x73\x74\x6f\x70\x70\x69\x6e\x67\x20\x74\x68\x65\x20\x66\x75\x6c\x6c\x20\x73\x63\x61\x6e\x2e", 
+        await _0x703395_53(_0x703395_2, _0x703395_3);
       }
-      throw new DOMException("Stopped", "AbortError");
-    }, f = e => {
-      const n = Math.max(0, Number(e?.checked) || 0), r = a + s;
-      Ae(Math.max(r, Math.min(t, n)), t), i("[data-freedns-progress-detail]").textContent = `${r.toLocaleString()} saved verdicts loaded. Nocturne's server has checked ${n.toLocaleString()} in the current refresh.`;
-    }, p = e => ({
-      target: e.domain,
-      url: `https://${e.domain}/`,
-      results: Object.entries(e.vendors || {}).map(([e, t]) => ({
-        filter: e,
-        blocked: !0 === t?.blocked || !1 !== t?.blocked && null,
-        category: String(t?.category || ""),
-        error: String(t?.error || "")
+      throw new DOMException("\x53\x74\x6f\x70\x70\x65\x64", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72");
+    }, _0x703395_e = _0x703395_0 => {
+      const _0x703395_2 = Math.max(0, Number(_0x703395_0?.checked) || 0), _0x703395_3 = _0x703395_4 + _0x703395_6;
+      _0x703395_52(Math.max(_0x703395_3, Math.min(_0x703395_1, _0x703395_2)), _0x703395_1), 
+      _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x64\x65\x74\x61\x69\x6c\x5d").textContent = `${_0x703395_3.toLocaleString()}\x20\x73\x61\x76\x65\x64\x20\x76\x65\x72\x64\x69\x63\x74\x73\x20\x6c\x6f\x61\x64\x65\x64\x2e\x20\x4e\x6f\x63\x74\x75\x72\x6e\x65\x27\x73\x20\x73\x65\x72\x76\x65\x72\x20\x68\x61\x73\x20\x63\x68\x65\x63\x6b\x65\x64\x20${_0x703395_2.toLocaleString()}\x20\x69\x6e\x20\x74\x68\x65\x20\x63\x75\x72\x72\x65\x6e\x74\x20\x72\x65\x66\x72\x65\x73\x68\x2e`;
+    }, _0x703395_f = _0x703395_0 => ({
+      target: _0x703395_0.domain,
+      url: `\x68\x74\x74\x70\x73\x3a\x2f\x2f${_0x703395_0.domain}\x2f`,
+      results: Object.entries(_0x703395_0.vendors || {}).map(([_0x703395_0, _0x703395_1]) => ({
+        filter: _0x703395_0,
+        blocked: !0 === _0x703395_1?.blocked || !1 !== _0x703395_1?.blocked && null,
+        category: String(_0x703395_1?.category || ""),
+        error: String(_0x703395_1?.error || "")
       }))
-    }), g = async (e = "Loading saved Nocturne verdicts") => {
-      const n = (n, r, c) => {
-        for (const e of Array.isArray(n.domains) ? n.domains : []) if (o.has(e.domain) && e.vendors && Object.keys(e.vendors).length && (ge(p(e), e.domain), 
-        o.delete(e.domain), s += 1, d += 1, d >= 100 && !u())) throw l = !0, new Error("This browser could not save more verdicts.");
-        Ae(a + s, t), i("[data-freedns-progress-detail]").textContent = `${e}: page ${r.toLocaleString()} of ${c.toLocaleString()} \xb7 ${(a + s).toLocaleString()} ready.`;
-      }, c = await m("/full-scan/results?page=1"), h = Math.max(1, Number(c.totalPages) || 1);
-      n(c, 1, h);
-      for (let t = 2; t <= h && !r.aborted && o.size; t += 2) {
-        const e = Array.from({
-          length: Math.min(2, h - t + 1)
-        }, (e, n) => t + n);
-        (await Promise.all(e.map(e => m(`/full-scan/results?page=${e}`)))).forEach((t, r) => n(t, e[r], h));
+    }), _0x703395_10 = async (_0x703395_0 = "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x73\x61\x76\x65\x64\x20\x4e\x6f\x63\x74\x75\x72\x6e\x65\x20\x76\x65\x72\x64\x69\x63\x74\x73") => {
+      const _0x703395_2 = (_0x703395_2, _0x703395_3, _0x703395_9) => {
+        for (const _0x703395_0 of Array.isArray(_0x703395_2.domains) ? _0x703395_2.domains : []) if (_0x703395_5.has(_0x703395_0.domain) && _0x703395_0.vendors && Object.keys(_0x703395_0.vendors).length && (_0x703395_46(_0x703395_f(_0x703395_0), _0x703395_0.domain), 
+        _0x703395_5.delete(_0x703395_0.domain), _0x703395_6 += 1, _0x703395_8 += 1, _0x703395_8 >= 100 && !_0x703395_b())) throw _0x703395_a = !0, 
+        new Error("\x54\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x61\x76\x65\x20\x6d\x6f\x72\x65\x20\x76\x65\x72\x64\x69\x63\x74\x73\x2e");
+        _0x703395_52(_0x703395_4 + _0x703395_6, _0x703395_1), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x6f\x67\x72\x65\x73\x73\x2d\x64\x65\x74\x61\x69\x6c\x5d").textContent = `${_0x703395_0}\x3a\x20\x70\x61\x67\x65\x20${_0x703395_3.toLocaleString()}\x20\x6f\x66\x20${_0x703395_9.toLocaleString()}\x20\xb7\x20${(_0x703395_4 + _0x703395_6).toLocaleString()}\x20\x72\x65\x61\x64\x79\x2e`;
+      }, _0x703395_9 = await _0x703395_c("\x2f\x66\x75\x6c\x6c\x2d\x73\x63\x61\x6e\x2f\x72\x65\x73\x75\x6c\x74\x73\x3f\x70\x61\x67\x65\x3d\x31"), _0x703395_d = Math.max(1, Number(_0x703395_9.totalPages) || 1);
+      _0x703395_2(_0x703395_9, 1, _0x703395_d);
+      for (let _0x703395_1 = 2; _0x703395_1 <= _0x703395_d && !_0x703395_3.aborted && _0x703395_5.size; _0x703395_1 += 2) {
+        const _0x703395_0 = Array.from({
+          length: Math.min(2, _0x703395_d - _0x703395_1 + 1)
+        }, (_0x703395_0, _0x703395_2) => _0x703395_1 + _0x703395_2);
+        (await Promise.all(_0x703395_0.map(_0x703395_0 => _0x703395_c(`\x2f\x66\x75\x6c\x6c\x2d\x73\x63\x61\x6e\x2f\x72\x65\x73\x75\x6c\x74\x73\x3f\x70\x61\x67\x65\x3d${_0x703395_0}`)))).forEach((_0x703395_1, _0x703395_3) => _0x703395_2(_0x703395_1, _0x703395_0[_0x703395_3], _0x703395_d));
       }
     };
-    let b = null;
+    let _0x703395_11 = null;
     try {
-      if (await g(), !u()) throw new Error("This browser could not save more verdicts.");
-      if (o.size) {
-        let e = await m("/full-scan/start", {
-          method: "POST",
+      if (await _0x703395_10(), !_0x703395_b()) throw new Error("\x54\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x61\x76\x65\x20\x6d\x6f\x72\x65\x20\x76\x65\x72\x64\x69\x63\x74\x73\x2e");
+      if (_0x703395_5.size) {
+        let _0x703395_0 = await _0x703395_c("\x2f\x66\x75\x6c\x6c\x2d\x73\x63\x61\x6e\x2f\x73\x74\x61\x72\x74", {
+          method: "\x50\x4f\x53\x54",
           headers: {
-            "Content-Type": "application/json"
+            "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
           },
-          body: "{}"
-        }), t = !0 === e.running, n = 0;
-        for (f(e); !r.aborted; ) {
-          if (!0 === e.running) t = !0, n = 0; else if (n >= 2 && (t || !1 === e.started)) break;
-          await Ne(2500, r), e = await m("/full-scan/status"), f(e), e.running || (n += 1);
+          body: "\x7b\x7d"
+        }), _0x703395_1 = !0 === _0x703395_0.running, _0x703395_2 = 0;
+        for (_0x703395_e(_0x703395_0); !_0x703395_3.aborted; ) {
+          if (!0 === _0x703395_0.running) _0x703395_1 = !0, _0x703395_2 = 0; else if (_0x703395_2 >= 2 && (_0x703395_1 || !1 === _0x703395_0.started)) break;
+          await _0x703395_53(2500, _0x703395_3), _0x703395_0 = await _0x703395_c("\x2f\x66\x75\x6c\x6c\x2d\x73\x63\x61\x6e\x2f\x73\x74\x61\x74\x75\x73"), 
+          _0x703395_e(_0x703395_0), _0x703395_0.running || (_0x703395_2 += 1);
         }
-        r.aborted || await g("Importing refreshed Nocturne verdicts");
+        _0x703395_3.aborted || await _0x703395_10("\x49\x6d\x70\x6f\x72\x74\x69\x6e\x67\x20\x72\x65\x66\x72\x65\x73\x68\x65\x64\x20\x4e\x6f\x63\x74\x75\x72\x6e\x65\x20\x76\x65\x72\x64\x69\x63\x74\x73");
       }
-    } catch (v) {
-      "AbortError" !== v.name && (b = v);
+    } catch (_0x703395_12) {
+      "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" !== _0x703395_12.name && (_0x703395_11 = _0x703395_12);
     } finally {
-      u() || (l = !0), $ = l || b || r.aborted ? 0 : o.size, x = !1, R.clear(), Ue(), 
-      l ? q(`The full scan stopped because this browser could not save more verdicts. ${c.toLocaleString()} domain results remain saved.`, "error", !0) : b ? q(`The full scan could not finish: ${b.message}`, "error", !0) : r.aborted ? q("Nyx stopped watching the full scan. The Nocturne server job may continue; click Check all domains to reconnect and import its results.") : o.size ? q(`The server scan finished and imported ${s.toLocaleString()} new domains. ${o.size.toLocaleString()} ${1 === o.size ? "domain still needs" : "domains still need"} results; use Double check to retry only ${1 === o.size ? "that domain" : "those domains"}.`, "error", !0) : q(`Full scan complete: all ${t.toLocaleString()} cached domains have saved vendor results.`);
+      _0x703395_b() || (_0x703395_a = !0), _0x703395_1b = _0x703395_a || _0x703395_11 || _0x703395_3.aborted ? 0 : _0x703395_5.size, 
+      _0x703395_19 = !1, _0x703395_24.clear(), _0x703395_5c(), _0x703395_a ? _0x703395_2a(`\x54\x68\x65\x20\x66\x75\x6c\x6c\x20\x73\x63\x61\x6e\x20\x73\x74\x6f\x70\x70\x65\x64\x20\x62\x65\x63\x61\x75\x73\x65\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x61\x76\x65\x20\x6d\x6f\x72\x65\x20\x76\x65\x72\x64\x69\x63\x74\x73\x2e\x20${_0x703395_9.toLocaleString()}\x20\x64\x6f\x6d\x61\x69\x6e\x20\x72\x65\x73\x75\x6c\x74\x73\x20\x72\x65\x6d\x61\x69\x6e\x20\x73\x61\x76\x65\x64\x2e`, "\x65\x72\x72\x6f\x72", !0) : _0x703395_11 ? _0x703395_2a(`\x54\x68\x65\x20\x66\x75\x6c\x6c\x20\x73\x63\x61\x6e\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x66\x69\x6e\x69\x73\x68\x3a\x20${_0x703395_11.message}`, "\x65\x72\x72\x6f\x72", !0) : _0x703395_3.aborted ? _0x703395_2a("\x4e\x79\x78\x20\x73\x74\x6f\x70\x70\x65\x64\x20\x77\x61\x74\x63\x68\x69\x6e\x67\x20\x74\x68\x65\x20\x66\x75\x6c\x6c\x20\x73\x63\x61\x6e\x2e\x20\x54\x68\x65\x20\x4e\x6f\x63\x74\x75\x72\x6e\x65\x20\x73\x65\x72\x76\x65\x72\x20\x6a\x6f\x62\x20\x6d\x61\x79\x20\x63\x6f\x6e\x74\x69\x6e\x75\x65\x3b\x20\x63\x6c\x69\x63\x6b\x20\x43\x68\x65\x63\x6b\x20\x61\x6c\x6c\x20\x64\x6f\x6d\x61\x69\x6e\x73\x20\x74\x6f\x20\x72\x65\x63\x6f\x6e\x6e\x65\x63\x74\x20\x61\x6e\x64\x20\x69\x6d\x70\x6f\x72\x74\x20\x69\x74\x73\x20\x72\x65\x73\x75\x6c\x74\x73\x2e") : _0x703395_5.size ? _0x703395_2a(`\x54\x68\x65\x20\x73\x65\x72\x76\x65\x72\x20\x73\x63\x61\x6e\x20\x66\x69\x6e\x69\x73\x68\x65\x64\x20\x61\x6e\x64\x20\x69\x6d\x70\x6f\x72\x74\x65\x64\x20${_0x703395_6.toLocaleString()}\x20\x6e\x65\x77\x20\x64\x6f\x6d\x61\x69\x6e\x73\x2e\x20${_0x703395_5.size.toLocaleString()}\x20${1 === _0x703395_5.size ? "\x64\x6f\x6d\x61\x69\x6e\x20\x73\x74\x69\x6c\x6c\x20\x6e\x65\x65\x64\x73" : "\x64\x6f\x6d\x61\x69\x6e\x73\x20\x73\x74\x69\x6c\x6c\x20\x6e\x65\x65\x64"}\x20\x72\x65\x73\x75\x6c\x74\x73\x3b\x20\x75\x73\x65\x20\x44\x6f\x75\x62\x6c\x65\x20\x63\x68\x65\x63\x6b\x20\x74\x6f\x20\x72\x65\x74\x72\x79\x20\x6f\x6e\x6c\x79\x20${1 === _0x703395_5.size ? "\x74\x68\x61\x74\x20\x64\x6f\x6d\x61\x69\x6e" : "\x74\x68\x6f\x73\x65\x20\x64\x6f\x6d\x61\x69\x6e\x73"}\x2e`, "\x65\x72\x72\x6f\x72", !0) : _0x703395_2a(`\x46\x75\x6c\x6c\x20\x73\x63\x61\x6e\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x3a\x20\x61\x6c\x6c\x20${_0x703395_1.toLocaleString()}\x20\x63\x61\x63\x68\x65\x64\x20\x64\x6f\x6d\x61\x69\x6e\x73\x20\x68\x61\x76\x65\x20\x73\x61\x76\x65\x64\x20\x76\x65\x6e\x64\x6f\x72\x20\x72\x65\x73\x75\x6c\x74\x73\x2e`);
     }
   }
-  async function Ie() {
-    if (i('[data-view="scraper"]')?.hidden || A || w || C || x || !h.length) return;
-    const e = we().visible;
-    e.length && !e.some(e => !Oe(e.domain, "")) && (A = !0, await je({
+  async function _0x703395_5b() {
+    if (_0x703395_7("\x5b\x64\x61\x74\x61\x2d\x76\x69\x65\x77\x3d\x22\x73\x63\x72\x61\x70\x65\x72\x22\x5d")?.hidden || _0x703395_1c || _0x703395_16 || _0x703395_18 || _0x703395_19 || !_0x703395_d.length) return;
+    const _0x703395_0 = _0x703395_4c().visible;
+    _0x703395_0.length && !_0x703395_0.some(_0x703395_0 => !_0x703395_58(_0x703395_0.domain, "")) && (_0x703395_1c = !0, 
+    await _0x703395_59({
       automatic: !0
     }));
   }
-  function Ue() {
-    ue(), c.historyList.replaceChildren(), m.forEach(e => {
-      const t = document.createElement("article");
-      t.className = "history-row";
-      const n = document.createElement("time");
-      n.dateTime = e.checkedAt || "", n.textContent = re(e.checkedAt);
-      const r = document.createElement("span");
-      r.className = "history-action", r.textContent = "check";
-      const a = document.createElement("div"), o = document.createElement("strong");
-      o.textContent = e.target;
-      const s = document.createElement("span");
-      s.textContent = e.url || e.target, a.append(o, s);
-      const i = document.createElement("div");
-      i.className = "history-result", i.append(le(e));
-      const d = document.createElement("span");
-      d.textContent = String(e.results?.length || 0), i.append(d);
-      const l = document.createElement("button");
-      l.className = "btn-secondary", l.type = "button", l.append(V("eye"), "View"), l.addEventListener("click", () => Be(e)), 
-      t.append(n, r, a, i, l), c.historyList.append(t);
-    }), c.historyEmpty.hidden = m.length > 0, Ce();
+  function _0x703395_5c() {
+    _0x703395_41(), _0x703395_9.historyList.replaceChildren(), _0x703395_c.forEach(_0x703395_0 => {
+      const _0x703395_1 = document.createElement("\x61\x72\x74\x69\x63\x6c\x65");
+      _0x703395_1.className = "\x68\x69\x73\x74\x6f\x72\x79\x2d\x72\x6f\x77";
+      const _0x703395_2 = document.createElement("\x74\x69\x6d\x65");
+      _0x703395_2.dateTime = _0x703395_0.checkedAt || "", _0x703395_2.textContent = _0x703395_39(_0x703395_0.checkedAt);
+      const _0x703395_3 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_3.className = "\x68\x69\x73\x74\x6f\x72\x79\x2d\x61\x63\x74\x69\x6f\x6e", _0x703395_3.textContent = "\x63\x68\x65\x63\x6b";
+      const _0x703395_4 = document.createElement("\x64\x69\x76"), _0x703395_5 = document.createElement("\x73\x74\x72\x6f\x6e\x67");
+      _0x703395_5.textContent = _0x703395_0.target;
+      const _0x703395_6 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_6.textContent = _0x703395_0.url || _0x703395_0.target, _0x703395_4.append(_0x703395_5, _0x703395_6);
+      const _0x703395_7 = document.createElement("\x64\x69\x76");
+      _0x703395_7.className = "\x68\x69\x73\x74\x6f\x72\x79\x2d\x72\x65\x73\x75\x6c\x74", _0x703395_7.append(_0x703395_40(_0x703395_0));
+      const _0x703395_8 = document.createElement("\x73\x70\x61\x6e");
+      _0x703395_8.textContent = String(_0x703395_0.results?.length || 0), _0x703395_7.append(_0x703395_8);
+      const _0x703395_a = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+      _0x703395_a.className = "\x62\x74\x6e\x2d\x73\x65\x63\x6f\x6e\x64\x61\x72\x79", _0x703395_a.type = "\x62\x75\x74\x74\x6f\x6e", _0x703395_a.append(_0x703395_2b("\x65\x79\x65"), "\x56\x69\x65\x77"), 
+      _0x703395_a.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x703395_5e(_0x703395_0)), _0x703395_1.append(_0x703395_2, _0x703395_3, _0x703395_4, _0x703395_7, _0x703395_a), 
+      _0x703395_9.historyList.append(_0x703395_1);
+    }), _0x703395_9.historyEmpty.hidden = _0x703395_c.length > 0, _0x703395_4e();
   }
-  function ze(e) {
-    d("[data-view]").forEach(t => {
-      const n = t.dataset.view === e;
-      t.hidden = !n, t.classList.toggle("active", n);
-    }), d("[data-view-button]").forEach(t => t.classList.toggle("active", t.dataset.viewButton === e)), 
-    i("[data-sidebar]")?.classList.remove("open");
-    const t = i("[data-sidebar-shade]");
-    t && (t.hidden = !0), window.scrollTo({
+  function _0x703395_5d(_0x703395_0) {
+    _0x703395_8("\x5b\x64\x61\x74\x61\x2d\x76\x69\x65\x77\x5d").forEach(_0x703395_1 => {
+      const _0x703395_2 = _0x703395_1.dataset.view === _0x703395_0;
+      _0x703395_1.hidden = !_0x703395_2, _0x703395_1.classList.toggle("\x61\x63\x74\x69\x76\x65", _0x703395_2);
+    }), _0x703395_8("\x5b\x64\x61\x74\x61\x2d\x76\x69\x65\x77\x2d\x62\x75\x74\x74\x6f\x6e\x5d").forEach(_0x703395_1 => _0x703395_1.classList.toggle("\x61\x63\x74\x69\x76\x65", _0x703395_1.dataset.viewButton === _0x703395_0)), 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x69\x64\x65\x62\x61\x72\x5d")?.classList.remove("\x6f\x70\x65\x6e");
+    const _0x703395_1 = _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x69\x64\x65\x62\x61\x72\x2d\x73\x68\x61\x64\x65\x5d");
+    _0x703395_1 && (_0x703395_1.hidden = !0), window.scrollTo({
       top: 0,
-      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
-    }), "scraper" === e && (Q(!0).catch(() => {}), Ie());
+      behavior: matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").matches ? "\x61\x75\x74\x6f" : "\x73\x6d\x6f\x6f\x74\x68"
+    }), "\x73\x63\x72\x61\x70\x65\x72" === _0x703395_0 && (_0x703395_32(!0).catch(() => {}), _0x703395_5b());
   }
-  function Be(e) {
-    g = e.url || e.target, c.input.value = g, te(e), c.domainSection.hidden = !0, ze("checker");
-    const t = new AbortController;
-    oe(g, t.signal);
+  function _0x703395_5e(_0x703395_0) {
+    _0x703395_10 = _0x703395_0.url || _0x703395_0.target, _0x703395_9.input.value = _0x703395_10, 
+    _0x703395_37(_0x703395_0), _0x703395_9.domainSection.hidden = !0, _0x703395_5d("\x63\x68\x65\x63\x6b\x65\x72");
+    const _0x703395_1 = new AbortController;
+    _0x703395_3b(_0x703395_10, _0x703395_1.signal);
   }
-  async function Fe() {
-    if (!p) return;
-    const e = [ `Link Checker report for ${p.target}` ];
-    p.results.forEach(t => {
-      const n = Z(t);
-      e.push(`${t.label || K(t.filter)}: ${n.label}${t.category ? ` \u2014 ${t.category}` : ""}`);
+  async function _0x703395_5f() {
+    if (!_0x703395_f) return;
+    const _0x703395_0 = [ `\x4c\x69\x6e\x6b\x20\x43\x68\x65\x63\x6b\x65\x72\x20\x72\x65\x70\x6f\x72\x74\x20\x66\x6f\x72\x20${_0x703395_f.target}` ];
+    _0x703395_f.results.forEach(_0x703395_1 => {
+      const _0x703395_2 = _0x703395_35(_0x703395_1);
+      _0x703395_0.push(`${_0x703395_1.label || _0x703395_2e(_0x703395_1.filter)}\x3a\x20${_0x703395_2.label}${_0x703395_1.category ? `\x20\u2014\x20${_0x703395_1.category}` : ""}`);
     });
     try {
-      await navigator.clipboard.writeText(e.join("\n")), q("Report copied to the clipboard.");
+      await navigator.clipboard.writeText(_0x703395_0.join("\x0a")), _0x703395_2a("\x52\x65\x70\x6f\x72\x74\x20\x63\x6f\x70\x69\x65\x64\x20\x74\x6f\x20\x74\x68\x65\x20\x63\x6c\x69\x70\x62\x6f\x61\x72\x64\x2e");
     } catch {
-      q("Clipboard access was unavailable.", "error", !0);
+      _0x703395_2a("\x43\x6c\x69\x70\x62\x6f\x61\x72\x64\x20\x61\x63\x63\x65\x73\x73\x20\x77\x61\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e", "\x65\x72\x72\x6f\x72", !0);
     }
   }
-  function qe(e) {
-    const t = String(e ?? "");
-    return /[",\n]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t;
+  function _0x703395_60(_0x703395_0) {
+    const _0x703395_1 = String(_0x703395_0 ?? "");
+    return /[",\n]/.test(_0x703395_1) ? `\x22${_0x703395_1.replace(/"/g, "\x22\x22")}\x22` : _0x703395_1;
   }
-  function Ve() {
-    m.length && confirm("Clear all Link Checker history stored on this device?") && (m = [], 
-    z(t, m), Ue(), q("Local scan history cleared."));
+  function _0x703395_61() {
+    _0x703395_c.length && confirm("\x43\x6c\x65\x61\x72\x20\x61\x6c\x6c\x20\x4c\x69\x6e\x6b\x20\x43\x68\x65\x63\x6b\x65\x72\x20\x68\x69\x73\x74\x6f\x72\x79\x20\x73\x74\x6f\x72\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x3f") && (_0x703395_c = [], 
+    _0x703395_27(_0x703395_1, _0x703395_c), _0x703395_5c(), _0x703395_2a("\x4c\x6f\x63\x61\x6c\x20\x73\x63\x61\x6e\x20\x68\x69\x73\x74\x6f\x72\x79\x20\x63\x6c\x65\x61\x72\x65\x64\x2e"));
   }
-  function Ge() {
-    z(n, u), F(), ue();
+  function _0x703395_62() {
+    _0x703395_27(_0x703395_2, _0x703395_b), _0x703395_29(), _0x703395_41();
   }
-  u = {
-    ...l,
-    ...u
+  _0x703395_b = {
+    ..._0x703395_a,
+    ..._0x703395_b
   };
-  const Je = O && !be();
-  F(), function() {
-    i("[data-back-to-nyx]").addEventListener("click", e => {
-      window.parent !== window && (e.preventDefault(), window.parent.postMessage({
-        type: "nyx:close-tab"
+  const _0x703395_63 = _0x703395_22 && !_0x703395_47();
+  _0x703395_29(), function() {
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x62\x61\x63\x6b\x2d\x74\x6f\x2d\x6e\x79\x78\x5d").addEventListener("\x63\x6c\x69\x63\x6b", _0x703395_0 => {
+      window.parent !== window && (_0x703395_0.preventDefault(), window.parent.postMessage({
+        type: "\x6e\x79\x78\x3a\x63\x6c\x6f\x73\x65\x2d\x74\x61\x62"
       }, location.origin));
-    }), c.form.addEventListener("submit", ie), i("[data-copy-results]").addEventListener("click", Fe), 
-    i("[data-recheck]").addEventListener("click", () => {
-      g && (c.input.value = g, ie());
-    }), d("[data-view-button]").forEach(e => e.addEventListener("click", () => ze(e.dataset.viewButton))), 
-    i("[data-dashboard-search-form]").addEventListener("submit", e => {
-      e.preventDefault(), b = 1, ue();
-    }), i("[data-dashboard-search]").addEventListener("input", () => {
-      b = 1, ue();
-    }), i("[data-dashboard-vendor]").addEventListener("change", () => {
-      b = 1, ue();
-    }), d("[data-dashboard-verdict]").forEach(e => e.addEventListener("click", () => {
-      v = e.dataset.dashboardVerdict || "", d("[data-dashboard-verdict]").forEach(t => t.classList.toggle("active", t === e)), 
-      b = 1, ue();
-    })), i("[data-dashboard-prev]").addEventListener("click", () => {
-      b -= 1, ue();
-    }), i("[data-dashboard-next]").addEventListener("click", () => {
-      b += 1, ue();
-    }), c.freednsStart.addEventListener("click", () => {
+    }), _0x703395_9.form.addEventListener("\x73\x75\x62\x6d\x69\x74", _0x703395_3d), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x2d\x72\x65\x73\x75\x6c\x74\x73\x5d").addEventListener("\x63\x6c\x69\x63\x6b", _0x703395_5f), 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x72\x65\x63\x68\x65\x63\x6b\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_10 && (_0x703395_9.input.value = _0x703395_10, _0x703395_3d());
+    }), _0x703395_8("\x5b\x64\x61\x74\x61\x2d\x76\x69\x65\x77\x2d\x62\x75\x74\x74\x6f\x6e\x5d").forEach(_0x703395_0 => _0x703395_0.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x703395_5d(_0x703395_0.dataset.viewButton))), 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x73\x65\x61\x72\x63\x68\x2d\x66\x6f\x72\x6d\x5d").addEventListener("\x73\x75\x62\x6d\x69\x74", _0x703395_0 => {
+      _0x703395_0.preventDefault(), _0x703395_11 = 1, _0x703395_41();
+    }), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x73\x65\x61\x72\x63\x68\x5d").addEventListener("\x69\x6e\x70\x75\x74", () => {
+      _0x703395_11 = 1, _0x703395_41();
+    }), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x76\x65\x6e\x64\x6f\x72\x5d").addEventListener("\x63\x68\x61\x6e\x67\x65", () => {
+      _0x703395_11 = 1, _0x703395_41();
+    }), _0x703395_8("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x76\x65\x72\x64\x69\x63\x74\x5d").forEach(_0x703395_0 => _0x703395_0.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_12 = _0x703395_0.dataset.dashboardVerdict || "", _0x703395_8("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x76\x65\x72\x64\x69\x63\x74\x5d").forEach(_0x703395_1 => _0x703395_1.classList.toggle("\x61\x63\x74\x69\x76\x65", _0x703395_1 === _0x703395_0)), 
+      _0x703395_11 = 1, _0x703395_41();
+    })), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x70\x72\x65\x76\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_11 -= 1, _0x703395_41();
+    }), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x64\x61\x73\x68\x62\x6f\x61\x72\x64\x2d\x6e\x65\x78\x74\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_11 += 1, _0x703395_41();
+    }), _0x703395_9.freednsStart.addEventListener("\x63\x6c\x69\x63\x6b", () => {
       !async function() {
-        if (w) return;
-        A = !1, $ = 0, S?.abort(), S = new AbortController;
-        const t = S.signal;
-        xe(!0), q("");
-        const n = new Map;
-        let r = 1, a = 0, o = 0;
+        if (_0x703395_16) return;
+        _0x703395_1c = !1, _0x703395_1b = 0, _0x703395_15?.abort(), _0x703395_15 = new AbortController;
+        const _0x703395_1 = _0x703395_15.signal;
+        _0x703395_4f(!0), _0x703395_2a("");
+        const _0x703395_2 = new Map;
+        let _0x703395_3 = 1, _0x703395_4 = 0, _0x703395_5 = 0;
         try {
-          for (let i = 1; i <= r; i += 1) {
-            const s = await _(`${e}/freedns-registry?page=${i}`, {
-              signal: t
+          for (let _0x703395_7 = 1; _0x703395_7 <= _0x703395_3; _0x703395_7 += 1) {
+            const _0x703395_6 = await _0x703395_2f(`${_0x703395_0}\x2f\x66\x72\x65\x65\x64\x6e\x73\x2d\x72\x65\x67\x69\x73\x74\x72\x79\x3f\x70\x61\x67\x65\x3d${_0x703395_7}`, {
+              signal: _0x703395_1
             });
-            1 === i && (r = Math.max(1, Math.min(500, Number(s.totalPages) || 1)), a = Math.max(0, Number(s.totalDomains) || 0)), 
-            (Array.isArray(s.domains) ? s.domains : []).forEach(e => {
-              const t = me(e);
-              t && n.set(t.id, t);
-            }), o = i, Le(i, r, n.size), 1 !== i && i % 10 != 0 && i !== r || (y = {
-              domains: [ ...n.values() ],
-              totalPages: r,
-              totalDomains: a,
+            1 === _0x703395_7 && (_0x703395_3 = Math.max(1, Math.min(500, Number(_0x703395_6.totalPages) || 1)), 
+            _0x703395_4 = Math.max(0, Number(_0x703395_6.totalDomains) || 0)), (Array.isArray(_0x703395_6.domains) ? _0x703395_6.domains : []).forEach(_0x703395_0 => {
+              const _0x703395_1 = _0x703395_42(_0x703395_0);
+              _0x703395_1 && _0x703395_2.set(_0x703395_1.id, _0x703395_1);
+            }), _0x703395_5 = _0x703395_7, _0x703395_50(_0x703395_7, _0x703395_3, _0x703395_2.size), 
+            1 !== _0x703395_7 && _0x703395_7 % 10 != 0 && _0x703395_7 !== _0x703395_3 || (_0x703395_13 = {
+              domains: [ ..._0x703395_2.values() ],
+              totalPages: _0x703395_3,
+              totalDomains: _0x703395_4,
               lastScrapedAt: (new Date).toISOString(),
-              complete: i === r
-            }, Ce()), i < r && await Ne(175, t);
+              complete: _0x703395_7 === _0x703395_3
+            }, _0x703395_4e()), _0x703395_7 < _0x703395_3 && await _0x703395_53(175, _0x703395_1);
           }
-          y = {
-            domains: [ ...n.values() ],
-            totalPages: r,
-            totalDomains: a,
+          _0x703395_13 = {
+            domains: [ ..._0x703395_2.values() ],
+            totalPages: _0x703395_3,
+            totalDomains: _0x703395_4,
             lastScrapedAt: (new Date).toISOString(),
             complete: !0
           };
-          const s = De();
-          Ce(), q(s ? `FreeDNS scrape complete: ${y.domains.length.toLocaleString()} domains cached on this device.` : "The scrape completed, but this browser could not save the registry cache.", s ? "" : "error", !s);
-        } catch (s) {
-          n.size && (y = {
-            domains: [ ...n.values() ],
-            totalPages: r,
-            totalDomains: a,
+          const _0x703395_6 = _0x703395_54();
+          _0x703395_4e(), _0x703395_2a(_0x703395_6 ? `\x46\x72\x65\x65\x44\x4e\x53\x20\x73\x63\x72\x61\x70\x65\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x3a\x20${_0x703395_13.domains.length.toLocaleString()}\x20\x64\x6f\x6d\x61\x69\x6e\x73\x20\x63\x61\x63\x68\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e` : "\x54\x68\x65\x20\x73\x63\x72\x61\x70\x65\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x64\x2c\x20\x62\x75\x74\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x61\x76\x65\x20\x74\x68\x65\x20\x72\x65\x67\x69\x73\x74\x72\x79\x20\x63\x61\x63\x68\x65\x2e", _0x703395_6 ? "" : "\x65\x72\x72\x6f\x72", !_0x703395_6);
+        } catch (_0x703395_6) {
+          _0x703395_2.size && (_0x703395_13 = {
+            domains: [ ..._0x703395_2.values() ],
+            totalPages: _0x703395_3,
+            totalDomains: _0x703395_4,
             lastScrapedAt: (new Date).toISOString(),
             complete: !1
-          }, De(), Ce()), "AbortError" === s.name ? q(`FreeDNS scrape stopped after ${o.toLocaleString()} pages. The partial cache was saved.`) : q(`FreeDNS scrape failed on page ${(o + 1).toLocaleString()}: ${s.message}`, "error", !0);
+          }, _0x703395_54(), _0x703395_4e()), "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x703395_6.name ? _0x703395_2a(`\x46\x72\x65\x65\x44\x4e\x53\x20\x73\x63\x72\x61\x70\x65\x20\x73\x74\x6f\x70\x70\x65\x64\x20\x61\x66\x74\x65\x72\x20${_0x703395_5.toLocaleString()}\x20\x70\x61\x67\x65\x73\x2e\x20\x54\x68\x65\x20\x70\x61\x72\x74\x69\x61\x6c\x20\x63\x61\x63\x68\x65\x20\x77\x61\x73\x20\x73\x61\x76\x65\x64\x2e`) : _0x703395_2a(`\x46\x72\x65\x65\x44\x4e\x53\x20\x73\x63\x72\x61\x70\x65\x20\x66\x61\x69\x6c\x65\x64\x20\x6f\x6e\x20\x70\x61\x67\x65\x20${(_0x703395_5 + 1).toLocaleString()}\x3a\x20${_0x703395_6.message}`, "\x65\x72\x72\x6f\x72", !0);
         } finally {
-          xe(!1), y.complete && Ie();
+          _0x703395_4f(!1), _0x703395_13.complete && _0x703395_5b();
         }
       }();
-    }), c.freednsCheckAll.addEventListener("click", () => {
-      Re();
-    }), c.freednsCheckPage.addEventListener("click", () => {
-      je();
-    }), c.freednsGodDomains.addEventListener("click", () => {
-      L = !L, k = 1, Ce();
-    }), c.freednsDoubleCheck.addEventListener("click", () => {
-      Re();
-    }), c.freednsStop.addEventListener("click", Me), c.freednsSearch.addEventListener("input", () => {
-      k = 1, Ce();
-    }), c.freednsStatus.addEventListener("change", () => {
-      k = 1, Ce();
-    }), c.freednsVendor.addEventListener("change", Ce), i("[data-freedns-export]").addEventListener("click", Te), 
-    i("[data-freedns-clear]").addEventListener("click", Pe), i("[data-freedns-prev]").addEventListener("click", () => {
-      k -= 1, Ce();
-    }), i("[data-freedns-next]").addEventListener("click", () => {
-      k += 1, Ce();
-    }), i("[data-freedns-detail-close]").addEventListener("click", ke), c.freednsDetail.addEventListener("click", e => {
-      e.target === c.freednsDetail && ke();
-    }), c.freednsDetail.addEventListener("close", () => {
-      P?.abort(), P = null;
-    }), d("[data-export]").forEach(e => e.addEventListener("click", () => function(e) {
-      if (!m.length) return void q("There is no scan data to export.", "error", !0);
-      const t = m.map(e => ({
-        checkedAt: e.checkedAt,
-        source: e.source,
-        url: e.url,
-        target: e.target,
-        verdict: ce(e),
-        blockedBy: (e.blockedBy || []).join("|"),
-        vendors: e.results || []
-      })), n = "csv" === e ? [ [ "checkedAt", "source", "url", "target", "verdict", "blockedBy", "vendorResults" ], ...t.map(e => [ e.checkedAt, e.source, e.url, e.target, e.verdict, e.blockedBy, JSON.stringify(e.vendors) ]) ].map(e => e.map(qe).join(",")).join("\n") : JSON.stringify(t, null, 2), r = new Blob([ n ], {
-        type: "csv" === e ? "text/csv" : "application/json"
-      }), a = URL.createObjectURL(r), o = document.createElement("a");
-      o.href = a, o.download = `nyx-link-checker-${(new Date).toISOString().slice(0, 10)}.${e}`, 
-      o.click(), setTimeout(() => URL.revokeObjectURL(a), 1e3), q(`${e.toUpperCase()} export created.`);
-    }(e.dataset.export))), d("[data-clear-history]").forEach(e => e.addEventListener("click", Ve));
-    const t = i("[data-setting-page-size]");
-    t.value = String(u.pageSize || 25), t.addEventListener("change", () => {
-      u.pageSize = Number(t.value) || 25, b = 1, Ge();
+    }), _0x703395_9.freednsCheckAll.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_5a();
+    }), _0x703395_9.freednsCheckPage.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_59();
+    }), _0x703395_9.freednsGodDomains.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_1a = !_0x703395_1a, _0x703395_14 = 1, _0x703395_4e();
+    }), _0x703395_9.freednsDoubleCheck.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_5a();
+    }), _0x703395_9.freednsStop.addEventListener("\x63\x6c\x69\x63\x6b", _0x703395_55), _0x703395_9.freednsSearch.addEventListener("\x69\x6e\x70\x75\x74", () => {
+      _0x703395_14 = 1, _0x703395_4e();
+    }), _0x703395_9.freednsStatus.addEventListener("\x63\x68\x61\x6e\x67\x65", () => {
+      _0x703395_14 = 1, _0x703395_4e();
+    }), _0x703395_9.freednsVendor.addEventListener("\x63\x68\x61\x6e\x67\x65", _0x703395_4e), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x65\x78\x70\x6f\x72\x74\x5d").addEventListener("\x63\x6c\x69\x63\x6b", _0x703395_57), 
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x63\x6c\x65\x61\x72\x5d").addEventListener("\x63\x6c\x69\x63\x6b", _0x703395_56), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x70\x72\x65\x76\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_14 -= 1, _0x703395_4e();
+    }), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x6e\x65\x78\x74\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_14 += 1, _0x703395_4e();
+    }), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x64\x6e\x73\x2d\x64\x65\x74\x61\x69\x6c\x2d\x63\x6c\x6f\x73\x65\x5d").addEventListener("\x63\x6c\x69\x63\x6b", _0x703395_4a), 
+    _0x703395_9.freednsDetail.addEventListener("\x63\x6c\x69\x63\x6b", _0x703395_0 => {
+      _0x703395_0.target === _0x703395_9.freednsDetail && _0x703395_4a();
+    }), _0x703395_9.freednsDetail.addEventListener("\x63\x6c\x6f\x73\x65", () => {
+      _0x703395_20?.abort(), _0x703395_20 = null;
+    }), _0x703395_8("\x5b\x64\x61\x74\x61\x2d\x65\x78\x70\x6f\x72\x74\x5d").forEach(_0x703395_0 => _0x703395_0.addEventListener("\x63\x6c\x69\x63\x6b", () => function(_0x703395_0) {
+      if (!_0x703395_c.length) return void _0x703395_2a("\x54\x68\x65\x72\x65\x20\x69\x73\x20\x6e\x6f\x20\x73\x63\x61\x6e\x20\x64\x61\x74\x61\x20\x74\x6f\x20\x65\x78\x70\x6f\x72\x74\x2e", "\x65\x72\x72\x6f\x72", !0);
+      const _0x703395_1 = _0x703395_c.map(_0x703395_0 => ({
+        checkedAt: _0x703395_0.checkedAt,
+        source: _0x703395_0.source,
+        url: _0x703395_0.url,
+        target: _0x703395_0.target,
+        verdict: _0x703395_3f(_0x703395_0),
+        blockedBy: (_0x703395_0.blockedBy || []).join("\x7c"),
+        vendors: _0x703395_0.results || []
+      })), _0x703395_2 = "\x63\x73\x76" === _0x703395_0 ? [ [ "\x63\x68\x65\x63\x6b\x65\x64\x41\x74", "\x73\x6f\x75\x72\x63\x65", "\x75\x72\x6c", "\x74\x61\x72\x67\x65\x74", "\x76\x65\x72\x64\x69\x63\x74", "\x62\x6c\x6f\x63\x6b\x65\x64\x42\x79", "\x76\x65\x6e\x64\x6f\x72\x52\x65\x73\x75\x6c\x74\x73" ], ..._0x703395_1.map(_0x703395_0 => [ _0x703395_0.checkedAt, _0x703395_0.source, _0x703395_0.url, _0x703395_0.target, _0x703395_0.verdict, _0x703395_0.blockedBy, JSON.stringify(_0x703395_0.vendors) ]) ].map(_0x703395_0 => _0x703395_0.map(_0x703395_60).join("\x2c")).join("\x0a") : JSON.stringify(_0x703395_1, null, 2), _0x703395_3 = new Blob([ _0x703395_2 ], {
+        type: "\x63\x73\x76" === _0x703395_0 ? "\x74\x65\x78\x74\x2f\x63\x73\x76" : "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
+      }), _0x703395_4 = URL.createObjectURL(_0x703395_3), _0x703395_5 = document.createElement("\x61");
+      _0x703395_5.href = _0x703395_4, _0x703395_5.download = `\x6e\x79\x78\x2d\x6c\x69\x6e\x6b\x2d\x63\x68\x65\x63\x6b\x65\x72\x2d${(new Date).toISOString().slice(0, 10)}\x2e${_0x703395_0}`, 
+      _0x703395_5.click(), setTimeout(() => URL.revokeObjectURL(_0x703395_4), 1e3), _0x703395_2a(`${_0x703395_0.toUpperCase()}\x20\x65\x78\x70\x6f\x72\x74\x20\x63\x72\x65\x61\x74\x65\x64\x2e`);
+    }(_0x703395_0.dataset.export))), _0x703395_8("\x5b\x64\x61\x74\x61\x2d\x63\x6c\x65\x61\x72\x2d\x68\x69\x73\x74\x6f\x72\x79\x5d").forEach(_0x703395_0 => _0x703395_0.addEventListener("\x63\x6c\x69\x63\x6b", _0x703395_61));
+    const _0x703395_1 = _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x65\x74\x74\x69\x6e\x67\x2d\x70\x61\x67\x65\x2d\x73\x69\x7a\x65\x5d");
+    _0x703395_1.value = String(_0x703395_b.pageSize || 25), _0x703395_1.addEventListener("\x63\x68\x61\x6e\x67\x65", () => {
+      _0x703395_b.pageSize = Number(_0x703395_1.value) || 25, _0x703395_11 = 1, _0x703395_62();
     });
-    const n = i("[data-setting-notifications]"), r = () => {
-      n.textContent = u.notifications ? "On" : "Off", n.setAttribute("aria-pressed", String(u.notifications));
+    const _0x703395_2 = _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x65\x74\x74\x69\x6e\x67\x2d\x6e\x6f\x74\x69\x66\x69\x63\x61\x74\x69\x6f\x6e\x73\x5d"), _0x703395_3 = () => {
+      _0x703395_2.textContent = _0x703395_b.notifications ? "\x4f\x6e" : "\x4f\x66\x66", _0x703395_2.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x703395_b.notifications));
     };
-    r(), n.addEventListener("click", () => {
-      u.notifications = !u.notifications, r(), Ge();
+    _0x703395_3(), _0x703395_2.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_b.notifications = !_0x703395_b.notifications, _0x703395_3(), _0x703395_62();
     });
-    const a = i("[data-setting-theme]");
-    a.value = u.theme || "inherit", a.addEventListener("change", () => {
-      u.theme = a.value, Ge();
+    const _0x703395_4 = _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x65\x74\x74\x69\x6e\x67\x2d\x74\x68\x65\x6d\x65\x5d");
+    _0x703395_4.value = _0x703395_b.theme || "\x69\x6e\x68\x65\x72\x69\x74", _0x703395_4.addEventListener("\x63\x68\x61\x6e\x67\x65", () => {
+      _0x703395_b.theme = _0x703395_4.value, _0x703395_62();
     });
-    const o = i("[data-sidebar]"), s = i("[data-sidebar-shade]");
-    i("[data-sidebar-toggle]").addEventListener("click", () => {
-      o.classList.add("open"), s.hidden = !1;
-    }), s.addEventListener("click", () => {
-      o.classList.remove("open"), s.hidden = !0;
+    const _0x703395_5 = _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x69\x64\x65\x62\x61\x72\x5d"), _0x703395_6 = _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x69\x64\x65\x62\x61\x72\x2d\x73\x68\x61\x64\x65\x5d");
+    _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x69\x64\x65\x62\x61\x72\x2d\x74\x6f\x67\x67\x6c\x65\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_5.classList.add("\x6f\x70\x65\x6e"), _0x703395_6.hidden = !1;
+    }), _0x703395_6.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+      _0x703395_5.classList.remove("\x6f\x70\x65\x6e"), _0x703395_6.hidden = !0;
     });
-  }(), Ue(), async function() {
+  }(), _0x703395_5c(), async function() {
     try {
-      const t = await _(`${e}/vendors`);
-      h = (Array.isArray(t) ? t : t.vendors || []).map(String).filter(Boolean), d("[data-vendor-select]").forEach(e => {
-        const t = e.value, n = e.options[0];
-        e.replaceChildren(n), h.forEach(t => {
-          const n = document.createElement("option");
-          n.value = t, n.textContent = K(t), e.append(n);
-        }), [ ...e.options ].some(e => e.value === t) && (e.value = t);
-      }), i("[data-stat-vendors]").textContent = String(h.length), J(!0, `${h.length} vendors ready`), 
-      Ce(), Ie();
-    } catch (t) {
-      J(!1), q(`Could not load vendor filters: ${t.message}`, "error", !0);
+      const _0x703395_1 = await _0x703395_2f(`${_0x703395_0}\x2f\x76\x65\x6e\x64\x6f\x72\x73`);
+      _0x703395_d = (Array.isArray(_0x703395_1) ? _0x703395_1 : _0x703395_1.vendors || []).map(String).filter(Boolean), 
+      _0x703395_8("\x5b\x64\x61\x74\x61\x2d\x76\x65\x6e\x64\x6f\x72\x2d\x73\x65\x6c\x65\x63\x74\x5d").forEach(_0x703395_0 => {
+        const _0x703395_1 = _0x703395_0.value, _0x703395_2 = _0x703395_0.options[0];
+        _0x703395_0.replaceChildren(_0x703395_2), _0x703395_d.forEach(_0x703395_1 => {
+          const _0x703395_2 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+          _0x703395_2.value = _0x703395_1, _0x703395_2.textContent = _0x703395_2e(_0x703395_1), 
+          _0x703395_0.append(_0x703395_2);
+        }), [ ..._0x703395_0.options ].some(_0x703395_0 => _0x703395_0.value === _0x703395_1) && (_0x703395_0.value = _0x703395_1);
+      }), _0x703395_7("\x5b\x64\x61\x74\x61\x2d\x73\x74\x61\x74\x2d\x76\x65\x6e\x64\x6f\x72\x73\x5d").textContent = String(_0x703395_d.length), 
+      _0x703395_2d(!0, `${_0x703395_d.length}\x20\x76\x65\x6e\x64\x6f\x72\x73\x20\x72\x65\x61\x64\x79`), _0x703395_4e(), _0x703395_5b();
+    } catch (_0x703395_1) {
+      _0x703395_2d(!1), _0x703395_2a(`\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x20\x76\x65\x6e\x64\x6f\x72\x20\x66\x69\x6c\x74\x65\x72\x73\x3a\x20${_0x703395_1.message}`, "\x65\x72\x72\x6f\x72", !0);
     }
-  }(), Q().catch(() => {}), I ? q("Cached FreeDNS domains and verdicts expired after eight hours and were removed from this device.") : Je && q("Nyx could not compact the existing verdict cache. Clear the FreeDNS cache before starting another full scan.", "error", !0), 
-  setInterval(() => B({
+  }(), _0x703395_32().catch(() => {}), _0x703395_25 ? _0x703395_2a("\x43\x61\x63\x68\x65\x64\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x64\x6f\x6d\x61\x69\x6e\x73\x20\x61\x6e\x64\x20\x76\x65\x72\x64\x69\x63\x74\x73\x20\x65\x78\x70\x69\x72\x65\x64\x20\x61\x66\x74\x65\x72\x20\x65\x69\x67\x68\x74\x20\x68\x6f\x75\x72\x73\x20\x61\x6e\x64\x20\x77\x65\x72\x65\x20\x72\x65\x6d\x6f\x76\x65\x64\x20\x66\x72\x6f\x6d\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e") : _0x703395_63 && _0x703395_2a("\x4e\x79\x78\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x6f\x6d\x70\x61\x63\x74\x20\x74\x68\x65\x20\x65\x78\x69\x73\x74\x69\x6e\x67\x20\x76\x65\x72\x64\x69\x63\x74\x20\x63\x61\x63\x68\x65\x2e\x20\x43\x6c\x65\x61\x72\x20\x74\x68\x65\x20\x46\x72\x65\x65\x44\x4e\x53\x20\x63\x61\x63\x68\x65\x20\x62\x65\x66\x6f\x72\x65\x20\x73\x74\x61\x72\x74\x69\x6e\x67\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x66\x75\x6c\x6c\x20\x73\x63\x61\x6e\x2e", "\x65\x72\x72\x6f\x72", !0), 
+  setInterval(() => _0x703395_28({
     render: !0,
     notify: !0
   }), 3e5);

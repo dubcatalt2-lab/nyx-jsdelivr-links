@@ -1,6 +1,6 @@
-import { encodeUTF8 } from './util/strings.js';
-import EventTargetMixin from './util/eventtarget.js';
-import legacyCrypto from './crypto/crypto.js';
+import { encodeUTF8 } from "./util/strings.js";
+import EventTargetMixin from "./util/eventtarget.js";
+import legacyCrypto from "./crypto/crypto.js";
 
 class RA2Cipher {
     constructor() {
@@ -55,7 +55,7 @@ export default class RSAAESAuthenticationState extends EventTargetMixin {
 
     _waitSockAsync(len) {
         return new Promise((resolve, reject) => {
-            const hasData = () => !this._sock.rQwait('RA2', len);
+            const hasData = () => !this._sock.rQwait("RA2", len);
             if (hasData()) {
                 resolve();
             } else {

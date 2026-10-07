@@ -1,33 +1,35 @@
 (() => {
   "use strict";
-  const e = document.querySelector("[data-luna-dialog]"), t = document.querySelector("[data-luna-host]"), n = document.querySelector("[data-luna-status]"), a = document.querySelector("[data-luna-open]");
-  let l;
-  function c(e) {
-    document.documentElement.classList.toggle("cloud-session-active", e), parent !== window && parent.postMessage({
-      type: "nyx:cloud-player",
-      active: e
+  const _0x7ae949_0 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x75\x6e\x61\x2d\x64\x69\x61\x6c\x6f\x67\x5d"), _0x7ae949_1 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x75\x6e\x61\x2d\x68\x6f\x73\x74\x5d"), _0x7ae949_2 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x75\x6e\x61\x2d\x73\x74\x61\x74\x75\x73\x5d"), _0x7ae949_3 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x75\x6e\x61\x2d\x6f\x70\x65\x6e\x5d");
+  let _0x7ae949_4;
+  function _0x7ae949_5(_0x7ae949_0) {
+    document.documentElement.classList.toggle("\x63\x6c\x6f\x75\x64\x2d\x73\x65\x73\x73\x69\x6f\x6e\x2d\x61\x63\x74\x69\x76\x65", _0x7ae949_0), 
+    parent !== window && parent.postMessage({
+      type: "\x6e\x79\x78\x3a\x63\x6c\x6f\x75\x64\x2d\x70\x6c\x61\x79\x65\x72",
+      active: _0x7ae949_0
     }, location.origin);
   }
-  a.addEventListener("click", () => {
-    if (e.open || document.documentElement.classList.contains("cloud-session-active")) return;
-    const a = document.createElement("iframe");
-    a.title = "Luna cloud gaming", a.allow = "autoplay; fullscreen; gamepad; clipboard-read; clipboard-write", 
-    a.allowFullscreen = !0, a.referrerPolicy = "no-referrer", n.textContent = "Loading Luna\u2026", 
-    l = setTimeout(() => {
-      n.textContent = "Taking longer than expected. Try opening Luna in a new tab.";
-    }, 2e4), a.addEventListener("load", () => {
-      clearTimeout(l), n.textContent = "CloudMoon games";
-    }), a.src = "https://luna.loan/", t.replaceChildren(a), e.showModal(), c(!0);
-  }), document.querySelector("[data-luna-close]").addEventListener("click", () => e.close()), 
-  e.addEventListener("close", () => {
-    clearTimeout(l), t.replaceChildren(), document.fullscreenElement === e && document.exitFullscreen().catch(() => {}), 
-    c(!document.querySelector("[data-player-layer]").hidden || !document.querySelector("[data-launch-layer]").hidden), 
-    a.focus();
-  }), document.querySelector("[data-luna-fullscreen]").addEventListener("click", async () => {
+  _0x7ae949_3.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    if (_0x7ae949_0.open || document.documentElement.classList.contains("\x63\x6c\x6f\x75\x64\x2d\x73\x65\x73\x73\x69\x6f\x6e\x2d\x61\x63\x74\x69\x76\x65")) return;
+    const _0x7ae949_3 = document.createElement("\x69\x66\x72\x61\x6d\x65");
+    _0x7ae949_3.title = "\x4c\x75\x6e\x61\x20\x63\x6c\x6f\x75\x64\x20\x67\x61\x6d\x69\x6e\x67", _0x7ae949_3.allow = "\x61\x75\x74\x6f\x70\x6c\x61\x79\x3b\x20\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x3b\x20\x67\x61\x6d\x65\x70\x61\x64\x3b\x20\x63\x6c\x69\x70\x62\x6f\x61\x72\x64\x2d\x72\x65\x61\x64\x3b\x20\x63\x6c\x69\x70\x62\x6f\x61\x72\x64\x2d\x77\x72\x69\x74\x65", 
+    _0x7ae949_3.allowFullscreen = !0, _0x7ae949_3.referrerPolicy = "\x6e\x6f\x2d\x72\x65\x66\x65\x72\x72\x65\x72", _0x7ae949_2.textContent = "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x4c\x75\x6e\x61\u2026", 
+    _0x7ae949_4 = setTimeout(() => {
+      _0x7ae949_2.textContent = "\x54\x61\x6b\x69\x6e\x67\x20\x6c\x6f\x6e\x67\x65\x72\x20\x74\x68\x61\x6e\x20\x65\x78\x70\x65\x63\x74\x65\x64\x2e\x20\x54\x72\x79\x20\x6f\x70\x65\x6e\x69\x6e\x67\x20\x4c\x75\x6e\x61\x20\x69\x6e\x20\x61\x20\x6e\x65\x77\x20\x74\x61\x62\x2e";
+    }, 2e4), _0x7ae949_3.addEventListener("\x6c\x6f\x61\x64", () => {
+      clearTimeout(_0x7ae949_4), _0x7ae949_2.textContent = "\x43\x6c\x6f\x75\x64\x4d\x6f\x6f\x6e\x20\x67\x61\x6d\x65\x73";
+    }), _0x7ae949_3.src = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6c\x75\x6e\x61\x2e\x6c\x6f\x61\x6e\x2f", _0x7ae949_1.replaceChildren(_0x7ae949_3), 
+    _0x7ae949_0.showModal(), _0x7ae949_5(!0);
+  }), document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x75\x6e\x61\x2d\x63\x6c\x6f\x73\x65\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => _0x7ae949_0.close()), 
+  _0x7ae949_0.addEventListener("\x63\x6c\x6f\x73\x65", () => {
+    clearTimeout(_0x7ae949_4), _0x7ae949_1.replaceChildren(), document.fullscreenElement === _0x7ae949_0 && document.exitFullscreen().catch(() => {}), 
+    _0x7ae949_5(!document.querySelector("\x5b\x64\x61\x74\x61\x2d\x70\x6c\x61\x79\x65\x72\x2d\x6c\x61\x79\x65\x72\x5d").hidden || !document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x61\x75\x6e\x63\x68\x2d\x6c\x61\x79\x65\x72\x5d").hidden), 
+    _0x7ae949_3.focus();
+  }), document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6c\x75\x6e\x61\x2d\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x5d").addEventListener("\x63\x6c\x69\x63\x6b", async () => {
     try {
-      document.fullscreenElement === e ? await document.exitFullscreen() : await e.requestFullscreen();
+      document.fullscreenElement === _0x7ae949_0 ? await document.exitFullscreen() : await _0x7ae949_0.requestFullscreen();
     } catch {
-      n.textContent = "Fullscreen is unavailable in this browser.";
+      _0x7ae949_2.textContent = "\x46\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e";
     }
-  }), "stratus" !== new URLSearchParams(location.search).get("provider") && a.click();
+  }), "\x73\x74\x72\x61\x74\x75\x73" !== new URLSearchParams(location.search).get("\x70\x72\x6f\x76\x69\x64\x65\x72") && _0x7ae949_3.click();
 })();

@@ -1,96 +1,103 @@
 !function() {
   "use strict";
-  window.createNyxScreenChat = function({conversation: e, input: t, form: r, stop: o, status: a, brand: n}) {
-    let s, c, l, i, u, d, h, p, b, m = !1, y = 0;
-    function f() {
-      if (!s) return;
-      const r = c.scrollHeight - c.scrollTop - c.clientHeight < 48;
-      c.replaceChildren(...[ ...e.querySelectorAll(".ai-message") ].slice(-8).map(e => {
-        const t = e.cloneNode(!0);
-        return t.querySelectorAll("[id]").forEach(e => e.removeAttribute("id")), t.removeAttribute("id"), 
-        t.querySelectorAll(".ai-message-actions,button").forEach(e => e.remove()), t;
-      })), r && (c.scrollTop = c.scrollHeight), i.disabled = t.disabled, l.disabled = t.disabled, 
-      s.querySelector("[data-screen-chat-status]").textContent = a.textContent, s.querySelector("[data-screen-chat-title]").textContent = n() + " \xb7 Screen share";
+  window.createNyxScreenChat = function({conversation: _0x7556c9_0, input: _0x7556c9_1, form: _0x7556c9_2, stop: _0x7556c9_3, status: _0x7556c9_4, brand: _0x7556c9_5}) {
+    let _0x7556c9_6, _0x7556c9_7, _0x7556c9_8, _0x7556c9_9, _0x7556c9_a, _0x7556c9_b, _0x7556c9_c, _0x7556c9_d, _0x7556c9_e, _0x7556c9_f = !1, _0x7556c9_10 = 0;
+    function _0x7556c9_11() {
+      if (!_0x7556c9_6) return;
+      const _0x7556c9_2 = _0x7556c9_7.scrollHeight - _0x7556c9_7.scrollTop - _0x7556c9_7.clientHeight < 48;
+      _0x7556c9_7.replaceChildren(...[ ..._0x7556c9_0.querySelectorAll("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65") ].slice(-8).map(_0x7556c9_0 => {
+        const _0x7556c9_1 = _0x7556c9_0.cloneNode(!0);
+        return _0x7556c9_1.querySelectorAll("\x5b\x69\x64\x5d").forEach(_0x7556c9_0 => _0x7556c9_0.removeAttribute("\x69\x64")), 
+        _0x7556c9_1.removeAttribute("\x69\x64"), _0x7556c9_1.querySelectorAll("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x61\x63\x74\x69\x6f\x6e\x73\x2c\x62\x75\x74\x74\x6f\x6e").forEach(_0x7556c9_0 => _0x7556c9_0.remove()), 
+        _0x7556c9_1;
+      })), _0x7556c9_2 && (_0x7556c9_7.scrollTop = _0x7556c9_7.scrollHeight), _0x7556c9_9.disabled = _0x7556c9_1.disabled, 
+      _0x7556c9_8.disabled = _0x7556c9_1.disabled, _0x7556c9_6.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x73\x74\x61\x74\x75\x73\x5d").textContent = _0x7556c9_4.textContent, 
+      _0x7556c9_6.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x74\x69\x74\x6c\x65\x5d").textContent = _0x7556c9_5() + "\x20\xb7\x20\x53\x63\x72\x65\x65\x6e\x20\x73\x68\x61\x72\x65";
     }
-    function v() {
-      y++, h?.disconnect(), p?.disconnect(), clearTimeout(b), s?.remove(), s = null;
-      const e = d;
-      d = null, e && !e.closed && e.close();
+    function _0x7556c9_12() {
+      _0x7556c9_10++, _0x7556c9_c?.disconnect(), _0x7556c9_d?.disconnect(), clearTimeout(_0x7556c9_e), 
+      _0x7556c9_6?.remove(), _0x7556c9_6 = null;
+      const _0x7556c9_0 = _0x7556c9_b;
+      _0x7556c9_b = null, _0x7556c9_0 && !_0x7556c9_0.closed && _0x7556c9_0.close();
     }
-    async function S(e = !1) {
-      if (m || d || !s) return;
-      m = !0;
-      const t = y;
-      let r;
+    async function _0x7556c9_13(_0x7556c9_0 = !1) {
+      if (_0x7556c9_f || _0x7556c9_b || !_0x7556c9_6) return;
+      _0x7556c9_f = !0;
+      const _0x7556c9_1 = _0x7556c9_10;
+      let _0x7556c9_2;
       try {
-        let a;
+        let _0x7556c9_4;
         try {
-          a = window.top.documentPictureInPicture || window.documentPictureInPicture;
+          _0x7556c9_4 = window.top.documentPictureInPicture || window.documentPictureInPicture;
         } catch {}
-        if (a?.requestWindow) try {
-          r = await a.requestWindow({
+        if (_0x7556c9_4?.requestWindow) try {
+          _0x7556c9_2 = await _0x7556c9_4.requestWindow({
             width: 560,
             height: 380
           });
         } catch {}
-        if (r || e || (r = window.open("about:blank", "", "popup,width=560,height=380")), 
-        !r) return void (e || (s.querySelector("[data-screen-chat-status]").textContent = "Allow popups to open a separate window."));
-        if (t !== y || !s) return void r.close();
-        d = r;
-        const c = r.document;
-        c.title = n() + " screen share", c.documentElement.dataset.tutsiApp = document.documentElement.dataset.tutsiApp || "";
-        for (const e of document.querySelectorAll('link[rel="stylesheet"],style')) {
-          const t = e.cloneNode(!0);
-          "LINK" === t.tagName && (t.href = e.href), c.head.append(t);
+        if (_0x7556c9_2 || _0x7556c9_0 || (_0x7556c9_2 = window.open("\x61\x62\x6f\x75\x74\x3a\x62\x6c\x61\x6e\x6b", "", "\x70\x6f\x70\x75\x70\x2c\x77\x69\x64\x74\x68\x3d\x35\x36\x30\x2c\x68\x65\x69\x67\x68\x74\x3d\x33\x38\x30")), 
+        !_0x7556c9_2) return void (_0x7556c9_0 || (_0x7556c9_6.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x73\x74\x61\x74\x75\x73\x5d").textContent = "\x41\x6c\x6c\x6f\x77\x20\x70\x6f\x70\x75\x70\x73\x20\x74\x6f\x20\x6f\x70\x65\x6e\x20\x61\x20\x73\x65\x70\x61\x72\x61\x74\x65\x20\x77\x69\x6e\x64\x6f\x77\x2e"));
+        if (_0x7556c9_1 !== _0x7556c9_10 || !_0x7556c9_6) return void _0x7556c9_2.close();
+        _0x7556c9_b = _0x7556c9_2;
+        const _0x7556c9_7 = _0x7556c9_2.document;
+        _0x7556c9_7.title = _0x7556c9_5() + "\x20\x73\x63\x72\x65\x65\x6e\x20\x73\x68\x61\x72\x65", _0x7556c9_7.documentElement.dataset.tutsiApp = document.documentElement.dataset.tutsiApp || "";
+        for (const _0x7556c9_0 of document.querySelectorAll("\x6c\x69\x6e\x6b\x5b\x72\x65\x6c\x3d\x22\x73\x74\x79\x6c\x65\x73\x68\x65\x65\x74\x22\x5d\x2c\x73\x74\x79\x6c\x65")) {
+          const _0x7556c9_1 = _0x7556c9_0.cloneNode(!0);
+          "\x4c\x49\x4e\x4b" === _0x7556c9_1.tagName && (_0x7556c9_1.href = _0x7556c9_0.href), _0x7556c9_7.head.append(_0x7556c9_1);
         }
-        const i = getComputedStyle(document.documentElement);
-        for (let e = 0; e < i.length; e++) {
-          const t = i[e];
-          t.startsWith("--") && c.documentElement.style.setProperty(t, i.getPropertyValue(t));
+        const _0x7556c9_9 = getComputedStyle(document.documentElement);
+        for (let _0x7556c9_0 = 0; _0x7556c9_0 < _0x7556c9_9.length; _0x7556c9_0++) {
+          const _0x7556c9_1 = _0x7556c9_9[_0x7556c9_0];
+          _0x7556c9_1.startsWith("\x2d\x2d") && _0x7556c9_7.documentElement.style.setProperty(_0x7556c9_1, _0x7556c9_9.getPropertyValue(_0x7556c9_1));
         }
-        c.body.className = "ai-screen-chat-window", c.body.style.fontFamily = getComputedStyle(document.body).fontFamily, 
-        c.body.append(s), s.classList.add("is-detached"), u.hidden = !0, r.addEventListener("pagehide", () => {
-          d === r && (d = null, o());
+        _0x7556c9_7.body.className = "\x61\x69\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x77\x69\x6e\x64\x6f\x77", _0x7556c9_7.body.style.fontFamily = getComputedStyle(document.body).fontFamily, 
+        _0x7556c9_7.body.append(_0x7556c9_6), _0x7556c9_6.classList.add("\x69\x73\x2d\x64\x65\x74\x61\x63\x68\x65\x64"), 
+        _0x7556c9_a.hidden = !0, _0x7556c9_2.addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", () => {
+          _0x7556c9_b === _0x7556c9_2 && (_0x7556c9_b = null, _0x7556c9_3());
         }, {
           once: !0
-        }), l.focus();
+        }), _0x7556c9_8.focus();
       } finally {
-        m = !1;
+        _0x7556c9_f = !1;
       }
     }
     return {
       start: function() {
-        v(), s = document.createElement("section"), s.className = "ai-screen-chat", s.setAttribute("role", "region"), 
-        s.setAttribute("aria-label", "Screen-sharing chat"), s.innerHTML = '<header><strong data-screen-chat-title></strong><div><button type="button" data-screen-chat-popout aria-label="Pop out screen chat">\u2197</button><button type="button" data-screen-chat-stop>Stop sharing</button></div></header><div class="ai-screen-chat-messages" role="log" aria-label="Screen chat replies"></div><form><label for="screenChatInput">Ask about your screen</label><div class="ai-screen-chat-compose"><textarea id="screenChatInput" rows="2" placeholder="Ask about your screen\u2026"></textarea><button type="submit" aria-label="Send screen chat message">Send</button></div></form><small data-screen-chat-status role="status"></small>', 
-        document.body.append(s), c = s.querySelector(".ai-screen-chat-messages"), l = s.querySelector("textarea"), 
-        i = s.querySelector("[type=submit]"), u = s.querySelector("[data-screen-chat-popout]"), 
-        u.onclick = () => {
-          S();
-        }, s.querySelector("[data-screen-chat-stop]").onclick = o, s.querySelector("form").onsubmit = e => {
-          e.preventDefault(), !t.disabled && l.value.trim() && (t.value = l.value, t.dispatchEvent(new Event("input", {
+        _0x7556c9_12(), _0x7556c9_6 = document.createElement("\x73\x65\x63\x74\x69\x6f\x6e"), _0x7556c9_6.className = "\x61\x69\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74", 
+        _0x7556c9_6.setAttribute("\x72\x6f\x6c\x65", "\x72\x65\x67\x69\x6f\x6e"), _0x7556c9_6.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x53\x63\x72\x65\x65\x6e\x2d\x73\x68\x61\x72\x69\x6e\x67\x20\x63\x68\x61\x74"), 
+        _0x7556c9_6.innerHTML = "\x3c\x68\x65\x61\x64\x65\x72\x3e\x3c\x73\x74\x72\x6f\x6e\x67\x20\x64\x61\x74\x61\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x74\x69\x74\x6c\x65\x3e\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e\x3c\x64\x69\x76\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x70\x6f\x70\x6f\x75\x74\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x50\x6f\x70\x20\x6f\x75\x74\x20\x73\x63\x72\x65\x65\x6e\x20\x63\x68\x61\x74\x22\x3e\u2197\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x73\x74\x6f\x70\x3e\x53\x74\x6f\x70\x20\x73\x68\x61\x72\x69\x6e\x67\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x68\x65\x61\x64\x65\x72\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x6d\x65\x73\x73\x61\x67\x65\x73\x22\x20\x72\x6f\x6c\x65\x3d\x22\x6c\x6f\x67\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x53\x63\x72\x65\x65\x6e\x20\x63\x68\x61\x74\x20\x72\x65\x70\x6c\x69\x65\x73\x22\x3e\x3c\x2f\x64\x69\x76\x3e\x3c\x66\x6f\x72\x6d\x3e\x3c\x6c\x61\x62\x65\x6c\x20\x66\x6f\x72\x3d\x22\x73\x63\x72\x65\x65\x6e\x43\x68\x61\x74\x49\x6e\x70\x75\x74\x22\x3e\x41\x73\x6b\x20\x61\x62\x6f\x75\x74\x20\x79\x6f\x75\x72\x20\x73\x63\x72\x65\x65\x6e\x3c\x2f\x6c\x61\x62\x65\x6c\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x63\x6f\x6d\x70\x6f\x73\x65\x22\x3e\x3c\x74\x65\x78\x74\x61\x72\x65\x61\x20\x69\x64\x3d\x22\x73\x63\x72\x65\x65\x6e\x43\x68\x61\x74\x49\x6e\x70\x75\x74\x22\x20\x72\x6f\x77\x73\x3d\x22\x32\x22\x20\x70\x6c\x61\x63\x65\x68\x6f\x6c\x64\x65\x72\x3d\x22\x41\x73\x6b\x20\x61\x62\x6f\x75\x74\x20\x79\x6f\x75\x72\x20\x73\x63\x72\x65\x65\x6e\u2026\x22\x3e\x3c\x2f\x74\x65\x78\x74\x61\x72\x65\x61\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x73\x75\x62\x6d\x69\x74\x22\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x53\x65\x6e\x64\x20\x73\x63\x72\x65\x65\x6e\x20\x63\x68\x61\x74\x20\x6d\x65\x73\x73\x61\x67\x65\x22\x3e\x53\x65\x6e\x64\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x2f\x64\x69\x76\x3e\x3c\x2f\x66\x6f\x72\x6d\x3e\x3c\x73\x6d\x61\x6c\x6c\x20\x64\x61\x74\x61\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x73\x74\x61\x74\x75\x73\x20\x72\x6f\x6c\x65\x3d\x22\x73\x74\x61\x74\x75\x73\x22\x3e\x3c\x2f\x73\x6d\x61\x6c\x6c\x3e", 
+        document.body.append(_0x7556c9_6), _0x7556c9_7 = _0x7556c9_6.querySelector("\x2e\x61\x69\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x6d\x65\x73\x73\x61\x67\x65\x73"), 
+        _0x7556c9_8 = _0x7556c9_6.querySelector("\x74\x65\x78\x74\x61\x72\x65\x61"), _0x7556c9_9 = _0x7556c9_6.querySelector("\x5b\x74\x79\x70\x65\x3d\x73\x75\x62\x6d\x69\x74\x5d"), 
+        _0x7556c9_a = _0x7556c9_6.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x70\x6f\x70\x6f\x75\x74\x5d"), _0x7556c9_a.onclick = () => {
+          _0x7556c9_13();
+        }, _0x7556c9_6.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x63\x72\x65\x65\x6e\x2d\x63\x68\x61\x74\x2d\x73\x74\x6f\x70\x5d").onclick = _0x7556c9_3, _0x7556c9_6.querySelector("\x66\x6f\x72\x6d").onsubmit = _0x7556c9_0 => {
+          _0x7556c9_0.preventDefault(), !_0x7556c9_1.disabled && _0x7556c9_8.value.trim() && (_0x7556c9_1.value = _0x7556c9_8.value, 
+          _0x7556c9_1.dispatchEvent(new Event("\x69\x6e\x70\x75\x74", {
             bubbles: !0
-          })), r.requestSubmit(), l.value = "", f());
-        }, l.onkeydown = e => {
-          "Enter" !== e.key || e.shiftKey || e.isComposing || (e.preventDefault(), s.querySelector("form").requestSubmit());
-        }, h = new MutationObserver(() => {
-          b || (b = setTimeout(() => {
-            b = 0, f();
+          })), _0x7556c9_2.requestSubmit(), _0x7556c9_8.value = "", _0x7556c9_11());
+        }, _0x7556c9_8.onkeydown = _0x7556c9_0 => {
+          "\x45\x6e\x74\x65\x72" !== _0x7556c9_0.key || _0x7556c9_0.shiftKey || _0x7556c9_0.isComposing || (_0x7556c9_0.preventDefault(), 
+          _0x7556c9_6.querySelector("\x66\x6f\x72\x6d").requestSubmit());
+        }, _0x7556c9_c = new MutationObserver(() => {
+          _0x7556c9_e || (_0x7556c9_e = setTimeout(() => {
+            _0x7556c9_e = 0, _0x7556c9_11();
           }, 80));
-        }), h.observe(e, {
+        }), _0x7556c9_c.observe(_0x7556c9_0, {
           childList: !0,
           subtree: !0,
           characterData: !0
-        }), p = new MutationObserver(f), p.observe(a, {
+        }), _0x7556c9_d = new MutationObserver(_0x7556c9_11), _0x7556c9_d.observe(_0x7556c9_4, {
           childList: !0,
           subtree: !0,
           characterData: !0
-        }), p.observe(t, {
+        }), _0x7556c9_d.observe(_0x7556c9_1, {
           attributes: !0,
-          attributeFilter: [ "disabled" ]
-        }), f(), l.focus(), S(!0);
+          attributeFilter: [ "\x64\x69\x73\x61\x62\x6c\x65\x64" ]
+        }), _0x7556c9_11(), _0x7556c9_8.focus(), _0x7556c9_13(!0);
       },
-      destroy: v,
-      refresh: f
+      destroy: _0x7556c9_12,
+      refresh: _0x7556c9_11
     };
   };
 }();

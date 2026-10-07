@@ -95,9 +95,9 @@ html {
       allow="fullscreen; gamepad; autoplay; keyboard-map; clipboard-read; clipboard-write; camera; microphone; display-capture; accelerometer; gyroscope; magnetometer; xr-spatial-tracking"
       allowfullscreen tabindex="0"></iframe>
     <script src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/@rbd40540c8f7b3a2faf0ddfdc!.js" data-provider="gn"></script>
-    <script type="module">import { prepareGameDocument } from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/@rf41309353ac8075587c9c20c!.js";
+    <script type="module">import { prepareGameDocument } from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x67\x61\x6d\x65\x73\x2f\x40\x72\x66\x34\x31\x33\x30\x39\x33\x35\x33\x61\x63\x38\x30\x37\x35\x35\x38\x37\x63\x39\x63\x32\x30\x63\x21\x2e\x6a\x73";
 
-const loading = document.querySelector(".loading"), status = document.getElementById("status"), progressLabel = document.getElementById("progressLabel"), progressPercent = document.getElementById("progressPercent"), progressFill = document.getElementById("progressFill"), frame = document.getElementById("gameFrame");
+const loading = document.querySelector("\x2e\x6c\x6f\x61\x64\x69\x6e\x67"), status = document.getElementById("\x73\x74\x61\x74\x75\x73"), progressLabel = document.getElementById("\x70\x72\x6f\x67\x72\x65\x73\x73\x4c\x61\x62\x65\x6c"), progressPercent = document.getElementById("\x70\x72\x6f\x67\x72\x65\x73\x73\x50\x65\x72\x63\x65\x6e\x74"), progressFill = document.getElementById("\x70\x72\x6f\x67\x72\x65\x73\x73\x46\x69\x6c\x6c"), frame = document.getElementById("\x67\x61\x6d\x65\x46\x72\x61\x6d\x65");
 
 function focusGameFrame() {
   setTimeout(() => {
@@ -113,154 +113,155 @@ function focusGameFrame() {
   }, 0);
 }
 
-frame.addEventListener("load", () => {
+frame.addEventListener("\x6c\x6f\x61\x64", () => {
   setTimeout(focusGameFrame, 80);
-}), frame.addEventListener("pointerdown", focusGameFrame, {
+}), frame.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x64\x6f\x77\x6e", focusGameFrame, {
   capture: !0
-}), document.addEventListener("pointerdown", focusGameFrame, !0), document.addEventListener("wheel", e => {
-  e.ctrlKey && e.preventDefault();
+}), document.addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x64\x6f\x77\x6e", focusGameFrame, !0), document.addEventListener("\x77\x68\x65\x65\x6c", _0x6ab938_0 => {
+  _0x6ab938_0.ctrlKey && _0x6ab938_0.preventDefault();
 }, {
   capture: !0,
   passive: !1
-}), document.addEventListener("keydown", e => {
-  const t = String(e.key || "").toLowerCase();
-  if (!e.altKey || e.ctrlKey || e.metaKey || 2 === e.location || "alt" !== t) if (!e.altKey || e.ctrlKey || e.metaKey || 2 === e.location || !/^[1-9]$/.test(t) && ![ "l", "d", "t", "w", "r", "arrowleft", "arrowright", "tab" ].includes(t)) (e.ctrlKey || e.metaKey) && [ "+", "=", "-", "_", "0" ].includes(t) && (e.preventDefault(), 
-  e.stopPropagation()); else {
-    e.preventDefault(), e.stopPropagation();
+}), document.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x6ab938_0 => {
+  const _0x6ab938_1 = String(_0x6ab938_0.key || "").toLowerCase();
+  if (!_0x6ab938_0.altKey || _0x6ab938_0.ctrlKey || _0x6ab938_0.metaKey || 2 === _0x6ab938_0.location || "\x61\x6c\x74" !== _0x6ab938_1) if (!_0x6ab938_0.altKey || _0x6ab938_0.ctrlKey || _0x6ab938_0.metaKey || 2 === _0x6ab938_0.location || !/^[1-9]$/.test(_0x6ab938_1) && ![ "\x6c", "\x64", "\x74", "\x77", "\x72", "\x61\x72\x72\x6f\x77\x6c\x65\x66\x74", "\x61\x72\x72\x6f\x77\x72\x69\x67\x68\x74", "\x74\x61\x62" ].includes(_0x6ab938_1)) (_0x6ab938_0.ctrlKey || _0x6ab938_0.metaKey) && [ "\x2b", "\x3d", "\x2d", "\x5f", "\x30" ].includes(_0x6ab938_1) && (_0x6ab938_0.preventDefault(), 
+  _0x6ab938_0.stopPropagation()); else {
+    _0x6ab938_0.preventDefault(), _0x6ab938_0.stopPropagation();
     try {
       parent.postMessage({
-        type: "nyx:alt-shortcut",
-        key: t,
-        code: e.code || "",
-        location: e.location || 0,
-        shiftKey: !!e.shiftKey
-      }, "*");
+        type: "\x6e\x79\x78\x3a\x61\x6c\x74\x2d\x73\x68\x6f\x72\x74\x63\x75\x74",
+        key: _0x6ab938_1,
+        code: _0x6ab938_0.code || "",
+        location: _0x6ab938_0.location || 0,
+        shiftKey: !!_0x6ab938_0.shiftKey
+      }, "\x2a");
     } catch {}
     try {
       top.postMessage({
-        type: "nyx:alt-shortcut",
-        key: t,
-        code: e.code || "",
-        location: e.location || 0,
-        shiftKey: !!e.shiftKey
-      }, "*");
+        type: "\x6e\x79\x78\x3a\x61\x6c\x74\x2d\x73\x68\x6f\x72\x74\x63\x75\x74",
+        key: _0x6ab938_1,
+        code: _0x6ab938_0.code || "",
+        location: _0x6ab938_0.location || 0,
+        shiftKey: !!_0x6ab938_0.shiftKey
+      }, "\x2a");
     } catch {}
   } else {
-    e.preventDefault(), e.stopPropagation();
+    _0x6ab938_0.preventDefault(), _0x6ab938_0.stopPropagation();
     try {
       parent.postMessage({
-        type: "nyx:alt-prime"
-      }, "*");
+        type: "\x6e\x79\x78\x3a\x61\x6c\x74\x2d\x70\x72\x69\x6d\x65"
+      }, "\x2a");
     } catch {}
     try {
       top.postMessage({
-        type: "nyx:alt-prime"
-      }, "*");
+        type: "\x6e\x79\x78\x3a\x61\x6c\x74\x2d\x70\x72\x69\x6d\x65"
+      }, "\x2a");
     } catch {}
   }
 }, !0);
 
-const params = new URLSearchParams(location.search), game = String(params.get("game") || "").replace(/^\/+/, "");
+const params = new URLSearchParams(location.search), game = String(params.get("\x67\x61\x6d\x65") || "").replace(/^\/+/, "");
 
 let progressTimer = 0, gameLaunched = !1, gameLoadStarted = 0, gameReadySignal = !1;
 
-function setGameProgress(e, t = "Loading") {
-  const a = Math.max(0, Math.min(100, Math.round(e)));
-  progressLabel.textContent = a >= 100 ? "Launched" : t, progressPercent.textContent = `${a}%`, 
-  progressFill.style.width = `${a}%`, loading.classList.remove("hidden");
+function setGameProgress(_0x6ab938_0, _0x6ab938_1 = "\x4c\x6f\x61\x64\x69\x6e\x67") {
+  const _0x6ab938_2 = Math.max(0, Math.min(100, Math.round(_0x6ab938_0)));
+  progressLabel.textContent = _0x6ab938_2 >= 100 ? "\x4c\x61\x75\x6e\x63\x68\x65\x64" : _0x6ab938_1, progressPercent.textContent = `${_0x6ab938_2}\x25`, 
+  progressFill.style.width = `${_0x6ab938_2}\x25`, loading.classList.remove("\x68\x69\x64\x64\x65\x6e");
 }
 
 function startGameProgress() {
   clearInterval(progressTimer), gameLaunched = !1, gameLoadStarted = performance.now();
-  let e = 8;
-  setGameProgress(e), progressTimer = setInterval(() => {
-    e = Math.min(94, e + Math.max(1, .1 * (96 - e))), setGameProgress(e);
+  let _0x6ab938_0 = 8;
+  setGameProgress(_0x6ab938_0), progressTimer = setInterval(() => {
+    _0x6ab938_0 = Math.min(94, _0x6ab938_0 + Math.max(1, .1 * (96 - _0x6ab938_0))), 
+    setGameProgress(_0x6ab938_0);
   }, 210);
 }
 
 function finishGameProgress() {
   if (!gameLaunched) {
-    if (!gameReadySignal && !gameSurfaceReady()) return performance.now() - gameLoadStarted > 11e3 ? void fail("This game loaded a blank screen. One of its required files is missing or blocked.") : void setTimeout(finishGameProgress, 700);
-    gameLaunched = !0, clearInterval(progressTimer), setGameProgress(100, "Launched"), 
+    if (!gameReadySignal && !gameSurfaceReady()) return performance.now() - gameLoadStarted > 11e3 ? void fail("\x54\x68\x69\x73\x20\x67\x61\x6d\x65\x20\x6c\x6f\x61\x64\x65\x64\x20\x61\x20\x62\x6c\x61\x6e\x6b\x20\x73\x63\x72\x65\x65\x6e\x2e\x20\x4f\x6e\x65\x20\x6f\x66\x20\x69\x74\x73\x20\x72\x65\x71\x75\x69\x72\x65\x64\x20\x66\x69\x6c\x65\x73\x20\x69\x73\x20\x6d\x69\x73\x73\x69\x6e\x67\x20\x6f\x72\x20\x62\x6c\x6f\x63\x6b\x65\x64\x2e") : void setTimeout(finishGameProgress, 700);
+    gameLaunched = !0, clearInterval(progressTimer), setGameProgress(100, "\x4c\x61\x75\x6e\x63\x68\x65\x64"), 
     parent.postMessage({
-      type: "nyx:game-launched"
-    }, "*"), setTimeout(() => loading.classList.add("hidden"), 650);
+      type: "\x6e\x79\x78\x3a\x67\x61\x6d\x65\x2d\x6c\x61\x75\x6e\x63\x68\x65\x64"
+    }, "\x2a"), setTimeout(() => loading.classList.add("\x68\x69\x64\x64\x65\x6e"), 650);
   }
 }
 
-function fail(e) {
-  window.nyxReportGameFailure?.(/blank|timed out/i.test(String(e)) ? "startup-timeout" : "load-error"), 
-  clearInterval(progressTimer), status.innerHTML = "", status.append(document.createTextNode(String(e || "This game failed to load.")));
-  const t = document.createElement("button");
-  t.type = "button", t.textContent = "Retry", t.addEventListener("click", () => location.reload());
-  const a = document.createElement("button");
-  a.type = "button", a.textContent = "Open game library", a.addEventListener("click", () => location.href = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/index.html"), 
-  status.append(document.createElement("br"), t, document.createTextNode(" "), a), 
-  loading.classList.remove("hidden"), parent.postMessage({
-    type: "nyx:game-failed"
-  }, "*");
+function fail(_0x6ab938_0) {
+  window.nyxReportGameFailure?.(/blank|timed out/i.test(String(_0x6ab938_0)) ? "\x73\x74\x61\x72\x74\x75\x70\x2d\x74\x69\x6d\x65\x6f\x75\x74" : "\x6c\x6f\x61\x64\x2d\x65\x72\x72\x6f\x72"), 
+  clearInterval(progressTimer), status.innerHTML = "", status.append(document.createTextNode(String(_0x6ab938_0 || "\x54\x68\x69\x73\x20\x67\x61\x6d\x65\x20\x66\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x6c\x6f\x61\x64\x2e")));
+  const _0x6ab938_1 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+  _0x6ab938_1.type = "\x62\x75\x74\x74\x6f\x6e", _0x6ab938_1.textContent = "\x52\x65\x74\x72\x79", _0x6ab938_1.addEventListener("\x63\x6c\x69\x63\x6b", () => location.reload());
+  const _0x6ab938_2 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+  _0x6ab938_2.type = "\x62\x75\x74\x74\x6f\x6e", _0x6ab938_2.textContent = "\x4f\x70\x65\x6e\x20\x67\x61\x6d\x65\x20\x6c\x69\x62\x72\x61\x72\x79", _0x6ab938_2.addEventListener("\x63\x6c\x69\x63\x6b", () => location.href = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x67\x61\x6d\x65\x73\x2f\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c"), 
+  status.append(document.createElement("\x62\x72"), _0x6ab938_1, document.createTextNode("\x20"), _0x6ab938_2), 
+  loading.classList.remove("\x68\x69\x64\x64\x65\x6e"), parent.postMessage({
+    type: "\x6e\x79\x78\x3a\x67\x61\x6d\x65\x2d\x66\x61\x69\x6c\x65\x64"
+  }, "\x2a");
 }
 
 function gameSurfaceReady() {
   try {
-    const e = frame.contentDocument;
-    return !!e?.body && (!![ ...e.querySelectorAll("canvas,object,embed,ruffle-player,ruffle-object,iframe,#game,#game-container,#unity-container,#unity-canvas,#ruffle,#player") ].find(e => {
-      const t = e.getBoundingClientRect?.();
-      return t && t.width > 40 && t.height > 40 && "none" !== getComputedStyle(e).display;
-    }) || String(e.body.textContent || "").replace(/\s+/g, " ").trim().length > 40);
+    const _0x6ab938_0 = frame.contentDocument;
+    return !!_0x6ab938_0?.body && (!![ ..._0x6ab938_0.querySelectorAll("\x63\x61\x6e\x76\x61\x73\x2c\x6f\x62\x6a\x65\x63\x74\x2c\x65\x6d\x62\x65\x64\x2c\x72\x75\x66\x66\x6c\x65\x2d\x70\x6c\x61\x79\x65\x72\x2c\x72\x75\x66\x66\x6c\x65\x2d\x6f\x62\x6a\x65\x63\x74\x2c\x69\x66\x72\x61\x6d\x65\x2c\x23\x67\x61\x6d\x65\x2c\x23\x67\x61\x6d\x65\x2d\x63\x6f\x6e\x74\x61\x69\x6e\x65\x72\x2c\x23\x75\x6e\x69\x74\x79\x2d\x63\x6f\x6e\x74\x61\x69\x6e\x65\x72\x2c\x23\x75\x6e\x69\x74\x79\x2d\x63\x61\x6e\x76\x61\x73\x2c\x23\x72\x75\x66\x66\x6c\x65\x2c\x23\x70\x6c\x61\x79\x65\x72") ].find(_0x6ab938_0 => {
+      const _0x6ab938_1 = _0x6ab938_0.getBoundingClientRect?.();
+      return _0x6ab938_1 && _0x6ab938_1.width > 40 && _0x6ab938_1.height > 40 && "\x6e\x6f\x6e\x65" !== getComputedStyle(_0x6ab938_0).display;
+    }) || String(_0x6ab938_0.body.textContent || "").replace(/\s+/g, "\x20").trim().length > 40);
   } catch {
     return !1;
   }
 }
 
-function safeGamePath(e) {
-  return e && !e.includes("..") && /^[a-z0-9_.-]+\.html(?:-[a-z0-9]+)?$/i.test(e) ? e : "";
+function safeGamePath(_0x6ab938_0) {
+  return _0x6ab938_0 && !_0x6ab938_0.includes("\x2e\x2e") && /^[a-z0-9_.-]+\.html(?:-[a-z0-9]+)?$/i.test(_0x6ab938_0) ? _0x6ab938_0 : "";
 }
 
-window.addEventListener("message", e => {
-  if (e.source === frame.contentWindow) {
-    if ("gn-math:ready" === e.data?.type) return gameReadySignal = !0, void finishGameProgress();
-    if ("gn-math:error" === e.data?.type) {
-      const t = e.data.url ? ` (${e.data.url})` : "";
-      fail(`${e.data.message || "This game failed to load."}${t}`);
+window.addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x6ab938_0 => {
+  if (_0x6ab938_0.source === frame.contentWindow) {
+    if ("\x67\x6e\x2d\x6d\x61\x74\x68\x3a\x72\x65\x61\x64\x79" === _0x6ab938_0.data?.type) return gameReadySignal = !0, void finishGameProgress();
+    if ("\x67\x6e\x2d\x6d\x61\x74\x68\x3a\x65\x72\x72\x6f\x72" === _0x6ab938_0.data?.type) {
+      const _0x6ab938_1 = _0x6ab938_0.data.url ? `\x20\x28${_0x6ab938_0.data.url}\x29` : "";
+      fail(`${_0x6ab938_0.data.message || "\x54\x68\x69\x73\x20\x67\x61\x6d\x65\x20\x66\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x6c\x6f\x61\x64\x2e"}${_0x6ab938_1}`);
     }
   }
-}), frame.addEventListener("load", () => setTimeout(finishGameProgress, 1800));
+}), frame.addEventListener("\x6c\x6f\x61\x64", () => setTimeout(finishGameProgress, 1800));
 
 const requestedPath = safeGamePath(game), gamePath = {
-  "266-a.html": "266.html",
-  "785-upd2.html": "785-upd3.html",
-  "253-update.html": "253-update2.html",
-  "801-fix.html": "801-fix2.html"
+  "\x32\x36\x36\x2d\x61\x2e\x68\x74\x6d\x6c": "\x32\x36\x36\x2e\x68\x74\x6d\x6c",
+  "\x37\x38\x35\x2d\x75\x70\x64\x32\x2e\x68\x74\x6d\x6c": "\x37\x38\x35\x2d\x75\x70\x64\x33\x2e\x68\x74\x6d\x6c",
+  "\x32\x35\x33\x2d\x75\x70\x64\x61\x74\x65\x2e\x68\x74\x6d\x6c": "\x32\x35\x33\x2d\x75\x70\x64\x61\x74\x65\x32\x2e\x68\x74\x6d\x6c",
+  "\x38\x30\x31\x2d\x66\x69\x78\x2e\x68\x74\x6d\x6c": "\x38\x30\x31\x2d\x66\x69\x78\x32\x2e\x68\x74\x6d\x6c"
 }[requestedPath] || requestedPath, archiveGame = {
-  "82-a.html": "C/clcookieclicker.html",
-  "177.html": "R/clrun3.html"
+  "\x38\x32\x2d\x61\x2e\x68\x74\x6d\x6c": "\x43\x2f\x63\x6c\x63\x6f\x6f\x6b\x69\x65\x63\x6c\x69\x63\x6b\x65\x72\x2e\x68\x74\x6d\x6c",
+  "\x31\x37\x37\x2e\x68\x74\x6d\x6c": "\x52\x2f\x63\x6c\x72\x75\x6e\x33\x2e\x68\x74\x6d\x6c"
 }[gamePath];
 
-if (archiveGame) location.replace("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/ugs/play.html?game=" + encodeURIComponent(archiveGame)); else if (gamePath) {
+if (archiveGame) location.replace("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x75\x67\x73\x2f\x70\x6c\x61\x79\x2e\x68\x74\x6d\x6c\x3f\x67\x61\x6d\x65\x3d" + encodeURIComponent(archiveGame)); else if (gamePath) {
   startGameProgress();
-  const e = `https://raw.githubusercontent.com/freebuisness/html/main/${encodeURIComponent(gamePath)}`;
+  const _0x6ab938_0 = `\x68\x74\x74\x70\x73\x3a\x2f\x2f\x72\x61\x77\x2e\x67\x69\x74\x68\x75\x62\x75\x73\x65\x72\x63\x6f\x6e\x74\x65\x6e\x74\x2e\x63\x6f\x6d\x2f\x66\x72\x65\x65\x62\x75\x69\x73\x6e\x65\x73\x73\x2f\x68\x74\x6d\x6c\x2f\x6d\x61\x69\x6e\x2f${encodeURIComponent(gamePath)}`;
   setGameProgress(22);
-  const t = {
-    "4-pf.html": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/gladihoppers.html",
-    "435.html": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/small-world-cup.html"
+  const _0x6ab938_1 = {
+    "\x34\x2d\x70\x66\x2e\x68\x74\x6d\x6c": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x67\x61\x6d\x65\x73\x2f\x67\x6c\x61\x64\x69\x68\x6f\x70\x70\x65\x72\x73\x2e\x68\x74\x6d\x6c",
+    "\x34\x33\x35\x2e\x68\x74\x6d\x6c": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x67\x61\x6d\x65\x73\x2f\x73\x6d\x61\x6c\x6c\x2d\x77\x6f\x72\x6c\x64\x2d\x63\x75\x70\x2e\x68\x74\x6d\x6c"
   }[gamePath];
-  fetch(t || `/gn-math-fetch?path=${encodeURIComponent(gamePath)}`, {
-    cache: "no-store"
-  }).then(a => {
-    if (a.ok) return setGameProgress(48), a;
-    if (t) throw new Error(`HTTP ${a.status}`);
-    return setGameProgress(34), fetch(e, {
-      cache: "no-store"
+  fetch(_0x6ab938_1 || `\x2f\x67\x6e\x2d\x6d\x61\x74\x68\x2d\x66\x65\x74\x63\x68\x3f\x70\x61\x74\x68\x3d${encodeURIComponent(gamePath)}`, {
+    cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+  }).then(_0x6ab938_2 => {
+    if (_0x6ab938_2.ok) return setGameProgress(48), _0x6ab938_2;
+    if (_0x6ab938_1) throw new Error(`\x48\x54\x54\x50\x20${_0x6ab938_2.status}`);
+    return setGameProgress(34), fetch(_0x6ab938_0, {
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
     });
-  }).then(e => {
-    if (!e.ok) throw new Error(`HTTP ${e.status}`);
-    return setGameProgress(58), e.text();
-  }).then(e => {
-    setGameProgress(76), frame.srcdoc = prepareGameDocument(e, gamePath), setGameProgress(88), 
-    setTimeout(finishGameProgress, 7e3);
-  }).catch(e => fail(`Could not load GN Math game: ${e?.message || e || "Network error"}`));
-} else fail("Missing GN Math game path.")</script>
+  }).then(_0x6ab938_0 => {
+    if (!_0x6ab938_0.ok) throw new Error(`\x48\x54\x54\x50\x20${_0x6ab938_0.status}`);
+    return setGameProgress(58), _0x6ab938_0.text();
+  }).then(_0x6ab938_0 => {
+    setGameProgress(76), frame.srcdoc = prepareGameDocument(_0x6ab938_0, gamePath), 
+    setGameProgress(88), setTimeout(finishGameProgress, 7e3);
+  }).catch(_0x6ab938_0 => fail(`\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x20\x47\x4e\x20\x4d\x61\x74\x68\x20\x67\x61\x6d\x65\x3a\x20${_0x6ab938_0?.message || _0x6ab938_0 || "\x4e\x65\x74\x77\x6f\x72\x6b\x20\x65\x72\x72\x6f\x72"}`));
+} else fail("\x4d\x69\x73\x73\x69\x6e\x67\x20\x47\x4e\x20\x4d\x61\x74\x68\x20\x67\x61\x6d\x65\x20\x70\x61\x74\x68\x2e")</script>
   </body>
 
 </html>

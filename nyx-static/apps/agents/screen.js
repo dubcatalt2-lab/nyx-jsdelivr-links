@@ -1,49 +1,52 @@
-export function setupScreen({notice: e}) {
-  const t = document.getElementById("shareScreen"), r = document.getElementById("screenPanel"), n = document.getElementById("screenPreview");
-  let a = null, i = !1, d = 0;
-  function o() {
-    d++, a?.getTracks().forEach(e => e.stop()), a = null, n.srcObject = null, r.hidden = !0, 
-    t.setAttribute("aria-pressed", "false");
+export function setupScreen({notice: _0xc311b7_0}) {
+  const _0xc311b7_1 = document.getElementById("\x73\x68\x61\x72\x65\x53\x63\x72\x65\x65\x6e"), _0xc311b7_2 = document.getElementById("\x73\x63\x72\x65\x65\x6e\x50\x61\x6e\x65\x6c"), _0xc311b7_3 = document.getElementById("\x73\x63\x72\x65\x65\x6e\x50\x72\x65\x76\x69\x65\x77");
+  let _0xc311b7_4 = null, _0xc311b7_5 = !1, _0xc311b7_6 = 0;
+  function _0xc311b7_7() {
+    _0xc311b7_6++, _0xc311b7_4?.getTracks().forEach(_0xc311b7_0 => _0xc311b7_0.stop()), 
+    _0xc311b7_4 = null, _0xc311b7_3.srcObject = null, _0xc311b7_2.hidden = !0, _0xc311b7_1.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", "\x66\x61\x6c\x73\x65");
   }
-  return t.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>', 
-  t.onclick = async () => {
-    if (a) return void o();
-    if (i) return;
-    if (!navigator.mediaDevices?.getDisplayMedia) return void e("Screen sharing is unavailable in this browser.");
-    i = !0;
-    const s = ++d;
+  return _0xc311b7_1.innerHTML = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x33\x22\x20\x79\x3d\x22\x34\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x31\x33\x22\x20\x72\x78\x3d\x22\x32\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x38\x20\x32\x31\x68\x38\x4d\x31\x32\x20\x31\x37\x76\x34\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e", 
+  _0xc311b7_1.onclick = async () => {
+    if (_0xc311b7_4) return void _0xc311b7_7();
+    if (_0xc311b7_5) return;
+    if (!navigator.mediaDevices?.getDisplayMedia) return void _0xc311b7_0("\x53\x63\x72\x65\x65\x6e\x20\x73\x68\x61\x72\x69\x6e\x67\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e");
+    _0xc311b7_5 = !0;
+    const _0xc311b7_8 = ++_0xc311b7_6;
     try {
-      const e = await navigator.mediaDevices.getDisplayMedia({
+      const _0xc311b7_0 = await navigator.mediaDevices.getDisplayMedia({
         video: {
           frameRate: 5
         },
         audio: !1
       });
-      if (s !== d) return void e.getTracks().forEach(e => e.stop());
-      if (a = e, n.srcObject = a, await n.play(), s !== d) return;
-      r.hidden = !1, t.setAttribute("aria-pressed", "true"), a.getVideoTracks()[0].addEventListener("ended", o, {
+      if (_0xc311b7_8 !== _0xc311b7_6) return void _0xc311b7_0.getTracks().forEach(_0xc311b7_0 => _0xc311b7_0.stop());
+      if (_0xc311b7_4 = _0xc311b7_0, _0xc311b7_3.srcObject = _0xc311b7_4, await _0xc311b7_3.play(), 
+      _0xc311b7_8 !== _0xc311b7_6) return;
+      _0xc311b7_2.hidden = !1, _0xc311b7_1.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", "\x74\x72\x75\x65"), _0xc311b7_4.getVideoTracks()[0].addEventListener("\x65\x6e\x64\x65\x64", _0xc311b7_7, {
         once: !0
       });
-    } catch (c) {
-      o(), "NotAllowedError" !== c.name && e("Could not start screen sharing.");
+    } catch (_0xc311b7_9) {
+      _0xc311b7_7(), "\x4e\x6f\x74\x41\x6c\x6c\x6f\x77\x65\x64\x45\x72\x72\x6f\x72" !== _0xc311b7_9.name && _0xc311b7_0("\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x73\x74\x61\x72\x74\x20\x73\x63\x72\x65\x65\x6e\x20\x73\x68\x61\x72\x69\x6e\x67\x2e");
     } finally {
-      i = !1;
+      _0xc311b7_5 = !1;
     }
-  }, document.getElementById("stopScreen").onclick = o, window.addEventListener("pagehide", o), 
+  }, document.getElementById("\x73\x74\x6f\x70\x53\x63\x72\x65\x65\x6e").onclick = _0xc311b7_7, window.addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", _0xc311b7_7), 
   {
     capture: async function() {
-      if (!a) return null;
-      if (n.readyState < 2) throw Error("The shared screen is still loading. Try again.");
-      const e = document.createElement("canvas"), t = Math.min(1, 1280 / n.videoWidth);
-      let r;
-      e.width = Math.max(1, Math.round(n.videoWidth * t)), e.height = Math.max(1, Math.round(n.videoHeight * t)), 
-      e.getContext("2d").drawImage(n, 0, 0, e.width, e.height);
-      for (const n of [ .8, .6, .4, .25 ]) if (r = e.toDataURL("image/jpeg", n), r.length < 28e4) return {
-        dataUrl: r,
+      if (!_0xc311b7_4) return null;
+      if (_0xc311b7_3.readyState < 2) throw Error("\x54\x68\x65\x20\x73\x68\x61\x72\x65\x64\x20\x73\x63\x72\x65\x65\x6e\x20\x69\x73\x20\x73\x74\x69\x6c\x6c\x20\x6c\x6f\x61\x64\x69\x6e\x67\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x2e");
+      const _0xc311b7_0 = document.createElement("\x63\x61\x6e\x76\x61\x73"), _0xc311b7_1 = Math.min(1, 1280 / _0xc311b7_3.videoWidth);
+      let _0xc311b7_2;
+      _0xc311b7_0.width = Math.max(1, Math.round(_0xc311b7_3.videoWidth * _0xc311b7_1)), 
+      _0xc311b7_0.height = Math.max(1, Math.round(_0xc311b7_3.videoHeight * _0xc311b7_1)), 
+      _0xc311b7_0.getContext("\x32\x64").drawImage(_0xc311b7_3, 0, 0, _0xc311b7_0.width, _0xc311b7_0.height);
+      for (const _0xc311b7_3 of [ .8, .6, .4, .25 ]) if (_0xc311b7_2 = _0xc311b7_0.toDataURL("\x69\x6d\x61\x67\x65\x2f\x6a\x70\x65\x67", _0xc311b7_3), 
+      _0xc311b7_2.length < 28e4) return {
+        dataUrl: _0xc311b7_2,
         screenCapture: !0
       };
-      throw Error("The shared screen is too detailed. Share a smaller window.");
+      throw Error("\x54\x68\x65\x20\x73\x68\x61\x72\x65\x64\x20\x73\x63\x72\x65\x65\x6e\x20\x69\x73\x20\x74\x6f\x6f\x20\x64\x65\x74\x61\x69\x6c\x65\x64\x2e\x20\x53\x68\x61\x72\x65\x20\x61\x20\x73\x6d\x61\x6c\x6c\x65\x72\x20\x77\x69\x6e\x64\x6f\x77\x2e");
     },
-    stop: o
+    stop: _0xc311b7_7
   };
 }

@@ -1,117 +1,122 @@
-import { readResponse as i } from "./@r30e5b755a8942777cddfc0ef!.js";
+import { readResponse as _0x714b6c_5 } from "\x2e\x2f\x40\x72\x33\x30\x65\x35\x62\x37\x35\x35\x61\x38\x39\x34\x32\x37\x37\x37\x63\x64\x64\x66\x63\x30\x65\x66\x21\x2e\x6a\x73";
 
-import { renderReply as e } from "./@r30db43030bb8e80f711a5429!.js";
+import { renderReply as _0x714b6c_0 } from "\x2e\x2f\x40\x72\x33\x30\x64\x62\x34\x33\x30\x33\x30\x62\x62\x38\x65\x38\x30\x66\x37\x31\x31\x61\x35\x34\x32\x39\x21\x2e\x6a\x73";
 
-export function setupDeveloper({account: t, user: a, nook: o, secret: n, refresh: s}) {
-  const l = e => document.getElementById(e);
-  let r, c = 0;
-  l("keyDialog").classList.toggle("nook-developer", o);
-  const u = () => {
-    c++, r?.abort(), r = null, l("playKey").value = "", l("playResult").replaceChildren(), 
-    l("playStatus").textContent = "", l("playRun").disabled = !1, l("playCancel").hidden = !0;
+export function setupDeveloper({account: _0xe6a29c_0, user: _0xe6a29c_1, nook: _0xe6a29c_2, secret: _0xe6a29c_3, refresh: _0xe6a29c_4}) {
+  const _0xe6a29c_5 = _0xe6a29c_0 => document.getElementById(_0xe6a29c_0);
+  let _0xe6a29c_6, _0xe6a29c_7 = 0;
+  _0xe6a29c_5("\x6b\x65\x79\x44\x69\x61\x6c\x6f\x67").classList.toggle("\x6e\x6f\x6f\x6b\x2d\x64\x65\x76\x65\x6c\x6f\x70\x65\x72", _0xe6a29c_2);
+  const _0xe6a29c_8 = () => {
+    _0xe6a29c_7++, _0xe6a29c_6?.abort(), _0xe6a29c_6 = null, _0xe6a29c_5("\x70\x6c\x61\x79\x4b\x65\x79").value = "", 
+    _0xe6a29c_5("\x70\x6c\x61\x79\x52\x65\x73\x75\x6c\x74").replaceChildren(), _0xe6a29c_5("\x70\x6c\x61\x79\x53\x74\x61\x74\x75\x73").textContent = "", 
+    _0xe6a29c_5("\x70\x6c\x61\x79\x52\x75\x6e").disabled = !1, _0xe6a29c_5("\x70\x6c\x61\x79\x43\x61\x6e\x63\x65\x6c").hidden = !0;
   };
-  function d(e) {
-    document.querySelectorAll("[data-key-tab]").forEach(t => t.setAttribute("aria-selected", String(t.dataset.keyTab === e))), 
-    document.querySelectorAll("[data-key-page]").forEach(t => t.hidden = t.dataset.keyPage !== e), 
-    "playground" !== e || l("playKey").value || (l("playKey").value = l("createdKey").value || n()), 
-    "usage" === e && s();
+  function _0xe6a29c_9(_0xe6a29c_0) {
+    document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6b\x65\x79\x2d\x74\x61\x62\x5d").forEach(_0xe6a29c_1 => _0xe6a29c_1.setAttribute("\x61\x72\x69\x61\x2d\x73\x65\x6c\x65\x63\x74\x65\x64", String(_0xe6a29c_1.dataset.keyTab === _0xe6a29c_0))), 
+    document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6b\x65\x79\x2d\x70\x61\x67\x65\x5d").forEach(_0xe6a29c_1 => _0xe6a29c_1.hidden = _0xe6a29c_1.dataset.keyPage !== _0xe6a29c_0), 
+    "\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64" !== _0xe6a29c_0 || _0xe6a29c_5("\x70\x6c\x61\x79\x4b\x65\x79").value || (_0xe6a29c_5("\x70\x6c\x61\x79\x4b\x65\x79").value = _0xe6a29c_5("\x63\x72\x65\x61\x74\x65\x64\x4b\x65\x79").value || _0xe6a29c_3()), 
+    "\x75\x73\x61\x67\x65" === _0xe6a29c_0 && _0xe6a29c_4();
   }
-  function p(e, t = "") {
-    if (e) {
-      for (const [a, o] of [ [ "Total", e.total ], [ "Expensive", e.expensive ] ]) l(t + "usage" + a).textContent = e.unlimited ? "Unlimited" : o.remaining.toLocaleString() + " / " + o.limit.toLocaleString() + " left", 
-      l(t + "meter" + a).max = o.limit || 1, l(t + "meter" + a).value = e.unlimited ? 1 : Math.max(0, o.limit - o.used);
-      l(t + "usageReset").textContent = e.unlimited ? "Your account has no token quota." : e.resetAt ? "Resets " + new Date(e.resetAt).toLocaleString() : "The four-day window starts with your first request.";
+  function _0xe6a29c_a(_0xe6a29c_0, _0xe6a29c_1 = "") {
+    if (_0xe6a29c_0) {
+      for (const [_0xe6a29c_2, _0xe6a29c_3] of [ [ "\x54\x6f\x74\x61\x6c", _0xe6a29c_0.total ], [ "\x45\x78\x70\x65\x6e\x73\x69\x76\x65", _0xe6a29c_0.expensive ] ]) _0xe6a29c_5(_0xe6a29c_1 + "\x75\x73\x61\x67\x65" + _0xe6a29c_2).textContent = _0xe6a29c_0.unlimited ? "\x55\x6e\x6c\x69\x6d\x69\x74\x65\x64" : _0xe6a29c_3.remaining.toLocaleString() + "\x20\x2f\x20" + _0xe6a29c_3.limit.toLocaleString() + "\x20\x6c\x65\x66\x74", 
+      _0xe6a29c_5(_0xe6a29c_1 + "\x6d\x65\x74\x65\x72" + _0xe6a29c_2).max = _0xe6a29c_3.limit || 1, _0xe6a29c_5(_0xe6a29c_1 + "\x6d\x65\x74\x65\x72" + _0xe6a29c_2).value = _0xe6a29c_0.unlimited ? 1 : Math.max(0, _0xe6a29c_3.limit - _0xe6a29c_3.used);
+      _0xe6a29c_5(_0xe6a29c_1 + "\x75\x73\x61\x67\x65\x52\x65\x73\x65\x74").textContent = _0xe6a29c_0.unlimited ? "\x59\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x68\x61\x73\x20\x6e\x6f\x20\x74\x6f\x6b\x65\x6e\x20\x71\x75\x6f\x74\x61\x2e" : _0xe6a29c_0.resetAt ? "\x52\x65\x73\x65\x74\x73\x20" + new Date(_0xe6a29c_0.resetAt).toLocaleString() : "\x54\x68\x65\x20\x66\x6f\x75\x72\x2d\x64\x61\x79\x20\x77\x69\x6e\x64\x6f\x77\x20\x73\x74\x61\x72\x74\x73\x20\x77\x69\x74\x68\x20\x79\x6f\x75\x72\x20\x66\x69\x72\x73\x74\x20\x72\x65\x71\x75\x65\x73\x74\x2e";
     }
   }
-  function y() {
-    const e = l("playModel").value || "MODEL_ID";
-    l("nodeExample").textContent = `const key = process.env.NOOK_API_KEY;\nif (!key) throw new Error('Set NOOK_API_KEY first');\n\nconst response = await fetch(${JSON.stringify(location.origin + "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/v1/ai")}, {\n  method: 'POST',\n  headers: { Authorization: 'Bearer ' + key, 'Content-Type': 'application/json' },\n  body: JSON.stringify({\n    model: ${JSON.stringify(e)},\n    messages: [{ role: 'user', content: 'Explain this code: const sum = (a, b) => a + b;' }],\n    max_tokens: 512\n  })\n});\nconst data = await response.json();\nif (!response.ok) throw new Error(data.error || 'Nook request failed');\nconsole.log(data.choices?.[0]?.message?.content);`, 
-    l("apiEndpoint").textContent = location.origin + "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/v1/ai", l("apiExample").textContent = `curl "${location.origin}/api/v1/ai" \\\n  -H "Authorization: Bearer $NOOK_API_KEY" \\\n  -H "Content-Type: application/json" \\\n  -d '${JSON.stringify({
-      model: e,
+  function _0xe6a29c_b() {
+    const _0xe6a29c_0 = _0xe6a29c_5("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").value || "\x4d\x4f\x44\x45\x4c\x5f\x49\x44";
+    _0xe6a29c_5("\x6e\x6f\x64\x65\x45\x78\x61\x6d\x70\x6c\x65").textContent = `\x63\x6f\x6e\x73\x74\x20\x6b\x65\x79\x20\x3d\x20\x70\x72\x6f\x63\x65\x73\x73\x2e\x65\x6e\x76\x2e\x4e\x4f\x4f\x4b\x5f\x41\x50\x49\x5f\x4b\x45\x59\x3b\x0a\x69\x66\x20\x28\x21\x6b\x65\x79\x29\x20\x74\x68\x72\x6f\x77\x20\x6e\x65\x77\x20\x45\x72\x72\x6f\x72\x28\x27\x53\x65\x74\x20\x4e\x4f\x4f\x4b\x5f\x41\x50\x49\x5f\x4b\x45\x59\x20\x66\x69\x72\x73\x74\x27\x29\x3b\x0a\x0a\x63\x6f\x6e\x73\x74\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x3d\x20\x61\x77\x61\x69\x74\x20\x66\x65\x74\x63\x68\x28${JSON.stringify(location.origin + "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x76\x31\x2f\x61\x69")}\x2c\x20\x7b\x0a\x20\x20\x6d\x65\x74\x68\x6f\x64\x3a\x20\x27\x50\x4f\x53\x54\x27\x2c\x0a\x20\x20\x68\x65\x61\x64\x65\x72\x73\x3a\x20\x7b\x20\x41\x75\x74\x68\x6f\x72\x69\x7a\x61\x74\x69\x6f\x6e\x3a\x20\x27\x42\x65\x61\x72\x65\x72\x20\x27\x20\x2b\x20\x6b\x65\x79\x2c\x20\x27\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65\x27\x3a\x20\x27\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e\x27\x20\x7d\x2c\x0a\x20\x20\x62\x6f\x64\x79\x3a\x20\x4a\x53\x4f\x4e\x2e\x73\x74\x72\x69\x6e\x67\x69\x66\x79\x28\x7b\x0a\x20\x20\x20\x20\x6d\x6f\x64\x65\x6c\x3a\x20${JSON.stringify(_0xe6a29c_0)}\x2c\x0a\x20\x20\x20\x20\x6d\x65\x73\x73\x61\x67\x65\x73\x3a\x20\x5b\x7b\x20\x72\x6f\x6c\x65\x3a\x20\x27\x75\x73\x65\x72\x27\x2c\x20\x63\x6f\x6e\x74\x65\x6e\x74\x3a\x20\x27\x45\x78\x70\x6c\x61\x69\x6e\x20\x74\x68\x69\x73\x20\x63\x6f\x64\x65\x3a\x20\x63\x6f\x6e\x73\x74\x20\x73\x75\x6d\x20\x3d\x20\x28\x61\x2c\x20\x62\x29\x20\x3d\x3e\x20\x61\x20\x2b\x20\x62\x3b\x27\x20\x7d\x5d\x2c\x0a\x20\x20\x20\x20\x6d\x61\x78\x5f\x74\x6f\x6b\x65\x6e\x73\x3a\x20\x35\x31\x32\x0a\x20\x20\x7d\x29\x0a\x7d\x29\x3b\x0a\x63\x6f\x6e\x73\x74\x20\x64\x61\x74\x61\x20\x3d\x20\x61\x77\x61\x69\x74\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e\x6a\x73\x6f\x6e\x28\x29\x3b\x0a\x69\x66\x20\x28\x21\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e\x6f\x6b\x29\x20\x74\x68\x72\x6f\x77\x20\x6e\x65\x77\x20\x45\x72\x72\x6f\x72\x28\x64\x61\x74\x61\x2e\x65\x72\x72\x6f\x72\x20\x7c\x7c\x20\x27\x4e\x6f\x6f\x6b\x20\x72\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64\x27\x29\x3b\x0a\x63\x6f\x6e\x73\x6f\x6c\x65\x2e\x6c\x6f\x67\x28\x64\x61\x74\x61\x2e\x63\x68\x6f\x69\x63\x65\x73\x3f\x2e\x5b\x30\x5d\x3f\x2e\x6d\x65\x73\x73\x61\x67\x65\x3f\x2e\x63\x6f\x6e\x74\x65\x6e\x74\x29\x3b`, 
+    _0xe6a29c_5("\x61\x70\x69\x45\x6e\x64\x70\x6f\x69\x6e\x74").textContent = location.origin + "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x76\x31\x2f\x61\x69", _0xe6a29c_5("\x61\x70\x69\x45\x78\x61\x6d\x70\x6c\x65").textContent = `\x63\x75\x72\x6c\x20\x22${location.origin}\x2f\x61\x70\x69\x2f\x76\x31\x2f\x61\x69\x22\x20\x5c\x0a\x20\x20\x2d\x48\x20\x22\x41\x75\x74\x68\x6f\x72\x69\x7a\x61\x74\x69\x6f\x6e\x3a\x20\x42\x65\x61\x72\x65\x72\x20\x24\x4e\x4f\x4f\x4b\x5f\x41\x50\x49\x5f\x4b\x45\x59\x22\x20\x5c\x0a\x20\x20\x2d\x48\x20\x22\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65\x3a\x20\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e\x22\x20\x5c\x0a\x20\x20\x2d\x64\x20\x27${JSON.stringify({
+      model: _0xe6a29c_0,
       messages: [ {
-        role: "user",
-        content: "Hello"
+        role: "\x75\x73\x65\x72",
+        content: "\x48\x65\x6c\x6c\x6f"
       } ],
       max_tokens: 512
-    })}'`;
+    })}\x27`;
   }
-  return document.querySelectorAll("[data-key-tab]").forEach(e => e.onclick = () => d(e.dataset.keyTab)), 
-  l("usagePage").hidden = !o, l("developerTabs").hidden = !o, l("usagePage").onclick = () => {
-    a() ? (l("keyDialog").showModal(), d("usage")) : l("account").click();
-  }, l("refreshUsage").onclick = () => {
-    s();
-  }, l("enableNookKey").onclick = async () => {
+  return document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6b\x65\x79\x2d\x74\x61\x62\x5d").forEach(_0xe6a29c_0 => _0xe6a29c_0.onclick = () => _0xe6a29c_9(_0xe6a29c_0.dataset.keyTab)), 
+  _0xe6a29c_5("\x75\x73\x61\x67\x65\x50\x61\x67\x65").hidden = !_0xe6a29c_2, _0xe6a29c_5("\x64\x65\x76\x65\x6c\x6f\x70\x65\x72\x54\x61\x62\x73").hidden = !_0xe6a29c_2, 
+  _0xe6a29c_5("\x75\x73\x61\x67\x65\x50\x61\x67\x65").onclick = () => {
+    _0xe6a29c_1() ? (_0xe6a29c_5("\x6b\x65\x79\x44\x69\x61\x6c\x6f\x67").showModal(), _0xe6a29c_9("\x75\x73\x61\x67\x65")) : _0xe6a29c_5("\x61\x63\x63\x6f\x75\x6e\x74").click();
+  }, _0xe6a29c_5("\x72\x65\x66\x72\x65\x73\x68\x55\x73\x61\x67\x65").onclick = () => {
+    _0xe6a29c_4();
+  }, _0xe6a29c_5("\x65\x6e\x61\x62\x6c\x65\x4e\x6f\x6f\x6b\x4b\x65\x79").onclick = async () => {
     try {
-      l("enableNookKey").disabled = !0, await t("/enable", {}), await s();
-    } catch (e) {
-      l("keyError").textContent = e.message;
+      _0xe6a29c_5("\x65\x6e\x61\x62\x6c\x65\x4e\x6f\x6f\x6b\x4b\x65\x79").disabled = !0, await _0xe6a29c_0("\x2f\x65\x6e\x61\x62\x6c\x65", {}), await _0xe6a29c_4();
+    } catch (_0xe6a29c_1) {
+      _0xe6a29c_5("\x6b\x65\x79\x45\x72\x72\x6f\x72").textContent = _0xe6a29c_1.message;
     } finally {
-      l("enableNookKey").disabled = !1;
+      _0xe6a29c_5("\x65\x6e\x61\x62\x6c\x65\x4e\x6f\x6f\x6b\x4b\x65\x79").disabled = !1;
     }
-  }, l("playModel").onchange = y, l("playForm").onsubmit = async t => {
-    if (t.preventDefault(), r) return;
-    const a = l("playKey").value.trim();
-    if (!/^n_api_[A-Za-z0-9_-]{43}$/.test(a)) return void (l("playStatus").textContent = "Enter your account API key.");
-    const o = ++c, n = new AbortController;
-    r = n;
-    const u = setTimeout(() => n.abort(), 125e3), d = performance.now();
-    l("playRun").disabled = !0, l("playCancel").hidden = !1, l("playStatus").textContent = "Generating\u2026", 
-    l("playResult").textContent = "";
+  }, _0xe6a29c_5("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").onchange = _0xe6a29c_b, _0xe6a29c_5("\x70\x6c\x61\x79\x46\x6f\x72\x6d").onsubmit = async _0xe6a29c_0 => {
+    if (_0xe6a29c_0.preventDefault(), _0xe6a29c_6) return;
+    const _0xe6a29c_1 = _0xe6a29c_5("\x70\x6c\x61\x79\x4b\x65\x79").value.trim();
+    if (!/^n_api_[A-Za-z0-9_-]{43}$/.test(_0xe6a29c_1)) return void (_0xe6a29c_5("\x70\x6c\x61\x79\x53\x74\x61\x74\x75\x73").textContent = "\x45\x6e\x74\x65\x72\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x41\x50\x49\x20\x6b\x65\x79\x2e");
+    const _0xe6a29c_2 = ++_0xe6a29c_7, _0xe6a29c_3 = new AbortController;
+    _0xe6a29c_6 = _0xe6a29c_3;
+    const _0xe6a29c_8 = setTimeout(() => _0xe6a29c_3.abort(), 125e3), _0xe6a29c_9 = performance.now();
+    _0xe6a29c_5("\x70\x6c\x61\x79\x52\x75\x6e").disabled = !0, _0xe6a29c_5("\x70\x6c\x61\x79\x43\x61\x6e\x63\x65\x6c").hidden = !1, _0xe6a29c_5("\x70\x6c\x61\x79\x53\x74\x61\x74\x75\x73").textContent = "\x47\x65\x6e\x65\x72\x61\x74\x69\x6e\x67\u2026", 
+    _0xe6a29c_5("\x70\x6c\x61\x79\x52\x65\x73\x75\x6c\x74").textContent = "";
     try {
-      const t = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/v1/ai", {
-        method: "POST",
-        signal: n.signal,
+      const _0xe6a29c_0 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x76\x31\x2f\x61\x69", {
+        method: "\x50\x4f\x53\x54",
+        signal: _0xe6a29c_3.signal,
         headers: {
-          Authorization: "Bearer " + a,
-          "Content-Type": "application/json"
+          Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0xe6a29c_1,
+          "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         },
         body: JSON.stringify({
-          model: l("playModel").value,
+          model: _0xe6a29c_5("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").value,
           messages: [ {
-            role: "user",
-            content: l("playPrompt").value
+            role: "\x75\x73\x65\x72",
+            content: _0xe6a29c_5("\x70\x6c\x61\x79\x50\x72\x6f\x6d\x70\x74").value
           } ],
-          max_tokens: Number(l("playTokens").value)
+          max_tokens: Number(_0xe6a29c_5("\x70\x6c\x61\x79\x54\x6f\x6b\x65\x6e\x73").value)
         })
-      }), s = await i(t);
-      if (o !== c) return;
-      const r = s.choices?.[0];
-      e(l("playResult"), r?.message?.content || "The model returned no text."), l("playStatus").textContent = `${((performance.now() - d) / 1e3).toFixed(1)}s \xb7 ${s.usage?.prompt_tokens ?? 0} input + ${s.usage?.completion_tokens ?? 0} output tokens` + ("length" === r?.finish_reason ? " \xb7 Output limit reached" : "");
-    } catch (p) {
-      o === c && (l("playStatus").textContent = n.signal.aborted ? "Stopped. Check Usage for tokens already processed." : p.message.replaceAll(a, "[key]"));
+      }), _0xe6a29c_4 = await _0x714b6c_5(_0xe6a29c_0);
+      if (_0xe6a29c_2 !== _0xe6a29c_7) return;
+      const _0xe6a29c_6 = _0xe6a29c_4.choices?.[0];
+      _0x714b6c_0(_0xe6a29c_5("\x70\x6c\x61\x79\x52\x65\x73\x75\x6c\x74"), _0xe6a29c_6?.message?.content || "\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x6e\x6f\x20\x74\x65\x78\x74\x2e"), 
+      _0xe6a29c_5("\x70\x6c\x61\x79\x53\x74\x61\x74\x75\x73").textContent = `${((performance.now() - _0xe6a29c_9) / 1e3).toFixed(1)}\x73\x20\xb7\x20${_0xe6a29c_4.usage?.prompt_tokens ?? 0}\x20\x69\x6e\x70\x75\x74\x20\x2b\x20${_0xe6a29c_4.usage?.completion_tokens ?? 0}\x20\x6f\x75\x74\x70\x75\x74\x20\x74\x6f\x6b\x65\x6e\x73` + ("\x6c\x65\x6e\x67\x74\x68" === _0xe6a29c_6?.finish_reason ? "\x20\xb7\x20\x4f\x75\x74\x70\x75\x74\x20\x6c\x69\x6d\x69\x74\x20\x72\x65\x61\x63\x68\x65\x64" : "");
+    } catch (_0xe6a29c_a) {
+      _0xe6a29c_2 === _0xe6a29c_7 && (_0xe6a29c_5("\x70\x6c\x61\x79\x53\x74\x61\x74\x75\x73").textContent = _0xe6a29c_3.signal.aborted ? "\x53\x74\x6f\x70\x70\x65\x64\x2e\x20\x43\x68\x65\x63\x6b\x20\x55\x73\x61\x67\x65\x20\x66\x6f\x72\x20\x74\x6f\x6b\x65\x6e\x73\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x70\x72\x6f\x63\x65\x73\x73\x65\x64\x2e" : _0xe6a29c_a.message.replaceAll(_0xe6a29c_1, "\x5b\x6b\x65\x79\x5d"));
     } finally {
-      clearTimeout(u), o === c && (r = null, l("playRun").disabled = !1, l("playCancel").hidden = !0, 
-      await s());
+      clearTimeout(_0xe6a29c_8), _0xe6a29c_2 === _0xe6a29c_7 && (_0xe6a29c_6 = null, _0xe6a29c_5("\x70\x6c\x61\x79\x52\x75\x6e").disabled = !1, 
+      _0xe6a29c_5("\x70\x6c\x61\x79\x43\x61\x6e\x63\x65\x6c").hidden = !0, await _0xe6a29c_4());
     }
-  }, l("playCancel").onclick = () => r?.abort(), l("copyExample").onclick = async () => {
+  }, _0xe6a29c_5("\x70\x6c\x61\x79\x43\x61\x6e\x63\x65\x6c").onclick = () => _0xe6a29c_6?.abort(), _0xe6a29c_5("\x63\x6f\x70\x79\x45\x78\x61\x6d\x70\x6c\x65").onclick = async () => {
     try {
-      await navigator.clipboard.writeText(l("apiExample").textContent), l("copyExample").textContent = "Copied";
+      await navigator.clipboard.writeText(_0xe6a29c_5("\x61\x70\x69\x45\x78\x61\x6d\x70\x6c\x65").textContent), _0xe6a29c_5("\x63\x6f\x70\x79\x45\x78\x61\x6d\x70\x6c\x65").textContent = "\x43\x6f\x70\x69\x65\x64";
     } catch {
-      l("keyError").textContent = "Select and copy the example manually.";
+      _0xe6a29c_5("\x6b\x65\x79\x45\x72\x72\x6f\x72").textContent = "\x53\x65\x6c\x65\x63\x74\x20\x61\x6e\x64\x20\x63\x6f\x70\x79\x20\x74\x68\x65\x20\x65\x78\x61\x6d\x70\x6c\x65\x20\x6d\x61\x6e\x75\x61\x6c\x6c\x79\x2e";
     }
-  }, window.addEventListener("pagehide", u), {
-    tab: d,
-    update: function(e) {
-      if (!o) return;
-      l("enableNookKey").hidden = !e.key || "nook" === e.key.app;
-      const t = l("playModel").value;
-      l("playModel").replaceChildren();
-      for (const o of e.catalog || []) {
-        const e = document.createElement("option");
-        e.value = o.id, e.textContent = o.label || o.id, l("playModel").append(e);
+  }, window.addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", _0xe6a29c_8), {
+    tab: _0xe6a29c_9,
+    update: function(_0xe6a29c_0) {
+      if (!_0xe6a29c_2) return;
+      _0xe6a29c_5("\x65\x6e\x61\x62\x6c\x65\x4e\x6f\x6f\x6b\x4b\x65\x79").hidden = !_0xe6a29c_0.key || "\x6e\x6f\x6f\x6b" === _0xe6a29c_0.key.app;
+      const _0xe6a29c_1 = _0xe6a29c_5("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").value;
+      _0xe6a29c_5("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").replaceChildren();
+      for (const _0xe6a29c_2 of _0xe6a29c_0.catalog || []) {
+        const _0xe6a29c_0 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+        _0xe6a29c_0.value = _0xe6a29c_2.id, _0xe6a29c_0.textContent = _0xe6a29c_2.label || _0xe6a29c_2.id, 
+        _0xe6a29c_5("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").append(_0xe6a29c_0);
       }
-      [ ...l("playModel").options ].some(e => e.value === t) && (l("playModel").value = t), 
-      l("modelAccess").textContent = (e.models?.length || 0) + " models \xb7 same access as your account", 
-      p(e.usage), l("otherBrowserUsage").hidden = !e.currentBrowserUsage, e.currentBrowserUsage && p(e.currentBrowserUsage, "current");
-      const a = e.usage?.haiku;
-      a && (l("usageHaiku").textContent = null === a.limitUsd ? "Unlimited" : `$${a.remainingUsd.toFixed(4)} / $${a.limitUsd.toFixed(2)} left`, 
-      l("meterHaiku").max = a.limitUsd || 1, l("meterHaiku").value = null === a.limitUsd ? 1 : a.remainingUsd, 
-      l("haikuReset").textContent = null === a.limitUsd ? "No account usage cap" : a.resetAt ? "Resets " + new Date(a.resetAt).toLocaleString() : "Per account, every four days. Starts with your first Haiku request.");
-      const n = e.usage?.requestsToday || 0;
-      l("usageRequests").textContent = n.toLocaleString() + (1 === n ? " request today" : " requests today") + (e.usage?.pending ? " \xb7 request in progress" : ""), 
-      l("usageScope").textContent = e.key && "nook" !== e.key.app ? "Your existing key uses the older API allowance. In Keys, choose \u201cUse Nook models and allowance\u201d to share the pool shown here." : e.keyUsesCurrentBrowser ? "Chat and Nook keys share this browser\u2019s allowance." : "Your key uses the browser allowance it was first created with. This browser\u2019s chat allowance is shown separately.", 
-      y();
+      [ ..._0xe6a29c_5("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").options ].some(_0xe6a29c_0 => _0xe6a29c_0.value === _0xe6a29c_1) && (_0xe6a29c_5("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").value = _0xe6a29c_1), 
+      _0xe6a29c_5("\x6d\x6f\x64\x65\x6c\x41\x63\x63\x65\x73\x73").textContent = (_0xe6a29c_0.models?.length || 0) + "\x20\x6d\x6f\x64\x65\x6c\x73\x20\xb7\x20\x73\x61\x6d\x65\x20\x61\x63\x63\x65\x73\x73\x20\x61\x73\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74", 
+      _0xe6a29c_a(_0xe6a29c_0.usage), _0xe6a29c_5("\x6f\x74\x68\x65\x72\x42\x72\x6f\x77\x73\x65\x72\x55\x73\x61\x67\x65").hidden = !_0xe6a29c_0.currentBrowserUsage, 
+      _0xe6a29c_0.currentBrowserUsage && _0xe6a29c_a(_0xe6a29c_0.currentBrowserUsage, "\x63\x75\x72\x72\x65\x6e\x74");
+      const _0xe6a29c_3 = _0xe6a29c_0.usage?.haiku;
+      _0xe6a29c_3 && (_0xe6a29c_5("\x75\x73\x61\x67\x65\x48\x61\x69\x6b\x75").textContent = null === _0xe6a29c_3.limitUsd ? "\x55\x6e\x6c\x69\x6d\x69\x74\x65\x64" : `\x24${_0xe6a29c_3.remainingUsd.toFixed(4)}\x20\x2f\x20\x24${_0xe6a29c_3.limitUsd.toFixed(2)}\x20\x6c\x65\x66\x74`, 
+      _0xe6a29c_5("\x6d\x65\x74\x65\x72\x48\x61\x69\x6b\x75").max = _0xe6a29c_3.limitUsd || 1, _0xe6a29c_5("\x6d\x65\x74\x65\x72\x48\x61\x69\x6b\x75").value = null === _0xe6a29c_3.limitUsd ? 1 : _0xe6a29c_3.remainingUsd, 
+      _0xe6a29c_5("\x68\x61\x69\x6b\x75\x52\x65\x73\x65\x74").textContent = null === _0xe6a29c_3.limitUsd ? "\x4e\x6f\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x75\x73\x61\x67\x65\x20\x63\x61\x70" : _0xe6a29c_3.resetAt ? "\x52\x65\x73\x65\x74\x73\x20" + new Date(_0xe6a29c_3.resetAt).toLocaleString() : "\x50\x65\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x2c\x20\x65\x76\x65\x72\x79\x20\x66\x6f\x75\x72\x20\x64\x61\x79\x73\x2e\x20\x53\x74\x61\x72\x74\x73\x20\x77\x69\x74\x68\x20\x79\x6f\x75\x72\x20\x66\x69\x72\x73\x74\x20\x48\x61\x69\x6b\x75\x20\x72\x65\x71\x75\x65\x73\x74\x2e");
+      const _0xe6a29c_4 = _0xe6a29c_0.usage?.requestsToday || 0;
+      _0xe6a29c_5("\x75\x73\x61\x67\x65\x52\x65\x71\x75\x65\x73\x74\x73").textContent = _0xe6a29c_4.toLocaleString() + (1 === _0xe6a29c_4 ? "\x20\x72\x65\x71\x75\x65\x73\x74\x20\x74\x6f\x64\x61\x79" : "\x20\x72\x65\x71\x75\x65\x73\x74\x73\x20\x74\x6f\x64\x61\x79") + (_0xe6a29c_0.usage?.pending ? "\x20\xb7\x20\x72\x65\x71\x75\x65\x73\x74\x20\x69\x6e\x20\x70\x72\x6f\x67\x72\x65\x73\x73" : ""), 
+      _0xe6a29c_5("\x75\x73\x61\x67\x65\x53\x63\x6f\x70\x65").textContent = _0xe6a29c_0.key && "\x6e\x6f\x6f\x6b" !== _0xe6a29c_0.key.app ? "\x59\x6f\x75\x72\x20\x65\x78\x69\x73\x74\x69\x6e\x67\x20\x6b\x65\x79\x20\x75\x73\x65\x73\x20\x74\x68\x65\x20\x6f\x6c\x64\x65\x72\x20\x41\x50\x49\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x2e\x20\x49\x6e\x20\x4b\x65\x79\x73\x2c\x20\x63\x68\x6f\x6f\x73\x65\x20\u201c\x55\x73\x65\x20\x4e\x6f\x6f\x6b\x20\x6d\x6f\x64\x65\x6c\x73\x20\x61\x6e\x64\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\u201d\x20\x74\x6f\x20\x73\x68\x61\x72\x65\x20\x74\x68\x65\x20\x70\x6f\x6f\x6c\x20\x73\x68\x6f\x77\x6e\x20\x68\x65\x72\x65\x2e" : _0xe6a29c_0.keyUsesCurrentBrowser ? "\x43\x68\x61\x74\x20\x61\x6e\x64\x20\x4e\x6f\x6f\x6b\x20\x6b\x65\x79\x73\x20\x73\x68\x61\x72\x65\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\u2019\x73\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x2e" : "\x59\x6f\x75\x72\x20\x6b\x65\x79\x20\x75\x73\x65\x73\x20\x74\x68\x65\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x20\x69\x74\x20\x77\x61\x73\x20\x66\x69\x72\x73\x74\x20\x63\x72\x65\x61\x74\x65\x64\x20\x77\x69\x74\x68\x2e\x20\x54\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\u2019\x73\x20\x63\x68\x61\x74\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x20\x69\x73\x20\x73\x68\x6f\x77\x6e\x20\x73\x65\x70\x61\x72\x61\x74\x65\x6c\x79\x2e", 
+      _0xe6a29c_b();
     },
-    clear: u
+    clear: _0xe6a29c_8
   };
 }

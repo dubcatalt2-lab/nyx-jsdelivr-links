@@ -1,35 +1,37 @@
-const eo = new Set([ "cdn.jsdelivr.net", "gcore.jsdelivr.net", "fastly.jsdelivr.net", "quantil.jsdelivr.net", "originfastly.jsdelivr.net", "testingcf.jsdelivr.net", "jsdelivr.b-cdn.net", "esm.sh", "raw.esm.sh" ]);
+const _0xb37b3b_0 = new Set([ "\x63\x64\x6e\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x67\x63\x6f\x72\x65\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x66\x61\x73\x74\x6c\x79\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x71\x75\x61\x6e\x74\x69\x6c\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x6f\x72\x69\x67\x69\x6e\x66\x61\x73\x74\x6c\x79\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x74\x65\x73\x74\x69\x6e\x67\x63\x66\x2e\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x6e\x65\x74", "\x6a\x73\x64\x65\x6c\x69\x76\x72\x2e\x62\x2d\x63\x64\x6e\x2e\x6e\x65\x74", "\x65\x73\x6d\x2e\x73\x68", "\x72\x61\x77\x2e\x65\x73\x6d\x2e\x73\x68" ]);
 
 export const MAX_JOB_LINKS = 1e5;
 
 export function openJobStore() {
-  return new Promise((e, t) => {
-    const o = indexedDB.open("nyx.link-publish-jobs", 1);
-    o.onupgradeneeded = () => o.result.createObjectStore("records"), o.onerror = () => t(o.error), 
-    o.onsuccess = () => {
-      const t = o.result;
-      e({
-        read: () => new Promise((e, o) => {
-          const s = t.transaction("records").objectStore("records").get("job");
-          s.onsuccess = () => e(s.result || null), s.onerror = () => o(s.error);
+  return new Promise((_0xb37b3b_0, _0xb37b3b_1) => {
+    const _0xb37b3b_2 = indexedDB.open("\x6e\x79\x78\x2e\x6c\x69\x6e\x6b\x2d\x70\x75\x62\x6c\x69\x73\x68\x2d\x6a\x6f\x62\x73", 1);
+    _0xb37b3b_2.onupgradeneeded = () => _0xb37b3b_2.result.createObjectStore("\x72\x65\x63\x6f\x72\x64\x73"), 
+    _0xb37b3b_2.onerror = () => _0xb37b3b_1(_0xb37b3b_2.error), _0xb37b3b_2.onsuccess = () => {
+      const _0xb37b3b_1 = _0xb37b3b_2.result;
+      _0xb37b3b_0({
+        read: () => new Promise((_0xb37b3b_0, _0xb37b3b_2) => {
+          const _0xb37b3b_3 = _0xb37b3b_1.transaction("\x72\x65\x63\x6f\x72\x64\x73").objectStore("\x72\x65\x63\x6f\x72\x64\x73").get("\x6a\x6f\x62");
+          _0xb37b3b_3.onsuccess = () => _0xb37b3b_0(_0xb37b3b_3.result || null), _0xb37b3b_3.onerror = () => _0xb37b3b_2(_0xb37b3b_3.error);
         }),
-        save: (e, o) => new Promise((s, r) => {
-          const a = t.transaction("records", "readwrite"), n = a.objectStore("records");
-          n.put(e, "job"), o && n.put(o.links, "batch:" + o.id), a.oncomplete = s, a.onerror = () => r(a.error), 
-          a.onabort = () => r(a.error || new Error("Progress could not be saved."));
+        save: (_0xb37b3b_0, _0xb37b3b_2) => new Promise((_0xb37b3b_3, _0xb37b3b_4) => {
+          const _0xb37b3b_5 = _0xb37b3b_1.transaction("\x72\x65\x63\x6f\x72\x64\x73", "\x72\x65\x61\x64\x77\x72\x69\x74\x65"), _0xb37b3b_6 = _0xb37b3b_5.objectStore("\x72\x65\x63\x6f\x72\x64\x73");
+          _0xb37b3b_6.put(_0xb37b3b_0, "\x6a\x6f\x62"), _0xb37b3b_2 && _0xb37b3b_6.put(_0xb37b3b_2.links, "\x62\x61\x74\x63\x68\x3a" + _0xb37b3b_2.id), 
+          _0xb37b3b_5.oncomplete = _0xb37b3b_3, _0xb37b3b_5.onerror = () => _0xb37b3b_4(_0xb37b3b_5.error), 
+          _0xb37b3b_5.onabort = () => _0xb37b3b_4(_0xb37b3b_5.error || new Error("\x50\x72\x6f\x67\x72\x65\x73\x73\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x73\x61\x76\x65\x64\x2e"));
         }),
-        links: e => new Promise((o, s) => {
-          const r = t.transaction("records"), a = r.objectStore("records"), n = [];
-          e.batches.forEach((e, t) => {
-            const o = a.get("batch:" + e);
-            o.onsuccess = () => {
-              n[t] = (o.result || []).join("\n") + "\n";
+        links: _0xb37b3b_0 => new Promise((_0xb37b3b_2, _0xb37b3b_3) => {
+          const _0xb37b3b_4 = _0xb37b3b_1.transaction("\x72\x65\x63\x6f\x72\x64\x73"), _0xb37b3b_5 = _0xb37b3b_4.objectStore("\x72\x65\x63\x6f\x72\x64\x73"), _0xb37b3b_6 = [];
+          _0xb37b3b_0.batches.forEach((_0xb37b3b_0, _0xb37b3b_1) => {
+            const _0xb37b3b_2 = _0xb37b3b_5.get("\x62\x61\x74\x63\x68\x3a" + _0xb37b3b_0);
+            _0xb37b3b_2.onsuccess = () => {
+              _0xb37b3b_6[_0xb37b3b_1] = (_0xb37b3b_2.result || []).join("\x0a") + "\x0a";
             };
-          }), r.oncomplete = () => o(n), r.onerror = () => s(r.error);
+          }), _0xb37b3b_4.oncomplete = () => _0xb37b3b_2(_0xb37b3b_6), _0xb37b3b_4.onerror = () => _0xb37b3b_3(_0xb37b3b_4.error);
         }),
-        clear: () => new Promise((e, o) => {
-          const s = t.transaction("records", "readwrite");
-          s.objectStore("records").clear(), s.oncomplete = e, s.onerror = () => o(s.error);
+        clear: () => new Promise((_0xb37b3b_0, _0xb37b3b_2) => {
+          const _0xb37b3b_3 = _0xb37b3b_1.transaction("\x72\x65\x63\x6f\x72\x64\x73", "\x72\x65\x61\x64\x77\x72\x69\x74\x65");
+          _0xb37b3b_3.objectStore("\x72\x65\x63\x6f\x72\x64\x73").clear(), _0xb37b3b_3.oncomplete = _0xb37b3b_0, 
+          _0xb37b3b_3.onerror = () => _0xb37b3b_2(_0xb37b3b_3.error);
         })
       });
     };
@@ -37,171 +39,176 @@ export function openJobStore() {
 }
 
 export class BulkJob {
-  constructor({store: e, access: t, request: o = fetch, update: s = () => {}, now: r = Date.now, sleep: a = e => new Promise(t => setTimeout(t, e)), uuid: n = () => crypto.randomUUID()}) {
+  constructor({store: _0xb37b3b_0, access: _0xb37b3b_1, request: _0xb37b3b_2 = fetch, update: _0xb37b3b_3 = () => {}, now: _0xb37b3b_4 = Date.now, sleep: _0xb37b3b_5 = _0xb37b3b_0 => new Promise(_0xb37b3b_1 => setTimeout(_0xb37b3b_1, _0xb37b3b_0)), uuid: _0xb37b3b_6 = () => crypto.randomUUID()}) {
     Object.assign(this, {
-      store: e,
-      access: t,
-      request: o,
-      update: s,
-      now: r,
-      sleep: a,
-      uuid: n
+      store: _0xb37b3b_0,
+      access: _0xb37b3b_1,
+      request: _0xb37b3b_2,
+      update: _0xb37b3b_3,
+      now: _0xb37b3b_4,
+      sleep: _0xb37b3b_5,
+      uuid: _0xb37b3b_6
     }), this.paused = !1;
   }
   pause() {
     this.paused = !0;
   }
-  async create(e) {
-    if (await this.store.read()) throw new Error("A saved job already exists. Resume it or clear its saved progress first.");
-    if (!Number.isSafeInteger(e.total) || e.total < 1 || e.total > 1e5 || !eo.has(e.host)) throw new Error("Choose up to 100,000 links and a supported CDN.");
-    const t = await this.access();
-    if (!t.uid) throw new Error("Sign in to your account above before starting a large job.");
-    const o = {
+  async create(_0xb37b3b_1) {
+    if (await this.store.read()) throw new Error("\x41\x20\x73\x61\x76\x65\x64\x20\x6a\x6f\x62\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x65\x78\x69\x73\x74\x73\x2e\x20\x52\x65\x73\x75\x6d\x65\x20\x69\x74\x20\x6f\x72\x20\x63\x6c\x65\x61\x72\x20\x69\x74\x73\x20\x73\x61\x76\x65\x64\x20\x70\x72\x6f\x67\x72\x65\x73\x73\x20\x66\x69\x72\x73\x74\x2e");
+    if (!Number.isSafeInteger(_0xb37b3b_1.total) || _0xb37b3b_1.total < 1 || _0xb37b3b_1.total > 1e5 || !_0xb37b3b_0.has(_0xb37b3b_1.host)) throw new Error("\x43\x68\x6f\x6f\x73\x65\x20\x75\x70\x20\x74\x6f\x20\x31\x30\x30\x2c\x30\x30\x30\x20\x6c\x69\x6e\x6b\x73\x20\x61\x6e\x64\x20\x61\x20\x73\x75\x70\x70\x6f\x72\x74\x65\x64\x20\x43\x44\x4e\x2e");
+    const _0xb37b3b_2 = await this.access();
+    if (!_0xb37b3b_2.uid) throw new Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x79\x6f\x75\x72\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x61\x62\x6f\x76\x65\x20\x62\x65\x66\x6f\x72\x65\x20\x73\x74\x61\x72\x74\x69\x6e\x67\x20\x61\x20\x6c\x61\x72\x67\x65\x20\x6a\x6f\x62\x2e");
+    const _0xb37b3b_3 = {
       id: this.uuid(),
-      uid: t.uid,
-      label: e.label,
-      host: e.host,
-      total: e.total,
+      uid: _0xb37b3b_2.uid,
+      label: _0xb37b3b_1.label,
+      host: _0xb37b3b_1.host,
+      total: _0xb37b3b_1.total,
       completed: 0,
       batches: [],
       pending: null,
       nextAt: 0
     };
-    return await this.store.save(o), o;
+    return await this.store.save(_0xb37b3b_3), _0xb37b3b_3;
   }
   async run() {
-    let e = await this.store.read();
-    if (!e) throw new Error("There is no saved job to resume.");
+    let _0xb37b3b_1 = await this.store.read();
+    if (!_0xb37b3b_1) throw new Error("\x54\x68\x65\x72\x65\x20\x69\x73\x20\x6e\x6f\x20\x73\x61\x76\x65\x64\x20\x6a\x6f\x62\x20\x74\x6f\x20\x72\x65\x73\x75\x6d\x65\x2e");
     this.paused = !1;
-    let t = 0;
-    for (;!this.paused && e.completed < e.total; ) {
-      if (e.nextAt > this.now()) {
-        this.update(e, "Waiting until " + new Date(e.nextAt).toLocaleTimeString() + ". You can pause and return later."), 
-        await this.sleep(Math.min(1e3, e.nextAt - this.now()));
+    let _0xb37b3b_2 = 0;
+    for (;!this.paused && _0xb37b3b_1.completed < _0xb37b3b_1.total; ) {
+      if (_0xb37b3b_1.nextAt > this.now()) {
+        this.update(_0xb37b3b_1, "\x57\x61\x69\x74\x69\x6e\x67\x20\x75\x6e\x74\x69\x6c\x20" + new Date(_0xb37b3b_1.nextAt).toLocaleTimeString() + "\x2e\x20\x59\x6f\x75\x20\x63\x61\x6e\x20\x70\x61\x75\x73\x65\x20\x61\x6e\x64\x20\x72\x65\x74\x75\x72\x6e\x20\x6c\x61\x74\x65\x72\x2e"), 
+        await this.sleep(Math.min(1e3, _0xb37b3b_1.nextAt - this.now()));
         continue;
       }
-      const o = await this.access();
-      if (o.uid !== e.uid) throw new Error("Sign in to the account that started this job.");
+      const _0xb37b3b_3 = await this.access();
+      if (_0xb37b3b_3.uid !== _0xb37b3b_1.uid) throw new Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x74\x68\x65\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x74\x68\x61\x74\x20\x73\x74\x61\x72\x74\x65\x64\x20\x74\x68\x69\x73\x20\x6a\x6f\x62\x2e");
       if (this.paused) break;
-      let s, r;
-      e.pending || (e.pending = {
+      let _0xb37b3b_4, _0xb37b3b_5;
+      _0xb37b3b_1.pending || (_0xb37b3b_1.pending = {
         id: this.uuid(),
-        amount: Math.min(o.limit, 1e3, e.total - e.completed),
-        method: o.method
-      }, await this.store.save(e)), this.update(e, "Publishing the next " + e.pending.amount.toLocaleString() + " links\u2026");
+        amount: Math.min(_0xb37b3b_3.limit, 1e3, _0xb37b3b_1.total - _0xb37b3b_1.completed),
+        method: _0xb37b3b_3.method
+      }, await this.store.save(_0xb37b3b_1)), this.update(_0xb37b3b_1, "\x50\x75\x62\x6c\x69\x73\x68\x69\x6e\x67\x20\x74\x68\x65\x20\x6e\x65\x78\x74\x20" + _0xb37b3b_1.pending.amount.toLocaleString() + "\x20\x6c\x69\x6e\x6b\x73\u2026");
       try {
-        s = await this.request("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/link-generator", {
-          method: "POST",
+        _0xb37b3b_4 = await this.request("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x67\x65\x6e\x65\x72\x61\x74\x6f\x72", {
+          method: "\x50\x4f\x53\x54",
           headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: "Bearer " + o.token
+            "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+            Accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+            Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0xb37b3b_3.token
           },
           signal: AbortSignal.timeout(12e4),
           body: JSON.stringify({
-            provider: "jsdelivr",
-            method: e.pending.method,
-            label: e.label,
-            amount: e.pending.amount,
-            batchRequestId: e.pending.id
+            provider: "\x6a\x73\x64\x65\x6c\x69\x76\x72",
+            method: _0xb37b3b_1.pending.method,
+            label: _0xb37b3b_1.label,
+            amount: _0xb37b3b_1.pending.amount,
+            batchRequestId: _0xb37b3b_1.pending.id
           })
-        }), r = await s.json();
+        }), _0xb37b3b_5 = await _0xb37b3b_4.json();
       } catch {
-        if (t++, e.nextAt = this.now() + Math.min(9e5, 6e4 * 2 ** (t - 1)), await this.store.save(e), 
-        t >= 5) throw new Error("Connection kept failing. Progress is saved; resume later to check the same batch.");
+        if (_0xb37b3b_2++, _0xb37b3b_1.nextAt = this.now() + Math.min(9e5, 6e4 * 2 ** (_0xb37b3b_2 - 1)), 
+        await this.store.save(_0xb37b3b_1), _0xb37b3b_2 >= 5) throw new Error("\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x6b\x65\x70\x74\x20\x66\x61\x69\x6c\x69\x6e\x67\x2e\x20\x50\x72\x6f\x67\x72\x65\x73\x73\x20\x69\x73\x20\x73\x61\x76\x65\x64\x3b\x20\x72\x65\x73\x75\x6d\x65\x20\x6c\x61\x74\x65\x72\x20\x74\x6f\x20\x63\x68\x65\x63\x6b\x20\x74\x68\x65\x20\x73\x61\x6d\x65\x20\x62\x61\x74\x63\x68\x2e");
         continue;
       }
-      if (!s.ok) {
-        if (429 === s.status && "STATIC_PACKAGE_PREPARING" === r.code) {
-          e.nextAt = this.now() + 1e3 * Math.max(10, Number(s.headers.get("Retry-After")) || 10), 
-          await this.store.save(e), this.update(e, r.error);
+      if (!_0xb37b3b_4.ok) {
+        if (429 === _0xb37b3b_4.status && "\x53\x54\x41\x54\x49\x43\x5f\x50\x41\x43\x4b\x41\x47\x45\x5f\x50\x52\x45\x50\x41\x52\x49\x4e\x47" === _0xb37b3b_5.code) {
+          _0xb37b3b_1.nextAt = this.now() + 1e3 * Math.max(10, Number(_0xb37b3b_4.headers.get("\x52\x65\x74\x72\x79\x2d\x41\x66\x74\x65\x72")) || 10), 
+          await this.store.save(_0xb37b3b_1), this.update(_0xb37b3b_1, _0xb37b3b_5.error);
           continue;
         }
-        if (429 === s.status || s.status >= 500) {
-          t++;
-          const o = s.headers.get("Retry-After"), r = Number(o) || Math.max(0, (Date.parse(o) - this.now()) / 1e3) || 60;
-          if (e.nextAt = this.now() + Math.max(1e3 * r, Math.min(9e5, 6e4 * 2 ** (t - 1))), 
-          await this.store.save(e), t >= 5) throw new Error("Publishing is still unavailable. Progress is saved; resume later.");
+        if (429 === _0xb37b3b_4.status || _0xb37b3b_4.status >= 500) {
+          _0xb37b3b_2++;
+          const _0xb37b3b_0 = _0xb37b3b_4.headers.get("\x52\x65\x74\x72\x79\x2d\x41\x66\x74\x65\x72"), _0xb37b3b_3 = Number(_0xb37b3b_0) || Math.max(0, (Date.parse(_0xb37b3b_0) - this.now()) / 1e3) || 60;
+          if (_0xb37b3b_1.nextAt = this.now() + Math.max(1e3 * _0xb37b3b_3, Math.min(9e5, 6e4 * 2 ** (_0xb37b3b_2 - 1))), 
+          await this.store.save(_0xb37b3b_1), _0xb37b3b_2 >= 5) throw new Error("\x50\x75\x62\x6c\x69\x73\x68\x69\x6e\x67\x20\x69\x73\x20\x73\x74\x69\x6c\x6c\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x50\x72\x6f\x67\x72\x65\x73\x73\x20\x69\x73\x20\x73\x61\x76\x65\x64\x3b\x20\x72\x65\x73\x75\x6d\x65\x20\x6c\x61\x74\x65\x72\x2e");
           continue;
         }
-        throw new Error(r.error || "Publishing stopped. Your completed links are saved.");
+        throw new Error(_0xb37b3b_5.error || "\x50\x75\x62\x6c\x69\x73\x68\x69\x6e\x67\x20\x73\x74\x6f\x70\x70\x65\x64\x2e\x20\x59\x6f\x75\x72\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x64\x20\x6c\x69\x6e\x6b\x73\x20\x61\x72\x65\x20\x73\x61\x76\x65\x64\x2e");
       }
-      const a = (r.links || []).map(t => {
-        const o = new URL("string" == typeof t ? t : t.url);
-        if ("https:" !== o.protocol || !eo.has(o.hostname) || !o.pathname.startsWith("/gh/")) throw new Error("Publisher returned an unexpected link. Progress is saved.");
-        return o.hostname = e.host, o.href;
+      const _0xb37b3b_6 = (_0xb37b3b_5.links || []).map(_0xb37b3b_2 => {
+        const _0xb37b3b_3 = new URL("\x73\x74\x72\x69\x6e\x67" == typeof _0xb37b3b_2 ? _0xb37b3b_2 : _0xb37b3b_2.url);
+        if ("\x68\x74\x74\x70\x73\x3a" !== _0xb37b3b_3.protocol || !_0xb37b3b_0.has(_0xb37b3b_3.hostname) || !_0xb37b3b_3.pathname.startsWith("\x2f\x67\x68\x2f")) throw new Error("\x50\x75\x62\x6c\x69\x73\x68\x65\x72\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x75\x6e\x65\x78\x70\x65\x63\x74\x65\x64\x20\x6c\x69\x6e\x6b\x2e\x20\x50\x72\x6f\x67\x72\x65\x73\x73\x20\x69\x73\x20\x73\x61\x76\x65\x64\x2e");
+        return _0xb37b3b_3.hostname = _0xb37b3b_1.host, _0xb37b3b_3.href;
       });
-      if (a.length !== e.pending.amount || new Set(a).size !== a.length) throw new Error("The batch result was incomplete. Resume to check the same batch.");
-      const n = {
-        id: e.pending.id,
-        links: a
-      }, i = {
-        ...e,
-        batches: [ ...e.batches, n.id ],
-        completed: e.completed + a.length,
+      if (_0xb37b3b_6.length !== _0xb37b3b_1.pending.amount || new Set(_0xb37b3b_6).size !== _0xb37b3b_6.length) throw new Error("\x54\x68\x65\x20\x62\x61\x74\x63\x68\x20\x72\x65\x73\x75\x6c\x74\x20\x77\x61\x73\x20\x69\x6e\x63\x6f\x6d\x70\x6c\x65\x74\x65\x2e\x20\x52\x65\x73\x75\x6d\x65\x20\x74\x6f\x20\x63\x68\x65\x63\x6b\x20\x74\x68\x65\x20\x73\x61\x6d\x65\x20\x62\x61\x74\x63\x68\x2e");
+      const _0xb37b3b_7 = {
+        id: _0xb37b3b_1.pending.id,
+        links: _0xb37b3b_6
+      }, _0xb37b3b_8 = {
+        ..._0xb37b3b_1,
+        batches: [ ..._0xb37b3b_1.batches, _0xb37b3b_7.id ],
+        completed: _0xb37b3b_1.completed + _0xb37b3b_6.length,
         pending: null,
-        nextAt: Math.max(this.now() + 3e4, Number(r.premiumCooldown?.cooldownUntil) || 0)
+        nextAt: Math.max(this.now() + 3e4, Number(_0xb37b3b_5.premiumCooldown?.cooldownUntil) || 0)
       };
-      await this.store.save(i, n), e = i, t = 0, this.update(e, "Saved " + e.completed.toLocaleString() + " published links.");
+      await this.store.save(_0xb37b3b_8, _0xb37b3b_7), _0xb37b3b_1 = _0xb37b3b_8, _0xb37b3b_2 = 0, 
+      this.update(_0xb37b3b_1, "\x53\x61\x76\x65\x64\x20" + _0xb37b3b_1.completed.toLocaleString() + "\x20\x70\x75\x62\x6c\x69\x73\x68\x65\x64\x20\x6c\x69\x6e\x6b\x73\x2e");
     }
-    return this.update(e, e.completed === e.total ? "Complete. Your links are ready to download." : "Paused. Progress is saved on this device."), 
-    e;
+    return this.update(_0xb37b3b_1, _0xb37b3b_1.completed === _0xb37b3b_1.total ? "\x43\x6f\x6d\x70\x6c\x65\x74\x65\x2e\x20\x59\x6f\x75\x72\x20\x6c\x69\x6e\x6b\x73\x20\x61\x72\x65\x20\x72\x65\x61\x64\x79\x20\x74\x6f\x20\x64\x6f\x77\x6e\x6c\x6f\x61\x64\x2e" : "\x50\x61\x75\x73\x65\x64\x2e\x20\x50\x72\x6f\x67\x72\x65\x73\x73\x20\x69\x73\x20\x73\x61\x76\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e"), 
+    _0xb37b3b_1;
   }
 }
 
-export async function attachBulkJobs({access: e}) {
-  const t = document.querySelector("[data-bulk-job]"), o = t.querySelector("[data-job-status]"), s = t.querySelector("progress"), r = t.querySelector("[data-job-resume]"), a = t.querySelector("[data-job-pause]"), n = t.querySelector("[data-job-download]"), i = t.querySelector("[data-job-clear]");
-  if (!navigator.locks || !globalThis.indexedDB) throw new Error("Large jobs need a browser with local storage and Web Locks support.");
-  const l = await openJobStore();
-  let c = !1;
-  const d = (e, l) => {
-    t.hidden = !1, s.max = e?.total || 1, s.value = e?.completed || 0, o.textContent = (e ? e.completed.toLocaleString() + " / " + e.total.toLocaleString() + " \u2014 " : "") + l, 
-    r.disabled = c || !e || e.completed === e.total, a.disabled = !c, i.disabled = c || !e, 
-    n.disabled = !e?.completed;
-  }, u = new BulkJob({
-    store: l,
-    access: e,
-    update: d
-  }), h = async e => navigator.locks.request("nyx-link-publish-job", {
+export async function attachBulkJobs({access: _0xb37b3b_0}) {
+  const _0xb37b3b_1 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x62\x75\x6c\x6b\x2d\x6a\x6f\x62\x5d"), _0xb37b3b_2 = _0xb37b3b_1.querySelector("\x5b\x64\x61\x74\x61\x2d\x6a\x6f\x62\x2d\x73\x74\x61\x74\x75\x73\x5d"), _0xb37b3b_3 = _0xb37b3b_1.querySelector("\x70\x72\x6f\x67\x72\x65\x73\x73"), _0xb37b3b_4 = _0xb37b3b_1.querySelector("\x5b\x64\x61\x74\x61\x2d\x6a\x6f\x62\x2d\x72\x65\x73\x75\x6d\x65\x5d"), _0xb37b3b_5 = _0xb37b3b_1.querySelector("\x5b\x64\x61\x74\x61\x2d\x6a\x6f\x62\x2d\x70\x61\x75\x73\x65\x5d"), _0xb37b3b_6 = _0xb37b3b_1.querySelector("\x5b\x64\x61\x74\x61\x2d\x6a\x6f\x62\x2d\x64\x6f\x77\x6e\x6c\x6f\x61\x64\x5d"), _0xb37b3b_7 = _0xb37b3b_1.querySelector("\x5b\x64\x61\x74\x61\x2d\x6a\x6f\x62\x2d\x63\x6c\x65\x61\x72\x5d");
+  if (!navigator.locks || !globalThis.indexedDB) throw new Error("\x4c\x61\x72\x67\x65\x20\x6a\x6f\x62\x73\x20\x6e\x65\x65\x64\x20\x61\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x77\x69\x74\x68\x20\x6c\x6f\x63\x61\x6c\x20\x73\x74\x6f\x72\x61\x67\x65\x20\x61\x6e\x64\x20\x57\x65\x62\x20\x4c\x6f\x63\x6b\x73\x20\x73\x75\x70\x70\x6f\x72\x74\x2e");
+  const _0xb37b3b_8 = await openJobStore();
+  let _0xb37b3b_9 = !1;
+  const _0xb37b3b_a = (_0xb37b3b_0, _0xb37b3b_8) => {
+    _0xb37b3b_1.hidden = !1, _0xb37b3b_3.max = _0xb37b3b_0?.total || 1, _0xb37b3b_3.value = _0xb37b3b_0?.completed || 0, 
+    _0xb37b3b_2.textContent = (_0xb37b3b_0 ? _0xb37b3b_0.completed.toLocaleString() + "\x20\x2f\x20" + _0xb37b3b_0.total.toLocaleString() + "\x20\u2014\x20" : "") + _0xb37b3b_8, 
+    _0xb37b3b_4.disabled = _0xb37b3b_9 || !_0xb37b3b_0 || _0xb37b3b_0.completed === _0xb37b3b_0.total, 
+    _0xb37b3b_5.disabled = !_0xb37b3b_9, _0xb37b3b_7.disabled = _0xb37b3b_9 || !_0xb37b3b_0, 
+    _0xb37b3b_6.disabled = !_0xb37b3b_0?.completed;
+  }, _0xb37b3b_b = new BulkJob({
+    store: _0xb37b3b_8,
+    access: _0xb37b3b_0,
+    update: _0xb37b3b_a
+  }), _0xb37b3b_c = async _0xb37b3b_0 => navigator.locks.request("\x6e\x79\x78\x2d\x6c\x69\x6e\x6b\x2d\x70\x75\x62\x6c\x69\x73\x68\x2d\x6a\x6f\x62", {
     ifAvailable: !0
-  }, async t => {
-    if (t) try {
-      c = !0, e && await u.create(e), await u.run();
-    } catch (o) {
-      d(await l.read(), o.message + " No further batches will be sent.");
+  }, async _0xb37b3b_1 => {
+    if (_0xb37b3b_1) try {
+      _0xb37b3b_9 = !0, _0xb37b3b_0 && await _0xb37b3b_b.create(_0xb37b3b_0), await _0xb37b3b_b.run();
+    } catch (_0xb37b3b_2) {
+      _0xb37b3b_a(await _0xb37b3b_8.read(), _0xb37b3b_2.message + "\x20\x4e\x6f\x20\x66\x75\x72\x74\x68\x65\x72\x20\x62\x61\x74\x63\x68\x65\x73\x20\x77\x69\x6c\x6c\x20\x62\x65\x20\x73\x65\x6e\x74\x2e");
     } finally {
-      c = !1;
-      const e = await l.read();
-      r.disabled = !e || e.completed === e.total, a.disabled = !0, i.disabled = !e;
-    } else d(await l.read(), "This job is already running in another tab.");
-  }).catch(e => {
-    c = !1, t.hidden = !1, o.textContent = "Could not access saved progress: " + e.message, 
-    a.disabled = !0;
+      _0xb37b3b_9 = !1;
+      const _0xb37b3b_0 = await _0xb37b3b_8.read();
+      _0xb37b3b_4.disabled = !_0xb37b3b_0 || _0xb37b3b_0.completed === _0xb37b3b_0.total, 
+      _0xb37b3b_5.disabled = !0, _0xb37b3b_7.disabled = !_0xb37b3b_0;
+    } else _0xb37b3b_a(await _0xb37b3b_8.read(), "\x54\x68\x69\x73\x20\x6a\x6f\x62\x20\x69\x73\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x72\x75\x6e\x6e\x69\x6e\x67\x20\x69\x6e\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x74\x61\x62\x2e");
+  }).catch(_0xb37b3b_0 => {
+    _0xb37b3b_9 = !1, _0xb37b3b_1.hidden = !1, _0xb37b3b_2.textContent = "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x61\x63\x63\x65\x73\x73\x20\x73\x61\x76\x65\x64\x20\x70\x72\x6f\x67\x72\x65\x73\x73\x3a\x20" + _0xb37b3b_0.message, 
+    _0xb37b3b_5.disabled = !0;
   });
-  r.addEventListener("click", () => {
-    h();
-  }), a.addEventListener("click", () => {
-    u.pause(), a.disabled = !0, o.textContent = "Pausing after the current request finishes\u2026";
-  }), n.addEventListener("click", async () => {
+  _0xb37b3b_4.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0xb37b3b_c();
+  }), _0xb37b3b_5.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0xb37b3b_b.pause(), _0xb37b3b_5.disabled = !0, _0xb37b3b_2.textContent = "\x50\x61\x75\x73\x69\x6e\x67\x20\x61\x66\x74\x65\x72\x20\x74\x68\x65\x20\x63\x75\x72\x72\x65\x6e\x74\x20\x72\x65\x71\x75\x65\x73\x74\x20\x66\x69\x6e\x69\x73\x68\x65\x73\u2026";
+  }), _0xb37b3b_6.addEventListener("\x63\x6c\x69\x63\x6b", async () => {
     try {
-      const e = await l.read(), t = await l.links(e), o = URL.createObjectURL(new Blob(t, {
-        type: "text/plain;charset=utf-8"
-      })), s = document.createElement("a");
-      s.href = o, s.download = "nyx-links-" + e.completed + ".txt", document.body.appendChild(s), 
-      s.click(), s.remove(), setTimeout(() => URL.revokeObjectURL(o), 1e3);
-    } catch (e) {
-      o.textContent = "Could not download: " + e.message;
+      const _0xb37b3b_0 = await _0xb37b3b_8.read(), _0xb37b3b_1 = await _0xb37b3b_8.links(_0xb37b3b_0), _0xb37b3b_2 = URL.createObjectURL(new Blob(_0xb37b3b_1, {
+        type: "\x74\x65\x78\x74\x2f\x70\x6c\x61\x69\x6e\x3b\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
+      })), _0xb37b3b_3 = document.createElement("\x61");
+      _0xb37b3b_3.href = _0xb37b3b_2, _0xb37b3b_3.download = "\x6e\x79\x78\x2d\x6c\x69\x6e\x6b\x73\x2d" + _0xb37b3b_0.completed + "\x2e\x74\x78\x74", 
+      document.body.appendChild(_0xb37b3b_3), _0xb37b3b_3.click(), _0xb37b3b_3.remove(), 
+      setTimeout(() => URL.revokeObjectURL(_0xb37b3b_2), 1e3);
+    } catch (_0xb37b3b_0) {
+      _0xb37b3b_2.textContent = "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x64\x6f\x77\x6e\x6c\x6f\x61\x64\x3a\x20" + _0xb37b3b_0.message;
     }
-  }), i.addEventListener("click", () => {
-    confirm("Clear this saved job and its local link list? Published files will stay online. Download your links first.") && navigator.locks.request("nyx-link-publish-job", {
+  }), _0xb37b3b_7.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    confirm("\x43\x6c\x65\x61\x72\x20\x74\x68\x69\x73\x20\x73\x61\x76\x65\x64\x20\x6a\x6f\x62\x20\x61\x6e\x64\x20\x69\x74\x73\x20\x6c\x6f\x63\x61\x6c\x20\x6c\x69\x6e\x6b\x20\x6c\x69\x73\x74\x3f\x20\x50\x75\x62\x6c\x69\x73\x68\x65\x64\x20\x66\x69\x6c\x65\x73\x20\x77\x69\x6c\x6c\x20\x73\x74\x61\x79\x20\x6f\x6e\x6c\x69\x6e\x65\x2e\x20\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x20\x79\x6f\x75\x72\x20\x6c\x69\x6e\x6b\x73\x20\x66\x69\x72\x73\x74\x2e") && navigator.locks.request("\x6e\x79\x78\x2d\x6c\x69\x6e\x6b\x2d\x70\x75\x62\x6c\x69\x73\x68\x2d\x6a\x6f\x62", {
       ifAvailable: !0
-    }, async e => {
-      e && (await l.clear(), d(null, "Saved job cleared."));
+    }, async _0xb37b3b_0 => {
+      _0xb37b3b_0 && (await _0xb37b3b_8.clear(), _0xb37b3b_a(null, "\x53\x61\x76\x65\x64\x20\x6a\x6f\x62\x20\x63\x6c\x65\x61\x72\x65\x64\x2e"));
     });
   });
-  const p = await l.read();
-  return p && d(p, "Saved job found. Sign in to the same account and choose Resume."), 
+  const _0xb37b3b_d = await _0xb37b3b_8.read();
+  return _0xb37b3b_d && _0xb37b3b_a(_0xb37b3b_d, "\x53\x61\x76\x65\x64\x20\x6a\x6f\x62\x20\x66\x6f\x75\x6e\x64\x2e\x20\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x74\x68\x65\x20\x73\x61\x6d\x65\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x61\x6e\x64\x20\x63\x68\x6f\x6f\x73\x65\x20\x52\x65\x73\x75\x6d\x65\x2e"), 
   {
-    start: e => h(e)
+    start: _0xb37b3b_0 => _0xb37b3b_c(_0xb37b3b_0)
   };
 }

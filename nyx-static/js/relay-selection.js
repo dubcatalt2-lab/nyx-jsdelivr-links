@@ -1,73 +1,75 @@
 (() => {
-  let t = "", e = "", n = null, r = 0;
-  const o = "nyx.lastWorkingRelay";
-  function a(t) {
-    return new Promise(e => {
-      let n, r, o = !1;
-      const a = t => {
-        if (!o) {
-          if (o = !0, clearTimeout(r), n) {
-            n.onmessage = n.onerror = n.onclose = null;
+  let _0xe31899_0 = "", _0xe31899_1 = "", _0xe31899_2 = null, _0xe31899_3 = 0;
+  const _0xe31899_4 = "\x6e\x79\x78\x2e\x6c\x61\x73\x74\x57\x6f\x72\x6b\x69\x6e\x67\x52\x65\x6c\x61\x79";
+  function _0xe31899_5(_0xe31899_0) {
+    return new Promise(_0xe31899_1 => {
+      let _0xe31899_2, _0xe31899_3, _0xe31899_4 = !1;
+      const _0xe31899_5 = _0xe31899_0 => {
+        if (!_0xe31899_4) {
+          if (_0xe31899_4 = !0, clearTimeout(_0xe31899_3), _0xe31899_2) {
+            _0xe31899_2.onmessage = _0xe31899_2.onerror = _0xe31899_2.onclose = null;
             try {
-              n.close();
+              _0xe31899_2.close();
             } catch {}
           }
-          e(t);
+          _0xe31899_1(_0xe31899_0);
         }
       };
-      r = setTimeout(() => a(!1), 1e4);
+      _0xe31899_3 = setTimeout(() => _0xe31899_5(!1), 1e4);
       try {
-        n = new WebSocket(t), n.binaryType = "arraybuffer", n.onmessage = t => {
-          if (!(t.data instanceof ArrayBuffer)) return;
-          const e = new Uint8Array(t.data);
-          e.length >= 9 && 3 === e[0] && 0 === new DataView(t.data).getUint32(1, !0) && a(!0);
-        }, n.onerror = n.onclose = () => a(!1);
+        _0xe31899_2 = new WebSocket(_0xe31899_0), _0xe31899_2.binaryType = "\x61\x72\x72\x61\x79\x62\x75\x66\x66\x65\x72", 
+        _0xe31899_2.onmessage = _0xe31899_0 => {
+          if (!(_0xe31899_0.data instanceof ArrayBuffer)) return;
+          const _0xe31899_1 = new Uint8Array(_0xe31899_0.data);
+          _0xe31899_1.length >= 9 && 3 === _0xe31899_1[0] && 0 === new DataView(_0xe31899_0.data).getUint32(1, !0) && _0xe31899_5(!0);
+        }, _0xe31899_2.onerror = _0xe31899_2.onclose = () => _0xe31899_5(!1);
       } catch {
-        a(!1);
+        _0xe31899_5(!1);
       }
     });
   }
-  function c(o) {
-    const a = JSON.stringify(o);
-    a !== t && (t = a, e = "", n = null, r++);
+  function _0xe31899_6(_0xe31899_4) {
+    const _0xe31899_5 = JSON.stringify(_0xe31899_4);
+    _0xe31899_5 !== _0xe31899_0 && (_0xe31899_0 = _0xe31899_5, _0xe31899_1 = "", _0xe31899_2 = null, 
+    _0xe31899_3++);
   }
   window.NyxRelaySelection = {
-    current: function(t) {
-      return c(t), e || t[0] || "";
+    current: function(_0xe31899_0) {
+      return _0xe31899_6(_0xe31899_0), _0xe31899_1 || _0xe31899_0[0] || "";
     },
-    choose: async function(t, l = "") {
-      if (c(t), n) return n;
-      if (e && !l) return e;
-      const i = r;
-      let s = "";
+    choose: async function(_0xe31899_0, _0xe31899_7 = "") {
+      if (_0xe31899_6(_0xe31899_0), _0xe31899_2) return _0xe31899_2;
+      if (_0xe31899_1 && !_0xe31899_7) return _0xe31899_1;
+      const _0xe31899_8 = _0xe31899_3;
+      let _0xe31899_9 = "";
       try {
-        s = localStorage.getItem(o) || "";
+        _0xe31899_9 = localStorage.getItem(_0xe31899_4) || "";
       } catch {}
-      const u = [ ...new Set([ e, s, ...t ]) ].filter(e => t.includes(e) && e !== l);
-      t.includes(l) && u.push(l), n = (async () => {
-        for (const t of u) {
-          const n = await a(t);
-          if (i !== r) return "";
-          if (n) {
-            e = t;
+      const _0xe31899_a = [ ...new Set([ _0xe31899_1, _0xe31899_9, ..._0xe31899_0 ]) ].filter(_0xe31899_1 => _0xe31899_0.includes(_0xe31899_1) && _0xe31899_1 !== _0xe31899_7);
+      _0xe31899_0.includes(_0xe31899_7) && _0xe31899_a.push(_0xe31899_7), _0xe31899_2 = (async () => {
+        for (const _0xe31899_0 of _0xe31899_a) {
+          const _0xe31899_2 = await _0xe31899_5(_0xe31899_0);
+          if (_0xe31899_8 !== _0xe31899_3) return "";
+          if (_0xe31899_2) {
+            _0xe31899_1 = _0xe31899_0;
             try {
-              localStorage.setItem(o, t);
+              localStorage.setItem(_0xe31899_4, _0xe31899_0);
             } catch {}
-            return t;
+            return _0xe31899_0;
           }
         }
-        e = "";
+        _0xe31899_1 = "";
         try {
-          localStorage.removeItem(o);
+          localStorage.removeItem(_0xe31899_4);
         } catch {}
         return "";
       })();
       try {
-        return await n;
+        return await _0xe31899_2;
       } finally {
-        i === r && (n = null);
+        _0xe31899_8 === _0xe31899_3 && (_0xe31899_2 = null);
       }
     },
-    probe: a
+    probe: _0xe31899_5
   };
 })();

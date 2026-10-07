@@ -1,11 +1,11 @@
-importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/studyjet-v1/@r7f2b63f4ebec4bf773e58ee7!.js?v=nyx-sj-v1-ready-before-route-v5");
+importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x73\x74\x75\x64\x79\x6a\x65\x74\x2d\x76\x31\x2f\x40\x72\x37\x66\x32\x62\x36\x33\x66\x34\x65\x62\x65\x63\x34\x62\x66\x37\x37\x33\x65\x35\x38\x65\x65\x37\x21\x2e\x6a\x73\x3f\x76\x3d\x6e\x79\x78\x2d\x73\x6a\x2d\x76\x31\x2d\x72\x65\x61\x64\x79\x2d\x62\x65\x66\x6f\x72\x65\x2d\x72\x6f\x75\x74\x65\x2d\x76\x35");
 
-const {StudyJetServiceWorker: ef} = $studyjetLoadWorker(), tf = new ef, af = tf.loadConfig();
+const {StudyJetServiceWorker: _0x63be1f_0} = $studyjetLoadWorker(), _0x63be1f_1 = new _0x63be1f_0, _0x63be1f_2 = _0x63be1f_1.loadConfig();
 
-self.addEventListener("install", λ0edbc0e677d0 => {
-  λ0edbc0e677d0.waitUntil(self.skipWaiting());
-}), self.addEventListener("activate", λ0edbc0e677d0 => {
-  λ0edbc0e677d0.waitUntil(self.clients.claim());
-}), self.addEventListener("fetch", λ0edbc0e677d0 => {
-  λ0edbc0e677d0.respondWith((async () => (await af, tf.route(λ0edbc0e677d0) ? tf.fetch(λ0edbc0e677d0) : fetch(λ0edbc0e677d0.request)))());
+self.addEventListener("\x69\x6e\x73\x74\x61\x6c\x6c", λ6b7a489a49c3 => {
+  λ6b7a489a49c3.waitUntil(self.skipWaiting());
+}), self.addEventListener("\x61\x63\x74\x69\x76\x61\x74\x65", λ6b7a489a49c3 => {
+  λ6b7a489a49c3.waitUntil(self.clients.claim());
+}), self.addEventListener("\x66\x65\x74\x63\x68", λ6b7a489a49c3 => {
+  λ6b7a489a49c3.respondWith((async () => (await _0x63be1f_2, _0x63be1f_1.route(λ6b7a489a49c3) ? _0x63be1f_1.fetch(λ6b7a489a49c3) : fetch(λ6b7a489a49c3.request)))());
 });

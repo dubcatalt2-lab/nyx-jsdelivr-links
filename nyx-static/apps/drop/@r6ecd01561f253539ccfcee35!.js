@@ -1,526 +1,554 @@
-import { warmBrowser as Se } from "../tutsi/@r2931fd1ced1f82891e21ea5e!.js";
+import { warmBrowser as _0xbaf490_0 } from "\x2e\x2e\x2f\x74\x75\x74\x73\x69\x2f\x40\x72\x32\x39\x33\x31\x66\x64\x31\x63\x65\x64\x31\x66\x38\x32\x38\x39\x31\x65\x32\x31\x65\x61\x35\x65\x21\x2e\x6a\x73";
 
-import { watchWebsiteFrame as Ne } from "../tutsi/@rbb67d7dcaa90043b6c3b5e1b!.js";
+import { watchWebsiteFrame as _0xbaf490_1 } from "\x2e\x2e\x2f\x74\x75\x74\x73\x69\x2f\x40\x72\x62\x62\x36\x37\x64\x37\x64\x63\x61\x61\x39\x30\x30\x34\x33\x62\x36\x63\x33\x62\x35\x65\x31\x62\x21\x2e\x6a\x73";
 
-import { setupDropPresence as Fe } from "./@rdee1237bb6a7318540ab65f2!.js";
+import { setupDropPresence as _0xbaf490_2 } from "\x2e\x2f\x40\x72\x64\x65\x65\x31\x32\x33\x37\x62\x62\x36\x61\x37\x33\x31\x38\x35\x34\x30\x61\x62\x36\x35\x66\x32\x21\x2e\x6a\x73";
 
-import { browse as Be, control as Te, closeBrowser as Pe, currentWebsiteUrl as De, testRelay as He } from "../tutsi/@r2931fd1ced1f82891e21ea5e!.js";
+import { browse as _0xbaf490_3, control as _0xbaf490_4, closeBrowser as _0xbaf490_5, currentWebsiteUrl as _0xbaf490_6, testRelay as _0xbaf490_7 } from "\x2e\x2e\x2f\x74\x75\x74\x73\x69\x2f\x40\x72\x32\x39\x33\x31\x66\x64\x31\x63\x65\x64\x31\x66\x38\x32\x38\x39\x31\x65\x32\x31\x65\x61\x35\x65\x21\x2e\x6a\x73";
 
-import { websiteAddress as We } from "../tutsi/@rc0dd68bfae021c67a5257319!.js";
+import { websiteAddress as _0xbaf490_8 } from "\x2e\x2e\x2f\x74\x75\x74\x73\x69\x2f\x40\x72\x63\x30\x64\x64\x36\x38\x62\x66\x61\x65\x30\x32\x31\x63\x36\x37\x61\x35\x32\x35\x37\x33\x31\x39\x21\x2e\x6a\x73";
 
-import { protectionSandbox as Ue, installShellPopupProtection as ze, installGameProtectionHost as je } from "../tutsi/@re1b4b200751d64fdd56726f8!.js";
+import { protectionSandbox as _0xbaf490_9, installShellPopupProtection as _0xbaf490_a, installGameProtectionHost as _0xbaf490_b } from "\x2e\x2e\x2f\x74\x75\x74\x73\x69\x2f\x40\x72\x65\x31\x62\x34\x62\x32\x30\x30\x37\x35\x31\x64\x36\x34\x66\x64\x64\x35\x36\x37\x32\x36\x66\x38\x21\x2e\x6a\x73";
 
-import { trafficMeter as Oe } from "./@r6a249696b59d7622cdfdfd08!.js";
+import { trafficMeter as _0xbaf490_c } from "\x2e\x2f\x40\x72\x36\x61\x32\x34\x39\x36\x39\x36\x62\x35\x39\x64\x37\x36\x32\x32\x63\x64\x66\x64\x66\x64\x30\x38\x21\x2e\x6a\x73";
 
-const m = e => document.getElementById(e), Je = {
-  game: "M8 9h8a5 5 0 0 1 4.6 6.9l-.8 2a2 2 0 0 1-3.2.8L14.8 17H9.2l-1.8 1.7a2 2 0 0 1-3.2-.8l-.8-2A5 5 0 0 1 8 9z M8 12v4M6 14h4M16.5 13.2h.1M18.2 15h.1",
-  bookmark: "M6 3h12v18l-6-4-6 4z",
-  pin: "M8 3h8l-1 6 4 4v2H5v-2l4-4z M12 15v6",
-  panel: "M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z M9 3v18",
-  plus: "M12 5v14 M5 12h14",
-  home: "m3 10 9-7 9 7v11h-6v-7H9v7H3z",
-  ai: "m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z M20 2v4 M18 4h4 M3 18v4 M1 20h4",
-  settings: "M9 3h6l1 3 3 1 2 5-2 5-3 1-1 3H9l-1-3-3-1-2-5 2-5 3-1z M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0",
-  account: "M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0 M4 21v-2a8 8 0 0 1 16 0v2",
-  search: "M21 21l-5-5 M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0",
-  enter: "M20 5v9H4m5-5-5 5 5 5",
-  close: "m6 6 12 12 M18 6 6 18",
-  back: "m14 5-7 7 7 7",
-  forward: "m10 5 7 7-7 7",
-  reload: "M20 11a8 8 0 1 0-2 6 M20 4v7h-7",
-  file: "M6 3h8l4 4v14H6z M14 3v5h5",
-  video: "M3 5h18v14H3z m7 4 6 3-6 3z",
-  github: "M9 19c-4 1-4-2-6-2 m12 5v-4a4 4 0 0 0-1-3c3 0 6-1 6-6a5 5 0 0 0-1-3 5 5 0 0 0 0-3s-2 0-4 2a13 13 0 0 0-6 0C7 3 5 3 5 3a5 5 0 0 0 0 3 5 5 0 0 0-1 3c0 5 3 6 6 6a4 4 0 0 0-1 3v4",
-  key: "M21 7a5 5 0 1 1-10 0 5 5 0 0 1 10 0 M12 11 3 20h4v-4h4v-4",
-  chevron: "m9 5 7 7-7 7"
-}, p = e => "game" === e ? '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2.5"/><path d="M7.5 10v5M5 12.5h5"/><circle cx="15" cy="14" r=".9" fill="currentColor" stroke="none"/><circle cx="18" cy="11" r=".9" fill="currentColor" stroke="none"/></svg>' : "settings" === e ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>' : "ai" === e ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 3 2.1 6.9L19 12l-6.9 2.1L10 21l-2.1-6.9L1 12l6.9-2.1L10 3Z"/><path d="M20 2v6m-3-3h6"/><rect x="2" y="19" width="3" height="3" rx="1"/></svg>' : "panel" === e ? '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + Je[e] + '"/></svg>';
+const _0x714b6c_b = _0xbaf490_0 => document.getElementById(_0xbaf490_0), _0xbaf490_d = {
+  game: "\x4d\x38\x20\x39\x68\x38\x61\x35\x20\x35\x20\x30\x20\x30\x20\x31\x20\x34\x2e\x36\x20\x36\x2e\x39\x6c\x2d\x2e\x38\x20\x32\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x2d\x33\x2e\x32\x2e\x38\x4c\x31\x34\x2e\x38\x20\x31\x37\x48\x39\x2e\x32\x6c\x2d\x31\x2e\x38\x20\x31\x2e\x37\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x2d\x33\x2e\x32\x2d\x2e\x38\x6c\x2d\x2e\x38\x2d\x32\x41\x35\x20\x35\x20\x30\x20\x30\x20\x31\x20\x38\x20\x39\x7a\x20\x4d\x38\x20\x31\x32\x76\x34\x4d\x36\x20\x31\x34\x68\x34\x4d\x31\x36\x2e\x35\x20\x31\x33\x2e\x32\x68\x2e\x31\x4d\x31\x38\x2e\x32\x20\x31\x35\x68\x2e\x31",
+  bookmark: "\x4d\x36\x20\x33\x68\x31\x32\x76\x31\x38\x6c\x2d\x36\x2d\x34\x2d\x36\x20\x34\x7a",
+  pin: "\x4d\x38\x20\x33\x68\x38\x6c\x2d\x31\x20\x36\x20\x34\x20\x34\x76\x32\x48\x35\x76\x2d\x32\x6c\x34\x2d\x34\x7a\x20\x4d\x31\x32\x20\x31\x35\x76\x36",
+  panel: "\x4d\x34\x20\x33\x68\x31\x36\x61\x31\x20\x31\x20\x30\x20\x30\x20\x31\x20\x31\x20\x31\x76\x31\x36\x61\x31\x20\x31\x20\x30\x20\x30\x20\x31\x2d\x31\x20\x31\x48\x34\x61\x31\x20\x31\x20\x30\x20\x30\x20\x31\x2d\x31\x2d\x31\x56\x34\x61\x31\x20\x31\x20\x30\x20\x30\x20\x31\x20\x31\x2d\x31\x7a\x20\x4d\x39\x20\x33\x76\x31\x38",
+  plus: "\x4d\x31\x32\x20\x35\x76\x31\x34\x20\x4d\x35\x20\x31\x32\x68\x31\x34",
+  home: "\x6d\x33\x20\x31\x30\x20\x39\x2d\x37\x20\x39\x20\x37\x76\x31\x31\x68\x2d\x36\x76\x2d\x37\x48\x39\x76\x37\x48\x33\x7a",
+  ai: "\x6d\x31\x32\x20\x33\x20\x32\x2e\x35\x20\x36\x2e\x35\x4c\x32\x31\x20\x31\x32\x6c\x2d\x36\x2e\x35\x20\x32\x2e\x35\x4c\x31\x32\x20\x32\x31\x6c\x2d\x32\x2e\x35\x2d\x36\x2e\x35\x4c\x33\x20\x31\x32\x6c\x36\x2e\x35\x2d\x32\x2e\x35\x7a\x20\x4d\x32\x30\x20\x32\x76\x34\x20\x4d\x31\x38\x20\x34\x68\x34\x20\x4d\x33\x20\x31\x38\x76\x34\x20\x4d\x31\x20\x32\x30\x68\x34",
+  settings: "\x4d\x39\x20\x33\x68\x36\x6c\x31\x20\x33\x20\x33\x20\x31\x20\x32\x20\x35\x2d\x32\x20\x35\x2d\x33\x20\x31\x2d\x31\x20\x33\x48\x39\x6c\x2d\x31\x2d\x33\x2d\x33\x2d\x31\x2d\x32\x2d\x35\x20\x32\x2d\x35\x20\x33\x2d\x31\x7a\x20\x4d\x31\x36\x20\x31\x32\x61\x34\x20\x34\x20\x30\x20\x31\x20\x31\x2d\x38\x20\x30\x20\x34\x20\x34\x20\x30\x20\x30\x20\x31\x20\x38\x20\x30",
+  account: "\x4d\x31\x36\x20\x37\x61\x34\x20\x34\x20\x30\x20\x31\x20\x31\x2d\x38\x20\x30\x20\x34\x20\x34\x20\x30\x20\x30\x20\x31\x20\x38\x20\x30\x20\x4d\x34\x20\x32\x31\x76\x2d\x32\x61\x38\x20\x38\x20\x30\x20\x30\x20\x31\x20\x31\x36\x20\x30\x76\x32",
+  search: "\x4d\x32\x31\x20\x32\x31\x6c\x2d\x35\x2d\x35\x20\x4d\x31\x38\x20\x31\x30\x61\x38\x20\x38\x20\x30\x20\x31\x20\x31\x2d\x31\x36\x20\x30\x20\x38\x20\x38\x20\x30\x20\x30\x20\x31\x20\x31\x36\x20\x30",
+  enter: "\x4d\x32\x30\x20\x35\x76\x39\x48\x34\x6d\x35\x2d\x35\x2d\x35\x20\x35\x20\x35\x20\x35",
+  close: "\x6d\x36\x20\x36\x20\x31\x32\x20\x31\x32\x20\x4d\x31\x38\x20\x36\x20\x36\x20\x31\x38",
+  back: "\x6d\x31\x34\x20\x35\x2d\x37\x20\x37\x20\x37\x20\x37",
+  forward: "\x6d\x31\x30\x20\x35\x20\x37\x20\x37\x2d\x37\x20\x37",
+  reload: "\x4d\x32\x30\x20\x31\x31\x61\x38\x20\x38\x20\x30\x20\x31\x20\x30\x2d\x32\x20\x36\x20\x4d\x32\x30\x20\x34\x76\x37\x68\x2d\x37",
+  file: "\x4d\x36\x20\x33\x68\x38\x6c\x34\x20\x34\x76\x31\x34\x48\x36\x7a\x20\x4d\x31\x34\x20\x33\x76\x35\x68\x35",
+  video: "\x4d\x33\x20\x35\x68\x31\x38\x76\x31\x34\x48\x33\x7a\x20\x6d\x37\x20\x34\x20\x36\x20\x33\x2d\x36\x20\x33\x7a",
+  github: "\x4d\x39\x20\x31\x39\x63\x2d\x34\x20\x31\x2d\x34\x2d\x32\x2d\x36\x2d\x32\x20\x6d\x31\x32\x20\x35\x76\x2d\x34\x61\x34\x20\x34\x20\x30\x20\x30\x20\x30\x2d\x31\x2d\x33\x63\x33\x20\x30\x20\x36\x2d\x31\x20\x36\x2d\x36\x61\x35\x20\x35\x20\x30\x20\x30\x20\x30\x2d\x31\x2d\x33\x20\x35\x20\x35\x20\x30\x20\x30\x20\x30\x20\x30\x2d\x33\x73\x2d\x32\x20\x30\x2d\x34\x20\x32\x61\x31\x33\x20\x31\x33\x20\x30\x20\x30\x20\x30\x2d\x36\x20\x30\x43\x37\x20\x33\x20\x35\x20\x33\x20\x35\x20\x33\x61\x35\x20\x35\x20\x30\x20\x30\x20\x30\x20\x30\x20\x33\x20\x35\x20\x35\x20\x30\x20\x30\x20\x30\x2d\x31\x20\x33\x63\x30\x20\x35\x20\x33\x20\x36\x20\x36\x20\x36\x61\x34\x20\x34\x20\x30\x20\x30\x20\x30\x2d\x31\x20\x33\x76\x34",
+  key: "\x4d\x32\x31\x20\x37\x61\x35\x20\x35\x20\x30\x20\x31\x20\x31\x2d\x31\x30\x20\x30\x20\x35\x20\x35\x20\x30\x20\x30\x20\x31\x20\x31\x30\x20\x30\x20\x4d\x31\x32\x20\x31\x31\x20\x33\x20\x32\x30\x68\x34\x76\x2d\x34\x68\x34\x76\x2d\x34",
+  chevron: "\x6d\x39\x20\x35\x20\x37\x20\x37\x2d\x37\x20\x37"
+}, _0x714b6c_d = _0xbaf490_0 => "\x67\x61\x6d\x65" === _0xbaf490_0 ? "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x32\x22\x20\x79\x3d\x22\x36\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x32\x30\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x31\x33\x22\x20\x72\x78\x3d\x22\x32\x2e\x35\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x37\x2e\x35\x20\x31\x30\x76\x35\x4d\x35\x20\x31\x32\x2e\x35\x68\x35\x22\x2f\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x35\x22\x20\x63\x79\x3d\x22\x31\x34\x22\x20\x72\x3d\x22\x2e\x39\x22\x20\x66\x69\x6c\x6c\x3d\x22\x63\x75\x72\x72\x65\x6e\x74\x43\x6f\x6c\x6f\x72\x22\x20\x73\x74\x72\x6f\x6b\x65\x3d\x22\x6e\x6f\x6e\x65\x22\x2f\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x38\x22\x20\x63\x79\x3d\x22\x31\x31\x22\x20\x72\x3d\x22\x2e\x39\x22\x20\x66\x69\x6c\x6c\x3d\x22\x63\x75\x72\x72\x65\x6e\x74\x43\x6f\x6c\x6f\x72\x22\x20\x73\x74\x72\x6f\x6b\x65\x3d\x22\x6e\x6f\x6e\x65\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e" : "\x73\x65\x74\x74\x69\x6e\x67\x73" === _0xbaf490_0 ? "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x32\x22\x20\x63\x79\x3d\x22\x31\x32\x22\x20\x72\x3d\x22\x33\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x39\x2e\x34\x20\x31\x35\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x20\x2e\x33\x33\x20\x31\x2e\x38\x32\x6c\x2e\x30\x36\x2e\x30\x36\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x30\x20\x32\x2e\x38\x33\x20\x32\x20\x32\x20\x30\x20\x30\x20\x31\x2d\x32\x2e\x38\x33\x20\x30\x6c\x2d\x2e\x30\x36\x2d\x2e\x30\x36\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x2d\x31\x2e\x38\x32\x2d\x2e\x33\x33\x20\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x2d\x31\x20\x31\x2e\x35\x31\x56\x32\x31\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x2d\x34\x20\x30\x76\x2d\x2e\x30\x39\x41\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x20\x39\x20\x31\x39\x2e\x34\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x2d\x31\x2e\x38\x32\x2e\x33\x33\x6c\x2d\x2e\x30\x36\x2e\x30\x36\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x2d\x32\x2e\x38\x33\x20\x30\x20\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x30\x2d\x32\x2e\x38\x33\x6c\x2e\x30\x36\x2d\x2e\x30\x36\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x20\x2e\x33\x33\x2d\x31\x2e\x38\x32\x20\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x2d\x31\x2e\x35\x31\x2d\x31\x48\x33\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x30\x2d\x34\x68\x2e\x30\x39\x41\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x20\x34\x2e\x36\x20\x39\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x2d\x2e\x33\x33\x2d\x31\x2e\x38\x32\x6c\x2d\x2e\x30\x36\x2d\x2e\x30\x36\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x30\x2d\x32\x2e\x38\x33\x20\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x32\x2e\x38\x33\x20\x30\x6c\x2e\x30\x36\x2e\x30\x36\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x20\x31\x2e\x38\x32\x2e\x33\x33\x48\x39\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x20\x31\x2d\x31\x2e\x35\x31\x56\x33\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x34\x20\x30\x76\x2e\x30\x39\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x20\x31\x20\x31\x2e\x35\x31\x20\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x20\x31\x2e\x38\x32\x2d\x2e\x33\x33\x6c\x2e\x30\x36\x2d\x2e\x30\x36\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x32\x2e\x38\x33\x20\x30\x20\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x30\x20\x32\x2e\x38\x33\x6c\x2d\x2e\x30\x36\x2e\x30\x36\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x2d\x2e\x33\x33\x20\x31\x2e\x38\x32\x56\x39\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x20\x31\x2e\x35\x31\x20\x31\x48\x32\x31\x61\x32\x20\x32\x20\x30\x20\x30\x20\x31\x20\x30\x20\x34\x68\x2d\x2e\x30\x39\x61\x31\x2e\x36\x35\x20\x31\x2e\x36\x35\x20\x30\x20\x30\x20\x30\x2d\x31\x2e\x35\x31\x20\x31\x7a\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e" : "\x61\x69" === _0xbaf490_0 ? "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x31\x30\x20\x33\x20\x32\x2e\x31\x20\x36\x2e\x39\x4c\x31\x39\x20\x31\x32\x6c\x2d\x36\x2e\x39\x20\x32\x2e\x31\x4c\x31\x30\x20\x32\x31\x6c\x2d\x32\x2e\x31\x2d\x36\x2e\x39\x4c\x31\x20\x31\x32\x6c\x36\x2e\x39\x2d\x32\x2e\x31\x4c\x31\x30\x20\x33\x5a\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x32\x30\x20\x32\x76\x36\x6d\x2d\x33\x2d\x33\x68\x36\x22\x2f\x3e\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x32\x22\x20\x79\x3d\x22\x31\x39\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x33\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x33\x22\x20\x72\x78\x3d\x22\x31\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e" : "\x70\x61\x6e\x65\x6c" === _0xbaf490_0 ? "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x33\x22\x20\x79\x3d\x22\x33\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x31\x38\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x31\x38\x22\x20\x72\x78\x3d\x22\x32\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x39\x20\x33\x76\x31\x38\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e" : "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22" + _0xbaf490_d[_0xbaf490_0] + "\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e";
 
-document.querySelectorAll("[data-icon]").forEach(e => e.innerHTML = p(e.dataset.icon));
+document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x69\x63\x6f\x6e\x5d").forEach(_0xbaf490_0 => _0xbaf490_0.innerHTML = _0x714b6c_d(_0xbaf490_0.dataset.icon));
 
-const Ve = window.open.bind(window), Ke = {
-  engine: "duckduckgo",
+const _0xbaf490_e = window.open.bind(window), _0xbaf490_f = {
+  engine: "\x64\x75\x63\x6b\x64\x75\x63\x6b\x67\x6f",
   restore: !0,
   popupBlock: !0,
   adBlock: !0,
   downloadBlock: !0,
-  transport: "textlib",
+  transport: "\x74\x65\x78\x74\x6c\x69\x62",
   autoRelay: !0,
-  blocker: "auto"
+  blocker: "\x61\x75\x74\x6f"
 };
 
-let Ge = {};
+let _0xbaf490_10 = {};
 
 try {
-  Ge = JSON.parse(localStorage.getItem("drop.settings") || "{}");
+  _0xbaf490_10 = JSON.parse(localStorage.getItem("\x64\x72\x6f\x70\x2e\x73\x65\x74\x74\x69\x6e\x67\x73") || "\x7b\x7d");
 } catch {}
 
-const Ye = {
-  ...Ke,
-  closePrevention: !0 === Ge.closePrevention,
-  engine: [ "duckduckgo", "google", "bing" ].includes(Ge.engine) ? Ge.engine : Ke.engine,
-  restore: !1 !== Ge.restore,
-  popupBlock: !1 !== Ge.popupBlock,
-  adBlock: !1 !== Ge.adBlock
+const _0xbaf490_11 = {
+  ..._0xbaf490_f,
+  closePrevention: !0 === _0xbaf490_10.closePrevention,
+  engine: [ "\x64\x75\x63\x6b\x64\x75\x63\x6b\x67\x6f", "\x67\x6f\x6f\x67\x6c\x65", "\x62\x69\x6e\x67" ].includes(_0xbaf490_10.engine) ? _0xbaf490_10.engine : _0xbaf490_f.engine,
+  restore: !1 !== _0xbaf490_10.restore,
+  popupBlock: !1 !== _0xbaf490_10.popupBlock,
+  adBlock: !1 !== _0xbaf490_10.adBlock
 };
 
-function Ze() {
-  Ye.httpBridge = "direct" !== Ye.connection, Ye.autoRelay = "bridge" !== Ye.connection;
+function _0xbaf490_12() {
+  _0xbaf490_11.httpBridge = "\x64\x69\x72\x65\x63\x74" !== _0xbaf490_11.connection, _0xbaf490_11.autoRelay = "\x62\x72\x69\x64\x67\x65" !== _0xbaf490_11.connection;
 }
 
-Ye.connection = [ "auto", "bridge", "direct" ].includes(Ge.connection) ? Ge.connection : "auto", 
-Ze();
+_0xbaf490_11.connection = [ "\x61\x75\x74\x6f", "\x62\x72\x69\x64\x67\x65", "\x64\x69\x72\x65\x63\x74" ].includes(_0xbaf490_10.connection) ? _0xbaf490_10.connection : "\x61\x75\x74\x6f", 
+_0xbaf490_12();
 
-const $e = Oe();
+const _0xbaf490_13 = _0xbaf490_c();
 
-Ye.onTraffic = (e, t) => $e.add(e, t), ze(() => Ye, () => "browser" === et || "games" === et), 
-je(() => Ye, () => [ m("gamesFrame") ]);
+_0xbaf490_11.onTraffic = (_0xbaf490_0, _0xbaf490_1) => _0xbaf490_13.add(_0xbaf490_0, _0xbaf490_1), 
+_0xbaf490_a(() => _0xbaf490_11, () => "\x62\x72\x6f\x77\x73\x65\x72" === _0xbaf490_17 || "\x67\x61\x6d\x65\x73" === _0xbaf490_17), 
+_0xbaf490_b(() => _0xbaf490_11, () => [ _0x714b6c_b("\x67\x61\x6d\x65\x73\x46\x72\x61\x6d\x65") ]);
 
-let _e, Qe = [], Xe = null, et = "home", tt = !1, nt = [], ot = !1;
+let _0xbaf490_14, _0xbaf490_15 = [], _0xbaf490_16 = null, _0xbaf490_17 = "\x68\x6f\x6d\x65", _0xbaf490_18 = !1, _0xbaf490_19 = [], _0xbaf490_1a = !1;
 
-function I(e) {
-  m("notice").textContent = e, m("notice").hidden = !1, clearTimeout(_e), _e = setTimeout(() => m("notice").hidden = !0, 6500);
+function _0x714b6c_24(_0xbaf490_0) {
+  _0x714b6c_b("\x6e\x6f\x74\x69\x63\x65").textContent = _0xbaf490_0, _0x714b6c_b("\x6e\x6f\x74\x69\x63\x65").hidden = !1, 
+  clearTimeout(_0xbaf490_14), _0xbaf490_14 = setTimeout(() => _0x714b6c_b("\x6e\x6f\x74\x69\x63\x65").hidden = !0, 6500);
 }
 
-function at() {
+function _0xbaf490_1b() {
   try {
-    localStorage.setItem("drop.settings", JSON.stringify(Ye));
+    localStorage.setItem("\x64\x72\x6f\x70\x2e\x73\x65\x74\x74\x69\x6e\x67\x73", JSON.stringify(_0xbaf490_11));
   } catch {
-    I("Browser storage is unavailable.");
+    _0x714b6c_24("\x42\x72\x6f\x77\x73\x65\x72\x20\x73\x74\x6f\x72\x61\x67\x65\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
   }
 }
 
-function rt() {
+function _0xbaf490_1c() {
   try {
-    Ye.restore ? localStorage.setItem("drop.tabs", JSON.stringify(Qe.map(({url: e, title: t, pinned: n}) => ({
-      url: e,
-      title: t,
-      pinned: !!n
-    })))) : localStorage.removeItem("drop.tabs");
+    _0xbaf490_11.restore ? localStorage.setItem("\x64\x72\x6f\x70\x2e\x74\x61\x62\x73", JSON.stringify(_0xbaf490_15.map(({url: _0xbaf490_0, title: _0xbaf490_1, pinned: _0xbaf490_2}) => ({
+      url: _0xbaf490_0,
+      title: _0xbaf490_1,
+      pinned: !!_0xbaf490_2
+    })))) : localStorage.removeItem("\x64\x72\x6f\x70\x2e\x74\x61\x62\x73");
   } catch {}
 }
 
-function it(e) {
-  et = e, document.body.dataset.view = e;
-  for (const t of [ "home", "browser", "ai", "games", "tube", "bookmarks" ]) m(t).hidden = t !== e;
-  m("homeNav").toggleAttribute("aria-current", "home" === e), m("homeNav").setAttribute("aria-current", "home" === e ? "page" : "false"), 
-  m("aiNav").setAttribute("aria-current", "ai" === e ? "page" : "false"), "home" === e && (m("query").value = "", 
-  m("query").focus()), "ai" === e && mt(), "games" !== e || m("gamesFrame").getAttribute("src") || (m("gamesFrame").src = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/games.html", 
-  mt()), "tube" !== e || m("tubeFrame").getAttribute("src") || (m("tubeFrame").src = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/tube.html", 
-  mt()), "tube" !== e && m("tubeFrame").contentWindow && m("tubeFrame").contentWindow.postMessage({
-    type: "drop:tube-pause"
-  }, location.origin), "bookmarks" === e && yt();
-  for (const t of [ "games", "tube", "bookmarks" ]) m(t + "Nav").setAttribute("aria-current", e === t ? "page" : "false");
-  ct();
+function _0xbaf490_1d(_0xbaf490_0) {
+  _0xbaf490_17 = _0xbaf490_0, document.body.dataset.view = _0xbaf490_0;
+  for (const _0xbaf490_1 of [ "\x68\x6f\x6d\x65", "\x62\x72\x6f\x77\x73\x65\x72", "\x61\x69", "\x67\x61\x6d\x65\x73", "\x74\x75\x62\x65", "\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x73" ]) _0x714b6c_b(_0xbaf490_1).hidden = _0xbaf490_1 !== _0xbaf490_0;
+  _0x714b6c_b("\x68\x6f\x6d\x65\x4e\x61\x76").toggleAttribute("\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74", "\x68\x6f\x6d\x65" === _0xbaf490_0), 
+  _0x714b6c_b("\x68\x6f\x6d\x65\x4e\x61\x76").setAttribute("\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74", "\x68\x6f\x6d\x65" === _0xbaf490_0 ? "\x70\x61\x67\x65" : "\x66\x61\x6c\x73\x65"), 
+  _0x714b6c_b("\x61\x69\x4e\x61\x76").setAttribute("\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74", "\x61\x69" === _0xbaf490_0 ? "\x70\x61\x67\x65" : "\x66\x61\x6c\x73\x65"), 
+  "\x68\x6f\x6d\x65" === _0xbaf490_0 && (_0x714b6c_b("\x71\x75\x65\x72\x79").value = "", _0x714b6c_b("\x71\x75\x65\x72\x79").focus()), 
+  "\x61\x69" === _0xbaf490_0 && _0xbaf490_24(), "\x67\x61\x6d\x65\x73" !== _0xbaf490_0 || _0x714b6c_b("\x67\x61\x6d\x65\x73\x46\x72\x61\x6d\x65").getAttribute("\x73\x72\x63") || (_0x714b6c_b("\x67\x61\x6d\x65\x73\x46\x72\x61\x6d\x65").src = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x64\x72\x6f\x70\x2f\x67\x61\x6d\x65\x73\x2e\x68\x74\x6d\x6c", 
+  _0xbaf490_24()), "\x74\x75\x62\x65" !== _0xbaf490_0 || _0x714b6c_b("\x74\x75\x62\x65\x46\x72\x61\x6d\x65").getAttribute("\x73\x72\x63") || (_0x714b6c_b("\x74\x75\x62\x65\x46\x72\x61\x6d\x65").src = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x64\x72\x6f\x70\x2f\x74\x75\x62\x65\x2e\x68\x74\x6d\x6c", 
+  _0xbaf490_24()), "\x74\x75\x62\x65" !== _0xbaf490_0 && _0x714b6c_b("\x74\x75\x62\x65\x46\x72\x61\x6d\x65").contentWindow && _0x714b6c_b("\x74\x75\x62\x65\x46\x72\x61\x6d\x65").contentWindow.postMessage({
+    type: "\x64\x72\x6f\x70\x3a\x74\x75\x62\x65\x2d\x70\x61\x75\x73\x65"
+  }, location.origin), "\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x73" === _0xbaf490_0 && _0xbaf490_2b();
+  for (const _0xbaf490_1 of [ "\x67\x61\x6d\x65\x73", "\x74\x75\x62\x65", "\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x73" ]) _0x714b6c_b(_0xbaf490_1 + "\x4e\x61\x76").setAttribute("\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74", _0xbaf490_0 === _0xbaf490_1 ? "\x70\x61\x67\x65" : "\x66\x61\x6c\x73\x65");
+  _0xbaf490_1e();
 }
 
-function ct() {
-  Qe.sort((e, t) => Number(!!t.pinned) - Number(!!e.pinned)), kt(), m("tabCount").textContent = Qe.length, 
-  m("tabs").replaceChildren(...Qe.map(e => {
-    const t = document.createElement("div");
-    t.className = "tab" + (e.pinned ? " pinned" : ""), t.setAttribute("role", "tab"), 
-    t.setAttribute("aria-selected", String("browser" === et && Xe === e));
-    const n = document.createElement("button");
-    n.innerHTML = p(e.pinned ? "pin" : "file");
-    const o = document.createElement("span");
-    o.className = "label", o.textContent = e.title || new URL(e.url).hostname, n.append(o), 
-    n.title = o.textContent, n.onclick = () => st(e);
-    const a = document.createElement("button");
-    a.className = "icon close-tab", a.innerHTML = p("close"), a.setAttribute("aria-label", "Close " + o.textContent), 
-    a.onclick = () => lt(e);
-    const r = document.createElement("button");
-    return r.className = "icon pin-tab", r.innerHTML = p("pin"), r.setAttribute("aria-label", (e.pinned ? "Unpin " : "Pin ") + o.textContent), 
-    r.setAttribute("aria-pressed", String(!!e.pinned)), r.onclick = () => ft(e), t.append(n, r, a), 
-    t;
+function _0xbaf490_1e() {
+  _0xbaf490_15.sort((_0xbaf490_0, _0xbaf490_1) => Number(!!_0xbaf490_1.pinned) - Number(!!_0xbaf490_0.pinned)), 
+  _0xbaf490_2a(), _0x714b6c_b("\x74\x61\x62\x43\x6f\x75\x6e\x74").textContent = _0xbaf490_15.length, _0x714b6c_b("\x74\x61\x62\x73").replaceChildren(..._0xbaf490_15.map(_0xbaf490_0 => {
+    const _0xbaf490_1 = document.createElement("\x64\x69\x76");
+    _0xbaf490_1.className = "\x74\x61\x62" + (_0xbaf490_0.pinned ? "\x20\x70\x69\x6e\x6e\x65\x64" : ""), _0xbaf490_1.setAttribute("\x72\x6f\x6c\x65", "\x74\x61\x62"), 
+    _0xbaf490_1.setAttribute("\x61\x72\x69\x61\x2d\x73\x65\x6c\x65\x63\x74\x65\x64", String("\x62\x72\x6f\x77\x73\x65\x72" === _0xbaf490_17 && _0xbaf490_16 === _0xbaf490_0));
+    const _0xbaf490_2 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0xbaf490_2.innerHTML = _0x714b6c_d(_0xbaf490_0.pinned ? "\x70\x69\x6e" : "\x66\x69\x6c\x65");
+    const _0xbaf490_3 = document.createElement("\x73\x70\x61\x6e");
+    _0xbaf490_3.className = "\x6c\x61\x62\x65\x6c", _0xbaf490_3.textContent = _0xbaf490_0.title || new URL(_0xbaf490_0.url).hostname, 
+    _0xbaf490_2.append(_0xbaf490_3), _0xbaf490_2.title = _0xbaf490_3.textContent, _0xbaf490_2.onclick = () => _0xbaf490_1f(_0xbaf490_0);
+    const _0xbaf490_4 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0xbaf490_4.className = "\x69\x63\x6f\x6e\x20\x63\x6c\x6f\x73\x65\x2d\x74\x61\x62", _0xbaf490_4.innerHTML = _0x714b6c_d("\x63\x6c\x6f\x73\x65"), 
+    _0xbaf490_4.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x43\x6c\x6f\x73\x65\x20" + _0xbaf490_3.textContent), _0xbaf490_4.onclick = () => _0xbaf490_20(_0xbaf490_0);
+    const _0xbaf490_5 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    return _0xbaf490_5.className = "\x69\x63\x6f\x6e\x20\x70\x69\x6e\x2d\x74\x61\x62", _0xbaf490_5.innerHTML = _0x714b6c_d("\x70\x69\x6e"), 
+    _0xbaf490_5.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", (_0xbaf490_0.pinned ? "\x55\x6e\x70\x69\x6e\x20" : "\x50\x69\x6e\x20") + _0xbaf490_3.textContent), 
+    _0xbaf490_5.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(!!_0xbaf490_0.pinned)), _0xbaf490_5.onclick = () => _0xbaf490_27(_0xbaf490_0), 
+    _0xbaf490_1.append(_0xbaf490_2, _0xbaf490_5, _0xbaf490_4), _0xbaf490_1;
   }));
 }
 
-function st(e) {
-  Xe = e, it("browser");
-  for (const t of Qe) t.frame && (t.frame.hidden = t !== e);
-  m("address").value = e.url, m("loading").textContent = e.loading ? "Loading..." : "", 
-  ht(e.error), e.frame || ut(e, e.url);
+function _0xbaf490_1f(_0xbaf490_0) {
+  _0xbaf490_16 = _0xbaf490_0, _0xbaf490_1d("\x62\x72\x6f\x77\x73\x65\x72");
+  for (const _0xbaf490_1 of _0xbaf490_15) _0xbaf490_1.frame && (_0xbaf490_1.frame.hidden = _0xbaf490_1 !== _0xbaf490_0);
+  _0x714b6c_b("\x61\x64\x64\x72\x65\x73\x73").value = _0xbaf490_0.url, _0x714b6c_b("\x6c\x6f\x61\x64\x69\x6e\x67").textContent = _0xbaf490_0.loading ? "\x4c\x6f\x61\x64\x69\x6e\x67\x2e\x2e\x2e" : "", 
+  _0xbaf490_26(_0xbaf490_0.error), _0xbaf490_0.frame || _0xbaf490_22(_0xbaf490_0, _0xbaf490_0.url);
 }
 
-function lt(e) {
-  e.stopNavigationWatch?.(), clearTimeout(e.loadTimer);
-  const t = Qe.indexOf(e);
-  Qe = Qe.filter(t => t !== e), e.frame && (Pe(e.frame), e.frame.remove()), Xe === e && (Xe = null, 
-  Qe.length ? st(Qe[Math.max(0, t - 1)]) : it("home")), ct(), rt();
+function _0xbaf490_20(_0xbaf490_0) {
+  _0xbaf490_0.stopNavigationWatch?.(), clearTimeout(_0xbaf490_0.loadTimer);
+  const _0xbaf490_1 = _0xbaf490_15.indexOf(_0xbaf490_0);
+  _0xbaf490_15 = _0xbaf490_15.filter(_0xbaf490_1 => _0xbaf490_1 !== _0xbaf490_0), 
+  _0xbaf490_0.frame && (_0xbaf490_5(_0xbaf490_0.frame), _0xbaf490_0.frame.remove()), 
+  _0xbaf490_16 === _0xbaf490_0 && (_0xbaf490_16 = null, _0xbaf490_15.length ? _0xbaf490_1f(_0xbaf490_15[Math.max(0, _0xbaf490_1 - 1)]) : _0xbaf490_1d("\x68\x6f\x6d\x65")), 
+  _0xbaf490_1e(), _0xbaf490_1c();
 }
 
-function dt(e) {
-  if (Qe.length >= 20) return void I("Close a tab before opening another.");
-  const t = {
+function _0xbaf490_21(_0xbaf490_0) {
+  if (_0xbaf490_15.length >= 20) return void _0x714b6c_24("\x43\x6c\x6f\x73\x65\x20\x61\x20\x74\x61\x62\x20\x62\x65\x66\x6f\x72\x65\x20\x6f\x70\x65\x6e\x69\x6e\x67\x20\x61\x6e\x6f\x74\x68\x65\x72\x2e");
+  const _0xbaf490_1 = {
     id: crypto.randomUUID(),
-    url: e,
-    title: new URL(e).hostname,
+    url: _0xbaf490_0,
+    title: new URL(_0xbaf490_0).hostname,
     version: 0
   };
-  Qe.push(t), st(t), rt();
+  _0xbaf490_15.push(_0xbaf490_1), _0xbaf490_1f(_0xbaf490_1), _0xbaf490_1c();
 }
 
-async function ut(e, t) {
-  const n = ++e.version;
-  let o;
-  e.stopNavigationWatch?.();
+async function _0xbaf490_22(_0xbaf490_0, _0xbaf490_2) {
+  const _0xbaf490_4 = ++_0xbaf490_0.version;
+  let _0xbaf490_5;
+  _0xbaf490_0.stopNavigationWatch?.();
   try {
-    o = e.frame?.contentDocument;
+    _0xbaf490_5 = _0xbaf490_0.frame?.contentDocument;
   } catch {}
-  if (e.url = t, e.title = new URL(t).hostname, e.loading = !0, e.error = "", Xe === e && ht(""), 
-  !e.frame) {
-    const t = document.createElement("iframe");
-    t.title = e.title, t.setAttribute("sandbox", Ue(Ye)), t.setAttribute("allow", "fullscreen; autoplay; clipboard-write"), 
-    t.referrerPolicy = "no-referrer", t.hidden = Xe !== e, e.frame = t, m("stage").append(t), 
-    t.addEventListener("load", () => {
-      if (!Qe.includes(e) || e.loading) return;
-      const n = De(t);
-      n && (e.url = n, rt());
+  if (_0xbaf490_0.url = _0xbaf490_2, _0xbaf490_0.title = new URL(_0xbaf490_2).hostname, 
+  _0xbaf490_0.loading = !0, _0xbaf490_0.error = "", _0xbaf490_16 === _0xbaf490_0 && _0xbaf490_26(""), 
+  !_0xbaf490_0.frame) {
+    const _0xbaf490_1 = document.createElement("\x69\x66\x72\x61\x6d\x65");
+    _0xbaf490_1.title = _0xbaf490_0.title, _0xbaf490_1.setAttribute("\x73\x61\x6e\x64\x62\x6f\x78", _0xbaf490_9(_0xbaf490_11)), 
+    _0xbaf490_1.setAttribute("\x61\x6c\x6c\x6f\x77", "\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x3b\x20\x61\x75\x74\x6f\x70\x6c\x61\x79\x3b\x20\x63\x6c\x69\x70\x62\x6f\x61\x72\x64\x2d\x77\x72\x69\x74\x65"), _0xbaf490_1.referrerPolicy = "\x6e\x6f\x2d\x72\x65\x66\x65\x72\x72\x65\x72", 
+    _0xbaf490_1.hidden = _0xbaf490_16 !== _0xbaf490_0, _0xbaf490_0.frame = _0xbaf490_1, 
+    _0x714b6c_b("\x73\x74\x61\x67\x65").append(_0xbaf490_1), _0xbaf490_1.addEventListener("\x6c\x6f\x61\x64", () => {
+      if (!_0xbaf490_15.includes(_0xbaf490_0) || _0xbaf490_0.loading) return;
+      const _0xbaf490_2 = _0xbaf490_6(_0xbaf490_1);
+      _0xbaf490_2 && (_0xbaf490_0.url = _0xbaf490_2, _0xbaf490_1c());
     });
   }
-  Xe === e && (m("address").value = t, m("loading").textContent = "Loading..."), ct(), 
-  e.stopNavigationWatch = Ne(e.frame, {
-    previousDocument: o,
-    onError: t => function(e, t) {
-      Qe.includes(e) && e.version === t && (e.stopNavigationWatch?.(), clearTimeout(e.loadTimer), 
-      e.loading = !1, e.error = "", Xe === e && (m("loading").textContent = "", ht(""), 
-      I("This website is not responding. You can open another address.")));
-    }(e, n),
-    reload: () => Be(t, Ye, e.frame, {
+  _0xbaf490_16 === _0xbaf490_0 && (_0x714b6c_b("\x61\x64\x64\x72\x65\x73\x73").value = _0xbaf490_2, _0x714b6c_b("\x6c\x6f\x61\x64\x69\x6e\x67").textContent = "\x4c\x6f\x61\x64\x69\x6e\x67\x2e\x2e\x2e"), 
+  _0xbaf490_1e(), _0xbaf490_0.stopNavigationWatch = _0xbaf490_1(_0xbaf490_0.frame, {
+    previousDocument: _0xbaf490_5,
+    onError: _0xbaf490_1 => function(_0xbaf490_0, _0xbaf490_1) {
+      _0xbaf490_15.includes(_0xbaf490_0) && _0xbaf490_0.version === _0xbaf490_1 && (_0xbaf490_0.stopNavigationWatch?.(), 
+      clearTimeout(_0xbaf490_0.loadTimer), _0xbaf490_0.loading = !1, _0xbaf490_0.error = "", 
+      _0xbaf490_16 === _0xbaf490_0 && (_0x714b6c_b("\x6c\x6f\x61\x64\x69\x6e\x67").textContent = "", _0xbaf490_26(""), 
+      _0x714b6c_24("\x54\x68\x69\x73\x20\x77\x65\x62\x73\x69\x74\x65\x20\x69\x73\x20\x6e\x6f\x74\x20\x72\x65\x73\x70\x6f\x6e\x64\x69\x6e\x67\x2e\x20\x59\x6f\x75\x20\x63\x61\x6e\x20\x6f\x70\x65\x6e\x20\x61\x6e\x6f\x74\x68\x65\x72\x20\x61\x64\x64\x72\x65\x73\x73\x2e")));
+    }(_0xbaf490_0, _0xbaf490_4),
+    reload: () => _0xbaf490_3(_0xbaf490_2, _0xbaf490_11, _0xbaf490_0.frame, {
       reconnect: !0
     }),
     onReady: () => {
-      if (n !== e.version || !Qe.includes(e)) return;
-      const t = De(e.frame);
-      t && (e.url = t);
+      if (_0xbaf490_4 !== _0xbaf490_0.version || !_0xbaf490_15.includes(_0xbaf490_0)) return;
+      const _0xbaf490_1 = _0xbaf490_6(_0xbaf490_0.frame);
+      _0xbaf490_1 && (_0xbaf490_0.url = _0xbaf490_1);
       try {
-        e.title = e.frame.contentDocument?.title || new URL(e.url).hostname;
+        _0xbaf490_0.title = _0xbaf490_0.frame.contentDocument?.title || new URL(_0xbaf490_0.url).hostname;
       } catch {}
-      e.loading = !1, e.error = "", Xe === e && (ht(""), document.activeElement !== m("address") && (m("address").value = e.url), 
-      m("loading").textContent = ""), ct(), rt();
+      _0xbaf490_0.loading = !1, _0xbaf490_0.error = "", _0xbaf490_16 === _0xbaf490_0 && (_0xbaf490_26(""), 
+      document.activeElement !== _0x714b6c_b("\x61\x64\x64\x72\x65\x73\x73") && (_0x714b6c_b("\x61\x64\x64\x72\x65\x73\x73").value = _0xbaf490_0.url), 
+      _0x714b6c_b("\x6c\x6f\x61\x64\x69\x6e\x67").textContent = ""), _0xbaf490_1e(), _0xbaf490_1c();
     }
   });
   try {
-    await Be(t, Ye, e.frame), n === e.version && Qe.includes(e) && rt();
-  } catch (a) {
-    n === e.version && e.stopNavigationWatch.failed(a.message || "Could not open this page.");
+    await _0xbaf490_3(_0xbaf490_2, _0xbaf490_11, _0xbaf490_0.frame), _0xbaf490_4 === _0xbaf490_0.version && _0xbaf490_15.includes(_0xbaf490_0) && _0xbaf490_1c();
+  } catch (_0xbaf490_7) {
+    _0xbaf490_4 === _0xbaf490_0.version && _0xbaf490_0.stopNavigationWatch.failed(_0xbaf490_7.message || "\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6f\x70\x65\x6e\x20\x74\x68\x69\x73\x20\x70\x61\x67\x65\x2e");
   }
 }
 
-function pt(e) {
-  document.body.classList.toggle("collapsed", e), m("collapse").setAttribute("aria-expanded", String(!e)), 
-  m("collapse").setAttribute("aria-label", e ? "Expand sidebar" : "Collapse sidebar"), 
-  m("collapse").title = e ? "Expand sidebar" : "Collapse sidebar";
+function _0xbaf490_23(_0xbaf490_0) {
+  document.body.classList.toggle("\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64", _0xbaf490_0), _0x714b6c_b("\x63\x6f\x6c\x6c\x61\x70\x73\x65").setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String(!_0xbaf490_0)), 
+  _0x714b6c_b("\x63\x6f\x6c\x6c\x61\x70\x73\x65").setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0xbaf490_0 ? "\x45\x78\x70\x61\x6e\x64\x20\x73\x69\x64\x65\x62\x61\x72" : "\x43\x6f\x6c\x6c\x61\x70\x73\x65\x20\x73\x69\x64\x65\x62\x61\x72"), 
+  _0x714b6c_b("\x63\x6f\x6c\x6c\x61\x70\x73\x65").title = _0xbaf490_0 ? "\x45\x78\x70\x61\x6e\x64\x20\x73\x69\x64\x65\x62\x61\x72" : "\x43\x6f\x6c\x6c\x61\x70\x73\x65\x20\x73\x69\x64\x65\x62\x61\x72";
   try {
-    localStorage.setItem("drop.collapsed", String(e));
+    localStorage.setItem("\x64\x72\x6f\x70\x2e\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64", String(_0xbaf490_0));
   } catch {}
 }
 
-m("search").onsubmit = e => {
-  e.preventDefault();
+_0x714b6c_b("\x73\x65\x61\x72\x63\x68").onsubmit = _0xbaf490_0 => {
+  _0xbaf490_0.preventDefault();
   try {
-    dt(We(m("query").value, Ye.engine));
-  } catch (t) {
-    I(t.message);
+    _0xbaf490_21(_0xbaf490_8(_0x714b6c_b("\x71\x75\x65\x72\x79").value, _0xbaf490_11.engine));
+  } catch (_0xbaf490_1) {
+    _0x714b6c_24(_0xbaf490_1.message);
   }
-}, m("addressForm").onsubmit = e => {
-  if (e.preventDefault(), Xe) try {
-    ut(Xe, We(m("address").value, Ye.engine));
-  } catch (t) {
-    I(t.message);
+}, _0x714b6c_b("\x61\x64\x64\x72\x65\x73\x73\x46\x6f\x72\x6d").onsubmit = _0xbaf490_0 => {
+  if (_0xbaf490_0.preventDefault(), _0xbaf490_16) try {
+    _0xbaf490_22(_0xbaf490_16, _0xbaf490_8(_0x714b6c_b("\x61\x64\x64\x72\x65\x73\x73").value, _0xbaf490_11.engine));
+  } catch (_0xbaf490_1) {
+    _0x714b6c_24(_0xbaf490_1.message);
   }
-}, m("back").onclick = () => Te("back", Xe?.frame), m("forward").onclick = () => Te("forward", Xe?.frame), 
-m("reload").onclick = m("retryPage").onclick = () => {
-  Xe && ut(Xe, De(Xe.frame) || Xe.url);
-}, m("newTab").onclick = m("homeNav").onclick = () => it("home"), m("aiNav").onclick = () => it("ai"), 
-m("tubeNav").onclick = () => it("tube"), m("gamesNav").onclick = () => it("games"), 
-m("bookmarksNav").onclick = () => it("bookmarks"), m("astraNav").onclick = () => dt("https://astra-education.top/"), 
-m("shortcuts").onclick = e => {
-  const t = e.target.closest("[data-url]");
-  t && ("https://youtube.com" === t.dataset.url ? it("tube") : dt(t.dataset.url));
-}, m("collapse").onclick = () => pt(!document.body.classList.contains("collapsed"));
+}, _0x714b6c_b("\x62\x61\x63\x6b").onclick = () => _0xbaf490_4("\x62\x61\x63\x6b", _0xbaf490_16?.frame), 
+_0x714b6c_b("\x66\x6f\x72\x77\x61\x72\x64").onclick = () => _0xbaf490_4("\x66\x6f\x72\x77\x61\x72\x64", _0xbaf490_16?.frame), 
+_0x714b6c_b("\x72\x65\x6c\x6f\x61\x64").onclick = _0x714b6c_b("\x72\x65\x74\x72\x79\x50\x61\x67\x65").onclick = () => {
+  _0xbaf490_16 && _0xbaf490_22(_0xbaf490_16, _0xbaf490_6(_0xbaf490_16.frame) || _0xbaf490_16.url);
+}, _0x714b6c_b("\x6e\x65\x77\x54\x61\x62").onclick = _0x714b6c_b("\x68\x6f\x6d\x65\x4e\x61\x76").onclick = () => _0xbaf490_1d("\x68\x6f\x6d\x65"), 
+_0x714b6c_b("\x61\x69\x4e\x61\x76").onclick = () => _0xbaf490_1d("\x61\x69"), _0x714b6c_b("\x74\x75\x62\x65\x4e\x61\x76").onclick = () => _0xbaf490_1d("\x74\x75\x62\x65"), 
+_0x714b6c_b("\x67\x61\x6d\x65\x73\x4e\x61\x76").onclick = () => _0xbaf490_1d("\x67\x61\x6d\x65\x73"), _0x714b6c_b("\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x73\x4e\x61\x76").onclick = () => _0xbaf490_1d("\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x73"), 
+_0x714b6c_b("\x61\x73\x74\x72\x61\x4e\x61\x76").onclick = () => _0xbaf490_21("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x61\x73\x74\x72\x61\x2d\x65\x64\x75\x63\x61\x74\x69\x6f\x6e\x2e\x74\x6f\x70\x2f"), 
+_0x714b6c_b("\x73\x68\x6f\x72\x74\x63\x75\x74\x73").onclick = _0xbaf490_0 => {
+  const _0xbaf490_1 = _0xbaf490_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x75\x72\x6c\x5d");
+  _0xbaf490_1 && ("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x79\x6f\x75\x74\x75\x62\x65\x2e\x63\x6f\x6d" === _0xbaf490_1.dataset.url ? _0xbaf490_1d("\x74\x75\x62\x65") : _0xbaf490_21(_0xbaf490_1.dataset.url));
+}, _0x714b6c_b("\x63\x6f\x6c\x6c\x61\x70\x73\x65").onclick = () => _0xbaf490_23(!document.body.classList.contains("\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64"));
 
 try {
-  pt(matchMedia("(max-width:700px)").matches || "true" === localStorage.getItem("drop.collapsed"));
+  _0xbaf490_23(matchMedia("\x28\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x37\x30\x30\x70\x78\x29").matches || "\x74\x72\x75\x65" === localStorage.getItem("\x64\x72\x6f\x70\x2e\x63\x6f\x6c\x6c\x61\x70\x73\x65\x64"));
 } catch {}
 
-m("connectionMode").value = Ye.connection, m("connectionMode").onchange = () => {
-  Ye.connection = m("connectionMode").value, Ze(), at(), m("connectionStatus").textContent = "Ready for next navigation", 
-  I("Connection preference saved. Reload an open page to apply it.");
-}, m("testConnection").onclick = async () => {
-  const e = m("testConnection");
-  e.disabled = !0;
+_0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x4d\x6f\x64\x65").value = _0xbaf490_11.connection, _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x4d\x6f\x64\x65").onchange = () => {
+  _0xbaf490_11.connection = _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x4d\x6f\x64\x65").value, _0xbaf490_12(), _0xbaf490_1b(), 
+  _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x53\x74\x61\x74\x75\x73").textContent = "\x52\x65\x61\x64\x79\x20\x66\x6f\x72\x20\x6e\x65\x78\x74\x20\x6e\x61\x76\x69\x67\x61\x74\x69\x6f\x6e", _0x714b6c_24("\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x70\x72\x65\x66\x65\x72\x65\x6e\x63\x65\x20\x73\x61\x76\x65\x64\x2e\x20\x52\x65\x6c\x6f\x61\x64\x20\x61\x6e\x20\x6f\x70\x65\x6e\x20\x70\x61\x67\x65\x20\x74\x6f\x20\x61\x70\x70\x6c\x79\x20\x69\x74\x2e");
+}, _0x714b6c_b("\x74\x65\x73\x74\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e").onclick = async () => {
+  const _0xbaf490_0 = _0x714b6c_b("\x74\x65\x73\x74\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e");
+  _0xbaf490_0.disabled = !0;
   try {
-    await He(Ye);
-  } catch (t) {
-    m("connectionStatus").textContent = "Unavailable", I(t.message);
+    await _0xbaf490_7(_0xbaf490_11);
+  } catch (_0xbaf490_1) {
+    _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x53\x74\x61\x74\x75\x73").textContent = "\x55\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", _0x714b6c_24(_0xbaf490_1.message);
   } finally {
-    e.disabled = !1;
+    _0xbaf490_0.disabled = !1;
   }
-}, addEventListener("tutsi:relay-status", ({detail: e}) => {
-  const t = e.url?.includes("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/tutsi-relay/socket/");
-  m("connectionStatus").textContent = [ "connected", "available", "switched" ].includes(e.state) ? t ? "HTTP bridge connected" : "WebSocket connected" : "checking" === e.state ? "Connecting..." : "Unavailable";
+}, addEventListener("\x74\x75\x74\x73\x69\x3a\x72\x65\x6c\x61\x79\x2d\x73\x74\x61\x74\x75\x73", ({detail: _0xbaf490_0}) => {
+  const _0xbaf490_1 = _0xbaf490_0.url?.includes("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x74\x75\x74\x73\x69\x2d\x72\x65\x6c\x61\x79\x2f\x73\x6f\x63\x6b\x65\x74\x2f");
+  _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x53\x74\x61\x74\x75\x73").textContent = [ "\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64", "\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", "\x73\x77\x69\x74\x63\x68\x65\x64" ].includes(_0xbaf490_0.state) ? _0xbaf490_1 ? "\x48\x54\x54\x50\x20\x62\x72\x69\x64\x67\x65\x20\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64" : "\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x20\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64" : "\x63\x68\x65\x63\x6b\x69\x6e\x67" === _0xbaf490_0.state ? "\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\x2e\x2e\x2e" : "\x55\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65";
 }), setInterval(() => {
-  if (document.hidden || "browser" !== et || !Xe?.frame || Xe.loading) return;
-  const e = De(Xe.frame);
-  if (!e || !/^https?:/.test(e)) return;
-  let t = Xe.title;
+  if (document.hidden || "\x62\x72\x6f\x77\x73\x65\x72" !== _0xbaf490_17 || !_0xbaf490_16?.frame || _0xbaf490_16.loading) return;
+  const _0xbaf490_0 = _0xbaf490_6(_0xbaf490_16.frame);
+  if (!_0xbaf490_0 || !/^https?:/.test(_0xbaf490_0)) return;
+  let _0xbaf490_1 = _0xbaf490_16.title;
   try {
-    t = Xe.frame.contentDocument?.title || new URL(e).hostname;
+    _0xbaf490_1 = _0xbaf490_16.frame.contentDocument?.title || new URL(_0xbaf490_0).hostname;
   } catch {}
-  e === Xe.url && t === Xe.title || (Xe.url = e, Xe.title = t, document.activeElement !== m("address") && (m("address").value = e), 
-  ct(), rt());
-}, 500), m("engine").value = Ye.engine, m("restore").checked = Ye.restore, m("popups").checked = Ye.popupBlock, 
-m("ads").checked = Ye.adBlock, m("settingsButton").onclick = () => m("settings").showModal(), 
-document.querySelectorAll("[data-close]").forEach(e => e.onclick = () => m(e.dataset.close).close());
+  _0xbaf490_0 === _0xbaf490_16.url && _0xbaf490_1 === _0xbaf490_16.title || (_0xbaf490_16.url = _0xbaf490_0, 
+  _0xbaf490_16.title = _0xbaf490_1, document.activeElement !== _0x714b6c_b("\x61\x64\x64\x72\x65\x73\x73") && (_0x714b6c_b("\x61\x64\x64\x72\x65\x73\x73").value = _0xbaf490_0), 
+  _0xbaf490_1e(), _0xbaf490_1c());
+}, 500), _0x714b6c_b("\x65\x6e\x67\x69\x6e\x65").value = _0xbaf490_11.engine, _0x714b6c_b("\x72\x65\x73\x74\x6f\x72\x65").checked = _0xbaf490_11.restore, 
+_0x714b6c_b("\x70\x6f\x70\x75\x70\x73").checked = _0xbaf490_11.popupBlock, _0x714b6c_b("\x61\x64\x73").checked = _0xbaf490_11.adBlock, 
+_0x714b6c_b("\x73\x65\x74\x74\x69\x6e\x67\x73\x42\x75\x74\x74\x6f\x6e").onclick = () => _0x714b6c_b("\x73\x65\x74\x74\x69\x6e\x67\x73").showModal(), 
+document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x63\x6c\x6f\x73\x65\x5d").forEach(_0xbaf490_0 => _0xbaf490_0.onclick = () => _0x714b6c_b(_0xbaf490_0.dataset.close).close());
 
-for (const [e, t] of [ [ "engine", "engine" ], [ "restore", "restore" ], [ "popups", "popupBlock" ], [ "ads", "adBlock" ] ]) m(e).onchange = () => {
-  if (Ye[t] = "engine" === e ? m(e).value : m(e).checked, at(), rt(), "popups" === e || "ads" === e) {
-    for (const e of Qe) e.frame && e.frame.setAttribute("sandbox", Ue(Ye));
-    import("../tutsi/@r2931fd1ced1f82891e21ea5e!.js").then(e => e.updateProtectionPolicy(Ye));
+for (const [_0xbaf490_34, _0xbaf490_35] of [ [ "\x65\x6e\x67\x69\x6e\x65", "\x65\x6e\x67\x69\x6e\x65" ], [ "\x72\x65\x73\x74\x6f\x72\x65", "\x72\x65\x73\x74\x6f\x72\x65" ], [ "\x70\x6f\x70\x75\x70\x73", "\x70\x6f\x70\x75\x70\x42\x6c\x6f\x63\x6b" ], [ "\x61\x64\x73", "\x61\x64\x42\x6c\x6f\x63\x6b" ] ]) _0x714b6c_b(_0xbaf490_34).onchange = () => {
+  if (_0xbaf490_11[_0xbaf490_35] = "\x65\x6e\x67\x69\x6e\x65" === _0xbaf490_34 ? _0x714b6c_b(_0xbaf490_34).value : _0x714b6c_b(_0xbaf490_34).checked, 
+  _0xbaf490_1b(), _0xbaf490_1c(), "\x70\x6f\x70\x75\x70\x73" === _0xbaf490_34 || "\x61\x64\x73" === _0xbaf490_34) {
+    for (const _0xbaf490_0 of _0xbaf490_15) _0xbaf490_0.frame && _0xbaf490_0.frame.setAttribute("\x73\x61\x6e\x64\x62\x6f\x78", _0xbaf490_9(_0xbaf490_11));
+    import("\x2e\x2e\x2f\x74\x75\x74\x73\x69\x2f\x40\x72\x32\x39\x33\x31\x66\x64\x31\x63\x65\x64\x31\x66\x38\x32\x38\x39\x31\x65\x32\x31\x65\x61\x35\x65\x21\x2e\x6a\x73").then(_0xbaf490_0 => _0xbaf490_0.updateProtectionPolicy(_0xbaf490_11));
   }
 };
 
-function mt() {
-  m("aiFrame").getAttribute("src") || (m("aiFrame").src = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/agents/?shell=drop");
+function _0xbaf490_24() {
+  _0x714b6c_b("\x61\x69\x46\x72\x61\x6d\x65").getAttribute("\x73\x72\x63") || (_0x714b6c_b("\x61\x69\x46\x72\x61\x6d\x65").src = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x61\x67\x65\x6e\x74\x73\x2f\x3f\x73\x68\x65\x6c\x6c\x3d\x64\x72\x6f\x70");
 }
 
-function gt(e) {
-  mt(), tt ? m("aiFrame").contentWindow.postMessage({
-    type: "drop:command",
-    action: e
-  }, location.origin) : nt.push(e);
+function _0xbaf490_25(_0xbaf490_0) {
+  _0xbaf490_24(), _0xbaf490_18 ? _0x714b6c_b("\x61\x69\x46\x72\x61\x6d\x65").contentWindow.postMessage({
+    type: "\x64\x72\x6f\x70\x3a\x63\x6f\x6d\x6d\x61\x6e\x64",
+    action: _0xbaf490_0
+  }, location.origin) : _0xbaf490_19.push(_0xbaf490_0);
 }
 
-if (m("clearTabs").onclick = () => {
-  for (const e of [ ...Qe ]) lt(e);
+if (_0x714b6c_b("\x63\x6c\x65\x61\x72\x54\x61\x62\x73").onclick = () => {
+  for (const _0xbaf490_0 of [ ..._0xbaf490_15 ]) _0xbaf490_20(_0xbaf490_0);
   try {
-    localStorage.removeItem("drop.tabs");
+    localStorage.removeItem("\x64\x72\x6f\x70\x2e\x74\x61\x62\x73");
   } catch {}
-  I("Tabs cleared.");
-}, m("keys").onclick = m("accountKeys").onclick = () => {
-  m("settings").close(), m("accountMenu").close(), it("ai"), gt("keys");
-}, m("createAccount").onclick = () => {
-  m("accountMenu").close(), it("ai"), gt("signup");
-}, m("profile").onclick = () => {
-  m("accountMenu").showModal(), mt();
-}, m("accountAction").onclick = () => {
-  m("accountMenu").close(), it("ai"), gt(ot ? "signout" : "signin");
-}, addEventListener("message", e => {
-  if (e.origin !== location.origin || e.source !== m("aiFrame").contentWindow) return;
-  const t = e.data;
-  if ("drop:activity" === t?.type && [ "start", "end", "up", "down" ].includes(t.kind)) $e.add(t.kind, t.bytes); else {
-    if ("drop:ready" === t?.type) {
-      tt = !0;
-      for (const e of nt) gt(e);
-      nt = [];
+  _0x714b6c_24("\x54\x61\x62\x73\x20\x63\x6c\x65\x61\x72\x65\x64\x2e");
+}, _0x714b6c_b("\x6b\x65\x79\x73").onclick = _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74\x4b\x65\x79\x73").onclick = () => {
+  _0x714b6c_b("\x73\x65\x74\x74\x69\x6e\x67\x73").close(), _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74\x4d\x65\x6e\x75").close(), _0xbaf490_1d("\x61\x69"), 
+  _0xbaf490_25("\x6b\x65\x79\x73");
+}, _0x714b6c_b("\x63\x72\x65\x61\x74\x65\x41\x63\x63\x6f\x75\x6e\x74").onclick = () => {
+  _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74\x4d\x65\x6e\x75").close(), _0xbaf490_1d("\x61\x69"), _0xbaf490_25("\x73\x69\x67\x6e\x75\x70");
+}, _0x714b6c_b("\x70\x72\x6f\x66\x69\x6c\x65").onclick = () => {
+  _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74\x4d\x65\x6e\x75").showModal(), _0xbaf490_24();
+}, _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74\x41\x63\x74\x69\x6f\x6e").onclick = () => {
+  _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74\x4d\x65\x6e\x75").close(), _0xbaf490_1d("\x61\x69"), _0xbaf490_25(_0xbaf490_1a ? "\x73\x69\x67\x6e\x6f\x75\x74" : "\x73\x69\x67\x6e\x69\x6e");
+}, addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0xbaf490_0 => {
+  if (_0xbaf490_0.origin !== location.origin || _0xbaf490_0.source !== _0x714b6c_b("\x61\x69\x46\x72\x61\x6d\x65").contentWindow) return;
+  const _0xbaf490_1 = _0xbaf490_0.data;
+  if ("\x64\x72\x6f\x70\x3a\x61\x63\x74\x69\x76\x69\x74\x79" === _0xbaf490_1?.type && [ "\x73\x74\x61\x72\x74", "\x65\x6e\x64", "\x75\x70", "\x64\x6f\x77\x6e" ].includes(_0xbaf490_1.kind)) _0xbaf490_13.add(_0xbaf490_1.kind, _0xbaf490_1.bytes); else {
+    if ("\x64\x72\x6f\x70\x3a\x72\x65\x61\x64\x79" === _0xbaf490_1?.type) {
+      _0xbaf490_18 = !0;
+      for (const _0xbaf490_0 of _0xbaf490_19) _0xbaf490_25(_0xbaf490_0);
+      _0xbaf490_19 = [];
     }
-    "drop:account" === t?.type && (ot = !0 === t.signedIn, Mt = {
-      uid: t.uid || "",
-      signedIn: ot,
-      displayName: t.name || "Drop account",
-      avatarUrl: t.avatarUrl || ""
-    }, m("createAccount").hidden = ot, xt && m("tubeFrame").contentWindow?.postMessage({
-      type: "nyx:nyxtube-profile",
-      requestId: xt,
-      profile: Mt
-    }, location.origin), m("accountName").textContent = t.name || "Account", m("accountAction").textContent = ot ? "Sign out" : "Sign in", 
-    m("profile").title = ot ? t.name || "Account" : "Sign in");
+    "\x64\x72\x6f\x70\x3a\x61\x63\x63\x6f\x75\x6e\x74" === _0xbaf490_1?.type && (_0xbaf490_1a = !0 === _0xbaf490_1.signedIn, 
+    _0xbaf490_2e = {
+      uid: _0xbaf490_1.uid || "",
+      signedIn: _0xbaf490_1a,
+      displayName: _0xbaf490_1.name || "\x44\x72\x6f\x70\x20\x61\x63\x63\x6f\x75\x6e\x74",
+      avatarUrl: _0xbaf490_1.avatarUrl || ""
+    }, _0x714b6c_b("\x63\x72\x65\x61\x74\x65\x41\x63\x63\x6f\x75\x6e\x74").hidden = _0xbaf490_1a, _0xbaf490_2d && _0x714b6c_b("\x74\x75\x62\x65\x46\x72\x61\x6d\x65").contentWindow?.postMessage({
+      type: "\x6e\x79\x78\x3a\x6e\x79\x78\x74\x75\x62\x65\x2d\x70\x72\x6f\x66\x69\x6c\x65",
+      requestId: _0xbaf490_2d,
+      profile: _0xbaf490_2e
+    }, location.origin), _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74\x4e\x61\x6d\x65").textContent = _0xbaf490_1.name || "\x41\x63\x63\x6f\x75\x6e\x74", 
+    _0x714b6c_b("\x61\x63\x63\x6f\x75\x6e\x74\x41\x63\x74\x69\x6f\x6e").textContent = _0xbaf490_1a ? "\x53\x69\x67\x6e\x20\x6f\x75\x74" : "\x53\x69\x67\x6e\x20\x69\x6e", 
+    _0x714b6c_b("\x70\x72\x6f\x66\x69\x6c\x65").title = _0xbaf490_1a ? _0xbaf490_1.name || "\x41\x63\x63\x6f\x75\x6e\x74" : "\x53\x69\x67\x6e\x20\x69\x6e");
   }
 }), setInterval(() => {
-  const e = $e.sample();
-  m("speed").textContent = e.mbps.toFixed(2) + " Mbps";
-  const t = {
-    traffic: "Traffic: " + e.download.toFixed(2) + " down / " + e.upload.toFixed(2) + " up Mbps",
-    requests: "Requests: " + e.rps.toFixed(1) + "/s / " + e.totalRequests + " total",
-    data: "Data: " + (n = e.totalBytes, (n >= 1e9 ? (n / 1e9).toFixed(2) + " GB" : n >= 1e6 ? (n / 1e6).toFixed(2) + " MB" : n >= 1e3 ? (n / 1e3).toFixed(1) + " KB" : n + " B") + " transferred"),
-    processing: "Processing: " + Math.round(e.processing) + "% active time / " + e.active + " in flight"
+  const _0xbaf490_0 = _0xbaf490_13.sample();
+  _0x714b6c_b("\x73\x70\x65\x65\x64").textContent = _0xbaf490_0.mbps.toFixed(2) + "\x20\x4d\x62\x70\x73";
+  const _0xbaf490_1 = {
+    traffic: "\x54\x72\x61\x66\x66\x69\x63\x3a\x20" + _0xbaf490_0.download.toFixed(2) + "\x20\x64\x6f\x77\x6e\x20\x2f\x20" + _0xbaf490_0.upload.toFixed(2) + "\x20\x75\x70\x20\x4d\x62\x70\x73",
+    requests: "\x52\x65\x71\x75\x65\x73\x74\x73\x3a\x20" + _0xbaf490_0.rps.toFixed(1) + "\x2f\x73\x20\x2f\x20" + _0xbaf490_0.totalRequests + "\x20\x74\x6f\x74\x61\x6c",
+    data: "\x44\x61\x74\x61\x3a\x20" + (_0xbaf490_2 = _0xbaf490_0.totalBytes, (_0xbaf490_2 >= 1e9 ? (_0xbaf490_2 / 1e9).toFixed(2) + "\x20\x47\x42" : _0xbaf490_2 >= 1e6 ? (_0xbaf490_2 / 1e6).toFixed(2) + "\x20\x4d\x42" : _0xbaf490_2 >= 1e3 ? (_0xbaf490_2 / 1e3).toFixed(1) + "\x20\x4b\x42" : _0xbaf490_2 + "\x20\x42") + "\x20\x74\x72\x61\x6e\x73\x66\x65\x72\x72\x65\x64"),
+    processing: "\x50\x72\x6f\x63\x65\x73\x73\x69\x6e\x67\x3a\x20" + Math.round(_0xbaf490_0.processing) + "\x25\x20\x61\x63\x74\x69\x76\x65\x20\x74\x69\x6d\x65\x20\x2f\x20" + _0xbaf490_0.active + "\x20\x69\x6e\x20\x66\x6c\x69\x67\x68\x74"
   };
-  var n;
-  m("transferDetail").replaceChildren(...Object.entries(t).map(([e, t]) => {
-    const n = document.createElement("div");
-    return n.dataset.series = e, n.textContent = t, n;
-  })), m("traffic").setAttribute("aria-label", "Activity. " + Object.values(t).join(". "));
-  for (const [o, a] of Object.entries(e.history)) {
-    const e = "processing" === o ? 100 : Math.max("traffic" === o ? .1 : 1, ...a);
-    m("graph").querySelector("[data-series=" + o + "]").setAttribute("d", a.map((t, n) => (n ? "L" : "M") + (90 * n / (a.length - 1)).toFixed(1) + " " + (26 - t / e * 23).toFixed(1)).join(" "));
+  var _0xbaf490_2;
+  _0x714b6c_b("\x74\x72\x61\x6e\x73\x66\x65\x72\x44\x65\x74\x61\x69\x6c").replaceChildren(...Object.entries(_0xbaf490_1).map(([_0xbaf490_0, _0xbaf490_1]) => {
+    const _0xbaf490_2 = document.createElement("\x64\x69\x76");
+    return _0xbaf490_2.dataset.series = _0xbaf490_0, _0xbaf490_2.textContent = _0xbaf490_1, 
+    _0xbaf490_2;
+  })), _0x714b6c_b("\x74\x72\x61\x66\x66\x69\x63").setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x41\x63\x74\x69\x76\x69\x74\x79\x2e\x20" + Object.values(_0xbaf490_1).join("\x2e\x20"));
+  for (const [_0xbaf490_3, _0xbaf490_4] of Object.entries(_0xbaf490_0.history)) {
+    const _0xbaf490_0 = "\x70\x72\x6f\x63\x65\x73\x73\x69\x6e\x67" === _0xbaf490_3 ? 100 : Math.max("\x74\x72\x61\x66\x66\x69\x63" === _0xbaf490_3 ? .1 : 1, ..._0xbaf490_4);
+    _0x714b6c_b("\x67\x72\x61\x70\x68").querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x65\x72\x69\x65\x73\x3d" + _0xbaf490_3 + "\x5d").setAttribute("\x64", _0xbaf490_4.map((_0xbaf490_1, _0xbaf490_2) => (_0xbaf490_2 ? "\x4c" : "\x4d") + (90 * _0xbaf490_2 / (_0xbaf490_4.length - 1)).toFixed(1) + "\x20" + (26 - _0xbaf490_1 / _0xbaf490_0 * 23).toFixed(1)).join("\x20"));
   }
-}, 1e3), addEventListener("keydown", e => {
-  e.altKey && "n" === e.key && (e.preventDefault(), it("home")), e.altKey && "w" === e.key && "browser" === et && Xe && (e.preventDefault(), 
-  lt(Xe)), e.altKey && /^[1-9]$/.test(e.key) && Qe[Number(e.key) - 1] && (e.preventDefault(), 
-  st(Qe[Number(e.key) - 1]));
-}), Ye.restore) try {
-  const e = JSON.parse(localStorage.getItem("drop.tabs") || "[]");
-  Array.isArray(e) && (Qe = e.slice(0, 20).filter(e => "string" == typeof e.url && /^https?:\/\//.test(e.url)).map(e => ({
+}, 1e3), addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0xbaf490_0 => {
+  _0xbaf490_0.altKey && "\x6e" === _0xbaf490_0.key && (_0xbaf490_0.preventDefault(), 
+  _0xbaf490_1d("\x68\x6f\x6d\x65")), _0xbaf490_0.altKey && "\x77" === _0xbaf490_0.key && "\x62\x72\x6f\x77\x73\x65\x72" === _0xbaf490_17 && _0xbaf490_16 && (_0xbaf490_0.preventDefault(), 
+  _0xbaf490_20(_0xbaf490_16)), _0xbaf490_0.altKey && /^[1-9]$/.test(_0xbaf490_0.key) && _0xbaf490_15[Number(_0xbaf490_0.key) - 1] && (_0xbaf490_0.preventDefault(), 
+  _0xbaf490_1f(_0xbaf490_15[Number(_0xbaf490_0.key) - 1]));
+}), _0xbaf490_11.restore) try {
+  const _0xbaf490_0 = JSON.parse(localStorage.getItem("\x64\x72\x6f\x70\x2e\x74\x61\x62\x73") || "\x5b\x5d");
+  Array.isArray(_0xbaf490_0) && (_0xbaf490_15 = _0xbaf490_0.slice(0, 20).filter(_0xbaf490_0 => "\x73\x74\x72\x69\x6e\x67" == typeof _0xbaf490_0.url && /^https?:\/\//.test(_0xbaf490_0.url)).map(_0xbaf490_0 => ({
     id: crypto.randomUUID(),
-    url: new URL(e.url).href,
-    title: String(e.title || new URL(e.url).hostname).slice(0, 100),
-    pinned: !0 === e.pinned,
+    url: new URL(_0xbaf490_0.url).href,
+    title: String(_0xbaf490_0.title || new URL(_0xbaf490_0.url).hostname).slice(0, 100),
+    pinned: !0 === _0xbaf490_0.pinned,
     version: 0
   })));
 } catch {}
 
-function ht(e) {
-  m("browseError").hidden = !e, m("browseErrorText").textContent = e || "";
+function _0xbaf490_26(_0xbaf490_0) {
+  _0x714b6c_b("\x62\x72\x6f\x77\x73\x65\x45\x72\x72\x6f\x72").hidden = !_0xbaf490_0, _0x714b6c_b("\x62\x72\x6f\x77\x73\x65\x45\x72\x72\x6f\x72\x54\x65\x78\x74").textContent = _0xbaf490_0 || "";
 }
 
-function ft(e) {
-  e.pinned = !e.pinned, ct(), rt();
+function _0xbaf490_27(_0xbaf490_0) {
+  _0xbaf490_0.pinned = !_0xbaf490_0.pinned, _0xbaf490_1e(), _0xbaf490_1c();
 }
 
-let bt = [];
+let _0xbaf490_28 = [];
 
 try {
-  const e = JSON.parse(localStorage.getItem("drop.bookmarks") || "[]");
-  Array.isArray(e) && (bt = e.filter(e => "string" == typeof e.url && /^https?:\/\//.test(e.url)).map(e => ({
-    url: new URL(e.url).href,
-    title: String(e.title || e.url).slice(0, 200)
+  const _0xbaf490_0 = JSON.parse(localStorage.getItem("\x64\x72\x6f\x70\x2e\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x73") || "\x5b\x5d");
+  Array.isArray(_0xbaf490_0) && (_0xbaf490_28 = _0xbaf490_0.filter(_0xbaf490_0 => "\x73\x74\x72\x69\x6e\x67" == typeof _0xbaf490_0.url && /^https?:\/\//.test(_0xbaf490_0.url)).map(_0xbaf490_0 => ({
+    url: new URL(_0xbaf490_0.url).href,
+    title: String(_0xbaf490_0.title || _0xbaf490_0.url).slice(0, 200)
   })));
 } catch {}
 
-function vt() {
+function _0xbaf490_29() {
   try {
-    localStorage.setItem("drop.bookmarks", JSON.stringify(bt));
+    localStorage.setItem("\x64\x72\x6f\x70\x2e\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x73", JSON.stringify(_0xbaf490_28));
   } catch {
-    I("Bookmarks could not be saved. Browser storage may be full.");
+    _0x714b6c_24("\x42\x6f\x6f\x6b\x6d\x61\x72\x6b\x73\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x73\x61\x76\x65\x64\x2e\x20\x42\x72\x6f\x77\x73\x65\x72\x20\x73\x74\x6f\x72\x61\x67\x65\x20\x6d\x61\x79\x20\x62\x65\x20\x66\x75\x6c\x6c\x2e");
   }
-  kt(), yt();
+  _0xbaf490_2a(), _0xbaf490_2b();
 }
 
-function kt() {
-  const e = !!Xe && bt.some(e => e.url === Xe.url);
-  for (const [t, n, o] of [ [ "bookmarkPage", e, e ? "Remove bookmark" : "Bookmark page" ], [ "pinPage", !!Xe?.pinned, Xe?.pinned ? "Unpin tab" : "Pin tab" ] ]) m(t).setAttribute("aria-pressed", String(n)), 
-  m(t).setAttribute("aria-label", o), m(t).title = o;
+function _0xbaf490_2a() {
+  const _0xbaf490_0 = !!_0xbaf490_16 && _0xbaf490_28.some(_0xbaf490_0 => _0xbaf490_0.url === _0xbaf490_16.url);
+  for (const [_0xbaf490_1, _0xbaf490_2, _0xbaf490_3] of [ [ "\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x50\x61\x67\x65", _0xbaf490_0, _0xbaf490_0 ? "\x52\x65\x6d\x6f\x76\x65\x20\x62\x6f\x6f\x6b\x6d\x61\x72\x6b" : "\x42\x6f\x6f\x6b\x6d\x61\x72\x6b\x20\x70\x61\x67\x65" ], [ "\x70\x69\x6e\x50\x61\x67\x65", !!_0xbaf490_16?.pinned, _0xbaf490_16?.pinned ? "\x55\x6e\x70\x69\x6e\x20\x74\x61\x62" : "\x50\x69\x6e\x20\x74\x61\x62" ] ]) _0x714b6c_b(_0xbaf490_1).setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0xbaf490_2)), 
+  _0x714b6c_b(_0xbaf490_1).setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0xbaf490_3), _0x714b6c_b(_0xbaf490_1).title = _0xbaf490_3;
 }
 
-function yt() {
-  const e = m("bookmarkSearch").value.trim().toLowerCase(), t = bt.filter(t => (t.title + " " + t.url).toLowerCase().includes(e));
-  m("bookmarkList").replaceChildren(...t.map(e => {
-    const t = document.createElement("div");
-    t.className = "bookmark-row";
-    const n = document.createElement("button");
-    n.innerHTML = p("bookmark");
-    const o = document.createElement("span"), a = document.createElement("strong"), r = document.createElement("small");
-    a.textContent = e.title, r.textContent = e.url, o.append(a, r), n.append(o), n.onclick = () => dt(e.url);
-    const i = document.createElement("button");
-    return i.className = "icon", i.innerHTML = p("close"), i.setAttribute("aria-label", "Remove bookmark " + e.title), 
-    i.onclick = () => {
-      bt = bt.filter(t => t !== e), vt();
-    }, t.append(n, i), t;
-  })), m("bookmarkEmpty").hidden = t.length > 0, m("bookmarkEmpty").textContent = bt.length ? "No matching bookmarks." : "Save a page with the bookmark icon in the address bar.";
+function _0xbaf490_2b() {
+  const _0xbaf490_0 = _0x714b6c_b("\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x53\x65\x61\x72\x63\x68").value.trim().toLowerCase(), _0xbaf490_1 = _0xbaf490_28.filter(_0xbaf490_1 => (_0xbaf490_1.title + "\x20" + _0xbaf490_1.url).toLowerCase().includes(_0xbaf490_0));
+  _0x714b6c_b("\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x4c\x69\x73\x74").replaceChildren(..._0xbaf490_1.map(_0xbaf490_0 => {
+    const _0xbaf490_1 = document.createElement("\x64\x69\x76");
+    _0xbaf490_1.className = "\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x2d\x72\x6f\x77";
+    const _0xbaf490_2 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    _0xbaf490_2.innerHTML = _0x714b6c_d("\x62\x6f\x6f\x6b\x6d\x61\x72\x6b");
+    const _0xbaf490_3 = document.createElement("\x73\x70\x61\x6e"), _0xbaf490_4 = document.createElement("\x73\x74\x72\x6f\x6e\x67"), _0xbaf490_5 = document.createElement("\x73\x6d\x61\x6c\x6c");
+    _0xbaf490_4.textContent = _0xbaf490_0.title, _0xbaf490_5.textContent = _0xbaf490_0.url, 
+    _0xbaf490_3.append(_0xbaf490_4, _0xbaf490_5), _0xbaf490_2.append(_0xbaf490_3), _0xbaf490_2.onclick = () => _0xbaf490_21(_0xbaf490_0.url);
+    const _0xbaf490_6 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+    return _0xbaf490_6.className = "\x69\x63\x6f\x6e", _0xbaf490_6.innerHTML = _0x714b6c_d("\x63\x6c\x6f\x73\x65"), 
+    _0xbaf490_6.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x52\x65\x6d\x6f\x76\x65\x20\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x20" + _0xbaf490_0.title), 
+    _0xbaf490_6.onclick = () => {
+      _0xbaf490_28 = _0xbaf490_28.filter(_0xbaf490_1 => _0xbaf490_1 !== _0xbaf490_0), 
+      _0xbaf490_29();
+    }, _0xbaf490_1.append(_0xbaf490_2, _0xbaf490_6), _0xbaf490_1;
+  })), _0x714b6c_b("\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x45\x6d\x70\x74\x79").hidden = _0xbaf490_1.length > 0, _0x714b6c_b("\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x45\x6d\x70\x74\x79").textContent = _0xbaf490_28.length ? "\x4e\x6f\x20\x6d\x61\x74\x63\x68\x69\x6e\x67\x20\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x73\x2e" : "\x53\x61\x76\x65\x20\x61\x20\x70\x61\x67\x65\x20\x77\x69\x74\x68\x20\x74\x68\x65\x20\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x20\x69\x63\x6f\x6e\x20\x69\x6e\x20\x74\x68\x65\x20\x61\x64\x64\x72\x65\x73\x73\x20\x62\x61\x72\x2e";
 }
 
-m("bookmarkPage").onclick = () => {
-  if (!Xe) return;
-  const e = bt.findIndex(e => e.url === Xe.url);
-  e >= 0 ? bt.splice(e, 1) : bt.unshift({
-    url: Xe.url,
-    title: Xe.title
-  }), vt();
-}, m("pinPage").onclick = () => {
-  Xe && ft(Xe);
-}, m("bookmarkSearch").oninput = yt, addEventListener("message", e => {
-  if (e.origin !== location.origin) return;
-  const t = e.data;
-  if (e.source === m("gamesFrame").contentWindow && [ "nyx:cloud-game-load", "nyx:cloud-game-save", "nyx:account-token-request" ].includes(t?.type)) {
-    mt();
-    const e = () => m("aiFrame").contentWindow.postMessage({
-      type: "drop:game-account",
-      request: t
+_0x714b6c_b("\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x50\x61\x67\x65").onclick = () => {
+  if (!_0xbaf490_16) return;
+  const _0xbaf490_0 = _0xbaf490_28.findIndex(_0xbaf490_0 => _0xbaf490_0.url === _0xbaf490_16.url);
+  _0xbaf490_0 >= 0 ? _0xbaf490_28.splice(_0xbaf490_0, 1) : _0xbaf490_28.unshift({
+    url: _0xbaf490_16.url,
+    title: _0xbaf490_16.title
+  }), _0xbaf490_29();
+}, _0x714b6c_b("\x70\x69\x6e\x50\x61\x67\x65").onclick = () => {
+  _0xbaf490_16 && _0xbaf490_27(_0xbaf490_16);
+}, _0x714b6c_b("\x62\x6f\x6f\x6b\x6d\x61\x72\x6b\x53\x65\x61\x72\x63\x68").oninput = _0xbaf490_2b, addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0xbaf490_0 => {
+  if (_0xbaf490_0.origin !== location.origin) return;
+  const _0xbaf490_1 = _0xbaf490_0.data;
+  if (_0xbaf490_0.source === _0x714b6c_b("\x67\x61\x6d\x65\x73\x46\x72\x61\x6d\x65").contentWindow && [ "\x6e\x79\x78\x3a\x63\x6c\x6f\x75\x64\x2d\x67\x61\x6d\x65\x2d\x6c\x6f\x61\x64", "\x6e\x79\x78\x3a\x63\x6c\x6f\x75\x64\x2d\x67\x61\x6d\x65\x2d\x73\x61\x76\x65", "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74" ].includes(_0xbaf490_1?.type)) {
+    _0xbaf490_24();
+    const _0xbaf490_0 = () => _0x714b6c_b("\x61\x69\x46\x72\x61\x6d\x65").contentWindow.postMessage({
+      type: "\x64\x72\x6f\x70\x3a\x67\x61\x6d\x65\x2d\x61\x63\x63\x6f\x75\x6e\x74",
+      request: _0xbaf490_1
     }, location.origin);
-    if (tt) e(); else {
-      const t = setInterval(() => {
-        tt && (clearInterval(t), e());
+    if (_0xbaf490_18) _0xbaf490_0(); else {
+      const _0xbaf490_1 = setInterval(() => {
+        _0xbaf490_18 && (clearInterval(_0xbaf490_1), _0xbaf490_0());
       }, 100);
-      setTimeout(() => clearInterval(t), 5e3);
+      setTimeout(() => clearInterval(_0xbaf490_1), 5e3);
     }
   }
-  e.source === m("aiFrame").contentWindow && "drop:game-result" === t?.type && m("gamesFrame").contentWindow?.postMessage(t.result, location.origin);
-}), it("home");
+  _0xbaf490_0.source === _0x714b6c_b("\x61\x69\x46\x72\x61\x6d\x65").contentWindow && "\x64\x72\x6f\x70\x3a\x67\x61\x6d\x65\x2d\x72\x65\x73\x75\x6c\x74" === _0xbaf490_1?.type && _0x714b6c_b("\x67\x61\x6d\x65\x73\x46\x72\x61\x6d\x65").contentWindow?.postMessage(_0xbaf490_1.result, location.origin);
+}), _0xbaf490_1d("\x68\x6f\x6d\x65");
 
-let wt, xt = "", Mt = {
+let _0xbaf490_2c, _0xbaf490_2d = "", _0xbaf490_2e = {
   signedIn: !1,
-  displayName: "Drop account"
+  displayName: "\x44\x72\x6f\x70\x20\x61\x63\x63\x6f\x75\x6e\x74"
 };
 
-function Ct(e) {
-  e.preventDefault(), e.returnValue = "";
+function _0xbaf490_2f(_0xbaf490_0) {
+  _0xbaf490_0.preventDefault(), _0xbaf490_0.returnValue = "";
 }
 
-function Lt() {
-  removeEventListener("beforeunload", Ct), Ye.closePrevention && addEventListener("beforeunload", Ct), 
-  m("closePrevention").checked = Ye.closePrevention;
+function _0xbaf490_30() {
+  removeEventListener("\x62\x65\x66\x6f\x72\x65\x75\x6e\x6c\x6f\x61\x64", _0xbaf490_2f), _0xbaf490_11.closePrevention && addEventListener("\x62\x65\x66\x6f\x72\x65\x75\x6e\x6c\x6f\x61\x64", _0xbaf490_2f), 
+  _0x714b6c_b("\x63\x6c\x6f\x73\x65\x50\x72\x65\x76\x65\x6e\x74\x69\x6f\x6e").checked = _0xbaf490_11.closePrevention;
 }
 
-function Et(e) {
-  e && (Ye.engine = m("setupEngine").value, Ye.closePrevention = m("setupClose").checked, 
-  m("engine").value = Ye.engine, at(), Lt());
+function _0xbaf490_31(_0xbaf490_0) {
+  _0xbaf490_0 && (_0xbaf490_11.engine = _0x714b6c_b("\x73\x65\x74\x75\x70\x45\x6e\x67\x69\x6e\x65").value, _0xbaf490_11.closePrevention = _0x714b6c_b("\x73\x65\x74\x75\x70\x43\x6c\x6f\x73\x65").checked, 
+  _0x714b6c_b("\x65\x6e\x67\x69\x6e\x65").value = _0xbaf490_11.engine, _0xbaf490_1b(), _0xbaf490_30());
   try {
-    localStorage.setItem("drop.setupComplete", "1");
+    localStorage.setItem("\x64\x72\x6f\x70\x2e\x73\x65\x74\x75\x70\x43\x6f\x6d\x70\x6c\x65\x74\x65", "\x31");
   } catch {}
-  m("setupWizard").close();
+  _0x714b6c_b("\x73\x65\x74\x75\x70\x57\x69\x7a\x61\x72\x64").close();
 }
 
-async function St() {
+async function _0xbaf490_32() {
   await (window.dropStartupReady || Promise.resolve());
   try {
-    if ("1" === localStorage.getItem("drop.setupComplete")) return;
+    if ("\x31" === localStorage.getItem("\x64\x72\x6f\x70\x2e\x73\x65\x74\x75\x70\x43\x6f\x6d\x70\x6c\x65\x74\x65")) return;
   } catch {}
-  m("setupEngine").value = Ye.engine, m("setupClose").checked = Ye.closePrevention, 
-  m("setupWizard").showModal();
+  _0x714b6c_b("\x73\x65\x74\x75\x70\x45\x6e\x67\x69\x6e\x65").value = _0xbaf490_11.engine, _0x714b6c_b("\x73\x65\x74\x75\x70\x43\x6c\x6f\x73\x65").checked = _0xbaf490_11.closePrevention, 
+  _0x714b6c_b("\x73\x65\x74\x75\x70\x57\x69\x7a\x61\x72\x64").showModal();
 }
 
-addEventListener("message", e => {
-  if (e.origin !== location.origin || e.source !== m("tubeFrame").contentWindow) return;
-  const t = e.data;
-  "nyx:nyxtube-profile-request" === t?.type && (xt = t.requestId, e.source.postMessage({
-    type: "nyx:nyxtube-profile",
-    requestId: t.requestId,
-    profile: Mt
-  }, location.origin)), "nyx:nyxtube-open-profile" === t?.type && m("profile").click();
-}), Fe({
-  frame: m("aiFrame"),
-  ensureAccount: mt,
-  notice: I
-}), m("closePrevention").onchange = () => {
-  Ye.closePrevention = m("closePrevention").checked, at(), Lt();
-}, Lt(), addEventListener("storage", e => {
-  if ("drop.settings" === e.key) try {
-    Ye.closePrevention = !0 === JSON.parse(e.newValue || "{}").closePrevention, Lt();
+addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0xbaf490_0 => {
+  if (_0xbaf490_0.origin !== location.origin || _0xbaf490_0.source !== _0x714b6c_b("\x74\x75\x62\x65\x46\x72\x61\x6d\x65").contentWindow) return;
+  const _0xbaf490_1 = _0xbaf490_0.data;
+  "\x6e\x79\x78\x3a\x6e\x79\x78\x74\x75\x62\x65\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2d\x72\x65\x71\x75\x65\x73\x74" === _0xbaf490_1?.type && (_0xbaf490_2d = _0xbaf490_1.requestId, 
+  _0xbaf490_0.source.postMessage({
+    type: "\x6e\x79\x78\x3a\x6e\x79\x78\x74\x75\x62\x65\x2d\x70\x72\x6f\x66\x69\x6c\x65",
+    requestId: _0xbaf490_1.requestId,
+    profile: _0xbaf490_2e
+  }, location.origin)), "\x6e\x79\x78\x3a\x6e\x79\x78\x74\x75\x62\x65\x2d\x6f\x70\x65\x6e\x2d\x70\x72\x6f\x66\x69\x6c\x65" === _0xbaf490_1?.type && _0x714b6c_b("\x70\x72\x6f\x66\x69\x6c\x65").click();
+}), _0xbaf490_2({
+  frame: _0x714b6c_b("\x61\x69\x46\x72\x61\x6d\x65"),
+  ensureAccount: _0xbaf490_24,
+  notice: _0x714b6c_24
+}), _0x714b6c_b("\x63\x6c\x6f\x73\x65\x50\x72\x65\x76\x65\x6e\x74\x69\x6f\x6e").onchange = () => {
+  _0xbaf490_11.closePrevention = _0x714b6c_b("\x63\x6c\x6f\x73\x65\x50\x72\x65\x76\x65\x6e\x74\x69\x6f\x6e").checked, _0xbaf490_1b(), 
+  _0xbaf490_30();
+}, _0xbaf490_30(), addEventListener("\x73\x74\x6f\x72\x61\x67\x65", _0xbaf490_0 => {
+  if ("\x64\x72\x6f\x70\x2e\x73\x65\x74\x74\x69\x6e\x67\x73" === _0xbaf490_0.key) try {
+    _0xbaf490_11.closePrevention = !0 === JSON.parse(_0xbaf490_0.newValue || "\x7b\x7d").closePrevention, 
+    _0xbaf490_30();
   } catch {}
-}), m("blankCloak").onclick = () => {
+}), _0x714b6c_b("\x62\x6c\x61\x6e\x6b\x43\x6c\x6f\x61\x6b").onclick = () => {
   try {
-    if (parent !== window && "about:blank" === parent.location.href) return void I("Drop is already open in about:blank.");
+    if (parent !== window && "\x61\x62\x6f\x75\x74\x3a\x62\x6c\x61\x6e\x6b" === parent.location.href) return void _0x714b6c_24("\x44\x72\x6f\x70\x20\x69\x73\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x6f\x70\x65\x6e\x20\x69\x6e\x20\x61\x62\x6f\x75\x74\x3a\x62\x6c\x61\x6e\x6b\x2e");
   } catch {}
-  const e = Ve("about:blank", "_blank");
-  if (e) try {
-    const t = e.document;
-    t.title = "New Tab", t.documentElement.style.cssText = "height:100%;background:#202020", 
-    t.body.style.cssText = "margin:0;height:100%;overflow:hidden";
-    const n = t.createElement("iframe");
-    n.title = "Drop", n.src = location.href, n.style.cssText = "display:block;width:100%;height:100%;border:0", 
-    n.allow = "autoplay; fullscreen; gamepad; microphone; display-capture; clipboard-read; clipboard-write", 
-    n.allowFullscreen = !0, t.body.replaceChildren(n), e.opener = null, e.focus(), m("settings").close();
+  const _0xbaf490_0 = _0xbaf490_e("\x61\x62\x6f\x75\x74\x3a\x62\x6c\x61\x6e\x6b", "\x5f\x62\x6c\x61\x6e\x6b");
+  if (_0xbaf490_0) try {
+    const _0xbaf490_1 = _0xbaf490_0.document;
+    _0xbaf490_1.title = "\x4e\x65\x77\x20\x54\x61\x62", _0xbaf490_1.documentElement.style.cssText = "\x68\x65\x69\x67\x68\x74\x3a\x31\x30\x30\x25\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x32\x30\x32\x30\x32\x30", 
+    _0xbaf490_1.body.style.cssText = "\x6d\x61\x72\x67\x69\x6e\x3a\x30\x3b\x68\x65\x69\x67\x68\x74\x3a\x31\x30\x30\x25\x3b\x6f\x76\x65\x72\x66\x6c\x6f\x77\x3a\x68\x69\x64\x64\x65\x6e";
+    const _0xbaf490_2 = _0xbaf490_1.createElement("\x69\x66\x72\x61\x6d\x65");
+    _0xbaf490_2.title = "\x44\x72\x6f\x70", _0xbaf490_2.src = location.href, _0xbaf490_2.style.cssText = "\x64\x69\x73\x70\x6c\x61\x79\x3a\x62\x6c\x6f\x63\x6b\x3b\x77\x69\x64\x74\x68\x3a\x31\x30\x30\x25\x3b\x68\x65\x69\x67\x68\x74\x3a\x31\x30\x30\x25\x3b\x62\x6f\x72\x64\x65\x72\x3a\x30", 
+    _0xbaf490_2.allow = "\x61\x75\x74\x6f\x70\x6c\x61\x79\x3b\x20\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x3b\x20\x67\x61\x6d\x65\x70\x61\x64\x3b\x20\x6d\x69\x63\x72\x6f\x70\x68\x6f\x6e\x65\x3b\x20\x64\x69\x73\x70\x6c\x61\x79\x2d\x63\x61\x70\x74\x75\x72\x65\x3b\x20\x63\x6c\x69\x70\x62\x6f\x61\x72\x64\x2d\x72\x65\x61\x64\x3b\x20\x63\x6c\x69\x70\x62\x6f\x61\x72\x64\x2d\x77\x72\x69\x74\x65", 
+    _0xbaf490_2.allowFullscreen = !0, _0xbaf490_1.body.replaceChildren(_0xbaf490_2), 
+    _0xbaf490_0.opener = null, _0xbaf490_0.focus(), _0x714b6c_b("\x73\x65\x74\x74\x69\x6e\x67\x73").close();
   } catch {
-    e.close(), I("Could not open the about:blank window. Try again.");
-  } else I("Allow popups for this site, then try again.");
-}, m("setupForm").onsubmit = e => {
-  e.preventDefault(), Et(!0);
-}, m("setupSkip").onclick = () => Et(!1), m("setupWizard").addEventListener("cancel", e => {
-  e.preventDefault(), Et(!1);
-}), "complete" === document.readyState ? St() : document.addEventListener("DOMContentLoaded", () => {
-  St();
+    _0xbaf490_0.close(), _0x714b6c_24("\x43\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6f\x70\x65\x6e\x20\x74\x68\x65\x20\x61\x62\x6f\x75\x74\x3a\x62\x6c\x61\x6e\x6b\x20\x77\x69\x6e\x64\x6f\x77\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x2e");
+  } else _0x714b6c_24("\x41\x6c\x6c\x6f\x77\x20\x70\x6f\x70\x75\x70\x73\x20\x66\x6f\x72\x20\x74\x68\x69\x73\x20\x73\x69\x74\x65\x2c\x20\x74\x68\x65\x6e\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e");
+}, _0x714b6c_b("\x73\x65\x74\x75\x70\x46\x6f\x72\x6d").onsubmit = _0xbaf490_0 => {
+  _0xbaf490_0.preventDefault(), _0xbaf490_31(!0);
+}, _0x714b6c_b("\x73\x65\x74\x75\x70\x53\x6b\x69\x70").onclick = () => _0xbaf490_31(!1), _0x714b6c_b("\x73\x65\x74\x75\x70\x57\x69\x7a\x61\x72\x64").addEventListener("\x63\x61\x6e\x63\x65\x6c", _0xbaf490_0 => {
+  _0xbaf490_0.preventDefault(), _0xbaf490_31(!1);
+}), "\x63\x6f\x6d\x70\x6c\x65\x74\x65" === document.readyState ? _0xbaf490_32() : document.addEventListener("\x44\x4f\x4d\x43\x6f\x6e\x74\x65\x6e\x74\x4c\x6f\x61\x64\x65\x64", () => {
+  _0xbaf490_32();
 }, {
   once: !0
 });
 
-const At = () => {
-  document.hidden || wt || (wt = Se(Ye).finally(() => {
-    wt = null;
+const _0xbaf490_33 = () => {
+  document.hidden || _0xbaf490_2c || (_0xbaf490_2c = _0xbaf490_0(_0xbaf490_11).finally(() => {
+    _0xbaf490_2c = null;
   }));
 };
 
-m("query").addEventListener("focus", At), m("query").addEventListener("pointerdown", At, {
+_0x714b6c_b("\x71\x75\x65\x72\x79").addEventListener("\x66\x6f\x63\x75\x73", _0xbaf490_33), _0x714b6c_b("\x71\x75\x65\x72\x79").addEventListener("\x70\x6f\x69\x6e\x74\x65\x72\x64\x6f\x77\x6e", _0xbaf490_33, {
   passive: !0
-}), "function" == typeof requestIdleCallback ? requestIdleCallback(At, {
+}), "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof requestIdleCallback ? requestIdleCallback(_0xbaf490_33, {
   timeout: 1e3
-}) : setTimeout(At, 700);
+}) : setTimeout(_0xbaf490_33, 700);

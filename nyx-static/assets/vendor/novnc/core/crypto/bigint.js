@@ -16,7 +16,7 @@ export function bigIntToU8Array(bigint, padLength=0) {
     if (padLength === 0) {
         padLength = Math.ceil(hex.length / 2);
     }
-    hex = hex.padStart(padLength * 2, '0');
+    hex = hex.padStart(padLength * 2, "0");
     const length = hex.length / 2;
     const arr = new Uint8Array(length);
     for (let i = 0; i < length; i++) {
@@ -26,9 +26,9 @@ export function bigIntToU8Array(bigint, padLength=0) {
 }
 
 export function u8ArrayToBigInt(arr) {
-    let hex = '0x';
+    let hex = "0x";
     for (let i = 0; i < arr.length; i++) {
-        hex += arr[i].toString(16).padStart(2, '0');
+        hex += arr[i].toString(16).padStart(2, "0");
     }
     return BigInt(hex);
 }

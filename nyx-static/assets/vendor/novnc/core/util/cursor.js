@@ -4,7 +4,7 @@
  * Licensed under MPL 2.0 or any later version (see LICENSE.txt)
  */
 
-import { supportsCursorURIs, isTouchDevice } from './browser.js';
+import { supportsCursorURIs, isTouchDevice } from "./browser.js";
 
 const useFallback = !supportsCursorURIs || isTouchDevice;
 
@@ -12,28 +12,28 @@ export default class Cursor {
     constructor() {
         this._target = null;
 
-        this._canvas = document.createElement('canvas');
+        this._canvas = document.createElement("canvas");
 
         if (useFallback) {
-            this._canvas.style.position = 'fixed';
-            this._canvas.style.zIndex = '65535';
-            this._canvas.style.pointerEvents = 'none';
+            this._canvas.style.position = "fixed";
+            this._canvas.style.zIndex = "65535";
+            this._canvas.style.pointerEvents = "none";
             // Safari on iOS can select the cursor image
             // https://bugs.webkit.org/show_bug.cgi?id=249223
-            this._canvas.style.userSelect = 'none';
-            this._canvas.style.WebkitUserSelect = 'none';
+            this._canvas.style.userSelect = "none";
+            this._canvas.style.WebkitUserSelect = "none";
             // Can't use "display" because of Firefox bug #1445997
-            this._canvas.style.visibility = 'hidden';
+            this._canvas.style.visibility = "hidden";
         }
 
         this._position = { x: 0, y: 0 };
         this._hotSpot = { x: 0, y: 0 };
 
         this._eventHandlers = {
-            'mouseover': this._handleMouseOver.bind(this),
-            'mouseleave': this._handleMouseLeave.bind(this),
-            'mousemove': this._handleMouseMove.bind(this),
-            'mouseup': this._handleMouseUp.bind(this),
+            "mouseover": this._handleMouseOver.bind(this),
+            "mouseleave": this._handleMouseLeave.bind(this),
+            "mousemove": this._handleMouseMove.bind(this),
+            "mouseup": this._handleMouseUp.bind(this),
         };
     }
 
@@ -48,10 +48,10 @@ export default class Cursor {
             document.body.appendChild(this._canvas);
 
             const options = { capture: true, passive: true };
-            this._target.addEventListener('mouseover', this._eventHandlers.mouseover, options);
-            this._target.addEventListener('mouseleave', this._eventHandlers.mouseleave, options);
-            this._target.addEventListener('mousemove', this._eventHandlers.mousemove, options);
-            this._target.addEventListener('mouseup', this._eventHandlers.mouseup, options);
+            this._target.addEventListener("mouseover", this._eventHandlers.mouseover, options);
+            this._target.addEventListener("mouseleave", this._eventHandlers.mouseleave, options);
+            this._target.addEventListener("mousemove", this._eventHandlers.mousemove, options);
+            this._target.addEventListener("mouseup", this._eventHandlers.mouseup, options);
         }
 
         this.clear();
@@ -64,10 +64,10 @@ export default class Cursor {
 
         if (useFallback) {
             const options = { capture: true, passive: true };
-            this._target.removeEventListener('mouseover', this._eventHandlers.mouseover, options);
-            this._target.removeEventListener('mouseleave', this._eventHandlers.mouseleave, options);
-            this._target.removeEventListener('mousemove', this._eventHandlers.mousemove, options);
-            this._target.removeEventListener('mouseup', this._eventHandlers.mouseup, options);
+            this._target.removeEventListener("mouseover", this._eventHandlers.mouseover, options);
+            this._target.removeEventListener("mouseleave", this._eventHandlers.mouseleave, options);
+            this._target.removeEventListener("mousemove", this._eventHandlers.mousemove, options);
+            this._target.removeEventListener("mouseup", this._eventHandlers.mouseup, options);
 
             if (document.contains(this._canvas)) {
                 document.body.removeChild(this._canvas);
@@ -88,7 +88,7 @@ export default class Cursor {
         this._hotSpot.x = hotx;
         this._hotSpot.y = hoty;
 
-        let ctx = this._canvas.getContext('2d');
+        let ctx = this._canvas.getContext("2d");
 
         this._canvas.width = w;
         this._canvas.height = h;
@@ -101,12 +101,12 @@ export default class Cursor {
             this._updatePosition();
         } else {
             let url = this._canvas.toDataURL();
-            this._target.style.cursor = 'url(' + url + ')' + hotx + ' ' + hoty + ', default';
+            this._target.style.cursor = "url(" + url + ")" + hotx + " " + hoty + ", default";
         }
     }
 
     clear() {
-        this._target.style.cursor = 'none';
+        this._target.style.cursor = "none";
         this._canvas.width = 0;
         this._canvas.height = 0;
         this._position.x = this._position.x + this._hotSpot.x;
@@ -189,14 +189,14 @@ export default class Cursor {
     }
 
     _showCursor() {
-        if (this._canvas.style.visibility === 'hidden') {
-            this._canvas.style.visibility = '';
+        if (this._canvas.style.visibility === "hidden") {
+            this._canvas.style.visibility = "";
         }
     }
 
     _hideCursor() {
-        if (this._canvas.style.visibility !== 'hidden') {
-            this._canvas.style.visibility = 'hidden';
+        if (this._canvas.style.visibility !== "hidden") {
+            this._canvas.style.visibility = "hidden";
         }
     }
 
@@ -218,7 +218,7 @@ export default class Cursor {
         // Has the child its own cursor?
         // FIXME: How can we tell that a sub element has an
         //        explicit "cursor: none;"?
-        if (window.getComputedStyle(target).cursor !== 'none') {
+        if (window.getComputedStyle(target).cursor !== "none") {
             return false;
         }
         return true;

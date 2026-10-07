@@ -1,340 +1,356 @@
 (() => {
   "use strict";
-  const e = e => document.querySelector(e), t = "google/gemini-2.5-flash-lite", n = "openai/gpt-5.6-luna";
-  let o = 0, a = 0;
-  function r() {
-    clearTimeout(o), a++, e("#owner-key-value") && (e("#owner-key-value").value = ""), 
-    e("#owner-key-reveal") && (e("#owner-key-reveal").hidden = !0);
+  const _0xec3e03_0 = _0xec3e03_0 => document.querySelector(_0xec3e03_0), _0xec3e03_1 = "\x67\x6f\x6f\x67\x6c\x65\x2f\x67\x65\x6d\x69\x6e\x69\x2d\x32\x2e\x35\x2d\x66\x6c\x61\x73\x68\x2d\x6c\x69\x74\x65", _0xec3e03_2 = "\x6f\x70\x65\x6e\x61\x69\x2f\x67\x70\x74\x2d\x35\x2e\x36\x2d\x6c\x75\x6e\x61";
+  let _0xec3e03_3 = 0, _0xec3e03_4 = 0;
+  function _0xec3e03_5() {
+    clearTimeout(_0xec3e03_3), _0xec3e03_4++, _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x76\x61\x6c\x75\x65") && (_0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x76\x61\x6c\x75\x65").value = ""), 
+    _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x72\x65\x76\x65\x61\x6c") && (_0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x72\x65\x76\x65\x61\x6c").hidden = !0);
   }
-  let i = null, s = "", l = "", c = !1, d = null;
-  function u(e) {
-    "owner" !== e && r(), [ "keys", "usage", "playground", "owner" ].includes(e) || (e = "keys"), 
-    "owner" !== e || c || (e = "keys"), document.querySelectorAll("[data-page]").forEach(t => t.hidden = t.dataset.page !== e), 
-    document.querySelectorAll("[data-tab]").forEach(t => {
-      t.dataset.tab === e ? t.setAttribute("aria-current", "page") : t.removeAttribute("aria-current");
+  let _0xec3e03_6 = null, _0xec3e03_7 = "", _0xec3e03_8 = "", _0xec3e03_9 = !1, _0xec3e03_a = null;
+  function _0xec3e03_b(_0xec3e03_0) {
+    "\x6f\x77\x6e\x65\x72" !== _0xec3e03_0 && _0xec3e03_5(), [ "\x6b\x65\x79\x73", "\x75\x73\x61\x67\x65", "\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64", "\x6f\x77\x6e\x65\x72" ].includes(_0xec3e03_0) || (_0xec3e03_0 = "\x6b\x65\x79\x73"), 
+    "\x6f\x77\x6e\x65\x72" !== _0xec3e03_0 || _0xec3e03_9 || (_0xec3e03_0 = "\x6b\x65\x79\x73"), document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x70\x61\x67\x65\x5d").forEach(_0xec3e03_1 => _0xec3e03_1.hidden = _0xec3e03_1.dataset.page !== _0xec3e03_0), 
+    document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x74\x61\x62\x5d").forEach(_0xec3e03_1 => {
+      _0xec3e03_1.dataset.tab === _0xec3e03_0 ? _0xec3e03_1.setAttribute("\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74", "\x70\x61\x67\x65") : _0xec3e03_1.removeAttribute("\x61\x72\x69\x61\x2d\x63\x75\x72\x72\x65\x6e\x74");
     });
   }
-  document.querySelectorAll("[data-tab]").forEach(e => e.onclick = () => {
-    location.hash = e.dataset.tab, u(e.dataset.tab);
-  }), addEventListener("hashchange", () => u(location.hash.slice(1))), u(location.hash.slice(1));
-  const m = window.parent !== window, p = (e, t) => {
+  document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x74\x61\x62\x5d").forEach(_0xec3e03_0 => _0xec3e03_0.onclick = () => {
+    location.hash = _0xec3e03_0.dataset.tab, _0xec3e03_b(_0xec3e03_0.dataset.tab);
+  }), addEventListener("\x68\x61\x73\x68\x63\x68\x61\x6e\x67\x65", () => _0xec3e03_b(location.hash.slice(1))), _0xec3e03_b(location.hash.slice(1));
+  const _0xec3e03_c = window.parent !== window, _0xec3e03_d = (_0xec3e03_0, _0xec3e03_1) => {
     try {
-      return localStorage.getItem(e) || t;
+      return localStorage.getItem(_0xec3e03_0) || _0xec3e03_1;
     } catch {
-      return t;
+      return _0xec3e03_1;
     }
   };
-  function y() {
-    if (m) {
+  function _0xec3e03_e() {
+    if (_0xec3e03_c) {
       try {
-        document.documentElement.style.setProperty("--nyx-font", getComputedStyle(parent.document.body).fontFamily);
+        document.documentElement.style.setProperty("\x2d\x2d\x6e\x79\x78\x2d\x66\x6f\x6e\x74", getComputedStyle(parent.document.body).fontFamily);
       } catch {}
       return;
     }
-    const e = {
-      outfit: "Outfit",
-      raleway: "Raleway",
-      nunito: "Nunito",
-      inter: "Inter",
-      poppins: "Poppins",
-      quicksand: "Quicksand",
-      lexend: "Lexend",
-      montserrat: "Montserrat",
-      atkinson: "Atkinson Hyperlegible"
-    }[p("nyx.font", "outfit")] || "Outfit";
-    document.documentElement.style.setProperty("--nyx-font", `"${e}",Arial,sans-serif`);
-    let t = document.getElementById("nyx-api-font");
-    t || (t = document.createElement("link"), t.id = "nyx-api-font", t.rel = "stylesheet", 
-    document.head.append(t));
-    const n = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(e).replaceAll("%20", "+")}:wght@400;500;600;700&display=swap`;
-    t.href !== n && (t.href = n);
-    const o = p("nyx.beamWallpaper", "frost");
-    document.documentElement.dataset.nyxBeamWallpaper = o;
-    const a = p("nyx.customThemeColor", ""), r = "custom" === p("nyx.theme", "default") && /^#[a-f0-9]{6}$/i.test(a) ? {
-      lightColor: a
+    const _0xec3e03_0 = {
+      outfit: "\x4f\x75\x74\x66\x69\x74",
+      raleway: "\x52\x61\x6c\x65\x77\x61\x79",
+      nunito: "\x4e\x75\x6e\x69\x74\x6f",
+      inter: "\x49\x6e\x74\x65\x72",
+      poppins: "\x50\x6f\x70\x70\x69\x6e\x73",
+      quicksand: "\x51\x75\x69\x63\x6b\x73\x61\x6e\x64",
+      lexend: "\x4c\x65\x78\x65\x6e\x64",
+      montserrat: "\x4d\x6f\x6e\x74\x73\x65\x72\x72\x61\x74",
+      atkinson: "\x41\x74\x6b\x69\x6e\x73\x6f\x6e\x20\x48\x79\x70\x65\x72\x6c\x65\x67\x69\x62\x6c\x65"
+    }[_0xec3e03_d("\x6e\x79\x78\x2e\x66\x6f\x6e\x74", "\x6f\x75\x74\x66\x69\x74")] || "\x4f\x75\x74\x66\x69\x74";
+    document.documentElement.style.setProperty("\x2d\x2d\x6e\x79\x78\x2d\x66\x6f\x6e\x74", `\x22${_0xec3e03_0}\x22\x2c\x41\x72\x69\x61\x6c\x2c\x73\x61\x6e\x73\x2d\x73\x65\x72\x69\x66`);
+    let _0xec3e03_1 = document.getElementById("\x6e\x79\x78\x2d\x61\x70\x69\x2d\x66\x6f\x6e\x74");
+    _0xec3e03_1 || (_0xec3e03_1 = document.createElement("\x6c\x69\x6e\x6b"), _0xec3e03_1.id = "\x6e\x79\x78\x2d\x61\x70\x69\x2d\x66\x6f\x6e\x74", 
+    _0xec3e03_1.rel = "\x73\x74\x79\x6c\x65\x73\x68\x65\x65\x74", document.head.append(_0xec3e03_1));
+    const _0xec3e03_2 = `\x68\x74\x74\x70\x73\x3a\x2f\x2f\x66\x6f\x6e\x74\x73\x2e\x67\x6f\x6f\x67\x6c\x65\x61\x70\x69\x73\x2e\x63\x6f\x6d\x2f\x63\x73\x73\x32\x3f\x66\x61\x6d\x69\x6c\x79\x3d${encodeURIComponent(_0xec3e03_0).replaceAll("\x25\x32\x30", "\x2b")}\x3a\x77\x67\x68\x74\x40\x34\x30\x30\x3b\x35\x30\x30\x3b\x36\x30\x30\x3b\x37\x30\x30\x26\x64\x69\x73\x70\x6c\x61\x79\x3d\x73\x77\x61\x70`;
+    _0xec3e03_1.href !== _0xec3e03_2 && (_0xec3e03_1.href = _0xec3e03_2);
+    const _0xec3e03_3 = _0xec3e03_d("\x6e\x79\x78\x2e\x62\x65\x61\x6d\x57\x61\x6c\x6c\x70\x61\x70\x65\x72", "\x66\x72\x6f\x73\x74");
+    document.documentElement.dataset.nyxBeamWallpaper = _0xec3e03_3;
+    const _0xec3e03_4 = _0xec3e03_d("\x6e\x79\x78\x2e\x63\x75\x73\x74\x6f\x6d\x54\x68\x65\x6d\x65\x43\x6f\x6c\x6f\x72", ""), _0xec3e03_5 = "\x63\x75\x73\x74\x6f\x6d" === _0xec3e03_d("\x6e\x79\x78\x2e\x74\x68\x65\x6d\x65", "\x64\x65\x66\x61\x75\x6c\x74") && /^#[a-f0-9]{6}$/i.test(_0xec3e03_4) ? {
+      lightColor: _0xec3e03_4
     } : {};
-    window.NyxBeamsWallpaper?.apply(o, r), window.NyxLineWavesWallpaper?.apply(o, {
-      colorVariant: p("nyx.lineWaves.colorVariant", "frost")
+    window.NyxBeamsWallpaper?.apply(_0xec3e03_3, _0xec3e03_5), window.NyxLineWavesWallpaper?.apply(_0xec3e03_3, {
+      colorVariant: _0xec3e03_d("\x6e\x79\x78\x2e\x6c\x69\x6e\x65\x57\x61\x76\x65\x73\x2e\x63\x6f\x6c\x6f\x72\x56\x61\x72\x69\x61\x6e\x74", "\x66\x72\x6f\x73\x74")
     });
   }
-  if (!m) {
-    document.documentElement.classList.add("nyx-api-standalone");
-    for (const e of [ "nyxBeamsBg", "nyxLineWavesBg" ]) {
-      const t = document.createElement("canvas");
-      t.id = e, t.setAttribute("aria-hidden", "true"), document.body.prepend(t);
+  if (!_0xec3e03_c) {
+    document.documentElement.classList.add("\x6e\x79\x78\x2d\x61\x70\x69\x2d\x73\x74\x61\x6e\x64\x61\x6c\x6f\x6e\x65");
+    for (const _0xec3e03_0 of [ "\x6e\x79\x78\x42\x65\x61\x6d\x73\x42\x67", "\x6e\x79\x78\x4c\x69\x6e\x65\x57\x61\x76\x65\x73\x42\x67" ]) {
+      const _0xec3e03_1 = document.createElement("\x63\x61\x6e\x76\x61\x73");
+      _0xec3e03_1.id = _0xec3e03_0, _0xec3e03_1.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), document.body.prepend(_0xec3e03_1);
     }
     (async () => {
-      for (const e of [ "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/three.r134.min.js", "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@rb68750c01c864a9ef9f8eae1!.js", "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@rd53edf8afd9e3315fe3c5521!.js" ]) await new Promise((t, n) => {
-        const o = document.createElement("script");
-        o.src = e, o.onload = t, o.onerror = n, document.head.append(o);
+      for (const _0xec3e03_0 of [ "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x76\x65\x6e\x64\x6f\x72\x2f\x74\x68\x72\x65\x65\x2e\x72\x31\x33\x34\x2e\x6d\x69\x6e\x2e\x6a\x73", "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x6a\x73\x2f\x40\x72\x62\x36\x38\x37\x35\x30\x63\x30\x31\x63\x38\x36\x34\x61\x39\x65\x66\x39\x66\x38\x65\x61\x65\x31\x21\x2e\x6a\x73", "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x6a\x73\x2f\x40\x72\x64\x35\x33\x65\x64\x66\x38\x61\x66\x64\x39\x65\x33\x33\x31\x35\x66\x65\x33\x63\x35\x35\x32\x31\x21\x2e\x6a\x73" ]) await new Promise((_0xec3e03_1, _0xec3e03_2) => {
+        const _0xec3e03_3 = document.createElement("\x73\x63\x72\x69\x70\x74");
+        _0xec3e03_3.src = _0xec3e03_0, _0xec3e03_3.onload = _0xec3e03_1, _0xec3e03_3.onerror = _0xec3e03_2, 
+        document.head.append(_0xec3e03_3);
       });
-      y();
+      _0xec3e03_e();
     })().catch(() => {});
   }
-  y(), addEventListener("storage", y), addEventListener("message", e => {
-    e.source === parent && e.origin === location.origin && "nyx:theme-sync" === e.data?.type && y();
+  _0xec3e03_e(), addEventListener("\x73\x74\x6f\x72\x61\x67\x65", _0xec3e03_e), addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0xec3e03_0 => {
+    _0xec3e03_0.source === parent && _0xec3e03_0.origin === location.origin && "\x6e\x79\x78\x3a\x74\x68\x65\x6d\x65\x2d\x73\x79\x6e\x63" === _0xec3e03_0.data?.type && _0xec3e03_e();
   });
-  const g = t => {
-    e("#notice").textContent = t;
+  const _0xec3e03_f = _0xec3e03_1 => {
+    _0xec3e03_0("\x23\x6e\x6f\x74\x69\x63\x65").textContent = _0xec3e03_1;
   };
-  async function h(t, n, o) {
-    const a = await async function(e = !1) {
-      const t = e ? "" : await async function() {
+  async function _0xec3e03_10(_0xec3e03_1, _0xec3e03_2, _0xec3e03_3) {
+    const _0xec3e03_4 = await async function(_0xec3e03_0 = !1) {
+      const _0xec3e03_1 = _0xec3e03_0 ? "" : await async function() {
         if (window.parent === window) return "";
-        const e = `keys-${Date.now()}-${Math.random().toString(36).slice(2)}`;
-        return new Promise(t => {
-          let n = !1;
-          const o = e => {
-            n || (n = !0, clearTimeout(r), removeEventListener("message", a), t(String(e || "")));
-          }, a = t => {
-            t.source === parent && t.origin === location.origin && "nyx:account-token-response" === t.data?.type && t.data.requestId === e && o(t.data.token);
-          }, r = setTimeout(() => o(""), 2500);
-          addEventListener("message", a), parent.postMessage({
-            type: "nyx:account-token-request",
-            requestId: e
+        const _0xec3e03_0 = `\x6b\x65\x79\x73\x2d${Date.now()}\x2d${Math.random().toString(36).slice(2)}`;
+        return new Promise(_0xec3e03_1 => {
+          let _0xec3e03_2 = !1;
+          const _0xec3e03_3 = _0xec3e03_0 => {
+            _0xec3e03_2 || (_0xec3e03_2 = !0, clearTimeout(_0xec3e03_5), removeEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0xec3e03_4), 
+            _0xec3e03_1(String(_0xec3e03_0 || "")));
+          }, _0xec3e03_4 = _0xec3e03_1 => {
+            _0xec3e03_1.source === parent && _0xec3e03_1.origin === location.origin && "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65" === _0xec3e03_1.data?.type && _0xec3e03_1.data.requestId === _0xec3e03_0 && _0xec3e03_3(_0xec3e03_1.data.token);
+          }, _0xec3e03_5 = setTimeout(() => _0xec3e03_3(""), 2500);
+          addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0xec3e03_4), parent.postMessage({
+            type: "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x74\x6f\x6b\x65\x6e\x2d\x72\x65\x71\x75\x65\x73\x74",
+            requestId: _0xec3e03_0
           }, location.origin);
         });
       }();
-      if (t && !e) return t;
-      if (m && !e) return t;
-      const n = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/founder-profile/auth-config", {
-        cache: "no-store"
-      }), o = await n.json();
-      if (!o?.enabled || !o?.apiKey || !o?.projectId) return "";
-      const [{initializeApp: a, getApps: r}, {getAuth: s, setPersistence: l, browserLocalPersistence: c}] = await Promise.all([ import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"), import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js") ]), d = s(r().find(e => "nyx-founder-owner" === e.name) || a({
-        apiKey: o.apiKey,
-        authDomain: `${o.projectId}.firebaseapp.com`,
-        projectId: o.projectId
-      }, "nyx-founder-owner"));
-      i = d;
+      if (_0xec3e03_1 && !_0xec3e03_0) return _0xec3e03_1;
+      if (_0xec3e03_c && !_0xec3e03_0) return _0xec3e03_1;
+      const _0xec3e03_2 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x66\x6f\x75\x6e\x64\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67", {
+        cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+      }), _0xec3e03_3 = await _0xec3e03_2.json();
+      if (!_0xec3e03_3?.enabled || !_0xec3e03_3?.apiKey || !_0xec3e03_3?.projectId) return "";
+      const [{initializeApp: _0xec3e03_4, getApps: _0xec3e03_5}, {getAuth: _0xec3e03_7, setPersistence: _0xec3e03_8, browserLocalPersistence: _0xec3e03_9}] = await Promise.all([ import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x70\x70\x2e\x6a\x73"), import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x75\x74\x68\x2e\x6a\x73") ]), _0xec3e03_a = _0xec3e03_7(_0xec3e03_5().find(_0xec3e03_0 => "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72" === _0xec3e03_0.name) || _0xec3e03_4({
+        apiKey: _0xec3e03_3.apiKey,
+        authDomain: `${_0xec3e03_3.projectId}\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d`,
+        projectId: _0xec3e03_3.projectId
+      }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72"));
+      _0xec3e03_6 = _0xec3e03_a;
       try {
-        await l(d, c);
+        await _0xec3e03_8(_0xec3e03_a, _0xec3e03_9);
       } catch {}
-      return "function" == typeof d.authStateReady && await d.authStateReady(), d.currentUser ? d.currentUser.getIdToken() : "";
+      return "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0xec3e03_a.authStateReady && await _0xec3e03_a.authStateReady(), 
+      _0xec3e03_a.currentUser ? _0xec3e03_a.currentUser.getIdToken() : "";
     }();
-    if (!a) throw r(), e("#sign-in").hidden = !1, e("#create-button").disabled = !0, 
-    e("#account").textContent = "Sign in to Nyx to view your API access.", e("#owner-tab").hidden = !0, 
-    c = !1, u("keys"), e("#management").hidden = !0, e("#secret").value = "", e("#playground-key").value = "", 
-    e("#reveal").hidden = !0, e("#members-rows").replaceChildren(), l = "", Error("Sign in to Nyx to continue.");
-    const s = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/developer" + t, {
-      method: o || (n ? "POST" : "GET"),
-      cache: "no-store",
+    if (!_0xec3e03_4) throw _0xec3e03_5(), _0xec3e03_0("\x23\x73\x69\x67\x6e\x2d\x69\x6e").hidden = !1, _0xec3e03_0("\x23\x63\x72\x65\x61\x74\x65\x2d\x62\x75\x74\x74\x6f\x6e").disabled = !0, 
+    _0xec3e03_0("\x23\x61\x63\x63\x6f\x75\x6e\x74").textContent = "\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x4e\x79\x78\x20\x74\x6f\x20\x76\x69\x65\x77\x20\x79\x6f\x75\x72\x20\x41\x50\x49\x20\x61\x63\x63\x65\x73\x73\x2e", 
+    _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x74\x61\x62").hidden = !0, _0xec3e03_9 = !1, _0xec3e03_b("\x6b\x65\x79\x73"), _0xec3e03_0("\x23\x6d\x61\x6e\x61\x67\x65\x6d\x65\x6e\x74").hidden = !0, 
+    _0xec3e03_0("\x23\x73\x65\x63\x72\x65\x74").value = "", _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6b\x65\x79").value = "", _0xec3e03_0("\x23\x72\x65\x76\x65\x61\x6c").hidden = !0, 
+    _0xec3e03_0("\x23\x6d\x65\x6d\x62\x65\x72\x73\x2d\x72\x6f\x77\x73").replaceChildren(), _0xec3e03_8 = "", Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x4e\x79\x78\x20\x74\x6f\x20\x63\x6f\x6e\x74\x69\x6e\x75\x65\x2e");
+    const _0xec3e03_7 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x64\x65\x76\x65\x6c\x6f\x70\x65\x72" + _0xec3e03_1, {
+      method: _0xec3e03_3 || (_0xec3e03_2 ? "\x50\x4f\x53\x54" : "\x47\x45\x54"),
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65",
       headers: {
-        Authorization: "Bearer " + a,
-        "Content-Type": "application/json"
+        Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0xec3e03_4,
+        "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
       },
-      ...n ? {
-        body: JSON.stringify(n)
+      ..._0xec3e03_2 ? {
+        body: JSON.stringify(_0xec3e03_2)
       } : {}
-    }), d = await s.json();
-    if (!s.ok) throw Error(d.error || "Request failed.");
-    return d;
+    }), _0xec3e03_a = await _0xec3e03_7.json();
+    if (!_0xec3e03_7.ok) throw Error(_0xec3e03_a.error || "\x52\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64\x2e");
+    return _0xec3e03_a;
   }
-  const k = e => async t => {
-    t?.preventDefault();
-    const n = t?.submitter || t?.currentTarget;
-    "BUTTON" === n?.tagName && (n.disabled = !0);
+  const _0xec3e03_11 = _0xec3e03_0 => async _0xec3e03_1 => {
+    _0xec3e03_1?.preventDefault();
+    const _0xec3e03_2 = _0xec3e03_1?.submitter || _0xec3e03_1?.currentTarget;
+    "\x42\x55\x54\x54\x4f\x4e" === _0xec3e03_2?.tagName && (_0xec3e03_2.disabled = !0);
     try {
-      await e(t);
-    } catch (o) {
-      g(o.message);
+      await _0xec3e03_0(_0xec3e03_1);
+    } catch (_0xec3e03_3) {
+      _0xec3e03_f(_0xec3e03_3.message);
     } finally {
-      "BUTTON" === n?.tagName && "create-button" !== n.id ? n.disabled = !1 : "create-button" === n?.id && await w().catch(() => {});
+      "\x42\x55\x54\x54\x4f\x4e" === _0xec3e03_2?.tagName && "\x63\x72\x65\x61\x74\x65\x2d\x62\x75\x74\x74\x6f\x6e" !== _0xec3e03_2.id ? _0xec3e03_2.disabled = !1 : "\x63\x72\x65\x61\x74\x65\x2d\x62\x75\x74\x74\x6f\x6e" === _0xec3e03_2?.id && await _0xec3e03_12().catch(() => {});
     }
   };
-  async function w() {
-    const o = await h("/me");
-    l !== o.uid && (r(), l = o.uid, s = "", e("#secret").value = "", e("#playground-key").value = "", 
-    e("#reveal").hidden = !0, e("#members-rows").replaceChildren(), e("#uid").value = ""), 
-    e("#sign-in").hidden = !0, e("#account").textContent = `${o.unlimited ? "Unlimited" : o.balance.toLocaleString()} tokens remaining | ${o.usedTokens || 0} used | ${o.dailyRequests} requests/day | ${o.minuteRequests}/minute. User ID: ${o.uid}`, 
-    e("#create-button").disabled = Boolean(o.key) || !o.configured, (o.modelAllowances || o.tokenPool) && (e("#account").textContent += " " + b(o)), 
-    e("#revoke").hidden = !o.key, e("#key").textContent = o.key ? `${o.key.label}: ${o.key.prefix}...` : "No active key.", 
-    c = o.owner, e("#owner-tab").hidden = !o.owner, u(location.hash.slice(1)), function(t) {
-      e("#usage-remaining").textContent = t.unlimited ? "Unlimited" : Math.max(0, t.balance).toLocaleString(), 
-      e("#usage-used").textContent = (t.usedTokens || 0).toLocaleString(), e("#usage-requests").textContent = `${t.requestsToday || 0} / ${t.dailyRequests}`, 
-      e("#usage-meter").max = Math.max(1, t.grantedTokens || t.balance + (t.usedTokens || 0)), 
-      e("#usage-meter").value = Math.max(0, t.balance), e("#usage-limits").textContent = `${t.minuteRequests} requests/minute. Maximum ${t.maxOutput} output tokens/request. ${t.tokenPool ? "All accessible AI models share a " + t.tokenPool.limit.toLocaleString() + "-token pool for 4 days. " + t.tokenPool.remaining.toLocaleString() + " tokens remaining; resets " + new Date(t.tokenPool.resetAt).toLocaleDateString() + "." : "Daily requests reset at 00:00 UTC; token balances do not refill automatically."}${t.pending ? " A request is in progress; its tokens are reserved." : ""}`, 
-      (t.modelAllowances || t.tokenPool) && (e("#usage-limits").textContent += " " + b(t) + (t.legacyTokens ? " Earlier combined usage is included in both limits until the next monthly reset." : ""));
-      const o = e("#usage-rows");
-      o.replaceChildren();
-      for (const e of t.recent || []) {
-        const t = document.createElement("tr");
-        for (const o of [ new Date(e.at).toLocaleString(), e.model === n ? "GPT-5.6 Luna" : "Gemini 2.5 Flash Lite", e.tokens.toLocaleString(), {
-          completed: "Completed",
-          not_sent: "Not sent",
-          unconfirmed: "Unconfirmed"
-        }[e.status] || "Unconfirmed" ]) {
-          const e = document.createElement("td");
-          e.textContent = o, t.append(e);
+  async function _0xec3e03_12() {
+    const _0xec3e03_3 = await _0xec3e03_10("\x2f\x6d\x65");
+    _0xec3e03_8 !== _0xec3e03_3.uid && (_0xec3e03_5(), _0xec3e03_8 = _0xec3e03_3.uid, 
+    _0xec3e03_7 = "", _0xec3e03_0("\x23\x73\x65\x63\x72\x65\x74").value = "", _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6b\x65\x79").value = "", 
+    _0xec3e03_0("\x23\x72\x65\x76\x65\x61\x6c").hidden = !0, _0xec3e03_0("\x23\x6d\x65\x6d\x62\x65\x72\x73\x2d\x72\x6f\x77\x73").replaceChildren(), 
+    _0xec3e03_0("\x23\x75\x69\x64").value = ""), _0xec3e03_0("\x23\x73\x69\x67\x6e\x2d\x69\x6e").hidden = !0, _0xec3e03_0("\x23\x61\x63\x63\x6f\x75\x6e\x74").textContent = `${_0xec3e03_3.unlimited ? "\x55\x6e\x6c\x69\x6d\x69\x74\x65\x64" : _0xec3e03_3.balance.toLocaleString()}\x20\x74\x6f\x6b\x65\x6e\x73\x20\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x20\x7c\x20${_0xec3e03_3.usedTokens || 0}\x20\x75\x73\x65\x64\x20\x7c\x20${_0xec3e03_3.dailyRequests}\x20\x72\x65\x71\x75\x65\x73\x74\x73\x2f\x64\x61\x79\x20\x7c\x20${_0xec3e03_3.minuteRequests}\x2f\x6d\x69\x6e\x75\x74\x65\x2e\x20\x55\x73\x65\x72\x20\x49\x44\x3a\x20${_0xec3e03_3.uid}`, 
+    _0xec3e03_0("\x23\x63\x72\x65\x61\x74\x65\x2d\x62\x75\x74\x74\x6f\x6e").disabled = Boolean(_0xec3e03_3.key) || !_0xec3e03_3.configured, 
+    (_0xec3e03_3.modelAllowances || _0xec3e03_3.tokenPool) && (_0xec3e03_0("\x23\x61\x63\x63\x6f\x75\x6e\x74").textContent += "\x20" + _0xec3e03_15(_0xec3e03_3)), 
+    _0xec3e03_0("\x23\x72\x65\x76\x6f\x6b\x65").hidden = !_0xec3e03_3.key, _0xec3e03_0("\x23\x6b\x65\x79").textContent = _0xec3e03_3.key ? `${_0xec3e03_3.key.label}\x3a\x20${_0xec3e03_3.key.prefix}\x2e\x2e\x2e` : "\x4e\x6f\x20\x61\x63\x74\x69\x76\x65\x20\x6b\x65\x79\x2e", 
+    _0xec3e03_9 = _0xec3e03_3.owner, _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x74\x61\x62").hidden = !_0xec3e03_3.owner, 
+    _0xec3e03_b(location.hash.slice(1)), function(_0xec3e03_1) {
+      _0xec3e03_0("\x23\x75\x73\x61\x67\x65\x2d\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67").textContent = _0xec3e03_1.unlimited ? "\x55\x6e\x6c\x69\x6d\x69\x74\x65\x64" : Math.max(0, _0xec3e03_1.balance).toLocaleString(), 
+      _0xec3e03_0("\x23\x75\x73\x61\x67\x65\x2d\x75\x73\x65\x64").textContent = (_0xec3e03_1.usedTokens || 0).toLocaleString(), 
+      _0xec3e03_0("\x23\x75\x73\x61\x67\x65\x2d\x72\x65\x71\x75\x65\x73\x74\x73").textContent = `${_0xec3e03_1.requestsToday || 0}\x20\x2f\x20${_0xec3e03_1.dailyRequests}`, 
+      _0xec3e03_0("\x23\x75\x73\x61\x67\x65\x2d\x6d\x65\x74\x65\x72").max = Math.max(1, _0xec3e03_1.grantedTokens || _0xec3e03_1.balance + (_0xec3e03_1.usedTokens || 0)), 
+      _0xec3e03_0("\x23\x75\x73\x61\x67\x65\x2d\x6d\x65\x74\x65\x72").value = Math.max(0, _0xec3e03_1.balance), _0xec3e03_0("\x23\x75\x73\x61\x67\x65\x2d\x6c\x69\x6d\x69\x74\x73").textContent = `${_0xec3e03_1.minuteRequests}\x20\x72\x65\x71\x75\x65\x73\x74\x73\x2f\x6d\x69\x6e\x75\x74\x65\x2e\x20\x4d\x61\x78\x69\x6d\x75\x6d\x20${_0xec3e03_1.maxOutput}\x20\x6f\x75\x74\x70\x75\x74\x20\x74\x6f\x6b\x65\x6e\x73\x2f\x72\x65\x71\x75\x65\x73\x74\x2e\x20${_0xec3e03_1.tokenPool ? "\x41\x6c\x6c\x20\x61\x63\x63\x65\x73\x73\x69\x62\x6c\x65\x20\x41\x49\x20\x6d\x6f\x64\x65\x6c\x73\x20\x73\x68\x61\x72\x65\x20\x61\x20" + _0xec3e03_1.tokenPool.limit.toLocaleString() + "\x2d\x74\x6f\x6b\x65\x6e\x20\x70\x6f\x6f\x6c\x20\x66\x6f\x72\x20\x34\x20\x64\x61\x79\x73\x2e\x20" + _0xec3e03_1.tokenPool.remaining.toLocaleString() + "\x20\x74\x6f\x6b\x65\x6e\x73\x20\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x3b\x20\x72\x65\x73\x65\x74\x73\x20" + new Date(_0xec3e03_1.tokenPool.resetAt).toLocaleDateString() + "\x2e" : "\x44\x61\x69\x6c\x79\x20\x72\x65\x71\x75\x65\x73\x74\x73\x20\x72\x65\x73\x65\x74\x20\x61\x74\x20\x30\x30\x3a\x30\x30\x20\x55\x54\x43\x3b\x20\x74\x6f\x6b\x65\x6e\x20\x62\x61\x6c\x61\x6e\x63\x65\x73\x20\x64\x6f\x20\x6e\x6f\x74\x20\x72\x65\x66\x69\x6c\x6c\x20\x61\x75\x74\x6f\x6d\x61\x74\x69\x63\x61\x6c\x6c\x79\x2e"}${_0xec3e03_1.pending ? "\x20\x41\x20\x72\x65\x71\x75\x65\x73\x74\x20\x69\x73\x20\x69\x6e\x20\x70\x72\x6f\x67\x72\x65\x73\x73\x3b\x20\x69\x74\x73\x20\x74\x6f\x6b\x65\x6e\x73\x20\x61\x72\x65\x20\x72\x65\x73\x65\x72\x76\x65\x64\x2e" : ""}`, 
+      (_0xec3e03_1.modelAllowances || _0xec3e03_1.tokenPool) && (_0xec3e03_0("\x23\x75\x73\x61\x67\x65\x2d\x6c\x69\x6d\x69\x74\x73").textContent += "\x20" + _0xec3e03_15(_0xec3e03_1) + (_0xec3e03_1.legacyTokens ? "\x20\x45\x61\x72\x6c\x69\x65\x72\x20\x63\x6f\x6d\x62\x69\x6e\x65\x64\x20\x75\x73\x61\x67\x65\x20\x69\x73\x20\x69\x6e\x63\x6c\x75\x64\x65\x64\x20\x69\x6e\x20\x62\x6f\x74\x68\x20\x6c\x69\x6d\x69\x74\x73\x20\x75\x6e\x74\x69\x6c\x20\x74\x68\x65\x20\x6e\x65\x78\x74\x20\x6d\x6f\x6e\x74\x68\x6c\x79\x20\x72\x65\x73\x65\x74\x2e" : ""));
+      const _0xec3e03_3 = _0xec3e03_0("\x23\x75\x73\x61\x67\x65\x2d\x72\x6f\x77\x73");
+      _0xec3e03_3.replaceChildren();
+      for (const _0xec3e03_0 of _0xec3e03_1.recent || []) {
+        const _0xec3e03_1 = document.createElement("\x74\x72");
+        for (const _0xec3e03_3 of [ new Date(_0xec3e03_0.at).toLocaleString(), _0xec3e03_0.model === _0xec3e03_2 ? "\x47\x50\x54\x2d\x35\x2e\x36\x20\x4c\x75\x6e\x61" : "\x47\x65\x6d\x69\x6e\x69\x20\x32\x2e\x35\x20\x46\x6c\x61\x73\x68\x20\x4c\x69\x74\x65", _0xec3e03_0.tokens.toLocaleString(), {
+          completed: "\x43\x6f\x6d\x70\x6c\x65\x74\x65\x64",
+          not_sent: "\x4e\x6f\x74\x20\x73\x65\x6e\x74",
+          unconfirmed: "\x55\x6e\x63\x6f\x6e\x66\x69\x72\x6d\x65\x64"
+        }[_0xec3e03_0.status] || "\x55\x6e\x63\x6f\x6e\x66\x69\x72\x6d\x65\x64" ]) {
+          const _0xec3e03_0 = document.createElement("\x74\x64");
+          _0xec3e03_0.textContent = _0xec3e03_3, _0xec3e03_1.append(_0xec3e03_0);
         }
-        o.append(t);
+        _0xec3e03_3.append(_0xec3e03_1);
       }
-      if (!o.children.length) {
-        const e = document.createElement("tr"), t = document.createElement("td");
-        t.colSpan = 4, t.textContent = "No requests yet. Try your first prompt in the playground.", 
-        e.append(t), o.append(e);
+      if (!_0xec3e03_3.children.length) {
+        const _0xec3e03_0 = document.createElement("\x74\x72"), _0xec3e03_1 = document.createElement("\x74\x64");
+        _0xec3e03_1.colSpan = 4, _0xec3e03_1.textContent = "\x4e\x6f\x20\x72\x65\x71\x75\x65\x73\x74\x73\x20\x79\x65\x74\x2e\x20\x54\x72\x79\x20\x79\x6f\x75\x72\x20\x66\x69\x72\x73\x74\x20\x70\x72\x6f\x6d\x70\x74\x20\x69\x6e\x20\x74\x68\x65\x20\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2e", 
+        _0xec3e03_0.append(_0xec3e03_1), _0xec3e03_3.append(_0xec3e03_0);
       }
-    }(o), function(o) {
-      const a = e("#playground-model"), r = a.value;
-      a.replaceChildren();
-      for (const e of o.models || [ t ]) {
-        const t = document.createElement("option");
-        t.value = e, t.textContent = e === n ? "GPT-5.6 Luna" : "Gemini 2.5 Flash Lite", 
-        a.append(t);
+    }(_0xec3e03_3), function(_0xec3e03_3) {
+      const _0xec3e03_4 = _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6d\x6f\x64\x65\x6c"), _0xec3e03_5 = _0xec3e03_4.value;
+      _0xec3e03_4.replaceChildren();
+      for (const _0xec3e03_0 of _0xec3e03_3.models || [ _0xec3e03_1 ]) {
+        const _0xec3e03_1 = document.createElement("\x6f\x70\x74\x69\x6f\x6e");
+        _0xec3e03_1.value = _0xec3e03_0, _0xec3e03_1.textContent = _0xec3e03_0 === _0xec3e03_2 ? "\x47\x50\x54\x2d\x35\x2e\x36\x20\x4c\x75\x6e\x61" : "\x47\x65\x6d\x69\x6e\x69\x20\x32\x2e\x35\x20\x46\x6c\x61\x73\x68\x20\x4c\x69\x74\x65", 
+        _0xec3e03_4.append(_0xec3e03_1);
       }
-      [ ...a.options ].some(e => e.value === r) && (a.value = r);
-    }(o), e("#management").hidden = !o.unlocked, o.unlocked || r(), e("#unlock").hidden = Boolean(o.unlocked), 
-    e("#uid").value || (e("#uid").value = o.uid), o.unlocked && !e("#members-rows").children.length && await v();
+      [ ..._0xec3e03_4.options ].some(_0xec3e03_0 => _0xec3e03_0.value === _0xec3e03_5) && (_0xec3e03_4.value = _0xec3e03_5);
+    }(_0xec3e03_3), _0xec3e03_0("\x23\x6d\x61\x6e\x61\x67\x65\x6d\x65\x6e\x74").hidden = !_0xec3e03_3.unlocked, _0xec3e03_3.unlocked || _0xec3e03_5(), 
+    _0xec3e03_0("\x23\x75\x6e\x6c\x6f\x63\x6b").hidden = Boolean(_0xec3e03_3.unlocked), _0xec3e03_0("\x23\x75\x69\x64").value || (_0xec3e03_0("\x23\x75\x69\x64").value = _0xec3e03_3.uid), 
+    _0xec3e03_3.unlocked && !_0xec3e03_0("\x23\x6d\x65\x6d\x62\x65\x72\x73\x2d\x72\x6f\x77\x73").children.length && await _0xec3e03_14();
   }
-  e("#refresh").onclick = k(async () => {
-    await w(), g("Access refreshed.");
-  }), e("#sign-in").onclick = e => {
-    m && (e.preventDefault(), parent.postMessage({
-      type: "nyx:account-open-signin"
+  _0xec3e03_0("\x23\x72\x65\x66\x72\x65\x73\x68").onclick = _0xec3e03_11(async () => {
+    await _0xec3e03_12(), _0xec3e03_f("\x41\x63\x63\x65\x73\x73\x20\x72\x65\x66\x72\x65\x73\x68\x65\x64\x2e");
+  }), _0xec3e03_0("\x23\x73\x69\x67\x6e\x2d\x69\x6e").onclick = _0xec3e03_0 => {
+    _0xec3e03_c && (_0xec3e03_0.preventDefault(), parent.postMessage({
+      type: "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x6f\x70\x65\x6e\x2d\x73\x69\x67\x6e\x69\x6e"
     }, location.origin));
-  }, addEventListener("message", e => {
-    m && e.source === parent && e.origin === location.origin && "nyx:account-changed" === e.data?.type && w().then(() => g("Access refreshed.")).catch(e => g(e.message));
-  }), addEventListener("focus", () => w().catch(e => g(e.message))), e("#create").onsubmit = k(async t => {
-    const n = await h("/keys", {
-      label: t.target.elements.label.value
+  }, addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0xec3e03_0 => {
+    _0xec3e03_c && _0xec3e03_0.source === parent && _0xec3e03_0.origin === location.origin && "\x6e\x79\x78\x3a\x61\x63\x63\x6f\x75\x6e\x74\x2d\x63\x68\x61\x6e\x67\x65\x64" === _0xec3e03_0.data?.type && _0xec3e03_12().then(() => _0xec3e03_f("\x41\x63\x63\x65\x73\x73\x20\x72\x65\x66\x72\x65\x73\x68\x65\x64\x2e")).catch(_0xec3e03_0 => _0xec3e03_f(_0xec3e03_0.message));
+  }), addEventListener("\x66\x6f\x63\x75\x73", () => _0xec3e03_12().catch(_0xec3e03_0 => _0xec3e03_f(_0xec3e03_0.message))), 
+  _0xec3e03_0("\x23\x63\x72\x65\x61\x74\x65").onsubmit = _0xec3e03_11(async _0xec3e03_1 => {
+    const _0xec3e03_2 = await _0xec3e03_10("\x2f\x6b\x65\x79\x73", {
+      label: _0xec3e03_1.target.elements.label.value
     });
-    e("#secret").value = n.key, e("#playground-key").value = n.key, e("#reveal").hidden = !1, 
-    g("Key created. Copy it now."), await w();
-  }), e("#revoke").onclick = k(async () => {
-    await h("/keys", null, "DELETE"), e("#playground-key").value = "", e("#secret").value = "", 
-    e("#reveal").hidden = !0, g("Key revoked. Your balance is preserved."), await w();
-  }), e("#copy").onclick = k(async () => {
-    await navigator.clipboard.writeText(e("#secret").value), g("Key copied.");
-  }), e("#dismiss").onclick = () => {
-    e("#secret").value = "", e("#reveal").hidden = !0;
+    _0xec3e03_0("\x23\x73\x65\x63\x72\x65\x74").value = _0xec3e03_2.key, _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6b\x65\x79").value = _0xec3e03_2.key, 
+    _0xec3e03_0("\x23\x72\x65\x76\x65\x61\x6c").hidden = !1, _0xec3e03_f("\x4b\x65\x79\x20\x63\x72\x65\x61\x74\x65\x64\x2e\x20\x43\x6f\x70\x79\x20\x69\x74\x20\x6e\x6f\x77\x2e"), await _0xec3e03_12();
+  }), _0xec3e03_0("\x23\x72\x65\x76\x6f\x6b\x65").onclick = _0xec3e03_11(async () => {
+    await _0xec3e03_10("\x2f\x6b\x65\x79\x73", null, "\x44\x45\x4c\x45\x54\x45"), _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6b\x65\x79").value = "", 
+    _0xec3e03_0("\x23\x73\x65\x63\x72\x65\x74").value = "", _0xec3e03_0("\x23\x72\x65\x76\x65\x61\x6c").hidden = !0, _0xec3e03_f("\x4b\x65\x79\x20\x72\x65\x76\x6f\x6b\x65\x64\x2e\x20\x59\x6f\x75\x72\x20\x62\x61\x6c\x61\x6e\x63\x65\x20\x69\x73\x20\x70\x72\x65\x73\x65\x72\x76\x65\x64\x2e"), 
+    await _0xec3e03_12();
+  }), _0xec3e03_0("\x23\x63\x6f\x70\x79").onclick = _0xec3e03_11(async () => {
+    await navigator.clipboard.writeText(_0xec3e03_0("\x23\x73\x65\x63\x72\x65\x74").value), _0xec3e03_f("\x4b\x65\x79\x20\x63\x6f\x70\x69\x65\x64\x2e");
+  }), _0xec3e03_0("\x23\x64\x69\x73\x6d\x69\x73\x73").onclick = () => {
+    _0xec3e03_0("\x23\x73\x65\x63\x72\x65\x74").value = "", _0xec3e03_0("\x23\x72\x65\x76\x65\x61\x6c").hidden = !0;
   };
-  let f = null;
-  async function v(t = "") {
-    const n = await h("/owner/accounts" + (t ? "?cursor=" + encodeURIComponent(t) : "")), o = e("#members-rows");
-    o.replaceChildren();
-    for (const a of n.members || []) {
-      const t = document.createElement("tr");
-      for (const e of [ a.name || a.uid, a.key?.prefix + "...", a.unlimited ? "Unlimited" : a.balance, a.usedTokens || 0 ]) {
-        const n = document.createElement("td");
-        n.textContent = String(e), t.append(n);
+  let _0xec3e03_13 = null;
+  async function _0xec3e03_14(_0xec3e03_1 = "") {
+    const _0xec3e03_2 = await _0xec3e03_10("\x2f\x6f\x77\x6e\x65\x72\x2f\x61\x63\x63\x6f\x75\x6e\x74\x73" + (_0xec3e03_1 ? "\x3f\x63\x75\x72\x73\x6f\x72\x3d" + encodeURIComponent(_0xec3e03_1) : "")), _0xec3e03_3 = _0xec3e03_0("\x23\x6d\x65\x6d\x62\x65\x72\x73\x2d\x72\x6f\x77\x73");
+    _0xec3e03_3.replaceChildren();
+    for (const _0xec3e03_4 of _0xec3e03_2.members || []) {
+      const _0xec3e03_1 = document.createElement("\x74\x72");
+      for (const _0xec3e03_0 of [ _0xec3e03_4.name || _0xec3e03_4.uid, _0xec3e03_4.key?.prefix + "\x2e\x2e\x2e", _0xec3e03_4.unlimited ? "\x55\x6e\x6c\x69\x6d\x69\x74\x65\x64" : _0xec3e03_4.balance, _0xec3e03_4.usedTokens || 0 ]) {
+        const _0xec3e03_2 = document.createElement("\x74\x64");
+        _0xec3e03_2.textContent = String(_0xec3e03_0), _0xec3e03_1.append(_0xec3e03_2);
       }
-      const n = document.createElement("td"), r = document.createElement("button");
-      r.textContent = "Manage", r.onclick = k(async () => {
-        e("#uid").value = a.uid, x(await h("/owner/account/" + encodeURIComponent(a.uid))), 
-        e("#limits").scrollIntoView({
-          block: "center"
+      const _0xec3e03_2 = document.createElement("\x74\x64"), _0xec3e03_5 = document.createElement("\x62\x75\x74\x74\x6f\x6e");
+      _0xec3e03_5.textContent = "\x4d\x61\x6e\x61\x67\x65", _0xec3e03_5.onclick = _0xec3e03_11(async () => {
+        _0xec3e03_0("\x23\x75\x69\x64").value = _0xec3e03_4.uid, _0xec3e03_16(await _0xec3e03_10("\x2f\x6f\x77\x6e\x65\x72\x2f\x61\x63\x63\x6f\x75\x6e\x74\x2f" + encodeURIComponent(_0xec3e03_4.uid))), 
+        _0xec3e03_0("\x23\x6c\x69\x6d\x69\x74\x73").scrollIntoView({
+          block: "\x63\x65\x6e\x74\x65\x72"
         });
-      }), n.append(r), t.append(n), o.append(t);
+      }), _0xec3e03_2.append(_0xec3e03_5), _0xec3e03_1.append(_0xec3e03_2), _0xec3e03_3.append(_0xec3e03_1);
     }
-    if (!o.children.length) {
-      const e = document.createElement("tr"), t = document.createElement("td");
-      t.colSpan = 5, t.textContent = "No active API keys.", e.append(t), o.append(e);
+    if (!_0xec3e03_3.children.length) {
+      const _0xec3e03_0 = document.createElement("\x74\x72"), _0xec3e03_1 = document.createElement("\x74\x64");
+      _0xec3e03_1.colSpan = 5, _0xec3e03_1.textContent = "\x4e\x6f\x20\x61\x63\x74\x69\x76\x65\x20\x41\x50\x49\x20\x6b\x65\x79\x73\x2e", _0xec3e03_0.append(_0xec3e03_1), 
+      _0xec3e03_3.append(_0xec3e03_0);
     }
-    f = n.nextCursor, e("#members-next").hidden = !f;
+    _0xec3e03_13 = _0xec3e03_2.nextCursor, _0xec3e03_0("\x23\x6d\x65\x6d\x62\x65\x72\x73\x2d\x6e\x65\x78\x74").hidden = !_0xec3e03_13;
   }
-  function b(e) {
-    return e.tokenPool ? `${e.tokenPool.remaining.toLocaleString()} / ${e.tokenPool.limit.toLocaleString()} pooled tokens left; resets ${new Date(e.tokenPool.resetAt).toLocaleDateString()}` : e.modelAllowances ? Object.entries(e.modelAllowances).map(([e, t]) => `${e === n ? "Luna" : "Gemini"}: ${t.remaining.toLocaleString()} / ${t.limit.toLocaleString()} tokens left`).join(" | ") : "";
+  function _0xec3e03_15(_0xec3e03_0) {
+    return _0xec3e03_0.tokenPool ? `${_0xec3e03_0.tokenPool.remaining.toLocaleString()}\x20\x2f\x20${_0xec3e03_0.tokenPool.limit.toLocaleString()}\x20\x70\x6f\x6f\x6c\x65\x64\x20\x74\x6f\x6b\x65\x6e\x73\x20\x6c\x65\x66\x74\x3b\x20\x72\x65\x73\x65\x74\x73\x20${new Date(_0xec3e03_0.tokenPool.resetAt).toLocaleDateString()}` : _0xec3e03_0.modelAllowances ? Object.entries(_0xec3e03_0.modelAllowances).map(([_0xec3e03_0, _0xec3e03_1]) => `${_0xec3e03_0 === _0xec3e03_2 ? "\x4c\x75\x6e\x61" : "\x47\x65\x6d\x69\x6e\x69"}\x3a\x20${_0xec3e03_1.remaining.toLocaleString()}\x20\x2f\x20${_0xec3e03_1.limit.toLocaleString()}\x20\x74\x6f\x6b\x65\x6e\x73\x20\x6c\x65\x66\x74`).join("\x20\x7c\x20") : "";
   }
-  function x(o) {
-    r(), s = o.uid, e("#owner-show-key").disabled = !o.key?.revealAvailable, e("#owner-key-availability").textContent = o.key && !o.key.revealAvailable ? "Older key: only its hash was saved. The user must replace it to enable reveal." : "", 
-    e("#target").textContent = `${o.uid}: ${o.unlimited ? "Unlimited" : o.balance} tokens remaining; ${o.usedTokens || 0} tokens used. ${o.key ? "Active key: " + o.key.prefix + "..." : "No key."}`, 
-    (o.modelAllowances || o.tokenPool) && (e("#target").textContent += " " + b(o));
-    const a = e("#limits").elements;
-    for (const e of [ "dailyRequests", "minuteRequests", "maxOutput" ]) a[e].value = o[e];
-    a.addTokens.value = 0;
-    for (const [e, t] of [ [ "lunaMonthlyLimit", "luna" ], [ "geminiMonthlyLimit", "gemini" ] ]) a[e].value = o.monthlyModelLimits?.[t] ?? 0, 
-    a[e].disabled = !0, a[e].closest("label").hidden = a[e].disabled;
-    a.gemini.checked = o.models.includes(t), a.luna.checked = o.models.includes(n);
+  function _0xec3e03_16(_0xec3e03_3) {
+    _0xec3e03_5(), _0xec3e03_7 = _0xec3e03_3.uid, _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x73\x68\x6f\x77\x2d\x6b\x65\x79").disabled = !_0xec3e03_3.key?.revealAvailable, 
+    _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x61\x76\x61\x69\x6c\x61\x62\x69\x6c\x69\x74\x79").textContent = _0xec3e03_3.key && !_0xec3e03_3.key.revealAvailable ? "\x4f\x6c\x64\x65\x72\x20\x6b\x65\x79\x3a\x20\x6f\x6e\x6c\x79\x20\x69\x74\x73\x20\x68\x61\x73\x68\x20\x77\x61\x73\x20\x73\x61\x76\x65\x64\x2e\x20\x54\x68\x65\x20\x75\x73\x65\x72\x20\x6d\x75\x73\x74\x20\x72\x65\x70\x6c\x61\x63\x65\x20\x69\x74\x20\x74\x6f\x20\x65\x6e\x61\x62\x6c\x65\x20\x72\x65\x76\x65\x61\x6c\x2e" : "", 
+    _0xec3e03_0("\x23\x74\x61\x72\x67\x65\x74").textContent = `${_0xec3e03_3.uid}\x3a\x20${_0xec3e03_3.unlimited ? "\x55\x6e\x6c\x69\x6d\x69\x74\x65\x64" : _0xec3e03_3.balance}\x20\x74\x6f\x6b\x65\x6e\x73\x20\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x3b\x20${_0xec3e03_3.usedTokens || 0}\x20\x74\x6f\x6b\x65\x6e\x73\x20\x75\x73\x65\x64\x2e\x20${_0xec3e03_3.key ? "\x41\x63\x74\x69\x76\x65\x20\x6b\x65\x79\x3a\x20" + _0xec3e03_3.key.prefix + "\x2e\x2e\x2e" : "\x4e\x6f\x20\x6b\x65\x79\x2e"}`, 
+    (_0xec3e03_3.modelAllowances || _0xec3e03_3.tokenPool) && (_0xec3e03_0("\x23\x74\x61\x72\x67\x65\x74").textContent += "\x20" + _0xec3e03_15(_0xec3e03_3));
+    const _0xec3e03_4 = _0xec3e03_0("\x23\x6c\x69\x6d\x69\x74\x73").elements;
+    for (const _0xec3e03_0 of [ "\x64\x61\x69\x6c\x79\x52\x65\x71\x75\x65\x73\x74\x73", "\x6d\x69\x6e\x75\x74\x65\x52\x65\x71\x75\x65\x73\x74\x73", "\x6d\x61\x78\x4f\x75\x74\x70\x75\x74" ]) _0xec3e03_4[_0xec3e03_0].value = _0xec3e03_3[_0xec3e03_0];
+    _0xec3e03_4.addTokens.value = 0;
+    for (const [_0xec3e03_0, _0xec3e03_1] of [ [ "\x6c\x75\x6e\x61\x4d\x6f\x6e\x74\x68\x6c\x79\x4c\x69\x6d\x69\x74", "\x6c\x75\x6e\x61" ], [ "\x67\x65\x6d\x69\x6e\x69\x4d\x6f\x6e\x74\x68\x6c\x79\x4c\x69\x6d\x69\x74", "\x67\x65\x6d\x69\x6e\x69" ] ]) _0xec3e03_4[_0xec3e03_0].value = _0xec3e03_3.monthlyModelLimits?.[_0xec3e03_1] ?? 0, 
+    _0xec3e03_4[_0xec3e03_0].disabled = !0, _0xec3e03_4[_0xec3e03_0].closest("\x6c\x61\x62\x65\x6c").hidden = _0xec3e03_4[_0xec3e03_0].disabled;
+    _0xec3e03_4.gemini.checked = _0xec3e03_3.models.includes(_0xec3e03_1), _0xec3e03_4.luna.checked = _0xec3e03_3.models.includes(_0xec3e03_2);
   }
-  e("#members-refresh").onclick = k(() => v()), e("#members-next").onclick = k(() => v(f)), 
-  e("#unlock").onsubmit = k(async e => {
+  _0xec3e03_0("\x23\x6d\x65\x6d\x62\x65\x72\x73\x2d\x72\x65\x66\x72\x65\x73\x68").onclick = _0xec3e03_11(() => _0xec3e03_14()), _0xec3e03_0("\x23\x6d\x65\x6d\x62\x65\x72\x73\x2d\x6e\x65\x78\x74").onclick = _0xec3e03_11(() => _0xec3e03_14(_0xec3e03_13)), 
+  _0xec3e03_0("\x23\x75\x6e\x6c\x6f\x63\x6b").onsubmit = _0xec3e03_11(async _0xec3e03_0 => {
     try {
-      await h("/unlock", {
-        password: e.target.elements.password.value
-      }), await w(), await v(), g("Owner management unlocked for 15 minutes.");
+      await _0xec3e03_10("\x2f\x75\x6e\x6c\x6f\x63\x6b", {
+        password: _0xec3e03_0.target.elements.password.value
+      }), await _0xec3e03_12(), await _0xec3e03_14(), _0xec3e03_f("\x4f\x77\x6e\x65\x72\x20\x6d\x61\x6e\x61\x67\x65\x6d\x65\x6e\x74\x20\x75\x6e\x6c\x6f\x63\x6b\x65\x64\x20\x66\x6f\x72\x20\x31\x35\x20\x6d\x69\x6e\x75\x74\x65\x73\x2e");
     } finally {
-      e.target.elements.password.value = "";
+      _0xec3e03_0.target.elements.password.value = "";
     }
-  }), e("#lock").onclick = k(async () => {
-    r(), await h("/lock", {}), await w(), g("Owner management locked.");
-  }), e("#uid").oninput = () => {
-    s = "";
-  }, e("#lookup").onsubmit = k(async () => x(await h("/owner/account/" + encodeURIComponent(e("#uid").value.trim())))), 
-  e("#limits").onsubmit = k(async e => {
-    if (!s) throw Error("Load an account first.");
-    const o = e.target.elements, a = {
-      models: [ ...o.gemini.checked ? [ t ] : [], ...o.luna.checked ? [ n ] : [] ]
+  }), _0xec3e03_0("\x23\x6c\x6f\x63\x6b").onclick = _0xec3e03_11(async () => {
+    _0xec3e03_5(), await _0xec3e03_10("\x2f\x6c\x6f\x63\x6b", {}), await _0xec3e03_12(), _0xec3e03_f("\x4f\x77\x6e\x65\x72\x20\x6d\x61\x6e\x61\x67\x65\x6d\x65\x6e\x74\x20\x6c\x6f\x63\x6b\x65\x64\x2e");
+  }), _0xec3e03_0("\x23\x75\x69\x64").oninput = () => {
+    _0xec3e03_7 = "";
+  }, _0xec3e03_0("\x23\x6c\x6f\x6f\x6b\x75\x70").onsubmit = _0xec3e03_11(async () => _0xec3e03_16(await _0xec3e03_10("\x2f\x6f\x77\x6e\x65\x72\x2f\x61\x63\x63\x6f\x75\x6e\x74\x2f" + encodeURIComponent(_0xec3e03_0("\x23\x75\x69\x64").value.trim())))), 
+  _0xec3e03_0("\x23\x6c\x69\x6d\x69\x74\x73").onsubmit = _0xec3e03_11(async _0xec3e03_0 => {
+    if (!_0xec3e03_7) throw Error("\x4c\x6f\x61\x64\x20\x61\x6e\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x66\x69\x72\x73\x74\x2e");
+    const _0xec3e03_3 = _0xec3e03_0.target.elements, _0xec3e03_4 = {
+      models: [ ..._0xec3e03_3.gemini.checked ? [ _0xec3e03_1 ] : [], ..._0xec3e03_3.luna.checked ? [ _0xec3e03_2 ] : [] ]
     };
-    for (const t of [ "addTokens", "dailyRequests", "minuteRequests", "maxOutput" ]) a[t] = Number(o[t].value);
-    o.lunaMonthlyLimit.disabled || (a.monthlyModelLimits = {
-      luna: Number(o.lunaMonthlyLimit.value),
-      gemini: Number(o.geminiMonthlyLimit.value)
-    }), x(await h("/owner/account/" + encodeURIComponent(s), a)), g("Token balance and limits saved."), 
-    await w();
-  }), e("#owner-show-key").onclick = k(async function() {
-    if (!s) throw Error("Load an account first.");
-    r();
-    const t = a, n = s, i = await h("/owner/account/" + encodeURIComponent(n) + "/reveal-key", {});
-    t !== a || n !== s || e("#management").hidden || (e("#owner-key-value").value = i.key, 
-    e("#owner-key-label").textContent = "API key for " + n, e("#owner-key-reveal").hidden = !1, 
-    o = setTimeout(r, 6e4));
-  }), e("#owner-key-copy").onclick = k(async () => {
-    if (!e("#owner-key-value").value) throw Error("Reveal a key first.");
-    await navigator.clipboard.writeText(e("#owner-key-value").value), g("Key copied.");
-  }), e("#owner-key-hide").onclick = r, addEventListener("pagehide", r), document.addEventListener("visibilitychange", () => {
-    document.hidden && r();
-  }), e("#owner-revoke").onclick = k(async () => {
-    if (r(), !s) throw Error("Load an account first.");
-    await h("/owner/account/" + encodeURIComponent(s) + "/key", null, "DELETE"), x(await h("/owner/account/" + encodeURIComponent(s))), 
-    g("User key revoked.");
-  }), e("#usage-refresh").onclick = k(w), e("#playground").onsubmit = async t => {
-    if (t.preventDefault(), d) return;
-    d = new AbortController;
-    const n = d, o = performance.now(), a = setTimeout(() => n.abort(), 125e3);
-    e("#playground-send").disabled = !0, e("#playground-cancel").hidden = !1, e("#playground-send .spinner").hidden = !1, 
-    e("#send-label").textContent = "Generating", e("#playground-result").hidden = !1, 
-    e("#playground-meta").textContent = "Waiting for a response...", e("#playground-response").textContent = "", 
-    e("#playground-limit").hidden = !0;
+    for (const _0xec3e03_1 of [ "\x61\x64\x64\x54\x6f\x6b\x65\x6e\x73", "\x64\x61\x69\x6c\x79\x52\x65\x71\x75\x65\x73\x74\x73", "\x6d\x69\x6e\x75\x74\x65\x52\x65\x71\x75\x65\x73\x74\x73", "\x6d\x61\x78\x4f\x75\x74\x70\x75\x74" ]) _0xec3e03_4[_0xec3e03_1] = Number(_0xec3e03_3[_0xec3e03_1].value);
+    _0xec3e03_3.lunaMonthlyLimit.disabled || (_0xec3e03_4.monthlyModelLimits = {
+      luna: Number(_0xec3e03_3.lunaMonthlyLimit.value),
+      gemini: Number(_0xec3e03_3.geminiMonthlyLimit.value)
+    }), _0xec3e03_16(await _0xec3e03_10("\x2f\x6f\x77\x6e\x65\x72\x2f\x61\x63\x63\x6f\x75\x6e\x74\x2f" + encodeURIComponent(_0xec3e03_7), _0xec3e03_4)), 
+    _0xec3e03_f("\x54\x6f\x6b\x65\x6e\x20\x62\x61\x6c\x61\x6e\x63\x65\x20\x61\x6e\x64\x20\x6c\x69\x6d\x69\x74\x73\x20\x73\x61\x76\x65\x64\x2e"), await _0xec3e03_12();
+  }), _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x73\x68\x6f\x77\x2d\x6b\x65\x79").onclick = _0xec3e03_11(async function() {
+    if (!_0xec3e03_7) throw Error("\x4c\x6f\x61\x64\x20\x61\x6e\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x66\x69\x72\x73\x74\x2e");
+    _0xec3e03_5();
+    const _0xec3e03_1 = _0xec3e03_4, _0xec3e03_2 = _0xec3e03_7, _0xec3e03_6 = await _0xec3e03_10("\x2f\x6f\x77\x6e\x65\x72\x2f\x61\x63\x63\x6f\x75\x6e\x74\x2f" + encodeURIComponent(_0xec3e03_2) + "\x2f\x72\x65\x76\x65\x61\x6c\x2d\x6b\x65\x79", {});
+    _0xec3e03_1 !== _0xec3e03_4 || _0xec3e03_2 !== _0xec3e03_7 || _0xec3e03_0("\x23\x6d\x61\x6e\x61\x67\x65\x6d\x65\x6e\x74").hidden || (_0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x76\x61\x6c\x75\x65").value = _0xec3e03_6.key, 
+    _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x6c\x61\x62\x65\x6c").textContent = "\x41\x50\x49\x20\x6b\x65\x79\x20\x66\x6f\x72\x20" + _0xec3e03_2, _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x72\x65\x76\x65\x61\x6c").hidden = !1, 
+    _0xec3e03_3 = setTimeout(_0xec3e03_5, 6e4));
+  }), _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x63\x6f\x70\x79").onclick = _0xec3e03_11(async () => {
+    if (!_0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x76\x61\x6c\x75\x65").value) throw Error("\x52\x65\x76\x65\x61\x6c\x20\x61\x20\x6b\x65\x79\x20\x66\x69\x72\x73\x74\x2e");
+    await navigator.clipboard.writeText(_0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x76\x61\x6c\x75\x65").value), _0xec3e03_f("\x4b\x65\x79\x20\x63\x6f\x70\x69\x65\x64\x2e");
+  }), _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x6b\x65\x79\x2d\x68\x69\x64\x65").onclick = _0xec3e03_5, addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", _0xec3e03_5), 
+  document.addEventListener("\x76\x69\x73\x69\x62\x69\x6c\x69\x74\x79\x63\x68\x61\x6e\x67\x65", () => {
+    document.hidden && _0xec3e03_5();
+  }), _0xec3e03_0("\x23\x6f\x77\x6e\x65\x72\x2d\x72\x65\x76\x6f\x6b\x65").onclick = _0xec3e03_11(async () => {
+    if (_0xec3e03_5(), !_0xec3e03_7) throw Error("\x4c\x6f\x61\x64\x20\x61\x6e\x20\x61\x63\x63\x6f\x75\x6e\x74\x20\x66\x69\x72\x73\x74\x2e");
+    await _0xec3e03_10("\x2f\x6f\x77\x6e\x65\x72\x2f\x61\x63\x63\x6f\x75\x6e\x74\x2f" + encodeURIComponent(_0xec3e03_7) + "\x2f\x6b\x65\x79", null, "\x44\x45\x4c\x45\x54\x45"), 
+    _0xec3e03_16(await _0xec3e03_10("\x2f\x6f\x77\x6e\x65\x72\x2f\x61\x63\x63\x6f\x75\x6e\x74\x2f" + encodeURIComponent(_0xec3e03_7))), 
+    _0xec3e03_f("\x55\x73\x65\x72\x20\x6b\x65\x79\x20\x72\x65\x76\x6f\x6b\x65\x64\x2e");
+  }), _0xec3e03_0("\x23\x75\x73\x61\x67\x65\x2d\x72\x65\x66\x72\x65\x73\x68").onclick = _0xec3e03_11(_0xec3e03_12), _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64").onsubmit = async _0xec3e03_1 => {
+    if (_0xec3e03_1.preventDefault(), _0xec3e03_a) return;
+    _0xec3e03_a = new AbortController;
+    const _0xec3e03_2 = _0xec3e03_a, _0xec3e03_3 = performance.now(), _0xec3e03_4 = setTimeout(() => _0xec3e03_2.abort(), 125e3);
+    _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x73\x65\x6e\x64").disabled = !0, _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x63\x61\x6e\x63\x65\x6c").hidden = !1, 
+    _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x73\x65\x6e\x64\x20\x2e\x73\x70\x69\x6e\x6e\x65\x72").hidden = !1, _0xec3e03_0("\x23\x73\x65\x6e\x64\x2d\x6c\x61\x62\x65\x6c").textContent = "\x47\x65\x6e\x65\x72\x61\x74\x69\x6e\x67", 
+    _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x72\x65\x73\x75\x6c\x74").hidden = !1, _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6d\x65\x74\x61").textContent = "\x57\x61\x69\x74\x69\x6e\x67\x20\x66\x6f\x72\x20\x61\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e\x2e\x2e", 
+    _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65").textContent = "", _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6c\x69\x6d\x69\x74").hidden = !0;
     try {
-      const t = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/v1/ai", {
-        method: "POST",
-        signal: n.signal,
+      const _0xec3e03_1 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x76\x31\x2f\x61\x69", {
+        method: "\x50\x4f\x53\x54",
+        signal: _0xec3e03_2.signal,
         headers: {
-          Authorization: "Bearer " + e("#playground-key").value.trim(),
-          "Content-Type": "application/json"
+          Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6b\x65\x79").value.trim(),
+          "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         },
         body: JSON.stringify({
-          model: e("#playground-model").value,
+          model: _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6d\x6f\x64\x65\x6c").value,
           messages: [ {
-            role: "user",
-            content: e("#playground-prompt").value
+            role: "\x75\x73\x65\x72",
+            content: _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x70\x72\x6f\x6d\x70\x74").value
           } ],
-          max_tokens: Number(e("#playground-tokens").value)
+          max_tokens: Number(_0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x74\x6f\x6b\x65\x6e\x73").value)
         })
-      }), a = await t.json();
-      if (!t.ok) throw Error(a.error || "The request failed.");
-      e("#playground-response").innerHTML = window.NyxMarkdown.render(a.choices?.[0]?.message?.content || "The model returned no text."), 
-      e("#playground-limit").hidden = "length" !== a.choices?.[0]?.finish_reason, e("#playground-limit").textContent = "This response reached its token limit. Increase Maximum output tokens if your key allowance permits, or ask for a shorter answer.", 
-      e("#playground-meta").textContent = `${((performance.now() - o) / 1e3).toFixed(1)} seconds | ${a.usage?.prompt_tokens || 0} input + ${a.usage?.completion_tokens || 0} output tokens`;
-    } catch (r) {
-      e("#playground-meta").textContent = n.signal.aborted ? "Request stopped" : "Request failed", 
-      e("#playground-response").textContent = n.signal.aborted ? "The request was stopped. Check Usage for any reserved tokens." : r.message;
+      }), _0xec3e03_4 = await _0xec3e03_1.json();
+      if (!_0xec3e03_1.ok) throw Error(_0xec3e03_4.error || "\x54\x68\x65\x20\x72\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64\x2e");
+      _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65").innerHTML = window.NyxMarkdown.render(_0xec3e03_4.choices?.[0]?.message?.content || "\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x6e\x6f\x20\x74\x65\x78\x74\x2e"), 
+      _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6c\x69\x6d\x69\x74").hidden = "\x6c\x65\x6e\x67\x74\x68" !== _0xec3e03_4.choices?.[0]?.finish_reason, 
+      _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6c\x69\x6d\x69\x74").textContent = "\x54\x68\x69\x73\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x72\x65\x61\x63\x68\x65\x64\x20\x69\x74\x73\x20\x74\x6f\x6b\x65\x6e\x20\x6c\x69\x6d\x69\x74\x2e\x20\x49\x6e\x63\x72\x65\x61\x73\x65\x20\x4d\x61\x78\x69\x6d\x75\x6d\x20\x6f\x75\x74\x70\x75\x74\x20\x74\x6f\x6b\x65\x6e\x73\x20\x69\x66\x20\x79\x6f\x75\x72\x20\x6b\x65\x79\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x20\x70\x65\x72\x6d\x69\x74\x73\x2c\x20\x6f\x72\x20\x61\x73\x6b\x20\x66\x6f\x72\x20\x61\x20\x73\x68\x6f\x72\x74\x65\x72\x20\x61\x6e\x73\x77\x65\x72\x2e", 
+      _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6d\x65\x74\x61").textContent = `${((performance.now() - _0xec3e03_3) / 1e3).toFixed(1)}\x20\x73\x65\x63\x6f\x6e\x64\x73\x20\x7c\x20${_0xec3e03_4.usage?.prompt_tokens || 0}\x20\x69\x6e\x70\x75\x74\x20\x2b\x20${_0xec3e03_4.usage?.completion_tokens || 0}\x20\x6f\x75\x74\x70\x75\x74\x20\x74\x6f\x6b\x65\x6e\x73`;
+    } catch (_0xec3e03_5) {
+      _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x6d\x65\x74\x61").textContent = _0xec3e03_2.signal.aborted ? "\x52\x65\x71\x75\x65\x73\x74\x20\x73\x74\x6f\x70\x70\x65\x64" : "\x52\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64", 
+      _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65").textContent = _0xec3e03_2.signal.aborted ? "\x54\x68\x65\x20\x72\x65\x71\x75\x65\x73\x74\x20\x77\x61\x73\x20\x73\x74\x6f\x70\x70\x65\x64\x2e\x20\x43\x68\x65\x63\x6b\x20\x55\x73\x61\x67\x65\x20\x66\x6f\x72\x20\x61\x6e\x79\x20\x72\x65\x73\x65\x72\x76\x65\x64\x20\x74\x6f\x6b\x65\x6e\x73\x2e" : _0xec3e03_5.message;
     } finally {
-      clearTimeout(a), d = null, e("#playground-send").disabled = !1, e("#playground-cancel").hidden = !0, 
-      e("#playground-send .spinner").hidden = !0, e("#send-label").textContent = "Run prompt", 
-      await w().catch(() => {});
+      clearTimeout(_0xec3e03_4), _0xec3e03_a = null, _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x73\x65\x6e\x64").disabled = !1, 
+      _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x63\x61\x6e\x63\x65\x6c").hidden = !0, _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x73\x65\x6e\x64\x20\x2e\x73\x70\x69\x6e\x6e\x65\x72").hidden = !0, 
+      _0xec3e03_0("\x23\x73\x65\x6e\x64\x2d\x6c\x61\x62\x65\x6c").textContent = "\x52\x75\x6e\x20\x70\x72\x6f\x6d\x70\x74", await _0xec3e03_12().catch(() => {});
     }
-  }, e("#playground-cancel").onclick = () => d?.abort(), e("#example").textContent = String.raw`curl ${location.origin}/api/v1/ai \
+  }, _0xec3e03_0("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x63\x61\x6e\x63\x65\x6c").onclick = () => _0xec3e03_a?.abort(), _0xec3e03_0("\x23\x65\x78\x61\x6d\x70\x6c\x65").textContent = String.raw`curl ${location.origin}/api/v1/ai \
   -H "Authorization: Bearer YOUR_NYX_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"model":"${t}","messages":[{"role":"user","content":"Hello"}],"max_tokens":128}'`, 
-  w().catch(e => g(e.message));
-})(), document.querySelector("#playground-response").addEventListener("click", async e => {
-  const t = e.target.closest("[data-copy-code]");
-  if (t) try {
-    await navigator.clipboard.writeText(t.closest(".ai-code-block").querySelector("code").textContent), 
-    t.querySelector("span").textContent = "Copied";
+  -d '{"model":"${_0xec3e03_1}","messages":[{"role":"user","content":"Hello"}],"max_tokens":128}'`, 
+  _0xec3e03_12().catch(_0xec3e03_0 => _0xec3e03_f(_0xec3e03_0.message));
+})(), document.querySelector("\x23\x70\x6c\x61\x79\x67\x72\x6f\x75\x6e\x64\x2d\x72\x65\x73\x70\x6f\x6e\x73\x65").addEventListener("\x63\x6c\x69\x63\x6b", async _0xec3e03_0 => {
+  const _0xec3e03_1 = _0xec3e03_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x2d\x63\x6f\x64\x65\x5d");
+  if (_0xec3e03_1) try {
+    await navigator.clipboard.writeText(_0xec3e03_1.closest("\x2e\x61\x69\x2d\x63\x6f\x64\x65\x2d\x62\x6c\x6f\x63\x6b").querySelector("\x63\x6f\x64\x65").textContent), 
+    _0xec3e03_1.querySelector("\x73\x70\x61\x6e").textContent = "\x43\x6f\x70\x69\x65\x64";
   } catch {
-    t.querySelector("span").textContent = "Copy failed";
+    _0xec3e03_1.querySelector("\x73\x70\x61\x6e").textContent = "\x43\x6f\x70\x79\x20\x66\x61\x69\x6c\x65\x64";
   }
 });

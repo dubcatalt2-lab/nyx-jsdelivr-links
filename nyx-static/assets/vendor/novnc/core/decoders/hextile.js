@@ -7,7 +7,7 @@
  *
  */
 
-import * as Log from '../util/logging.js';
+import * as Log from "../util/logging.js";
 
 export default class HextileDecoder {
     constructor() {

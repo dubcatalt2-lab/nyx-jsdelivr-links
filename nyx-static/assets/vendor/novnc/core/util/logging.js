@@ -10,7 +10,7 @@
  * Logging/debug routines
  */
 
-let _logLevel = 'warn';
+let _logLevel = "warn";
 
 let Debug = () => {};
 let Info = () => {};
@@ -18,7 +18,7 @@ let Warn = () => {};
 let Error = () => {};
 
 export function initLogging(level) {
-    if (typeof level === 'undefined') {
+    if (typeof level === "undefined") {
         level = _logLevel;
     } else {
         _logLevel = level;
@@ -29,15 +29,15 @@ export function initLogging(level) {
     if (typeof window.console !== "undefined") {
         /* eslint-disable no-console, no-fallthrough */
         switch (level) {
-            case 'debug':
+            case "debug":
                 Debug = console.debug.bind(window.console);
-            case 'info':
+            case "info":
                 Info  = console.info.bind(window.console);
-            case 'warn':
+            case "warn":
                 Warn  = console.warn.bind(window.console);
-            case 'error':
+            case "error":
                 Error = console.error.bind(window.console);
-            case 'none':
+            case "none":
                 break;
             default:
                 throw new window.Error("invalid logging type '" + level + "'");

@@ -4,8 +4,8 @@
  * Licensed under MPL 2.0 or any later version (see LICENSE.txt)
  */
 
-import * as Log from '../util/logging.js';
-import { stopEvent } from '../util/events.js';
+import * as Log from "../util/logging.js";
+import { stopEvent } from "../util/events.js";
 import * as KeyboardUtil from "./util.js";
 import KeyTable from "./keysym.js";
 import * as browser from "../util/browser.js";
@@ -24,9 +24,9 @@ export default class Keyboard {
 
         // keep these here so we can refer to them later
         this._eventHandlers = {
-            'keyup': this._handleKeyUp.bind(this),
-            'keydown': this._handleKeyDown.bind(this),
-            'blur': this._allKeysUp.bind(this),
+            "keyup": this._handleKeyUp.bind(this),
+            "keydown": this._handleKeyDown.bind(this),
+            "blur": this._allKeysUp.bind(this),
         };
 
         // ===== EVENT HANDLERS =====
@@ -55,7 +55,7 @@ export default class Keyboard {
 
     _getKeyCode(e) {
         const code = KeyboardUtil.getKeycode(e);
-        if (code !== 'Unidentified') {
+        if (code !== "Unidentified") {
             return code;
         }
 
@@ -63,7 +63,7 @@ export default class Keyboard {
         if (e.keyCode) {
             // 229 is used for composition events
             if (e.keyCode !== 229) {
-                return 'Platform' + e.keyCode;
+                return "Platform" + e.keyCode;
             }
         }
 
@@ -71,24 +71,24 @@ export default class Keyboard {
         // is not layout independent, so it is as bad as using keyCode
         if (e.keyIdentifier) {
             // Non-character key?
-            if (e.keyIdentifier.substr(0, 2) !== 'U+') {
+            if (e.keyIdentifier.substr(0, 2) !== "U+") {
                 return e.keyIdentifier;
             }
 
             const codepoint = parseInt(e.keyIdentifier.substr(2), 16);
             const char = String.fromCharCode(codepoint).toUpperCase();
 
-            return 'Platform' + char.charCodeAt();
+            return "Platform" + char.charCodeAt();
         }
 
-        return 'Unidentified';
+        return "Unidentified";
     }
 
     _handleKeyDown(e) {
         const code = this._getKeyCode(e);
         let keysym = KeyboardUtil.getKeysym(e);
-        let numlock = e.getModifierState('NumLock');
-        let capslock = e.getModifierState('CapsLock');
+        let numlock = e.getModifierState("NumLock");
+        let capslock = e.getModifierState("CapsLock");
 
         // getModifierState for NumLock is not supported on mac and ios and always returns false.
         // Set to null to indicate unknown/unsupported instead.
@@ -122,7 +122,7 @@ export default class Keyboard {
 
         // We cannot handle keys we cannot track, but we also need
         // to deal with virtual keyboards which omit key info
-        if (code === 'Unidentified') {
+        if (code === "Unidentified") {
             if (keysym) {
                 // If it's a virtual keyboard then it should be
                 // sufficient to just send press and release right
@@ -165,7 +165,7 @@ export default class Keyboard {
         // macOS doesn't send proper key releases if a key is pressed
         // while meta is held down
         if ((browser.isMac() || browser.isIOS()) &&
-            (e.metaKey && code !== 'MetaLeft' && code !== 'MetaRight')) {
+            (e.metaKey && code !== "MetaLeft" && code !== "MetaRight")) {
             this._sendKeyEvent(keysym, code, true, numlock, capslock);
             this._sendKeyEvent(keysym, code, false, numlock, capslock);
             stopEvent(e);
@@ -176,9 +176,9 @@ export default class Keyboard {
         // state change events. That gets extra confusing for CapsLock
         // which toggles on each press, but not on release. So pretend
         // it was a quick press and release of the button.
-        if ((browser.isMac() || browser.isIOS()) && (code === 'CapsLock')) {
-            this._sendKeyEvent(KeyTable.XK_Caps_Lock, 'CapsLock', true, numlock, capslock);
-            this._sendKeyEvent(KeyTable.XK_Caps_Lock, 'CapsLock', false, numlock, capslock);
+        if ((browser.isMac() || browser.isIOS()) && (code === "CapsLock")) {
+            this._sendKeyEvent(KeyTable.XK_Caps_Lock, "CapsLock", true, numlock, capslock);
+            this._sendKeyEvent(KeyTable.XK_Caps_Lock, "CapsLock", false, numlock, capslock);
             stopEvent(e);
             return;
         }
@@ -221,9 +221,9 @@ export default class Keyboard {
         this._interruptAltGrSequence();
 
         // See comment in _handleKeyDown()
-        if ((browser.isMac() || browser.isIOS()) && (code === 'CapsLock')) {
-            this._sendKeyEvent(KeyTable.XK_Caps_Lock, 'CapsLock', true);
-            this._sendKeyEvent(KeyTable.XK_Caps_Lock, 'CapsLock', false);
+        if ((browser.isMac() || browser.isIOS()) && (code === "CapsLock")) {
+            this._sendKeyEvent(KeyTable.XK_Caps_Lock, "CapsLock", true);
+            this._sendKeyEvent(KeyTable.XK_Caps_Lock, "CapsLock", false);
             return;
         }
 
@@ -232,15 +232,15 @@ export default class Keyboard {
         // Windows has a rather nasty bug where it won't send key
         // release events for a Shift button if the other Shift is still
         // pressed
-        if (browser.isWindows() && ((code === 'ShiftLeft') ||
-                                    (code === 'ShiftRight'))) {
-            if ('ShiftRight' in this._keyDownList) {
-                this._sendKeyEvent(this._keyDownList['ShiftRight'],
-                                   'ShiftRight', false);
+        if (browser.isWindows() && ((code === "ShiftLeft") ||
+                                    (code === "ShiftRight"))) {
+            if ("ShiftRight" in this._keyDownList) {
+                this._sendKeyEvent(this._keyDownList["ShiftRight"],
+                                   "ShiftRight", false);
             }
-            if ('ShiftLeft' in this._keyDownList) {
-                this._sendKeyEvent(this._keyDownList['ShiftLeft'],
-                                   'ShiftLeft', false);
+            if ("ShiftLeft" in this._keyDownList) {
+                this._sendKeyEvent(this._keyDownList["ShiftLeft"],
+                                   "ShiftLeft", false);
             }
         }
     }
@@ -262,7 +262,7 @@ export default class Keyboard {
         for (let code in this._keyDownList) {
             this._sendKeyEvent(this._keyDownList[code], code, false);
         }
-        Log.Debug("<< Keyboard.allKeysUp");
+        Log.Debug("\u003c\u003c Keyboard.allKeysUp");
     }
 
     // ===== PUBLIC METHODS =====
@@ -270,11 +270,11 @@ export default class Keyboard {
     grab() {
         //Log.Debug(">> Keyboard.grab");
 
-        this._target.addEventListener('keydown', this._eventHandlers.keydown);
-        this._target.addEventListener('keyup', this._eventHandlers.keyup);
+        this._target.addEventListener("keydown", this._eventHandlers.keydown);
+        this._target.addEventListener("keyup", this._eventHandlers.keyup);
 
         // Release (key up) if window loses focus
-        window.addEventListener('blur', this._eventHandlers.blur);
+        window.addEventListener("blur", this._eventHandlers.blur);
 
         //Log.Debug("<< Keyboard.grab");
     }
@@ -282,9 +282,9 @@ export default class Keyboard {
     ungrab() {
         //Log.Debug(">> Keyboard.ungrab");
 
-        this._target.removeEventListener('keydown', this._eventHandlers.keydown);
-        this._target.removeEventListener('keyup', this._eventHandlers.keyup);
-        window.removeEventListener('blur', this._eventHandlers.blur);
+        this._target.removeEventListener("keydown", this._eventHandlers.keydown);
+        this._target.removeEventListener("keyup", this._eventHandlers.keyup);
+        window.removeEventListener("blur", this._eventHandlers.blur);
 
         // Release (key up) all keys that are in a down state
         this._allKeysUp();

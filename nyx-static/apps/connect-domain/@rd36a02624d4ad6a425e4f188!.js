@@ -1,60 +1,65 @@
 (() => {
-  const t = document.querySelector("[data-target-ip]"), e = document.querySelector("[data-copy-ip]"), n = document.querySelector("[data-domain-form]"), a = document.querySelector("[data-submit]"), o = document.querySelector("[data-status]"), s = "tutsi" === document.body.dataset.site ? "tutsi" : "nyx", i = "tutsi" === s ? "Tutsi" : "Nyx";
-  let r = "";
-  function c(t, e = "") {
-    o.hidden = !1, o.className = "status" + (e ? ` ${e}` : ""), o.textContent = t;
+  const _0xaf8177_0 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x74\x61\x72\x67\x65\x74\x2d\x69\x70\x5d"), _0xaf8177_1 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x2d\x69\x70\x5d"), _0xaf8177_2 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x64\x6f\x6d\x61\x69\x6e\x2d\x66\x6f\x72\x6d\x5d"), _0xaf8177_3 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x75\x62\x6d\x69\x74\x5d"), _0xaf8177_4 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x73\x74\x61\x74\x75\x73\x5d"), _0xaf8177_5 = "\x74\x75\x74\x73\x69" === document.body.dataset.site ? "\x74\x75\x74\x73\x69" : "\x6e\x79\x78", _0xaf8177_6 = "\x74\x75\x74\x73\x69" === _0xaf8177_5 ? "\x54\x75\x74\x73\x69" : "\x4e\x79\x78";
+  let _0xaf8177_7 = "";
+  function _0xaf8177_8(_0xaf8177_0, _0xaf8177_1 = "") {
+    _0xaf8177_4.hidden = !1, _0xaf8177_4.className = "\x73\x74\x61\x74\x75\x73" + (_0xaf8177_1 ? `\x20${_0xaf8177_1}` : ""), 
+    _0xaf8177_4.textContent = _0xaf8177_0;
   }
-  async function d(t) {
-    const e = await t.text();
+  async function _0xaf8177_9(_0xaf8177_0) {
+    const _0xaf8177_1 = await _0xaf8177_0.text();
     try {
-      return e ? JSON.parse(e) : {};
+      return _0xaf8177_1 ? JSON.parse(_0xaf8177_1) : {};
     } catch {
-      throw new Error(`${i} returned an unexpected ${t.status} response.`);
+      throw new Error(`${_0xaf8177_6}\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x75\x6e\x65\x78\x70\x65\x63\x74\x65\x64\x20${_0xaf8177_0.status}\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x2e`);
     }
   }
-  e.addEventListener("click", async () => {
-    if (r) try {
-      await navigator.clipboard.writeText(r), e.textContent = "Copied", setTimeout(() => {
-        e.textContent = "Copy";
+  _0xaf8177_1.addEventListener("\x63\x6c\x69\x63\x6b", async () => {
+    if (_0xaf8177_7) try {
+      await navigator.clipboard.writeText(_0xaf8177_7), _0xaf8177_1.textContent = "\x43\x6f\x70\x69\x65\x64", 
+      setTimeout(() => {
+        _0xaf8177_1.textContent = "\x43\x6f\x70\x79";
       }, 1400);
     } catch {
-      c(`Copy this address: ${r}`);
+      _0xaf8177_8(`\x43\x6f\x70\x79\x20\x74\x68\x69\x73\x20\x61\x64\x64\x72\x65\x73\x73\x3a\x20${_0xaf8177_7}`);
     }
-  }), n.addEventListener("submit", async t => {
-    t.preventDefault(), a.disabled = !0;
-    const e = a.textContent;
-    a.textContent = "Verifying\u2026", o.hidden = !0;
+  }), _0xaf8177_2.addEventListener("\x73\x75\x62\x6d\x69\x74", async _0xaf8177_0 => {
+    _0xaf8177_0.preventDefault(), _0xaf8177_3.disabled = !0;
+    const _0xaf8177_1 = _0xaf8177_3.textContent;
+    _0xaf8177_3.textContent = "\x56\x65\x72\x69\x66\x79\x69\x6e\x67\u2026", _0xaf8177_4.hidden = !0;
     try {
-      const t = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/custom-hostnames", {
-        method: "POST",
-        credentials: "same-origin",
+      const _0xaf8177_0 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x63\x75\x73\x74\x6f\x6d\x2d\x68\x6f\x73\x74\x6e\x61\x6d\x65\x73", {
+        method: "\x50\x4f\x53\x54",
+        credentials: "\x73\x61\x6d\x65\x2d\x6f\x72\x69\x67\x69\x6e",
         headers: {
-          "Content-Type": "application/json"
+          "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         },
         body: JSON.stringify({
-          hostname: n.elements.hostname.value,
-          site: s
+          hostname: _0xaf8177_2.elements.hostname.value,
+          site: _0xaf8177_5
         })
-      }), e = await d(t);
-      if (!t.ok) throw new Error(e.error || `Domain verification failed (${t.status}).`);
-      o.hidden = !1, o.className = "status success", o.replaceChildren(document.createTextNode(`${e.message} `));
-      const a = document.createElement("a");
-      a.href = e.url, a.textContent = `Open ${e.hostname}`, o.append(a);
-    } catch (r) {
-      c(r.message || `${i} could not connect that domain.`, "error");
+      }), _0xaf8177_1 = await _0xaf8177_9(_0xaf8177_0);
+      if (!_0xaf8177_0.ok) throw new Error(_0xaf8177_1.error || `\x44\x6f\x6d\x61\x69\x6e\x20\x76\x65\x72\x69\x66\x69\x63\x61\x74\x69\x6f\x6e\x20\x66\x61\x69\x6c\x65\x64\x20\x28${_0xaf8177_0.status}\x29\x2e`);
+      _0xaf8177_4.hidden = !1, _0xaf8177_4.className = "\x73\x74\x61\x74\x75\x73\x20\x73\x75\x63\x63\x65\x73\x73", _0xaf8177_4.replaceChildren(document.createTextNode(`${_0xaf8177_1.message}\x20`));
+      const _0xaf8177_3 = document.createElement("\x61");
+      _0xaf8177_3.href = _0xaf8177_1.url, _0xaf8177_3.textContent = `\x4f\x70\x65\x6e\x20${_0xaf8177_1.hostname}`, 
+      _0xaf8177_4.append(_0xaf8177_3);
+    } catch (_0xaf8177_7) {
+      _0xaf8177_8(_0xaf8177_7.message || `${_0xaf8177_6}\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x6f\x6e\x6e\x65\x63\x74\x20\x74\x68\x61\x74\x20\x64\x6f\x6d\x61\x69\x6e\x2e`, "\x65\x72\x72\x6f\x72");
     } finally {
-      a.disabled = !1, a.textContent = e;
+      _0xaf8177_3.disabled = !1, _0xaf8177_3.textContent = _0xaf8177_1;
     }
   }), async function() {
     try {
-      const n = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/custom-hostnames/config", {
-        credentials: "same-origin",
-        cache: "no-store"
-      }), o = await d(n);
-      r = String(o.targetIps?.[0] || ""), t.textContent = r || "Not configured", e.disabled = !r, 
-      a.disabled = !o.enabled, o.enabled || c(`Custom-domain connection is not enabled on this ${i} server yet.`, "error");
-    } catch (n) {
-      t.textContent = "Unavailable", e.disabled = !0, a.disabled = !0, c(n.message || `${i} could not load the domain configuration.`, "error");
+      const _0xaf8177_2 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x63\x75\x73\x74\x6f\x6d\x2d\x68\x6f\x73\x74\x6e\x61\x6d\x65\x73\x2f\x63\x6f\x6e\x66\x69\x67", {
+        credentials: "\x73\x61\x6d\x65\x2d\x6f\x72\x69\x67\x69\x6e",
+        cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+      }), _0xaf8177_4 = await _0xaf8177_9(_0xaf8177_2);
+      _0xaf8177_7 = String(_0xaf8177_4.targetIps?.[0] || ""), _0xaf8177_0.textContent = _0xaf8177_7 || "\x4e\x6f\x74\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64", 
+      _0xaf8177_1.disabled = !_0xaf8177_7, _0xaf8177_3.disabled = !_0xaf8177_4.enabled, 
+      _0xaf8177_4.enabled || _0xaf8177_8(`\x43\x75\x73\x74\x6f\x6d\x2d\x64\x6f\x6d\x61\x69\x6e\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x69\x73\x20\x6e\x6f\x74\x20\x65\x6e\x61\x62\x6c\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20${_0xaf8177_6}\x20\x73\x65\x72\x76\x65\x72\x20\x79\x65\x74\x2e`, "\x65\x72\x72\x6f\x72");
+    } catch (_0xaf8177_2) {
+      _0xaf8177_0.textContent = "\x55\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", _0xaf8177_1.disabled = !0, _0xaf8177_3.disabled = !0, 
+      _0xaf8177_8(_0xaf8177_2.message || `${_0xaf8177_6}\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x20\x74\x68\x65\x20\x64\x6f\x6d\x61\x69\x6e\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x61\x74\x69\x6f\x6e\x2e`, "\x65\x72\x72\x6f\x72");
     }
   }();
 })();

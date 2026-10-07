@@ -1,74 +1,75 @@
-import { publisherBaseMode as op, publisherHostAllowed as ip } from "./@r3e5de20a40d352293b198b87!.js";
+import { publisherBaseMode as _0x2d90e6_0, publisherHostAllowed as _0x2d90e6_1 } from "\x2e\x2f\x40\x72\x33\x65\x35\x64\x65\x32\x30\x61\x34\x30\x64\x33\x35\x32\x32\x39\x33\x62\x31\x39\x38\x62\x38\x37\x21\x2e\x6a\x73";
 
 export const adcoinsPeriod = 6e5;
 
 export const adcoinsBreak = 18e4;
 
-export const adcoinsKey = "nyx.adcoins.v1";
+export const adcoinsKey = "\x6e\x79\x78\x2e\x61\x64\x63\x6f\x69\x6e\x73\x2e\x76\x31";
 
-export function advanceAdcoins(e, n, t, o) {
-  const i = t >= n && t - n <= 5e3, a = e => Number.isFinite(e) ? Math.max(0, e) : 0, r = {
-    progress: Math.min(6e5, a(e?.progress)),
-    freeUntil: a(e?.freeUntil),
-    lastEnd: a(e?.lastEnd)
+export function advanceAdcoins(_0x2d90e6_0, _0x2d90e6_1, _0x2d90e6_2, _0x2d90e6_3) {
+  const _0x2d90e6_4 = _0x2d90e6_2 >= _0x2d90e6_1 && _0x2d90e6_2 - _0x2d90e6_1 <= 5e3, _0x2d90e6_5 = _0x2d90e6_0 => Number.isFinite(_0x2d90e6_0) ? Math.max(0, _0x2d90e6_0) : 0, _0x2d90e6_6 = {
+    progress: Math.min(6e5, _0x2d90e6_5(_0x2d90e6_0?.progress)),
+    freeUntil: _0x2d90e6_5(_0x2d90e6_0?.freeUntil),
+    lastEnd: _0x2d90e6_5(_0x2d90e6_0?.lastEnd)
   };
-  return r.freeUntil > t || (r.freeUntil && (n = Math.max(n, r.freeUntil), r.freeUntil = 0), 
-  o && i && (r.progress += Math.max(0, t - Math.max(n, r.lastEnd)), r.lastEnd = Math.max(r.lastEnd, t), 
-  r.progress >= 6e5 && (r.progress = 0, r.freeUntil = t + 18e4))), r;
+  return _0x2d90e6_6.freeUntil > _0x2d90e6_2 || (_0x2d90e6_6.freeUntil && (_0x2d90e6_1 = Math.max(_0x2d90e6_1, _0x2d90e6_6.freeUntil), 
+  _0x2d90e6_6.freeUntil = 0), _0x2d90e6_3 && _0x2d90e6_4 && (_0x2d90e6_6.progress += Math.max(0, _0x2d90e6_2 - Math.max(_0x2d90e6_1, _0x2d90e6_6.lastEnd)), 
+  _0x2d90e6_6.lastEnd = Math.max(_0x2d90e6_6.lastEnd, _0x2d90e6_2), _0x2d90e6_6.progress >= 6e5 && (_0x2d90e6_6.progress = 0, 
+  _0x2d90e6_6.freeUntil = _0x2d90e6_2 + 18e4))), _0x2d90e6_6;
 }
 
 export function startAdcoins() {
-  if (!ip() || window.parent !== window || window.__nyxAdcoinsStarted) return;
+  if (!_0x2d90e6_1() || window.parent !== window || window.__nyxAdcoinsStarted) return;
   window.__nyxAdcoinsStarted = !0;
-  let e = Date.now(), n = !document.hidden, t = !1, o = {}, i = !1;
-  const a = document.createElement("style");
-  a.textContent = '.nyx-adcoins{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;max-width:calc(100% - 32px);padding:8px 12px;border:1px solid #ffffff14;border-radius:14px;background:var(--obsidian-surface,#151515);color:var(--obsidian-muted,#aaa);font-family:inherit;font-size:12px;line-height:1.4;white-space:nowrap;pointer-events:none}.nyx-adcoins svg{width:16px;height:16px;flex:none}.nyx-adcoins[hidden]{display:none}.nyx-adcoins[data-free="true"]{color:var(--obsidian-text,#eee)}', 
-  document.head.append(a);
-  const r = () => [ "standard", "adkid" ].includes(op()) && document.body.classList.contains("browser-shell");
-  function s() {
-    const e = Date.now(), n = o.freeUntil > e;
-    window.__nyxAdcoinsFreeUntil = o.freeUntil || 0, n !== i && (i = n, window.dispatchEvent(new Event("nyx:publisher-change")), 
-    document.querySelectorAll("iframe.view").forEach(e => {
+  let _0x2d90e6_2 = Date.now(), _0x2d90e6_3 = !document.hidden, _0x2d90e6_4 = !1, _0x2d90e6_5 = {}, _0x2d90e6_6 = !1;
+  const _0x2d90e6_7 = document.createElement("\x73\x74\x79\x6c\x65");
+  _0x2d90e6_7.textContent = "\x2e\x6e\x79\x78\x2d\x61\x64\x63\x6f\x69\x6e\x73\x7b\x70\x6f\x73\x69\x74\x69\x6f\x6e\x3a\x61\x62\x73\x6f\x6c\x75\x74\x65\x3b\x62\x6f\x74\x74\x6f\x6d\x3a\x34\x38\x70\x78\x3b\x6c\x65\x66\x74\x3a\x35\x30\x25\x3b\x74\x72\x61\x6e\x73\x66\x6f\x72\x6d\x3a\x74\x72\x61\x6e\x73\x6c\x61\x74\x65\x58\x28\x2d\x35\x30\x25\x29\x3b\x64\x69\x73\x70\x6c\x61\x79\x3a\x66\x6c\x65\x78\x3b\x61\x6c\x69\x67\x6e\x2d\x69\x74\x65\x6d\x73\x3a\x63\x65\x6e\x74\x65\x72\x3b\x67\x61\x70\x3a\x38\x70\x78\x3b\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x63\x61\x6c\x63\x28\x31\x30\x30\x25\x20\x2d\x20\x33\x32\x70\x78\x29\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x38\x70\x78\x20\x31\x32\x70\x78\x3b\x62\x6f\x72\x64\x65\x72\x3a\x31\x70\x78\x20\x73\x6f\x6c\x69\x64\x20\x23\x66\x66\x66\x66\x66\x66\x31\x34\x3b\x62\x6f\x72\x64\x65\x72\x2d\x72\x61\x64\x69\x75\x73\x3a\x31\x34\x70\x78\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x76\x61\x72\x28\x2d\x2d\x6f\x62\x73\x69\x64\x69\x61\x6e\x2d\x73\x75\x72\x66\x61\x63\x65\x2c\x23\x31\x35\x31\x35\x31\x35\x29\x3b\x63\x6f\x6c\x6f\x72\x3a\x76\x61\x72\x28\x2d\x2d\x6f\x62\x73\x69\x64\x69\x61\x6e\x2d\x6d\x75\x74\x65\x64\x2c\x23\x61\x61\x61\x29\x3b\x66\x6f\x6e\x74\x2d\x66\x61\x6d\x69\x6c\x79\x3a\x69\x6e\x68\x65\x72\x69\x74\x3b\x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3a\x31\x32\x70\x78\x3b\x6c\x69\x6e\x65\x2d\x68\x65\x69\x67\x68\x74\x3a\x31\x2e\x34\x3b\x77\x68\x69\x74\x65\x2d\x73\x70\x61\x63\x65\x3a\x6e\x6f\x77\x72\x61\x70\x3b\x70\x6f\x69\x6e\x74\x65\x72\x2d\x65\x76\x65\x6e\x74\x73\x3a\x6e\x6f\x6e\x65\x7d\x2e\x6e\x79\x78\x2d\x61\x64\x63\x6f\x69\x6e\x73\x20\x73\x76\x67\x7b\x77\x69\x64\x74\x68\x3a\x31\x36\x70\x78\x3b\x68\x65\x69\x67\x68\x74\x3a\x31\x36\x70\x78\x3b\x66\x6c\x65\x78\x3a\x6e\x6f\x6e\x65\x7d\x2e\x6e\x79\x78\x2d\x61\x64\x63\x6f\x69\x6e\x73\x5b\x68\x69\x64\x64\x65\x6e\x5d\x7b\x64\x69\x73\x70\x6c\x61\x79\x3a\x6e\x6f\x6e\x65\x7d\x2e\x6e\x79\x78\x2d\x61\x64\x63\x6f\x69\x6e\x73\x5b\x64\x61\x74\x61\x2d\x66\x72\x65\x65\x3d\x22\x74\x72\x75\x65\x22\x5d\x7b\x63\x6f\x6c\x6f\x72\x3a\x76\x61\x72\x28\x2d\x2d\x6f\x62\x73\x69\x64\x69\x61\x6e\x2d\x74\x65\x78\x74\x2c\x23\x65\x65\x65\x29\x7d", 
+  document.head.append(_0x2d90e6_7);
+  const _0x2d90e6_8 = () => [ "\x73\x74\x61\x6e\x64\x61\x72\x64", "\x61\x64\x6b\x69\x64" ].includes(_0x2d90e6_0()) && document.body.classList.contains("\x62\x72\x6f\x77\x73\x65\x72\x2d\x73\x68\x65\x6c\x6c");
+  function _0x2d90e6_9() {
+    const _0x2d90e6_0 = Date.now(), _0x2d90e6_1 = _0x2d90e6_5.freeUntil > _0x2d90e6_0;
+    window.__nyxAdcoinsFreeUntil = _0x2d90e6_5.freeUntil || 0, _0x2d90e6_1 !== _0x2d90e6_6 && (_0x2d90e6_6 = _0x2d90e6_1, 
+    window.dispatchEvent(new Event("\x6e\x79\x78\x3a\x70\x75\x62\x6c\x69\x73\x68\x65\x72\x2d\x63\x68\x61\x6e\x67\x65")), document.querySelectorAll("\x69\x66\x72\x61\x6d\x65\x2e\x76\x69\x65\x77").forEach(_0x2d90e6_0 => {
       try {
-        e.contentWindow?.postMessage({
-          type: "nyx:publisher-change"
+        _0x2d90e6_0.contentWindow?.postMessage({
+          type: "\x6e\x79\x78\x3a\x70\x75\x62\x6c\x69\x73\x68\x65\x72\x2d\x63\x68\x61\x6e\x67\x65"
         }, location.origin);
       } catch {}
     }));
-    const t = Math.ceil((n ? o.freeUntil - e : 6e5 - (o.progress || 0)) / 1e3), a = Math.floor(t / 60) + ":" + String(t % 60).padStart(2, "0");
-    for (const o of document.querySelectorAll(".browser-home.nyx-minimal-home")) {
-      let e = o.querySelector(".nyx-adcoins");
-      if (!e && r() && (e = document.createElement("div"), e.className = "nyx-adcoins", 
-      e.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 13 3 3 5-7"/></svg><span></span>', 
-      e.title = "Every 10 minutes with Nyx visible earns a 3-minute ad break. Shared across tabs in this browser.", 
-      o.append(e)), !e) continue;
-      e.hidden = !r(), e.dataset.free = String(n);
-      const t = n ? "Adcoins \xb7 Ad-free for " + a : "Adcoins \xb7 Ad break in " + a;
-      e.lastElementChild.textContent !== t && (e.lastElementChild.textContent = t);
+    const _0x2d90e6_2 = Math.ceil((_0x2d90e6_1 ? _0x2d90e6_5.freeUntil - _0x2d90e6_0 : 6e5 - (_0x2d90e6_5.progress || 0)) / 1e3), _0x2d90e6_3 = Math.floor(_0x2d90e6_2 / 60) + "\x3a" + String(_0x2d90e6_2 % 60).padStart(2, "\x30");
+    for (const _0x2d90e6_4 of document.querySelectorAll("\x2e\x62\x72\x6f\x77\x73\x65\x72\x2d\x68\x6f\x6d\x65\x2e\x6e\x79\x78\x2d\x6d\x69\x6e\x69\x6d\x61\x6c\x2d\x68\x6f\x6d\x65")) {
+      let _0x2d90e6_0 = _0x2d90e6_4.querySelector("\x2e\x6e\x79\x78\x2d\x61\x64\x63\x6f\x69\x6e\x73");
+      if (!_0x2d90e6_0 && _0x2d90e6_8() && (_0x2d90e6_0 = document.createElement("\x64\x69\x76"), 
+      _0x2d90e6_0.className = "\x6e\x79\x78\x2d\x61\x64\x63\x6f\x69\x6e\x73", _0x2d90e6_0.innerHTML = "\x3c\x73\x76\x67\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x20\x66\x69\x6c\x6c\x3d\x22\x6e\x6f\x6e\x65\x22\x20\x73\x74\x72\x6f\x6b\x65\x3d\x22\x63\x75\x72\x72\x65\x6e\x74\x43\x6f\x6c\x6f\x72\x22\x20\x73\x74\x72\x6f\x6b\x65\x2d\x77\x69\x64\x74\x68\x3d\x22\x31\x2e\x35\x22\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x3e\x3c\x63\x69\x72\x63\x6c\x65\x20\x63\x78\x3d\x22\x31\x32\x22\x20\x63\x79\x3d\x22\x31\x32\x22\x20\x72\x3d\x22\x39\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x6d\x38\x20\x31\x33\x20\x33\x20\x33\x20\x35\x2d\x37\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x73\x70\x61\x6e\x3e\x3c\x2f\x73\x70\x61\x6e\x3e", 
+      _0x2d90e6_0.title = "\x45\x76\x65\x72\x79\x20\x31\x30\x20\x6d\x69\x6e\x75\x74\x65\x73\x20\x77\x69\x74\x68\x20\x4e\x79\x78\x20\x76\x69\x73\x69\x62\x6c\x65\x20\x65\x61\x72\x6e\x73\x20\x61\x20\x33\x2d\x6d\x69\x6e\x75\x74\x65\x20\x61\x64\x20\x62\x72\x65\x61\x6b\x2e\x20\x53\x68\x61\x72\x65\x64\x20\x61\x63\x72\x6f\x73\x73\x20\x74\x61\x62\x73\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e", 
+      _0x2d90e6_4.append(_0x2d90e6_0)), !_0x2d90e6_0) continue;
+      _0x2d90e6_0.hidden = !_0x2d90e6_8(), _0x2d90e6_0.dataset.free = String(_0x2d90e6_1);
+      const _0x2d90e6_2 = _0x2d90e6_1 ? "\x41\x64\x63\x6f\x69\x6e\x73\x20\xb7\x20\x41\x64\x2d\x66\x72\x65\x65\x20\x66\x6f\x72\x20" + _0x2d90e6_3 : "\x41\x64\x63\x6f\x69\x6e\x73\x20\xb7\x20\x41\x64\x20\x62\x72\x65\x61\x6b\x20\x69\x6e\x20" + _0x2d90e6_3;
+      _0x2d90e6_0.lastElementChild.textContent !== _0x2d90e6_2 && (_0x2d90e6_0.lastElementChild.textContent = _0x2d90e6_2);
     }
   }
-  function d() {
+  function _0x2d90e6_a() {
     try {
-      return JSON.parse(localStorage.getItem(adcoinsKey) || "{}");
+      return JSON.parse(localStorage.getItem(adcoinsKey) || "\x7b\x7d");
     } catch {
       return {};
     }
   }
-  function c() {
-    const i = Date.now(), a = e, c = n && t;
-    e = i, n = !document.hidden, t = r();
-    const l = () => {
-      o = advanceAdcoins(d(), a, i, c);
+  function _0x2d90e6_b() {
+    const _0x2d90e6_0 = Date.now(), _0x2d90e6_1 = _0x2d90e6_2, _0x2d90e6_6 = _0x2d90e6_3 && _0x2d90e6_4;
+    _0x2d90e6_2 = _0x2d90e6_0, _0x2d90e6_3 = !document.hidden, _0x2d90e6_4 = _0x2d90e6_8();
+    const _0x2d90e6_7 = () => {
+      _0x2d90e6_5 = advanceAdcoins(_0x2d90e6_a(), _0x2d90e6_1, _0x2d90e6_0, _0x2d90e6_6);
       try {
-        localStorage.setItem(adcoinsKey, JSON.stringify(o));
+        localStorage.setItem(adcoinsKey, JSON.stringify(_0x2d90e6_5));
       } catch {}
-      s();
+      _0x2d90e6_9();
     };
-    navigator.locks ? navigator.locks.request(adcoinsKey, l).catch(() => {}) : l();
+    navigator.locks ? navigator.locks.request(adcoinsKey, _0x2d90e6_7).catch(() => {}) : _0x2d90e6_7();
   }
-  window.addEventListener("storage", e => {
-    e.key === adcoinsKey && (o = d(), s());
-  }), document.addEventListener("visibilitychange", c), window.addEventListener("nyx:publisher-change", c), 
-  window.addEventListener("pageshow", c), window.addEventListener("pagehide", c), 
-  setInterval(c, 1e3), o = d(), s(), c();
+  window.addEventListener("\x73\x74\x6f\x72\x61\x67\x65", _0x2d90e6_0 => {
+    _0x2d90e6_0.key === adcoinsKey && (_0x2d90e6_5 = _0x2d90e6_a(), _0x2d90e6_9());
+  }), document.addEventListener("\x76\x69\x73\x69\x62\x69\x6c\x69\x74\x79\x63\x68\x61\x6e\x67\x65", _0x2d90e6_b), window.addEventListener("\x6e\x79\x78\x3a\x70\x75\x62\x6c\x69\x73\x68\x65\x72\x2d\x63\x68\x61\x6e\x67\x65", _0x2d90e6_b), 
+  window.addEventListener("\x70\x61\x67\x65\x73\x68\x6f\x77", _0x2d90e6_b), window.addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", _0x2d90e6_b), 
+  setInterval(_0x2d90e6_b, 1e3), _0x2d90e6_5 = _0x2d90e6_a(), _0x2d90e6_9(), _0x2d90e6_b();
 }

@@ -1,30 +1,30 @@
 (() => {
-  const e = {
-    image: [ "image", "images", "picture", "pictures", "photo", "photos", "art", "draw", "drawing", "generate", "generation", "generator" ],
-    vision: [ "vision", "see", "analyze", "analyse", "describe", "recognize", "ocr", "screenshot", "screenshots" ],
-    video: [ "video", "videos", "movie", "movies", "animation", "animate" ],
-    audio: [ "audio", "speech", "voice", "sound", "speak", "tts" ],
-    transcription: [ "transcribe", "transcription", "stt" ],
-    coding: [ "code", "coding", "coder", "programming", "debug", "debugging", "developer" ],
-    reasoning: [ "reason", "reasoning", "think", "thinking", "math", "mathematics", "logic" ],
-    embeddings: [ "embedding", "embeddings" ],
-    rerank: [ "rerank", "ranking" ],
-    free: [ "free" ],
-    text: [ "text", "write", "writing", "chat", "conversation", "summarize", "summary" ]
-  }, i = new Set([ "a", "an", "the", "for", "to", "that", "can", "do", "make", "create", "best", "model", "models", "and", "with", "of", "me", "i", "want", "some", "please" ]);
+  const _0x19e79c_0 = {
+    image: [ "\x69\x6d\x61\x67\x65", "\x69\x6d\x61\x67\x65\x73", "\x70\x69\x63\x74\x75\x72\x65", "\x70\x69\x63\x74\x75\x72\x65\x73", "\x70\x68\x6f\x74\x6f", "\x70\x68\x6f\x74\x6f\x73", "\x61\x72\x74", "\x64\x72\x61\x77", "\x64\x72\x61\x77\x69\x6e\x67", "\x67\x65\x6e\x65\x72\x61\x74\x65", "\x67\x65\x6e\x65\x72\x61\x74\x69\x6f\x6e", "\x67\x65\x6e\x65\x72\x61\x74\x6f\x72" ],
+    vision: [ "\x76\x69\x73\x69\x6f\x6e", "\x73\x65\x65", "\x61\x6e\x61\x6c\x79\x7a\x65", "\x61\x6e\x61\x6c\x79\x73\x65", "\x64\x65\x73\x63\x72\x69\x62\x65", "\x72\x65\x63\x6f\x67\x6e\x69\x7a\x65", "\x6f\x63\x72", "\x73\x63\x72\x65\x65\x6e\x73\x68\x6f\x74", "\x73\x63\x72\x65\x65\x6e\x73\x68\x6f\x74\x73" ],
+    video: [ "\x76\x69\x64\x65\x6f", "\x76\x69\x64\x65\x6f\x73", "\x6d\x6f\x76\x69\x65", "\x6d\x6f\x76\x69\x65\x73", "\x61\x6e\x69\x6d\x61\x74\x69\x6f\x6e", "\x61\x6e\x69\x6d\x61\x74\x65" ],
+    audio: [ "\x61\x75\x64\x69\x6f", "\x73\x70\x65\x65\x63\x68", "\x76\x6f\x69\x63\x65", "\x73\x6f\x75\x6e\x64", "\x73\x70\x65\x61\x6b", "\x74\x74\x73" ],
+    transcription: [ "\x74\x72\x61\x6e\x73\x63\x72\x69\x62\x65", "\x74\x72\x61\x6e\x73\x63\x72\x69\x70\x74\x69\x6f\x6e", "\x73\x74\x74" ],
+    coding: [ "\x63\x6f\x64\x65", "\x63\x6f\x64\x69\x6e\x67", "\x63\x6f\x64\x65\x72", "\x70\x72\x6f\x67\x72\x61\x6d\x6d\x69\x6e\x67", "\x64\x65\x62\x75\x67", "\x64\x65\x62\x75\x67\x67\x69\x6e\x67", "\x64\x65\x76\x65\x6c\x6f\x70\x65\x72" ],
+    reasoning: [ "\x72\x65\x61\x73\x6f\x6e", "\x72\x65\x61\x73\x6f\x6e\x69\x6e\x67", "\x74\x68\x69\x6e\x6b", "\x74\x68\x69\x6e\x6b\x69\x6e\x67", "\x6d\x61\x74\x68", "\x6d\x61\x74\x68\x65\x6d\x61\x74\x69\x63\x73", "\x6c\x6f\x67\x69\x63" ],
+    embeddings: [ "\x65\x6d\x62\x65\x64\x64\x69\x6e\x67", "\x65\x6d\x62\x65\x64\x64\x69\x6e\x67\x73" ],
+    rerank: [ "\x72\x65\x72\x61\x6e\x6b", "\x72\x61\x6e\x6b\x69\x6e\x67" ],
+    free: [ "\x66\x72\x65\x65" ],
+    text: [ "\x74\x65\x78\x74", "\x77\x72\x69\x74\x65", "\x77\x72\x69\x74\x69\x6e\x67", "\x63\x68\x61\x74", "\x63\x6f\x6e\x76\x65\x72\x73\x61\x74\x69\x6f\x6e", "\x73\x75\x6d\x6d\x61\x72\x69\x7a\x65", "\x73\x75\x6d\x6d\x61\x72\x79" ]
+  }, _0x19e79c_1 = new Set([ "\x61", "\x61\x6e", "\x74\x68\x65", "\x66\x6f\x72", "\x74\x6f", "\x74\x68\x61\x74", "\x63\x61\x6e", "\x64\x6f", "\x6d\x61\x6b\x65", "\x63\x72\x65\x61\x74\x65", "\x62\x65\x73\x74", "\x6d\x6f\x64\x65\x6c", "\x6d\x6f\x64\x65\x6c\x73", "\x61\x6e\x64", "\x77\x69\x74\x68", "\x6f\x66", "\x6d\x65", "\x69", "\x77\x61\x6e\x74", "\x73\x6f\x6d\x65", "\x70\x6c\x65\x61\x73\x65" ]);
   globalThis.NyxModelSearch = {
-    search: function(a, o, n) {
-      const t = String(o).toLowerCase().trim().split(/\s+/).filter(Boolean), r = new Set, s = [];
-      for (const g of t) {
-        const a = Object.keys(e).find(i => e[i].includes(g));
-        a ? r.add(a) : i.has(g) || s.push(g);
+    search: function(_0x19e79c_2, _0x19e79c_3, _0x19e79c_4) {
+      const _0x19e79c_5 = String(_0x19e79c_3).toLowerCase().trim().split(/\s+/).filter(Boolean), _0x19e79c_6 = new Set, _0x19e79c_7 = [];
+      for (const _0x19e79c_a of _0x19e79c_5) {
+        const _0x19e79c_2 = Object.keys(_0x19e79c_0).find(_0x19e79c_1 => _0x19e79c_0[_0x19e79c_1].includes(_0x19e79c_a));
+        _0x19e79c_2 ? _0x19e79c_6.add(_0x19e79c_2) : _0x19e79c_1.has(_0x19e79c_a) || _0x19e79c_7.push(_0x19e79c_a);
       }
-      (r.has("video") || r.has("audio") || r.has("vision") || r.has("transcription")) && r.delete("image");
-      const d = e => e.outputModalities || [ ...!1 !== e.text ? [ "text" ] : [], ...e.imageGeneration ? [ "image" ] : [] ], c = e => {
-        const i = `${e.id} ${e.label}`.toLowerCase(), a = i === o || e.id.toLowerCase() === o || e.label.toLowerCase() === o ? 1e5 : 0, n = r.has("coding") && !Number.isFinite(e.codingRank) && /codex|coder|code|devstral|programming/.test(i) ? 1e3 : 0, t = r.has("coding") ? e.codingRank ?? e.catalogRank : e.catalogRank;
-        return a + n + (Number.isFinite(t) ? Math.max(0, 900 - t) : 0);
+      (_0x19e79c_6.has("\x76\x69\x64\x65\x6f") || _0x19e79c_6.has("\x61\x75\x64\x69\x6f") || _0x19e79c_6.has("\x76\x69\x73\x69\x6f\x6e") || _0x19e79c_6.has("\x74\x72\x61\x6e\x73\x63\x72\x69\x70\x74\x69\x6f\x6e")) && _0x19e79c_6.delete("\x69\x6d\x61\x67\x65");
+      const _0x19e79c_8 = _0x19e79c_0 => _0x19e79c_0.outputModalities || [ ...!1 !== _0x19e79c_0.text ? [ "\x74\x65\x78\x74" ] : [], ..._0x19e79c_0.imageGeneration ? [ "\x69\x6d\x61\x67\x65" ] : [] ], _0x19e79c_9 = _0x19e79c_0 => {
+        const _0x19e79c_1 = `${_0x19e79c_0.id}\x20${_0x19e79c_0.label}`.toLowerCase(), _0x19e79c_2 = _0x19e79c_1 === _0x19e79c_3 || _0x19e79c_0.id.toLowerCase() === _0x19e79c_3 || _0x19e79c_0.label.toLowerCase() === _0x19e79c_3 ? 1e5 : 0, _0x19e79c_4 = _0x19e79c_6.has("\x63\x6f\x64\x69\x6e\x67") && !Number.isFinite(_0x19e79c_0.codingRank) && /codex|coder|code|devstral|programming/.test(_0x19e79c_1) ? 1e3 : 0, _0x19e79c_5 = _0x19e79c_6.has("\x63\x6f\x64\x69\x6e\x67") ? _0x19e79c_0.codingRank ?? _0x19e79c_0.catalogRank : _0x19e79c_0.catalogRank;
+        return _0x19e79c_2 + _0x19e79c_4 + (Number.isFinite(_0x19e79c_5) ? Math.max(0, 900 - _0x19e79c_5) : 0);
       };
-      return a.filter(e => [ ...r ].every(i => ((e, i) => "image" === i ? e.imageGeneration : "vision" === i ? e.vision : "coding" === i ? !1 !== e.text : "reasoning" === i ? e.reasoning : "free" === i ? e.free || e.id.endsWith(":free") || "openrouter/free" === e.id : "audio" === i ? d(e).some(e => "speech" === e || "audio" === e) : d(e).includes(i))(e, i)) && s.every(i => `${e.label} ${e.id} ${n(e).label}`.toLowerCase().includes(i))).sort((e, i) => c(i) - c(e) || e.label.localeCompare(i.label));
+      return _0x19e79c_2.filter(_0x19e79c_0 => [ ..._0x19e79c_6 ].every(_0x19e79c_1 => ((_0x19e79c_0, _0x19e79c_1) => "\x69\x6d\x61\x67\x65" === _0x19e79c_1 ? _0x19e79c_0.imageGeneration : "\x76\x69\x73\x69\x6f\x6e" === _0x19e79c_1 ? _0x19e79c_0.vision : "\x63\x6f\x64\x69\x6e\x67" === _0x19e79c_1 ? !1 !== _0x19e79c_0.text : "\x72\x65\x61\x73\x6f\x6e\x69\x6e\x67" === _0x19e79c_1 ? _0x19e79c_0.reasoning : "\x66\x72\x65\x65" === _0x19e79c_1 ? _0x19e79c_0.free || _0x19e79c_0.id.endsWith("\x3a\x66\x72\x65\x65") || "\x6f\x70\x65\x6e\x72\x6f\x75\x74\x65\x72\x2f\x66\x72\x65\x65" === _0x19e79c_0.id : "\x61\x75\x64\x69\x6f" === _0x19e79c_1 ? _0x19e79c_8(_0x19e79c_0).some(_0x19e79c_0 => "\x73\x70\x65\x65\x63\x68" === _0x19e79c_0 || "\x61\x75\x64\x69\x6f" === _0x19e79c_0) : _0x19e79c_8(_0x19e79c_0).includes(_0x19e79c_1))(_0x19e79c_0, _0x19e79c_1)) && _0x19e79c_7.every(_0x19e79c_1 => `${_0x19e79c_0.label}\x20${_0x19e79c_0.id}\x20${_0x19e79c_4(_0x19e79c_0).label}`.toLowerCase().includes(_0x19e79c_1))).sort((_0x19e79c_0, _0x19e79c_1) => _0x19e79c_9(_0x19e79c_1) - _0x19e79c_9(_0x19e79c_0) || _0x19e79c_0.label.localeCompare(_0x19e79c_1.label));
     }
   };
 })();

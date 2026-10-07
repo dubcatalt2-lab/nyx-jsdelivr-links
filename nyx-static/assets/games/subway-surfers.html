@@ -30,39 +30,40 @@ html {
     </div>
     <div id="status">Loading Subway Surfers…</div>
     <script>(async () => {
-  const e = "winter-holiday" === document.documentElement.dataset.edition, t = e ? "WinterHoliday" : "Barcelona", a = document.baseURI, n = document.getElementById("status"), r = [];
-  async function read(e) {
-    const t = await fetch(new URL(e, a));
-    if (!t.ok) throw Error(`Game file unavailable (${t.status})`);
-    return t;
+  const _0x5f0e9e_0 = "\x77\x69\x6e\x74\x65\x72\x2d\x68\x6f\x6c\x69\x64\x61\x79" === document.documentElement.dataset.edition, _0x5f0e9e_1 = _0x5f0e9e_0 ? "\x57\x69\x6e\x74\x65\x72\x48\x6f\x6c\x69\x64\x61\x79" : "\x42\x61\x72\x63\x65\x6c\x6f\x6e\x61", _0x5f0e9e_2 = document.baseURI, _0x5f0e9e_3 = document.getElementById("\x73\x74\x61\x74\x75\x73"), _0x5f0e9e_4 = [];
+  async function read(_0x5f0e9e_0) {
+    const _0x5f0e9e_1 = await fetch(new URL(_0x5f0e9e_0, _0x5f0e9e_2));
+    if (!_0x5f0e9e_1.ok) throw Error(`\x47\x61\x6d\x65\x20\x66\x69\x6c\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x28${_0x5f0e9e_1.status}\x29`);
+    return _0x5f0e9e_1;
   }
-  async function asset(n) {
-    if (e) return new URL(`winter-holiday/${t}.${n}`, a).href;
-    const s = await Promise.all([ 1, 2 ].map(async e => (await read(`${t}.${n}.part${e}`)).arrayBuffer())), o = URL.createObjectURL(new Blob(s));
-    return r.push(o), o;
+  async function asset(_0x5f0e9e_3) {
+    if (_0x5f0e9e_0) return new URL(`\x77\x69\x6e\x74\x65\x72\x2d\x68\x6f\x6c\x69\x64\x61\x79\x2f${_0x5f0e9e_1}\x2e${_0x5f0e9e_3}`, _0x5f0e9e_2).href;
+    const _0x5f0e9e_5 = await Promise.all([ 1, 2 ].map(async _0x5f0e9e_0 => (await read(`${_0x5f0e9e_1}\x2e${_0x5f0e9e_3}\x2e\x70\x61\x72\x74${_0x5f0e9e_0}`)).arrayBuffer())), _0x5f0e9e_6 = URL.createObjectURL(new Blob(_0x5f0e9e_5));
+    return _0x5f0e9e_4.push(_0x5f0e9e_6), _0x5f0e9e_6;
   }
   try {
-    const [e, s, o] = await Promise.all([ (await read(t + ".json")).json(), asset("data.unityweb"), asset("wasm.code.unityweb") ]);
-    Object.assign(e, {
-      dataUrl: s,
-      wasmCodeUrl: o,
-      wasmFrameworkUrl: new URL(t + ".wasm.framework.unityweb", a).href
+    const [_0x5f0e9e_0, _0x5f0e9e_5, _0x5f0e9e_6] = await Promise.all([ (await read(_0x5f0e9e_1 + "\x2e\x6a\x73\x6f\x6e")).json(), asset("\x64\x61\x74\x61\x2e\x75\x6e\x69\x74\x79\x77\x65\x62"), asset("\x77\x61\x73\x6d\x2e\x63\x6f\x64\x65\x2e\x75\x6e\x69\x74\x79\x77\x65\x62") ]);
+    Object.assign(_0x5f0e9e_0, {
+      dataUrl: _0x5f0e9e_5,
+      wasmCodeUrl: _0x5f0e9e_6,
+      wasmFrameworkUrl: new URL(_0x5f0e9e_1 + "\x2e\x77\x61\x73\x6d\x2e\x66\x72\x61\x6d\x65\x77\x6f\x72\x6b\x2e\x75\x6e\x69\x74\x79\x77\x65\x62", _0x5f0e9e_2).href
     });
-    const i = URL.createObjectURL(new Blob([ JSON.stringify(e) ], {
-      type: "application/json"
+    const _0x5f0e9e_7 = URL.createObjectURL(new Blob([ JSON.stringify(_0x5f0e9e_0) ], {
+      type: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
     }));
-    r.push(i), UnityLoader.instantiate("game", i, {
-      onProgress: (e, t) => {
-        n.textContent = `Loading Subway Surfers\u2026 ${Math.round(100 * t)}%`, 1 === t && n.remove();
+    _0x5f0e9e_4.push(_0x5f0e9e_7), UnityLoader.instantiate("\x67\x61\x6d\x65", _0x5f0e9e_7, {
+      onProgress: (_0x5f0e9e_0, _0x5f0e9e_1) => {
+        _0x5f0e9e_3.textContent = `\x4c\x6f\x61\x64\x69\x6e\x67\x20\x53\x75\x62\x77\x61\x79\x20\x53\x75\x72\x66\x65\x72\x73\u2026\x20${Math.round(100 * _0x5f0e9e_1)}\x25`, 
+        1 === _0x5f0e9e_1 && _0x5f0e9e_3.remove();
       }
     });
-  } catch (e) {
-    n.textContent = e.message, parent.postMessage({
-      type: "gn-math:error",
-      message: e.message
-    }, "*");
+  } catch (_0x5f0e9e_0) {
+    _0x5f0e9e_3.textContent = _0x5f0e9e_0.message, parent.postMessage({
+      type: "\x67\x6e\x2d\x6d\x61\x74\x68\x3a\x65\x72\x72\x6f\x72",
+      message: _0x5f0e9e_0.message
+    }, "\x2a");
   }
-  addEventListener("pagehide", () => r.forEach(e => URL.revokeObjectURL(e)), {
+  addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", () => _0x5f0e9e_4.forEach(_0x5f0e9e_0 => URL.revokeObjectURL(_0x5f0e9e_0)), {
     once: !0
   });
 })()</script>

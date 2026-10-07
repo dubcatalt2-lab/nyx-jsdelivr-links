@@ -7,7 +7,7 @@
  *
  */
 
-import * as Log from '../util/logging.js';
+import * as Log from "../util/logging.js";
 
 export class H264Parser {
     constructor(data) {
@@ -48,7 +48,7 @@ export class H264Parser {
     _parseNalUnit(index) {
         const firstByte = this._data[index];
         if (firstByte & 0x80) {
-            throw new Error('H264 parsing sanity check failed, forbidden zero bit is set');
+            throw new Error("H264 parsing sanity check failed, forbidden zero bit is set");
         }
         const unitType = firstByte & 0x1f;
 
@@ -78,7 +78,7 @@ export class H264Parser {
         while (this._index < this._data.length) {
             const startSequenceLen = this._getStartSequenceLen(this._index);
             if (startSequenceLen == 0) {
-                throw new Error('Invalid start sequence in bit stream');
+                throw new Error("Invalid start sequence in bit stream");
             }
 
             const { slice, key } = this._parseNalUnit(this._index + startSequenceLen);
@@ -146,16 +146,16 @@ export class H264Context {
     }
 
     _configureDecoder(profileIdc, constraintSet, levelIdc) {
-        if (this._decoder === null || this._decoder.state === 'closed') {
+        if (this._decoder === null || this._decoder.state === "closed") {
             this._decoder = new VideoDecoder({
                 output: frame => this._handleFrame(frame),
                 error: e => this._handleError(e),
             });
         }
-        const codec = 'avc1.' +
-            profileIdc.toString(16).padStart(2, '0') +
-            constraintSet.toString(16).padStart(2, '0') +
-            levelIdc.toString(16).padStart(2, '0');
+        const codec = "avc1." +
+            profileIdc.toString(16).padStart(2, "0") +
+            constraintSet.toString(16).padStart(2, "0") +
+            levelIdc.toString(16).padStart(2, "0");
         this._decoder.configure({
             codec: codec,
             codedWidth: this._width,
@@ -201,13 +201,13 @@ export class H264Context {
                 self._levelIdc = parser.levelIdc;
             }
 
-            if (this._decoder === null || this._decoder.state !== 'configured') {
+            if (this._decoder === null || this._decoder.state !== "configured") {
                 if (!encodedFrame.key) {
                     Log.Warn("Missing key frame. Can't decode until one arrives");
                     continue;
                 }
                 if (self._profileIdc === null) {
-                    Log.Warn('Cannot config decoder. Have not received SPS and PPS yet.');
+                    Log.Warn("Cannot config decoder. Have not received SPS and PPS yet.");
                     continue;
                 }
                 this._configureDecoder(self._profileIdc, self._constraintSet,
@@ -218,7 +218,7 @@ export class H264Context {
 
             const chunk = new EncodedVideoChunk({
                 timestamp: timestamp,
-                type: encodedFrame.key ? 'key' : 'delta',
+                type: encodedFrame.key ? "key" : "delta",
                 data: encodedFrame.frame,
             });
 
@@ -245,7 +245,7 @@ export default class H264Decoder {
     }
 
     _contextId(x, y, width, height) {
-        return [x, y, width, height].join(',');
+        return [x, y, width, height].join(",");
     }
 
     _findOldestContextId() {

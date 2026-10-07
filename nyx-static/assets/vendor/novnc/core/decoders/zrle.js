@@ -62,7 +62,7 @@ export default class ZRLEDecoder {
                     const data = this._decodeRLEPaletteTile(subencoding - 128, tileSize);
                     display.blitImage(tx, ty, tw, th, data, 0, false);
                 } else {
-                    throw new Error('Unknown subencoding: ' + subencoding);
+                    throw new Error("Unknown subencoding: " + subencoding);
                 }
             }
         }
@@ -156,10 +156,10 @@ export default class ZRLEDecoder {
                 length = this._readRLELength();
             }
             if (indexInPalette > paletteSize) {
-                throw new Error('Too big index in palette: ' + indexInPalette + ', palette size: ' + paletteSize);
+                throw new Error("Too big index in palette: " + indexInPalette + ", palette size: " + paletteSize);
             }
             if (offset + length > tileSize) {
-                throw new Error('Too big rle length in palette mode: ' + length + ', allowed length is: ' + (tileSize - offset));
+                throw new Error("Too big rle length in palette mode: " + length + ", allowed length is: " + (tileSize - offset));
             }
 
             for (let j = 0; j < length; j++) {

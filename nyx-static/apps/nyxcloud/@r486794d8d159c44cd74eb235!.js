@@ -1,220 +1,226 @@
-import es from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/novnc/core/rfb.js";
+import _0x73587b_0 from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x76\x65\x6e\x64\x6f\x72\x2f\x6e\x6f\x76\x6e\x63\x2f\x63\x6f\x72\x65\x2f\x72\x66\x62\x2e\x6a\x73";
 
-import { loremDesktop as ts } from "./@r2ef72f9b05ea89de16614001!.js";
+import { loremDesktop as _0x73587b_1 } from "\x2e\x2f\x40\x72\x32\x65\x66\x37\x32\x66\x39\x62\x30\x35\x65\x61\x38\x39\x64\x65\x31\x36\x36\x31\x34\x30\x30\x31\x21\x2e\x6a\x73";
 
-const m = e => document.getElementById(e);
+const _0x714b6c_b = _0x73587b_0 => document.getElementById(_0x73587b_0);
 
-let C, ns, os, cs, as, is, rs = 0, ls = 0, ds = !1, us = "fill";
+let _0x714b6c_16, _0x73587b_2, _0x73587b_3, _0x73587b_4, _0x73587b_5, _0x73587b_6, _0x73587b_7 = 0, _0x73587b_8 = 0, _0x73587b_9 = !1, _0x73587b_a = "\x66\x69\x6c\x6c";
 
 try {
-  us = "fit" === localStorage.getItem("nyx.vm.displayScale") ? "fit" : "fill";
+  _0x73587b_a = "\x66\x69\x74" === localStorage.getItem("\x6e\x79\x78\x2e\x76\x6d\x2e\x64\x69\x73\x70\x6c\x61\x79\x53\x63\x61\x6c\x65") ? "\x66\x69\x74" : "\x66\x69\x6c\x6c";
 } catch {}
 
-function ps() {
-  m("screen").dataset.scale = us, m("display-scale").textContent = "Fill screen: " + ("fill" === us ? "On" : "Off"), 
-  m("display-scale").setAttribute("aria-pressed", String("fill" === us)), m("screen").dispatchEvent(new Event("nyx:display-scale"));
+function _0x73587b_b() {
+  _0x714b6c_b("\x73\x63\x72\x65\x65\x6e").dataset.scale = _0x73587b_a, _0x714b6c_b("\x64\x69\x73\x70\x6c\x61\x79\x2d\x73\x63\x61\x6c\x65").textContent = "\x46\x69\x6c\x6c\x20\x73\x63\x72\x65\x65\x6e\x3a\x20" + ("\x66\x69\x6c\x6c" === _0x73587b_a ? "\x4f\x6e" : "\x4f\x66\x66"), 
+  _0x714b6c_b("\x64\x69\x73\x70\x6c\x61\x79\x2d\x73\x63\x61\x6c\x65").setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String("\x66\x69\x6c\x6c" === _0x73587b_a)), 
+  _0x714b6c_b("\x73\x63\x72\x65\x65\x6e").dispatchEvent(new Event("\x6e\x79\x78\x3a\x64\x69\x73\x70\x6c\x61\x79\x2d\x73\x63\x61\x6c\x65"));
 }
 
-m("display-scale").onclick = () => {
-  us = "fill" === us ? "fit" : "fill";
+_0x714b6c_b("\x64\x69\x73\x70\x6c\x61\x79\x2d\x73\x63\x61\x6c\x65").onclick = () => {
+  _0x73587b_a = "\x66\x69\x6c\x6c" === _0x73587b_a ? "\x66\x69\x74" : "\x66\x69\x6c\x6c";
   try {
-    localStorage.setItem("nyx.vm.displayScale", us);
+    localStorage.setItem("\x6e\x79\x78\x2e\x76\x6d\x2e\x64\x69\x73\x70\x6c\x61\x79\x53\x63\x61\x6c\x65", _0x73587b_a);
   } catch {}
-  ps();
-}, ps();
+  _0x73587b_b();
+}, _0x73587b_b();
 
-const ms = e => {
-  m("status").textContent = e;
+const _0x73587b_c = _0x73587b_0 => {
+  _0x714b6c_b("\x73\x74\x61\x74\x75\x73").textContent = _0x73587b_0;
 };
 
-function I(e, t) {
-  ms(t);
-  const n = document.createElement("div");
-  n.className = "vm-loading";
-  const s = document.createElement("section");
-  s.className = "boot-card";
-  const o = document.createElement("h1");
-  o.textContent = e;
-  const c = document.createElement("p");
-  c.className = "boot-session-note", c.textContent = t, s.append(o, c), n.append(s), 
-  m("screen").replaceChildren(n);
+function _0x714b6c_24(_0x73587b_0, _0x73587b_1) {
+  _0x73587b_c(_0x73587b_1);
+  const _0x73587b_2 = document.createElement("\x64\x69\x76");
+  _0x73587b_2.className = "\x76\x6d\x2d\x6c\x6f\x61\x64\x69\x6e\x67";
+  const _0x73587b_3 = document.createElement("\x73\x65\x63\x74\x69\x6f\x6e");
+  _0x73587b_3.className = "\x62\x6f\x6f\x74\x2d\x63\x61\x72\x64";
+  const _0x73587b_4 = document.createElement("\x68\x31");
+  _0x73587b_4.textContent = _0x73587b_0;
+  const _0x73587b_5 = document.createElement("\x70");
+  _0x73587b_5.className = "\x62\x6f\x6f\x74\x2d\x73\x65\x73\x73\x69\x6f\x6e\x2d\x6e\x6f\x74\x65", _0x73587b_5.textContent = _0x73587b_1, 
+  _0x73587b_3.append(_0x73587b_4, _0x73587b_5), _0x73587b_2.append(_0x73587b_3), _0x714b6c_b("\x73\x63\x72\x65\x65\x6e").replaceChildren(_0x73587b_2);
 }
 
-async function $(e, t = "GET", n = !1) {
-  const s = await (C?.currentUser?.getIdToken(n));
-  if (!s) throw Object.assign(Error("Sign in to Nyx to open a desktop."), {
+async function _0x714b6c_2e(_0x73587b_0, _0x73587b_1 = "\x47\x45\x54", _0x73587b_2 = !1) {
+  const _0x73587b_3 = await (_0x714b6c_16?.currentUser?.getIdToken(_0x73587b_2));
+  if (!_0x73587b_3) throw Object.assign(Error("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x4e\x79\x78\x20\x74\x6f\x20\x6f\x70\x65\x6e\x20\x61\x20\x64\x65\x73\x6b\x74\x6f\x70\x2e"), {
     status: 401
   });
-  const o = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxcloud" + e, {
-    method: t,
+  const _0x73587b_4 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x63\x6c\x6f\x75\x64" + _0x73587b_0, {
+    method: _0x73587b_1,
     headers: {
-      Authorization: "Bearer " + s
+      Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0x73587b_3
     },
-    cache: "no-store",
-    signal: AbortSignal.timeout(e.startsWith("/lorem/") ? 65e3 : 12e3)
+    cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65",
+    signal: AbortSignal.timeout(_0x73587b_0.startsWith("\x2f\x6c\x6f\x72\x65\x6d\x2f") ? 65e3 : 12e3)
   });
-  if (401 === o.status && !n) return $(e, t, !0);
-  const c = await o.json().catch(() => ({}));
-  if (!o.ok) throw Object.assign(Error(c.error || "Not available."), {
-    status: o.status
+  if (401 === _0x73587b_4.status && !_0x73587b_2) return _0x714b6c_2e(_0x73587b_0, _0x73587b_1, !0);
+  const _0x73587b_5 = await _0x73587b_4.json().catch(() => ({}));
+  if (!_0x73587b_4.ok) throw Object.assign(Error(_0x73587b_5.error || "\x4e\x6f\x74\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e"), {
+    status: _0x73587b_4.status
   });
-  return c;
+  return _0x73587b_5;
 }
 
-function ce() {
-  rs++, is?.(), is = null, clearTimeout(cs), clearTimeout(as), ns?.disconnect(), ns = null, 
-  os?.close(), os = null, m("screen").replaceChildren(), m("fullscreen").disabled = !0, 
-  m("disconnect").disabled = !0, m("end-session").disabled = !0;
+function _0x714b6c_3e() {
+  _0x73587b_7++, _0x73587b_6?.(), _0x73587b_6 = null, clearTimeout(_0x73587b_4), clearTimeout(_0x73587b_5), 
+  _0x73587b_2?.disconnect(), _0x73587b_2 = null, _0x73587b_3?.close(), _0x73587b_3 = null, 
+  _0x714b6c_b("\x73\x63\x72\x65\x65\x6e").replaceChildren(), _0x714b6c_b("\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e").disabled = !0, 
+  _0x714b6c_b("\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !0, _0x714b6c_b("\x65\x6e\x64\x2d\x73\x65\x73\x73\x69\x6f\x6e").disabled = !0;
 }
 
-function fs(e, t = 6e4) {
-  as = setTimeout(async () => {
-    if (e === rs) {
+function _0x73587b_d(_0x73587b_0, _0x73587b_1 = 6e4) {
+  _0x73587b_5 = setTimeout(async () => {
+    if (_0x73587b_0 === _0x73587b_7) {
       try {
-        await $("/session", "POST");
-      } catch (t) {
-        return void (e === rs && ([ 401, 403, 404 ].includes(t.status) ? bs(t) : fs(e, 5e3)));
+        await _0x714b6c_2e("\x2f\x73\x65\x73\x73\x69\x6f\x6e", "\x50\x4f\x53\x54");
+      } catch (_0x73587b_1) {
+        return void (_0x73587b_0 === _0x73587b_7 && ([ 401, 403, 404 ].includes(_0x73587b_1.status) ? _0x73587b_e(_0x73587b_1) : _0x73587b_d(_0x73587b_0, 5e3)));
       }
-      e === rs && fs(e);
+      _0x73587b_0 === _0x73587b_7 && _0x73587b_d(_0x73587b_0);
     }
-  }, t);
+  }, _0x73587b_1);
 }
 
-function bs(e) {
-  if (ce(), [ 401, 403, 404 ].includes(e.status)) return ds = !1, void ms("Sign in to Nyx again to reconnect.");
-  if (!ds) return;
-  const t = Math.min(3e4, 2e3 * 2 ** Math.min(ls++, 4));
-  ms(e.message + " Retrying in " + t / 1e3 + " seconds\u2026"), cs = setTimeout(ys, t), 
-  m("disconnect").disabled = !1;
+function _0x73587b_e(_0x73587b_0) {
+  if (_0x714b6c_3e(), [ 401, 403, 404 ].includes(_0x73587b_0.status)) return _0x73587b_9 = !1, 
+  void _0x73587b_c("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x4e\x79\x78\x20\x61\x67\x61\x69\x6e\x20\x74\x6f\x20\x72\x65\x63\x6f\x6e\x6e\x65\x63\x74\x2e");
+  if (!_0x73587b_9) return;
+  const _0x73587b_1 = Math.min(3e4, 2e3 * 2 ** Math.min(_0x73587b_8++, 4));
+  _0x73587b_c(_0x73587b_0.message + "\x20\x52\x65\x74\x72\x79\x69\x6e\x67\x20\x69\x6e\x20" + _0x73587b_1 / 1e3 + "\x20\x73\x65\x63\x6f\x6e\x64\x73\u2026"), 
+  _0x73587b_4 = setTimeout(_0x73587b_f, _0x73587b_1), _0x714b6c_b("\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1;
 }
 
-async function ys() {
-  if ("local" !== new URLSearchParams(location.search).get("desktop")) {
-    ce(), ds = !1;
-    const e = rs;
-    m("connect").disabled = !0;
+async function _0x73587b_f() {
+  if ("\x6c\x6f\x63\x61\x6c" !== new URLSearchParams(location.search).get("\x64\x65\x73\x6b\x74\x6f\x70")) {
+    _0x714b6c_3e(), _0x73587b_9 = !1;
+    const _0x73587b_0 = _0x73587b_7;
+    _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !0;
     try {
-      if (await $("/lorem/status"), e !== rs) return;
-      is = ts({
-        api: $,
-        screen: m("screen"),
-        status: ms,
-        reconnect: ys,
+      if (await _0x714b6c_2e("\x2f\x6c\x6f\x72\x65\x6d\x2f\x73\x74\x61\x74\x75\x73"), _0x73587b_0 !== _0x73587b_7) return;
+      _0x73587b_6 = _0x73587b_1({
+        api: _0x714b6c_2e,
+        screen: _0x714b6c_b("\x73\x63\x72\x65\x65\x6e"),
+        status: _0x73587b_c,
+        reconnect: _0x73587b_f,
         connected: () => {
-          m("fullscreen").disabled = !1, m("disconnect").disabled = !1, m("end-session").disabled = !1;
+          _0x714b6c_b("\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e").disabled = !1, _0x714b6c_b("\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1, 
+          _0x714b6c_b("\x65\x6e\x64\x2d\x73\x65\x73\x73\x69\x6f\x6e").disabled = !1;
         }
-      }), m("disconnect").disabled = !1;
-    } catch (t) {
-      e === rs && I("Unable to open desktop", t.message);
+      }), _0x714b6c_b("\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1;
+    } catch (_0x73587b_a) {
+      _0x73587b_0 === _0x73587b_7 && _0x714b6c_24("\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x6f\x70\x65\x6e\x20\x64\x65\x73\x6b\x74\x6f\x70", _0x73587b_a.message);
     } finally {
-      e === rs && (m("connect").disabled = !1);
+      _0x73587b_0 === _0x73587b_7 && (_0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1);
     }
     return;
   }
-  ce(), ds = !0;
-  const e = rs;
-  m("connect").disabled = !0, ms("Connecting\u2026");
+  _0x714b6c_3e(), _0x73587b_9 = !0;
+  const _0x73587b_5 = _0x73587b_7;
+  _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !0, _0x73587b_c("\x43\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\u2026");
   try {
-    await $("/session", "POST");
-    const {ticket: t} = await $("/connect", "POST");
-    if (e !== rs) return;
-    os = new WebSocket(location.origin.replace(/^http/, "ws") + "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxcloud/socket");
-    const n = os;
-    n.binaryType = "arraybuffer";
-    const s = t => {
-      e === rs && bs({
-        message: t,
+    await _0x714b6c_2e("\x2f\x73\x65\x73\x73\x69\x6f\x6e", "\x50\x4f\x53\x54");
+    const {ticket: _0x73587b_1} = await _0x714b6c_2e("\x2f\x63\x6f\x6e\x6e\x65\x63\x74", "\x50\x4f\x53\x54");
+    if (_0x73587b_5 !== _0x73587b_7) return;
+    _0x73587b_3 = new WebSocket(location.origin.replace(/^http/, "\x77\x73") + "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x63\x6c\x6f\x75\x64\x2f\x73\x6f\x63\x6b\x65\x74");
+    const _0x73587b_6 = _0x73587b_3;
+    _0x73587b_6.binaryType = "\x61\x72\x72\x61\x79\x62\x75\x66\x66\x65\x72";
+    const _0x73587b_a = _0x73587b_0 => {
+      _0x73587b_5 === _0x73587b_7 && _0x73587b_e({
+        message: _0x73587b_0,
         status: 503
       });
     };
-    cs = setTimeout(() => s("The VM connection timed out."), 15e3), n.onopen = () => n.send(JSON.stringify({
-      ticket: t
-    })), n.onmessage = t => {
-      if (e !== rs || "string" != typeof t.data) return;
-      let o;
+    _0x73587b_4 = setTimeout(() => _0x73587b_a("\x54\x68\x65\x20\x56\x4d\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x74\x69\x6d\x65\x64\x20\x6f\x75\x74\x2e"), 15e3), 
+    _0x73587b_6.onopen = () => _0x73587b_6.send(JSON.stringify({
+      ticket: _0x73587b_1
+    })), _0x73587b_6.onmessage = _0x73587b_1 => {
+      if (_0x73587b_5 !== _0x73587b_7 || "\x73\x74\x72\x69\x6e\x67" != typeof _0x73587b_1.data) return;
+      let _0x73587b_3;
       try {
-        o = JSON.parse(t.data);
+        _0x73587b_3 = JSON.parse(_0x73587b_1.data);
       } catch {
         return;
       }
-      o.ready && (ns = new es(m("screen"), n, {
+      _0x73587b_3.ready && (_0x73587b_2 = new _0x73587b_0(_0x714b6c_b("\x73\x63\x72\x65\x65\x6e"), _0x73587b_6, {
         credentials: {
-          password: o.password
+          password: _0x73587b_3.password
         }
-      }), ns.scaleViewport = !0, ns.resizeSession = !1, ns.qualityLevel = 9, ns.compressionLevel = 2, 
-      ns.addEventListener("connect", () => {
-        e === rs && (clearTimeout(cs), ls = 0, fs(e), ms("Connected"), m("fullscreen").disabled = !1, 
-        m("disconnect").disabled = !1);
-      }), ns.addEventListener("disconnect", () => setTimeout(() => {
-        e === rs && s("VM connection ended.");
-      }, 0)), ns.addEventListener("securityfailure", () => {
-        ds = !1, ce(), ms("VM authentication failed."), m("connect").disabled = !1;
+      }), _0x73587b_2.scaleViewport = !0, _0x73587b_2.resizeSession = !1, _0x73587b_2.qualityLevel = 9, 
+      _0x73587b_2.compressionLevel = 2, _0x73587b_2.addEventListener("\x63\x6f\x6e\x6e\x65\x63\x74", () => {
+        _0x73587b_5 === _0x73587b_7 && (clearTimeout(_0x73587b_4), _0x73587b_8 = 0, _0x73587b_d(_0x73587b_5), 
+        _0x73587b_c("\x43\x6f\x6e\x6e\x65\x63\x74\x65\x64"), _0x714b6c_b("\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e").disabled = !1, _0x714b6c_b("\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1);
+      }), _0x73587b_2.addEventListener("\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74", () => setTimeout(() => {
+        _0x73587b_5 === _0x73587b_7 && _0x73587b_a("\x56\x4d\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x65\x6e\x64\x65\x64\x2e");
+      }, 0)), _0x73587b_2.addEventListener("\x73\x65\x63\x75\x72\x69\x74\x79\x66\x61\x69\x6c\x75\x72\x65", () => {
+        _0x73587b_9 = !1, _0x714b6c_3e(), _0x73587b_c("\x56\x4d\x20\x61\x75\x74\x68\x65\x6e\x74\x69\x63\x61\x74\x69\x6f\x6e\x20\x66\x61\x69\x6c\x65\x64\x2e"), _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1;
       }));
-    }, n.addEventListener("close", t => {
-      e === rs && bs({
-        message: "VM connection ended.",
-        status: 4003 === t.code ? 403 : 503
+    }, _0x73587b_6.addEventListener("\x63\x6c\x6f\x73\x65", _0x73587b_0 => {
+      _0x73587b_5 === _0x73587b_7 && _0x73587b_e({
+        message: "\x56\x4d\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x65\x6e\x64\x65\x64\x2e",
+        status: 4003 === _0x73587b_0.code ? 403 : 503
       });
-    }), n.onerror = () => {};
-  } catch (t) {
-    e === rs && bs(t);
+    }), _0x73587b_6.onerror = () => {};
+  } catch (_0x73587b_a) {
+    _0x73587b_5 === _0x73587b_7 && _0x73587b_e(_0x73587b_a);
   } finally {
-    e === rs && (m("connect").disabled = !1);
+    _0x73587b_5 === _0x73587b_7 && (_0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1);
   }
 }
 
-async function Q() {
+async function _0x714b6c_32() {
   try {
-    const e = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/founder-profile/auth-config", {
-      cache: "no-store"
+    const _0x73587b_0 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x66\x6f\x75\x6e\x64\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2f\x61\x75\x74\x68\x2d\x63\x6f\x6e\x66\x69\x67", {
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
     });
-    if (!e.ok) throw Error("Account service unavailable.");
-    const t = await e.json(), [n, s] = await Promise.all([ import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"), import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js") ]), o = n.getApps().find(e => "nyx-founder-owner" === e.name) || n.initializeApp({
-      apiKey: t.apiKey,
-      authDomain: t.projectId + ".firebaseapp.com",
-      projectId: t.projectId
-    }, "nyx-founder-owner");
-    C = s.getAuth(o), await s.setPersistence(C, s.browserLocalPersistence), s.onAuthStateChanged(C, async e => {
-      ds = !1, ce();
-      const t = rs;
-      if (m("connect").disabled = !0, e) try {
-        if (await $("local" === new URLSearchParams(location.search).get("desktop") ? "/access" : "/lorem/status"), 
-        t !== rs) return;
-        m("connect").disabled = !1, ys();
-      } catch (n) {
-        if (t !== rs) return;
-        m("connect").disabled = !1, I("Unable to open desktop", n.message);
-      } else I("Sign in to use VMs", "Sign in to Nyx, then reopen VMs. Desktops are available to all accounts.");
+    if (!_0x73587b_0.ok) throw Error("\x41\x63\x63\x6f\x75\x6e\x74\x20\x73\x65\x72\x76\x69\x63\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+    const _0x73587b_1 = await _0x73587b_0.json(), [_0x73587b_2, _0x73587b_3] = await Promise.all([ import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x70\x70\x2e\x6a\x73"), import("\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x73\x74\x61\x74\x69\x63\x2e\x63\x6f\x6d\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x6a\x73\x2f\x31\x31\x2e\x31\x30\x2e\x30\x2f\x66\x69\x72\x65\x62\x61\x73\x65\x2d\x61\x75\x74\x68\x2e\x6a\x73") ]), _0x73587b_4 = _0x73587b_2.getApps().find(_0x73587b_0 => "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72" === _0x73587b_0.name) || _0x73587b_2.initializeApp({
+      apiKey: _0x73587b_1.apiKey,
+      authDomain: _0x73587b_1.projectId + "\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d",
+      projectId: _0x73587b_1.projectId
+    }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72");
+    _0x714b6c_16 = _0x73587b_3.getAuth(_0x73587b_4), await _0x73587b_3.setPersistence(_0x714b6c_16, _0x73587b_3.browserLocalPersistence), 
+    _0x73587b_3.onAuthStateChanged(_0x714b6c_16, async _0x73587b_0 => {
+      _0x73587b_9 = !1, _0x714b6c_3e();
+      const _0x73587b_1 = _0x73587b_7;
+      if (_0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !0, _0x73587b_0) try {
+        if (await _0x714b6c_2e("\x6c\x6f\x63\x61\x6c" === new URLSearchParams(location.search).get("\x64\x65\x73\x6b\x74\x6f\x70") ? "\x2f\x61\x63\x63\x65\x73\x73" : "\x2f\x6c\x6f\x72\x65\x6d\x2f\x73\x74\x61\x74\x75\x73"), 
+        _0x73587b_1 !== _0x73587b_7) return;
+        _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1, _0x73587b_f();
+      } catch (_0x73587b_2) {
+        if (_0x73587b_1 !== _0x73587b_7) return;
+        _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1, _0x714b6c_24("\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x6f\x70\x65\x6e\x20\x64\x65\x73\x6b\x74\x6f\x70", _0x73587b_2.message);
+      } else _0x714b6c_24("\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x75\x73\x65\x20\x56\x4d\x73", "\x53\x69\x67\x6e\x20\x69\x6e\x20\x74\x6f\x20\x4e\x79\x78\x2c\x20\x74\x68\x65\x6e\x20\x72\x65\x6f\x70\x65\x6e\x20\x56\x4d\x73\x2e\x20\x44\x65\x73\x6b\x74\x6f\x70\x73\x20\x61\x72\x65\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x74\x6f\x20\x61\x6c\x6c\x20\x61\x63\x63\x6f\x75\x6e\x74\x73\x2e");
     });
-  } catch (e) {
-    ms(e.message);
+  } catch (_0x73587b_0) {
+    _0x73587b_c(_0x73587b_0.message);
   }
 }
 
-m("connect").onclick = () => {
-  document.querySelector(".session-menu").open = !1, ls = 0, ys();
-}, m("end-session").onclick = async () => {
-  if (confirm("End this desktop session? Unsaved files will be deleted.")) {
-    m("end-session").disabled = !0;
+_0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").onclick = () => {
+  document.querySelector("\x2e\x73\x65\x73\x73\x69\x6f\x6e\x2d\x6d\x65\x6e\x75").open = !1, _0x73587b_8 = 0, _0x73587b_f();
+}, _0x714b6c_b("\x65\x6e\x64\x2d\x73\x65\x73\x73\x69\x6f\x6e").onclick = async () => {
+  if (confirm("\x45\x6e\x64\x20\x74\x68\x69\x73\x20\x64\x65\x73\x6b\x74\x6f\x70\x20\x73\x65\x73\x73\x69\x6f\x6e\x3f\x20\x55\x6e\x73\x61\x76\x65\x64\x20\x66\x69\x6c\x65\x73\x20\x77\x69\x6c\x6c\x20\x62\x65\x20\x64\x65\x6c\x65\x74\x65\x64\x2e")) {
+    _0x714b6c_b("\x65\x6e\x64\x2d\x73\x65\x73\x73\x69\x6f\x6e").disabled = !0;
     try {
-      await $("/lorem/end", "POST"), ds = !1, ce(), ms("Session ended. The desktop slot is available again."), 
-      m("connect").disabled = !1;
-    } catch (e) {
-      ms(e.message), m("end-session").disabled = !1;
+      await _0x714b6c_2e("\x2f\x6c\x6f\x72\x65\x6d\x2f\x65\x6e\x64", "\x50\x4f\x53\x54"), _0x73587b_9 = !1, _0x714b6c_3e(), _0x73587b_c("\x53\x65\x73\x73\x69\x6f\x6e\x20\x65\x6e\x64\x65\x64\x2e\x20\x54\x68\x65\x20\x64\x65\x73\x6b\x74\x6f\x70\x20\x73\x6c\x6f\x74\x20\x69\x73\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x61\x67\x61\x69\x6e\x2e"), 
+      _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1;
+    } catch (_0x73587b_0) {
+      _0x73587b_c(_0x73587b_0.message), _0x714b6c_b("\x65\x6e\x64\x2d\x73\x65\x73\x73\x69\x6f\x6e").disabled = !1;
     }
   }
-}, m("disconnect").onclick = () => {
-  document.querySelector(".session-menu").open = !1, ds = !1, ce(), ms("Disconnected"), 
-  m("connect").disabled = !1;
-  const e = document.createElement("div");
-  e.className = "vm-loading", e.innerHTML = '<section class="boot-card"><p class="boot-eyebrow">NYXCLOUD</p><h1>Desktop disconnected</h1><p class="boot-message">Your desktop follows its normal inactivity limits.</p><button class="boot-retry">Open desktop</button></section>', 
-  e.querySelector("button").onclick = ys, m("screen").append(e);
-}, m("fullscreen").onclick = async () => {
+}, _0x714b6c_b("\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74").onclick = () => {
+  document.querySelector("\x2e\x73\x65\x73\x73\x69\x6f\x6e\x2d\x6d\x65\x6e\x75").open = !1, _0x73587b_9 = !1, _0x714b6c_3e(), 
+  _0x73587b_c("\x44\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64"), _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").disabled = !1;
+  const _0x73587b_0 = document.createElement("\x64\x69\x76");
+  _0x73587b_0.className = "\x76\x6d\x2d\x6c\x6f\x61\x64\x69\x6e\x67", _0x73587b_0.innerHTML = "\x3c\x73\x65\x63\x74\x69\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x62\x6f\x6f\x74\x2d\x63\x61\x72\x64\x22\x3e\x3c\x70\x20\x63\x6c\x61\x73\x73\x3d\x22\x62\x6f\x6f\x74\x2d\x65\x79\x65\x62\x72\x6f\x77\x22\x3e\x4e\x59\x58\x43\x4c\x4f\x55\x44\x3c\x2f\x70\x3e\x3c\x68\x31\x3e\x44\x65\x73\x6b\x74\x6f\x70\x20\x64\x69\x73\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64\x3c\x2f\x68\x31\x3e\x3c\x70\x20\x63\x6c\x61\x73\x73\x3d\x22\x62\x6f\x6f\x74\x2d\x6d\x65\x73\x73\x61\x67\x65\x22\x3e\x59\x6f\x75\x72\x20\x64\x65\x73\x6b\x74\x6f\x70\x20\x66\x6f\x6c\x6c\x6f\x77\x73\x20\x69\x74\x73\x20\x6e\x6f\x72\x6d\x61\x6c\x20\x69\x6e\x61\x63\x74\x69\x76\x69\x74\x79\x20\x6c\x69\x6d\x69\x74\x73\x2e\x3c\x2f\x70\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x62\x6f\x6f\x74\x2d\x72\x65\x74\x72\x79\x22\x3e\x4f\x70\x65\x6e\x20\x64\x65\x73\x6b\x74\x6f\x70\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x2f\x73\x65\x63\x74\x69\x6f\x6e\x3e", 
+  _0x73587b_0.querySelector("\x62\x75\x74\x74\x6f\x6e").onclick = _0x73587b_f, _0x714b6c_b("\x73\x63\x72\x65\x65\x6e").append(_0x73587b_0);
+}, _0x714b6c_b("\x66\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e").onclick = async () => {
   try {
-    document.fullscreenElement ? await document.exitFullscreen() : await m("screen").requestFullscreen();
+    document.fullscreenElement ? await document.exitFullscreen() : await _0x714b6c_b("\x73\x63\x72\x65\x65\x6e").requestFullscreen();
   } catch {
-    ms("Fullscreen is unavailable in this browser.");
+    _0x73587b_c("\x46\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e");
   }
-}, window.addEventListener("pagehide", () => {
-  ds = !1, ce();
-}), Q();
+}, window.addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", () => {
+  _0x73587b_9 = !1, _0x714b6c_3e();
+}), _0x714b6c_32();

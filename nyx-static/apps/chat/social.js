@@ -1,226 +1,238 @@
-window.createNyxChatSocial = function({request: e, me: n, members: t, avatar: o, name: r, badge: a, startDm: i, changed: d, closeDrawers: c}) {
-  const s = document.querySelector("[data-member-dialog]"), l = document.querySelector("[data-member-dialog-content]"), p = document.querySelector("[data-friends-dialog]"), u = document.querySelector("[data-friends-list]"), m = document.querySelector("[data-friends-error]");
-  let f = new Map, b = "", g = !1, h = null, y = 0, v = 0, M = "", S = null, q = "accepted", w = !1, A = "";
-  const k = (e, n, t) => {
-    const o = document.createElement(e);
-    return o.className = n, void 0 !== t && (o.textContent = t), o;
-  }, E = {
-    "Add friend": "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 8h6M19 5v6M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8",
-    "Remove friend": "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 8h6M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8",
-    Accept: "m5 12 4 4L19 6",
-    Decline: "m6 6 12 12M6 18 18 6",
-    "Cancel request": "m6 6 12 12M6 18 18 6",
-    Block: "M5.6 5.6 18.4 18.4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0",
-    Unblock: "m8 12 3 3 5-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0",
-    Ignore: "m3 3 18 18M10.6 10.6a2 2 0 0 0 2.8 2.8M9.9 5.3A10 10 0 0 1 12 5c7 0 10 7 10 7a16 16 0 0 1-3 4M6 6.5A16 16 0 0 0 2 12s3 7 10 7a10 10 0 0 0 4-1",
-    Unignore: "M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0",
-    Message: "M21 11.5a8.5 8.5 0 0 1-8.5 8.5H4l-1 2V11.5a8.5 8.5 0 0 1 17 0Z",
-    Retry: "M3 10a9 9 0 1 1 1 7M3 4v6h6"
-  }, L = (e, n, t = "social-button") => {
-    const o = k("button", t, e);
-    o.type = "button";
-    const r = E[e] || E[e.startsWith("Retry") ? "Retry" : ""];
-    if (r) {
-      o.replaceChildren();
-      const n = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      n.setAttribute("viewBox", "0 0 24 24"), n.setAttribute("aria-hidden", "true");
-      const a = document.createElementNS(n.namespaceURI, "path");
-      a.setAttribute("d", r), n.append(a), o.append(n);
-      const i = k("span", t.includes("social-button") ? "social-action-label" : "", e);
-      o.append(i), o.setAttribute("aria-label", e), o.title = e;
+window.createNyxChatSocial = function({request: _0xc95615_0, me: _0xc95615_1, members: _0xc95615_2, avatar: _0xc95615_3, name: _0xc95615_4, badge: _0xc95615_5, startDm: _0xc95615_6, changed: _0xc95615_7, closeDrawers: _0xc95615_8}) {
+  const _0xc95615_9 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6d\x65\x6d\x62\x65\x72\x2d\x64\x69\x61\x6c\x6f\x67\x5d"), _0xc95615_a = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6d\x65\x6d\x62\x65\x72\x2d\x64\x69\x61\x6c\x6f\x67\x2d\x63\x6f\x6e\x74\x65\x6e\x74\x5d"), _0xc95615_b = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x66\x72\x69\x65\x6e\x64\x73\x2d\x64\x69\x61\x6c\x6f\x67\x5d"), _0xc95615_c = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x66\x72\x69\x65\x6e\x64\x73\x2d\x6c\x69\x73\x74\x5d"), _0xc95615_d = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x66\x72\x69\x65\x6e\x64\x73\x2d\x65\x72\x72\x6f\x72\x5d");
+  let _0xc95615_e = new Map, _0xc95615_f = "", _0xc95615_10 = !1, _0xc95615_11 = null, _0xc95615_12 = 0, _0xc95615_13 = 0, _0xc95615_14 = "", _0xc95615_15 = null, _0xc95615_16 = "\x61\x63\x63\x65\x70\x74\x65\x64", _0xc95615_17 = !1, _0xc95615_18 = "";
+  const _0xc95615_19 = (_0xc95615_0, _0xc95615_1, _0xc95615_2) => {
+    const _0xc95615_3 = document.createElement(_0xc95615_0);
+    return _0xc95615_3.className = _0xc95615_1, void 0 !== _0xc95615_2 && (_0xc95615_3.textContent = _0xc95615_2), 
+    _0xc95615_3;
+  }, _0xc95615_1a = {
+    "\x41\x64\x64\x20\x66\x72\x69\x65\x6e\x64": "\x4d\x31\x36\x20\x32\x31\x76\x2d\x32\x61\x34\x20\x34\x20\x30\x20\x30\x20\x30\x2d\x34\x2d\x34\x48\x36\x61\x34\x20\x34\x20\x30\x20\x30\x20\x30\x2d\x34\x20\x34\x76\x32\x4d\x31\x36\x20\x38\x68\x36\x4d\x31\x39\x20\x35\x76\x36\x4d\x39\x20\x31\x31\x61\x34\x20\x34\x20\x30\x20\x31\x20\x30\x20\x30\x2d\x38\x20\x34\x20\x34\x20\x30\x20\x30\x20\x30\x20\x30\x20\x38",
+    "\x52\x65\x6d\x6f\x76\x65\x20\x66\x72\x69\x65\x6e\x64": "\x4d\x31\x36\x20\x32\x31\x76\x2d\x32\x61\x34\x20\x34\x20\x30\x20\x30\x20\x30\x2d\x34\x2d\x34\x48\x36\x61\x34\x20\x34\x20\x30\x20\x30\x20\x30\x2d\x34\x20\x34\x76\x32\x4d\x31\x36\x20\x38\x68\x36\x4d\x39\x20\x31\x31\x61\x34\x20\x34\x20\x30\x20\x31\x20\x30\x20\x30\x2d\x38\x20\x34\x20\x34\x20\x30\x20\x30\x20\x30\x20\x30\x20\x38",
+    Accept: "\x6d\x35\x20\x31\x32\x20\x34\x20\x34\x4c\x31\x39\x20\x36",
+    Decline: "\x6d\x36\x20\x36\x20\x31\x32\x20\x31\x32\x4d\x36\x20\x31\x38\x20\x31\x38\x20\x36",
+    "\x43\x61\x6e\x63\x65\x6c\x20\x72\x65\x71\x75\x65\x73\x74": "\x6d\x36\x20\x36\x20\x31\x32\x20\x31\x32\x4d\x36\x20\x31\x38\x20\x31\x38\x20\x36",
+    Block: "\x4d\x35\x2e\x36\x20\x35\x2e\x36\x20\x31\x38\x2e\x34\x20\x31\x38\x2e\x34\x4d\x32\x31\x20\x31\x32\x61\x39\x20\x39\x20\x30\x20\x31\x20\x31\x2d\x31\x38\x20\x30\x20\x39\x20\x39\x20\x30\x20\x30\x20\x31\x20\x31\x38\x20\x30",
+    Unblock: "\x6d\x38\x20\x31\x32\x20\x33\x20\x33\x20\x35\x2d\x36\x4d\x32\x31\x20\x31\x32\x61\x39\x20\x39\x20\x30\x20\x31\x20\x31\x2d\x31\x38\x20\x30\x20\x39\x20\x39\x20\x30\x20\x30\x20\x31\x20\x31\x38\x20\x30",
+    Ignore: "\x6d\x33\x20\x33\x20\x31\x38\x20\x31\x38\x4d\x31\x30\x2e\x36\x20\x31\x30\x2e\x36\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x20\x32\x2e\x38\x20\x32\x2e\x38\x4d\x39\x2e\x39\x20\x35\x2e\x33\x41\x31\x30\x20\x31\x30\x20\x30\x20\x30\x20\x31\x20\x31\x32\x20\x35\x63\x37\x20\x30\x20\x31\x30\x20\x37\x20\x31\x30\x20\x37\x61\x31\x36\x20\x31\x36\x20\x30\x20\x30\x20\x31\x2d\x33\x20\x34\x4d\x36\x20\x36\x2e\x35\x41\x31\x36\x20\x31\x36\x20\x30\x20\x30\x20\x30\x20\x32\x20\x31\x32\x73\x33\x20\x37\x20\x31\x30\x20\x37\x61\x31\x30\x20\x31\x30\x20\x30\x20\x30\x20\x30\x20\x34\x2d\x31",
+    Unignore: "\x4d\x32\x20\x31\x32\x73\x33\x2d\x37\x20\x31\x30\x2d\x37\x20\x31\x30\x20\x37\x20\x31\x30\x20\x37\x2d\x33\x20\x37\x2d\x31\x30\x20\x37\x53\x32\x20\x31\x32\x20\x32\x20\x31\x32\x4d\x31\x35\x20\x31\x32\x61\x33\x20\x33\x20\x30\x20\x31\x20\x31\x2d\x36\x20\x30\x20\x33\x20\x33\x20\x30\x20\x30\x20\x31\x20\x36\x20\x30",
+    Message: "\x4d\x32\x31\x20\x31\x31\x2e\x35\x61\x38\x2e\x35\x20\x38\x2e\x35\x20\x30\x20\x30\x20\x31\x2d\x38\x2e\x35\x20\x38\x2e\x35\x48\x34\x6c\x2d\x31\x20\x32\x56\x31\x31\x2e\x35\x61\x38\x2e\x35\x20\x38\x2e\x35\x20\x30\x20\x30\x20\x31\x20\x31\x37\x20\x30\x5a",
+    Retry: "\x4d\x33\x20\x31\x30\x61\x39\x20\x39\x20\x30\x20\x31\x20\x31\x20\x31\x20\x37\x4d\x33\x20\x34\x76\x36\x68\x36"
+  }, _0xc95615_1b = (_0xc95615_0, _0xc95615_1, _0xc95615_2 = "\x73\x6f\x63\x69\x61\x6c\x2d\x62\x75\x74\x74\x6f\x6e") => {
+    const _0xc95615_3 = _0xc95615_19("\x62\x75\x74\x74\x6f\x6e", _0xc95615_2, _0xc95615_0);
+    _0xc95615_3.type = "\x62\x75\x74\x74\x6f\x6e";
+    const _0xc95615_4 = _0xc95615_1a[_0xc95615_0] || _0xc95615_1a[_0xc95615_0.startsWith("\x52\x65\x74\x72\x79") ? "\x52\x65\x74\x72\x79" : ""];
+    if (_0xc95615_4) {
+      _0xc95615_3.replaceChildren();
+      const _0xc95615_1 = document.createElementNS("\x68\x74\x74\x70\x3a\x2f\x2f\x77\x77\x77\x2e\x77\x33\x2e\x6f\x72\x67\x2f\x32\x30\x30\x30\x2f\x73\x76\x67", "\x73\x76\x67");
+      _0xc95615_1.setAttribute("\x76\x69\x65\x77\x42\x6f\x78", "\x30\x20\x30\x20\x32\x34\x20\x32\x34"), _0xc95615_1.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65");
+      const _0xc95615_5 = document.createElementNS(_0xc95615_1.namespaceURI, "\x70\x61\x74\x68");
+      _0xc95615_5.setAttribute("\x64", _0xc95615_4), _0xc95615_1.append(_0xc95615_5), _0xc95615_3.append(_0xc95615_1);
+      const _0xc95615_6 = _0xc95615_19("\x73\x70\x61\x6e", _0xc95615_2.includes("\x73\x6f\x63\x69\x61\x6c\x2d\x62\x75\x74\x74\x6f\x6e") ? "\x73\x6f\x63\x69\x61\x6c\x2d\x61\x63\x74\x69\x6f\x6e\x2d\x6c\x61\x62\x65\x6c" : "", _0xc95615_0);
+      _0xc95615_3.append(_0xc95615_6), _0xc95615_3.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0xc95615_0), 
+      _0xc95615_3.title = _0xc95615_0;
     }
-    return o.disabled = w || !g, o.addEventListener("click", n), o;
-  }, R = e => !1 !== f.get(e)?.canMessage;
-  function C() {
-    b = n()?.uid || "", y++, v++, M = "", S = null, g = !1, h = null, f = new Map, A = "", 
-    w = !1, s.close(), p.close(), x();
+    return _0xc95615_3.disabled = _0xc95615_17 || !_0xc95615_10, _0xc95615_3.addEventListener("\x63\x6c\x69\x63\x6b", _0xc95615_1), 
+    _0xc95615_3;
+  }, _0xc95615_1c = _0xc95615_0 => !1 !== _0xc95615_e.get(_0xc95615_0)?.canMessage;
+  function _0xc95615_1d() {
+    _0xc95615_f = _0xc95615_1()?.uid || "", _0xc95615_12++, _0xc95615_13++, _0xc95615_14 = "", 
+    _0xc95615_15 = null, _0xc95615_10 = !1, _0xc95615_11 = null, _0xc95615_e = new Map, 
+    _0xc95615_18 = "", _0xc95615_17 = !1, _0xc95615_9.close(), _0xc95615_b.close(), 
+    _0xc95615_21();
   }
-  function N(e) {
-    const n = JSON.stringify(e || []);
-    return !(g && M === n && !A || (M = n, f = new Map((Array.isArray(e) ? e : []).map(e => [ e.uid, e ])), 
-    g = !0, A = "", x(), d(), 0));
+  function _0xc95615_1e(_0xc95615_0) {
+    const _0xc95615_1 = JSON.stringify(_0xc95615_0 || []);
+    return !(_0xc95615_10 && _0xc95615_14 === _0xc95615_1 && !_0xc95615_18 || (_0xc95615_14 = _0xc95615_1, 
+    _0xc95615_e = new Map((Array.isArray(_0xc95615_0) ? _0xc95615_0 : []).map(_0xc95615_0 => [ _0xc95615_0.uid, _0xc95615_0 ])), 
+    _0xc95615_10 = !0, _0xc95615_18 = "", _0xc95615_21(), _0xc95615_7(), 0));
   }
-  async function U() {
-    if (b !== n()?.uid && C(), !b) return;
-    if (h) return h;
-    const t = b, o = v, r = e("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/chat/relationships", {
-      cache: "no-store"
-    }).then(e => {
-      t === b && t === n()?.uid && o === v && N(e.relationships) && s.open && S && D(S);
-    }).catch(e => {
-      t === b && (A = e.message || "Relationships could not load.", x());
+  async function _0xc95615_1f() {
+    if (_0xc95615_f !== _0xc95615_1()?.uid && _0xc95615_1d(), !_0xc95615_f) return;
+    if (_0xc95615_11) return _0xc95615_11;
+    const _0xc95615_2 = _0xc95615_f, _0xc95615_3 = _0xc95615_13, _0xc95615_4 = _0xc95615_0("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x63\x68\x61\x74\x2f\x72\x65\x6c\x61\x74\x69\x6f\x6e\x73\x68\x69\x70\x73", {
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+    }).then(_0xc95615_0 => {
+      _0xc95615_2 === _0xc95615_f && _0xc95615_2 === _0xc95615_1()?.uid && _0xc95615_3 === _0xc95615_13 && _0xc95615_1e(_0xc95615_0.relationships) && _0xc95615_9.open && _0xc95615_15 && _0xc95615_22(_0xc95615_15);
+    }).catch(_0xc95615_0 => {
+      _0xc95615_2 === _0xc95615_f && (_0xc95615_18 = _0xc95615_0.message || "\x52\x65\x6c\x61\x74\x69\x6f\x6e\x73\x68\x69\x70\x73\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x2e", 
+      _0xc95615_21());
     }).finally(() => {
-      h === r && (h = null);
+      _0xc95615_11 === _0xc95615_4 && (_0xc95615_11 = null);
     });
-    return h = r, r;
+    return _0xc95615_11 = _0xc95615_4, _0xc95615_4;
   }
-  function I(t, o, r = !1) {
-    const a = f.get(t.uid) || {}, i = (r, a, i) => o.append(L(r, () => {
-      !async function(t, o) {
-        if (w || !g) return;
-        w = !0, v++, A = "", x(), S && D(S);
-        const r = b;
+  function _0xc95615_20(_0xc95615_2, _0xc95615_3, _0xc95615_4 = !1) {
+    const _0xc95615_5 = _0xc95615_e.get(_0xc95615_2.uid) || {}, _0xc95615_6 = (_0xc95615_4, _0xc95615_5, _0xc95615_6) => _0xc95615_3.append(_0xc95615_1b(_0xc95615_4, () => {
+      !async function(_0xc95615_2, _0xc95615_3) {
+        if (_0xc95615_17 || !_0xc95615_10) return;
+        _0xc95615_17 = !0, _0xc95615_13++, _0xc95615_18 = "", _0xc95615_21(), _0xc95615_15 && _0xc95615_22(_0xc95615_15);
+        const _0xc95615_4 = _0xc95615_f;
         try {
-          const a = await e("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/chat/relationships/" + encodeURIComponent(t.uid), {
-            method: "POST",
+          const _0xc95615_5 = await _0xc95615_0("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x63\x68\x61\x74\x2f\x72\x65\x6c\x61\x74\x69\x6f\x6e\x73\x68\x69\x70\x73\x2f" + encodeURIComponent(_0xc95615_2.uid), {
+            method: "\x50\x4f\x53\x54",
             headers: {
-              "Content-Type": "application/json"
+              "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
             },
             body: JSON.stringify({
-              action: o
+              action: _0xc95615_3
             })
           });
-          b === r && n()?.uid === r && (v++, N(a.relationships));
-        } catch (a) {
-          b === r && (A = a.message || "The change could not be saved.");
+          _0xc95615_f === _0xc95615_4 && _0xc95615_1()?.uid === _0xc95615_4 && (_0xc95615_13++, 
+          _0xc95615_1e(_0xc95615_5.relationships));
+        } catch (_0xc95615_5) {
+          _0xc95615_f === _0xc95615_4 && (_0xc95615_18 = _0xc95615_5.message || "\x54\x68\x65\x20\x63\x68\x61\x6e\x67\x65\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x73\x61\x76\x65\x64\x2e");
         } finally {
-          b === r && (w = !1, x(), S && s.open && D(S));
+          _0xc95615_f === _0xc95615_4 && (_0xc95615_17 = !1, _0xc95615_21(), _0xc95615_15 && _0xc95615_9.open && _0xc95615_22(_0xc95615_15));
         }
-      }(t, a);
-    }, i));
-    a.blocked ? i("Unblock", "unblock") : ("incoming" === a.friend ? (i("Accept", "accept"), 
-    i("Decline", "decline")) : "outgoing" === a.friend ? i("Cancel request", "cancel") : "accepted" === a.friend ? i("Remove friend", "remove") : !r && R(t.uid) && i("Add friend", "request", "social-button friend-request"), 
-    r || i("Block", "block", "social-button social-danger")), r && "ignored" !== q || i(a.ignored ? "Unignore" : "Ignore", a.ignored ? "unignore" : "ignore");
+      }(_0xc95615_2, _0xc95615_5);
+    }, _0xc95615_6));
+    _0xc95615_5.blocked ? _0xc95615_6("\x55\x6e\x62\x6c\x6f\x63\x6b", "\x75\x6e\x62\x6c\x6f\x63\x6b") : ("\x69\x6e\x63\x6f\x6d\x69\x6e\x67" === _0xc95615_5.friend ? (_0xc95615_6("\x41\x63\x63\x65\x70\x74", "\x61\x63\x63\x65\x70\x74"), 
+    _0xc95615_6("\x44\x65\x63\x6c\x69\x6e\x65", "\x64\x65\x63\x6c\x69\x6e\x65")) : "\x6f\x75\x74\x67\x6f\x69\x6e\x67" === _0xc95615_5.friend ? _0xc95615_6("\x43\x61\x6e\x63\x65\x6c\x20\x72\x65\x71\x75\x65\x73\x74", "\x63\x61\x6e\x63\x65\x6c") : "\x61\x63\x63\x65\x70\x74\x65\x64" === _0xc95615_5.friend ? _0xc95615_6("\x52\x65\x6d\x6f\x76\x65\x20\x66\x72\x69\x65\x6e\x64", "\x72\x65\x6d\x6f\x76\x65") : !_0xc95615_4 && _0xc95615_1c(_0xc95615_2.uid) && _0xc95615_6("\x41\x64\x64\x20\x66\x72\x69\x65\x6e\x64", "\x72\x65\x71\x75\x65\x73\x74", "\x73\x6f\x63\x69\x61\x6c\x2d\x62\x75\x74\x74\x6f\x6e\x20\x66\x72\x69\x65\x6e\x64\x2d\x72\x65\x71\x75\x65\x73\x74"), 
+    _0xc95615_4 || _0xc95615_6("\x42\x6c\x6f\x63\x6b", "\x62\x6c\x6f\x63\x6b", "\x73\x6f\x63\x69\x61\x6c\x2d\x62\x75\x74\x74\x6f\x6e\x20\x73\x6f\x63\x69\x61\x6c\x2d\x64\x61\x6e\x67\x65\x72")), _0xc95615_4 && "\x69\x67\x6e\x6f\x72\x65\x64" !== _0xc95615_16 || _0xc95615_6(_0xc95615_5.ignored ? "\x55\x6e\x69\x67\x6e\x6f\x72\x65" : "\x49\x67\x6e\x6f\x72\x65", _0xc95615_5.ignored ? "\x75\x6e\x69\x67\x6e\x6f\x72\x65" : "\x69\x67\x6e\x6f\x72\x65");
   }
-  function x() {
-    m.textContent = A;
-    const e = [ ...f.values() ].filter(e => "incoming" === e.friend).length, n = document.querySelector("[data-request-count]");
-    n.textContent = e, n.hidden = !e, u.replaceChildren();
-    const a = [ ...f.values() ].filter(e => "pending" === q ? [ "incoming", "outgoing" ].includes(e.friend) : [ "blocked", "ignored" ].includes(q) ? e[q] : "accepted" === e.friend);
-    a.length || u.append(k("p", "friends-empty", g ? {
-      accepted: "No friends yet.",
-      pending: "No pending requests.",
-      blocked: "No blocked accounts.",
-      ignored: "No ignored accounts."
-    }[q] : "Loading relationships\u2026"));
-    for (const i of a) {
-      const e = t().find(e => e.uid === i.uid) || i.member, n = k("article", "friend-row"), a = L("", () => {
-        B(e);
-      }, "friend-identity");
-      a.disabled = !1, a.append(o(e, e.online));
-      const d = k("span", "friend-copy");
-      d.append(r(e)), d.append(k("small", "", "incoming" === i.friend ? "Incoming request" : "outgoing" === i.friend ? "Request sent" : e.handle || "")), 
-      a.append(d), n.append(a);
-      const c = k("div", "friend-actions");
-      I(e, c, !0), n.append(c), u.append(n);
+  function _0xc95615_21() {
+    _0xc95615_d.textContent = _0xc95615_18;
+    const _0xc95615_0 = [ ..._0xc95615_e.values() ].filter(_0xc95615_0 => "\x69\x6e\x63\x6f\x6d\x69\x6e\x67" === _0xc95615_0.friend).length, _0xc95615_1 = document.querySelector("\x5b\x64\x61\x74\x61\x2d\x72\x65\x71\x75\x65\x73\x74\x2d\x63\x6f\x75\x6e\x74\x5d");
+    _0xc95615_1.textContent = _0xc95615_0, _0xc95615_1.hidden = !_0xc95615_0, _0xc95615_c.replaceChildren();
+    const _0xc95615_5 = [ ..._0xc95615_e.values() ].filter(_0xc95615_0 => "\x70\x65\x6e\x64\x69\x6e\x67" === _0xc95615_16 ? [ "\x69\x6e\x63\x6f\x6d\x69\x6e\x67", "\x6f\x75\x74\x67\x6f\x69\x6e\x67" ].includes(_0xc95615_0.friend) : [ "\x62\x6c\x6f\x63\x6b\x65\x64", "\x69\x67\x6e\x6f\x72\x65\x64" ].includes(_0xc95615_16) ? _0xc95615_0[_0xc95615_16] : "\x61\x63\x63\x65\x70\x74\x65\x64" === _0xc95615_0.friend);
+    _0xc95615_5.length || _0xc95615_c.append(_0xc95615_19("\x70", "\x66\x72\x69\x65\x6e\x64\x73\x2d\x65\x6d\x70\x74\x79", _0xc95615_10 ? {
+      accepted: "\x4e\x6f\x20\x66\x72\x69\x65\x6e\x64\x73\x20\x79\x65\x74\x2e",
+      pending: "\x4e\x6f\x20\x70\x65\x6e\x64\x69\x6e\x67\x20\x72\x65\x71\x75\x65\x73\x74\x73\x2e",
+      blocked: "\x4e\x6f\x20\x62\x6c\x6f\x63\x6b\x65\x64\x20\x61\x63\x63\x6f\x75\x6e\x74\x73\x2e",
+      ignored: "\x4e\x6f\x20\x69\x67\x6e\x6f\x72\x65\x64\x20\x61\x63\x63\x6f\x75\x6e\x74\x73\x2e"
+    }[_0xc95615_16] : "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x72\x65\x6c\x61\x74\x69\x6f\x6e\x73\x68\x69\x70\x73\u2026"));
+    for (const _0xc95615_6 of _0xc95615_5) {
+      const _0xc95615_0 = _0xc95615_2().find(_0xc95615_0 => _0xc95615_0.uid === _0xc95615_6.uid) || _0xc95615_6.member, _0xc95615_1 = _0xc95615_19("\x61\x72\x74\x69\x63\x6c\x65", "\x66\x72\x69\x65\x6e\x64\x2d\x72\x6f\x77"), _0xc95615_5 = _0xc95615_1b("", () => {
+        _0xc95615_23(_0xc95615_0);
+      }, "\x66\x72\x69\x65\x6e\x64\x2d\x69\x64\x65\x6e\x74\x69\x74\x79");
+      _0xc95615_5.disabled = !1, _0xc95615_5.append(_0xc95615_3(_0xc95615_0, _0xc95615_0.online));
+      const _0xc95615_7 = _0xc95615_19("\x73\x70\x61\x6e", "\x66\x72\x69\x65\x6e\x64\x2d\x63\x6f\x70\x79");
+      _0xc95615_7.append(_0xc95615_4(_0xc95615_0)), _0xc95615_7.append(_0xc95615_19("\x73\x6d\x61\x6c\x6c", "", "\x69\x6e\x63\x6f\x6d\x69\x6e\x67" === _0xc95615_6.friend ? "\x49\x6e\x63\x6f\x6d\x69\x6e\x67\x20\x72\x65\x71\x75\x65\x73\x74" : "\x6f\x75\x74\x67\x6f\x69\x6e\x67" === _0xc95615_6.friend ? "\x52\x65\x71\x75\x65\x73\x74\x20\x73\x65\x6e\x74" : _0xc95615_0.handle || "")), 
+      _0xc95615_5.append(_0xc95615_7), _0xc95615_1.append(_0xc95615_5);
+      const _0xc95615_8 = _0xc95615_19("\x64\x69\x76", "\x66\x72\x69\x65\x6e\x64\x2d\x61\x63\x74\x69\x6f\x6e\x73");
+      _0xc95615_20(_0xc95615_0, _0xc95615_8, !0), _0xc95615_1.append(_0xc95615_8), _0xc95615_c.append(_0xc95615_1);
     }
-    if (A) {
-      const e = L("Retry", () => {
-        U();
+    if (_0xc95615_18) {
+      const _0xc95615_0 = _0xc95615_1b("\x52\x65\x74\x72\x79", () => {
+        _0xc95615_1f();
       });
-      e.disabled = !1, u.append(e);
+      _0xc95615_0.disabled = !1, _0xc95615_c.append(_0xc95615_0);
     }
   }
-  function D(e) {
-    if (l.replaceChildren(), l.className = "", /^fx-[a-z0-9-]+$/.test(e.profileEffect || "")) {
-      l.className = "nyx-user-profile-effect-" + e.profileEffect;
-      const n = k("i", "nyx-user-profile-effect");
-      n.setAttribute("aria-hidden", "true"), l.append(n);
+  function _0xc95615_22(_0xc95615_0) {
+    if (_0xc95615_a.replaceChildren(), _0xc95615_a.className = "", /^fx-[a-z0-9-]+$/.test(_0xc95615_0.profileEffect || "")) {
+      _0xc95615_a.className = "\x6e\x79\x78\x2d\x75\x73\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2d\x65\x66\x66\x65\x63\x74\x2d" + _0xc95615_0.profileEffect;
+      const _0xc95615_1 = _0xc95615_19("\x69", "\x6e\x79\x78\x2d\x75\x73\x65\x72\x2d\x70\x72\x6f\x66\x69\x6c\x65\x2d\x65\x66\x66\x65\x63\x74");
+      _0xc95615_1.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), _0xc95615_a.append(_0xc95615_1);
     }
-    const t = k("div", "member-card-banner");
-    if (/^#[0-9a-f]{6}$/i.test(e.bannerColor || "") && (t.style.backgroundColor = e.bannerColor), 
-    e.bannerUrl) try {
-      const n = new URL(e.bannerUrl, location.origin);
-      if ([ "http:", "https:" ].includes(n.protocol) || /^data:image\/(png|jpeg|webp|gif);base64,[a-z0-9+/=\s]+$/i.test(e.bannerUrl)) {
-        const e = k("img", "member-banner-image");
-        e.alt = "", e.src = n.href, e.addEventListener("error", () => e.remove(), {
+    const _0xc95615_2 = _0xc95615_19("\x64\x69\x76", "\x6d\x65\x6d\x62\x65\x72\x2d\x63\x61\x72\x64\x2d\x62\x61\x6e\x6e\x65\x72");
+    if (/^#[0-9a-f]{6}$/i.test(_0xc95615_0.bannerColor || "") && (_0xc95615_2.style.backgroundColor = _0xc95615_0.bannerColor), 
+    _0xc95615_0.bannerUrl) try {
+      const _0xc95615_1 = new URL(_0xc95615_0.bannerUrl, location.origin);
+      if ([ "\x68\x74\x74\x70\x3a", "\x68\x74\x74\x70\x73\x3a" ].includes(_0xc95615_1.protocol) || /^data:image\/(png|jpeg|webp|gif);base64,[a-z0-9+/=\s]+$/i.test(_0xc95615_0.bannerUrl)) {
+        const _0xc95615_0 = _0xc95615_19("\x69\x6d\x67", "\x6d\x65\x6d\x62\x65\x72\x2d\x62\x61\x6e\x6e\x65\x72\x2d\x69\x6d\x61\x67\x65");
+        _0xc95615_0.alt = "", _0xc95615_0.src = _0xc95615_1.href, _0xc95615_0.addEventListener("\x65\x72\x72\x6f\x72", () => _0xc95615_0.remove(), {
           once: !0
-        }), t.append(e);
+        }), _0xc95615_2.append(_0xc95615_0);
       }
     } catch {}
-    const d = k("div", "member-card-body");
-    d.append(o(e, e.online));
-    const c = k("div", "member-card-title"), s = k("h2", "");
-    s.append(r(e)), c.append(s), e.role && "member" !== e.role && c.append(k("span", "profile-role", e.roleLabel || e.role.replaceAll("_", " "))), 
-    e.caffeine && c.append(a()), d.append(c, k("p", "member-handle", e.handle || "")), 
-    e.customStatus && d.append(k("p", "member-status", e.customStatus)), e.bio && d.append(k("p", "member-bio", e.bio));
-    const u = new Date(e.createdAt);
-    Number.isFinite(u.getTime()) && d.append(k("p", "member-joined", "Joined " + u.toLocaleDateString(void 0, {
-      month: "long",
-      year: "numeric"
+    const _0xc95615_7 = _0xc95615_19("\x64\x69\x76", "\x6d\x65\x6d\x62\x65\x72\x2d\x63\x61\x72\x64\x2d\x62\x6f\x64\x79");
+    _0xc95615_7.append(_0xc95615_3(_0xc95615_0, _0xc95615_0.online));
+    const _0xc95615_8 = _0xc95615_19("\x64\x69\x76", "\x6d\x65\x6d\x62\x65\x72\x2d\x63\x61\x72\x64\x2d\x74\x69\x74\x6c\x65"), _0xc95615_9 = _0xc95615_19("\x68\x32", "");
+    _0xc95615_9.append(_0xc95615_4(_0xc95615_0)), _0xc95615_8.append(_0xc95615_9), _0xc95615_0.role && "\x6d\x65\x6d\x62\x65\x72" !== _0xc95615_0.role && _0xc95615_8.append(_0xc95615_19("\x73\x70\x61\x6e", "\x70\x72\x6f\x66\x69\x6c\x65\x2d\x72\x6f\x6c\x65", _0xc95615_0.roleLabel || _0xc95615_0.role.replaceAll("\x5f", "\x20"))), 
+    _0xc95615_0.caffeine && _0xc95615_8.append(_0xc95615_5()), _0xc95615_7.append(_0xc95615_8, _0xc95615_19("\x70", "\x6d\x65\x6d\x62\x65\x72\x2d\x68\x61\x6e\x64\x6c\x65", _0xc95615_0.handle || "")), 
+    _0xc95615_0.customStatus && _0xc95615_7.append(_0xc95615_19("\x70", "\x6d\x65\x6d\x62\x65\x72\x2d\x73\x74\x61\x74\x75\x73", _0xc95615_0.customStatus)), 
+    _0xc95615_0.bio && _0xc95615_7.append(_0xc95615_19("\x70", "\x6d\x65\x6d\x62\x65\x72\x2d\x62\x69\x6f", _0xc95615_0.bio));
+    const _0xc95615_c = new Date(_0xc95615_0.createdAt);
+    Number.isFinite(_0xc95615_c.getTime()) && _0xc95615_7.append(_0xc95615_19("\x70", "\x6d\x65\x6d\x62\x65\x72\x2d\x6a\x6f\x69\x6e\x65\x64", "\x4a\x6f\x69\x6e\x65\x64\x20" + _0xc95615_c.toLocaleDateString(void 0, {
+      month: "\x6c\x6f\x6e\x67",
+      year: "\x6e\x75\x6d\x65\x72\x69\x63"
     })));
-    const m = k("p", "profile-status", e.loading ? "Loading profile\u2026" : e.profileError || "");
-    if (m.setAttribute("role", "status"), d.append(m), e.profileError) {
-      const n = L("Retry profile", () => {
-        B(e);
+    const _0xc95615_d = _0xc95615_19("\x70", "\x70\x72\x6f\x66\x69\x6c\x65\x2d\x73\x74\x61\x74\x75\x73", _0xc95615_0.loading ? "\x4c\x6f\x61\x64\x69\x6e\x67\x20\x70\x72\x6f\x66\x69\x6c\x65\u2026" : _0xc95615_0.profileError || "");
+    if (_0xc95615_d.setAttribute("\x72\x6f\x6c\x65", "\x73\x74\x61\x74\x75\x73"), _0xc95615_7.append(_0xc95615_d), 
+    _0xc95615_0.profileError) {
+      const _0xc95615_1 = _0xc95615_1b("\x52\x65\x74\x72\x79\x20\x70\x72\x6f\x66\x69\x6c\x65", () => {
+        _0xc95615_23(_0xc95615_0);
       });
-      n.disabled = !1, d.append(n);
+      _0xc95615_1.disabled = !1, _0xc95615_7.append(_0xc95615_1);
     }
-    if (e.uid !== n()?.uid) {
-      const n = L("Message", () => {
-        p.close(), i(e);
-      }, "member-dm-button");
-      n.disabled = !R(e.uid) || w, d.append(n);
-      const t = k("div", "member-social-actions");
-      I(e, t), d.append(t);
-      const o = f.get(e.uid);
-      o?.blocked ? d.append(k("p", "member-social-hint", "Blocked. Direct messages and friend requests are disabled.")) : o?.ignored ? d.append(k("p", "member-social-hint", "Ignored. Their messages and notifications are hidden for you.")) : !1 === o?.canMessage && d.append(k("p", "member-social-hint", "Direct messages are unavailable."));
-      const r = k("p", "profile-status", A);
-      if (r.setAttribute("role", "status"), d.append(r), !g && A) {
-        const e = L("Retry relationships", () => {
-          U().then(() => S && D(S));
+    if (_0xc95615_0.uid !== _0xc95615_1()?.uid) {
+      const _0xc95615_1 = _0xc95615_1b("\x4d\x65\x73\x73\x61\x67\x65", () => {
+        _0xc95615_b.close(), _0xc95615_6(_0xc95615_0);
+      }, "\x6d\x65\x6d\x62\x65\x72\x2d\x64\x6d\x2d\x62\x75\x74\x74\x6f\x6e");
+      _0xc95615_1.disabled = !_0xc95615_1c(_0xc95615_0.uid) || _0xc95615_17, _0xc95615_7.append(_0xc95615_1);
+      const _0xc95615_2 = _0xc95615_19("\x64\x69\x76", "\x6d\x65\x6d\x62\x65\x72\x2d\x73\x6f\x63\x69\x61\x6c\x2d\x61\x63\x74\x69\x6f\x6e\x73");
+      _0xc95615_20(_0xc95615_0, _0xc95615_2), _0xc95615_7.append(_0xc95615_2);
+      const _0xc95615_3 = _0xc95615_e.get(_0xc95615_0.uid);
+      _0xc95615_3?.blocked ? _0xc95615_7.append(_0xc95615_19("\x70", "\x6d\x65\x6d\x62\x65\x72\x2d\x73\x6f\x63\x69\x61\x6c\x2d\x68\x69\x6e\x74", "\x42\x6c\x6f\x63\x6b\x65\x64\x2e\x20\x44\x69\x72\x65\x63\x74\x20\x6d\x65\x73\x73\x61\x67\x65\x73\x20\x61\x6e\x64\x20\x66\x72\x69\x65\x6e\x64\x20\x72\x65\x71\x75\x65\x73\x74\x73\x20\x61\x72\x65\x20\x64\x69\x73\x61\x62\x6c\x65\x64\x2e")) : _0xc95615_3?.ignored ? _0xc95615_7.append(_0xc95615_19("\x70", "\x6d\x65\x6d\x62\x65\x72\x2d\x73\x6f\x63\x69\x61\x6c\x2d\x68\x69\x6e\x74", "\x49\x67\x6e\x6f\x72\x65\x64\x2e\x20\x54\x68\x65\x69\x72\x20\x6d\x65\x73\x73\x61\x67\x65\x73\x20\x61\x6e\x64\x20\x6e\x6f\x74\x69\x66\x69\x63\x61\x74\x69\x6f\x6e\x73\x20\x61\x72\x65\x20\x68\x69\x64\x64\x65\x6e\x20\x66\x6f\x72\x20\x79\x6f\x75\x2e")) : !1 === _0xc95615_3?.canMessage && _0xc95615_7.append(_0xc95615_19("\x70", "\x6d\x65\x6d\x62\x65\x72\x2d\x73\x6f\x63\x69\x61\x6c\x2d\x68\x69\x6e\x74", "\x44\x69\x72\x65\x63\x74\x20\x6d\x65\x73\x73\x61\x67\x65\x73\x20\x61\x72\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e"));
+      const _0xc95615_4 = _0xc95615_19("\x70", "\x70\x72\x6f\x66\x69\x6c\x65\x2d\x73\x74\x61\x74\x75\x73", _0xc95615_18);
+      if (_0xc95615_4.setAttribute("\x72\x6f\x6c\x65", "\x73\x74\x61\x74\x75\x73"), _0xc95615_7.append(_0xc95615_4), 
+      !_0xc95615_10 && _0xc95615_18) {
+        const _0xc95615_0 = _0xc95615_1b("\x52\x65\x74\x72\x79\x20\x72\x65\x6c\x61\x74\x69\x6f\x6e\x73\x68\x69\x70\x73", () => {
+          _0xc95615_1f().then(() => _0xc95615_15 && _0xc95615_22(_0xc95615_15));
         });
-        e.disabled = !1, d.append(e);
+        _0xc95615_0.disabled = !1, _0xc95615_7.append(_0xc95615_0);
       }
     }
-    l.append(t, d);
+    _0xc95615_a.append(_0xc95615_2, _0xc95615_7);
   }
-  async function B(t) {
-    if (!t?.uid) return;
-    b !== n()?.uid && C();
-    const o = ++y;
-    S = {
-      ...t,
+  async function _0xc95615_23(_0xc95615_2) {
+    if (!_0xc95615_2?.uid) return;
+    _0xc95615_f !== _0xc95615_1()?.uid && _0xc95615_1d();
+    const _0xc95615_3 = ++_0xc95615_12;
+    _0xc95615_15 = {
+      ..._0xc95615_2,
       loading: !0,
       profileError: ""
-    }, D(S), c(), s.open || s.showModal(), U();
+    }, _0xc95615_22(_0xc95615_15), _0xc95615_8(), _0xc95615_9.open || _0xc95615_9.showModal(), 
+    _0xc95615_1f();
     try {
-      const n = await e("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/profiles/" + encodeURIComponent(t.uid), {
-        cache: "no-store"
+      const _0xc95615_1 = await _0xc95615_0("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x70\x72\x6f\x66\x69\x6c\x65\x73\x2f" + encodeURIComponent(_0xc95615_2.uid), {
+        cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
       });
-      if (o !== y || !s.open) return;
-      S = {
-        ...t,
-        ...n.profile,
-        uid: t.uid,
-        role: n.role,
-        roleLabel: n.roleLabel,
-        customRole: n.customRole,
-        online: n.online,
-        createdAt: n.createdAt
+      if (_0xc95615_3 !== _0xc95615_12 || !_0xc95615_9.open) return;
+      _0xc95615_15 = {
+        ..._0xc95615_2,
+        ..._0xc95615_1.profile,
+        uid: _0xc95615_2.uid,
+        role: _0xc95615_1.role,
+        roleLabel: _0xc95615_1.roleLabel,
+        customRole: _0xc95615_1.customRole,
+        online: _0xc95615_1.online,
+        createdAt: _0xc95615_1.createdAt
       };
-    } catch (r) {
-      if (o !== y || !s.open) return;
-      S = {
-        ...t,
-        profileError: r.message || "Profile unavailable."
+    } catch (_0xc95615_4) {
+      if (_0xc95615_3 !== _0xc95615_12 || !_0xc95615_9.open) return;
+      _0xc95615_15 = {
+        ..._0xc95615_2,
+        profileError: _0xc95615_4.message || "\x50\x72\x6f\x66\x69\x6c\x65\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e"
       };
     }
-    D(S);
+    _0xc95615_22(_0xc95615_15);
   }
-  s.addEventListener("close", () => {
-    y++, S = null;
-  }), document.querySelector("[data-open-friends]").addEventListener("click", () => {
-    x(), c(), p.showModal(), U();
-  }), document.querySelector("[data-friends-close]").addEventListener("click", () => p.close()), 
-  p.addEventListener("click", e => {
-    e.target === p && p.close();
-  }), document.querySelector("[data-find-friend]").addEventListener("click", () => {
-    p.close(), document.querySelector("[data-new-dm]").click();
-  }), document.querySelectorAll("[data-friend-filter]").forEach(e => e.addEventListener("click", () => {
-    q = e.dataset.friendFilter, document.querySelectorAll("[data-friend-filter]").forEach(n => n.setAttribute("aria-pressed", String(n === e))), 
-    x();
+  _0xc95615_9.addEventListener("\x63\x6c\x6f\x73\x65", () => {
+    _0xc95615_12++, _0xc95615_15 = null;
+  }), document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6f\x70\x65\x6e\x2d\x66\x72\x69\x65\x6e\x64\x73\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0xc95615_21(), _0xc95615_8(), _0xc95615_b.showModal(), _0xc95615_1f();
+  }), document.querySelector("\x5b\x64\x61\x74\x61\x2d\x66\x72\x69\x65\x6e\x64\x73\x2d\x63\x6c\x6f\x73\x65\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => _0xc95615_b.close()), 
+  _0xc95615_b.addEventListener("\x63\x6c\x69\x63\x6b", _0xc95615_0 => {
+    _0xc95615_0.target === _0xc95615_b && _0xc95615_b.close();
+  }), document.querySelector("\x5b\x64\x61\x74\x61\x2d\x66\x69\x6e\x64\x2d\x66\x72\x69\x65\x6e\x64\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0xc95615_b.close(), document.querySelector("\x5b\x64\x61\x74\x61\x2d\x6e\x65\x77\x2d\x64\x6d\x5d").click();
+  }), document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x66\x72\x69\x65\x6e\x64\x2d\x66\x69\x6c\x74\x65\x72\x5d").forEach(_0xc95615_0 => _0xc95615_0.addEventListener("\x63\x6c\x69\x63\x6b", () => {
+    _0xc95615_16 = _0xc95615_0.dataset.friendFilter, document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x66\x72\x69\x65\x6e\x64\x2d\x66\x69\x6c\x74\x65\x72\x5d").forEach(_0xc95615_1 => _0xc95615_1.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0xc95615_1 === _0xc95615_0))), 
+    _0xc95615_21();
   }));
-  const T = setInterval(() => {
-    !document.hidden && n()?.uid && U();
+  const _0xc95615_24 = setInterval(() => {
+    !document.hidden && _0xc95615_1()?.uid && _0xc95615_1f();
   }, 15e3);
-  return window.addEventListener("beforeunload", () => clearInterval(T), {
+  return window.addEventListener("\x62\x65\x66\x6f\x72\x65\x75\x6e\x6c\x6f\x61\x64", () => clearInterval(_0xc95615_24), {
     once: !0
   }), {
-    open: B,
-    refresh: U,
-    reset: C,
-    muted: e => Boolean(f.get(e)?.blocked || f.get(e)?.ignored),
-    canMessage: R
+    open: _0xc95615_23,
+    refresh: _0xc95615_1f,
+    reset: _0xc95615_1d,
+    muted: _0xc95615_0 => Boolean(_0xc95615_e.get(_0xc95615_0)?.blocked || _0xc95615_e.get(_0xc95615_0)?.ignored),
+    canMessage: _0xc95615_1c
   };
 };

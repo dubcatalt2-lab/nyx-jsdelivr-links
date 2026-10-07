@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
+	if(typeof exports === "object" && typeof module === "object")
 		module.exports = factory(require("katex"));
-	else if(typeof define === 'function' && define.amd)
+	else if(typeof define === "function" && define.amd)
 		define(["katex"], factory);
-	else if(typeof exports === 'object')
+	else if(typeof exports === "object")
 		exports["renderMathInElement"] = factory(require("katex"));
 	else
 		root["renderMathInElement"] = factory(root["katex"]);
-})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__757__) {
+})((typeof self !== "undefined" ? self : this), function(__WEBPACK_EXTERNAL_MODULE__757__) {
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
@@ -51,7 +51,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__757__;
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
 /******/ 		__webpack_require__.n = function(module) {
 /******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module["default"]; } :
 /******/ 				function() { return module; };
 /******/ 			__webpack_require__.d(getter, { a: getter });
 /******/ 			return getter;
@@ -165,7 +165,7 @@ const splitAtDelimiters = function (text, delimiters) {
  */
 const renderMathInText = function (text, optionsCopy) {
   const data = auto_render_splitAtDelimiters(text, optionsCopy.delimiters);
-  if (data.length === 1 && data[0].type === 'text') {
+  if (data.length === 1 && data[0].type === "text") {
     // There is no formula in the text.
     // Let's return null which means there is no need to replace
     // the current text node with a new one.
@@ -232,8 +232,8 @@ const renderElem = function (elem, optionsCopy) {
       }
     } else if (childNode.nodeType === 1) {
       // Element node
-      const className = ' ' + childNode.className + ' ';
-      const shouldRender = !optionsCopy.ignoredTags.has(childNode.nodeName.toLowerCase()) && optionsCopy.ignoredClasses.every(x => !className.includes(' ' + x + ' '));
+      const className = " " + childNode.className + " ";
+      const shouldRender = !optionsCopy.ignoredTags.has(childNode.nodeName.toLowerCase()) && optionsCopy.ignoredClasses.every(x => !className.includes(" " + x + " "));
       if (shouldRender) {
         renderElem(childNode, optionsCopy);
       }

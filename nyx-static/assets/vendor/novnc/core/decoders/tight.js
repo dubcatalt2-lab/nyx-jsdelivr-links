@@ -8,7 +8,7 @@
  *
  */
 
-import * as Log from '../util/logging.js';
+import * as Log from "../util/logging.js";
 import Inflator from "../inflator.js";
 
 export default class TightDecoder {

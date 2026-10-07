@@ -1,1 +1,1 @@
-self.NYX_TUTSI_WORKER = !0, importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/@r8f745eeb4055a7f4baa35b8a!.js");
+self.NYX_TUTSI_WORKER = !0, importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x40\x72\x38\x66\x37\x34\x35\x65\x65\x62\x34\x30\x35\x35\x61\x37\x66\x34\x62\x61\x61\x33\x35\x62\x38\x61\x21\x2e\x6a\x73");

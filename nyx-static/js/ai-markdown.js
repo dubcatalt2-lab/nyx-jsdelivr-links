@@ -1,173 +1,182 @@
 (() => {
   "use strict";
-  function t(t) {
-    return String(t ?? "").replace(/[&<>"']/g, t => ({
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    }[t]));
+  function _0xf47aef_0(_0xf47aef_0) {
+    return String(_0xf47aef_0 ?? "").replace(/[&<>"']/g, _0xf47aef_0 => ({
+      "\x26": "\x26\x61\x6d\x70\x3b",
+      "\x3c": "\x26\x6c\x74\x3b",
+      "\x3e": "\x26\x67\x74\x3b",
+      "\x22": "\x26\x71\x75\x6f\x74\x3b",
+      "\x27": "\x26\x23\x33\x39\x3b"
+    }[_0xf47aef_0]));
   }
-  function e(e, n = !1) {
-    const r = String(e ?? "").trim();
-    if (!r) return "";
+  function _0xf47aef_1(_0xf47aef_1, _0xf47aef_2 = !1) {
+    const _0xf47aef_3 = String(_0xf47aef_1 ?? "").trim();
+    if (!_0xf47aef_3) return "";
     try {
-      if (window.katex?.renderToString) return window.katex.renderToString(r, {
-        displayMode: Boolean(n),
+      if (window.katex?.renderToString) return window.katex.renderToString(_0xf47aef_3, {
+        displayMode: Boolean(_0xf47aef_2),
         throwOnError: !1,
-        strict: "ignore",
+        strict: "\x69\x67\x6e\x6f\x72\x65",
         trust: !1,
-        output: "htmlAndMathml"
+        output: "\x68\x74\x6d\x6c\x41\x6e\x64\x4d\x61\x74\x68\x6d\x6c"
       });
-    } catch (s) {
-      console.warn("Nyx AI could not render math:", s);
+    } catch (_0xf47aef_4) {
+      console.warn("\x4e\x79\x78\x20\x41\x49\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x72\x65\x6e\x64\x65\x72\x20\x6d\x61\x74\x68\x3a", _0xf47aef_4);
     }
-    return `<span class="ai-math-fallback">${t(r.replace(/\\text\{([^{}]*)\}/g, "$1").replace(/\\[,;:!]/g, " ").replace(/\\(?:quad|qquad)\b/g, " ").replace(/\\(?:times|cdot)/g, " \xd7 ").replace(/\\leq?/g, "\u2264").replace(/\\geq?/g, "\u2265").replace(/\\neq/g, "\u2260").replace(/\\pm/g, "\xb1").replace(/[{}]/g, ""))}</span>`;
+    return `\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x61\x74\x68\x2d\x66\x61\x6c\x6c\x62\x61\x63\x6b\x22\x3e${_0xf47aef_0(_0xf47aef_3.replace(/\\text\{([^{}]*)\}/g, "\x24\x31").replace(/\\[,;:!]/g, "\x20").replace(/\\(?:quad|qquad)\b/g, "\x20").replace(/\\(?:times|cdot)/g, "\x20\xd7\x20").replace(/\\leq?/g, "\u2264").replace(/\\geq?/g, "\u2265").replace(/\\neq/g, "\u2260").replace(/\\pm/g, "\xb1").replace(/[{}]/g, ""))}\x3c\x2f\x73\x70\x61\x6e\x3e`;
   }
-  function n(n) {
-    const r = [];
-    let s = String(n ?? "").replace(/`([^`\n]+)`/g, (e, n) => {
-      const s = `@@NYX_INLINE_${r.length}@@`;
-      return r.push(`<code>${t(n)}</code>`), s;
+  function _0xf47aef_2(_0xf47aef_2) {
+    const _0xf47aef_3 = [];
+    let _0xf47aef_4 = String(_0xf47aef_2 ?? "").replace(/`([^`\n]+)`/g, (_0xf47aef_1, _0xf47aef_2) => {
+      const _0xf47aef_4 = `\x40\x40\x4e\x59\x58\x5f\x49\x4e\x4c\x49\x4e\x45\x5f${_0xf47aef_3.length}\x40\x40`;
+      return _0xf47aef_3.push(`\x3c\x63\x6f\x64\x65\x3e${_0xf47aef_0(_0xf47aef_2)}\x3c\x2f\x63\x6f\x64\x65\x3e`), _0xf47aef_4;
     });
-    const o = [];
-    s = s.replace(/\\+\[([^\n]*?)\\+\]|\\+\(([^\n]*?)\\+\)/g, (t, n, r) => {
-      const s = `@@NYX_MATH_${o.length}@@`;
-      return o.push(e(n ?? r, void 0 !== n)), s;
-    }), s = s.replace(/(?<!\\)\$([^\s$](?:[^$\n]*?[^\s$])?)\$(?!\d)/g, (t, n) => {
-      const r = `@@NYX_MATH_${o.length}@@`;
-      return o.push(e(n, !1)), r;
+    const _0xf47aef_5 = [];
+    _0xf47aef_4 = _0xf47aef_4.replace(/\\+\[([^\n]*?)\\+\]|\\+\(([^\n]*?)\\+\)/g, (_0xf47aef_0, _0xf47aef_2, _0xf47aef_3) => {
+      const _0xf47aef_4 = `\x40\x40\x4e\x59\x58\x5f\x4d\x41\x54\x48\x5f${_0xf47aef_5.length}\x40\x40`;
+      return _0xf47aef_5.push(_0xf47aef_1(_0xf47aef_2 ?? _0xf47aef_3, void 0 !== _0xf47aef_2)), 
+      _0xf47aef_4;
+    }), _0xf47aef_4 = _0xf47aef_4.replace(/(?<!\\)\$([^\s$](?:[^$\n]*?[^\s$])?)\$(?!\d)/g, (_0xf47aef_0, _0xf47aef_2) => {
+      const _0xf47aef_3 = `\x40\x40\x4e\x59\x58\x5f\x4d\x41\x54\x48\x5f${_0xf47aef_5.length}\x40\x40`;
+      return _0xf47aef_5.push(_0xf47aef_1(_0xf47aef_2, !1)), _0xf47aef_3;
     });
-    let c = t(s);
-    return c = c.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/gi, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'), 
-    c = c.replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>"), c = c.replace(/__([^_\n]+)__/g, "<strong>$1</strong>"), 
-    c = c.replace(/~~([^~\n]+)~~/g, "<s>$1</s>"), c = c.replace(/(^|[^*])\*([^*\n]+)\*/g, "$1<em>$2</em>"), 
-    o.forEach((t, e) => {
-      c = c.replace(`@@NYX_MATH_${e}@@`, t);
-    }), r.forEach((t, e) => {
-      c = c.replace(`@@NYX_INLINE_${e}@@`, t);
-    }), c;
+    let _0xf47aef_6 = _0xf47aef_0(_0xf47aef_4);
+    return _0xf47aef_6 = _0xf47aef_6.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/gi, "\x3c\x61\x20\x68\x72\x65\x66\x3d\x22\x24\x32\x22\x20\x74\x61\x72\x67\x65\x74\x3d\x22\x5f\x62\x6c\x61\x6e\x6b\x22\x20\x72\x65\x6c\x3d\x22\x6e\x6f\x6f\x70\x65\x6e\x65\x72\x20\x6e\x6f\x72\x65\x66\x65\x72\x72\x65\x72\x22\x3e\x24\x31\x3c\x2f\x61\x3e"), 
+    _0xf47aef_6 = _0xf47aef_6.replace(/\*\*([^*\n]+)\*\*/g, "\x3c\x73\x74\x72\x6f\x6e\x67\x3e\x24\x31\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e"), 
+    _0xf47aef_6 = _0xf47aef_6.replace(/__([^_\n]+)__/g, "\x3c\x73\x74\x72\x6f\x6e\x67\x3e\x24\x31\x3c\x2f\x73\x74\x72\x6f\x6e\x67\x3e"), _0xf47aef_6 = _0xf47aef_6.replace(/~~([^~\n]+)~~/g, "\x3c\x73\x3e\x24\x31\x3c\x2f\x73\x3e"), 
+    _0xf47aef_6 = _0xf47aef_6.replace(/(^|[^*])\*([^*\n]+)\*/g, "\x24\x31\x3c\x65\x6d\x3e\x24\x32\x3c\x2f\x65\x6d\x3e"), _0xf47aef_5.forEach((_0xf47aef_0, _0xf47aef_1) => {
+      _0xf47aef_6 = _0xf47aef_6.replace(`\x40\x40\x4e\x59\x58\x5f\x4d\x41\x54\x48\x5f${_0xf47aef_1}\x40\x40`, _0xf47aef_0);
+    }), _0xf47aef_3.forEach((_0xf47aef_0, _0xf47aef_1) => {
+      _0xf47aef_6 = _0xf47aef_6.replace(`\x40\x40\x4e\x59\x58\x5f\x49\x4e\x4c\x49\x4e\x45\x5f${_0xf47aef_1}\x40\x40`, _0xf47aef_0);
+    }), _0xf47aef_6;
   }
-  function r(t) {
-    return String(t).trim().replace(/^\||\|$/g, "").split("|").map(t => t.trim());
+  function _0xf47aef_3(_0xf47aef_0) {
+    return String(_0xf47aef_0).trim().replace(/^\||\|$/g, "").split("\x7c").map(_0xf47aef_0 => _0xf47aef_0.trim());
   }
-  function s(t) {
-    const e = r(t);
-    return e.length > 1 && e.every(t => /^:?-{3,}:?$/.test(t));
+  function _0xf47aef_4(_0xf47aef_0) {
+    const _0xf47aef_1 = _0xf47aef_3(_0xf47aef_0);
+    return _0xf47aef_1.length > 1 && _0xf47aef_1.every(_0xf47aef_0 => /^:?-{3,}:?$/.test(_0xf47aef_0));
   }
-  function o(t) {
-    const e = String(t ?? "").trim();
-    return /^\\+\[$/.test(e) ? "bracket" : "$$" === e ? "dollar" : "";
+  function _0xf47aef_5(_0xf47aef_0) {
+    const _0xf47aef_1 = String(_0xf47aef_0 ?? "").trim();
+    return /^\\+\[$/.test(_0xf47aef_1) ? "\x62\x72\x61\x63\x6b\x65\x74" : "\x24\x24" === _0xf47aef_1 ? "\x64\x6f\x6c\x6c\x61\x72" : "";
   }
-  function c(t, e) {
-    const n = String(t ?? "").trim();
-    return "bracket" === e ? /^\\+\]$/.test(n) : "$$" === n;
+  function _0xf47aef_6(_0xf47aef_0, _0xf47aef_1) {
+    const _0xf47aef_2 = String(_0xf47aef_0 ?? "").trim();
+    return "\x62\x72\x61\x63\x6b\x65\x74" === _0xf47aef_1 ? /^\\+\]$/.test(_0xf47aef_2) : "\x24\x24" === _0xf47aef_2;
   }
-  function i(t) {
-    const e = String(t ?? "").trim(), n = e.match(/^\\+\[([\s\S]*?)\\+\]$/);
-    if (n) return n[1];
-    const r = e.match(/^\$\$([\s\S]*?)\$\$$/);
-    return r ? r[1] : null;
+  function _0xf47aef_7(_0xf47aef_0) {
+    const _0xf47aef_1 = String(_0xf47aef_0 ?? "").trim(), _0xf47aef_2 = _0xf47aef_1.match(/^\\+\[([\s\S]*?)\\+\]$/);
+    if (_0xf47aef_2) return _0xf47aef_2[1];
+    const _0xf47aef_3 = _0xf47aef_1.match(/^\$\$([\s\S]*?)\$\$$/);
+    return _0xf47aef_3 ? _0xf47aef_3[1] : null;
   }
-  function a(t, e) {
-    const n = t[e] || "";
-    return Boolean(o(n)) || null !== i(n) || c(n, "bracket") || /^```/.test(n) || /^#{1,3}\s+/.test(n) || /^>\s?/.test(n) || /^\s*[-*+]\s+/.test(n) || /^\s*\d+[.)]\s+/.test(n) || /^\s*(?:---+|___+)\s*$/.test(n) || n.includes("\t") || n.includes("|") && s(t[e + 1] || "");
+  function _0xf47aef_8(_0xf47aef_0, _0xf47aef_1) {
+    const _0xf47aef_2 = _0xf47aef_0[_0xf47aef_1] || "";
+    return Boolean(_0xf47aef_5(_0xf47aef_2)) || null !== _0xf47aef_7(_0xf47aef_2) || _0xf47aef_6(_0xf47aef_2, "\x62\x72\x61\x63\x6b\x65\x74") || /^```/.test(_0xf47aef_2) || /^#{1,3}\s+/.test(_0xf47aef_2) || /^>\s?/.test(_0xf47aef_2) || /^\s*[-*+]\s+/.test(_0xf47aef_2) || /^\s*\d+[.)]\s+/.test(_0xf47aef_2) || /^\s*(?:---+|___+)\s*$/.test(_0xf47aef_2) || _0xf47aef_2.includes("\x09") || _0xf47aef_2.includes("\x7c") && _0xf47aef_4(_0xf47aef_0[_0xf47aef_1 + 1] || "");
   }
   window.NyxMarkdown = {
-    render: function(l) {
-      const p = String(l ?? "").replace(/\r\n?/g, "\n").split("\n"), u = [];
-      for (let h = 0; h < p.length; ) {
-        const l = p[h];
-        if (!l.trim()) {
-          h += 1;
+    render: function(_0xf47aef_9) {
+      const _0xf47aef_a = String(_0xf47aef_9 ?? "").replace(/\r\n?/g, "\x0a").split("\x0a"), _0xf47aef_b = [];
+      for (let _0xf47aef_c = 0; _0xf47aef_c < _0xf47aef_a.length; ) {
+        const _0xf47aef_9 = _0xf47aef_a[_0xf47aef_c];
+        if (!_0xf47aef_9.trim()) {
+          _0xf47aef_c += 1;
           continue;
         }
-        const d = l.match(/^```([^\s`]*)\s*$/);
-        if (d) {
-          const e = (d[1] || "code").slice(0, 24), n = [];
-          for (h += 1; h < p.length && !/^```\s*$/.test(p[h]); ) n.push(p[h]), h += 1;
-          h < p.length && (h += 1), u.push(`<div class="ai-code-block"><div class="ai-code-head"><span>${t(e)}</span><button class="ai-code-copy" type="button" data-copy-code aria-label="Copy code"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg><span>Copy</span></button></div><pre><code>${t(n.join("\n"))}</code></pre></div>`);
+        const _0xf47aef_d = _0xf47aef_9.match(/^```([^\s`]*)\s*$/);
+        if (_0xf47aef_d) {
+          const _0xf47aef_1 = (_0xf47aef_d[1] || "\x63\x6f\x64\x65").slice(0, 24), _0xf47aef_2 = [];
+          for (_0xf47aef_c += 1; _0xf47aef_c < _0xf47aef_a.length && !/^```\s*$/.test(_0xf47aef_a[_0xf47aef_c]); ) _0xf47aef_2.push(_0xf47aef_a[_0xf47aef_c]), 
+          _0xf47aef_c += 1;
+          _0xf47aef_c < _0xf47aef_a.length && (_0xf47aef_c += 1), _0xf47aef_b.push(`\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x64\x65\x2d\x62\x6c\x6f\x63\x6b\x22\x3e\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x64\x65\x2d\x68\x65\x61\x64\x22\x3e\x3c\x73\x70\x61\x6e\x3e${_0xf47aef_0(_0xf47aef_1)}\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x62\x75\x74\x74\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x63\x6f\x64\x65\x2d\x63\x6f\x70\x79\x22\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x2d\x63\x6f\x64\x65\x20\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c\x3d\x22\x43\x6f\x70\x79\x20\x63\x6f\x64\x65\x22\x3e\x3c\x73\x76\x67\x20\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e\x3d\x22\x74\x72\x75\x65\x22\x20\x76\x69\x65\x77\x42\x6f\x78\x3d\x22\x30\x20\x30\x20\x32\x34\x20\x32\x34\x22\x3e\x3c\x72\x65\x63\x74\x20\x78\x3d\x22\x39\x22\x20\x79\x3d\x22\x39\x22\x20\x77\x69\x64\x74\x68\x3d\x22\x31\x31\x22\x20\x68\x65\x69\x67\x68\x74\x3d\x22\x31\x31\x22\x20\x72\x78\x3d\x22\x32\x22\x2f\x3e\x3c\x70\x61\x74\x68\x20\x64\x3d\x22\x4d\x31\x35\x20\x39\x56\x36\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x2d\x32\x2d\x32\x48\x36\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x2d\x32\x20\x32\x76\x37\x61\x32\x20\x32\x20\x30\x20\x30\x20\x30\x20\x32\x20\x32\x68\x33\x22\x2f\x3e\x3c\x2f\x73\x76\x67\x3e\x3c\x73\x70\x61\x6e\x3e\x43\x6f\x70\x79\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x2f\x64\x69\x76\x3e\x3c\x70\x72\x65\x3e\x3c\x63\x6f\x64\x65\x3e${_0xf47aef_0(_0xf47aef_2.join("\x0a"))}\x3c\x2f\x63\x6f\x64\x65\x3e\x3c\x2f\x70\x72\x65\x3e\x3c\x2f\x64\x69\x76\x3e`);
           continue;
         }
-        const $ = o(l);
-        if ($) {
-          let t = h + 1;
-          for (;t < p.length && !c(p[t], $); ) t += 1;
-          if (t < p.length) {
-            u.push(`<div class="ai-math-block">${e(p.slice(h + 1, t).join("\n"), !0)}</div>`), 
-            h = t + 1;
+        const _0xf47aef_e = _0xf47aef_5(_0xf47aef_9);
+        if (_0xf47aef_e) {
+          let _0xf47aef_0 = _0xf47aef_c + 1;
+          for (;_0xf47aef_0 < _0xf47aef_a.length && !_0xf47aef_6(_0xf47aef_a[_0xf47aef_0], _0xf47aef_e); ) _0xf47aef_0 += 1;
+          if (_0xf47aef_0 < _0xf47aef_a.length) {
+            _0xf47aef_b.push(`\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x61\x74\x68\x2d\x62\x6c\x6f\x63\x6b\x22\x3e${_0xf47aef_1(_0xf47aef_a.slice(_0xf47aef_c + 1, _0xf47aef_0).join("\x0a"), !0)}\x3c\x2f\x64\x69\x76\x3e`), 
+            _0xf47aef_c = _0xf47aef_0 + 1;
             continue;
           }
-          let n = h + 1;
-          for (;n < p.length && p[n].trim(); ) n += 1;
-          const r = p.slice(h + 1, n).join("\n");
-          r.trim() && u.push(`<div class="ai-math-block">${e(r, !0)}</div>`), h = n;
+          let _0xf47aef_2 = _0xf47aef_c + 1;
+          for (;_0xf47aef_2 < _0xf47aef_a.length && _0xf47aef_a[_0xf47aef_2].trim(); ) _0xf47aef_2 += 1;
+          const _0xf47aef_3 = _0xf47aef_a.slice(_0xf47aef_c + 1, _0xf47aef_2).join("\x0a");
+          _0xf47aef_3.trim() && _0xf47aef_b.push(`\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x61\x74\x68\x2d\x62\x6c\x6f\x63\x6b\x22\x3e${_0xf47aef_1(_0xf47aef_3, !0)}\x3c\x2f\x64\x69\x76\x3e`), 
+          _0xf47aef_c = _0xf47aef_2;
           continue;
         }
-        const g = i(l);
-        if (null !== g) {
-          u.push(`<div class="ai-math-block">${e(g, !0)}</div>`), h += 1;
+        const _0xf47aef_f = _0xf47aef_7(_0xf47aef_9);
+        if (null !== _0xf47aef_f) {
+          _0xf47aef_b.push(`\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x6d\x61\x74\x68\x2d\x62\x6c\x6f\x63\x6b\x22\x3e${_0xf47aef_1(_0xf47aef_f, !0)}\x3c\x2f\x64\x69\x76\x3e`), 
+          _0xf47aef_c += 1;
           continue;
         }
-        if (c(l, "bracket")) {
-          h += 1;
+        if (_0xf47aef_6(_0xf47aef_9, "\x62\x72\x61\x63\x6b\x65\x74")) {
+          _0xf47aef_c += 1;
           continue;
         }
-        if (l.includes("\t")) {
-          const t = [];
-          for (;h < p.length && p[h].includes("\t") && p[h].trim(); ) t.push(p[h].split(/\t+/).map(t => t.trim())), 
-          h += 1;
-          const e = Math.max(0, ...t.map(t => t.length));
-          if (t.length > 1 && e > 1) {
-            const r = t.shift();
-            u.push(`<div class="ai-table-wrap"><table><thead><tr>${Array.from({
-              length: e
-            }, (t, e) => `<th>${n(r[e] || "")}</th>`).join("")}</tr></thead><tbody>${t.map(t => `<tr>${Array.from({
-              length: e
-            }, (e, r) => `<td>${n(t[r] || "")}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`);
+        if (_0xf47aef_9.includes("\x09")) {
+          const _0xf47aef_0 = [];
+          for (;_0xf47aef_c < _0xf47aef_a.length && _0xf47aef_a[_0xf47aef_c].includes("\x09") && _0xf47aef_a[_0xf47aef_c].trim(); ) _0xf47aef_0.push(_0xf47aef_a[_0xf47aef_c].split(/\t+/).map(_0xf47aef_0 => _0xf47aef_0.trim())), 
+          _0xf47aef_c += 1;
+          const _0xf47aef_1 = Math.max(0, ..._0xf47aef_0.map(_0xf47aef_0 => _0xf47aef_0.length));
+          if (_0xf47aef_0.length > 1 && _0xf47aef_1 > 1) {
+            const _0xf47aef_3 = _0xf47aef_0.shift();
+            _0xf47aef_b.push(`\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x74\x61\x62\x6c\x65\x2d\x77\x72\x61\x70\x22\x3e\x3c\x74\x61\x62\x6c\x65\x3e\x3c\x74\x68\x65\x61\x64\x3e\x3c\x74\x72\x3e${Array.from({
+              length: _0xf47aef_1
+            }, (_0xf47aef_0, _0xf47aef_1) => `\x3c\x74\x68\x3e${_0xf47aef_2(_0xf47aef_3[_0xf47aef_1] || "")}\x3c\x2f\x74\x68\x3e`).join("")}\x3c\x2f\x74\x72\x3e\x3c\x2f\x74\x68\x65\x61\x64\x3e\x3c\x74\x62\x6f\x64\x79\x3e${_0xf47aef_0.map(_0xf47aef_0 => `\x3c\x74\x72\x3e${Array.from({
+              length: _0xf47aef_1
+            }, (_0xf47aef_1, _0xf47aef_3) => `\x3c\x74\x64\x3e${_0xf47aef_2(_0xf47aef_0[_0xf47aef_3] || "")}\x3c\x2f\x74\x64\x3e`).join("")}\x3c\x2f\x74\x72\x3e`).join("")}\x3c\x2f\x74\x62\x6f\x64\x79\x3e\x3c\x2f\x74\x61\x62\x6c\x65\x3e\x3c\x2f\x64\x69\x76\x3e`);
             continue;
           }
-          u.push(`<p>${t.flat().map(n).join("<br>")}</p>`);
+          _0xf47aef_b.push(`\x3c\x70\x3e${_0xf47aef_0.flat().map(_0xf47aef_2).join("\x3c\x62\x72\x3e")}\x3c\x2f\x70\x3e`);
           continue;
         }
-        if (l.includes("|") && s(p[h + 1] || "")) {
-          const t = r(l);
-          h += 2;
-          const e = [];
-          for (;h < p.length && p[h].includes("|") && p[h].trim(); ) e.push(r(p[h])), h += 1;
-          u.push(`<div class="ai-table-wrap"><table><thead><tr>${t.map(t => `<th>${n(t)}</th>`).join("")}</tr></thead><tbody>${e.map(e => `<tr>${t.map((t, r) => `<td>${n(e[r] || "")}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`);
+        if (_0xf47aef_9.includes("\x7c") && _0xf47aef_4(_0xf47aef_a[_0xf47aef_c + 1] || "")) {
+          const _0xf47aef_0 = _0xf47aef_3(_0xf47aef_9);
+          _0xf47aef_c += 2;
+          const _0xf47aef_1 = [];
+          for (;_0xf47aef_c < _0xf47aef_a.length && _0xf47aef_a[_0xf47aef_c].includes("\x7c") && _0xf47aef_a[_0xf47aef_c].trim(); ) _0xf47aef_1.push(_0xf47aef_3(_0xf47aef_a[_0xf47aef_c])), 
+          _0xf47aef_c += 1;
+          _0xf47aef_b.push(`\x3c\x64\x69\x76\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x74\x61\x62\x6c\x65\x2d\x77\x72\x61\x70\x22\x3e\x3c\x74\x61\x62\x6c\x65\x3e\x3c\x74\x68\x65\x61\x64\x3e\x3c\x74\x72\x3e${_0xf47aef_0.map(_0xf47aef_0 => `\x3c\x74\x68\x3e${_0xf47aef_2(_0xf47aef_0)}\x3c\x2f\x74\x68\x3e`).join("")}\x3c\x2f\x74\x72\x3e\x3c\x2f\x74\x68\x65\x61\x64\x3e\x3c\x74\x62\x6f\x64\x79\x3e${_0xf47aef_1.map(_0xf47aef_1 => `\x3c\x74\x72\x3e${_0xf47aef_0.map((_0xf47aef_0, _0xf47aef_3) => `\x3c\x74\x64\x3e${_0xf47aef_2(_0xf47aef_1[_0xf47aef_3] || "")}\x3c\x2f\x74\x64\x3e`).join("")}\x3c\x2f\x74\x72\x3e`).join("")}\x3c\x2f\x74\x62\x6f\x64\x79\x3e\x3c\x2f\x74\x61\x62\x6c\x65\x3e\x3c\x2f\x64\x69\x76\x3e`);
           continue;
         }
-        const f = l.match(/^(#{1,3})\s+(.+)$/);
-        if (f) {
-          const t = f[1].length;
-          u.push(`<h${t}>${n(f[2])}</h${t}>`), h += 1;
+        const _0xf47aef_10 = _0xf47aef_9.match(/^(#{1,3})\s+(.+)$/);
+        if (_0xf47aef_10) {
+          const _0xf47aef_0 = _0xf47aef_10[1].length;
+          _0xf47aef_b.push(`\x3c\x68${_0xf47aef_0}\x3e${_0xf47aef_2(_0xf47aef_10[2])}\x3c\x2f\x68${_0xf47aef_0}\x3e`), 
+          _0xf47aef_c += 1;
           continue;
         }
-        if (/^>\s?/.test(l)) {
-          const t = [];
-          for (;h < p.length && /^>\s?/.test(p[h]); ) t.push(p[h].replace(/^>\s?/, "")), h += 1;
-          u.push(`<blockquote>${t.map(n).join("<br>")}</blockquote>`);
+        if (/^>\s?/.test(_0xf47aef_9)) {
+          const _0xf47aef_0 = [];
+          for (;_0xf47aef_c < _0xf47aef_a.length && /^>\s?/.test(_0xf47aef_a[_0xf47aef_c]); ) _0xf47aef_0.push(_0xf47aef_a[_0xf47aef_c].replace(/^>\s?/, "")), 
+          _0xf47aef_c += 1;
+          _0xf47aef_b.push(`\x3c\x62\x6c\x6f\x63\x6b\x71\x75\x6f\x74\x65\x3e${_0xf47aef_0.map(_0xf47aef_2).join("\x3c\x62\x72\x3e")}\x3c\x2f\x62\x6c\x6f\x63\x6b\x71\x75\x6f\x74\x65\x3e`);
           continue;
         }
-        const m = /^\s*[-*+]\s+/.test(l), b = /^\s*\d+[.)]\s+/.test(l);
-        if (m || b) {
-          const t = [], e = b ? /^\s*\d+[.)]\s+/ : /^\s*[-*+]\s+/;
-          for (;h < p.length && e.test(p[h]); ) t.push(p[h].replace(e, "")), h += 1;
-          const r = b ? "ol" : "ul";
-          u.push(`<${r}>${t.map(t => `<li>${n(t)}</li>`).join("")}</${r}>`);
+        const _0xf47aef_11 = /^\s*[-*+]\s+/.test(_0xf47aef_9), _0xf47aef_12 = /^\s*\d+[.)]\s+/.test(_0xf47aef_9);
+        if (_0xf47aef_11 || _0xf47aef_12) {
+          const _0xf47aef_0 = [], _0xf47aef_1 = _0xf47aef_12 ? /^\s*\d+[.)]\s+/ : /^\s*[-*+]\s+/;
+          for (;_0xf47aef_c < _0xf47aef_a.length && _0xf47aef_1.test(_0xf47aef_a[_0xf47aef_c]); ) _0xf47aef_0.push(_0xf47aef_a[_0xf47aef_c].replace(_0xf47aef_1, "")), 
+          _0xf47aef_c += 1;
+          const _0xf47aef_3 = _0xf47aef_12 ? "\x6f\x6c" : "\x75\x6c";
+          _0xf47aef_b.push(`\x3c${_0xf47aef_3}\x3e${_0xf47aef_0.map(_0xf47aef_0 => `\x3c\x6c\x69\x3e${_0xf47aef_2(_0xf47aef_0)}\x3c\x2f\x6c\x69\x3e`).join("")}\x3c\x2f${_0xf47aef_3}\x3e`);
           continue;
         }
-        if (/^\s*(?:---+|___+)\s*$/.test(l)) {
-          u.push("<hr>"), h += 1;
+        if (/^\s*(?:---+|___+)\s*$/.test(_0xf47aef_9)) {
+          _0xf47aef_b.push("\x3c\x68\x72\x3e"), _0xf47aef_c += 1;
           continue;
         }
-        const _ = [ l ];
-        for (h += 1; h < p.length && p[h].trim() && !a(p, h); ) _.push(p[h]), h += 1;
-        u.push(`<p>${_.map(n).join("<br>")}</p>`);
+        const _0xf47aef_13 = [ _0xf47aef_9 ];
+        for (_0xf47aef_c += 1; _0xf47aef_c < _0xf47aef_a.length && _0xf47aef_a[_0xf47aef_c].trim() && !_0xf47aef_8(_0xf47aef_a, _0xf47aef_c); ) _0xf47aef_13.push(_0xf47aef_a[_0xf47aef_c]), 
+        _0xf47aef_c += 1;
+        _0xf47aef_b.push(`\x3c\x70\x3e${_0xf47aef_13.map(_0xf47aef_2).join("\x3c\x62\x72\x3e")}\x3c\x2f\x70\x3e`);
       }
-      return u.join("");
+      return _0xf47aef_b.join("");
     }
   };
 })();

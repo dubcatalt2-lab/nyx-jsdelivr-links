@@ -1,21 +1,22 @@
 !function() {
   "use strict";
-  const o = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/nyx-cat-moon.svg?v=3", e = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/nyx-cat-moon-small.svg?v=3";
+  const _0x2e4254_0 = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x6e\x79\x78\x2d\x63\x61\x74\x2d\x6d\x6f\x6f\x6e\x2e\x73\x76\x67\x3f\x76\x3d\x33", _0x2e4254_1 = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x6e\x79\x78\x2d\x63\x61\x74\x2d\x6d\x6f\x6f\x6e\x2d\x73\x6d\x61\x6c\x6c\x2e\x73\x76\x67\x3f\x76\x3d\x33";
   window.NyxLogo = {
-    apply: async function(t = "default", n = document) {
-      return n.documentElement?.style.setProperty("--nyx-themed-logo-url", 'url("' + o + '")'), 
-      n.body?.style.setProperty("--nyx-themed-logo-url", 'url("' + o + '")'), n.querySelectorAll?.('[data-nyx-logo],img[src$="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/nyx-monogram.png"],img[src$="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/nyx-logo.png"],img[src$="firefly-tab-logo-bold.png"]').forEach(t => {
-        t.dataset.nyxLogo = "true", "IMG" === t.tagName && (t.src = o), "LINK" === t.tagName && (t.href = e, 
-        t.type = "image/svg+xml");
-      }), o;
+    apply: async function(_0x2e4254_2 = "\x64\x65\x66\x61\x75\x6c\x74", _0x2e4254_3 = document) {
+      return _0x2e4254_3.documentElement?.style.setProperty("\x2d\x2d\x6e\x79\x78\x2d\x74\x68\x65\x6d\x65\x64\x2d\x6c\x6f\x67\x6f\x2d\x75\x72\x6c", "\x75\x72\x6c\x28\x22" + _0x2e4254_0 + "\x22\x29"), 
+      _0x2e4254_3.body?.style.setProperty("\x2d\x2d\x6e\x79\x78\x2d\x74\x68\x65\x6d\x65\x64\x2d\x6c\x6f\x67\x6f\x2d\x75\x72\x6c", "\x75\x72\x6c\x28\x22" + _0x2e4254_0 + "\x22\x29"), 
+      _0x2e4254_3.querySelectorAll?.("\x5b\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x6c\x6f\x67\x6f\x5d\x2c\x69\x6d\x67\x5b\x73\x72\x63\x24\x3d\x22/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x6e\x79\x78\x2d\x6d\x6f\x6e\x6f\x67\x72\x61\x6d\x2e\x70\x6e\x67\x22\x5d\x2c\x69\x6d\x67\x5b\x73\x72\x63\x24\x3d\x22/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x69\x63\x6f\x6e\x73\x2f\x6e\x79\x78\x2d\x6c\x6f\x67\x6f\x2e\x70\x6e\x67\x22\x5d\x2c\x69\x6d\x67\x5b\x73\x72\x63\x24\x3d\x22\x66\x69\x72\x65\x66\x6c\x79\x2d\x74\x61\x62\x2d\x6c\x6f\x67\x6f\x2d\x62\x6f\x6c\x64\x2e\x70\x6e\x67\x22\x5d").forEach(_0x2e4254_2 => {
+        _0x2e4254_2.dataset.nyxLogo = "\x74\x72\x75\x65", "\x49\x4d\x47" === _0x2e4254_2.tagName && (_0x2e4254_2.src = _0x2e4254_0), 
+        "\x4c\x49\x4e\x4b" === _0x2e4254_2.tagName && (_0x2e4254_2.href = _0x2e4254_1, _0x2e4254_2.type = "\x69\x6d\x61\x67\x65\x2f\x73\x76\x67\x2b\x78\x6d\x6c");
+      }), _0x2e4254_0;
     },
     themedUrl: async function() {
-      return o;
+      return _0x2e4254_0;
     },
     croppedUrl: async function() {
-      return e;
+      return _0x2e4254_1;
     },
-    source: o,
-    smallSource: e
+    source: _0x2e4254_0,
+    smallSource: _0x2e4254_1
   };
 }();
