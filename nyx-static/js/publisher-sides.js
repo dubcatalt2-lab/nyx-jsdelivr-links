@@ -17,9 +17,9 @@ export function startHomeSponsors() {
     "\x61\x64\x6b\x69\x64" !== _0x3c407f_6 || _0x3c407f_1 ? "\x61\x64\x6b\x69\x64" !== _0x3c407f_6 && _0x3c407f_1 && (_0x3c407f_1.remove(), 
     _0x3c407f_1 = null) : (_0x3c407f_1 = document.createElement("\x64\x69\x76"), _0x3c407f_1.className = "\x6e\x79\x78\x2d\x61\x64\x6b\x69\x64\x2d\x73\x70\x6f\x6e\x73\x6f\x72\x73", 
     document.body.append(_0x3c407f_1));
-    const _0x3c407f_a = [ ...document.querySelectorAll("\x2e\x62\x72\x6f\x77\x73\x65\x72\x2d\x68\x6f\x6d\x65\x2e\x6e\x79\x78\x2d\x6d\x69\x6e\x69\x6d\x61\x6c\x2d\x68\x6f\x6d\x65") ];
+    const _0x3c407f_a = [ ...document.querySelectorAll("\x2e\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2d\x68\x6f\x6d\x65\x2e\x6e\x79\x78\x2d\x6d\x69\x6e\x69\x6d\x61\x6c\x2d\x68\x6f\x6d\x65") ];
     if (_0x3c407f_1) {
-      const _0x3c407f_0 = document.querySelector("\x2e\x62\x72\x6f\x77\x73\x65\x72\x2d\x77\x69\x6e\x64\x6f\x77");
+      const _0x3c407f_0 = document.querySelector("\x2e\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2d\x77\x69\x6e\x64\x6f\x77");
       _0x3c407f_0 && (_0x3c407f_1.style.left = Math.max(0, _0x3c407f_0.getBoundingClientRect().left) + "\x70\x78"), 
       _0x3c407f_a.push(_0x3c407f_1);
     }
@@ -28,7 +28,7 @@ export function startHomeSponsors() {
         slots: [],
         attempted: !1
       });
-      const _0x3c407f_4 = _0x3c407f_0.get(_0x3c407f_2), _0x3c407f_a = _0x3c407f_2.getBoundingClientRect(), _0x3c407f_b = _0x3c407f_9 && ("\x61\x64\x6b\x69\x64" !== _0x3c407f_6 || _0x3c407f_2 === _0x3c407f_1), _0x3c407f_c = _0x3c407f_b && !document.hidden && !_0x3c407f_2.classList.contains("\x68\x69\x64\x64\x65\x6e") && (_0x3c407f_2 === _0x3c407f_1 || _0x3c407f_2.closest("\x2e\x62\x72\x6f\x77\x73\x65\x72\x2d\x77\x69\x6e\x64\x6f\x77\x2e\x62\x72\x6f\x77\x73\x65\x72\x2d\x62\x6c\x61\x6e\x6b")) && _0x3c407f_a.width >= 900 && _0x3c407f_a.height >= 520 && "\x68\x69\x64\x64\x65\x6e" !== getComputedStyle(_0x3c407f_2).visibility && !document.body.classList.contains("\x6e\x79\x78\x2d\x6c\x6f\x61\x64\x69\x6e\x67\x2d\x61\x63\x74\x69\x76\x65");
+      const _0x3c407f_4 = _0x3c407f_0.get(_0x3c407f_2), _0x3c407f_a = _0x3c407f_2.getBoundingClientRect(), _0x3c407f_b = _0x3c407f_9 && ("\x61\x64\x6b\x69\x64" !== _0x3c407f_6 || _0x3c407f_2 === _0x3c407f_1), _0x3c407f_c = _0x3c407f_b && !document.hidden && !_0x3c407f_2.classList.contains("\x68\x69\x64\x64\x65\x6e") && (_0x3c407f_2 === _0x3c407f_1 || _0x3c407f_2.closest("\x2e\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2d\x77\x69\x6e\x64\x6f\x77\x2e\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2d\x62\x6c\x61\x6e\x6b")) && _0x3c407f_a.width >= 900 && _0x3c407f_a.height >= 520 && "\x68\x69\x64\x64\x65\x6e" !== getComputedStyle(_0x3c407f_2).visibility && !document.body.classList.contains("\x6e\x79\x78\x2d\x6c\x6f\x61\x64\x69\x6e\x67\x2d\x61\x63\x74\x69\x76\x65");
       if (_0x3c407f_b) {
         for (const _0x3c407f_0 of _0x3c407f_4.slots) _0x3c407f_0.host.hidden = !_0x3c407f_c || _0x3c407f_0.failed;
         _0x3c407f_c && !_0x3c407f_4.attempted && (_0x3c407f_4.attempted = !0, _0xe3575c_3.homeBanners.forEach((_0x3c407f_1, _0x3c407f_6) => {

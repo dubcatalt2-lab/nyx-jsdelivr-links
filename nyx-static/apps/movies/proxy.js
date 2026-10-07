@@ -10,15 +10,15 @@ const _0x099e7a_0 = _0x099e7a_0 => {
   if (_0x099e7a_0?.aborted) throw _0x099e7a_0.reason || new DOMException("\x43\x61\x6e\x63\x65\x6c\x6c\x65\x64", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72");
 };
 
-export async function launchMovieProxy(_0x099e7a_2, _0x099e7a_3, _0x099e7a_4, {recover: _0x099e7a_5 = !1} = {}) {
-  if (_0x099e7a_1(_0x099e7a_4), !_0x984456_1(_0x099e7a_3) || "\x61\x6c\x6c\x6f\x77\x2d\x73\x63\x72\x69\x70\x74\x73\x20\x61\x6c\x6c\x6f\x77\x2d\x73\x61\x6d\x65\x2d\x6f\x72\x69\x67\x69\x6e\x20\x61\x6c\x6c\x6f\x77\x2d\x66\x6f\x72\x6d\x73\x20\x61\x6c\x6c\x6f\x77\x2d\x70\x72\x65\x73\x65\x6e\x74\x61\x74\x69\x6f\x6e" !== _0x099e7a_2.getAttribute("\x73\x61\x6e\x64\x62\x6f\x78")) throw Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x6d\x6f\x76\x69\x65\x20\x70\x72\x6f\x78\x79\x20\x72\x65\x71\x75\x65\x73\x74\x2e");
+export async function launchMovieConnection(_0x099e7a_2, _0x099e7a_3, _0x099e7a_4, {recover: _0x099e7a_5 = !1} = {}) {
+  if (_0x099e7a_1(_0x099e7a_4), !_0x984456_1(_0x099e7a_3) || "\x61\x6c\x6c\x6f\x77\x2d\x73\x63\x72\x69\x70\x74\x73\x20\x61\x6c\x6c\x6f\x77\x2d\x73\x61\x6d\x65\x2d\x6f\x72\x69\x67\x69\x6e\x20\x61\x6c\x6c\x6f\x77\x2d\x66\x6f\x72\x6d\x73\x20\x61\x6c\x6c\x6f\x77\x2d\x70\x72\x65\x73\x65\x6e\x74\x61\x74\x69\x6f\x6e" !== _0x099e7a_2.getAttribute("\x73\x61\x6e\x64\x62\x6f\x78")) throw Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x6d\x6f\x76\x69\x65\x20\x70\x6c\x61\x79\x62\x61\x63\x6b\x20\x72\x65\x71\x75\x65\x73\x74\x2e");
   if (window.parent !== window && "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof parent.nyxLaunchMovieFrame) return void await parent.nyxLaunchMovieFrame(_0x099e7a_2, _0x099e7a_3, {
     signal: _0x099e7a_4,
     recover: _0x099e7a_5
   });
-  const {loadProxyScript: _0x099e7a_6} = await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x6a\x73\x2f\x40\x72\x63\x65\x64\x31\x65\x63\x32\x30\x62\x30\x63\x62\x63\x66\x32\x34\x34\x64\x37\x33\x37\x37\x66\x37\x21\x2e\x6a\x73"));
+  const {loadConnectionScript: _0x099e7a_6} = await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x6a\x73\x2f\x40\x72\x63\x65\x64\x31\x65\x63\x32\x30\x62\x30\x63\x62\x63\x66\x32\x34\x34\x64\x37\x33\x37\x37\x66\x37\x21\x2e\x6a\x73"));
   globalThis.__NYX_RUNTIME_CONFIG__ || await _0x099e7a_6("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x72\x75\x6e\x74\x69\x6d\x65\x2d\x63\x6f\x6e\x66\x69\x67\x2e\x6a\x73", () => !!globalThis.__NYX_RUNTIME_CONFIG__);
-  const {browse: _0x099e7a_7, closeBrowser: _0x099e7a_8} = await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x74\x75\x74\x73\x69\x2f\x40\x72\x32\x39\x33\x31\x66\x64\x31\x63\x65\x64\x31\x66\x38\x32\x38\x39\x31\x65\x32\x31\x65\x61\x35\x65\x21\x2e\x6a\x73"));
+  const {explore: _0x099e7a_7, closeWorkspace: _0x099e7a_8} = await (import("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x70\x73\x2f\x74\x75\x74\x73\x69\x2f\x40\x72\x32\x39\x33\x31\x66\x64\x31\x63\x65\x64\x31\x66\x38\x32\x38\x39\x31\x65\x32\x31\x65\x61\x35\x65\x21\x2e\x6a\x73"));
   if (_0x099e7a_1(_0x099e7a_4), !_0x099e7a_2.isConnected) return;
   _0x099e7a_5 && _0x099e7a_8(_0x099e7a_2);
   const _0x099e7a_9 = () => _0x099e7a_8(_0x099e7a_2);
@@ -55,7 +55,7 @@ export async function launchMovieProxy(_0x099e7a_2, _0x099e7a_3, _0x099e7a_4, {r
   }
 }
 
-export function inspectMovieProxy(_0x099e7a_0) {
+export function inspectMovieConnection(_0x099e7a_0) {
   const _0x099e7a_1 = [ {
     frame: _0x099e7a_0,
     depth: 0,
@@ -135,12 +135,14 @@ function _0x099e7a_2(_0x099e7a_0) {
   return null;
 }
 
-export function canStartMovieProxy(_0x099e7a_0) {
+export function canStartMovieConnection(_0x099e7a_0) {
   return Boolean(_0x099e7a_2(_0x099e7a_0));
 }
 
-export async function startMovieProxy(_0x099e7a_0) {
+export async function startMovieConnection(_0x099e7a_0) {
   const _0x099e7a_1 = _0x099e7a_2(_0x099e7a_0);
   if (!_0x099e7a_1) throw Error("\x54\x68\x65\x20\x70\x6c\x61\x79\x65\x72\x20\x69\x73\x20\x73\x74\x69\x6c\x6c\x20\x6c\x6f\x61\x64\x69\x6e\x67\x2e");
   await _0x099e7a_1();
 }
+
+export { launchMovieConnection as \u{6c}\u{61}\u{75}\u{6e}\u{63}\u{68}\u{4d}\u{6f}\u{76}\u{69}\u{65}\u{50}\u{72}\u{6f}\u{78}\u{79}, inspectMovieConnection as \u{69}\u{6e}\u{73}\u{70}\u{65}\u{63}\u{74}\u{4d}\u{6f}\u{76}\u{69}\u{65}\u{50}\u{72}\u{6f}\u{78}\u{79}, canStartMovieConnection as \u{63}\u{61}\u{6e}\u{53}\u{74}\u{61}\u{72}\u{74}\u{4d}\u{6f}\u{76}\u{69}\u{65}\u{50}\u{72}\u{6f}\u{78}\u{79}, startMovieConnection as \u{73}\u{74}\u{61}\u{72}\u{74}\u{4d}\u{6f}\u{76}\u{69}\u{65}\u{50}\u{72}\u{6f}\u{78}\u{79} };

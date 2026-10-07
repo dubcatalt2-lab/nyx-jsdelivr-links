@@ -600,7 +600,7 @@ html body #setupScreen[data-preview-theme=fresh] :is(
   height: var(--mini-logo);
   object-fit: contain
 }
-html body.browser-shell .setup-mini-name {
+html body.workspace-shell .setup-mini-name {
   font-family: NyxRounded,"Arial Rounded MT Bold",sans-serif!important;
   font-weight: 600!important;
   font-size: calc(var(--mini-font)*1.8);

@@ -13,11 +13,11 @@ const _0xc0ba45_0 = new Map, _0xa15090_0 = new Set;
   }
 });
 
-export function trackProxyController(_0xa15090_1) {
+export function trackConnectionController(_0xa15090_1) {
   return _0xa15090_0.add(_0xa15090_1), () => _0xa15090_0.delete(_0xa15090_1);
 }
 
-export function loadProxyScript(_0xa15090_0, _0xa15090_1, {timeoutMs: _0xa15090_2 = 2e4} = {}) {
+export function loadConnectionScript(_0xa15090_0, _0xa15090_1, {timeoutMs: _0xa15090_2 = 2e4} = {}) {
   if (_0xa15090_1()) return Promise.resolve();
   const _0xa15090_3 = new URL(_0xa15090_0, location.href).href;
   if (_0xc0ba45_0.has(_0xa15090_3)) return _0xc0ba45_0.get(_0xa15090_3);
@@ -28,9 +28,9 @@ export function loadProxyScript(_0xa15090_0, _0xa15090_1, {timeoutMs: _0xa15090_
     const _0xa15090_6 = _0xa15090_0 => {
       clearTimeout(_0xa15090_7), _0xa15090_5.onload = null, _0xa15090_5.onerror = null, 
       _0xa15090_0 ? (_0xa15090_5.remove(), _0xa15090_4(_0xa15090_0)) : _0xa15090_3();
-    }, _0xa15090_7 = setTimeout(() => _0xa15090_6(new Error("\x54\x68\x65\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x65\x6e\x67\x69\x6e\x65\x20\x74\x6f\x6f\x6b\x20\x74\x6f\x6f\x20\x6c\x6f\x6e\x67\x20\x74\x6f\x20\x6c\x6f\x61\x64\x2e\x20\x50\x6c\x65\x61\x73\x65\x20\x72\x65\x74\x72\x79\x2e")), _0xa15090_2);
-    _0xa15090_5.onload = () => _0xa15090_6(_0xa15090_1() ? null : new Error("\x54\x68\x65\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x65\x6e\x67\x69\x6e\x65\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x69\x6e\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x73\x63\x72\x69\x70\x74\x2e")), 
-    _0xa15090_5.onerror = () => _0xa15090_6(Object.assign(new Error("\x54\x68\x65\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x65\x6e\x67\x69\x6e\x65\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x2e\x20\x50\x6c\x65\x61\x73\x65\x20\x72\x65\x74\x72\x79\x2e"), {
+    }, _0xa15090_7 = setTimeout(() => _0xa15090_6(new Error("\x54\x68\x65\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x65\x6e\x67\x69\x6e\x65\x20\x74\x6f\x6f\x6b\x20\x74\x6f\x6f\x20\x6c\x6f\x6e\x67\x20\x74\x6f\x20\x6c\x6f\x61\x64\x2e\x20\x50\x6c\x65\x61\x73\x65\x20\x72\x65\x74\x72\x79\x2e")), _0xa15090_2);
+    _0xa15090_5.onload = () => _0xa15090_6(_0xa15090_1() ? null : new Error("\x54\x68\x65\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x65\x6e\x67\x69\x6e\x65\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x69\x6e\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x73\x63\x72\x69\x70\x74\x2e")), 
+    _0xa15090_5.onerror = () => _0xa15090_6(Object.assign(new Error("\x54\x68\x65\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x65\x6e\x67\x69\x6e\x65\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x6c\x6f\x61\x64\x2e\x20\x50\x6c\x65\x61\x73\x65\x20\x72\x65\x74\x72\x79\x2e"), {
       retryable: !0
     })), document.head.append(_0xa15090_5);
   }), _0xa15090_5 = _0xa15090_4().catch(_0xa15090_0 => {
@@ -42,9 +42,11 @@ export function loadProxyScript(_0xa15090_0, _0xa15090_1, {timeoutMs: _0xa15090_
   return _0xc0ba45_0.set(_0xa15090_3, _0xa15090_5), _0xa15090_5;
 }
 
-export function waitForProxyController(_0xa15090_0, _0xa15090_1 = 2e4) {
+export function waitForConnectionController(_0xa15090_0, _0xa15090_1 = 2e4) {
   let _0xa15090_2;
   return Promise.race([ _0xa15090_0.wait(), new Promise((_0xa15090_0, _0xa15090_3) => {
-    _0xa15090_2 = setTimeout(() => _0xa15090_3(new Error("\x54\x68\x65\x20\x62\x72\x6f\x77\x73\x65\x72\x20\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x20\x74\x6f\x6f\x6b\x20\x74\x6f\x6f\x20\x6c\x6f\x6e\x67\x20\x74\x6f\x20\x73\x74\x61\x72\x74\x2e\x20\x50\x6c\x65\x61\x73\x65\x20\x72\x65\x74\x72\x79\x2e")), _0xa15090_1);
+    _0xa15090_2 = setTimeout(() => _0xa15090_3(new Error("\x54\x68\x65\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x20\x63\x6f\x6e\x74\x72\x6f\x6c\x6c\x65\x72\x20\x74\x6f\x6f\x6b\x20\x74\x6f\x6f\x20\x6c\x6f\x6e\x67\x20\x74\x6f\x20\x73\x74\x61\x72\x74\x2e\x20\x50\x6c\x65\x61\x73\x65\x20\x72\x65\x74\x72\x79\x2e")), _0xa15090_1);
   }) ]).finally(() => clearTimeout(_0xa15090_2));
 }
+
+export { trackConnectionController as \u{74}\u{72}\u{61}\u{63}\u{6b}\u{50}\u{72}\u{6f}\u{78}\u{79}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}, loadConnectionScript as \u{6c}\u{6f}\u{61}\u{64}\u{50}\u{72}\u{6f}\u{78}\u{79}\u{53}\u{63}\u{72}\u{69}\u{70}\u{74}, waitForConnectionController as \u{77}\u{61}\u{69}\u{74}\u{46}\u{6f}\u{72}\u{50}\u{72}\u{6f}\u{78}\u{79}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72} };

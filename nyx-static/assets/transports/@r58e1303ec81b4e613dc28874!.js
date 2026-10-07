@@ -1,12 +1,12 @@
-export function headerEntries(λ90a2d343fb37) {
-  return λ90a2d343fb37 ? λ90a2d343fb37 instanceof Headers ? [ ...λ90a2d343fb37.entries() ] : "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof λ90a2d343fb37[Symbol.iterator] ? [ ...λ90a2d343fb37 ].flatMap(([λ90a2d343fb37, λfa19bd4f7c4b]) => Array.isArray(λfa19bd4f7c4b) ? λfa19bd4f7c4b.map(λfa19bd4f7c4b => [ String(λ90a2d343fb37), String(λfa19bd4f7c4b) ]) : null == λfa19bd4f7c4b ? [] : [ [ String(λ90a2d343fb37), String(λfa19bd4f7c4b) ] ]) : "\x6f\x62\x6a\x65\x63\x74" == typeof λ90a2d343fb37 ? Object.entries(λ90a2d343fb37).flatMap(([λ90a2d343fb37, λfa19bd4f7c4b]) => Array.isArray(λfa19bd4f7c4b) ? λfa19bd4f7c4b.map(λfa19bd4f7c4b => [ λ90a2d343fb37, String(λfa19bd4f7c4b) ]) : null == λfa19bd4f7c4b ? [] : [ [ λ90a2d343fb37, String(λfa19bd4f7c4b) ] ]) : [] : [];
+export function headerEntries(λ384a93abced5) {
+  return λ384a93abced5 ? λ384a93abced5 instanceof Headers ? [ ...λ384a93abced5.entries() ] : "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof λ384a93abced5[Symbol.iterator] ? [ ...λ384a93abced5 ].flatMap(([λ384a93abced5, λfb76938263c2]) => Array.isArray(λfb76938263c2) ? λfb76938263c2.map(λfb76938263c2 => [ String(λ384a93abced5), String(λfb76938263c2) ]) : null == λfb76938263c2 ? [] : [ [ String(λ384a93abced5), String(λfb76938263c2) ] ]) : "\x6f\x62\x6a\x65\x63\x74" == typeof λ384a93abced5 ? Object.entries(λ384a93abced5).flatMap(([λ384a93abced5, λfb76938263c2]) => Array.isArray(λfb76938263c2) ? λfb76938263c2.map(λfb76938263c2 => [ λ384a93abced5, String(λfb76938263c2) ]) : null == λfb76938263c2 ? [] : [ [ λ384a93abced5, String(λfb76938263c2) ] ]) : [] : [];
 }
 
-export function headerRecord(λ90a2d343fb37) {
-  const λfa19bd4f7c4b = {};
-  for (const [λ19ab52b71880, λ7efd827ab0b8] of headerEntries(λ90a2d343fb37)) {
-    const λ90a2d343fb37 = String(λ19ab52b71880).toLowerCase();
-    void 0 === λfa19bd4f7c4b[λ90a2d343fb37] ? λfa19bd4f7c4b[λ90a2d343fb37] = λ7efd827ab0b8 : Array.isArray(λfa19bd4f7c4b[λ90a2d343fb37]) ? λfa19bd4f7c4b[λ90a2d343fb37].push(λ7efd827ab0b8) : λfa19bd4f7c4b[λ90a2d343fb37] = [ λfa19bd4f7c4b[λ90a2d343fb37], λ7efd827ab0b8 ];
+export function headerRecord(λ384a93abced5) {
+  const λfb76938263c2 = {};
+  for (const [λed9e88fb93f3, λ066df3d6389d] of headerEntries(λ384a93abced5)) {
+    const λ384a93abced5 = String(λed9e88fb93f3).toLowerCase();
+    void 0 === λfb76938263c2[λ384a93abced5] ? λfb76938263c2[λ384a93abced5] = λ066df3d6389d : Array.isArray(λfb76938263c2[λ384a93abced5]) ? λfb76938263c2[λ384a93abced5].push(λ066df3d6389d) : λfb76938263c2[λ384a93abced5] = [ λfb76938263c2[λ384a93abced5], λ066df3d6389d ];
   }
-  return λfa19bd4f7c4b;
+  return λfb76938263c2;
 }

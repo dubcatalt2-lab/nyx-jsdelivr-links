@@ -7,9 +7,9 @@
     <meta name="referrer" content="no-referrer">
     <title>StudyReady</title>
     <link rel="icon" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/logo.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/owner-dashboard.css?rev=9ae3113a046b3a57">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/owner-dashboard-polish.css?rev=9ae3113a046b3a57">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/style.css?rev=9ae3113a046b3a57">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/owner-dashboard.css?rev=6a42b5fc5a98c5e5">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/owner-dashboard-polish.css?rev=6a42b5fc5a98c5e5">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/style.css?rev=6a42b5fc5a98c5e5">
     <script src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/runtime-config.js"></script>
     <script type="module" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/@r6ecd01561f253539ccfcee35!.js"></script>
     <style>html.startup-covered {
@@ -99,8 +99,8 @@ html.startup-covered body > :not(#studyready-startup):not(script) {
               data-url="https://youtube.com"><span data-icon="video"></span>YouTube</button></div>
         </div>
       </section>
-      <section id="browser" hidden>
-        <div class="browser-bar"><button id="back" class="icon" aria-label="Back" title="Back"
+      <section id="workspace" hidden>
+        <div class="workspace-bar"><button id="back" class="icon" aria-label="Back" title="Back"
             data-icon="back"></button><button id="forward" class="icon" aria-label="Forward"
             title="Forward" data-icon="forward">
           </button><button id="reload" class="icon" aria-label="Reload" title="Reload"
@@ -113,9 +113,9 @@ html.startup-covered body > :not(#studyready-startup):not(script) {
             class="sr-only" role="status"></span>
         </div>
         <div id="stage"></div>
-        <div id="browseError" hidden role="status">
+        <div id="resourceError" hidden role="status">
           <h2>This page could not load</h2>
-          <p id="browseErrorText"></p><button id="retryPage">Try again</button>
+          <p id="resourceErrorText"></p><button id="retryPage">Try again</button>
         </div>
       </section>
       <section id="games" hidden><iframe id="gamesFrame" title="Drop games"
@@ -157,8 +157,8 @@ html.startup-covered body > :not(#studyready-startup):not(script) {
           aria-describedby="closePreventionHelp">
       </label>
       <p id="closePreventionHelp" class="setting-help"> Ask before closing or leaving this tab, when
-        supported by your browser.</p><button id="blankCloak" class="setting" type="button">Open in
-        about:blank<span class="spacer"></span><span data-icon="chevron"></span></button><label
+        supported by your workspace.</p><button id="blankCloak" class="setting" type="button">Open
+        in about:blank<span class="spacer"></span><span data-icon="chevron"></span></button><label
         class="setting">Restore tabs<input id="restore" type="checkbox" role="switch"></label><label
         class="setting"> Block popups<input id="popups" type="checkbox" role="switch"
           checked="checked"></label><label class="setting">Block ads <input id="ads" type="checkbox"

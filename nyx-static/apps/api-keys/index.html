@@ -6,14 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Nyx API</title>
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/utility-shell.css?rev=9ae3113a046b3a57">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/api-keys/developer.css?rev=9ae3113a046b3a57">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/katex/katex.min.css?rev=9ae3113a046b3a57">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/utility-shell.css?rev=6a42b5fc5a98c5e5">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/api-keys/developer.css?rev=6a42b5fc5a98c5e5">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/katex/katex.min.css?rev=6a42b5fc5a98c5e5">
     <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/katex/katex.min.js"></script>
     <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@r00d54c7c2696033ea8ee0696!.js?v=20260911-format-v1">
 </script>
     <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/api-keys/@rc2b829d771fd6156d7aad300!.js?v=20260914-pooled-tokens-v1"></script>
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/obsidian.css?rev=9ae3113a046b3a57">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/obsidian.css?rev=6a42b5fc5a98c5e5">
   </head>
 
   <body class="utility-neutral">
@@ -37,8 +37,8 @@
         <p> Sign in with your Nyx account to create a key. No email address or verification is
           required. Start with <strong> 1,000 total input + output tokens</strong> , with no daily
           refill. One active key per account. Other users on your network have their own allowance.
-          Free signups are limited to three per browser per day and 30 per day across Nyx. Existing
-          keys and replacements keep their allowance. </p>
+          Free signups are limited to three per workspace per day and 30 per day across Nyx.
+          Existing keys and replacements keep their allowance. </p>
         <p>All requests share Nyx’s site spending budget and availability limits.</p>
         <p id="account"> Sign in to Nyx, then refresh this page.</p>
         <div class="actions"><a id="sign-in" href="/?nyx-api-login=1" target="_top"> Sign in to
@@ -53,8 +53,8 @@
           <p id="key"></p><button id="revoke" hidden>Revoke key</button>
         </div>
         <div id="reveal" class="control-panel" hidden>
-          <p> Copy this key now. It is shown only once. Keep it on your server, out of browser code.
-          </p><textarea id="secret" readonly="readonly" aria-label="New API key"></textarea>
+          <p> Copy this key now. It is shown only once. Keep it on your server, out of workspace
+            code.</p><textarea id="secret" readonly="readonly" aria-label="New API key"></textarea>
           <div class="actions"><button id="copy">Copy key</button><button id="dismiss"
               class="secondary">Hide key</button></div>
         </div>

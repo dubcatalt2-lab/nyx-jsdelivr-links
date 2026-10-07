@@ -47,7 +47,7 @@
       projectId: _0x4deea6_5.projectId
     }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72");
     _0x4deea6_1 = _0x4deea6_7.getAuth(_0x4deea6_8), _0x4deea6_2 = _0x4deea6_7.signInWithEmailAndPassword, 
-    _0x4deea6_3 = _0x4deea6_7.signOut, await _0x4deea6_7.setPersistence(_0x4deea6_1, _0x4deea6_7.browserLocalPersistence), 
+    _0x4deea6_3 = _0x4deea6_7.signOut, await _0x4deea6_7.setPersistence(_0x4deea6_1, _0x4deea6_7.\u{62}\u{72}\u{6f}\u{77}\u{73}\u{65}\u{72}\u{4c}\u{6f}\u{63}\u{61}\u{6c}\u{50}\u{65}\u{72}\u{73}\u{69}\u{73}\u{74}\u{65}\u{6e}\u{63}\u{65}), 
     _0x4deea6_7.onAuthStateChanged(_0x4deea6_1, _0x4deea6_1 => {
       _0x4deea6_0("\x6c\x6f\x67\x69\x6e").hidden = !!_0x4deea6_1, _0x4deea6_0("\x73\x69\x67\x6e\x65\x64\x49\x6e").hidden = !_0x4deea6_1, 
       _0x4deea6_0("\x61\x63\x63\x6f\x75\x6e\x74").textContent = _0x4deea6_1?.email || "", _0x4deea6_0("\x73\x74\x61\x74\x75\x73").textContent = "", 

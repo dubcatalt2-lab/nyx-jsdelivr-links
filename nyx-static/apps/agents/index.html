@@ -10,12 +10,12 @@
 try {  document.documentElement.dataset.theme = "\x6c\x69\x67\x68\x74" === localStorage.getItem("\x6e\x6f\x6f\x6b\x2e\x74\x68\x65\x6d\x65") ? "\x6c\x69\x67\x68\x74" : "\x64\x61\x72\x6b";
 } catch {}</script>
     <link rel="icon" type="image/svg+xml" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/agents/icons/nook.svg?v=1">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/agents/style.css?rev=9ae3113a046b3a57">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/katex/katex.min.css?rev=9ae3113a046b3a57">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/agents/style.css?rev=6a42b5fc5a98c5e5">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/katex/katex.min.css?rev=6a42b5fc5a98c5e5">
     <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/katex/katex.min.js"></script>
     <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@r00d54c7c2696033ea8ee0696!.js"></script>
     <script type="module" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/agents/@r7043b9fc94186b94f7417f52!.js?v=20261002-haiku-v1"></script>
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/agents/models.css?rev=9ae3113a046b3a57">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/agents/models.css?rev=6a42b5fc5a98c5e5">
   </head>
 
   <body class="chat-mode">
@@ -56,7 +56,7 @@ try {  document.documentElement.dataset.theme = "\x6c\x69\x67\x68\x74" === local
                 d="M20.3 4.4a19.8 19.8 0 0 0-4.9-1.5l-.6 1.2a18.4 18.4 0 0 0-5.5 0l-.6-1.2a20 20 0 0 0-4.9 1.5C.7 9 .0 13.5.4 17.9a20 20 0 0 0 6 3l1.2-2a12.7 12.7 0 0 1-1.9-.9l.5-.4a14.3 14.3 0 0 0 11.6 0l.5.4-1.9.9 1.2 2a20 20 0 0 0 6-3c.5-5.1-.8-9.6-3.3-13.5ZM8.1 15.2c-1.1 0-1.9-1-1.9-2.2s.8-2.2 1.9-2.2 1.9 1 1.9 2.2-.8 2.2-1.9 2.2Zm7.8 0c-1.1 0-1.9-1-1.9-2.2s.8-2.2 1.9-2.2 1.9 1 1.9 2.2-.8 2.2-1.9 2.2Z" />
             </svg><span>Discord</span></a><button id="themeToggle" type="button"
             aria-label="Use light mode"></button><button id="account">Sign in</button><small>Saved
-            on this browser. Temporary chats are not saved.</small>
+            on this workspace. Temporary chats are not saved.</small>
         </div>
       </aside>
       <main>
@@ -288,15 +288,15 @@ try {  document.documentElement.dataset.theme = "\x6c\x69\x67\x68\x74" === local
         </article>
         <p id="usageReset"></p>
         <p id="usageRequests" class="muted"></p>
-        <div id="otherBrowserUsage" hidden>
-          <h4>This browser's chat usage</h4>
-          <p id="currentusageTotal"></p>
-          <progress id="currentmeterTotal"></progress>
+        <div id="otherWorkspaceUsage" hidden>
+          <h4>This workspace's chat usage</h4>
+          <p id="currentusageTotal">
+          </p><progress id="currentmeterTotal"></progress>
           <p id="currentusageExpensive"></p><progress id="currentmeterExpensive">
           </progress>
           <p id="currentusageReset"></p>
         </div>
-        <p class="muted"> Accounts on one browser share 7,000 tokens over four days. Models priced
+        <p class="muted"> Accounts on one workspace share 7,000 tokens over four days. Models priced
           above $5 per million input or output tokens also share a 1,000-token cap within that pool.
           Chat and API requests use the same counters. Requests in progress reserve tokens; totals
           settle when usage is received. Account restrictions, request pacing and service spending
@@ -307,7 +307,7 @@ try {  document.documentElement.dataset.theme = "\x6c\x69\x67\x68\x74" === local
         <ol class="setup-steps">
           <li> Create a key in <strong>Keys</strong>, then copy it. For an older key, choose
             <strong>Use Nook models and allowance </strong>.</li>
-          <li>Store it on your server as <code>NOOK_API_KEY</code> . Keep it out of public browser
+          <li>Store it on your server as <code>NOOK_API_KEY</code> . Keep it out of public workspace
             code and repositories.</li>
           <li>Send a POST request to <code id="apiEndpoint"></code> with <code>Authorization: Bearer
               YOUR_KEY</code> and a model ID from the playground.</li>
@@ -334,14 +334,14 @@ try {  document.documentElement.dataset.theme = "\x6c\x69\x67\x68\x74" === local
             and approve edits or commands on your desktop. Keep the companion running. </li>
         </ol>
         <h4>Use Nook as an app</h4>
-        <p class="muted"> In Chrome, open the browser menu, then Cast, save, and share &rarr;
-          Install page as app. In Edge, open the browser menu, then More tools &rarr; Apps &rarr;
+        <p class="muted"> In Chrome, open the workspace menu, then Cast, save, and share &rarr;
+          Install page as app. In Edge, open the workspace menu, then More tools &rarr; Apps &rarr;
           Install this site as an app. This opens Nook in its own window; code tools still require
           the companion. </p>
         <p class="muted"> The response follows the chat-completions format. Use stream: true for
           supported models. A 401 means the key is invalid or revoked, 403 means access is
           restricted, and 429 means a usage or request limit was reached. Keys keep their original
-          browser pool when used from a server or another device. Replacing a key does not refill
+          workspace pool when used from a server or another device. Replacing a key does not refill
           the pool. </p>
       </section>
       <p id="keyError" role="alert"></p>

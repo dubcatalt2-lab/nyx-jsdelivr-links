@@ -254,8 +254,8 @@ footer > button {
   position: relative
 }
 #ai,
-#browser,
-#home {
+#home,
+#workspace {
   height: 100%;
   width: 100%
 }
@@ -328,7 +328,7 @@ input::placeholder {
   font-family: Georgia,serif;
   font-size: 19px
 }
-.browser-bar {
+.workspace-bar {
   height: 56px;
   border-bottom: 1px solid #383838;
   display: flex;
@@ -561,11 +561,11 @@ body.collapsed {
   #loading {
     display: none
   }
-  .browser-bar {
+  .workspace-bar {
     padding: 8px 4px;
     gap: 1px
   }
-  .browser-bar .icon {
+  .workspace-bar .icon {
     width: 30px
   }
   #address {
@@ -641,10 +641,10 @@ body.collapsed {
   border-top-style: dashed;
   border-color: #aaa
 }
-.browser-bar {
+.workspace-bar {
   position: relative
 }
-.browser-bar:has(#loading:not(:empty)):after {
+.workspace-bar:has(#loading:not(:empty)):after {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -656,7 +656,7 @@ body.collapsed {
   pointer-events: none;
   z-index: 2
 }
-.browser-bar:has(#loading:not(:empty)) {
+.workspace-bar:has(#loading:not(:empty)) {
   overflow: hidden
 }
 @keyframes drop-loading-sweep {
@@ -672,7 +672,7 @@ body.collapsed {
   :before {
     transition: none!important
   }
-  .browser-bar:has(#loading:not(:empty)):after {
+  .workspace-bar:has(#loading:not(:empty)):after {
     animation: none;
     left: 0;
     width: 100%;
@@ -783,7 +783,7 @@ body.collapsed {
   fill: #ddd;
   stroke: #ddd
 }
-#browseError {
+#resourceError {
   position: absolute;
   inset: 56px 0 0;
   background: #202020;
@@ -795,7 +795,7 @@ body.collapsed {
   text-align: center;
   z-index: 3
 }
-#browseError p {
+#resourceError p {
   color: #bbb;
   max-width: 420px;
   line-height: 1.6
@@ -811,22 +811,22 @@ body.collapsed {
   }
 }
 @media(max-width:700px) {
-  .browser-bar {
+  .workspace-bar {
     flex-wrap: wrap;
     height: 92px
   }
-  .browser-bar #addressForm {
+  .workspace-bar #addressForm {
     order: 2;
     flex-basis: 100%;
     margin: 0
   }
-  .browser-bar #bookmarkPage {
+  .workspace-bar #bookmarkPage {
     margin-left: auto
   }
   #stage {
     height: calc(100% - 92px)
   }
-  #browseError {
+  #resourceError {
     top: 92px
   }
 }

@@ -179,7 +179,7 @@ async function _0x714b6c_32() {
       authDomain: _0x73587b_1.projectId + "\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d",
       projectId: _0x73587b_1.projectId
     }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72");
-    _0x714b6c_16 = _0x73587b_3.getAuth(_0x73587b_4), await _0x73587b_3.setPersistence(_0x714b6c_16, _0x73587b_3.browserLocalPersistence), 
+    _0x714b6c_16 = _0x73587b_3.getAuth(_0x73587b_4), await _0x73587b_3.setPersistence(_0x714b6c_16, _0x73587b_3.\u{62}\u{72}\u{6f}\u{77}\u{73}\u{65}\u{72}\u{4c}\u{6f}\u{63}\u{61}\u{6c}\u{50}\u{65}\u{72}\u{73}\u{69}\u{73}\u{74}\u{65}\u{6e}\u{63}\u{65}), 
     _0x73587b_3.onAuthStateChanged(_0x714b6c_16, async _0x73587b_0 => {
       _0x73587b_9 = !1, _0x714b6c_3e();
       const _0x73587b_1 = _0x73587b_7;
@@ -219,7 +219,7 @@ _0x714b6c_b("\x63\x6f\x6e\x6e\x65\x63\x74").onclick = () => {
   try {
     document.fullscreenElement ? await document.exitFullscreen() : await _0x714b6c_b("\x73\x63\x72\x65\x65\x6e").requestFullscreen();
   } catch {
-    _0x73587b_c("\x46\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x62\x72\x6f\x77\x73\x65\x72\x2e");
+    _0x73587b_c("\x46\x75\x6c\x6c\x73\x63\x72\x65\x65\x6e\x20\x69\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2e");
   }
 }, window.addEventListener("\x70\x61\x67\x65\x68\x69\x64\x65", () => {
   _0x73587b_9 = !1, _0x714b6c_3e();

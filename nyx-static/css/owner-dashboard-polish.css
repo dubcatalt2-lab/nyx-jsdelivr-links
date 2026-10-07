@@ -683,53 +683,53 @@
   border-radius: 8px;
   background: padding-box #353640
 }
-body.browser-shell .nyx-owner-dashboard-overlay :is(button,input,select,textarea) {
+body.workspace-shell .nyx-owner-dashboard-overlay :is(button,input,select,textarea) {
   -webkit-backdrop-filter: none!important;
   backdrop-filter: none!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-header-actions button,
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-pagination button,
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-quick-actions button {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-header-actions button,
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-pagination button,
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-quick-actions button {
   background-color: #08090d!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-header-actions [data-owner-refresh] {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-header-actions [data-owner-refresh] {
   border-color: #efeff1!important;
   background-color: #f3f3f5!important;
   color: #08080a!important;
   -webkit-text-fill-color: #08080a!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-header-actions .nyx-owner-close {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-header-actions .nyx-owner-close {
   border-color: var(--owner-line)!important;
   background-color: #050609!important;
   color: var(--owner-muted)!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-metric {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-metric {
   background: #07080b!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-metric.active {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-metric.active {
   background: #0d0d13!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-role-options button,
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-row-action {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-role-options button,
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-row-action {
   background: #050609!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-role-options button.active {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-role-options button.active {
   background: #111017!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-confirm button[type=submit],
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-detail-actions button {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-confirm button[type=submit],
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-detail-actions button {
   background: #f3f3f5!important;
   color: #08080a!important;
   -webkit-text-fill-color: #08080a!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay :is(.nyx-owner-header-actions [data-owner-refresh],.nyx-owner-detail-actions button,.nyx-owner-confirm button[type=submit]) :is(span,strong,b,small) {
+body.workspace-shell .nyx-owner-dashboard-overlay :is(.nyx-owner-header-actions [data-owner-refresh],.nyx-owner-detail-actions button,.nyx-owner-confirm button[type=submit]) :is(span,strong,b,small) {
   color: #08080a!important;
   -webkit-text-fill-color: #08080a!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-action-grid button {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-action-grid button {
   background: #090a0e!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-action-grid button.danger {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-action-grid button.danger {
   background: rgba(255,125,145,.07)!important;
   color: #ffabb8!important
 }
@@ -765,7 +765,7 @@ body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-action-grid button.da
   font-weight: 700;
   line-height: 1.25
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor > .nyx-owner-custom-role-field > :is(input:not([type=color]),select) {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor > .nyx-owner-custom-role-field > :is(input:not([type=color]),select) {
   display: block;
   width: 100%!important;
   min-width: 0!important;
@@ -782,7 +782,7 @@ body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor > 
   font: 600 10px/1.2 var(--owner-display-font)!important;
   box-shadow: none!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor > .nyx-owner-custom-role-field > :is(input:not([type=color]),select):focus {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor > .nyx-owner-custom-role-field > :is(input:not([type=color]),select):focus {
   border-color: #8b839f!important;
   box-shadow: 0 0 0 2px rgba(195,184,242,.09)!important
 }
@@ -790,7 +790,7 @@ body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor > 
   grid-template-columns: 42px minmax(0,1fr)!important;
   gap: 8px!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-color-picker {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-color-picker {
   display: block!important;
   width: 42px!important;
   min-width: 42px!important;
@@ -822,7 +822,7 @@ body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-color-pic
   flex-wrap: wrap;
   gap: 8px!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-actions > button {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-actions > button {
   display: inline-flex!important;
   width: auto!important;
   min-width: 0!important;
@@ -842,20 +842,20 @@ body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-ac
   box-shadow: none!important;
   cursor: pointer
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-actions > .nyx-owner-custom-role-save {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-actions > .nyx-owner-custom-role-save {
   border-color: #efeff1!important;
   background: #f3f3f5!important;
   color: #08080a!important;
   -webkit-text-fill-color: #08080a!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-actions > .nyx-owner-custom-role-save:hover {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-actions > .nyx-owner-custom-role-save:hover {
   background: #fff!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-actions > .nyx-owner-custom-role-cancel:hover {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-actions > .nyx-owner-custom-role-cancel:hover {
   border-color: #4b4c57!important;
   background: #15161c!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-actions > button > svg {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-actions > button > svg {
   display: block!important;
   flex: 0 0 14px!important;
   width: 14px!important;
@@ -866,11 +866,11 @@ body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-editor-ac
   stroke-linecap: round;
   stroke-linejoin: round
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-row > button {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-row > button {
   font: 750 9px/1 var(--owner-display-font)!important;
   -webkit-text-fill-color: currentColor!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-row > button[data-owner-custom-role-delete] > svg {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-row > button[data-owner-custom-role-delete] > svg {
   display: block!important;
   width: 13px!important;
   height: 13px!important;
@@ -1009,7 +1009,7 @@ body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-custom-role-row > but
   stroke: currentColor;
   stroke-width: 1.8
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-global-app-form input {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-global-app-form input {
   display: block;
   width: 100%!important;
   height: 38px!important;
@@ -1023,15 +1023,15 @@ body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-global-app-form input
   font: 600 10px/1.2 var(--owner-display-font)!important;
   box-shadow: none!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-global-app-form input:focus {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-global-app-form input:focus {
   border-color: #8b839f!important;
   box-shadow: 0 0 0 2px rgba(195,184,242,.09)!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-global-app-form .nyx-owner-detail-actions button {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-global-app-form .nyx-owner-detail-actions button {
   color: #08080a!important;
   -webkit-text-fill-color: #08080a!important
 }
-body.browser-shell .nyx-owner-dashboard-overlay .nyx-owner-global-app-form .nyx-owner-detail-actions button :is(span,strong) {
+body.workspace-shell .nyx-owner-dashboard-overlay .nyx-owner-global-app-form .nyx-owner-detail-actions button :is(span,strong) {
   color: #08080a!important;
   -webkit-text-fill-color: #08080a!important
 }

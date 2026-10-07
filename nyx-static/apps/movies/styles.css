@@ -1282,14 +1282,14 @@ body.movie-backdrop-active #nyxBeamsBg,
 body.movie-backdrop-active #nyxLineWavesBg {
   visibility: hidden
 }
-#watch-area.proxy-playback .player iframe {
+#watch-area.connection-playback .player iframe {
   visibility: hidden;
   pointer-events: none
 }
-#watch-area.proxy-ready .player iframe {
+#watch-area.connection-ready .player iframe {
   visibility: visible
 }
-#start-proxy {
+#start-playback {
   width: 64px;
   height: 64px;
   display: inline-grid;
@@ -1298,19 +1298,19 @@ body.movie-backdrop-active #nyxLineWavesBg {
   background: #edf0f6;
   color: #101217
 }
-#start-proxy[hidden] {
+#start-playback[hidden] {
   display: none
 }
 .playback-row button:disabled {
   opacity: .4;
   cursor: default
 }
-#proxy-loading {
+#connection-loading {
   width: 40px;
   height: 40px;
   margin: 12px auto
 }
-#proxy-loading[hidden] {
+#connection-loading[hidden] {
   display: none
 }
 #sources-panel::-webkit-scrollbar {

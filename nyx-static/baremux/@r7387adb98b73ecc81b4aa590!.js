@@ -1,8 +1,8 @@
-!function(_5995852ff2b8, _5b8d834290ae) {
-  "\x6f\x62\x6a\x65\x63\x74" == typeof exports && "\x75\x6e\x64\x65\x66\x69\x6e\x65\x64" != typeof module ? _5b8d834290ae(exports) : "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof define && define.amd ? define([ "\x65\x78\x70\x6f\x72\x74\x73" ], _5b8d834290ae) : _5b8d834290ae((_5995852ff2b8 = "\x75\x6e\x64\x65\x66\x69\x6e\x65\x64" != typeof globalThis ? globalThis : _5995852ff2b8 || self).BareMux = {});
-}(this, function(_5995852ff2b8) {
+!function(_7bcd542fa320, _1ba4b19f22b9) {
+  "\x6f\x62\x6a\x65\x63\x74" == typeof exports && "\x75\x6e\x64\x65\x66\x69\x6e\x65\x64" != typeof module ? _1ba4b19f22b9(exports) : "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof define && define.amd ? define([ "\x65\x78\x70\x6f\x72\x74\x73" ], _1ba4b19f22b9) : _1ba4b19f22b9((_7bcd542fa320 = "\x75\x6e\x64\x65\x66\x69\x6e\x65\x64" != typeof globalThis ? globalThis : _7bcd542fa320 || self).\u{42}\u{61}\u{72}\u{65}\u{4d}\u{75}\u{78} = {});
+}(this, function(_7bcd542fa320) {
   "use strict";
-  const _5b8d834290ae = globalThis.fetch, _2f149434b242 = globalThis.SharedWorker, _7cb27c4fcb51 = globalThis.localStorage, _f620f4b69795 = globalThis.navigator.serviceWorker, _c6b8f6894827 = MessagePort.prototype.postMessage, _4f199c724125 = {
+  const _1ba4b19f22b9 = globalThis.fetch, _1c60282b51db = globalThis.SharedWorker, _3883a58e7410 = globalThis.localStorage, _e797f45c9574 = globalThis.navigator.serviceWorker, _98137bcda6f3 = MessagePort.prototype.postMessage, _98bad7a47f6e = {
     prototype: {
       send: WebSocket.prototype.send
     },
@@ -12,238 +12,238 @@
     OPEN: WebSocket.OPEN
   };
   async function c() {
-    const _5995852ff2b8 = (await self.clients.matchAll({
+    const _7bcd542fa320 = (await self.clients.matchAll({
       type: "\x77\x69\x6e\x64\x6f\x77",
       includeUncontrolled: !0
-    })).map(async _5995852ff2b8 => {
-      const _5b8d834290ae = await function(_5995852ff2b8) {
-        let _5b8d834290ae = new MessageChannel;
-        return new Promise(_2f149434b242 => {
-          _5995852ff2b8.postMessage({
+    })).map(async _7bcd542fa320 => {
+      const _1ba4b19f22b9 = await function(_7bcd542fa320) {
+        let _1ba4b19f22b9 = new MessageChannel;
+        return new Promise(_1c60282b51db => {
+          _7bcd542fa320.postMessage({
             type: "\x67\x65\x74\x50\x6f\x72\x74",
-            port: _5b8d834290ae.port2
-          }, [ _5b8d834290ae.port2 ]), _5b8d834290ae.port1.onmessage = _5995852ff2b8 => {
-            _2f149434b242(_5995852ff2b8.data);
+            port: _1ba4b19f22b9.port2
+          }, [ _1ba4b19f22b9.port2 ]), _1ba4b19f22b9.port1.onmessage = _7bcd542fa320 => {
+            _1c60282b51db(_7bcd542fa320.data);
           };
         });
-      }(_5995852ff2b8);
-      return await i(_5b8d834290ae), _5b8d834290ae;
-    }), _5b8d834290ae = Promise.race([ Promise.any(_5995852ff2b8), new Promise((_5995852ff2b8, _5b8d834290ae) => setTimeout(_5b8d834290ae, 1e3, new TypeError("\x74\x69\x6d\x65\x6f\x75\x74"))) ]);
+      }(_7bcd542fa320);
+      return await i(_1ba4b19f22b9), _1ba4b19f22b9;
+    }), _1ba4b19f22b9 = Promise.race([ Promise.any(_7bcd542fa320), new Promise((_7bcd542fa320, _1ba4b19f22b9) => setTimeout(_1ba4b19f22b9, 1e3, new TypeError("\x74\x69\x6d\x65\x6f\x75\x74"))) ]);
     try {
-      return await _5b8d834290ae;
-    } catch (_5995852ff2b8) {
-      if (_5995852ff2b8 instanceof AggregateError) throw console.error("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x66\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x67\x65\x74\x20\x61\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x20\x53\x68\x61\x72\x65\x64\x57\x6f\x72\x6b\x65\x72\x20\x4d\x65\x73\x73\x61\x67\x65\x50\x6f\x72\x74\x20\x61\x73\x20\x61\x6c\x6c\x20\x63\x6c\x69\x65\x6e\x74\x73\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x69\x6e\x76\x61\x6c\x69\x64\x20\x4d\x65\x73\x73\x61\x67\x65\x50\x6f\x72\x74\x2e"), 
+      return await _1ba4b19f22b9;
+    } catch (_7bcd542fa320) {
+      if (_7bcd542fa320 instanceof AggregateError) throw console.error("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x66\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x67\x65\x74\x20\x61\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x20\x53\x68\x61\x72\x65\x64\x57\x6f\x72\x6b\x65\x72\x20\x4d\x65\x73\x73\x61\x67\x65\x50\x6f\x72\x74\x20\x61\x73\x20\x61\x6c\x6c\x20\x63\x6c\x69\x65\x6e\x74\x73\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x69\x6e\x76\x61\x6c\x69\x64\x20\x4d\x65\x73\x73\x61\x67\x65\x50\x6f\x72\x74\x2e"), 
       new Error("\x41\x6c\x6c\x20\x63\x6c\x69\x65\x6e\x74\x73\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x61\x6e\x20\x69\x6e\x76\x61\x6c\x69\x64\x20\x4d\x65\x73\x73\x61\x67\x65\x50\x6f\x72\x74\x2e", {
-        cause: _5995852ff2b8
+        cause: _7bcd542fa320
       });
       return console.warn("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x66\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x67\x65\x74\x20\x61\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x20\x53\x68\x61\x72\x65\x64\x57\x6f\x72\x6b\x65\x72\x20\x4d\x65\x73\x73\x61\x67\x65\x50\x6f\x72\x74\x20\x77\x69\x74\x68\x69\x6e\x20\x31\x73\x2c\x20\x72\x65\x74\x72\x79\x69\x6e\x67"), 
       await c();
     }
   }
-  function i(_5995852ff2b8) {
-    const _5b8d834290ae = new MessageChannel, _2f149434b242 = new Promise((_5995852ff2b8, _2f149434b242) => {
-      _5b8d834290ae.port1.onmessage = _5b8d834290ae => {
-        "\x70\x6f\x6e\x67" === _5b8d834290ae.data.type && _5995852ff2b8();
-      }, setTimeout(_2f149434b242, 1500);
+  function i(_7bcd542fa320) {
+    const _1ba4b19f22b9 = new MessageChannel, _1c60282b51db = new Promise((_7bcd542fa320, _1c60282b51db) => {
+      _1ba4b19f22b9.port1.onmessage = _1ba4b19f22b9 => {
+        "\x70\x6f\x6e\x67" === _1ba4b19f22b9.data.type && _7bcd542fa320();
+      }, setTimeout(_1c60282b51db, 1500);
     });
-    return _c6b8f6894827.call(_5995852ff2b8, {
+    return _98137bcda6f3.call(_7bcd542fa320, {
       message: {
         type: "\x70\x69\x6e\x67"
       },
-      port: _5b8d834290ae.port2
-    }, [ _5b8d834290ae.port2 ]), _2f149434b242;
+      port: _1ba4b19f22b9.port2
+    }, [ _1ba4b19f22b9.port2 ]), _1c60282b51db;
   }
-  function l(_5995852ff2b8, _5b8d834290ae) {
-    const _7cb27c4fcb51 = new _2f149434b242(_5995852ff2b8, "\x72\x69\x64\x67\x65\x77\x6f\x6f\x64\x2d\x73\x74\x65\x6d\x2d\x77\x6f\x72\x6b\x65\x72");
-    return _5b8d834290ae && _f620f4b69795.addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _5b8d834290ae => {
-      if ("\x67\x65\x74\x50\x6f\x72\x74" === _5b8d834290ae.data.type && _5b8d834290ae.data.port) {
+  function l(_7bcd542fa320, _1ba4b19f22b9) {
+    const _3883a58e7410 = new _1c60282b51db(_7bcd542fa320, "\x72\x69\x64\x67\x65\x77\x6f\x6f\x64\x2d\x73\x74\x65\x6d\x2d\x77\x6f\x72\x6b\x65\x72");
+    return _1ba4b19f22b9 && _e797f45c9574.addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _1ba4b19f22b9 => {
+      if ("\x67\x65\x74\x50\x6f\x72\x74" === _1ba4b19f22b9.data.type && _1ba4b19f22b9.data.port) {
         console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x72\x65\x63\x69\x65\x76\x65\x64\x20\x72\x65\x71\x75\x65\x73\x74\x20\x66\x6f\x72\x20\x70\x6f\x72\x74\x20\x66\x72\x6f\x6d\x20\x73\x77");
-        const _7cb27c4fcb51 = new _2f149434b242(_5995852ff2b8, "\x72\x69\x64\x67\x65\x77\x6f\x6f\x64\x2d\x73\x74\x65\x6d\x2d\x77\x6f\x72\x6b\x65\x72");
-        _c6b8f6894827.call(_5b8d834290ae.data.port, _7cb27c4fcb51.port, [ _7cb27c4fcb51.port ]);
+        const _3883a58e7410 = new _1c60282b51db(_7bcd542fa320, "\x72\x69\x64\x67\x65\x77\x6f\x6f\x64\x2d\x73\x74\x65\x6d\x2d\x77\x6f\x72\x6b\x65\x72");
+        _98137bcda6f3.call(_1ba4b19f22b9.data.port, _3883a58e7410.port, [ _3883a58e7410.port ]);
       }
-    }), _7cb27c4fcb51.port;
+    }), _3883a58e7410.port;
   }
-  let _12fb538101aa = null;
+  let _9986bd7ce69b = null;
   function d() {
-    if (null === _12fb538101aa) {
-      const _5995852ff2b8 = new MessageChannel, _5b8d834290ae = new ReadableStream;
-      let _2f149434b242;
+    if (null === _9986bd7ce69b) {
+      const _7bcd542fa320 = new MessageChannel, _1ba4b19f22b9 = new ReadableStream;
+      let _1c60282b51db;
       try {
-        _c6b8f6894827.call(_5995852ff2b8.port1, _5b8d834290ae, [ _5b8d834290ae ]), _2f149434b242 = !0;
-      } catch (_5995852ff2b8) {
-        _2f149434b242 = !1;
+        _98137bcda6f3.call(_7bcd542fa320.port1, _1ba4b19f22b9, [ _1ba4b19f22b9 ]), _1c60282b51db = !0;
+      } catch (_7bcd542fa320) {
+        _1c60282b51db = !1;
       }
-      return _12fb538101aa = _2f149434b242, _2f149434b242;
+      return _9986bd7ce69b = _1c60282b51db, _1c60282b51db;
     }
-    return _12fb538101aa;
+    return _9986bd7ce69b;
   }
   class p {
     channel;
     port;
     workerPath;
-    constructor(_5995852ff2b8) {
-      this.channel = new BroadcastChannel("\x62\x61\x72\x65\x2d\x6d\x75\x78"), _5995852ff2b8 instanceof MessagePort || _5995852ff2b8 instanceof Promise ? this.port = _5995852ff2b8 : this.createChannel(_5995852ff2b8, !0);
+    constructor(_7bcd542fa320) {
+      this.channel = new BroadcastChannel("\x62\x61\x72\x65\x2d\x6d\x75\x78"), _7bcd542fa320 instanceof MessagePort || _7bcd542fa320 instanceof Promise ? this.port = _7bcd542fa320 : this.createChannel(_7bcd542fa320, !0);
     }
-    createChannel(_5995852ff2b8, _5b8d834290ae) {
-      if (self.clients) this.port = c(), this.channel.onmessage = _5995852ff2b8 => {
-        "\x72\x65\x66\x72\x65\x73\x68\x50\x6f\x72\x74" === _5995852ff2b8.data.type && (this.port = c());
-      }; else if (_5995852ff2b8 && SharedWorker) {
-        if (!_5995852ff2b8.startsWith("\x2f") && !_5995852ff2b8.includes("\x3a")) throw new Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x55\x52\x4c\x2e\x20\x4d\x75\x73\x74\x20\x62\x65\x20\x61\x62\x73\x6f\x6c\x75\x74\x65\x20\x6f\x72\x20\x73\x74\x61\x72\x74\x20\x61\x74\x20\x74\x68\x65\x20\x72\x6f\x6f\x74\x2e");
-        this.port = l(_5995852ff2b8, _5b8d834290ae), console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x73\x65\x74\x74\x69\x6e\x67\x20\x6c\x6f\x63\x61\x6c\x53\x74\x6f\x72\x61\x67\x65\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68\x20\x74\x6f", _5995852ff2b8), 
-        _7cb27c4fcb51["\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68"] = _5995852ff2b8;
+    createChannel(_7bcd542fa320, _1ba4b19f22b9) {
+      if (self.clients) this.port = c(), this.channel.onmessage = _7bcd542fa320 => {
+        "\x72\x65\x66\x72\x65\x73\x68\x50\x6f\x72\x74" === _7bcd542fa320.data.type && (this.port = c());
+      }; else if (_7bcd542fa320 && SharedWorker) {
+        if (!_7bcd542fa320.startsWith("\x2f") && !_7bcd542fa320.includes("\x3a")) throw new Error("\x49\x6e\x76\x61\x6c\x69\x64\x20\x55\x52\x4c\x2e\x20\x4d\x75\x73\x74\x20\x62\x65\x20\x61\x62\x73\x6f\x6c\x75\x74\x65\x20\x6f\x72\x20\x73\x74\x61\x72\x74\x20\x61\x74\x20\x74\x68\x65\x20\x72\x6f\x6f\x74\x2e");
+        this.port = l(_7bcd542fa320, _1ba4b19f22b9), console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x73\x65\x74\x74\x69\x6e\x67\x20\x6c\x6f\x63\x61\x6c\x53\x74\x6f\x72\x61\x67\x65\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68\x20\x74\x6f", _7bcd542fa320), 
+        _3883a58e7410["\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68"] = _7bcd542fa320;
       } else {
         if (!SharedWorker) throw new Error("\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x67\x65\x74\x20\x61\x20\x63\x68\x61\x6e\x6e\x65\x6c\x20\x74\x6f\x20\x74\x68\x65\x20\x53\x68\x61\x72\x65\x64\x57\x6f\x72\x6b\x65\x72\x2e");
         {
-          const _5995852ff2b8 = _7cb27c4fcb51["\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68"];
-          if (console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x67\x6f\x74\x20\x6c\x6f\x63\x61\x6c\x53\x74\x6f\x72\x61\x67\x65\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68\x3a", _5995852ff2b8), !_5995852ff2b8) throw new Error("\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x67\x65\x74\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x20\x77\x6f\x72\x6b\x65\x72\x50\x61\x74\x68\x20\x66\x72\x6f\x6d\x20\x6c\x6f\x63\x61\x6c\x53\x74\x6f\x72\x61\x67\x65\x2e");
-          this.port = l(_5995852ff2b8, _5b8d834290ae);
+          const _7bcd542fa320 = _3883a58e7410["\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68"];
+          if (console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x67\x6f\x74\x20\x6c\x6f\x63\x61\x6c\x53\x74\x6f\x72\x61\x67\x65\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x70\x61\x74\x68\x3a", _7bcd542fa320), !_7bcd542fa320) throw new Error("\x55\x6e\x61\x62\x6c\x65\x20\x74\x6f\x20\x67\x65\x74\x20\x62\x61\x72\x65\x2d\x6d\x75\x78\x20\x77\x6f\x72\x6b\x65\x72\x50\x61\x74\x68\x20\x66\x72\x6f\x6d\x20\x6c\x6f\x63\x61\x6c\x53\x74\x6f\x72\x61\x67\x65\x2e");
+          this.port = l(_7bcd542fa320, _1ba4b19f22b9);
         }
       }
     }
-    async sendMessage(_5995852ff2b8, _5b8d834290ae) {
+    async sendMessage(_7bcd542fa320, _1ba4b19f22b9) {
       this.port instanceof Promise && (this.port = await this.port);
       try {
         await i(this.port);
       } catch {
         return console.warn("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x67\x65\x74\x20\x61\x20\x70\x69\x6e\x67\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x66\x72\x6f\x6d\x20\x74\x68\x65\x20\x77\x6f\x72\x6b\x65\x72\x20\x77\x69\x74\x68\x69\x6e\x20\x31\x2e\x35\x73\x2e\x20\x41\x73\x73\x75\x6d\x69\x6e\x67\x20\x70\x6f\x72\x74\x20\x69\x73\x20\x64\x65\x61\x64\x2e"), 
-        this.createChannel(), await this.sendMessage(_5995852ff2b8, _5b8d834290ae);
+        this.createChannel(), await this.sendMessage(_7bcd542fa320, _1ba4b19f22b9);
       }
-      const _2f149434b242 = new MessageChannel, _7cb27c4fcb51 = [ _2f149434b242.port2, ..._5b8d834290ae || [] ], _f620f4b69795 = new Promise((_5995852ff2b8, _5b8d834290ae) => {
-        _2f149434b242.port1.onmessage = _2f149434b242 => {
-          const _7cb27c4fcb51 = _2f149434b242.data;
-          "\x65\x72\x72\x6f\x72" === _7cb27c4fcb51.type ? _5b8d834290ae(_7cb27c4fcb51.error) : _5995852ff2b8(_7cb27c4fcb51);
+      const _1c60282b51db = new MessageChannel, _3883a58e7410 = [ _1c60282b51db.port2, ..._1ba4b19f22b9 || [] ], _e797f45c9574 = new Promise((_7bcd542fa320, _1ba4b19f22b9) => {
+        _1c60282b51db.port1.onmessage = _1c60282b51db => {
+          const _3883a58e7410 = _1c60282b51db.data;
+          "\x65\x72\x72\x6f\x72" === _3883a58e7410.type ? _1ba4b19f22b9(_3883a58e7410.error) : _7bcd542fa320(_3883a58e7410);
         };
       });
-      return _c6b8f6894827.call(this.port, {
-        message: _5995852ff2b8,
-        port: _2f149434b242.port2
-      }, _7cb27c4fcb51), await _f620f4b69795;
+      return _98137bcda6f3.call(this.port, {
+        message: _7bcd542fa320,
+        port: _1c60282b51db.port2
+      }, _3883a58e7410), await _e797f45c9574;
     }
   }
   class u extends EventTarget {
     protocols;
     url;
-    readyState=_4f199c724125.CONNECTING;
+    readyState=_98bad7a47f6e.CONNECTING;
     channel;
-    constructor(_5995852ff2b8, _5b8d834290ae = [], _2f149434b242, _7cb27c4fcb51) {
-      super(), this.protocols = _5b8d834290ae, this.url = _5995852ff2b8.toString(), this.protocols = _5b8d834290ae;
-      const s = _5995852ff2b8 => {
-        this.protocols = _5995852ff2b8, this.readyState = _4f199c724125.OPEN;
-        const _5b8d834290ae = new Event("\x6f\x70\x65\x6e");
-        this.dispatchEvent(_5b8d834290ae);
-      }, o = async _5995852ff2b8 => {
-        const _5b8d834290ae = new MessageEvent("\x6d\x65\x73\x73\x61\x67\x65", {
-          data: _5995852ff2b8
+    constructor(_7bcd542fa320, _1ba4b19f22b9 = [], _1c60282b51db, _3883a58e7410) {
+      super(), this.protocols = _1ba4b19f22b9, this.url = _7bcd542fa320.toString(), this.protocols = _1ba4b19f22b9;
+      const s = _7bcd542fa320 => {
+        this.protocols = _7bcd542fa320, this.readyState = _98bad7a47f6e.OPEN;
+        const _1ba4b19f22b9 = new Event("\x6f\x70\x65\x6e");
+        this.dispatchEvent(_1ba4b19f22b9);
+      }, o = async _7bcd542fa320 => {
+        const _1ba4b19f22b9 = new MessageEvent("\x6d\x65\x73\x73\x61\x67\x65", {
+          data: _7bcd542fa320
         });
-        this.dispatchEvent(_5b8d834290ae);
-      }, c = (_5995852ff2b8, _5b8d834290ae) => {
-        this.readyState = _4f199c724125.CLOSED;
-        const _2f149434b242 = new CloseEvent("\x63\x6c\x6f\x73\x65", {
-          code: _5995852ff2b8,
-          reason: _5b8d834290ae
+        this.dispatchEvent(_1ba4b19f22b9);
+      }, c = (_7bcd542fa320, _1ba4b19f22b9) => {
+        this.readyState = _98bad7a47f6e.CLOSED;
+        const _1c60282b51db = new CloseEvent("\x63\x6c\x6f\x73\x65", {
+          code: _7bcd542fa320,
+          reason: _1ba4b19f22b9
         });
-        this.dispatchEvent(_2f149434b242);
+        this.dispatchEvent(_1c60282b51db);
       }, i = () => {
-        this.readyState = _4f199c724125.CLOSED;
-        const _5995852ff2b8 = new Event("\x65\x72\x72\x6f\x72");
-        this.dispatchEvent(_5995852ff2b8);
+        this.readyState = _98bad7a47f6e.CLOSED;
+        const _7bcd542fa320 = new Event("\x65\x72\x72\x6f\x72");
+        this.dispatchEvent(_7bcd542fa320);
       };
-      this.channel = new MessageChannel, this.channel.port1.onmessage = _5995852ff2b8 => {
-        "\x6f\x70\x65\x6e" === _5995852ff2b8.data.type ? s(_5995852ff2b8.data.args[0]) : "\x6d\x65\x73\x73\x61\x67\x65" === _5995852ff2b8.data.type ? o(_5995852ff2b8.data.args[0]) : "\x63\x6c\x6f\x73\x65" === _5995852ff2b8.data.type ? c(_5995852ff2b8.data.args[0], _5995852ff2b8.data.args[1]) : "\x65\x72\x72\x6f\x72" === _5995852ff2b8.data.type && i();
-      }, _2f149434b242.sendMessage({
+      this.channel = new MessageChannel, this.channel.port1.onmessage = _7bcd542fa320 => {
+        "\x6f\x70\x65\x6e" === _7bcd542fa320.data.type ? s(_7bcd542fa320.data.args[0]) : "\x6d\x65\x73\x73\x61\x67\x65" === _7bcd542fa320.data.type ? o(_7bcd542fa320.data.args[0]) : "\x63\x6c\x6f\x73\x65" === _7bcd542fa320.data.type ? c(_7bcd542fa320.data.args[0], _7bcd542fa320.data.args[1]) : "\x65\x72\x72\x6f\x72" === _7bcd542fa320.data.type && i();
+      }, _1c60282b51db.sendMessage({
         type: "\x77\x65\x62\x73\x6f\x63\x6b\x65\x74",
         websocket: {
-          url: _5995852ff2b8.toString(),
-          protocols: _5b8d834290ae,
-          requestHeaders: _7cb27c4fcb51,
+          url: _7bcd542fa320.toString(),
+          protocols: _1ba4b19f22b9,
+          requestHeaders: _3883a58e7410,
           channel: this.channel.port2
         }
       }, [ this.channel.port2 ]);
     }
-    send(..._5995852ff2b8) {
-      if (this.readyState === _4f199c724125.CONNECTING) throw new DOMException("\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x65\x78\x65\x63\x75\x74\x65\x20\x27\x73\x65\x6e\x64\x27\x20\x6f\x6e\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x53\x74\x69\x6c\x6c\x20\x69\x6e\x20\x43\x4f\x4e\x4e\x45\x43\x54\x49\x4e\x47\x20\x73\x74\x61\x74\x65\x2e");
-      let _5b8d834290ae = _5995852ff2b8[0];
-      _5b8d834290ae.buffer && (_5b8d834290ae = _5b8d834290ae.buffer.slice(_5b8d834290ae.byteOffset, _5b8d834290ae.byteOffset + _5b8d834290ae.byteLength)), 
-      _c6b8f6894827.call(this.channel.port1, {
+    send(..._7bcd542fa320) {
+      if (this.readyState === _98bad7a47f6e.CONNECTING) throw new DOMException("\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x65\x78\x65\x63\x75\x74\x65\x20\x27\x73\x65\x6e\x64\x27\x20\x6f\x6e\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x53\x74\x69\x6c\x6c\x20\x69\x6e\x20\x43\x4f\x4e\x4e\x45\x43\x54\x49\x4e\x47\x20\x73\x74\x61\x74\x65\x2e");
+      let _1ba4b19f22b9 = _7bcd542fa320[0];
+      _1ba4b19f22b9.buffer && (_1ba4b19f22b9 = _1ba4b19f22b9.buffer.slice(_1ba4b19f22b9.byteOffset, _1ba4b19f22b9.byteOffset + _1ba4b19f22b9.byteLength)), 
+      _98137bcda6f3.call(this.channel.port1, {
         type: "\x64\x61\x74\x61",
-        data: _5b8d834290ae
-      }, _5b8d834290ae instanceof ArrayBuffer ? [ _5b8d834290ae ] : []);
+        data: _1ba4b19f22b9
+      }, _1ba4b19f22b9 instanceof ArrayBuffer ? [ _1ba4b19f22b9 ] : []);
     }
-    close(_5995852ff2b8, _5b8d834290ae) {
-      _c6b8f6894827.call(this.channel.port1, {
+    close(_7bcd542fa320, _1ba4b19f22b9) {
+      _98137bcda6f3.call(this.channel.port1, {
         type: "\x63\x6c\x6f\x73\x65",
-        closeCode: _5995852ff2b8,
-        closeReason: _5b8d834290ae
+        closeCode: _7bcd542fa320,
+        closeReason: _1ba4b19f22b9
       });
     }
   }
-  function w(_5995852ff2b8, _5b8d834290ae, _2f149434b242) {
-    console.error(`\x65\x72\x72\x6f\x72\x20\x77\x68\x69\x6c\x65\x20\x70\x72\x6f\x63\x65\x73\x73\x69\x6e\x67\x20\x27${_2f149434b242}\x27\x3a\x20`, _5b8d834290ae), _5995852ff2b8.postMessage({
+  function w(_7bcd542fa320, _1ba4b19f22b9, _1c60282b51db) {
+    console.error(`\x65\x72\x72\x6f\x72\x20\x77\x68\x69\x6c\x65\x20\x70\x72\x6f\x63\x65\x73\x73\x69\x6e\x67\x20\x27${_1c60282b51db}\x27\x3a\x20`, _1ba4b19f22b9), _7bcd542fa320.postMessage({
       type: "\x65\x72\x72\x6f\x72",
-      error: _5b8d834290ae
+      error: _1ba4b19f22b9
     });
   }
-  function f(_5995852ff2b8) {
-    for (let _5b8d834290ae = 0; _5b8d834290ae < _5995852ff2b8.length; _5b8d834290ae++) {
-      const _2f149434b242 = _5995852ff2b8[_5b8d834290ae];
-      if (!"\x21\x23\x24\x25\x26\x27\x2a\x2b\x2d\x2e\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5e\x5f\x60\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7c\x7e".includes(_2f149434b242)) return !1;
+  function f(_7bcd542fa320) {
+    for (let _1ba4b19f22b9 = 0; _1ba4b19f22b9 < _7bcd542fa320.length; _1ba4b19f22b9++) {
+      const _1c60282b51db = _7bcd542fa320[_1ba4b19f22b9];
+      if (!"\x21\x23\x24\x25\x26\x27\x2a\x2b\x2d\x2e\x30\x31\x32\x33\x34\x35\x36\x37\x38\x39\x41\x42\x43\x44\x45\x46\x47\x48\x49\x4a\x4b\x4c\x4d\x4e\x4f\x50\x51\x52\x53\x54\x55\x56\x57\x58\x59\x5a\x5e\x5f\x60\x61\x62\x63\x64\x65\x66\x67\x68\x69\x6a\x6b\x6c\x6d\x6e\x6f\x70\x71\x72\x73\x74\x75\x76\x77\x78\x79\x7a\x7c\x7e".includes(_1c60282b51db)) return !1;
     }
     return !0;
   }
-  const _946d8fab26c3 = [ "\x77\x73\x3a", "\x77\x73\x73\x3a" ], _3846db1e0671 = [ 101, 204, 205, 304 ], _d954d90da060 = [ 301, 302, 303, 307, 308 ];
+  const _9e426a55530e = [ "\x77\x73\x3a", "\x77\x73\x73\x3a" ], _260c3db30103 = [ 101, 204, 205, 304 ], _15223e88e131 = [ 301, 302, 303, 307, 308 ];
   class m {
     worker;
-    constructor(_5995852ff2b8) {
-      this.worker = new p(_5995852ff2b8);
+    constructor(_7bcd542fa320) {
+      this.worker = new p(_7bcd542fa320);
     }
-    createWebSocket(_5995852ff2b8, _5b8d834290ae = [], _2f149434b242, _7cb27c4fcb51) {
+    createWebSocket(_7bcd542fa320, _1ba4b19f22b9 = [], _1c60282b51db, _3883a58e7410) {
       try {
-        _5995852ff2b8 = new URL(_5995852ff2b8);
-      } catch (_5b8d834290ae) {
-        throw new DOMException(`\x46\x61\x69\x69\x6c\x65\x64\x20\x74\x6f\x20\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x54\x68\x65\x20\x55\x52\x4c\x20\x27${_5995852ff2b8}\x27\x20\x69\x73\x20\x69\x6e\x76\x61\x6c\x69\x64\x2e`);
+        _7bcd542fa320 = new URL(_7bcd542fa320);
+      } catch (_1ba4b19f22b9) {
+        throw new DOMException(`\x46\x61\x69\x69\x6c\x65\x64\x20\x74\x6f\x20\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x54\x68\x65\x20\x55\x52\x4c\x20\x27${_7bcd542fa320}\x27\x20\x69\x73\x20\x69\x6e\x76\x61\x6c\x69\x64\x2e`);
       }
-      if (!_946d8fab26c3.includes(_5995852ff2b8.protocol)) throw new DOMException(`\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x54\x68\x65\x20\x55\x52\x4c\x27\x73\x20\x73\x63\x68\x65\x6d\x65\x20\x6d\x75\x73\x74\x20\x62\x65\x20\x65\x69\x74\x68\x65\x72\x20\x27\x77\x73\x27\x20\x6f\x72\x20\x27\x77\x73\x73\x27\x2e\x20\x27${_5995852ff2b8.protocol}\x27\x20\x69\x73\x20\x6e\x6f\x74\x20\x61\x6c\x6c\x6f\x77\x65\x64\x2e`);
-      Array.isArray(_5b8d834290ae) || (_5b8d834290ae = [ _5b8d834290ae ]), _5b8d834290ae = _5b8d834290ae.map(String);
-      for (const _5995852ff2b8 of _5b8d834290ae) if (!f(_5995852ff2b8)) throw new DOMException(`\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x54\x68\x65\x20\x73\x75\x62\x70\x72\x6f\x74\x6f\x63\x6f\x6c\x20\x27${_5995852ff2b8}\x27\x20\x69\x73\x20\x69\x6e\x76\x61\x6c\x69\x64\x2e`);
-      _7cb27c4fcb51 = _7cb27c4fcb51 || {};
-      return new u(_5995852ff2b8, _5b8d834290ae, this.worker, _7cb27c4fcb51);
+      if (!_9e426a55530e.includes(_7bcd542fa320.protocol)) throw new DOMException(`\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x54\x68\x65\x20\x55\x52\x4c\x27\x73\x20\x73\x63\x68\x65\x6d\x65\x20\x6d\x75\x73\x74\x20\x62\x65\x20\x65\x69\x74\x68\x65\x72\x20\x27\x77\x73\x27\x20\x6f\x72\x20\x27\x77\x73\x73\x27\x2e\x20\x27${_7bcd542fa320.protocol}\x27\x20\x69\x73\x20\x6e\x6f\x74\x20\x61\x6c\x6c\x6f\x77\x65\x64\x2e`);
+      Array.isArray(_1ba4b19f22b9) || (_1ba4b19f22b9 = [ _1ba4b19f22b9 ]), _1ba4b19f22b9 = _1ba4b19f22b9.map(String);
+      for (const _7bcd542fa320 of _1ba4b19f22b9) if (!f(_7bcd542fa320)) throw new DOMException(`\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x63\x6f\x6e\x73\x74\x72\x75\x63\x74\x20\x27\x57\x65\x62\x53\x6f\x63\x6b\x65\x74\x27\x3a\x20\x54\x68\x65\x20\x73\x75\x62\x70\x72\x6f\x74\x6f\x63\x6f\x6c\x20\x27${_7bcd542fa320}\x27\x20\x69\x73\x20\x69\x6e\x76\x61\x6c\x69\x64\x2e`);
+      _3883a58e7410 = _3883a58e7410 || {};
+      return new u(_7bcd542fa320, _1ba4b19f22b9, this.worker, _3883a58e7410);
     }
-    async fetch(_5995852ff2b8, _2f149434b242) {
-      const _7cb27c4fcb51 = new Request(_5995852ff2b8, _2f149434b242), _f620f4b69795 = _2f149434b242?.headers || _7cb27c4fcb51.headers, _c6b8f6894827 = _f620f4b69795 instanceof Headers ? Object.fromEntries(_f620f4b69795) : _f620f4b69795, _4f199c724125 = _7cb27c4fcb51.body;
-      let _12fb538101aa = new URL(_7cb27c4fcb51.url);
-      if (_12fb538101aa.protocol.startsWith("\x62\x6c\x6f\x62\x3a")) {
-        const _5995852ff2b8 = await _5b8d834290ae(_12fb538101aa), _2f149434b242 = new Response(_5995852ff2b8.body, _5995852ff2b8);
-        return _2f149434b242.rawHeaders = Object.fromEntries(_5995852ff2b8.headers), _2f149434b242.rawResponse = {
-          body: _5995852ff2b8.body,
-          headers: Object.fromEntries(_5995852ff2b8.headers),
-          status: _5995852ff2b8.status,
-          statusText: _5995852ff2b8.statusText
-        }, _2f149434b242.finalURL = _12fb538101aa.toString(), _2f149434b242;
+    async fetch(_7bcd542fa320, _1c60282b51db) {
+      const _3883a58e7410 = new Request(_7bcd542fa320, _1c60282b51db), _e797f45c9574 = _1c60282b51db?.headers || _3883a58e7410.headers, _98137bcda6f3 = _e797f45c9574 instanceof Headers ? Object.fromEntries(_e797f45c9574) : _e797f45c9574, _98bad7a47f6e = _3883a58e7410.body;
+      let _9986bd7ce69b = new URL(_3883a58e7410.url);
+      if (_9986bd7ce69b.protocol.startsWith("\x62\x6c\x6f\x62\x3a")) {
+        const _7bcd542fa320 = await _1ba4b19f22b9(_9986bd7ce69b), _1c60282b51db = new Response(_7bcd542fa320.body, _7bcd542fa320);
+        return _1c60282b51db.rawHeaders = Object.fromEntries(_7bcd542fa320.headers), _1c60282b51db.rawResponse = {
+          body: _7bcd542fa320.body,
+          headers: Object.fromEntries(_7bcd542fa320.headers),
+          status: _7bcd542fa320.status,
+          statusText: _7bcd542fa320.statusText
+        }, _1c60282b51db.finalURL = _9986bd7ce69b.toString(), _1c60282b51db;
       }
-      for (let _5995852ff2b8 = 0; ;_5995852ff2b8++) {
-        let _5b8d834290ae = (await this.worker.sendMessage({
+      for (let _7bcd542fa320 = 0; ;_7bcd542fa320++) {
+        let _1ba4b19f22b9 = (await this.worker.sendMessage({
           type: "\x66\x65\x74\x63\x68",
           fetch: {
-            remote: _12fb538101aa.toString(),
-            method: _7cb27c4fcb51.method,
-            headers: _c6b8f6894827,
-            body: _4f199c724125 || void 0
+            remote: _9986bd7ce69b.toString(),
+            method: _3883a58e7410.method,
+            headers: _98137bcda6f3,
+            body: _98bad7a47f6e || void 0
           }
-        }, _4f199c724125 ? [ _4f199c724125 ] : [])).fetch, _f620f4b69795 = new Response(_3846db1e0671.includes(_5b8d834290ae.status) ? void 0 : _5b8d834290ae.body, {
-          headers: new Headers(_5b8d834290ae.headers),
-          status: _5b8d834290ae.status,
-          statusText: _5b8d834290ae.statusText
+        }, _98bad7a47f6e ? [ _98bad7a47f6e ] : [])).fetch, _e797f45c9574 = new Response(_260c3db30103.includes(_1ba4b19f22b9.status) ? void 0 : _1ba4b19f22b9.body, {
+          headers: new Headers(_1ba4b19f22b9.headers),
+          status: _1ba4b19f22b9.status,
+          statusText: _1ba4b19f22b9.statusText
         });
-        _f620f4b69795.rawHeaders = _5b8d834290ae.headers, _f620f4b69795.rawResponse = _5b8d834290ae, 
-        _f620f4b69795.finalURL = _12fb538101aa.toString();
-        const _946d8fab26c3 = _2f149434b242?.redirect || _7cb27c4fcb51.redirect;
-        if (!_d954d90da060.includes(_f620f4b69795.status)) return _f620f4b69795;
-        switch (_946d8fab26c3) {
+        _e797f45c9574.rawHeaders = _1ba4b19f22b9.headers, _e797f45c9574.rawResponse = _1ba4b19f22b9, 
+        _e797f45c9574.finalURL = _9986bd7ce69b.toString();
+        const _9e426a55530e = _1c60282b51db?.redirect || _3883a58e7410.redirect;
+        if (!_15223e88e131.includes(_e797f45c9574.status)) return _e797f45c9574;
+        switch (_9e426a55530e) {
          case "\x66\x6f\x6c\x6c\x6f\x77":
           {
-            const _5b8d834290ae = _f620f4b69795.headers.get("\x6c\x6f\x63\x61\x74\x69\x6f\x6e");
-            if (20 > _5995852ff2b8 && null !== _5b8d834290ae) {
-              _12fb538101aa = new URL(_5b8d834290ae, _12fb538101aa);
+            const _1ba4b19f22b9 = _e797f45c9574.headers.get("\x6c\x6f\x63\x61\x74\x69\x6f\x6e");
+            if (20 > _7bcd542fa320 && null !== _1ba4b19f22b9) {
+              _9986bd7ce69b = new URL(_1ba4b19f22b9, _9986bd7ce69b);
               continue;
             }
             throw new TypeError("\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x66\x65\x74\x63\x68");
@@ -253,106 +253,106 @@
           throw new TypeError("\x46\x61\x69\x6c\x65\x64\x20\x74\x6f\x20\x66\x65\x74\x63\x68");
 
          case "\x6d\x61\x6e\x75\x61\x6c":
-          return _f620f4b69795;
+          return _e797f45c9574;
         }
       }
     }
   }
-  console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x72\x75\x6e\x6e\x69\x6e\x67\x20\x76\x32\x2e\x31\x2e\x39\x20\x28\x62\x75\x69\x6c\x64\x20\x64\x63\x39\x64\x63\x36\x65\x29"), _5995852ff2b8.BareClient = m, 
-  _5995852ff2b8.BareMuxConnection = class {
+  console.debug("\x62\x61\x72\x65\x2d\x6d\x75\x78\x3a\x20\x72\x75\x6e\x6e\x69\x6e\x67\x20\x76\x32\x2e\x31\x2e\x39\x20\x28\x62\x75\x69\x6c\x64\x20\x64\x63\x39\x64\x63\x36\x65\x29"), _7bcd542fa320.BareClient = m, 
+  _7bcd542fa320.\u{42}\u{61}\u{72}\u{65}\u{4d}\u{75}\u{78}\u{43}\u{6f}\u{6e}\u{6e}\u{65}\u{63}\u{74}\u{69}\u{6f}\u{6e} = class {
     worker;
-    constructor(_5995852ff2b8) {
-      this.worker = new p(_5995852ff2b8);
+    constructor(_7bcd542fa320) {
+      this.worker = new p(_7bcd542fa320);
     }
     async getTransport() {
       return (await this.worker.sendMessage({
         type: "\x67\x65\x74"
       })).name;
     }
-    async setTransport(_5995852ff2b8, _5b8d834290ae, _2f149434b242) {
-      await this.setManualTransport(`\x0a\x09\x09\x09\x63\x6f\x6e\x73\x74\x20\x7b\x20\x64\x65\x66\x61\x75\x6c\x74\x3a\x20\x42\x61\x72\x65\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x20\x7d\x20\x3d\x20\x61\x77\x61\x69\x74\x20\x69\x6d\x70\x6f\x72\x74\x28\x22${_5995852ff2b8}\x22\x29\x3b\x0a\x09\x09\x09\x72\x65\x74\x75\x72\x6e\x20\x5b\x42\x61\x72\x65\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x2c\x20\x22${_5995852ff2b8}\x22\x5d\x3b\x0a\x09\x09`, _5b8d834290ae, _2f149434b242);
+    async setTransport(_7bcd542fa320, _1ba4b19f22b9, _1c60282b51db) {
+      await this.setManualTransport(`\x0a\x09\x09\x09\x63\x6f\x6e\x73\x74\x20\x7b\x20\x64\x65\x66\x61\x75\x6c\x74\x3a\x20\x42\x61\x72\x65\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x20\x7d\x20\x3d\x20\x61\x77\x61\x69\x74\x20\x69\x6d\x70\x6f\x72\x74\x28\x22${_7bcd542fa320}\x22\x29\x3b\x0a\x09\x09\x09\x72\x65\x74\x75\x72\x6e\x20\x5b\x42\x61\x72\x65\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x2c\x20\x22${_7bcd542fa320}\x22\x5d\x3b\x0a\x09\x09`, _1ba4b19f22b9, _1c60282b51db);
     }
-    async setManualTransport(_5995852ff2b8, _5b8d834290ae, _2f149434b242) {
-      if ("\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x72\x65\x6d\x6f\x74\x65" === _5995852ff2b8) throw new Error("\x55\x73\x65\x20\x73\x65\x74\x52\x65\x6d\x6f\x74\x65\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x2e");
+    async setManualTransport(_7bcd542fa320, _1ba4b19f22b9, _1c60282b51db) {
+      if ("\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x72\x65\x6d\x6f\x74\x65" === _7bcd542fa320) throw new Error("\x55\x73\x65\x20\x73\x65\x74\x52\x65\x6d\x6f\x74\x65\x54\x72\x61\x6e\x73\x70\x6f\x72\x74\x2e");
       await this.worker.sendMessage({
         type: "\x73\x65\x74",
         client: {
-          function: _5995852ff2b8,
-          args: _5b8d834290ae
+          function: _7bcd542fa320,
+          args: _1ba4b19f22b9
         }
-      }, _2f149434b242);
+      }, _1c60282b51db);
     }
-    async setRemoteTransport(_5995852ff2b8, _5b8d834290ae) {
-      const _2f149434b242 = new MessageChannel;
-      _2f149434b242.port1.onmessage = async _5b8d834290ae => {
-        const _2f149434b242 = _5b8d834290ae.data.port, _7cb27c4fcb51 = _5b8d834290ae.data.message;
-        if ("\x66\x65\x74\x63\x68" === _7cb27c4fcb51.type) try {
-          _5995852ff2b8.ready || await _5995852ff2b8.init(), await async function(_5995852ff2b8, _5b8d834290ae, _2f149434b242) {
-            const _7cb27c4fcb51 = await _2f149434b242.request(new URL(_5995852ff2b8.fetch.remote), _5995852ff2b8.fetch.method, _5995852ff2b8.fetch.body, _5995852ff2b8.fetch.headers, null);
-            if (!d() && _7cb27c4fcb51.body instanceof ReadableStream) {
-              const _5995852ff2b8 = new Response(_7cb27c4fcb51.body);
-              _7cb27c4fcb51.body = await _5995852ff2b8.arrayBuffer();
+    async setRemoteTransport(_7bcd542fa320, _1ba4b19f22b9) {
+      const _1c60282b51db = new MessageChannel;
+      _1c60282b51db.port1.onmessage = async _1ba4b19f22b9 => {
+        const _1c60282b51db = _1ba4b19f22b9.data.port, _3883a58e7410 = _1ba4b19f22b9.data.message;
+        if ("\x66\x65\x74\x63\x68" === _3883a58e7410.type) try {
+          _7bcd542fa320.ready || await _7bcd542fa320.init(), await async function(_7bcd542fa320, _1ba4b19f22b9, _1c60282b51db) {
+            const _3883a58e7410 = await _1c60282b51db.request(new URL(_7bcd542fa320.fetch.remote), _7bcd542fa320.fetch.method, _7bcd542fa320.fetch.body, _7bcd542fa320.fetch.headers, null);
+            if (!d() && _3883a58e7410.body instanceof ReadableStream) {
+              const _7bcd542fa320 = new Response(_3883a58e7410.body);
+              _3883a58e7410.body = await _7bcd542fa320.arrayBuffer();
             }
-            _7cb27c4fcb51.body instanceof ReadableStream || _7cb27c4fcb51.body instanceof ArrayBuffer ? _c6b8f6894827.call(_5b8d834290ae, {
+            _3883a58e7410.body instanceof ReadableStream || _3883a58e7410.body instanceof ArrayBuffer ? _98137bcda6f3.call(_1ba4b19f22b9, {
               type: "\x66\x65\x74\x63\x68",
-              fetch: _7cb27c4fcb51
-            }, [ _7cb27c4fcb51.body ]) : _c6b8f6894827.call(_5b8d834290ae, {
+              fetch: _3883a58e7410
+            }, [ _3883a58e7410.body ]) : _98137bcda6f3.call(_1ba4b19f22b9, {
               type: "\x66\x65\x74\x63\x68",
-              fetch: _7cb27c4fcb51
+              fetch: _3883a58e7410
             });
-          }(_7cb27c4fcb51, _2f149434b242, _5995852ff2b8);
-        } catch (_5995852ff2b8) {
-          w(_2f149434b242, _5995852ff2b8, "\x66\x65\x74\x63\x68");
-        } else if ("\x77\x65\x62\x73\x6f\x63\x6b\x65\x74" === _7cb27c4fcb51.type) try {
-          _5995852ff2b8.ready || await _5995852ff2b8.init(), await async function(_5995852ff2b8, _5b8d834290ae, _2f149434b242) {
-            const [_7cb27c4fcb51, _f620f4b69795] = _2f149434b242.connect(new URL(_5995852ff2b8.websocket.url), _5995852ff2b8.websocket.protocols, _5995852ff2b8.websocket.requestHeaders, _5b8d834290ae => {
-              _c6b8f6894827.call(_5995852ff2b8.websocket.channel, {
+          }(_3883a58e7410, _1c60282b51db, _7bcd542fa320);
+        } catch (_7bcd542fa320) {
+          w(_1c60282b51db, _7bcd542fa320, "\x66\x65\x74\x63\x68");
+        } else if ("\x77\x65\x62\x73\x6f\x63\x6b\x65\x74" === _3883a58e7410.type) try {
+          _7bcd542fa320.ready || await _7bcd542fa320.init(), await async function(_7bcd542fa320, _1ba4b19f22b9, _1c60282b51db) {
+            const [_3883a58e7410, _e797f45c9574] = _1c60282b51db.connect(new URL(_7bcd542fa320.websocket.url), _7bcd542fa320.websocket.protocols, _7bcd542fa320.websocket.requestHeaders, _1ba4b19f22b9 => {
+              _98137bcda6f3.call(_7bcd542fa320.websocket.channel, {
                 type: "\x6f\x70\x65\x6e",
-                args: [ _5b8d834290ae ]
+                args: [ _1ba4b19f22b9 ]
               });
-            }, _5b8d834290ae => {
-              _5b8d834290ae instanceof ArrayBuffer ? _c6b8f6894827.call(_5995852ff2b8.websocket.channel, {
+            }, _1ba4b19f22b9 => {
+              _1ba4b19f22b9 instanceof ArrayBuffer ? _98137bcda6f3.call(_7bcd542fa320.websocket.channel, {
                 type: "\x6d\x65\x73\x73\x61\x67\x65",
-                args: [ _5b8d834290ae ]
-              }, [ _5b8d834290ae ]) : _c6b8f6894827.call(_5995852ff2b8.websocket.channel, {
+                args: [ _1ba4b19f22b9 ]
+              }, [ _1ba4b19f22b9 ]) : _98137bcda6f3.call(_7bcd542fa320.websocket.channel, {
                 type: "\x6d\x65\x73\x73\x61\x67\x65",
-                args: [ _5b8d834290ae ]
+                args: [ _1ba4b19f22b9 ]
               });
-            }, (_5b8d834290ae, _2f149434b242) => {
-              _c6b8f6894827.call(_5995852ff2b8.websocket.channel, {
+            }, (_1ba4b19f22b9, _1c60282b51db) => {
+              _98137bcda6f3.call(_7bcd542fa320.websocket.channel, {
                 type: "\x63\x6c\x6f\x73\x65",
-                args: [ _5b8d834290ae, _2f149434b242 ]
+                args: [ _1ba4b19f22b9, _1c60282b51db ]
               });
-            }, _5b8d834290ae => {
-              _c6b8f6894827.call(_5995852ff2b8.websocket.channel, {
+            }, _1ba4b19f22b9 => {
+              _98137bcda6f3.call(_7bcd542fa320.websocket.channel, {
                 type: "\x65\x72\x72\x6f\x72",
-                args: [ _5b8d834290ae ]
+                args: [ _1ba4b19f22b9 ]
               });
             });
-            _5995852ff2b8.websocket.channel.onmessage = _5995852ff2b8 => {
-              "\x64\x61\x74\x61" === _5995852ff2b8.data.type ? _7cb27c4fcb51(_5995852ff2b8.data.data) : "\x63\x6c\x6f\x73\x65" === _5995852ff2b8.data.type && _f620f4b69795(_5995852ff2b8.data.closeCode, _5995852ff2b8.data.closeReason);
-            }, _c6b8f6894827.call(_5b8d834290ae, {
+            _7bcd542fa320.websocket.channel.onmessage = _7bcd542fa320 => {
+              "\x64\x61\x74\x61" === _7bcd542fa320.data.type ? _3883a58e7410(_7bcd542fa320.data.data) : "\x63\x6c\x6f\x73\x65" === _7bcd542fa320.data.type && _e797f45c9574(_7bcd542fa320.data.closeCode, _7bcd542fa320.data.closeReason);
+            }, _98137bcda6f3.call(_1ba4b19f22b9, {
               type: "\x77\x65\x62\x73\x6f\x63\x6b\x65\x74"
             });
-          }(_7cb27c4fcb51, _2f149434b242, _5995852ff2b8);
-        } catch (_5995852ff2b8) {
-          w(_2f149434b242, _5995852ff2b8, "\x77\x65\x62\x73\x6f\x63\x6b\x65\x74");
+          }(_3883a58e7410, _1c60282b51db, _7bcd542fa320);
+        } catch (_7bcd542fa320) {
+          w(_1c60282b51db, _7bcd542fa320, "\x77\x65\x62\x73\x6f\x63\x6b\x65\x74");
         }
       }, await this.worker.sendMessage({
         type: "\x73\x65\x74",
         client: {
           function: "\x62\x61\x72\x65\x2d\x6d\x75\x78\x2d\x72\x65\x6d\x6f\x74\x65",
-          args: [ _2f149434b242.port2, _5b8d834290ae ]
+          args: [ _1c60282b51db.port2, _1ba4b19f22b9 ]
         }
-      }, [ _2f149434b242.port2 ]);
+      }, [ _1c60282b51db.port2 ]);
     }
     getInnerPort() {
       return this.worker.port;
     }
-  }, _5995852ff2b8.BareWebSocket = u, _5995852ff2b8.WebSocketFields = _4f199c724125, 
-  _5995852ff2b8.WorkerConnection = p, _5995852ff2b8.browserSupportsTransferringStreams = d, 
-  _5995852ff2b8.default = m, _5995852ff2b8.maxRedirects = 20, _5995852ff2b8.validProtocol = f, 
-  Object.defineProperty(_5995852ff2b8, "\x5f\x5f\x65\x73\x4d\x6f\x64\x75\x6c\x65", {
+  }, _7bcd542fa320.BareWebSocket = u, _7bcd542fa320.WebSocketFields = _98bad7a47f6e, 
+  _7bcd542fa320.WorkerConnection = p, _7bcd542fa320.\u{62}\u{72}\u{6f}\u{77}\u{73}\u{65}\u{72}\u{53}\u{75}\u{70}\u{70}\u{6f}\u{72}\u{74}\u{73}\u{54}\u{72}\u{61}\u{6e}\u{73}\u{66}\u{65}\u{72}\u{72}\u{69}\u{6e}\u{67}\u{53}\u{74}\u{72}\u{65}\u{61}\u{6d}\u{73} = d, 
+  _7bcd542fa320.default = m, _7bcd542fa320.maxRedirects = 20, _7bcd542fa320.validProtocol = f, 
+  Object.defineProperty(_7bcd542fa320, "\x5f\x5f\x65\x73\x4d\x6f\x64\x75\x6c\x65", {
     value: !0
   });
 });

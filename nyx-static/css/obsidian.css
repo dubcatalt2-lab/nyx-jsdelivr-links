@@ -1,4 +1,4 @@
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=9ae3113a046b3a57");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=6a42b5fc5a98c5e5");
 :root {
   --nyx-sidebar-width: 184px;
   --nyx-chrome-height: 0px;
@@ -20,7 +20,7 @@ html[data-nyx-appearance=light] {
   --obsidian-hover: rgba(0,0,0,.055);
   color-scheme: light
 }
-html body.browser-shell {
+html body.workspace-shell {
   --bar: var(--nyx-chrome-height)!important;
   --nyx-interface-bar: var(--nyx-chrome-height)!important;
   --nyx-visual-dock-current-width: var(--nyx-sidebar-width)!important;
@@ -41,33 +41,33 @@ html body.browser-shell {
   background: var(--obsidian-bg)!important;
   color: var(--obsidian-text)
 }
-body.browser-shell.nyx-browser-chrome-visible {
+body.workspace-shell.nyx-workspace-chrome-visible {
   --nyx-chrome-height: 86px
 }
-body.browser-shell::before {
+body.workspace-shell::before {
   background: var(--obsidian-bg);
   filter: blur(1px);
   transform: scale(1.02);
   inset: 0
 }
-body.browser-shell:not(.browser-content-active)::after {
+body.workspace-shell:not(.workspace-content-active)::after {
   background: linear-gradient(145deg,rgba(8,10,14,.24),rgba(4,6,10,.4));
   box-shadow: inset 0 1px 0 rgba(255,255,255,.025)
 }
-html body.browser-shell.custom-bg-active .custom-bg-image {
+html body.workspace-shell.custom-bg-active .custom-bg-image {
   display: block!important;
   filter: blur(1px) brightness(.48) saturate(.65);
   transform: scale(1.02);
   z-index: 1
 }
-body.browser-shell :is(#nyxBeamsBg,#nyxLineWavesBg,.nyx-wave-bg,#defaultVantaBg,#rubyVantaBg,#emeraldVantaBg,#sakuraVantaBg,#whiteVantaBg) {
+body.workspace-shell :is(#nyxBeamsBg,#nyxLineWavesBg,.nyx-wave-bg,#defaultVantaBg,#rubyVantaBg,#emeraldVantaBg,#sakuraVantaBg,#whiteVantaBg) {
   filter: blur(1px) brightness(.55) saturate(.65);
   transform: scale(1.02)
 }
-html[data-nyx-appearance=light] body.browser-shell::before {
+html[data-nyx-appearance=light] body.workspace-shell::before {
   opacity: .12
 }
-html[data-nyx-appearance=light] body.browser-shell :is(#nyxBeamsBg,#nyxLineWavesBg,#customBgImage,#defaultVantaBg,#rubyVantaBg,#emeraldVantaBg,#sakuraVantaBg,#whiteVantaBg) {
+html[data-nyx-appearance=light] body.workspace-shell :is(#nyxBeamsBg,#nyxLineWavesBg,#customBgImage,#defaultVantaBg,#rubyVantaBg,#emeraldVantaBg,#sakuraVantaBg,#whiteVantaBg) {
   opacity: .14
 }
 html[data-nyx-beam-wallpaper=obsidian] body:not(.custom-bg-active)::before {
@@ -104,17 +104,17 @@ html[data-nyx-beam-wallpaper=obsidian] :is(#nyxBeamsBg,#nyxWaveBg,#nyxLineWavesB
 html[data-nyx-beam-wallpaper] #nyxWaveBg {
   display: none!important
 }
-body.browser-shell :is(.dock,.weather-restore,#desktop>.desktop-shortcuts) {
+body.workspace-shell :is(.dock,.weather-restore,#desktop>.desktop-shortcuts) {
   display: none!important
 }
-body.browser-shell #desktop {
+body.workspace-shell #desktop {
   position: fixed;
   inset: 0;
   overflow: hidden;
   zoom: 1!important;
   pointer-events: none
 }
-body.browser-shell #desktop > .window.maximized {
+body.workspace-shell #desktop > .window.maximized {
   position: fixed!important;
   top: var(--nyx-chrome-height)!important;
   left: var(--nyx-sidebar-width)!important;
@@ -138,27 +138,27 @@ body.browser-shell #desktop > .window.maximized {
   pointer-events: auto;
   transition: left var(--nyx-rail-motion),width var(--nyx-rail-motion)!important
 }
-body.browser-shell #desktop > .window.maximized::after,
-body.browser-shell #desktop > .window.maximized::before {
+body.workspace-shell #desktop > .window.maximized::after,
+body.workspace-shell #desktop > .window.maximized::before {
   display: none!important
 }
-body.browser-shell .browser-window.maximized > :is(.titlebar,.browser-tabs,.browser-tools) {
+body.workspace-shell .workspace-window.maximized > :is(.titlebar,.workspace-tabs,.workspace-tools) {
   display: none!important
 }
-body.browser-shell .browser-window.maximized .browser-body {
+body.workspace-shell .workspace-window.maximized .workspace-body {
   position: absolute;
   inset: 0;
   height: 100%;
   overflow: hidden;
   background: 0 0
 }
-body.browser-shell .browser-window.maximized .view {
+body.workspace-shell .workspace-window.maximized .view {
   inset: 0;
   width: 100%;
   height: 100%;
   border: 0
 }
-body.browser-shell .browser-window.maximized .view.active {
+body.workspace-shell .workspace-window.maximized .view.active {
   display: block
 }
 .nyx-visual-dock {
@@ -384,7 +384,7 @@ html[data-nyx-sidebar-width=collapsed] body .nyx-visual-dock #nyxAccountButton::
   outline: 1px solid var(--obsidian-text);
   outline-offset: -2px
 }
-body.browser-shell .top-os {
+body.workspace-shell .top-os {
   position: fixed;
   z-index: 2147482501;
   top: 0;
@@ -401,12 +401,12 @@ body.browser-shell .top-os {
   box-shadow: none;
   zoom: 1!important
 }
-body.browser-shell.nyx-browser-chrome-visible .top-os {
+body.workspace-shell.nyx-workspace-chrome-visible .top-os {
   display: grid;
   grid-template-columns: minmax(0,1fr) 44px;
   grid-template-rows: 40px 46px
 }
-.top-os > .browser-mode-address {
+.top-os > .workspace-mode-address {
   grid-column: 1/-1;
   grid-row: 2
 }
@@ -439,7 +439,7 @@ body.browser-shell.nyx-browser-chrome-visible .top-os {
   background: var(--obsidian-hover);
   color: var(--obsidian-text)
 }
-.nyx-browser-tab-sidebar {
+.nyx-workspace-tab-sidebar {
   display: none;
   position: fixed;
   z-index: 10000;
@@ -456,21 +456,21 @@ body.browser-shell.nyx-browser-chrome-visible .top-os {
   box-shadow: 0 15px 45px #0005;
   color: var(--obsidian-text)
 }
-.nyx-tab-sidebar-open .nyx-browser-tab-sidebar {
+.nyx-tab-sidebar-open .nyx-workspace-tab-sidebar {
   display: block
 }
-.nyx-browser-tab-sidebar header {
+.nyx-workspace-tab-sidebar header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5px 8px 10px;
   font-size: 12px
 }
-.nyx-browser-tab-sidebar header > div {
+.nyx-workspace-tab-sidebar header > div {
   display: flex;
   gap: 4px
 }
-.nyx-browser-tab-sidebar button {
+.nyx-workspace-tab-sidebar button {
   border: 0;
   border-radius: 5px;
   background: 0 0;
@@ -480,19 +480,19 @@ body.browser-shell.nyx-browser-chrome-visible .top-os {
   padding: 5px;
   box-shadow: none
 }
-.nyx-browser-tab-row:hover,
-.nyx-browser-tab-sidebar button:hover {
+.nyx-workspace-tab-row:hover,
+.nyx-workspace-tab-sidebar button:hover {
   background: var(--obsidian-hover);
   color: var(--obsidian-text)
 }
-.nyx-browser-tab-sidebar svg {
+.nyx-workspace-tab-sidebar svg {
   width: 18px;
   height: 18px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5
 }
-.nyx-browser-tab-row {
+.nyx-workspace-tab-row {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -501,46 +501,46 @@ body.browser-shell.nyx-browser-chrome-visible .top-os {
   cursor: pointer;
   font-size: 12px
 }
-.nyx-browser-tab-row.active {
+.nyx-workspace-tab-row.active {
   background: var(--obsidian-hover)
 }
-.nyx-browser-tab-row > span {
+.nyx-workspace-tab-row > span {
   display: grid;
   gap: 4px;
   flex: 1;
   min-width: 0
 }
-.nyx-browser-tab-row small,
-.nyx-browser-tab-row strong {
+.nyx-workspace-tab-row small,
+.nyx-workspace-tab-row strong {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: 400
 }
-.nyx-browser-tab-row small {
+.nyx-workspace-tab-row small {
   color: var(--obsidian-muted);
   font-size: 10px
 }
-.nyx-browser-tab-icon {
+.nyx-workspace-tab-icon {
   width: 18px;
   height: 18px;
   object-fit: contain;
   border-radius: 3px
 }
-.nyx-browser-tab-close {
+.nyx-workspace-tab-close {
   flex: none;
   font-size: 20px;
   line-height: 18px
 }
-.nyx-browser-tab-sidebar :focus-visible {
+.nyx-workspace-tab-sidebar :focus-visible {
   outline: 1px solid var(--obsidian-muted);
   outline-offset: -2px
 }
-.nyx-browser-tab-slot {
+.nyx-workspace-tab-slot {
   display: flex;
   align-items: center
 }
-.nyx-browser-tab-slot > .nyx-browser-tab-row {
+.nyx-workspace-tab-slot > .nyx-workspace-tab-row {
   flex: 1;
   min-width: 0
 }
@@ -629,7 +629,7 @@ body.browser-shell.nyx-browser-chrome-visible .top-os {
 .nyx-tab-strip .tab-drop-after {
   border-right-color: var(--obsidian-text)
 }
-body.browser-shell .top-os .browser-mode-address {
+body.workspace-shell .top-os .workspace-mode-address {
   position: relative;
   inset: auto;
   display: flex;
@@ -643,7 +643,7 @@ body.browser-shell .top-os .browser-mode-address {
   background: var(--obsidian-field);
   box-shadow: none
 }
-.browser-mode-address > button {
+.workspace-mode-address > button {
   display: grid;
   place-items: center;
   flex: none;
@@ -657,10 +657,10 @@ body.browser-shell .top-os .browser-mode-address {
   box-shadow: none;
   font-size: 17px
 }
-.browser-mode-address > button:hover {
+.workspace-mode-address > button:hover {
   background: var(--obsidian-hover)
 }
-.browser-mode-address svg {
+.workspace-mode-address svg {
   width: 18px;
   height: 18px;
   fill: none;
@@ -669,7 +669,7 @@ body.browser-shell .top-os .browser-mode-address {
   stroke-linecap: round;
   stroke-linejoin: round
 }
-.browser-mode-address .browser-mode-secure-indicator {
+.workspace-mode-address .workspace-mode-secure-indicator {
   display: grid;
   place-items: center;
   width: 28px;
@@ -677,7 +677,7 @@ body.browser-shell .top-os .browser-mode-address {
   margin-left: 6px;
   color: var(--obsidian-muted)
 }
-.browser-mode-address .browser-mode-url {
+.workspace-mode-address .workspace-mode-url {
   flex: 1;
   min-width: 0;
   height: 32px;
@@ -691,13 +691,13 @@ body.browser-shell .top-os .browser-mode-address {
   box-shadow: none;
   outline: 0
 }
-.browser-mode-address .browser-mode-url:focus {
+.workspace-mode-address .workspace-mode-url:focus {
   border-color: var(--obsidian-muted)
 }
-.browser-mode-address :is(.browser-tabs-toggle,[data-browser-shell-home-nav],[data-browser-shell-settings],[data-page-fullscreen],.browser-mode-url-pointer-border) {
+.workspace-mode-address :is(.workspace-tabs-toggle,[data-workspace-shell-home-nav],[data-workspace-shell-settings],[data-page-fullscreen],.workspace-mode-url-pointer-border) {
   display: none!important
 }
-.browser-home.nyx-minimal-home {
+.workspace-home.nyx-minimal-home {
   position: absolute;
   inset: 0;
   display: grid;
@@ -706,7 +706,7 @@ body.browser-shell .top-os .browser-mode-address {
   color: var(--obsidian-text);
   overflow: hidden
 }
-.browser-home.nyx-minimal-home.hidden {
+.workspace-home.nyx-minimal-home.hidden {
   display: none!important
 }
 .nyx-minimal-hero {
@@ -733,7 +733,7 @@ body.browser-shell .top-os .browser-mode-address {
   height: 57px;
   object-fit: contain
 }
-html body.browser-shell .nyx-minimal-brand h1 {
+html body.workspace-shell .nyx-minimal-brand h1 {
   margin: 0;
   color: var(--obsidian-text);
   font-family: NyxRounded,"Arial Rounded MT Bold",sans-serif!important;
@@ -908,7 +908,7 @@ html body.browser-shell .nyx-minimal-brand h1 {
   outline: 2px solid var(--obsidian-muted);
   outline-offset: 2px
 }
-html body.browser-shell .browser-shell-settings-overlay {
+html body.workspace-shell .workspace-shell-settings-overlay {
   position: fixed!important;
   inset: 86px 0 0 var(--nyx-sidebar-width)!important;
   width: auto!important;
@@ -917,7 +917,7 @@ html body.browser-shell .browser-shell-settings-overlay {
   zoom: 1!important;
   background: var(--obsidian-bg)!important
 }
-html body.browser-shell.browser-shell .browser-shell-settings-panel.browser-shell-settings-panel {
+html body.workspace-shell.workspace-shell .workspace-shell-settings-panel.workspace-shell-settings-panel {
   width: 100%!important;
   height: 100%!important;
   max-width: none!important;
@@ -1024,7 +1024,7 @@ html body :is(.settings-action,.settings-card button,.nyx-account-submit,.nyx-ac
   box-shadow: none!important;
   text-shadow: none!important
 }
-html body :is(.browser-mode-menu,.browser-bookmark-panel) {
+html body :is(.workspace-mode-menu,.workspace-bookmark-panel) {
   background: var(--obsidian-panel)!important;
   border: 1px solid var(--obsidian-line)!important;
   border-radius: 10px!important;
@@ -1032,7 +1032,7 @@ html body :is(.browser-mode-menu,.browser-bookmark-panel) {
   box-shadow: 0 15px 45px #0005!important;
   color: var(--obsidian-text)!important
 }
-html body .browser-mode-menu {
+html body .workspace-mode-menu {
   position: absolute;
   top: 88px!important;
   right: 12px!important;
@@ -1040,13 +1040,13 @@ html body .browser-mode-menu {
   padding: 8px;
   display: none!important
 }
-html body.menu-open .browser-mode-menu {
+html body.menu-open .workspace-mode-menu {
   display: block!important;
   opacity: 1;
   visibility: visible;
   pointer-events: auto
 }
-.browser-mode-menu button {
+.workspace-mode-menu button {
   display: block;
   width: 100%;
   padding: 10px 12px;
@@ -1056,19 +1056,19 @@ html body.menu-open .browser-mode-menu {
   color: var(--obsidian-text);
   font-size: 12px
 }
-html body.browser-shell .browser-shell-settings-panel :is(.nyx-settings-side,.nyx-color-theme-card,.nyx-wallpaper-card) {
+html body.workspace-shell .workspace-shell-settings-panel :is(.nyx-settings-side,.nyx-color-theme-card,.nyx-wallpaper-card) {
   border-color: var(--obsidian-line)!important;
   background: var(--obsidian-panel)!important
 }
-html body.browser-shell .browser-shell-settings-panel .nyx-settings-nav button.active {
+html body.workspace-shell .workspace-shell-settings-panel .nyx-settings-nav button.active {
   background: var(--obsidian-hover)!important;
   color: var(--obsidian-text)!important
 }
-body.browser-shell .top-os,
-html body.browser-shell .browser-shell-settings-overlay {
+body.workspace-shell .top-os,
+html body.workspace-shell .workspace-shell-settings-overlay {
   transition: left var(--nyx-rail-motion)
 }
-html body.browser-shell .browser-mode-address > button {
+html body.workspace-shell .workspace-mode-address > button {
   color: var(--obsidian-text)!important;
   -webkit-text-fill-color: currentColor!important;
   background: 0 0!important;
@@ -1077,42 +1077,42 @@ html body.browser-shell .browser-mode-address > button {
   box-shadow: none!important;
   transition: background-color 150ms,transform 150ms
 }
-html body.browser-shell .browser-mode-address > button:hover {
+html body.workspace-shell .workspace-mode-address > button:hover {
   background: var(--obsidian-hover)!important;
   transform: translateY(-1px)
 }
-html body.browser-shell .browser-mode-address .browser-mode-url {
+html body.workspace-shell .workspace-mode-address .workspace-mode-url {
   color: var(--obsidian-text)!important;
   -webkit-text-fill-color: var(--obsidian-text)!important;
   border-color: var(--obsidian-line)!important;
   box-shadow: none!important
 }
-html body.browser-shell .browser-mode-address .browser-mode-url::selection {
+html body.workspace-shell .workspace-mode-address .workspace-mode-url::selection {
   color: #fff;
   -webkit-text-fill-color: #fff;
   background: #3390ff
 }
-html body.browser-shell :is(.browser-mode-address>button,.nyx-home-links button):focus-visible {
+html body.workspace-shell :is(.workspace-mode-address>button,.nyx-home-links button):focus-visible {
   outline: 1px solid var(--obsidian-muted);
   outline-offset: 2px
 }
-html body.browser-shell .nyx-settings-control input[type=range] {
+html body.workspace-shell .nyx-settings-control input[type=range] {
   accent-color: #9aac9f;
   cursor: pointer
 }
-html body.browser-shell .nyx-settings-control :is(button,input,select,textarea):focus-visible {
+html body.workspace-shell .nyx-settings-control :is(button,input,select,textarea):focus-visible {
   outline: 1px solid var(--obsidian-muted)!important;
   outline-offset: 2px!important;
   border-radius: 7px
 }
-html body.browser-shell .nyx-settings-control button {
+html body.workspace-shell .nyx-settings-control button {
   padding: 8px 12px!important;
   transition: background-color 150ms,border-color 150ms!important
 }
-html body.browser-shell .nyx-settings-control :is(.nyx-wallpaper-card,.nyx-color-theme-card).selected {
+html body.workspace-shell .nyx-settings-control :is(.nyx-wallpaper-card,.nyx-color-theme-card).selected {
   border-color: var(--obsidian-muted)!important
 }
-html body.browser-shell .nyx-settings-control :is(.nyx-wallpaper-card,.nyx-color-theme-card):hover {
+html body.workspace-shell .nyx-settings-control :is(.nyx-wallpaper-card,.nyx-color-theme-card):hover {
   border-color: var(--obsidian-muted)!important;
   background: var(--obsidian-hover)!important
 }
@@ -1140,12 +1140,12 @@ html body.browser-shell .nyx-settings-control :is(.nyx-wallpaper-card,.nyx-color
     transition: none!important;
     animation: none!important
   }
-  .browser-mode-address > button,
-  .nyx-home-links button {
+  .nyx-home-links button,
+  .workspace-mode-address > button {
     transition: none!important;
     transform: none!important
   }
-  html body.browser-shell .nyx-minimal-brand h1 {
+  html body.workspace-shell .nyx-minimal-brand h1 {
     animation: none
   }
 }
@@ -1162,10 +1162,10 @@ html body.browser-shell .nyx-settings-control :is(.nyx-wallpaper-card,.nyx-color
   margin-bottom: 16px
 }
 html[data-nyx-theme=halloween] .nyx-visual-dock [data-nyx-dock-item].active,
-html[data-nyx-theme=halloween] body.browser-shell .browser-shell-settings-panel .nyx-settings-nav button.active {
+html[data-nyx-theme=halloween] body.workspace-shell .workspace-shell-settings-panel .nyx-settings-nav button.active {
   color: var(--nyx-surface-accent)!important
 }
-html[data-nyx-theme=halloween] body.browser-shell .nyx-settings-control .nyx-color-theme-card.selected {
+html[data-nyx-theme=halloween] body.workspace-shell .nyx-settings-control .nyx-color-theme-card.selected {
   border-color: var(--nyx-surface-accent)!important
 }
 .nyx-wallpaper-upload {

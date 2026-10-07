@@ -8,7 +8,7 @@ export function additionalSources(_0x0722d8_0, _0x0722d8_1, _0x0722d8_2, _0x0722
     id: _0x0722d8_0,
     name: _0x0722d8_1,
     url: _0x0722d8_2 + _0x0722d8_3 + _0x0722d8_4,
-    proxy: !0
+    \u{70}\u{72}\u{6f}\u{78}\u{79}: !0
   }));
 }
 

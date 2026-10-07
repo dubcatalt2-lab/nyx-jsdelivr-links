@@ -24,9 +24,9 @@ button {
 a {
   color: inherit
 }
-.browser-shell-page,
 .nyx-utility-tab,
-.shell-page {
+.shell-page,
+.workspace-shell-page {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;

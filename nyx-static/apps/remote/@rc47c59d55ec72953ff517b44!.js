@@ -271,7 +271,7 @@ async function _0x714b6c_32() {
       authDomain: _0xeb3350_1.projectId + "\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x61\x70\x70\x2e\x63\x6f\x6d",
       projectId: _0xeb3350_1.projectId
     }, "\x6e\x79\x78\x2d\x66\x6f\x75\x6e\x64\x65\x72\x2d\x6f\x77\x6e\x65\x72");
-    _0x714b6c_16 = _0xeb3350_3.getAuth(_0xeb3350_4), await _0xeb3350_3.setPersistence(_0x714b6c_16, _0xeb3350_3.browserLocalPersistence), 
+    _0x714b6c_16 = _0xeb3350_3.getAuth(_0xeb3350_4), await _0xeb3350_3.setPersistence(_0x714b6c_16, _0xeb3350_3.\u{62}\u{72}\u{6f}\u{77}\u{73}\u{65}\u{72}\u{4c}\u{6f}\u{63}\u{61}\u{6c}\u{50}\u{65}\u{72}\u{73}\u{69}\u{73}\u{74}\u{65}\u{6e}\u{63}\u{65}), 
     _0xeb3350_3.onAuthStateChanged(_0x714b6c_16, _0xeb3350_0 => {
       _0xeb3350_f(), clearTimeout(_0xeb3350_9);
       const _0xeb3350_1 = ++_0xeb3350_b;

@@ -10,11 +10,11 @@
     <meta name="color-scheme" content="dark">
     <title>Nyx Movies</title>
     <link rel="icon" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/nyx-cat-moon-small.svg?v=3">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/utility-shell.css?rev=9ae3113a046b3a57">
-    <link rel="stylesheet" href="./styles.css?rev=9ae3113a046b3a57">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/utility-shell.css?rev=6a42b5fc5a98c5e5">
+    <link rel="stylesheet" href="./styles.css?rev=6a42b5fc5a98c5e5">
     <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/hls.min.js"></script>
     <script type="module" src="./@r4a078bdaa48a72bfecf01c41!.js?v=20261001-halloween-v33"></script>
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/obsidian.css?rev=9ae3113a046b3a57">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/obsidian.css?rev=6a42b5fc5a98c5e5">
   </head>
 
   <body class="utility-neutral">
@@ -133,12 +133,13 @@
             title="Automatically choose source"></button>
           <ol id="source-list" aria-live="polite"></ol>
         </section>
-        <div class="watch-feedback"><span id="proxy-loading" class="spinner" role="status"
-            aria-label="Loading video" hidden></span>
-          <button id="start-proxy" type="button" class="icon-control" data-icon="play"
-            aria-label="Start video" hidden></button>
+        <div class="watch-feedback"><span id="connection-loading" class="spinner" role="status"
+            aria-label="Loading video" hidden>
+          </span><button id="start-playback" type="button" class="icon-control" data-icon="play"
+            aria-label="Start video" hidden>
+          </button>
           <p id="player-status" role="status"></p><button id="retry-player" type="button"
-            class="secondary">Reload player</button>
+            class="secondary">Reload player </button>
         </div>
         <div class="playback-controls"><label for="seek" class="sr-only">Seek through
             movie</label><input id="seek" type="range" min="0" max="100" step="0.1" value="0"

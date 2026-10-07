@@ -16,9 +16,9 @@
   font-size: 12px;
   pointer-events: none
 }
-.browser-blank .nyx-frame-loader,
-.browser-home-page .nyx-frame-loader,
-.nyx-frame-loader[aria-hidden=true] {
+.nyx-frame-loader[aria-hidden=true],
+.workspace-blank .nyx-frame-loader,
+.workspace-home-page .nyx-frame-loader {
   display: none!important
 }
 .nyx-page-spinner {
@@ -78,7 +78,7 @@
   font-size: 30px;
   letter-spacing: -.035em
 }
-body.browser-shell .nyx-release-notes h1 {
+body.workspace-shell .nyx-release-notes h1 {
   font-weight: 700!important
 }
 .nyx-release-notes h1:focus {
@@ -135,7 +135,7 @@ body.browser-shell .nyx-release-notes h1 {
 .nyx-release-greeting strong {
   font-size: 15px
 }
-body.browser-shell .nyx-release-greeting strong {
+body.workspace-shell .nyx-release-greeting strong {
   font-weight: 650!important
 }
 .nyx-release-community {

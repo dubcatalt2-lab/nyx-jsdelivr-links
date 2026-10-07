@@ -118,10 +118,10 @@ function validSource(_0x1705ee_0) {
   }
 }
 
-function proxyOwner() {
+function \u{70}\u{72}\u{6f}\u{78}\u{79}\u{4f}\u{77}\u{6e}\u{65}\u{72}() {
   let _0x1705ee_0 = window;
   for (let _0x1705ee_1 = 0; _0x1705ee_1 < 4; _0x1705ee_1++) try {
-    if ("\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x1705ee_0.nyxLaunchGameFrame || "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x1705ee_0.nyxProxyGameUrl) return _0x1705ee_0;
+    if ("\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x1705ee_0.nyxLaunchGameFrame || "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x1705ee_0.\u{6e}\u{79}\u{78}\u{50}\u{72}\u{6f}\u{78}\u{79}\u{47}\u{61}\u{6d}\u{65}\u{55}\u{72}\u{6c}) return _0x1705ee_0;
     if (_0x1705ee_0.parent === _0x1705ee_0) break;
     _0x1705ee_0 = _0x1705ee_0.parent;
   } catch {
@@ -156,7 +156,7 @@ async function launch() {
     spinner.hidden = !1, heading.textContent = "\x4f\x70\x65\x6e\x69\x6e\x67\x20\x67\x61\x6d\x65", detail.textContent = "\x50\x72\x65\x70\x61\x72\x69\x6e\x67\x20\x74\x68\x65\x20\x6f\x72\x69\x67\x69\x6e\x61\x6c\x20\x67\x61\x6d\x65\x20\x73\x6f\x75\x72\x63\x65\x20\x74\x68\x72\x6f\x75\x67\x68\x20\x4e\x79\x78\x2e", 
     retry.hidden = !0, state.hidden = !1, frame.removeAttribute("\x73\x72\x63");
     try {
-      const _0x1705ee_2 = proxyOwner(), _0x1705ee_3 = _0x1705ee_2 && "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x1705ee_2.nyxLaunchGameFrame ? await _0x1705ee_2.nyxLaunchGameFrame(frame, _0x1705ee_1) : null;
+      const _0x1705ee_2 = \u{70}\u{72}\u{6f}\u{78}\u{79}\u{4f}\u{77}\u{6e}\u{65}\u{72}(), _0x1705ee_3 = _0x1705ee_2 && "\x66\x75\x6e\x63\x74\x69\x6f\x6e" == typeof _0x1705ee_2.nyxLaunchGameFrame ? await _0x1705ee_2.nyxLaunchGameFrame(frame, _0x1705ee_1) : null;
       if (_0x1705ee_0 !== launchAttempt) return;
       if (_0x1705ee_3?.managed) return clearTimeout(launchTimer), void setTimeout(() => {
         _0x1705ee_0 === launchAttempt && (state.hidden = !0, parent.postMessage({
@@ -164,7 +164,7 @@ async function launch() {
           engine: _0x1705ee_3.engine
         }, "\x2a"));
       }, 650);
-      const _0x1705ee_4 = _0x1705ee_3?.url || (_0x1705ee_2 ? await _0x1705ee_2.nyxProxyGameUrl(_0x1705ee_1) : _0x1705ee_1);
+      const _0x1705ee_4 = _0x1705ee_3?.url || (_0x1705ee_2 ? await _0x1705ee_2.\u{6e}\u{79}\u{78}\u{50}\u{72}\u{6f}\u{78}\u{79}\u{47}\u{61}\u{6d}\u{65}\u{55}\u{72}\u{6c}(_0x1705ee_1) : _0x1705ee_1);
       if (_0x1705ee_0 !== launchAttempt) return;
       if (!_0x1705ee_4) return void fail("\x4e\x79\x78\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x70\x72\x65\x70\x61\x72\x65\x20\x74\x68\x69\x73\x20\x67\x61\x6d\x65\x20\x73\x6f\x75\x72\x63\x65\x2e");
       launchTimer = setTimeout(() => fail("\x54\x68\x65\x20\x6f\x72\x69\x67\x69\x6e\x61\x6c\x20\x67\x61\x6d\x65\x20\x68\x6f\x73\x74\x20\x64\x69\x64\x20\x6e\x6f\x74\x20\x72\x65\x73\x70\x6f\x6e\x64\x2e"), 3e4), 

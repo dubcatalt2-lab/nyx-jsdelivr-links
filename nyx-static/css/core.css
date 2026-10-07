@@ -3,7 +3,7 @@
   --bg: url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/backgrounds/nyx-blue-light-trails.jpg");
   --bg-render: var(--bg);
   --bg-enhanced-render: var(--bg-render);
-  --browser-bg-render: url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/backgrounds/nyx-blue-light-trails.jpg");
+  --workspace-bg-render: url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/backgrounds/nyx-blue-light-trails.jpg");
   --glass: rgba(8,7,13,.82);
   --glass2: rgba(190,148,255,.08);
   --glass-panel: rgba(8,7,13,.54);
@@ -102,8 +102,8 @@ body::before {
   pointer-events: none;
   user-select: none
 }
-body.browser-content-active .nyx-wave-bg,
-body.custom-bg-active .nyx-wave-bg {
+body.custom-bg-active .nyx-wave-bg,
+body.workspace-content-active .nyx-wave-bg {
   display: none
 }
 body.custom-bg-active .custom-bg-image {
@@ -244,189 +244,189 @@ body.theme-ruby .custom-bg-image,
 body.theme-sakura .custom-bg-image {
   display: none!important
 }
-body:not(.browser-shell).theme-ruby .glass-card,
-body:not(.browser-shell).theme-ruby .quick-tile,
-body:not(.browser-shell).theme-ruby .settings-card {
+body:not(.workspace-shell).theme-ruby .glass-card,
+body:not(.workspace-shell).theme-ruby .quick-tile,
+body:not(.workspace-shell).theme-ruby .settings-card {
   background: linear-gradient(145deg,rgba(248,113,113,.28),rgba(127,29,29,.42))
 }
-body:not(.browser-shell).theme-emerald .glass-card,
-body:not(.browser-shell).theme-emerald .quick-tile,
-body:not(.browser-shell).theme-emerald .settings-card {
+body:not(.workspace-shell).theme-emerald .glass-card,
+body:not(.workspace-shell).theme-emerald .quick-tile,
+body:not(.workspace-shell).theme-emerald .settings-card {
   background: linear-gradient(145deg,rgba(52,211,153,.28),rgba(6,78,59,.42))
 }
-body:not(.browser-shell).theme-sakura .glass-card,
-body:not(.browser-shell).theme-sakura .quick-tile,
-body:not(.browser-shell).theme-sakura .settings-card {
+body:not(.workspace-shell).theme-sakura .glass-card,
+body:not(.workspace-shell).theme-sakura .quick-tile,
+body:not(.workspace-shell).theme-sakura .settings-card {
   background: linear-gradient(145deg,rgba(249,168,212,.3),rgba(190,24,93,.38))
 }
-body:not(.browser-shell).theme-ruby .browser-mode-menu,
-body:not(.browser-shell).theme-ruby .settings-panel,
-body:not(.browser-shell).theme-ruby .window {
+body:not(.workspace-shell).theme-ruby .settings-panel,
+body:not(.workspace-shell).theme-ruby .window,
+body:not(.workspace-shell).theme-ruby .workspace-mode-menu {
   background: linear-gradient(145deg,rgba(254,202,202,.38),rgba(239,68,68,.28),rgba(127,29,29,.42))!important
 }
-body:not(.browser-shell).theme-emerald .browser-mode-menu,
-body:not(.browser-shell).theme-emerald .settings-panel,
-body:not(.browser-shell).theme-emerald .window {
+body:not(.workspace-shell).theme-emerald .settings-panel,
+body:not(.workspace-shell).theme-emerald .window,
+body:not(.workspace-shell).theme-emerald .workspace-mode-menu {
   background: linear-gradient(145deg,rgba(187,247,208,.34),rgba(16,185,129,.28),rgba(6,95,70,.42))!important
 }
-body:not(.browser-shell).theme-sakura .browser-mode-menu,
-body:not(.browser-shell).theme-sakura .settings-panel,
-body:not(.browser-shell).theme-sakura .window {
+body:not(.workspace-shell).theme-sakura .settings-panel,
+body:not(.workspace-shell).theme-sakura .window,
+body:not(.workspace-shell).theme-sakura .workspace-mode-menu {
   background: linear-gradient(145deg,rgba(252,231,243,.36),rgba(244,114,182,.3),rgba(190,24,93,.4))!important
 }
-body:not(.browser-shell).theme-ruby button,
-body:not(.browser-shell).theme-ruby input,
-body:not(.browser-shell).theme-ruby select {
+body:not(.workspace-shell).theme-ruby button,
+body:not(.workspace-shell).theme-ruby input,
+body:not(.workspace-shell).theme-ruby select {
   border-color: rgba(248,113,113,.38)
 }
-body:not(.browser-shell).theme-emerald button,
-body:not(.browser-shell).theme-emerald input,
-body:not(.browser-shell).theme-emerald select {
+body:not(.workspace-shell).theme-emerald button,
+body:not(.workspace-shell).theme-emerald input,
+body:not(.workspace-shell).theme-emerald select {
   border-color: rgba(52,211,153,.38)
 }
-body:not(.browser-shell).theme-sakura button,
-body:not(.browser-shell).theme-sakura input,
-body:not(.browser-shell).theme-sakura select {
+body:not(.workspace-shell).theme-sakura button,
+body:not(.workspace-shell).theme-sakura input,
+body:not(.workspace-shell).theme-sakura select {
   border-color: rgba(249,168,212,.42)
 }
-body:not(.browser-shell).theme-ruby .quick-tile,
-body:not(.browser-shell).theme-ruby .settings-action,
-body:not(.browser-shell).theme-ruby .window button {
+body:not(.workspace-shell).theme-ruby .quick-tile,
+body:not(.workspace-shell).theme-ruby .settings-action,
+body:not(.workspace-shell).theme-ruby .window button {
   background: linear-gradient(145deg,rgba(248,113,113,.42),rgba(127,29,29,.76))!important
 }
-body:not(.browser-shell).theme-emerald .quick-tile,
-body:not(.browser-shell).theme-emerald .settings-action,
-body:not(.browser-shell).theme-emerald .window button {
+body:not(.workspace-shell).theme-emerald .quick-tile,
+body:not(.workspace-shell).theme-emerald .settings-action,
+body:not(.workspace-shell).theme-emerald .window button {
   background: linear-gradient(145deg,rgba(52,211,153,.42),rgba(6,78,59,.76))!important
 }
-body:not(.browser-shell).theme-sakura .quick-tile,
-body:not(.browser-shell).theme-sakura .settings-action,
-body:not(.browser-shell).theme-sakura .window button {
+body:not(.workspace-shell).theme-sakura .quick-tile,
+body:not(.workspace-shell).theme-sakura .settings-action,
+body:not(.workspace-shell).theme-sakura .window button {
   background: linear-gradient(145deg,rgba(249,168,212,.48),rgba(157,23,77,.68))!important
 }
-body:not(.browser-shell).theme-ruby .browser-shell-clock,
-body:not(.browser-shell).theme-ruby .desktop-center-clock,
-body:not(.browser-shell).theme-ruby .home-heading,
-body:not(.browser-shell).theme-ruby .titlebar-title,
-body:not(.browser-shell).theme-ruby h1,
-body:not(.browser-shell).theme-ruby h2,
-body:not(.browser-shell).theme-ruby h3 {
+body:not(.workspace-shell).theme-ruby .desktop-center-clock,
+body:not(.workspace-shell).theme-ruby .home-heading,
+body:not(.workspace-shell).theme-ruby .titlebar-title,
+body:not(.workspace-shell).theme-ruby .workspace-shell-clock,
+body:not(.workspace-shell).theme-ruby h1,
+body:not(.workspace-shell).theme-ruby h2,
+body:not(.workspace-shell).theme-ruby h3 {
   background: linear-gradient(90deg,#fecaca,#fb7185,#991b1b);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent!important
 }
-body:not(.browser-shell).theme-emerald .browser-shell-clock,
-body:not(.browser-shell).theme-emerald .desktop-center-clock,
-body:not(.browser-shell).theme-emerald .home-heading,
-body:not(.browser-shell).theme-emerald .titlebar-title,
-body:not(.browser-shell).theme-emerald h1,
-body:not(.browser-shell).theme-emerald h2,
-body:not(.browser-shell).theme-emerald h3 {
+body:not(.workspace-shell).theme-emerald .desktop-center-clock,
+body:not(.workspace-shell).theme-emerald .home-heading,
+body:not(.workspace-shell).theme-emerald .titlebar-title,
+body:not(.workspace-shell).theme-emerald .workspace-shell-clock,
+body:not(.workspace-shell).theme-emerald h1,
+body:not(.workspace-shell).theme-emerald h2,
+body:not(.workspace-shell).theme-emerald h3 {
   background: linear-gradient(90deg,#bbf7d0,#34d399,#065f46);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent!important
 }
-body:not(.browser-shell).theme-sakura .browser-shell-clock,
-body:not(.browser-shell).theme-sakura .desktop-center-clock,
-body:not(.browser-shell).theme-sakura .home-heading,
-body:not(.browser-shell).theme-sakura .titlebar-title,
-body:not(.browser-shell).theme-sakura h1,
-body:not(.browser-shell).theme-sakura h2,
-body:not(.browser-shell).theme-sakura h3 {
+body:not(.workspace-shell).theme-sakura .desktop-center-clock,
+body:not(.workspace-shell).theme-sakura .home-heading,
+body:not(.workspace-shell).theme-sakura .titlebar-title,
+body:not(.workspace-shell).theme-sakura .workspace-shell-clock,
+body:not(.workspace-shell).theme-sakura h1,
+body:not(.workspace-shell).theme-sakura h2,
+body:not(.workspace-shell).theme-sakura h3 {
   background: linear-gradient(90deg,#fce7f3,#f9a8d4,#be185d);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent!important
 }
-body:not(.browser-shell).theme-ruby .browser-mode-menu button,
-body:not(.browser-shell).theme-ruby .home-sub,
-body:not(.browser-shell).theme-ruby .quick-tile span,
-body:not(.browser-shell).theme-ruby .settings-block label,
-body:not(.browser-shell).theme-ruby .settings-main p {
+body:not(.workspace-shell).theme-ruby .home-sub,
+body:not(.workspace-shell).theme-ruby .quick-tile span,
+body:not(.workspace-shell).theme-ruby .settings-block label,
+body:not(.workspace-shell).theme-ruby .settings-main p,
+body:not(.workspace-shell).theme-ruby .workspace-mode-menu button {
   background: linear-gradient(90deg,#fee2e2,#fb7185);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent!important
 }
-body:not(.browser-shell).theme-emerald .browser-mode-menu button,
-body:not(.browser-shell).theme-emerald .home-sub,
-body:not(.browser-shell).theme-emerald .quick-tile span,
-body:not(.browser-shell).theme-emerald .settings-block label,
-body:not(.browser-shell).theme-emerald .settings-main p {
+body:not(.workspace-shell).theme-emerald .home-sub,
+body:not(.workspace-shell).theme-emerald .quick-tile span,
+body:not(.workspace-shell).theme-emerald .settings-block label,
+body:not(.workspace-shell).theme-emerald .settings-main p,
+body:not(.workspace-shell).theme-emerald .workspace-mode-menu button {
   background: linear-gradient(90deg,#dcfce7,#34d399);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent!important
 }
-body:not(.browser-shell).theme-sakura .browser-mode-menu button,
-body:not(.browser-shell).theme-sakura .home-sub,
-body:not(.browser-shell).theme-sakura .quick-tile span,
-body:not(.browser-shell).theme-sakura .settings-block label,
-body:not(.browser-shell).theme-sakura .settings-main p {
+body:not(.workspace-shell).theme-sakura .home-sub,
+body:not(.workspace-shell).theme-sakura .quick-tile span,
+body:not(.workspace-shell).theme-sakura .settings-block label,
+body:not(.workspace-shell).theme-sakura .settings-main p,
+body:not(.workspace-shell).theme-sakura .workspace-mode-menu button {
   background: linear-gradient(90deg,#fce7f3,#f9a8d4);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent!important
 }
-body:not(.browser-shell).theme-ruby .urlbar,
-body:not(.browser-shell).theme-ruby input,
-body:not(.browser-shell).theme-ruby select {
+body:not(.workspace-shell).theme-ruby .urlbar,
+body:not(.workspace-shell).theme-ruby input,
+body:not(.workspace-shell).theme-ruby select {
   background: linear-gradient(145deg,rgba(127,29,29,.38),rgba(15,7,9,.74));
   color: #fee2e2
 }
-body:not(.browser-shell).theme-emerald .urlbar,
-body:not(.browser-shell).theme-emerald input,
-body:not(.browser-shell).theme-emerald select {
+body:not(.workspace-shell).theme-emerald .urlbar,
+body:not(.workspace-shell).theme-emerald input,
+body:not(.workspace-shell).theme-emerald select {
   background: linear-gradient(145deg,rgba(6,78,59,.38),rgba(5,13,10,.74));
   color: #dcfce7
 }
-body:not(.browser-shell).theme-sakura .urlbar,
-body:not(.browser-shell).theme-sakura input,
-body:not(.browser-shell).theme-sakura select {
+body:not(.workspace-shell).theme-sakura .urlbar,
+body:not(.workspace-shell).theme-sakura input,
+body:not(.workspace-shell).theme-sakura select {
   background: linear-gradient(145deg,rgba(157,23,77,.35),rgba(17,8,13,.74));
   color: #fce7f3
 }
-body:not(.browser-shell).theme-emerald .browser-bookmark-panel button,
-body:not(.browser-shell).theme-emerald .browser-mode-menu button,
-body:not(.browser-shell).theme-ruby .browser-bookmark-panel button,
-body:not(.browser-shell).theme-ruby .browser-mode-menu button,
-body:not(.browser-shell).theme-sakura .browser-bookmark-panel button,
-body:not(.browser-shell).theme-sakura .browser-mode-menu button {
+body:not(.workspace-shell).theme-emerald .workspace-bookmark-panel button,
+body:not(.workspace-shell).theme-emerald .workspace-mode-menu button,
+body:not(.workspace-shell).theme-ruby .workspace-bookmark-panel button,
+body:not(.workspace-shell).theme-ruby .workspace-mode-menu button,
+body:not(.workspace-shell).theme-sakura .workspace-bookmark-panel button,
+body:not(.workspace-shell).theme-sakura .workspace-mode-menu button {
   color: var(--theme-strong)!important;
   -webkit-text-fill-color: var(--theme-strong)!important;
   background-clip: border-box!important;
   -webkit-background-clip: border-box!important;
   text-shadow: 0 1px 8px rgba(0,0,0,.48)
 }
-body:not(.browser-shell).theme-emerald .browser-bookmark-panel,
-body:not(.browser-shell).theme-emerald .browser-mode-menu,
-body:not(.browser-shell).theme-ruby .browser-bookmark-panel,
-body:not(.browser-shell).theme-ruby .browser-mode-menu,
-body:not(.browser-shell).theme-sakura .browser-bookmark-panel,
-body:not(.browser-shell).theme-sakura .browser-mode-menu {
+body:not(.workspace-shell).theme-emerald .workspace-bookmark-panel,
+body:not(.workspace-shell).theme-emerald .workspace-mode-menu,
+body:not(.workspace-shell).theme-ruby .workspace-bookmark-panel,
+body:not(.workspace-shell).theme-ruby .workspace-mode-menu,
+body:not(.workspace-shell).theme-sakura .workspace-bookmark-panel,
+body:not(.workspace-shell).theme-sakura .workspace-mode-menu {
   background: linear-gradient(145deg,color-mix(in srgb,var(--theme-b) 76%,#05070d),color-mix(in srgb,var(--theme-a) 32%,#05070d))!important;
   border-color: color-mix(in srgb,var(--theme-a) 52%,rgba(255,255,255,.22))!important
 }
-body:not(.browser-shell).theme-emerald .quick-tile:not(:hover),
-body:not(.browser-shell).theme-ruby .quick-tile:not(:hover),
-body:not(.browser-shell).theme-sakura .quick-tile:not(:hover) {
+body:not(.workspace-shell).theme-emerald .quick-tile:not(:hover),
+body:not(.workspace-shell).theme-ruby .quick-tile:not(:hover),
+body:not(.workspace-shell).theme-sakura .quick-tile:not(:hover) {
   background: 0 0!important;
   border-color: transparent!important;
   box-shadow: none!important;
   backdrop-filter: none!important
 }
-body:not(.browser-shell).theme-emerald .quick-tile:hover,
-body:not(.browser-shell).theme-ruby .quick-tile:hover,
-body:not(.browser-shell).theme-sakura .quick-tile:hover {
+body:not(.workspace-shell).theme-emerald .quick-tile:hover,
+body:not(.workspace-shell).theme-ruby .quick-tile:hover,
+body:not(.workspace-shell).theme-sakura .quick-tile:hover {
   background: linear-gradient(145deg,color-mix(in srgb,var(--theme-a) 34%,rgba(255,255,255,.16)),color-mix(in srgb,var(--theme-b) 48%,rgba(7,10,16,.7)))!important;
   border-color: color-mix(in srgb,var(--theme-a) 45%,rgba(255,255,255,.22))!important
 }
-body:not(.browser-shell).theme-emerald select option,
-body:not(.browser-shell).theme-fresh select option,
-body:not(.browser-shell).theme-ruby select option,
-body:not(.browser-shell).theme-sakura select option {
+body:not(.workspace-shell).theme-emerald select option,
+body:not(.workspace-shell).theme-fresh select option,
+body:not(.workspace-shell).theme-ruby select option,
+body:not(.workspace-shell).theme-sakura select option {
   color: #f8fafc!important;
   background: #111827!important
 }
@@ -445,14 +445,14 @@ body::after {
   overflow: hidden;
   display: none
 }
-body.browser-shell .quick-tile,
-body.browser-shell .settings-action,
-body.browser-shell .settings-preset,
-body.browser-shell .settings-side button {
+body.workspace-shell .quick-tile,
+body.workspace-shell .settings-action,
+body.workspace-shell .settings-preset,
+body.workspace-shell .settings-side button {
   border-radius: 24px
 }
-body.browser-shell .quick-icon,
-body.browser-shell .settings-preset .quick-icon {
+body.workspace-shell .quick-icon,
+body.workspace-shell .settings-preset .quick-icon {
   border-radius: 22px
 }
 video::cue {
@@ -869,17 +869,17 @@ body.effect-amount-medium #visualEffects i:nth-child(n+11) {
 .top-fullscreen:hover {
   background: rgba(255,255,255,.16)
 }
-body.browser-shell .brand-button,
-body.browser-shell .user-chip {
+body.workspace-shell .brand-button,
+body.workspace-shell .user-chip {
   color: #eaf2ff;
   display: none
 }
-body.browser-shell .top-fullscreen {
+body.workspace-shell .top-fullscreen {
   background: #060b22;
   color: #dbeafe;
   border-color: rgba(63,105,190,.48)
 }
-body.browser-shell .browser-mode-menu {
+body.workspace-shell .workspace-mode-menu {
   position: fixed;
   z-index: 160;
   display: block;
@@ -893,12 +893,12 @@ body.browser-shell .browser-mode-menu {
   transform: translateY(-10px) scale(.98);
   transform-origin: top right
 }
-body.browser-shell.menu-open .browser-mode-menu {
+body.workspace-shell.menu-open .workspace-mode-menu {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0) scale(1)
 }
-body.browser-shell .browser-mode-menu button {
+body.workspace-shell .workspace-mode-menu button {
   width: 100%;
   border: 0;
   background: 0 0;
@@ -909,74 +909,74 @@ body.browser-shell .browser-mode-menu button {
   text-align: left;
   gap: 10px
 }
-body.browser-shell .browser-mode-menu button:hover {
+body.workspace-shell .workspace-mode-menu button:hover {
   background: rgba(255,255,255,.1);
   transform: scale(1.06)
 }
-body.browser-shell .browser-mode-menu hr {
+body.workspace-shell .workspace-mode-menu hr {
   border: 0;
   border-top: 1px solid rgba(255,255,255,.18)
 }
-body.browser-shell .desktop-center-clock,
-body.browser-shell .desktop-search {
+body.workspace-shell .desktop-center-clock,
+body.workspace-shell .desktop-search {
   display: none!important
 }
-body.browser-shell .window.maximized {
+body.workspace-shell .window.maximized {
   inset: var(--bar) 0 0 0!important;
   top: var(--bar)!important;
   height: calc(100dvh - var(--bar))!important;
   top: 64px!important;
   height: calc(100dvh - 64px)!important
 }
-body.browser-shell .window:not(.maximized) {
+body.workspace-shell .window:not(.maximized) {
   border-radius: 0 0 8px 8px
 }
-body.browser-shell {
+body.workspace-shell {
   --safe-bottom: 12px
 }
-body.browser-shell .glass-card,
-body.browser-shell .settings-card,
-body.browser-shell .window {
+body.workspace-shell .glass-card,
+body.workspace-shell .settings-card,
+body.workspace-shell .window {
   background: linear-gradient(145deg,rgba(55,65,81,.58),rgba(17,24,39,.72));
   border-color: rgba(148,163,184,.22)
 }
-body.browser-shell .browser-tabs,
-body.browser-shell .browser-tools,
-body.browser-shell .titlebar {
+body.workspace-shell .titlebar,
+body.workspace-shell .workspace-tabs,
+body.workspace-shell .workspace-tools {
   background: linear-gradient(180deg,rgba(55,65,81,.82),rgba(17,24,39,.92));
   border-color: rgba(148,163,184,.2)
 }
-body.browser-shell .browser-window.maximized .browser-tabs,
-body.browser-shell .browser-window.maximized .browser-tools,
-body.browser-shell .browser-window.maximized .titlebar {
+body.workspace-shell .workspace-window.maximized .titlebar,
+body.workspace-shell .workspace-window.maximized .workspace-tabs,
+body.workspace-shell .workspace-window.maximized .workspace-tools {
   display: none!important
 }
-body.browser-shell .browser-window.maximized .browser-body {
+body.workspace-shell .workspace-window.maximized .workspace-body {
   height: 100%!important;
   top: 0!important;
   background: 0 0!important
 }
-body.browser-shell .browser-window.maximized iframe.view {
+body.workspace-shell .workspace-window.maximized iframe.view {
   height: 100%!important
 }
-body.browser-shell .browser-window.maximized.browser-blank {
+body.workspace-shell .workspace-window.maximized.workspace-blank {
   background: 0 0!important;
   border-color: transparent!important;
   box-shadow: none!important;
   backdrop-filter: none!important
 }
-body.browser-shell .browser-window.maximized.browser-blank::after,
-body.browser-shell .browser-window.maximized.browser-blank::before {
+body.workspace-shell .workspace-window.maximized.workspace-blank::after,
+body.workspace-shell .workspace-window.maximized.workspace-blank::before {
   display: none!important
 }
-body.browser-shell .weather-panel {
+body.workspace-shell .weather-panel {
   background: linear-gradient(145deg,rgba(71,85,105,.74),rgba(15,23,42,.78));
   border-color: rgba(203,213,225,.2)
 }
-body.browser-shell.custom-bg-active .custom-bg-image {
+body.workspace-shell.custom-bg-active .custom-bg-image {
   display: none!important
 }
-@keyframes browserShellTabOpen {
+@keyframes workspaceShellTabOpen {
   0% {
     opacity: 0;
     flex-basis: 0;
@@ -1000,7 +1000,7 @@ body.browser-shell.custom-bg-active .custom-bg-image {
     filter: blur(0)
   }
 }
-@keyframes browserShellTabClose {
+@keyframes workspaceShellTabClose {
   0% {
     transform: translateX(0) scale(1);
     opacity: 1;
@@ -1029,7 +1029,7 @@ body.browser-shell.custom-bg-active .custom-bg-image {
     margin-left: -8px
   }
 }
-@keyframes browserShellPageReveal {
+@keyframes workspaceShellPageReveal {
   0% {
     opacity: 0;
     transform: translateY(12px) scale(.985);
@@ -1046,8 +1046,8 @@ body.browser-shell.custom-bg-active .custom-bg-image {
     filter: blur(0)
   }
 }
-body.browser-shell .browser-window.maximized iframe.view.tab-opening {
-  animation: .44s cubic-bezier(.16,.86,.2,1) both browserShellPageReveal;
+body.workspace-shell .workspace-window.maximized iframe.view.tab-opening {
+  animation: .44s cubic-bezier(.16,.86,.2,1) both workspaceShellPageReveal;
   transform-origin: 50% 18%
 }
 .tool-btn[data-reload] {
@@ -1123,7 +1123,7 @@ body.browser-shell .browser-window.maximized iframe.view.tab-opening {
 .tool-btn[data-reload]:active::before {
   transform: translate(-50%,-50%) rotate(48deg) scale(.92)
 }
-body.browser-shell .browser-bookmark-panel {
+body.workspace-shell .workspace-bookmark-panel {
   position: fixed;
   right: 64px;
   top: calc(var(--bar) - 2px);
@@ -1138,12 +1138,12 @@ body.browser-shell .browser-bookmark-panel {
   box-shadow: 0 22px 60px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.12);
   backdrop-filter: blur(14px);
   transform-origin: top right;
-  animation: .18s cubic-bezier(.2,.8,.2,1) both browserMenuIn
+  animation: .18s cubic-bezier(.2,.8,.2,1) both workspaceMenuIn
 }
-body.browser-shell .browser-bookmark-panel[hidden] {
+body.workspace-shell .workspace-bookmark-panel[hidden] {
   display: none!important
 }
-body.browser-shell .browser-bookmark-row {
+body.workspace-shell .workspace-bookmark-row {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 30px;
@@ -1151,14 +1151,14 @@ body.browser-shell .browser-bookmark-row {
   align-items: center;
   margin: 4px 0
 }
-body.browser-shell .browser-bookmark-open {
+body.workspace-shell .workspace-bookmark-open {
   min-width: 0;
   text-align: left;
   border-radius: 12px!important;
   padding: 10px 12px!important;
   color: #f8fafc
 }
-body.browser-shell .browser-bookmark-open small {
+body.workspace-shell .workspace-bookmark-open small {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1167,31 +1167,31 @@ body.browser-shell .browser-bookmark-open small {
   font-size: 11px;
   margin-top: 2px
 }
-body.browser-shell .browser-bookmark-remove {
+body.workspace-shell .workspace-bookmark-remove {
   width: 30px!important;
   height: 30px!important;
   border-radius: 999px!important;
   font-size: 15px!important
 }
-body.browser-shell .browser-bookmark-empty {
+body.workspace-shell .workspace-bookmark-empty {
   margin: 4px;
   color: #dbe4f0;
   font-weight: 800
 }
-body.browser-shell .browser-mode-weather {
+body.workspace-shell .workspace-mode-weather {
   font-size: 15px!important;
   color: #f8fafc!important;
   position: relative
 }
-body.browser-shell .browser-mode-weather::after,
-body.browser-shell .browser-mode-weather::before {
+body.workspace-shell .workspace-mode-weather::after,
+body.workspace-shell .workspace-mode-weather::before {
   content: none!important
 }
-body.browser-shell #weatherRestore,
-body.browser-shell [data-weather-minimize] {
+body.workspace-shell #weatherRestore,
+body.workspace-shell [data-weather-minimize] {
   display: none!important
 }
-body.browser-shell .browser-mode-menu {
+body.workspace-shell .workspace-mode-menu {
   background: #5b6470;
   border-color: rgba(226,232,240,.28);
   transform-origin: top right;
@@ -1200,10 +1200,10 @@ body.browser-shell .browser-mode-menu {
   right: 8px!important;
   width: 146px!important
 }
-body.browser-shell .browser-mode-menu:not(:hover) {
+body.workspace-shell .workspace-mode-menu:not(:hover) {
   filter: saturate(.96)
 }
-body.browser-shell .browser-mode-menu button {
+body.workspace-shell .workspace-mode-menu button {
   transition: transform .18s cubic-bezier(.2,.8,.2,1),background .18s,border-color .18s,box-shadow .18s;
   gap: 7px!important;
   font-weight: 700!important;
@@ -1212,21 +1212,21 @@ body.browser-shell .browser-mode-menu button {
   padding: 0 8px!important;
   font-size: 10px!important
 }
-body.browser-shell .browser-mode-menu hr {
+body.workspace-shell .workspace-mode-menu hr {
   margin: 2px 0!important
 }
-body.browser-shell .browser-mode-menu,
-body.browser-shell .browser-mode-menu button {
+body.workspace-shell .workspace-mode-menu,
+body.workspace-shell .workspace-mode-menu button {
   border-radius: 0!important
 }
-body.browser-shell .weather-panel {
+body.workspace-shell .weather-panel {
   top: 76px!important
 }
-body.browser-shell .weather-restore {
+body.workspace-shell .weather-restore {
   bottom: auto;
   top: 70px!important
 }
-@keyframes browserShellTabIn {
+@keyframes workspaceShellTabIn {
   from {
     opacity: 0;
     transform: translateY(8px) scale(.94)
@@ -1236,19 +1236,19 @@ body.browser-shell .weather-restore {
     transform: translateY(0) scale(1)
   }
 }
-body.browser-shell .settings-backgrounds {
+body.workspace-shell .settings-backgrounds {
   opacity: .44;
   pointer-events: none;
   filter: grayscale(1)
 }
-body.browser-shell .settings-backgrounds::after {
-  content: "Browser Mode uses your selected theme background.";
+body.workspace-shell .settings-backgrounds::after {
+  content: "Workspace Mode uses your selected theme background.";
   display: block;
   margin-top: 10px;
   color: #e5e7eb;
   font-size: 13px
 }
-.browser-shell-logo {
+.workspace-shell-logo {
   width: clamp(104px,11vw,152px);
   height: clamp(104px,11vw,152px);
   border-radius: 0;
@@ -1258,14 +1258,14 @@ body.browser-shell .settings-backgrounds::after {
   object-fit: contain;
   filter: brightness(1.5) contrast(1.45) drop-shadow(0 0 2px rgba(255,255,255,.96)) drop-shadow(0 0 14px rgba(255,255,255,.66)) drop-shadow(0 22px 42px rgba(0,0,0,.54))
 }
-.browser-shell-clock {
+.workspace-shell-clock {
   font-size: clamp(48px,8vw,112px);
   font-weight: 900;
   line-height: 1;
   font-variant-numeric: tabular-nums;
   text-shadow: 0 18px 60px rgba(0,0,0,.45)
 }
-.browser-top-clock {
+.workspace-top-clock {
   position: absolute;
   right: 12px;
   top: 5px;
@@ -1475,20 +1475,20 @@ body.theme-sakura .settings-app,
 body.theme-sakura .shell-page {
   background: linear-gradient(145deg,color-mix(in srgb,var(--theme-b) 68%,#080a12),color-mix(in srgb,var(--theme-a) 24%,#10131d))!important
 }
-.browser-shell-page,
-.shell-page {
+.shell-page,
+.workspace-shell-page {
   background: radial-gradient(circle at 18% 10%,rgba(255,255,255,.52),transparent 28%),linear-gradient(135deg,#d6dbe1 0,#9199a4 48%,#46505c 100%)!important
 }
-body.theme-ruby .browser-shell-page,
-body.theme-ruby .shell-page {
+body.theme-ruby .shell-page,
+body.theme-ruby .workspace-shell-page {
   background: radial-gradient(circle at 18% 10%,color-mix(in srgb,var(--theme-a) 28%,transparent),transparent 30%),linear-gradient(135deg,color-mix(in srgb,var(--theme-a) 28%,#fff),color-mix(in srgb,var(--theme-b) 38%,#cbd5e1) 58%,color-mix(in srgb,var(--theme-b) 48%,#64748b))!important
 }
-body.theme-emerald .browser-shell-page,
-body.theme-emerald .shell-page {
+body.theme-emerald .shell-page,
+body.theme-emerald .workspace-shell-page {
   background: radial-gradient(circle at 18% 10%,color-mix(in srgb,var(--theme-a) 28%,transparent),transparent 30%),linear-gradient(135deg,color-mix(in srgb,var(--theme-a) 26%,#fff),color-mix(in srgb,var(--theme-b) 34%,#cbd5e1) 58%,color-mix(in srgb,var(--theme-b) 46%,#64748b))!important
 }
-body.theme-sakura .browser-shell-page,
-body.theme-sakura .shell-page {
+body.theme-sakura .shell-page,
+body.theme-sakura .workspace-shell-page {
   background: radial-gradient(circle at 18% 10%,color-mix(in srgb,var(--theme-a) 30%,transparent),transparent 30%),linear-gradient(135deg,color-mix(in srgb,var(--theme-a) 30%,#fff),color-mix(in srgb,var(--theme-b) 34%,#d1d5db) 58%,color-mix(in srgb,var(--theme-b) 42%,#64748b))!important
 }
 body.theme-emerald .quick-tile,
@@ -1676,7 +1676,7 @@ body.effect-emeralds #visualEffects i::before {
   font-weight: 750;
   line-height: 1.05
 }
-body.browser-shell #desktop .desktop-app {
+body.workspace-shell #desktop .desktop-app {
   display: none!important;
   pointer-events: none!important
 }
@@ -1981,14 +1981,14 @@ body.browser-shell #desktop .desktop-app {
 .window-controls [data-close]:hover::after {
   transform: translate(-50%,-50%) rotate(0)
 }
-.browser-window {
+.workspace-window {
   left: 31vw;
   top: 170px;
   width: 45vw;
   height: 420px;
   --tab-width: 150px
 }
-.browser-tabs {
+.workspace-tabs {
   height: 48px;
   display: flex;
   align-items: center;
@@ -1998,7 +1998,7 @@ body.browser-shell #desktop .desktop-app {
   cursor: grab;
   overflow: hidden
 }
-.browser-tab {
+.workspace-tab {
   height: 30px;
   width: var(--tab-width);
   min-width: 92px;
@@ -2044,7 +2044,7 @@ body.browser-shell #desktop .desktop-app {
     filter: blur(0)
   }
 }
-.browser-tab.tab-closing {
+.workspace-tab.tab-closing {
   pointer-events: none;
   animation: none!important;
   display: none!important
@@ -2061,13 +2061,13 @@ body.browser-shell #desktop .desktop-app {
     margin-left: -6px
   }
 }
-.browser-tab.active {
+.workspace-tab.active {
   background: rgba(255,255,255,.17)
 }
-.browser-tab.chat-unread {
+.workspace-tab.chat-unread {
   position: relative
 }
-.browser-tab.chat-unread::after {
+.workspace-tab.chat-unread::after {
   content: "";
   position: absolute;
   z-index: 2;
@@ -2080,23 +2080,23 @@ body.browser-shell #desktop .desktop-app {
   box-shadow: 0 0 0 2px rgba(240,68,92,.18),0 0 8px rgba(240,68,92,.7);
   pointer-events: none
 }
-.browser-tab span {
+.workspace-tab span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap
 }
-.browser-tab button,
-.new-tab {
+.new-tab,
+.workspace-tab button {
   border: 0;
   background: 0 0
 }
-.browser-tab button {
+.workspace-tab button {
   position: relative;
   color: transparent;
   font-size: 0;
   transition: transform .58s cubic-bezier(.16,.86,.2,1),background .26s,color .26s
 }
-.browser-tab button::before {
+.workspace-tab button::before {
   content: "\00d7";
   color: #cbd5e1;
   display: grid;
@@ -2105,10 +2105,10 @@ body.browser-shell #desktop .desktop-app {
   transform: rotate(0);
   transition: transform .58s cubic-bezier(.16,.86,.2,1),color .26s
 }
-.browser-tab button:hover {
+.workspace-tab button:hover {
   transform: scale(1.08)
 }
-.browser-tab button:hover::before {
+.workspace-tab button:hover::before {
   color: #fff;
   transform: rotate(45deg)
 }
@@ -2149,7 +2149,7 @@ body.browser-shell #desktop .desktop-app {
 .new-tab:active {
   transform: translateY(0) scale(.94)
 }
-.browser-tools {
+.workspace-tools {
   height: 48px;
   display: grid;
   grid-template-columns: 104px minmax(220px,1fr);
@@ -2188,7 +2188,7 @@ body.browser-shell #desktop .desktop-app {
   outline: 0;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.05)
 }
-.browser-tools::before {
+.workspace-tools::before {
   content: none;
   display: none
 }
@@ -2211,7 +2211,7 @@ body.browser-shell #desktop .desktop-app {
 .menu-btn:hover {
   background: rgba(255,255,255,.18)
 }
-.browser-body {
+.workspace-body {
   position: absolute;
   left: 0;
   right: 0;
@@ -2228,10 +2228,10 @@ body.browser-shell #desktop .desktop-app {
   display: none;
   background: #fff
 }
-.browser-window.internal-clear .browser-body,
-.browser-window.internal-clear .view,
 .view.transparent-internal-page,
-.view.transparent-internal-page.active {
+.view.transparent-internal-page.active,
+.workspace-window.internal-clear .view,
+.workspace-window.internal-clear .workspace-body {
   background: 0 0!important
 }
 .view.active {
@@ -2623,11 +2623,11 @@ body.browser-shell #desktop .desktop-app {
   backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   box-shadow: inset 0 1px 0 rgba(255,255,255,.18),0 24px 70px rgba(0,0,0,.25)
 }
-.browser-tabs:hover,
-.browser-tools:hover,
 .glass-card:hover,
 .titlebar:hover,
-.weather-panel:hover {
+.weather-panel:hover,
+.workspace-tabs:hover,
+.workspace-tools:hover {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.18),0 24px 70px rgba(0,0,0,.25)
 }
 .glass-card h2 {
@@ -2651,17 +2651,17 @@ body.browser-shell #desktop .desktop-app {
   margin: 4px 6px 0 0;
   backdrop-filter: blur(calc(var(--glass-blur) * .55))
 }
-.window.compact .browser-tabs {
+.window.compact .workspace-tabs {
   gap: 4px;
   padding-inline: 6px
 }
-.window.compact .browser-tab {
+.window.compact .workspace-tab {
   min-width: 70px;
   width: 110px;
   font-size: 11px;
   padding-inline: 7px
 }
-.window.compact .browser-tools {
+.window.compact .workspace-tools {
   grid-template-columns: 88px minmax(160px,1fr);
   gap: 7px;
   padding-inline: 8px
@@ -2682,7 +2682,7 @@ body.browser-shell #desktop .desktop-app {
   padding: 0 40px 0 38px;
   font-size: 13px
 }
-.window.compact .browser-tools::before {
+.window.compact .workspace-tools::before {
   left: 110px
 }
 .window.compact .quick-grid {
@@ -3781,7 +3781,7 @@ body.theme-fresh .weather-stat,
 body.theme-fresh .weather-status {
   color: #247f91!important
 }
-.browser-search-suggestions {
+.workspace-search-suggestions {
   position: fixed;
   z-index: 2147482600;
   display: none;
@@ -3796,10 +3796,10 @@ body.theme-fresh .weather-status {
   box-shadow: 0 14px 32px #0004;
   backdrop-filter: blur(22px)
 }
-.browser-search-suggestions.show {
+.workspace-search-suggestions.show {
   display: grid
 }
-.browser-search-suggestion {
+.workspace-search-suggestion {
   min-height: 36px;
   border: 0;
   border-radius: 6px;
@@ -3810,8 +3810,8 @@ body.theme-fresh .weather-status {
   font-size: 12px;
   transition: background-color 140ms,color 140ms
 }
-.browser-search-suggestion.active,
-.browser-search-suggestion:hover {
+.workspace-search-suggestion.active,
+.workspace-search-suggestion:hover {
   background: var(--obsidian-hover);
   color: var(--obsidian-text)
 }
@@ -4037,7 +4037,7 @@ body.theme-fresh .weather-status {
   accent-color: var(--good);
   background: 0 0
 }
-.browser-message {
+.workspace-message {
   position: absolute;
   inset: 0;
   display: grid;
@@ -4046,7 +4046,7 @@ body.theme-fresh .weather-status {
   color: #fff;
   padding: 24px
 }
-.browser-message-box {
+.workspace-message-box {
   width: min(520px,92%);
   border: 1px solid rgba(255,255,255,.14);
   border-radius: 14px;
@@ -4055,14 +4055,14 @@ body.theme-fresh .weather-status {
   padding: 18px;
   box-shadow: 0 18px 54px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.12)
 }
-.browser-message-box h2 {
+.workspace-message-box h2 {
   margin: 0 0 8px
 }
-.browser-message-box p {
+.workspace-message-box p {
   color: #cbd5e1;
   line-height: 1.4
 }
-.browser-message-box button {
+.workspace-message-box button {
   height: 34px;
   border: 0;
   border-radius: 9px;
@@ -5164,7 +5164,7 @@ html.hosted-cloak-entry #welcomeScreen {
   background-repeat: no-repeat;
   background-position: left center
 }
-body.browser-shell .settings-panel::before {
+body.workspace-shell .settings-panel::before {
   content: "nyx\A Settings";
   white-space: pre-line;
   position: fixed;
@@ -5183,8 +5183,8 @@ body.browser-shell .settings-panel::before {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.14),0 24px 70px rgba(0,0,0,.32);
   backdrop-filter: blur(calc(var(--glass-blur) * .8)) saturate(var(--glass-saturate))
 }
-body.browser-shell .settings-panel::after {
-  content: "Cloak\A Appearance\A Effects\A Browser\A Backgrounds";
+body.workspace-shell .settings-panel::after {
+  content: "Cloak\A Appearance\A Effects\A Workspace\A Backgrounds";
   white-space: pre-line;
   position: fixed;
   left: calc(3vw + 46px);
@@ -5195,23 +5195,23 @@ body.browser-shell .settings-panel::after {
   line-height: 2.7;
   opacity: .88
 }
-body.browser-shell .settings-panel h1 {
+body.workspace-shell .settings-panel h1 {
   margin: 0 0 20px;
   font-size: clamp(30px,3vw,46px);
   font-weight: 900;
   text-shadow: 0 16px 46px rgba(0,0,0,.35)
 }
-body.browser-shell .settings-section-title {
+body.workspace-shell .settings-section-title {
   margin: 38px 0 18px;
   font-size: 24px;
   font-weight: 900;
   color: #e5edf8
 }
-body.browser-shell .settings-grid {
+body.workspace-shell .settings-grid {
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
   gap: 16px
 }
-body.browser-shell .settings-card {
+body.workspace-shell .settings-card {
   min-height: 128px;
   padding: 20px;
   border-color: rgba(226,232,240,.16);
@@ -5220,31 +5220,31 @@ body.browser-shell .settings-card {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.18),0 18px 48px rgba(0,0,0,.24);
   transition: transform .18s cubic-bezier(.2,.8,.2,1),border-color .18s,box-shadow .18s
 }
-body.browser-shell .settings-card:hover {
+body.workspace-shell .settings-card:hover {
   transform: translateY(-3px);
   border-color: rgba(226,232,240,.28);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.2),0 26px 64px rgba(0,0,0,.34)
 }
-body.browser-shell .settings-card.hieroglyph-scroll:hover {
+body.workspace-shell .settings-card.hieroglyph-scroll:hover {
   transform: none
 }
-body.browser-shell .settings-card h2 {
+body.workspace-shell .settings-card h2 {
   font-weight: 900
 }
-body.browser-shell .settings-card button,
-body.browser-shell .settings-card select {
+body.workspace-shell .settings-card button,
+body.workspace-shell .settings-card select {
   background: rgba(15,23,42,.42)
 }
-body.browser-shell .settings-card select {
+body.workspace-shell .settings-card select {
   max-width: 100%;
   outline: 0;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.1)
 }
-body.browser-shell .settings-card .seg {
+body.workspace-shell .settings-card .seg {
   grid-template-columns: repeat(auto-fit,minmax(128px,1fr));
   width: 100%
 }
-body.browser-shell .settings-effect-preview {
+body.workspace-shell .settings-effect-preview {
   display: none!important
 }
 body.lag-reducer *,
@@ -5275,7 +5275,6 @@ body.lag-reducer .welcome-title span {
   opacity: 1!important;
   transform: none!important
 }
-body.lag-reducer .browser-message-box,
 body.lag-reducer .glass-card,
 body.lag-reducer .quick-icon,
 body.lag-reducer .quick-tile,
@@ -5285,7 +5284,8 @@ body.lag-reducer .titlebar,
 body.lag-reducer .toast,
 body.lag-reducer .weather-panel,
 body.lag-reducer .weather-restore,
-body.lag-reducer .window {
+body.lag-reducer .window,
+body.lag-reducer .workspace-message-box {
   backdrop-filter: none!important;
   -webkit-backdrop-filter: none!important;
   box-shadow: none!important
@@ -5389,7 +5389,7 @@ iframe[src*="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/code-stu
   -webkit-backdrop-filter: blur(48px) saturate(.65);
   backdrop-filter: blur(48px) saturate(.65)
 }
-body.browser-shell .toast {
+body.workspace-shell .toast {
   right: 22px;
   bottom: 22px;
   max-width: min(360px,calc(100vw - var(--nyx-sidebar-width,64px) - 44px))
