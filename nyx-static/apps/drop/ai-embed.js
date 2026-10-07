@@ -43,7 +43,8 @@ export function setupDropEmbed({user: _0xd63c32_1 = () => null, signup: _0xd63c3
           ..._0xd63c32_1 ? {
             body: JSON.stringify({
               storage: _0xd63c32_2.storage,
-              removed: _0xd63c32_2.removed
+              removed: _0xd63c32_2.removed,
+              accountUid: _0xd63c32_2.accountUid
             })
           } : {}
         }), _0xd63c32_5 = await _0xd63c32_4.json();

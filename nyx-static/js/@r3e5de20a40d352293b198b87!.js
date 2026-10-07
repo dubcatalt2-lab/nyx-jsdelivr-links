@@ -25,7 +25,7 @@ export function publisherHostAllowed(_0x86f066_0 = location.hostname) {
 export function publisherBaseMode() {
   try {
     const _0x86f066_0 = window.parent === window ? window : window.parent;
-    return !1 === _0x86f066_0.__NYX_RUNTIME_CONFIG__?.publisherAdsEnabled ? "\x6f\x66\x66" : _0x86f066_0.__nyxPublisherMode || (_0x86f066_0.document.body?.classList.contains("\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2d\x73\x68\x65\x6c\x6c") ? "\x70\x65\x6e\x64\x69\x6e\x67" : "\x73\x74\x61\x6e\x64\x61\x72\x64");
+    return !1 === _0x86f066_0.__NYX_RUNTIME_CONFIG__?.publisherAdsEnabled || _0x86f066_0.__NYX_RUNTIME_CONFIG__?.publisherAdsAdkidOnly && "\x61\x64\x6b\x69\x64" !== _0x86f066_0.__nyxPublisherMode ? "\x6f\x66\x66" : _0x86f066_0.__nyxPublisherMode || (_0x86f066_0.document.body?.classList.contains("\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2d\x73\x68\x65\x6c\x6c") ? "\x70\x65\x6e\x64\x69\x6e\x67" : "\x73\x74\x61\x6e\x64\x61\x72\x64");
   } catch {
     return "\x6f\x66\x66";
   }
@@ -36,8 +36,9 @@ export function publisherMode() {
   try {
     const _0x86f066_1 = window.parent === window ? window : window.parent;
     if (_0x86f066_1.__nyxAdcoinsFreeUntil > Date.now()) return "\x6f\x66\x66";
-    if ("\x73\x74\x61\x6e\x64\x61\x72\x64" === _0x86f066_0) {
+    if ("\x73\x74\x61\x6e\x64\x61\x72\x64" === _0x86f066_0 || "\x61\x64\x6b\x69\x64" === _0x86f066_0) {
       if (_0x86f066_1 !== window || document.hidden || document.body?.classList.contains("\x6e\x79\x78\x2d\x6c\x6f\x61\x64\x69\x6e\x67\x2d\x61\x63\x74\x69\x76\x65")) return "\x6f\x66\x66";
+      if (!window.__nyxPublisherHome?.()) return "\x6f\x66\x66";
       if (![ ...document.querySelectorAll("\x2e\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2d\x77\x69\x6e\x64\x6f\x77\x2e\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2d\x62\x6c\x61\x6e\x6b\x20\x2e\x77\x6f\x72\x6b\x73\x70\x61\x63\x65\x2d\x68\x6f\x6d\x65\x2e\x6e\x79\x78\x2d\x6d\x69\x6e\x69\x6d\x61\x6c\x2d\x68\x6f\x6d\x65\x3a\x6e\x6f\x74\x28\x2e\x68\x69\x64\x64\x65\x6e\x29") ].some(_0x86f066_0 => _0x86f066_0.getClientRects().length && "\x76\x69\x73\x69\x62\x6c\x65" === getComputedStyle(_0x86f066_0).visibility)) return "\x6f\x66\x66";
     }
     return _0x86f066_0;

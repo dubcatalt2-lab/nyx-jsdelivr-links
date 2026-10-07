@@ -7,7 +7,7 @@
   _0xaa455f_4.inert = !0, _0xaa455f_4.setAttribute("\x61\x72\x69\x61\x2d\x68\x69\x64\x64\x65\x6e", "\x74\x72\x75\x65"), _0xaa455f_4.setAttribute("\x70\x6f\x70\x6f\x76\x65\x72", "\x6d\x61\x6e\x75\x61\x6c");
   const _0xaa455f_5 = document.createElement("\x69\x6d\x67");
   _0xaa455f_5.src = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x73\x73\x65\x74\x73\x2f\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x73\x2f\x73\x74\x75\x64\x79\x2d\x61\x77\x61\x79\x2d\x63\x6f\x76\x65\x72\x2e\x70\x6e\x67", _0xaa455f_5.alt = "", 
-  _0xaa455f_5.draggable = !1, _0xaa455f_4.append(_0xaa455f_5), document.body.append(_0xaa455f_4);
+  _0xaa455f_5.draggable = !1, _0xaa455f_4.append(_0xaa455f_5), (document.getElementById("\x61\x70\x70") || document.body).append(_0xaa455f_4);
   let _0xaa455f_6, _0xaa455f_7, _0xaa455f_8 = !1;
   function _0xaa455f_9() {
     if (!_0xaa455f_0) if (clearInterval(_0xaa455f_7), document.hidden || _0xaa455f_8) {
@@ -91,7 +91,7 @@
             _0xaa455f_3(), _0xaa455f_2?.focus?.(), _0xaa455f_0.run();
           }), _0xaa455f_1.append(_0xaa455f_4);
         }
-        document.body.append(_0xaa455f_1);
+        (document.getElementById("\x61\x70\x70") || document.body).append(_0xaa455f_1);
         const _0xaa455f_9 = _0xaa455f_1.getBoundingClientRect();
         let _0xaa455f_a = _0xaa455f_4.clientX, _0xaa455f_b = _0xaa455f_4.clientY, _0xaa455f_c = _0xaa455f_5.defaultView;
         try {

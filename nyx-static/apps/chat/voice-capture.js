@@ -1,4 +1,4 @@
-class _0x78411b_0 extends AudioWorkletProcessor {
+class VoiceCapture extends AudioWorkletProcessor {
   constructor() {
     super(), this.frame = new Int16Array(1600), this.index = 0, this.phase = 0, this.sum = 0, 
     this.count = 0;
@@ -14,4 +14,4 @@ class _0x78411b_0 extends AudioWorkletProcessor {
   }
 }
 
-registerProcessor("\x6e\x79\x78\x2d\x76\x6f\x69\x63\x65\x2d\x63\x61\x70\x74\x75\x72\x65", _0x78411b_0);
+registerProcessor("\x6e\x79\x78\x2d\x76\x6f\x69\x63\x65\x2d\x63\x61\x70\x74\x75\x72\x65", VoiceCapture);

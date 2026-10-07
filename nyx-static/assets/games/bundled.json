@@ -1,0 +1,11 @@
+{
+  "games": [
+    {
+      "id": "balatro",
+      "title": "Balatro",
+      "author": "LocalThunk",
+      "path": "balatro",
+      "cover": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/vendor/balatro/img.webp"
+    }
+  ]
+}

@@ -1165,7 +1165,7 @@
     })), _0xefd14c_4("\x5b\x64\x61\x74\x61\x2d\x76\x69\x65\x77\x2d\x62\x75\x74\x74\x6f\x6e\x5d").forEach(_0xefd14c_0 => _0xefd14c_0.addEventListener("\x63\x6c\x69\x63\x6b", () => {
       _0xefd14c_16(_0xefd14c_0.dataset.viewButton), "\x73\x68\x6f\x72\x74\x73" === _0xefd14c_6.view && _0xefd14c_4a();
     })), _0xefd14c_3("\x5b\x64\x61\x74\x61\x2d\x62\x61\x63\x6b\x5d").addEventListener("\x63\x6c\x69\x63\x6b", () => {
-      "\x77\x61\x74\x63\x68" === _0xefd14c_6.view ? _0xefd14c_16("\x68\x6f\x6d\x65") : _0x714b6c_20.length > 1 ? _0x714b6c_20.back() : location.href = "\x2f";
+      "\x77\x61\x74\x63\x68" === _0xefd14c_6.view ? _0xefd14c_16("\x68\x6f\x6d\x65") : history.length > 1 ? history.back() : location.href = "\x2f";
     }), _0xefd14c_7.watchToggle.addEventListener("\x63\x6c\x69\x63\x6b", _0xefd14c_29), _0xefd14c_7.watchCenterPlay.addEventListener("\x63\x6c\x69\x63\x6b", _0xefd14c_29), 
     _0xefd14c_7.watchMute.addEventListener("\x63\x6c\x69\x63\x6b", _0xefd14c_2a);
     const _0xefd14c_1 = _0xefd14c_0 => {

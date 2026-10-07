@@ -3,7 +3,6 @@ import { additionalSources as _0x984456_0, movieSourceUrl as _0x984456_1 } from 
 import { launchMovieConnection as _0x984456_2, inspectMovieConnection as _0x984456_3, styleMovieVideo as _0x984456_4, startMovieConnection as _0x984456_5, canStartMovieConnection as _0x984456_6 } from "\x2e\x2f\x40\x72\x65\x38\x37\x34\x62\x38\x34\x37\x35\x36\x38\x61\x31\x33\x39\x65\x36\x39\x31\x31\x39\x66\x66\x61\x21\x2e\x6a\x73\x3f\x76\x3d\x32\x30\x32\x36\x30\x39\x32\x38\x2d\x70\x6c\x61\x79\x62\x61\x63\x6b\x2d\x72\x65\x63\x6f\x76\x65\x72\x79\x2d\x76\x34";
 
 (() => {
-  "use strict";
   const _0x984456_7 = _0x984456_0 => document.getElementById(_0x984456_0), _0x984456_8 = window.parent !== window;
   document.querySelector("\x2e\x68\x6f\x6d\x65\x2d\x6c\x69\x6e\x6b").addEventListener("\x63\x6c\x69\x63\x6b", _0x984456_0 => {
     _0x984456_8 && (_0x984456_0.preventDefault(), parent.postMessage({
