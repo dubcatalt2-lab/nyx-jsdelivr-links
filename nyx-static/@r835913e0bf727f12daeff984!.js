@@ -2,10 +2,10 @@ importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x73\x74\x7
 
 const {StudyJetServiceWorker: StudyJetServiceWorker} = $studyjetLoadWorker(), studyjet = new StudyJetServiceWorker, studyjetReady = studyjet.loadConfig();
 
-self.addEventListener("\x69\x6e\x73\x74\x61\x6c\x6c", λfc41856e6561 => {
-  λfc41856e6561.waitUntil(self.skipWaiting());
-}), self.addEventListener("\x61\x63\x74\x69\x76\x61\x74\x65", λfc41856e6561 => {
-  λfc41856e6561.waitUntil(self.clients.claim());
-}), self.addEventListener("\x66\x65\x74\x63\x68", λfc41856e6561 => {
-  λfc41856e6561.respondWith((async () => (await studyjetReady, studyjet.route(λfc41856e6561) ? studyjet.fetch(λfc41856e6561) : fetch(λfc41856e6561.request)))());
+self.addEventListener("\x69\x6e\x73\x74\x61\x6c\x6c", λd9f1f7c1f964 => {
+  λd9f1f7c1f964.waitUntil(self.skipWaiting());
+}), self.addEventListener("\x61\x63\x74\x69\x76\x61\x74\x65", λd9f1f7c1f964 => {
+  λd9f1f7c1f964.waitUntil(self.clients.claim());
+}), self.addEventListener("\x66\x65\x74\x63\x68", λd9f1f7c1f964 => {
+  λd9f1f7c1f964.respondWith((async () => (await studyjetReady, studyjet.route(λd9f1f7c1f964) ? studyjet.fetch(λd9f1f7c1f964) : fetch(λd9f1f7c1f964.request)))());
 });

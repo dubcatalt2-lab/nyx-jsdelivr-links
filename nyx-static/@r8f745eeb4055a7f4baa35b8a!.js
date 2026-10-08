@@ -6,69 +6,69 @@ function \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52
   return "\x3c\x21\x64\x6f\x63\x74\x79\x70\x65\x20\x68\x74\x6d\x6c\x3e\x0a\x3c\x6d\x65\x74\x61\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x22\x75\x74\x66\x2d\x38\x22\x3e\x0a\x3c\x6d\x65\x74\x61\x20\x6e\x61\x6d\x65\x3d\x22\x6e\x79\x78\x2d\x72\x6f\x75\x74\x65\x2d\x6d\x69\x73\x73\x22\x20\x63\x6f\x6e\x74\x65\x6e\x74\x3d\x22\x31\x22\x3e\x0a\x3c\x73\x74\x79\x6c\x65\x3e\x0a\x20\x20\x62\x6f\x64\x79\x7b\x6d\x61\x72\x67\x69\x6e\x3a\x30\x3b\x6d\x69\x6e\x2d\x68\x65\x69\x67\x68\x74\x3a\x31\x30\x30\x76\x68\x3b\x64\x69\x73\x70\x6c\x61\x79\x3a\x67\x72\x69\x64\x3b\x70\x6c\x61\x63\x65\x2d\x69\x74\x65\x6d\x73\x3a\x63\x65\x6e\x74\x65\x72\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x31\x30\x31\x33\x31\x38\x3b\x63\x6f\x6c\x6f\x72\x3a\x23\x66\x35\x66\x37\x66\x62\x3b\x66\x6f\x6e\x74\x3a\x31\x35\x70\x78\x2f\x31\x2e\x34\x35\x20\x73\x79\x73\x74\x65\x6d\x2d\x75\x69\x2c\x73\x61\x6e\x73\x2d\x73\x65\x72\x69\x66\x7d\x0a\x20\x20\x6d\x61\x69\x6e\x7b\x6d\x61\x78\x2d\x77\x69\x64\x74\x68\x3a\x35\x36\x30\x70\x78\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x32\x38\x70\x78\x3b\x74\x65\x78\x74\x2d\x61\x6c\x69\x67\x6e\x3a\x63\x65\x6e\x74\x65\x72\x7d\x0a\x20\x20\x68\x31\x7b\x66\x6f\x6e\x74\x2d\x73\x69\x7a\x65\x3a\x32\x30\x70\x78\x3b\x6d\x61\x72\x67\x69\x6e\x3a\x30\x20\x30\x20\x31\x30\x70\x78\x7d\x0a\x20\x20\x70\x7b\x6d\x61\x72\x67\x69\x6e\x3a\x30\x3b\x63\x6f\x6c\x6f\x72\x3a\x23\x63\x38\x63\x65\x64\x38\x7d\x0a\x20\x20\x62\x75\x74\x74\x6f\x6e\x7b\x6d\x61\x72\x67\x69\x6e\x2d\x74\x6f\x70\x3a\x31\x38\x70\x78\x3b\x62\x6f\x72\x64\x65\x72\x3a\x31\x70\x78\x20\x73\x6f\x6c\x69\x64\x20\x23\x34\x34\x35\x30\x36\x36\x3b\x62\x6f\x72\x64\x65\x72\x2d\x72\x61\x64\x69\x75\x73\x3a\x31\x30\x70\x78\x3b\x62\x61\x63\x6b\x67\x72\x6f\x75\x6e\x64\x3a\x23\x31\x62\x32\x32\x33\x30\x3b\x63\x6f\x6c\x6f\x72\x3a\x23\x66\x35\x66\x37\x66\x62\x3b\x70\x61\x64\x64\x69\x6e\x67\x3a\x31\x30\x70\x78\x20\x31\x35\x70\x78\x3b\x66\x6f\x6e\x74\x3a\x36\x30\x30\x20\x31\x34\x70\x78\x20\x73\x79\x73\x74\x65\x6d\x2d\x75\x69\x2c\x73\x61\x6e\x73\x2d\x73\x65\x72\x69\x66\x3b\x63\x75\x72\x73\x6f\x72\x3a\x70\x6f\x69\x6e\x74\x65\x72\x7d\x0a\x3c\x2f\x73\x74\x79\x6c\x65\x3e\x0a\x3c\x6d\x61\x69\x6e\x3e\x0a\x20\x20\x3c\x68\x31\x3e\x52\x65\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\x20\x53\x63\x72\x61\x6d\x6a\x65\x74\x3c\x2f\x68\x31\x3e\x0a\x20\x20\x3c\x70\x3e\x4e\x79\x78\x20\x69\x73\x20\x72\x65\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6e\x67\x20\x74\x68\x69\x73\x20\x74\x61\x62\x20\x74\x6f\x20\x74\x68\x65\x20\x70\x72\x6f\x78\x79\x20\x73\x65\x72\x76\x69\x63\x65\x20\x77\x6f\x72\x6b\x65\x72\x2e\x3c\x2f\x70\x3e\x0a\x20\x20\x3c\x62\x75\x74\x74\x6f\x6e\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x6e\x79\x78\x2d\x72\x65\x70\x61\x69\x72\x20\x6f\x6e\x63\x6c\x69\x63\x6b\x3d\x22\x69\x66\x28\x70\x61\x72\x65\x6e\x74\x3d\x3d\x3d\x77\x69\x6e\x64\x6f\x77\x29\x7b\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x72\x65\x6c\x6f\x61\x64\x28\x29\x7d\x65\x6c\x73\x65\x7b\x77\x69\x6e\x64\x6f\x77\x2e\x6e\x79\x78\x52\x65\x70\x61\x69\x72\x69\x6e\x67\x3d\x74\x72\x75\x65\x3b\x70\x61\x72\x65\x6e\x74\x2e\x70\x6f\x73\x74\x4d\x65\x73\x73\x61\x67\x65\x28\x7b\x74\x79\x70\x65\x3a\x27\x6e\x79\x78\x3a\x72\x65\x70\x61\x69\x72\x2d\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x27\x7d\x2c\x70\x61\x72\x65\x6e\x74\x2e\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x6f\x72\x69\x67\x69\x6e\x29\x7d\x22\x3e\x52\x65\x70\x61\x69\x72\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x0a\x3c\x2f\x6d\x61\x69\x6e\x3e\x0a\x3c\x73\x63\x72\x69\x70\x74\x3e\x0a\x20\x20\x28\x28\x29\x20\x3d\x3e\x20\x7b\x0a\x20\x20\x20\x20\x63\x6f\x6e\x73\x74\x20\x6b\x65\x79\x3d\x27\x6e\x79\x78\x2e\x73\x63\x72\x61\x6d\x6a\x65\x74\x2d\x72\x6f\x75\x74\x65\x2d\x72\x65\x74\x72\x79\x3a\x27\x2b\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x70\x61\x74\x68\x6e\x61\x6d\x65\x3b\x0a\x20\x20\x20\x20\x63\x6f\x6e\x73\x74\x20\x61\x74\x74\x65\x6d\x70\x74\x73\x3d\x4e\x75\x6d\x62\x65\x72\x28\x73\x65\x73\x73\x69\x6f\x6e\x53\x74\x6f\x72\x61\x67\x65\x2e\x67\x65\x74\x49\x74\x65\x6d\x28\x6b\x65\x79\x29\x7c\x7c\x30\x29\x3b\x0a\x20\x20\x20\x20\x69\x66\x28\x61\x74\x74\x65\x6d\x70\x74\x73\x3c\x32\x29\x7b\x0a\x20\x20\x20\x20\x20\x20\x73\x65\x73\x73\x69\x6f\x6e\x53\x74\x6f\x72\x61\x67\x65\x2e\x73\x65\x74\x49\x74\x65\x6d\x28\x6b\x65\x79\x2c\x53\x74\x72\x69\x6e\x67\x28\x61\x74\x74\x65\x6d\x70\x74\x73\x2b\x31\x29\x29\x3b\x0a\x20\x20\x20\x20\x20\x20\x73\x65\x74\x54\x69\x6d\x65\x6f\x75\x74\x28\x28\x29\x3d\x3e\x7b\x69\x66\x28\x21\x77\x69\x6e\x64\x6f\x77\x2e\x6e\x79\x78\x52\x65\x70\x61\x69\x72\x69\x6e\x67\x29\x6c\x6f\x63\x61\x74\x69\x6f\x6e\x2e\x72\x65\x6c\x6f\x61\x64\x28\x29\x7d\x2c\x39\x30\x30\x29\x3b\x0a\x20\x20\x20\x20\x7d\x65\x6c\x73\x65\x7b\x0a\x20\x20\x20\x20\x20\x20\x73\x65\x73\x73\x69\x6f\x6e\x53\x74\x6f\x72\x61\x67\x65\x2e\x72\x65\x6d\x6f\x76\x65\x49\x74\x65\x6d\x28\x6b\x65\x79\x29\x3b\x0a\x20\x20\x20\x20\x7d\x0a\x20\x20\x7d\x29\x28\x29\x3b\x0a\x3c\x2f\x73\x63\x72\x69\x70\x74\x3e";
 }
 
-function \u{6e}\u{79}\u{78}\u{49}\u{73}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{71}\u{75}\u{65}\u{73}\u{74}(_9ed3642c954a) {
+function \u{6e}\u{79}\u{78}\u{49}\u{73}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{71}\u{75}\u{65}\u{73}\u{74}(_dd6e08829cd1) {
   try {
-    return new URL(_9ed3642c954a.request.url).pathname.startsWith(self.NYX_TUTSI_WORKER ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x7e\x2f\x74\x6d\x2f" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x7e\x2f\x73\x6a\x2f");
+    return new URL(_dd6e08829cd1.request.url).pathname.startsWith(self.NYX_TUTSI_WORKER ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x7e\x2f\x74\x6d\x2f" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x7e\x2f\x73\x6a\x2f");
   } catch {
     return !1;
   }
 }
 
-function \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{6f}\u{75}\u{72}\u{63}\u{65}\u{50}\u{61}\u{74}\u{68}(_9ed3642c954a) {
+function \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{6f}\u{75}\u{72}\u{63}\u{65}\u{50}\u{61}\u{74}\u{68}(_dd6e08829cd1) {
   try {
-    const _10716c995afd = new URL(_9ed3642c954a).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:sj|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
-    return _10716c995afd ? new URL(decodeURIComponent(_10716c995afd[1])).pathname : "";
+    const _3e8ed6b7e8a5 = new URL(_dd6e08829cd1).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:sj|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
+    return _3e8ed6b7e8a5 ? new URL(decodeURIComponent(_3e8ed6b7e8a5[1])).pathname : "";
   } catch {
     return "";
   }
 }
 
-function \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{6f}\u{75}\u{72}\u{63}\u{65}\u{55}\u{72}\u{6c}(_9ed3642c954a) {
+function \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{6f}\u{75}\u{72}\u{63}\u{65}\u{55}\u{72}\u{6c}(_dd6e08829cd1) {
   try {
-    const _10716c995afd = new URL(_9ed3642c954a).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:sj|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
-    return _10716c995afd ? new URL(decodeURIComponent(_10716c995afd[1])).href : "";
+    const _3e8ed6b7e8a5 = new URL(_dd6e08829cd1).pathname.match(/^\/gh\/dubcatalt2-lab\/nyx-jsdelivr-links@main\/nyx-static\/~\/(?:sj|tm)\/[^/]+\/[^/]+\/([^?#]*)/);
+    return _3e8ed6b7e8a5 ? new URL(decodeURIComponent(_3e8ed6b7e8a5[1])).href : "";
   } catch {
     return "";
   }
 }
 
-self.addEventListener("\x69\x6e\x73\x74\x61\x6c\x6c", _9ed3642c954a => {
-  _9ed3642c954a.waitUntil(self.skipWaiting());
+self.addEventListener("\x69\x6e\x73\x74\x61\x6c\x6c", _dd6e08829cd1 => {
+  _dd6e08829cd1.waitUntil(self.skipWaiting());
 });
 
 const nyxBlockedRequestHosts = [ "\x70\x61\x67\x65\x61\x64\x32\x2e\x67\x6f\x6f\x67\x6c\x65\x73\x79\x6e\x64\x69\x63\x61\x74\x69\x6f\x6e\x2e\x63\x6f\x6d", "\x67\x6f\x6f\x67\x6c\x65\x73\x79\x6e\x64\x69\x63\x61\x74\x69\x6f\x6e\x2e\x63\x6f\x6d", "\x67\x6f\x6f\x67\x6c\x65\x61\x64\x73\x2e\x67\x2e\x64\x6f\x75\x62\x6c\x65\x63\x6c\x69\x63\x6b\x2e\x6e\x65\x74", "\x64\x6f\x75\x62\x6c\x65\x63\x6c\x69\x63\x6b\x2e\x6e\x65\x74", "\x67\x6f\x6f\x67\x6c\x65\x74\x61\x67\x6d\x61\x6e\x61\x67\x65\x72\x2e\x63\x6f\x6d", "\x67\x6f\x6f\x67\x6c\x65\x2d\x61\x6e\x61\x6c\x79\x74\x69\x63\x73\x2e\x63\x6f\x6d", "\x61\x6e\x61\x6c\x79\x74\x69\x63\x73\x2e\x67\x6f\x6f\x67\x6c\x65\x2e\x63\x6f\x6d", "\x61\x64\x73\x65\x72\x76\x69\x63\x65\x2e\x67\x6f\x6f\x67\x6c\x65\x2e\x63\x6f\x6d", "\x61\x64\x74\x72\x61\x66\x66\x69\x63\x71\x75\x61\x6c\x69\x74\x79\x2e\x67\x6f\x6f\x67\x6c\x65", "\x73\x74\x61\x74\x73\x2e\x67\x2e\x64\x6f\x75\x62\x6c\x65\x63\x6c\x69\x63\x6b\x2e\x6e\x65\x74", "\x73\x74\x61\x74\x69\x63\x2e\x63\x6c\x6f\x75\x64\x66\x6c\x61\x72\x65\x69\x6e\x73\x69\x67\x68\x74\x73\x2e\x63\x6f\x6d", "\x63\x6c\x6f\x75\x64\x66\x6c\x61\x72\x65\x69\x6e\x73\x69\x67\x68\x74\x73\x2e\x63\x6f\x6d", "\x73\x74\x61\x74\x63\x6f\x75\x6e\x74\x65\x72\x2e\x63\x6f\x6d", "\x63\x2e\x73\x74\x61\x74\x63\x6f\x75\x6e\x74\x65\x72\x2e\x63\x6f\x6d", "\x77\x77\x77\x2e\x73\x74\x61\x74\x63\x6f\x75\x6e\x74\x65\x72\x2e\x63\x6f\x6d", "\x69\x6e\x6d\x6f\x62\x69\x2e\x63\x6f\x6d", "\x63\x6d\x70\x2e\x69\x6e\x6d\x6f\x62\x69\x2e\x63\x6f\x6d", "\x76\x6e\x74\x73\x6d\x2e\x63\x6f\x6d", "\x68\x62\x2e\x76\x6e\x74\x73\x6d\x2e\x63\x6f\x6d", "\x66\x61\x63\x65\x62\x6f\x6f\x6b\x2e\x6e\x65\x74", "\x63\x6f\x6e\x6e\x65\x63\x74\x2e\x66\x61\x63\x65\x62\x6f\x6f\x6b\x2e\x6e\x65\x74", "\x61\x64\x73\x2e\x65\x6d\x75\x6c\x61\x74\x6f\x72\x6a\x73\x2e\x6f\x72\x67", "\x63\x64\x6e\x2e\x72\x39\x78\x2e\x69\x6e", "\x67\x61\x6d\x65\x6d\x6f\x6e\x65\x74\x69\x7a\x65\x2e\x63\x6f\x6d", "\x68\x74\x6d\x6c\x35\x2e\x61\x70\x69\x2e\x67\x61\x6d\x65\x64\x69\x73\x74\x72\x69\x62\x75\x74\x69\x6f\x6e\x2e\x63\x6f\x6d", "\x69\x6d\x61\x73\x64\x6b\x2e\x67\x6f\x6f\x67\x6c\x65\x61\x70\x69\x73\x2e\x63\x6f\x6d", "\x73\x64\x6b\x2e\x70\x6f\x6b\x69\x2e\x63\x6f\x6d" ];
 
-function nyxHostBlocked(_9ed3642c954a) {
-  const _10716c995afd = String(_9ed3642c954a || "").toLowerCase();
-  return "\x63\x6d\x70\x2e\x69\x6e\x6d\x6f\x62\x69\x2e\x63\x6f\x6d" !== _10716c995afd && !_10716c995afd.endsWith("\x2e\x63\x6d\x70\x2e\x69\x6e\x6d\x6f\x62\x69\x2e\x63\x6f\x6d") && nyxBlockedRequestHosts.some(_9ed3642c954a => _10716c995afd === _9ed3642c954a || _10716c995afd.endsWith(`\x2e${_9ed3642c954a}`));
+function nyxHostBlocked(_dd6e08829cd1) {
+  const _3e8ed6b7e8a5 = String(_dd6e08829cd1 || "").toLowerCase();
+  return "\x63\x6d\x70\x2e\x69\x6e\x6d\x6f\x62\x69\x2e\x63\x6f\x6d" !== _3e8ed6b7e8a5 && !_3e8ed6b7e8a5.endsWith("\x2e\x63\x6d\x70\x2e\x69\x6e\x6d\x6f\x62\x69\x2e\x63\x6f\x6d") && nyxBlockedRequestHosts.some(_dd6e08829cd1 => _3e8ed6b7e8a5 === _dd6e08829cd1 || _3e8ed6b7e8a5.endsWith(`\x2e${_dd6e08829cd1}`));
 }
 
-function \u{6e}\u{79}\u{78}\u{53}\u{68}\u{6f}\u{75}\u{6c}\u{64}\u{42}\u{6c}\u{6f}\u{63}\u{6b}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{71}\u{75}\u{65}\u{73}\u{74}(_9ed3642c954a) {
-  const _10716c995afd = \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{6f}\u{75}\u{72}\u{63}\u{65}\u{55}\u{72}\u{6c}(_9ed3642c954a.request.url);
-  if (!_10716c995afd) return !1;
+function \u{6e}\u{79}\u{78}\u{53}\u{68}\u{6f}\u{75}\u{6c}\u{64}\u{42}\u{6c}\u{6f}\u{63}\u{6b}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{71}\u{75}\u{65}\u{73}\u{74}(_dd6e08829cd1) {
+  const _3e8ed6b7e8a5 = \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{6f}\u{75}\u{72}\u{63}\u{65}\u{55}\u{72}\u{6c}(_dd6e08829cd1.request.url);
+  if (!_3e8ed6b7e8a5) return !1;
   try {
-    const _9ed3642c954a = new URL(_10716c995afd);
-    return nyxHostBlocked(_9ed3642c954a.hostname) || /(?:^|\/)(?:ads?|ad[-_.]?(?:loader|manager|script)|jump[_-]gamemonetize|poki-(?:master-loader|sdk))\.(?:js|mjs)(?:$|\/)/i.test(_9ed3642c954a.pathname) || "\x73\x65\x72\x76\x65\x2e\x61\x70\x70\x2e\x70\x6c\x61\x79\x73\x61\x75\x72\x75\x73\x2e\x63\x6f\x6d" === _9ed3642c954a.hostname && /\/ad-campaigns\//i.test(_9ed3642c954a.pathname);
+    const _dd6e08829cd1 = new URL(_3e8ed6b7e8a5);
+    return nyxHostBlocked(_dd6e08829cd1.hostname) || /(?:^|\/)(?:ads?|ad[-_.]?(?:loader|manager|script)|jump[_-]gamemonetize|poki-(?:master-loader|sdk))\.(?:js|mjs)(?:$|\/)/i.test(_dd6e08829cd1.pathname) || "\x73\x65\x72\x76\x65\x2e\x61\x70\x70\x2e\x70\x6c\x61\x79\x73\x61\x75\x72\x75\x73\x2e\x63\x6f\x6d" === _dd6e08829cd1.hostname && /\/ad-campaigns\//i.test(_dd6e08829cd1.pathname);
   } catch {
     return !1;
   }
 }
 
-function \u{6e}\u{79}\u{78}\u{42}\u{6c}\u{6f}\u{63}\u{6b}\u{65}\u{64}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{73}\u{70}\u{6f}\u{6e}\u{73}\u{65}(_9ed3642c954a) {
-  const _10716c995afd = _9ed3642c954a.request.headers.get("\x61\x63\x63\x65\x70\x74") || "";
-  return [ "\x73\x63\x72\x69\x70\x74", "\x77\x6f\x72\x6b\x65\x72", "\x73\x68\x61\x72\x65\x64\x77\x6f\x72\x6b\x65\x72" ].includes(_9ed3642c954a.request.destination) || /javascript|ecmascript/i.test(_10716c995afd) ? new Response("", {
+function \u{6e}\u{79}\u{78}\u{42}\u{6c}\u{6f}\u{63}\u{6b}\u{65}\u{64}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{73}\u{70}\u{6f}\u{6e}\u{73}\u{65}(_dd6e08829cd1) {
+  const _3e8ed6b7e8a5 = _dd6e08829cd1.request.headers.get("\x61\x63\x63\x65\x70\x74") || "";
+  return [ "\x73\x63\x72\x69\x70\x74", "\x77\x6f\x72\x6b\x65\x72", "\x73\x68\x61\x72\x65\x64\x77\x6f\x72\x6b\x65\x72" ].includes(_dd6e08829cd1.request.destination) || /javascript|ecmascript/i.test(_3e8ed6b7e8a5) ? new Response("", {
     status: 200,
     headers: {
       "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
     }
-  }) : "\x73\x74\x79\x6c\x65" === _9ed3642c954a.request.destination || /text\/css/i.test(_10716c995afd) ? new Response("", {
+  }) : "\x73\x74\x79\x6c\x65" === _dd6e08829cd1.request.destination || /text\/css/i.test(_3e8ed6b7e8a5) ? new Response("", {
     status: 200,
     headers: {
       "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x74\x65\x78\x74\x2f\x63\x73\x73\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
     }
-  }) : "\x69\x6d\x61\x67\x65" === _9ed3642c954a.request.destination ? new Response("", {
+  }) : "\x69\x6d\x61\x67\x65" === _dd6e08829cd1.request.destination ? new Response("", {
     status: 204
-  }) : "\x64\x6f\x63\x75\x6d\x65\x6e\x74" === _9ed3642c954a.request.destination || "\x69\x66\x72\x61\x6d\x65" === _9ed3642c954a.request.destination ? new Response("\x3c\x21\x64\x6f\x63\x74\x79\x70\x65\x20\x68\x74\x6d\x6c\x3e\x3c\x6d\x65\x74\x61\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x22\x75\x74\x66\x2d\x38\x22\x3e", {
+  }) : "\x64\x6f\x63\x75\x6d\x65\x6e\x74" === _dd6e08829cd1.request.destination || "\x69\x66\x72\x61\x6d\x65" === _dd6e08829cd1.request.destination ? new Response("\x3c\x21\x64\x6f\x63\x74\x79\x70\x65\x20\x68\x74\x6d\x6c\x3e\x3c\x6d\x65\x74\x61\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x22\x75\x74\x66\x2d\x38\x22\x3e", {
     status: 200,
     headers: {
       "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
@@ -78,19 +78,19 @@ function \u{6e}\u{79}\u{78}\u{42}\u{6c}\u{6f}\u{63}\u{6b}\u{65}\u{64}\u{53}\u{63
   });
 }
 
-function nyxRequestExpectsAsset(_9ed3642c954a) {
-  const _10716c995afd = _9ed3642c954a.request.headers.get("\x61\x63\x63\x65\x70\x74") || "", _7b2bddf96fa3 = new URL(_9ed3642c954a.request.url).pathname, _9a51a085dd77 = \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{6f}\u{75}\u{72}\u{63}\u{65}\u{50}\u{61}\u{74}\u{68}(_9ed3642c954a.request.url);
-  return [ "\x73\x63\x72\x69\x70\x74", "\x77\x6f\x72\x6b\x65\x72", "\x73\x68\x61\x72\x65\x64\x77\x6f\x72\x6b\x65\x72", "\x73\x74\x79\x6c\x65" ].includes(_9ed3642c954a.request.destination) || /javascript|ecmascript|text\/css/i.test(_10716c995afd) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_7b2bddf96fa3) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_9a51a085dd77);
+function nyxRequestExpectsAsset(_dd6e08829cd1) {
+  const _3e8ed6b7e8a5 = _dd6e08829cd1.request.headers.get("\x61\x63\x63\x65\x70\x74") || "", _f4840b2a2b21 = new URL(_dd6e08829cd1.request.url).pathname, _4fa11b558884 = \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{6f}\u{75}\u{72}\u{63}\u{65}\u{50}\u{61}\u{74}\u{68}(_dd6e08829cd1.request.url);
+  return [ "\x73\x63\x72\x69\x70\x74", "\x77\x6f\x72\x6b\x65\x72", "\x73\x68\x61\x72\x65\x64\x77\x6f\x72\x6b\x65\x72", "\x73\x74\x79\x6c\x65" ].includes(_dd6e08829cd1.request.destination) || /javascript|ecmascript|text\/css/i.test(_3e8ed6b7e8a5) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_f4840b2a2b21) || /\.(?:js|mjs|cjs|css|jq|hs|ohs)(?:$|[/?#])/i.test(_4fa11b558884);
 }
 
-function nyxEmptyAssetResponse(_9ed3642c954a) {
-  const _10716c995afd = _9ed3642c954a.request.headers.get("\x61\x63\x63\x65\x70\x74") || "", _7b2bddf96fa3 = new URL(_9ed3642c954a.request.url).pathname, _9a51a085dd77 = \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{6f}\u{75}\u{72}\u{63}\u{65}\u{50}\u{61}\u{74}\u{68}(_9ed3642c954a.request.url);
-  return [ "\x73\x63\x72\x69\x70\x74", "\x77\x6f\x72\x6b\x65\x72", "\x73\x68\x61\x72\x65\x64\x77\x6f\x72\x6b\x65\x72" ].includes(_9ed3642c954a.request.destination) || /javascript|ecmascript/i.test(_10716c995afd) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_7b2bddf96fa3) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_9a51a085dd77) ? new Response("", {
+function nyxEmptyAssetResponse(_dd6e08829cd1) {
+  const _3e8ed6b7e8a5 = _dd6e08829cd1.request.headers.get("\x61\x63\x63\x65\x70\x74") || "", _f4840b2a2b21 = new URL(_dd6e08829cd1.request.url).pathname, _4fa11b558884 = \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{6f}\u{75}\u{72}\u{63}\u{65}\u{50}\u{61}\u{74}\u{68}(_dd6e08829cd1.request.url);
+  return [ "\x73\x63\x72\x69\x70\x74", "\x77\x6f\x72\x6b\x65\x72", "\x73\x68\x61\x72\x65\x64\x77\x6f\x72\x6b\x65\x72" ].includes(_dd6e08829cd1.request.destination) || /javascript|ecmascript/i.test(_3e8ed6b7e8a5) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_f4840b2a2b21) || /\.(?:js|mjs|cjs|jq|hs|ohs)(?:$|[/?#])/i.test(_4fa11b558884) ? new Response("", {
     status: 200,
     headers: {
       "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
     }
-  }) : "\x73\x74\x79\x6c\x65" === _9ed3642c954a.request.destination || /text\/css/i.test(_10716c995afd) ? new Response("", {
+  }) : "\x73\x74\x79\x6c\x65" === _dd6e08829cd1.request.destination || /text\/css/i.test(_3e8ed6b7e8a5) ? new Response("", {
     status: 200,
     headers: {
       "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x74\x65\x78\x74\x2f\x63\x73\x73\x3b\x20\x63\x68\x61\x72\x73\x65\x74\x3d\x75\x74\x66\x2d\x38"
@@ -98,37 +98,37 @@ function nyxEmptyAssetResponse(_9ed3642c954a) {
   }) : null;
 }
 
-function nyxBadAssetBody(_9ed3642c954a) {
-  return /^\s*</.test(_9ed3642c954a) || /^\s*\)\]\}'/.test(_9ed3642c954a) || /^\s*\)\]/.test(_9ed3642c954a);
+function nyxBadAssetBody(_dd6e08829cd1) {
+  return /^\s*</.test(_dd6e08829cd1) || /^\s*\)\]\}'/.test(_dd6e08829cd1) || /^\s*\)\]/.test(_dd6e08829cd1);
 }
 
-async function nyxScrubAssetResponse(_9ed3642c954a, _10716c995afd) {
-  if (!nyxRequestExpectsAsset(_9ed3642c954a)) return _10716c995afd;
-  const _7b2bddf96fa3 = _10716c995afd.headers.get("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65") || "";
-  if (_10716c995afd.status >= 400 || _7b2bddf96fa3.includes("\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c") || _7b2bddf96fa3.includes("\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e") || _7b2bddf96fa3.includes("\x74\x65\x78\x74\x2f\x6a\x73\x6f\x6e")) return nyxEmptyAssetResponse(_9ed3642c954a) || _10716c995afd;
-  const _9a51a085dd77 = await _10716c995afd.clone().text().catch(() => "");
-  if (nyxBadAssetBody(_9a51a085dd77)) return nyxEmptyAssetResponse(_9ed3642c954a) || _10716c995afd;
-  if (!_9a51a085dd77) return _10716c995afd;
-  const _8a5a6ca76283 = new Headers(_10716c995afd.headers);
-  return _8a5a6ca76283.delete("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x6c\x65\x6e\x67\x74\x68"), new Response(_9a51a085dd77, {
-    status: _10716c995afd.status,
-    statusText: _10716c995afd.statusText,
-    headers: _8a5a6ca76283
+async function nyxScrubAssetResponse(_dd6e08829cd1, _3e8ed6b7e8a5) {
+  if (!nyxRequestExpectsAsset(_dd6e08829cd1)) return _3e8ed6b7e8a5;
+  const _f4840b2a2b21 = _3e8ed6b7e8a5.headers.get("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65") || "";
+  if (_3e8ed6b7e8a5.status >= 400 || _f4840b2a2b21.includes("\x74\x65\x78\x74\x2f\x68\x74\x6d\x6c") || _f4840b2a2b21.includes("\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e") || _f4840b2a2b21.includes("\x74\x65\x78\x74\x2f\x6a\x73\x6f\x6e")) return nyxEmptyAssetResponse(_dd6e08829cd1) || _3e8ed6b7e8a5;
+  const _4fa11b558884 = await _3e8ed6b7e8a5.clone().text().catch(() => "");
+  if (nyxBadAssetBody(_4fa11b558884)) return nyxEmptyAssetResponse(_dd6e08829cd1) || _3e8ed6b7e8a5;
+  if (!_4fa11b558884) return _3e8ed6b7e8a5;
+  const _6d72c4c69ba8 = new Headers(_3e8ed6b7e8a5.headers);
+  return _6d72c4c69ba8.delete("\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x6c\x65\x6e\x67\x74\x68"), new Response(_4fa11b558884, {
+    status: _3e8ed6b7e8a5.status,
+    statusText: _3e8ed6b7e8a5.statusText,
+    headers: _6d72c4c69ba8
   });
 }
 
-function nyxDelay(_9ed3642c954a) {
-  return new Promise(_10716c995afd => setTimeout(_10716c995afd, _9ed3642c954a));
+function nyxDelay(_dd6e08829cd1) {
+  return new Promise(_3e8ed6b7e8a5 => setTimeout(_3e8ed6b7e8a5, _dd6e08829cd1));
 }
 
 async function \u{6e}\u{79}\u{78}\u{4e}\u{6f}\u{74}\u{69}\u{66}\u{79}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}\u{73}() {
   return \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{76}\u{69}\u{76}\u{65}\u{50}\u{72}\u{6f}\u{6d}\u{69}\u{73}\u{65} || (\u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{76}\u{69}\u{76}\u{65}\u{50}\u{72}\u{6f}\u{6d}\u{69}\u{73}\u{65} = (async () => {
-    const _9ed3642c954a = await self.clients.matchAll({
+    const _dd6e08829cd1 = await self.clients.matchAll({
       includeUncontrolled: !0,
       type: "\x77\x69\x6e\x64\x6f\x77"
     });
-    for (const _10716c995afd of _9ed3642c954a) try {
-      _10716c995afd.postMessage({
+    for (const _3e8ed6b7e8a5 of _dd6e08829cd1) try {
+      _3e8ed6b7e8a5.postMessage({
         $controller$swrevive: {}
       });
     } catch {}
@@ -138,13 +138,13 @@ async function \u{6e}\u{79}\u{78}\u{4e}\u{6f}\u{74}\u{69}\u{66}\u{79}\u{53}\u{63
   }), \u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{76}\u{69}\u{76}\u{65}\u{50}\u{72}\u{6f}\u{6d}\u{69}\u{73}\u{65});
 }
 
-async function nyxRouteAfterRevive(_9ed3642c954a) {
-  const _10716c995afd = Date.now() + 7e3;
-  let _7b2bddf96fa3 = 0;
-  for (;Date.now() < _10716c995afd; ) {
-    const _10716c995afd = Date.now();
-    if (_10716c995afd >= _7b2bddf96fa3 && (await \u{6e}\u{79}\u{78}\u{4e}\u{6f}\u{74}\u{69}\u{66}\u{79}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}\u{73}(), _7b2bddf96fa3 = _10716c995afd + 500), 
-    \u{24}\u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}.shouldRoute(_9ed3642c954a)) return \u{6e}\u{79}\u{78}\u{52}\u{6f}\u{75}\u{74}\u{65}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}(_9ed3642c954a);
+async function nyxRouteAfterRevive(_dd6e08829cd1) {
+  const _3e8ed6b7e8a5 = Date.now() + 7e3;
+  let _f4840b2a2b21 = 0;
+  for (;Date.now() < _3e8ed6b7e8a5; ) {
+    const _3e8ed6b7e8a5 = Date.now();
+    if (_3e8ed6b7e8a5 >= _f4840b2a2b21 && (await \u{6e}\u{79}\u{78}\u{4e}\u{6f}\u{74}\u{69}\u{66}\u{79}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}\u{73}(), _f4840b2a2b21 = _3e8ed6b7e8a5 + 500), 
+    \u{24}\u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}.shouldRoute(_dd6e08829cd1)) return \u{6e}\u{79}\u{78}\u{52}\u{6f}\u{75}\u{74}\u{65}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}(_dd6e08829cd1);
     await nyxDelay(100);
   }
   return new Response(\u{6e}\u{79}\u{78}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{6f}\u{75}\u{74}\u{65}\u{4d}\u{69}\u{73}\u{73}\u{48}\u{74}\u{6d}\u{6c}(), {
@@ -155,14 +155,14 @@ async function nyxRouteAfterRevive(_9ed3642c954a) {
   });
 }
 
-async function \u{6e}\u{79}\u{78}\u{52}\u{6f}\u{75}\u{74}\u{65}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}(_9ed3642c954a) {
-  return nyxScrubAssetResponse(_9ed3642c954a, await \u{24}\u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}.route(_9ed3642c954a));
+async function \u{6e}\u{79}\u{78}\u{52}\u{6f}\u{75}\u{74}\u{65}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}(_dd6e08829cd1) {
+  return nyxScrubAssetResponse(_dd6e08829cd1, await \u{24}\u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}.route(_dd6e08829cd1));
 }
 
-self.addEventListener("\x66\x65\x74\x63\x68", _9ed3642c954a => {
-  self.NYX_TUTSI_WORKER || !\u{6e}\u{79}\u{78}\u{53}\u{68}\u{6f}\u{75}\u{6c}\u{64}\u{42}\u{6c}\u{6f}\u{63}\u{6b}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{71}\u{75}\u{65}\u{73}\u{74}(_9ed3642c954a) ? \u{24}\u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}.shouldRoute(_9ed3642c954a) ? _9ed3642c954a.respondWith(\u{6e}\u{79}\u{78}\u{52}\u{6f}\u{75}\u{74}\u{65}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}(_9ed3642c954a)) : \u{6e}\u{79}\u{78}\u{49}\u{73}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{71}\u{75}\u{65}\u{73}\u{74}(_9ed3642c954a) && _9ed3642c954a.respondWith(nyxRouteAfterRevive(_9ed3642c954a)) : _9ed3642c954a.respondWith(\u{6e}\u{79}\u{78}\u{42}\u{6c}\u{6f}\u{63}\u{6b}\u{65}\u{64}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{73}\u{70}\u{6f}\u{6e}\u{73}\u{65}(_9ed3642c954a));
-}), self.addEventListener("\x61\x63\x74\x69\x76\x61\x74\x65", _9ed3642c954a => {
-  _9ed3642c954a.waitUntil(Promise.all([ self.clients.claim(), \u{6e}\u{79}\u{78}\u{4e}\u{6f}\u{74}\u{69}\u{66}\u{79}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}\u{73}().catch(() => {}) ]));
+self.addEventListener("\x66\x65\x74\x63\x68", _dd6e08829cd1 => {
+  self.NYX_TUTSI_WORKER || !\u{6e}\u{79}\u{78}\u{53}\u{68}\u{6f}\u{75}\u{6c}\u{64}\u{42}\u{6c}\u{6f}\u{63}\u{6b}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{71}\u{75}\u{65}\u{73}\u{74}(_dd6e08829cd1) ? \u{24}\u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}.shouldRoute(_dd6e08829cd1) ? _dd6e08829cd1.respondWith(\u{6e}\u{79}\u{78}\u{52}\u{6f}\u{75}\u{74}\u{65}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}(_dd6e08829cd1)) : \u{6e}\u{79}\u{78}\u{49}\u{73}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{71}\u{75}\u{65}\u{73}\u{74}(_dd6e08829cd1) && _dd6e08829cd1.respondWith(nyxRouteAfterRevive(_dd6e08829cd1)) : _dd6e08829cd1.respondWith(\u{6e}\u{79}\u{78}\u{42}\u{6c}\u{6f}\u{63}\u{6b}\u{65}\u{64}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{73}\u{70}\u{6f}\u{6e}\u{73}\u{65}(_dd6e08829cd1));
+}), self.addEventListener("\x61\x63\x74\x69\x76\x61\x74\x65", _dd6e08829cd1 => {
+  _dd6e08829cd1.waitUntil(Promise.all([ self.clients.claim(), \u{6e}\u{79}\u{78}\u{4e}\u{6f}\u{74}\u{69}\u{66}\u{79}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}\u{73}().catch(() => {}) ]));
 }), setTimeout(() => {
   \u{6e}\u{79}\u{78}\u{4e}\u{6f}\u{74}\u{69}\u{66}\u{79}\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{43}\u{6f}\u{6e}\u{74}\u{72}\u{6f}\u{6c}\u{6c}\u{65}\u{72}\u{73}().catch(() => {});
 }, 120);

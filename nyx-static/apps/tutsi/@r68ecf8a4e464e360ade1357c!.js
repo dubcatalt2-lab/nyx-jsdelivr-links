@@ -1,51 +1,51 @@
-import { httpRelayUrl as λ0654f8fae26c } from "\x2e\x2f\x40\x72\x36\x39\x34\x62\x61\x38\x32\x65\x39\x34\x34\x31\x37\x38\x64\x65\x36\x38\x66\x39\x62\x66\x38\x64\x21\x2e\x6a\x73";
+import { httpRelayUrl as λ54f0a38a854b } from "\x2e\x2f\x40\x72\x36\x39\x34\x62\x61\x38\x32\x65\x39\x34\x34\x31\x37\x38\x64\x65\x36\x38\x66\x39\x62\x66\x38\x64\x21\x2e\x6a\x73";
 
-export function normalizeRelay(λ0654f8fae26c, λb257c730ad53 = globalThis.location?.protocol || "\x68\x74\x74\x70\x73\x3a") {
+export function normalizeRelay(λ54f0a38a854b, λ5454f9ca2e88 = globalThis.location?.protocol || "\x68\x74\x74\x70\x73\x3a") {
   try {
-    const λ0d010d887981 = new URL(λ0654f8fae26c);
-    return ![ "\x77\x73\x3a", "\x77\x73\x73\x3a" ].includes(λ0d010d887981.protocol) || λ0d010d887981.username || λ0d010d887981.password || λ0d010d887981.hash || "\x68\x74\x74\x70\x73\x3a" === λb257c730ad53 && "\x77\x73\x73\x3a" !== λ0d010d887981.protocol ? "" : λ0d010d887981.href;
+    const λ2ed4ee85319f = new URL(λ54f0a38a854b);
+    return ![ "\x77\x73\x3a", "\x77\x73\x73\x3a" ].includes(λ2ed4ee85319f.protocol) || λ2ed4ee85319f.username || λ2ed4ee85319f.password || λ2ed4ee85319f.hash || "\x68\x74\x74\x70\x73\x3a" === λ5454f9ca2e88 && "\x77\x73\x73\x3a" !== λ2ed4ee85319f.protocol ? "" : λ2ed4ee85319f.href;
   } catch {
     return "";
   }
 }
 
-export function relayCandidates(λ0654f8fae26c, λb257c730ad53 = globalThis.__NYX_RUNTIME_CONFIG__ || {}, λ0d010d887981 = location) {
-  const λd6b3eeab04d6 = `${"\x68\x74\x74\x70\x73\x3a" === λ0d010d887981.protocol ? "\x77\x73\x73\x3a" : "\x77\x73\x3a"}\x2f\x2f${λ0d010d887981.host}\x2f\x72\x65\x73\x6f\x75\x72\x63\x65\x73\x2f\x6c\x69\x76\x65\x2f`, λ37c03445fbbd = normalizeRelay(λ0654f8fae26c.relay, λ0d010d887981.protocol) || normalizeRelay(λb257c730ad53.wispUrl, λ0d010d887981.protocol) || λd6b3eeab04d6;
-  return !1 === λ0654f8fae26c.autoRelay ? [ λ37c03445fbbd ] : [ ...new Set([ λ37c03445fbbd, λd6b3eeab04d6, ...Array.isArray(λb257c730ad53.wispUrls) ? λb257c730ad53.wispUrls : [], "\x77\x73\x73\x3a\x2f\x2f\x63\x6f\x70\x69\x75\x6d\x2d\x77\x69\x73\x70\x2d\x39\x35\x32\x39\x34\x36\x33\x2e\x6f\x6e\x72\x65\x6e\x64\x65\x72\x2e\x63\x6f\x6d\x2f\x77\x69\x73\x70\x2f" ].map(λ0654f8fae26c => normalizeRelay(λ0654f8fae26c, λ0d010d887981.protocol)).filter(Boolean)) ].slice(0, 6);
+export function relayCandidates(λ54f0a38a854b, λ5454f9ca2e88 = globalThis.__NYX_RUNTIME_CONFIG__ || {}, λ2ed4ee85319f = location) {
+  const λ16db786f0d00 = `${"\x68\x74\x74\x70\x73\x3a" === λ2ed4ee85319f.protocol ? "\x77\x73\x73\x3a" : "\x77\x73\x3a"}\x2f\x2f${λ2ed4ee85319f.host}\x2f\x72\x65\x73\x6f\x75\x72\x63\x65\x73\x2f\x6c\x69\x76\x65\x2f`, λc873e1c880fe = normalizeRelay(λ54f0a38a854b.relay, λ2ed4ee85319f.protocol) || normalizeRelay(λ5454f9ca2e88.wispUrl, λ2ed4ee85319f.protocol) || λ16db786f0d00;
+  return !1 === λ54f0a38a854b.autoRelay ? [ λc873e1c880fe ] : [ ...new Set([ λc873e1c880fe, λ16db786f0d00, ...Array.isArray(λ5454f9ca2e88.wispUrls) ? λ5454f9ca2e88.wispUrls : [], "\x77\x73\x73\x3a\x2f\x2f\x63\x6f\x70\x69\x75\x6d\x2d\x77\x69\x73\x70\x2d\x39\x35\x32\x39\x34\x36\x33\x2e\x6f\x6e\x72\x65\x6e\x64\x65\x72\x2e\x63\x6f\x6d\x2f\x77\x69\x73\x70\x2f" ].map(λ54f0a38a854b => normalizeRelay(λ54f0a38a854b, λ2ed4ee85319f.protocol)).filter(Boolean)) ].slice(0, 6);
 }
 
-export function transportCandidates(λb257c730ad53, λ0d010d887981 = globalThis.__NYX_RUNTIME_CONFIG__ || {}, λd6b3eeab04d6 = location) {
-  const λ37c03445fbbd = λ0654f8fae26c(λd6b3eeab04d6), λ00fea495f66b = relayCandidates(λb257c730ad53, λ0d010d887981, λd6b3eeab04d6);
-  return !1 === λb257c730ad53.httpBridge ? relayCandidates(λb257c730ad53.relay === λ37c03445fbbd ? {
-    ...λb257c730ad53,
+export function transportCandidates(λ5454f9ca2e88, λ2ed4ee85319f = globalThis.__NYX_RUNTIME_CONFIG__ || {}, λ16db786f0d00 = location) {
+  const λc873e1c880fe = λ54f0a38a854b(λ16db786f0d00), λ4afb38bf7fb4 = relayCandidates(λ5454f9ca2e88, λ2ed4ee85319f, λ16db786f0d00);
+  return !1 === λ5454f9ca2e88.httpBridge ? relayCandidates(λ5454f9ca2e88.relay === λc873e1c880fe ? {
+    ...λ5454f9ca2e88,
     relay: ""
-  } : λb257c730ad53, λ0d010d887981.wispUrl === λ37c03445fbbd ? {
-    ...λ0d010d887981,
+  } : λ5454f9ca2e88, λ2ed4ee85319f.wispUrl === λc873e1c880fe ? {
+    ...λ2ed4ee85319f,
     wispUrl: ""
-  } : λ0d010d887981, λd6b3eeab04d6).filter(λ0654f8fae26c => λ0654f8fae26c !== λ37c03445fbbd) : λb257c730ad53.relay && λb257c730ad53.relay !== λ37c03445fbbd ? [ ...new Set([ ...λ00fea495f66b, ...!1 === λb257c730ad53.autoRelay ? [] : [ λ37c03445fbbd ] ]) ] : [ ...new Set([ λ37c03445fbbd, ...!1 === λb257c730ad53.autoRelay ? [] : λ00fea495f66b ]) ];
+  } : λ2ed4ee85319f, λ16db786f0d00).filter(λ54f0a38a854b => λ54f0a38a854b !== λc873e1c880fe) : λ5454f9ca2e88.relay && λ5454f9ca2e88.relay !== λc873e1c880fe ? [ ...new Set([ ...λ4afb38bf7fb4, ...!1 === λ5454f9ca2e88.autoRelay ? [] : [ λc873e1c880fe ] ]) ] : [ ...new Set([ λc873e1c880fe, ...!1 === λ5454f9ca2e88.autoRelay ? [] : λ4afb38bf7fb4 ]) ];
 }
 
-export function probeWisp(λ0654f8fae26c, {timeout: λb257c730ad53 = 7e3, Socket: λ0d010d887981 = WebSocket} = {}) {
-  return new Promise(λd6b3eeab04d6 => {
-    let λ37c03445fbbd, λ00fea495f66b = !1;
-    const _0x06a923_6 = λ0654f8fae26c => {
-      if (!λ00fea495f66b) {
-        if (λ00fea495f66b = !0, clearTimeout(λ615754a89e1a), λ37c03445fbbd) {
-          λ37c03445fbbd.onmessage = λ37c03445fbbd.onerror = λ37c03445fbbd.onclose = null;
+export function probeWisp(λ54f0a38a854b, {timeout: λ5454f9ca2e88 = 7e3, Socket: λ2ed4ee85319f = WebSocket} = {}) {
+  return new Promise(λ16db786f0d00 => {
+    let λc873e1c880fe, λ4afb38bf7fb4 = !1;
+    const _0x06a923_6 = λ54f0a38a854b => {
+      if (!λ4afb38bf7fb4) {
+        if (λ4afb38bf7fb4 = !0, clearTimeout(λ5f476d10aaad), λc873e1c880fe) {
+          λc873e1c880fe.onmessage = λc873e1c880fe.onerror = λc873e1c880fe.onclose = null;
           try {
-            λ37c03445fbbd.close();
+            λc873e1c880fe.close();
           } catch {}
         }
-        λd6b3eeab04d6(λ0654f8fae26c);
+        λ16db786f0d00(λ54f0a38a854b);
       }
-    }, λ615754a89e1a = setTimeout(() => _0x06a923_6(!1), λb257c730ad53);
+    }, λ5f476d10aaad = setTimeout(() => _0x06a923_6(!1), λ5454f9ca2e88);
     try {
-      λ37c03445fbbd = new λ0d010d887981(λ0654f8fae26c), λ37c03445fbbd.binaryType = "\x61\x72\x72\x61\x79\x62\x75\x66\x66\x65\x72", 
-      λ37c03445fbbd.onmessage = λ0654f8fae26c => {
-        if (!(λ0654f8fae26c.data instanceof ArrayBuffer)) return;
-        const λb257c730ad53 = new Uint8Array(λ0654f8fae26c.data);
-        λb257c730ad53.length >= 9 && 3 === λb257c730ad53[0] && 0 === new DataView(λ0654f8fae26c.data).getUint32(1, !0) && _0x06a923_6(!0);
-      }, λ37c03445fbbd.onerror = λ37c03445fbbd.onclose = () => _0x06a923_6(!1);
+      λc873e1c880fe = new λ2ed4ee85319f(λ54f0a38a854b), λc873e1c880fe.binaryType = "\x61\x72\x72\x61\x79\x62\x75\x66\x66\x65\x72", 
+      λc873e1c880fe.onmessage = λ54f0a38a854b => {
+        if (!(λ54f0a38a854b.data instanceof ArrayBuffer)) return;
+        const λ5454f9ca2e88 = new Uint8Array(λ54f0a38a854b.data);
+        λ5454f9ca2e88.length >= 9 && 3 === λ5454f9ca2e88[0] && 0 === new DataView(λ54f0a38a854b.data).getUint32(1, !0) && _0x06a923_6(!0);
+      }, λc873e1c880fe.onerror = λc873e1c880fe.onclose = () => _0x06a923_6(!1);
     } catch {
       _0x06a923_6(!1);
     }
@@ -53,67 +53,67 @@ export function probeWisp(λ0654f8fae26c, {timeout: λb257c730ad53 = 7e3, Socket
 }
 
 export class RelayTransport {
-  constructor({urls: λ0654f8fae26c, createClient: λb257c730ad53, probe: λ0d010d887981 = probeWisp, onStatus: λd6b3eeab04d6 = () => {}, storage: λ37c03445fbbd = globalThis.sessionStorage, monitorMs: λ00fea495f66b = 3e4, requestTimeoutMs: λ615754a89e1a = 2e4, rank: λ8b7a3d707640 = async λ0654f8fae26c => λ0654f8fae26c, online: λa93155343a30 = () => !1 !== globalThis.navigator?.onLine, visible: λ04da5e698fcc = () => !globalThis.document?.hidden}) {
+  constructor({urls: λ54f0a38a854b, createClient: λ5454f9ca2e88, probe: λ2ed4ee85319f = probeWisp, onStatus: λ16db786f0d00 = () => {}, storage: λc873e1c880fe = globalThis.sessionStorage, monitorMs: λ4afb38bf7fb4 = 3e4, requestTimeoutMs: λ5f476d10aaad = 2e4, rank: λf5dcff6a86bf = async λ54f0a38a854b => λ54f0a38a854b, online: λ7c513ceea6a5 = () => !1 !== globalThis.navigator?.onLine, visible: λ225afaedc6b8 = () => !globalThis.document?.hidden}) {
     Object.assign(this, {
-      urls: λ0654f8fae26c,
-      createClient: λb257c730ad53,
-      probe: λ0d010d887981,
-      onStatus: λd6b3eeab04d6,
-      storage: λ37c03445fbbd,
-      monitorMs: λ00fea495f66b,
-      requestTimeoutMs: λ615754a89e1a,
-      rank: λ8b7a3d707640,
-      online: λa93155343a30,
-      visible: λ04da5e698fcc
+      urls: λ54f0a38a854b,
+      createClient: λ5454f9ca2e88,
+      probe: λ2ed4ee85319f,
+      onStatus: λ16db786f0d00,
+      storage: λc873e1c880fe,
+      monitorMs: λ4afb38bf7fb4,
+      requestTimeoutMs: λ5f476d10aaad,
+      rank: λf5dcff6a86bf,
+      online: λ7c513ceea6a5,
+      visible: λ225afaedc6b8
     }), this.ready = !1, this.closed = !1, this.url = "", this.client = null, this.switching = null, 
     this.failures = 0, this.retired = [];
   }
   async init() {
     await this.select(), this.ready = !0, this.schedule();
   }
-  async select(λ0654f8fae26c = "") {
+  async select(λ54f0a38a854b = "") {
     if (this.closed) throw new Error("\x52\x65\x6c\x61\x79\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x63\x6c\x6f\x73\x65\x64\x2e");
     if (this.switching) return this.switching;
     if (!this.online()) throw new Error("\x59\x6f\x75\x20\x61\x72\x65\x20\x6f\x66\x66\x6c\x69\x6e\x65\x2e\x20\x52\x65\x63\x6f\x6e\x6e\x65\x63\x74\x20\x74\x6f\x20\x57\x69\x2d\x46\x69\x20\x61\x6e\x64\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e");
-    let λb257c730ad53 = "";
+    let λ5454f9ca2e88 = "";
     try {
-      λb257c730ad53 = this.storage?.getItem("\x74\x75\x74\x73\x69\x2e\x77\x6f\x72\x6b\x69\x6e\x67\x52\x65\x6c\x61\x79\x3a" + this.urls.join("\x7c")) || "";
+      λ5454f9ca2e88 = this.storage?.getItem("\x74\x75\x74\x73\x69\x2e\x77\x6f\x72\x6b\x69\x6e\x67\x52\x65\x6c\x61\x79\x3a" + this.urls.join("\x7c")) || "";
     } catch {}
-    const λ0d010d887981 = [ ...new Set([ this.url, λb257c730ad53, ...this.urls ]) ].filter(λb257c730ad53 => this.urls.includes(λb257c730ad53) && λb257c730ad53 !== λ0654f8fae26c);
+    const λ2ed4ee85319f = [ ...new Set([ this.url, λ5454f9ca2e88, ...this.urls ]) ].filter(λ5454f9ca2e88 => this.urls.includes(λ5454f9ca2e88) && λ5454f9ca2e88 !== λ54f0a38a854b);
     this.switching = (async () => {
-      let λb257c730ad53;
-      const λd6b3eeab04d6 = await Promise.race([ Promise.resolve().then(() => this.rank(λ0d010d887981)).catch(() => λ0d010d887981), new Promise(λ0654f8fae26c => {
-        λb257c730ad53 = setTimeout(() => λ0654f8fae26c(λ0d010d887981), 300);
-      }) ]).finally(() => clearTimeout(λb257c730ad53));
-      for (const λb257c730ad53 of λd6b3eeab04d6) {
+      let λ5454f9ca2e88;
+      const λ16db786f0d00 = await Promise.race([ Promise.resolve().then(() => this.rank(λ2ed4ee85319f)).catch(() => λ2ed4ee85319f), new Promise(λ54f0a38a854b => {
+        λ5454f9ca2e88 = setTimeout(() => λ54f0a38a854b(λ2ed4ee85319f), 300);
+      }) ]).finally(() => clearTimeout(λ5454f9ca2e88));
+      for (const λ5454f9ca2e88 of λ16db786f0d00) {
         if (this.closed) throw new Error("\x52\x65\x6c\x61\x79\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x63\x6c\x6f\x73\x65\x64\x2e");
         if (this.onStatus({
           state: "\x63\x68\x65\x63\x6b\x69\x6e\x67",
-          url: λb257c730ad53
-        }), !await this.probe(λb257c730ad53)) continue;
-        let λ0d010d887981;
+          url: λ5454f9ca2e88
+        }), !await this.probe(λ5454f9ca2e88)) continue;
+        let λ2ed4ee85319f;
         try {
-          λ0d010d887981 = await this.createClient(λb257c730ad53);
+          λ2ed4ee85319f = await this.createClient(λ5454f9ca2e88);
         } catch {
           continue;
         }
-        if (this.closed) throw λ0d010d887981.close?.(), new Error("\x52\x65\x6c\x61\x79\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x63\x6c\x6f\x73\x65\x64\x2e");
+        if (this.closed) throw λ2ed4ee85319f.close?.(), new Error("\x52\x65\x6c\x61\x79\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x63\x6c\x6f\x73\x65\x64\x2e");
         for (this.client && this.retired.push(this.client); this.retired.length > 2; ) try {
           this.retired.shift()?.close?.();
         } catch {}
-        this.client = λ0d010d887981, this.url = λb257c730ad53, this.failures = 0;
+        this.client = λ2ed4ee85319f, this.url = λ5454f9ca2e88, this.failures = 0;
         try {
-          this.storage?.setItem("\x74\x75\x74\x73\x69\x2e\x77\x6f\x72\x6b\x69\x6e\x67\x52\x65\x6c\x61\x79\x3a" + this.urls.join("\x7c"), λb257c730ad53);
+          this.storage?.setItem("\x74\x75\x74\x73\x69\x2e\x77\x6f\x72\x6b\x69\x6e\x67\x52\x65\x6c\x61\x79\x3a" + this.urls.join("\x7c"), λ5454f9ca2e88);
         } catch {}
         return void this.onStatus({
-          state: λ0654f8fae26c ? "\x73\x77\x69\x74\x63\x68\x65\x64" : "\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64",
-          url: λb257c730ad53
+          state: λ54f0a38a854b ? "\x73\x77\x69\x74\x63\x68\x65\x64" : "\x63\x6f\x6e\x6e\x65\x63\x74\x65\x64",
+          url: λ5454f9ca2e88
         });
       }
       throw this.onStatus({
         state: "\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65",
         url: ""
-      }), new Error("\x4e\x6f\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64\x20\x57\x69\x73\x70\x20\x72\x65\x6c\x61\x79\x20\x69\x73\x20\x72\x65\x61\x63\x68\x61\x62\x6c\x65\x20\x66\x72\x6f\x6d\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x6f\x72\x20\x63\x68\x61\x6e\x67\x65\x20\x74\x68\x65\x20\x72\x65\x6c\x61\x79\x20\x69\x6e\x20\x53\x65\x74\x74\x69\x6e\x67\x73\x2e");
+      }), new Error("\x4e\x6f\x20\x63\x6f\x6e\x66\x69\x67\x75\x72\x65\x64\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x72\x65\x6c\x61\x79\x20\x69\x73\x20\x72\x65\x61\x63\x68\x61\x62\x6c\x65\x20\x66\x72\x6f\x6d\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e\x20\x54\x72\x79\x20\x61\x67\x61\x69\x6e\x20\x6f\x72\x20\x63\x68\x61\x6e\x67\x65\x20\x74\x68\x65\x20\x72\x65\x6c\x61\x79\x20\x69\x6e\x20\x53\x65\x74\x74\x69\x6e\x67\x73\x2e");
     })();
     try {
       return await this.switching;
@@ -121,68 +121,68 @@ export class RelayTransport {
       this.switching = null;
     }
   }
-  async recover(λ0654f8fae26c, λb257c730ad53 = !1, λ0d010d887981 = !1) {
-    return !(this.closed || !this.online() || this.client === λ0654f8fae26c && (this.switching ? (await this.switching, 
-    this.client === λ0654f8fae26c) : !λb257c730ad53 && await this.probe(this.url) || this.client === λ0654f8fae26c && (await this.select(λ0d010d887981 ? "" : this.url), 
-    this.client === λ0654f8fae26c)));
+  async recover(λ54f0a38a854b, λ5454f9ca2e88 = !1, λ2ed4ee85319f = !1) {
+    return !(this.closed || !this.online() || this.client === λ54f0a38a854b && (this.switching ? (await this.switching, 
+    this.client === λ54f0a38a854b) : !λ5454f9ca2e88 && await this.probe(this.url) || this.client === λ54f0a38a854b && (await this.select(λ2ed4ee85319f ? "" : this.url), 
+    this.client === λ54f0a38a854b)));
   }
-  async attempt(λ0654f8fae26c, λb257c730ad53) {
-    const λ0d010d887981 = λb257c730ad53[4], λd6b3eeab04d6 = new AbortController;
-    if (λ0d010d887981?.aborted) throw λ0d010d887981.reason || new DOMException("\x43\x61\x6e\x63\x65\x6c\x6c\x65\x64", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72");
-    let λ37c03445fbbd, λ00fea495f66b = !1, λ615754a89e1a = !1;
-    const λ8b7a3d707640 = λ0d010d887981 ? AbortSignal.any([ λ0d010d887981, λd6b3eeab04d6.signal ]) : λd6b3eeab04d6.signal, λa93155343a30 = Promise.resolve().then(() => λ0654f8fae26c.request(...λb257c730ad53.slice(0, 4), λ8b7a3d707640));
-    λa93155343a30.then(λ0654f8fae26c => {
-      λ615754a89e1a && λ8b7a3d707640.aborted && λ0654f8fae26c?.body?.cancel?.().catch(() => {});
+  async attempt(λ54f0a38a854b, λ5454f9ca2e88) {
+    const λ2ed4ee85319f = λ5454f9ca2e88[4], λ16db786f0d00 = new AbortController;
+    if (λ2ed4ee85319f?.aborted) throw λ2ed4ee85319f.reason || new DOMException("\x43\x61\x6e\x63\x65\x6c\x6c\x65\x64", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72");
+    let λc873e1c880fe, λ4afb38bf7fb4 = !1, λ5f476d10aaad = !1;
+    const λf5dcff6a86bf = λ2ed4ee85319f ? AbortSignal.any([ λ2ed4ee85319f, λ16db786f0d00.signal ]) : λ16db786f0d00.signal, λ7c513ceea6a5 = Promise.resolve().then(() => λ54f0a38a854b.request(...λ5454f9ca2e88.slice(0, 4), λf5dcff6a86bf));
+    λ7c513ceea6a5.then(λ54f0a38a854b => {
+      λ5f476d10aaad && λf5dcff6a86bf.aborted && λ54f0a38a854b?.body?.cancel?.().catch(() => {});
     }, () => {});
-    const λ04da5e698fcc = new Promise((λ0654f8fae26c, λb257c730ad53) => {
-      const _0x06a923_2 = () => λb257c730ad53(λ00fea495f66b ? Object.assign(new Error("\x52\x65\x6c\x61\x79\x20\x72\x65\x71\x75\x65\x73\x74\x20\x74\x69\x6d\x65\x64\x20\x6f\x75\x74"), {
+    const λ225afaedc6b8 = new Promise((λ54f0a38a854b, λ5454f9ca2e88) => {
+      const _0x06a923_2 = () => λ5454f9ca2e88(λ4afb38bf7fb4 ? Object.assign(new Error("\x52\x65\x6c\x61\x79\x20\x72\x65\x71\x75\x65\x73\x74\x20\x74\x69\x6d\x65\x64\x20\x6f\x75\x74"), {
         name: "\x54\x69\x6d\x65\x6f\x75\x74\x45\x72\x72\x6f\x72"
-      }) : λ8b7a3d707640.reason);
-      λ8b7a3d707640.addEventListener("\x61\x62\x6f\x72\x74", _0x06a923_2, {
+      }) : λf5dcff6a86bf.reason);
+      λf5dcff6a86bf.addEventListener("\x61\x62\x6f\x72\x74", _0x06a923_2, {
         once: !0
-      }), λ37c03445fbbd = setTimeout(() => {
-        λ00fea495f66b = !0, λd6b3eeab04d6.abort();
-      }, this.requestTimeoutMs), λa93155343a30.finally(() => λ8b7a3d707640.removeEventListener("\x61\x62\x6f\x72\x74", _0x06a923_2)).catch(() => {});
+      }), λc873e1c880fe = setTimeout(() => {
+        λ4afb38bf7fb4 = !0, λ16db786f0d00.abort();
+      }, this.requestTimeoutMs), λ7c513ceea6a5.finally(() => λf5dcff6a86bf.removeEventListener("\x61\x62\x6f\x72\x74", _0x06a923_2)).catch(() => {});
     });
     try {
-      return await Promise.race([ λa93155343a30, λ04da5e698fcc ]);
+      return await Promise.race([ λ7c513ceea6a5, λ225afaedc6b8 ]);
     } finally {
-      λ615754a89e1a = !0, clearTimeout(λ37c03445fbbd);
+      λ5f476d10aaad = !0, clearTimeout(λc873e1c880fe);
     }
   }
-  async request(...λ0654f8fae26c) {
+  async request(...λ54f0a38a854b) {
     if (this.closed) throw new Error("\x52\x65\x6c\x61\x79\x20\x63\x6f\x6e\x6e\x65\x63\x74\x69\x6f\x6e\x20\x63\x6c\x6f\x73\x65\x64\x2e");
     this.ready || await this.init();
-    const λb257c730ad53 = this.client;
+    const λ5454f9ca2e88 = this.client;
     try {
-      return await this.attempt(λb257c730ad53, λ0654f8fae26c);
-    } catch (λ0d010d887981) {
-      if (λ0654f8fae26c[4]?.aborted || "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === λ0d010d887981?.name) throw λ0d010d887981;
-      const λd6b3eeab04d6 = "\x54\x69\x6d\x65\x6f\x75\x74\x45\x72\x72\x6f\x72" === λ0d010d887981?.name || /timed?\s*out|timeout|ETIMEDOUT|ECONNRESET|network|socket|wisp|hyper.*(?:error|client)|muxtaskended|connection.*(?:closed|reset|lost|failed)|unexpected.*(?:eof|cutoff)|transport.*(?:closed|failed)/i.test(String(λ0d010d887981?.message || λ0d010d887981 || ""));
-      let λ37c03445fbbd = !1;
+      return await this.attempt(λ5454f9ca2e88, λ54f0a38a854b);
+    } catch (λ2ed4ee85319f) {
+      if (λ54f0a38a854b[4]?.aborted || "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === λ2ed4ee85319f?.name) throw λ2ed4ee85319f;
+      const λ16db786f0d00 = "\x54\x69\x6d\x65\x6f\x75\x74\x45\x72\x72\x6f\x72" === λ2ed4ee85319f?.name || /timed?\s*out|timeout|ETIMEDOUT|ECONNRESET|network|socket|wisp|hyper.*(?:error|client)|muxtaskended|connection.*(?:closed|reset|lost|failed)|unexpected.*(?:eof|cutoff)|transport.*(?:closed|failed)/i.test(String(λ2ed4ee85319f?.message || λ2ed4ee85319f || ""));
+      let λc873e1c880fe = !1;
       try {
-        λ37c03445fbbd = await this.recover(λb257c730ad53, λd6b3eeab04d6, λd6b3eeab04d6);
+        λc873e1c880fe = await this.recover(λ5454f9ca2e88, λ16db786f0d00, λ16db786f0d00);
       } catch {}
-      if (λ37c03445fbbd && /^(GET|HEAD)$/i.test(String(λ0654f8fae26c[1] || "\x47\x45\x54")) && !λ0654f8fae26c[4]?.aborted && !this.closed && this.online()) return this.attempt(this.client, λ0654f8fae26c);
-      throw λ0d010d887981;
+      if (λc873e1c880fe && /^(GET|HEAD)$/i.test(String(λ54f0a38a854b[1] || "\x47\x45\x54")) && !λ54f0a38a854b[4]?.aborted && !this.closed && this.online()) return this.attempt(this.client, λ54f0a38a854b);
+      throw λ2ed4ee85319f;
     }
   }
-  connect(...λ0654f8fae26c) {
-    const λb257c730ad53 = this.client, λ0d010d887981 = λ0654f8fae26c[6];
-    λ0654f8fae26c[6] = (...λ0654f8fae26c) => {
-      this.recover(λb257c730ad53).catch(() => {}), λ0d010d887981?.(...λ0654f8fae26c);
+  connect(...λ54f0a38a854b) {
+    const λ5454f9ca2e88 = this.client, λ2ed4ee85319f = λ54f0a38a854b[6];
+    λ54f0a38a854b[6] = (...λ54f0a38a854b) => {
+      this.recover(λ5454f9ca2e88).catch(() => {}), λ2ed4ee85319f?.(...λ54f0a38a854b);
     };
     try {
-      return λb257c730ad53.connect(...λ0654f8fae26c);
-    } catch (λ0654f8fae26c) {
-      throw this.recover(λb257c730ad53).catch(() => {}), λ0654f8fae26c;
+      return λ5454f9ca2e88.connect(...λ54f0a38a854b);
+    } catch (λ54f0a38a854b) {
+      throw this.recover(λ5454f9ca2e88).catch(() => {}), λ54f0a38a854b;
     }
   }
   async check() {
     if (this.closed || !this.client || !this.online() || !this.visible()) return;
-    const λ0654f8fae26c = this.client, λb257c730ad53 = this.url, λ0d010d887981 = await this.probe(λb257c730ad53);
-    this.closed || λ0654f8fae26c !== this.client || (this.failures = λ0d010d887981 ? 0 : this.failures + 1, 
-    this.failures >= 2 && await this.recover(λ0654f8fae26c, !0).catch(() => {}));
+    const λ54f0a38a854b = this.client, λ5454f9ca2e88 = this.url, λ2ed4ee85319f = await this.probe(λ5454f9ca2e88);
+    this.closed || λ54f0a38a854b !== this.client || (this.failures = λ2ed4ee85319f ? 0 : this.failures + 1, 
+    this.failures >= 2 && await this.recover(λ54f0a38a854b, !0).catch(() => {}));
   }
   schedule() {
     !this.closed && this.monitorMs && (this.timer = setTimeout(async () => {
@@ -191,60 +191,60 @@ export class RelayTransport {
   }
   close() {
     this.closed = !0, clearTimeout(this.timer);
-    for (const λ0654f8fae26c of [ this.client, ...this.retired ]) try {
-      λ0654f8fae26c?.close?.();
+    for (const λ54f0a38a854b of [ this.client, ...this.retired ]) try {
+      λ54f0a38a854b?.close?.();
     } catch {}
     this.retired = [];
   }
 }
 
-const λb257c730ad53 = new Map;
+const λ5454f9ca2e88 = new Map;
 
-export async function rankForBlocker(λ0654f8fae26c, λ0d010d887981, {fetcher: λd6b3eeab04d6 = fetch, onHint: λ37c03445fbbd = () => {}} = {}) {
-  if (!/^[a-z0-9_-]{1,64}$/.test(λ0d010d887981 || "")) return λ0654f8fae26c;
-  const λ00fea495f66b = await Promise.all(λ0654f8fae26c.map(async λ0654f8fae26c => {
-    const λ37c03445fbbd = new URL(λ0654f8fae26c).hostname;
-    if ("\x6c\x6f\x63\x61\x6c\x68\x6f\x73\x74" === λ37c03445fbbd || λ37c03445fbbd.endsWith("\x2e\x6c\x6f\x63\x61\x6c") || /^[\d.]+$/.test(λ37c03445fbbd) || λ37c03445fbbd.includes("\x3a")) return {
-      url: λ0654f8fae26c,
+export async function rankForBlocker(λ54f0a38a854b, λ2ed4ee85319f, {fetcher: λ16db786f0d00 = fetch, onHint: λc873e1c880fe = () => {}} = {}) {
+  if (!/^[a-z0-9_-]{1,64}$/.test(λ2ed4ee85319f || "")) return λ54f0a38a854b;
+  const λ4afb38bf7fb4 = await Promise.all(λ54f0a38a854b.map(async λ54f0a38a854b => {
+    const λc873e1c880fe = new URL(λ54f0a38a854b).hostname;
+    if ("\x6c\x6f\x63\x61\x6c\x68\x6f\x73\x74" === λc873e1c880fe || λc873e1c880fe.endsWith("\x2e\x6c\x6f\x63\x61\x6c") || /^[\d.]+$/.test(λc873e1c880fe) || λc873e1c880fe.includes("\x3a")) return {
+      url: λ54f0a38a854b,
       blocked: null
     };
-    const λ00fea495f66b = λ0d010d887981 + "\x3a" + λ37c03445fbbd, λ615754a89e1a = λb257c730ad53.get(λ00fea495f66b);
-    if (λ615754a89e1a && λ615754a89e1a.until > Date.now()) return {
-      url: λ0654f8fae26c,
-      blocked: λ615754a89e1a.blocked
+    const λ4afb38bf7fb4 = λ2ed4ee85319f + "\x3a" + λc873e1c880fe, λ5f476d10aaad = λ5454f9ca2e88.get(λ4afb38bf7fb4);
+    if (λ5f476d10aaad && λ5f476d10aaad.until > Date.now()) return {
+      url: λ54f0a38a854b,
+      blocked: λ5f476d10aaad.blocked
     };
-    let λ8b7a3d707640 = null;
-    const λa93155343a30 = new AbortController, λ04da5e698fcc = setTimeout(() => λa93155343a30.abort(), 4e3);
+    let λf5dcff6a86bf = null;
+    const λ7c513ceea6a5 = new AbortController, λ225afaedc6b8 = setTimeout(() => λ7c513ceea6a5.abort(), 4e3);
     try {
-      const λ0654f8fae26c = await λd6b3eeab04d6("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x63\x68\x65\x63\x6b\x65\x72\x2f\x63\x68\x65\x63\x6b", {
+      const λ54f0a38a854b = await λ16db786f0d00("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6c\x69\x6e\x6b\x2d\x63\x68\x65\x63\x6b\x65\x72\x2f\x63\x68\x65\x63\x6b", {
         method: "\x50\x4f\x53\x54",
-        signal: λa93155343a30.signal,
+        signal: λ7c513ceea6a5.signal,
         headers: {
           "\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79\x70\x65": "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
         },
         body: JSON.stringify({
-          url: "\x68\x74\x74\x70\x73\x3a\x2f\x2f" + λ37c03445fbbd + "\x2f",
-          vendor: λ0d010d887981
+          url: "\x68\x74\x74\x70\x73\x3a\x2f\x2f" + λc873e1c880fe + "\x2f",
+          vendor: λ2ed4ee85319f
         })
       });
-      if (λ0654f8fae26c.ok) {
-        const λb257c730ad53 = await λ0654f8fae26c.json(), λd6b3eeab04d6 = λb257c730ad53?.vendors?.[λ0d010d887981];
-        λd6b3eeab04d6?.error || "\x62\x6f\x6f\x6c\x65\x61\x6e" != typeof λd6b3eeab04d6?.blocked || (λ8b7a3d707640 = λd6b3eeab04d6.blocked);
+      if (λ54f0a38a854b.ok) {
+        const λ5454f9ca2e88 = await λ54f0a38a854b.json(), λ16db786f0d00 = λ5454f9ca2e88?.vendors?.[λ2ed4ee85319f];
+        λ16db786f0d00?.error || "\x62\x6f\x6f\x6c\x65\x61\x6e" != typeof λ16db786f0d00?.blocked || (λf5dcff6a86bf = λ16db786f0d00.blocked);
       }
     } catch {} finally {
-      clearTimeout(λ04da5e698fcc);
+      clearTimeout(λ225afaedc6b8);
     }
-    return λb257c730ad53.set(λ00fea495f66b, {
-      blocked: λ8b7a3d707640,
-      until: Date.now() + (null === λ8b7a3d707640 ? 3e4 : 6e5)
-    }), λb257c730ad53.size > 100 && λb257c730ad53.delete(λb257c730ad53.keys().next().value), 
+    return λ5454f9ca2e88.set(λ4afb38bf7fb4, {
+      blocked: λf5dcff6a86bf,
+      until: Date.now() + (null === λf5dcff6a86bf ? 3e4 : 6e5)
+    }), λ5454f9ca2e88.size > 100 && λ5454f9ca2e88.delete(λ5454f9ca2e88.keys().next().value), 
     {
-      url: λ0654f8fae26c,
-      blocked: λ8b7a3d707640
+      url: λ54f0a38a854b,
+      blocked: λf5dcff6a86bf
     };
   }));
-  return λ37c03445fbbd({
-    vendor: λ0d010d887981,
-    results: λ00fea495f66b
-  }), λ00fea495f66b.sort((λ0654f8fae26c, λb257c730ad53) => Number(!0 === λ0654f8fae26c.blocked) - Number(!0 === λb257c730ad53.blocked)).map(λ0654f8fae26c => λ0654f8fae26c.url);
+  return λc873e1c880fe({
+    vendor: λ2ed4ee85319f,
+    results: λ4afb38bf7fb4
+  }), λ4afb38bf7fb4.sort((λ54f0a38a854b, λ5454f9ca2e88) => Number(!0 === λ54f0a38a854b.blocked) - Number(!0 === λ5454f9ca2e88.blocked)).map(λ54f0a38a854b => λ54f0a38a854b.url);
 }

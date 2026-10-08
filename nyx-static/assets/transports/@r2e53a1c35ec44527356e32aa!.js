@@ -1,17 +1,17 @@
-import λea819891df6a from "\x2e\x2f\x40\x72\x66\x63\x63\x35\x39\x66\x31\x39\x66\x39\x30\x34\x62\x39\x64\x35\x33\x39\x34\x39\x34\x32\x65\x38\x21\x2e\x6a\x73";
+import λ909d455d6a12 from "\x2e\x2f\x40\x72\x66\x63\x63\x35\x39\x66\x31\x39\x66\x39\x30\x34\x62\x39\x64\x35\x33\x39\x34\x39\x34\x32\x65\x38\x21\x2e\x6a\x73";
 
-import { headerEntries as λcfd95a0a375c, headerRecord as λ477202e5ddf3 } from "\x2e\x2f\x40\x72\x63\x66\x37\x30\x66\x31\x66\x39\x39\x63\x66\x65\x64\x62\x32\x30\x38\x64\x66\x31\x62\x30\x61\x30\x21\x2e\x6a\x73";
+import { headerEntries as λ7a5ef23173b7, headerRecord as λ357937177cf5 } from "\x2e\x2f\x40\x72\x63\x66\x37\x30\x66\x31\x66\x39\x39\x63\x66\x65\x64\x62\x32\x30\x38\x64\x66\x31\x62\x30\x61\x30\x21\x2e\x6a\x73";
 
-export default class _0x127b89_3 extends λea819891df6a {
-  async request(λea819891df6a, λe9aab6a21a19, λ5009769a8ac2, λ8479baad1696, λa4d8386fdb46) {
-    const λcffd6abdf7da = await super.request(λea819891df6a, λe9aab6a21a19, λ5009769a8ac2, λcfd95a0a375c(λ8479baad1696), λa4d8386fdb46), λdd1ab976004f = λ477202e5ddf3(λcffd6abdf7da.headers);
+export default class _0x127b89_3 extends λ909d455d6a12 {
+  async request(λ909d455d6a12, λ384aef63cedf, λ163e78661b6f, λ573292962779, λ297a802167cd) {
+    const λab2020f7aba7 = await super.request(λ909d455d6a12, λ384aef63cedf, λ163e78661b6f, λ7a5ef23173b7(λ573292962779), λ297a802167cd), λ259aab25f4fc = λ357937177cf5(λab2020f7aba7.headers);
     return {
-      ...λcffd6abdf7da,
-      headers: λdd1ab976004f,
-      rawHeaders: λdd1ab976004f
+      ...λab2020f7aba7,
+      headers: λ259aab25f4fc,
+      rawHeaders: λ259aab25f4fc
     };
   }
-  connect(λea819891df6a, λ477202e5ddf3, λe9aab6a21a19, λ5009769a8ac2, λ8479baad1696, λa4d8386fdb46, λcffd6abdf7da) {
-    return super.connect(λea819891df6a, λ477202e5ddf3, λcfd95a0a375c(λe9aab6a21a19), λ5009769a8ac2, λ8479baad1696, λa4d8386fdb46, λcffd6abdf7da);
+  connect(λ909d455d6a12, λ357937177cf5, λ384aef63cedf, λ163e78661b6f, λ573292962779, λ297a802167cd, λab2020f7aba7) {
+    return super.connect(λ909d455d6a12, λ357937177cf5, λ7a5ef23173b7(λ384aef63cedf), λ163e78661b6f, λ573292962779, λ297a802167cd, λab2020f7aba7);
   }
 }

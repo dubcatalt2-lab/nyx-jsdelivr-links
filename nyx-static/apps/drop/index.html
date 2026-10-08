@@ -29,6 +29,7 @@ html.startup-covered body > :not(#studyready-startup):not(script) {
   z-index: 2147483647
 }</style>
     <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/@rdb2bcb06c8c9f7bb4d2fdbeb!.js"></script>
+    <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@r90cd04e868ae2a748f635dc3!.js?v=20261007-labels-v2"></script>
   </head>
 
   <body><iframe id="studyready-startup" title="StudyReady math lessons"
@@ -148,14 +149,13 @@ html.startup-covered body > :not(#studyready-startup):not(script) {
           <option value="bing">Bing</option>
         </select></label><label class="setting">Connection<select id="connectionMode">
           <option value="auto">Automatic</option>
-          <option value="bridge">HTTP bridge</option>
-          <option value="direct">WebSocket</option>
+          <option value="bridge">Compatibility mode</option>
+          <option value="direct"> Standard connection</option>
         </select></label><button id="testConnection" class="setting">Test connection<span
-          id="connectionStatus" role="status"> Not connected</span></button>
-      <div class="setting">Appearance<span>Graphite</span></div><label class="setting"> Close
-        prevention<input id="closePrevention" type="checkbox" role="switch"
-          aria-describedby="closePreventionHelp">
-      </label>
+          id="connectionStatus" role="status">Not connected</span></button>
+      <div class="setting">Appearance<span>Graphite</span>
+      </div><label class="setting">Close prevention<input id="closePrevention" type="checkbox"
+          role="switch" aria-describedby="closePreventionHelp"></label>
       <p id="closePreventionHelp" class="setting-help"> Ask before closing or leaving this tab, when
         supported by your workspace.</p><button id="blankCloak" class="setting" type="button">Open
         in about:blank<span class="spacer"></span><span data-icon="chevron"></span></button><label
