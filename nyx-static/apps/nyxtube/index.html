@@ -8,8 +8,8 @@
     <meta name="color-scheme" content="dark">
     <title>NyxTube</title>
     <link rel="icon" type="image/svg+xml" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/icons/shortcut-youtube.svg">
-    <link rel="stylesheet" href="./styles.css?rev=90791a69bfad1c07">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/obsidian.css?rev=90791a69bfad1c07">
+    <link rel="stylesheet" href="./styles.css?rev=5dd1371cab7de039">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/obsidian.css?rev=5dd1371cab7de039">
     <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@r90cd04e868ae2a748f635dc3!.js?v=20261007-labels-v2"></script>
   </head>
 
@@ -78,13 +78,16 @@
             <use href="#icon-back"></use>
           </svg></button> <button class="active" type="button" data-view-button="home"><svg>
             <use href="#icon-home"></use>
-          </svg>Home</button> <button type="button" data-view-button="shorts"><svg>
+          </svg>Home</button> <button type="button" data-nyx-display-label
+          data-view-button="shorts"><svg>
             <use href="#icon-short"></use>
-          </svg>Shorts</button> <button class="profile-button" data-profile-button type="button"
+          </svg>Shorts</button>
+        <button class="profile-button" data-profile-button type="button"
           aria-label="Open your profile"><span class="nyxtube-profile-avatar"
             data-profile-avatar><svg>
               <use href="#icon-user"></use>
-            </svg></span></button> </nav>
+            </svg></span></button>
+      </nav>
       <p class="notice" data-notice role="status" aria-live="polite" hidden></p>
       <section class="home-view" data-view="home">
         <div class="catalog-head">
@@ -98,13 +101,17 @@
               spellcheck="false" placeholder="Search videos" aria-label="Search videos"><button
               type="submit"> Search</button></form>
         </div>
-        <nav class="topic-row" aria-label="Video topics"> <button data-topic="documentary">
-            Documentary</button><button data-topic="music">Music</button><button
-            data-topic="coding">Coding</button><button data-topic="science">Science</button><button
-            data-topic="travel">Travel</button><button data-topic="cooking">Cooking </button><button
-            data-topic="gaming">Gaming</button><button data-topic="history">History</button> </nav>
+        <nav class="topic-row" aria-label="Video topics"> <button data-topic="documentary"
+            data-nyx-display-label>Documentary</button><button data-topic="music"
+            data-nyx-display-label>Music</button><button data-topic="coding"
+            data-nyx-display-label>Coding</button><button data-topic="science"
+            data-nyx-display-label>Science </button><button data-topic="travel"
+            data-nyx-display-label>Travel</button><button data-topic="cooking"
+            data-nyx-display-label>Cooking</button><button data-topic="gaming"
+            data-nyx-display-label>Gaming</button><button data-topic="history"
+            data-nyx-display-label>History</button> </nav>
         <div class="catalog-status">
-          <h2 data-feed-title>Discover videos</h2><span data-result-count>Loading...</span>
+          <h2 data-feed-title> Discover videos</h2><span data-result-count>Loading...</span>
         </div>
         <section class="video-grid" data-video-grid aria-live="polite"></section>
       </section>
@@ -243,8 +250,8 @@
       <section class="shorts-view" data-view="shorts" hidden>
         <header class="shorts-discovery">
           <div>
-            <h1>Shorts</h1><span class="short-sr-only" data-short-feed-label aria-live="polite">For
-              you</span>
+            <h1 data-nyx-display-label>Shorts</h1><span class="short-sr-only" data-short-feed-label
+              aria-live="polite">For you</span>
           </div>
           <form class="search-box" data-short-search-form role="search" aria-label="Search Shorts">
             <svg aria-hidden="true">
@@ -256,10 +263,12 @@
               </svg></button> </form>
           <nav class="short-topics" aria-label="Shorts topics"> <button type="button"
               data-short-topic="discover" aria-pressed="true">For you</button> <button type="button"
-              data-short-topic="gaming" aria-pressed="false">Gaming</button> <button type="button"
-              data-short-topic="science" aria-pressed="false">Science</button> <button type="button"
-              data-short-topic="sports" aria-pressed="false">Sports </button> <button type="button"
-              data-short-topic="nature" aria-pressed="false">Nature</button> </nav>
+              data-short-topic="gaming" aria-pressed="false" data-nyx-display-label>Gaming</button>
+            <button type="button" data-short-topic="science" aria-pressed="false"
+              data-nyx-display-label>Science</button> <button type="button"
+              data-short-topic="sports" aria-pressed="false" data-nyx-display-label>Sports</button>
+            <button type="button" data-short-topic="nature" aria-pressed="false"
+              data-nyx-display-label>Nature</button> </nav>
         </header>
         <div class="shorts-layout">
           <div class="short-player-group">

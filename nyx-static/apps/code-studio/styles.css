@@ -24,8 +24,8 @@
   --studio-success: #a6e3a1;
   --studio-shadow: 0 18px 48px rgba(0, 0, 0, .23);
   --studio-radius: 13px;
-  --assistant-width: 318px;
-  --preview-width: 38%;
+  --assistant-width: 280px;
+  --preview-width: 36%;
   --editor-pad-y: 22px;
   --editor-line-height: 22.4px;
   font-family: Inter,"Segoe UI",sans-serif;
@@ -103,7 +103,7 @@ button:disabled {
   height: 100dvh;
   display: grid;
   grid-template-columns: var(--assistant-width) 7px minmax(0,1fr);
-  padding: 8px;
+  padding: 12px;
   overflow: hidden
 }
 .assistant-panel,
@@ -588,7 +588,6 @@ body.is-resizing iframe {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 0 13px 0 17px;
   overflow: hidden;
   border-radius: var(--studio-radius);
   background: color-mix(in srgb,var(--studio-surface) 96%,var(--studio-bg));
@@ -636,7 +635,6 @@ body.is-resizing iframe {
   grid-template-columns: minmax(130px,1fr) minmax(130px,1fr) minmax(130px,1fr);
   align-items: end;
   gap: 9px;
-  padding: 9px 10px;
   border-radius: var(--studio-radius);
   background: color-mix(in srgb,var(--studio-surface) 94%,var(--studio-bg))
 }
@@ -1379,4 +1377,117 @@ textarea:focus-visible {
   display: flex;
   justify-content: flex-end;
   gap: 8px
+}
+.project-controls {
+  grid-template-columns: repeat(auto-fit,minmax(170px,1fr));
+  gap: 12px;
+  padding: 16px
+}
+.workspace-header {
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px
+}
+.editor-meta {
+  flex-wrap: wrap
+}
+.code-suggestions {
+  position: absolute;
+  z-index: 10;
+  left: 54px;
+  bottom: 16px;
+  width: min(320px,calc(100% - 70px));
+  max-height: 210px;
+  overflow: auto;
+  padding: 6px;
+  border: 1px solid var(--studio-accent-line);
+  border-radius: 10px;
+  background: #181825;
+  box-shadow: 0 10px 32px #0008
+}
+.code-suggestions[hidden] {
+  display: none
+}
+.code-suggestions button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 5px;
+  background: 0 0;
+  color: var(--studio-text);
+  font: 13px/1.4 monospace
+}
+.code-suggestions button[aria-selected=true] {
+  background: #45405f
+}
+@media (min-width:941px) and (max-width:1450px) {
+  .workbench {
+    grid-template-columns: minmax(0,1fr);
+    grid-template-rows: minmax(220px,3fr) minmax(170px,2fr);
+    gap: 12px
+  }
+  .preview-resizer {
+    display: none
+  }
+  body.preview-collapsed .workbench {
+    grid-template-columns: minmax(0,1fr);
+    grid-template-rows: minmax(0,1fr) 0;
+    gap: 0
+  }
+}
+@media (max-width:940px) {
+  .studio-shell,
+  body.ai-collapsed .studio-shell {
+    display: block;
+    padding: 8px
+  }
+  .panel-resizer {
+    display: none
+  }
+  .assistant-panel,
+  .workspace {
+    height: 100%
+  }
+  .assistant-panel {
+    display: none
+  }
+  .mobile-only {
+    display: flex!important
+  }
+  .workbench,
+  body.preview-collapsed .workbench {
+    display: block
+  }
+  .editor-card,
+  .result-card {
+    height: 100%
+  }
+  .result-card {
+    display: none
+  }
+  body.mobile-show-ai .assistant-panel {
+    display: flex;
+    visibility: visible;
+    pointer-events: auto
+  }
+  body.mobile-show-ai .workspace,
+  body.mobile-show-preview .editor-card {
+    display: none
+  }
+  body.mobile-show-preview .result-card {
+    display: grid;
+    visibility: visible;
+    pointer-events: auto
+  }
+  .workspace-header {
+    padding: 10px
+  }
+  .project-controls {
+    padding: 10px;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    max-height: 210px;
+    overflow: auto
+  }
 }

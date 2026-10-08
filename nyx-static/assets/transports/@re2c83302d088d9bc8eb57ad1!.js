@@ -1,94 +1,94 @@
-export function preserveTransferErrors(λ104f67611228) {
-  const λb072501e108c = λ104f67611228.stream_response;
-  λ104f67611228.stream_response = function(λ104f67611228, λ5b422a468723, λ51ba09f87a1d, λf892f8686a32) {
-    let λ79c54bccd55c;
-    const λc805ac135bd0 = new Promise(λ104f67611228 => {
-      λ79c54bccd55c = λ104f67611228;
+export function preserveTransferErrors(λ70794dbe04d5) {
+  const λ6ff92328e04b = λ70794dbe04d5.stream_response;
+  λ70794dbe04d5.stream_response = function(λ70794dbe04d5, λ7f952a664914, λ3403d2ef346f, λc04583e02bed) {
+    let λe624d1fbe04a;
+    const λb3438273e587 = new Promise(λ70794dbe04d5 => {
+      λe624d1fbe04a = λ70794dbe04d5;
     });
-    return λb072501e108c.call(this, λ104f67611228, λ104f67611228 => {
-      const λb072501e108c = λ104f67611228.getReader();
-      λ5b422a468723(new ReadableStream({
-        async pull(λ104f67611228) {
+    return λ6ff92328e04b.call(this, λ70794dbe04d5, λ70794dbe04d5 => {
+      const λ6ff92328e04b = λ70794dbe04d5.getReader();
+      λ7f952a664914(new ReadableStream({
+        async pull(λ70794dbe04d5) {
           try {
-            const λ5b422a468723 = await λb072501e108c.read();
-            if (!λ5b422a468723.done) return void λ104f67611228.enqueue(λ5b422a468723.value);
-            const λ51ba09f87a1d = await λc805ac135bd0;
-            if (-1 === λ51ba09f87a1d || λf892f8686a32?.aborted) throw λf892f8686a32?.reason || new DOMException("\x54\x68\x65\x20\x6f\x70\x65\x72\x61\x74\x69\x6f\x6e\x20\x77\x61\x73\x20\x61\x62\x6f\x72\x74\x65\x64\x2e", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72");
-            if (0 !== λ51ba09f87a1d) throw new TypeError(`\x52\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64\x20\x77\x69\x74\x68\x20\x65\x72\x72\x6f\x72\x20\x63\x6f\x64\x65\x20${λ51ba09f87a1d}\x3a\x20\x69\x6e\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x74\x65\x78\x74\x6c\x69\x62\x20\x74\x72\x61\x6e\x73\x66\x65\x72`);
-            λ104f67611228.close();
-          } catch (λb072501e108c) {
-            λ104f67611228.error(λb072501e108c);
+            const λ7f952a664914 = await λ6ff92328e04b.read();
+            if (!λ7f952a664914.done) return void λ70794dbe04d5.enqueue(λ7f952a664914.value);
+            const λ3403d2ef346f = await λb3438273e587;
+            if (-1 === λ3403d2ef346f || λc04583e02bed?.aborted) throw λc04583e02bed?.reason || new DOMException("\x54\x68\x65\x20\x6f\x70\x65\x72\x61\x74\x69\x6f\x6e\x20\x77\x61\x73\x20\x61\x62\x6f\x72\x74\x65\x64\x2e", "\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72");
+            if (0 !== λ3403d2ef346f) throw new TypeError(`\x52\x65\x71\x75\x65\x73\x74\x20\x66\x61\x69\x6c\x65\x64\x20\x77\x69\x74\x68\x20\x65\x72\x72\x6f\x72\x20\x63\x6f\x64\x65\x20${λ3403d2ef346f}\x3a\x20\x69\x6e\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x74\x65\x78\x74\x6c\x69\x62\x20\x74\x72\x61\x6e\x73\x66\x65\x72`);
+            λ70794dbe04d5.close();
+          } catch (λ6ff92328e04b) {
+            λ70794dbe04d5.error(λ6ff92328e04b);
           }
         },
-        cancel: λ104f67611228 => λb072501e108c.cancel(λ104f67611228)
+        cancel: λ70794dbe04d5 => λ6ff92328e04b.cancel(λ70794dbe04d5)
       }, {
         highWaterMark: 0
       }));
-    }, λ104f67611228 => {
-      λ79c54bccd55c(λ104f67611228), λ51ba09f87a1d(λ104f67611228);
-    }, λf892f8686a32);
+    }, λ70794dbe04d5 => {
+      λe624d1fbe04a(λ70794dbe04d5), λ3403d2ef346f(λ70794dbe04d5);
+    }, λc04583e02bed);
   };
 }
 
 export const bufferLimit = 33554432;
 
-const _0x7e8643_0 = λ104f67611228 => /\berror code (?:18|52|56|92)\b/i.test(String(λ104f67611228?.message || λ104f67611228)), _0x7e8643_1 = λ104f67611228 => λ104f67611228.some(([λ104f67611228, λb072501e108c]) => "\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65" === λ104f67611228.toLowerCase() && /^(?:(?:text|application)\/(?:x-)?(?:javascript|ecmascript)|(?:text|application)\/(?:[\w.+-]+\+)?json|text\/html|application\/xhtml\+xml)$/i.test(String(λb072501e108c).split("\x3b")[0].trim()));
+const _0x7e8643_0 = λ70794dbe04d5 => /\berror code (?:18|52|56|92)\b/i.test(String(λ70794dbe04d5?.message || λ70794dbe04d5)), _0x7e8643_1 = λ70794dbe04d5 => λ70794dbe04d5.some(([λ70794dbe04d5, λ6ff92328e04b]) => "\x63\x6f\x6e\x74\x65\x6e\x74\x2d\x74\x79\x70\x65" === λ70794dbe04d5.toLowerCase() && /^(?:(?:text|application)\/(?:x-)?(?:javascript|ecmascript)|(?:text|application)\/(?:[\w.+-]+\+)?json|text\/html|application\/xhtml\+xml)$/i.test(String(λ6ff92328e04b).split("\x3b")[0].trim()));
 
-async function _0x7e8643_2(λ104f67611228, λb072501e108c) {
-  const λ5b422a468723 = λ104f67611228.getReader(), λ51ba09f87a1d = [];
-  let λf892f8686a32 = 0;
+async function _0x7e8643_2(λ70794dbe04d5, λ6ff92328e04b) {
+  const λ7f952a664914 = λ70794dbe04d5.getReader(), λ3403d2ef346f = [];
+  let λc04583e02bed = 0;
   const _0x7e8643_5 = () => {
-    λb072501e108c.bytes -= λf892f8686a32, λf892f8686a32 = 0, λ51ba09f87a1d.length = 0;
+    λ6ff92328e04b.bytes -= λc04583e02bed, λc04583e02bed = 0, λ3403d2ef346f.length = 0;
   };
   try {
     for (;;) {
-      const λ104f67611228 = await λ5b422a468723.read();
-      if (λ104f67611228.done) {
-        const λ104f67611228 = new Blob(λ51ba09f87a1d).stream();
-        return _0x7e8643_5(), λ104f67611228;
+      const λ70794dbe04d5 = await λ7f952a664914.read();
+      if (λ70794dbe04d5.done) {
+        const λ70794dbe04d5 = new Blob(λ3403d2ef346f).stream();
+        return _0x7e8643_5(), λ70794dbe04d5;
       }
-      if (λf892f8686a32 + λ104f67611228.value.byteLength > 16777216 || λb072501e108c.bytes + λ104f67611228.value.byteLength > 33554432) {
-        let λ79c54bccd55c = λ104f67611228.value;
+      if (λc04583e02bed + λ70794dbe04d5.value.byteLength > 16777216 || λ6ff92328e04b.bytes + λ70794dbe04d5.value.byteLength > 33554432) {
+        let λe624d1fbe04a = λ70794dbe04d5.value;
         return new ReadableStream({
-          async pull(λ104f67611228) {
+          async pull(λ70794dbe04d5) {
             try {
-              if (λ51ba09f87a1d.length) {
-                const λ5b422a468723 = λ51ba09f87a1d.shift();
-                return λf892f8686a32 -= λ5b422a468723.byteLength, λb072501e108c.bytes -= λ5b422a468723.byteLength, 
-                void λ104f67611228.enqueue(λ5b422a468723);
+              if (λ3403d2ef346f.length) {
+                const λ7f952a664914 = λ3403d2ef346f.shift();
+                return λc04583e02bed -= λ7f952a664914.byteLength, λ6ff92328e04b.bytes -= λ7f952a664914.byteLength, 
+                void λ70794dbe04d5.enqueue(λ7f952a664914);
               }
-              if (λ79c54bccd55c) return λ104f67611228.enqueue(λ79c54bccd55c), void (λ79c54bccd55c = null);
-              const λc805ac135bd0 = await λ5b422a468723.read();
-              λc805ac135bd0.done ? λ104f67611228.close() : λ104f67611228.enqueue(λc805ac135bd0.value);
-            } catch (λb072501e108c) {
-              _0x7e8643_5(), λ104f67611228.error(λb072501e108c);
+              if (λe624d1fbe04a) return λ70794dbe04d5.enqueue(λe624d1fbe04a), void (λe624d1fbe04a = null);
+              const λb3438273e587 = await λ7f952a664914.read();
+              λb3438273e587.done ? λ70794dbe04d5.close() : λ70794dbe04d5.enqueue(λb3438273e587.value);
+            } catch (λ6ff92328e04b) {
+              _0x7e8643_5(), λ70794dbe04d5.error(λ6ff92328e04b);
             }
           },
-          cancel: λ104f67611228 => (_0x7e8643_5(), λ79c54bccd55c = null, λ5b422a468723.cancel(λ104f67611228))
+          cancel: λ70794dbe04d5 => (_0x7e8643_5(), λe624d1fbe04a = null, λ7f952a664914.cancel(λ70794dbe04d5))
         }, {
           highWaterMark: 0
         });
       }
-      λ51ba09f87a1d.push(λ104f67611228.value), λf892f8686a32 += λ104f67611228.value.byteLength, 
-      λb072501e108c.bytes += λ104f67611228.value.byteLength;
+      λ3403d2ef346f.push(λ70794dbe04d5.value), λc04583e02bed += λ70794dbe04d5.value.byteLength, 
+      λ6ff92328e04b.bytes += λ70794dbe04d5.value.byteLength;
     }
-  } catch (λ104f67611228) {
-    throw _0x7e8643_5(), λ5b422a468723.cancel(λ104f67611228).catch(() => {}), λ104f67611228;
+  } catch (λ70794dbe04d5) {
+    throw _0x7e8643_5(), λ7f952a664914.cancel(λ70794dbe04d5).catch(() => {}), λ70794dbe04d5;
   }
 }
 
-export async function requestWithTransferRetry(λ104f67611228, {method: λb072501e108c, body: λ5b422a468723, signal: λ51ba09f87a1d, budget: λf892f8686a32}) {
-  const λ79c54bccd55c = /^(?:GET|HEAD)$/i.test(λb072501e108c || "\x47\x45\x54") && null == λ5b422a468723;
-  for (let λb072501e108c = 0; ;λb072501e108c++) {
-    λ51ba09f87a1d?.throwIfAborted();
+export async function requestWithTransferRetry(λ70794dbe04d5, {method: λ6ff92328e04b, body: λ7f952a664914, signal: λ3403d2ef346f, budget: λc04583e02bed}) {
+  const λe624d1fbe04a = /^(?:GET|HEAD)$/i.test(λ6ff92328e04b || "\x47\x45\x54") && null == λ7f952a664914;
+  for (let λ6ff92328e04b = 0; ;λ6ff92328e04b++) {
+    λ3403d2ef346f?.throwIfAborted();
     try {
-      const λb072501e108c = await λ104f67611228();
-      return λ79c54bccd55c && λb072501e108c.body?.getReader && _0x7e8643_1(λb072501e108c.headers) ? {
-        ...λb072501e108c,
-        body: await _0x7e8643_2(λb072501e108c.body, λf892f8686a32)
-      } : λb072501e108c;
-    } catch (λ104f67611228) {
-      if (!λ79c54bccd55c || λb072501e108c >= 1 || λ51ba09f87a1d?.aborted || !_0x7e8643_0(λ104f67611228)) throw λ104f67611228;
+      const λ6ff92328e04b = await λ70794dbe04d5();
+      return λe624d1fbe04a && λ6ff92328e04b.body?.getReader && _0x7e8643_1(λ6ff92328e04b.headers) ? {
+        ...λ6ff92328e04b,
+        body: await _0x7e8643_2(λ6ff92328e04b.body, λc04583e02bed)
+      } : λ6ff92328e04b;
+    } catch (λ70794dbe04d5) {
+      if (!λe624d1fbe04a || λ6ff92328e04b >= 1 || λ3403d2ef346f?.aborted || !_0x7e8643_0(λ70794dbe04d5)) throw λ70794dbe04d5;
     }
   }
 }
