@@ -28,7 +28,7 @@
           this.renewing && this.setBuffering(!0);
         }), this.video.addEventListener("\x70\x61\x75\x73\x65", () => {
           this.renewing || this.setBuffering(!1);
-        }), this.video.addEventListener("\x65\x6e\x64\x65\x64", () => this.setBuffering(!1)), this.video.addEventListener("\x65\x72\x72\x6f\x72", () => _0xdb56b3_2("\x6f\x6e\x45\x72\x72\x6f\x72", 900)), 
+        }), this.video.addEventListener("\x65\x6e\x64\x65\x64", () => this.setBuffering(!1)), this.video.addEventListener("\x65\x72\x72\x6f\x72", () => this.fail("\x54\x68\x65\x20\x76\x69\x64\x65\x6f\x20\x73\x74\x72\x65\x61\x6d\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x6c\x6f\x61\x64\x65\x64\x20\x6f\x72\x20\x64\x65\x63\x6f\x64\x65\x64\x2e")), 
         this.video.addEventListener("\x6c\x6f\x61\x64\x65\x64\x6d\x65\x74\x61\x64\x61\x74\x61", () => _0xdb56b3_2("\x6f\x6e\x52\x65\x61\x64\x79"), {
           once: !0
         }), this.watchdog = setInterval(() => this.checkProgress(), 2e3), this.video.addEventListener("\x74\x69\x6d\x65\x75\x70\x64\x61\x74\x65", () => {
@@ -158,7 +158,8 @@
         this.controller.signal.aborted || this.failed || (this.failed = !0, this.failure = _0xdb56b3_0, 
         this.setBuffering(!1), clearInterval(this.watchdog), this.hls?.stopLoad(), this.options.events?.onError?.({
           target: this,
-          data: 900
+          data: 900,
+          message: this.failure
         }));
       }
       async setCaptions(_0xdb56b3_0) {

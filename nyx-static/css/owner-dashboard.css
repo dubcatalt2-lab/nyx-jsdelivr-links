@@ -2426,7 +2426,9 @@
   overflow-wrap: anywhere
 }
 .nyx-owner-ai-rules summary small {
-  opacity: .7
+  opacity: .7;
+  display: block;
+  margin-top: 4px
 }
 .nyx-owner-ai-rule-fields {
   display: grid;
@@ -2446,4 +2448,11 @@
   padding: 12px;
   background: #8881;
   border-radius: 12px
+}
+.nyx-owner-ai-rules details[hidden] {
+  display: none
+}
+.nyx-owner-ai-rule-fields button {
+  align-self: end;
+  min-height: 42px
 }
