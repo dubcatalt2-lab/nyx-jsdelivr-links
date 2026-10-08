@@ -1,4 +1,4 @@
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=edca73f26566330e");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=0240251717d0b488");
 :root {
   --nyx-sidebar-width: 184px;
   --nyx-chrome-height: 0px;
@@ -406,7 +406,7 @@ body.workspace-shell.nyx-workspace-chrome-visible .top-os {
   grid-template-columns: minmax(0,1fr) 44px;
   grid-template-rows: 40px 46px
 }
-.top-os > .workspace-mode-address {
+.top-os > .j5d9t {
   grid-column: 1/-1;
   grid-row: 2
 }
@@ -629,7 +629,7 @@ body.workspace-shell.nyx-workspace-chrome-visible .top-os {
 .nyx-tab-strip .tab-drop-after {
   border-right-color: var(--obsidian-text)
 }
-body.workspace-shell .top-os .workspace-mode-address {
+body.workspace-shell .top-os .j5d9t {
   position: relative;
   inset: auto;
   display: flex;
@@ -643,7 +643,7 @@ body.workspace-shell .top-os .workspace-mode-address {
   background: var(--obsidian-field);
   box-shadow: none
 }
-.workspace-mode-address > button {
+.j5d9t > button {
   display: grid;
   place-items: center;
   flex: none;
@@ -657,10 +657,10 @@ body.workspace-shell .top-os .workspace-mode-address {
   box-shadow: none;
   font-size: 17px
 }
-.workspace-mode-address > button:hover {
+.j5d9t > button:hover {
   background: var(--obsidian-hover)
 }
-.workspace-mode-address svg {
+.j5d9t svg {
   width: 18px;
   height: 18px;
   fill: none;
@@ -669,7 +669,7 @@ body.workspace-shell .top-os .workspace-mode-address {
   stroke-linecap: round;
   stroke-linejoin: round
 }
-.workspace-mode-address .workspace-mode-secure-indicator {
+.j5d9t .workspace-mode-secure-indicator {
   display: grid;
   place-items: center;
   width: 28px;
@@ -677,7 +677,7 @@ body.workspace-shell .top-os .workspace-mode-address {
   margin-left: 6px;
   color: var(--obsidian-muted)
 }
-.workspace-mode-address .workspace-mode-url {
+.j5d9t .workspace-mode-url {
   flex: 1;
   min-width: 0;
   height: 32px;
@@ -691,10 +691,10 @@ body.workspace-shell .top-os .workspace-mode-address {
   box-shadow: none;
   outline: 0
 }
-.workspace-mode-address .workspace-mode-url:focus {
+.j5d9t .workspace-mode-url:focus {
   border-color: var(--obsidian-muted)
 }
-.workspace-mode-address :is(.workspace-tabs-toggle,[data-workspace-shell-home-nav],[data-workspace-shell-settings],[data-page-fullscreen],.workspace-mode-url-pointer-border) {
+.j5d9t :is(.workspace-tabs-toggle,[data-workspace-shell-home-nav],[data-workspace-shell-settings],[data-page-fullscreen],.workspace-mode-url-pointer-border) {
   display: none!important
 }
 .workspace-home.nyx-minimal-home {
@@ -1068,7 +1068,7 @@ body.workspace-shell .top-os,
 html body.workspace-shell .workspace-shell-settings-overlay {
   transition: left var(--nyx-rail-motion)
 }
-html body.workspace-shell .workspace-mode-address > button {
+html body.workspace-shell .j5d9t > button {
   color: var(--obsidian-text)!important;
   -webkit-text-fill-color: currentColor!important;
   background: 0 0!important;
@@ -1077,22 +1077,22 @@ html body.workspace-shell .workspace-mode-address > button {
   box-shadow: none!important;
   transition: background-color 150ms,transform 150ms
 }
-html body.workspace-shell .workspace-mode-address > button:hover {
+html body.workspace-shell .j5d9t > button:hover {
   background: var(--obsidian-hover)!important;
   transform: translateY(-1px)
 }
-html body.workspace-shell .workspace-mode-address .workspace-mode-url {
+html body.workspace-shell .j5d9t .workspace-mode-url {
   color: var(--obsidian-text)!important;
   -webkit-text-fill-color: var(--obsidian-text)!important;
   border-color: var(--obsidian-line)!important;
   box-shadow: none!important
 }
-html body.workspace-shell .workspace-mode-address .workspace-mode-url::selection {
+html body.workspace-shell .j5d9t .workspace-mode-url::selection {
   color: #fff;
   -webkit-text-fill-color: #fff;
   background: #3390ff
 }
-html body.workspace-shell :is(.workspace-mode-address>button,.nyx-home-links button):focus-visible {
+html body.workspace-shell :is(.j5d9t>button,.nyx-home-links button):focus-visible {
   outline: 1px solid var(--obsidian-muted);
   outline-offset: 2px
 }
@@ -1140,8 +1140,8 @@ html body.workspace-shell .nyx-settings-control :is(.nyx-wallpaper-card,.nyx-col
     transition: none!important;
     animation: none!important
   }
-  .nyx-home-links button,
-  .workspace-mode-address > button {
+  .j5d9t > button,
+  .nyx-home-links button {
     transition: none!important;
     transform: none!important
   }
