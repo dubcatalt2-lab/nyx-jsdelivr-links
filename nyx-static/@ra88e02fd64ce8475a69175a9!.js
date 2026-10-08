@@ -2,10 +2,10 @@ importScripts("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x73\x63\x7
 
 const {\u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{65}\u{72}\u{76}\u{69}\u{63}\u{65}\u{57}\u{6f}\u{72}\u{6b}\u{65}\u{72}: \u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{65}\u{72}\u{76}\u{69}\u{63}\u{65}\u{57}\u{6f}\u{72}\u{6b}\u{65}\u{72}} = \u{24}\u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{4c}\u{6f}\u{61}\u{64}\u{57}\u{6f}\u{72}\u{6b}\u{65}\u{72}(), \u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74} = new \u{53}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{53}\u{65}\u{72}\u{76}\u{69}\u{63}\u{65}\u{57}\u{6f}\u{72}\u{6b}\u{65}\u{72}, \u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{61}\u{64}\u{79} = \u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}.loadConfig();
 
-self.addEventListener("\x69\x6e\x73\x74\x61\x6c\x6c", λa2d715bad4dd => {
-  λa2d715bad4dd.waitUntil(self.skipWaiting());
-}), self.addEventListener("\x61\x63\x74\x69\x76\x61\x74\x65", λa2d715bad4dd => {
-  λa2d715bad4dd.waitUntil(self.clients.claim());
-}), self.addEventListener("\x66\x65\x74\x63\x68", λa2d715bad4dd => {
-  λa2d715bad4dd.respondWith((async () => (await \u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{61}\u{64}\u{79}, \u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}.route(λa2d715bad4dd) ? \u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}.fetch(λa2d715bad4dd) : fetch(λa2d715bad4dd.request)))());
+self.addEventListener("\x69\x6e\x73\x74\x61\x6c\x6c", λa785c50d7d57 => {
+  λa785c50d7d57.waitUntil(self.skipWaiting());
+}), self.addEventListener("\x61\x63\x74\x69\x76\x61\x74\x65", λa785c50d7d57 => {
+  λa785c50d7d57.waitUntil(self.clients.claim());
+}), self.addEventListener("\x66\x65\x74\x63\x68", λa785c50d7d57 => {
+  λa785c50d7d57.respondWith((async () => (await \u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}\u{52}\u{65}\u{61}\u{64}\u{79}, \u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}.route(λa785c50d7d57) ? \u{73}\u{63}\u{72}\u{61}\u{6d}\u{6a}\u{65}\u{74}.fetch(λa785c50d7d57) : fetch(λa785c50d7d57.request)))());
 });
