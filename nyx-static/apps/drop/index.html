@@ -7,9 +7,9 @@
     <meta name="referrer" content="no-referrer">
     <title>StudyReady</title>
     <link rel="icon" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/logo.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/owner-dashboard.css?rev=0240251717d0b488">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/owner-dashboard-polish.css?rev=0240251717d0b488">
-    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/style.css?rev=0240251717d0b488">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/owner-dashboard.css?rev=049f697513dfb3bb">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/owner-dashboard-polish.css?rev=049f697513dfb3bb">
+    <link rel="stylesheet" href="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/style.css?rev=049f697513dfb3bb">
     <script src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/runtime-config.js"></script>
     <script type="module" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/@r6ecd01561f253539ccfcee35!.js"></script>
     <style>html.startup-covered {
@@ -46,7 +46,7 @@ html.startup-covered body > :not(#studyready-startup):not(script) {
             src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/logo.svg" alt=""><span>drop</span></a><button id="collapse" class="icon"
           aria-label="Collapse sidebar" aria-expanded="true" title="Collapse sidebar"
           data-icon="panel"></button></header><button id="newTab" class="new-tab"
-        title="New tab"><span data-icon="plus"></span><span class="label">New tab</span></button>
+        title="New page"><span data-icon="plus"></span><span class="label">New page</span></button>
       <nav aria-label="Workspace">
         <button id="homeNav" title="Home" aria-current="page"><span data-icon="home"></span><span
             class="label">Home</span>
@@ -60,7 +60,7 @@ html.startup-covered body > :not(#studyready-startup):not(script) {
             class="label">Astra</span></button><button id="bookmarksNav" title="Bookmarks">
           <span data-icon="bookmark"></span><span class="label">Bookmarks</span></button>
       </nav>
-      <div class="tabs-label">TABS <span id="tabCount">0</span></div>
+      <div class="tabs-label">PAGES <span id="tabCount">0</span></div>
       <div id="tabs" role="tablist" aria-label="Open websites"></div>
       <footer><button id="settingsButton" title="Settings"><span data-icon="settings"></span><span
             class="label">Settings</span></button>
@@ -109,8 +109,8 @@ html.startup-covered body > :not(#studyready-startup):not(script) {
           <form id="q7m2x"><label class="sr-only" for="address">Website address</label><input
               id="address" autocomplete="off" spellcheck="false"></form><button id="bookmarkPage"
             class="icon" aria-label="Bookmark page" title="Bookmark page" data-icon="bookmark"
-            aria-pressed="false"></button><button id="pinPage" class="icon" aria-label="Pin tab"
-            title="Pin tab" data-icon="pin" aria-pressed="false"></button><span id="loading"
+            aria-pressed="false"></button><button id="pinPage" class="icon" aria-label="Pin page"
+            title="Pin page" data-icon="pin" aria-pressed="false"></button><span id="loading"
             class="sr-only" role="status"></span>
         </div>
         <div id="stage"></div>
@@ -156,28 +156,29 @@ html.startup-covered body > :not(#studyready-startup):not(script) {
       <div class="setting">Appearance<span>Graphite</span>
       </div><label class="setting">Close prevention<input id="closePrevention" type="checkbox"
           role="switch" aria-describedby="closePreventionHelp"></label>
-      <p id="closePreventionHelp" class="setting-help"> Ask before closing or leaving this tab, when
-        supported by your workspace.</p><button id="blankCloak" class="setting" type="button">Open
-        in about:blank<span class="spacer"></span><span data-icon="chevron"></span></button><label
-        class="setting">Restore tabs<input id="restore" type="checkbox" role="switch"></label><label
-        class="setting"> Block popups<input id="popups" type="checkbox" role="switch"
-          checked="checked"></label><label class="setting">Block ads <input id="ads" type="checkbox"
-          role="switch" checked="checked"></label><button id="keys" class="setting"><span
+      <p id="closePreventionHelp" class="setting-help"> Ask before closing or leaving this page,
+        when supported by your workspace.</p><button id="blankCloak" class="setting"
+        type="button">Open in about:blank<span class="spacer"></span><span
+          data-icon="chevron"></span></button><label class="setting">Restore pages<input
+          id="restore" type="checkbox" role="switch"></label><label class="setting"> Block
+        popups<input id="popups" type="checkbox" role="switch" checked="checked"></label><label
+        class="setting">Block ads <input id="ads" type="checkbox" role="switch"
+          checked="checked"></label><button id="keys" class="setting"><span
           data-icon="key"></span>API keys<span class="spacer"></span><span
           data-icon="chevron"></span></button><button id="clearTabs" class="setting">Clear saved
-        tabs</button>
+        pages</button>
     </dialog>
     <dialog id="setupWizard" aria-labelledby="setupTitle">
       <form id="setupForm">
         <div class="setup-brand"><img src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/drop/logo.svg" alt="" width="28" height="28">
           <h2 id="setupTitle">Set up Drop</h2>
-        </div><label class="setting" for="setupEngine">S3ARC4 engine<select id="setupEngine">
+        </div><label class="setting" for="setupEngine">S3ARC4 engine <select id="setupEngine">
             <option value="duckduckgo">DuckDuckGo</option>
             <option value="google">Google</option>
             <option value="bing">Bing</option>
           </select></label><label class="setting" for="setupClose">Close prevention<input
             id="setupClose" type="checkbox" role="switch"></label>
-        <div class="setup-actions"><button id="setupSkip" type="button">Skip</button><button
+        <div class="setup-actions"><button id="setupSkip" type="button"> Skip</button><button
             type="submit" class="setup-done">Done</button></div>
       </form>
     </dialog>

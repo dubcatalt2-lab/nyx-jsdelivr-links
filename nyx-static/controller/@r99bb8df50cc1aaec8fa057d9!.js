@@ -1,3 +1,3 @@
-const λ0e46b9d411e3 = globalThis.$studyjetController;
+const λ2bba626b4a44 = globalThis.$studyjetController;
 
-export const {Controller: Controller, Frame: Frame, ManagedPlugin: ManagedPlugin, VERSION: VERSION, assertRuntimeStudyJetVersion: assertRuntimeStudyJetVersion, config: config} = λ0e46b9d411e3;
+export const {Controller: Controller, Frame: Frame, ManagedPlugin: ManagedPlugin, VERSION: VERSION, assertRuntimeStudyJetVersion: assertRuntimeStudyJetVersion, config: config} = λ2bba626b4a44;
