@@ -90,13 +90,13 @@
   document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x43\x6c\x6f\x73\x65")?.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_51.close()), 
   document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x52\x65\x6d\x6f\x76\x65")?.addEventListener("\x63\x6c\x69\x63\x6b", () => {
     _0x9efee5_4f = "", document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x49\x6e\x70\x75\x74").value = "", _0x9efee5_51.close(), 
-    _0x9efee5_52(), _0x9efee5_a3(), _0x9efee5_58();
+    _0x9efee5_52(), _0x9efee5_a4(), _0x9efee5_58();
   }), document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x46\x6f\x72\x6d")?.addEventListener("\x73\x75\x62\x6d\x69\x74", _0x9efee5_0 => {
     _0x9efee5_0.preventDefault();
     const _0x9efee5_1 = document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x49\x6e\x70\x75\x74"), _0x9efee5_2 = _0x9efee5_1.value.trim();
     /^n_api_[A-Za-z0-9_-]{43}$/.test(_0x9efee5_2) || /^sk-or-[A-Za-z0-9_-]{20,}$/.test(_0x9efee5_2) ? (_0x9efee5_4f = _0x9efee5_2, 
     _0x9efee5_1.value = "", document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x45\x72\x72\x6f\x72").textContent = "", 
-    _0x9efee5_51.close(), _0x9efee5_52(), _0x9efee5_a3(), _0x9efee5_58()) : document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x45\x72\x72\x6f\x72").textContent = "\x45\x6e\x74\x65\x72\x20\x61\x20\x76\x61\x6c\x69\x64\x20\x4e\x79\x78\x20\x6f\x72\x20\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72\x20\x41\x50\x49\x20\x6b\x65\x79\x2e";
+    _0x9efee5_51.close(), _0x9efee5_52(), _0x9efee5_a4(), _0x9efee5_58()) : document.getElementById("\x63\x75\x73\x74\x6f\x6d\x4b\x65\x79\x45\x72\x72\x6f\x72").textContent = "\x45\x6e\x74\x65\x72\x20\x61\x20\x76\x61\x6c\x69\x64\x20\x4e\x79\x78\x20\x6f\x72\x20\x4f\x70\x65\x6e\x52\x6f\x75\x74\x65\x72\x20\x41\x50\x49\x20\x6b\x65\x79\x2e";
   });
   let _0x9efee5_55, _0x9efee5_56 = 0;
   const _0x9efee5_57 = document.createElement("\x70");
@@ -250,7 +250,7 @@
       _0x9efee5_2.textContent = "\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x20\x69\x6d\x61\x67\x65", _0x9efee5_1.append(_0x9efee5_2, document.createTextNode(_0x9efee5_3.saved ? "\x20\x3f\x20\x4c\x61\x73\x74\x20\x32\x30\x20\x69\x6d\x61\x67\x65\x73\x20\x73\x61\x76\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e" : "\x20\x3f\x20\x44\x6f\x77\x6e\x6c\x6f\x61\x64\x20\x74\x6f\x20\x6b\x65\x65\x70\x20\x74\x68\x69\x73\x20\x69\x6d\x61\x67\x65\x3b\x20\x69\x74\x20\x69\x73\x20\x6f\x6e\x6c\x79\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x20\x69\x6e\x20\x74\x68\x69\x73\x20\x73\x65\x73\x73\x69\x6f\x6e\x2e")), 
       _0x9efee5_4.append(_0x9efee5_0, _0x9efee5_1);
     } else _0x9efee5_4.textContent = "\x54\x68\x69\x73\x20\x69\x6d\x61\x67\x65\x20\x69\x73\x20\x6e\x6f\x20\x6c\x6f\x6e\x67\x65\x72\x20\x73\x74\x6f\x72\x65\x64\x20\x6f\x6e\x20\x74\x68\x69\x73\x20\x64\x65\x76\x69\x63\x65\x2e";
-    _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74")?.after(_0x9efee5_4), _0x9efee5_a5();
+    _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x63\x6f\x6e\x74\x65\x6e\x74")?.after(_0x9efee5_4), _0x9efee5_a6();
   }
   const _0x9efee5_60 = new Map;
   async function _0x9efee5_61(_0x9efee5_0, _0x9efee5_1) {
@@ -595,7 +595,7 @@
     _0x9efee5_1.title = "\x54\x68\x69\x73\x20\x72\x65\x70\x6c\x79\x20\x72\x65\x61\x63\x68\x65\x64\x20\x69\x74\x73\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x6c\x69\x6d\x69\x74\x2e\x20\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x75\x73\x69\x6e\x67\x20\x79\x6f\x75\x72\x20\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x20\x61\x6c\x6c\x6f\x77\x61\x6e\x63\x65\x2e", 
     _0x9efee5_1.onclick = () => {
       _0x9efee5_12.disabled || _0x9efee5_f.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x3a\x6c\x61\x73\x74\x2d\x63\x68\x69\x6c\x64") === _0x9efee5_0 && (_0x9efee5_11.value.trim() ? _0x9efee5_11.focus() : (_0x9efee5_11.value = "\x43\x6f\x6e\x74\x69\x6e\x75\x65\x20\x79\x6f\x75\x72\x20\x70\x72\x65\x76\x69\x6f\x75\x73\x20\x72\x65\x73\x70\x6f\x6e\x73\x65\x20\x66\x72\x6f\x6d\x20\x77\x68\x65\x72\x65\x20\x69\x74\x20\x73\x74\x6f\x70\x70\x65\x64\x2c\x20\x77\x69\x74\x68\x6f\x75\x74\x20\x72\x65\x70\x65\x61\x74\x69\x6e\x67\x20\x69\x74\x2e", 
-      _0x9efee5_a9()));
+      _0x9efee5_aa()));
     }, _0x9efee5_0.querySelector("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65\x2d\x62\x6f\x64\x79").append(_0x9efee5_1);
   }
   function _0x9efee5_7d(_0x9efee5_0, _0x9efee5_1, {error: _0x9efee5_2 = !1, thinking: _0x9efee5_3 = !1, attachment: _0x9efee5_4 = null, imageId: _0x9efee5_5 = null, mediaJobId: _0x9efee5_6 = null, metadata: _0x9efee5_7 = null, timing: _0x9efee5_8 = null, modelId: _0x9efee5_9 = "", modelName: _0x9efee5_a = "", finishReason: _0x9efee5_b = null} = {}) {
@@ -627,7 +627,7 @@
       thinking: _0x9efee5_3
     }), "\x6c\x65\x6e\x67\x74\x68" === _0x9efee5_b && _0x9efee5_7c(_0x9efee5_d), _0x9efee5_f.appendChild(_0x9efee5_d), 
     _0x9efee5_5 && _0x9efee5_5f(_0x9efee5_d, _0x9efee5_5), _0x9efee5_6 && _0x9efee5_61(_0x9efee5_d, _0x9efee5_6), 
-    _0x9efee5_6b(), _0x9efee5_a5(!0), _0x9efee5_d;
+    _0x9efee5_6b(), _0x9efee5_a6(!0), _0x9efee5_d;
   }
   function _0x9efee5_7e(_0x9efee5_0, _0x9efee5_1, _0x9efee5_2) {
     return `\x3c\x62\x75\x74\x74\x6f\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x73\x74\x61\x72\x74\x65\x72\x22\x20\x74\x79\x70\x65\x3d\x22\x62\x75\x74\x74\x6f\x6e\x22\x20\x64\x61\x74\x61\x2d\x70\x72\x6f\x6d\x70\x74\x3d\x22${_0x9efee5_5a(_0x9efee5_0)}\x22\x3e\x3c\x73\x70\x61\x6e\x20\x63\x6c\x61\x73\x73\x3d\x22\x61\x69\x2d\x73\x74\x61\x72\x74\x65\x72\x2d\x69\x63\x6f\x6e\x22\x3e${function(_0x9efee5_0) {
@@ -658,7 +658,7 @@
     }(_0x9efee5_0.updatedAt))}\x3c\x2f\x73\x6d\x61\x6c\x6c\x3e\x3c\x2f\x73\x70\x61\x6e\x3e\x3c\x2f\x62\x75\x74\x74\x6f\x6e\x3e\x3c\x2f\x64\x69\x76\x3e`).join(""), _0x9efee5_23.setAttribute("\x61\x72\x69\x61\x2d\x70\x72\x65\x73\x73\x65\x64", String(_0x9efee5_47));
   }
   function _0x9efee5_80() {
-    _0x9efee5_3f?.abort(), _0x9efee5_3f = null, _0x9efee5_a6(!1);
+    _0x9efee5_3f?.abort(), _0x9efee5_3f = null, _0x9efee5_a7(!1);
   }
   function _0x9efee5_81(_0x9efee5_0) {
     _0x9efee5_d.classList.toggle("\x69\x73\x2d\x73\x69\x64\x65\x62\x61\x72\x2d\x6f\x70\x65\x6e", Boolean(_0x9efee5_0)), _0x9efee5_1f.setAttribute("\x61\x72\x69\x61\x2d\x65\x78\x70\x61\x6e\x64\x65\x64", String(Boolean(_0x9efee5_0)));
@@ -671,7 +671,7 @@
       } catch {}
       _0x9efee5_67([]);
     }
-    _0x9efee5_7f(), _0x9efee5_88(), _0x9efee5_11.value = "", _0x9efee5_a4(), _0x9efee5_11.focus();
+    _0x9efee5_7f(), _0x9efee5_88(), _0x9efee5_11.value = "", _0x9efee5_a5(), _0x9efee5_11.focus();
   }
   const _0x9efee5_83 = Object.freeze({
     0: "\x23\x30\x30\x30\x30\x30\x30",
@@ -1073,18 +1073,25 @@
       restoreFocus: !0
     })));
   }
-  async function _0x9efee5_a3() {
-    const _0x9efee5_0 = document.querySelector("\x2e\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x73\x74\x61\x74\x75\x73");
+  matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").addEventListener("\x63\x68\x61\x6e\x67\x65", _0x9efee5_97);
+  let _0x9efee5_a3 = 0;
+  async function _0x9efee5_a4() {
+    const _0x9efee5_0 = ++_0x9efee5_a3, _0x9efee5_1 = _0x9efee5_4f, _0x9efee5_2 = document.querySelector("\x2e\x61\x69\x2d\x6d\x6f\x64\x65\x6c\x2d\x73\x74\x61\x74\x75\x73");
     _0x9efee5_13.disabled = !0, _0x9efee5_17.disabled = !0, _0x9efee5_17.setAttribute("\x61\x72\x69\x61\x2d\x62\x75\x73\x79", "\x74\x72\x75\x65");
     try {
-      const _0x9efee5_1 = await fetch((_0x9efee5_94() ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x74\x75\x74\x73\x69\x2d\x61\x69\x2f\x6d\x6f\x64\x65\x6c\x73" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x6d\x6f\x64\x65\x6c\x73") + (_0x9efee5_4f ? "\x3f\x63\x75\x73\x74\x6f\x6d\x3d\x31" : ""), {
-        headers: await _0x9efee5_4e({
+      const _0x9efee5_4 = _0x9efee5_1.startsWith("\x6e\x5f\x61\x70\x69\x5f"), _0x9efee5_5 = await fetch(_0x9efee5_4 ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x76\x31\x2f\x6d\x6f\x64\x65\x6c\x73" : (_0x9efee5_94() ? "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x74\x75\x74\x73\x69\x2d\x61\x69\x2f\x6d\x6f\x64\x65\x6c\x73" : "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x6e\x79\x78\x2d\x61\x69\x2f\x6d\x6f\x64\x65\x6c\x73") + (_0x9efee5_1 ? "\x3f\x63\x75\x73\x74\x6f\x6d\x3d\x31" : ""), {
+        headers: _0x9efee5_4 ? {
+          accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e",
+          Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0x9efee5_1
+        } : await _0x9efee5_4e({
           accept: "\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e\x2f\x6a\x73\x6f\x6e"
-        })
-      }), _0x9efee5_2 = await _0x9efee5_1.json();
-      if (!_0x9efee5_1.ok) throw new Error(_0x9efee5_2?.error || `\x4d\x6f\x64\x65\x6c\x20\x63\x61\x74\x61\x6c\x6f\x67\x20\x66\x61\x69\x6c\x65\x64\x20\x28${_0x9efee5_1.status}\x29`);
-      _0x9efee5_44 = !0 === _0x9efee5_2.ownerMediaAccess;
-      const _0x9efee5_4 = Array.isArray(_0x9efee5_2?.models) ? _0x9efee5_2.models.flatMap(_0x9efee5_0 => {
+        }),
+        cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65"
+      }), _0x9efee5_7 = await _0x9efee5_5.json();
+      if (_0x9efee5_0 !== _0x9efee5_a3 || _0x9efee5_1 !== _0x9efee5_4f) return !1;
+      if (!_0x9efee5_5.ok) throw new Error(_0x9efee5_7?.error || `\x4d\x6f\x64\x65\x6c\x20\x63\x61\x74\x61\x6c\x6f\x67\x20\x66\x61\x69\x6c\x65\x64\x20\x28${_0x9efee5_5.status}\x29`);
+      _0x9efee5_44 = !0 === _0x9efee5_7.ownerMediaAccess;
+      const _0x9efee5_8 = Array.isArray(_0x9efee5_7?.models) ? _0x9efee5_7.models.flatMap(_0x9efee5_0 => {
         if (_0x9efee5_4f && "\x6e\x79\x78" === _0x9efee5_50() && _0x9efee5_0?.imageGeneration) return [];
         const _0x9efee5_1 = String(_0x9efee5_0?.id || "").trim(), _0x9efee5_2 = String(_0x9efee5_0?.label || _0x9efee5_1).trim(), _0x9efee5_3 = String(_0x9efee5_0?.company || "").trim();
         return _0x9efee5_1 && _0x9efee5_2 ? [ {
@@ -1103,46 +1110,48 @@
           reasoning: Boolean(_0x9efee5_0?.reasoning)
         } ] : [];
       }) : [];
-      if (!_0x9efee5_4.length) throw new Error("\x4e\x6f\x20\x6d\x6f\x64\x65\x6c\x73\x20\x61\x72\x65\x20\x63\x75\x72\x72\x65\x6e\x74\x6c\x79\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
-      const _0x9efee5_5 = _0x9efee5_68()?.model || localStorage.getItem(_0x9efee5_3) || _0x9efee5_6, _0x9efee5_7 = _0x9efee5_43.find(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_5)?.label || _0x9efee5_5;
-      _0x9efee5_43 = _0x9efee5_4;
-      const _0x9efee5_8 = _0x9efee5_4.some(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_5) ? _0x9efee5_5 : _0x9efee5_4.some(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_6) ? _0x9efee5_6 : _0x9efee5_4[0].id;
-      return _0x9efee5_9e(_0x9efee5_4, _0x9efee5_8), _0x9efee5_8 === _0x9efee5_5 ? (localStorage.setItem(_0x9efee5_3, _0x9efee5_8), 
-      _0x9efee5_0 && (_0x9efee5_0.classList.remove("\x69\x73\x2d\x77\x61\x72\x6e\x69\x6e\x67"), _0x9efee5_0.title = `${_0x9efee5_4.length}\x20\x6d\x6f\x64\x65\x6c\x73\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65`)) : _0x9efee5_0 && (_0x9efee5_0.classList.add("\x69\x73\x2d\x77\x61\x72\x6e\x69\x6e\x67"), 
-      _0x9efee5_0.title = `${_0x9efee5_7}\x20\x69\x73\x20\x74\x65\x6d\x70\x6f\x72\x61\x72\x69\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x4e\x79\x78\x20\x77\x69\x6c\x6c\x20\x72\x65\x73\x74\x6f\x72\x65\x20\x69\x74\x20\x77\x68\x65\x6e\x20\x69\x74\x20\x72\x65\x74\x75\x72\x6e\x73\x2e`), 
+      if (!_0x9efee5_8.length) throw new Error("\x4e\x6f\x20\x6d\x6f\x64\x65\x6c\x73\x20\x61\x72\x65\x20\x63\x75\x72\x72\x65\x6e\x74\x6c\x79\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e");
+      const _0x9efee5_9 = _0x9efee5_68()?.model || localStorage.getItem(_0x9efee5_3) || _0x9efee5_6, _0x9efee5_a = _0x9efee5_43.find(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_9)?.label || _0x9efee5_9;
+      _0x9efee5_43 = _0x9efee5_8;
+      const _0x9efee5_b = _0x9efee5_8.some(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_9) ? _0x9efee5_9 : _0x9efee5_8.some(_0x9efee5_0 => _0x9efee5_0.id === _0x9efee5_6) ? _0x9efee5_6 : _0x9efee5_8[0].id;
+      return _0x9efee5_9e(_0x9efee5_8, _0x9efee5_b), _0x9efee5_b === _0x9efee5_9 ? (localStorage.setItem(_0x9efee5_3, _0x9efee5_b), 
+      _0x9efee5_2 && (_0x9efee5_2.classList.remove("\x69\x73\x2d\x77\x61\x72\x6e\x69\x6e\x67"), _0x9efee5_2.title = `${_0x9efee5_8.length}\x20\x6d\x6f\x64\x65\x6c\x73\x20\x61\x76\x61\x69\x6c\x61\x62\x6c\x65`)) : _0x9efee5_2 && (_0x9efee5_2.classList.add("\x69\x73\x2d\x77\x61\x72\x6e\x69\x6e\x67"), 
+      _0x9efee5_2.title = `${_0x9efee5_a}\x20\x69\x73\x20\x74\x65\x6d\x70\x6f\x72\x61\x72\x69\x6c\x79\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65\x2e\x20\x4e\x79\x78\x20\x77\x69\x6c\x6c\x20\x72\x65\x73\x74\x6f\x72\x65\x20\x69\x74\x20\x77\x68\x65\x6e\x20\x69\x74\x20\x72\x65\x74\x75\x72\x6e\x73\x2e`), 
       !0;
-    } catch (_0x9efee5_1) {
-      return console.warn("\x4e\x79\x78\x20\x41\x49\x20\x6d\x6f\x64\x65\x6c\x20\x63\x61\x74\x61\x6c\x6f\x67\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x6c\x6f\x61\x64\x65\x64\x3a", _0x9efee5_1), _0x9efee5_43 = [], 
-      _0x9efee5_9e([], ""), _0x9efee5_18.textContent = "\x4d\x6f\x64\x65\x6c\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", _0x9efee5_0 && (_0x9efee5_0.classList.add("\x69\x73\x2d\x77\x61\x72\x6e\x69\x6e\x67"), 
-      _0x9efee5_0.title = "\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x6c\x69\x73\x74\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x76\x65\x72\x69\x66\x69\x65\x64"), !1;
+    } catch (_0x9efee5_4) {
+      return _0x9efee5_0 !== _0x9efee5_a3 || _0x9efee5_1 !== _0x9efee5_4f || (console.warn("\x4e\x79\x78\x20\x41\x49\x20\x6d\x6f\x64\x65\x6c\x20\x63\x61\x74\x61\x6c\x6f\x67\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x6c\x6f\x61\x64\x65\x64\x3a", _0x9efee5_4), 
+      _0x9efee5_43 = [], _0x9efee5_9e([], ""), _0x9efee5_18.textContent = "\x4d\x6f\x64\x65\x6c\x73\x20\x75\x6e\x61\x76\x61\x69\x6c\x61\x62\x6c\x65", 
+      _0x9efee5_2 && (_0x9efee5_2.classList.add("\x69\x73\x2d\x77\x61\x72\x6e\x69\x6e\x67"), _0x9efee5_2.title = "\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x6c\x69\x73\x74\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x62\x65\x20\x76\x65\x72\x69\x66\x69\x65\x64")), 
+      !1;
     } finally {
-      const _0x9efee5_0 = _0x9efee5_43.length > 0;
-      _0x9efee5_13.disabled = !_0x9efee5_0, _0x9efee5_17.disabled = !_0x9efee5_0, _0x9efee5_17.removeAttribute("\x61\x72\x69\x61\x2d\x62\x75\x73\x79");
+      if (_0x9efee5_0 !== _0x9efee5_a3 || _0x9efee5_1 !== _0x9efee5_4f) return !1;
+      const _0x9efee5_2 = _0x9efee5_43.length > 0;
+      _0x9efee5_13.disabled = !_0x9efee5_2, _0x9efee5_17.disabled = !_0x9efee5_2, _0x9efee5_17.removeAttribute("\x61\x72\x69\x61\x2d\x62\x75\x73\x79");
     }
   }
-  function _0x9efee5_a4() {
+  function _0x9efee5_a5() {
     _0x9efee5_11.style.height = "\x61\x75\x74\x6f", _0x9efee5_11.style.height = `${Math.min(_0x9efee5_11.scrollHeight, 190)}\x70\x78`, 
     _0x9efee5_1d && (_0x9efee5_1d.textContent = `${_0x9efee5_11.value.length}\x20\x2f\x20${_0x9efee5_11.maxLength}`);
   }
-  function _0x9efee5_a5(_0x9efee5_0 = !1) {
+  function _0x9efee5_a6(_0x9efee5_0 = !1) {
     _0x9efee5_7 || !_0x9efee5_0 && !_0x9efee5_42 || requestAnimationFrame(() => {
       _0x9efee5_e.scrollTop = _0x9efee5_e.scrollHeight;
     });
   }
-  function _0x9efee5_a6(_0x9efee5_0) {
+  function _0x9efee5_a7(_0x9efee5_0) {
     _0x9efee5_e.setAttribute("\x61\x72\x69\x61\x2d\x62\x75\x73\x79", String(_0x9efee5_0)), _0x9efee5_10.classList.toggle("\x69\x73\x2d\x62\x75\x73\x79", _0x9efee5_0), 
     _0x9efee5_11.disabled = _0x9efee5_0, _0x9efee5_12.disabled = _0x9efee5_0 || Date.now() < _0x9efee5_40, 
     _0x9efee5_32.disabled = _0x9efee5_0, _0x9efee5_33.disabled = _0x9efee5_0, _0x9efee5_3c.disabled = _0x9efee5_0, 
     _0x9efee5_38.disabled = _0x9efee5_0, _0x9efee5_12.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", _0x9efee5_0 ? `\x57\x61\x69\x74\x69\x6e\x67\x20\x66\x6f\x72\x20${_0x9efee5_77()}` : "\x53\x65\x6e\x64\x20\x6d\x65\x73\x73\x61\x67\x65");
   }
-  async function _0x9efee5_a7(_0x9efee5_0) {
+  async function _0x9efee5_a8(_0x9efee5_0) {
     if (navigator.clipboard?.writeText) return void await navigator.clipboard.writeText(String(_0x9efee5_0 || ""));
     const _0x9efee5_1 = document.createElement("\x74\x65\x78\x74\x61\x72\x65\x61");
     _0x9efee5_1.value = String(_0x9efee5_0 || ""), _0x9efee5_1.style.position = "\x66\x69\x78\x65\x64", 
     _0x9efee5_1.style.opacity = "\x30", document.body.appendChild(_0x9efee5_1), _0x9efee5_1.select(), 
     document.execCommand("\x63\x6f\x70\x79"), _0x9efee5_1.remove();
   }
-  function _0x9efee5_a8(_0x9efee5_0) {
+  function _0x9efee5_a9(_0x9efee5_0) {
     const _0x9efee5_1 = _0x9efee5_0.querySelector("\x73\x70\x61\x6e"), _0x9efee5_2 = _0x9efee5_1?.textContent || "";
     _0x9efee5_0.classList.add("\x69\x73\x2d\x63\x6f\x70\x69\x65\x64"), _0x9efee5_0.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x43\x6f\x70\x69\x65\x64"), 
     _0x9efee5_1 && (_0x9efee5_1.textContent = "\x43\x6f\x70\x69\x65\x64"), setTimeout(() => {
@@ -1150,7 +1159,7 @@
       _0x9efee5_1 && (_0x9efee5_1.textContent = _0x9efee5_2 || "\x43\x6f\x70\x79");
     }, 1200);
   }
-  async function _0x9efee5_a9() {
+  async function _0x9efee5_aa() {
     const _0x9efee5_0 = _0x9efee5_11.value.trim();
     let _0x9efee5_1 = _0x9efee5_49;
     const _0x9efee5_2 = _0x9efee5_4a, _0x9efee5_3 = Boolean(_0x9efee5_4b);
@@ -1197,13 +1206,13 @@
       } : {}
     }), _0x9efee5_6a(_0x9efee5_e), _0x9efee5_7d("\x75\x73\x65\x72", _0x9efee5_d, {
       attachment: _0x9efee5_1 || _0x9efee5_2
-    }), _0x9efee5_11.value = "", _0x9efee5_a4();
+    }), _0x9efee5_11.value = "", _0x9efee5_a5();
     const _0x9efee5_f = _0x9efee5_7d("\x61\x73\x73\x69\x73\x74\x61\x6e\x74", "", {
       thinking: !0,
       modelId: _0x9efee5_4,
       modelName: _0x9efee5_89(_0x9efee5_4)
     });
-    _0x9efee5_3f = new AbortController, _0x9efee5_a6(!0);
+    _0x9efee5_3f = new AbortController, _0x9efee5_a7(!0);
     let _0x9efee5_14 = "", _0x9efee5_15 = null;
     const _0x9efee5_16 = performance.now();
     let _0x9efee5_17 = null, _0x9efee5_18 = 0;
@@ -1216,7 +1225,7 @@
     _0x9efee5_7b(_0x9efee5_f, _0x9efee5_19(), !0);
     let _0x9efee5_1b = null, _0x9efee5_1c = null, _0x9efee5_1d = !1, _0x9efee5_1e = 0;
     const _0x9efee5_1f = () => {
-      _0x9efee5_1e = 0, _0x9efee5_79(_0x9efee5_f, _0x9efee5_14), _0x9efee5_a5();
+      _0x9efee5_1e = 0, _0x9efee5_79(_0x9efee5_f, _0x9efee5_14), _0x9efee5_a6();
     };
     try {
       const _0x9efee5_0 = _0x9efee5_1 ? await (_0x9efee5_20 = _0x9efee5_1, _0x9efee5_20?.dataUrl ? new Promise((_0x9efee5_0, _0x9efee5_1) => {
@@ -1453,15 +1462,14 @@
       if ("\x41\x62\x6f\x72\x74\x45\x72\x72\x6f\x72" === _0x9efee5_21?.name) return;
       _0x9efee5_79(_0x9efee5_f, _0x9efee5_21?.message || "\x4e\x79\x78\x20\x41\x49\x20\x63\x6f\x75\x6c\x64\x20\x6e\x6f\x74\x20\x63\x6f\x6d\x70\x6c\x65\x74\x65\x20\x74\x68\x61\x74\x20\x72\x65\x71\x75\x65\x73\x74\x2e", {
         error: !0
-      }), _0x9efee5_4f || _0x9efee5_a3();
+      }), _0x9efee5_4f || _0x9efee5_a4();
     } finally {
       clearInterval(_0x9efee5_1a), _0x9efee5_7b(_0x9efee5_f, _0x9efee5_19()), _0x9efee5_1e && cancelAnimationFrame(_0x9efee5_1e), 
-      _0x9efee5_3f = null, _0x9efee5_a6(!1), _0x9efee5_1d && _0x9efee5_70(), _0x9efee5_4b && (_0x9efee5_3b.textContent = "\x41\x20\x66\x72\x65\x73\x68\x20\x66\x72\x61\x6d\x65\x20\x69\x73\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x6f\x6e\x6c\x79\x20\x77\x68\x65\x6e\x20\x79\x6f\x75\x20\x73\x65\x6e\x64\x2e"), 
-      _0x9efee5_11.focus(), _0x9efee5_a5(), _0x9efee5_58();
+      _0x9efee5_3f = null, _0x9efee5_a7(!1), _0x9efee5_1d && _0x9efee5_70(), _0x9efee5_4b && (_0x9efee5_3b.textContent = "\x41\x20\x66\x72\x65\x73\x68\x20\x66\x72\x61\x6d\x65\x20\x69\x73\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x6f\x6e\x6c\x79\x20\x77\x68\x65\x6e\x20\x79\x6f\x75\x20\x73\x65\x6e\x64\x2e"), 
+      _0x9efee5_11.focus(), _0x9efee5_a6(), _0x9efee5_58();
     }
     var _0x9efee5_20;
   }
-  matchMedia("\x28\x70\x72\x65\x66\x65\x72\x73\x2d\x72\x65\x64\x75\x63\x65\x64\x2d\x6d\x6f\x74\x69\x6f\x6e\x3a\x20\x72\x65\x64\x75\x63\x65\x29").addEventListener("\x63\x68\x61\x6e\x67\x65", _0x9efee5_97), 
   _0x9efee5_59(), addEventListener("\x6d\x65\x73\x73\x61\x67\x65", _0x9efee5_0 => {
     _0x9efee5_0.origin === location.origin && (_0x9efee5_0.source === parent && "\x6e\x79\x78\x3a\x74\x68\x65\x6d\x65\x2d\x73\x79\x6e\x63" === _0x9efee5_0.data?.type && _0x9efee5_59(_0x9efee5_0.data.theme), 
     _0x9efee5_0.source === parent && "\x6e\x79\x78\x3a\x61\x69\x2d\x70\x72\x6f\x66\x69\x6c\x65" === _0x9efee5_0.data?.type && (_0x9efee5_85(_0x9efee5_0.data.profile || {}), 
@@ -1482,7 +1490,7 @@
     passive: !0
   }), _0x9efee5_e.addEventListener("\x63\x6c\x69\x63\x6b", async _0x9efee5_0 => {
     const _0x9efee5_1 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x70\x72\x6f\x6d\x70\x74\x5d");
-    if (_0x9efee5_1) return _0x9efee5_11.value = _0x9efee5_1.dataset.prompt || "", _0x9efee5_a4(), 
+    if (_0x9efee5_1) return _0x9efee5_11.value = _0x9efee5_1.dataset.prompt || "", _0x9efee5_a5(), 
     _0x9efee5_11.focus(), void _0x9efee5_10.requestSubmit();
     const _0x9efee5_2 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x64\x6f\x77\x6e\x6c\x6f\x61\x64\x2d\x74\x65\x78\x74\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74\x5d");
     if (_0x9efee5_2) return void function(_0x9efee5_0) {
@@ -1495,15 +1503,15 @@
       _0x9efee5_3.click(), _0x9efee5_3.remove(), setTimeout(() => URL.revokeObjectURL(_0x9efee5_2), 1e3);
     }(_0x9efee5_2._nyxTextAttachment);
     const _0x9efee5_3 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x2d\x63\x6f\x64\x65\x5d");
-    if (_0x9efee5_3) return await _0x9efee5_a7(_0x9efee5_3.closest("\x2e\x61\x69\x2d\x63\x6f\x64\x65\x2d\x62\x6c\x6f\x63\x6b")?.querySelector("\x70\x72\x65\x20\x63\x6f\x64\x65")?.textContent || ""), 
-    void _0x9efee5_a8(_0x9efee5_3);
+    if (_0x9efee5_3) return await _0x9efee5_a8(_0x9efee5_3.closest("\x2e\x61\x69\x2d\x63\x6f\x64\x65\x2d\x62\x6c\x6f\x63\x6b")?.querySelector("\x70\x72\x65\x20\x63\x6f\x64\x65")?.textContent || ""), 
+    void _0x9efee5_a9(_0x9efee5_3);
     const _0x9efee5_4 = _0x9efee5_0.target.closest("\x5b\x64\x61\x74\x61\x2d\x63\x6f\x70\x79\x2d\x6d\x65\x73\x73\x61\x67\x65\x5d");
     if (_0x9efee5_4) {
       const _0x9efee5_0 = _0x9efee5_4.closest("\x2e\x61\x69\x2d\x6d\x65\x73\x73\x61\x67\x65");
-      await _0x9efee5_a7(_0x9efee5_0?._nyxMessageText || ""), _0x9efee5_a8(_0x9efee5_4);
+      await _0x9efee5_a8(_0x9efee5_0?._nyxMessageText || ""), _0x9efee5_a9(_0x9efee5_4);
     }
   }), _0x9efee5_10.addEventListener("\x73\x75\x62\x6d\x69\x74", _0x9efee5_0 => {
-    _0x9efee5_0.preventDefault(), _0x9efee5_a9();
+    _0x9efee5_0.preventDefault(), _0x9efee5_aa();
   }), _0x9efee5_33.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_32.click()), _0x9efee5_3c.addEventListener("\x63\x6c\x69\x63\x6b", () => {
     !async function() {
       if (navigator.mediaDevices?.getDisplayMedia) {
@@ -1555,7 +1563,7 @@
       _0x9efee5_36.textContent = _0x9efee5_2.name, _0x9efee5_6d(`${_0x9efee5_6e(_0x9efee5_2.size)}\x20\xb7\x20\x52\x65\x61\x64\x79\x20\x74\x6f\x20\x73\x65\x6e\x64`), 
       _0x9efee5_33.classList.remove("\x68\x61\x73\x2d\x61\x74\x74\x61\x63\x68\x6d\x65\x6e\x74"), _0x9efee5_33.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x41\x74\x74\x61\x63\x68\x20\x61\x6e\x20\x69\x6d\x61\x67\x65\x20\x28\x72\x65\x70\x6c\x61\x63\x65\x73\x20\x74\x68\x65\x20\x74\x65\x78\x74\x20\x66\x69\x6c\x65\x29"), 
       _0x9efee5_38.title = "\x52\x65\x6d\x6f\x76\x65\x20\x74\x65\x78\x74\x20\x66\x69\x6c\x65", _0x9efee5_38.setAttribute("\x61\x72\x69\x61\x2d\x6c\x61\x62\x65\x6c", "\x52\x65\x6d\x6f\x76\x65\x20\x61\x74\x74\x61\x63\x68\x65\x64\x20\x74\x65\x78\x74\x20\x66\x69\x6c\x65"));
-    }(_0x9efee5_2), _0x9efee5_a4());
+    }(_0x9efee5_2), _0x9efee5_a5());
   }), _0x9efee5_10.addEventListener("\x64\x72\x61\x67\x65\x6e\x74\x65\x72", _0x9efee5_0 => {
     [ ..._0x9efee5_0.dataTransfer?.items || [] ].some(_0x9efee5_0 => "\x66\x69\x6c\x65" === _0x9efee5_0.kind) && _0x9efee5_10.classList.add("\x69\x73\x2d\x64\x72\x61\x67\x67\x69\x6e\x67");
   }), _0x9efee5_10.addEventListener("\x64\x72\x61\x67\x6f\x76\x65\x72", _0x9efee5_0 => {
@@ -1566,7 +1574,7 @@
     _0x9efee5_10.classList.remove("\x69\x73\x2d\x64\x72\x61\x67\x67\x69\x6e\x67");
     const _0x9efee5_1 = [ ..._0x9efee5_0.dataTransfer?.files || [] ][0];
     _0x9efee5_1 && (_0x9efee5_0.preventDefault(), _0x9efee5_72(_0x9efee5_1));
-  }), _0x9efee5_11.addEventListener("\x69\x6e\x70\x75\x74", _0x9efee5_a4), _0x9efee5_11.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x9efee5_0 => {
+  }), _0x9efee5_11.addEventListener("\x69\x6e\x70\x75\x74", _0x9efee5_a5), _0x9efee5_11.addEventListener("\x6b\x65\x79\x64\x6f\x77\x6e", _0x9efee5_0 => {
     "\x45\x6e\x74\x65\x72" !== _0x9efee5_0.key || _0x9efee5_0.shiftKey || _0x9efee5_0.ctrlKey || _0x9efee5_0.altKey || _0x9efee5_0.metaKey || _0x9efee5_0.isComposing || (_0x9efee5_0.preventDefault(), 
     _0x9efee5_10.requestSubmit());
   }), _0x9efee5_17.addEventListener("\x63\x6c\x69\x63\x6b", () => {
@@ -1640,7 +1648,7 @@
       } catch {}
       _0x9efee5_66();
     }
-    _0x9efee5_67([]), _0x9efee5_7f(), _0x9efee5_88(), _0x9efee5_11.value = "", _0x9efee5_a4(), 
+    _0x9efee5_67([]), _0x9efee5_7f(), _0x9efee5_88(), _0x9efee5_11.value = "", _0x9efee5_a5(), 
     _0x9efee5_11.focus();
   }), _0x9efee5_22.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_82()), _0x9efee5_23.addEventListener("\x63\x6c\x69\x63\x6b", () => _0x9efee5_82({
     temporary: !0
@@ -1703,7 +1711,7 @@
       _0x9efee5_67(_0x9efee5_68()?.messages || []);
     }
   }(), _0x9efee5_9e(_0x9efee5_43, _0x9efee5_13.value || _0x9efee5_6), _0x9efee5_7f(), 
-  _0x9efee5_88(), _0x9efee5_a4(), _0x9efee5_54(), _0x9efee5_58(), _0x9efee5_86(), 
+  _0x9efee5_88(), _0x9efee5_a5(), _0x9efee5_54(), _0x9efee5_58(), _0x9efee5_86(), 
   (async () => {
     await async function() {
       try {
@@ -1724,6 +1732,6 @@
         _0x9efee5_4d = [];
       }
       _0x9efee5_52();
-    }(), await _0x9efee5_a3();
+    }(), await _0x9efee5_a4();
   })(), _0x9efee5_11.focus();
 }();

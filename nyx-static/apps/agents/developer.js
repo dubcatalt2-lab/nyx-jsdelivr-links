@@ -36,6 +36,21 @@ export function setupDeveloper({account: _0xe6a29c_2, user: _0xe6a29c_3, nook: _
       max_tokens: 512
     })}\x27`;
   }
+  async function _0xe6a29c_e(_0xe6a29c_1, _0xe6a29c_2) {
+    return _0xe6a29c_0(await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x76\x31\x2f\x6d\x6f\x64\x65\x6c\x73", {
+      headers: {
+        Authorization: "\x42\x65\x61\x72\x65\x72\x20" + _0xe6a29c_1
+      },
+      cache: "\x6e\x6f\x2d\x73\x74\x6f\x72\x65",
+      signal: _0xe6a29c_2
+    }));
+  }
+  function _0xe6a29c_f(_0xe6a29c_0) {
+    const _0xe6a29c_1 = _0xe6a29c_7("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").value;
+    _0xe6a29c_7("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").replaceChildren(..._0xe6a29c_0.map(_0xe6a29c_0 => new Option(_0xe6a29c_0.label || _0xe6a29c_0.id, _0xe6a29c_0.id))), 
+    _0xe6a29c_0.some(_0xe6a29c_0 => _0xe6a29c_0.id === _0xe6a29c_1) && (_0xe6a29c_7("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").value = _0xe6a29c_1), 
+    _0xe6a29c_d();
+  }
   return document.querySelectorAll("\x5b\x64\x61\x74\x61\x2d\x6b\x65\x79\x2d\x74\x61\x62\x5d").forEach(_0xe6a29c_0 => _0xe6a29c_0.onclick = () => _0xe6a29c_b(_0xe6a29c_0.dataset.keyTab)), 
   _0xe6a29c_7("\x75\x73\x61\x67\x65\x50\x61\x67\x65").hidden = !_0xe6a29c_4, _0xe6a29c_7("\x64\x65\x76\x65\x6c\x6f\x70\x65\x72\x54\x61\x62\x73").hidden = !_0xe6a29c_4, 
   _0xe6a29c_7("\x75\x73\x61\x67\x65\x50\x61\x67\x65").onclick = () => {
@@ -50,6 +65,15 @@ export function setupDeveloper({account: _0xe6a29c_2, user: _0xe6a29c_3, nook: _
     } finally {
       _0xe6a29c_7("\x65\x6e\x61\x62\x6c\x65\x4e\x6f\x6f\x6b\x4b\x65\x79").disabled = !1;
     }
+  }, _0xe6a29c_7("\x70\x6c\x61\x79\x4b\x65\x79").onchange = async () => {
+    const _0xe6a29c_0 = _0xe6a29c_7("\x70\x6c\x61\x79\x4b\x65\x79").value.trim(), _0xe6a29c_1 = _0xe6a29c_9;
+    if (/^n_api_[A-Za-z0-9_-]{43}$/.test(_0xe6a29c_0)) try {
+      const _0xe6a29c_2 = await _0xe6a29c_e(_0xe6a29c_0);
+      _0xe6a29c_1 === _0xe6a29c_9 && _0xe6a29c_0 === _0xe6a29c_7("\x70\x6c\x61\x79\x4b\x65\x79").value.trim() && _0xe6a29c_f(_0xe6a29c_2.models || []);
+    } catch (_0xe6a29c_2) {
+      _0xe6a29c_1 === _0xe6a29c_9 && _0xe6a29c_0 === _0xe6a29c_7("\x70\x6c\x61\x79\x4b\x65\x79").value.trim() && (_0xe6a29c_7("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").replaceChildren(), 
+      _0xe6a29c_7("\x70\x6c\x61\x79\x53\x74\x61\x74\x75\x73").textContent = _0xe6a29c_2.message.replaceAll(_0xe6a29c_0, "\x5b\x6b\x65\x79\x5d"));
+    }
   }, _0xe6a29c_7("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").onchange = _0xe6a29c_d, _0xe6a29c_7("\x70\x6c\x61\x79\x46\x6f\x72\x6d").onsubmit = async _0xe6a29c_2 => {
     if (_0xe6a29c_2.preventDefault(), _0xe6a29c_8) return;
     const _0xe6a29c_3 = _0xe6a29c_7("\x70\x6c\x61\x79\x4b\x65\x79").value.trim();
@@ -60,7 +84,10 @@ export function setupDeveloper({account: _0xe6a29c_2, user: _0xe6a29c_3, nook: _
     _0xe6a29c_7("\x70\x6c\x61\x79\x52\x75\x6e").disabled = !0, _0xe6a29c_7("\x70\x6c\x61\x79\x43\x61\x6e\x63\x65\x6c").hidden = !1, _0xe6a29c_7("\x70\x6c\x61\x79\x53\x74\x61\x74\x75\x73").textContent = "\x47\x65\x6e\x65\x72\x61\x74\x69\x6e\x67\u2026", 
     _0xe6a29c_7("\x70\x6c\x61\x79\x52\x65\x73\x75\x6c\x74").textContent = "";
     try {
-      const _0xe6a29c_2 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x76\x31\x2f\x61\x69", {
+      const _0xe6a29c_2 = _0xe6a29c_7("\x70\x6c\x61\x79\x4d\x6f\x64\x65\x6c").value, _0xe6a29c_6 = await _0xe6a29c_e(_0xe6a29c_3, _0xe6a29c_5.signal);
+      if (_0xe6a29c_4 !== _0xe6a29c_9) return;
+      if (_0xe6a29c_f(_0xe6a29c_6.models || []), !(_0xe6a29c_6.models || []).some(_0xe6a29c_0 => _0xe6a29c_0.id === _0xe6a29c_2)) throw Error("\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x6c\x69\x73\x74\x20\x68\x61\x73\x20\x62\x65\x65\x6e\x20\x72\x65\x66\x72\x65\x73\x68\x65\x64\x20\x66\x6f\x72\x20\x74\x68\x69\x73\x20\x6b\x65\x79\x2e\x20\x43\x68\x6f\x6f\x73\x65\x20\x61\x20\x6d\x6f\x64\x65\x6c\x20\x61\x6e\x64\x20\x74\x72\x79\x20\x61\x67\x61\x69\x6e\x2e");
+      const _0xe6a29c_8 = await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/\x61\x70\x69\x2f\x76\x31\x2f\x61\x69", {
         method: "\x50\x4f\x53\x54",
         signal: _0xe6a29c_5.signal,
         headers: {
@@ -75,11 +102,11 @@ export function setupDeveloper({account: _0xe6a29c_2, user: _0xe6a29c_3, nook: _
           } ],
           max_tokens: Number(_0xe6a29c_7("\x70\x6c\x61\x79\x54\x6f\x6b\x65\x6e\x73").value)
         })
-      }), _0xe6a29c_6 = await _0xe6a29c_0(_0xe6a29c_2);
+      }), _0xe6a29c_a = await _0xe6a29c_0(_0xe6a29c_8);
       if (_0xe6a29c_4 !== _0xe6a29c_9) return;
-      const _0xe6a29c_8 = _0xe6a29c_6.choices?.[0];
-      _0xe6a29c_1(_0xe6a29c_7("\x70\x6c\x61\x79\x52\x65\x73\x75\x6c\x74"), _0xe6a29c_8?.message?.content || "\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x6e\x6f\x20\x74\x65\x78\x74\x2e"), 
-      _0xe6a29c_7("\x70\x6c\x61\x79\x53\x74\x61\x74\x75\x73").textContent = `${((performance.now() - _0xe6a29c_b) / 1e3).toFixed(1)}\x73\x20\xb7\x20${_0xe6a29c_6.usage?.prompt_tokens ?? 0}\x20\x69\x6e\x70\x75\x74\x20\x2b\x20${_0xe6a29c_6.usage?.completion_tokens ?? 0}\x20\x6f\x75\x74\x70\x75\x74\x20\x74\x6f\x6b\x65\x6e\x73` + ("\x6c\x65\x6e\x67\x74\x68" === _0xe6a29c_8?.finish_reason ? "\x20\xb7\x20\x4f\x75\x74\x70\x75\x74\x20\x6c\x69\x6d\x69\x74\x20\x72\x65\x61\x63\x68\x65\x64" : "");
+      const _0xe6a29c_c = _0xe6a29c_a.choices?.[0];
+      _0xe6a29c_1(_0xe6a29c_7("\x70\x6c\x61\x79\x52\x65\x73\x75\x6c\x74"), _0xe6a29c_c?.message?.content || "\x54\x68\x65\x20\x6d\x6f\x64\x65\x6c\x20\x72\x65\x74\x75\x72\x6e\x65\x64\x20\x6e\x6f\x20\x74\x65\x78\x74\x2e"), 
+      _0xe6a29c_7("\x70\x6c\x61\x79\x53\x74\x61\x74\x75\x73").textContent = `${((performance.now() - _0xe6a29c_b) / 1e3).toFixed(1)}\x73\x20\xb7\x20${_0xe6a29c_a.usage?.prompt_tokens ?? 0}\x20\x69\x6e\x70\x75\x74\x20\x2b\x20${_0xe6a29c_a.usage?.completion_tokens ?? 0}\x20\x6f\x75\x74\x70\x75\x74\x20\x74\x6f\x6b\x65\x6e\x73` + ("\x6c\x65\x6e\x67\x74\x68" === _0xe6a29c_c?.finish_reason ? "\x20\xb7\x20\x4f\x75\x74\x70\x75\x74\x20\x6c\x69\x6d\x69\x74\x20\x72\x65\x61\x63\x68\x65\x64" : "");
     } catch (_0xe6a29c_c) {
       _0xe6a29c_4 === _0xe6a29c_9 && (_0xe6a29c_7("\x70\x6c\x61\x79\x53\x74\x61\x74\x75\x73").textContent = _0xe6a29c_5.signal.aborted ? "\x53\x74\x6f\x70\x70\x65\x64\x2e\x20\x43\x68\x65\x63\x6b\x20\x55\x73\x61\x67\x65\x20\x66\x6f\x72\x20\x74\x6f\x6b\x65\x6e\x73\x20\x61\x6c\x72\x65\x61\x64\x79\x20\x70\x72\x6f\x63\x65\x73\x73\x65\x64\x2e" : _0xe6a29c_c.message.replaceAll(_0xe6a29c_3, "\x5b\x6b\x65\x79\x5d"));
     } finally {
