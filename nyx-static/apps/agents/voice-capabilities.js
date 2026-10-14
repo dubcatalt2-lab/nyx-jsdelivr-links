@@ -1,3 +1,1 @@
-export function supportsConversationVoice(_0x73d34b_0) {
-  return !!_0x73d34b_0?.outputModalities?.includes("\x61\x75\x64\x69\x6f") && !/(?:^|[\/ _-])(lyria|musicgen|suno|udio)(?:[\/ _-]|$)/i.test(String(_0x73d34b_0.id || _0x73d34b_0.model || ""));
-}
+export function supportsConversationVoice(_577ead0663f8){return!!_577ead0663f8?.outputModalities?.includes("audio")&&!/(?:^|[\/ _-])(lyria|musicgen|suno|udio)(?:[\/ _-]|$)/i.test(String(_577ead0663f8.id||_577ead0663f8.model||""))}

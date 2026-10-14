@@ -1,17 +1,1 @@
-import λ41a4c9803907 from "\x2e\x2f\x6c\x69\x62\x63\x75\x72\x6c\x2d\x63\x6c\x69\x65\x6e\x74\x2e\x6a\x73";
-
-import { headerEntries as λ97751db37782, headerRecord as λc68168ffe4d9 } from "\x2e\x2f\x68\x65\x61\x64\x65\x72\x2d\x75\x74\x69\x6c\x73\x2e\x6a\x73";
-
-export default class _0x127b89_3 extends λ41a4c9803907 {
-  async request(λ41a4c9803907, λ62f02fa88074, λ0f5f7dbf1505, λf43749bc7e78, λ62859f503701) {
-    const λbc19e483b31f = await super.request(λ41a4c9803907, λ62f02fa88074, λ0f5f7dbf1505, λ97751db37782(λf43749bc7e78), λ62859f503701), λ4068b1cc9f6a = λc68168ffe4d9(λbc19e483b31f.headers);
-    return {
-      ...λbc19e483b31f,
-      headers: λ4068b1cc9f6a,
-      rawHeaders: λ4068b1cc9f6a
-    };
-  }
-  connect(λ41a4c9803907, λc68168ffe4d9, λ62f02fa88074, λ0f5f7dbf1505, λf43749bc7e78, λ62859f503701, λbc19e483b31f) {
-    return super.connect(λ41a4c9803907, λc68168ffe4d9, λ97751db37782(λ62f02fa88074), λ0f5f7dbf1505, λf43749bc7e78, λ62859f503701, λbc19e483b31f);
-  }
-}
+import λc5da5e6e1a4d from"./libcurl-client.js";import{headerEntries as λ8bd7be22aab1,headerRecord as λ51b343e8c6d1}from"./header-utils.js";export default class _3015bedd639a extends λc5da5e6e1a4d{async request(λc5da5e6e1a4d,λ91f6e43262ee,λ5ad680778d2f,λd05a464cb8a7,λ939192fdc506){const λeb955a1867be=await super.request(λc5da5e6e1a4d,λ91f6e43262ee,λ5ad680778d2f,λ8bd7be22aab1(λd05a464cb8a7),λ939192fdc506),λbc56185612bb=λ51b343e8c6d1(λeb955a1867be.headers);return{...λeb955a1867be,headers:λbc56185612bb,rawHeaders:λbc56185612bb}}connect(λc5da5e6e1a4d,λ51b343e8c6d1,λ91f6e43262ee,λ5ad680778d2f,λd05a464cb8a7,λ939192fdc506,λeb955a1867be){return super.connect(λc5da5e6e1a4d,λ51b343e8c6d1,λ8bd7be22aab1(λ91f6e43262ee),λ5ad680778d2f,λd05a464cb8a7,λ939192fdc506,λeb955a1867be)}}
