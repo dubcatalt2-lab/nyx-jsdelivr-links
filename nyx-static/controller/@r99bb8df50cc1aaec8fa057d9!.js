@@ -1,1 +1,1 @@
-const λ9d845781bc67=globalThis.$studyjetController;export const{Controller:Controller,Frame:Frame,ManagedPlugin:ManagedPlugin,VERSION:VERSION,assertRuntimeStudyJetVersion:assertRuntimeStudyJetVersion,config:config}=λ9d845781bc67;
+const __64993=globalThis.$studyjetController;export const{Controller:Controller,Frame:Frame,ManagedPlugin:ManagedPlugin,VERSION:VERSION,assertRuntimeStudyJetVersion:assertRuntimeStudyJetVersion,config:config}=__64993;

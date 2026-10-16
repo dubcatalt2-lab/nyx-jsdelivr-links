@@ -1,1 +1,1 @@
-export function supportsConversationVoice(_577ead0663f8){return!!_577ead0663f8?.outputModalities?.includes("audio")&&!/(?:^|[\/ _-])(lyria|musicgen|suno|udio)(?:[\/ _-]|$)/i.test(String(_577ead0663f8.id||_577ead0663f8.model||""))}
+export function supportsConversationVoice(__64993){return!!__64993?.outputModalities?.includes("audio")&&!/(?:^|[\/ _-])(lyria|musicgen|suno|udio)(?:[\/ _-]|$)/i.test(String(__64993.id||__64993.model||""))}
