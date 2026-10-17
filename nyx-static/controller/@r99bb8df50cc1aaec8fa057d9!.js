@@ -1,1 +1,1 @@
-const __64993=globalThis.$studyjetController;export const{Controller:Controller,Frame:Frame,ManagedPlugin:ManagedPlugin,VERSION:VERSION,assertRuntimeStudyJetVersion:assertRuntimeStudyJetVersion,config:config}=__64993;
+const __08999a97b1e44eaa151416784b2cd41bfecddf5764ec933c23a2874eaf7a6be9=globalThis.$studyjetController;export const{Controller:Controller,Frame:Frame,ManagedPlugin:ManagedPlugin,VERSION:VERSION,assertRuntimeStudyJetVersion:assertRuntimeStudyJetVersion,config:config}=__08999a97b1e44eaa151416784b2cd41bfecddf5764ec933c23a2874eaf7a6be9;

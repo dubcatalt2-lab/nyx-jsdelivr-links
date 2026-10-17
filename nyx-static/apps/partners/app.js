@@ -1,1 +1,1 @@
-(()=>{function __64993(){try{document.documentElement.style.setProperty("--accent","#a9b8d8")}catch{}}addEventListener("storage",__64993),__64993()})();
+(()=>{function __08999a97b1e44eaa151416784b2cd41bfecddf5764ec933c23a2874eaf7a6be9(){try{document.documentElement.style.setProperty("--accent","#a9b8d8")}catch{}}addEventListener("storage",__08999a97b1e44eaa151416784b2cd41bfecddf5764ec933c23a2874eaf7a6be9),__08999a97b1e44eaa151416784b2cd41bfecddf5764ec933c23a2874eaf7a6be9()})();
