@@ -1,1 +1,155 @@
-export function n79425056e076({notice:__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca}){const __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=document.getElementById("shareScreen"),__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=document.getElementById("screenPanel"),__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd=document.getElementById("screenPreview");let __3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548=null,__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467=!1,__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a=0;function __fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8(){__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a++,__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548?.getTracks().forEach(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=>__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.stop()),__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548=null,__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.srcObject=null,__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.hidden=!0,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.setAttribute("aria-pressed","false")}return __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.onclick=async()=>{if(__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548)return void __fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8();if(__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467)return;if(!navigator.mediaDevices?.getDisplayMedia)return void __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca("Screen sharing is unavailable in this browser.");__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467=!0;const __0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b=++__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a;try{const __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=await navigator.mediaDevices.getDisplayMedia({video:{frameRate:5},audio:!1});if(__0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b!==__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a)return void __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.getTracks().forEach(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=>__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.stop());if(__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548=__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.srcObject=__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548,await __cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.play(),__0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b!==__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a)return;__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.hidden=!1,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.setAttribute("aria-pressed","true"),__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.getVideoTracks()[0].addEventListener("ended",__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8,{once:!0})}catch(__b06d3ada0a1064bbc2fd1945d010f4117ffdeef39a0711c0c5588a657e8c27c8){__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8(),"NotAllowedError"!==__b06d3ada0a1064bbc2fd1945d010f4117ffdeef39a0711c0c5588a657e8c27c8.name&&__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca("Could not start screen sharing.")}finally{__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467=!1}},document.getElementById("stopScreen").onclick=__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8,window.addEventListener("pagehide",__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8),{capture:async function(){if(!__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548)return null;if(__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.readyState<2)throw Error("The shared screen is still loading. Try again.");const __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=document.createElement("canvas"),__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=Math.min(1,1280/__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.videoWidth);let __b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870;__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.width=Math.max(1,Math.round(__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.videoWidth*__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7)),__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.height=Math.max(1,Math.round(__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.videoHeight*__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7)),__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.getContext("2d").drawImage(__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd,0,0,__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.width,__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.height);for(const __cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd of[.8,.6,.4,.25])if(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.toDataURL("image/jpeg",__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd),__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.length<28e4)return{dataUrl:__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870,screenCapture:!0};throw Error("The shared screen is too detailed. Share a smaller window.")},stop:__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8}}
+export function n79425056e076({
+  notice: __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+}) {
+  const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 =
+      document.getElementById("\u0073\u0068\u0061\u0072\u0065\u0053\u0063\u0072\u0065\u0065\u006e"),
+    __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
+      document.getElementById("\u0073\u0063\u0072\u0065\u0065\u006e\u0050\u0061\u006e\u0065\u006c"),
+    __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c =
+      document.getElementById("\u0073\u0063\u0072\u0065\u0065\u006e\u0050\u0072\u0065\u0076\u0069\u0065\u0077");
+  let __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 = null,
+    __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 = !1,
+    __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7 = 0;
+  function __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061() {
+    (__22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7++,
+      __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477
+        ?.getTracks()
+        .forEach((__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) =>
+          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.stop(),
+        ),
+      (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 = null),
+      (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.srcObject = null),
+      (__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.hidden = !0),
+      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.setAttribute(
+        "\u0061\u0072\u0069\u0061\u002d\u0070\u0072\u0065\u0073\u0073\u0065\u0064",
+        "\u0066\u0061\u006c\u0073\u0065",
+      ));
+  }
+  return (
+    (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.innerHTML =
+      "\u003c\u0073\u0076\u0067\u0020\u0076\u0069\u0065\u0077\u0042\u006f\u0078\u003d\u0022\u0030\u0020\u0030\u0020\u0032\u0034\u0020\u0032\u0034\u0022\u0020\u0061\u0072\u0069\u0061\u002d\u0068\u0069\u0064\u0064\u0065\u006e\u003d\u0022\u0074\u0072\u0075\u0065\u0022\u003e\u003c\u0072\u0065\u0063\u0074\u0020\u0078\u003d\u0022\u0033\u0022\u0020\u0079\u003d\u0022\u0034\u0022\u0020\u0077\u0069\u0064\u0074\u0068\u003d\u0022\u0031\u0038\u0022\u0020\u0068\u0065\u0069\u0067\u0068\u0074\u003d\u0022\u0031\u0033\u0022\u0020\u0072\u0078\u003d\u0022\u0032\u0022\u002f\u003e\u003c\u0070\u0061\u0074\u0068\u0020\u0064\u003d\u0022\u004d\u0038\u0020\u0032\u0031\u0068\u0038\u004d\u0031\u0032\u0020\u0031\u0037\u0076\u0034\u0022\u002f\u003e\u003c\u002f\u0073\u0076\u0067\u003e"),
+    (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.onclick = async () => {
+      if (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477)
+        return void __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061();
+      if (__f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766) return;
+      if (!navigator.mediaDevices?.getDisplayMedia)
+        return void __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f(
+          "\u0053\u0063\u0072\u0065\u0065\u006e\u0020\u0073\u0068\u0061\u0072\u0069\u006e\u0067\u0020\u0069\u0073\u0020\u0075\u006e\u0061\u0076\u0061\u0069\u006c\u0061\u0062\u006c\u0065\u0020\u0069\u006e\u0020\u0074\u0068\u0069\u0073\u0020\u0062\u0072\u006f\u0077\u0073\u0065\u0072\u002e",
+        );
+      __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 = !0;
+      const __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106 =
+        ++__22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7;
+      try {
+        const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f =
+          await navigator.mediaDevices.getDisplayMedia({
+            video: {
+              frameRate: 5,
+            },
+            audio: !1,
+          });
+        if (
+          __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106 !==
+          __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7
+        )
+          return void __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f
+            .getTracks()
+            .forEach((__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) =>
+              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.stop(),
+            );
+        if (
+          ((__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 =
+            __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f),
+          (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.srcObject =
+            __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477),
+          await __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.play(),
+          __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106 !==
+            __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7)
+        )
+          return;
+        ((__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.hidden = !1),
+          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.setAttribute(
+            "\u0061\u0072\u0069\u0061\u002d\u0070\u0072\u0065\u0073\u0073\u0065\u0064",
+            "\u0074\u0072\u0075\u0065",
+          ),
+          __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477
+            .getVideoTracks()[0]
+            .addEventListener(
+              "\u0065\u006e\u0064\u0065\u0064",
+              __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061,
+              {
+                once: !0,
+              },
+            ));
+      } catch (__195933d5304e67fc303baeabe6be18e3c2ac1ca646479600f2b3f20799e3770e) {
+        (__bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061(),
+          "\u004e\u006f\u0074\u0041\u006c\u006c\u006f\u0077\u0065\u0064\u0045\u0072\u0072\u006f\u0072" !==
+            __195933d5304e67fc303baeabe6be18e3c2ac1ca646479600f2b3f20799e3770e.name &&
+            __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f(
+              "\u0043\u006f\u0075\u006c\u0064\u0020\u006e\u006f\u0074\u0020\u0073\u0074\u0061\u0072\u0074\u0020\u0073\u0063\u0072\u0065\u0065\u006e\u0020\u0073\u0068\u0061\u0072\u0069\u006e\u0067\u002e",
+            ));
+      } finally {
+        __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 = !1;
+      }
+    }),
+    (document.getElementById("\u0073\u0074\u006f\u0070\u0053\u0063\u0072\u0065\u0065\u006e").onclick =
+      __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061),
+    window.addEventListener(
+      "\u0070\u0061\u0067\u0065\u0068\u0069\u0064\u0065",
+      __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061,
+    ),
+    {
+      capture: async function () {
+        if (!__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477) return null;
+        if (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.readyState < 2)
+          throw Error("\u0054\u0068\u0065\u0020\u0073\u0068\u0061\u0072\u0065\u0064\u0020\u0073\u0063\u0072\u0065\u0065\u006e\u0020\u0069\u0073\u0020\u0073\u0074\u0069\u006c\u006c\u0020\u006c\u006f\u0061\u0064\u0069\u006e\u0067\u002e\u0020\u0054\u0072\u0079\u0020\u0061\u0067\u0061\u0069\u006e\u002e");
+        const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f =
+            document.createElement("\u0063\u0061\u006e\u0076\u0061\u0073"),
+          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = Math.min(
+            1,
+            1280 / __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.videoWidth,
+          );
+        let __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708;
+        ((__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.width = Math.max(
+          1,
+          Math.round(
+            __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.videoWidth *
+              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+          ),
+        )),
+          (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.height = Math.max(
+            1,
+            Math.round(
+              __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.videoHeight *
+                __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+            ),
+          )),
+          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f
+            .getContext("\u0032\u0064")
+            .drawImage(
+              __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+              0,
+              0,
+              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.width,
+              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.height,
+            ));
+        for (const __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c of [
+          0.8, 0.6, 0.4, 0.25,
+        ])
+          if (
+            ((__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
+              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.toDataURL(
+                "\u0069\u006d\u0061\u0067\u0065\u002f\u006a\u0070\u0065\u0067",
+                __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+              )),
+            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.length < 28e4)
+          )
+            return {
+              dataUrl: __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+              screenCapture: !0,
+            };
+        throw Error("\u0054\u0068\u0065\u0020\u0073\u0068\u0061\u0072\u0065\u0064\u0020\u0073\u0063\u0072\u0065\u0065\u006e\u0020\u0069\u0073\u0020\u0074\u006f\u006f\u0020\u0064\u0065\u0074\u0061\u0069\u006c\u0065\u0064\u002e\u0020\u0053\u0068\u0061\u0072\u0065\u0020\u0061\u0020\u0073\u006d\u0061\u006c\u006c\u0065\u0072\u0020\u0077\u0069\u006e\u0064\u006f\u0077\u002e");
+      },
+      stop: __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061,
+    }
+  );
+}

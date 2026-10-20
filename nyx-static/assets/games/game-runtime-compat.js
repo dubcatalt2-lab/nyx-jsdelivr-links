@@ -1,1 +1,267 @@
-(()=>{try{globalThis.caches}catch{const __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca={match:async()=>{},matchAll:async()=>[],put:async()=>{},delete:async()=>!1,keys:async()=>[]};Object.defineProperty(globalThis,"caches",{configurable:!0,value:{open:async()=>__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,match:async()=>{},has:async()=>!1,delete:async()=>!1,keys:async()=>[]}})}try{globalThis.indexedDB}catch{Object.defineProperty(globalThis,"indexedDB",{configurable:!0,value:void 0})}"null"===globalThis.origin&&(globalThis.EJS_disableDatabases=!0);let __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=!1;try{navigator.serviceWorker}catch{__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=!0;const __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=()=>Promise.reject(new DOMException("Offline service workers are unavailable in this game sandbox.","NotSupportedError"));try{Object.defineProperty(navigator,"serviceWorker",{configurable:!0,value:{controller:null,getRegistration:async()=>{},getRegistrations:async()=>[],register:__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,addEventListener(){},removeEventListener(){}}})}catch{}}const __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=new WeakSet;function __b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870(){const __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=globalThis.createUnityInstance;if("function"!=typeof __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca||__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.has(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca))return;const __b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=function(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870,...__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd){const __3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548={...__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870};return __3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.streamingAssetsUrl=new URL(__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.streamingAssetsUrl||"StreamingAssets",document.baseURI).href,"null"===globalThis.origin&&(__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.cacheControl=()=>"no-store"),Reflect.apply(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,this,[__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548,...__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd])};__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.add(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870),globalThis.createUnityInstance=__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870}if(document.addEventListener?.("load",__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=>{"SCRIPT"===__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.target?.tagName&&__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870()},!0),document.addEventListener?.("DOMContentLoaded",__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870),!globalThis.ytgame){const __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=new Set,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=()=>{},__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=async()=>{},__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd=()=>"nyx.playable.save:"+document.baseURI;globalThis.ytgame={IN_PLAYABLES_ENV:!1,SDK_VERSION:"nyx-standalone-1",game:{firstFrameReady:__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,gameReady:__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,gameLoaded:__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,loadData:async()=>{try{return localStorage.getItem(__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd())||""}catch{return""}},saveData:async __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=>{try{localStorage.setItem(__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd(),String(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca))}catch{}},sendScore:__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870},system:{getLanguage:async()=>navigator.language||"en",isAudioEnabled:()=>!0,isMuted:()=>!1,onAudioEnabledChange:__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=>(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.add(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7),()=>__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.delete(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7)),onPause:()=>__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,onResume:()=>__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7},engagement:{sendScore:__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870},health:{logError:__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,logWarning:__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7},ads:{AdResult:{UNKNOWN:"unknown",SHOWED:"showed",REJECTED:"rejected"},isAdAvailable:()=>!1,requestAd:async()=>"rejected"}}}if(globalThis.__nyxConstructBase)return;globalThis.__nyxConstructBase=!0;let __cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd,__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548=!1;Object.defineProperty(globalThis,"RuntimeInterface",{configurable:!0,get:()=>__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd,set(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7){__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd="function"==typeof __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7?new Proxy(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,{construct(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870,__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd){!function(){if(__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548)return;__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548=!0;const __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=globalThis.cancelAnimationFrame.bind(globalThis),__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=globalThis.requestAnimationFrame.bind(globalThis);let __cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd;globalThis.cancelAnimationFrame=__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=>"function"==typeof __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca?__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca):__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca);try{__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca||(__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd=navigator.serviceWorker)}catch{}if(!__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd)try{Object.defineProperty(globalThis,"C3_RegisterSW",{configurable:!0,get:()=>()=>{},set:()=>{}})}catch{}}();const __de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467=__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870[0];return __de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467&&"object"==typeof __de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467&&(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=[{...__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467,baseUrl:__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467.baseUrl||document.baseURI,..."null"===globalThis.origin?{useWorker:!1}:{}},...__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.slice(1)]),Reflect.construct(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870,__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd)}}):__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7}})})();
+(() => {
+  try {
+    globalThis.caches;
+  } catch {
+    const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f = {
+      match: async () => {},
+      matchAll: async () => [],
+      put: async () => {},
+      delete: async () => !1,
+      keys: async () => [],
+    };
+    Object.defineProperty(globalThis, "\u0063\u0061\u0063\u0068\u0065\u0073", {
+      configurable: !0,
+      value: {
+        open: async () => __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+        match: async () => {},
+        has: async () => !1,
+        delete: async () => !1,
+        keys: async () => [],
+      },
+    });
+  }
+  try {
+    globalThis.indexedDB;
+  } catch {
+    Object.defineProperty(globalThis, "\u0069\u006e\u0064\u0065\u0078\u0065\u0064\u0044\u0042", {
+      configurable: !0,
+      value: void 0,
+    });
+  }
+  "\u006e\u0075\u006c\u006c" === globalThis.origin && (globalThis.EJS_disableDatabases = !0);
+  let __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f = !1;
+  try {
+    navigator.serviceWorker;
+  } catch {
+    __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f = !0;
+    const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = () =>
+      Promise.reject(
+        new DOMException(
+          "\u004f\u0066\u0066\u006c\u0069\u006e\u0065\u0020\u0073\u0065\u0072\u0076\u0069\u0063\u0065\u0020\u0077\u006f\u0072\u006b\u0065\u0072\u0073\u0020\u0061\u0072\u0065\u0020\u0075\u006e\u0061\u0076\u0061\u0069\u006c\u0061\u0062\u006c\u0065\u0020\u0069\u006e\u0020\u0074\u0068\u0069\u0073\u0020\u0067\u0061\u006d\u0065\u0020\u0073\u0061\u006e\u0064\u0062\u006f\u0078\u002e",
+          "\u004e\u006f\u0074\u0053\u0075\u0070\u0070\u006f\u0072\u0074\u0065\u0064\u0045\u0072\u0072\u006f\u0072",
+        ),
+      );
+    try {
+      Object.defineProperty(navigator, "\u0073\u0065\u0072\u0076\u0069\u0063\u0065\u0057\u006f\u0072\u006b\u0065\u0072", {
+        configurable: !0,
+        value: {
+          controller: null,
+          getRegistration: async () => {},
+          getRegistrations: async () => [],
+          register: __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+          addEventListener() {},
+          removeEventListener() {},
+        },
+      });
+    } catch {}
+  }
+  const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = new WeakSet();
+  function __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708() {
+    const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f =
+      globalThis.createUnityInstance;
+    if (
+      "\u0066\u0075\u006e\u0063\u0074\u0069\u006f\u006e" != typeof __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f ||
+      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.has(
+        __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+      )
+    )
+      return;
+    const __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = function (
+      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+      ...__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c
+    ) {
+      const __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 = {
+        ...__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+      };
+      return (
+        (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.streamingAssetsUrl =
+          new URL(
+            __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.streamingAssetsUrl ||
+              "\u0053\u0074\u0072\u0065\u0061\u006d\u0069\u006e\u0067\u0041\u0073\u0073\u0065\u0074\u0073",
+            document.baseURI,
+          ).href),
+        "\u006e\u0075\u006c\u006c" === globalThis.origin &&
+          (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.cacheControl = () =>
+            "\u006e\u006f\u002d\u0073\u0074\u006f\u0072\u0065"),
+        Reflect.apply(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f, this, [
+          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+          __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477,
+          ...__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+        ])
+      );
+    };
+    (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.add(
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+    ),
+      (globalThis.createUnityInstance =
+        __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708));
+  }
+  if (
+    (document.addEventListener?.(
+      "\u006c\u006f\u0061\u0064",
+      (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) => {
+        "\u0053\u0043\u0052\u0049\u0050\u0054" ===
+          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.target?.tagName &&
+          __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708();
+      },
+      !0,
+    ),
+    document.addEventListener?.(
+      "\u0044\u004f\u004d\u0043\u006f\u006e\u0074\u0065\u006e\u0074\u004c\u006f\u0061\u0064\u0065\u0064",
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+    ),
+    !globalThis.ytgame)
+  ) {
+    const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f = new Set(),
+      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = () => {},
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = async () => {},
+      __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c = () =>
+        "\u006e\u0079\u0078\u002e\u0070\u006c\u0061\u0079\u0061\u0062\u006c\u0065\u002e\u0073\u0061\u0076\u0065\u003a" + document.baseURI;
+    globalThis.ytgame = {
+      IN_PLAYABLES_ENV: !1,
+      SDK_VERSION: "\u006e\u0079\u0078\u002d\u0073\u0074\u0061\u006e\u0064\u0061\u006c\u006f\u006e\u0065\u002d\u0031",
+      game: {
+        firstFrameReady: __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+        gameReady: __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+        gameLoaded: __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+        loadData: async () => {
+          try {
+            return (
+              localStorage.getItem(
+                __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c(),
+              ) || ""
+            );
+          } catch {
+            return "";
+          }
+        },
+        saveData: async (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) => {
+          try {
+            localStorage.setItem(
+              __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c(),
+              String(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f),
+            );
+          } catch {}
+        },
+        sendScore: __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+      },
+      system: {
+        getLanguage: async () => navigator.language || "\u0065\u006e",
+        isAudioEnabled: () => !0,
+        isMuted: () => !1,
+        onAudioEnabledChange: (
+          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+        ) => (
+          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.add(
+            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+          ),
+          () =>
+            __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.delete(
+              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+            )
+        ),
+        onPause: () => __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+        onResume: () => __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+      },
+      engagement: {
+        sendScore: __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+      },
+      health: {
+        logError: __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+        logWarning: __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+      },
+      ads: {
+        AdResult: {
+          UNKNOWN: "\u0075\u006e\u006b\u006e\u006f\u0077\u006e",
+          SHOWED: "\u0073\u0068\u006f\u0077\u0065\u0064",
+          REJECTED: "\u0072\u0065\u006a\u0065\u0063\u0074\u0065\u0064",
+        },
+        isAdAvailable: () => !1,
+        requestAd: async () => "\u0072\u0065\u006a\u0065\u0063\u0074\u0065\u0064",
+      },
+    };
+  }
+  if (globalThis.__nyxConstructBase) return;
+  globalThis.__nyxConstructBase = !0;
+  let __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+    __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 = !1;
+  Object.defineProperty(globalThis, "\u0052\u0075\u006e\u0074\u0069\u006d\u0065\u0049\u006e\u0074\u0065\u0072\u0066\u0061\u0063\u0065", {
+    configurable: !0,
+    get: () => __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+    set(__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53) {
+      __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c =
+        "\u0066\u0075\u006e\u0063\u0074\u0069\u006f\u006e" == typeof __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53
+          ? new Proxy(__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53, {
+              construct(
+                __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+                __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+                __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+              ) {
+                !(function () {
+                  if (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477) return;
+                  __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 = !0;
+                  const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 =
+                      globalThis.cancelAnimationFrame.bind(globalThis),
+                    __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
+                      globalThis.requestAnimationFrame.bind(globalThis);
+                  let __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c;
+                  globalThis.cancelAnimationFrame = (
+                    __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                  ) =>
+                    "\u0066\u0075\u006e\u0063\u0074\u0069\u006f\u006e" ==
+                    typeof __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f
+                      ? __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708(
+                          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                        )
+                      : __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53(
+                          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                        );
+                  try {
+                    __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f ||
+                      (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c =
+                        navigator.serviceWorker);
+                  } catch {}
+                  if (!__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c)
+                    try {
+                      Object.defineProperty(globalThis, "\u0043\u0033\u005f\u0052\u0065\u0067\u0069\u0073\u0074\u0065\u0072\u0053\u0057", {
+                        configurable: !0,
+                        get: () => () => {},
+                        set: () => {},
+                      });
+                    } catch {}
+                })();
+                const __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 =
+                  __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708[0];
+                return (
+                  __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 &&
+                    "\u006f\u0062\u006a\u0065\u0063\u0074" ==
+                      typeof __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 &&
+                    (__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = [
+                      {
+                        ...__f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766,
+                        baseUrl:
+                          __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766.baseUrl ||
+                          document.baseURI,
+                        ...("\u006e\u0075\u006c\u006c" === globalThis.origin
+                          ? {
+                              useWorker: !1,
+                            }
+                          : {}),
+                      },
+                      ...__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.slice(
+                        1,
+                      ),
+                    ]),
+                  Reflect.construct(
+                    __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+                    __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+                    __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+                  )
+                );
+              },
+            })
+          : __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53;
+    },
+  });
+})();

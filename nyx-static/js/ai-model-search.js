@@ -1,1 +1,226 @@
-(()=>{const __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca={image:["image","images","picture","pictures","photo","photos","art","draw","drawing","generate","generation","generator"],vision:["vision","see","analyze","analyse","describe","recognize","ocr","screenshot","screenshots"],video:["video","videos","movie","movies","animation","animate"],audio:["audio","speech","voice","sound","speak","tts"],transcription:["transcribe","transcription","stt"],coding:["code","coding","coder","programming","debug","debugging","developer"],reasoning:["reason","reasoning","think","thinking","math","mathematics","logic"],embeddings:["embedding","embeddings"],rerank:["rerank","ranking"],free:["free"],text:["text","write","writing","chat","conversation","summarize","summary"]},__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=new Set(["a","an","the","for","to","that","can","do","make","create","best","model","models","and","with","of","me","i","want","some","please"]);globalThis.NyxModelSearch={search:function(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870,__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd,__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548){const __de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467=String(__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd).toLowerCase().trim().split(/\s+/).filter(Boolean),__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a=new Set,__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8=[];for(const __26d4c66b8805a4ef71d42dbe2dfdca640f37e199df59bb87f7b7e50aeb74715e of __de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467){const __b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=Object.keys(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca).find(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=>__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca[__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7].includes(__26d4c66b8805a4ef71d42dbe2dfdca640f37e199df59bb87f7b7e50aeb74715e));__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870?__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a.add(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870):__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.has(__26d4c66b8805a4ef71d42dbe2dfdca640f37e199df59bb87f7b7e50aeb74715e)||__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8.push(__26d4c66b8805a4ef71d42dbe2dfdca640f37e199df59bb87f7b7e50aeb74715e)}(__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a.has("video")||__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a.has("audio")||__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a.has("vision")||__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a.has("transcription"))&&__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a.delete("image");const __0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b=__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=>__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.outputModalities||[...!1!==__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.text?["text"]:[],...__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.imageGeneration?["image"]:[]],__b06d3ada0a1064bbc2fd1945d010f4117ffdeef39a0711c0c5588a657e8c27c8=__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=>{const __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=`${__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.id} ${__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.label}`.toLowerCase(),__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7===__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd||__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.id.toLowerCase()===__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd||__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.label.toLowerCase()===__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd?1e5:0,__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548=__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a.has("coding")&&!Number.isFinite(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.codingRank)&&/codex|coder|code|devstral|programming/.test(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7)?1e3:0,__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467=__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a.has("coding")?__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.codingRank??__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.catalogRank:__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.catalogRank;return __b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870+__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548+(Number.isFinite(__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467)?Math.max(0,900-__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467):0)};return __b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.filter(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=>[...__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a].every(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=>((__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7)=>"image"===__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7?__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.imageGeneration:"vision"===__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7?__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.vision:"coding"===__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7?!1!==__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.text:"reasoning"===__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7?__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.reasoning:"free"===__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7?__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.free||__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.id.endsWith(":free")||"openrouter/free"===__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.id:"audio"===__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7?__0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca).some(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=>"speech"===__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca||"audio"===__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca):__0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca).includes(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7))(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7))&&__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8.every(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=>`${__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.label} ${__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.id} ${__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca).label}`.toLowerCase().includes(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7))).sort((__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7)=>__b06d3ada0a1064bbc2fd1945d010f4117ffdeef39a0711c0c5588a657e8c27c8(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7)-__b06d3ada0a1064bbc2fd1945d010f4117ffdeef39a0711c0c5588a657e8c27c8(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca)||__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.label.localeCompare(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.label))}}})();
+(() => {
+  const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f = {
+      image: [
+        "\u0069\u006d\u0061\u0067\u0065",
+        "\u0069\u006d\u0061\u0067\u0065\u0073",
+        "\u0070\u0069\u0063\u0074\u0075\u0072\u0065",
+        "\u0070\u0069\u0063\u0074\u0075\u0072\u0065\u0073",
+        "\u0070\u0068\u006f\u0074\u006f",
+        "\u0070\u0068\u006f\u0074\u006f\u0073",
+        "\u0061\u0072\u0074",
+        "\u0064\u0072\u0061\u0077",
+        "\u0064\u0072\u0061\u0077\u0069\u006e\u0067",
+        "\u0067\u0065\u006e\u0065\u0072\u0061\u0074\u0065",
+        "\u0067\u0065\u006e\u0065\u0072\u0061\u0074\u0069\u006f\u006e",
+        "\u0067\u0065\u006e\u0065\u0072\u0061\u0074\u006f\u0072",
+      ],
+      vision: [
+        "\u0076\u0069\u0073\u0069\u006f\u006e",
+        "\u0073\u0065\u0065",
+        "\u0061\u006e\u0061\u006c\u0079\u007a\u0065",
+        "\u0061\u006e\u0061\u006c\u0079\u0073\u0065",
+        "\u0064\u0065\u0073\u0063\u0072\u0069\u0062\u0065",
+        "\u0072\u0065\u0063\u006f\u0067\u006e\u0069\u007a\u0065",
+        "\u006f\u0063\u0072",
+        "\u0073\u0063\u0072\u0065\u0065\u006e\u0073\u0068\u006f\u0074",
+        "\u0073\u0063\u0072\u0065\u0065\u006e\u0073\u0068\u006f\u0074\u0073",
+      ],
+      video: ["\u0076\u0069\u0064\u0065\u006f", "\u0076\u0069\u0064\u0065\u006f\u0073", "\u006d\u006f\u0076\u0069\u0065", "\u006d\u006f\u0076\u0069\u0065\u0073", "\u0061\u006e\u0069\u006d\u0061\u0074\u0069\u006f\u006e", "\u0061\u006e\u0069\u006d\u0061\u0074\u0065"],
+      audio: ["\u0061\u0075\u0064\u0069\u006f", "\u0073\u0070\u0065\u0065\u0063\u0068", "\u0076\u006f\u0069\u0063\u0065", "\u0073\u006f\u0075\u006e\u0064", "\u0073\u0070\u0065\u0061\u006b", "\u0074\u0074\u0073"],
+      transcription: ["\u0074\u0072\u0061\u006e\u0073\u0063\u0072\u0069\u0062\u0065", "\u0074\u0072\u0061\u006e\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006f\u006e", "\u0073\u0074\u0074"],
+      coding: ["\u0063\u006f\u0064\u0065", "\u0063\u006f\u0064\u0069\u006e\u0067", "\u0063\u006f\u0064\u0065\u0072", "\u0070\u0072\u006f\u0067\u0072\u0061\u006d\u006d\u0069\u006e\u0067", "\u0064\u0065\u0062\u0075\u0067", "\u0064\u0065\u0062\u0075\u0067\u0067\u0069\u006e\u0067", "\u0064\u0065\u0076\u0065\u006c\u006f\u0070\u0065\u0072"],
+      reasoning: ["\u0072\u0065\u0061\u0073\u006f\u006e", "\u0072\u0065\u0061\u0073\u006f\u006e\u0069\u006e\u0067", "\u0074\u0068\u0069\u006e\u006b", "\u0074\u0068\u0069\u006e\u006b\u0069\u006e\u0067", "\u006d\u0061\u0074\u0068", "\u006d\u0061\u0074\u0068\u0065\u006d\u0061\u0074\u0069\u0063\u0073", "\u006c\u006f\u0067\u0069\u0063"],
+      embeddings: ["\u0065\u006d\u0062\u0065\u0064\u0064\u0069\u006e\u0067", "\u0065\u006d\u0062\u0065\u0064\u0064\u0069\u006e\u0067\u0073"],
+      rerank: ["\u0072\u0065\u0072\u0061\u006e\u006b", "\u0072\u0061\u006e\u006b\u0069\u006e\u0067"],
+      free: ["\u0066\u0072\u0065\u0065"],
+      text: ["\u0074\u0065\u0078\u0074", "\u0077\u0072\u0069\u0074\u0065", "\u0077\u0072\u0069\u0074\u0069\u006e\u0067", "\u0063\u0068\u0061\u0074", "\u0063\u006f\u006e\u0076\u0065\u0072\u0073\u0061\u0074\u0069\u006f\u006e", "\u0073\u0075\u006d\u006d\u0061\u0072\u0069\u007a\u0065", "\u0073\u0075\u006d\u006d\u0061\u0072\u0079"],
+    },
+    __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = new Set([
+      "\u0061",
+      "\u0061\u006e",
+      "\u0074\u0068\u0065",
+      "\u0066\u006f\u0072",
+      "\u0074\u006f",
+      "\u0074\u0068\u0061\u0074",
+      "\u0063\u0061\u006e",
+      "\u0064\u006f",
+      "\u006d\u0061\u006b\u0065",
+      "\u0063\u0072\u0065\u0061\u0074\u0065",
+      "\u0062\u0065\u0073\u0074",
+      "\u006d\u006f\u0064\u0065\u006c",
+      "\u006d\u006f\u0064\u0065\u006c\u0073",
+      "\u0061\u006e\u0064",
+      "\u0077\u0069\u0074\u0068",
+      "\u006f\u0066",
+      "\u006d\u0065",
+      "\u0069",
+      "\u0077\u0061\u006e\u0074",
+      "\u0073\u006f\u006d\u0065",
+      "\u0070\u006c\u0065\u0061\u0073\u0065",
+    ]);
+  globalThis.NyxModelSearch = {
+    search: function (
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+      __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+      __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477,
+    ) {
+      const __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 = String(
+          __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+        )
+          .toLowerCase()
+          .trim()
+          .split(/\s+/)
+          .filter(Boolean),
+        __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7 = new Set(),
+        __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061 = [];
+      for (const __d4c8b1c79e16b03c6f5e435e41c684cb411ca847ac2c7391a10c4243f0c44c22 of __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766) {
+        const __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = Object.keys(
+          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+        ).find((__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53) =>
+          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f[
+            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53
+          ].includes(__d4c8b1c79e16b03c6f5e435e41c684cb411ca847ac2c7391a10c4243f0c44c22),
+        );
+        __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708
+          ? __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7.add(
+              __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+            )
+          : __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.has(
+              __d4c8b1c79e16b03c6f5e435e41c684cb411ca847ac2c7391a10c4243f0c44c22,
+            ) ||
+            __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061.push(
+              __d4c8b1c79e16b03c6f5e435e41c684cb411ca847ac2c7391a10c4243f0c44c22,
+            );
+      }
+      (__22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7.has("\u0076\u0069\u0064\u0065\u006f") ||
+        __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7.has("\u0061\u0075\u0064\u0069\u006f") ||
+        __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7.has("\u0076\u0069\u0073\u0069\u006f\u006e") ||
+        __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7.has("\u0074\u0072\u0061\u006e\u0073\u0063\u0072\u0069\u0070\u0074\u0069\u006f\u006e")) &&
+        __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7.delete("\u0069\u006d\u0061\u0067\u0065");
+      const __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106 = (
+          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+        ) =>
+          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.outputModalities || [
+            ...(!1 !== __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.text
+              ? ["\u0074\u0065\u0078\u0074"]
+              : []),
+            ...(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.imageGeneration
+              ? ["\u0069\u006d\u0061\u0067\u0065"]
+              : []),
+          ],
+        __195933d5304e67fc303baeabe6be18e3c2ac1ca646479600f2b3f20799e3770e = (
+          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+        ) => {
+          const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 =
+              `${__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.id} ${__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.label}`.toLowerCase(),
+            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
+              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 ===
+                __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c ||
+              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.id.toLowerCase() ===
+                __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c ||
+              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.label.toLowerCase() ===
+                __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c
+                ? 1e5
+                : 0,
+            __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 =
+              __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7.has("\u0063\u006f\u0064\u0069\u006e\u0067") &&
+              !Number.isFinite(
+                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.codingRank,
+              ) &&
+              /codex|coder|code|devstral|programming/.test(
+                __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+              )
+                ? 1e3
+                : 0,
+            __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 =
+              __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7.has("\u0063\u006f\u0064\u0069\u006e\u0067")
+                ? (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.codingRank ??
+                  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.catalogRank)
+                : __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.catalogRank;
+          return (
+            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 +
+            __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 +
+            (Number.isFinite(__f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766)
+              ? Math.max(
+                  0,
+                  900 - __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766,
+                )
+              : 0)
+          );
+        };
+      return __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708
+        .filter(
+          (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) =>
+            [...__22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7].every(
+              (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53) =>
+                ((
+                  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                  __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+                ) =>
+                  "\u0069\u006d\u0061\u0067\u0065" === __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53
+                    ? __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.imageGeneration
+                    : "\u0076\u0069\u0073\u0069\u006f\u006e" ===
+                        __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53
+                      ? __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.vision
+                      : "\u0063\u006f\u0064\u0069\u006e\u0067" ===
+                          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53
+                        ? !1 !==
+                          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.text
+                        : "\u0072\u0065\u0061\u0073\u006f\u006e\u0069\u006e\u0067" ===
+                            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53
+                          ? __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.reasoning
+                          : "\u0066\u0072\u0065\u0065" ===
+                              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53
+                            ? __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.free ||
+                              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.id.endsWith(
+                                "\u003a\u0066\u0072\u0065\u0065",
+                              ) ||
+                              "\u006f\u0070\u0065\u006e\u0072\u006f\u0075\u0074\u0065\u0072\u002f\u0066\u0072\u0065\u0065" ===
+                                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.id
+                            : "\u0061\u0075\u0064\u0069\u006f" ===
+                                __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53
+                              ? __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106(
+                                  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                                ).some(
+                                  (
+                                    __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                                  ) =>
+                                    "\u0073\u0070\u0065\u0065\u0063\u0068" ===
+                                      __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f ||
+                                    "\u0061\u0075\u0064\u0069\u006f" ===
+                                      __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                                )
+                              : __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106(
+                                  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                                ).includes(
+                                  __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+                                ))(
+                  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                  __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+                ),
+            ) &&
+            __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061.every(
+              (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53) =>
+                `${__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.label} ${__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.id} ${__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f).label}`
+                  .toLowerCase()
+                  .includes(__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53),
+            ),
+        )
+        .sort(
+          (
+            __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+          ) =>
+            __195933d5304e67fc303baeabe6be18e3c2ac1ca646479600f2b3f20799e3770e(
+              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+            ) -
+              __195933d5304e67fc303baeabe6be18e3c2ac1ca646479600f2b3f20799e3770e(
+                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+              ) ||
+            __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.label.localeCompare(
+              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.label,
+            ),
+        );
+    },
+  };
+})();

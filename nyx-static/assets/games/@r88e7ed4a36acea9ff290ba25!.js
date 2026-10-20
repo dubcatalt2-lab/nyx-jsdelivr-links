@@ -1,1 +1,99 @@
-export const gameCdnHosts=new Set(["cdn.jsdelivr.net","raw.githubusercontent.com","rawcdn.githack.com","raw.githack.com"]);export function repairGameResourcePath(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca){return(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.replace(/\/genizy\/google-class(?=@|\/)/g,"/taskmaster773/google-class").replace(/\/gh\/genizy\/ovo-3-dimension@[^/]+\//g,"/gh/bubblfan/ovo-3-dimension@102179bf4242fd237c46c555ba154c2f325d351c/")).replace(/(\/web-ports\/fear-and-hunger-2@[^/]+\/(?:js\/plugins|data)\/)([^/]+\.(?:js|json))$/i,(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870)=>__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7+__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.toLowerCase())}export function normalizeGameCdnUrl(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7){try{const __b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=new URL(String(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca),__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7);return!["http:","https:"].includes(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.protocol)||!gameCdnHosts.has(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.hostname)||__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.username||__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.password||__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.port?null:("cdn.jsdelivr.net"===__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.hostname&&/^\/(?!gh\/|npm\/|combine\/)[\w.-]+\/[\w.-]+@[^/]+\//.test(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.pathname)&&(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.pathname="/gh"+__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.pathname),__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.pathname=repairGameResourcePath(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.pathname),__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870)}catch{return null}}export function gameResourceUrl(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7,__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870){const __cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd=normalizeGameCdnUrl(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7);return __cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd?`${__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870}/gn-math-resource/${__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.protocol.slice(0,-1)}/${__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.host}${__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.pathname}${__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.search}${__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.hash}`:String(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca)}export function gameResourceTarget(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca){try{const __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=new URL(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,"https://nyx.invalid"),__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.pathname.match(/^\/gn-math-resource\/(https?)\/([^/]+)(\/.*)$/);return __b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870?normalizeGameCdnUrl(`${__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870[1]}://${__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870[2]}${__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870[3]}${__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.search}`):null}catch{return null}}
+export const gameCdnHosts = new Set([
+  "\u0063\u0064\u006e\u002e\u006a\u0073\u0064\u0065\u006c\u0069\u0076\u0072\u002e\u006e\u0065\u0074",
+  "\u0072\u0061\u0077\u002e\u0067\u0069\u0074\u0068\u0075\u0062\u0075\u0073\u0065\u0072\u0063\u006f\u006e\u0074\u0065\u006e\u0074\u002e\u0063\u006f\u006d",
+  "\u0072\u0061\u0077\u0063\u0064\u006e\u002e\u0067\u0069\u0074\u0068\u0061\u0063\u006b\u002e\u0063\u006f\u006d",
+  "\u0072\u0061\u0077\u002e\u0067\u0069\u0074\u0068\u0061\u0063\u006b\u002e\u0063\u006f\u006d",
+]);
+
+export function repairGameResourcePath(
+  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+) {
+  return (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f =
+    __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f
+      .replace(/\/genizy\/google-class(?=@|\/)/g, "\u002f\u0074\u0061\u0073\u006b\u006d\u0061\u0073\u0074\u0065\u0072\u0037\u0037\u0033\u002f\u0067\u006f\u006f\u0067\u006c\u0065\u002d\u0063\u006c\u0061\u0073\u0073")
+      .replace(
+        /\/gh\/genizy\/ovo-3-dimension@[^/]+\//g,
+        "\u002f\u0067\u0068\u002f\u0062\u0075\u0062\u0062\u006c\u0066\u0061\u006e\u002f\u006f\u0076\u006f\u002d\u0033\u002d\u0064\u0069\u006d\u0065\u006e\u0073\u0069\u006f\u006e\u0040\u0031\u0030\u0032\u0031\u0037\u0039\u0062\u0066\u0034\u0032\u0034\u0032\u0066\u0064\u0032\u0033\u0037\u0063\u0034\u0036\u0063\u0035\u0035\u0035\u0062\u0061\u0031\u0035\u0034\u0063\u0032\u0066\u0033\u0032\u0035\u0064\u0033\u0035\u0031\u0063\u002f",
+      )).replace(
+    /(\/web-ports\/fear-and-hunger-2@[^/]+\/(?:js\/plugins|data)\/)([^/]+\.(?:js|json))$/i,
+    (
+      __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+    ) =>
+      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 +
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.toLowerCase(),
+  );
+}
+
+export function normalizeGameCdnUrl(
+  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+  __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+) {
+  try {
+    const __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = new URL(
+      String(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f),
+      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+    );
+    return !["\u0068\u0074\u0074\u0070\u003a", "\u0068\u0074\u0074\u0070\u0073\u003a"].includes(
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.protocol,
+    ) ||
+      !gameCdnHosts.has(
+        __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.hostname,
+      ) ||
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.username ||
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.password ||
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.port
+      ? null
+      : ("\u0063\u0064\u006e\u002e\u006a\u0073\u0064\u0065\u006c\u0069\u0076\u0072\u002e\u006e\u0065\u0074" ===
+          __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.hostname &&
+          /^\/(?!gh\/|npm\/|combine\/)[\w.-]+\/[\w.-]+@[^/]+\//.test(
+            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.pathname,
+          ) &&
+          (__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.pathname =
+            "\u002f\u0067\u0068" + __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.pathname),
+        (__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.pathname =
+          repairGameResourcePath(
+            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.pathname,
+          )),
+        __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708);
+  } catch {
+    return null;
+  }
+}
+
+export function gameResourceUrl(
+  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+  __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+  __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+) {
+  const __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c = normalizeGameCdnUrl(
+    __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+    __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+  );
+  return __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c
+    ? `${__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708}/gn-math-resource/${__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.protocol.slice(0, -1)}/${__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.host}${__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.pathname}${__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.search}${__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.hash}`
+    : String(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f);
+}
+
+export function gameResourceTarget(
+  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+) {
+  try {
+    const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = new URL(
+        __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+        "\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u006e\u0079\u0078\u002e\u0069\u006e\u0076\u0061\u006c\u0069\u0064",
+      ),
+      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
+        __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.pathname.match(
+          /^\/gn-math-resource\/(https?)\/([^/]+)(\/.*)$/,
+        );
+    return __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708
+      ? normalizeGameCdnUrl(
+          `${__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708[1]}://${__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708[2]}${__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708[3]}${__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.search}`,
+        )
+      : null;
+  } catch {
+    return null;
+  }
+}

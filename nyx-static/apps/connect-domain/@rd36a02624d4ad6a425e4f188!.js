@@ -1,1 +1,172 @@
-(()=>{const __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=document.querySelector("[data-target-ip]"),__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=document.querySelector("[data-copy-ip]"),__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=document.querySelector("[data-domain-form]"),__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd=document.querySelector("[data-submit]"),__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548=document.querySelector("[data-status]"),__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467="tutsi"===document.body.dataset.site?"tutsi":"nyx",__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a="tutsi"===__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467?"Tutsi":"N7X";let __fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8="";function __0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca,__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=""){__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.hidden=!1,__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.className="status"+(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7?` ${__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7}`:""),__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.textContent=__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca}async function __b06d3ada0a1064bbc2fd1945d010f4117ffdeef39a0711c0c5588a657e8c27c8(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca){const __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=await __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.text();try{return __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7?JSON.parse(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7):{}}catch{throw new Error(`${__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a} returned an unexpected ${__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.status} response.`)}}__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.addEventListener("click",async()=>{if(__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8)try{await navigator.clipboard.writeText(__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8),__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.textContent="Copied",setTimeout(()=>{__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.textContent="Copy"},1400)}catch{__0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b(`Copy this address: ${__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8}`)}}),__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.addEventListener("submit",async __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=>{__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.preventDefault(),__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.disabled=!0;const __df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.textContent;__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.textContent="Verifying\u2026",__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.hidden=!0;try{const __87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca=await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/custom-hostnames",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({hostname:__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.elements.hostname.value,site:__de9f043bf20f773c53a2e10b90caca67e4e30f303fd43ef455144ef3a262e467})}),__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7=await __b06d3ada0a1064bbc2fd1945d010f4117ffdeef39a0711c0c5588a657e8c27c8(__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca);if(!__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.ok)throw new Error(__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.error||`Domain verification failed (${__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.status}).`);__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.hidden=!1,__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.className="status success",__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.replaceChildren(document.createTextNode(`${__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.message} `));const __cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd=document.createElement("a");__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.href=__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.url,__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.textContent=`Open ${__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.hostname}`,__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.append(__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd)}catch(__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8){__0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b(__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8.message||`${__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a} could not connect that domain.`,"error")}finally{__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.disabled=!1,__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.textContent=__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7}}),async function(){try{const __b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870=await fetch("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/custom-hostnames/config",{credentials:"same-origin",cache:"no-store"}),__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548=await __b06d3ada0a1064bbc2fd1945d010f4117ffdeef39a0711c0c5588a657e8c27c8(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870);__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8=String(__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.targetIps?.[0]||""),__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.textContent=__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8||"Not configured",__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.disabled=!__fd54ab8e5f095ce42094e00b5888be9d3c5da40c0d0e1893c0b5e040eb2b2ca8,__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.disabled=!__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.enabled,__3fbbc1b0d135330e7d6fbd97dfcd97aea984629f963a1715635d709feea82548.enabled||__0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b(`Custom-domain connection is not enabled on this ${__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a} server yet.`,"error")}catch(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870){__87866db9dc9bd33e16350e6a46ccdd3e0cdde658ee734af6943d874c72cf8bca.textContent="Unavailable",__df8574386c21bb39c35ba06da04de88b642b8e37b4d162d6aa00c6d1e2b52ea7.disabled=!0,__cf9158d5f3cba45e2aafd737fb0eaad2d65579583b0d48dbb02ae601aa7a09dd.disabled=!0,__0fe2b9867e755ee4f9da749c0f4dcd3eba8aad4e03ff2d30b12207dbe2c9ba4b(__b4e7476b9dc232db289304a3f10c0c3a2168f4f90b6dd8d4658741e9324bf870.message||`${__62fb3b8d8c8796f5ee3c5c61d324d7fb3aee0f2b0118fd66c3d8ed0a38385a1a} could not load the domain configuration.`,"error")}}()})();
+(() => {
+  const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f =
+      document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0074\u0061\u0072\u0067\u0065\u0074\u002d\u0069\u0070\u005d"),
+    __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 =
+      document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0063\u006f\u0070\u0079\u002d\u0069\u0070\u005d"),
+    __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
+      document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0064\u006f\u006d\u0061\u0069\u006e\u002d\u0066\u006f\u0072\u006d\u005d"),
+    __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c =
+      document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0073\u0075\u0062\u006d\u0069\u0074\u005d"),
+    __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 =
+      document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0073\u0074\u0061\u0074\u0075\u0073\u005d"),
+    __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 =
+      "\u0074\u0075\u0074\u0073\u0069" === document.body.dataset.site ? "\u0074\u0075\u0074\u0073\u0069" : "\u006e\u0079\u0078",
+    __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7 =
+      "\u0074\u0075\u0074\u0073\u0069" === __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766
+        ? "\u0054\u0075\u0074\u0073\u0069"
+        : "\u004e\u0037\u0058";
+  let __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061 = "";
+  function __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106(
+    __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+    __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = "",
+  ) {
+    ((__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.hidden = !1),
+      (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.className =
+        "\u0073\u0074\u0061\u0074\u0075\u0073" +
+        (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53
+          ? ` ${__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53}`
+          : "")),
+      (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.textContent =
+        __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f));
+  }
+  async function __195933d5304e67fc303baeabe6be18e3c2ac1ca646479600f2b3f20799e3770e(
+    __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+  ) {
+    const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 =
+      await __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.text();
+    try {
+      return __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53
+        ? JSON.parse(__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53)
+        : {};
+    } catch {
+      throw new Error(
+        `${__22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7} returned an unexpected ${__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.status} response.`,
+      );
+    }
+  }
+  (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.addEventListener(
+    "\u0063\u006c\u0069\u0063\u006b",
+    async () => {
+      if (__bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061)
+        try {
+          (await navigator.clipboard.writeText(
+            __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061,
+          ),
+            (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.textContent =
+              "\u0043\u006f\u0070\u0069\u0065\u0064"),
+            setTimeout(() => {
+              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.textContent =
+                "\u0043\u006f\u0070\u0079";
+            }, 1400));
+        } catch {
+          __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106(
+            `Copy this address: ${__bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061}`,
+          );
+        }
+    },
+  ),
+    __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.addEventListener(
+      "\u0073\u0075\u0062\u006d\u0069\u0074",
+      async (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) => {
+        (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.preventDefault(),
+          (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.disabled = !0));
+        const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 =
+          __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.textContent;
+        ((__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.textContent =
+          "\u0056\u0065\u0072\u0069\u0066\u0079\u0069\u006e\u0067\u2026"),
+          (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.hidden = !0));
+        try {
+          const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f = await fetch(
+              "\u002f\u0061\u0070\u0069\u002f\u0063\u0075\u0073\u0074\u006f\u006d\u002d\u0068\u006f\u0073\u0074\u006e\u0061\u006d\u0065\u0073",
+              {
+                method: "\u0050\u004f\u0053\u0054",
+                credentials: "\u0073\u0061\u006d\u0065\u002d\u006f\u0072\u0069\u0067\u0069\u006e",
+                headers: {
+                  "\u0043\u006f\u006e\u0074\u0065\u006e\u0074\u002d\u0054\u0079\u0070\u0065": "\u0061\u0070\u0070\u006c\u0069\u0063\u0061\u0074\u0069\u006f\u006e\u002f\u006a\u0073\u006f\u006e",
+                },
+                body: JSON.stringify({
+                  hostname:
+                    __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.elements
+                      .hostname.value,
+                  site: __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766,
+                }),
+              },
+            ),
+            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 =
+              await __195933d5304e67fc303baeabe6be18e3c2ac1ca646479600f2b3f20799e3770e(
+                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+              );
+          if (!__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.ok)
+            throw new Error(
+              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.error ||
+                `Domain verification failed (${__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.status}).`,
+            );
+          ((__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.hidden = !1),
+            (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.className =
+              "\u0073\u0074\u0061\u0074\u0075\u0073\u0020\u0073\u0075\u0063\u0063\u0065\u0073\u0073"),
+            __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.replaceChildren(
+              document.createTextNode(
+                `${__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.message} `,
+              ),
+            ));
+          const __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c =
+            document.createElement("\u0061");
+          ((__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.href =
+            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.url),
+            (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.textContent = `Open ${__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.hostname}`),
+            __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.append(
+              __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+            ));
+        } catch (__bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061) {
+          __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106(
+            __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061.message ||
+              `${__22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7} could not connect that domain.`,
+            "\u0065\u0072\u0072\u006f\u0072",
+          );
+        } finally {
+          ((__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.disabled = !1),
+            (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.textContent =
+              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53));
+        }
+      },
+    ),
+    (async function () {
+      try {
+        const __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = await fetch(
+            "\u002f\u0061\u0070\u0069\u002f\u0063\u0075\u0073\u0074\u006f\u006d\u002d\u0068\u006f\u0073\u0074\u006e\u0061\u006d\u0065\u0073\u002f\u0063\u006f\u006e\u0066\u0069\u0067",
+            {
+              credentials: "\u0073\u0061\u006d\u0065\u002d\u006f\u0072\u0069\u0067\u0069\u006e",
+              cache: "\u006e\u006f\u002d\u0073\u0074\u006f\u0072\u0065",
+            },
+          ),
+          __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 =
+            await __195933d5304e67fc303baeabe6be18e3c2ac1ca646479600f2b3f20799e3770e(
+              __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+            );
+        ((__bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061 = String(
+          __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.targetIps?.[0] || "",
+        )),
+          (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.textContent =
+            __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061 || "\u004e\u006f\u0074\u0020\u0063\u006f\u006e\u0066\u0069\u0067\u0075\u0072\u0065\u0064"),
+          (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.disabled =
+            !__bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061),
+          (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.disabled =
+            !__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.enabled),
+          __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.enabled ||
+            __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106(
+              `Custom-domain connection is not enabled on this ${__22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7} server yet.`,
+              "\u0065\u0072\u0072\u006f\u0072",
+            ));
+      } catch (__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708) {
+        ((__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.textContent =
+          "\u0055\u006e\u0061\u0076\u0061\u0069\u006c\u0061\u0062\u006c\u0065"),
+          (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.disabled = !0),
+          (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.disabled = !0),
+          __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106(
+            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.message ||
+              `${__22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7} could not load the domain configuration.`,
+            "\u0065\u0072\u0072\u006f\u0072",
+          ));
+      }
+    })());
+})();
