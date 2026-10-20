@@ -1,7 +1,7 @@
 (() => {
   "use strict";
-  const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 = "\u006e\u0079\u0078\u002e\u0063\u006f\u0064\u0065\u0054\u0075\u0074\u006f\u0072\u0069\u0061\u006c\u0073\u002e\u0076\u0031",
-    __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede = {
+  const __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96 = "\u006e\u0079\u0078\u002e\u0063\u006f\u0064\u0065\u0054\u0075\u0074\u006f\u0072\u0069\u0061\u006c\u0073\u002e\u0076\u0031",
+    __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5 = {
       javascript: {
         name: "\u004a\u0061\u0076\u0061\u0053\u0063\u0072\u0069\u0070\u0074",
         items: [
@@ -143,7 +143,7 @@
         ],
       },
     },
-    __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f = {
+    __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c = {
       list: document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0063\u006f\u0075\u0072\u0073\u0065\u002d\u006c\u0069\u0073\u0074\u005d"),
       label: document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0063\u006f\u0075\u0072\u0073\u0065\u002d\u006c\u0061\u0062\u0065\u006c\u005d"),
       title: document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u006c\u0065\u0073\u0073\u006f\u006e\u002d\u0074\u0069\u0074\u006c\u0065\u005d"),
@@ -156,12 +156,12 @@
       save: document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0073\u0061\u0076\u0065\u002d\u0073\u0074\u0061\u0074\u0065\u005d"),
       account: document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002d\u006e\u006f\u0074\u0065\u005d"),
     };
-  let __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 = (function () {
+  let __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03 = (function () {
       try {
         return {
           ...JSON.parse(
             localStorage.getItem(
-              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+              __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96,
             ) || "\u007b\u007d",
           ),
           course: "\u006a\u0061\u0076\u0061\u0073\u0063\u0072\u0069\u0070\u0074",
@@ -176,336 +176,336 @@
         };
       }
     })(),
-    __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 = 0;
-  function __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45() {
+    __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713 = 0;
+  function __13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a() {
     try {
       (localStorage.setItem(
-        __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
-        JSON.stringify(__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0),
+        __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96,
+        JSON.stringify(__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03),
       ),
-        (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.save.textContent =
+        (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.save.textContent =
           "\u0053\u0061\u0076\u0065\u0064\u0020\u006f\u006e\u0020\u0074\u0068\u0069\u0073\u0020\u0064\u0065\u0076\u0069\u0063\u0065"));
     } catch {
-      __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.save.textContent =
+      __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.save.textContent =
         "\u0043\u006f\u0075\u006c\u0064\u0020\u006e\u006f\u0074\u0020\u0073\u0061\u0076\u0065\u0020\u006c\u006f\u0063\u0061\u006c\u006c\u0079";
     }
-    (clearTimeout(__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579),
-      (__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 = setTimeout(
-        __b16bccb347dc9c0d0015a5c0688050c73aafac976dfd513b3b37833e0f570bf5,
+    (clearTimeout(__a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713),
+      (__a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713 = setTimeout(
+        __16ce36443f8abd1a5f32e6f2b0fe67530069d12a74af4ce959921c772863f30f,
         650,
       )));
   }
-  function __67711e8b1ef6f2192fc59039c6dc2e25167f773d807b2e16e0feb1a35d50408d(
-    __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+  function __158e0bd6d678cff89b23dafaa46fbabfba531f042706486a09e48c7cac9ea8fc(
+    __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96,
   ) {
-    return __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede[
-      __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28
+    return __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5[
+      __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96
     ].items.filter(
       (
-        __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
-        __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f,
+        __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5,
+        __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c,
       ) =>
-        __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.completed[
-          `${__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28}:${__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f}`
+        __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.completed[
+          `${__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96}:${__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c}`
         ],
     ).length;
   }
-  function __23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd() {
+  function __da22d558ffc7beaebd4dccdeb2aa108eeecad0bd95e878106e4e41a785d60ee2() {
     const [
-      __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
-      __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579,
-      __7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2,
+      __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96,
+      __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713,
+      __9d0e07cd702e6d276679ef0fc087fb77ade5212b41061e0ba9cfc26ab56a2238,
     ] =
-      __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede[
-        __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course
-      ].items[__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.lesson];
-    ((__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.label.textContent =
-      __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede[
-        __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course
+      __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5[
+        __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course
+      ].items[__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.lesson];
+    ((__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.label.textContent =
+      __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5[
+        __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course
       ].name),
-      (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.title.textContent =
-        __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28),
-      __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.copy.replaceChildren(),
-      __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579
+      (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.title.textContent =
+        __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96),
+      __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.copy.replaceChildren(),
+      __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713
         .split("\u000a")
         .filter(Boolean)
-        .forEach((__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) => {
-          const __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede =
+        .forEach((__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96) => {
+          const __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5 =
             document.createElement("\u0070");
-          ((__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.textContent =
-            __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28),
-            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.copy.append(
-              __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
+          ((__49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5.textContent =
+            __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96),
+            __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.copy.append(
+              __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5,
             ));
         }),
-      (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.example.textContent =
-        __7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2),
-      (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.practice.value =
-        __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.drafts?.[
-          `${__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course}:${__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.lesson}`
-        ] || __7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2),
-      (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.progress.textContent = `${__67711e8b1ef6f2192fc59039c6dc2e25167f773d807b2e16e0feb1a35d50408d(__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course)} of ${__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede[__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course].items.length} finished`),
-      __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.list.replaceChildren(),
-      Object.entries(__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede).forEach(
+      (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.example.textContent =
+        __9d0e07cd702e6d276679ef0fc087fb77ade5212b41061e0ba9cfc26ab56a2238),
+      (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.practice.value =
+        __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.drafts?.[
+          `${__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course}:${__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.lesson}`
+        ] || __9d0e07cd702e6d276679ef0fc087fb77ade5212b41061e0ba9cfc26ab56a2238),
+      (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.progress.textContent = `${__158e0bd6d678cff89b23dafaa46fbabfba531f042706486a09e48c7cac9ea8fc(__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course)} of ${__49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5[__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course].items.length} finished`),
+      __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.list.replaceChildren(),
+      Object.entries(__49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5).forEach(
         ([
-          __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
-          __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
+          __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96,
+          __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5,
         ]) => {
-          const __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 =
+          const __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713 =
             document.createElement("\u0062\u0075\u0074\u0074\u006f\u006e");
-          ((__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.type = "\u0062\u0075\u0074\u0074\u006f\u006e"),
-            (__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.className =
-              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 ===
-              __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course
+          ((__a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713.type = "\u0062\u0075\u0074\u0074\u006f\u006e"),
+            (__a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713.className =
+              __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96 ===
+              __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course
                 ? "\u0061\u0063\u0074\u0069\u0076\u0065"
                 : ""),
-            (__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.innerHTML = `<strong>${__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.name}</strong><small>${__67711e8b1ef6f2192fc59039c6dc2e25167f773d807b2e16e0feb1a35d50408d(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28)} of ${__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.items.length} finished</small>`),
-            __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.addEventListener(
+            (__a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713.innerHTML = `<strong>${__49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5.name}</strong><small>${__158e0bd6d678cff89b23dafaa46fbabfba531f042706486a09e48c7cac9ea8fc(__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96)} of ${__49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5.items.length} finished</small>`),
+            __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713.addEventListener(
               "\u0063\u006c\u0069\u0063\u006b",
               () => {
-                ((__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course =
-                  __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28),
-                  (__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.lesson = 0),
-                  __23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd(),
-                  __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45());
+                ((__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course =
+                  __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96),
+                  (__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.lesson = 0),
+                  __da22d558ffc7beaebd4dccdeb2aa108eeecad0bd95e878106e4e41a785d60ee2(),
+                  __13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a());
               },
             ),
-            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.list.append(
-              __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579,
+            __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.list.append(
+              __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713,
             ));
         },
       ));
   }
-  async function __7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2() {
+  async function __9d0e07cd702e6d276679ef0fc087fb77ade5212b41061e0ba9cfc26ab56a2238() {
     if (parent === window) return "";
-    const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 = `tutorials-${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    return new Promise((__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede) => {
-      let __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f = !1;
-      const __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 = (
-          __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+    const __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96 = `tutorials-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    return new Promise((__49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5) => {
+      let __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c = !1;
+      const __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03 = (
+          __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96,
         ) => {
-          __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f ||
-            ((__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f = !0),
-            clearTimeout(__dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45),
+          __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c ||
+            ((__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c = !0),
+            clearTimeout(__13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a),
             removeEventListener(
               "\u006d\u0065\u0073\u0073\u0061\u0067\u0065",
-              __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579,
+              __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713,
             ),
-            __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede(
-              String(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 || ""),
+            __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5(
+              String(__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96 || ""),
             ));
         },
-        __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 = (
-          __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
+        __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713 = (
+          __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5,
         ) => {
-          __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.source === parent &&
-            __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.origin ===
+          __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5.source === parent &&
+            __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5.origin ===
               location.origin &&
             "\u006e\u0079\u0078\u003a\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002d\u0074\u006f\u006b\u0065\u006e\u002d\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065" ===
-              __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.data?.type &&
-            __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.data.requestId ===
-              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 &&
-            __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0(
-              __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.data.token,
+              __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5.data?.type &&
+            __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5.data.requestId ===
+              __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96 &&
+            __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03(
+              __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5.data.token,
             );
         },
-        __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45 = setTimeout(
-          () => __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0(""),
+        __13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a = setTimeout(
+          () => __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03(""),
           2200,
         );
       (addEventListener(
         "\u006d\u0065\u0073\u0073\u0061\u0067\u0065",
-        __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579,
+        __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713,
       ),
         parent.postMessage(
           {
             type: "\u006e\u0079\u0078\u003a\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002d\u0074\u006f\u006b\u0065\u006e\u002d\u0072\u0065\u0071\u0075\u0065\u0073\u0074",
-            requestId: __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+            requestId: __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96,
           },
           location.origin,
         ));
     });
   }
-  async function __b16bccb347dc9c0d0015a5c0688050c73aafac976dfd513b3b37833e0f570bf5() {
-    const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 =
-      await __7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2();
-    if (__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28)
+  async function __16ce36443f8abd1a5f32e6f2b0fe67530069d12a74af4ce959921c772863f30f() {
+    const __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96 =
+      await __9d0e07cd702e6d276679ef0fc087fb77ade5212b41061e0ba9cfc26ab56a2238();
+    if (__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96)
       try {
         (
           await fetch("\u002f\u0061\u0070\u0069\u002f\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002f\u0063\u006c\u006f\u0075\u0064\u002d\u0067\u0061\u006d\u0065\u0073\u002f\u0063\u006f\u0064\u0065\u002d\u0074\u0075\u0074\u006f\u0072\u0069\u0061\u006c\u0073", {
             method: "\u0050\u0055\u0054",
             headers: {
               "\u0063\u006f\u006e\u0074\u0065\u006e\u0074\u002d\u0074\u0079\u0070\u0065": "\u0061\u0070\u0070\u006c\u0069\u0063\u0061\u0074\u0069\u006f\u006e\u002f\u006a\u0073\u006f\u006e",
-              Authorization: `Bearer ${__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28}`,
+              Authorization: `Bearer ${__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96}`,
             },
             body: JSON.stringify({
               storage: {
                 progress: JSON.stringify(
-                  __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0,
+                  __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03,
                 ),
               },
             }),
           })
         ).ok &&
-          ((__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.save.textContent =
+          ((__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.save.textContent =
             "\u0050\u0072\u006f\u0067\u0072\u0065\u0073\u0073\u0020\u0073\u0061\u0076\u0065\u0064\u0020\u0074\u006f\u0020\u0079\u006f\u0075\u0072\u0020\u0061\u0063\u0063\u006f\u0075\u006e\u0074"),
-          (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.account.textContent =
+          (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.account.textContent =
             "\u0059\u006f\u0075\u0072\u0020\u006c\u0065\u0073\u0073\u006f\u006e\u0020\u0070\u0072\u006f\u0067\u0072\u0065\u0073\u0073\u0020\u0069\u0073\u0020\u0073\u0061\u0076\u0065\u0064\u0020\u0074\u006f\u0020\u0074\u0068\u0069\u0073\u0020\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002e"));
       } catch {}
   }
   (document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0063\u006f\u0070\u0079\u002d\u0065\u0078\u0061\u006d\u0070\u006c\u0065\u005d").addEventListener("\u0063\u006c\u0069\u0063\u006b", async () => {
     try {
       (await navigator.clipboard.writeText(
-        __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.example.textContent,
+        __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.example.textContent,
       ),
-        (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent =
+        (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent =
           "\u0045\u0078\u0061\u006d\u0070\u006c\u0065\u0020\u0063\u006f\u0070\u0069\u0065\u0064\u002e"));
     } catch {
-      __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent =
+      __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent =
         "\u0053\u0065\u006c\u0065\u0063\u0074\u0020\u0061\u006e\u0064\u0020\u0063\u006f\u0070\u0079\u0020\u0074\u0068\u0065\u0020\u0065\u0078\u0061\u006d\u0070\u006c\u0065\u0020\u0066\u0072\u006f\u006d\u0020\u0074\u0068\u0065\u0020\u006c\u0065\u0073\u0073\u006f\u006e\u002e";
     }
   }),
     document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0072\u0075\u006e\u002d\u0070\u0072\u0061\u0063\u0074\u0069\u0063\u0065\u005d").addEventListener("\u0063\u006c\u0069\u0063\u006b", function () {
-      const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 =
-        __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.practice.value.trim();
-      if (__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28)
+      const __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96 =
+        __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.practice.value.trim();
+      if (__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96)
         if (
-          "\u006a\u0061\u0076\u0061\u0073\u0063\u0072\u0069\u0070\u0074" === __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course
+          "\u006a\u0061\u0076\u0061\u0073\u0063\u0072\u0069\u0070\u0074" === __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course
         ) {
-          __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent =
+          __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent =
             "\u0052\u0075\u006e\u006e\u0069\u006e\u0067\u0020\u004a\u0061\u0076\u0061\u0053\u0063\u0072\u0069\u0070\u0074\u2026";
-          const __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede =
-            __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.replace(
+          const __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5 =
+            __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.replace(
               /<\/script/gi,
               "\u003c\u005c\u002f\u0073\u0063\u0072\u0069\u0070\u0074",
             );
-          __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.runner.srcdoc = `<!doctype html><script>const send=(kind,text)=>parent.postMessage({type:'nyx:tutorial-run',kind,text:String(text)},'*');console.log=(...values)=>send('log',values.join(' '));try{${__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede};send('done','')}catch(error){send('error',error.message)}<\/script>`;
+          __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.runner.srcdoc = `<!doctype html><script>const send=(kind,text)=>parent.postMessage({type:'nyx:tutorial-run',kind,text:String(text)},'*');console.log=(...values)=>send('log',values.join(' '));try{${__49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5};send('done','')}catch(error){send('error',error.message)}<\/script>`;
         } else
-          "\u0068\u0074\u006d\u006c" === __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course
-            ? (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent =
+          "\u0068\u0074\u006d\u006c" === __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course
+            ? (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent =
                 "\u0048\u0054\u004d\u004c\u0020\u0073\u0061\u0076\u0065\u0064\u002e\u0020\u004f\u0070\u0065\u006e\u0020\u0043\u006f\u0064\u0065\u0020\u0053\u0061\u006e\u0064\u0062\u006f\u0078\u0020\u0074\u006f\u0020\u0070\u0072\u0065\u0076\u0069\u0065\u0077\u0020\u0069\u0074\u0020\u0069\u006e\u0020\u0061\u0020\u0062\u0072\u006f\u0077\u0073\u0065\u0072\u002e")
-            : "\u0063\u0073\u0073" === __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course
-              ? (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent =
+            : "\u0063\u0073\u0073" === __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course
+              ? (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent =
                   "\u0043\u0053\u0053\u0020\u0073\u0061\u0076\u0065\u0064\u002e\u0020\u0054\u0072\u0079\u0020\u0069\u0074\u0020\u0069\u006e\u0020\u0043\u006f\u0064\u0065\u0020\u0053\u0061\u006e\u0064\u0062\u006f\u0078\u0020\u0077\u0069\u0074\u0068\u0020\u0061\u0020\u0073\u006d\u0061\u006c\u006c\u0020\u0048\u0054\u004d\u004c\u0020\u0070\u0061\u0067\u0065\u002e")
-              : (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent = `${__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede[__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course].name} example saved. Run this language in its usual environment when you are ready.`);
+              : (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent = `${__49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5[__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course].name} example saved. Run this language in its usual environment when you are ready.`);
       else
-        __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent =
+        __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent =
           "\u0057\u0072\u0069\u0074\u0065\u0020\u0061\u0020\u0073\u006d\u0061\u006c\u006c\u0020\u0065\u0078\u0061\u006d\u0070\u006c\u0065\u0020\u0066\u0069\u0072\u0073\u0074\u002e";
     }),
     document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0066\u0069\u006e\u0069\u0073\u0068\u002d\u006c\u0065\u0073\u0073\u006f\u006e\u005d").addEventListener("\u0063\u006c\u0069\u0063\u006b", () => {
-      ((__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.completed[
-        `${__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course}:${__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.lesson}`
+      ((__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.completed[
+        `${__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course}:${__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.lesson}`
       ] = !0),
-        (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent =
+        (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent =
           "\u004c\u0065\u0073\u0073\u006f\u006e\u0020\u0063\u006f\u006d\u0070\u006c\u0065\u0074\u0065\u002e\u0020\u004b\u0065\u0065\u0070\u0020\u0067\u006f\u0069\u006e\u0067\u0020\u0077\u0068\u0065\u006e\u0020\u0079\u006f\u0075\u0020\u0061\u0072\u0065\u0020\u0072\u0065\u0061\u0064\u0079\u002e"),
-        __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45(),
-        __23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd());
+        __13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a(),
+        __da22d558ffc7beaebd4dccdeb2aa108eeecad0bd95e878106e4e41a785d60ee2());
     }),
     document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u0070\u0072\u0065\u0076\u0069\u006f\u0075\u0073\u005d").addEventListener("\u0063\u006c\u0069\u0063\u006b", () => {
-      ((__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.lesson = Math.max(
+      ((__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.lesson = Math.max(
         0,
-        __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.lesson - 1,
+        __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.lesson - 1,
       )),
-        __23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd(),
-        __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45());
+        __da22d558ffc7beaebd4dccdeb2aa108eeecad0bd95e878106e4e41a785d60ee2(),
+        __13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a());
     }),
     document.querySelector("\u005b\u0064\u0061\u0074\u0061\u002d\u006e\u0065\u0078\u0074\u005d").addEventListener("\u0063\u006c\u0069\u0063\u006b", () => {
-      ((__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.lesson =
-        (__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.lesson + 1) %
-        __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede[
-          __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course
+      ((__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.lesson =
+        (__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.lesson + 1) %
+        __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5[
+          __32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course
         ].items.length),
-        __23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd(),
-        __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45());
+        __da22d558ffc7beaebd4dccdeb2aa108eeecad0bd95e878106e4e41a785d60ee2(),
+        __13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a());
     }),
-    __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.practice.addEventListener(
+    __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.practice.addEventListener(
       "\u0069\u006e\u0070\u0075\u0074",
       () => {
-        ((__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.drafts = {
-          ...(__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.drafts || {}),
-          [`${__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.course}:${__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.lesson}`]:
-            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.practice.value,
+        ((__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.drafts = {
+          ...(__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.drafts || {}),
+          [`${__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.course}:${__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.lesson}`]:
+            __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.practice.value,
         }),
-          __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45());
+          __13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a());
       },
     ),
     addEventListener(
       "\u006d\u0065\u0073\u0073\u0061\u0067\u0065",
-      (__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) => {
-        __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.source ===
-          __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.runner.contentWindow &&
+      (__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96) => {
+        __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.source ===
+          __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.runner.contentWindow &&
           "\u006e\u0079\u0078\u003a\u0074\u0075\u0074\u006f\u0072\u0069\u0061\u006c\u002d\u0072\u0075\u006e" ===
-            __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.data?.type &&
-          ("\u006c\u006f\u0067" === __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.data.kind &&
-            (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent =
+            __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.data?.type &&
+          ("\u006c\u006f\u0067" === __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.data.kind &&
+            (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent =
               ("\u0052\u0075\u006e\u006e\u0069\u006e\u0067\u0020\u004a\u0061\u0076\u0061\u0053\u0063\u0072\u0069\u0070\u0074\u2026" ===
-              __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent
+              __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent
                 ? ""
-                : `${__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent}\n`) +
-              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.data.text),
+                : `${__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent}\n`) +
+              __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.data.text),
           "\u0065\u0072\u0072\u006f\u0072" ===
-            __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.data.kind &&
-            (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent = `Check your JavaScript: ${__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.data.text}`),
-          "\u0064\u006f\u006e\u0065" === __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.data.kind &&
+            __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.data.kind &&
+            (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent = `Check your JavaScript: ${__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.data.text}`),
+          "\u0064\u006f\u006e\u0065" === __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.data.kind &&
             "\u0052\u0075\u006e\u006e\u0069\u006e\u0067\u0020\u004a\u0061\u0076\u0061\u0053\u0063\u0072\u0069\u0070\u0074\u2026" ===
-              __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output
+              __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output
                 .textContent &&
-            (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.output.textContent =
+            (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.output.textContent =
               "\u004a\u0061\u0076\u0061\u0053\u0063\u0072\u0069\u0070\u0074\u0020\u0072\u0061\u006e\u0020\u0077\u0069\u0074\u0068\u006f\u0075\u0074\u0020\u0063\u006f\u006e\u0073\u006f\u006c\u0065\u0020\u006f\u0075\u0074\u0070\u0075\u0074\u002e"));
       },
     ),
     addEventListener(
       "\u0073\u0074\u006f\u0072\u0061\u0067\u0065",
-      (__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) => {
-        "\u006e\u0079\u0078\u002e\u0074\u0068\u0065\u006d\u0065" === __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.key &&
+      (__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96) => {
+        "\u006e\u0079\u0078\u002e\u0074\u0068\u0065\u006d\u0065" === __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.key &&
           location.reload();
       },
     ),
     (function () {
       try {
-        const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 =
+        const __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96 =
           localStorage.getItem("\u006e\u0079\u0078\u002e\u0074\u0068\u0065\u006d\u0065");
         ["\u0072\u0075\u0062\u0079", "\u0065\u006d\u0065\u0072\u0061\u006c\u0064", "\u0073\u0061\u006b\u0075\u0072\u0061", "\u0066\u0072\u0065\u0073\u0068"].includes(
-          __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+          __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96,
         ) &&
           document.body.classList.add(
-            `theme-${__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28}`,
+            `theme-${__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96}`,
           );
       } catch {}
     })(),
-    __23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd(),
+    __da22d558ffc7beaebd4dccdeb2aa108eeecad0bd95e878106e4e41a785d60ee2(),
     (async function () {
-      const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 =
-        await __7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2();
-      if (__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28)
+      const __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96 =
+        await __9d0e07cd702e6d276679ef0fc087fb77ade5212b41061e0ba9cfc26ab56a2238();
+      if (__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96)
         try {
-          const __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede = await fetch(
+          const __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5 = await fetch(
               "\u002f\u0061\u0070\u0069\u002f\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002f\u0063\u006c\u006f\u0075\u0064\u002d\u0067\u0061\u006d\u0065\u0073\u002f\u0063\u006f\u0064\u0065\u002d\u0074\u0075\u0074\u006f\u0072\u0069\u0061\u006c\u0073",
               {
                 headers: {
-                  Authorization: `Bearer ${__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28}`,
+                  Authorization: `Bearer ${__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96}`,
                 },
               },
             ),
-            __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 =
-              await __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.json(),
-            __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45 = JSON.parse(
-              __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579?.storage
+            __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713 =
+              await __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5.json(),
+            __13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a = JSON.parse(
+              __a725252ec43dce1a31487d6ec610ab6a9c69bd553a25619ea0cdf7e9e04cd713?.storage
                 ?.progress || "\u006e\u0075\u006c\u006c",
             );
-          __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45 &&
-            "\u006f\u0062\u006a\u0065\u0063\u0074" == typeof __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45 &&
-            ((__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 = {
-              ...__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0,
-              ...__dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45,
+          __13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a &&
+            "\u006f\u0062\u006a\u0065\u0063\u0074" == typeof __13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a &&
+            ((__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03 = {
+              ...__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03,
+              ...__13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a,
               completed: {
-                ...__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.completed,
-                ...__dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45.completed,
+                ...__32ebf74c1a408f3d2c8873db931f0d8243b80c30aec9632e9840e4501bdbeb03.completed,
+                ...__13795770954b8a681f9048418bcc4f93554d6d92f2bb7770a7709d8cc2d0f87a.completed,
               },
             }),
-            (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.account.textContent =
+            (__60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c.account.textContent =
               "\u0059\u006f\u0075\u0072\u0020\u006c\u0065\u0073\u0073\u006f\u006e\u0020\u0070\u0072\u006f\u0067\u0072\u0065\u0073\u0073\u0020\u0069\u0073\u0020\u0073\u0061\u0076\u0065\u0064\u0020\u0074\u006f\u0020\u0074\u0068\u0069\u0073\u0020\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002e"),
-            __23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd());
+            __da22d558ffc7beaebd4dccdeb2aa108eeecad0bd95e878106e4e41a785d60ee2());
         } catch {}
     })());
 })();

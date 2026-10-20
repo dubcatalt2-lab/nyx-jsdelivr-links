@@ -1,4 +1,4 @@
-class __a8c370478751dfd3ddc4a822fddfb4a54d5406714a223ce1b46ef2246e2d596f extends AudioWorkletProcessor {
+class __62516b3d67659acde2ed095c5e65043f9a756eddaa7c07346c546771330b5378 extends AudioWorkletProcessor {
   constructor() {
     (super(),
       (this.frame = new Int16Array(1600)),
@@ -7,12 +7,12 @@ class __a8c370478751dfd3ddc4a822fddfb4a54d5406714a223ce1b46ef2246e2d596f extends
       (this.sum = 0),
       (this.count = 0));
   }
-  process(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) {
-    const __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede =
-      __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28[0]?.[0];
-    if (!__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede) return !0;
-    for (const __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f of __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede)
-      ((this.sum += __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f),
+  process(__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96) {
+    const __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5 =
+      __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96[0]?.[0];
+    if (!__49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5) return !0;
+    for (const __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c of __49b93de3d0d74953b0f2bcaa351bad16553ef6084284335ae10ea62972bf2fc5)
+      ((this.sum += __60e6e637b7b963d634fdfd50df3a066e4a57f83857541db66fe8be28eb2fcd7c),
         this.count++,
         (this.phase += 16e3),
         this.phase >= sampleRate &&
@@ -32,5 +32,5 @@ class __a8c370478751dfd3ddc4a822fddfb4a54d5406714a223ce1b46ef2246e2d596f extends
 
 registerProcessor(
   "\u006e\u0079\u0078\u002d\u0076\u006f\u0069\u0063\u0065\u002d\u0063\u0061\u0070\u0074\u0075\u0072\u0065",
-  __a8c370478751dfd3ddc4a822fddfb4a54d5406714a223ce1b46ef2246e2d596f,
+  __62516b3d67659acde2ed095c5e65043f9a756eddaa7c07346c546771330b5378,
 );
