@@ -3,11 +3,11 @@
   window.NyxNativePlayer = Object.freeze({
     Player: class {
       constructor(
-        __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
-        __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+        __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+        __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
       ) {
         ((this.isNative = !0),
-          (this.options = __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53),
+          (this.options = __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede),
           (this.controller = new AbortController()),
           (this.current = 0),
           (this.lastProgress = Date.now()),
@@ -18,29 +18,29 @@
           (this.video.preload = "\u0061\u0075\u0074\u006f"),
           (this.video.style.cssText = "\u0077\u0069\u0064\u0074\u0068\u003a\u0031\u0030\u0030\u0025\u003b\u0068\u0065\u0069\u0067\u0068\u0074\u003a\u0031\u0030\u0030\u0025\u003b\u006f\u0062\u006a\u0065\u0063\u0074\u002d\u0066\u0069\u0074\u003a\u0063\u006f\u006e\u0074\u0061\u0069\u006e"),
           (this.node = document.getElementById(
-            __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+            __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
           )),
           this.node.replaceChildren(this.video));
-        const __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = (
-          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
-          __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+        const __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f = (
+          __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+          __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f,
         ) => {
           this.controller.signal.aborted ||
-            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.events?.[
-              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f
+            __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.events?.[
+              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28
             ]?.({
               target: this,
-              data: __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+              data: __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f,
             });
         };
         (this.video.addEventListener("\u0070\u006c\u0061\u0079\u0069\u006e\u0067", () =>
-          __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708("\u006f\u006e\u0053\u0074\u0061\u0074\u0065\u0043\u0068\u0061\u006e\u0067\u0065", 1),
+          __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f("\u006f\u006e\u0053\u0074\u0061\u0074\u0065\u0043\u0068\u0061\u006e\u0067\u0065", 1),
         ),
           this.video.addEventListener("\u0070\u0061\u0075\u0073\u0065", () =>
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708("\u006f\u006e\u0053\u0074\u0061\u0074\u0065\u0043\u0068\u0061\u006e\u0067\u0065", 2),
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f("\u006f\u006e\u0053\u0074\u0061\u0074\u0065\u0043\u0068\u0061\u006e\u0067\u0065", 2),
           ),
           this.video.addEventListener("\u0065\u006e\u0064\u0065\u0064", () =>
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708("\u006f\u006e\u0053\u0074\u0061\u0074\u0065\u0043\u0068\u0061\u006e\u0067\u0065", 0),
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f("\u006f\u006e\u0053\u0074\u0061\u0074\u0065\u0043\u0068\u0061\u006e\u0067\u0065", 0),
           ),
           this.video.addEventListener("\u0077\u0061\u0069\u0074\u0069\u006e\u0067", () => this.setBuffering(!0)),
           this.video.addEventListener("\u0070\u006c\u0061\u0079\u0069\u006e\u0067", () => {
@@ -63,11 +63,11 @@
           }),
           this.video.addEventListener("\u0065\u006e\u0064\u0065\u0064", () => this.setBuffering(!1)),
           this.video.addEventListener("\u0065\u0072\u0072\u006f\u0072", () =>
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708("\u006f\u006e\u0045\u0072\u0072\u006f\u0072", 900),
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f("\u006f\u006e\u0045\u0072\u0072\u006f\u0072", 900),
           ),
           this.video.addEventListener(
             "\u006c\u006f\u0061\u0064\u0065\u0064\u006d\u0065\u0074\u0061\u0064\u0061\u0074\u0061",
-            () => __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708("\u006f\u006e\u0052\u0065\u0061\u0064\u0079"),
+            () => __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f("\u006f\u006e\u0052\u0065\u0061\u0064\u0079"),
             {
               once: !0,
             },
@@ -82,142 +82,142 @@
               this.captionsEnabled && this.updateCaptions(!0));
           }),
           this.prepare().catch(
-            (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) =>
-              this.fail(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.message),
+            (__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) =>
+              this.fail(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.message),
           ));
       }
-      setBuffering(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) {
+      setBuffering(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) {
         this.controller.signal.aborted ||
-          this.buffering === __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f ||
-          ((this.buffering = __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f),
+          this.buffering === __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 ||
+          ((this.buffering = __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28),
           this.options.events?.onBuffering?.({
             target: this,
-            data: __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+            data: __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
           }));
       }
-      wait(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) {
+      wait(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) {
         return new Promise(
           (
-            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+            __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f,
           ) => {
-            const __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c =
+            const __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 =
                 this.controller.signal,
-              __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 = () => {
-                (clearTimeout(__f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766),
-                  __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708(
+              __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 = () => {
+                (clearTimeout(__dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45),
+                  __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f(
                     new DOMException("\u0041\u0062\u006f\u0072\u0074\u0065\u0064", "\u0041\u0062\u006f\u0072\u0074\u0045\u0072\u0072\u006f\u0072"),
                   ));
               },
-              __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 = setTimeout(
+              __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45 = setTimeout(
                 () => {
-                  (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.removeEventListener(
+                  (__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.removeEventListener(
                     "\u0061\u0062\u006f\u0072\u0074",
-                    __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477,
+                    __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579,
                   ),
-                    __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53());
+                    __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede());
                 },
-                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
               );
-            (__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.addEventListener(
+            (__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.addEventListener(
               "\u0061\u0062\u006f\u0072\u0074",
-              __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477,
+              __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579,
               {
                 once: !0,
               },
             ),
-              __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.aborted &&
-                __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477());
+              __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.aborted &&
+                __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579());
           },
         );
       }
       async json(
-        __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
-        __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = {},
+        __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+        __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede = {},
       ) {
-        const __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = Date.now() + 6e4;
+        const __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f = Date.now() + 6e4;
         for (
-          let __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c = 0;
+          let __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 = 0;
           ;
-          __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c++
+          __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0++
         ) {
           this.controller.signal.throwIfAborted();
-          const __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 =
+          const __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 =
               new AbortController(),
-            __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 = () =>
-              __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.abort(),
-            __22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7 = setTimeout(
-              __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766,
+            __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45 = () =>
+              __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.abort(),
+            __67711e8b1ef6f2192fc59039c6dc2e25167f773d807b2e16e0feb1a35d50408d = setTimeout(
+              __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45,
               Math.max(
                 1,
                 Math.min(
                   3e4,
-                  __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 - Date.now(),
+                  __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f - Date.now(),
                 ),
               ),
             );
-          let __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061,
-            __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106;
+          let __23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd,
+            __7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2;
           (this.controller.signal.addEventListener(
             "\u0061\u0062\u006f\u0072\u0074",
-            __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766,
+            __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45,
             {
               once: !0,
             },
           ),
             this.controller.signal.aborted &&
-              __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766());
+              __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45());
           try {
-            ((__bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061 = await fetch(
-              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+            ((__23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd = await fetch(
+              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
               {
-                ...__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+                ...__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
                 credentials: "\u0073\u0061\u006d\u0065\u002d\u006f\u0072\u0069\u0067\u0069\u006e",
-                signal: __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.signal,
+                signal: __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.signal,
               },
             )),
-              (__78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106 =
-                await __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061.json()));
+              (__7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2 =
+                await __23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd.json()));
           } finally {
-            (clearTimeout(__22c239fbc1e4eeef1877df3a130f05d8427fced4710f905846a60962e68d11b7),
+            (clearTimeout(__67711e8b1ef6f2192fc59039c6dc2e25167f773d807b2e16e0feb1a35d50408d),
               this.controller.signal.removeEventListener(
                 "\u0061\u0062\u006f\u0072\u0074",
-                __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766,
+                __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45,
               ));
           }
-          if (__bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061.ok)
-            return __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106;
+          if (__23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd.ok)
+            return __7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2;
           if (
             !(
-              429 === __bfdbd7d577d05fec84a9e12b90237ceac40d6054230b5fee0489b9f0cb653061.status &&
-              "\u0062\u0075\u0073\u0079" === __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106.code &&
-              __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c < 4 &&
-              Date.now() + 3e3 < __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708
+              429 === __23a7f849fce2e518dd65ea22688a9d72f9ab8ead538339cc1a997826f76fe9dd.status &&
+              "\u0062\u0075\u0073\u0079" === __7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2.code &&
+              __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 < 4 &&
+              Date.now() + 3e3 < __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f
             )
           )
             throw new Error(
-              __78b4105d72b193566e65cfcb85f32a43a7f5416106fb44c79a8f6e425b505106.error ||
+              __7a5da2f0da2b619fe5913e06623633eef79ef7e49bdea8097b59055de96151a2.error ||
                 "\u004e\u0061\u0074\u0069\u0076\u0065\u0020\u0070\u006c\u0061\u0079\u0062\u0061\u0063\u006b\u0020\u0075\u006e\u0061\u0076\u0061\u0069\u006c\u0061\u0062\u006c\u0065\u002e",
             );
           await this.wait(3e3);
         }
       }
       async prepare() {
-        const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f =
+        const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 =
             encodeURIComponent(this.options.videoId),
-          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = await this.json(
-            `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxtube/native/formats/${__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f}`,
+          __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede = await this.json(
+            `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxtube/native/formats/${__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28}`,
           );
         if (
           ((this.qualities = (
-            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.formats || []
+            __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.formats || []
           )
-            .map((__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) =>
-              Number(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.height),
+            .map((__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) =>
+              Number(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.height),
             )
-            .filter((__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) =>
+            .filter((__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) =>
               [360, 480, 720].includes(
-                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
               ),
             )),
           !this.qualities.length)
@@ -226,116 +226,116 @@
         this.quality = this.qualities.includes(this.options.quality)
           ? this.options.quality
           : Math.max(...this.qualities);
-        let __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = await this.json(
-          `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxtube/native/prepare/${__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f}/${this.quality}?mode=hls`,
+        let __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f = await this.json(
+          `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxtube/native/prepare/${__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28}/${this.quality}?mode=hls`,
           {
             method: "\u0050\u004f\u0053\u0054",
           },
         );
-        const __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c = Date.now() + 6e4;
+        const __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 = Date.now() + 6e4;
         for (
           ;
           "\u0070\u0072\u0065\u0070\u0061\u0072\u0069\u006e\u0067" ===
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.state &&
-          Date.now() < __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c;
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.state &&
+          Date.now() < __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0;
 
         )
           (await this.wait(1500),
-            (__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = await this.json(
-              `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxtube/native/jobs/${__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f}/${this.quality}`,
+            (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f = await this.json(
+              `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxtube/native/jobs/${__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28}/${this.quality}`,
             )));
         if (
-          "\u0072\u0065\u0061\u0064\u0079" === __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.state &&
-          "\u0068\u006c\u0073" === __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.kind &&
+          "\u0072\u0065\u0061\u0064\u0079" === __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.state &&
+          "\u0068\u006c\u0073" === __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.kind &&
           /^\/api\/nyxtube\/native\/hls\/[a-f0-9]{32}\/master\.m3u8$/.test(
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.url || "",
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.url || "",
           )
         )
           return this.loadHls(
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.url,
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.url,
           );
         if (
-          "\u0072\u0065\u0061\u0064\u0079" !== __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.state ||
+          "\u0072\u0065\u0061\u0064\u0079" !== __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.state ||
           !new RegExp(
             `^/api/nyxtube/native/media/${this.options.videoId}-(360|480|720)\\.mp4$`,
-          ).test(__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.url || "")
+          ).test(__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.url || "")
         )
           throw new Error("\u0054\u0068\u0065\u0020\u0076\u0069\u0064\u0065\u006f\u0020\u0063\u006f\u0075\u006c\u0064\u0020\u006e\u006f\u0074\u0020\u0062\u0065\u0020\u0070\u0072\u0065\u0070\u0061\u0072\u0065\u0064\u002e");
-        this.video.src = __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.url;
+        this.video.src = __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.url;
       }
       loadHls(
-        __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
-        __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = this.options
+        __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+        __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede = this.options
           .startTime || 0,
       ) {
-        ((this.hlsUrl = __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f),
+        ((this.hlsUrl = __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28),
           (this.lastProgress = Date.now()));
-        const __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = window.Hls;
-        if (__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708?.isSupported()) {
+        const __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f = window.Hls;
+        if (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f?.isSupported()) {
           this.hls?.destroy();
-          const __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c = {
+          const __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 = {
               maxNumRetry: 2,
               retryDelayMs: 1e3,
               maxRetryDelayMs: 8e3,
               shouldRetry: (
-                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
-                __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
-                __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
-                __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
-                __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477,
+                __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+                __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
+                __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f,
+                __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0,
+                __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579,
               ) =>
-                __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 ||
-                (429 === __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c?.code &&
-                  __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 <
-                    __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.maxNumRetry),
+                __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 ||
+                (429 === __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0?.code &&
+                  __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede <
+                    __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.maxNumRetry),
             },
-            __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 = {
+            __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 = {
               default: {
                 maxTimeToFirstByteMs: 65e3,
                 maxLoadTimeMs: 7e4,
                 timeoutRetry: {
-                  ...__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+                  ...__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0,
                   maxNumRetry: 1,
                 },
-                errorRetry: __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+                errorRetry: __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0,
               },
             },
-            __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 = (this.hls =
-              new __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708({
-                startPosition: __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+            __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45 = (this.hls =
+              new __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f({
+                startPosition: __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
                 maxBufferLength: 12,
                 maxMaxBufferLength: 24,
                 maxBufferSize: 8388608,
                 backBufferLength: 12,
-                fragLoadPolicy: __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477,
+                fragLoadPolicy: __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579,
                 manifestLoadPolicy:
-                  __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477,
+                  __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579,
                 playlistLoadPolicy:
-                  __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477,
+                  __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579,
               }));
-          (__f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766.on(
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.Events.ERROR,
+          (__dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45.on(
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.Events.ERROR,
             (
-              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
-              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+              __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
             ) => {
               if (!this.controller.signal.aborted)
-                if (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.fatal) {
+                if (__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.fatal) {
                   if (
                     410 ===
-                      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.response
+                      __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.response
                         ?.code &&
                     (!this.renewedAt || Date.now() - this.renewedAt > 6e4)
                   ) {
                     this.renewedAt = Date.now();
-                    const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f =
+                    const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 =
                         this.video.currentTime,
-                      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 =
+                      __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede =
                         this.video.paused;
                     return (
                       (this.renewing = !0),
                       this.setBuffering(!0),
-                      __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766.destroy(),
+                      __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45.destroy(),
                       (this.hls = null),
                       void this.json(
                         `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxtube/native/prepare/${encodeURIComponent(this.options.videoId)}/${this.quality}?mode=hls`,
@@ -344,78 +344,78 @@
                         },
                       )
                         .then(
-                          (__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708) => {
+                          (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f) => {
                             if (
                               !/^\/api\/nyxtube\/native\/hls\/[a-f0-9]{32}\/master\.m3u8$/.test(
-                                __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.url ||
+                                __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.url ||
                                   "",
                               )
                             )
                               throw new Error("\u0054\u0068\u0065\u0020\u0076\u0069\u0064\u0065\u006f\u0020\u0073\u0065\u0073\u0073\u0069\u006f\u006e\u0020\u0063\u006f\u0075\u006c\u0064\u0020\u006e\u006f\u0074\u0020\u0062\u0065\u0020\u0072\u0065\u006e\u0065\u0077\u0065\u0064\u002e");
                             (this.loadHls(
-                              __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.url,
-                              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                              __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.url,
+                              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
                             ),
-                              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 ||
+                              __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede ||
                                 this.playVideo());
                           },
                         )
                         .catch(
-                          (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) =>
+                          (__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) =>
                             this.fail(
-                              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.message,
+                              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.message,
                             ),
                         )
                     );
                   }
                   if (
-                    __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.type ===
-                      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.ErrorTypes
+                    __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.type ===
+                      __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.ErrorTypes
                         .MEDIA_ERROR &&
                     this.recoveries++ < 1
                   )
                     return (
                       (this.lastProgress = Date.now()),
-                      void __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766.recoverMediaError()
+                      void __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45.recoverMediaError()
                     );
                   this.fail(
-                    __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.type ===
-                      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.ErrorTypes
+                    __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.type ===
+                      __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.ErrorTypes
                         .NETWORK_ERROR
                       ? "\u0054\u0068\u0065\u0020\u0076\u0069\u0064\u0065\u006f\u0020\u0063\u006f\u006e\u006e\u0065\u0063\u0074\u0069\u006f\u006e\u0020\u0063\u006f\u0075\u006c\u0064\u0020\u006e\u006f\u0074\u0020\u0072\u0065\u0063\u006f\u0076\u0065\u0072\u002e"
                       : "\u0054\u0068\u0069\u0073\u0020\u0076\u0069\u0064\u0065\u006f\u0020\u0063\u006f\u0075\u006c\u0064\u0020\u006e\u006f\u0074\u0020\u0062\u0065\u0020\u0064\u0065\u0063\u006f\u0064\u0065\u0064\u002e",
                   );
                 } else
-                  __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.details !==
-                    __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.ErrorDetails
+                  __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.details !==
+                    __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.ErrorDetails
                       ?.BUFFER_STALLED_ERROR ||
                     this.video.paused ||
                     this.setBuffering(!0);
             },
           ),
-            __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766.loadSource(
-              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+            __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45.loadSource(
+              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
             ),
-            __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766.attachMedia(
+            __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45.attachMedia(
               this.video,
             ));
         } else {
           if (!this.video.canPlayType("\u0061\u0070\u0070\u006c\u0069\u0063\u0061\u0074\u0069\u006f\u006e\u002f\u0076\u006e\u0064\u002e\u0061\u0070\u0070\u006c\u0065\u002e\u006d\u0070\u0065\u0067\u0075\u0072\u006c"))
             throw new Error("\u0054\u0068\u0069\u0073\u0020\u0062\u0072\u006f\u0077\u0073\u0065\u0072\u0020\u0064\u006f\u0065\u0073\u0020\u006e\u006f\u0074\u0020\u0073\u0075\u0070\u0070\u006f\u0072\u0074\u0020\u0073\u0065\u0067\u006d\u0065\u006e\u0074\u0065\u0064\u0020\u0076\u0069\u0064\u0065\u006f\u0020\u0070\u006c\u0061\u0079\u0062\u0061\u0063\u006b\u002e");
-          this.video.src = __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f;
+          this.video.src = __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28;
         }
       }
       checkProgress() {
         if (this.controller.signal.aborted || this.failed) return;
-        const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f =
+        const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 =
           this.video.currentTime;
         return (!this.video.paused &&
           Math.abs(
-            __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f - this.lastTime,
+            __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 - this.lastTime,
           ) > 0.1) ||
           this.video.ended ||
           (this.video.paused && this.video.readyState >= 2 && !this.renewing)
-          ? ((this.lastTime = __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f),
+          ? ((this.lastTime = __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28),
             void (this.lastProgress = Date.now()))
           : Date.now() - this.lastProgress < 9e4
             ? void 0
@@ -423,18 +423,18 @@
               ? ((this.lastProgress = Date.now()),
                 this.hls.stopLoad(),
                 this.hls.startLoad(
-                  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                  __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
                 ),
                 void this.setBuffering(!0))
               : void this.fail(
                   "\u0056\u0069\u0064\u0065\u006f\u0020\u006c\u006f\u0061\u0064\u0069\u006e\u0067\u0020\u0073\u0074\u006f\u0070\u0070\u0065\u0064\u0020\u006d\u0061\u006b\u0069\u006e\u0067\u0020\u0070\u0072\u006f\u0067\u0072\u0065\u0073\u0073\u002e\u0020\u0054\u0072\u0079\u0020\u0061\u0020\u006c\u006f\u0077\u0065\u0072\u0020\u0071\u0075\u0061\u006c\u0069\u0074\u0079\u0020\u006f\u0072\u0020\u0074\u0068\u0065\u0020\u0065\u006d\u0062\u0065\u0064\u0064\u0065\u0064\u0020\u0070\u006c\u0061\u0079\u0065\u0072\u002e",
                 );
       }
-      fail(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) {
+      fail(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) {
         this.controller.signal.aborted ||
           this.failed ||
           ((this.failed = !0),
-          (this.failure = __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f),
+          (this.failure = __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28),
           this.setBuffering(!1),
           clearInterval(this.watchdog),
           this.hls?.stopLoad(),
@@ -443,85 +443,85 @@
             data: 900,
           }));
       }
-      async setCaptions(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) {
+      async setCaptions(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) {
         ((this.captionsEnabled =
-          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f),
+          __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28),
           this.captionTrack &&
             (this.captionTrack.mode =
-              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f
+              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28
                 ? "\u0073\u0068\u006f\u0077\u0069\u006e\u0067"
                 : "\u0064\u0069\u0073\u0061\u0062\u006c\u0065\u0064"),
-          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f &&
+          __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 &&
             (await this.updateCaptions(!0)));
       }
       async updateCaptions(
-        __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f = !1,
+        __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 = !1,
       ) {
-        const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 =
+        const __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede =
           this.getCurrentTime();
         if (
           !(
             this.controller.signal.aborted ||
             !this.captionsEnabled ||
             this.captionLoading ||
-            (!__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f &&
-              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 >=
+            (!__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 &&
+              __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede >=
                 this.captionStart &&
-              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 <
+              __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede <
                 this.captionUntil)
           )
         ) {
           this.captionLoading = !0;
           try {
-            const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f =
+            const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 =
               await this.json(
-                `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxtube/captions/${encodeURIComponent(this.options.videoId)}?at=${Math.floor(__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53)}`,
+                `/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/api/nyxtube/captions/${encodeURIComponent(this.options.videoId)}?at=${Math.floor(__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede)}`,
               );
             if (this.controller.signal.aborted) return;
-            if (!__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.available)
+            if (!__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.available)
               throw new Error(
-                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.message ||
+                __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.message ||
                   "\u0043\u0061\u0070\u0074\u0069\u006f\u006e\u0073\u0020\u0061\u0072\u0065\u0020\u0075\u006e\u0061\u0076\u0061\u0069\u006c\u0061\u0062\u006c\u0065\u0020\u0066\u006f\u0072\u0020\u0074\u0068\u0069\u0073\u0020\u0076\u0069\u0064\u0065\u006f\u002e",
               );
             (this.captionTrack ||
               (this.captionTrack = this.video.addTextTrack(
                 "\u0063\u0061\u0070\u0074\u0069\u006f\u006e\u0073",
-                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.language ||
+                __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.language ||
                   "\u0043\u0061\u0070\u0074\u0069\u006f\u006e\u0073",
-                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.languageCode ||
+                __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.languageCode ||
                   "",
               )),
               (this.captionTrack.mode = "\u0068\u0069\u0064\u0064\u0065\u006e"));
-            for (const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 of Array.from(
+            for (const __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede of Array.from(
               this.captionTrack.cues || [],
             ))
               this.captionTrack.removeCue(
-                __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+                __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
               );
-            for (const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 of (
-              __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.segments || []
+            for (const __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede of (
+              __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.segments || []
             ).slice(0, 1e3)) {
-              const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f = Number(
-                  __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.startSeconds,
+              const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 = Number(
+                  __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.startSeconds,
                 ),
-                __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
-                  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f +
+                __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f =
+                  __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 +
                   Number(
-                    __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.durationSeconds,
+                    __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.durationSeconds,
                   );
               if (
                 !Number.isFinite(
-                  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+                  __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
                 ) ||
                 !Number.isFinite(
-                  __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+                  __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f,
                 ) ||
-                __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 <=
-                  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f
+                __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f <=
+                  __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28
               )
                 continue;
-              const __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c = String(
-                __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.text || "",
+              const __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 = String(
+                __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.text || "",
               )
                 .slice(0, 500)
                 .replace(/&/g, "\u0026\u0061\u006d\u0070\u003b")
@@ -529,32 +529,32 @@
                 .replace(/>/g, "\u0026\u0067\u0074\u003b");
               this.captionTrack.addCue(
                 new VTTCue(
-                  __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
-                  __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
-                  __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+                  __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+                  __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f,
+                  __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0,
                 ),
               );
             }
             if (
               ((this.captionStart =
-                Number(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.start) ||
+                Number(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.start) ||
                 0),
               (this.captionUntil = Number(
-                __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.until,
+                __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.until,
               )),
               !Number.isFinite(this.captionUntil) ||
                 this.captionUntil <=
-                  __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53)
+                  __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede)
             )
               throw new Error("\u0054\u0068\u0065\u0020\u0063\u0061\u0070\u0074\u0069\u006f\u006e\u0020\u0074\u0069\u006d\u0069\u006e\u0067\u0020\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065\u0020\u0077\u0061\u0073\u0020\u0069\u006e\u0076\u0061\u006c\u0069\u0064\u002e");
             this.captionTrack.mode = this.captionsEnabled ? "\u0073\u0068\u006f\u0077\u0069\u006e\u0067" : "\u0064\u0069\u0073\u0061\u0062\u006c\u0065\u0064";
-          } catch (__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708) {
+          } catch (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f) {
             this.controller.signal.aborted ||
               ((this.captionsEnabled = !1),
               this.captionTrack && (this.captionTrack.mode = "\u0064\u0069\u0073\u0061\u0062\u006c\u0065\u0064"),
               this.options.events?.onCaptionError?.({
                 target: this,
-                message: __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.message,
+                message: __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.message,
               }));
           } finally {
             ((this.captionLoading = !1),
@@ -595,17 +595,17 @@
       getPlaybackRate() {
         return this.video.playbackRate;
       }
-      setPlaybackRate(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) {
+      setPlaybackRate(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) {
         this.video.playbackRate =
-          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f;
+          __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28;
       }
       getVolume() {
         return 100 * this.video.volume;
       }
-      setVolume(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) {
+      setVolume(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) {
         this.video.volume = Math.max(
           0,
-          Math.min(1, __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f / 100),
+          Math.min(1, __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 / 100),
         );
       }
       mute() {
@@ -617,12 +617,12 @@
       isMuted() {
         return this.video.muted;
       }
-      seekTo(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) {
+      seekTo(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) {
         this.video.currentTime = Math.max(
           0,
           Math.min(
             this.getDuration(),
-            __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
+            __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
           ),
         );
       }

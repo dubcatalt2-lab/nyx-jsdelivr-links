@@ -1,20 +1,20 @@
-import { measureFetch as __486e69198427b55a46896094b43b16ada4888f82b3310bcd5c9b1441df89ba23 } from "\u002e\u002f\u0040\u0072\u0036\u0061\u0032\u0034\u0039\u0036\u0039\u0036\u0062\u0035\u0039\u0064\u0037\u0036\u0032\u0032\u0063\u0064\u0066\u0064\u0066\u0064\u0030\u0038\u0021\u002e\u006a\u0073";
+import { measureFetch as __4aae2f1f458fa6b3a0a3270cd9bc99f741ef0d26ea6eaf1fb9ce892455a20844 } from "\u002e\u002f\u0040\u0072\u0036\u0061\u0032\u0034\u0039\u0036\u0039\u0036\u0062\u0035\u0039\u0064\u0037\u0036\u0032\u0032\u0063\u0064\u0066\u0064\u0066\u0064\u0030\u0038\u0021\u002e\u006a\u0073";
 
 export function setupDropEmbed({
-  user: __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f = () => null,
-  signup: __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 = () => {},
+  user: __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 = () => null,
+  signup: __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede = () => {},
 } = {}) {
-  ((window.fetch = __486e69198427b55a46896094b43b16ada4888f82b3310bcd5c9b1441df89ba23(
+  ((window.fetch = __4aae2f1f458fa6b3a0a3270cd9bc99f741ef0d26ea6eaf1fb9ce892455a20844(
     window.fetch.bind(window),
     (
-      __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
-      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+      __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+      __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
     ) =>
       parent.postMessage(
         {
           type: "\u0064\u0072\u006f\u0070\u003a\u0061\u0063\u0074\u0069\u0076\u0069\u0074\u0079",
-          kind: __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f,
-          bytes: __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+          kind: __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28,
+          bytes: __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
         },
         location.origin,
       ),
@@ -23,16 +23,16 @@ export function setupDropEmbed({
     (document.documentElement.dataset.theme = "\u0064\u0061\u0072\u006b"),
     (document.title = "\u0044\u0072\u006f\u0070\u0020\u0041\u0049"),
     (document.getElementById("\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u004b\u0065\u0079\u004c\u0061\u0062\u0065\u006c").value = "\u0044\u0072\u006f\u0070"));
-  const __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
+  const __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f =
     document.createElement("\u006c\u0069\u006e\u006b");
-  ((__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.rel = "\u0073\u0074\u0079\u006c\u0065\u0073\u0068\u0065\u0065\u0074"),
-    (__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.href = "\u002f\u0061\u0070\u0070\u0073\u002f\u0064\u0072\u006f\u0070\u002f\u0061\u0069\u002e\u0063\u0073\u0073"),
-    document.head.append(__72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708));
-  const __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c =
+  ((__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.rel = "\u0073\u0074\u0079\u006c\u0065\u0073\u0068\u0065\u0065\u0074"),
+    (__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.href = "\u002f\u0061\u0070\u0070\u0073\u002f\u0064\u0072\u006f\u0070\u002f\u0061\u0069\u002e\u0063\u0073\u0073"),
+    document.head.append(__8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f));
+  const __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 =
     document.querySelector("\u002e\u0062\u0072\u0061\u006e\u0064");
-  ((__fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.textContent = "\u0041\u0049\u0020\u0063\u0068\u0061\u0074\u0073"),
-    __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.removeAttribute("\u0068\u0072\u0065\u0066"),
-    __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.setAttribute(
+  ((__48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.textContent = "\u0041\u0049\u0020\u0063\u0068\u0061\u0074\u0073"),
+    __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.removeAttribute("\u0068\u0072\u0065\u0066"),
+    __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.setAttribute(
       "\u0061\u0072\u0069\u0061\u002d\u006c\u0061\u0062\u0065\u006c",
       "\u0044\u0072\u006f\u0070\u0020\u0041\u0049\u0020\u0063\u0068\u0061\u0074\u0073",
     ),
@@ -48,119 +48,119 @@ export function setupDropEmbed({
     }),
     addEventListener(
       "\u006d\u0065\u0073\u0073\u0061\u0067\u0065",
-      (__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f) => {
+      (__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28) => {
         if (
-          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.origin !==
+          __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.origin !==
             location.origin ||
-          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.source !== parent ||
+          __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.source !== parent ||
           "\u0064\u0072\u006f\u0070\u003a\u0063\u006f\u006d\u006d\u0061\u006e\u0064" !==
-            __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.data?.type
+            __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.data?.type
         )
           return;
-        const __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
-          __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f.data.action;
-        ("\u0073\u0069\u0067\u006e\u0075\u0070" === __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 &&
-          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53(),
-          "\u006b\u0065\u0079\u0073" === __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 &&
+        const __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f =
+          __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28.data.action;
+        ("\u0073\u0069\u0067\u006e\u0075\u0070" === __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f &&
+          __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede(),
+          "\u006b\u0065\u0079\u0073" === __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f &&
             document.getElementById("\u0061\u0070\u0069\u004b\u0065\u0079\u0073").click(),
-          "\u0073\u0069\u0067\u006e\u0069\u006e" === __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 &&
+          "\u0073\u0069\u0067\u006e\u0069\u006e" === __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f &&
             document.getElementById("\u0061\u0063\u0063\u006f\u0075\u006e\u0074").textContent.includes("\u0053\u0069\u0067\u006e\u0020\u0069\u006e") &&
             document.getElementById("\u0061\u0063\u0063\u006f\u0075\u006e\u0074").click(),
-          "\u0073\u0069\u0067\u006e\u006f\u0075\u0074" === __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 &&
+          "\u0073\u0069\u0067\u006e\u006f\u0075\u0074" === __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f &&
             document.getElementById("\u0061\u0063\u0063\u006f\u0075\u006e\u0074").textContent.includes("\u0053\u0069\u0067\u006e\u0020\u006f\u0075\u0074") &&
             document.getElementById("\u0061\u0063\u0063\u006f\u0075\u006e\u0074").click());
       },
     ),
     addEventListener(
       "\u006d\u0065\u0073\u0073\u0061\u0067\u0065",
-      async (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53) => {
+      async (__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede) => {
         if (
-          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.origin !==
+          __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.origin !==
             location.origin ||
-          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.source !== parent ||
+          __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.source !== parent ||
           "\u0064\u0072\u006f\u0070\u003a\u0067\u0061\u006d\u0065\u002d\u0061\u0063\u0063\u006f\u0075\u006e\u0074" !==
-            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.data?.type
+            __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.data?.type
         )
           return;
-        const __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
-          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.data.request;
+        const __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f =
+          __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.data.request;
         if (
           !["\u006e\u0079\u0078\u003a\u0063\u006c\u006f\u0075\u0064\u002d\u0067\u0061\u006d\u0065\u002d\u006c\u006f\u0061\u0064", "\u006e\u0079\u0078\u003a\u0063\u006c\u006f\u0075\u0064\u002d\u0067\u0061\u006d\u0065\u002d\u0073\u0061\u0076\u0065", "\u006e\u0079\u0078\u003a\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002d\u0074\u006f\u006b\u0065\u006e\u002d\u0072\u0065\u0071\u0075\u0065\u0073\u0074"].includes(
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708?.type,
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f?.type,
           )
         )
           return;
-        const __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c = {
+        const __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0 = {
           type:
             "\u006e\u0079\u0078\u003a\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002d\u0074\u006f\u006b\u0065\u006e\u002d\u0072\u0065\u0071\u0075\u0065\u0073\u0074" ===
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.type
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.type
               ? "\u006e\u0079\u0078\u003a\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002d\u0074\u006f\u006b\u0065\u006e\u002d\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065"
               : "\u006e\u0079\u0078\u003a\u0063\u006c\u006f\u0075\u0064\u002d\u0067\u0061\u006d\u0065\u002d\u0072\u0065\u0073\u0075\u006c\u0074",
-          requestId: __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.requestId,
+          requestId: __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.requestId,
         };
         try {
-          const __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 =
-            await __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f()?.getIdToken();
+          const __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede =
+            await __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28()?.getIdToken();
           if (
             "\u006e\u0079\u0078\u003a\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002d\u0074\u006f\u006b\u0065\u006e\u002d\u0072\u0065\u0071\u0075\u0065\u0073\u0074" ===
-            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.type
+            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.type
           )
-            __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.token =
-              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53 || "";
-          else if (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53) {
-            const __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f =
+            __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.token =
+              __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede || "";
+          else if (__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede) {
+            const __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28 =
                 "\u006e\u0079\u0078\u003a\u0063\u006c\u006f\u0075\u0064\u002d\u0067\u0061\u006d\u0065\u002d\u0073\u0061\u0076\u0065" ===
-                __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.type,
-              __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 = await fetch(
+                __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.type,
+              __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 = await fetch(
                 "\u002f\u0061\u0070\u0069\u002f\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u002f\u0063\u006c\u006f\u0075\u0064\u002d\u0067\u0061\u006d\u0065\u0073\u002f" +
                   encodeURIComponent(
                     String(
-                      __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.gameKey ||
+                      __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.gameKey ||
                         "",
                     ),
                   ),
                 {
-                  method: __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f
+                  method: __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28
                     ? "\u0050\u0055\u0054"
                     : "\u0047\u0045\u0054",
                   headers: {
                     Authorization:
                       "\u0042\u0065\u0061\u0072\u0065\u0072\u0020" +
-                      __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53,
+                      __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede,
                     "\u0043\u006f\u006e\u0074\u0065\u006e\u0074\u002d\u0054\u0079\u0070\u0065": "\u0061\u0070\u0070\u006c\u0069\u0063\u0061\u0074\u0069\u006f\u006e\u002f\u006a\u0073\u006f\u006e",
                   },
-                  ...(__3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f
+                  ...(__e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28
                     ? {
                         body: JSON.stringify({
                           storage:
-                            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.storage,
+                            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.storage,
                           removed:
-                            __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708.removed,
+                            __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f.removed,
                         }),
                       }
                     : {}),
                 },
               ),
-              __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766 =
-                await __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.json();
-            if (!__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.ok)
+              __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45 =
+                await __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.json();
+            if (!__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.ok)
               throw Error(
-                __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766.error ||
+                __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45.error ||
                   "\u0043\u006c\u006f\u0075\u0064\u0020\u0073\u0061\u0076\u0065\u0020\u0075\u006e\u0061\u0076\u0061\u0069\u006c\u0061\u0062\u006c\u0065\u002e",
               );
             Object.assign(
-              __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
-              __f99bdc34d32739ef3662be82186109fd746156c2f535dee2694150c284892766,
+              __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0,
+              __dd3415bf681ff69d3510f8e6d39dd1381a095cf340a5dd37249e8df797e01b45,
             );
-          } else __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.storage = {};
-        } catch (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477) {
-          __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c.error =
-            __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.message;
+          } else __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.storage = {};
+        } catch (__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579) {
+          __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0.error =
+            __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.message;
         }
         parent.postMessage(
           {
             type: "\u0064\u0072\u006f\u0070\u003a\u0067\u0061\u006d\u0065\u002d\u0072\u0065\u0073\u0075\u006c\u0074",
-            result: __fd94be3de23310062da37b678c91d5e96bad6b26833c0d9b39c4b74b9caf7c0c,
+            result: __48a1ccc20710b1d8d49b6ce5e8ade380cb14b8793bb656c2d82397358af21ee0,
           },
           location.origin,
         );
@@ -168,47 +168,47 @@ export function setupDropEmbed({
     ),
     addEventListener(
       "\u006d\u0065\u0073\u0073\u0061\u0067\u0065",
-      async (__af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53) => {
+      async (__4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede) => {
         if (
-          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.origin !==
+          __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.origin !==
             location.origin ||
-          __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.source !== parent ||
+          __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.source !== parent ||
           "\u0064\u0072\u006f\u0070\u003a\u0073\u0065\u0073\u0073\u0069\u006f\u006e\u002d\u0074\u006f\u006b\u0065\u006e" !==
-            __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.data?.type
+            __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.data?.type
         )
           return;
-        let __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 = "";
+        let __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f = "";
         try {
-          __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708 =
-            (await __3cb627a3c5a1c308e59b8bf7cd21c5379e97f175a635288112485a6d2187c03f()?.getIdToken()) ||
+          __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f =
+            (await __e867a82f2f37641d35758a6d44e57a5730b804da56d4c014e81051e20c8c3a28()?.getIdToken()) ||
             "";
         } catch {}
         parent.postMessage(
           {
             type: "\u0064\u0072\u006f\u0070\u003a\u0073\u0065\u0073\u0073\u0069\u006f\u006e\u002d\u0074\u006f\u006b\u0065\u006e\u002d\u0072\u0065\u0073\u0075\u006c\u0074",
             requestId:
-              __af197fc1d1f3f80b7a12289c3d46927a3cc1f9e80ef5c2f3f19200529c558b53.data.requestId,
-            token: __72eb16f4a7239131d5e3d33c1ec288fdae2793881ef94b459d14601e5286d708,
+              __4ed4af0993ed6106700e01a769d5837177e6fb9e606e255b7f3e659d4b07eede.data.requestId,
+            token: __8416330e42df068833b56c5ac8e9737d861c245e1799ee7609f3d0cee8f1c36f,
           },
           location.origin,
         );
       },
     ));
-  const __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477 =
+  const __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579 =
     document.createElement("\u0062\u0075\u0074\u0074\u006f\u006e");
-  ((__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.id = "\u0064\u0072\u006f\u0070\u0048\u0069\u0073\u0074\u006f\u0072\u0079"),
-    (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.type = "\u0062\u0075\u0074\u0074\u006f\u006e"),
-    (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.title = "\u0043\u0068\u0061\u0074\u0020\u0068\u0069\u0073\u0074\u006f\u0072\u0079"),
-    __bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.setAttribute(
+  ((__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.id = "\u0064\u0072\u006f\u0070\u0048\u0069\u0073\u0074\u006f\u0072\u0079"),
+    (__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.type = "\u0062\u0075\u0074\u0074\u006f\u006e"),
+    (__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.title = "\u0043\u0068\u0061\u0074\u0020\u0068\u0069\u0073\u0074\u006f\u0072\u0079"),
+    __64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.setAttribute(
       "\u0061\u0072\u0069\u0061\u002d\u006c\u0061\u0062\u0065\u006c",
       "\u0043\u0068\u0061\u0074\u0020\u0068\u0069\u0073\u0074\u006f\u0072\u0079",
     ),
-    (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.innerHTML =
+    (__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.innerHTML =
       "\u003c\u0073\u0076\u0067\u0020\u0076\u0069\u0065\u0077\u0042\u006f\u0078\u003d\u0022\u0030\u0020\u0030\u0020\u0032\u0034\u0020\u0032\u0034\u0022\u0020\u0061\u0072\u0069\u0061\u002d\u0068\u0069\u0064\u0064\u0065\u006e\u003d\u0022\u0074\u0072\u0075\u0065\u0022\u003e\u003c\u0070\u0061\u0074\u0068\u0020\u0064\u003d\u0022\u004d\u0034\u0020\u0034\u0068\u0031\u0036\u0076\u0031\u0032\u0048\u0039\u006c\u002d\u0035\u0020\u0034\u007a\u0022\u002f\u003e\u003c\u002f\u0073\u0076\u0067\u003e"),
     document
       .querySelector("\u002e\u0063\u0068\u0061\u0074\u002d\u0074\u006f\u006f\u006c\u0062\u0061\u0072")
-      .prepend(__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477),
-    (__bab969bd3ce538579b5e1d7fd61e9cffe5fb4a63d157d64f9e8b39b1ff5c9477.onclick = () => {
+      .prepend(__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579),
+    (__64cc36e759b540a378028f969acc599334838e48c7db9cd9782c140bdb4b0579.onclick = () => {
       (document.body.classList.remove("\u0073\u0069\u0064\u0065\u0062\u0061\u0072\u002d\u0063\u006f\u006c\u006c\u0061\u0070\u0073\u0065\u0064"),
         document.body.classList.toggle("\u0068\u0069\u0073\u0074\u006f\u0072\u0079\u002d\u006f\u0070\u0065\u006e"));
     }),
