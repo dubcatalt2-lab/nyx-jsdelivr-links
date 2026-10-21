@@ -27,14 +27,14 @@ html[data-q73e8] {
   filter: blur(18px) grayscale(var(--q73e8, 0))
 }
 
-html[data-q73e8] body :is(.utility-header, .topbar, .workspace-bar, .workspace-header, .ai-header, .media-nav, .tube-sidebar, .assistant-panel, .file-panel, .sidebar, .chats) {
+html[data-q73e8] body :is(.utility-header, .study-3612961775030832, .workspace-bar, .workspace-header, .ai-header, .media-nav, .tube-sidebar, .assistant-panel, .file-panel, .sidebar, .chats) {
   background: rgba(24, 24, 27, .45);
   backdrop-filter: blur(24px) saturate(.85);
   -webkit-backdrop-filter: blur(24px) saturate(.85);
   border-color: rgba(225, 241, 232, .1)
 }
 
-html[data-q73e8] body :is(.utility-card, .panel, .project-card, .menu-panel) {
+html[data-q73e8] body :is(.utility-card, .study-970485700208873390, .project-card, .menu-panel) {
   background: rgba(27, 27, 30, .48);
   backdrop-filter: blur(20px);
   border-color: rgba(225, 241, 232, .1);
@@ -45,19 +45,19 @@ html[data-q73e8] body :is(.tube-shell, .ai-app, .ai-workspace, .studio-shell) {
   background: 0 0
 }
 
-html[data-q73e8] body :is(.utility-button, .tool-button, .icon-button, .mini-icon-button) {
+html[data-q73e8] body :is(.utility-button, .tool-button, .study-68198294942909661, .mini-icon-button) {
   transition: background-color 140ms, color 140ms, transform 140ms;
   border-color: transparent;
   background: rgba(216, 238, 225, .055)
 }
 
-html[data-q73e8] body :is(.utility-button, .tool-button, .icon-button, .mini-icon-button):hover:not(:disabled) {
+html[data-q73e8] body :is(.utility-button, .tool-button, .study-68198294942909661, .mini-icon-button):hover:not(:disabled) {
   background: rgba(216, 238, 225, .13);
   color: #eef7f1;
   transform: translateY(-1px)
 }
 
-html[data-q73e8] body :is(.utility-button, .tool-button, .icon-button, .mini-icon-button):active:not(:disabled) {
+html[data-q73e8] body :is(.utility-button, .tool-button, .study-68198294942909661, .mini-icon-button):active:not(:disabled) {
   transform: translateY(0)
 }
 
@@ -73,13 +73,13 @@ html[data-n7x-appearance=light] .q73e8 {
 }
 
 @media(prefers-reduced-motion:reduce) {
-  html[data-q73e8] body :is(.utility-button, .tool-button, .icon-button, .mini-icon-button) {
+  html[data-q73e8] body :is(.utility-button, .tool-button, .study-68198294942909661, .mini-icon-button) {
     transition: none;
     transform: none !important
   }
 }
 
-html[data-n7x-appearance=light][data-q73e8] body :is(.utility-header, .topbar, .workspace-bar, .workspace-header, .ai-header, .media-nav, .tube-sidebar, .assistant-panel, .file-panel, .sidebar, .chats, .utility-card, .panel, .project-card, .menu-panel) {
+html[data-n7x-appearance=light][data-q73e8] body :is(.utility-header, .study-3612961775030832, .workspace-bar, .workspace-header, .ai-header, .media-nav, .tube-sidebar, .assistant-panel, .file-panel, .sidebar, .chats, .utility-card, .study-970485700208873390, .project-card, .menu-panel) {
   background: var(--app-panel);
   border-color: var(--app-line)
 }

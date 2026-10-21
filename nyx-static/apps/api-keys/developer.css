@@ -27,30 +27,30 @@ main {
   z-index: 1
 }
 
-.hero {
+.study-917645206410291550 {
   padding: 12px 0 32px
 }
 
-.hero>a {
+.study-917645206410291550>a {
   text-decoration: none
 }
 
-.eyebrow,
-.hero>p:first-of-type {
+.study-1005347692774137563,
+.study-917645206410291550>p:first-of-type {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .14em;
   color: var(--n7x-app-muted)
 }
 
-.hero h1 {
+.study-917645206410291550 h1 {
   font-size: clamp(32px, 4vw, 46px);
   line-height: 1.1;
   letter-spacing: -.05em;
   margin: 16px 0
 }
 
-.hero>p:last-child {
+.study-917645206410291550>p:last-child {
   font-size: 18px
 }
 
@@ -122,7 +122,7 @@ button:hover {
   filter: brightness(1.1)
 }
 
-button.secondary {
+button.study-809169225603504381 {
   background: var(--n7x-app-field);
   border-color: var(--n7x-app-line);
   color: var(--n7x-app-text)
@@ -315,7 +315,7 @@ td {
   padding-top: 15px
 }
 
-.spinner {
+.study-238185408915448896 {
   width: 16px;
   height: 16px;
   border: 2px solid #11111155;
@@ -331,7 +331,7 @@ td {
 }
 
 @media(prefers-reduced-motion:reduce) {
-  .spinner {
+  .study-238185408915448896 {
     animation-duration: 2s
   }
 }
@@ -363,7 +363,7 @@ html[data-n7x-beam-wallpaper=lineWaves] #n22e9fbee8c96 {
   display: none !important
 }
 
-.hero .brand-logo {
+.study-917645206410291550 .brand-logo {
   display: block;
   width: 56px;
   height: 56px;
@@ -372,7 +372,7 @@ html[data-n7x-beam-wallpaper=lineWaves] #n22e9fbee8c96 {
   margin-top: 26px
 }
 
-.hero>p:first-of-type {
+.study-917645206410291550>p:first-of-type {
   margin-top: 22px
 }
 
@@ -399,12 +399,12 @@ textarea {
   border-color: var(--n7x-app-line)
 }
 
-#q5ce20cee9a8e9d6ed5 {
+#study-639812337695660838 {
   min-width: 0;
   max-width: 100%
 }
 
-#q31471e3c4415b2832f {
+#study-334406376440486822 {
   height: auto;
   max-height: none;
   min-width: 0;
@@ -418,20 +418,20 @@ textarea {
   border-radius: 12px
 }
 
-#q31471e3c4415b2832f p {
+#study-334406376440486822 p {
   white-space: normal;
   margin: 0 0 1em
 }
 
-#q31471e3c4415b2832f :last-child {
+#study-334406376440486822 :last-child {
   margin-bottom: 0
 }
 
-#q31471e3c4415b2832f li {
+#study-334406376440486822 li {
   margin: .4em 0
 }
 
-#q31471e3c4415b2832f pre {
+#study-334406376440486822 pre {
   white-space: pre;
   max-width: 100%;
   max-height: none;
@@ -439,22 +439,22 @@ textarea {
   margin: 0
 }
 
-#q31471e3c4415b2832f .ai-code-block,
-#q31471e3c4415b2832f .ai-math-block,
-#q31471e3c4415b2832f .ai-table-wrap {
+#study-334406376440486822 .ai-code-block,
+#study-334406376440486822 .ai-math-block,
+#study-334406376440486822 .ai-table-wrap {
   max-width: 100%;
   min-width: 0;
   overflow-x: auto;
   margin: 1em 0
 }
 
-#q31471e3c4415b2832f .katex-display {
+#study-334406376440486822 .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
   padding: .3em 0
 }
 
-#q31471e3c4415b2832f .ai-code-head {
+#study-334406376440486822 .ai-code-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -462,14 +462,14 @@ textarea {
   padding: 10px
 }
 
-#q31471e3c4415b2832f .ai-code-copy {
+#study-334406376440486822 .ai-code-copy {
   display: flex;
   align-items: center;
   gap: 6px;
   width: auto
 }
 
-#q31471e3c4415b2832f .ai-code-copy svg {
+#study-334406376440486822 .ai-code-copy svg {
   width: 16px;
   height: 16px;
   fill: none;
@@ -477,18 +477,18 @@ textarea {
   stroke-width: 1.7
 }
 
-#q31471e3c4415b2832f blockquote {
+#study-334406376440486822 blockquote {
   margin: 1em 0;
   padding-left: 16px;
   border-left: 3px solid var(--n7x-app-line)
 }
 
-#q31471e3c4415b2832f table {
+#study-334406376440486822 table {
   min-width: 0;
   width: 100%
 }
 
-#qad1341c3c2d10ebfad {
+#study-271969882118166067 {
   padding: 12px;
   border: 1px solid var(--n7x-app-line);
   border-radius: 10px
@@ -623,11 +623,11 @@ textarea {
   max-width: 560px
 }
 
-#q7c2c326ea125acd62e {
+#study-608990348611069032 {
   margin-top: 24px
 }
 
-#q7c2c326ea125acd62e .actions {
+#study-608990348611069032 .actions {
   justify-content: flex-end
 }
 

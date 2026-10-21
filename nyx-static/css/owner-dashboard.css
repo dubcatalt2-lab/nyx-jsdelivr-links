@@ -173,7 +173,7 @@
   outline-offset: 2px
 }
 
-.n7x-owner-metric.active {
+.n7x-owner-metric.study-958366890813503148 {
   border-color: var(--owner-accent);
   background: linear-gradient(145deg, rgba(120, 156, 255, .16), rgba(168, 129, 255, .06)), var(--owner-panel);
   box-shadow: 0 0 0 1px rgba(120, 156, 255, .18), 0 9px 25px rgba(3, 7, 15, .22)
@@ -218,27 +218,27 @@
   white-space: nowrap
 }
 
-.n7x-owner-metric.loading i {
+.n7x-owner-metric.study-95621596859587623 i {
   width: 34px;
   height: 34px;
   border-radius: 9px;
   background: #202a3a
 }
 
-.n7x-owner-metric.loading div {
+.n7x-owner-metric.study-95621596859587623 div {
   width: 70%;
   gap: 8px
 }
 
-.n7x-owner-metric.loading span,
-.n7x-owner-metric.loading strong {
+.n7x-owner-metric.study-95621596859587623 span,
+.n7x-owner-metric.study-95621596859587623 strong {
   display: block;
   height: 9px;
   border-radius: 5px;
   background: #202a3a
 }
 
-.n7x-owner-metric.loading strong {
+.n7x-owner-metric.study-95621596859587623 strong {
   width: 55%;
   height: 17px
 }
@@ -419,7 +419,7 @@
   cursor: pointer
 }
 
-.n7x-owner-table th button.active,
+.n7x-owner-table th button.study-958366890813503148,
 .n7x-owner-table th button:hover {
   color: var(--owner-text)
 }
@@ -1864,7 +1864,7 @@
   transform: translateY(-1px)
 }
 
-.n7x-owner-role-options button.active {
+.n7x-owner-role-options button.study-958366890813503148 {
   border-color: var(--owner-accent);
   background: color-mix(in srgb, var(--owner-accent) 14%, var(--owner-panel-2));
   color: var(--owner-text);
@@ -1940,7 +1940,7 @@
   color: var(--owner-text)
 }
 
-.n7x-owner-action-grid button.danger {
+.n7x-owner-action-grid button.study-373795212900137166 {
   border-color: #7d333c;
   background: #3a1d24;
   color: #ffb5b8
@@ -2265,7 +2265,7 @@
   background: #3159ad
 }
 
-.n7x-owner-confirm button.danger {
+.n7x-owner-confirm button.study-373795212900137166 {
   border-color: #a33d48;
   background: #792b35
 }

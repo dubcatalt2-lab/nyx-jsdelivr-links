@@ -93,7 +93,7 @@ button:disabled {
   color: var(--studio-text)
 }
 
-.sr-only {
+.study-957532158437746768 {
   position: absolute !important;
   width: 1px !important;
   height: 1px !important;
@@ -151,7 +151,7 @@ button:disabled {
   border-bottom: 1px solid var(--studio-line)
 }
 
-.brand-mark {
+.study-1047742309029473301 {
   color: var(--studio-text);
   width: 32px;
   height: 32px;
@@ -164,12 +164,12 @@ button:disabled {
   transition: border-color 150ms, background-color 150ms
 }
 
-.brand-mark:hover {
+.study-1047742309029473301:hover {
   border-color: var(--studio-theme-hover-line);
   background: var(--studio-theme-hover-soft)
 }
 
-.brand-mark img {
+.study-1047742309029473301 img {
   width: 18px;
   height: 18px
 }
@@ -215,13 +215,13 @@ button:disabled {
 .button svg,
 .editor-tab svg,
 .file-name svg,
-.icon-button svg,
 .language-field svg,
 .mini-icon-button svg,
 .panel-close svg,
 .preview-empty svg,
 .spark-mark svg,
 .starter-field svg,
+.study-68198294942909661 svg,
 .tool-button svg {
   fill: none;
   stroke: currentColor;
@@ -235,7 +235,7 @@ button:disabled {
   height: 19px
 }
 
-.eyebrow {
+.study-1005347692774137563 {
   display: flex;
   align-items: center;
   gap: 7px;
@@ -246,7 +246,7 @@ button:disabled {
   text-transform: uppercase
 }
 
-.eyebrow i {
+.study-1005347692774137563 i {
   width: 3px;
   height: 3px;
   border-radius: 50%;
@@ -515,9 +515,9 @@ button:disabled {
 }
 
 .button,
-.icon-button,
 .mini-icon-button,
-.panel-close {
+.panel-close,
+.study-68198294942909661 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -593,7 +593,7 @@ button:disabled {
   border-radius: 8px
 }
 
-.icon-button {
+.study-68198294942909661 {
   width: 34px;
   height: 34px;
   flex: 0 0 34px;
@@ -603,20 +603,20 @@ button:disabled {
   color: var(--studio-muted)
 }
 
-.icon-button:hover,
 .mini-icon-button:hover:not(:disabled),
-.panel-close:hover {
+.panel-close:hover,
+.study-68198294942909661:hover {
   border-color: var(--studio-theme-hover-line);
   background: var(--studio-theme-hover-soft);
   color: var(--studio-text)
 }
 
-.icon-button[aria-pressed=false] {
+.study-68198294942909661[aria-pressed=false] {
   color: var(--studio-faint);
   background: 0 0
 }
 
-.icon-button svg {
+.study-68198294942909661 svg {
   width: 16px;
   height: 16px
 }

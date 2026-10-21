@@ -103,7 +103,7 @@ header {
   margin-bottom: 28px
 }
 
-.brand {
+.study-581976946526172727 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -114,7 +114,7 @@ header {
   padding-left: 8px
 }
 
-.brand img {
+.study-581976946526172727 img {
   width: 24px;
   height: 30px
 }
@@ -327,7 +327,7 @@ footer>button {
   margin-bottom: 38px
 }
 
-#search {
+#study-400462108262189424 {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -356,7 +356,7 @@ input::placeholder {
   color: #b2b2b2
 }
 
-#search>span {
+#study-400462108262189424>span {
   color: #ccc
 }
 
@@ -535,7 +535,7 @@ h2 {
   z-index: 99
 }
 
-.sr-only {
+.study-957532158437746768 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -558,12 +558,12 @@ body.collapsed {
   margin-bottom: 22px
 }
 
-.collapsed .brand {
+.collapsed .study-581976946526172727 {
   padding: 0
 }
 
-.collapsed .brand span,
 .collapsed .label,
+.collapsed .study-581976946526172727 span,
 .collapsed .tabs-label {
   display: none
 }
@@ -689,7 +689,7 @@ body.collapsed {
 }
 
 #addressForm:focus-within,
-#search:focus-within {
+#study-400462108262189424:focus-within {
   border-color: #8a8a8a;
   box-shadow: 0 0 0 1px #ffffff12
 }
@@ -808,12 +808,12 @@ body.collapsed {
 }
 
 #bookmarks,
-#qda6f94aa3393570d81 {
+#study-632622342169798280 {
   height: 100%;
   width: 100%
 }
 
-#q410602d8c6f298f8ca {
+#study-254340624282821765 {
   width: 100%;
   height: 100%;
   border: 0;
@@ -992,7 +992,7 @@ body.collapsed {
 @media (prefers-reduced-motion:no-preference) {
 
   #addressForm,
-  #search,
+  #study-400462108262189424,
   .bookmark-row,
   .tab,
   button {

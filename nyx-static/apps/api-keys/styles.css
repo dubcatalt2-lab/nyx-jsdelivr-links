@@ -1,4 +1,4 @@
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/utility-shell.css?rev=d779171deea5674d");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/utility-shell.css?rev=17a75c820ade4ca4");
 
 .key-shell {
   width: min(1040px, calc(100% - 40px))
@@ -113,9 +113,9 @@
   white-space: nowrap
 }
 
-.empty,
 .key-row small,
-.limits {
+.limits,
+.study-102270167545976020 {
   margin: 0;
   color: var(--muted);
   font-size: 10px
@@ -273,7 +273,7 @@
   font-size: 9px
 }
 
-.usage-table .empty {
+.usage-table .study-102270167545976020 {
   text-align: center;
   padding: 30px
 }
@@ -412,7 +412,7 @@
   letter-spacing: -.035em
 }
 
-.key-dialog p:not(.eyebrow) {
+.key-dialog p:not(.study-1005347692774137563) {
   margin: 8px 0 19px;
   color: var(--muted);
   font-size: 11px;

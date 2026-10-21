@@ -152,12 +152,12 @@ a {
   color: var(--text)
 }
 
-.lc-nav button.active {
+.lc-nav button.study-958366890813503148 {
   background: var(--accent-soft);
   color: var(--accent)
 }
 
-.lc-nav button.active>.lc-icon {
+.lc-nav button.study-958366890813503148>.lc-icon {
   color: var(--accent)
 }
 
@@ -380,7 +380,7 @@ a {
   color: #fde68a
 }
 
-.god-domains-button.active {
+.god-domains-button.study-958366890813503148 {
   border-color: #fbbf24;
   background: linear-gradient(135deg, rgba(251, 191, 36, .22), rgba(245, 158, 11, .1));
   color: #fef3c7;
@@ -523,7 +523,7 @@ select:focus {
   border-right: 0
 }
 
-.verdict-toggle button.active {
+.verdict-toggle button.study-958366890813503148 {
   background: var(--accent-soft);
   color: var(--accent)
 }
@@ -634,7 +634,7 @@ select:focus {
   gap: 7px
 }
 
-.empty-state {
+.study-7477708325281236 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -644,12 +644,12 @@ select:focus {
   text-align: center
 }
 
-.empty-state strong {
+.study-7477708325281236 strong {
   color: #c5cfdd;
   font-size: 14px
 }
 
-.empty-state span {
+.study-7477708325281236 span {
   font-size: 11px
 }
 
@@ -1514,12 +1514,12 @@ body.theme-fresh .freedns-registration {
   width: 180px
 }
 
-.loading [data-check-button] {
+.study-95621596859587623 [data-check-button] {
   position: relative;
   color: transparent
 }
 
-.loading [data-check-button]::after {
+.study-95621596859587623 [data-check-button]::after {
   position: absolute;
   inset: 0;
   display: grid;

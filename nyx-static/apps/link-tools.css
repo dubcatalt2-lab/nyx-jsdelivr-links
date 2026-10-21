@@ -121,7 +121,7 @@ html body.link-tool :is(.service-status, .api-status) {
   border-radius: 10px
 }
 
-.link-tool .access-tabs button.active {
+.link-tool .access-tabs button.study-958366890813503148 {
   background: var(--surface-raised)
 }
 
@@ -156,13 +156,13 @@ html body.link-tool :is(.utility-nav-item, .primary-action, .secondary-action, .
   border-color: var(--muted)
 }
 
-html body.link-tool .notice {
+html body.link-tool .study-503259250321395676 {
   background: var(--field);
   font-size: 13px;
   line-height: 1.6
 }
 
-html body.link-tool .notice.error {
+html body.link-tool .study-503259250321395676.error {
   color: var(--blocked);
   border-color: color-mix(in srgb, var(--blocked) 30%, transparent)
 }
@@ -194,7 +194,7 @@ html body.link-tool .notice.error {
   background: var(--surface)
 }
 
-.link-tool .wizard-progress li.active>span {
+.link-tool .wizard-progress li.study-958366890813503148>span {
   background: var(--surface-raised)
 }
 

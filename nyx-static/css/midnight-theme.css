@@ -262,7 +262,7 @@ html body.q6172f40672fb949e9c .settings-window .settings-card :is(p, label, .set
   -webkit-text-fill-color: rgba(226, 232, 240, .74) !important
 }
 
-html body.q6172f40672fb949e9c .settings-window .settings-card :is(input:not([type=range]), select, textarea, .settings-input, .settings-select, .panic-key-display) {
+html body.q6172f40672fb949e9c .settings-window .settings-card :is(input:not([type=range]), select, textarea, .settings-input, .settings-select, .study-41145675326909723) {
   min-height: 40px !important;
   border: 1px solid color-mix(in srgb, var(--n7x-chrome-bright, var(--theme-border, #8b5cf6)) 25%, transparent) !important;
   border-radius: 10px !important;

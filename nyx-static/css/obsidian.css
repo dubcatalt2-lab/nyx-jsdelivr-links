@@ -1,4 +1,4 @@
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=d779171deea5674d");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=17a75c820ade4ca4");
 
 @font-face {
   font-family: q81c6;
@@ -197,7 +197,7 @@ body.q6172f40672fb949e9c .n2ac0604c6ebc.maximized .view {
   border: 0
 }
 
-body.q6172f40672fb949e9c .n2ac0604c6ebc.maximized .view.active {
+body.q6172f40672fb949e9c .n2ac0604c6ebc.maximized .view.study-958366890813503148 {
   display: block
 }
 
@@ -329,12 +329,12 @@ body.q6172f40672fb949e9c .n2ac0604c6ebc.maximized .view.active {
   margin-top: 18px
 }
 
-.q1a2b180d7cc7c3531f [data-n7x-dock-item].active {
+.q1a2b180d7cc7c3531f [data-n7x-dock-item].study-958366890813503148 {
   color: var(--obsidian-text);
   background: var(--obsidian-hover)
 }
 
-.q1a2b180d7cc7c3531f [data-n7x-dock-item].active::before {
+.q1a2b180d7cc7c3531f [data-n7x-dock-item].study-958366890813503148::before {
   content: "";
   position: absolute;
   left: 1px;
@@ -587,7 +587,7 @@ body.q6172f40672fb949e9c.qca8d8b3457e9847393 .n11c31f2b2fec {
   font-size: 12px
 }
 
-.qabe30eb136bdd4788a.active {
+.qabe30eb136bdd4788a.study-958366890813503148 {
   background: var(--obsidian-hover)
 }
 
@@ -670,7 +670,7 @@ body.q6172f40672fb949e9c.qca8d8b3457e9847393 .n11c31f2b2fec {
   cursor: pointer
 }
 
-.qf74dbcbc3fb499c195.active {
+.qf74dbcbc3fb499c195.study-958366890813503148 {
   background: var(--obsidian-field);
   border-color: var(--obsidian-line);
   color: var(--obsidian-text)
@@ -824,7 +824,7 @@ body.q6172f40672fb949e9c .n11c31f2b2fec .qc4af721dd1914ea3fa {
   overflow: hidden
 }
 
-.q4f959b063679fe3afa.n7x-minimal-home.hidden {
+.q4f959b063679fe3afa.n7x-minimal-home.study-272526013971310577 {
   display: none !important
 }
 
@@ -1236,13 +1236,13 @@ html body.q6172f40672fb949e9c.q6172f40672fb949e9c .q061b9457d0f4fef27a.q061b9457
   display: block
 }
 
-html body :is(.settings-card, .settings-block, .apps-panel, .panel, .n7x-credits-card) {
+html body :is(.settings-card, .settings-block, .apps-panel, .study-970485700208873390, .n7x-credits-card) {
   border-color: var(--obsidian-line) !important;
   background: var(--obsidian-panel) !important;
   box-shadow: none !important
 }
 
-html body :is(.settings-action, .settings-card button, .n7x-account-submit, .q7b0b6bded0c1cb20cb.active, .n7x-prompt button) {
+html body :is(.settings-action, .settings-card button, .n7x-account-submit, .q7b0b6bded0c1cb20cb.study-958366890813503148, .n7x-prompt button) {
   background: var(--obsidian-field) !important;
   background-image: none !important;
   color: var(--obsidian-text) !important;
@@ -1293,7 +1293,7 @@ html body.q6172f40672fb949e9c .q061b9457d0f4fef27a :is(.n7x-settings-side, .n7x-
   background: var(--obsidian-panel) !important
 }
 
-html body.q6172f40672fb949e9c .q061b9457d0f4fef27a .n7x-settings-nav button.active {
+html body.q6172f40672fb949e9c .q061b9457d0f4fef27a .n7x-settings-nav button.study-958366890813503148 {
   background: var(--obsidian-hover) !important;
   color: var(--obsidian-text) !important
 }
@@ -1424,8 +1424,8 @@ html body.q6172f40672fb949e9c .n7x-settings-control :is(.n7x-wallpaper-card, .n7
   margin-bottom: 16px
 }
 
-html[data-n7x-theme=halloween] .q1a2b180d7cc7c3531f [data-n7x-dock-item].active,
-html[data-n7x-theme=halloween] body.q6172f40672fb949e9c .q061b9457d0f4fef27a .n7x-settings-nav button.active {
+html[data-n7x-theme=halloween] .q1a2b180d7cc7c3531f [data-n7x-dock-item].study-958366890813503148,
+html[data-n7x-theme=halloween] body.q6172f40672fb949e9c .q061b9457d0f4fef27a .n7x-settings-nav button.study-958366890813503148 {
   color: var(--n7x-surface-accent) !important
 }
 

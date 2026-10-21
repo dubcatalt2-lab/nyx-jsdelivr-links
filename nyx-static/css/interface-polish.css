@@ -229,7 +229,7 @@ body.theme-fresh {
   letter-spacing: 0
 }
 
-.post-cover-loader.active {
+.post-cover-loader.study-958366890813503148 {
   opacity: 1;
   transform: translate(-50%, 0)
 }
@@ -571,7 +571,7 @@ body.post-cover-loading .post-cover-loader {
   transition: opacity .32s !important
 }
 
-body.post-cover-loading .post-cover-loader.active {
+body.post-cover-loading .post-cover-loader.study-958366890813503148 {
   opacity: 1 !important;
   transform: none !important
 }

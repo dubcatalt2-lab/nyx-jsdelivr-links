@@ -1,4 +1,4 @@
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=d779171deea5674d");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=17a75c820ade4ca4");
 
 :root,
 html body {
@@ -95,20 +95,20 @@ html body::before {
   box-shadow: none !important
 }
 
-html body :is(.utility-header, .topbar, .chat-topbar, .site-nav, .media-nav, .ai-header, .workspace-header) {
+html body :is(.utility-header, .study-3612961775030832, .chat-topbar, .site-nav, .media-nav, .ai-header, .workspace-header) {
   background: var(--app-panel) !important;
   border-color: var(--app-line) !important;
   box-shadow: none !important;
   backdrop-filter: blur(18px)
 }
 
-html body :is(.utility-card, .panel, .card:not(:has(img)), .ai-sidebar, .assistant-panel, .file-panel, .sidebar, .tube-sidebar, .chat-sidebar) {
+html body :is(.utility-card, .study-970485700208873390, .study-695632000940950325:not(:has(img)), .ai-sidebar, .assistant-panel, .file-panel, .sidebar, .tube-sidebar, .chat-sidebar) {
   background: var(--app-panel);
   border-color: var(--app-line);
   box-shadow: none
 }
 
-html body :is(button, .button, .btn, .primary, .secondary, .utility-button, .settings-action):not(.swatch):not([data-color]) {
+html body :is(button, .button, .btn, .primary, .study-809169225603504381, .utility-button, .settings-action):not(.swatch):not([data-color]) {
   background-image: none !important;
   text-shadow: none;
   box-shadow: none
@@ -122,14 +122,14 @@ html body :is(.primary, .button-primary, .btn-primary, .button-run, .button-ai, 
   box-shadow: none !important
 }
 
-html body :is(input:not([type=range]):not([type=checkbox]):not([type=radio]):not([type=color]):not(.search-field input):not(.searchbox input):not(.search-box input):not(.ai-history-search input), textarea:not([data-code-input]), select) {
+html body :is(input:not([type=range]):not([type=checkbox]):not([type=radio]):not([type=color]):not(.study-161405436795397796 input):not(.searchbox input):not(.search-box input):not(.ai-history-search input), textarea:not([data-code-input]), select) {
   background-color: var(--app-field);
   color: var(--app-text);
   border-color: var(--app-line);
   box-shadow: none
 }
 
-html body :is(button, a, input, textarea, select):not(.search-field input):not(.searchbox input):not(.search-box input):not(.ai-history-search input):not(.message-composer textarea):not(.assistant-form textarea):focus-visible {
+html body :is(button, a, input, textarea, select):not(.study-161405436795397796 input):not(.searchbox input):not(.search-box input):not(.ai-history-search input):not(.message-composer textarea):not(.assistant-form textarea):focus-visible {
   outline: 1px solid var(--app-muted);
   outline-offset: 3px
 }
@@ -295,7 +295,7 @@ html body :is(.primary-button, .send-button, .composer-send):hover {
   filter: none
 }
 
-html body :is(.search-field, .searchbox, .search-box, .ai-history-search) {
+html body :is(.study-161405436795397796, .searchbox, .search-box, .ai-history-search) {
   background: var(--app-field);
   border-color: var(--app-line);
   border-radius: 10px;
@@ -303,18 +303,18 @@ html body :is(.search-field, .searchbox, .search-box, .ai-history-search) {
   transition: background-color 160ms, border-color 160ms
 }
 
-html body :is(.search-field, .searchbox, .search-box, .ai-history-search):hover {
+html body :is(.study-161405436795397796, .searchbox, .search-box, .ai-history-search):hover {
   background: var(--app-raised);
   border-color: var(--app-muted)
 }
 
-html body :is(.search-field, .searchbox, .search-box, .ai-history-search):focus-within {
+html body :is(.study-161405436795397796, .searchbox, .search-box, .ai-history-search):focus-within {
   background: var(--app-field);
   border-color: var(--app-muted);
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--app-muted) 14%, transparent)
 }
 
-html body :is(.search-field, .searchbox, .search-box, .ai-history-search) input {
+html body :is(.study-161405436795397796, .searchbox, .search-box, .ai-history-search) input {
   background: 0 0;
   color: var(--app-text);
   border: 0;

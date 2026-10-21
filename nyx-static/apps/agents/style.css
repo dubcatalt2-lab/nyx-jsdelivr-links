@@ -135,7 +135,7 @@ button:focus-visible {
   outline-offset: 3px
 }
 
-.brand {
+.study-581976946526172727 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -144,7 +144,7 @@ button:focus-visible {
   text-decoration: none
 }
 
-.brand>span:last-child {
+.study-581976946526172727>span:last-child {
   font-weight: 400;
   letter-spacing: 0;
   color: var(--ink-a2aaa6);
@@ -1377,7 +1377,7 @@ samp {
   background: var(--panel)
 }
 
-.chats .brand {
+.chats .study-581976946526172727 {
   font-size: 16px;
   letter-spacing: .4px;
   font-weight: 600
@@ -2094,7 +2094,7 @@ body:not(.chat-mode) #composer {
 .sidebar-collapsed #chatSearch,
 .sidebar-collapsed #connection,
 .sidebar-collapsed #projectList,
-.sidebar-collapsed .chats-heading .brand,
+.sidebar-collapsed .chats-heading .study-581976946526172727,
 .sidebar-collapsed .chats-label,
 .sidebar-collapsed .projects-heading,
 .sidebar-collapsed .sidebar-account small {
@@ -2440,13 +2440,13 @@ body:not(.chat-mode) #composer {
   margin: 16px 0
 }
 
-#qc71fddd34f6c36ce74,
+#study-68638267951538727,
 #usageReset {
   font-size: 13px;
   line-height: 1.7
 }
 
-#q8b88a2e3490ab1f5bb {
+#study-348096827116673485 {
   line-height: 1.7;
   overflow-wrap: anywhere;
   max-width: 100%

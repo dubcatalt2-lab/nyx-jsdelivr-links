@@ -67,7 +67,7 @@ html body .n7x-credits-thanks .n7x-credits-site {
   font-size: 16px
 }
 
-html body .n7x-credits-thanks .n7x-credits-libraries {
+html body .n7x-credits-thanks .study-865756375451992052 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -79,7 +79,7 @@ html body .n7x-credits-thanks .n7x-credits-libraries {
   list-style: none
 }
 
-html body .n7x-credits-thanks .n7x-credits-libraries li {
+html body .n7x-credits-thanks .study-865756375451992052 li {
   font-size: 15px;
   color: var(--obsidian-muted, var(--app-muted));
   line-height: 1.8

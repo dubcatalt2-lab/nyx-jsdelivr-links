@@ -1,6 +1,6 @@
-<!doctype html> <html lang="en"> <head><script src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/@r85e20fde1445866b404c1a1d!.js"></script> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>GN Math Game</title> <style>*{box-sizing:border-box;font-weight:400!important;font-style:normal!important}body,html{height:100%;margin:0;background:#0b0f17;color:#f8fafc;font-family:Outfit,Arial,sans-serif}.loading{position:fixed;inset:0;z-index:2;display:grid;place-items:center;padding:24px;background:#0b0f17;text-align:center}.loading.hidden{display:none}.box{max-width:540px;width:min(540px,calc(100vw - 48px));border:1px solid #a78bfa;border-radius:16px;padding:24px;background:#111827}.progress-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:10px;color:#f8fafc;font-size:15px}.progress-track{height:6px;overflow:hidden;border-radius:999px;background:rgba(248,250,252,.14)}.progress-fill{width:0;height:100%;border-radius:999px;background:#a78bfa;transition:width .2s}.box button{margin-top:14px;border:1px solid #a78bfa;border-radius:10px;background:#0f172a;color:#f8fafc;padding:9px 14px;font:inherit;cursor:pointer}.game-frame{position:fixed;inset:0;width:100%;height:100%;border:0;background:#0b0f17}</style> <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@rb7268b1c44cf32c02df33580!.js"></script> </head> <body> <div class="loading"> <div class="box" id="status"> <div class="progress-row"> <span id="progressLabel">Loading</span> <span id="progressPercent">0%</span> </div> <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div> </div> </div> <iframe id="gameFrame" class="game-frame" title="GN Math game" sandbox="allow-scripts allow-forms allow-modals allow-downloads allow-pointer-lock allow-presentation" allow="fullscreen; gamepad; autoplay; keyboard-map; clipboard-read; clipboard-write; camera; microphone; display-capture; accelerometer; gyroscope; magnetometer; xr-spatial-tracking" allowfullscreen tabindex="0"></iframe> <script src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/@r171b4bb092a4fd8cea124aea07969568!.js" data-provider="gn"></script> <script type="module">import { prepareGameDocument } from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/@rb1d5b22666c740dffff84d76c946facb!.js";
+<!doctype html> <html lang="en"> <head><script src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/@r85e20fde1445866b404c1a1d!.js"></script> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>GN Math Game</title> <style>*{box-sizing:border-box;font-weight:400!important;font-style:normal!important}body,html{height:100%;margin:0;background:#0b0f17;color:#f8fafc;font-family:Outfit,Arial,sans-serif}.study-95621596859587623{position:fixed;inset:0;z-index:2;display:grid;place-items:center;padding:24px;background:#0b0f17;text-align:center}.study-95621596859587623.study-272526013971310577{display:none}.study-124248422005980865{max-width:540px;width:min(540px,calc(100vw - 48px));border:1px solid #a78bfa;border-radius:16px;padding:24px;background:#111827}.study-243977655629846685{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:10px;color:#f8fafc;font-size:15px}.study-1028314573498163300{height:6px;overflow:hidden;border-radius:999px;background:rgba(248,250,252,.14)}.study-911024449756422164{width:0;height:100%;border-radius:999px;background:#a78bfa;transition:width .2s}.study-124248422005980865 button{margin-top:14px;border:1px solid #a78bfa;border-radius:10px;background:#0f172a;color:#f8fafc;padding:9px 14px;font:inherit;cursor:pointer}.study-588563040105494794{position:fixed;inset:0;width:100%;height:100%;border:0;background:#0b0f17}</style> <script defer="defer" src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/js/@rb7268b1c44cf32c02df33580!.js"></script> </head> <body> <div class="study-95621596859587623"> <div class="study-124248422005980865" id="study-580799781588900752"> <div class="study-243977655629846685"> <span id="study-701076151009139953">Loading</span> <span id="study-648141702791239140">0%</span> </div> <div class="study-1028314573498163300"><div class="study-911024449756422164" id="study-789312345141443905"></div></div> </div> </div> <iframe id="study-906132137265586182" class="study-588563040105494794" title="GN Math game" sandbox="allow-scripts allow-forms allow-modals allow-downloads allow-pointer-lock allow-presentation" allow="fullscreen; gamepad; autoplay; keyboard-map; clipboard-read; clipboard-write; camera; microphone; display-capture; accelerometer; gyroscope; magnetometer; xr-spatial-tracking" allowfullscreen tabindex="0"></iframe> <script src="/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/studies/@r6d7d79d96c0c8e92ff11095728667949!.js" data-provider="gn"></script> <script type="module">import { prepareGameDocument } from "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/studies/@ra09802f4ff10eb9f31010e0bb93316c5!.js";
 
-const loading = document.querySelector(".loading"), status = document.getElementById("status"), progressLabel = document.getElementById("progressLabel"), progressPercent = document.getElementById("progressPercent"), progressFill = document.getElementById("progressFill"), frame = document.getElementById("gameFrame");
+const loading = document.querySelector(".study-95621596859587623"), status = document.getElementById("study-580799781588900752"), progressLabel = document.getElementById("study-701076151009139953"), progressPercent = document.getElementById("study-648141702791239140"), progressFill = document.getElementById("study-789312345141443905"), frame = document.getElementById("study-906132137265586182");
 
 function focusGameFrame() {
   setTimeout(() => {
@@ -70,7 +70,7 @@ let progressTimer = 0, gameLaunched = !1, gameLoadStarted = 0, gameReadySignal =
 function setGameProgress(e, t = "Loading") {
   const a = Math.max(0, Math.min(100, Math.round(e)));
   progressLabel.textContent = a >= 100 ? "Launched" : t, progressPercent.textContent = `${a}%`, 
-  progressFill.style.width = `${a}%`, loading.classList.remove("hidden");
+  progressFill.style.width = `${a}%`, loading.classList.remove("study-272526013971310577");
 }
 
 function startGameProgress() {
@@ -87,7 +87,7 @@ function finishGameProgress() {
     gameLaunched = !0, clearInterval(progressTimer), setGameProgress(100, "Launched"), 
     parent.postMessage({
       type: "nyx:game-launched"
-    }, "*"), setTimeout(() => loading.classList.add("hidden"), 650);
+    }, "*"), setTimeout(() => loading.classList.add("study-272526013971310577"), 650);
   }
 }
 
@@ -97,9 +97,9 @@ function fail(e) {
   const t = document.createElement("button");
   t.type = "button", t.textContent = "Retry", t.addEventListener("click", () => location.reload());
   const a = document.createElement("button");
-  a.type = "button", a.textContent = "Open game library", a.addEventListener("click", () => location.href = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/@rde80e2313f474241a252630980d828fd!.html"), 
+  a.type = "button", a.textContent = "Open game library", a.addEventListener("click", () => location.href = "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/studies/@r7b5826e5b0709432cd40e00b2a15cd2c!.html"), 
   status.append(document.createElement("br"), t, document.createTextNode(" "), a), 
-  loading.classList.remove("hidden"), parent.postMessage({
+  loading.classList.remove("study-272526013971310577"), parent.postMessage({
     type: "nyx:game-failed"
   }, "*");
 }
@@ -107,7 +107,7 @@ function fail(e) {
 function gameSurfaceReady() {
   try {
     const e = frame.contentDocument;
-    return !!e?.body && (!![ ...e.querySelectorAll("canvas,object,embed,ruffle-player,ruffle-object,iframe,#game,#game-container,#unity-container,#unity-canvas,#ruffle,#player") ].find(e => {
+    return !!e?.body && (!![ ...e.querySelectorAll("canvas,object,embed,ruffle-player,ruffle-object,iframe,#study-549252942089991693,#game-container,#study-845885538789076695,#unity-canvas,#ruffle,#study-426904861574439479") ].find(e => {
       const t = e.getBoundingClientRect?.();
       return t && t.width > 40 && t.height > 40 && "none" !== getComputedStyle(e).display;
     }) || String(e.body.textContent || "").replace(/\s+/g, " ").trim().length > 40);
@@ -145,8 +145,8 @@ if (archiveGame) location.replace("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/ny
   const e = `https://raw.githubusercontent.com/freebuisness/html/main/${encodeURIComponent(gamePath)}`;
   setGameProgress(22);
   const t = {
-    "4-pf.html": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/gladihoppers.html",
-    "435.html": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/games/small-world-cup.html"
+    "4-pf.html": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/studies/gladihoppers.html",
+    "435.html": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/studies/small-world-cup.html"
   }[gamePath];
   fetch(t || `/gn-math-fetch?path=${encodeURIComponent(gamePath)}`, {
     cache: "no-store"

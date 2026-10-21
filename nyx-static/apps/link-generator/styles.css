@@ -1,4 +1,4 @@
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/utility-shell.css?rev=d779171deea5674d");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/apps/utility-shell.css?rev=17a75c820ade4ca4");
 
 .generator-shell {
   width: min(820px, calc(100% - 40px))
@@ -36,7 +36,7 @@
   white-space: nowrap
 }
 
-.sr-only {
+.study-957532158437746768 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -110,12 +110,12 @@
   letter-spacing: .03em
 }
 
-.wizard-progress li.active,
-.wizard-progress li.complete {
+.wizard-progress li.complete,
+.wizard-progress li.study-958366890813503148 {
   color: var(--text)
 }
 
-.wizard-progress li.active>span {
+.wizard-progress li.study-958366890813503148>span {
   background: linear-gradient(var(--accent-soft), var(--accent-soft)), var(--bg);
   color: var(--accent)
 }
@@ -134,16 +134,16 @@
   min-height: 365px
 }
 
-.wizard-step.active {
+.wizard-step.study-958366890813503148 {
   display: flex;
   flex-direction: column
 }
 
-.generator-card.wizard-forward .wizard-step.active {
+.generator-card.wizard-forward .wizard-step.study-958366890813503148 {
   animation: .34s cubic-bezier(.16, .86, .18, 1) both wizardStepForward
 }
 
-.generator-card.wizard-back .wizard-step.active {
+.generator-card.wizard-back .wizard-step.study-958366890813503148 {
   animation: .34s cubic-bezier(.16, .86, .18, 1) both wizardStepBack
 }
 
@@ -191,7 +191,7 @@
   font: 500 10px/1 ui-monospace, SFMono-Regular, Consolas, monospace
 }
 
-.wizard-step-heading .eyebrow {
+.wizard-step-heading .study-1005347692774137563 {
   margin: 0 0 3px
 }
 
@@ -246,7 +246,7 @@ fieldset {
   background: var(--surface-raised)
 }
 
-.access-tabs button.active {
+.access-tabs button.study-958366890813503148 {
   background: var(--surface-raised);
   color: var(--text)
 }
@@ -465,7 +465,7 @@ fieldset {
   height: 21px
 }
 
-.result-heading .eyebrow {
+.result-heading .study-1005347692774137563 {
   margin-bottom: 3px
 }
 
@@ -1011,8 +1011,8 @@ fieldset {
 
 @media(prefers-reduced-motion:reduce) {
 
-  .generator-card.wizard-back .wizard-step.active,
-  .generator-card.wizard-forward .wizard-step.active {
+  .generator-card.wizard-back .wizard-step.study-958366890813503148,
+  .generator-card.wizard-forward .wizard-step.study-958366890813503148 {
     animation: none
   }
 

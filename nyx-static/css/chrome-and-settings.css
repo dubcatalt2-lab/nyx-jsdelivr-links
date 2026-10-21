@@ -152,11 +152,11 @@ body.q6172f40672fb949e9c.theme-sakura .apps-panel .quick-tile span {
 }
 
 body.q6172f40672fb949e9c.theme-emerald .apps-panel,
-body.q6172f40672fb949e9c.theme-emerald .panel.apps-panel,
+body.q6172f40672fb949e9c.theme-emerald .study-970485700208873390.apps-panel,
 body.q6172f40672fb949e9c.theme-ruby .apps-panel,
-body.q6172f40672fb949e9c.theme-ruby .panel.apps-panel,
+body.q6172f40672fb949e9c.theme-ruby .study-970485700208873390.apps-panel,
 body.q6172f40672fb949e9c.theme-sakura .apps-panel,
-body.q6172f40672fb949e9c.theme-sakura .panel.apps-panel,
+body.q6172f40672fb949e9c.theme-sakura .study-970485700208873390.apps-panel,
 body.theme-emerald .apps-panel,
 body.theme-ruby .apps-panel,
 body.theme-sakura .apps-panel {
@@ -242,8 +242,8 @@ body.q6172f40672fb949e9c .settings-card p {
   -webkit-text-fill-color: rgba(226, 232, 240, .72) !important
 }
 
-body.q6172f40672fb949e9c .panic-key-display,
-body.q6172f40672fb949e9c .settings-card :is(input:not([type=range]), select, .settings-input, .settings-select) {
+body.q6172f40672fb949e9c .settings-card :is(input:not([type=range]), select, .settings-input, .settings-select),
+body.q6172f40672fb949e9c .study-41145675326909723 {
   min-height: 38px !important;
   border: 1px solid rgba(255, 255, 255, .12) !important;
   border-radius: 10px !important;
@@ -254,7 +254,7 @@ body.q6172f40672fb949e9c .settings-card :is(input:not([type=range]), select, .se
   box-shadow: none !important
 }
 
-body.q6172f40672fb949e9c .panic-key-display {
+body.q6172f40672fb949e9c .study-41145675326909723 {
   display: inline-flex;
   align-items: center;
   min-width: 150px;
@@ -356,10 +356,10 @@ body.q6172f40672fb949e9c .settings-card .switch {
 }
 
 .n238da90cb7ed,
-.panel,
 .quick-tile,
 .settings-card,
 .settings-panel,
+.study-970485700208873390,
 body,
 button,
 input,
@@ -488,7 +488,7 @@ body.q6172f40672fb949e9c .settings-window .settings-card:has([data-cloak-type]) 
   min-width: 0 !important
 }
 
-body.q6172f40672fb949e9c .settings-window :is(button, input, select, textarea, .settings-input, .settings-select, .panic-key-display) {
+body.q6172f40672fb949e9c .settings-window :is(button, input, select, textarea, .settings-input, .settings-select, .study-41145675326909723) {
   min-height: 32px !important;
   border-radius: 9px !important;
   background: rgba(8, 7, 14, .46) !important;
