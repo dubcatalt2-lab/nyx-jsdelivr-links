@@ -26,7 +26,7 @@ body {
   font-family: Quicksand, system-ui, sans-serif
 }
 
-.library {
+.q8d73bc86944b3b8216 {
   max-width: 1360px;
   padding: 38px clamp(18px, 4vw, 56px) 48px
 }
@@ -101,7 +101,7 @@ body {
   font-size: 13px
 }
 
-.library-picker {
+.qbfdc8405c3b8be2c32 {
   padding: 0;
   border: 0;
   background: 0 0;
@@ -109,15 +109,15 @@ body {
   margin: 0
 }
 
-.library-picker-heading {
+.q71746c69dcf535eb19 {
   display: none
 }
 
-.library-tabs {
+.q40096442a5af6fd196 {
   gap: 7px
 }
 
-.library-tab {
+.qfcc7eb7e67a3cef50a {
   height: 32px;
   border-radius: 7px;
   font-size: 11px;
@@ -126,19 +126,19 @@ body {
   padding: 0 10px
 }
 
-.library-tab-count {
+.q5d173bb66767f9ac01 {
   font-size: 9px;
   min-width: 18px;
   background: #ffffff08
 }
 
-.library-meta {
+.q5d0e394f27265ed4bc {
   justify-items: start;
   margin: 12px 0 18px;
   min-height: 28px
 }
 
-.library-meta p {
+.q5d0e394f27265ed4bc p {
   font-size: 11px
 }
 
@@ -260,7 +260,7 @@ body {
 }
 
 @media(max-width:540px) {
-  .library {
+  .q8d73bc86944b3b8216 {
     padding: 24px 16px
   }
 
@@ -299,10 +299,10 @@ body {
 
 @media (prefers-reduced-motion:no-preference) {
 
-  .library-tab,
   .page-button,
   .q0fa2962b8d68,
   .q482f08e91ee0,
+  .qfcc7eb7e67a3cef50a,
   .toolbar-button {
     transition: background-color 240ms cubic-bezier(.2, .7, .2, 1), border-color 240ms, color 180ms, transform 280ms cubic-bezier(.2, .7, .2, 1), box-shadow 280ms
   }

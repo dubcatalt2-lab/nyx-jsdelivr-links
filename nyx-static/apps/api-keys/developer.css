@@ -399,12 +399,12 @@ textarea {
   border-color: var(--n7x-app-line)
 }
 
-#playground-result {
+#q5ce20cee9a8e9d6ed5 {
   min-width: 0;
   max-width: 100%
 }
 
-#playground-response {
+#q31471e3c4415b2832f {
   height: auto;
   max-height: none;
   min-width: 0;
@@ -418,20 +418,20 @@ textarea {
   border-radius: 12px
 }
 
-#playground-response p {
+#q31471e3c4415b2832f p {
   white-space: normal;
   margin: 0 0 1em
 }
 
-#playground-response :last-child {
+#q31471e3c4415b2832f :last-child {
   margin-bottom: 0
 }
 
-#playground-response li {
+#q31471e3c4415b2832f li {
   margin: .4em 0
 }
 
-#playground-response pre {
+#q31471e3c4415b2832f pre {
   white-space: pre;
   max-width: 100%;
   max-height: none;
@@ -439,22 +439,22 @@ textarea {
   margin: 0
 }
 
-#playground-response .ai-code-block,
-#playground-response .ai-math-block,
-#playground-response .ai-table-wrap {
+#q31471e3c4415b2832f .ai-code-block,
+#q31471e3c4415b2832f .ai-math-block,
+#q31471e3c4415b2832f .ai-table-wrap {
   max-width: 100%;
   min-width: 0;
   overflow-x: auto;
   margin: 1em 0
 }
 
-#playground-response .katex-display {
+#q31471e3c4415b2832f .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
   padding: .3em 0
 }
 
-#playground-response .ai-code-head {
+#q31471e3c4415b2832f .ai-code-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -462,14 +462,14 @@ textarea {
   padding: 10px
 }
 
-#playground-response .ai-code-copy {
+#q31471e3c4415b2832f .ai-code-copy {
   display: flex;
   align-items: center;
   gap: 6px;
   width: auto
 }
 
-#playground-response .ai-code-copy svg {
+#q31471e3c4415b2832f .ai-code-copy svg {
   width: 16px;
   height: 16px;
   fill: none;
@@ -477,18 +477,18 @@ textarea {
   stroke-width: 1.7
 }
 
-#playground-response blockquote {
+#q31471e3c4415b2832f blockquote {
   margin: 1em 0;
   padding-left: 16px;
   border-left: 3px solid var(--n7x-app-line)
 }
 
-#playground-response table {
+#q31471e3c4415b2832f table {
   min-width: 0;
   width: 100%
 }
 
-#playground-limit {
+#qad1341c3c2d10ebfad {
   padding: 12px;
   border: 1px solid var(--n7x-app-line);
   border-radius: 10px
@@ -623,11 +623,11 @@ textarea {
   max-width: 560px
 }
 
-#playground {
+#q7c2c326ea125acd62e {
   margin-top: 24px
 }
 
-#playground .actions {
+#q7c2c326ea125acd62e .actions {
   justify-content: flex-end
 }
 

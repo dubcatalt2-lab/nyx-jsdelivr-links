@@ -301,13 +301,13 @@ main {
   color: #ffb8bf
 }
 
-.game-grid {
+.q900911672a7786fb15 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 18px
 }
 
-.game-card {
+.q8aa4b5be1c05baf9ac {
   min-width: 0;
   border: 1px solid #1e202b;
   border-radius: 17px;
@@ -316,21 +316,21 @@ main {
   transition: transform .28s cubic-bezier(.2, .8, .2, 1), border-color .28s, box-shadow .28s
 }
 
-.game-card:focus-within,
-.game-card:hover {
+.q8aa4b5be1c05baf9ac:focus-within,
+.q8aa4b5be1c05baf9ac:hover {
   transform: translateY(-5px);
   border-color: #494269;
   box-shadow: 0 18px 40px rgba(0, 0, 0, .36)
 }
 
-.game-art {
+.q157e5fa8744677ff6d {
   position: relative;
   aspect-ratio: 16/10;
   background: linear-gradient(135deg, #171827, #0a0a0e);
   overflow: hidden
 }
 
-.game-art img {
+.q157e5fa8744677ff6d img {
   width: 100%;
   height: 100%;
   display: block;
@@ -338,22 +338,22 @@ main {
   transition: transform .45s
 }
 
-.game-card:hover .game-art img {
+.q8aa4b5be1c05baf9ac:hover .q157e5fa8744677ff6d img {
   transform: scale(1.035)
 }
 
-.game-art:after {
+.q157e5fa8744677ff6d:after {
   content: "";
   position: absolute;
   inset: 45% 0 0;
   background: linear-gradient(transparent, rgba(3, 3, 5, .9))
 }
 
-.game-copy {
+.q0b086be650b19ee1bc {
   padding: 15px
 }
 
-.game-copy h3 {
+.q0b086be650b19ee1bc h3 {
   margin: 0;
   font-size: 15px;
   white-space: nowrap;
@@ -378,7 +378,7 @@ main {
   white-space: nowrap
 }
 
-.play {
+.q2b95e8b6e6ff8b6b33 {
   width: 100%;
   height: 38px;
   border: 1px solid #7f70e5;
@@ -388,7 +388,7 @@ main {
   font-weight: 800
 }
 
-.play:disabled {
+.q2b95e8b6e6ff8b6b33:disabled {
   cursor: not-allowed;
   filter: grayscale(1);
   opacity: .45
@@ -401,7 +401,7 @@ main {
 }
 
 .launch-layer,
-.player-layer {
+.q17fc0a8a6afb56fb56 {
   position: fixed;
   inset: 0;
   z-index: 40
@@ -416,7 +416,7 @@ main {
 }
 
 .launch-layer[hidden],
-.player-layer[hidden] {
+.q17fc0a8a6afb56fb56[hidden] {
   display: none
 }
 
@@ -484,14 +484,14 @@ main {
   color: var(--text)
 }
 
-.player-layer {
+.q17fc0a8a6afb56fb56 {
   display: grid;
   grid-template-rows: 58px 1fr;
   background: #000;
   grid-template-rows: 58px minmax(0, 1fr)
 }
 
-.player-layer header {
+.q17fc0a8a6afb56fb56 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -501,29 +501,29 @@ main {
   background: #070708
 }
 
-.player-layer header>div {
+.q17fc0a8a6afb56fb56 header>div {
   display: flex;
   align-items: center;
   gap: 10px;
   min-width: 0
 }
 
-.player-layer header strong {
+.q17fc0a8a6afb56fb56 header strong {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis
 }
 
-.player-layer header small {
+.q17fc0a8a6afb56fb56 header small {
   color: var(--muted)
 }
 
-.player-layer nav {
+.q17fc0a8a6afb56fb56 nav {
   display: flex;
   gap: 8px
 }
 
-.player-layer button {
+.q17fc0a8a6afb56fb56 button {
   height: 36px;
   padding: 0 13px;
   border: 1px solid #303039;
@@ -532,12 +532,12 @@ main {
   color: #fff
 }
 
-.player-layer button.danger {
+.q17fc0a8a6afb56fb56 button.danger {
   border-color: #62303a;
   color: #ffb3ba
 }
 
-.player-layer iframe {
+.q17fc0a8a6afb56fb56 iframe {
   width: 100%;
   height: 100%;
   border: 0;
@@ -561,27 +561,27 @@ main {
   }
 }
 
-html.games-embedded,
-html.games-embedded body {
+html.q4e86e9b00fadc0355b,
+html.q4e86e9b00fadc0355b body {
   min-height: 100%;
   background: #000
 }
 
-html.games-embedded body {
+html.q4e86e9b00fadc0355b body {
   background: #000
 }
 
-html.games-embedded .hero,
-html.games-embedded .topbar {
+html.q4e86e9b00fadc0355b .hero,
+html.q4e86e9b00fadc0355b .topbar {
   display: none
 }
 
-html.games-embedded main {
+html.q4e86e9b00fadc0355b main {
   width: 100%;
   padding: 18px 20px 42px
 }
 
-html.games-embedded .catalog-shell {
+html.q4e86e9b00fadc0355b .catalog-shell {
   border-top: 0;
   padding-top: 0
 }
@@ -620,7 +620,7 @@ html.cloud-session-active main {
   display: none
 }
 
-.player-layer iframe {
+.q17fc0a8a6afb56fb56 iframe {
   min-height: 0;
   min-width: 0
 }
@@ -674,7 +674,7 @@ html.cloud-session-active main {
   color: var(--muted)
 }
 
-.luna-player {
+.qedf15875a0efed70af {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -689,16 +689,16 @@ html.cloud-session-active main {
   color: var(--text)
 }
 
-.luna-player[open] {
+.qedf15875a0efed70af[open] {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr)
 }
 
-.luna-player::backdrop {
+.qedf15875a0efed70af::backdrop {
   background: #000
 }
 
-.luna-player header {
+.qedf15875a0efed70af header {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -707,21 +707,21 @@ html.cloud-session-active main {
   background: var(--app-panel, var(--panel))
 }
 
-.luna-player header>span {
+.qedf15875a0efed70af header>span {
   font-size: 12px;
   color: var(--muted);
   min-width: 0
 }
 
-.luna-player nav {
+.qedf15875a0efed70af nav {
   display: flex;
   gap: 6px;
   margin-left: auto;
   flex: none
 }
 
-.luna-player nav a,
-.luna-player nav button {
+.qedf15875a0efed70af nav a,
+.qedf15875a0efed70af nav button {
   display: grid;
   place-items: center;
   width: 36px;
@@ -732,16 +732,16 @@ html.cloud-session-active main {
   color: var(--text)
 }
 
-.luna-player nav svg {
+.qedf15875a0efed70af nav svg {
   width: 18px;
   height: 18px
 }
 
-.luna-player [data-luna-host] {
+.qedf15875a0efed70af [data-luna-host] {
   min-height: 0
 }
 
-.luna-player iframe {
+.qedf15875a0efed70af iframe {
   display: block;
   width: 100%;
   height: 100%;
@@ -750,12 +750,12 @@ html.cloud-session-active main {
 }
 
 @media(max-width:520px) {
-  .luna-player header {
+  .qedf15875a0efed70af header {
     gap: 10px;
     padding: 8px
   }
 
-  .luna-player header>span {
+  .qedf15875a0efed70af header>span {
     font-size: 11px
   }
 

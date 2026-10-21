@@ -5,16 +5,16 @@
   font-display: swap
 }
 
-.n7x-arcade .library {
+.q2ff352f9bbd5153b5a .q8d73bc86944b3b8216 {
   width: min(1640px, 100%);
   padding: 38px clamp(18px, 3.5vw, 56px) 60px
 }
 
-.n7x-arcade [hidden] {
+.q2ff352f9bbd5153b5a [hidden] {
   display: none !important
 }
 
-.n7x-arcade .arcade-masthead {
+.q2ff352f9bbd5153b5a .q9b9e5dc75c574fdb65 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,19 +22,19 @@
   margin-bottom: 30px
 }
 
-.n7x-arcade .cove-header {
+.q2ff352f9bbd5153b5a .cove-header {
   justify-items: start;
   text-align: left
 }
 
-.n7x-arcade .eyebrow {
+.q2ff352f9bbd5153b5a .eyebrow {
   margin: 0 0 5px 3px;
   font-size: 10px;
   letter-spacing: .3em;
   color: var(--app-muted)
 }
 
-.n7x-arcade h1 {
+.q2ff352f9bbd5153b5a h1 {
   font-family: ArcadeDisplay, sans-serif;
   font-size: clamp(38px, 4.5vw, 58px);
   font-weight: 800;
@@ -42,35 +42,35 @@
   line-height: 1
 }
 
-.n7x-arcade .qc7b156557cda {
+.q2ff352f9bbd5153b5a .qc7b156557cda {
   margin: 0;
   border-radius: 12px;
   background: var(--app-panel)
 }
 
-.n7x-arcade .q0fa2962b8d68 {
+.q2ff352f9bbd5153b5a .q0fa2962b8d68 {
   min-width: 112px;
   font-size: 12px;
   font-weight: 600
 }
 
-.n7x-arcade .q0fa2962b8d68.active {
+.q2ff352f9bbd5153b5a .q0fa2962b8d68.active {
   background: var(--app-raised);
   color: var(--app-text)
 }
 
-.n7x-arcade .arcade-featured {
+.q2ff352f9bbd5153b5a .qb9e3292dc267f78416 {
   display: grid;
   grid-template-columns: 1.7fr 1fr 1fr;
   gap: 16px;
   margin-bottom: 40px
 }
 
-.n7x-arcade .arcade-featured[hidden] {
+.q2ff352f9bbd5153b5a .qb9e3292dc267f78416[hidden] {
   display: none
 }
 
-.n7x-arcade .arcade-feature {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21 {
   position: relative;
   isolation: isolate;
   height: clamp(260px, 26vw, 360px);
@@ -85,31 +85,31 @@
   transition: transform 220ms, border-color 220ms
 }
 
-.n7x-arcade .arcade-feature:nth-child(2) {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21:nth-child(2) {
   background: #292321
 }
 
-.n7x-arcade .arcade-feature:nth-child(3) {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21:nth-child(3) {
   background: #16283e
 }
 
-.n7x-arcade .arcade-feature .qaddd0d3ae838::after {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21 .qaddd0d3ae838::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, #00000008 10%, #00000020 30%, #000000e8 100%)
 }
 
-.n7x-arcade .arcade-feature .qaddd0d3ae838 img {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21 .qaddd0d3ae838 img {
   transition: transform .6s cubic-bezier(.2, .65, .3, 1)
 }
 
-.n7x-arcade .arcade-feature .cover-fallback {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21 .cover-fallback {
   font: 800 130px ArcadeDisplay, sans-serif;
   color: #ffffff20
 }
 
-.n7x-arcade .arcade-feature-copy {
+.q2ff352f9bbd5153b5a .qfcfbd9143ffb25e94d {
   position: absolute;
   inset: auto 26px 26px;
   display: grid;
@@ -118,7 +118,7 @@
   color: #fff
 }
 
-.n7x-arcade .arcade-feature-label {
+.q2ff352f9bbd5153b5a .qe2f9e96bc14134b6e3 {
   font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
@@ -126,7 +126,7 @@
   color: #ffffffbb
 }
 
-.n7x-arcade .arcade-feature-title {
+.q2ff352f9bbd5153b5a .q59902aeaa3dea4c952 {
   font-family: ArcadeDisplay, sans-serif;
   font-weight: 700;
   font-size: clamp(25px, 3vw, 40px);
@@ -134,13 +134,13 @@
   letter-spacing: -.035em
 }
 
-.n7x-arcade .arcade-feature:first-child .arcade-feature-title {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21:first-child .q59902aeaa3dea4c952 {
   font-size: clamp(42px, 5.5vw, 76px);
   text-transform: uppercase;
   font-weight: 800
 }
 
-.n7x-arcade .arcade-feature-play {
+.q2ff352f9bbd5153b5a .qedb089d447f6b53f61 {
   display: inline-flex;
   align-items: center;
   gap: 18px;
@@ -149,20 +149,20 @@
   margin-top: 6px
 }
 
-.n7x-arcade .arcade-feature:first-child .arcade-feature-play {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21:first-child .qedb089d447f6b53f61 {
   padding: 12px 18px;
   border-radius: 8px;
   background: #f5f7f9;
   color: #111
 }
 
-.n7x-arcade .arcade-feature-play svg {
+.q2ff352f9bbd5153b5a .qedb089d447f6b53f61 svg {
   width: 17px;
   height: 17px;
   transition: transform 220ms
 }
 
-.n7x-arcade .arcade-feature-number {
+.q2ff352f9bbd5153b5a .q71ceb60c520583eea5 {
   position: absolute;
   top: 20px;
   left: 24px;
@@ -175,20 +175,20 @@
   background: #00000042
 }
 
-.n7x-arcade .arcade-feature:hover {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21:hover {
   transform: translateY(-3px);
   border-color: #ffffff80
 }
 
-.n7x-arcade .arcade-feature:hover .qaddd0d3ae838 img {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21:hover .qaddd0d3ae838 img {
   transform: scale(1.045)
 }
 
-.n7x-arcade .arcade-feature:hover .arcade-feature-play svg {
+.q2ff352f9bbd5153b5a .q921bc84267c79a9e21:hover .qedb089d447f6b53f61 svg {
   transform: translateX(3px)
 }
 
-.n7x-arcade .arcade-collection {
+.q2ff352f9bbd5153b5a .qce251c91c94209c864 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -196,7 +196,7 @@
   margin-bottom: 18px
 }
 
-.n7x-arcade .arcade-collection h2 {
+.q2ff352f9bbd5153b5a .qce251c91c94209c864 h2 {
   margin: 0;
   display: flex;
   align-items: center;
@@ -206,33 +206,33 @@
   letter-spacing: -.02em
 }
 
-.n7x-arcade .arcade-heading-line {
+.q2ff352f9bbd5153b5a .qbd4b33c4b571faddf6 {
   display: block;
   width: 28px;
   height: 2px;
   background: var(--app-line)
 }
 
-.n7x-arcade .catalog-tools {
+.q2ff352f9bbd5153b5a .catalog-tools {
   width: min(660px, 65%);
   margin: 0;
   grid-template-columns: minmax(100px, 1fr) auto auto;
   gap: 8px
 }
 
-.n7x-arcade .search-field,
-.n7x-arcade .select-field {
+.q2ff352f9bbd5153b5a .search-field,
+.q2ff352f9bbd5153b5a .select-field {
   height: 42px;
   border-radius: 9px;
   font-size: 12px
 }
 
-.n7x-arcade .search-field input {
+.q2ff352f9bbd5153b5a .search-field input {
   padding: 0;
   height: 100%
 }
 
-.n7x-arcade .arcade-random {
+.q2ff352f9bbd5153b5a .qdada7726cace5ea104 {
   display: inline-flex;
   gap: 9px;
   align-items: center;
@@ -247,22 +247,22 @@
   transition: background 180ms
 }
 
-.n7x-arcade .arcade-random svg {
+.q2ff352f9bbd5153b5a .qdada7726cace5ea104 svg {
   width: 16px;
   height: 16px;
   flex-shrink: 0
 }
 
-.n7x-arcade .arcade-random:disabled {
+.q2ff352f9bbd5153b5a .qdada7726cace5ea104:disabled {
   opacity: .45;
   cursor: default
 }
 
-.n7x-arcade .arcade-random:not(:disabled):hover {
+.q2ff352f9bbd5153b5a .qdada7726cace5ea104:not(:disabled):hover {
   background: var(--app-raised)
 }
 
-.n7x-arcade .library-picker {
+.q2ff352f9bbd5153b5a .qbfdc8405c3b8be2c32 {
   width: 100%;
   margin: 0;
   padding: 0 0 18px;
@@ -273,7 +273,7 @@
   box-shadow: none
 }
 
-.n7x-arcade .library-picker-heading {
+.q2ff352f9bbd5153b5a .q71746c69dcf535eb19 {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -283,55 +283,55 @@
   padding: 0
 }
 
-.n7x-arcade .library-tabs {
+.q2ff352f9bbd5153b5a .q40096442a5af6fd196 {
   gap: 7px
 }
 
-.n7x-arcade .library-tab {
+.q2ff352f9bbd5153b5a .qfcc7eb7e67a3cef50a {
   min-height: 34px;
   border-radius: 7px;
   font-size: 11px;
   padding: 7px 11px
 }
 
-.n7x-arcade .library-tab-count {
+.q2ff352f9bbd5153b5a .q5d173bb66767f9ac01 {
   font-size: 9px;
   min-width: 20px
 }
 
-html[data-n7x-appearance=light] .n7x-arcade .library-tab {
+html[data-n7x-appearance=light] .q2ff352f9bbd5153b5a .qfcc7eb7e67a3cef50a {
   color: var(--app-text);
   background: var(--app-field);
   border-color: var(--app-line)
 }
 
-html[data-n7x-appearance=light] .n7x-arcade .library-tab.active {
+html[data-n7x-appearance=light] .q2ff352f9bbd5153b5a .qfcc7eb7e67a3cef50a.active {
   color: #fff;
   background: #202a24
 }
 
-.n7x-arcade .library-meta {
+.q2ff352f9bbd5153b5a .q5d0e394f27265ed4bc {
   justify-items: start;
   text-align: left;
   margin: 15px 0 18px;
   min-height: 18px
 }
 
-.n7x-arcade #qbd6ae01dd017 {
+.q2ff352f9bbd5153b5a #qbd6ae01dd017 {
   font-size: 11px;
   color: var(--app-muted)
 }
 
-.n7x-arcade .catalog-progress {
+.q2ff352f9bbd5153b5a .catalog-progress {
   margin: 8px 0 0
 }
 
-.n7x-arcade .q1823ef120d6d {
+.q2ff352f9bbd5153b5a .q1823ef120d6d {
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 22px 16px
 }
 
-.n7x-arcade .q482f08e91ee0 {
+.q2ff352f9bbd5153b5a .q482f08e91ee0 {
   display: flex;
   flex-direction: column;
   aspect-ratio: auto;
@@ -344,7 +344,7 @@ html[data-n7x-appearance=light] .n7x-arcade .library-tab.active {
   transition: transform 220ms
 }
 
-.n7x-arcade .q482f08e91ee0 .qaddd0d3ae838 {
+.q2ff352f9bbd5153b5a .q482f08e91ee0 .qaddd0d3ae838 {
   position: relative;
   inset: auto;
   display: block;
@@ -355,15 +355,15 @@ html[data-n7x-appearance=light] .n7x-arcade .library-tab.active {
   background: var(--app-raised)
 }
 
-.n7x-arcade .q482f08e91ee0::after {
+.q2ff352f9bbd5153b5a .q482f08e91ee0::after {
   display: none
 }
 
-.n7x-arcade .q482f08e91ee0 .qaddd0d3ae838 img {
+.q2ff352f9bbd5153b5a .q482f08e91ee0 .qaddd0d3ae838 img {
   transition: transform 450ms cubic-bezier(.2, .65, .3, 1)
 }
 
-.n7x-arcade .q482f08e91ee0 .qf9ea5fbfc68e {
+.q2ff352f9bbd5153b5a .q482f08e91ee0 .qf9ea5fbfc68e {
   position: static;
   display: block;
   width: 100%;
@@ -382,7 +382,7 @@ html[data-n7x-appearance=light] .n7x-arcade .library-tab.active {
   text-shadow: none
 }
 
-.n7x-arcade .q482f08e91ee0 .qa1ec59942bde {
+.q2ff352f9bbd5153b5a .q482f08e91ee0 .qa1ec59942bde {
   top: 8px;
   left: 8px;
   border: 1px solid #ffffff20;
@@ -394,169 +394,169 @@ html[data-n7x-appearance=light] .n7x-arcade .library-tab.active {
   letter-spacing: .06em
 }
 
-.n7x-arcade .q482f08e91ee0:hover {
+.q2ff352f9bbd5153b5a .q482f08e91ee0:hover {
   transform: translateY(-4px)
 }
 
-.n7x-arcade .q482f08e91ee0:is(:hover, :focus-visible) .qaddd0d3ae838 img {
+.q2ff352f9bbd5153b5a .q482f08e91ee0:is(:hover, :focus-visible) .qaddd0d3ae838 img {
   transform: scale(1.05);
   filter: none
 }
 
-.n7x-arcade :is(.arcade-feature, .arcade-random, .q482f08e91ee0, .library-tab):focus-visible {
+.q2ff352f9bbd5153b5a :is(.q921bc84267c79a9e21, .qdada7726cace5ea104, .q482f08e91ee0, .qfcc7eb7e67a3cef50a):focus-visible {
   outline: #7eb7ff solid 2px;
   outline-offset: 4px
 }
 
-.n7x-arcade .pagination {
+.q2ff352f9bbd5153b5a .pagination {
   margin-top: 32px
 }
 
-.n7x-arcade .page-button {
+.q2ff352f9bbd5153b5a .page-button {
   font-size: 12px
 }
 
-.n7x-arcade.cloud-session-active .arcade-masthead {
+.q2ff352f9bbd5153b5a.cloud-session-active .q9b9e5dc75c574fdb65 {
   display: none
 }
 
-.n7x-arcade.cloud-session-active .library {
+.q2ff352f9bbd5153b5a.cloud-session-active .q8d73bc86944b3b8216 {
   width: 100%;
   padding: 0
 }
 
 @media (min-width:1600px) {
-  .n7x-arcade .q1823ef120d6d {
+  .q2ff352f9bbd5153b5a .q1823ef120d6d {
     grid-template-columns: repeat(7, minmax(0, 1fr))
   }
 }
 
 @media (max-width:1050px) {
-  .n7x-arcade .q1823ef120d6d {
+  .q2ff352f9bbd5153b5a .q1823ef120d6d {
     grid-template-columns: repeat(4, minmax(0, 1fr))
   }
 
-  .n7x-arcade .arcade-featured {
+  .q2ff352f9bbd5153b5a .qb9e3292dc267f78416 {
     grid-template-columns: 1.4fr 1fr 1fr;
     gap: 12px
   }
 
-  .n7x-arcade .arcade-feature-copy {
+  .q2ff352f9bbd5153b5a .qfcfbd9143ffb25e94d {
     inset: auto 18px 20px
   }
 
-  .n7x-arcade .arcade-random span {
+  .q2ff352f9bbd5153b5a .qdada7726cace5ea104 span {
     display: none
   }
 }
 
 @media (max-width:700px) {
-  .n7x-arcade .library {
+  .q2ff352f9bbd5153b5a .q8d73bc86944b3b8216 {
     padding-top: 24px
   }
 
-  .n7x-arcade .arcade-masthead {
+  .q2ff352f9bbd5153b5a .q9b9e5dc75c574fdb65 {
     gap: 12px;
     margin-bottom: 24px
   }
 
-  .n7x-arcade h1 {
+  .q2ff352f9bbd5153b5a h1 {
     font-size: 36px
   }
 
-  .n7x-arcade .q0fa2962b8d68 {
+  .q2ff352f9bbd5153b5a .q0fa2962b8d68 {
     min-width: 0;
     height: 36px;
     padding: 0 10px;
     font-size: 10px
   }
 
-  .n7x-arcade .arcade-featured {
+  .q2ff352f9bbd5153b5a .qb9e3292dc267f78416 {
     grid-template-columns: 1fr 1fr;
     margin-bottom: 28px
   }
 
-  .n7x-arcade .arcade-feature {
+  .q2ff352f9bbd5153b5a .q921bc84267c79a9e21 {
     height: 200px;
     border-radius: 12px
   }
 
-  .n7x-arcade .arcade-feature:first-child {
+  .q2ff352f9bbd5153b5a .q921bc84267c79a9e21:first-child {
     grid-column: 1/-1;
     height: 270px
   }
 
-  .n7x-arcade .arcade-feature:first-child .arcade-feature-title {
+  .q2ff352f9bbd5153b5a .q921bc84267c79a9e21:first-child .q59902aeaa3dea4c952 {
     font-size: 58px
   }
 
-  .n7x-arcade .arcade-feature-title {
+  .q2ff352f9bbd5153b5a .q59902aeaa3dea4c952 {
     font-size: 27px
   }
 
-  .n7x-arcade .arcade-feature-label {
+  .q2ff352f9bbd5153b5a .qe2f9e96bc14134b6e3 {
     font-size: 8px;
     letter-spacing: .1em
   }
 
-  .n7x-arcade .arcade-feature-number {
+  .q2ff352f9bbd5153b5a .q71ceb60c520583eea5 {
     top: 14px;
     left: 16px
   }
 
-  .n7x-arcade .arcade-collection {
+  .q2ff352f9bbd5153b5a .qce251c91c94209c864 {
     align-items: stretch;
     flex-direction: column;
     gap: 16px
   }
 
-  .n7x-arcade .catalog-tools {
+  .q2ff352f9bbd5153b5a .catalog-tools {
     width: 100%
   }
 
-  .n7x-arcade .arcade-collection h2 {
+  .q2ff352f9bbd5153b5a .qce251c91c94209c864 h2 {
     font-size: 21px
   }
 
-  .n7x-arcade .q1823ef120d6d {
+  .q2ff352f9bbd5153b5a .q1823ef120d6d {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px 12px
   }
 
-  .n7x-arcade .q482f08e91ee0 .qf9ea5fbfc68e {
+  .q2ff352f9bbd5153b5a .q482f08e91ee0 .qf9ea5fbfc68e {
     font-size: 12px;
     padding-top: 9px
   }
 }
 
 @media (max-width:420px) {
-  .n7x-arcade .q1823ef120d6d {
+  .q2ff352f9bbd5153b5a .q1823ef120d6d {
     grid-template-columns: repeat(2, minmax(0, 1fr))
   }
 
-  .n7x-arcade .arcade-feature-copy {
+  .q2ff352f9bbd5153b5a .qfcfbd9143ffb25e94d {
     inset-inline: 14px
   }
 
-  .n7x-arcade .arcade-feature-title {
+  .q2ff352f9bbd5153b5a .q59902aeaa3dea4c952 {
     font-size: 24px
   }
 }
 
 @media (prefers-reduced-motion:reduce) {
 
-  .n7x-arcade *,
-  .n7x-arcade ::after,
-  .n7x-arcade ::before {
+  .q2ff352f9bbd5153b5a *,
+  .q2ff352f9bbd5153b5a ::after,
+  .q2ff352f9bbd5153b5a ::before {
     transition: none !important;
     animation: none !important;
     scroll-behavior: auto !important
   }
 
-  .n7x-arcade .arcade-feature:hover,
-  .n7x-arcade .arcade-feature:hover .qaddd0d3ae838 img,
-  .n7x-arcade .q482f08e91ee0:hover,
-  .n7x-arcade .q482f08e91ee0:hover .qaddd0d3ae838 img {
+  .q2ff352f9bbd5153b5a .q482f08e91ee0:hover,
+  .q2ff352f9bbd5153b5a .q482f08e91ee0:hover .qaddd0d3ae838 img,
+  .q2ff352f9bbd5153b5a .q921bc84267c79a9e21:hover,
+  .q2ff352f9bbd5153b5a .q921bc84267c79a9e21:hover .qaddd0d3ae838 img {
     transform: none
   }
 }

@@ -1,14 +1,14 @@
 export function supportsConversationVoice(
-  __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96,
+  __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
 ) {
   return (
-    !!__36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96?.outputModalities?.includes(
+    !!__af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06?.["\u006f\u0075\u0074\u0070\u0075\u0074\u004d\u006f\u0064\u0061\u006c\u0069\u0074\u0069\u0065\u0073"]?.["\u0069\u006e\u0063\u006c\u0075\u0064\u0065\u0073"](
       "\u0061\u0075\u0064\u0069\u006f",
     ) &&
-    !/(?:^|[\/ _-])(lyria|musicgen|suno|udio)(?:[\/ _-]|$)/i.test(
+    !/(?:^|[\/ _-])(lyria|musicgen|suno|udio)(?:[\/ _-]|$)/i["\u0074\u0065\u0073\u0074"](
       String(
-        __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.id ||
-          __36f5e6ef47df95b66bef1238924acdec148863ee52a72d004a636e896f7d8b96.model ||
+        __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06["\u0069\u0064"] ||
+          __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06["\u006d\u006f\u0064\u0065\u006c"] ||
           "",
       ),
     )

@@ -31,7 +31,7 @@
   border-color: rgba(var(--accent-rgb), .65)
 }
 
-.watch-player .watch-controls {
+.q38f5b33c1217c5aab6 .watch-controls {
   grid-template-columns: 42px minmax(0, 1fr) repeat(4, 42px)
 }
 
@@ -617,7 +617,7 @@ body.theme-fresh {
   margin: 45px auto 0
 }
 
-.watch-player {
+.q38f5b33c1217c5aab6 {
   position: relative;
   aspect-ratio: 16/9;
   overflow: hidden;
@@ -627,8 +627,8 @@ body.theme-fresh {
   box-shadow: 0 35px 90px rgba(0, 0, 0, .45)
 }
 
-.player-mount,
-.player-mount iframe {
+.qbb8c6fa936ea4909a2,
+.qbb8c6fa936ea4909a2 iframe {
   position: absolute;
   z-index: 1;
   inset: 0;
@@ -637,7 +637,7 @@ body.theme-fresh {
   border: 0
 }
 
-.player-loading {
+.qe09c94d8fd27a84a8b {
   position: absolute;
   z-index: 3;
   inset: 0;
@@ -649,7 +649,7 @@ body.theme-fresh {
   color: #a0a1a7
 }
 
-.player-loading span,
+.qe09c94d8fd27a84a8b span,
 .short-loading span {
   width: 42px;
   height: 42px;
@@ -659,7 +659,7 @@ body.theme-fresh {
   animation: .85s linear infinite spin
 }
 
-.player-loading strong {
+.qe09c94d8fd27a84a8b strong {
   font-size: 12px;
   font-weight: 400
 }
@@ -670,8 +670,8 @@ body.theme-fresh {
   }
 }
 
-.center-play,
-.short-center-play {
+.qe503c6e4539fbdeb84,
+.qfb4d0c08605533e31b {
   position: absolute;
   z-index: 4;
   left: 50%;
@@ -688,8 +688,8 @@ body.theme-fresh {
   cursor: pointer
 }
 
-.center-play svg,
-.short-center-play svg {
+.qe503c6e4539fbdeb84 svg,
+.qfb4d0c08605533e31b svg {
   width: 26px;
   height: 26px
 }
@@ -1075,7 +1075,7 @@ body[data-tube-view=shorts] .notice {
   container-type: size
 }
 
-.short-player-group {
+.qe98c8a9620bc290d75 {
   --short-height: min(calc(100cqh - 52px), calc((100cqw - 72px)*16/9), 860px);
   display: flex;
   align-items: center;
@@ -1408,7 +1408,7 @@ body[data-tube-view=shorts] .notice {
     font-size: 12px
   }
 
-  .short-player-group {
+  .qe98c8a9620bc290d75 {
     gap: 12px;
     --short-height: min(calc(100cqh - 52px), calc((100cqw - 60px)*16/9))
   }
@@ -1565,7 +1565,7 @@ body[data-tube-view=shorts] .notice {
   stroke-linecap: round
 }
 
-.player-loading strong {
+.qe09c94d8fd27a84a8b strong {
   max-width: calc(100% - 32px);
   text-align: center
 }
@@ -1581,13 +1581,13 @@ body[data-tube-view=shorts] .notice {
   transition: opacity .2s
 }
 
-.watch-player.controls-idle .mobile-seek-controls,
-.watch-player.controls-idle .watch-controls {
+.q38f5b33c1217c5aab6.controls-idle .mobile-seek-controls,
+.q38f5b33c1217c5aab6.controls-idle .watch-controls {
   opacity: 0;
   pointer-events: none
 }
 
-.watch-player.controls-idle {
+.q38f5b33c1217c5aab6.controls-idle {
   cursor: none
 }
 
@@ -1628,7 +1628,7 @@ body[data-tube-view=shorts] .notice {
   user-select: none
 }
 
-.watch-player:has(iframe) .watch-gesture {
+.q38f5b33c1217c5aab6:has(iframe) .watch-gesture {
   top: 50px
 }
 
@@ -1636,7 +1636,7 @@ body[data-tube-view=shorts] .notice {
   pointer-events: none
 }
 
-.watch-player.mini-player {
+.q38f5b33c1217c5aab6.q4dfd31942171041347 {
   position: fixed;
   right: 16px;
   bottom: 16px;
@@ -1685,7 +1685,7 @@ body[data-tube-view=shorts] .notice {
   font-size: 14px
 }
 
-.watch-player>.center-play {
+.q38f5b33c1217c5aab6>.qe503c6e4539fbdeb84 {
   pointer-events: none
 }
 
@@ -1747,11 +1747,11 @@ body[data-tube-view=shorts] .notice {
   }
 }
 
-.watch-player.invidious-player .center-play,
-.watch-player.invidious-player .mobile-seek-controls,
-.watch-player.invidious-player .watch-controls,
-.watch-player.invidious-player .watch-gesture,
-.watch-player.invidious-player .watch-speed-indicator {
+.q38f5b33c1217c5aab6.q290d40cf511d6dd432 .mobile-seek-controls,
+.q38f5b33c1217c5aab6.q290d40cf511d6dd432 .qe503c6e4539fbdeb84,
+.q38f5b33c1217c5aab6.q290d40cf511d6dd432 .watch-controls,
+.q38f5b33c1217c5aab6.q290d40cf511d6dd432 .watch-gesture,
+.q38f5b33c1217c5aab6.q290d40cf511d6dd432 .watch-speed-indicator {
   display: none
 }
 
@@ -1786,13 +1786,13 @@ body[data-tube-view=shorts] .notice {
   color: var(--muted)
 }
 
-.short-card.invidious-player .short-actions,
-.short-card.invidious-player .short-center-play,
-.short-card.invidious-player .short-progress {
+.short-card.q290d40cf511d6dd432 .qfb4d0c08605533e31b,
+.short-card.q290d40cf511d6dd432 .short-actions,
+.short-card.q290d40cf511d6dd432 .short-progress {
   display: none
 }
 
-.short-card.invidious-player iframe {
+.short-card.q290d40cf511d6dd432 iframe {
   pointer-events: auto
 }
 
@@ -1804,7 +1804,7 @@ body[data-tube-view=shorts] .notice {
     align-items: center
   }
 
-  .short-player-group {
+  .qe98c8a9620bc290d75 {
     --short-height: min(calc(100cqh - 52px), calc((100cqw - 190px)*16/9));
     gap: 14px
   }
