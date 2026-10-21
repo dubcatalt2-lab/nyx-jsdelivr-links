@@ -1,396 +1,169 @@
-export function measureTransport(
-  __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-  __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-) {
-  const __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287 = (
-      __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-      __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287 = 0,
-    ) => {
+export function measureTransport(e, t) {
+  const n = (e, n = 0) => {
       try {
-        __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447(
-          __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-          __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287,
-        );
+        t(e, n);
       } catch {}
     },
-    __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb = (
-      __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-      __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-    ) => {
-      const __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb = ((
-        __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-      ) =>
-        "\u0073\u0074\u0072\u0069\u006e\u0067" == typeof __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06
-          ? new TextEncoder()["\u0065\u006e\u0063\u006f\u0064\u0065"](
-              __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-            )["\u0062\u0079\u0074\u0065\u004c\u0065\u006e\u0067\u0074\u0068"]
-          : (__af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06?.["\u0062\u0079\u0074\u0065\u004c\u0065\u006e\u0067\u0074\u0068"] ??
-            __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06?.["\u0073\u0069\u007a\u0065"] ??
-            0))(__ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447);
-      __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb &&
-        __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287(
-          __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-          __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb,
-        );
+    r = (e, t) => {
+      const r = ((e) =>
+        "\u0073\u0074\u0072\u0069\u006e\u0067" == typeof e
+          ? new TextEncoder()["\u0065\u006e\u0063\u006f\u0064\u0065"](e)["\u0062\u0079\u0074\u0065\u004c\u0065\u006e\u0067\u0074\u0068"]
+          : (e?.["\u0062\u0079\u0074\u0065\u004c\u0065\u006e\u0067\u0074\u0068"] ?? e?.["\u0073\u0069\u007a\u0065"] ?? 0))(t);
+      r && n(e, r);
     },
-    __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07 =
-      __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06["\u0072\u0065\u0071\u0075\u0065\u0073\u0074"]["\u0062\u0069\u006e\u0064"](
-        __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-      );
-  __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06["\u0072\u0065\u0071\u0075\u0065\u0073\u0074"] = async (
-    __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-    __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-    __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786,
-    ...__3541046e81d6b4657ecc9dd6c7fcfa5582ef7ba2a82b43a92f7a51464c50f694
-  ) => {
-    __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287("\u0073\u0074\u0061\u0072\u0074");
-    let __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a = !1;
-    const __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b = () => {
-      __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a ||
-        ((__216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a = !0),
-        __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287("\u0065\u006e\u0064"));
+    s = e["\u0072\u0065\u0071\u0075\u0065\u0073\u0074"]["\u0062\u0069\u006e\u0064"](e);
+  e["\u0072\u0065\u0071\u0075\u0065\u0073\u0074"] = async (e, t, a, ...o) => {
+    n("\u0073\u0074\u0061\u0072\u0074");
+    let c = !1;
+    const u = () => {
+      c || ((c = !0), n("\u0065\u006e\u0064"));
     };
     try {
-      let __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287 =
-        __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786;
-      __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786 instanceof ReadableStream
-        ? (__8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287 =
-            __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786["\u0070\u0069\u0070\u0065\u0054\u0068\u0072\u006f\u0075\u0067\u0068"](
-              new TransformStream({
-                transform(
-                  __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-                  __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-                ) {
-                  (__5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb(
-                    "\u0075\u0070",
-                    __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-                  ),
-                    __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447["\u0065\u006e\u0071\u0075\u0065\u0075\u0065"](
-                      __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-                    ));
-                },
-              }),
-            ))
-        : __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb(
-            "\u0075\u0070",
-            __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786,
-          );
-      const __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a =
-        await __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07(
-          __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-          __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-          __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287,
-          ...__3541046e81d6b4657ecc9dd6c7fcfa5582ef7ba2a82b43a92f7a51464c50f694,
-        );
-      if (
-        __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a["\u0062\u006f\u0064\u0079"] instanceof
-        ReadableStream
-      ) {
-        const __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06 =
-          __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a["\u0062\u006f\u0064\u0079"]["\u0067\u0065\u0074\u0052\u0065\u0061\u0064\u0065\u0072"]();
+      let n = a;
+      a instanceof ReadableStream
+        ? (n = a["\u0070\u0069\u0070\u0065\u0054\u0068\u0072\u006f\u0075\u0067\u0068"](
+            new TransformStream({
+              transform(e, t) {
+                (r("\u0075\u0070", e), t["\u0065\u006e\u0071\u0075\u0065\u0075\u0065"](e));
+              },
+            }),
+          ))
+        : r("\u0075\u0070", a);
+      const c = await s(e, t, n, ...o);
+      if (c["\u0062\u006f\u0064\u0079"] instanceof ReadableStream) {
+        const e = c["\u0062\u006f\u0064\u0079"]["\u0067\u0065\u0074\u0052\u0065\u0061\u0064\u0065\u0072"]();
         return {
-          ...__216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a,
+          ...c,
           "\u0062\u006f\u0064\u0079": new ReadableStream({
-            async pull(__ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447) {
+            async pull(t) {
               try {
-                const {
-                  "\u0076\u0061\u006c\u0075\u0065": __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287,
-                  "\u0064\u006f\u006e\u0065": __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07,
-                } = await __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06["\u0072\u0065\u0061\u0064"]();
-                __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07
-                  ? (__f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b(),
-                    __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06["\u0072\u0065\u006c\u0065\u0061\u0073\u0065\u004c\u006f\u0063\u006b"](),
-                    __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447["\u0063\u006c\u006f\u0073\u0065"]())
-                  : (__5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb(
-                      "\u0064\u006f\u0077\u006e",
-                      __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287,
-                    ),
-                    __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447["\u0065\u006e\u0071\u0075\u0065\u0075\u0065"](
-                      __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287,
-                    ));
-              } catch (__8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287) {
-                (__f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b(),
-                  __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447["\u0065\u0072\u0072\u006f\u0072"](
-                    __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287,
-                  ));
+                const { "\u0076\u0061\u006c\u0075\u0065": n, "\u0064\u006f\u006e\u0065": s } = await e["\u0072\u0065\u0061\u0064"]();
+                s ? (u(), e["\u0072\u0065\u006c\u0065\u0061\u0073\u0065\u004c\u006f\u0063\u006b"](), t["\u0063\u006c\u006f\u0073\u0065"]()) : (r("\u0064\u006f\u0077\u006e", n), t["\u0065\u006e\u0071\u0075\u0065\u0075\u0065"](n));
+              } catch (n) {
+                (u(), t["\u0065\u0072\u0072\u006f\u0072"](n));
               }
             },
-            async cancel(__ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447) {
+            async cancel(t) {
               try {
-                await __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06["\u0063\u0061\u006e\u0063\u0065\u006c"](
-                  __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-                );
+                await e["\u0063\u0061\u006e\u0063\u0065\u006c"](t);
               } finally {
-                (__f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b(),
-                  __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06["\u0072\u0065\u006c\u0065\u0061\u0073\u0065\u004c\u006f\u0063\u006b"]());
+                (u(), e["\u0072\u0065\u006c\u0065\u0061\u0073\u0065\u004c\u006f\u0063\u006b"]());
               }
             },
           }),
         };
       }
-      return (
-        __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb(
-          "\u0064\u006f\u0077\u006e",
-          __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a["\u0062\u006f\u0064\u0079"],
-        ),
-        __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b(),
-        __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a
-      );
-    } catch (__033be3cb098fe0f151bddfa88c939b390586bc160f4a13b2f2052ef590035c67) {
-      throw (
-        __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b(),
-        __033be3cb098fe0f151bddfa88c939b390586bc160f4a13b2f2052ef590035c67
-      );
+      return (r("\u0064\u006f\u0077\u006e", c["\u0062\u006f\u0064\u0079"]), u(), c);
+    } catch (i) {
+      throw (u(), i);
     }
   };
-  const __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786 =
-    __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06["\u0063\u006f\u006e\u006e\u0065\u0063\u0074"]?.["\u0062\u0069\u006e\u0064"](
-      __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-    );
+  const a = e["\u0063\u006f\u006e\u006e\u0065\u0063\u0074"]?.["\u0062\u0069\u006e\u0064"](e);
   return (
-    __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786 &&
-      (__af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06["\u0063\u006f\u006e\u006e\u0065\u0063\u0074"] = (
-        __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-        __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-        __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287,
-        __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07,
-        __3541046e81d6b4657ecc9dd6c7fcfa5582ef7ba2a82b43a92f7a51464c50f694,
-        ...__216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a
-      ) => {
-        const __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b =
-          __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786(
-            __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-            __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-            __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287,
-            __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07,
-            (...__af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06) => {
-              (__5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb(
-                "\u0064\u006f\u0077\u006e",
-                __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06[0],
-              ),
-                __3541046e81d6b4657ecc9dd6c7fcfa5582ef7ba2a82b43a92f7a51464c50f694?.(
-                  ...__af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-                ));
-            },
-            ...__216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a,
-          );
-        if (
-          Array["\u0069\u0073\u0041\u0072\u0072\u0061\u0079"](__f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b) &&
-          "\u0066\u0075\u006e\u0063\u0074\u0069\u006f\u006e" == typeof __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b[0]
-        ) {
-          const __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06 =
-            __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b[0];
-          __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b[0] = (
-            ...__ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447
-          ) => (
-            __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb(
-              "\u0075\u0070",
-              __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447[0],
-            ),
-            __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06(
-              ...__ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-            )
-          );
+    a &&
+      (e["\u0063\u006f\u006e\u006e\u0065\u0063\u0074"] = (e, t, n, s, o, ...c) => {
+        const u = a(
+          e,
+          t,
+          n,
+          s,
+          (...e) => {
+            (r("\u0064\u006f\u0077\u006e", e[0]), o?.(...e));
+          },
+          ...c,
+        );
+        if (Array["\u0069\u0073\u0041\u0072\u0072\u0061\u0079"](u) && "\u0066\u0075\u006e\u0063\u0074\u0069\u006f\u006e" == typeof u[0]) {
+          const e = u[0];
+          u[0] = (...t) => (r("\u0075\u0070", t[0]), e(...t));
         }
-        return __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b;
+        return u;
       }),
-    __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06
+    e
   );
 }
 
-export function measureFetch(
-  __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-  __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-) {
-  const __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287 = measureTransport(
+export function measureFetch(e, t) {
+  const n = measureTransport(
     {
-      async request(
-        __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-        __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287,
-        __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb,
-        __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07,
-      ) {
-        const __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786 =
-          await __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06(
-            __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-            __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07,
-          );
+      async request(t, n, r, s) {
+        const a = await e(t, s);
         return {
-          "\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065": __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786,
-          "\u0062\u006f\u0064\u0079": __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786["\u0062\u006f\u0064\u0079"],
+          "\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065": a,
+          "\u0062\u006f\u0064\u0079": a["\u0062\u006f\u0064\u0079"],
         };
       },
     },
-    __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
+    t,
   );
-  return async (
-    __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-    __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-  ) => {
-    const {
-      "\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065": __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb,
-      "\u0062\u006f\u0064\u0079": __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07,
-    } = await __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287["\u0072\u0065\u0071\u0075\u0065\u0073\u0074"](
-      __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-      __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447?.["\u006d\u0065\u0074\u0068\u006f\u0064"],
-      __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447?.["\u0062\u006f\u0064\u0079"],
-      __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-    );
-    return __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb["\u0062\u006f\u0064\u0079"]
-      ? new Response(__d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07, {
-          "\u0073\u0074\u0061\u0074\u0075\u0073": __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb["\u0073\u0074\u0061\u0074\u0075\u0073"],
-          "\u0073\u0074\u0061\u0074\u0075\u0073\u0054\u0065\u0078\u0074": __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb["\u0073\u0074\u0061\u0074\u0075\u0073\u0054\u0065\u0078\u0074"],
-          "\u0068\u0065\u0061\u0064\u0065\u0072\u0073": __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb["\u0068\u0065\u0061\u0064\u0065\u0072\u0073"],
+  return async (e, t) => {
+    const { "\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065": r, "\u0062\u006f\u0064\u0079": s } = await n["\u0072\u0065\u0071\u0075\u0065\u0073\u0074"](e, t?.["\u006d\u0065\u0074\u0068\u006f\u0064"], t?.["\u0062\u006f\u0064\u0079"], t);
+    return r["\u0062\u006f\u0064\u0079"]
+      ? new Response(s, {
+          "\u0073\u0074\u0061\u0074\u0075\u0073": r["\u0073\u0074\u0061\u0074\u0075\u0073"],
+          "\u0073\u0074\u0061\u0074\u0075\u0073\u0054\u0065\u0078\u0074": r["\u0073\u0074\u0061\u0074\u0075\u0073\u0054\u0065\u0078\u0074"],
+          "\u0068\u0065\u0061\u0064\u0065\u0072\u0073": r["\u0068\u0065\u0061\u0064\u0065\u0072\u0073"],
         })
-      : __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb;
+      : r;
   };
 }
 
-export function trafficMeter({
-  "\u006e\u006f\u0077": __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06 = () => performance["\u006e\u006f\u0077"](),
-} = {}) {
-  let __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447 = 0,
-    __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287 = 0,
-    __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb = 0,
-    __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07 = 0,
-    __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786 = 0,
-    __3541046e81d6b4657ecc9dd6c7fcfa5582ef7ba2a82b43a92f7a51464c50f694 = 0,
-    __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a = 0,
-    __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b =
-      __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06(),
-    __033be3cb098fe0f151bddfa88c939b390586bc160f4a13b2f2052ef590035c67 =
-      __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b;
-  const __26715b86f95665f2925fa9558178a1f413ed03c5e3fd701661953abe966bf357 = Object["\u0066\u0072\u006f\u006d\u0045\u006e\u0074\u0072\u0069\u0065\u0073"](
-      ["\u0074\u0072\u0061\u0066\u0066\u0069\u0063", "\u0072\u0065\u0071\u0075\u0065\u0073\u0074\u0073", "\u0064\u0061\u0074\u0061", "\u0070\u0072\u006f\u0063\u0065\u0073\u0073\u0069\u006e\u0067"]["\u006d\u0061\u0070"](
-        (__af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06) => [
-          __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-          Array(45)["\u0066\u0069\u006c\u006c"](0),
-        ],
-      ),
+export function trafficMeter({ "\u006e\u006f\u0077": e = () => performance["\u006e\u006f\u0077"]() } = {}) {
+  let t = 0,
+    n = 0,
+    r = 0,
+    s = 0,
+    a = 0,
+    o = 0,
+    c = 0,
+    u = e(),
+    i = u;
+  const d = Object["\u0066\u0072\u006f\u006d\u0045\u006e\u0074\u0072\u0069\u0065\u0073"](
+      ["\u0074\u0072\u0061\u0066\u0066\u0069\u0063", "\u0072\u0065\u0071\u0075\u0065\u0073\u0074\u0073", "\u0064\u0061\u0074\u0061", "\u0070\u0072\u006f\u0063\u0065\u0073\u0073\u0069\u006e\u0067"]["\u006d\u0061\u0070"]((e) => [e, Array(45)["\u0066\u0069\u006c\u006c"](0)]),
     ),
-    __adf76c9746048c7bb7bd11a590a5eae07ad452c7f4efafe058b3bb642c8c459c = (
-      __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-    ) => {
-      (__3541046e81d6b4657ecc9dd6c7fcfa5582ef7ba2a82b43a92f7a51464c50f694 &&
-        (__216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a += Math["\u006d\u0061\u0078"](
-          0,
-          __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06 -
-            __033be3cb098fe0f151bddfa88c939b390586bc160f4a13b2f2052ef590035c67,
-        )),
-        (__033be3cb098fe0f151bddfa88c939b390586bc160f4a13b2f2052ef590035c67 =
-          __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06));
+    p = (e) => {
+      (o && (c += Math["\u006d\u0061\u0078"](0, e - i)), (i = e));
     };
   return {
-    add(
-      __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a,
-      __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b = 0,
-    ) {
-      if (
-        (__adf76c9746048c7bb7bd11a590a5eae07ad452c7f4efafe058b3bb642c8c459c(
-          __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06(),
-        ),
-        "\u0073\u0074\u0061\u0072\u0074" === __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a)
-      )
-        return (
-          __3541046e81d6b4657ecc9dd6c7fcfa5582ef7ba2a82b43a92f7a51464c50f694++,
-          __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786++,
-          void __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07++
-        );
-      "\u0065\u006e\u0064" !== __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a
-        ? !["\u0075\u0070", "\u0064\u006f\u0077\u006e"]["\u0069\u006e\u0063\u006c\u0075\u0064\u0065\u0073"](
-            __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a,
-          ) ||
-          !Number["\u0069\u0073\u0046\u0069\u006e\u0069\u0074\u0065"](__f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b) ||
-          __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b < 0 ||
-          ("\u0075\u0070" === __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a
-            ? (__8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287 +=
-                __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b)
-            : (__ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447 +=
-                __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b),
-          (__5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb +=
-            __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b))
-        : (__3541046e81d6b4657ecc9dd6c7fcfa5582ef7ba2a82b43a92f7a51464c50f694 = Math["\u006d\u0061\u0078"](
-            0,
-            __3541046e81d6b4657ecc9dd6c7fcfa5582ef7ba2a82b43a92f7a51464c50f694 - 1,
-          ));
+    add(c, u = 0) {
+      if ((p(e()), "\u0073\u0074\u0061\u0072\u0074" === c)) return (o++, a++, void s++);
+      "\u0065\u006e\u0064" !== c
+        ? !["\u0075\u0070", "\u0064\u006f\u0077\u006e"]["\u0069\u006e\u0063\u006c\u0075\u0064\u0065\u0073"](c) ||
+          !Number["\u0069\u0073\u0046\u0069\u006e\u0069\u0074\u0065"](u) ||
+          u < 0 ||
+          ("\u0075\u0070" === c ? (n += u) : (t += u), (r += u))
+        : (o = Math["\u006d\u0061\u0078"](0, o - 1));
     },
     sample() {
-      const __033be3cb098fe0f151bddfa88c939b390586bc160f4a13b2f2052ef590035c67 =
-        __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06();
-      __adf76c9746048c7bb7bd11a590a5eae07ad452c7f4efafe058b3bb642c8c459c(
-        __033be3cb098fe0f151bddfa88c939b390586bc160f4a13b2f2052ef590035c67,
-      );
-      const __0b45634ebf8cea54a7a1ecee89b61e5333b43e09f176281bd633f1bc69371da9 = Math["\u006d\u0061\u0078"](
-          1,
-          __033be3cb098fe0f151bddfa88c939b390586bc160f4a13b2f2052ef590035c67 -
-            __f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b,
-        ),
-        __8fdf809ba9366e0c52007bd3016fbd32705f80dfa0a2be211bff9e131915f6a7 =
-          __0b45634ebf8cea54a7a1ecee89b61e5333b43e09f176281bd633f1bc69371da9 / 1e3,
-        __8950d5e25292753861ead9f96cf67b0e466a2a69dbb2fc5313965e010c4c75f9 =
-          (8 * __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447) /
-          __8fdf809ba9366e0c52007bd3016fbd32705f80dfa0a2be211bff9e131915f6a7 /
-          1e6,
-        __82051c941c2195a71c5786b9e4b84d2376461e91b851f8820affba6afe4ad7df =
-          (8 * __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287) /
-          __8fdf809ba9366e0c52007bd3016fbd32705f80dfa0a2be211bff9e131915f6a7 /
-          1e6,
-        __c0dafce6ecb2df234b619bb3b7b898b0197294865ae7c5f03e387f515c2150ac =
-          __8950d5e25292753861ead9f96cf67b0e466a2a69dbb2fc5313965e010c4c75f9 +
-          __82051c941c2195a71c5786b9e4b84d2376461e91b851f8820affba6afe4ad7df,
-        __197d37ca45c6b452007a65fb02c33e605f305d0ab7f42bf8de6fc39c4108879e = Math["\u006d\u0069\u006e"](
-          100,
-          (__216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a /
-            __0b45634ebf8cea54a7a1ecee89b61e5333b43e09f176281bd633f1bc69371da9) *
-            100,
-        ),
-        __5ff5445d609ba7451b05874d91aa51ebe49a3d6fab0d432b4d287b1409aca7c3 =
-          __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786 /
-          __8fdf809ba9366e0c52007bd3016fbd32705f80dfa0a2be211bff9e131915f6a7;
-      for (const [
-        __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-        __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-      ] of Object["\u0065\u006e\u0074\u0072\u0069\u0065\u0073"]({
-        "\u0074\u0072\u0061\u0066\u0066\u0069\u0063": __c0dafce6ecb2df234b619bb3b7b898b0197294865ae7c5f03e387f515c2150ac,
-        "\u0072\u0065\u0071\u0075\u0065\u0073\u0074\u0073": __5ff5445d609ba7451b05874d91aa51ebe49a3d6fab0d432b4d287b1409aca7c3,
-        "\u0064\u0061\u0074\u0061": __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb,
-        "\u0070\u0072\u006f\u0063\u0065\u0073\u0073\u0069\u006e\u0067": __197d37ca45c6b452007a65fb02c33e605f305d0ab7f42bf8de6fc39c4108879e,
+      const i = e();
+      p(i);
+      const f = Math["\u006d\u0061\u0078"](1, i - u),
+        y = f / 1e3,
+        l = (8 * t) / y / 1e6,
+        m = (8 * n) / y / 1e6,
+        b = l + m,
+        h = Math["\u006d\u0069\u006e"](100, (c / f) * 100),
+        w = a / y;
+      for (const [e, t] of Object["\u0065\u006e\u0074\u0072\u0069\u0065\u0073"]({
+        "\u0074\u0072\u0061\u0066\u0066\u0069\u0063": b,
+        "\u0072\u0065\u0071\u0075\u0065\u0073\u0074\u0073": w,
+        "\u0064\u0061\u0074\u0061": r,
+        "\u0070\u0072\u006f\u0063\u0065\u0073\u0073\u0069\u006e\u0067": h,
       }))
-        (__26715b86f95665f2925fa9558178a1f413ed03c5e3fd701661953abe966bf357[
-          __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06
-        ]["\u0070\u0075\u0073\u0068"](__ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447),
-          __26715b86f95665f2925fa9558178a1f413ed03c5e3fd701661953abe966bf357[
-            __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06
-          ]["\u0073\u0068\u0069\u0066\u0074"]());
+        (d[e]["\u0070\u0075\u0073\u0068"](t), d[e]["\u0073\u0068\u0069\u0066\u0074"]());
       return (
-        (__f7668be02ef98e4ed3153c0cdb9f8a56c8cae0b4fc64f85a0f104385f21d5a2b =
-          __033be3cb098fe0f151bddfa88c939b390586bc160f4a13b2f2052ef590035c67),
-        (__ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447 =
-          __8ecaf8ed32e520d738b1d7097912c90f8337fc00854bab1740b148c5fb3ed287 =
-          __a07a6a282488059bb611b797f01bd09ea03be2642150fffa0d62900f46591786 =
-          __216983d896836dc0ea3169fe98779663c2e448070018595244c70c156475105a =
-            0),
+        (u = i),
+        (t = n = a = c = 0),
         {
-          "\u006d\u0062\u0070\u0073": __c0dafce6ecb2df234b619bb3b7b898b0197294865ae7c5f03e387f515c2150ac,
-          "\u0064\u006f\u0077\u006e\u006c\u006f\u0061\u0064": __8950d5e25292753861ead9f96cf67b0e466a2a69dbb2fc5313965e010c4c75f9,
-          "\u0075\u0070\u006c\u006f\u0061\u0064": __82051c941c2195a71c5786b9e4b84d2376461e91b851f8820affba6afe4ad7df,
-          "\u0070\u0072\u006f\u0063\u0065\u0073\u0073\u0069\u006e\u0067": __197d37ca45c6b452007a65fb02c33e605f305d0ab7f42bf8de6fc39c4108879e,
-          "\u0072\u0070\u0073": __5ff5445d609ba7451b05874d91aa51ebe49a3d6fab0d432b4d287b1409aca7c3,
-          "\u0061\u0063\u0074\u0069\u0076\u0065": __3541046e81d6b4657ecc9dd6c7fcfa5582ef7ba2a82b43a92f7a51464c50f694,
-          "\u0074\u006f\u0074\u0061\u006c\u0042\u0079\u0074\u0065\u0073": __5d0c0f9e96b2f1b8288b1c6c9138a0633badc8f67d240b3387b105c3cbe135fb,
-          "\u0074\u006f\u0074\u0061\u006c\u0052\u0065\u0071\u0075\u0065\u0073\u0074\u0073": __d5d62aa159990c71f58f47c52fb867acb7e62d8dee1db29a2b8551b615d79d07,
-          "\u0073\u0061\u006d\u0070\u006c\u0065\u0073": [...__26715b86f95665f2925fa9558178a1f413ed03c5e3fd701661953abe966bf357["\u0074\u0072\u0061\u0066\u0066\u0069\u0063"]],
-          "\u0068\u0069\u0073\u0074\u006f\u0072\u0079": Object["\u0066\u0072\u006f\u006d\u0045\u006e\u0074\u0072\u0069\u0065\u0073"](
-            Object["\u0065\u006e\u0074\u0072\u0069\u0065\u0073"](__26715b86f95665f2925fa9558178a1f413ed03c5e3fd701661953abe966bf357)["\u006d\u0061\u0070"](
-              ([
-                __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-                __ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447,
-              ]) => [
-                __af29b979bab80be80228533d7f7a6108b898ce7204bee96f1c31dbb8933bac06,
-                [...__ce00a2af57126faa04f9124c1a23db068a6318e688060671bdd7322004bb8447],
-              ],
-            ),
-          ),
+          "\u006d\u0062\u0070\u0073": b,
+          "\u0064\u006f\u0077\u006e\u006c\u006f\u0061\u0064": l,
+          "\u0075\u0070\u006c\u006f\u0061\u0064": m,
+          "\u0070\u0072\u006f\u0063\u0065\u0073\u0073\u0069\u006e\u0067": h,
+          "\u0072\u0070\u0073": w,
+          "\u0061\u0063\u0074\u0069\u0076\u0065": o,
+          "\u0074\u006f\u0074\u0061\u006c\u0042\u0079\u0074\u0065\u0073": r,
+          "\u0074\u006f\u0074\u0061\u006c\u0052\u0065\u0071\u0075\u0065\u0073\u0074\u0073": s,
+          "\u0073\u0061\u006d\u0070\u006c\u0065\u0073": [...d["\u0074\u0072\u0061\u0066\u0066\u0069\u0063"]],
+          "\u0068\u0069\u0073\u0074\u006f\u0072\u0079": Object["\u0066\u0072\u006f\u006d\u0045\u006e\u0074\u0072\u0069\u0065\u0073"](Object["\u0065\u006e\u0074\u0072\u0069\u0065\u0073"](d)["\u006d\u0061\u0070"](([e, t]) => [e, [...t]])),
         }
       );
     },

@@ -12,6 +12,6 @@
 })().catch(() => {
   const I = document.createElement("p");
   I.setAttribute("role", "alert");
-  I.textContent = "Saved browser data could not be updated. Close other site tabs and reload.";
+  I.textContent = "This page could not be loaded. Please reload to try again.";
   document.body.prepend(I);
 });
