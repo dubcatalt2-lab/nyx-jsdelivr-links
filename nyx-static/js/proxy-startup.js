@@ -1,5 +1,5 @@
 const Re = new Map(),
-  Pu = new Set();
+  ef = new Set();
 
 "\u0075\u006e\u0064\u0065\u0066\u0069\u006e\u0065\u0064" != typeof navigator &&
   navigator["\u0073\u0065\u0072\u0076\u0069\u0063\u0065\u0057\u006f\u0072\u006b\u0065\u0072"] &&
@@ -11,7 +11,7 @@ const Re = new Map(),
       r instanceof ServiceWorker &&
       ["\u0061\u0063\u0074\u0069\u0076\u0061\u0074\u0069\u006e\u0067", "\u0061\u0063\u0074\u0069\u0076\u0061\u0074\u0065\u0064"]["\u0069\u006e\u0063\u006c\u0075\u0064\u0065\u0073"](r["\u0073\u0074\u0061\u0074\u0065"])
     )
-      for (const o of Pu) {
+      for (const o of ef) {
         const e = o["\u0073\u0065\u0072\u0076\u0069\u0063\u0065\u0057\u006f\u0072\u006b\u0065\u0072\u0043\u006f\u006e\u0074\u0072\u006f\u006c\u006c\u0065\u0072"];
         if (e && e !== r)
           try {
@@ -24,7 +24,7 @@ const Re = new Map(),
   });
 
 export function trackProxyController(e) {
-  return (Pu["\u0061\u0064\u0064"](e), () => Pu["\u0064\u0065\u006c\u0065\u0074\u0065"](e));
+  return (ef["\u0061\u0064\u0064"](e), () => ef["\u0064\u0065\u006c\u0065\u0074\u0065"](e));
 }
 
 export function loadProxyScript(e, r, { "\u0074\u0069\u006d\u0065\u006f\u0075\u0074\u004d\u0073": o = 2e4 } = {}) {
