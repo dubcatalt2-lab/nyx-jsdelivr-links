@@ -2231,3 +2231,165 @@ html body .member-dialog [data-member-dialog-content]>.n7x-user-profile-effect {
   letter-spacing: -.5px
 }
 
+.study-927352715381422242 {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  overflow: auto;
+  padding: 20px;
+  background: #000;
+  color: var(--chat-text, #eee);
+  font-family: Arial, sans-serif
+}
+
+.study-927352715381422242[hidden] {
+  display: none
+}
+
+.study-927352715381422242 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px
+}
+
+.study-927352715381422242 h2 {
+  font-size: 20px;
+  margin: 0
+}
+
+.study-927352715381422242 p {
+  color: #b9bbc4;
+  line-height: 1.5
+}
+
+.study-927352715381422242 button,
+[data-voice-open] {
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #171717;
+  color: inherit;
+  font: inherit;
+  cursor: pointer
+}
+
+[data-voice-open] {
+  width: 100%;
+  margin: 8px 0;
+  font-size: 12px
+}
+
+.study-256626602599577685 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px
+}
+
+.study-1093655299946335719 {
+  min-width: 0;
+  border: 2px solid #333;
+  border-radius: 14px;
+  padding: 14px;
+  background: #111;
+  text-align: center
+}
+
+.study-1093655299946335719 button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 0;
+  background: 0 0;
+  overflow-wrap: anywhere
+}
+
+.study-1093655299946335719 .avatar {
+  width: 60px;
+  height: 60px
+}
+
+.study-1093655299946335719 small {
+  display: block;
+  min-height: 18px;
+  color: #b9bbc4
+}
+
+.study-1093655299946335719.study-636069461165909331 {
+  border-color: #6de6a5;
+  box-shadow: 0 0 0 2px #6de6a5
+}
+
+.study-636069461165909331 .avatar {
+  outline: #6de6a5 solid 3px;
+  outline-offset: 3px
+}
+
+.study-927352715381422242 .voice-screen-stage {
+  position: static;
+  width: 100%;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  background: #000;
+  box-shadow: none;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr))
+}
+
+.study-927352715381422242 .voice-screen-card {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.study-927352715381422242 .voice-screen-card span {
+  position: static;
+  max-width: 100%;
+  padding: 0;
+  background: 0 0;
+  font-size: 13px
+}
+
+.study-927352715381422242 .voice-screen-card video {
+  max-height: 30vh;
+  aspect-ratio: 16/9
+}
+
+.study-927352715381422242 .study-763519853311327764 {
+  grid-column: 1/-1
+}
+
+.study-927352715381422242 .study-763519853311327764 video {
+  max-height: 65vh
+}
+
+.study-927352715381422242 button:focus-visible,
+[data-voice-open]:focus-visible {
+  outline: #fff solid 2px;
+  outline-offset: 3px
+}
+
+@media(max-width:600px) {
+  .study-927352715381422242 {
+    padding: 12px
+  }
+
+  .study-256626602599577685 {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+  }
+
+  .study-927352715381422242 header {
+    align-items: flex-start
+  }
+}
+
+.study-1016943678335922404 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 20px
+}
+

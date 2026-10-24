@@ -1,0 +1,244 @@
+export function preserveTransferErrors(
+  __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+) {
+  const __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6 =
+    __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0073\u0074\u0072\u0065\u0061\u006d\u005f\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065"];
+  __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0073\u0074\u0072\u0065\u0061\u006d\u005f\u0072\u0065\u0073\u0070\u006f\u006e\u0073\u0065"] = function (
+    __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+    __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088,
+    __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72,
+    __5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc,
+  ) {
+    let __dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3;
+    const __fd84a17716948c5be0056f8c3c086b69f82afe887c0fb9e1adfe08f536a6fa9e = new Promise(
+      (__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) => {
+        __dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3 =
+          __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09;
+      },
+    );
+    return __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6["\u0063\u0061\u006c\u006c"](
+      this,
+      __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+      (__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) => {
+        const __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6 =
+          __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0067\u0065\u0074\u0052\u0065\u0061\u0064\u0065\u0072"]();
+        __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088(
+          new ReadableStream(
+            {
+              async pull(__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) {
+                try {
+                  const __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088 =
+                    await __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6["\u0072\u0065\u0061\u0064"]();
+                  if (!__854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088["\u0064\u006f\u006e\u0065"])
+                    return void __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0065\u006e\u0071\u0075\u0065\u0075\u0065"](
+                      __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088["\u0076\u0061\u006c\u0075\u0065"],
+                    );
+                  const __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72 =
+                    await __fd84a17716948c5be0056f8c3c086b69f82afe887c0fb9e1adfe08f536a6fa9e;
+                  if (
+                    -1 === __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72 ||
+                    __5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc?.["\u0061\u0062\u006f\u0072\u0074\u0065\u0064"]
+                  )
+                    throw (
+                      __5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc?.["\u0072\u0065\u0061\u0073\u006f\u006e"] ||
+                      new DOMException("\u0054\u0068\u0065\u0020\u006f\u0070\u0065\u0072\u0061\u0074\u0069\u006f\u006e\u0020\u0077\u0061\u0073\u0020\u0061\u0062\u006f\u0072\u0074\u0065\u0064\u002e", "\u0041\u0062\u006f\u0072\u0074\u0045\u0072\u0072\u006f\u0072")
+                    );
+                  if (0 !== __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72)
+                    throw new TypeError(
+                      `\u0052\u0065\u0071\u0075\u0065\u0073\u0074\u0020\u0066\u0061\u0069\u006c\u0065\u0064\u0020\u0077\u0069\u0074\u0068\u0020\u0065\u0072\u0072\u006f\u0072\u0020\u0063\u006f\u0064\u0065\u0020${__6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72}\u003a\u0020\u0069\u006e\u0063\u006f\u006d\u0070\u006c\u0065\u0074\u0065\u0020\u006c\u0069\u0062\u0063\u0075\u0072\u006c\u0020\u0074\u0072\u0061\u006e\u0073\u0066\u0065\u0072`,
+                    );
+                  __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0063\u006c\u006f\u0073\u0065"]();
+                } catch (__a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6) {
+                  __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0065\u0072\u0072\u006f\u0072"](
+                    __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6,
+                  );
+                }
+              },
+              "\u0063\u0061\u006e\u0063\u0065\u006c": (__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) =>
+                __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6["\u0063\u0061\u006e\u0063\u0065\u006c"](
+                  __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+                ),
+            },
+            { "\u0068\u0069\u0067\u0068\u0057\u0061\u0074\u0065\u0072\u004d\u0061\u0072\u006b": 0 },
+          ),
+        );
+      },
+      (__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) => {
+        (__dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3(
+          __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+        ),
+          __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72(
+            __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+          ));
+      },
+      __5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc,
+    );
+  };
+}
+export const bufferLimit = 33554432;
+const rh = (__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) =>
+    /\berror code (?:18|52|56|92)\b/i["\u0074\u0065\u0073\u0074"](
+      String(
+        __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09?.["\u006d\u0065\u0073\u0073\u0061\u0067\u0065"] ||
+          __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+      ),
+    ),
+  nh = (__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) =>
+    __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0073\u006f\u006d\u0065"](
+      ([
+        __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+        __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6,
+      ]) =>
+        "\u0063\u006f\u006e\u0074\u0065\u006e\u0074\u002d\u0074\u0079\u0070\u0065" ===
+          __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0074\u006f\u004c\u006f\u0077\u0065\u0072\u0043\u0061\u0073\u0065"]() &&
+        /^(?:(?:text|application)\/(?:x-)?(?:javascript|ecmascript)|(?:text|application)\/(?:[\w.+-]+\+)?json|text\/html|application\/xhtml\+xml)$/i["\u0074\u0065\u0073\u0074"](
+          String(__a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6)
+            ["\u0073\u0070\u006c\u0069\u0074"]("\u003b")[0]
+            ["\u0074\u0072\u0069\u006d"](),
+        ),
+    );
+async function ah(
+  __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+  __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6,
+) {
+  const __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088 =
+      __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0067\u0065\u0074\u0052\u0065\u0061\u0064\u0065\u0072"](),
+    __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72 = [];
+  let __5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc = 0;
+  const o = () => {
+    ((__a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6["\u0062\u0079\u0074\u0065\u0073"] -=
+      __5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc),
+      (__5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc = 0),
+      (__6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72["\u006c\u0065\u006e\u0067\u0074\u0068"] = 0));
+  };
+  try {
+    for (;;) {
+      const __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09 =
+        await __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088["\u0072\u0065\u0061\u0064"]();
+      if (__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0064\u006f\u006e\u0065"]) {
+        const __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09 = new Blob(
+          __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72,
+        )["\u0073\u0074\u0072\u0065\u0061\u006d"]();
+        return (o(), __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09);
+      }
+      if (
+        __5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc +
+          __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0076\u0061\u006c\u0075\u0065"]["\u0062\u0079\u0074\u0065\u004c\u0065\u006e\u0067\u0074\u0068"] >
+          16777216 ||
+        __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6["\u0062\u0079\u0074\u0065\u0073"] +
+          __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0076\u0061\u006c\u0075\u0065"]["\u0062\u0079\u0074\u0065\u004c\u0065\u006e\u0067\u0074\u0068"] >
+          33554432
+      ) {
+        let __dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3 =
+          __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0076\u0061\u006c\u0075\u0065"];
+        return new ReadableStream(
+          {
+            async pull(__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) {
+              try {
+                if (__6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72["\u006c\u0065\u006e\u0067\u0074\u0068"]) {
+                  const __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088 =
+                    __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72["\u0073\u0068\u0069\u0066\u0074"]();
+                  return (
+                    (__5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc -=
+                      __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088["\u0062\u0079\u0074\u0065\u004c\u0065\u006e\u0067\u0074\u0068"]),
+                    (__a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6["\u0062\u0079\u0074\u0065\u0073"] -=
+                      __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088["\u0062\u0079\u0074\u0065\u004c\u0065\u006e\u0067\u0074\u0068"]),
+                    void __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0065\u006e\u0071\u0075\u0065\u0075\u0065"](
+                      __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088,
+                    )
+                  );
+                }
+                if (__dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3)
+                  return (
+                    __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0065\u006e\u0071\u0075\u0065\u0075\u0065"](
+                      __dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3,
+                    ),
+                    void (__dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3 = null)
+                  );
+                const __fd84a17716948c5be0056f8c3c086b69f82afe887c0fb9e1adfe08f536a6fa9e =
+                  await __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088["\u0072\u0065\u0061\u0064"]();
+                __fd84a17716948c5be0056f8c3c086b69f82afe887c0fb9e1adfe08f536a6fa9e["\u0064\u006f\u006e\u0065"]
+                  ? __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0063\u006c\u006f\u0073\u0065"]()
+                  : __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0065\u006e\u0071\u0075\u0065\u0075\u0065"](
+                      __fd84a17716948c5be0056f8c3c086b69f82afe887c0fb9e1adfe08f536a6fa9e["\u0076\u0061\u006c\u0075\u0065"],
+                    );
+              } catch (__a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6) {
+                (o(),
+                  __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0065\u0072\u0072\u006f\u0072"](
+                    __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6,
+                  ));
+              }
+            },
+            "\u0063\u0061\u006e\u0063\u0065\u006c": (__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) => (
+              o(),
+              (__dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3 = null),
+              __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088["\u0063\u0061\u006e\u0063\u0065\u006c"](
+                __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+              )
+            ),
+          },
+          { "\u0068\u0069\u0067\u0068\u0057\u0061\u0074\u0065\u0072\u004d\u0061\u0072\u006b": 0 },
+        );
+      }
+      (__6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72["\u0070\u0075\u0073\u0068"](
+        __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0076\u0061\u006c\u0075\u0065"],
+      ),
+        (__5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc +=
+          __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0076\u0061\u006c\u0075\u0065"]["\u0062\u0079\u0074\u0065\u004c\u0065\u006e\u0067\u0074\u0068"]),
+        (__a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6["\u0062\u0079\u0074\u0065\u0073"] +=
+          __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09["\u0076\u0061\u006c\u0075\u0065"]["\u0062\u0079\u0074\u0065\u004c\u0065\u006e\u0067\u0074\u0068"]));
+    }
+  } catch (__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) {
+    throw (
+      o(),
+      __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088
+        ["\u0063\u0061\u006e\u0063\u0065\u006c"](__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09)
+        ["\u0063\u0061\u0074\u0063\u0068"](() => {}),
+      __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09
+    );
+  }
+}
+export async function requestWithTransferRetry(
+  __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09,
+  {
+    "\u006d\u0065\u0074\u0068\u006f\u0064": __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6,
+    "\u0062\u006f\u0064\u0079": __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088,
+    "\u0073\u0069\u0067\u006e\u0061\u006c": __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72,
+    "\u0062\u0075\u0064\u0067\u0065\u0074": __5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc,
+  },
+) {
+  const __dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3 =
+    /^(?:GET|HEAD)$/i["\u0074\u0065\u0073\u0074"](
+      __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6 || "\u0047\u0045\u0054",
+    ) && null == __854706466abc35714a909f367b3e8c8701748264f311f4c5455125615792d088;
+  for (
+    let __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6 = 0;
+    ;
+    __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6++
+  ) {
+    __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72?.["\u0074\u0068\u0072\u006f\u0077\u0049\u0066\u0041\u0062\u006f\u0072\u0074\u0065\u0064"]();
+    try {
+      const __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6 =
+        await __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09();
+      return __dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3 &&
+        __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6["\u0062\u006f\u0064\u0079"]?.["\u0067\u0065\u0074\u0052\u0065\u0061\u0064\u0065\u0072"] &&
+        nh(__a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6["\u0068\u0065\u0061\u0064\u0065\u0072\u0073"])
+        ? {
+            ...__a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6,
+            "\u0062\u006f\u0064\u0079": await ah(
+              __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6["\u0062\u006f\u0064\u0079"],
+              __5c34f63fd60d664be461927d481505d64376f4f3bac87f1f9fb1495449a2c3cc,
+            ),
+          }
+        : __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6;
+    } catch (__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09) {
+      if (
+        !__dd75889c29f66fc6c485dc0d4c70cbbe97837b863dc41af3fa692b9ca70b29b3 ||
+        __a92f575ca118fdd34c4d3e1ac4a9996365cf5e73e75a7d31efed084f22bf8bb6 >= 1 ||
+        __6a5b4519fdb0521f8265cbd74e967e5d706d8e963646acbd845d4f8eb03dbf72?.["\u0061\u0062\u006f\u0072\u0074\u0065\u0064"] ||
+        !rh(__ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09)
+      )
+        throw __ec4b2a719cf233e50fdcfcfd0b380e5b15b1f39f6e3ed1e478f354747c964d09;
+    }
+  }
+}
