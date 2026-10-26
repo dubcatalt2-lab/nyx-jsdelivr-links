@@ -37,7 +37,7 @@
       "\u0076\u0065\u006e\u0061\u0074\u0075\u0073\u006d\u0065\u0064\u0069\u0061\u002e\u0063\u006f\u006d",
     ]),
     e =
-      /(?:^|\/)(?:ads?|ad[-_.]?(?:loader|manager|script)|jump[_-]gamemonetize|poki-(?:master-loader|sdk))\.(?:js|mjs)(?:$|\/)/i,
+      /(?:^|\/)(?:ads?|ad[-_.]?(?:loader|manager|script)|jump[_-]gamemonetize|poki-sdk)\.(?:js|mjs)(?:$|\/)/i,
     o = /\/ad-campaigns\//i,
     a = [
       "\u002e\u0061\u0064\u0073\u0062\u0079\u0067\u006f\u006f\u0067\u006c\u0065",

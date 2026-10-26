@@ -3804,7 +3804,8 @@ body.theme-sakura .lion-ai-title span {
 .na4d232506ecd {
   position: fixed;
   inset: 0;
-  z-index: 4700;
+  z-index: 2147483647;
+  outline: 0;
   display: none;
   place-items: center;
   overflow: hidden;
