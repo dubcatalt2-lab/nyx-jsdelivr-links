@@ -1,0 +1,17 @@
+(async () => {
+  await new Promise(I => {
+    const c = () => setTimeout(I, 0);
+    if (document.readyState === "complete") c(); else window.addEventListener("load", c, {
+      once: true
+    });
+  });
+  const I = (new TextDecoder).decode(Uint8Array.from(atob([ "PCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz0iZW4iPjxoZWFkPjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij48bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29u", "dGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLGluaXRpYWwtc2NhbGU9MSI+PHRpdGxlPkFkIEhhdmVuPC90aXRsZT48c2NyaXB0IHNyYz0iL2pzL0By", "ZGJhZGJmYWQ2ZTk1ZTIyMjA4Y2MyODEyIS5qcyI+PC9zY3JpcHQ+PGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSIvYXBwcy9xNzNlOC5jc3M/", "cmV2PTBkODVjMTQ0OWE2ZmE4MDkiPjxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iLi9zdHlsZS5jc3M/cmV2PTBkODVjMTQ0OWE2ZmE4MDki", "PjxzY3JpcHQgZGVmZXI9ImRlZmVyIiBzcmM9Ii9qcy9AcjkwNjk1YTVmYmExNGNmZWYxOTQxZTBjMyEuanMiPjwvc2NyaXB0PiA8L2hlYWQ+PGJv", "ZHk+PG1haW4+IDxoZWFkZXI+PGRpdiBjbGFzcz0ibWFyayIgYXJpYS1oaWRkZW49InRydWUiPjxzdmcgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0", "aCBkPSJtMyAxMCA5LTcgOSA3djEwSDNaIi8+PHBhdGggZD0iTTggMjB2LTdoOHY3TTggOWg4Ii8+PC9zdmc+PC9kaXY+PGRpdj48cCBjbGFzcz0i", "c3R1ZHktMTAwNTM0NzY5Mjc3NDEzNzU2MyI+VEhFIFNQT05TT1IgTE9VTkdFPC9wPjxoMT5BZCBIYXZlbjwvaDE+PHAgY2xhc3M9InN0dWR5LTg2", "NjM2NzM5MzAxMjEyOTQxMSI+VGhyZWUgcGxhY2VtZW50cy4gUG9wdXBzIHN0YXkgaGVyZS48L3A+PC9kaXY+PC9oZWFkZXI+IDxzZWN0aW9uIGNs", "YXNzPSJjb250cm9scyIgYXJpYS1sYWJlbD0iQWQgY29udHJvbHMiPjxkaXY+PHN0cm9uZz5Zb3UncmUgaW4gY29udHJvbDwvc3Ryb25nPjxwIGlk", "PSJzdHVkeS01ODA3OTk3ODE1ODg5MDA3NTIiIHJvbGU9InN0YXR1cyI+T3BlbiB0aGlzIGFwcCBmcm9tIE55eCB0byBjaGVjayB5b3VyIGFkIHNl", "dHRpbmdzLjwvcD48L2Rpdj48ZGl2IGNsYXNzPSJhY3Rpb25zIj48YnV0dG9uIGlkPSJzdGFydCIgZGlzYWJsZWQ9ImRpc2FibGVkIiBhcmlhLWxh", "YmVsPSJTaG93IGFkcyI+PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIGFyaWEtaGlkZGVuPSJ0cnVlIj48cGF0aCBkPSJtOSA1IDEwIDctMTAgN1oi", "Lz48L3N2Zz5TaG93IGFkczwvYnV0dG9uPjxidXR0b24gaWQ9InN0b3AiIGRpc2FibGVkPSJkaXNhYmxlZCIgYXJpYS1sYWJlbD0iU3RvcCBhbGwg", "YWRzIj48c3ZnIHZpZXdCb3g9IjAgMCAyNCAyNCIgYXJpYS1oaWRkZW49InRydWUiPjxyZWN0IHg9IjYiIHk9IjYiIHdpZHRoPSIxMiIgaGVpZ2h0", "PSIxMiIgcng9IjIiLz48L3N2Zz5TdG9wIGFsbDwvYnV0dG9uPjwvZGl2Pjwvc2VjdGlvbj4gPHNlY3Rpb24gY2xhc3M9InN0dWR5LTMwNzI3NDE4", "ODYzODE2NDkyOCIgYXJpYS1sYWJlbD0iQWQgcGxhY2VtZW50cyI+PGFydGljbGUgY2xhc3M9IndpZGUiPjxkaXYgY2xhc3M9ImxhYmVsIj48c3Bh", "bj4wMiAvIEJBTk5FUjwvc3Bhbj48c3Bhbj40NjggJnRpbWVzOyA2MDwvc3Bhbj48L2Rpdj48ZGl2IGlkPSJiYW5uZXIiIGNsYXNzPSJzbG90Ij48", "cD5Ib3Jpem9udGFsIGJhbm5lcjwvcD48L2Rpdj48L2FydGljbGU+PGFydGljbGU+PGRpdiBjbGFzcz0ibGFiZWwiPjxzcGFuPjAzIC8gTVVMVElU", "QUc8L3NwYW4+PHNwYW4+TWl4ZWQgZm9ybWF0czwvc3Bhbj48L2Rpdj48ZGl2IGlkPSJtdWx0aXRhZyIgY2xhc3M9InNsb3QiPjxwPk1peGVkIGFk", "czwvcD48L2Rpdj48L2FydGljbGU+PGFydGljbGUgY2xhc3M9IndpZGUiPjxkaXYgY2xhc3M9ImxhYmVsIj48c3Bhbj4wNSAvIE5BVElWRTwvc3Bh", "bj48c3Bhbj5SZWNvbW1lbmRlZDwvc3Bhbj48L2Rpdj48ZGl2IGlkPSJuYXRpdmUiIGNsYXNzPSJzbG90Ij48cD5OYXRpdmUgcGxhY2VtZW50PC9w", "PjwvZGl2PjwvYXJ0aWNsZT48L3NlY3Rpb24+IDxmb290ZXI+QWRzIHN0YXkgd2l0aGluIHRoZWlyIGZyYW1lcy4gTGVhdmluZyB0aGlzIGFwcCBz", "dG9wcyBpdHMgYWQgc2Vzc2lvbi48L2Zvb3Rlcj48L21haW4+PHNjcmlwdCB0eXBlPSJtb2R1bGUiIHNyYz0iLi9AcmNjYjUxZjNiMWNmMDQ4MmNl", "NDZkNmRhZSEuanMiPjwvc2NyaXB0PjwvYm9keT48L2h0bWw+Cg==" ].join("")), I => I.charCodeAt(0)));
+  document.open();
+  document.write(I);
+  document.close();
+})().catch(() => {
+  const I = document.createElement("p");
+  I.setAttribute("role", "alert");
+  I.textContent = "This page could not be loaded. Please reload to try again.";
+  document.body.prepend(I);
+});
