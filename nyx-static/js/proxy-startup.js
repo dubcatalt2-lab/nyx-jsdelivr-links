@@ -1,4 +1,4 @@
-const Fe = new Map(),
+const Ge = new Map(),
   du = new Set();
 
 "\u0075\u006e\u0064\u0065\u0066\u0069\u006e\u0065\u0064" != typeof navigator &&
@@ -30,7 +30,7 @@ export function trackProxyController(e) {
 export function loadProxyScript(e, r, { "\u0074\u0069\u006d\u0065\u006f\u0075\u0074\u004d\u0073": o = 2e4 } = {}) {
   if (r()) return Promise["\u0072\u0065\u0073\u006f\u006c\u0076\u0065"]();
   const t = new URL(e, location["\u0068\u0072\u0065\u0066"])["\u0068\u0072\u0065\u0066"];
-  if (Fe["\u0068\u0061\u0073"](t)) return Fe["\u0067\u0065\u0074"](t);
+  if (Ge["\u0068\u0061\u0073"](t)) return Ge["\u0067\u0065\u0074"](t);
   const n = () =>
       new Promise((t, n) => {
         if (r()) return t();
@@ -59,9 +59,9 @@ export function loadProxyScript(e, r, { "\u0074\u0069\u006d\u0065\u006f\u0075\u0
         return n();
       })
       ["\u0066\u0069\u006e\u0061\u006c\u006c\u0079"](() => {
-        Fe["\u0067\u0065\u0074"](t) === i && Fe["\u0064\u0065\u006c\u0065\u0074\u0065"](t);
+        Ge["\u0067\u0065\u0074"](t) === i && Ge["\u0064\u0065\u006c\u0065\u0074\u0065"](t);
       });
-  return (Fe["\u0073\u0065\u0074"](t, i), i);
+  return (Ge["\u0073\u0065\u0074"](t, i), i);
 }
 
 export function waitForProxyController(e, r = 2e4) {

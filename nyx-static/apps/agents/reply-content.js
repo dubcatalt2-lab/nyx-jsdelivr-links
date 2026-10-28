@@ -2,18 +2,18 @@ export function renderReply(e, t) {
   window["\u004e\u0079\u0078\u004d\u0061\u0072\u006b\u0064\u006f\u0077\u006e"] ? (e["\u0069\u006e\u006e\u0065\u0072\u0048\u0054\u004d\u004c"] = window["\u004e\u0079\u0078\u004d\u0061\u0072\u006b\u0064\u006f\u0077\u006e"]["\u0072\u0065\u006e\u0064\u0065\u0072"](t)) : (e["\u0074\u0065\u0078\u0074\u0043\u006f\u006e\u0074\u0065\u006e\u0074"] = t);
 }
 
-const Fe = new WeakMap();
+const Ge = new WeakMap();
 
 export function scheduleReply(e, t, n) {
-  const o = Fe["\u0067\u0065\u0074"](e);
+  const o = Ge["\u0067\u0065\u0074"](e);
   if (o) return ((o["\u0074\u0065\u0078\u0074"] = t), void (o["\u006f\u006e\u0052\u0065\u006e\u0064\u0065\u0072"] = n));
   const r = {
     "\u0074\u0065\u0078\u0074": t,
     "\u006f\u006e\u0052\u0065\u006e\u0064\u0065\u0072": n,
   };
-  (Fe["\u0073\u0065\u0074"](e, r),
+  (Ge["\u0073\u0065\u0074"](e, r),
     requestAnimationFrame(() => {
-      (Fe["\u0064\u0065\u006c\u0065\u0074\u0065"](e), e["\u0069\u0073\u0043\u006f\u006e\u006e\u0065\u0063\u0074\u0065\u0064"] && (renderReply(e, r["\u0074\u0065\u0078\u0074"]), r["\u006f\u006e\u0052\u0065\u006e\u0064\u0065\u0072"]?.()));
+      (Ge["\u0064\u0065\u006c\u0065\u0074\u0065"](e), e["\u0069\u0073\u0043\u006f\u006e\u006e\u0065\u0063\u0074\u0065\u0064"] && (renderReply(e, r["\u0074\u0065\u0078\u0074"]), r["\u006f\u006e\u0052\u0065\u006e\u0064\u0065\u0072"]?.()));
     }));
 }
 
