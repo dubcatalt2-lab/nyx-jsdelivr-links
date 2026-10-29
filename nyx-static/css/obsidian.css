@@ -1,4 +1,4 @@
-@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=ead641d4ff6a70d8");
+@import url("/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/css/obsidian-palette.css?rev=7aaef18ed09f776e");
 
 @font-face {
   font-family: q81c6;
@@ -293,7 +293,7 @@ body.q6172f40672fb949e9c .n2ac0604c6ebc.maximized .view.study-958366890813503148
   transform: rotate(180deg)
 }
 
-.q1a2b180d7cc7c3531f [data-n7x-dock-item]>span {
+.q1a2b180d7cc7c3531f [data-study-447373717197414632]>span {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 160ms, transform var(--n7x-rail-motion)
@@ -309,7 +309,7 @@ body.q6172f40672fb949e9c .n2ac0604c6ebc.maximized .view.study-958366890813503148
   min-height: 0
 }
 
-.q1a2b180d7cc7c3531f [data-n7x-dock-item] {
+.q1a2b180d7cc7c3531f [data-study-447373717197414632] {
   position: relative;
   display: flex;
   align-items: center;
@@ -325,16 +325,16 @@ body.q6172f40672fb949e9c .n2ac0604c6ebc.maximized .view.study-958366890813503148
   color: var(--obsidian-muted)
 }
 
-.q1a2b180d7cc7c3531f [data-n7x-dock-item=apps] {
+.q1a2b180d7cc7c3531f [data-study-447373717197414632=apps] {
   margin-top: 18px
 }
 
-.q1a2b180d7cc7c3531f [data-n7x-dock-item].study-958366890813503148 {
+.q1a2b180d7cc7c3531f [data-study-447373717197414632].study-958366890813503148 {
   color: var(--obsidian-text);
   background: var(--obsidian-hover)
 }
 
-.q1a2b180d7cc7c3531f [data-n7x-dock-item].study-958366890813503148::before {
+.q1a2b180d7cc7c3531f [data-study-447373717197414632].study-958366890813503148::before {
   content: "";
   position: absolute;
   left: 1px;
@@ -435,7 +435,7 @@ html[data-n7x-sidebar-width=collapsed] .n7x-visual-dock-head {
   justify-content: center
 }
 
-html[data-n7x-sidebar-width=collapsed] .q1a2b180d7cc7c3531f [data-n7x-dock-item]>span {
+html[data-n7x-sidebar-width=collapsed] .q1a2b180d7cc7c3531f [data-study-447373717197414632]>span {
   opacity: 0;
   transform: translateX(-5px);
   pointer-events: none
@@ -721,7 +721,7 @@ body.q6172f40672fb949e9c.qca8d8b3457e9847393 .n11c31f2b2fec {
 }
 
 .q052e128294a2d519e5 button,
-.q1a2b180d7cc7c3531f [data-n7x-dock-item] {
+.q1a2b180d7cc7c3531f [data-study-447373717197414632] {
   transition: background-color 140ms, color 140ms
 }
 
@@ -1424,7 +1424,7 @@ html body.q6172f40672fb949e9c .n7x-settings-control :is(.n7x-wallpaper-card, .n7
   margin-bottom: 16px
 }
 
-html[data-n7x-theme=halloween] .q1a2b180d7cc7c3531f [data-n7x-dock-item].study-958366890813503148,
+html[data-n7x-theme=halloween] .q1a2b180d7cc7c3531f [data-study-447373717197414632].study-958366890813503148,
 html[data-n7x-theme=halloween] body.q6172f40672fb949e9c .q061b9457d0f4fef27a .n7x-settings-nav button.study-958366890813503148 {
   color: var(--n7x-surface-accent) !important
 }
@@ -1469,11 +1469,11 @@ html.qe74ba391f50c862d19[data-n7x-beam-wallpaper=lineWaves] body:not(.custom-bg-
   filter: brightness(.65)
 }
 
-[data-n7x-dock-item=chat].q19f8 {
+[data-study-447373717197414632=chat].q19f8 {
   position: relative
 }
 
-[data-n7x-dock-item=chat].q19f8::after {
+[data-study-447373717197414632=chat].q19f8::after {
   content: "";
   position: absolute;
   right: 5px;
