@@ -1,41 +1,41 @@
 {
   "flux": {
-    "file": "flux.svg",
+    "file": "@r6fa8967069d716b72964910e!.svg",
     "color": false,
     "source": "https://unpkg.com/@lobehub/icons-static-svg@1.95.1/icons/flux.svg"
   },
   "recraft": {
-    "file": "recraft.svg",
+    "file": "@r4d9b203ff66fb85a9faf6e7d!.svg",
     "color": false,
     "source": "https://unpkg.com/@lobehub/icons-static-svg@1.95.1/icons/recraft.svg"
   },
   "runway": {
-    "file": "runway.svg",
+    "file": "@ra1261eb1eb764e69ca726eea!.svg",
     "color": false,
     "source": "https://unpkg.com/@lobehub/icons-static-svg@1.95.1/icons/runway.svg"
   },
   "kling": {
-    "file": "kling-color.svg",
+    "file": "@r451125fbe28d6b66ebb17e93!.svg",
     "color": true,
     "source": "https://unpkg.com/@lobehub/icons-static-svg@1.95.1/icons/kling-color.svg"
   },
   "elevenlabs": {
-    "file": "elevenlabs.svg",
+    "file": "@r219613239ae92f1f51c33d5d!.svg",
     "color": false,
     "source": "https://unpkg.com/@lobehub/icons-static-svg@1.95.1/icons/elevenlabs.svg"
   },
   "assemblyai": {
-    "file": "assemblyai-color.svg",
+    "file": "@r55f847b03e046c2e1b461872!.svg",
     "color": true,
     "source": "https://unpkg.com/@lobehub/icons-static-svg@1.95.1/icons/assemblyai-color.svg"
   },
   "suno": {
-    "file": "suno.svg",
+    "file": "@r504e43e74ab43d5a31cb8259!.svg",
     "color": false,
     "source": "https://unpkg.com/@lobehub/icons-static-svg@1.95.1/icons/suno.svg"
   },
   "alibaba": {
-    "file": "alibaba-color.svg",
+    "file": "@r99710a1f686f8790e4173f69!.svg",
     "color": true,
     "source": "https://unpkg.com/@lobehub/icons-static-svg@1.95.1/icons/alibaba-color.svg"
   }
