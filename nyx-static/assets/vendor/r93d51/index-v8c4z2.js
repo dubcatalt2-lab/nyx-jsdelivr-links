@@ -88,7 +88,7 @@ async function inspect(res){
 
 async function solve(url){
   const base=(localStorage.getItem(BASE_KEY)||DEFAULT_BASE).replace(/\/+$/,"");
-  const r=await fetch(base+"/v1",{
+  const r=await fetch(base+"/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/v1",{
     method:"POST",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({cmd:"request.get",url,maxTimeout:60000})
