@@ -59,8 +59,11 @@
     {
       "source": "stuff/LyzaHBeO/WBv0kYC0.js",
       "path": "LyzaHBeO/WBv0kYC0.js",
-      "bytes": 4577,
-      "sha256": "170cbf2149745b3e8e205ab4c0ca57084d4f3abf007984ada9f765c629c12bc7"
+      "bytes": 4617,
+      "sha256": "5a6064829410bf7b3caca300e64cbadf6a902f211825ea37aace8d13290563e0",
+      "upstreamBytes": 4577,
+      "upstreamSha256": "170cbf2149745b3e8e205ab4c0ca57084d4f3abf007984ada9f765c629c12bc7",
+      "patch": "Include the shell outside the worker scope in cookie synchronization, so its controller can apply cookies and acknowledge subresource responses."
     },
     {
       "source": ".assets/index-k9v3f1.js",
