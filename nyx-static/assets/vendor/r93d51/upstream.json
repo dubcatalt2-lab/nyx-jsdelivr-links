@@ -17,8 +17,11 @@
     {
       "source": "stuff/LyzaHBeO/hdr6ZzzC.js",
       "path": "LyzaHBeO/hdr6ZzzC.js",
-      "bytes": 227262,
-      "sha256": "073711357acb230b83ea3cd5fc5d2d0c98fd06632ae885eecb54e176ad314fc7"
+      "bytes": 227020,
+      "sha256": "ae70d93eb8369df93853f659e4213cd24c33ae027eaa09496f0628d88341edd2",
+      "upstreamBytes": 227262,
+      "upstreamSha256": "073711357acb230b83ea3cd5fc5d2d0c98fd06632ae885eecb54e176ad314fc7",
+      "patch": "Preserve native frozen document base URL across history navigation; rewrite base href attributes and property assignments to absolute encoded references."
     },
     {
       "source": "stuff/LyzaHBeO/jCC9IUDB.wasm",
