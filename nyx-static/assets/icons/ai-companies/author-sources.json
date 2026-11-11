@@ -30,7 +30,7 @@
     "reference": "https://openrouter.ai/writer"
   },
   "stealth": {
-    "file": "@r7b6aef6084d47724ffab5e44!.svg",
+    "file": "@r7cee0e6dbd225251281d3eb2!.svg",
     "source": "https://openrouter.ai/images/icons/Stealth.svg",
     "reference": "https://openrouter.ai/stealth"
   },
@@ -105,12 +105,12 @@
     "reference": "https://openrouter.ai/fish-audio"
   },
   "nex-agi": {
-    "file": "@r76c06051b1559483d0f1e813!.svg",
+    "file": "@r29b40b72a0aab0238ac7bdcb!.svg",
     "source": "https://openrouter.ai/images/icons/NexAGI.svg",
     "reference": "https://openrouter.ai/nex-agi"
   },
   "deepgram": {
-    "file": "@rf541018a2fd3b1c4a7ab2c9e!.svg",
+    "file": "@r358366dfdaa0e6ea1ca1ff31!.svg",
     "source": "https://openrouter.ai/images/icons/Deepgram.svg",
     "reference": "https://openrouter.ai/deepgram"
   },
