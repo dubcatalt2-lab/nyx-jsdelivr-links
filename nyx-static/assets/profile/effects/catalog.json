@@ -1,0 +1,555 @@
+[
+  {
+    "id": "fx-cosmic-vortex",
+    "label": "Butterfly Sparkles",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r5b7fa4d1f56e1a33449bed61!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r11cdb0c6cac3a96cba9f742f!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/13e64b0456243ed81ae809a507d980cadf31d1b44848bd2c89d3c511604b25ff",
+    "bytes": 4309262,
+    "sourceLabel": "Cosmic Vortex",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rb83ede64b899f245b4408a06!.png"
+  },
+  {
+    "id": "fx-nebula-storm",
+    "label": "Drifting Butterflies",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r555534d67e9151d6e74a7fbe!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r9561e63219e3eaead7285849!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/66349ad1617c21762b446035e03f536391351001a0261f3fc695292a0c00230b",
+    "bytes": 1649483,
+    "sourceLabel": "Nebula Storm"
+  },
+  {
+    "id": "fx-stellar-burst",
+    "label": "Starlit Petals",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rf3cb639a246dec832d078961!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r45cf89580f8d8aa82263af2d!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/f6798f7dce84fed42daa90be43d3e5852e96baf9de60022065116d3ca137b096",
+    "bytes": 3460437,
+    "sourceLabel": "Stellar Burst",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@re37bf20bebbf8c079a152b12!.png"
+  },
+  {
+    "id": "fx-ethereal-flame",
+    "label": "Floating Petals",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r4182b7325bfe40c5a6be9773!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@reb8039583c2e39e1aec8a4bb!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/c9bafb1182c45452f70b58073d63d139ab6435cd261a63c10c1b6b048b6d9369",
+    "bytes": 1873930,
+    "sourceLabel": "Ethereal Flame"
+  },
+  {
+    "id": "fx-quantum-rift",
+    "label": "Moonlit Wolf",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r4f6e442b7067df2567225c8d!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r8906f2f96f9a51faf156ebad!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/c8eda0d8533d69a251d780152bbfe6bac4fbbaab48be155a7c7dbebe8d74ed05",
+    "bytes": 3204223,
+    "sourceLabel": "Quantum Rift",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r7c17642395ad90b4250a5905!.png"
+  },
+  {
+    "id": "fx-astral-cascade",
+    "label": "Night Clouds",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r6e01c1d040ddf287410d3e42!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r64cc444222895b470bba0ac3!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/8996b4926f52d07d4e791b6db6e132be07d0a34b2e63dadf32919542b9da004d",
+    "bytes": 2666203,
+    "sourceLabel": "Astral Cascade"
+  },
+  {
+    "id": "fx-plasma-wave",
+    "label": "Shadow Grins",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r19928505e29b8ebe797d4bc5!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@re301d9a9263b5eb3468ce2f4!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/4394a572d2d2b1eddbc253c6c77e3725ea55a379ace4a998267afe37b2fe352b",
+    "bytes": 5980596,
+    "sourceLabel": "Plasma Wave",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r7d6364328dfad25cc85bf050!.png"
+  },
+  {
+    "id": "fx-supernova-flash",
+    "label": "Peeking Shadows",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r78a6bdfef2889a94295a1609!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r82a1e5e08c1d544e60ec07c4!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/41bdd75fdbffcb851d65825cd0f6a13d2876d29c145b888074c0af55b7dfba9c",
+    "bytes": 4017850,
+    "sourceLabel": "Supernova Flash"
+  },
+  {
+    "id": "fx-void-shards",
+    "label": "Owl in the Mist",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rdc9fa3a7de38efd41aa91e3f!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r8d9b2b26c2b8bfc8d6506430!.png",
+    "animated": false,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/88278b3768b7a4e2dc71af8f77c136b07169c7eafb0cc752969bb07ada33e112",
+    "bytes": 962246,
+    "sourceLabel": "Void Shards"
+  },
+  {
+    "id": "fx-prismatic-spark",
+    "label": "Neon Beast Spiral",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rbc5ac339c5ad2e52de32f77e!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r9e7329f8a1f64bddf834bb0c!.png",
+    "animated": false,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/ee63dbed7337a57ac139ae5bb16f4c35fe2092e5471193bff974d3a14672a664",
+    "bytes": 113184,
+    "sourceLabel": "Prismatic Spark"
+  },
+  {
+    "id": "fx-arcane-pulse",
+    "label": "Monochrome Demon",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@reee30dec0cdb1b5e45f9fb24!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r71c393922aaaf9307311cad5!.png",
+    "animated": false,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/120627a78de773d458668ba9dc5db233e94df7f70f321e3e2f752b63e4797a3a",
+    "bytes": 166848,
+    "sourceLabel": "Arcane Pulse"
+  },
+  {
+    "id": "fx-solar-surge",
+    "label": "Demon Reveal",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r9a4693423610be7739b8b072!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@re103775e84369c5cf97705e5!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/84168a5adc7db3805121683b85f398b21ebfd9e0396bc9a2bbf70591acb482fb",
+    "bytes": 5482699,
+    "sourceLabel": "Solar Surge"
+  },
+  {
+    "id": "fx-neon-eclipse",
+    "label": "Hanging Shadow Grin",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r69db29f327505b490bb03ddc!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r15448328472407df97c11eb8!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/be67d92063f863236b59b19e84ab4a82c43d9cf99b1640636c69cfecad3dbcb2",
+    "bytes": 1584287,
+    "sourceLabel": "Neon Eclipse"
+  },
+  {
+    "id": "fx-celestial-drift",
+    "label": "Neon Beast Portrait",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r860adf11b5f9cb0701f2a3e6!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r833cc9ffffba09745f06f32a!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/db5a61d9fb5b447c626cd59cf00c45cc61e211b042c8d5397be5f17b4151c698",
+    "bytes": 3775861,
+    "sourceLabel": "Celestial Drift",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r6047e05a4c8f886d57a92aa4!.png"
+  },
+  {
+    "id": "fx-shadow-aura",
+    "label": "Pink Lightning",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rc7c175ecc485704ba870e39d!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r85cc03b4cf5ae4a01b685fb9!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/36651b3517f1d214876474a0df786edf56a8efd545925c304a8e3155b47aa68b",
+    "bytes": 1662387,
+    "sourceLabel": "Shadow Aura"
+  },
+  {
+    "id": "fx-hyper-aura",
+    "label": "Owl on a Branch",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rae8a4787223b1fbdb1ac7d06!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r10b1318cebb3383dc88207c4!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1f2b91c50cc613ac683138f81c4fd6636445246275d0a43be220105b7426dc37",
+    "bytes": 2565811,
+    "sourceLabel": "Hyper Aura",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rb8de1b008e57537aa481b542!.png"
+  },
+  {
+    "id": "fx-starlight-bloom",
+    "label": "Clouds & Full Moon",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@ree899ffb729c36d69708ccf7!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r49d3d01041f2a23d91c534dc!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/6141bed8d0353c9104a069af0c42dc80967c72a4061c018f7ace53c1f4a359ad",
+    "bytes": 707164,
+    "sourceLabel": "Starlight Bloom"
+  },
+  {
+    "id": "fx-galaxy-shimmer",
+    "label": "Hello Kitty Blossoms",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rc363091ccddddecf782ca9de!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r5bf5452789ad1ef732ca66c9!.png",
+    "animated": false,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/80ee7cc461db7f7493816a03af3b03a620c8edc248f188f8b2913ffbf7266371",
+    "bytes": 252746,
+    "sourceLabel": "Galaxy Shimmer"
+  },
+  {
+    "id": "fx-cyber-lattice",
+    "label": "Moonlit Vine Border",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r716f2f0f0bc9ef60564c1da4!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rfb9dab8c05aede020216ef10!.png",
+    "animated": false,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/5c86da4e65bd9a5a5c0f37ad559ec6637fde50a6782dc6800cb7ee88293676d0",
+    "bytes": 534648,
+    "sourceLabel": "Cyber Lattice"
+  },
+  {
+    "id": "fx-abyssal-ring",
+    "label": "Spider-Man Swing",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r3af46383ba89caf60cc9c546!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@ra6fc06f6e5d20ea135ccede2!.png",
+    "animated": false,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/ba0e0454f6c23edf081067357f72a1cf3629e4d59ffe14e1f33de40b96371d49",
+    "bytes": 572818,
+    "sourceLabel": "Abyssal Ring"
+  },
+  {
+    "id": "fx-dimension-rift",
+    "label": "Shark Whirlpool",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r064759399b3504b9dfeb51d0!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r388681786b094fd4754540c9!.png",
+    "animated": false,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/b6f265ce5b8663ac063871c792f2f087a67d4670bc2010214f9ca65114b88f48",
+    "bytes": 109315,
+    "sourceLabel": "Dimension Rift"
+  },
+  {
+    "id": "fx-chrono-spark",
+    "label": "Circling Sharks",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r6da860f5c4091e60e92ebeaf!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@raac0b0d001fb49c0eeeb077e!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/8274a57f4d55d382e3ab04ea178d274456bc397a7f2846f07962de8e01593b68",
+    "bytes": 4974354,
+    "sourceLabel": "Chrono Spark",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r3221d67df14aec9644502bd5!.png"
+  },
+  {
+    "id": "fx-zenith-glow",
+    "label": "Deep Sea Silhouettes",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r77dc42c9343cb805f2b41107!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r5295495de192006aa24177dc!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/52385aff9666affe84b73f56e8ebccba906df0978ee93ed56301c7fb1c890af0",
+    "bytes": 1305461,
+    "sourceLabel": "Zenith Glow",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r66d0375adf565f9a85f6c873!.png"
+  },
+  {
+    "id": "fx-infrared-pulse",
+    "label": "Deep Sea Drift",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rd2a18a588fa3c266f948772e!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rc26b591aa5c566952e88ea01!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/ff91e837fc27b6147481ab8bfef2769c45e13bfffaf60bf8931f10def33c10db",
+    "bytes": 1332022,
+    "sourceLabel": "Infrared Pulse",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rb50031c9f7776422a9cfaf08!.png"
+  },
+  {
+    "id": "fx-glitch-storm",
+    "label": "Ocean Shadows",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rcd752909ae63f833e9b20e93!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r9007d6ebf6dec07bbb1cc1cf!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/2884b01ea871d48b778e75b202fdb6d2f766b3adba3ae695915c4e4b3be9c322",
+    "bytes": 1402412,
+    "sourceLabel": "Glitch Storm",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r60e306f1fa6f5656c839568d!.png"
+  },
+  {
+    "id": "fx-phantom-flame",
+    "label": "Spider-Man Peek",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r5606325ad8d9cf23b64d0ac4!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r4345033fe2eb2378a44aea6b!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/05d9543720cb0294728155de219d9bb440d72331e88de3dbc1dced6bd270e6fb",
+    "bytes": 1609390,
+    "sourceLabel": "Phantom Flame",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r145831fd4e314020eb0be829!.png"
+  },
+  {
+    "id": "fx-vortex-surge",
+    "label": "Spiderweb Border",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r58fcae96c97c992ec4f2b47e!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r33c85a466269788fb604dd66!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/3d65e7f6c15aab66f854209ebb66b2a9f25d48f481abd6b450fe99a1e955683f",
+    "bytes": 33458,
+    "sourceLabel": "Vortex Surge",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r62a230c0146285d04832ecb4!.png"
+  },
+  {
+    "id": "fx-nebula-spark",
+    "label": "Moonlit Vine Canopy",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r0e7e2094faea41555a7cd244!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rbc87ae9fefbb83097944c775!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/bbd175b29de9b89e9bb88f5e1f690033a7112be874c57e7d7aed06c9db80a606",
+    "bytes": 1502041,
+    "sourceLabel": "Nebula Spark",
+    "loopPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r7ff3bf578f72547e8db501ff!.png"
+  },
+  {
+    "id": "fx-starlight-echo",
+    "label": "Moonlit Vine Sparkles",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rc295f9d7b6e7f5c680a6fef8!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r718faae324f1f6e77a612195!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/684d47f73e67c1393c54cd605ee9ddda072df1ae68672eb1d41bf90f933bd480",
+    "bytes": 1870137,
+    "sourceLabel": "Starlight Echo"
+  },
+  {
+    "id": "fx-spectral-surge",
+    "label": "Glowing Butterflies",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@ra7381f91b54035b095b3b9b5!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r9790274d6c82e3fcd36cf3be!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1538991362601656420/animated",
+    "bytes": 972375,
+    "sourceLabel": "Spectral Surge"
+  },
+  {
+    "id": "fx-cyber-matrix",
+    "label": "Glowing Rose Wreath",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r212f3de6bba421d95ad4ce96!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@ra08145ce32e62a86859061c1!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1538990902306152558/animated",
+    "bytes": 1880700,
+    "sourceLabel": "Cyber Matrix"
+  },
+  {
+    "id": "fx-dark-void",
+    "label": "Cloud Halo",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r2c97d2dc6c2b583edb04cab4!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r77b08904caa67da22c138fd8!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1538991167511994549/animated",
+    "bytes": 1336053,
+    "sourceLabel": "Dark Void"
+  },
+  {
+    "id": "fx-nebula-rift",
+    "label": "Black Thorn Ring",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r83c3cb0d49c39f60bee4e579!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rd4a7d444ae51c5fc84b7317a!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1481388474673139855/animated",
+    "bytes": 1262028,
+    "sourceLabel": "Nebula Rift"
+  },
+  {
+    "id": "fx-solar-flare",
+    "label": "Skeletal Embrace",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r0952c342dae2a9f05d215f88!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r272f60cee3a89a52406e8977!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1516559294819074088/animated",
+    "bytes": 707577,
+    "sourceLabel": "Solar Flare"
+  },
+  {
+    "id": "fx-sakura-blossom",
+    "label": "Blushing Cat Ears",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r98e8adacc96e699be07f2435!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r34f1faba58135977fb4e81bd!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1212569433839636530/animated",
+    "bytes": 356762,
+    "sourceLabel": "Sakura Blossom"
+  },
+  {
+    "id": "fx-arcane-prism",
+    "label": "Phoenix Swirl",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r6b75f78a9efd5ed1a996dbbc!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r80485a91700d28dd73cf26e8!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1533914517329678408/animated",
+    "bytes": 1029544,
+    "sourceLabel": "Arcane Prism"
+  },
+  {
+    "id": "fx-abyssal-pulse",
+    "label": "Black Roses & Butterfly",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r961d7d0bfc40f6ebc30375f2!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r37b0a944b38e6c6b134651f4!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1462116613645144185/animated",
+    "bytes": 1677664,
+    "sourceLabel": "Abyssal Pulse"
+  },
+  {
+    "id": "fx-neon-stardust",
+    "label": "Dark Angel Wings",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r536e5237ac7ab3ad7cb38315!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r21e9218ffa5f4ee97b1b1117!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1462116613682757888/animated",
+    "bytes": 1239357,
+    "sourceLabel": "Neon Stardust"
+  },
+  {
+    "id": "fx-retro-wave",
+    "label": "Comic Anger",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r870ed75bc5e552777a164a78!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r91a1a2683f9baa9332c65e18!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1144308439720394944/animated",
+    "bytes": 468914,
+    "sourceLabel": "Retro Wave"
+  },
+  {
+    "id": "fx-glitch-mirage",
+    "label": "Prismatic Eclipse",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r072f28e1dc8d0d04abf37437!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rba78983ec17119ca7b1eaada!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1531403489727746310/animated",
+    "bytes": 1696777,
+    "sourceLabel": "Glitch Mirage"
+  },
+  {
+    "id": "fx-celestial-shine",
+    "label": "Luminous Moth",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r3275bae7a6d44489d8a5cb96!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r7915ef4fc94a412e1de5306d!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1541454059670605845/animated",
+    "bytes": 1576231,
+    "sourceLabel": "Celestial Shine"
+  },
+  {
+    "id": "fx-phantom-mist",
+    "label": "Crimson Butterfly",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rb2db132f4f61c5bbf879edc2!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rec9b3b46d5b686dd6937c966!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1436367668897775757/animated",
+    "bytes": 930497,
+    "sourceLabel": "Phantom Mist"
+  },
+  {
+    "id": "fx-hyperdrive",
+    "label": "Moonlit Vines",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r62fa295f3c7bb51336908768!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@raf758e04041cf691f43713e8!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1541453953760239616/animated",
+    "bytes": 1656844,
+    "sourceLabel": "Hyperdrive"
+  },
+  {
+    "id": "fx-quantum-bloom",
+    "label": "Silver Orbits",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r3ce9a7c2ba0baff6d2bc71d7!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r4fc870d72fc945136094d1d7!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1531406020851793950/animated",
+    "bytes": 1920395,
+    "sourceLabel": "Quantum Bloom"
+  },
+  {
+    "id": "fx-prismatic-aura",
+    "label": "Moonlit Clouds",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r4da609ee587a6b3a4345210f!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r18428c12dd9abeaa0d4f3340!.png",
+    "animated": false,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1495805817792761976/static",
+    "bytes": 19824,
+    "sourceLabel": "Prismatic Aura"
+  },
+  {
+    "id": "fx-astral-spark",
+    "label": "Flaming Skulls",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@raf6fe0b9c8d360896939cbe7!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rc8df4c5acd430fbf0204a08c!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1533913535149506670/animated",
+    "bytes": 1114765,
+    "sourceLabel": "Astral Spark"
+  },
+  {
+    "id": "fx-thunderstorm",
+    "label": "Golden Moon",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r3b392124756893056e3cd1d0!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rf433caa13238714f2e565dab!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1432550258126229565/animated",
+    "bytes": 913643,
+    "sourceLabel": "Thunderstorm"
+  },
+  {
+    "id": "fx-crimson-eclipse",
+    "label": "Golden Star Crown",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r3e79a4b1fb64254ef53d668a!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rb4245bea55039be138e3188c!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1531405732174626986/animated",
+    "bytes": 1415320,
+    "sourceLabel": "Crimson Eclipse"
+  },
+  {
+    "id": "fx-electric-dream",
+    "label": "Ocean Glow",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r39cbc1182b52db4c860e5b21!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rc5194dc9d70f4042183e9ec2!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1533919242892607610/animated",
+    "bytes": 775188,
+    "sourceLabel": "Electric Dream"
+  },
+  {
+    "id": "fx-frozen-shards",
+    "label": "White Angel Wings",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r4f274315d2d1688ae65f45e9!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r16a4ed30e10a0a7fd81dd26b!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1462116613691281560/animated",
+    "bytes": 1268132,
+    "sourceLabel": "Frozen Shards"
+  },
+  {
+    "id": "fx-vortex-horizon",
+    "label": "Ember Moon",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rf36c32193cbd2d2de40088a9!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r0d06c7d54f515b408ec150b0!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1432550258147328050/animated",
+    "bytes": 1061732,
+    "sourceLabel": "Vortex Horizon"
+  },
+  {
+    "id": "fx-nova-beam",
+    "label": "Aurora Wisps",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rec41898414530a4f95fe29a4!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@rbb2b55f18a17ccf41595a9c0!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1541454236456456232/animated",
+    "bytes": 269328,
+    "sourceLabel": "Nova Beam"
+  },
+  {
+    "id": "fx-cybernetic-pulse",
+    "label": "White Roses & Butterfly",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r079a101697cf2114750c9a3f!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@re9e9c2894707d5ec033016a9!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1462116613653401775/animated",
+    "bytes": 1699142,
+    "sourceLabel": "Cybernetic Pulse"
+  },
+  {
+    "id": "fx-radiant-orbit",
+    "label": "Starlight Mist",
+    "path": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@ra0ec770988aefc3657be14a9!.png",
+    "staticPath": "/gh/dubcatalt2-lab/nyx-jsdelivr-links@main/nyx-static/assets/profile/effects/@r56d9dcc08b7558b7d22b5a86!.png",
+    "animated": true,
+    "source": "https://cdn.discordapp.com/media/v1/collectibles-shop/1432550258247995533/animated",
+    "bytes": 1880407,
+    "sourceLabel": "Radiant Orbit"
+  }
+]
