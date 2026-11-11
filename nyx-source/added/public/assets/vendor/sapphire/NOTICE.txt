@@ -1,0 +1,3 @@
+Sapphire @x8r/sapphire 0.1.4, https://github.com/x8rr/sapphire
+Upstream package declares no license. Included at project owner request; no license grant is asserted.
+Bundled dependencies retain their source license comments.

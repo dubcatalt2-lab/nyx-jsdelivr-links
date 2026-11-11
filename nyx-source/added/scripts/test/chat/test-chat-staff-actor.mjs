@@ -1,0 +1,6 @@
+import assert from'node:assert/strict';import{chatStaffActor}from'../../../lib/chat-staff-actor.mjs';
+let uid='divine-user',permissions=['chat:moderate','accounts:disable','chat:device_bans'];const roles={owner:'owner','divine-user':'co_owner',peer:'co_owner',member:'member'};const policy=role=>({rank:{owner:100,co_owner:90,member:0}[role],permissions:[]});const firebase={firestore:{collection:()=>({doc:uid=>({get:async()=>({data:()=>({role:roles[uid]})})})})}};
+const deps={authenticate:async()=>({firebase,token:{uid}}),ownerUid:()=> 'owner',roleForUser:id=>roles[id]||'member',customRoles:async()=>new Map(),assignedCustomRole:()=>({permissions}),rolePolicy:policy};
+for(const permission of permissions)assert((await chatStaffActor({params:{uid:'member'}},permission,deps)).actor.role==='co_owner');
+for(const target of ['owner','divine-user','peer'])await assert.rejects(()=>chatStaffActor({params:{uid:target}},'chat:device_bans',deps),e=>e.status===403);
+permissions=[];await assert.rejects(()=>chatStaffActor({params:{uid:'member'}},'chat:device_bans',deps),e=>e.status===403);uid='owner';assert((await chatStaffActor({params:{uid:'peer'}},'chat:device_bans',deps)).actor.role==='owner');console.log('PASS Divine permissions, missing-permission denial, self/owner/peer protections, founder override');

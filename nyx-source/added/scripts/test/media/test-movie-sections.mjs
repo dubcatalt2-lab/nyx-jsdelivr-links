@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';
+import {createMovieCatalog} from '../../../lib/movies.mjs';
+const requests=[];const catalog=createMovieCatalog({token:()=> 'test-only',fetchImpl:async url=>{requests.push(new URL(url));return Response.json({results:[{id:10,name:'Example',title:'Example',original_language:'ja',genre_ids:[16]},{id:11,name:'Other',original_language:'en',genre_ids:[18]}],total_pages:2})}});
+for(const kind of ['movie','tv','anime']){const result=await catalog.search('',1,kind);assert(result.results.length);if(kind!=='movie')assert(result.results.every(x=>x.kind==='tv'));if(kind==='anime')assert.equal(result.results.length,1);}
+assert.deepEqual(requests.map(x=>x.pathname),['/3/movie/popular','/3/tv/popular','/3/discover/tv']);assert.equal(requests[2].searchParams.get('with_genres'),'16');assert.equal(requests[2].searchParams.get('with_original_language'),'ja');await catalog.search('test',1,'tv');assert.equal(requests.at(-1).pathname,'/3/search/tv');await assert.rejects(()=>catalog.search('',1,'bad'),e=>e.status===400);console.log('PASS separate Movie/TV/Anime catalogs, filtered anime and invalid-section validation');

@@ -1,0 +1,7 @@
+(()=>{
+ if(parent===window)return;
+ let root,body;try{root=parent.document.documentElement;body=parent.document.body}catch{return}
+ const style=document.createElement('style');style.textContent='html,html body{background:transparent!important}html body{isolation:isolate}html body::before{content:""!important;display:block!important;position:fixed!important;inset:0!important;width:100%!important;height:100%!important;z-index:-1!important;pointer-events:none!important;background:var(--nyx-shared-bg)!important;filter:var(--nyx-shared-filter)!important;opacity:var(--nyx-shared-opacity)!important;border-radius:0!important}';document.head.append(style);
+ let scheduled=false;const sync=()=>{scheduled=false;const source=parent.getComputedStyle(body,'::before');document.documentElement.style.setProperty('--nyx-shared-bg',source.background);document.documentElement.style.setProperty('--nyx-shared-filter',source.filter);document.documentElement.style.setProperty('--nyx-shared-opacity',source.opacity);};const queue=()=>{if(!scheduled){scheduled=true;requestAnimationFrame(sync)}};
+ const observer=new MutationObserver(queue);observer.observe(root,{attributes:true,attributeFilter:['style','class','data-n7x-theme','data-n7x-beam-wallpaper','data-n7x-appearance']});observer.observe(body,{attributes:true,attributeFilter:['style','class']});sync();addEventListener('pagehide',()=>observer.disconnect(),{once:true});
+})();
