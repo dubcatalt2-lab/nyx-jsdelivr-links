@@ -1,4 +1,0 @@
-Request filtering: @ghostery/adblocker 2.20.3 (MPL-2.0).
-https://github.com/ghostery/adblocker
-Rules: EasyList (GPL-3.0-or-later), https://easylist.to/
-Source and list snapshot: Nyx repository, scripts/build/build-request-filters.mjs and config/request-filters/.
