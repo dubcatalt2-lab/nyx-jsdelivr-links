@@ -37,7 +37,7 @@ ${l}`}}if((0,n.U5)("rewriterLogs",r.base))for(let e of s.errors)console.error("o
             <html>
                 <head>
                     <meta charset="utf-8" />
-                    <title>__60745</title>
+                    <title>_</title>
                     <style>
                     :root {
                         --deep: #080602;
@@ -176,15 +176,16 @@ ${l}`}}if((0,n.U5)("rewriterLogs",r.base))for(let e of s.errors)console.error("o
                                 <p>If you're the administrator of <b id="hostname"></b>, try:</p>
                                     <ul>
                                     <li>Restarting your server</li>
-                                    <li>Updating __60745</li>
-                                    <li>Troubleshooting the error on the <a href="https://github.com/__25888/__60745" target="_blank">GitHub repository</a></li>
+                                    <li><a href="mailto:hi@zaka.qzz.io">email a dev</a></li>
+                                    <li>ctrl + shift + r reloading the page</li>
+									<li>trying a diffrent version of Jet or try u22</li>
                                 </ul>
                             </div>
                         </div>
                         <br>
                         <button id="reload" class="primary">Reload</button>
                     </div>
-                    <p id="version-wrapper"><i>__60745 v<span id="version"></span> (build <span id="build"></span>)</i></p>
+                    <p id="version-wrapper"><i>Jet v<span id="version"></span> (build <span id="build"></span>)</i></p>
                     <script src="${"data:application/javascript,"+encodeURIComponent(r)}"></script>
                 </body>
             </html>

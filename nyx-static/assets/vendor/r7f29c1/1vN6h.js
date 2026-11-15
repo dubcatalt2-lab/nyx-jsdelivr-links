@@ -10,38 +10,54 @@
         u22Version.textContent = ${JSON.stringify("3.2.10")};
         u22Build.textContent = ${JSON.stringify("92d9074")};
     `;return`<!DOCTYPE html>
-        <html>
-        <head>
-        <meta charset='utf-8' />
-        <title>err0r</title>
-        <style>
-        * { background-color: white }
-        </style>
-        </head>
-        <body>
-        <h1 id='errorTitle'>Error processing your request</h1>
-        <hr />
-        <p>Failed to load <b id="ftchuvl"></b></p>
-        <p id="errorMessage">Internal Server Error</p>
-        <textarea id="errorTrace" cols="40" rows="10" readonly></textarea>
-        <p>Try:</p>
-        <ul>
-        <li>Checking your internet connection</li>
-        <li>Verifying you entered the correct address</li>
-        <li>Clearing the site data</li>
-        <li>Contacting <b id="u22Hostname"></b>'s administrator</li>
-        <li>Verify the server isn't censored</li>
-        </ul>
-        <p>If you're the administrator of <b id="u22Hostname"></b>, try:</p>
-        <ul>
-        <li>Restarting your server</li>
-        <li>Updating u2</li>
-        <li>Troubleshooting the error on the <a href="https://github.com/" target="_blank">GitHub repo</a></li>
-        </ul>
-        <button id="reload">Reload</button>
-        <hr />
-        <p><i>u2 v<span id="u22Version"></span> (build <span id="u22Build"></span>)</i></p>
-        <script src="${"data:application/javascript,"+encodeURIComponent(s)}"><\/script>
-        </body>
-        </html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>err0r</title>
+  <style>
+    * {
+      background-color: black;
+      color: white;
+    }
+    a {
+      color: #66b3ff;
+    }
+    textarea, button {
+      border: 1px solid white;
+      padding: 5px;
+    }
+    button {
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="errorTitle">Error processing your request</h1>
+  <hr />
+  <p>Failed to load <b id="ftchuvl"></b></p>
+  <p id="errorMessage">Internal Server Error</p>
+  <textarea id="errorTrace" cols="40" rows="10" readonly></textarea>
+  <br />
+  <button id="copyBtn" onclick="copyError()">Copy Error</button>
+  
+  <p>Try:</p>
+  <ul>
+    <li>Checking your internet connection</li>
+    <li>Verifying you entered the correct address</li>
+    <li>Clearing the site data</li>
+    <li><a href="mailto:hi@zaka.qzz.io">Email a dev</a></li>
+    <li>Pressing Ctrl + Shift + R to reload the page</li>
+    <li>DMing @zaka13fr on Discord (or @vdrtes) if it keeps doing this</li>
+  </ul>
+  
+  <button id="reload">Reload</button>
+  <hr />
+  <p><i>u2 v<span id="u22Version"></span> (build <span id="u22Build"></span>)</i></p>
+  <script src="${"data:application/javascript,"+encodeURIComponent(s)}"><\/script>
+  <script src="data:text/javascript;base64,ZnVuY3Rpb24gY29weUVycm9yKCkgewogIGNvbnN0IHRyYWNlVGV4dCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJlcnJvclRyYWNlIikudmFsdWU7CiAgY29uc3QgY29weUJ0biA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJjb3B5QnRuIik7CiAgCiAgbmF2aWdhdG9yLmNsaXBib2FyZC53cml0ZVRleHQodHJhY2VUZXh0KS50aGVuKCgpID0+IHsKICAgIGNvcHlCdG4udGV4dENvbnRlbnQgPSAiQ29waWVkISI7CiAgICBzZXRUaW1lb3V0KCgpID0+IHsKICAgICAgY29weUJ0bi50ZXh0Q29udGVudCA9ICJDb3B5IEVycm9yIjsKICAgIH0sIDIwMDApOwogIH0pOwp9"></script>
+</body>
+</html>
         `}function T(a,e){let s={"content-type":"text/html"};return crossOriginIsolated&&(s["Cross-Origin-Embedder-Policy"]="require-corp"),new Response(E(String(a),e),{status:500,headers:s})}})();
